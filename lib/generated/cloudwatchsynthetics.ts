@@ -365,7 +365,7 @@ export class Synthetics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCanary(canaryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:synthetics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:canary:${ canaryName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:synthetics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:canary:${ canaryName }`);
   }
 
   /**
@@ -382,7 +382,7 @@ export class Synthetics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGroup(groupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:synthetics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:group:${ groupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:synthetics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:group:${ groupId }`);
   }
 
   /**
@@ -400,7 +400,7 @@ export class Synthetics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -432,7 +432,7 @@ export class Synthetics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -462,7 +462,7 @@ export class Synthetics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -478,6 +478,6 @@ export class Synthetics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifNames(value: string | string[], operator?: Operator | string) {
-    return this.if(`Names`, value, operator || 'StringLike');
+    return this.if(`Names`, value, operator ?? 'StringLike');
   }
 }

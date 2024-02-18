@@ -765,7 +765,7 @@ export class Kafka extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterName }/${ uuid }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafka:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterName }/${ uuid }`);
   }
 
   /**
@@ -780,7 +780,7 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfiguration(configurationName: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration/${ configurationName }/${ uuid }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafka:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration/${ configurationName }/${ uuid }`);
   }
 
   /**
@@ -799,7 +799,7 @@ export class Kafka extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpcConnection(vpcOwnerAccount: string, clusterOwnerAccount: string, clusterName: string, uuid: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ vpcOwnerAccount }:vpc-connection/${ clusterOwnerAccount }/${ clusterName }/${ uuid }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafka:${ region ?? this.defaultRegion }:${ vpcOwnerAccount }:vpc-connection/${ clusterOwnerAccount }/${ clusterName }/${ uuid }`);
   }
 
   /**
@@ -817,7 +817,7 @@ export class Kafka extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReplicator(replicatorName: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replicator/${ replicatorName }/${ uuid }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafka:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:replicator/${ replicatorName }/${ uuid }`);
   }
 
   /**
@@ -833,7 +833,7 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopic(clusterName: string, clusterUuid: string, topicName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafka:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topic/${ clusterName }/${ clusterUuid }/${ topicName }`);
   }
 
   /**
@@ -849,7 +849,7 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(clusterName: string, clusterUuid: string, groupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafka:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:group/${ clusterName }/${ clusterUuid }/${ groupName }`);
   }
 
   /**
@@ -865,7 +865,7 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTransactionalId(clusterName: string, clusterUuid: string, transactionalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kafka:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafka:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transactional-id/${ clusterName }/${ clusterUuid }/${ transactionalId }`);
   }
 
   /**
@@ -885,7 +885,7 @@ export class Kafka extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -903,7 +903,7 @@ export class Kafka extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -923,7 +923,7 @@ export class Kafka extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**

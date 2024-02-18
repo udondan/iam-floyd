@@ -873,7 +873,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnalysistemplate(membershipId: string, analysisTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }/analysistemplate/${ analysisTemplateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }/analysistemplate/${ analysisTemplateId }`);
   }
 
   /**
@@ -890,7 +890,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCollaboration(collaborationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:collaboration/${ collaborationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:collaboration/${ collaborationId }`);
   }
 
   /**
@@ -908,7 +908,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfiguredaudiencemodelassociation(membershipId: string, configuredAudienceModelAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }/configuredaudiencemodelassociation/${ configuredAudienceModelAssociationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }/configuredaudiencemodelassociation/${ configuredAudienceModelAssociationId }`);
   }
 
   /**
@@ -925,7 +925,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfiguredtable(configuredTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuredtable/${ configuredTableId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuredtable/${ configuredTableId }`);
   }
 
   /**
@@ -943,7 +943,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfiguredtableassociation(membershipId: string, configuredTableAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }/configuredtableassociation/${ configuredTableAssociationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }/configuredtableassociation/${ configuredTableAssociationId }`);
   }
 
   /**
@@ -960,7 +960,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMembership(membershipId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }`);
   }
 
   /**
@@ -978,7 +978,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPrivacybudgettemplate(membershipId: string, privacyBudgetTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:membership/${ membershipId }/privacybudgettemplate/${ privacyBudgetTemplateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }/privacybudgettemplate/${ privacyBudgetTemplateId }`);
   }
 
   /**
@@ -1001,7 +1001,7 @@ export class Cleanrooms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1032,7 +1032,7 @@ export class Cleanrooms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1055,6 +1055,6 @@ export class Cleanrooms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

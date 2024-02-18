@@ -117,44 +117,14 @@ Every statement provider (e.g. ``Ec2``) brings its unique conditions. `Global co
 
 Every ``if`` method has a default operator. For instance, conditions which operate on strings usually have ``StringLike`` as default. Most methods allow you to pass an operator as last argument.
 
+.. NOTE::
+   Operators can be passed as string, though it is recommended to use the `Operators <operators.html>`__ provided by the package.
+
 .. example:: conditions-operator-string
 
 In case of `missing conditions <faq.html#are-all-actions-conditions-resource-types-covered>`__, you can define just any condition yourself via ``if()``:
 
 .. example:: conditions-raw
-
-Operators
-^^^^^^^^^
-
-`Condition operators <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html>`_ can just be passed as strings. Or you can use the class ``Operator()``:
-
-First import the ``Operator`` class along with the ``Statement``:
-
-.. tabs::
-
-   .. code-tab:: ts
-
-      // for use without AWS CDK use the iam-floyd package
-      import { Operator, Statement } from 'iam-floyd';
-
-      // for use with CDK use the cdk-iam-floyd package
-      import { Operator, Statement } from 'cdk-iam-floyd';
-
-   .. code-tab:: js
-
-      // for use without AWS CDK use the iam-floyd package
-      const { Operator, Statement } = require('iam-floyd');
-
-      // for use with CDK use the cdk-iam-floyd package
-      const { Operator, Statement } = require('cdk-iam-floyd');
-
-Then it can be used like this:
-
-.. example:: conditions-operator-all-values
-
-.. example:: conditions-operator-any-value
-
-.. example:: conditions-operator-if-exists
 
 **on** (Resource)
 -----------------

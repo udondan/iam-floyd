@@ -506,7 +506,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }`);
   }
 
   /**
@@ -524,7 +524,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBranches(appId: string, branchName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/branches/${ branchName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/branches/${ branchName }`);
   }
 
   /**
@@ -540,7 +540,7 @@ export class Amplify extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJobs(appId: string, branchName: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/branches/${ branchName }/jobs/${ jobId }`);
   }
 
   /**
@@ -558,7 +558,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomains(appId: string, domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/domains/${ domainName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/domains/${ domainName }`);
   }
 
   /**
@@ -575,7 +575,7 @@ export class Amplify extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebhooks(webhookId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:amplify:${ region || this.defaultRegion }:${ account || this.defaultAccount }:webhooks/${ webhookId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:webhooks/${ webhookId }`);
   }
 
   /**
@@ -594,7 +594,7 @@ export class Amplify extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -613,7 +613,7 @@ export class Amplify extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -632,6 +632,6 @@ export class Amplify extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

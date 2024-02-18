@@ -629,7 +629,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codedeploy:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application:${ applicationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codedeploy:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application:${ applicationName }`);
   }
 
   /**
@@ -643,7 +643,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDeploymentconfig(deploymentConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codedeploy:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deploymentconfig:${ deploymentConfigurationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codedeploy:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deploymentconfig:${ deploymentConfigurationName }`);
   }
 
   /**
@@ -658,7 +658,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDeploymentgroup(applicationName: string, deploymentGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codedeploy:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deploymentgroup:${ applicationName }/${ deploymentGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codedeploy:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deploymentgroup:${ applicationName }/${ deploymentGroupName }`);
   }
 
   /**
@@ -672,7 +672,7 @@ export class Codedeploy extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onInstance(instanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codedeploy:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance:${ instanceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codedeploy:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance:${ instanceName }`);
   }
 
   /**
@@ -690,7 +690,7 @@ export class Codedeploy extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -703,7 +703,7 @@ export class Codedeploy extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -721,6 +721,6 @@ export class Codedeploy extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

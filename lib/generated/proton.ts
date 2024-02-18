@@ -1483,7 +1483,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplate(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-template/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-template/${ name }`);
   }
 
   /**
@@ -1502,7 +1502,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
   }
 
   /**
@@ -1520,7 +1520,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateMajorVersion(templateName: string, majorVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-template/${ templateName }:${ majorVersionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-template/${ templateName }:${ majorVersionId }`);
   }
 
   /**
@@ -1539,7 +1539,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentTemplateMinorVersion(templateName: string, majorVersionId: string, minorVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
   }
 
   /**
@@ -1556,7 +1556,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceTemplate(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service-template/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-template/${ name }`);
   }
 
   /**
@@ -1575,7 +1575,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateVersion(templateName: string, majorVersion: string, minorVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-template/${ templateName }:${ majorVersion }.${ minorVersion }`);
   }
 
   /**
@@ -1593,7 +1593,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateMajorVersion(templateName: string, majorVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service-template/${ templateName }:${ majorVersionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-template/${ templateName }:${ majorVersionId }`);
   }
 
   /**
@@ -1612,7 +1612,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceTemplateMinorVersion(templateName: string, majorVersionId: string, minorVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-template/${ templateName }:${ majorVersionId }.${ minorVersionId }`);
   }
 
   /**
@@ -1629,7 +1629,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ name }`);
   }
 
   /**
@@ -1646,7 +1646,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onService(name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ name }`);
   }
 
   /**
@@ -1664,7 +1664,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceInstance(serviceName: string, name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceName }/service-instance/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/service-instance/${ name }`);
   }
 
   /**
@@ -1681,7 +1681,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironmentAccountConnection(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment-account-connection/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment-account-connection/${ id }`);
   }
 
   /**
@@ -1699,7 +1699,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRepository(provider: string, name: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:repository/${ provider }:${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:repository/${ provider }:${ name }`);
   }
 
   /**
@@ -1716,7 +1716,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponent(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:component/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:component/${ id }`);
   }
 
   /**
@@ -1733,7 +1733,7 @@ export class Proton extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeployment(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:proton:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deployment/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:proton:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment/${ id }`);
   }
 
   /**
@@ -1763,7 +1763,7 @@ export class Proton extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1793,7 +1793,7 @@ export class Proton extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1823,7 +1823,7 @@ export class Proton extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1841,7 +1841,7 @@ export class Proton extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnvironmentTemplate(value: string | string[], operator?: Operator | string) {
-    return this.if(`EnvironmentTemplate`, value, operator || 'StringLike');
+    return this.if(`EnvironmentTemplate`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1863,6 +1863,6 @@ export class Proton extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifServiceTemplate(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceTemplate`, value, operator || 'StringLike');
+    return this.if(`ServiceTemplate`, value, operator ?? 'StringLike');
   }
 }

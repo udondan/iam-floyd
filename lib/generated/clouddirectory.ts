@@ -834,7 +834,7 @@ export class Clouddirectory extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAppliedSchema(directoryId: string, schemaName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:clouddirectory:${ region || this.defaultRegion }:${ account || this.defaultAccount }:directory/${ directoryId }/schema/${ schemaName }/${ version }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:clouddirectory:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:directory/${ directoryId }/schema/${ schemaName }/${ version }`);
   }
 
   /**
@@ -848,7 +848,7 @@ export class Clouddirectory extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDevelopmentSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:clouddirectory:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schema/development/${ schemaName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:clouddirectory:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schema/development/${ schemaName }`);
   }
 
   /**
@@ -862,7 +862,7 @@ export class Clouddirectory extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:clouddirectory:${ region || this.defaultRegion }:${ account || this.defaultAccount }:directory/${ directoryId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:clouddirectory:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:directory/${ directoryId }`);
   }
 
   /**
@@ -877,6 +877,6 @@ export class Clouddirectory extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPublishedSchema(schemaName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:clouddirectory:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schema/published/${ schemaName }/${ version }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:clouddirectory:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schema/published/${ schemaName }/${ version }`);
   }
 }

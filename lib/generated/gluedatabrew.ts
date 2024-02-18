@@ -604,7 +604,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:databrew:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ resourceId }`);
   }
 
   /**
@@ -621,7 +621,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:databrew:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ resourceId }`);
   }
 
   /**
@@ -638,7 +638,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRuleset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ruleset/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:databrew:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ruleset/${ resourceId }`);
   }
 
   /**
@@ -655,7 +655,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recipe/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:databrew:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recipe/${ resourceId }`);
   }
 
   /**
@@ -672,7 +672,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:databrew:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ resourceId }`);
   }
 
   /**
@@ -689,7 +689,7 @@ export class Databrew extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:databrew:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schedule/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:databrew:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schedule/${ resourceId }`);
   }
 
   /**
@@ -712,7 +712,7 @@ export class Databrew extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -733,7 +733,7 @@ export class Databrew extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -756,6 +756,6 @@ export class Databrew extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

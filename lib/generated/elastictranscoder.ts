@@ -242,7 +242,7 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elastictranscoder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
   }
 
   /**
@@ -256,7 +256,7 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elastictranscoder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineId }`);
   }
 
   /**
@@ -270,6 +270,6 @@ export class Elastictranscoder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPreset(presetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elastictranscoder:${ region || this.defaultRegion }:${ account || this.defaultAccount }:preset/${ presetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elastictranscoder:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:preset/${ presetId }`);
   }
 }

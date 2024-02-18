@@ -798,7 +798,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApiKey(keyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:api-key/${ keyName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:geo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:api-key/${ keyName }`);
   }
 
   /**
@@ -816,7 +816,7 @@ export class Geo extends PolicyStatement {
    * - .ifGeofenceIds()
    */
   public onGeofenceCollection(geofenceCollectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:geofence-collection/${ geofenceCollectionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:geo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:geofence-collection/${ geofenceCollectionName }`);
   }
 
   /**
@@ -833,7 +833,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMap(mapName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:map/${ mapName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:geo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:map/${ mapName }`);
   }
 
   /**
@@ -850,7 +850,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPlaceIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:place-index/${ indexName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:geo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:place-index/${ indexName }`);
   }
 
   /**
@@ -867,7 +867,7 @@ export class Geo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRouteCalculator(calculatorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:route-calculator/${ calculatorName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:geo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:route-calculator/${ calculatorName }`);
   }
 
   /**
@@ -885,7 +885,7 @@ export class Geo extends PolicyStatement {
    * - .ifDeviceIds()
    */
   public onTracker(trackerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:geo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tracker/${ trackerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:geo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tracker/${ trackerName }`);
   }
 
   /**
@@ -908,7 +908,7 @@ export class Geo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -929,7 +929,7 @@ export class Geo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -951,7 +951,7 @@ export class Geo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -973,7 +973,7 @@ export class Geo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDeviceIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`DeviceIds`, value, operator || 'StringLike');
+    return this.if(`DeviceIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -994,6 +994,6 @@ export class Geo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGeofenceIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`GeofenceIds`, value, operator || 'StringLike');
+    return this.if(`GeofenceIds`, value, operator ?? 'StringLike');
   }
 }

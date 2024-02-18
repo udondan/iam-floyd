@@ -372,6 +372,6 @@ export class Chatbot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onChatbotConfiguration(configurationType: string, chatbotConfigurationName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:chatbot::${ account || this.defaultAccount }:chat-configuration/${ configurationType }/${ chatbotConfigurationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chatbot::${ account ?? this.defaultAccount }:chat-configuration/${ configurationType }/${ chatbotConfigurationName }`);
   }
 }

@@ -712,7 +712,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTranscriptionjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transcription-job/${ jobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transcription-job/${ jobName }`);
   }
 
   /**
@@ -729,7 +729,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVocabulary(vocabularyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vocabulary/${ vocabularyName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vocabulary/${ vocabularyName }`);
   }
 
   /**
@@ -746,7 +746,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVocabularyfilter(vocabularyFilterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vocabulary-filter/${ vocabularyFilterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vocabulary-filter/${ vocabularyFilterName }`);
   }
 
   /**
@@ -763,7 +763,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLanguagemodel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:language-model/${ modelName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:language-model/${ modelName }`);
   }
 
   /**
@@ -780,7 +780,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMedicaltranscriptionjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:medical-transcription-job/${ jobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-transcription-job/${ jobName }`);
   }
 
   /**
@@ -797,7 +797,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMedicalvocabulary(vocabularyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:medical-vocabulary/${ vocabularyName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-vocabulary/${ vocabularyName }`);
   }
 
   /**
@@ -811,7 +811,7 @@ export class Transcribe extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCallanalyticsjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:analytics-job/${ jobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics-job/${ jobName }`);
   }
 
   /**
@@ -825,7 +825,7 @@ export class Transcribe extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCallanalyticscategory(categoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:analytics-category/${ categoryName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics-category/${ categoryName }`);
   }
 
   /**
@@ -842,7 +842,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMedicalscribejob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:transcribe:${ region || this.defaultRegion }:${ account || this.defaultAccount }:medical-scribe-job/${ jobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:medical-scribe-job/${ jobName }`);
   }
 
   /**
@@ -865,7 +865,7 @@ export class Transcribe extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -887,7 +887,7 @@ export class Transcribe extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -910,7 +910,7 @@ export class Transcribe extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -927,7 +927,7 @@ export class Transcribe extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOutputBucketName(value: string | string[], operator?: Operator | string) {
-    return this.if(`OutputBucketName`, value, operator || 'StringLike');
+    return this.if(`OutputBucketName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -945,7 +945,7 @@ export class Transcribe extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOutputEncryptionKMSKeyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`OutputEncryptionKMSKeyId`, value, operator || 'StringLike');
+    return this.if(`OutputEncryptionKMSKeyId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -961,7 +961,7 @@ export class Transcribe extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOutputKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`OutputKey`, value, operator || 'StringLike');
+    return this.if(`OutputKey`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -976,6 +976,6 @@ export class Transcribe extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOutputLocation(value: string | string[], operator?: Operator | string) {
-    return this.if(`OutputLocation`, value, operator || 'StringLike');
+    return this.if(`OutputLocation`, value, operator ?? 'StringLike');
   }
 }

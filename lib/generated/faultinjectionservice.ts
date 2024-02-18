@@ -416,7 +416,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAction(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:action/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:action/${ id }`);
   }
 
   /**
@@ -433,7 +433,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExperiment(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:experiment/${ id }`);
   }
 
   /**
@@ -450,7 +450,7 @@ export class Fis extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExperimentTemplate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:fis:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment-template/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:experiment-template/${ id }`);
   }
 
   /**
@@ -469,7 +469,7 @@ export class Fis extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -492,7 +492,7 @@ export class Fis extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -511,7 +511,7 @@ export class Fis extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -528,7 +528,7 @@ export class Fis extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOperations(value: string | string[], operator?: Operator | string) {
-    return this.if(`Operations`, value, operator || 'StringLike');
+    return this.if(`Operations`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -545,7 +545,7 @@ export class Fis extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifPercentage(value: number | number[], operator?: Operator | string) {
-    return this.if(`Percentage`, value, operator || 'NumericEquals');
+    return this.if(`Percentage`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -562,7 +562,7 @@ export class Fis extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifService(value: string | string[], operator?: Operator | string) {
-    return this.if(`Service`, value, operator || 'StringLike');
+    return this.if(`Service`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -579,6 +579,6 @@ export class Fis extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTargets(value: string | string[], operator?: Operator | string) {
-    return this.if(`Targets`, value, operator || 'StringLike');
+    return this.if(`Targets`, value, operator ?? 'StringLike');
   }
 }

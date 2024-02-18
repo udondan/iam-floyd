@@ -664,7 +664,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(datasetName: string, datasetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ datasetName }/${ datasetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lookoutequipment:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetName }/${ datasetId }`);
   }
 
   /**
@@ -682,7 +682,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(modelName: string, modelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/${ modelName }/${ modelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lookoutequipment:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/${ modelName }/${ modelId }`);
   }
 
   /**
@@ -701,7 +701,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModelVersion(modelName: string, modelId: string, modelVersionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/${ modelName }/${ modelId }/model-version/${ modelVersionNumber }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lookoutequipment:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/${ modelName }/${ modelId }/model-version/${ modelVersionNumber }`);
   }
 
   /**
@@ -719,7 +719,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInferenceScheduler(inferenceSchedulerName: string, inferenceSchedulerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || this.defaultRegion }:${ account || this.defaultAccount }:inference-scheduler/${ inferenceSchedulerName }/${ inferenceSchedulerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lookoutequipment:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-scheduler/${ inferenceSchedulerName }/${ inferenceSchedulerId }`);
   }
 
   /**
@@ -737,7 +737,7 @@ export class Lookoutequipment extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLabelGroup(labelGroupName: string, labelGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lookoutequipment:${ region || this.defaultRegion }:${ account || this.defaultAccount }:label-group/${ labelGroupName }/${ labelGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lookoutequipment:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:label-group/${ labelGroupName }/${ labelGroupId }`);
   }
 
   /**
@@ -759,7 +759,7 @@ export class Lookoutequipment extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -779,7 +779,7 @@ export class Lookoutequipment extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -801,7 +801,7 @@ export class Lookoutequipment extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**

@@ -215,7 +215,7 @@ export class ArcZonalShift extends PolicyStatement {
    * - .ifElasticloadbalancingResourceTag()
    */
   public onALB(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -234,7 +234,7 @@ export class ArcZonalShift extends PolicyStatement {
    * - .ifElasticloadbalancingResourceTag()
    */
   public onNLB(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -261,7 +261,7 @@ export class ArcZonalShift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -288,6 +288,6 @@ export class ArcZonalShift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifElasticloadbalancingResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

@@ -423,7 +423,7 @@ export class Lookoutmetrics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnomalyDetector(anomalyDetectorName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lookoutmetrics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:AnomalyDetector:${ anomalyDetectorName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lookoutmetrics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:AnomalyDetector:${ anomalyDetectorName }`);
   }
 
   /**
@@ -441,7 +441,7 @@ export class Lookoutmetrics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMetricSet(anomalyDetectorName: string, metricSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lookoutmetrics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:MetricSet/${ anomalyDetectorName }/${ metricSetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lookoutmetrics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:MetricSet/${ anomalyDetectorName }/${ metricSetName }`);
   }
 
   /**
@@ -458,7 +458,7 @@ export class Lookoutmetrics extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAlert(alertName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lookoutmetrics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Alert:${ alertName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lookoutmetrics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Alert:${ alertName }`);
   }
 
   /**
@@ -477,7 +477,7 @@ export class Lookoutmetrics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -498,7 +498,7 @@ export class Lookoutmetrics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -517,6 +517,6 @@ export class Lookoutmetrics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

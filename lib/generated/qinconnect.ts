@@ -590,7 +590,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssistant(assistantId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assistant/${ assistantId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assistant/${ assistantId }`);
   }
 
   /**
@@ -608,7 +608,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssistantAssociation(assistantId: string, assistantAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:association/${ assistantId }/${ assistantAssociationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:association/${ assistantId }/${ assistantAssociationId }`);
   }
 
   /**
@@ -626,7 +626,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContent(knowledgeBaseId: string, contentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:content/${ knowledgeBaseId }/${ contentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:content/${ knowledgeBaseId }/${ contentId }`);
   }
 
   /**
@@ -643,7 +643,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKnowledgeBase(knowledgeBaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:knowledge-base/${ knowledgeBaseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:knowledge-base/${ knowledgeBaseId }`);
   }
 
   /**
@@ -661,7 +661,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSession(assistantId: string, sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:session/${ assistantId }/${ sessionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session/${ assistantId }/${ sessionId }`);
   }
 
   /**
@@ -679,7 +679,7 @@ export class Wisdom extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuickResponse(knowledgeBaseId: string, quickResponseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wisdom:${ region || this.defaultRegion }:${ account || this.defaultAccount }:quick-response/${ knowledgeBaseId }/${ quickResponseId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:quick-response/${ knowledgeBaseId }/${ quickResponseId }`);
   }
 
   /**
@@ -702,7 +702,7 @@ export class Wisdom extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -727,7 +727,7 @@ export class Wisdom extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -750,7 +750,7 @@ export class Wisdom extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -765,6 +765,6 @@ export class Wisdom extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSearchFilterRoutingProfileArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`SearchFilter/RoutingProfileArn`, value, operator || 'ArnLike');
+    return this.if(`SearchFilter/RoutingProfileArn`, value, operator ?? 'ArnLike');
   }
 }

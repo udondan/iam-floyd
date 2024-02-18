@@ -215,7 +215,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onManagedDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:snow-device-management:${ region || this.defaultRegion }:${ account || this.defaultAccount }:managed-device/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:snow-device-management:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:managed-device/${ resourceId }`);
   }
 
   /**
@@ -232,7 +232,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:snow-device-management:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:snow-device-management:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task/${ resourceId }`);
   }
 
   /**
@@ -251,7 +251,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -268,7 +268,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -286,6 +286,6 @@ export class SnowDeviceManagement extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

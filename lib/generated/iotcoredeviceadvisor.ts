@@ -226,7 +226,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSuitedefinition(suiteDefinitionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotdeviceadvisor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:suitedefinition/${ suiteDefinitionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotdeviceadvisor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:suitedefinition/${ suiteDefinitionId }`);
   }
 
   /**
@@ -244,7 +244,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSuiterun(suiteDefinitionId: string, suiteRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotdeviceadvisor:${ region || this.defaultRegion }:${ account || this.defaultAccount }:suiterun/${ suiteDefinitionId }/${ suiteRunId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotdeviceadvisor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:suiterun/${ suiteDefinitionId }/${ suiteRunId }`);
   }
 
   /**
@@ -262,7 +262,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -279,7 +279,7 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -297,6 +297,6 @@ export class Iotdeviceadvisor extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

@@ -87,7 +87,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     }
 
     if (typeof operator === 'undefined') {
-      operator = new Operator().stringLike();
+      operator = Operator.stringLike;
     }
 
     let op = '';
@@ -196,7 +196,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:CurrentTime',
       value,
-      operator ?? new Operator().dateLessThanEquals(),
+      operator ?? Operator.dateLessThanEquals,
     );
   }
 
@@ -240,7 +240,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:Ec2InstanceSourcePrivateIPv4',
       value,
-      operator ?? new Operator().ipAddress(),
+      operator ?? Operator.ipAddress,
     );
   }
 
@@ -271,7 +271,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:EpochTime',
       value,
-      operator ?? new Operator().dateLessThanEquals(),
+      operator ?? Operator.dateLessThanEquals,
     );
   }
 
@@ -309,7 +309,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       'aws:MultiFactorAuthAge',
       value,
-      operator ?? new Operator().numericLessThan(),
+      operator ?? Operator.numericLessThan,
     );
   }
 
@@ -330,7 +330,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:MultiFactorAuthPresent`,
       typeof value !== 'undefined' ? value : true,
-      new Operator().bool(),
+      Operator.bool,
     );
   }
 
@@ -367,11 +367,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     value: string | string[],
     operator?: Operator | string,
   ) {
-    return this.if(
-      'aws:PrincipalArn',
-      value,
-      operator ?? new Operator().arnLike(),
-    );
+    return this.if('aws:PrincipalArn', value, operator ?? Operator.arnLike);
   }
 
   /**
@@ -387,7 +383,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:PrincipalIsAWSService`,
       typeof value !== 'undefined' ? value : true,
-      new Operator().bool(),
+      Operator.bool,
     );
   }
 
@@ -715,7 +711,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:SecureTransport`,
       typeof value !== 'undefined' ? value : true,
-      new Operator().bool(),
+      Operator.bool,
     );
   }
 
@@ -756,11 +752,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     value: string | string[],
     operator?: Operator | string,
   ) {
-    return this.if(
-      'aws:SourceArn',
-      value,
-      operator ?? new Operator().arnLike(),
-    );
+    return this.if('aws:SourceArn', value, operator ?? Operator.arnLike);
   }
 
   /**
@@ -799,11 +791,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param operator Works with IP [address operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress). **Default:** `IpAddress`
    */
   public ifAwsSourceIp(value: string | string[], operator?: Operator | string) {
-    return this.if(
-      'aws:SourceIp',
-      value,
-      operator ?? new Operator().ipAddress(),
-    );
+    return this.if('aws:SourceIp', value, operator ?? Operator.ipAddress);
   }
 
   /**
@@ -951,7 +939,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     return this.if(
       `aws:ViaAWSService`,
       typeof value !== 'undefined' ? value : true,
-      new Operator().bool(),
+      Operator.bool,
     );
   }
 
@@ -971,11 +959,7 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     value: string | string[],
     operator?: Operator | string,
   ) {
-    return this.if(
-      'aws:VpcSourceIp',
-      value,
-      operator ?? new Operator().ipAddress(),
-    );
+    return this.if('aws:VpcSourceIp', value, operator ?? Operator.ipAddress);
   }
 }
 

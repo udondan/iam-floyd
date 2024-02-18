@@ -173,7 +173,7 @@ export class RedshiftData extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster:${ clusterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster:${ clusterName }`);
   }
 
   /**
@@ -190,7 +190,7 @@ export class RedshiftData extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workgroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workgroup/${ workgroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workgroup/${ workgroupId }`);
   }
 
   /**
@@ -207,7 +207,7 @@ export class RedshiftData extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -225,6 +225,6 @@ export class RedshiftData extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifStatementOwnerIamUserid(value: string | string[], operator?: Operator | string) {
-    return this.if(`statement-owner-iam-userid`, value, operator || 'StringLike');
+    return this.if(`statement-owner-iam-userid`, value, operator ?? 'StringLike');
   }
 }

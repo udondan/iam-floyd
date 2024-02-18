@@ -912,7 +912,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasource(graphQLAPIId: string, datasourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ graphQLAPIId }/datasources/${ datasourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/datasources/${ datasourceName }`);
   }
 
   /**
@@ -926,7 +926,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domainnames/${ domainName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domainnames/${ domainName }`);
   }
 
   /**
@@ -943,7 +943,7 @@ export class Appsync extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGraphqlapi(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ graphQLAPIId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }`);
   }
 
   /**
@@ -959,7 +959,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onField(graphQLAPIId: string, typeName: string, fieldName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ graphQLAPIId }/types/${ typeName }/fields/${ fieldName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/types/${ typeName }/fields/${ fieldName }`);
   }
 
   /**
@@ -974,7 +974,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onType(graphQLAPIId: string, typeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ graphQLAPIId }/types/${ typeName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/types/${ typeName }`);
   }
 
   /**
@@ -989,7 +989,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFunction(graphQLAPIId: string, functionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ graphQLAPIId }/functions/${ functionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/functions/${ functionId }`);
   }
 
   /**
@@ -1004,7 +1004,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSourceApiAssociation(mergedGraphQLAPIId: string, associationid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ mergedGraphQLAPIId }/sourceApiAssociations/${ associationid }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ mergedGraphQLAPIId }/sourceApiAssociations/${ associationid }`);
   }
 
   /**
@@ -1019,7 +1019,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMergedApiAssociation(sourceGraphQLAPIId: string, associationid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ sourceGraphQLAPIId }/mergedApiAssociations/${ associationid }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ sourceGraphQLAPIId }/mergedApiAssociations/${ associationid }`);
   }
 
   /**
@@ -1032,7 +1032,7 @@ export class Appsync extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVisibility(value: string | string[], operator?: Operator | string) {
-    return this.if(`Visibility`, value, operator || 'StringLike');
+    return this.if(`Visibility`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1049,7 +1049,7 @@ export class Appsync extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1072,7 +1072,7 @@ export class Appsync extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1089,6 +1089,6 @@ export class Appsync extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

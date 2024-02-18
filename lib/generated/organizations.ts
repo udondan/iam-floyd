@@ -789,7 +789,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccount(organizationId: string, accountId?: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || this.defaultAccount }:account/o-${ organizationId }/${ accountId || this.defaultAccount }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:account/o-${ organizationId }/${ accountId ?? this.defaultAccount }`);
   }
 
   /**
@@ -804,7 +804,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHandshake(organizationId: string, handshakeType: string, handshakeId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || this.defaultAccount }:handshake/o-${ organizationId }/${ handshakeType }/h-${ handshakeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:handshake/o-${ organizationId }/${ handshakeType }/h-${ handshakeId }`);
   }
 
   /**
@@ -817,7 +817,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOrganization(organizationId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || this.defaultAccount }:organization/o-${ organizationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:organization/o-${ organizationId }`);
   }
 
   /**
@@ -834,7 +834,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationalunit(organizationId: string, organizationalUnitId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || this.defaultAccount }:ou/o-${ organizationId }/ou-${ organizationalUnitId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:ou/o-${ organizationId }/ou-${ organizationalUnitId }`);
   }
 
   /**
@@ -852,7 +852,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(organizationId: string, policyType: string, policyId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || this.defaultAccount }:policy/o-${ organizationId }/${ policyType }/p-${ policyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:policy/o-${ organizationId }/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -869,7 +869,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResourcepolicy(organizationId: string, resourcePolicyId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || this.defaultAccount }:resourcepolicy/o-${ organizationId }/rp-${ resourcePolicyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:resourcepolicy/o-${ organizationId }/rp-${ resourcePolicyId }`);
   }
 
   /**
@@ -882,7 +882,7 @@ export class Organizations extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAwspolicy(policyType: string, policyId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::aws:policy/${ policyType }/p-${ policyId }`);
   }
 
   /**
@@ -899,7 +899,7 @@ export class Organizations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRoot(organizationId: string, rootId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:organizations::${ account || this.defaultAccount }:root/o-${ organizationId }/r-${ rootId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:root/o-${ organizationId }/r-${ rootId }`);
   }
 
   /**
@@ -921,7 +921,7 @@ export class Organizations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -941,7 +941,7 @@ export class Organizations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -963,7 +963,7 @@ export class Organizations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -989,7 +989,7 @@ export class Organizations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPolicyType(value: string | string[], operator?: Operator | string) {
-    return this.if(`PolicyType`, value, operator || 'StringLike');
+    return this.if(`PolicyType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1008,6 +1008,6 @@ export class Organizations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifServicePrincipal(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServicePrincipal`, value, operator || 'StringLike');
+    return this.if(`ServicePrincipal`, value, operator ?? 'StringLike');
   }
 }

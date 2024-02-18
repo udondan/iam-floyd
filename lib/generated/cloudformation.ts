@@ -1146,7 +1146,7 @@ export class Cloudformation extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChangeset(changeSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudformation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:changeSet/${ changeSetName }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:changeSet/${ changeSetName }/${ id }`);
   }
 
   /**
@@ -1164,7 +1164,7 @@ export class Cloudformation extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStack(stackName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudformation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stack/${ stackName }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stack/${ stackName }/${ id }`);
   }
 
   /**
@@ -1182,7 +1182,7 @@ export class Cloudformation extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStackset(stackSetName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudformation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stackset/${ stackSetName }:${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stackset/${ stackSetName }:${ id }`);
   }
 
   /**
@@ -1196,7 +1196,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStacksetTarget(stackSetTarget: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudformation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stackset-target/${ stackSetTarget }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stackset-target/${ stackSetTarget }`);
   }
 
   /**
@@ -1210,7 +1210,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onType(type: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudformation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:type/resource/${ type }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:type/resource/${ type }`);
   }
 
   /**
@@ -1224,7 +1224,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGeneratedtemplate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudformation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:generatedTemplate/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:generatedTemplate/${ id }`);
   }
 
   /**
@@ -1238,7 +1238,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResourcescan(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudformation:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resourceScan/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resourceScan/${ id }`);
   }
 
   /**
@@ -1259,7 +1259,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1277,7 +1277,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1299,7 +1299,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1318,7 +1318,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChangeSetName(value: string | string[], operator?: Operator | string) {
-    return this.if(`ChangeSetName`, value, operator || 'StringLike');
+    return this.if(`ChangeSetName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1333,7 +1333,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifImportResourceTypes(value: string | string[], operator?: Operator | string) {
-    return this.if(`ImportResourceTypes`, value, operator || 'StringLike');
+    return this.if(`ImportResourceTypes`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1350,7 +1350,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTypes(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTypes`, value, operator || 'StringLike');
+    return this.if(`ResourceTypes`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1372,7 +1372,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifRoleArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`RoleArn`, value, operator || 'ArnLike');
+    return this.if(`RoleArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1390,7 +1390,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifStackPolicyUrl(value: string | string[], operator?: Operator | string) {
-    return this.if(`StackPolicyUrl`, value, operator || 'StringLike');
+    return this.if(`StackPolicyUrl`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1408,7 +1408,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTargetRegion(value: string | string[], operator?: Operator | string) {
-    return this.if(`TargetRegion`, value, operator || 'StringLike');
+    return this.if(`TargetRegion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1430,6 +1430,6 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTemplateUrl(value: string | string[], operator?: Operator | string) {
-    return this.if(`TemplateUrl`, value, operator || 'StringLike');
+    return this.if(`TemplateUrl`, value, operator ?? 'StringLike');
   }
 }

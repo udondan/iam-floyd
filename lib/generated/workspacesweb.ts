@@ -813,7 +813,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBrowserSettings(browserSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:browserSettings/${ browserSettingsId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:browserSettings/${ browserSettingsId }`);
   }
 
   /**
@@ -828,7 +828,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentityProvider(portalId: string, identityProviderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identityProvider/${ portalId }/${ identityProviderId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identityProvider/${ portalId }/${ identityProviderId }`);
   }
 
   /**
@@ -845,7 +845,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkSettings(networkSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:networkSettings/${ networkSettingsId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:networkSettings/${ networkSettingsId }`);
   }
 
   /**
@@ -862,7 +862,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:portal/${ portalId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:portal/${ portalId }`);
   }
 
   /**
@@ -879,7 +879,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrustStore(trustStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:trustStore/${ trustStoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:trustStore/${ trustStoreId }`);
   }
 
   /**
@@ -896,7 +896,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUserSettings(userSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:userSettings/${ userSettingsId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:userSettings/${ userSettingsId }`);
   }
 
   /**
@@ -913,7 +913,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUserAccessLoggingSettings(userAccessLoggingSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:userAccessLoggingSettings/${ userAccessLoggingSettingsId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:userAccessLoggingSettings/${ userAccessLoggingSettingsId }`);
   }
 
   /**
@@ -930,7 +930,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIpAccessSettings(ipAccessSettingsId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces-web:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ipAccessSettings/${ ipAccessSettingsId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ipAccessSettings/${ ipAccessSettingsId }`);
   }
 
   /**
@@ -954,7 +954,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -976,7 +976,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -999,6 +999,6 @@ export class WorkspacesWeb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

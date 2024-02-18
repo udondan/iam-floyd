@@ -893,7 +893,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCidrcollection(id: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53:::cidrcollection/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::cidrcollection/${ id }`);
   }
 
   /**
@@ -905,7 +905,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onChange(id: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53:::change/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::change/${ id }`);
   }
 
   /**
@@ -917,7 +917,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDelegationset(id: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53:::delegationset/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::delegationset/${ id }`);
   }
 
   /**
@@ -929,7 +929,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHealthcheck(id: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53:::healthcheck/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::healthcheck/${ id }`);
   }
 
   /**
@@ -941,7 +941,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHostedzone(id: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53:::hostedzone/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::hostedzone/${ id }`);
   }
 
   /**
@@ -953,7 +953,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrafficpolicy(id: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53:::trafficpolicy/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::trafficpolicy/${ id }`);
   }
 
   /**
@@ -965,7 +965,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTrafficpolicyinstance(id: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53:::trafficpolicyinstance/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::trafficpolicyinstance/${ id }`);
   }
 
   /**
@@ -977,7 +977,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onQueryloggingconfig(id: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53:::queryloggingconfig/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53:::queryloggingconfig/${ id }`);
   }
 
   /**
@@ -991,7 +991,7 @@ export class Route53 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpc/${ vpcId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpc/${ vpcId }`);
   }
 
   /**
@@ -1006,7 +1006,7 @@ export class Route53 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChangeResourceRecordSetsActions(value: string | string[], operator?: Operator | string) {
-    return this.if(`ChangeResourceRecordSetsActions`, value, operator || 'StringLike');
+    return this.if(`ChangeResourceRecordSetsActions`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1021,7 +1021,7 @@ export class Route53 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChangeResourceRecordSetsNormalizedRecordNames(value: string | string[], operator?: Operator | string) {
-    return this.if(`ChangeResourceRecordSetsNormalizedRecordNames`, value, operator || 'StringLike');
+    return this.if(`ChangeResourceRecordSetsNormalizedRecordNames`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1036,6 +1036,6 @@ export class Route53 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChangeResourceRecordSetsRecordTypes(value: string | string[], operator?: Operator | string) {
-    return this.if(`ChangeResourceRecordSetsRecordTypes`, value, operator || 'StringLike');
+    return this.if(`ChangeResourceRecordSetsRecordTypes`, value, operator ?? 'StringLike');
   }
 }

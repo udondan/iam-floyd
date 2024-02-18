@@ -269,7 +269,7 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssets(assetIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assets/${ assetIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackage-vod:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assets/${ assetIdentifier }`);
   }
 
   /**
@@ -286,7 +286,7 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackagingConfigurations(packagingConfigurationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || this.defaultRegion }:${ account || this.defaultAccount }:packaging-configurations/${ packagingConfigurationIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackage-vod:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:packaging-configurations/${ packagingConfigurationIdentifier }`);
   }
 
   /**
@@ -303,7 +303,7 @@ export class MediapackageVod extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackagingGroups(packagingGroupIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage-vod:${ region || this.defaultRegion }:${ account || this.defaultAccount }:packaging-groups/${ packagingGroupIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackage-vod:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:packaging-groups/${ packagingGroupIdentifier }`);
   }
 
   /**
@@ -322,7 +322,7 @@ export class MediapackageVod extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -340,7 +340,7 @@ export class MediapackageVod extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -359,6 +359,6 @@ export class MediapackageVod extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

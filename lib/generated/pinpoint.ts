@@ -1606,7 +1606,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApp(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }`);
   }
 
   /**
@@ -1620,7 +1620,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApps(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ resourceName }`);
   }
 
   /**
@@ -1638,7 +1638,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCampaign(appId: string, campaignId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/campaigns/${ campaignId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/campaigns/${ campaignId }`);
   }
 
   /**
@@ -1656,7 +1656,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJourney(appId: string, journeyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }`);
   }
 
   /**
@@ -1670,7 +1670,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJourneys(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/journeys`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys`);
   }
 
   /**
@@ -1688,7 +1688,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSegment(appId: string, segmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/segments/${ segmentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/segments/${ segmentId }`);
   }
 
   /**
@@ -1706,7 +1706,7 @@ export class Mobiletargeting extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTemplate(templateName: string, templateType: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:templates/${ templateName }/${ templateType }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:templates/${ templateName }/${ templateType }`);
   }
 
   /**
@@ -1719,7 +1719,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTemplates(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:templates`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:templates`);
   }
 
   /**
@@ -1733,7 +1733,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecommender(recommenderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recommenders/${ recommenderId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommenders/${ recommenderId }`);
   }
 
   /**
@@ -1747,7 +1747,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRecommenders(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recommenders/${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommenders/${ resourceName }`);
   }
 
   /**
@@ -1760,7 +1760,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPhoneNumberValidate(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:phone/number/validate`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone/number/validate`);
   }
 
   /**
@@ -1774,7 +1774,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onChannels(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/channels`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/channels`);
   }
 
   /**
@@ -1789,7 +1789,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onChannel(appId: string, channelType: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/channels/${ channelType }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/channels/${ channelType }`);
   }
 
   /**
@@ -1803,7 +1803,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEventStream(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/eventstream`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/eventstream`);
   }
 
   /**
@@ -1817,7 +1817,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEvents(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/events`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/events`);
   }
 
   /**
@@ -1831,7 +1831,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMessages(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/messages`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/messages`);
   }
 
   /**
@@ -1845,7 +1845,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVerifyOtp(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/verify-otp`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/verify-otp`);
   }
 
   /**
@@ -1859,7 +1859,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOtp(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/otp`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/otp`);
   }
 
   /**
@@ -1874,7 +1874,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAttribute(appId: string, attributeType: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/attributes/${ attributeType }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/attributes/${ attributeType }`);
   }
 
   /**
@@ -1889,7 +1889,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(appId: string, userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/users/${ userId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/users/${ userId }`);
   }
 
   /**
@@ -1904,7 +1904,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpoint(appId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/endpoints/${ endpointId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/endpoints/${ endpointId }`);
   }
 
   /**
@@ -1919,7 +1919,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImportJob(appId: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/jobs/import/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/jobs/import/${ jobId }`);
   }
 
   /**
@@ -1934,7 +1934,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExportJob(appId: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/jobs/export/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/jobs/export/${ jobId }`);
   }
 
   /**
@@ -1949,7 +1949,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApplicationMetrics(appId: string, kpiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/kpis/daterange/${ kpiName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/kpis/daterange/${ kpiName }`);
   }
 
   /**
@@ -1965,7 +1965,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCampaignMetrics(appId: string, campaignId: string, kpiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/campaigns/${ campaignId }/kpis/daterange/${ kpiName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/campaigns/${ campaignId }/kpis/daterange/${ kpiName }`);
   }
 
   /**
@@ -1981,7 +1981,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJourneyMetrics(appId: string, journeyId: string, kpiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/kpis/daterange/${ kpiName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/kpis/daterange/${ kpiName }`);
   }
 
   /**
@@ -1996,7 +1996,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJourneyExecutionMetrics(appId: string, journeyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/execution-metrics`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/execution-metrics`);
   }
 
   /**
@@ -2012,7 +2012,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJourneyExecutionActivityMetrics(appId: string, journeyId: string, journeyActivityId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/activities/${ journeyActivityId }/execution-metrics`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }/journeys/${ journeyId }/activities/${ journeyActivityId }/execution-metrics`);
   }
 
   /**
@@ -2025,7 +2025,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReports(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mobiletargeting:${ region || this.defaultRegion }:${ account || this.defaultAccount }:reports`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mobiletargeting:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reports`);
   }
 
   /**
@@ -2060,7 +2060,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2091,7 +2091,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2125,6 +2125,6 @@ export class Mobiletargeting extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

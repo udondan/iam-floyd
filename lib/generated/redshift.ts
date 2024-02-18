@@ -1943,7 +1943,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster:${ clusterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster:${ clusterName }`);
   }
 
   /**
@@ -1961,7 +1961,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatashare(producerClusterNamespace: string, dataShareName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datashare:${ producerClusterNamespace }/${ dataShareName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datashare:${ producerClusterNamespace }/${ dataShareName }`);
   }
 
   /**
@@ -1979,7 +1979,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbgroup(clusterName: string, dbGroup: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dbgroup:${ clusterName }/${ dbGroup }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dbgroup:${ clusterName }/${ dbGroup }`);
   }
 
   /**
@@ -1997,7 +1997,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbname(clusterName: string, dbName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dbname:${ clusterName }/${ dbName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dbname:${ clusterName }/${ dbName }`);
   }
 
   /**
@@ -2015,7 +2015,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDbuser(clusterName: string, dbUser: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dbuser:${ clusterName }/${ dbUser }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dbuser:${ clusterName }/${ dbUser }`);
   }
 
   /**
@@ -2032,7 +2032,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventsubscription(eventSubscriptionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:eventsubscription:${ eventSubscriptionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eventsubscription:${ eventSubscriptionName }`);
   }
 
   /**
@@ -2049,7 +2049,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHsmclientcertificate(hSMClientCertificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hsmclientcertificate:${ hSMClientCertificateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hsmclientcertificate:${ hSMClientCertificateId }`);
   }
 
   /**
@@ -2066,7 +2066,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHsmconfiguration(hSMConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hsmconfiguration:${ hSMConfigurationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hsmconfiguration:${ hSMConfigurationId }`);
   }
 
   /**
@@ -2083,7 +2083,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNamespace(clusterNamespace: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:namespace:${ clusterNamespace }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:namespace:${ clusterNamespace }`);
   }
 
   /**
@@ -2100,7 +2100,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:parametergroup:${ parameterGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:parametergroup:${ parameterGroupName }`);
   }
 
   /**
@@ -2119,7 +2119,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroup(securityGroupName: string, owner: string, ec2SecurityGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:securitygroup:${ securityGroupName }/ec2securitygroup/${ owner }/${ ec2SecurityGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:securitygroup:${ securityGroupName }/ec2securitygroup/${ owner }/${ ec2SecurityGroupId }`);
   }
 
   /**
@@ -2137,7 +2137,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroupingressCidr(securityGroupName: string, ipRange: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:securitygroupingress:${ securityGroupName }/cidrip/${ ipRange }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:securitygroupingress:${ securityGroupName }/cidrip/${ ipRange }`);
   }
 
   /**
@@ -2156,7 +2156,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecuritygroupingressEc2securitygroup(securityGroupName: string, owner: string, ece2SecuritygroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:securitygroupingress:${ securityGroupName }/ec2securitygroup/${ owner }/${ ece2SecuritygroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:securitygroupingress:${ securityGroupName }/ec2securitygroup/${ owner }/${ ece2SecuritygroupId }`);
   }
 
   /**
@@ -2174,7 +2174,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(clusterName: string, snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot:${ clusterName }/${ snapshotName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot:${ clusterName }/${ snapshotName }`);
   }
 
   /**
@@ -2191,7 +2191,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshotcopygrant(snapshotCopyGrantName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshotcopygrant:${ snapshotCopyGrantName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshotcopygrant:${ snapshotCopyGrantName }`);
   }
 
   /**
@@ -2208,7 +2208,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshotschedule(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshotschedule:${ parameterGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshotschedule:${ parameterGroupName }`);
   }
 
   /**
@@ -2225,7 +2225,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subnetgroup:${ subnetGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subnetgroup:${ subnetGroupName }`);
   }
 
   /**
@@ -2242,7 +2242,7 @@ export class Redshift extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUsagelimit(usageLimitId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:usagelimit:${ usageLimitId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:usagelimit:${ usageLimitId }`);
   }
 
   /**
@@ -2256,7 +2256,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRedshiftidcapplication(redshiftIdcApplicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift:${ region || this.defaultRegion }:${ account || this.defaultAccount }:redshiftidcapplication:${ redshiftIdcApplicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:redshiftidcapplication:${ redshiftIdcApplicationId }`);
   }
 
   /**
@@ -2284,7 +2284,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2317,7 +2317,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2346,7 +2346,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2377,7 +2377,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifConsumerArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ConsumerArn`, value, operator || 'ArnLike');
+    return this.if(`ConsumerArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -2393,7 +2393,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifConsumerIdentifier(value: string | string[], operator?: Operator | string) {
-    return this.if(`ConsumerIdentifier`, value, operator || 'StringLike');
+    return this.if(`ConsumerIdentifier`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2409,7 +2409,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDbName(value: string | string[], operator?: Operator | string) {
-    return this.if(`DbName`, value, operator || 'StringLike');
+    return this.if(`DbName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2425,7 +2425,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDbUser(value: string | string[], operator?: Operator | string) {
-    return this.if(`DbUser`, value, operator || 'StringLike');
+    return this.if(`DbUser`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2441,7 +2441,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDurationSeconds(value: string | string[], operator?: Operator | string) {
-    return this.if(`DurationSeconds`, value, operator || 'StringLike');
+    return this.if(`DurationSeconds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2456,6 +2456,6 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInboundIntegrationArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`InboundIntegrationArn`, value, operator || 'StringLike');
+    return this.if(`InboundIntegrationArn`, value, operator ?? 'StringLike');
   }
 }

@@ -748,7 +748,7 @@ export class RedshiftServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:namespace/${ namespaceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:namespace/${ namespaceId }`);
   }
 
   /**
@@ -765,7 +765,7 @@ export class RedshiftServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSnapshot(snapshotId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot/${ snapshotId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot/${ snapshotId }`);
   }
 
   /**
@@ -782,7 +782,7 @@ export class RedshiftServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkgroup(workgroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workgroup/${ workgroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workgroup/${ workgroupId }`);
   }
 
   /**
@@ -799,7 +799,7 @@ export class RedshiftServerless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recoverypoint/${ recoveryPointId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recoverypoint/${ recoveryPointId }`);
   }
 
   /**
@@ -813,7 +813,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpointAccess(endpointAccessId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:redshift-serverless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:managedvpcendpoint/${ endpointAccessId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:managedvpcendpoint/${ endpointAccessId }`);
   }
 
   /**
@@ -833,7 +833,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -856,7 +856,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -876,7 +876,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -888,7 +888,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEndpointAccessId(value: string | string[], operator?: Operator | string) {
-    return this.if(`endpointAccessId`, value, operator || 'StringLike');
+    return this.if(`endpointAccessId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -900,7 +900,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifNamespaceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`namespaceId`, value, operator || 'StringLike');
+    return this.if(`namespaceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -912,7 +912,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRecoveryPointId(value: string | string[], operator?: Operator | string) {
-    return this.if(`recoveryPointId`, value, operator || 'StringLike');
+    return this.if(`recoveryPointId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -924,7 +924,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSnapshotId(value: string | string[], operator?: Operator | string) {
-    return this.if(`snapshotId`, value, operator || 'StringLike');
+    return this.if(`snapshotId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -936,7 +936,7 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTableRestoreRequestId(value: string | string[], operator?: Operator | string) {
-    return this.if(`tableRestoreRequestId`, value, operator || 'StringLike');
+    return this.if(`tableRestoreRequestId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -948,6 +948,6 @@ export class RedshiftServerless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWorkgroupId(value: string | string[], operator?: Operator | string) {
-    return this.if(`workgroupId`, value, operator || 'StringLike');
+    return this.if(`workgroupId`, value, operator ?? 'StringLike');
   }
 }

@@ -1205,7 +1205,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDevice(gatewayId: string, vtldevice: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }/device/${ vtldevice }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }/device/${ vtldevice }`);
   }
 
   /**
@@ -1222,7 +1222,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFsAssociation(fsaId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fs-association/${ fsaId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fs-association/${ fsaId }`);
   }
 
   /**
@@ -1239,7 +1239,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -1256,7 +1256,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onShare(shareId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:share/${ shareId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:share/${ shareId }`);
   }
 
   /**
@@ -1273,7 +1273,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTape(tapeBarcode: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tape/${ tapeBarcode }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tape/${ tapeBarcode }`);
   }
 
   /**
@@ -1290,7 +1290,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTapepool(poolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tapepool/${ poolId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tapepool/${ poolId }`);
   }
 
   /**
@@ -1305,7 +1305,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTarget(gatewayId: string, iscsiTarget: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }/target/${ iscsiTarget }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }/target/${ iscsiTarget }`);
   }
 
   /**
@@ -1323,7 +1323,7 @@ export class Storagegateway extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVolume(gatewayId: string, volumeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:storagegateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:gateway/${ gatewayId }/volume/${ volumeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }/volume/${ volumeId }`);
   }
 
   /**
@@ -1351,7 +1351,7 @@ export class Storagegateway extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1372,7 +1372,7 @@ export class Storagegateway extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1400,6 +1400,6 @@ export class Storagegateway extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

@@ -291,7 +291,7 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannels(channelIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channels/${ channelIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackage:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channels/${ channelIdentifier }`);
   }
 
   /**
@@ -308,7 +308,7 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOriginEndpoints(originEndpointIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || this.defaultRegion }:${ account || this.defaultAccount }:origin_endpoints/${ originEndpointIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackage:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:origin_endpoints/${ originEndpointIdentifier }`);
   }
 
   /**
@@ -325,7 +325,7 @@ export class Mediapackage extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHarvestJobs(harvestJobIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackage:${ region || this.defaultRegion }:${ account || this.defaultAccount }:harvest_jobs/${ harvestJobIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackage:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:harvest_jobs/${ harvestJobIdentifier }`);
   }
 
   /**
@@ -344,7 +344,7 @@ export class Mediapackage extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -362,7 +362,7 @@ export class Mediapackage extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -381,6 +381,6 @@ export class Mediapackage extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

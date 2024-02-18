@@ -376,7 +376,7 @@ export class Machinelearning extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBatchprediction(batchPredictionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:machinelearning:${ region || this.defaultRegion }:${ account || this.defaultAccount }:batchprediction/${ batchPredictionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:machinelearning:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batchprediction/${ batchPredictionId }`);
   }
 
   /**
@@ -390,7 +390,7 @@ export class Machinelearning extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatasource(datasourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:machinelearning:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datasource/${ datasourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:machinelearning:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datasource/${ datasourceId }`);
   }
 
   /**
@@ -404,7 +404,7 @@ export class Machinelearning extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEvaluation(evaluationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:machinelearning:${ region || this.defaultRegion }:${ account || this.defaultAccount }:evaluation/${ evaluationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:machinelearning:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:evaluation/${ evaluationId }`);
   }
 
   /**
@@ -418,6 +418,6 @@ export class Machinelearning extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMlmodel(mlModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:machinelearning:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mlmodel/${ mlModelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:machinelearning:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlmodel/${ mlModelId }`);
   }
 }

@@ -1450,7 +1450,7 @@ export class Cloudfront extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDistribution(distributionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:distribution/${ distributionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:distribution/${ distributionId }`);
   }
 
   /**
@@ -1466,7 +1466,7 @@ export class Cloudfront extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStreamingDistribution(distributionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:streaming-distribution/${ distributionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:streaming-distribution/${ distributionId }`);
   }
 
   /**
@@ -1479,7 +1479,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOriginAccessIdentity(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:origin-access-identity/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-access-identity/${ id }`);
   }
 
   /**
@@ -1492,7 +1492,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFieldLevelEncryptionConfig(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:field-level-encryption-config/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:field-level-encryption-config/${ id }`);
   }
 
   /**
@@ -1505,7 +1505,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFieldLevelEncryptionProfile(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:field-level-encryption-profile/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:field-level-encryption-profile/${ id }`);
   }
 
   /**
@@ -1518,7 +1518,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCachePolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:cache-policy/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:cache-policy/${ id }`);
   }
 
   /**
@@ -1531,7 +1531,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOriginRequestPolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:origin-request-policy/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-request-policy/${ id }`);
   }
 
   /**
@@ -1544,7 +1544,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRealtimeLogConfig(name: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:realtime-log-config/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:realtime-log-config/${ name }`);
   }
 
   /**
@@ -1557,7 +1557,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFunction(name: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:function/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:function/${ name }`);
   }
 
   /**
@@ -1570,7 +1570,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onKeyValueStore(name: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:key-value-store/${ name }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:key-value-store/${ name }`);
   }
 
   /**
@@ -1583,7 +1583,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResponseHeadersPolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:response-headers-policy/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:response-headers-policy/${ id }`);
   }
 
   /**
@@ -1596,7 +1596,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onOriginAccessControl(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:origin-access-control/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:origin-access-control/${ id }`);
   }
 
   /**
@@ -1609,7 +1609,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContinuousDeploymentPolicy(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:continuous-deployment-policy/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:continuous-deployment-policy/${ id }`);
   }
 
   /**
@@ -1626,7 +1626,7 @@ export class Cloudfront extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1643,7 +1643,7 @@ export class Cloudfront extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1660,6 +1660,6 @@ export class Cloudfront extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

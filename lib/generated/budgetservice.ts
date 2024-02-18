@@ -161,7 +161,7 @@ export class Budgets extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBudget(budgetName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:budgets::${ account || this.defaultAccount }:budget/${ budgetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:budgets::${ account ?? this.defaultAccount }:budget/${ budgetName }`);
   }
 
   /**
@@ -175,6 +175,6 @@ export class Budgets extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBudgetAction(budgetName: string, actionId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:budgets::${ account || this.defaultAccount }:budget/${ budgetName }/action/${ actionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:budgets::${ account ?? this.defaultAccount }:budget/${ budgetName }/action/${ actionId }`);
   }
 }

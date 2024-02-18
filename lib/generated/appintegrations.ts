@@ -477,7 +477,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventIntegration(eventIntegrationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:app-integrations:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-integration/${ eventIntegrationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-integration/${ eventIntegrationName }`);
   }
 
   /**
@@ -495,7 +495,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventIntegrationAssociation(eventIntegrationName: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:app-integrations:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-integration-association/${ eventIntegrationName }/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-integration-association/${ eventIntegrationName }/${ resourceId }`);
   }
 
   /**
@@ -512,7 +512,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataIntegration(dataIntegrationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:app-integrations:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-integration/${ dataIntegrationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-integration/${ dataIntegrationId }`);
   }
 
   /**
@@ -530,7 +530,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataIntegrationAssociation(dataIntegrationId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:app-integrations:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-integration-association/${ dataIntegrationId }/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-integration-association/${ dataIntegrationId }/${ resourceId }`);
   }
 
   /**
@@ -547,7 +547,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:app-integrations:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application/${ applicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }`);
   }
 
   /**
@@ -565,7 +565,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplicationAssociation(applicationId: string, applicationAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:app-integrations:${ region || this.defaultRegion }:${ account || this.defaultAccount }:application-association/${ applicationId }/${ applicationAssociationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:app-integrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application-association/${ applicationId }/${ applicationAssociationId }`);
   }
 
   /**
@@ -587,7 +587,7 @@ export class AppIntegrations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -622,7 +622,7 @@ export class AppIntegrations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -644,6 +644,6 @@ export class AppIntegrations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

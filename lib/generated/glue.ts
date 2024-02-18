@@ -2845,7 +2845,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCatalog(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:catalog`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog`);
   }
 
   /**
@@ -2859,7 +2859,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:database/${ databaseName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:database/${ databaseName }`);
   }
 
   /**
@@ -2874,7 +2874,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:table/${ databaseName }/${ tableName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ databaseName }/${ tableName }`);
   }
 
   /**
@@ -2890,7 +2890,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTableversion(databaseName: string, tableName: string, tableVersionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tableVersion/${ databaseName }/${ tableName }/${ tableVersionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tableVersion/${ databaseName }/${ tableName }/${ tableVersionName }`);
   }
 
   /**
@@ -2907,7 +2907,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ connectionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionName }`);
   }
 
   /**
@@ -2922,7 +2922,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUserdefinedfunction(databaseName: string, userDefinedFunctionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:userDefinedFunction/${ databaseName }/${ userDefinedFunctionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:userDefinedFunction/${ databaseName }/${ userDefinedFunctionName }`);
   }
 
   /**
@@ -2939,7 +2939,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:devEndpoint/${ devEndpointName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:devEndpoint/${ devEndpointName }`);
   }
 
   /**
@@ -2956,7 +2956,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobName }`);
   }
 
   /**
@@ -2973,7 +2973,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrigger(triggerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:trigger/${ triggerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:trigger/${ triggerName }`);
   }
 
   /**
@@ -2990,7 +2990,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCrawler(crawlerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:crawler/${ crawlerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:crawler/${ crawlerName }`);
   }
 
   /**
@@ -3007,7 +3007,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workflow/${ workflowName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow/${ workflowName }`);
   }
 
   /**
@@ -3024,7 +3024,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBlueprint(blueprintName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:blueprint/${ blueprintName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint/${ blueprintName }`);
   }
 
   /**
@@ -3041,7 +3041,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mlTransform/${ transformId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlTransform/${ transformId }`);
   }
 
   /**
@@ -3058,7 +3058,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:registry/${ registryName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registry/${ registryName }`);
   }
 
   /**
@@ -3075,7 +3075,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchema(schemaName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schema/${ schemaName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schema/${ schemaName }`);
   }
 
   /**
@@ -3092,7 +3092,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:session/${ sessionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session/${ sessionId }`);
   }
 
   /**
@@ -3109,7 +3109,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataQualityRuleset(rulesetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataQualityRuleset/${ rulesetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataQualityRuleset/${ rulesetName }`);
   }
 
   /**
@@ -3126,7 +3126,7 @@ export class Glue extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomEntityType(customEntityTypeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:customEntityType/${ customEntityTypeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:customEntityType/${ customEntityTypeId }`);
   }
 
   /**
@@ -3140,7 +3140,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCompletion(completionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:glue:${ region || this.defaultRegion }:${ account || this.defaultAccount }:completion/${ completionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:completion/${ completionId }`);
   }
 
   /**
@@ -3169,7 +3169,7 @@ export class Glue extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3197,7 +3197,7 @@ export class Glue extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3226,7 +3226,7 @@ export class Glue extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3238,7 +3238,7 @@ export class Glue extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCredentialIssuingService(value: string | string[], operator?: Operator | string) {
-    return this.if(`CredentialIssuingService`, value, operator || 'StringLike');
+    return this.if(`CredentialIssuingService`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3250,7 +3250,7 @@ export class Glue extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRoleAssumedBy(value: string | string[], operator?: Operator | string) {
-    return this.if(`RoleAssumedBy`, value, operator || 'StringLike');
+    return this.if(`RoleAssumedBy`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3267,7 +3267,7 @@ export class Glue extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecurityGroupIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecurityGroupIds`, value, operator || 'StringLike');
+    return this.if(`SecurityGroupIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3284,7 +3284,7 @@ export class Glue extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubnetIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`SubnetIds`, value, operator || 'StringLike');
+    return this.if(`SubnetIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3301,6 +3301,6 @@ export class Glue extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcIds`, value, operator || 'StringLike');
+    return this.if(`VpcIds`, value, operator ?? 'StringLike');
   }
 }

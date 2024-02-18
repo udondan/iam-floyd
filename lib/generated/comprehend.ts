@@ -1147,7 +1147,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTargetedSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:targeted-sentiment-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:targeted-sentiment-detection-job/${ jobId }`);
   }
 
   /**
@@ -1164,7 +1164,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassifier(documentClassifierName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:document-classifier/${ documentClassifierName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:document-classifier/${ documentClassifierName }`);
   }
 
   /**
@@ -1181,7 +1181,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassifierEndpoint(documentClassifierEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:document-classifier-endpoint/${ documentClassifierEndpointName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:document-classifier-endpoint/${ documentClassifierEndpointName }`);
   }
 
   /**
@@ -1198,7 +1198,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntityRecognizer(entityRecognizerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:entity-recognizer/${ entityRecognizerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:entity-recognizer/${ entityRecognizerName }`);
   }
 
   /**
@@ -1215,7 +1215,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntityRecognizerEndpoint(entityRecognizerEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:entity-recognizer-endpoint/${ entityRecognizerEndpointName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:entity-recognizer-endpoint/${ entityRecognizerEndpointName }`);
   }
 
   /**
@@ -1232,7 +1232,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDominantLanguageDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dominant-language-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dominant-language-detection-job/${ jobId }`);
   }
 
   /**
@@ -1249,7 +1249,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:entities-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:entities-detection-job/${ jobId }`);
   }
 
   /**
@@ -1266,7 +1266,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPiiEntitiesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pii-entities-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pii-entities-detection-job/${ jobId }`);
   }
 
   /**
@@ -1283,7 +1283,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:events-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:events-detection-job/${ jobId }`);
   }
 
   /**
@@ -1300,7 +1300,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKeyPhrasesDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:key-phrases-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key-phrases-detection-job/${ jobId }`);
   }
 
   /**
@@ -1317,7 +1317,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSentimentDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sentiment-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sentiment-detection-job/${ jobId }`);
   }
 
   /**
@@ -1334,7 +1334,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTopicsDetectionJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topics-detection-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topics-detection-job/${ jobId }`);
   }
 
   /**
@@ -1351,7 +1351,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDocumentClassificationJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:document-classification-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:document-classification-job/${ jobId }`);
   }
 
   /**
@@ -1368,7 +1368,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFlywheel(flywheelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:flywheel/${ flywheelName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flywheel/${ flywheelName }`);
   }
 
   /**
@@ -1386,7 +1386,7 @@ export class Comprehend extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFlywheelDataset(flywheelName: string, datasetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:comprehend:${ region || this.defaultRegion }:${ account || this.defaultAccount }:flywheel/${ flywheelName }/dataset/${ datasetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:comprehend:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flywheel/${ flywheelName }/dataset/${ datasetName }`);
   }
 
   /**
@@ -1417,7 +1417,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1447,7 +1447,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1478,7 +1478,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1493,7 +1493,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifDataLakeKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`DataLakeKmsKey`, value, operator || 'ArnLike');
+    return this.if(`DataLakeKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1508,7 +1508,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFlywheelIterationId(value: string | string[], operator?: Operator | string) {
-    return this.if(`FlywheelIterationId`, value, operator || 'StringLike');
+    return this.if(`FlywheelIterationId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1527,7 +1527,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifModelKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`ModelKmsKey`, value, operator || 'ArnLike');
+    return this.if(`ModelKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1551,7 +1551,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifOutputKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`OutputKmsKey`, value, operator || 'ArnLike');
+    return this.if(`OutputKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1576,7 +1576,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVolumeKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`VolumeKmsKey`, value, operator || 'ArnLike');
+    return this.if(`VolumeKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1601,7 +1601,7 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcSecurityGroupIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcSecurityGroupIds`, value, operator || 'StringLike');
+    return this.if(`VpcSecurityGroupIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1626,6 +1626,6 @@ export class Comprehend extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcSubnets(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcSubnets`, value, operator || 'StringLike');
+    return this.if(`VpcSubnets`, value, operator ?? 'StringLike');
   }
 }

@@ -2631,7 +2631,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccount(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:account/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:account/${ resourceId }`);
   }
 
   /**
@@ -2645,7 +2645,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ resourceId }`);
   }
 
   /**
@@ -2659,7 +2659,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:group/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:group/${ resourceId }`);
   }
 
   /**
@@ -2676,7 +2676,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:analysis/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analysis/${ resourceId }`);
   }
 
   /**
@@ -2693,7 +2693,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDashboard(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dashboard/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ resourceId }`);
   }
 
   /**
@@ -2710,7 +2710,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:template/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:template/${ resourceId }`);
   }
 
   /**
@@ -2727,7 +2727,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpcconnection(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpcConnection/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpcConnection/${ resourceId }`);
   }
 
   /**
@@ -2741,7 +2741,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssetBundleExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:asset-bundle-export-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:asset-bundle-export-job/${ resourceId }`);
   }
 
   /**
@@ -2755,7 +2755,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssetBundleImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:asset-bundle-import-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:asset-bundle-import-job/${ resourceId }`);
   }
 
   /**
@@ -2772,7 +2772,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatasource(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datasource/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datasource/${ resourceId }`);
   }
 
   /**
@@ -2789,7 +2789,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ resourceId }`);
   }
 
   /**
@@ -2807,7 +2807,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIngestion(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ datasetId }/ingestion/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }/ingestion/${ resourceId }`);
   }
 
   /**
@@ -2822,7 +2822,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRefreshschedule(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ datasetId }/refresh-schedule/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }/refresh-schedule/${ resourceId }`);
   }
 
   /**
@@ -2839,7 +2839,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTheme(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:theme/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:theme/${ resourceId }`);
   }
 
   /**
@@ -2852,7 +2852,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssignment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight::${ account || this.defaultAccount }:assignment/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight::${ account ?? this.defaultAccount }:assignment/${ resourceId }`);
   }
 
   /**
@@ -2869,7 +2869,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomization(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:customization/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:customization/${ resourceId }`);
   }
 
   /**
@@ -2883,7 +2883,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:namespace/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:namespace/${ resourceId }`);
   }
 
   /**
@@ -2900,7 +2900,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFolder(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:folder/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:folder/${ resourceId }`);
   }
 
   /**
@@ -2914,7 +2914,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:email-customization-template/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:email-customization-template/${ resourceId }`);
   }
 
   /**
@@ -2931,7 +2931,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTopic(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topic/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topic/${ resourceId }`);
   }
 
   /**
@@ -2949,7 +2949,7 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDashboardSnapshotJob(dashboardId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:quicksight:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dashboard/${ dashboardId }/snapshot-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ dashboardId }/snapshot-job/${ resourceId }`);
   }
 
   /**
@@ -3009,7 +3009,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3036,7 +3036,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3096,7 +3096,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3112,7 +3112,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAllowedEmbeddingDomains(value: string | string[], operator?: Operator | string) {
-    return this.if(`AllowedEmbeddingDomains`, value, operator || 'StringLike');
+    return this.if(`AllowedEmbeddingDomains`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3128,7 +3128,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDirectoryType(value: string | string[], operator?: Operator | string) {
-    return this.if(`DirectoryType`, value, operator || 'StringLike');
+    return this.if(`DirectoryType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3144,7 +3144,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEdition(value: string | string[], operator?: Operator | string) {
-    return this.if(`Edition`, value, operator || 'StringLike');
+    return this.if(`Edition`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3159,7 +3159,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifIamArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`IamArn`, value, operator || 'ArnLike');
+    return this.if(`IamArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -3174,7 +3174,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSessionName(value: string | string[], operator?: Operator | string) {
-    return this.if(`SessionName`, value, operator || 'StringLike');
+    return this.if(`SessionName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -3191,6 +3191,6 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserName(value: string | string[], operator?: Operator | string) {
-    return this.if(`UserName`, value, operator || 'StringLike');
+    return this.if(`UserName`, value, operator ?? 'StringLike');
   }
 }

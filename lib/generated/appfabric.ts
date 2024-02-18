@@ -397,7 +397,7 @@ export class Appfabric extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppbundle(appBundleIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appfabric:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appbundle/${ appBundleIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:appbundle/${ appBundleIdentifier }`);
   }
 
   /**
@@ -415,7 +415,7 @@ export class Appfabric extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppauthorization(appbundleId: string, appAuthorizationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appfabric:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appbundle/${ appbundleId }/appauthorization/${ appAuthorizationIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:appbundle/${ appbundleId }/appauthorization/${ appAuthorizationIdentifier }`);
   }
 
   /**
@@ -433,7 +433,7 @@ export class Appfabric extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIngestion(appbundleId: string, ingestionIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appfabric:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appbundle/${ appbundleId }/ingestion/${ ingestionIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:appbundle/${ appbundleId }/ingestion/${ ingestionIdentifier }`);
   }
 
   /**
@@ -452,7 +452,7 @@ export class Appfabric extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIngestiondestination(appbundleId: string, ingestionIdentifier: string, ingestionDestinationIdentifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appfabric:${ region || this.defaultRegion }:${ account || this.defaultAccount }:appbundle/${ appbundleId }/ingestion/${ ingestionIdentifier }/ingestiondestination/${ ingestionDestinationIdentifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:appbundle/${ appbundleId }/ingestion/${ ingestionIdentifier }/ingestiondestination/${ ingestionDestinationIdentifier }`);
   }
 
   /**
@@ -472,7 +472,7 @@ export class Appfabric extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -500,7 +500,7 @@ export class Appfabric extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -520,6 +520,6 @@ export class Appfabric extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

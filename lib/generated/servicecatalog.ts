@@ -1555,7 +1555,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:servicecatalog:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/applications/${ applicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:servicecatalog:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/applications/${ applicationId }`);
   }
 
   /**
@@ -1572,7 +1572,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAttributeGroup(attributeGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:servicecatalog:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/attribute-groups/${ attributeGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:servicecatalog:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/attribute-groups/${ attributeGroupId }`);
   }
 
   /**
@@ -1589,7 +1589,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPortfolio(portfolioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:catalog:${ region || this.defaultRegion }:${ account || this.defaultAccount }:portfolio/${ portfolioId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:catalog:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:portfolio/${ portfolioId }`);
   }
 
   /**
@@ -1606,7 +1606,7 @@ export class Servicecatalog extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProduct(productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:catalog:${ region || this.defaultRegion }:${ account || this.defaultAccount }:product/${ productId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:catalog:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:product/${ productId }`);
   }
 
   /**
@@ -1629,7 +1629,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1648,7 +1648,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1670,7 +1670,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1687,7 +1687,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResource(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource`, value, operator || 'StringLike');
+    return this.if(`Resource`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1704,7 +1704,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceType`, value, operator || 'StringLike');
+    return this.if(`ResourceType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1734,7 +1734,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccountLevel(value: string | string[], operator?: Operator | string) {
-    return this.if(`accountLevel`, value, operator || 'StringLike');
+    return this.if(`accountLevel`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1764,7 +1764,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRoleLevel(value: string | string[], operator?: Operator | string) {
-    return this.if(`roleLevel`, value, operator || 'StringLike');
+    return this.if(`roleLevel`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1794,6 +1794,6 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserLevel(value: string | string[], operator?: Operator | string) {
-    return this.if(`userLevel`, value, operator || 'StringLike');
+    return this.if(`userLevel`, value, operator ?? 'StringLike');
   }
 }

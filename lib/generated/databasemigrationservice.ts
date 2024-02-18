@@ -2068,7 +2068,7 @@ export class Dms extends PolicyStatement {
    * - .ifCertTag()
    */
   public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cert:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cert:${ resourceName }`);
   }
 
   /**
@@ -2086,7 +2086,7 @@ export class Dms extends PolicyStatement {
    * - .ifDataProviderTag()
    */
   public onDataProvider(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-provider:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-provider:${ resourceName }`);
   }
 
   /**
@@ -2104,7 +2104,7 @@ export class Dms extends PolicyStatement {
    * - .ifDataMigrationTag()
    */
   public onDataMigration(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-migration:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-migration:${ resourceName }`);
   }
 
   /**
@@ -2122,7 +2122,7 @@ export class Dms extends PolicyStatement {
    * - .ifEndpointTag()
    */
   public onEndpoint(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:endpoint:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint:${ resourceName }`);
   }
 
   /**
@@ -2140,7 +2140,7 @@ export class Dms extends PolicyStatement {
    * - .ifEsTag()
    */
   public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:es:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:es:${ resourceName }`);
   }
 
   /**
@@ -2158,7 +2158,7 @@ export class Dms extends PolicyStatement {
    * - .ifInstanceProfileTag()
    */
   public onInstanceProfile(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance-profile:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance-profile:${ resourceName }`);
   }
 
   /**
@@ -2176,7 +2176,7 @@ export class Dms extends PolicyStatement {
    * - .ifMigrationProjectTag()
    */
   public onMigrationProject(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:migration-project:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:migration-project:${ resourceName }`);
   }
 
   /**
@@ -2194,7 +2194,7 @@ export class Dms extends PolicyStatement {
    * - .ifReplicationConfigTag()
    */
   public onReplicationConfig(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replication-config:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:replication-config:${ resourceName }`);
   }
 
   /**
@@ -2212,7 +2212,7 @@ export class Dms extends PolicyStatement {
    * - .ifRepTag()
    */
   public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rep:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rep:${ resourceName }`);
   }
 
   /**
@@ -2230,7 +2230,7 @@ export class Dms extends PolicyStatement {
    * - .ifSubgrpTag()
    */
   public onReplicationSubnetGroup(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subgrp:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subgrp:${ resourceName }`);
   }
 
   /**
@@ -2248,7 +2248,7 @@ export class Dms extends PolicyStatement {
    * - .ifTaskTag()
    */
   public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task:${ resourceName }`);
   }
 
   /**
@@ -2262,7 +2262,7 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationTaskAssessmentRun(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assessment-run:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessment-run:${ resourceName }`);
   }
 
   /**
@@ -2276,7 +2276,7 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReplicationTaskIndividualAssessment(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:individual-assessment:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:individual-assessment:${ resourceName }`);
   }
 
   /**
@@ -2294,7 +2294,7 @@ export class Dms extends PolicyStatement {
    * - .ifTestPlanTag()
    */
   public onTestPlan(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test-plan:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test-plan:${ resourceName }`);
   }
 
   /**
@@ -2312,7 +2312,7 @@ export class Dms extends PolicyStatement {
    * - .ifTestTag()
    */
   public onTest(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test:${ resourceName }`);
   }
 
   /**
@@ -2330,7 +2330,7 @@ export class Dms extends PolicyStatement {
    * - .ifTestRunTag()
    */
   public onTestRun(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test-run:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test-run:${ resourceName }`);
   }
 
   /**
@@ -2348,7 +2348,7 @@ export class Dms extends PolicyStatement {
    * - .ifTestEnvironmentTag()
    */
   public onTestEnvironment(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dms:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test-environment:${ resourceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test-environment:${ resourceName }`);
   }
 
   /**
@@ -2376,7 +2376,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2422,7 +2422,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2450,7 +2450,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2466,7 +2466,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCertTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`cert-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`cert-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2482,7 +2482,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataMigrationTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`data-migration-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`data-migration-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2498,7 +2498,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataProviderTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`data-provider-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`data-provider-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2514,7 +2514,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEndpointTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`endpoint-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`endpoint-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2530,7 +2530,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEsTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`es-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`es-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2546,7 +2546,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceProfileTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`instance-profile-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`instance-profile-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2562,7 +2562,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMigrationProjectTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`migration-project-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`migration-project-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2578,7 +2578,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRepTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`rep-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`rep-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2594,7 +2594,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReplicationConfigTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`replication-config-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`replication-config-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2620,7 +2620,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReqTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`req-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`req-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2636,7 +2636,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubgrpTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`subgrp-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`subgrp-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2652,7 +2652,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTaskTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`task-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`task-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2668,7 +2668,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTestEnvironmentTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`test-environment-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`test-environment-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2684,7 +2684,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTestPlanTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`test-plan-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`test-plan-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2700,7 +2700,7 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTestRunTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`test-run-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`test-run-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2716,6 +2716,6 @@ export class Dms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`test-tag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`test-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

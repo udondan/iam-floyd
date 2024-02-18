@@ -1428,7 +1428,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWirelessDevice(wirelessDeviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:WirelessDevice/${ wirelessDeviceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessDevice/${ wirelessDeviceId }`);
   }
 
   /**
@@ -1445,7 +1445,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWirelessGateway(wirelessGatewayId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:WirelessGateway/${ wirelessGatewayId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessGateway/${ wirelessGatewayId }`);
   }
 
   /**
@@ -1462,7 +1462,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceProfile(deviceProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:DeviceProfile/${ deviceProfileId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:DeviceProfile/${ deviceProfileId }`);
   }
 
   /**
@@ -1479,7 +1479,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServiceProfile(serviceProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ServiceProfile/${ serviceProfileId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ServiceProfile/${ serviceProfileId }`);
   }
 
   /**
@@ -1496,7 +1496,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDestination(destinationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Destination/${ destinationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Destination/${ destinationName }`);
   }
 
   /**
@@ -1513,7 +1513,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSidewalkAccount(sidewalkAccountId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:SidewalkAccount/${ sidewalkAccountId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:SidewalkAccount/${ sidewalkAccountId }`);
   }
 
   /**
@@ -1530,7 +1530,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWirelessGatewayTaskDefinition(wirelessGatewayTaskDefinitionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:WirelessGatewayTaskDefinition/${ wirelessGatewayTaskDefinitionId }`);
   }
 
   /**
@@ -1547,7 +1547,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFuotaTask(fuotaTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:FuotaTask/${ fuotaTaskId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:FuotaTask/${ fuotaTaskId }`);
   }
 
   /**
@@ -1564,7 +1564,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMulticastGroup(multicastGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:MulticastGroup/${ multicastGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:MulticastGroup/${ multicastGroupId }`);
   }
 
   /**
@@ -1581,7 +1581,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkAnalyzerConfiguration(networkAnalyzerConfigurationName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:NetworkAnalyzerConfiguration/${ networkAnalyzerConfigurationName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:NetworkAnalyzerConfiguration/${ networkAnalyzerConfigurationName }`);
   }
 
   /**
@@ -1595,7 +1595,7 @@ export class Iotwireless extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thing/${ thingName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thing/${ thingName }`);
   }
 
   /**
@@ -1609,7 +1609,7 @@ export class Iotwireless extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cert/${ certificate }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cert/${ certificate }`);
   }
 
   /**
@@ -1626,7 +1626,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImportTask(importTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotwireless:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ImportTask/${ importTaskId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotwireless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ImportTask/${ importTaskId }`);
   }
 
   /**
@@ -1654,7 +1654,7 @@ export class Iotwireless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1680,7 +1680,7 @@ export class Iotwireless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1708,6 +1708,6 @@ export class Iotwireless extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

@@ -431,7 +431,7 @@ export class CleanroomsMl extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTrainingdataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms-ml:${ region || this.defaultRegion }:${ account || this.defaultAccount }:training-dataset/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training-dataset/${ resourceId }`);
   }
 
   /**
@@ -448,7 +448,7 @@ export class CleanroomsMl extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAudiencemodel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms-ml:${ region || this.defaultRegion }:${ account || this.defaultAccount }:audience-model/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:audience-model/${ resourceId }`);
   }
 
   /**
@@ -465,7 +465,7 @@ export class CleanroomsMl extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfiguredaudiencemodel(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms-ml:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configured-audience-model/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configured-audience-model/${ resourceId }`);
   }
 
   /**
@@ -482,7 +482,7 @@ export class CleanroomsMl extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAudiencegenerationjob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cleanrooms-ml:${ region || this.defaultRegion }:${ account || this.defaultAccount }:audience-generation-job/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms-ml:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:audience-generation-job/${ resourceId }`);
   }
 
   /**
@@ -516,7 +516,7 @@ export class CleanroomsMl extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -540,7 +540,7 @@ export class CleanroomsMl extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -575,7 +575,7 @@ export class CleanroomsMl extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -590,6 +590,6 @@ export class CleanroomsMl extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCollaborationId(value: string | string[], operator?: Operator | string) {
-    return this.if(`CollaborationId`, value, operator || 'StringLike');
+    return this.if(`CollaborationId`, value, operator ?? 'StringLike');
   }
 }

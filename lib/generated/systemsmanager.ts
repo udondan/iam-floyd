@@ -1993,7 +1993,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAssociation(associationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:association/${ associationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:association/${ associationId }`);
   }
 
   /**
@@ -2011,7 +2011,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAutomationExecution(automationExecutionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:automation-execution/${ automationExecutionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-execution/${ automationExecutionId }`);
   }
 
   /**
@@ -2026,7 +2026,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAutomationDefinition(automationDefinitionName: string, versionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:automation-definition/${ automationDefinitionName }:${ versionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-definition/${ automationDefinitionName }:${ versionId }`);
   }
 
   /**
@@ -2038,7 +2038,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(bucketName: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:s3:::${ bucketName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3:::${ bucketName }`);
   }
 
   /**
@@ -2057,7 +2057,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:document/${ documentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:document/${ documentName }`);
   }
 
   /**
@@ -2075,7 +2075,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instance/${ instanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
   }
 
   /**
@@ -2093,7 +2093,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onMaintenancewindow(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:maintenancewindow/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:maintenancewindow/${ resourceId }`);
   }
 
   /**
@@ -2111,7 +2111,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onManagedInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:managed-instance/${ instanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:managed-instance/${ instanceId }`);
   }
 
   /**
@@ -2125,7 +2125,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onManagedInstanceInventory(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:managed-instance-inventory/${ instanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:managed-instance-inventory/${ instanceId }`);
   }
 
   /**
@@ -2142,7 +2142,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOpsitem(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:opsitem/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:opsitem/${ resourceId }`);
   }
 
   /**
@@ -2160,7 +2160,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onOpsmetadata(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:opsmetadata/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:opsmetadata/${ resourceId }`);
   }
 
   /**
@@ -2178,7 +2178,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onParameter(parameterNameWithoutLeadingSlash: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:parameter/${ parameterNameWithoutLeadingSlash }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:parameter/${ parameterNameWithoutLeadingSlash }`);
   }
 
   /**
@@ -2196,7 +2196,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPatchbaseline(patchBaselineIdResourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:patchbaseline/${ patchBaselineIdResourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:patchbaseline/${ patchBaselineIdResourceId }`);
   }
 
   /**
@@ -2209,7 +2209,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResourcearn(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:opsitemgroup/default`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:opsitemgroup/default`);
   }
 
   /**
@@ -2227,7 +2227,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTagAws()
    */
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:session/${ sessionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session/${ sessionId }`);
   }
 
   /**
@@ -2241,7 +2241,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onResourcedatasync(syncName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resource-data-sync/${ syncName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resource-data-sync/${ syncName }`);
   }
 
   /**
@@ -2255,7 +2255,7 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onServicesetting(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:servicesetting/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicesetting/${ resourceId }`);
   }
 
   /**
@@ -2273,7 +2273,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWindowtarget(windowTargetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:windowtarget/${ windowTargetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:windowtarget/${ windowTargetId }`);
   }
 
   /**
@@ -2291,7 +2291,7 @@ export class Ssm extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWindowtask(windowTaskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ssm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:windowtask/${ windowTaskId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:windowtask/${ windowTaskId }`);
   }
 
   /**
@@ -2308,7 +2308,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ taskId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task/${ taskId }`);
   }
 
   /**
@@ -2336,7 +2336,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2386,7 +2386,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2414,7 +2414,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2432,7 +2432,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifEc2SourceInstanceARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`ec2:SourceInstanceARN`, value, operator || 'ArnLike');
+    return this.if(`ec2:SourceInstanceARN`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -2464,7 +2464,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDocumentCategories(value: string | string[], operator?: Operator | string) {
-    return this.if(`DocumentCategories`, value, operator || 'StringLike');
+    return this.if(`DocumentCategories`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2479,7 +2479,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOverwrite(value: string | string[], operator?: Operator | string) {
-    return this.if(`Overwrite`, value, operator || 'StringLike');
+    return this.if(`Overwrite`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2494,7 +2494,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRecursive(value: string | string[], operator?: Operator | string) {
-    return this.if(`Recursive`, value, operator || 'StringLike');
+    return this.if(`Recursive`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2526,7 +2526,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifSourceInstanceARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`SourceInstanceARN`, value, operator || 'ArnLike');
+    return this.if(`SourceInstanceARN`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -2544,7 +2544,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSyncType(value: string | string[], operator?: Operator | string) {
-    return this.if(`SyncType`, value, operator || 'StringLike');
+    return this.if(`SyncType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2576,7 +2576,7 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`resourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`resourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2595,6 +2595,6 @@ export class Ssm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTagAws(value: string | string[], operator?: Operator | string) {
-    return this.if(`resourceTag/aws`, value, operator || 'StringLike');
+    return this.if(`resourceTag/aws`, value, operator ?? 'StringLike');
   }
 }

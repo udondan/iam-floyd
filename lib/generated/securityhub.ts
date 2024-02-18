@@ -1157,7 +1157,7 @@ export class Securityhub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onHub(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hub/default`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub/default`);
   }
 
   /**
@@ -1172,7 +1172,7 @@ export class Securityhub extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProduct(company: string, productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:product/${ company }/${ productId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:product/${ company }/${ productId }`);
   }
 
   /**
@@ -1186,7 +1186,7 @@ export class Securityhub extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFindingAggregator(findingAggregatorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:finding-aggregator/${ findingAggregatorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:finding-aggregator/${ findingAggregatorId }`);
   }
 
   /**
@@ -1200,7 +1200,7 @@ export class Securityhub extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAutomationRule(automationRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:automation-rule/${ automationRuleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-rule/${ automationRuleId }`);
   }
 
   /**
@@ -1214,7 +1214,7 @@ export class Securityhub extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onConfigurationPolicy(configurationPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:securityhub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration-policy/${ configurationPolicyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-policy/${ configurationPolicyId }`);
   }
 
   /**
@@ -1232,7 +1232,7 @@ export class Securityhub extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1248,7 +1248,7 @@ export class Securityhub extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1265,7 +1265,7 @@ export class Securityhub extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1281,7 +1281,7 @@ export class Securityhub extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifASFFSyntaxPath(aSFFSyntaxPath: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ASFFSyntaxPath/${ aSFFSyntaxPath }`, value, operator || 'StringLike');
+    return this.if(`ASFFSyntaxPath/${ aSFFSyntaxPath }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1296,6 +1296,6 @@ export class Securityhub extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTargetAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`TargetAccount`, value, operator || 'StringLike');
+    return this.if(`TargetAccount`, value, operator ?? 'StringLike');
   }
 }

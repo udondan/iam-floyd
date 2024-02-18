@@ -208,7 +208,7 @@ export class Pi extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMetricResource(serviceType: string, identifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:pi:${ region || this.defaultRegion }:${ account || this.defaultAccount }:metrics/${ serviceType }/${ identifier }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:pi:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metrics/${ serviceType }/${ identifier }`);
   }
 
   /**
@@ -227,7 +227,7 @@ export class Pi extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPerfReportsResource(serviceType: string, identifier: string, reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:pi:${ region || this.defaultRegion }:${ account || this.defaultAccount }:perf-reports/${ serviceType }/${ identifier }/${ reportId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:pi:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:perf-reports/${ serviceType }/${ identifier }/${ reportId }`);
   }
 
   /**
@@ -242,7 +242,7 @@ export class Pi extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -256,7 +256,7 @@ export class Pi extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -271,6 +271,6 @@ export class Pi extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

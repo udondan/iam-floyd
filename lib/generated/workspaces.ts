@@ -1021,7 +1021,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDirectoryid(directoryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:directory/${ directoryId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:directory/${ directoryId }`);
   }
 
   /**
@@ -1038,7 +1038,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspacebundle(bundleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspacebundle/${ bundleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspacebundle/${ bundleId }`);
   }
 
   /**
@@ -1055,7 +1055,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspaceid(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -1072,7 +1072,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspaceimage(imageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspaceimage/${ imageId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspaceimage/${ imageId }`);
   }
 
   /**
@@ -1089,7 +1089,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspaceipgroup(groupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspaceipgroup/${ groupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspaceipgroup/${ groupId }`);
   }
 
   /**
@@ -1106,7 +1106,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnectionalias(connectionAliasId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connectionalias/${ connectionAliasId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connectionalias/${ connectionAliasId }`);
   }
 
   /**
@@ -1123,7 +1123,7 @@ export class Workspaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspaceapplication(workSpaceApplicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:workspaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspaceapplication/${ workSpaceApplicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspaceapplication/${ workSpaceApplicationId }`);
   }
 
   /**
@@ -1149,7 +1149,7 @@ export class Workspaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1180,7 +1180,7 @@ export class Workspaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1205,7 +1205,7 @@ export class Workspaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1220,6 +1220,6 @@ export class Workspaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserId(value: string | string[], operator?: Operator | string) {
-    return this.if(`userId`, value, operator || 'StringLike');
+    return this.if(`userId`, value, operator ?? 'StringLike');
   }
 }

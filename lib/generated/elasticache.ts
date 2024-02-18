@@ -1322,7 +1322,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifCacheParameterGroupName()
    */
   public onParametergroup(cacheParameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:parametergroup:${ cacheParameterGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:parametergroup:${ cacheParameterGroupName }`);
   }
 
   /**
@@ -1341,7 +1341,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onSecuritygroup(cacheSecurityGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:securitygroup:${ cacheSecurityGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:securitygroup:${ cacheSecurityGroupName }`);
   }
 
   /**
@@ -1360,7 +1360,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onSubnetgroup(cacheSubnetGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:subnetgroup:${ cacheSubnetGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:subnetgroup:${ cacheSubnetGroupName }`);
   }
 
   /**
@@ -1393,7 +1393,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifTransitEncryptionEnabled()
    */
   public onReplicationgroup(replicationGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:replicationgroup:${ replicationGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:replicationgroup:${ replicationGroupId }`);
   }
 
   /**
@@ -1419,7 +1419,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifSnapshotRetentionLimit()
    */
   public onCluster(cacheClusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster:${ cacheClusterId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster:${ cacheClusterId }`);
   }
 
   /**
@@ -1438,7 +1438,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onReservedInstance(reservedCacheNodeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:reserved-instance:${ reservedCacheNodeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reserved-instance:${ reservedCacheNodeId }`);
   }
 
   /**
@@ -1458,7 +1458,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifKmsKeyId()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:snapshot:${ snapshotName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshot:${ snapshotName }`);
   }
 
   /**
@@ -1487,7 +1487,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifTransitEncryptionEnabled()
    */
   public onGlobalreplicationgroup(globalReplicationGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache::${ account || this.defaultAccount }:globalreplicationgroup:${ globalReplicationGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache::${ account ?? this.defaultAccount }:globalreplicationgroup:${ globalReplicationGroupId }`);
   }
 
   /**
@@ -1507,7 +1507,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifUserAuthenticationMode()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user:${ userId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user:${ userId }`);
   }
 
   /**
@@ -1526,7 +1526,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onUsergroup(userGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:usergroup:${ userGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:usergroup:${ userGroupId }`);
   }
 
   /**
@@ -1552,7 +1552,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifSnapshotRetentionLimit()
    */
   public onServerlesscache(serverlessCacheName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:serverlesscache:${ serverlessCacheName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:serverlesscache:${ serverlessCacheName }`);
   }
 
   /**
@@ -1572,7 +1572,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifKmsKeyId()
    */
   public onServerlesscachesnapshot(serverlessCacheSnapshotName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticache:${ region || this.defaultRegion }:${ account || this.defaultAccount }:serverlesscachesnapshot:${ serverlessCacheSnapshotName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticache:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:serverlesscachesnapshot:${ serverlessCacheSnapshotName }`);
   }
 
   /**
@@ -1614,7 +1614,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1706,7 +1706,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1748,7 +1748,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1832,7 +1832,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCacheNodeType(value: string | string[], operator?: Operator | string) {
-    return this.if(`CacheNodeType`, value, operator || 'StringLike');
+    return this.if(`CacheNodeType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1860,7 +1860,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCacheParameterGroupName(value: string | string[], operator?: Operator | string) {
-    return this.if(`CacheParameterGroupName`, value, operator || 'StringLike');
+    return this.if(`CacheParameterGroupName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1898,7 +1898,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataStorageUnit(value: string | string[], operator?: Operator | string) {
-    return this.if(`DataStorageUnit`, value, operator || 'StringLike');
+    return this.if(`DataStorageUnit`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1921,7 +1921,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEngineType(value: string | string[], operator?: Operator | string) {
-    return this.if(`EngineType`, value, operator || 'StringLike');
+    return this.if(`EngineType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1948,7 +1948,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEngineVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`EngineVersion`, value, operator || 'StringLike');
+    return this.if(`EngineVersion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1975,7 +1975,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKmsKeyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`KmsKeyId`, value, operator || 'StringLike');
+    return this.if(`KmsKeyId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1994,7 +1994,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaximumDataStorage(value: number | number[], operator?: Operator | string) {
-    return this.if(`MaximumDataStorage`, value, operator || 'NumericEquals');
+    return this.if(`MaximumDataStorage`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -2013,7 +2013,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaximumECPUPerSecond(value: number | number[], operator?: Operator | string) {
-    return this.if(`MaximumECPUPerSecond`, value, operator || 'NumericEquals');
+    return this.if(`MaximumECPUPerSecond`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -2057,7 +2057,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifNumNodeGroups(value: number | number[], operator?: Operator | string) {
-    return this.if(`NumNodeGroups`, value, operator || 'NumericEquals');
+    return this.if(`NumNodeGroups`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -2078,7 +2078,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifReplicasPerNodeGroup(value: number | number[], operator?: Operator | string) {
-    return this.if(`ReplicasPerNodeGroup`, value, operator || 'NumericEquals');
+    return this.if(`ReplicasPerNodeGroup`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -2104,7 +2104,7 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifSnapshotRetentionLimit(value: number | number[], operator?: Operator | string) {
-    return this.if(`SnapshotRetentionLimit`, value, operator || 'NumericEquals');
+    return this.if(`SnapshotRetentionLimit`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -2142,6 +2142,6 @@ export class Elasticache extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserAuthenticationMode(value: string | string[], operator?: Operator | string) {
-    return this.if(`UserAuthenticationMode`, value, operator || 'StringLike');
+    return this.if(`UserAuthenticationMode`, value, operator ?? 'StringLike');
   }
 }

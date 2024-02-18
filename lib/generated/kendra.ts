@@ -866,7 +866,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }`);
   }
 
   /**
@@ -884,7 +884,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDataSource(indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/data-source/${ dataSourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/data-source/${ dataSourceId }`);
   }
 
   /**
@@ -902,7 +902,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/faq/${ faqId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/faq/${ faqId }`);
   }
 
   /**
@@ -917,7 +917,7 @@ export class Kendra extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExperience(indexId: string, experienceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/experience/${ experienceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/experience/${ experienceId }`);
   }
 
   /**
@@ -935,7 +935,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThesaurus(indexId: string, thesaurusId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/thesaurus/${ thesaurusId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/thesaurus/${ thesaurusId }`);
   }
 
   /**
@@ -953,7 +953,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuerySuggestionsBlockList(indexId: string, querySuggestionsBlockListId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/query-suggestions-block-list/${ querySuggestionsBlockListId }`);
   }
 
   /**
@@ -971,7 +971,7 @@ export class Kendra extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFeaturedResultsSet(indexId: string, featuredResultsSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/featured-results-set/${ featuredResultsSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/featured-results-set/${ featuredResultsSetId }`);
   }
 
   /**
@@ -986,7 +986,7 @@ export class Kendra extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccessControlConfiguration(indexId: string, accessControlConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kendra:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexId }/access-control-configuration/${ accessControlConfigurationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kendra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexId }/access-control-configuration/${ accessControlConfigurationId }`);
   }
 
   /**
@@ -1008,7 +1008,7 @@ export class Kendra extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1029,7 +1029,7 @@ export class Kendra extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1051,6 +1051,6 @@ export class Kendra extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

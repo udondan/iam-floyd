@@ -9,6 +9,7 @@
    packages
    getting-started
    vocabulary
+   operators
    examples
    collections
    Policy Converter <https://iam-floyd.readthedocs.io/en/latest/policy-converter.html>

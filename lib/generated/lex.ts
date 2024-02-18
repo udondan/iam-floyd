@@ -623,7 +623,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBot(botName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bot:${ botName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot:${ botName }`);
   }
 
   /**
@@ -641,7 +641,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBotVersion(botName: string, botVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bot:${ botName }:${ botVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot:${ botName }:${ botVersion }`);
   }
 
   /**
@@ -659,7 +659,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBotAlias(botName: string, botAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bot:${ botName }:${ botAlias }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot:${ botName }:${ botAlias }`);
   }
 
   /**
@@ -678,7 +678,7 @@ export class Lex extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(botName: string, botAlias: string, channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:bot-channel:${ botName }:${ botAlias }:${ channelName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot-channel:${ botName }:${ botAlias }:${ channelName }`);
   }
 
   /**
@@ -693,7 +693,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIntentVersion(intentName: string, intentVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:intent:${ intentName }:${ intentVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:intent:${ intentName }:${ intentVersion }`);
   }
 
   /**
@@ -708,7 +708,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSlottypeVersion(slotName: string, slotVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lex:${ region || this.defaultRegion }:${ account || this.defaultAccount }:slottype:${ slotName }:${ slotVersion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:slottype:${ slotName }:${ slotVersion }`);
   }
 
   /**
@@ -727,7 +727,7 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -746,7 +746,7 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -764,7 +764,7 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -776,7 +776,7 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAssociatedIntents(value: string | string[], operator?: Operator | string) {
-    return this.if(`associatedIntents`, value, operator || 'StringLike');
+    return this.if(`associatedIntents`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -788,7 +788,7 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAssociatedSlotTypes(value: string | string[], operator?: Operator | string) {
-    return this.if(`associatedSlotTypes`, value, operator || 'StringLike');
+    return this.if(`associatedSlotTypes`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -800,6 +800,6 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChannelType(value: string | string[], operator?: Operator | string) {
-    return this.if(`channelType`, value, operator || 'StringLike');
+    return this.if(`channelType`, value, operator ?? 'StringLike');
   }
 }

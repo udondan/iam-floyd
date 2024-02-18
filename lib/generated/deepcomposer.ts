@@ -285,7 +285,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(modelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepcomposer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/${ modelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepcomposer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/${ modelId }`);
   }
 
   /**
@@ -302,7 +302,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepcomposer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:composition/${ compositionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepcomposer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:composition/${ compositionId }`);
   }
 
   /**
@@ -316,7 +316,7 @@ export class Deepcomposer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAudio(audioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:deepcomposer:${ region || this.defaultRegion }:${ account || this.defaultAccount }:audio/${ audioId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deepcomposer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:audio/${ audioId }`);
   }
 
   /**
@@ -334,7 +334,7 @@ export class Deepcomposer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -358,7 +358,7 @@ export class Deepcomposer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -376,6 +376,6 @@ export class Deepcomposer extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

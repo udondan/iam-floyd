@@ -760,7 +760,7 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResiliencyPolicy(resiliencyPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:resiliency-policy/${ resiliencyPolicyId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resiliencehub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resiliency-policy/${ resiliencyPolicyId }`);
   }
 
   /**
@@ -777,7 +777,7 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onApplication(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ appId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resiliencehub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app/${ appId }`);
   }
 
   /**
@@ -794,7 +794,7 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAppAssessment(appAssessmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app-assessment/${ appAssessmentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resiliencehub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app-assessment/${ appAssessmentId }`);
   }
 
   /**
@@ -811,7 +811,7 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecommendationTemplate(recommendationTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:resiliencehub:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recommendation-template/${ recommendationTemplateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resiliencehub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommendation-template/${ recommendationTemplateId }`);
   }
 
   /**
@@ -831,7 +831,7 @@ export class Resiliencehub extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -850,7 +850,7 @@ export class Resiliencehub extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -870,6 +870,6 @@ export class Resiliencehub extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

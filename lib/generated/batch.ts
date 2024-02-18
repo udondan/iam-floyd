@@ -373,7 +373,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComputeEnvironment(computeEnvironmentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:compute-environment/${ computeEnvironmentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compute-environment/${ computeEnvironmentName }`);
   }
 
   /**
@@ -390,7 +390,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job-queue/${ jobQueueName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job-queue/${ jobQueueName }`);
   }
 
   /**
@@ -404,7 +404,7 @@ export class Batch extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJobDefinition(jobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job-definition/${ jobDefinitionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job-definition/${ jobDefinitionName }`);
   }
 
   /**
@@ -422,7 +422,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobDefinitionRevision(jobDefinitionName: string, revision: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job-definition/${ jobDefinitionName }:${ revision }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job-definition/${ jobDefinitionName }:${ revision }`);
   }
 
   /**
@@ -439,7 +439,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
   }
 
   /**
@@ -456,7 +456,7 @@ export class Batch extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSchedulingPolicy(schedulingPolicyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:batch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:scheduling-policy/${ schedulingPolicyName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scheduling-policy/${ schedulingPolicyName }`);
   }
 
   /**
@@ -477,7 +477,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -497,7 +497,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -518,7 +518,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -547,7 +547,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAWSLogsGroup(value: string | string[], operator?: Operator | string) {
-    return this.if(`AWSLogsGroup`, value, operator || 'StringLike');
+    return this.if(`AWSLogsGroup`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -562,7 +562,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAWSLogsRegion(value: string | string[], operator?: Operator | string) {
-    return this.if(`AWSLogsRegion`, value, operator || 'StringLike');
+    return this.if(`AWSLogsRegion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -577,7 +577,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAWSLogsStreamPrefix(value: string | string[], operator?: Operator | string) {
-    return this.if(`AWSLogsStreamPrefix`, value, operator || 'StringLike');
+    return this.if(`AWSLogsStreamPrefix`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -593,7 +593,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEKSImage(value: string | string[], operator?: Operator | string) {
-    return this.if(`EKSImage`, value, operator || 'StringLike');
+    return this.if(`EKSImage`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -622,7 +622,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifEKSRunAsGroup(value: number | number[], operator?: Operator | string) {
-    return this.if(`EKSRunAsGroup`, value, operator || 'NumericEquals');
+    return this.if(`EKSRunAsGroup`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -637,7 +637,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifEKSRunAsUser(value: number | number[], operator?: Operator | string) {
-    return this.if(`EKSRunAsUser`, value, operator || 'NumericEquals');
+    return this.if(`EKSRunAsUser`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -652,7 +652,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEKSServiceAccountName(value: string | string[], operator?: Operator | string) {
-    return this.if(`EKSServiceAccountName`, value, operator || 'StringLike');
+    return this.if(`EKSServiceAccountName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -667,7 +667,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifImage(value: string | string[], operator?: Operator | string) {
-    return this.if(`Image`, value, operator || 'StringLike');
+    return this.if(`Image`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -682,7 +682,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLogDriver(value: string | string[], operator?: Operator | string) {
-    return this.if(`LogDriver`, value, operator || 'StringLike');
+    return this.if(`LogDriver`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -711,7 +711,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifShareIdentifier(value: string | string[], operator?: Operator | string) {
-    return this.if(`ShareIdentifier`, value, operator || 'StringLike');
+    return this.if(`ShareIdentifier`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -726,6 +726,6 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUser(value: string | string[], operator?: Operator | string) {
-    return this.if(`User`, value, operator || 'StringLike');
+    return this.if(`User`, value, operator ?? 'StringLike');
   }
 }

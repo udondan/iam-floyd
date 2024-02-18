@@ -739,7 +739,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:listener/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:listener/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
   }
 
   /**
@@ -760,7 +760,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerRuleApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:listener-rule/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:listener-rule/app/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
   }
 
   /**
@@ -780,7 +780,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:listener/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:listener/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
   }
 
   /**
@@ -801,7 +801,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onListenerRuleNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:listener-rule/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:listener-rule/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
   }
 
   /**
@@ -820,7 +820,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -839,7 +839,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancerNet(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/net/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -858,7 +858,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTargetgroup(targetGroupName: string, targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:targetgroup/${ targetGroupName }/${ targetGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:targetgroup/${ targetGroupName }/${ targetGroupId }`);
   }
 
   /**
@@ -877,7 +877,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTruststore(trustStoreName: string, trustStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:truststore/${ trustStoreName }/${ trustStoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:truststore/${ trustStoreName }/${ trustStoreId }`);
   }
 
   /**
@@ -899,7 +899,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -953,7 +953,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -974,7 +974,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -989,7 +989,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreateAction(value: string | string[], operator?: Operator | string) {
-    return this.if(`CreateAction`, value, operator || 'StringLike');
+    return this.if(`CreateAction`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1005,7 +1005,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifListenerProtocol(value: string | string[], operator?: Operator | string) {
-    return this.if(`ListenerProtocol`, value, operator || 'StringLike');
+    return this.if(`ListenerProtocol`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1059,7 +1059,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1074,7 +1074,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifScheme(value: string | string[], operator?: Operator | string) {
-    return this.if(`Scheme`, value, operator || 'StringLike');
+    return this.if(`Scheme`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1090,7 +1090,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecurityGroup(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecurityGroup`, value, operator || 'StringLike');
+    return this.if(`SecurityGroup`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1106,7 +1106,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecurityPolicy(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecurityPolicy`, value, operator || 'StringLike');
+    return this.if(`SecurityPolicy`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1122,6 +1122,6 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubnet(value: string | string[], operator?: Operator | string) {
-    return this.if(`Subnet`, value, operator || 'StringLike');
+    return this.if(`Subnet`, value, operator ?? 'StringLike');
   }
 }

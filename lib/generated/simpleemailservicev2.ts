@@ -1484,7 +1484,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:configuration-set/${ configurationSetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-set/${ configurationSetName }`);
   }
 
   /**
@@ -1501,7 +1501,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContactList(contactListName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:contact-list/${ contactListName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:contact-list/${ contactListName }`);
   }
 
   /**
@@ -1515,7 +1515,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custom-verification-email-template/${ templateName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-verification-email-template/${ templateName }`);
   }
 
   /**
@@ -1532,7 +1532,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDedicatedIpPool(dedicatedIPPool: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dedicated-ip-pool/${ dedicatedIPPool }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dedicated-ip-pool/${ dedicatedIPPool }`);
   }
 
   /**
@@ -1549,7 +1549,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeliverabilityTestReport(reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:deliverability-test-report/${ reportId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deliverability-test-report/${ reportId }`);
   }
 
   /**
@@ -1563,7 +1563,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExportJob(exportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:export-job/${ exportJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:export-job/${ exportJobId }`);
   }
 
   /**
@@ -1580,7 +1580,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identity/${ identityName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identity/${ identityName }`);
   }
 
   /**
@@ -1594,7 +1594,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImportJob(importJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:import-job/${ importJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:import-job/${ importJobId }`);
   }
 
   /**
@@ -1608,7 +1608,7 @@ export class SesV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ses:${ region || this.defaultRegion }:${ account || this.defaultAccount }:template/${ templateName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:template/${ templateName }`);
   }
 
   /**
@@ -1629,7 +1629,7 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1689,7 +1689,7 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1710,7 +1710,7 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1816,7 +1816,7 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifApiVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`ApiVersion`, value, operator || 'StringLike');
+    return this.if(`ApiVersion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1834,7 +1834,7 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExportSourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`ExportSourceType`, value, operator || 'StringLike');
+    return this.if(`ExportSourceType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1849,7 +1849,7 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFeedbackAddress(value: string | string[], operator?: Operator | string) {
-    return this.if(`FeedbackAddress`, value, operator || 'StringLike');
+    return this.if(`FeedbackAddress`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1864,7 +1864,7 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFromAddress(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromAddress`, value, operator || 'StringLike');
+    return this.if(`FromAddress`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1879,7 +1879,7 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFromDisplayName(value: string | string[], operator?: Operator | string) {
-    return this.if(`FromDisplayName`, value, operator || 'StringLike');
+    return this.if(`FromDisplayName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1894,6 +1894,6 @@ export class SesV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRecipients(value: string | string[], operator?: Operator | string) {
-    return this.if(`Recipients`, value, operator || 'StringLike');
+    return this.if(`Recipients`, value, operator ?? 'StringLike');
   }
 }

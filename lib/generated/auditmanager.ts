@@ -815,7 +815,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessment(assessmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:auditmanager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assessment/${ assessmentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessment/${ assessmentId }`);
   }
 
   /**
@@ -829,7 +829,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessmentFramework(assessmentFrameworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:auditmanager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assessmentFramework/${ assessmentFrameworkId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessmentFramework/${ assessmentFrameworkId }`);
   }
 
   /**
@@ -844,7 +844,7 @@ export class Auditmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssessmentControlSet(assessmentId: string, controlSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:auditmanager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:assessment/${ assessmentId }/controlSet/${ controlSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessment/${ assessmentId }/controlSet/${ controlSetId }`);
   }
 
   /**
@@ -861,7 +861,7 @@ export class Auditmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onControl(controlId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:auditmanager:${ region || this.defaultRegion }:${ account || this.defaultAccount }:control/${ controlId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:control/${ controlId }`);
   }
 
   /**
@@ -883,7 +883,7 @@ export class Auditmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -899,7 +899,7 @@ export class Auditmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -921,6 +921,6 @@ export class Auditmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

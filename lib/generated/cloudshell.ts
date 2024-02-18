@@ -144,6 +144,6 @@ export class Cloudshell extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudshell:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudshell:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ environmentId }`);
   }
 }

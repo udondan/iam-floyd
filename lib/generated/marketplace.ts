@@ -252,7 +252,7 @@ export class AwsMarketplace extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAgreementType(value: string | string[], operator?: Operator | string) {
-    return this.if(`AgreementType`, value, operator || 'StringLike');
+    return this.if(`AgreementType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -264,7 +264,7 @@ export class AwsMarketplace extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPartyType(value: string | string[], operator?: Operator | string) {
-    return this.if(`PartyType`, value, operator || 'StringLike');
+    return this.if(`PartyType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -276,6 +276,6 @@ export class AwsMarketplace extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProductId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ProductId`, value, operator || 'StringLike');
+    return this.if(`ProductId`, value, operator ?? 'StringLike');
   }
 }

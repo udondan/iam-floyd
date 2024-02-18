@@ -233,7 +233,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScalableTarget(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:application-autoscaling:${ region || this.defaultRegion }:${ account || this.defaultAccount }:scalable-target/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:application-autoscaling:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scalable-target/${ resourceId }`);
   }
 
   /**
@@ -253,7 +253,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifScalableDimension(value: string | string[], operator?: Operator | string) {
-    return this.if(`scalable-dimension`, value, operator || 'StringLike');
+    return this.if(`scalable-dimension`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -273,7 +273,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifServiceNamespace(value: string | string[], operator?: Operator | string) {
-    return this.if(`service-namespace`, value, operator || 'StringLike');
+    return this.if(`service-namespace`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -290,7 +290,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -306,7 +306,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -323,6 +323,6 @@ export class ApplicationAutoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

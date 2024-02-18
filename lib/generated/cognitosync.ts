@@ -264,7 +264,7 @@ export class CognitoSync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDataset(identityPoolId: string, identityId: string, datasetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cognito-sync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identitypool/${ identityPoolId }/identity/${ identityId }/dataset/${ datasetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cognito-sync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identitypool/${ identityPoolId }/identity/${ identityId }/dataset/${ datasetName }`);
   }
 
   /**
@@ -279,7 +279,7 @@ export class CognitoSync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentity(identityPoolId: string, identityId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cognito-sync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identitypool/${ identityPoolId }/identity/${ identityId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cognito-sync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identitypool/${ identityPoolId }/identity/${ identityId }`);
   }
 
   /**
@@ -293,6 +293,6 @@ export class CognitoSync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cognito-sync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:identitypool/${ identityPoolId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cognito-sync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identitypool/${ identityPoolId }`);
   }
 }

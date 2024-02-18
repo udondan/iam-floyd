@@ -109,6 +109,6 @@ export class CloudfrontKeyvaluestore extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onKeyValueStore(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudfront::${ account || this.defaultAccount }:key-value-store/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:key-value-store/${ resourceId }`);
   }
 }

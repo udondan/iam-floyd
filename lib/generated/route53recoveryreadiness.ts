@@ -460,7 +460,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReadinesscheck(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || this.defaultAccount }:readiness-check/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53-recovery-readiness::${ account ?? this.defaultAccount }:readiness-check/${ resourceId }`);
   }
 
   /**
@@ -476,7 +476,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onResourceset(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || this.defaultAccount }:resource-set/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53-recovery-readiness::${ account ?? this.defaultAccount }:resource-set/${ resourceId }`);
   }
 
   /**
@@ -492,7 +492,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCell(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || this.defaultAccount }:cell/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53-recovery-readiness::${ account ?? this.defaultAccount }:cell/${ resourceId }`);
   }
 
   /**
@@ -508,7 +508,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecoverygroup(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:route53-recovery-readiness::${ account || this.defaultAccount }:recovery-group/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53-recovery-readiness::${ account ?? this.defaultAccount }:recovery-group/${ resourceId }`);
   }
 
   /**
@@ -529,7 +529,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -548,7 +548,7 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -572,6 +572,6 @@ export class Route53RecoveryReadiness extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

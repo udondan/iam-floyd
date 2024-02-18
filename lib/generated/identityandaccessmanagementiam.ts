@@ -2256,7 +2256,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccessReport(entityPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:access-report/${ entityPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:access-report/${ entityPath }`);
   }
 
   /**
@@ -2270,7 +2270,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAssumedRole(roleName: string, roleSessionName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:assumed-role/${ roleName }/${ roleSessionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:assumed-role/${ roleName }/${ roleSessionName }`);
   }
 
   /**
@@ -2283,7 +2283,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFederatedUser(userName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:federated-user/${ userName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:federated-user/${ userName }`);
   }
 
   /**
@@ -2296,7 +2296,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGroup(groupNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:group/${ groupNameWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:group/${ groupNameWithPath }`);
   }
 
   /**
@@ -2312,7 +2312,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstanceProfile(instanceProfileNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:instance-profile/${ instanceProfileNameWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:instance-profile/${ instanceProfileNameWithPath }`);
   }
 
   /**
@@ -2328,7 +2328,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:mfa/${ mfaTokenIdWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:mfa/${ mfaTokenIdWithPath }`);
   }
 
   /**
@@ -2344,7 +2344,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOidcProvider(oidcProviderName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:oidc-provider/${ oidcProviderName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:oidc-provider/${ oidcProviderName }`);
   }
 
   /**
@@ -2360,7 +2360,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(policyNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:policy/${ policyNameWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:policy/${ policyNameWithPath }`);
   }
 
   /**
@@ -2377,7 +2377,7 @@ export class Iam extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:role/${ roleNameWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:role/${ roleNameWithPath }`);
   }
 
   /**
@@ -2393,7 +2393,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSamlProvider(samlProviderName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:saml-provider/${ samlProviderName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:saml-provider/${ samlProviderName }`);
   }
 
   /**
@@ -2409,7 +2409,7 @@ export class Iam extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onServerCertificate(certificateNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:server-certificate/${ certificateNameWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:server-certificate/${ certificateNameWithPath }`);
   }
 
   /**
@@ -2422,7 +2422,7 @@ export class Iam extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSmsMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:sms-mfa/${ mfaTokenIdWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:sms-mfa/${ mfaTokenIdWithPath }`);
   }
 
   /**
@@ -2439,7 +2439,7 @@ export class Iam extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iam::${ account || this.defaultAccount }:user/${ userNameWithPath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:user/${ userNameWithPath }`);
   }
 
   /**
@@ -2470,7 +2470,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2493,7 +2493,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2531,7 +2531,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2546,7 +2546,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAWSServiceName(value: string | string[], operator?: Operator | string) {
-    return this.if(`AWSServiceName`, value, operator || 'StringLike');
+    return this.if(`AWSServiceName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2561,7 +2561,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifAssociatedResourceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`AssociatedResourceArn`, value, operator || 'ArnLike');
+    return this.if(`AssociatedResourceArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -2576,7 +2576,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFIDOFIPS1402Certification(value: string | string[], operator?: Operator | string) {
-    return this.if(`FIDO-FIPS-140-2-certification`, value, operator || 'StringLike');
+    return this.if(`FIDO-FIPS-140-2-certification`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2591,7 +2591,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFIDOFIPS1403Certification(value: string | string[], operator?: Operator | string) {
-    return this.if(`FIDO-FIPS-140-3-certification`, value, operator || 'StringLike');
+    return this.if(`FIDO-FIPS-140-3-certification`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2606,7 +2606,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFIDOCertification(value: string | string[], operator?: Operator | string) {
-    return this.if(`FIDO-certification`, value, operator || 'StringLike');
+    return this.if(`FIDO-certification`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2621,7 +2621,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOrganizationsPolicyId(value: string | string[], operator?: Operator | string) {
-    return this.if(`OrganizationsPolicyId`, value, operator || 'StringLike');
+    return this.if(`OrganizationsPolicyId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2636,7 +2636,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPassedToService(value: string | string[], operator?: Operator | string) {
-    return this.if(`PassedToService`, value, operator || 'StringLike');
+    return this.if(`PassedToService`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2664,7 +2664,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPermissionsBoundary(value: string | string[], operator?: Operator | string) {
-    return this.if(`PermissionsBoundary`, value, operator || 'ArnLike');
+    return this.if(`PermissionsBoundary`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -2684,7 +2684,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifPolicyARN(value: string | string[], operator?: Operator | string) {
-    return this.if(`PolicyARN`, value, operator || 'ArnLike');
+    return this.if(`PolicyARN`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -2699,7 +2699,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRegisterSecurityKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`RegisterSecurityKey`, value, operator || 'StringLike');
+    return this.if(`RegisterSecurityKey`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2716,6 +2716,6 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

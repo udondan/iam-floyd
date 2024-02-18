@@ -789,7 +789,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ environmentId }`);
   }
 
   /**
@@ -806,7 +806,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onUser(userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user/${ userId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ userId }`);
   }
 
   /**
@@ -823,7 +823,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKxEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }`);
   }
 
   /**
@@ -841,7 +841,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKxUser(environmentId: string, userName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxUser/${ userName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxUser/${ userName }`);
   }
 
   /**
@@ -859,7 +859,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKxCluster(environmentId: string, kxCluster: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxCluster/${ kxCluster }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxCluster/${ kxCluster }`);
   }
 
   /**
@@ -877,7 +877,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKxDatabase(environmentId: string, kxDatabase: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxDatabase/${ kxDatabase }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxDatabase/${ kxDatabase }`);
   }
 
   /**
@@ -895,7 +895,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKxScalingGroup(environmentId: string, kxScalingGroup: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxScalingGroup/${ kxScalingGroup }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxScalingGroup/${ kxScalingGroup }`);
   }
 
   /**
@@ -914,7 +914,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKxDataview(environmentId: string, kxDatabase: string, kxDataview: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxDatabase/${ kxDatabase }/kxDataview/${ kxDataview }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxDatabase/${ kxDatabase }/kxDataview/${ kxDataview }`);
   }
 
   /**
@@ -932,7 +932,7 @@ export class Finspace extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKxVolume(environmentId: string, kxVolume: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:finspace:${ region || this.defaultRegion }:${ account || this.defaultAccount }:kxEnvironment/${ environmentId }/kxVolume/${ kxVolume }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:finspace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:kxEnvironment/${ environmentId }/kxVolume/${ kxVolume }`);
   }
 
   /**
@@ -957,7 +957,7 @@ export class Finspace extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -981,7 +981,7 @@ export class Finspace extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1006,6 +1006,6 @@ export class Finspace extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

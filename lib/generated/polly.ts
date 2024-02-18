@@ -149,6 +149,6 @@ export class Polly extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLexicon(lexiconName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:polly:${ region || this.defaultRegion }:${ account || this.defaultAccount }:lexicon/${ lexiconName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:polly:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:lexicon/${ lexiconName }`);
   }
 }

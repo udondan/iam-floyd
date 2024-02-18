@@ -1205,7 +1205,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAggregationAuthorization(aggregatorAccount: string, aggregatorRegion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || this.defaultRegion }:${ account || this.defaultAccount }:aggregation-authorization/${ aggregatorAccount }/${ aggregatorRegion }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:aggregation-authorization/${ aggregatorAccount }/${ aggregatorRegion }`);
   }
 
   /**
@@ -1222,7 +1222,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigurationAggregator(aggregatorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || this.defaultRegion }:${ account || this.defaultAccount }:config-aggregator/${ aggregatorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:config-aggregator/${ aggregatorId }`);
   }
 
   /**
@@ -1239,7 +1239,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || this.defaultRegion }:${ account || this.defaultAccount }:config-rule/${ configRuleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:config-rule/${ configRuleId }`);
   }
 
   /**
@@ -1257,7 +1257,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConformancePack(conformancePackName: string, conformancePackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || this.defaultRegion }:${ account || this.defaultAccount }:conformance-pack/${ conformancePackName }/${ conformancePackId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:conformance-pack/${ conformancePackName }/${ conformancePackId }`);
   }
 
   /**
@@ -1274,7 +1274,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationConfigRule(organizationConfigRuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || this.defaultRegion }:${ account || this.defaultAccount }:organization-config-rule/${ organizationConfigRuleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:organization-config-rule/${ organizationConfigRuleId }`);
   }
 
   /**
@@ -1291,7 +1291,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationConformancePack(organizationConformancePackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || this.defaultRegion }:${ account || this.defaultAccount }:organization-conformance-pack/${ organizationConformancePackId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:organization-conformance-pack/${ organizationConformancePackId }`);
   }
 
   /**
@@ -1305,7 +1305,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onRemediationConfiguration(remediationConfigurationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || this.defaultRegion }:${ account || this.defaultAccount }:remediation-configuration/${ remediationConfigurationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:remediation-configuration/${ remediationConfigurationId }`);
   }
 
   /**
@@ -1323,7 +1323,7 @@ export class Config extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStoredQuery(storedQueryName: string, storedQueryId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:config:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stored-query/${ storedQueryName }/${ storedQueryId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stored-query/${ storedQueryName }/${ storedQueryId }`);
   }
 
   /**
@@ -1343,7 +1343,7 @@ export class Config extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1365,7 +1365,7 @@ export class Config extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1385,6 +1385,6 @@ export class Config extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

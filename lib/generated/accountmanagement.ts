@@ -210,7 +210,7 @@ export class Account extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccount(account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:account::${ account || this.defaultAccount }:account`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:account::${ account ?? this.defaultAccount }:account`);
   }
 
   /**
@@ -224,7 +224,7 @@ export class Account extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccountInOrganization(managementAccountId: string, organizationId: string, memberAccountId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:account::${ managementAccountId }:account/o-${ organizationId }/${ memberAccountId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:account::${ managementAccountId }:account/o-${ organizationId }/${ memberAccountId }`);
   }
 
   /**
@@ -236,7 +236,7 @@ export class Account extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccountResourceOrgPaths(value: string | string[], operator?: Operator | string) {
-    return this.if(`AccountResourceOrgPaths`, value, operator || 'StringLike');
+    return this.if(`AccountResourceOrgPaths`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -249,7 +249,7 @@ export class Account extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccountResourceOrgTags(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`AccountResourceOrgTags/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`AccountResourceOrgTags/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -266,7 +266,7 @@ export class Account extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAlternateContactTypes(value: string | string[], operator?: Operator | string) {
-    return this.if(`AlternateContactTypes`, value, operator || 'StringLike');
+    return this.if(`AlternateContactTypes`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -283,6 +283,6 @@ export class Account extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTargetRegion(value: string | string[], operator?: Operator | string) {
-    return this.if(`TargetRegion`, value, operator || 'StringLike');
+    return this.if(`TargetRegion`, value, operator ?? 'StringLike');
   }
 }

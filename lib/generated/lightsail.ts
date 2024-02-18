@@ -2047,7 +2047,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomain(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Domain/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Domain/${ id }`);
   }
 
   /**
@@ -2064,7 +2064,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstance(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Instance/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Instance/${ id }`);
   }
 
   /**
@@ -2081,7 +2081,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstanceSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:InstanceSnapshot/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:InstanceSnapshot/${ id }`);
   }
 
   /**
@@ -2098,7 +2098,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onKeyPair(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:KeyPair/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:KeyPair/${ id }`);
   }
 
   /**
@@ -2115,7 +2115,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStaticIp(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:StaticIp/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:StaticIp/${ id }`);
   }
 
   /**
@@ -2132,7 +2132,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDisk(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Disk/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Disk/${ id }`);
   }
 
   /**
@@ -2149,7 +2149,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDiskSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:DiskSnapshot/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:DiskSnapshot/${ id }`);
   }
 
   /**
@@ -2166,7 +2166,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLoadBalancer(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:LoadBalancer/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:LoadBalancer/${ id }`);
   }
 
   /**
@@ -2180,7 +2180,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLoadBalancerTlsCertificate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:LoadBalancerTlsCertificate/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:LoadBalancerTlsCertificate/${ id }`);
   }
 
   /**
@@ -2194,7 +2194,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExportSnapshotRecord(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ExportSnapshotRecord/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ExportSnapshotRecord/${ id }`);
   }
 
   /**
@@ -2208,7 +2208,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCloudFormationStackRecord(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:CloudFormationStackRecord/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:CloudFormationStackRecord/${ id }`);
   }
 
   /**
@@ -2225,7 +2225,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRelationalDatabase(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:RelationalDatabase/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:RelationalDatabase/${ id }`);
   }
 
   /**
@@ -2242,7 +2242,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRelationalDatabaseSnapshot(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:RelationalDatabaseSnapshot/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:RelationalDatabaseSnapshot/${ id }`);
   }
 
   /**
@@ -2256,7 +2256,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAlarm(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Alarm/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Alarm/${ id }`);
   }
 
   /**
@@ -2273,7 +2273,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCertificate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Certificate/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Certificate/${ id }`);
   }
 
   /**
@@ -2287,7 +2287,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onContactMethod(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ContactMethod/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ContactMethod/${ id }`);
   }
 
   /**
@@ -2304,7 +2304,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onContainerService(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:ContainerService/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ContainerService/${ id }`);
   }
 
   /**
@@ -2321,7 +2321,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDistribution(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Distribution/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Distribution/${ id }`);
   }
 
   /**
@@ -2338,7 +2338,7 @@ export class Lightsail extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBucket(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:lightsail:${ region || this.defaultRegion }:${ account || this.defaultAccount }:Bucket/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Bucket/${ id }`);
   }
 
   /**
@@ -2371,7 +2371,7 @@ export class Lightsail extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2400,7 +2400,7 @@ export class Lightsail extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2432,6 +2432,6 @@ export class Lightsail extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

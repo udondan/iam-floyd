@@ -512,7 +512,7 @@ export class Tnb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFunctionPackage(functionPackageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:function-package/${ functionPackageId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:tnb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:function-package/${ functionPackageId }`);
   }
 
   /**
@@ -529,7 +529,7 @@ export class Tnb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkPackage(networkPackageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-package/${ networkPackageId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:tnb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-package/${ networkPackageId }`);
   }
 
   /**
@@ -546,7 +546,7 @@ export class Tnb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkInstance(networkInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-instance/${ networkInstanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:tnb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-instance/${ networkInstanceId }`);
   }
 
   /**
@@ -563,7 +563,7 @@ export class Tnb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFunctionInstance(functionInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:function-instance/${ functionInstanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:tnb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:function-instance/${ functionInstanceId }`);
   }
 
   /**
@@ -580,7 +580,7 @@ export class Tnb extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkOperation(networkOperationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:tnb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-operation/${ networkOperationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:tnb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-operation/${ networkOperationId }`);
   }
 
   /**
@@ -602,7 +602,7 @@ export class Tnb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -638,7 +638,7 @@ export class Tnb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -660,6 +660,6 @@ export class Tnb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

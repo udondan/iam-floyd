@@ -714,7 +714,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomains(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }`);
   }
 
   /**
@@ -732,7 +732,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onObjectTypes(domainName: string, objectTypeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }/object-types/${ objectTypeName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/object-types/${ objectTypeName }`);
   }
 
   /**
@@ -750,7 +750,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIntegrations(domainName: string, uri: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }/integrations/${ uri }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/integrations/${ uri }`);
   }
 
   /**
@@ -768,7 +768,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventStreams(domainName: string, eventStreamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }/event-streams/${ eventStreamName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/event-streams/${ eventStreamName }`);
   }
 
   /**
@@ -786,7 +786,7 @@ export class Profile extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCalculatedAttributes(domainName: string, calculatedAttributeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:profile:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domains/${ domainName }/calculated-attributes/${ calculatedAttributeName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/calculated-attributes/${ calculatedAttributeName }`);
   }
 
   /**
@@ -808,7 +808,7 @@ export class Profile extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -828,7 +828,7 @@ export class Profile extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -850,6 +850,6 @@ export class Profile extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

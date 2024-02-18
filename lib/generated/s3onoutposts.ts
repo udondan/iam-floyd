@@ -983,7 +983,7 @@ export class S3Outposts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAccesspoint(outpostId: string, accessPointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:s3-outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }/accesspoint/${ accessPointName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3-outposts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:outpost/${ outpostId }/accesspoint/${ accessPointName }`);
   }
 
   /**
@@ -998,7 +998,7 @@ export class S3Outposts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBucket(outpostId: string, bucketName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:s3-outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }/bucket/${ bucketName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3-outposts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:outpost/${ outpostId }/bucket/${ bucketName }`);
   }
 
   /**
@@ -1013,7 +1013,7 @@ export class S3Outposts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEndpoint(outpostId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:s3-outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }/endpoint/${ endpointId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3-outposts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:outpost/${ outpostId }/endpoint/${ endpointId }`);
   }
 
   /**
@@ -1029,7 +1029,7 @@ export class S3Outposts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onObject(outpostId: string, bucketName: string, objectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:s3-outposts:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outpost/${ outpostId }/bucket/${ bucketName }/object/${ objectName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3-outposts:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:outpost/${ outpostId }/bucket/${ bucketName }/object/${ objectName }`);
   }
 
   /**
@@ -1066,7 +1066,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccessPointNetworkOrigin(value: string | string[], operator?: Operator | string) {
-    return this.if(`AccessPointNetworkOrigin`, value, operator || 'StringLike');
+    return this.if(`AccessPointNetworkOrigin`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1103,7 +1103,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDataAccessPointAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`DataAccessPointAccount`, value, operator || 'StringLike');
+    return this.if(`DataAccessPointAccount`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1138,7 +1138,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifDataAccessPointArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`DataAccessPointArn`, value, operator || 'ArnLike');
+    return this.if(`DataAccessPointArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1162,7 +1162,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifExistingObjectTag(key: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ExistingObjectTag/${ key }`, value, operator || 'StringLike');
+    return this.if(`ExistingObjectTag/${ key }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1180,7 +1180,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestObjectTag(key: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestObjectTag/${ key }`, value, operator || 'StringLike');
+    return this.if(`RequestObjectTag/${ key }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1197,7 +1197,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestObjectTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`RequestObjectTagKeys`, value, operator || 'StringLike');
+    return this.if(`RequestObjectTagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1254,7 +1254,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAuthType(value: string | string[], operator?: Operator | string) {
-    return this.if(`authType`, value, operator || 'StringLike');
+    return this.if(`authType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1270,7 +1270,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDelimiter(value: string | string[], operator?: Operator | string) {
-    return this.if(`delimiter`, value, operator || 'StringLike');
+    return this.if(`delimiter`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1286,7 +1286,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaxKeys(value: number | number[], operator?: Operator | string) {
-    return this.if(`max-keys`, value, operator || 'NumericEquals');
+    return this.if(`max-keys`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -1302,7 +1302,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPrefix(value: string | string[], operator?: Operator | string) {
-    return this.if(`prefix`, value, operator || 'StringLike');
+    return this.if(`prefix`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1359,7 +1359,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifSignatureAge(value: number | number[], operator?: Operator | string) {
-    return this.if(`signatureAge`, value, operator || 'NumericEquals');
+    return this.if(`signatureAge`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -1416,7 +1416,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSignatureversion(value: string | string[], operator?: Operator | string) {
-    return this.if(`signatureversion`, value, operator || 'StringLike');
+    return this.if(`signatureversion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1435,7 +1435,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionid(value: string | string[], operator?: Operator | string) {
-    return this.if(`versionid`, value, operator || 'StringLike');
+    return this.if(`versionid`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1451,7 +1451,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzAcl(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-acl`, value, operator || 'StringLike');
+    return this.if(`x-amz-acl`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1508,7 +1508,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzContentSha256(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-content-sha256`, value, operator || 'StringLike');
+    return this.if(`x-amz-content-sha256`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1523,7 +1523,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzCopySource(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-copy-source`, value, operator || 'StringLike');
+    return this.if(`x-amz-copy-source`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1538,7 +1538,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzMetadataDirective(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-metadata-directive`, value, operator || 'StringLike');
+    return this.if(`x-amz-metadata-directive`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1554,7 +1554,7 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzServerSideEncryption(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-server-side-encryption`, value, operator || 'StringLike');
+    return this.if(`x-amz-server-side-encryption`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1570,6 +1570,6 @@ export class S3Outposts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzStorageClass(value: string | string[], operator?: Operator | string) {
-    return this.if(`x-amz-storage-class`, value, operator || 'StringLike');
+    return this.if(`x-amz-storage-class`, value, operator ?? 'StringLike');
   }
 }

@@ -426,6 +426,6 @@ export class Cloudsearch extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cloudsearch:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudsearch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainName }`);
   }
 }

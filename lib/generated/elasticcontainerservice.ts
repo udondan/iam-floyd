@@ -959,7 +959,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterName }`);
   }
 
   /**
@@ -978,7 +978,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onContainerInstance(clusterName: string, containerInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:container-instance/${ clusterName }/${ containerInstanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:container-instance/${ clusterName }/${ containerInstanceId }`);
   }
 
   /**
@@ -997,7 +997,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onService(clusterName: string, serviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ clusterName }/${ serviceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ clusterName }/${ serviceName }`);
   }
 
   /**
@@ -1016,7 +1016,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTask(clusterName: string, taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task/${ clusterName }/${ taskId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task/${ clusterName }/${ taskId }`);
   }
 
   /**
@@ -1035,7 +1035,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTaskDefinition(taskDefinitionFamilyName: string, taskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task-definition/${ taskDefinitionFamilyName }:${ taskDefinitionRevisionNumber }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task-definition/${ taskDefinitionFamilyName }:${ taskDefinitionRevisionNumber }`);
   }
 
   /**
@@ -1053,7 +1053,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:capacity-provider/${ capacityProviderName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capacity-provider/${ capacityProviderName }`);
   }
 
   /**
@@ -1073,7 +1073,7 @@ export class Ecs extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTaskSet(clusterName: string, serviceName: string, taskSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ecs:${ region || this.defaultRegion }:${ account || this.defaultAccount }:task-set/${ clusterName }/${ serviceName }/${ taskSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task-set/${ clusterName }/${ serviceName }/${ taskSetId }`);
   }
 
   /**
@@ -1097,7 +1097,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1161,7 +1161,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1185,7 +1185,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1200,7 +1200,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreateAction(value: string | string[], operator?: Operator | string) {
-    return this.if(`CreateAction`, value, operator || 'StringLike');
+    return this.if(`CreateAction`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1222,7 +1222,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1239,7 +1239,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccountSetting(value: string | string[], operator?: Operator | string) {
-    return this.if(`account-setting`, value, operator || 'StringLike');
+    return this.if(`account-setting`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1259,7 +1259,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifCapacityProvider(value: string | string[], operator?: Operator | string) {
-    return this.if(`capacity-provider`, value, operator || 'ArnLike');
+    return this.if(`capacity-provider`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1298,7 +1298,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifCluster(value: string | string[], operator?: Operator | string) {
-    return this.if(`cluster`, value, operator || 'ArnLike');
+    return this.if(`cluster`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1313,7 +1313,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifContainerInstances(value: string | string[], operator?: Operator | string) {
-    return this.if(`container-instances`, value, operator || 'ArnLike');
+    return this.if(`container-instances`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1328,7 +1328,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifContainerName(value: string | string[], operator?: Operator | string) {
-    return this.if(`container-name`, value, operator || 'StringLike');
+    return this.if(`container-name`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1346,7 +1346,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnableEbsVolumes(value: string | string[], operator?: Operator | string) {
-    return this.if(`enable-ebs-volumes`, value, operator || 'StringLike');
+    return this.if(`enable-ebs-volumes`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1364,7 +1364,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnableExecuteCommand(value: string | string[], operator?: Operator | string) {
-    return this.if(`enable-execute-command`, value, operator || 'StringLike');
+    return this.if(`enable-execute-command`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1380,7 +1380,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnableServiceConnect(value: string | string[], operator?: Operator | string) {
-    return this.if(`enable-service-connect`, value, operator || 'StringLike');
+    return this.if(`enable-service-connect`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1397,7 +1397,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifNamespace(value: string | string[], operator?: Operator | string) {
-    return this.if(`namespace`, value, operator || 'ArnLike');
+    return this.if(`namespace`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1415,7 +1415,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifService(value: string | string[], operator?: Operator | string) {
-    return this.if(`service`, value, operator || 'ArnLike');
+    return this.if(`service`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1430,7 +1430,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTask(value: string | string[], operator?: Operator | string) {
-    return this.if(`task`, value, operator || 'ArnLike');
+    return this.if(`task`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1447,6 +1447,6 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTaskDefinition(value: string | string[], operator?: Operator | string) {
-    return this.if(`task-definition`, value, operator || 'ArnLike');
+    return this.if(`task-definition`, value, operator ?? 'ArnLike');
   }
 }

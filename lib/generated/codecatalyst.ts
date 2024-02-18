@@ -447,7 +447,7 @@ export class Codecatalyst extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnections(connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codecatalyst:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/connections/${ connectionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codecatalyst:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/connections/${ connectionId }`);
   }
 
   /**
@@ -461,7 +461,7 @@ export class Codecatalyst extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIdentityCenterApplications(identityCenterApplicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codecatalyst:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/identity-center-applications/${ identityCenterApplicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codecatalyst:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/identity-center-applications/${ identityCenterApplicationId }`);
   }
 
   /**
@@ -473,7 +473,7 @@ export class Codecatalyst extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSpace(spaceId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codecatalyst:::space/${ spaceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codecatalyst:::space/${ spaceId }`);
   }
 
   /**
@@ -486,7 +486,7 @@ export class Codecatalyst extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onProject(spaceId: string, projectId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codecatalyst:::space/${ spaceId }/project/${ projectId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codecatalyst:::space/${ spaceId }/project/${ projectId }`);
   }
 
   /**
@@ -504,7 +504,7 @@ export class Codecatalyst extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -532,7 +532,7 @@ export class Codecatalyst extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -550,6 +550,6 @@ export class Codecatalyst extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

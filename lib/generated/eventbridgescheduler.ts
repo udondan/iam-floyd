@@ -230,7 +230,7 @@ export class Scheduler extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScheduleGroup(groupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:scheduler:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schedule-group/${ groupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:scheduler:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schedule-group/${ groupName }`);
   }
 
   /**
@@ -245,7 +245,7 @@ export class Scheduler extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSchedule(groupName: string, scheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:scheduler:${ region || this.defaultRegion }:${ account || this.defaultAccount }:schedule/${ groupName }/${ scheduleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:scheduler:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schedule/${ groupName }/${ scheduleName }`);
   }
 
   /**
@@ -262,7 +262,7 @@ export class Scheduler extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -289,7 +289,7 @@ export class Scheduler extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -306,6 +306,6 @@ export class Scheduler extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

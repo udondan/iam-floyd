@@ -69,6 +69,6 @@ export class Mapcredits extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAgreement(agreement: string, agreementId: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mapcredits:::${ agreement }/${ agreementId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mapcredits:::${ agreement }/${ agreementId }`);
   }
 }

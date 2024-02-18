@@ -69,29 +69,49 @@ export class Operator {
   /**
    * Exact match, case sensitive.
    */
+  public static stringEquals = 'StringEquals';
+
+  /**
+   * Exact match, case sensitive.
+   */
   public stringEquals() {
-    return this.setBase('StringEquals');
+    return this.setBase(Operator.stringEquals);
   }
 
   /**
    * Negated exact match, case sensitive.
    */
+  public static stringNotEquals = 'StringNotEquals';
+
+  /**
+   * Negated exact match, case sensitive.
+   */
   public stringNotEquals() {
-    return this.setBase('StringNotEquals');
+    return this.setBase(Operator.stringNotEquals);
   }
 
   /**
    * Exact match, ignore case.
    */
+  public static stringEqualsIgnoreCase = 'StringEqualsIgnoreCase';
+
+  /**
+   * Exact match, ignore case.
+   */
   public stringEqualsIgnoreCase() {
-    return this.setBase('StringEqualsIgnoreCase');
+    return this.setBase(Operator.stringEqualsIgnoreCase);
   }
 
   /**
-   * Exact exact match, ignore case.
+   * Negated exact match, ignore case.
+   */
+  public static stringNotEqualsIgnoreCase = 'StringNotEqualsIgnoreCase';
+
+  /**
+   * Negated exact match, ignore case.
    */
   public stringNotEqualsIgnoreCase() {
-    return this.setBase('StringNotEqualsIgnoreCase');
+    return this.setBase(Operator.stringNotEqualsIgnoreCase);
   }
 
   /**
@@ -99,8 +119,15 @@ export class Operator {
    *
    * The values can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`) anywhere in the string.
    */
+  public static stringLike = 'StringLike';
+
+  /**
+   * Case-sensitive match.
+   *
+   * The values can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`) anywhere in the string.
+   */
   public stringLike() {
-    return this.setBase('StringLike');
+    return this.setBase(Operator.stringLike);
   }
 
   /**
@@ -108,120 +135,219 @@ export class Operator {
    *
    * The values can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`) anywhere in the string.
    */
+  public static stringNotLike = 'StringNotLike';
+
+  /**
+   * Negated case-sensitive matching.
+   *
+   * The values can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`) anywhere in the string.
+   */
   public stringNotLike() {
-    return this.setBase('StringNotLike');
+    return this.setBase(Operator.stringNotLike);
   }
 
   /**
    * Exact match.
    */
+  public static numericEquals = 'NumericEquals';
+
+  /**
+   * Exact match.
+   */
   public numericEquals() {
-    return this.setBase('NumericEquals');
+    return this.setBase(Operator.numericEquals);
   }
 
   /**
    * Negated exact match.
    */
+  public static numericNotEquals = 'NumericNotEquals';
+
+  /**
+   * Negated exact match.
+   */
   public numericNotEquals() {
-    return this.setBase('NumericNotEquals');
+    return this.setBase(Operator.numericNotEquals);
   }
 
   /**
    * Match numbers lower than value: `<`
    */
+  public static numericLessThan = 'NumericLessThan';
+
+  /**
+   * Match numbers lower than value: `<`
+   */
   public numericLessThan() {
-    return this.setBase('NumericLessThan');
+    return this.setBase(Operator.numericLessThan);
   }
 
   /**
    * Match numbers lower or equal to value: `<=`
    */
+  public static numericLessThanEquals = 'NumericLessThanEquals';
+
+  /**
+   * Match numbers lower or equal to value: `<=`
+   */
   public numericLessThanEquals() {
-    return this.setBase('NumericLessThanEquals');
+    return this.setBase(Operator.numericLessThanEquals);
   }
 
   /**
    * Match numbers higher than value: `>`
    */
+  public static numericGreaterThan = 'NumericGreaterThan';
+
+  /**
+   * Match numbers higher than value: `>`
+   */
   public numericGreaterThan() {
-    return this.setBase('NumericGreaterThan');
+    return this.setBase(Operator.numericGreaterThan);
   }
 
   /**
    * Match numbers higher or equal value: `>=`
    */
+  public static numericGreaterThanEquals = 'NumericGreaterThanEquals';
+
+  /**
+   * Match numbers higher or equal value: `>=`
+   */
   public numericGreaterThanEquals() {
-    return this.setBase('NumericGreaterThanEquals');
+    return this.setBase(Operator.numericGreaterThanEquals);
   }
 
   /**
    * Match a specific date: `=`
    */
+  public static dateEquals = 'DateEquals';
+
+  /**
+   * Match a specific date: `=`
+   */
   public dateEquals() {
-    return this.setBase('DateEquals');
+    return this.setBase(Operator.dateEquals);
   }
 
   /**
    * Negated match for a specific date: `!=`
    */
+  public static dateNotEquals = 'DateNotEquals';
+
+  /**
+   * Negated match for a specific date: `!=`
+   */
   public dateNotEquals() {
-    return this.setBase('DateNotEquals');
+    return this.setBase(Operator.dateNotEquals);
   }
 
   /**
    * Match before a specific date and time: `<`
    */
+  public static dateLessThan = 'DateLessThan';
+
+  /**
+   * Match before a specific date and time: `<`
+   */
   public dateLessThan() {
-    return this.setBase('DateLessThan');
+    return this.setBase(Operator.dateLessThan);
   }
 
   /**
    * Match at or before a specific date and time: `<=`
    */
+  public static dateLessThanEquals = 'DateLessThanEquals';
+
+  /**
+   * Match at or before a specific date and time: `<=`
+   */
   public dateLessThanEquals() {
-    return this.setBase('DateLessThanEquals');
+    return this.setBase(Operator.dateLessThanEquals);
   }
 
   /**
    * Match after a specific a date and time: `>`
    */
+  public static dateGreaterThan = 'DateGreaterThan';
+
+  /**
+   * Match after a specific a date and time: `>`
+   */
   public dateGreaterThan() {
-    return this.setBase('DateGreaterThan');
+    return this.setBase(Operator.dateGreaterThan);
   }
 
   /**
    * Match at or after a specific date and time: `>=`
    */
+  public static dateGreaterThanEquals = 'DateGreaterThanEquals';
+
+  /**
+   * Match at or after a specific date and time: `>=`
+   */
   public dateGreaterThanEquals() {
-    return this.setBase('DateGreaterThanEquals');
+    return this.setBase(Operator.dateGreaterThanEquals);
   }
 
   /**
    * Boolean match
    */
+  public static bool = 'Bool';
+
+  /**
+   * Boolean match
+   */
   public bool() {
-    return this.setBase('Bool');
+    return this.setBase(Operator.bool);
   }
 
   /**
    * The BinaryEquals condition operator lets you construct Condition elements that test key values that are in binary format. It compares the value of the specified key byte for byte against a [base-64](https://en.wikipedia.org/wiki/Base64) encoded representation of the binary value in the policy.
    */
+  public static binaryEquals = 'BinaryEquals';
+
+  /**
+   * The BinaryEquals condition operator lets you construct Condition elements that test key values that are in binary format. It compares the value of the specified key byte for byte against a [base-64](https://en.wikipedia.org/wiki/Base64) encoded representation of the binary value in the policy.
+   */
   public binaryEquals() {
-    return this.setBase('BinaryEquals');
+    return this.setBase(Operator.binaryEquals);
+  }
+
+  /**
+   * The BinaryEquals condition operator lets you construct Condition elements that test key values that are in binary format. It compares the value of the specified key byte for byte against a [base-64](https://en.wikipedia.org/wiki/Base64) encoded representation of the binary value in the policy.
+   */
+  public static binaryNotEquals = 'BinaryNotEquals';
+
+  /**
+   * The BinaryEquals condition operator lets you construct Condition elements that test key values that are in binary format. It compares the value of the specified key byte for byte against a [base-64](https://en.wikipedia.org/wiki/Base64) encoded representation of the binary value in the policy.
+   */
+  public binaryNotEquals() {
+    return this.setBase(Operator.binaryNotEquals);
   }
 
   /**
    * Match an IP address or range: `=`
    */
+  public static ipAddress = 'IpAddress';
+
+  /**
+   * Match an IP address or range: `=`
+   */
   public ipAddress() {
-    return this.setBase('IpAddress');
+    return this.setBase(Operator.ipAddress);
   }
 
   /**
    * All IP addresses except the specified IP address or range `!=`
    */
+  public static notIpAddress = 'NotIpAddress';
+
+  /**
+   * All IP addresses except the specified IP address or range `!=`
+   */
   public notIpAddress() {
-    return this.setBase('NotIpAddress');
+    return this.setBase(Operator.notIpAddress);
   }
 
   /**
@@ -231,9 +357,27 @@ export class Operator {
    *
    * `ArnEquals` and `ArnLike` behave identical.
    */
+  public static arnEquals = 'ArnEquals';
+
+  /**
+   * Match of the ARN, case sensitive.
+   *
+   * Each of the six colon-delimited components of the ARN is checked separately and each can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`).
+   *
+   * `ArnEquals` and `ArnLike` behave identical.
+   */
   public arnEquals() {
-    return this.setBase('ArnEquals');
+    return this.setBase(Operator.arnEquals);
   }
+
+  /**
+   * Negated match of the ARN, case sensitive.
+   *
+   * Each of the six colon-delimited components of the ARN is checked separately and each can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`).
+   *
+   * `ArnNotEquals` and `ArnNotLike` behave identical.
+   */
+  public static arnNotEquals = 'ArnNotEquals';
 
   /**
    * Negated match of the ARN, case sensitive.
@@ -243,7 +387,7 @@ export class Operator {
    * `ArnNotEquals` and `ArnNotLike` behave identical.
    */
   public arnNotEquals() {
-    return this.setBase('ArnNotEquals');
+    return this.setBase(Operator.arnNotEquals);
   }
 
   /**
@@ -251,8 +395,15 @@ export class Operator {
    *
    * Each of the six colon-delimited components of the ARN is checked separately and each can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`).
    */
+  public static arnLike = 'ArnLike';
+
+  /**
+   * Match of the ARN, case sensitive.
+   *
+   * Each of the six colon-delimited components of the ARN is checked separately and each can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`).
+   */
   public arnLike() {
-    return this.setBase('ArnLike');
+    return this.setBase(Operator.arnLike);
   }
 
   /**
@@ -262,14 +413,21 @@ export class Operator {
    *
    * `ArnNotEquals` and `ArnNotLike` behave identical.
    */
+  public static arnNotLike = 'ArnNotLike';
+
+  /**
+   * Negated match of the ARN, case sensitive.
+   *
+   * Each of the six colon-delimited components of the ARN is checked separately and each can include a multi-character match wildcard (`*`) or a single-character match wildcard (`?`).
+   *
+   * `ArnNotEquals` and `ArnNotLike` behave identical.
+   */
   public arnNotLike() {
-    return this.setBase('ArnNotLike');
+    return this.setBase(Operator.arnNotLike);
   }
 
   /**
    * Check if a key is present at the time of authorization. In the policy statement, use either true (the key doesn't exist — it is null) or false (the key exists and its value is not null).
    */
-  public null() {
-    return this.setBase('Null');
-  }
+  public static null = 'Null';
 }

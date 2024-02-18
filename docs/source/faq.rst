@@ -43,7 +43,7 @@ Are all actions / conditions / resource types covered?
 
 The code of IAM Floyd is generated from the `AWS Documentation`_. This means, **everything that was documented is covered**. Unfortunately not everything is documented. Users have repeatedly `reported <https://github.com/awsdocs/iam-user-guide/issues/217>`_ missing actions/conditions/resource types on the documentation repository.
 
-If you believe something is missing, feel free to report it in the `IAM Floyd repository <repo_>`_ or directly on the `AWS Documentation repository <aws_docs_repo_>`_.
+If you believe something is missing, please report it through the feedback functionality on the IAM documentation page of the related service. Shortly after changes have been added to the documentation, they will be available in this package.
 
 How often will there be updates to reflect IAM changes?
 -------------------------------------------------------

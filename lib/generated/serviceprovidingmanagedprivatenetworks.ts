@@ -396,7 +396,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetwork(networkName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network/${ networkName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:private-networks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network/${ networkName }`);
   }
 
   /**
@@ -414,7 +414,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkSite(networkName: string, networkSiteName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-site/${ networkName }/${ networkSiteName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:private-networks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-site/${ networkName }/${ networkSiteName }`);
   }
 
   /**
@@ -432,7 +432,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkResource(networkName: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:network-resource/${ networkName }/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:private-networks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-resource/${ networkName }/${ resourceId }`);
   }
 
   /**
@@ -450,7 +450,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrder(networkName: string, orderId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:order/${ networkName }/${ orderId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:private-networks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:order/${ networkName }/${ orderId }`);
   }
 
   /**
@@ -468,7 +468,7 @@ export class PrivateNetworks extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceIdentifier(networkName: string, deviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:private-networks:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-identifier/${ networkName }/${ deviceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:private-networks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-identifier/${ networkName }/${ deviceId }`);
   }
 
   /**
@@ -488,7 +488,7 @@ export class PrivateNetworks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -516,7 +516,7 @@ export class PrivateNetworks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -536,6 +536,6 @@ export class PrivateNetworks extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

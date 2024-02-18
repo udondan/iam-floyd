@@ -954,7 +954,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onConnection(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || this.defaultRegion }:${ account || this.defaultAccount }:connection/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ resourceId }`);
   }
 
   /**
@@ -971,7 +971,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onQuery(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || this.defaultRegion }:${ account || this.defaultAccount }:query/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:query/${ resourceId }`);
   }
 
   /**
@@ -988,7 +988,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChart(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || this.defaultRegion }:${ account || this.defaultAccount }:chart/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:chart/${ resourceId }`);
   }
 
   /**
@@ -1005,7 +1005,7 @@ export class Sqlworkbench extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNotebook(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sqlworkbench:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notebook/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sqlworkbench:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook/${ resourceId }`);
   }
 
   /**
@@ -1037,7 +1037,7 @@ export class Sqlworkbench extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1056,7 +1056,7 @@ export class Sqlworkbench extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1088,6 +1088,6 @@ export class Sqlworkbench extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

@@ -834,7 +834,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAuthType()
    */
   public onServiceNetwork(serviceNetworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:servicenetwork/${ serviceNetworkId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetwork/${ serviceNetworkId }`);
   }
 
   /**
@@ -854,7 +854,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAuthType()
    */
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }`);
   }
 
   /**
@@ -876,7 +876,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifVpcId()
    */
   public onServiceNetworkVpcAssociation(serviceNetworkVpcAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
   }
 
   /**
@@ -897,7 +897,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifServiceNetworkArn()
    */
   public onServiceNetworkServiceAssociation(serviceNetworkServiceAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
   }
 
   /**
@@ -917,7 +917,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifVpcId()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:targetgroup/${ targetGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:targetgroup/${ targetGroupId }`);
   }
 
   /**
@@ -939,7 +939,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifTargetGroupArns()
    */
   public onListener(serviceId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }/listener/${ listenerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }/listener/${ listenerId }`);
   }
 
   /**
@@ -961,7 +961,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifTargetGroupArns()
    */
   public onRule(serviceId: string, listenerId: string, ruleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceId }/listener/${ listenerId }/rule/${ ruleId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }/listener/${ listenerId }/rule/${ ruleId }`);
   }
 
   /**
@@ -980,7 +980,7 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsTagKeys()
    */
   public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:vpc-lattice:${ region || this.defaultRegion }:${ account || this.defaultAccount }:accesslogsubscription/${ accessLogSubscriptionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesslogsubscription/${ accessLogSubscriptionId }`);
   }
 
   /**
@@ -1014,7 +1014,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1063,7 +1063,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1097,7 +1097,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1119,7 +1119,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAuthType(value: string | string[], operator?: Operator | string) {
-    return this.if(`AuthType`, value, operator || 'StringLike');
+    return this.if(`AuthType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1137,7 +1137,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProtocol(value: string | string[], operator?: Operator | string) {
-    return this.if(`Protocol`, value, operator || 'StringLike');
+    return this.if(`Protocol`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1156,7 +1156,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecurityGroupIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecurityGroupIds`, value, operator || 'StringLike');
+    return this.if(`SecurityGroupIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1177,7 +1177,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifServiceArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceArn`, value, operator || 'ArnLike');
+    return this.if(`ServiceArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1204,7 +1204,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifServiceNetworkArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceNetworkArn`, value, operator || 'ArnLike');
+    return this.if(`ServiceNetworkArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1226,7 +1226,7 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTargetGroupArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`TargetGroupArns`, value, operator || 'ArnLike');
+    return this.if(`TargetGroupArns`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1250,6 +1250,6 @@ export class VpcLattice extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcId(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcId`, value, operator || 'StringLike');
+    return this.if(`VpcId`, value, operator ?? 'StringLike');
   }
 }

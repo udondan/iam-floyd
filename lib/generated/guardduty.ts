@@ -926,7 +926,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetector(detectorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || this.defaultRegion }:${ account || this.defaultAccount }:detector/${ detectorId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }`);
   }
 
   /**
@@ -944,7 +944,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFilter(detectorId: string, filterName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || this.defaultRegion }:${ account || this.defaultAccount }:detector/${ detectorId }/filter/${ filterName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/filter/${ filterName }`);
   }
 
   /**
@@ -962,7 +962,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIpset(detectorId: string, iPSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || this.defaultRegion }:${ account || this.defaultAccount }:detector/${ detectorId }/ipset/${ iPSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/ipset/${ iPSetId }`);
   }
 
   /**
@@ -980,7 +980,7 @@ export class Guardduty extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThreatintelset(detectorId: string, threatIntelSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || this.defaultRegion }:${ account || this.defaultAccount }:detector/${ detectorId }/threatintelset/${ threatIntelSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/threatintelset/${ threatIntelSetId }`);
   }
 
   /**
@@ -995,7 +995,7 @@ export class Guardduty extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:guardduty:${ region || this.defaultRegion }:${ account || this.defaultAccount }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
   }
 
   /**
@@ -1015,7 +1015,7 @@ export class Guardduty extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1034,7 +1034,7 @@ export class Guardduty extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1054,6 +1054,6 @@ export class Guardduty extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

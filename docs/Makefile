@@ -17,8 +17,7 @@ help:
 .PHONY: help Makefile
 
 serve:
-	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	@cd build && python3 -m http.server
+	@sphinx-watch source build html --httpd
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

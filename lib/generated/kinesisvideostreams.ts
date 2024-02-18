@@ -582,7 +582,7 @@ export class Kinesisvideo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStream(streamName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kinesisvideo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stream/${ streamName }/${ creationTime }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kinesisvideo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stream/${ streamName }/${ creationTime }`);
   }
 
   /**
@@ -600,7 +600,7 @@ export class Kinesisvideo extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelName: string, creationTime: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:kinesisvideo:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channel/${ channelName }/${ creationTime }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kinesisvideo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channel/${ channelName }/${ creationTime }`);
   }
 
   /**
@@ -619,7 +619,7 @@ export class Kinesisvideo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -636,7 +636,7 @@ export class Kinesisvideo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -656,6 +656,6 @@ export class Kinesisvideo extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

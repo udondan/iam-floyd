@@ -933,7 +933,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIndex(tableName: string, indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:table/${ tableName }/index/${ indexName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/index/${ indexName }`);
   }
 
   /**
@@ -948,7 +948,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onStream(tableName: string, streamLabel: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:table/${ tableName }/stream/${ streamLabel }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/stream/${ streamLabel }`);
   }
 
   /**
@@ -962,7 +962,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTable(tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:table/${ tableName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }`);
   }
 
   /**
@@ -977,7 +977,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBackup(tableName: string, backupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:table/${ tableName }/backup/${ backupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/backup/${ backupName }`);
   }
 
   /**
@@ -992,7 +992,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExport(tableName: string, exportName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:table/${ tableName }/export/${ exportName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/export/${ exportName }`);
   }
 
   /**
@@ -1005,7 +1005,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onGlobalTable(globalTableName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb::${ account || this.defaultAccount }:global-table/${ globalTableName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb::${ account ?? this.defaultAccount }:global-table/${ globalTableName }`);
   }
 
   /**
@@ -1020,7 +1020,7 @@ export class Dynamodb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImport(tableName: string, importName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:dynamodb:${ region || this.defaultRegion }:${ account || this.defaultAccount }:table/${ tableName }/import/${ importName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/import/${ importName }`);
   }
 
   /**
@@ -1047,7 +1047,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAttributes(value: string | string[], operator?: Operator | string) {
-    return this.if(`Attributes`, value, operator || 'StringLike');
+    return this.if(`Attributes`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1069,7 +1069,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnclosingOperation(value: string | string[], operator?: Operator | string) {
-    return this.if(`EnclosingOperation`, value, operator || 'StringLike');
+    return this.if(`EnclosingOperation`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1109,7 +1109,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLeadingKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`LeadingKeys`, value, operator || 'StringLike');
+    return this.if(`LeadingKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1132,7 +1132,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReturnConsumedCapacity(value: string | string[], operator?: Operator | string) {
-    return this.if(`ReturnConsumedCapacity`, value, operator || 'StringLike');
+    return this.if(`ReturnConsumedCapacity`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1154,7 +1154,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReturnValues(value: string | string[], operator?: Operator | string) {
-    return this.if(`ReturnValues`, value, operator || 'StringLike');
+    return this.if(`ReturnValues`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1173,6 +1173,6 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSelect(value: string | string[], operator?: Operator | string) {
-    return this.if(`Select`, value, operator || 'StringLike');
+    return this.if(`Select`, value, operator ?? 'StringLike');
   }
 }

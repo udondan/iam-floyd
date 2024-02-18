@@ -739,7 +739,7 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccelerator(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || this.defaultAccount }:accelerator/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:globalaccelerator::${ account ?? this.defaultAccount }:accelerator/${ resourceId }`);
   }
 
   /**
@@ -756,7 +756,7 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onListener(resourceId: string, listenerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || this.defaultAccount }:accelerator/${ resourceId }/listener/${ listenerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:globalaccelerator::${ account ?? this.defaultAccount }:accelerator/${ resourceId }/listener/${ listenerId }`);
   }
 
   /**
@@ -774,7 +774,7 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEndpointgroup(resourceId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || this.defaultAccount }:accelerator/${ resourceId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:globalaccelerator::${ account ?? this.defaultAccount }:accelerator/${ resourceId }/listener/${ listenerId }/endpoint-group/${ endpointGroupId }`);
   }
 
   /**
@@ -790,7 +790,7 @@ export class Globalaccelerator extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAttachment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:globalaccelerator::${ account || this.defaultAccount }:attachment/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:globalaccelerator::${ account ?? this.defaultAccount }:attachment/${ resourceId }`);
   }
 
   /**
@@ -809,7 +809,7 @@ export class Globalaccelerator extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -828,7 +828,7 @@ export class Globalaccelerator extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -847,6 +847,6 @@ export class Globalaccelerator extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

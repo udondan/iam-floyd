@@ -477,7 +477,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channel/${ channelName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotanalytics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channel/${ channelName }`);
   }
 
   /**
@@ -496,7 +496,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataset(datasetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dataset/${ datasetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotanalytics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetName }`);
   }
 
   /**
@@ -515,7 +515,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDatastore(datastoreName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datastore/${ datastoreName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotanalytics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datastore/${ datastoreName }`);
   }
 
   /**
@@ -534,7 +534,7 @@ export class Iotanalytics extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iotanalytics:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotanalytics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineName }`);
   }
 
   /**
@@ -561,7 +561,7 @@ export class Iotanalytics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -587,7 +587,7 @@ export class Iotanalytics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -606,6 +606,6 @@ export class Iotanalytics extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

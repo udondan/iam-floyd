@@ -1268,7 +1268,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackupVault(backupVaultName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:backup-vault:${ backupVaultName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:backup-vault:${ backupVaultName }`);
   }
 
   /**
@@ -1285,7 +1285,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBackupPlan(backupPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:backup-plan:${ backupPlanId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:backup-plan:${ backupPlanId }`);
   }
 
   /**
@@ -1302,7 +1302,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:recovery-point:${ recoveryPointId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recovery-point:${ recoveryPointId }`);
   }
 
   /**
@@ -1320,7 +1320,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFramework(frameworkName: string, frameworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:framework:${ frameworkName }-${ frameworkId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:framework:${ frameworkName }-${ frameworkId }`);
   }
 
   /**
@@ -1338,7 +1338,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReportPlan(reportPlanName: string, reportPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:report-plan:${ reportPlanName }-${ reportPlanId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:report-plan:${ reportPlanName }-${ reportPlanId }`);
   }
 
   /**
@@ -1355,7 +1355,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLegalHold(legalHoldId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:legal-hold:${ legalHoldId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:legal-hold:${ legalHoldId }`);
   }
 
   /**
@@ -1373,7 +1373,7 @@ export class Backup extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRestoreTestingPlan(restoreTestingPlanName: string, restoreTestingPlanId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:backup:${ region || this.defaultRegion }:${ account || this.defaultAccount }:restore-testing-plan:${ restoreTestingPlanName }-${ restoreTestingPlanId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:restore-testing-plan:${ restoreTestingPlanName }-${ restoreTestingPlanId }`);
   }
 
   /**
@@ -1397,7 +1397,7 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1419,7 +1419,7 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1442,7 +1442,7 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1457,7 +1457,7 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifChangeableForDays(value: number | number[], operator?: Operator | string) {
-    return this.if(`ChangeableForDays`, value, operator || 'NumericEquals');
+    return this.if(`ChangeableForDays`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -1472,7 +1472,7 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCopyTargetOrgPaths(value: string | string[], operator?: Operator | string) {
-    return this.if(`CopyTargetOrgPaths`, value, operator || 'StringLike');
+    return this.if(`CopyTargetOrgPaths`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1487,7 +1487,7 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifCopyTargets(value: string | string[], operator?: Operator | string) {
-    return this.if(`CopyTargets`, value, operator || 'ArnLike');
+    return this.if(`CopyTargets`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1503,7 +1503,7 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFrameworkArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`FrameworkArns`, value, operator || 'ArnLike');
+    return this.if(`FrameworkArns`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1519,7 +1519,7 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaxRetentionDays(value: number | number[], operator?: Operator | string) {
-    return this.if(`MaxRetentionDays`, value, operator || 'NumericEquals');
+    return this.if(`MaxRetentionDays`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -1535,6 +1535,6 @@ export class Backup extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMinRetentionDays(value: number | number[], operator?: Operator | string) {
-    return this.if(`MinRetentionDays`, value, operator || 'NumericEquals');
+    return this.if(`MinRetentionDays`, value, operator ?? 'NumericEquals');
   }
 }

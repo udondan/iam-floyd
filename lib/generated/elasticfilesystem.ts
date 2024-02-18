@@ -513,7 +513,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticfilesystem:${ region || this.defaultRegion }:${ account || this.defaultAccount }:file-system/${ fileSystemId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticfilesystem:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:file-system/${ fileSystemId }`);
   }
 
   /**
@@ -530,7 +530,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAccessPoint(accessPointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticfilesystem:${ region || this.defaultRegion }:${ account || this.defaultAccount }:access-point/${ accessPointId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticfilesystem:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-point/${ accessPointId }`);
   }
 
   /**
@@ -549,7 +549,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -566,7 +566,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -586,7 +586,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -603,7 +603,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifAccessPointArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`AccessPointArn`, value, operator || 'ArnLike');
+    return this.if(`AccessPointArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -634,7 +634,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreateAction(value: string | string[], operator?: Operator | string) {
-    return this.if(`CreateAction`, value, operator || 'StringLike');
+    return this.if(`CreateAction`, value, operator ?? 'StringLike');
   }
 
   /**

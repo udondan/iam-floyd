@@ -805,7 +805,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStudio(studioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:studio/${ studioId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:nimble:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:studio/${ studioId }`);
   }
 
   /**
@@ -825,7 +825,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStreamingImage(streamingImageId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:streaming-image/${ streamingImageId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:nimble:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:streaming-image/${ streamingImageId }`);
   }
 
   /**
@@ -845,7 +845,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onStudioComponent(studioComponentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:studio-component/${ studioComponentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:nimble:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:studio-component/${ studioComponentId }`);
   }
 
   /**
@@ -865,7 +865,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onLaunchProfile(launchProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:launch-profile/${ launchProfileId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:nimble:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:launch-profile/${ launchProfileId }`);
   }
 
   /**
@@ -886,7 +886,7 @@ export class Nimble extends PolicyStatement {
    * - .ifOwnedBy()
    */
   public onStreamingSession(streamingSessionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:streaming-session/${ streamingSessionId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:nimble:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:streaming-session/${ streamingSessionId }`);
   }
 
   /**
@@ -906,7 +906,7 @@ export class Nimble extends PolicyStatement {
    * - .ifOwnedBy()
    */
   public onStreamingSessionBackup(streamingSessionBackupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:streaming-session-backup/${ streamingSessionBackupId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:nimble:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:streaming-session-backup/${ streamingSessionBackupId }`);
   }
 
   /**
@@ -920,7 +920,7 @@ export class Nimble extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onEula(eulaId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:eula/${ eulaId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:nimble:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eula/${ eulaId }`);
   }
 
   /**
@@ -937,7 +937,7 @@ export class Nimble extends PolicyStatement {
    * - .ifStudioId()
    */
   public onEulaAcceptance(eulaAcceptanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:nimble:${ region || this.defaultRegion }:${ account || this.defaultAccount }:eula-acceptance/${ eulaAcceptanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:nimble:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eula-acceptance/${ eulaAcceptanceId }`);
   }
 
   /**
@@ -966,7 +966,7 @@ export class Nimble extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -990,7 +990,7 @@ export class Nimble extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1019,7 +1019,7 @@ export class Nimble extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1037,7 +1037,7 @@ export class Nimble extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreatedBy(value: string | string[], operator?: Operator | string) {
-    return this.if(`createdBy`, value, operator || 'StringLike');
+    return this.if(`createdBy`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1056,7 +1056,7 @@ export class Nimble extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOwnedBy(value: string | string[], operator?: Operator | string) {
-    return this.if(`ownedBy`, value, operator || 'StringLike');
+    return this.if(`ownedBy`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1071,7 +1071,7 @@ export class Nimble extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPrincipalId(value: string | string[], operator?: Operator | string) {
-    return this.if(`principalId`, value, operator || 'StringLike');
+    return this.if(`principalId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1095,7 +1095,7 @@ export class Nimble extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequesterPrincipalId(value: string | string[], operator?: Operator | string) {
-    return this.if(`requesterPrincipalId`, value, operator || 'StringLike');
+    return this.if(`requesterPrincipalId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1114,6 +1114,6 @@ export class Nimble extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifStudioId(value: string | string[], operator?: Operator | string) {
-    return this.if(`studioId`, value, operator || 'ArnLike');
+    return this.if(`studioId`, value, operator ?? 'ArnLike');
   }
 }

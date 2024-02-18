@@ -764,7 +764,7 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || this.defaultRegion }:${ account || this.defaultAccount }:build/${ buildId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:build/${ buildId }`);
   }
 
   /**
@@ -778,7 +778,7 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onBuildBatch(buildBatchId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || this.defaultRegion }:${ account || this.defaultAccount }:build-batch/${ buildBatchId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:build-batch/${ buildBatchId }`);
   }
 
   /**
@@ -795,7 +795,7 @@ export class Codebuild extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }`);
   }
 
   /**
@@ -812,7 +812,7 @@ export class Codebuild extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onReportGroup(reportGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || this.defaultRegion }:${ account || this.defaultAccount }:report-group/${ reportGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:report-group/${ reportGroupName }`);
   }
 
   /**
@@ -827,7 +827,7 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onReport(reportGroupName: string, reportId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || this.defaultRegion }:${ account || this.defaultAccount }:report/${ reportGroupName }:${ reportId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:report/${ reportGroupName }:${ reportId }`);
   }
 
   /**
@@ -842,7 +842,7 @@ export class Codebuild extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFleet(fleetName: string, fleetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:codebuild:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleet/${ fleetName }:${ fleetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleet/${ fleetName }:${ fleetId }`);
   }
 
   /**
@@ -864,7 +864,7 @@ export class Codebuild extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -881,7 +881,7 @@ export class Codebuild extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -902,6 +902,6 @@ export class Codebuild extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

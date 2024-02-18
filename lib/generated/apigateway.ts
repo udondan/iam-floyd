@@ -71,6 +71,6 @@ export class ExecuteApi extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onExecuteApiGeneral(apiId: string, stage: string, method: string, apiSpecificResourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:execute-api:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ apiId }/${ stage }/${ method }/${ apiSpecificResourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:execute-api:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ apiId }/${ stage }/${ method }/${ apiSpecificResourcePath }`);
   }
 }

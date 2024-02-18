@@ -271,7 +271,7 @@ export class MedicalImaging extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDatastore(datastoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:medical-imaging:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datastore/${ datastoreId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medical-imaging:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datastore/${ datastoreId }`);
   }
 
   /**
@@ -289,7 +289,7 @@ export class MedicalImaging extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onImageset(datastoreId: string, imageSetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:medical-imaging:${ region || this.defaultRegion }:${ account || this.defaultAccount }:datastore/${ datastoreId }/imageset/${ imageSetId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medical-imaging:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datastore/${ datastoreId }/imageset/${ imageSetId }`);
   }
 
   /**
@@ -306,7 +306,7 @@ export class MedicalImaging extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -326,7 +326,7 @@ export class MedicalImaging extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -343,6 +343,6 @@ export class MedicalImaging extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

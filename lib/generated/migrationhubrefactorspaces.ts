@@ -427,7 +427,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:refactor-spaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ environmentId }`);
   }
 
   /**
@@ -447,7 +447,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifCreatedByAccountIds()
    */
   public onApplication(environmentId: string, applicationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:refactor-spaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }`);
   }
 
   /**
@@ -469,7 +469,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifServiceCreatedByAccount()
    */
   public onService(environmentId: string, applicationId: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }/service/${ serviceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:refactor-spaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }/service/${ serviceId }`);
   }
 
   /**
@@ -493,7 +493,7 @@ export class RefactorSpaces extends PolicyStatement {
    * - .ifSourcePath()
    */
   public onRoute(environmentId: string, applicationId: string, routeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:refactor-spaces:${ region || this.defaultRegion }:${ account || this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }/route/${ routeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:refactor-spaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ environmentId }/application/${ applicationId }/route/${ routeId }`);
   }
 
   /**
@@ -514,7 +514,7 @@ export class RefactorSpaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -546,7 +546,7 @@ export class RefactorSpaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -566,7 +566,7 @@ export class RefactorSpaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -597,7 +597,7 @@ export class RefactorSpaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifApplicationCreatedByAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`ApplicationCreatedByAccount`, value, operator || 'StringLike');
+    return this.if(`ApplicationCreatedByAccount`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -628,7 +628,7 @@ export class RefactorSpaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreatedByAccountIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`CreatedByAccountIds`, value, operator || 'StringLike');
+    return this.if(`CreatedByAccountIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -651,7 +651,7 @@ export class RefactorSpaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRouteCreatedByAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`RouteCreatedByAccount`, value, operator || 'StringLike');
+    return this.if(`RouteCreatedByAccount`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -678,7 +678,7 @@ export class RefactorSpaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifServiceCreatedByAccount(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceCreatedByAccount`, value, operator || 'StringLike');
+    return this.if(`ServiceCreatedByAccount`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -701,6 +701,6 @@ export class RefactorSpaces extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSourcePath(value: string | string[], operator?: Operator | string) {
-    return this.if(`SourcePath`, value, operator || 'StringLike');
+    return this.if(`SourcePath`, value, operator ?? 'StringLike');
   }
 }

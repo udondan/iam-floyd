@@ -309,7 +309,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVirtualCluster(virtualClusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/virtualclusters/${ virtualClusterId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/virtualclusters/${ virtualClusterId }`);
   }
 
   /**
@@ -327,7 +327,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobRun(virtualClusterId: string, jobRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/virtualclusters/${ virtualClusterId }/jobruns/${ jobRunId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/virtualclusters/${ virtualClusterId }/jobruns/${ jobRunId }`);
   }
 
   /**
@@ -344,7 +344,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobTemplate(jobTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/jobtemplates/${ jobTemplateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/jobtemplates/${ jobTemplateId }`);
   }
 
   /**
@@ -362,7 +362,7 @@ export class EmrContainers extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onManagedEndpoint(virtualClusterId: string, endpointId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:emr-containers:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/virtualclusters/${ virtualClusterId }/endpoints/${ endpointId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/virtualclusters/${ virtualClusterId }/endpoints/${ endpointId }`);
   }
 
   /**
@@ -382,7 +382,7 @@ export class EmrContainers extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -401,7 +401,7 @@ export class EmrContainers extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -421,7 +421,7 @@ export class EmrContainers extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -437,7 +437,7 @@ export class EmrContainers extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifExecutionRoleArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ExecutionRoleArn`, value, operator || 'ArnLike');
+    return this.if(`ExecutionRoleArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -452,6 +452,6 @@ export class EmrContainers extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifJobTemplateArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`JobTemplateArn`, value, operator || 'ArnLike');
+    return this.if(`JobTemplateArn`, value, operator ?? 'ArnLike');
   }
 }

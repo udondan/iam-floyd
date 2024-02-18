@@ -487,7 +487,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLoadbalancer(loadBalancerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/${ loadBalancerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/${ loadBalancerName }`);
   }
 
   /**
@@ -505,7 +505,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -545,7 +545,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -562,7 +562,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -577,7 +577,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreateAction(value: string | string[], operator?: Operator | string) {
-    return this.if(`CreateAction`, value, operator || 'StringLike');
+    return this.if(`CreateAction`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -593,7 +593,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifListenerProtocol(value: string | string[], operator?: Operator | string) {
-    return this.if(`ListenerProtocol`, value, operator || 'StringLike');
+    return this.if(`ListenerProtocol`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -605,7 +605,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTagExists(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -645,7 +645,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -660,7 +660,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifScheme(value: string | string[], operator?: Operator | string) {
-    return this.if(`Scheme`, value, operator || 'StringLike');
+    return this.if(`Scheme`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -676,7 +676,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecurityGroup(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecurityGroup`, value, operator || 'StringLike');
+    return this.if(`SecurityGroup`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -692,7 +692,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSecurityPolicy(value: string | string[], operator?: Operator | string) {
-    return this.if(`SecurityPolicy`, value, operator || 'StringLike');
+    return this.if(`SecurityPolicy`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -708,6 +708,6 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSubnet(value: string | string[], operator?: Operator | string) {
-    return this.if(`Subnet`, value, operator || 'StringLike');
+    return this.if(`Subnet`, value, operator ?? 'StringLike');
   }
 }

@@ -1026,7 +1026,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBatchPrediction(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:batch-prediction/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-prediction/${ resourcePath }`);
   }
 
   /**
@@ -1043,7 +1043,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetector(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:detector/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ resourcePath }`);
   }
 
   /**
@@ -1060,7 +1060,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDetectorVersion(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:detector-version/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector-version/${ resourcePath }`);
   }
 
   /**
@@ -1077,7 +1077,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntityType(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:entity-type/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:entity-type/${ resourcePath }`);
   }
 
   /**
@@ -1094,7 +1094,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onExternalModel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:external-model/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:external-model/${ resourcePath }`);
   }
 
   /**
@@ -1111,7 +1111,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEventType(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:event-type/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-type/${ resourcePath }`);
   }
 
   /**
@@ -1128,7 +1128,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onLabel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:label/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:label/${ resourcePath }`);
   }
 
   /**
@@ -1145,7 +1145,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModel(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/${ resourcePath }`);
   }
 
   /**
@@ -1162,7 +1162,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onModelVersion(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-version/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-version/${ resourcePath }`);
   }
 
   /**
@@ -1179,7 +1179,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOutcome(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:outcome/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:outcome/${ resourcePath }`);
   }
 
   /**
@@ -1196,7 +1196,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rule/${ resourcePath }`);
   }
 
   /**
@@ -1213,7 +1213,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVariable(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:variable/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:variable/${ resourcePath }`);
   }
 
   /**
@@ -1230,7 +1230,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBatchImport(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:batch-import/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-import/${ resourcePath }`);
   }
 
   /**
@@ -1247,7 +1247,7 @@ export class Frauddetector extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onList(resourcePath: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:frauddetector:${ region || this.defaultRegion }:${ account || this.defaultAccount }:list/${ resourcePath }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:frauddetector:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:list/${ resourcePath }`);
   }
 
   /**
@@ -1282,7 +1282,7 @@ export class Frauddetector extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1317,7 +1317,7 @@ export class Frauddetector extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1352,6 +1352,6 @@ export class Frauddetector extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

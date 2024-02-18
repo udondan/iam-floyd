@@ -805,7 +805,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/webacl/${ name }/${ id }`);
   }
 
   /**
@@ -824,7 +824,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/ipset/${ name }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/ipset/${ name }/${ id }`);
   }
 
   /**
@@ -840,7 +840,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onManagedruleset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/managedruleset/${ name }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/managedruleset/${ name }/${ id }`);
   }
 
   /**
@@ -859,7 +859,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/rulegroup/${ name }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/rulegroup/${ name }/${ id }`);
   }
 
   /**
@@ -878,7 +878,7 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRegexpatternset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:wafv2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:${ scope }/regexpatternset/${ name }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wafv2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ scope }/regexpatternset/${ name }/${ id }`);
   }
 
   /**
@@ -893,7 +893,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:elasticloadbalancing:${ region || this.defaultRegion }:${ account || this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/app/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -908,7 +908,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApigateway(apiId: string, stageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apigateway:${ region || this.defaultRegion }:${ account || this.defaultAccount }:/restapis/${ apiId }/stages/${ stageName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/restapis/${ apiId }/stages/${ stageName }`);
   }
 
   /**
@@ -922,7 +922,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onAppsync(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:appsync:${ region || this.defaultRegion }:${ account || this.defaultAccount }:apis/${ graphQLAPIId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }`);
   }
 
   /**
@@ -936,7 +936,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:cognito-idp:${ region || this.defaultRegion }:${ account || this.defaultAccount }:userpool/${ userPoolId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cognito-idp:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:userpool/${ userPoolId }`);
   }
 
   /**
@@ -951,7 +951,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onApprunner(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:apprunner:${ region || this.defaultRegion }:${ account || this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
   }
 
   /**
@@ -965,7 +965,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onVerifiedAccessInstance(verifiedAccessInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:ec2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:verified-access-instance/${ verifiedAccessInstanceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:verified-access-instance/${ verifiedAccessInstanceId }`);
   }
 
   /**
@@ -985,7 +985,7 @@ export class Wafv2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1018,7 +1018,7 @@ export class Wafv2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1038,7 +1038,7 @@ export class Wafv2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1053,7 +1053,7 @@ export class Wafv2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifLogDestinationResource(value: string | string[], operator?: Operator | string) {
-    return this.if(`LogDestinationResource`, value, operator || 'ArnLike');
+    return this.if(`LogDestinationResource`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -1071,6 +1071,6 @@ export class Wafv2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLogScope(value: string | string[], operator?: Operator | string) {
-    return this.if(`LogScope`, value, operator || 'StringLike');
+    return this.if(`LogScope`, value, operator ?? 'StringLike');
   }
 }

@@ -386,7 +386,7 @@ export class Mediapackagev2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannelGroup(channelGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackagev2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channelGroup/${ channelGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackagev2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channelGroup/${ channelGroupName }`);
   }
 
   /**
@@ -404,7 +404,7 @@ export class Mediapackagev2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onChannel(channelGroupName: string, channelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackagev2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackagev2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }`);
   }
 
   /**
@@ -423,7 +423,7 @@ export class Mediapackagev2 extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOriginEndpoint(channelGroupName: string, channelName: string, originEndpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:mediapackagev2:${ region || this.defaultRegion }:${ account || this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }/originEndpoint/${ originEndpointName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackagev2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }/originEndpoint/${ originEndpointName }`);
   }
 
   /**
@@ -442,7 +442,7 @@ export class Mediapackagev2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -460,7 +460,7 @@ export class Mediapackagev2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -479,6 +479,6 @@ export class Mediapackagev2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

@@ -3445,7 +3445,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onClient(clientId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:client/${ clientId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:client/${ clientId }`);
   }
 
   /**
@@ -3459,7 +3459,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:index/${ indexName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexName }`);
   }
 
   /**
@@ -3476,7 +3476,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onFleetmetric(fleetMetricName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:fleetmetric/${ fleetMetricName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleetmetric/${ fleetMetricName }`);
   }
 
   /**
@@ -3493,7 +3493,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
   }
 
   /**
@@ -3510,7 +3510,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onJobtemplate(jobTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:jobtemplate/${ jobTemplateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:jobtemplate/${ jobTemplateId }`);
   }
 
   /**
@@ -3527,7 +3527,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTunnel(tunnelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:tunnel/${ tunnelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tunnel/${ tunnelId }`);
   }
 
   /**
@@ -3541,7 +3541,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thing/${ thingName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thing/${ thingName }`);
   }
 
   /**
@@ -3558,7 +3558,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thinggroup/${ thingGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thinggroup/${ thingGroupName }`);
   }
 
   /**
@@ -3575,7 +3575,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onBillinggroup(billingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:billinggroup/${ billingGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:billinggroup/${ billingGroupName }`);
   }
 
   /**
@@ -3592,7 +3592,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDynamicthinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thinggroup/${ thingGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thinggroup/${ thingGroupName }`);
   }
 
   /**
@@ -3609,7 +3609,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThingtype(thingTypeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:thingtype/${ thingTypeName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thingtype/${ thingTypeName }`);
   }
 
   /**
@@ -3623,7 +3623,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topic/${ topicName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topic/${ topicName }`);
   }
 
   /**
@@ -3637,7 +3637,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTopicfilter(topicFilter: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:topicfilter/${ topicFilter }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topicfilter/${ topicFilter }`);
   }
 
   /**
@@ -3654,7 +3654,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRolealias(roleAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rolealias/${ roleAlias }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rolealias/${ roleAlias }`);
   }
 
   /**
@@ -3671,7 +3671,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onAuthorizer(authorizerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:authorizer/${ authorizerName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:authorizer/${ authorizerName }`);
   }
 
   /**
@@ -3688,7 +3688,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPolicy(policyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:policy/${ policyName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy/${ policyName }`);
   }
 
   /**
@@ -3702,7 +3702,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cert/${ certificate }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cert/${ certificate }`);
   }
 
   /**
@@ -3719,7 +3719,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCacert(cACertificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cacert/${ cACertificate }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cacert/${ cACertificate }`);
   }
 
   /**
@@ -3736,7 +3736,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onStream(streamId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:stream/${ streamId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stream/${ streamId }`);
   }
 
   /**
@@ -3753,7 +3753,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:otaupdate/${ otaUpdateId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:otaupdate/${ otaUpdateId }`);
   }
 
   /**
@@ -3770,7 +3770,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScheduledaudit(scheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:scheduledaudit/${ scheduleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scheduledaudit/${ scheduleName }`);
   }
 
   /**
@@ -3787,7 +3787,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onMitigationaction(mitigationActionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:mitigationaction/${ mitigationActionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mitigationaction/${ mitigationActionName }`);
   }
 
   /**
@@ -3804,7 +3804,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:securityprofile/${ securityProfileName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:securityprofile/${ securityProfileName }`);
   }
 
   /**
@@ -3821,7 +3821,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustommetric(metricName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:custommetric/${ metricName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custommetric/${ metricName }`);
   }
 
   /**
@@ -3838,7 +3838,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDimension(dimensionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:dimension/${ dimensionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dimension/${ dimensionName }`);
   }
 
   /**
@@ -3855,7 +3855,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:rule/${ ruleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rule/${ ruleName }`);
   }
 
   /**
@@ -3870,7 +3870,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDestination(destinationType: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:destination/${ destinationType }/${ uuid }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:destination/${ destinationType }/${ uuid }`);
   }
 
   /**
@@ -3887,7 +3887,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:provisioningtemplate/${ provisioningTemplate }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:provisioningtemplate/${ provisioningTemplate }`);
   }
 
   /**
@@ -3905,7 +3905,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDomainconfiguration(domainConfigurationName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domainconfiguration/${ domainConfigurationName }/${ id }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domainconfiguration/${ domainConfigurationName }/${ id }`);
   }
 
   /**
@@ -3922,7 +3922,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackage(packageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:package/${ packageName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ packageName }`);
   }
 
   /**
@@ -3940,7 +3940,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onPackageversion(packageName: string, versionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:package/${ packageName }/version/${ versionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ packageName }/version/${ versionName }`);
   }
 
   /**
@@ -3957,7 +3957,7 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCertificateprovider(certificateProviderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iot:${ region || this.defaultRegion }:${ account || this.defaultAccount }:certificateprovider/${ certificateProviderName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:certificateprovider/${ certificateProviderName }`);
   }
 
   /**
@@ -3998,7 +3998,7 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4038,7 +4038,7 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4079,7 +4079,7 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4094,7 +4094,7 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifClientMode(value: string | string[], operator?: Operator | string) {
-    return this.if(`ClientMode`, value, operator || 'StringLike');
+    return this.if(`ClientMode`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4123,7 +4123,7 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDomainName(value: string | string[], operator?: Operator | string) {
-    return this.if(`DomainName`, value, operator || 'StringLike');
+    return this.if(`DomainName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4139,7 +4139,7 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifThingGroupArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ThingGroupArn`, value, operator || 'ArnLike');
+    return this.if(`ThingGroupArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -4155,6 +4155,6 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTunnelDestinationService(value: string | string[], operator?: Operator | string) {
-    return this.if(`TunnelDestinationService`, value, operator || 'StringLike');
+    return this.if(`TunnelDestinationService`, value, operator ?? 'StringLike');
   }
 }

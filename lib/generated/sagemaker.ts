@@ -4848,7 +4848,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDevice(deviceFleetName: string, deviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
   }
 
   /**
@@ -4866,7 +4866,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDeviceFleet(deviceFleetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:device-fleet/${ deviceFleetName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-fleet/${ deviceFleetName }`);
   }
 
   /**
@@ -4884,7 +4884,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEdgePackagingJob(edgePackagingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:edge-packaging-job/${ edgePackagingJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:edge-packaging-job/${ edgePackagingJobName }`);
   }
 
   /**
@@ -4902,7 +4902,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEdgeDeploymentPlan(edgeDeploymentPlanName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:edge-deployment/${ edgeDeploymentPlanName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:edge-deployment/${ edgeDeploymentPlanName }`);
   }
 
   /**
@@ -4916,7 +4916,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHumanLoop(humanLoopName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:human-loop/${ humanLoopName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:human-loop/${ humanLoopName }`);
   }
 
   /**
@@ -4934,7 +4934,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFlowDefinition(flowDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:flow-definition/${ flowDefinitionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow-definition/${ flowDefinitionName }`);
   }
 
   /**
@@ -4952,7 +4952,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:human-task-ui/${ humanTaskUiName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:human-task-ui/${ humanTaskUiName }`);
   }
 
   /**
@@ -4966,7 +4966,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHub(hubName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hub/${ hubName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub/${ hubName }`);
   }
 
   /**
@@ -4982,7 +4982,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onHubContent(hubName: string, hubContentType: string, hubContentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
   }
 
   /**
@@ -5000,7 +5000,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInferenceRecommendationsJob(inferenceRecommendationsJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
   }
 
   /**
@@ -5018,7 +5018,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInferenceExperiment(inferenceExperimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:inference-experiment/${ inferenceExperimentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-experiment/${ inferenceExperimentName }`);
   }
 
   /**
@@ -5036,7 +5036,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLabelingJob(labelingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:labeling-job/${ labelingJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:labeling-job/${ labelingJobName }`);
   }
 
   /**
@@ -5054,7 +5054,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWorkteam(workteamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workteam/${ workteamName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workteam/${ workteamName }`);
   }
 
   /**
@@ -5072,7 +5072,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onWorkforce(workforceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workforce/${ workforceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workforce/${ workforceName }`);
   }
 
   /**
@@ -5090,7 +5090,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:domain/${ domainId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }`);
   }
 
   /**
@@ -5109,7 +5109,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:user-profile/${ domainId }/${ userProfileName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user-profile/${ domainId }/${ userProfileName }`);
   }
 
   /**
@@ -5128,7 +5128,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onSpace(domainId: string, spaceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:space/${ domainId }/${ spaceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:space/${ domainId }/${ spaceName }`);
   }
 
   /**
@@ -5149,7 +5149,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onApp(domainId: string, userProfileName: string, appType: string, appName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app/${ domainId }/${ userProfileName }/${ appType }/${ appName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app/${ domainId }/${ userProfileName }/${ appType }/${ appName }`);
   }
 
   /**
@@ -5167,7 +5167,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAppImageConfig(appImageConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:app-image-config/${ appImageConfigName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app-image-config/${ appImageConfigName }`);
   }
 
   /**
@@ -5185,7 +5185,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onStudioLifecycleConfig(studioLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
   }
 
   /**
@@ -5203,7 +5203,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onNotebookInstance(notebookInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notebook-instance/${ notebookInstanceName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook-instance/${ notebookInstanceName }`);
   }
 
   /**
@@ -5217,7 +5217,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onNotebookInstanceLifecycleConfig(notebookInstanceLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
   }
 
   /**
@@ -5235,7 +5235,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:code-repository/${ codeRepositoryName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:code-repository/${ codeRepositoryName }`);
   }
 
   /**
@@ -5253,7 +5253,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image/${ imageName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image/${ imageName }`);
   }
 
   /**
@@ -5268,7 +5268,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onImageVersion(imageName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:image-version/${ imageName }/${ version }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image-version/${ imageName }/${ version }`);
   }
 
   /**
@@ -5286,7 +5286,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAlgorithm(algorithmName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:algorithm/${ algorithmName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:algorithm/${ algorithmName }`);
   }
 
   /**
@@ -5304,7 +5304,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ clusterId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterId }`);
   }
 
   /**
@@ -5322,7 +5322,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTrainingJob(trainingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:training-job/${ trainingJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training-job/${ trainingJobName }`);
   }
 
   /**
@@ -5340,7 +5340,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:processing-job/${ processingJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:processing-job/${ processingJobName }`);
   }
 
   /**
@@ -5358,7 +5358,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onHyperParameterTuningJob(hyperParameterTuningJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
   }
 
   /**
@@ -5376,7 +5376,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project/${ projectName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }`);
   }
 
   /**
@@ -5394,7 +5394,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-package/${ modelPackageName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-package/${ modelPackageName }`);
   }
 
   /**
@@ -5412,7 +5412,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelPackageGroup(modelPackageGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-package-group/${ modelPackageGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-package-group/${ modelPackageGroupName }`);
   }
 
   /**
@@ -5430,7 +5430,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model/${ modelName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/${ modelName }`);
   }
 
   /**
@@ -5448,7 +5448,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEndpointConfig(endpointConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:endpoint-config/${ endpointConfigName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint-config/${ endpointConfigName }`);
   }
 
   /**
@@ -5466,7 +5466,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:endpoint/${ endpointName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint/${ endpointName }`);
   }
 
   /**
@@ -5484,7 +5484,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onInferenceComponent(inferenceComponentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:inference-component/${ inferenceComponentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-component/${ inferenceComponentName }`);
   }
 
   /**
@@ -5502,7 +5502,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onTransformJob(transformJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:transform-job/${ transformJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transform-job/${ transformJobName }`);
   }
 
   /**
@@ -5520,7 +5520,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onCompilationJob(compilationJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:compilation-job/${ compilationJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compilation-job/${ compilationJobName }`);
   }
 
   /**
@@ -5538,7 +5538,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAutomlJob(autoMLJobJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:automl-job/${ autoMLJobJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automl-job/${ autoMLJobJobName }`);
   }
 
   /**
@@ -5556,7 +5556,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onMonitoringSchedule(monitoringScheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }`);
   }
 
   /**
@@ -5571,7 +5571,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMonitoringScheduleAlert(monitoringScheduleName: string, monitoringScheduleAlertName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
   }
 
   /**
@@ -5589,7 +5589,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onDataQualityJobDefinition(dataQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:data-quality-job-definition/${ dataQualityJobDefinitionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-quality-job-definition/${ dataQualityJobDefinitionName }`);
   }
 
   /**
@@ -5607,7 +5607,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelQualityJobDefinition(modelQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
   }
 
   /**
@@ -5625,7 +5625,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelBiasJobDefinition(modelBiasJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
   }
 
   /**
@@ -5643,7 +5643,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelExplainabilityJobDefinition(modelExplainabilityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
   }
 
   /**
@@ -5661,7 +5661,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperiment(experimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment/${ experimentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:experiment/${ experimentName }`);
   }
 
   /**
@@ -5679,7 +5679,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperimentTrial(trialName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment-trial/${ trialName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:experiment-trial/${ trialName }`);
   }
 
   /**
@@ -5697,7 +5697,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onExperimentTrialComponent(trialComponentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:experiment-trial-component/${ trialComponentName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:experiment-trial-component/${ trialComponentName }`);
   }
 
   /**
@@ -5715,7 +5715,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onFeatureGroup(featureGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:feature-group/${ featureGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:feature-group/${ featureGroupName }`);
   }
 
   /**
@@ -5733,7 +5733,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineName }`);
   }
 
   /**
@@ -5748,7 +5748,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPipelineExecution(pipelineName: string, randomString: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:pipeline/${ pipelineName }/execution/${ randomString }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineName }/execution/${ randomString }`);
   }
 
   /**
@@ -5766,7 +5766,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onArtifact(hashOfArtifactSource: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:artifact/${ hashOfArtifactSource }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:artifact/${ hashOfArtifactSource }`);
   }
 
   /**
@@ -5784,7 +5784,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onContext(contextName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:context/${ contextName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:context/${ contextName }`);
   }
 
   /**
@@ -5802,7 +5802,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onAction(actionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:action/${ actionName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:action/${ actionName }`);
   }
 
   /**
@@ -5820,7 +5820,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onLineageGroup(lineageGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:lineage-group/${ lineageGroupName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:lineage-group/${ lineageGroupName }`);
   }
 
   /**
@@ -5838,7 +5838,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelCard(modelCardName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-card/${ modelCardName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-card/${ modelCardName }`);
   }
 
   /**
@@ -5857,7 +5857,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifResourceTag()
    */
   public onModelCardExportJob(modelCardName: string, exportJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:model-card/${ modelCardName }/export-job/${ exportJobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-card/${ modelCardName }/export-job/${ exportJobName }`);
   }
 
   /**
@@ -5871,7 +5871,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSharedModel(sharedModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:shared-model/${ sharedModelId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:shared-model/${ sharedModelId }`);
   }
 
   /**
@@ -5885,7 +5885,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSharedModelEvent(eventId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:shared-model-event/${ eventId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:shared-model-event/${ eventId }`);
   }
 
   /**
@@ -5899,7 +5899,7 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSagemakerCatalog(resourceCatalogName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:sagemaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sagemaker-catalog/${ resourceCatalogName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sagemaker-catalog/${ resourceCatalogName }`);
   }
 
   /**
@@ -5971,7 +5971,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6037,7 +6037,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6108,7 +6108,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6125,7 +6125,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAcceleratorTypes(value: string | string[], operator?: Operator | string) {
-    return this.if(`AcceleratorTypes`, value, operator || 'StringLike');
+    return this.if(`AcceleratorTypes`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6141,7 +6141,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAppNetworkAccessType(value: string | string[], operator?: Operator | string) {
-    return this.if(`AppNetworkAccessType`, value, operator || 'StringLike');
+    return this.if(`AppNetworkAccessType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6158,7 +6158,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCustomerMetadataProperties(metadataKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`CustomerMetadataProperties/${ metadataKey }`, value, operator || 'StringLike');
+    return this.if(`CustomerMetadataProperties/${ metadataKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6173,7 +6173,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCustomerMetadataPropertiesToRemove(value: string | string[], operator?: Operator | string) {
-    return this.if(`CustomerMetadataPropertiesToRemove`, value, operator || 'StringLike');
+    return this.if(`CustomerMetadataPropertiesToRemove`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6188,7 +6188,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDirectInternetAccess(value: string | string[], operator?: Operator | string) {
-    return this.if(`DirectInternetAccess`, value, operator || 'StringLike');
+    return this.if(`DirectInternetAccess`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6200,7 +6200,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDomainId(value: string | string[], operator?: Operator | string) {
-    return this.if(`DomainId`, value, operator || 'StringLike');
+    return this.if(`DomainId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6218,7 +6218,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifDomainSharingOutputKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`DomainSharingOutputKmsKey`, value, operator || 'ArnLike');
+    return this.if(`DomainSharingOutputKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6290,7 +6290,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFeatureGroupOfflineStoreKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`FeatureGroupOfflineStoreKmsKey`, value, operator || 'ArnLike');
+    return this.if(`FeatureGroupOfflineStoreKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6305,7 +6305,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFeatureGroupOfflineStoreS3Uri(value: string | string[], operator?: Operator | string) {
-    return this.if(`FeatureGroupOfflineStoreS3Uri`, value, operator || 'StringLike');
+    return this.if(`FeatureGroupOfflineStoreS3Uri`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6320,7 +6320,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifFeatureGroupOnlineStoreKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`FeatureGroupOnlineStoreKmsKey`, value, operator || 'ArnLike');
+    return this.if(`FeatureGroupOnlineStoreKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6336,7 +6336,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFileSystemAccessMode(value: string | string[], operator?: Operator | string) {
-    return this.if(`FileSystemAccessMode`, value, operator || 'StringLike');
+    return this.if(`FileSystemAccessMode`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6352,7 +6352,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFileSystemDirectoryPath(value: string | string[], operator?: Operator | string) {
-    return this.if(`FileSystemDirectoryPath`, value, operator || 'StringLike');
+    return this.if(`FileSystemDirectoryPath`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6368,7 +6368,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFileSystemId(value: string | string[], operator?: Operator | string) {
-    return this.if(`FileSystemId`, value, operator || 'StringLike');
+    return this.if(`FileSystemId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6384,7 +6384,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFileSystemType(value: string | string[], operator?: Operator | string) {
-    return this.if(`FileSystemType`, value, operator || 'StringLike');
+    return this.if(`FileSystemType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6396,7 +6396,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifHomeEfsFileSystemKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`HomeEfsFileSystemKmsKey`, value, operator || 'ArnLike');
+    return this.if(`HomeEfsFileSystemKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6417,7 +6417,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifImageArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`ImageArns`, value, operator || 'ArnLike');
+    return this.if(`ImageArns`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6438,7 +6438,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifImageVersionArns(value: string | string[], operator?: Operator | string) {
-    return this.if(`ImageVersionArns`, value, operator || 'ArnLike');
+    return this.if(`ImageVersionArns`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6473,7 +6473,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceTypes(value: string | string[], operator?: Operator | string) {
-    return this.if(`InstanceTypes`, value, operator || 'StringLike');
+    return this.if(`InstanceTypes`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6513,7 +6513,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifKeepAlivePeriod(value: number | number[], operator?: Operator | string) {
-    return this.if(`KeepAlivePeriod`, value, operator || 'NumericEquals');
+    return this.if(`KeepAlivePeriod`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -6536,7 +6536,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaxRuntimeInSeconds(value: number | number[], operator?: Operator | string) {
-    return this.if(`MaxRuntimeInSeconds`, value, operator || 'NumericEquals');
+    return this.if(`MaxRuntimeInSeconds`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -6552,7 +6552,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMinimumInstanceMetadataServiceVersion(value: string | string[], operator?: Operator | string) {
-    return this.if(`MinimumInstanceMetadataServiceVersion`, value, operator || 'StringLike');
+    return this.if(`MinimumInstanceMetadataServiceVersion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6568,7 +6568,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifModelApprovalStatus(value: string | string[], operator?: Operator | string) {
-    return this.if(`ModelApprovalStatus`, value, operator || 'StringLike');
+    return this.if(`ModelApprovalStatus`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6585,7 +6585,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifModelArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`ModelArn`, value, operator || 'ArnLike');
+    return this.if(`ModelArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6636,7 +6636,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifOutputKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`OutputKmsKey`, value, operator || 'ArnLike');
+    return this.if(`OutputKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6655,7 +6655,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifOwnerUserProfileArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`OwnerUserProfileArn`, value, operator || 'ArnLike');
+    return this.if(`OwnerUserProfileArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6667,7 +6667,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTagExists(value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6733,7 +6733,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6749,7 +6749,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRootAccess(value: string | string[], operator?: Operator | string) {
-    return this.if(`RootAccess`, value, operator || 'StringLike');
+    return this.if(`RootAccess`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6765,7 +6765,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSearchVisibilityCondition(filterKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`SearchVisibilityCondition/${ filterKey }`, value, operator || 'StringLike');
+    return this.if(`SearchVisibilityCondition/${ filterKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6780,7 +6780,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifServerlessMaxConcurrency(value: number | number[], operator?: Operator | string) {
-    return this.if(`ServerlessMaxConcurrency`, value, operator || 'NumericEquals');
+    return this.if(`ServerlessMaxConcurrency`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -6795,7 +6795,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifServerlessMemorySize(value: number | number[], operator?: Operator | string) {
-    return this.if(`ServerlessMemorySize`, value, operator || 'NumericEquals');
+    return this.if(`ServerlessMemorySize`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -6814,7 +6814,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSpaceSharingType(value: string | string[], operator?: Operator | string) {
-    return this.if(`SpaceSharingType`, value, operator || 'StringLike');
+    return this.if(`SpaceSharingType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6829,7 +6829,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTaggingAction(value: string | string[], operator?: Operator | string) {
-    return this.if(`TaggingAction`, value, operator || 'StringLike');
+    return this.if(`TaggingAction`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6844,7 +6844,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTargetModel(value: string | string[], operator?: Operator | string) {
-    return this.if(`TargetModel`, value, operator || 'StringLike');
+    return this.if(`TargetModel`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6856,7 +6856,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserProfileName(value: string | string[], operator?: Operator | string) {
-    return this.if(`UserProfileName`, value, operator || 'StringLike');
+    return this.if(`UserProfileName`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6886,7 +6886,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifVolumeKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`VolumeKmsKey`, value, operator || 'ArnLike');
+    return this.if(`VolumeKmsKey`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6918,7 +6918,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcSecurityGroupIds(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcSecurityGroupIds`, value, operator || 'StringLike');
+    return this.if(`VpcSecurityGroupIds`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6948,7 +6948,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpcSubnets(value: string | string[], operator?: Operator | string) {
-    return this.if(`VpcSubnets`, value, operator || 'StringLike');
+    return this.if(`VpcSubnets`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -6964,7 +6964,7 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifWorkteamArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`WorkteamArn`, value, operator || 'ArnLike');
+    return this.if(`WorkteamArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -6980,6 +6980,6 @@ export class Sagemaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifWorkteamType(value: string | string[], operator?: Operator | string) {
-    return this.if(`WorkteamType`, value, operator || 'StringLike');
+    return this.if(`WorkteamType`, value, operator ?? 'StringLike');
   }
 }

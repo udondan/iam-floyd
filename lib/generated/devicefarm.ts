@@ -1002,7 +1002,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:project:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project:${ resourceId }`);
   }
 
   /**
@@ -1019,7 +1019,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onRun(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:run:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:run:${ resourceId }`);
   }
 
   /**
@@ -1033,7 +1033,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:job:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job:${ resourceId }`);
   }
 
   /**
@@ -1047,7 +1047,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSuite(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:suite:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:suite:${ resourceId }`);
   }
 
   /**
@@ -1061,7 +1061,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onTest(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:test:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test:${ resourceId }`);
   }
 
   /**
@@ -1075,7 +1075,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onUpload(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:upload:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:upload:${ resourceId }`);
   }
 
   /**
@@ -1089,7 +1089,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onArtifact(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:artifact:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:artifact:${ resourceId }`);
   }
 
   /**
@@ -1103,7 +1103,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onSample(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:sample:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sample:${ resourceId }`);
   }
 
   /**
@@ -1120,7 +1120,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:networkprofile:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:networkprofile:${ resourceId }`);
   }
 
   /**
@@ -1136,7 +1136,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDeviceinstance(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }::deviceinstance:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }::deviceinstance:${ resourceId }`);
   }
 
   /**
@@ -1153,7 +1153,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSession(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:session:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session:${ resourceId }`);
   }
 
   /**
@@ -1170,7 +1170,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevicepool(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:devicepool:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:devicepool:${ resourceId }`);
   }
 
   /**
@@ -1186,7 +1186,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onDevice(resourceId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }::device:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }::device:${ resourceId }`);
   }
 
   /**
@@ -1203,7 +1203,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onInstanceprofile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:instanceprofile:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instanceprofile:${ resourceId }`);
   }
 
   /**
@@ -1220,7 +1220,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onVpceconfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:vpceconfiguration:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpceconfiguration:${ resourceId }`);
   }
 
   /**
@@ -1237,7 +1237,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTestgridProject(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:testgrid-project:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:testgrid-project:${ resourceId }`);
   }
 
   /**
@@ -1254,7 +1254,7 @@ export class Devicefarm extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTestgridSession(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:devicefarm:${ region || this.defaultRegion }:${ account || this.defaultAccount }:testgrid-session:${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:devicefarm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:testgrid-session:${ resourceId }`);
   }
 
   /**
@@ -1270,7 +1270,7 @@ export class Devicefarm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1296,7 +1296,7 @@ export class Devicefarm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1312,6 +1312,6 @@ export class Devicefarm extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

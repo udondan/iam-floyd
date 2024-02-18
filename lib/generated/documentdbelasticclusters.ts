@@ -342,7 +342,7 @@ export class DocdbElastic extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCluster(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:docdb-elastic:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:docdb-elastic:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ resourceId }`);
   }
 
   /**
@@ -359,7 +359,7 @@ export class DocdbElastic extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onClusterSnapshot(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:docdb-elastic:${ region || this.defaultRegion }:${ account || this.defaultAccount }:cluster-snapshot/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:docdb-elastic:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster-snapshot/${ resourceId }`);
   }
 
   /**
@@ -378,7 +378,7 @@ export class DocdbElastic extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -406,7 +406,7 @@ export class DocdbElastic extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -425,6 +425,6 @@ export class DocdbElastic extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

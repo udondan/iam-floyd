@@ -143,6 +143,6 @@ export class IqPermission extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPermission(permissionRequestId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iq-permission:${ region || this.defaultRegion }::permission/${ permissionRequestId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iq-permission:${ region ?? this.defaultRegion }::permission/${ permissionRequestId }`);
   }
 }

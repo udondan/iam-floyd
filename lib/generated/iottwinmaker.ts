@@ -568,7 +568,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onWorkspace(workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }`);
   }
 
   /**
@@ -586,7 +586,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onEntity(workspaceId: string, entityId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }/entity/${ entityId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }/entity/${ entityId }`);
   }
 
   /**
@@ -604,7 +604,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onComponentType(workspaceId: string, componentTypeId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }/component-type/${ componentTypeId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }/component-type/${ componentTypeId }`);
   }
 
   /**
@@ -622,7 +622,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onScene(workspaceId: string, sceneId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }/scene/${ sceneId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }/scene/${ sceneId }`);
   }
 
   /**
@@ -640,7 +640,7 @@ export class Iottwinmaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onSyncJob(workspaceId: string, syncJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:workspace/${ workspaceId }/sync-job/${ syncJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceId }/sync-job/${ syncJobId }`);
   }
 
   /**
@@ -654,7 +654,7 @@ export class Iottwinmaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onMetadataTransferJob(metadataTransferJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition || this.defaultPartition }:iottwinmaker:${ region || this.defaultRegion }:${ account || this.defaultAccount }:metadata-transfer-job/${ metadataTransferJobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iottwinmaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metadata-transfer-job/${ metadataTransferJobId }`);
   }
 
   /**
@@ -675,7 +675,7 @@ export class Iottwinmaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -698,7 +698,7 @@ export class Iottwinmaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -719,7 +719,7 @@ export class Iottwinmaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -731,7 +731,7 @@ export class Iottwinmaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDestinationType(value: string | string[], operator?: Operator | string) {
-    return this.if(`destinationType`, value, operator || 'StringLike');
+    return this.if(`destinationType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -743,7 +743,7 @@ export class Iottwinmaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLinkedServices(value: string | string[], operator?: Operator | string) {
-    return this.if(`linkedServices`, value, operator || 'StringLike');
+    return this.if(`linkedServices`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -755,6 +755,6 @@ export class Iottwinmaker extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSourceType(value: string | string[], operator?: Operator | string) {
-    return this.if(`sourceType`, value, operator || 'StringLike');
+    return this.if(`sourceType`, value, operator ?? 'StringLike');
   }
 }
