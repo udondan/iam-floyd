@@ -682,7 +682,7 @@ export function createIndex() {
 
     sourceFile.addExportDeclaration({
       namedExports: exports,
-      moduleSpecifier: `./${module.filename}`,
+      moduleSpecifier: `./policy-statements/${module.filename}`,
     });
   });
 
