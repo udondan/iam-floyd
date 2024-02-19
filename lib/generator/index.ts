@@ -174,7 +174,7 @@ export function getContent(service: string): Promise<Module> {
 
       const url = urlPattern.replace('%s', service);
 
-      const cachedFile = `lib/generated/.cache/${module.filename}.ts`;
+      const cachedFile = `lib/generated/policy-statements/.cache/${module.filename}.ts`;
       if (fs.existsSync(cachedFile)) {
         const lastModified = await getLastModified(url);
         if (lastModified < timeThreshold) {
@@ -268,7 +268,7 @@ export function createModule(module: Module): Promise<void> {
   };
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
-    const moduleFilePath = `lib/generated/${module.filename}.ts`;
+    const moduleFilePath = `lib/generated/policy-statements/${module.filename}.ts`;
     restoreFileFromCache(moduleFilePath);
 
     const moduleProject = new Project();
@@ -311,7 +311,7 @@ export function createModule(module: Module): Promise<void> {
   modules.push(module);
 
   const sourceFile = project.createSourceFile(
-    `./lib/generated/${module.filename}.ts`,
+    `./lib/generated/policy-statements/${module.filename}.ts`,
   );
 
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
@@ -664,11 +664,13 @@ export function createIndex() {
   if (fs.existsSync(filePath)) {
     fs.unlinkSync(filePath);
   }
-  const sourceFile = project.createSourceFile(filePath);
+  const sourceFile = project.createSourceFile(filePath, '', {
+    overwrite: true,
+  });
 
   modules.sort().forEach((module) => {
     const source = project.addSourceFileAtPath(
-      `./lib/generated/${module.filename}.ts`,
+      `./lib/generated/policy-statements/${module.filename}.ts`,
     );
     const exports: string[] = [];
 
@@ -737,7 +739,7 @@ function createCache() {
 }
 
 function createLibCache() {
-  const dir = 'lib/generated';
+  const dir = 'lib/generated/policy-statements';
   mkDirCache(dir, '*.ts');
 }
 
