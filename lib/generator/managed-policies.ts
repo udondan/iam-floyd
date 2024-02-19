@@ -1,18 +1,77 @@
 import {
+  GetPolicyCommand,
   GetPolicyVersionCommand,
   IAMClient,
+  IAMClientConfig,
   ListPoliciesCommand,
   ListPoliciesRequest,
   Policy,
 } from '@aws-sdk/client-iam';
 import * as fs from 'fs';
+import { EnumDeclaration, Project, QuoteKind, SourceFile } from 'ts-morph';
 
-const iamClient = new IAMClient({
+import { camelCase } from '.';
+
+class ManagedPolicies {
+  private file: SourceFile;
+  private collection: EnumDeclaration;
+
+  constructor() {
+    const project = new Project();
+    project.manipulationSettings.set({
+      quoteKind: QuoteKind.Single,
+    });
+
+    this.file = project.createSourceFile(
+      'lib/generated/aws-managed-policies.ts',
+      '',
+      {
+        overwrite: true,
+      },
+    );
+
+    this.collection = this.file.addEnum({
+      isExported: true,
+      name: 'AwsManagedPolicies',
+    });
+  }
+
+  public save() {
+    this.file.saveSync();
+  }
+
+  public add(name: string, value: string, description: string) {
+    this.collection
+      .addMember({
+        name,
+        value,
+      })
+      .addJsDoc({
+        description,
+      });
+  }
+}
+
+const clientConfig: IAMClientConfig = {
   region: 'us-east-1',
-});
+};
+if (
+  process.env.AWS_ACCESS_KEY_ID &&
+  process.env.AWS_SECRET_ACCESS_KEY &&
+  process.env.AWS_SESSION_TOKEN
+) {
+  clientConfig.credentials = {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    sessionToken: process.env.AWS_SESSION_TOKEN,
+  };
+}
+
+const iamClient = new IAMClient(clientConfig);
 
 export async function indexManagedPolicies(): Promise<void> {
   console.log('starting');
+  const managedPolicies = new ManagedPolicies();
   const policyNames: string[] = [];
   const policies = await getPolicies();
   console.log(`Fetched metadata of ${policies.length} managed policies`);
@@ -22,6 +81,12 @@ export async function indexManagedPolicies(): Promise<void> {
       policyMetadata.Arn &&
       policyMetadata.DefaultVersionId
     ) {
+      const description = await getIAMPolicyDescription(policyMetadata.Arn);
+      managedPolicies.add(
+        camelCase(policyMetadata.PolicyName),
+        policyMetadata.Arn,
+        description!,
+      );
       policyNames.push(policyMetadata.PolicyName);
       console.log(`Fetching policy document ${policyMetadata.PolicyName}`);
       const document = await getPolicyDocument(
@@ -32,6 +97,7 @@ export async function indexManagedPolicies(): Promise<void> {
     }
   }
   storePolicyIndex(policyNames);
+  managedPolicies.save();
 }
 
 async function getPolicies(marker?: string): Promise<Policy[]> {
@@ -80,6 +146,13 @@ async function getPolicyDocument(
   }
 }
 
+async function getIAMPolicyDescription(policyArn) {
+  const response = await iamClient.send(
+    new GetPolicyCommand({ PolicyArn: policyArn }),
+  );
+  return response.Policy!.Description;
+}
+
 function storePolicyDocument(name: string, document: string) {
   const path = `${__dirname}/../../docs/source/_static/managed-policies/${name}.json`;
 
@@ -88,7 +161,7 @@ function storePolicyDocument(name: string, document: string) {
 
   try {
     fs.writeFileSync(path, document);
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
   }
 }
@@ -97,7 +170,7 @@ function storePolicyIndex(names: string[]) {
   const path = `${__dirname}/../../docs/source/_static/managed-policies/index.json`;
   try {
     fs.writeFileSync(path, JSON.stringify(names));
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
   }
 }

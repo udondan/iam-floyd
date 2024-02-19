@@ -35,6 +35,12 @@ cdk:
 	@npx ts-node bin/mkcdk.ts
 	@npm i
 
+uncdk:
+	@echo -e "$(TARGET_COLOR)Running uncdk$(NO_COLOR)"
+	@git stash -- lib/generated
+	@git stash -- lib/shared
+	@git stash -- package.json
+
 test:
 	@echo -e "$(TARGET_COLOR)Running main test$(NO_COLOR)"
 	@cd test && $(MAKE) --no-print-directory -f Makefile test

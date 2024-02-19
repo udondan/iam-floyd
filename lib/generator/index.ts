@@ -26,10 +26,6 @@ import { formatCode } from './format';
 
 export { indexManagedPolicies } from './managed-policies';
 
-// tmp solution. the cheerio/types is currently not working
-type CheerioStatic = any;
-type CheerioElement = any;
-
 const project = new Project();
 project.manipulationSettings.set({
   quoteKind: QuoteKind.Single,
@@ -178,7 +174,7 @@ export function getContent(service: string): Promise<Module> {
 
       const url = urlPattern.replace('%s', service);
 
-      const cachedFile = `lib/generated/.cache/${module.filename}.ts`;
+      const cachedFile = `lib/generated/policy-statements/.cache/${module.filename}.ts`;
       if (fs.existsSync(cachedFile)) {
         const lastModified = await getLastModified(url);
         if (lastModified < timeThreshold) {
@@ -272,7 +268,7 @@ export function createModule(module: Module): Promise<void> {
   };
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
-    const moduleFilePath = `lib/generated/${module.filename}.ts`;
+    const moduleFilePath = `lib/generated/policy-statements/${module.filename}.ts`;
     restoreFileFromCache(moduleFilePath);
 
     const moduleProject = new Project();
@@ -315,14 +311,14 @@ export function createModule(module: Module): Promise<void> {
   modules.push(module);
 
   const sourceFile = project.createSourceFile(
-    `./lib/generated/${module.filename}.ts`,
+    `./lib/generated/policy-statements/${module.filename}.ts`,
   );
 
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
 
   sourceFile.addImportDeclaration({
     namedImports: ['AccessLevelList'],
-    moduleSpecifier: '../shared/access-level',
+    moduleSpecifier: '../../shared/access-level',
   });
 
   const classDeclaration = sourceFile.addClass({
@@ -407,7 +403,7 @@ export function createModule(module: Module): Promise<void> {
       .replace(/^ {2}'([^' ]+)'/gm, '$1'), // remove quotes from single word keys
   });
 
-  for (const [name, resourceType] of Object.entries(module.resourceTypes!)) {
+  for (const [name, resourceType] of Object.entries(module.resourceTypes)) {
     const method = classDeclaration.addMethod({
       name: `on${camelCase(name)}`,
       scope: Scope.Public,
@@ -650,7 +646,7 @@ export function createModule(module: Module): Promise<void> {
   }
   sourceFile.addImportDeclaration({
     namedImports: sharedClasses,
-    moduleSpecifier: '../shared',
+    moduleSpecifier: '../../shared',
   });
 
   formatCode(sourceFile);
@@ -668,11 +664,13 @@ export function createIndex() {
   if (fs.existsSync(filePath)) {
     fs.unlinkSync(filePath);
   }
-  const sourceFile = project.createSourceFile(filePath);
+  const sourceFile = project.createSourceFile(filePath, '', {
+    overwrite: true,
+  });
 
   modules.sort().forEach((module) => {
     const source = project.addSourceFileAtPath(
-      `./lib/generated/${module.filename}.ts`,
+      `./lib/generated/policy-statements/${module.filename}.ts`,
     );
     const exports: string[] = [];
 
@@ -684,7 +682,7 @@ export function createIndex() {
 
     sourceFile.addExportDeclaration({
       namedExports: exports,
-      moduleSpecifier: `./${module.filename}`,
+      moduleSpecifier: `./policy-statements/${module.filename}`,
     });
   });
 
@@ -741,7 +739,7 @@ function createCache() {
 }
 
 function createLibCache() {
-  const dir = 'lib/generated';
+  const dir = 'lib/generated/policy-statements';
   mkDirCache(dir, '*.ts');
 }
 
