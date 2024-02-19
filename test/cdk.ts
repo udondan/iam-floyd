@@ -6,7 +6,7 @@ import {
   Stack,
   StackProps,
 } from 'aws-cdk-lib';
-import { Statement } from 'cdk-iam-floyd';
+import { AwsManagedPolicies, Statement } from 'cdk-iam-floyd';
 import { Construct } from 'constructs';
 
 export class TestStack extends Stack {
@@ -43,10 +43,17 @@ export class TestStack extends Stack {
     });
 
     const role = new aws_iam.Role(this, 'Role', {
-      roleName: `${this.stackName}-testrole`,
+      roleName: `${this.stackName}-test-role`,
       description: 'Test Role',
       assumedBy: new aws_iam.ServicePrincipal('lambda.amazonaws.com'),
-      managedPolicies: [policy],
+      managedPolicies: [
+        policy,
+        aws_iam.ManagedPolicy.fromManagedPolicyArn(
+          this,
+          'ServiceQuotasReadOnlyAccess',
+          AwsManagedPolicies.ServiceQuotasReadOnlyAccess,
+        ),
+      ],
     });
 
     const bucket = new aws_s3.Bucket(this, 'Bucket', {

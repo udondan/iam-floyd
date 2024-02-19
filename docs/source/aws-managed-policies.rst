@@ -26,6 +26,16 @@ The ``AwsManagedPolicies`` enum contains an up-to-date collection of AWS managed
 
 .. tabs::
 
+   .. code-tab:: ts aws-cdk
+
+      readOnlyUser.addManagedPolicy(
+        aws_iam.ManagedPolicy.fromManagedPolicyArn(
+          this,
+          'ReadOnlyAccess',
+          AwsManagedPolicies.ReadOnlyAccess,
+        ),
+      );
+
    .. code-tab:: ts aws-sdk
 
       await iamClient.send(
@@ -34,11 +44,3 @@ The ``AwsManagedPolicies`` enum contains an up-to-date collection of AWS managed
           PolicyArn: AwsManagedPolicies.ReadOnlyAccess,
         }),
       );
-
-   .. code-tab:: ts aws-cdk
-
-      // for use without AWS CDK use the iam-floyd package
-      const { AwsManagedPolicies } = require('iam-floyd');
-
-      // for use with CDK use the cdk-iam-floyd package
-      const { AwsManagedPolicies } = require('cdk-iam-floyd');
