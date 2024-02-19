@@ -26,14 +26,14 @@ async function run() {
   if (doFixPolicyStatement) fixPolicyStatement(project);
 
   if (doFixModule) {
-    const files = fs.readdirSync(`${lib}/generated`);
+    const files = fs.readdirSync(`${lib}/generated/policy-statements`);
     files.forEach(async (file) => {
       if (file == '.cache') return;
       if (file == 'index.ts') return;
       if (!file.endsWith('.ts')) return;
       if (file.endsWith('.d.ts')) return;
 
-      file = `${lib}/generated/${file}`;
+      file = `${lib}/generated/policy-statements/${file}`;
       console.log(`Processing ${file}`);
 
       fixModule(project, file);
