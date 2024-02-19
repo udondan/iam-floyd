@@ -318,7 +318,7 @@ export function createModule(module: Module): Promise<void> {
 
   sourceFile.addImportDeclaration({
     namedImports: ['AccessLevelList'],
-    moduleSpecifier: '../shared/access-level',
+    moduleSpecifier: '../../shared/access-level',
   });
 
   const classDeclaration = sourceFile.addClass({
@@ -646,7 +646,7 @@ export function createModule(module: Module): Promise<void> {
   }
   sourceFile.addImportDeclaration({
     namedImports: sharedClasses,
-    moduleSpecifier: '../shared',
+    moduleSpecifier: '../../shared',
   });
 
   formatCode(sourceFile);
