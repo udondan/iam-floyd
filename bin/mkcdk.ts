@@ -30,7 +30,6 @@ async function run() {
     files.forEach(async (file) => {
       if (file == '.cache') return;
       if (file == 'index.ts') return;
-      if (file == 'aws-managed-policies.ts') return;
       if (!file.endsWith('.ts')) return;
       if (file.endsWith('.d.ts')) return;
 

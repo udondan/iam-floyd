@@ -1,5 +1,5 @@
-import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement, Operator } from '../shared';
+import { AccessLevelList } from '../../shared/access-level';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [rbin](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrecyclebin.html).

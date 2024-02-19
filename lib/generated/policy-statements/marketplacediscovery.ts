@@ -1,5 +1,5 @@
-import { AccessLevelList } from '../shared/access-level';
-import { PolicyStatement } from '../shared';
+import { AccessLevelList } from '../../shared/access-level';
+import { PolicyStatement } from '../../shared';
 
 /**
  * Statement provider for service [aws-marketplace-discovery](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacediscovery.html).

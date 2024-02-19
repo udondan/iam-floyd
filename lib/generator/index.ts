@@ -757,10 +757,6 @@ function mkDirCache(dir: string, pattern: string) {
   }
   for (const file of glob.sync(`${dir}/${pattern}`)) {
     const fileName = file.split('/').slice(-1)[0];
-    if (fileName == 'aws-managed-policies.ts') {
-      // managed polices are generated differently
-      continue;
-    }
     fs.renameSync(file, `${cacheDir}/${fileName}`);
   }
 }

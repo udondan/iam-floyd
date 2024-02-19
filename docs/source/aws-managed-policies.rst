@@ -28,7 +28,7 @@ The ``AwsManagedPolicies`` enum contains an up-to-date collection of AWS managed
 
    .. code-tab:: ts aws-cdk
 
-      readOnlyUser.addManagedPolicy(
+      readOnlyRole.addManagedPolicy(
         aws_iam.ManagedPolicy.fromManagedPolicyArn(
           this,
           'ReadOnlyAccess',
@@ -40,7 +40,7 @@ The ``AwsManagedPolicies`` enum contains an up-to-date collection of AWS managed
 
       await iamClient.send(
         new Attach RolePolicyCommand({
-          RoleName: 'ReadOnlyUser',
+          RoleName: 'ReadOnlyRole',
           PolicyArn: AwsManagedPolicies.ReadOnlyAccess,
         }),
       );
