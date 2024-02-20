@@ -1,3 +1,5 @@
+import { Aws } from 'aws-cdk-lib';
+
 import { PolicyStatementWithArnDefaults } from './6-arn-defaults';
 
 /**
