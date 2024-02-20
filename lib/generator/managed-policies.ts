@@ -34,6 +34,10 @@ class ManagedPolicies {
       isExported: true,
       name: 'AwsManagedPolicies',
     });
+
+    this.collection.addJsDoc({
+      description: 'Provides names of all AWS managed policies.',
+    });
   }
 
   public save() {
@@ -44,7 +48,7 @@ class ManagedPolicies {
     this.collection
       .addMember({
         name,
-        value,
+        value: value.replace(/^arn:aws:iam::aws:policy\//, ''),
       })
       .addJsDoc({
         description,
