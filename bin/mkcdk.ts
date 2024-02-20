@@ -52,50 +52,65 @@ try {
 }
 
 function fixPolicyStatement(project: Project) {
-  try {
-    // loop over files in ../lib/shared/policy-statement:
-    for (const fileName of fs.readdirSync(`${lib}/shared/policy-statement`)) {
-      if (fileName.endsWith('.ts') && !fileName.endsWith('.d.ts')) {
-        const file = path.join(
-          __dirname,
-          '../lib/shared/policy-statement',
-          fileName,
-        );
+  // loop over files in ../lib/shared/policy-statement:
+  for (const fileName of fs.readdirSync(`${lib}/shared/policy-statement`)) {
+    if (fileName.endsWith('.ts') && !fileName.endsWith('.d.ts')) {
+      const file = path.join(
+        __dirname,
+        '../lib/shared/policy-statement',
+        fileName,
+      );
 
-        const sourceFile = project.addSourceFileAtPath(file);
-
-        if (fileName === 'index.ts') {
-          sourceFile.addExportDeclaration({
-            namedExports: ['PolicyStatementWithCDKPrincipal'],
-            moduleSpecifier: './9-principals-CDK',
-          });
-
-          sourceFile.getExportDeclarations().forEach((exportDeclaration) => {
-            exportDeclaration.getNamedExports().forEach((exportItem) => {
-              if (exportItem.getName() == 'Effect') {
-                console.log('Removing Effect export...');
-                exportItem.remove();
-              }
-            });
-          });
-        }
-
-        sourceFile.getClasses().forEach((classDeclaration) => {
-          console.log(`CHECKING CLASS NAME: ${classDeclaration.getName()}`);
-          if (classDeclaration.getMethod('freeze')) {
-            console.log('Importing aws_iam'); // otherwise TS2742
-            sourceFile.addImportDeclaration({
-              namedImports: ['aws_iam as _iam'],
-              moduleSpecifier: 'aws-cdk-lib',
-            });
+      const sourceFile = project.addSourceFileAtPath(file);
+      if (fileName === '8-principals.ts') {
+        sourceFile.getImportDeclarations().forEach((importDeclaration) => {
+          if (
+            importDeclaration.getNamedImports()[0].getName() ===
+            'PolicyStatementWithArnDefaults'
+          ) {
+            importDeclaration.setModuleSpecifier('./7-arn-defaults-CDK');
+            importDeclaration
+              .getNamedImports()[0]
+              .setName('PolicyStatementWithArnDefaultsForCdk');
           }
         });
 
-        formatCode(sourceFile);
+        const policyStatementWithPrincipal = sourceFile.getClass(
+          'PolicyStatementWithPrincipal',
+        );
+        policyStatementWithPrincipal?.setExtends(
+          'PolicyStatementWithArnDefaultsForCdk',
+        );
       }
+      //if (fileName === 'index.ts') {
+      //  sourceFile.addExportDeclaration({
+      //    namedExports: ['PolicyStatementWithCDKPrincipal'],
+      //    moduleSpecifier: './9-principals-CDK',
+      //  });
+      //
+      //  sourceFile.getExportDeclarations().forEach((exportDeclaration) => {
+      //    exportDeclaration.getNamedExports().forEach((exportItem) => {
+      //      if (exportItem.getName() == 'Effect') {
+      //        console.log('Removing Effect export...');
+      //        exportItem.remove();
+      //      }
+      //    });
+      //  });
+      //}
+
+      sourceFile.getClasses().forEach((classDeclaration) => {
+        console.log(`CHECKING CLASS NAME: ${classDeclaration.getName()}`);
+        if (classDeclaration.getMethod('freeze')) {
+          console.log('Importing aws_iam'); // otherwise TS2742
+          sourceFile.addImportDeclaration({
+            namedImports: ['aws_iam as _iam'],
+            moduleSpecifier: 'aws-cdk-lib',
+          });
+        }
+      });
+
+      formatCode(sourceFile);
     }
-  } catch (error: any) {
-    throw error;
   }
 }
 
