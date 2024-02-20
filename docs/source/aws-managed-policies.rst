@@ -4,7 +4,10 @@ AWS Managed Policies
 .. include:: _warning.rst
 .. include:: _links.rst
 
-The ``AwsManagedPolicies`` enum contains an up-to-date collection of AWS managed policies. This helps adding managed policies to IAM roles and users in a type-safe way.
+The ``AwsManagedPolicies`` enum contains an up-to-date collection of AWS managed policy **names**. This helps adding managed policies to IAM roles and users in a type-safe way.
+
+.. NOTE::
+   The enum provides the **names** since version 0.605.0. If you instead need the ARN, prefix the string with ``arn:aws:iam::aws:policy/``.
 
 First import ``AwsManagedPolicies``:
 
@@ -33,7 +36,7 @@ Usage in aws-sdk v3 and aws-cdk:
    .. code-tab:: ts aws-cdk
 
       readOnlyRole.addManagedPolicy(
-        aws_iam.ManagedPolicy.fromManagedPolicyArn(
+        aws_iam.ManagedPolicy.fromAwsManagedPolicyName(
           this,
           'ReadOnlyAccess',
           AwsManagedPolicies.ReadOnlyAccess,
@@ -45,6 +48,6 @@ Usage in aws-sdk v3 and aws-cdk:
       await iamClient.send(
         new AttachRolePolicyCommand({
           RoleName: 'ReadOnlyRole',
-          PolicyArn: AwsManagedPolicies.ReadOnlyAccess,
+          PolicyArn: `arn:aws:iam::aws:policy/${AwsManagedPolicies.ReadOnlyAccess}`,
         }),
       );
