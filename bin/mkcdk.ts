@@ -82,21 +82,6 @@ function fixPolicyStatement(project: Project) {
           'PolicyStatementWithArnDefaultsForCdk',
         );
       }
-      //if (fileName === 'index.ts') {
-      //  sourceFile.addExportDeclaration({
-      //    namedExports: ['PolicyStatementWithCDKPrincipal'],
-      //    moduleSpecifier: './9-principals-CDK',
-      //  });
-      //
-      //  sourceFile.getExportDeclarations().forEach((exportDeclaration) => {
-      //    exportDeclaration.getNamedExports().forEach((exportItem) => {
-      //      if (exportItem.getName() == 'Effect') {
-      //        console.log('Removing Effect export...');
-      //        exportItem.remove();
-      //      }
-      //    });
-      //  });
-      //}
 
       sourceFile.getClasses().forEach((classDeclaration) => {
         console.log(`CHECKING CLASS NAME: ${classDeclaration.getName()}`);
