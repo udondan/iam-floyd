@@ -48,8 +48,7 @@ jobs:
       - name: Check for changes # we expect at least 3 changes or we won't trigger a new release
         id: changes
         run: |
-          set -x +e
-          git stash -- package-lock.json
+          set -xeuo pipefail
           git diff
           echo "CHANGED=$(git diff --unified=0 -- stats | grep '^[+-]' | grep -v +++ | grep -v -- --- | wc -l | xargs)" >> $GITHUB_OUTPUT
 
@@ -63,14 +62,14 @@ jobs:
 
       - name: Configure git
         run: |
-          set -x
+          set -xeuo pipefail
           git config --local user.email "${{ secrets.RELEASE_MAIL }}"
           git config --local user.name "udondan"
         if: steps.changes.outputs.CHANGED >= 3
 
       - name: Update version refs
         run: |
-          set -x
+          set -xeuo pipefail
           perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION
           make update-version-refs
         if: steps.changes.outputs.CHANGED >= 3
@@ -81,7 +80,7 @@ jobs:
 
       - name: Generate changelog for next release
         run: |
-          set -x
+          set -xeuo pipefail
           make changelog
           git add CHANGELOG/*
         if: steps.changes.outputs.CHANGED >= 3
@@ -95,7 +94,7 @@ jobs:
 
       - name: Add all changes
         run: |
-          set -x
+          set -xeuo pipefail
           rm -rf package-lock.json node_modules *.tsbuildinfo &&
           git add *
         if: steps.changes.outputs.CHANGED >= 3
