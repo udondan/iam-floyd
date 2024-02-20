@@ -48,9 +48,7 @@ export class TestStack extends Stack {
       assumedBy: new aws_iam.ServicePrincipal('lambda.amazonaws.com'),
       managedPolicies: [
         policy,
-        aws_iam.ManagedPolicy.fromManagedPolicyArn(
-          this,
-          'ServiceQuotasReadOnlyAccess',
+        aws_iam.ManagedPolicy.fromAwsManagedPolicyName(
           AwsManagedPolicies.ServiceQuotasReadOnlyAccess,
         ),
       ],
