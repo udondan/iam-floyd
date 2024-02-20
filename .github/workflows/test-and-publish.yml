@@ -49,8 +49,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          set -x +e
-          [ -f package-lock.json ] && git stash -- package-lock.json
+          set -xeuo pipefail
           git diff
           echo "CHANGED=$(git ls-files -m | wc -l | xargs)" >> $GITHUB_OUTPUT
 

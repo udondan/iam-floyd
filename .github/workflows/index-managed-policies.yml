@@ -34,22 +34,21 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          set -x +e
-          git stash -- package-lock.json
+          set -xeuo pipefail
           git diff
           git diff --quiet
           echo "CHANGED=$?" >> $GITHUB_OUTPUT
 
       - name: Configure git
         run: |
-          set -x
+          set -xeuo pipefail
           git config --local user.email "${{ secrets.RELEASE_MAIL }}"
           git config --local user.name "udondan"
         if: steps.changes.outputs.CHANGED == '1'
 
       - name: Add all changes
         run: |
-          set -x
+          set -xeuo pipefail
           rm -rf package-lock.json node_modules &&
           git add *
         if: steps.changes.outputs.CHANGED == '1'
