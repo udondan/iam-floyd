@@ -127,8 +127,9 @@ function fixManagedPolicy(project: Project) {
   const managedPolicies = project.addSourceFileAtPath(
     'lib/generated/aws-managed-policies/index.ts',
   );
+
   managedPolicies
-    .getImportDeclarationOrThrow('AwsManagedPolicy')
+    .getExportDeclarationOrThrow('./iam-floyd')
     .setModuleSpecifier('./cdk-iam-floyd');
 }
 
