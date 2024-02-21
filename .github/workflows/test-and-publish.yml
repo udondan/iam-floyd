@@ -49,7 +49,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          set -xeuo pipefail
+          set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
           git diff
           echo "CHANGED=$(git ls-files -m | wc -l | xargs)" >> $GITHUB_OUTPUT
 

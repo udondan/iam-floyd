@@ -17,6 +17,8 @@ async function run() {
   const doFixPolicyStatement =
     !args.length || args.includes('--fix-policy-statement');
   const doFixModule = !args.length || args.includes('--fix-module');
+  const doFixManagedPolicy =
+    !args.length || args.includes('--fix-managed-policy');
 
   if (doFileSwap) swapFiles();
   if (doPackageJson) preparePackageJson();
@@ -24,10 +26,11 @@ async function run() {
   const project = new Project();
 
   if (doFixPolicyStatement) fixPolicyStatement(project);
+  if (doFixManagedPolicy) fixManagedPolicy(project);
 
   if (doFixModule) {
     const files = fs.readdirSync(`${lib}/generated/policy-statements`);
-    files.forEach(async (file) => {
+    files.forEach((file) => {
       if (file == '.cache') return;
       if (file == 'index.ts') return;
       if (!file.endsWith('.ts')) return;
@@ -45,11 +48,8 @@ async function run() {
   await project.save();
   console.log('done');
 }
-try {
-  run();
-} catch (error: any) {
-  throw error;
-}
+
+void run();
 
 function fixPolicyStatement(project: Project) {
   // loop over files in ../lib/shared/policy-statement:
@@ -100,31 +100,37 @@ function fixPolicyStatement(project: Project) {
 }
 
 function fixModule(project: Project, file: string) {
-  try {
-    const sourceFile = project.addSourceFileAtPath(file);
-    const classDeclaration = sourceFile.getClasses()[0];
-    sourceFile.addImportDeclaration({
-      namedImports: ['aws_iam as iam'],
-      moduleSpecifier: 'aws-cdk-lib',
-    });
-    const oldConstructor = classDeclaration.getConstructors()[0];
-    const desc = oldConstructor.getJsDocs()[0].getDescription();
+  const sourceFile = project.addSourceFileAtPath(file);
+  const classDeclaration = sourceFile.getClasses()[0];
+  sourceFile.addImportDeclaration({
+    namedImports: ['aws_iam as iam'],
+    moduleSpecifier: 'aws-cdk-lib',
+  });
+  const oldConstructor = classDeclaration.getConstructors()[0];
+  const desc = oldConstructor.getJsDocs()[0].getDescription();
 
-    oldConstructor.remove();
-    const constructor = classDeclaration.addConstructor({});
-    constructor.addParameter({
-      name: 'props',
-      type: 'iam.PolicyStatementProps',
-      hasQuestionToken: true,
-    });
-    constructor.setBodyText('super(props);');
-    constructor.addJsDoc({
-      description: desc,
-    });
-    formatCode(sourceFile);
-  } catch (error: any) {
-    throw error;
-  }
+  oldConstructor.remove();
+  const constructor = classDeclaration.addConstructor({});
+  constructor.addParameter({
+    name: 'props',
+    type: 'iam.PolicyStatementProps',
+    hasQuestionToken: true,
+  });
+  constructor.setBodyText('super(props);');
+  constructor.addJsDoc({
+    description: desc,
+  });
+  formatCode(sourceFile);
+}
+
+function fixManagedPolicy(project: Project) {
+  const managedPolicies = project.addSourceFileAtPath(
+    'lib/generated/aws-managed-policies/index.ts',
+  );
+
+  managedPolicies
+    .getExportDeclarationOrThrow('./iam-floyd')
+    .setModuleSpecifier('./cdk-iam-floyd');
 }
 
 function preparePackageJson() {
@@ -148,7 +154,7 @@ function preparePackageJson() {
 function swapFiles() {
   const dir = `${lib}/shared/policy-statement`;
   const files = fs.readdirSync(dir);
-  files.forEach(async (file) => {
+  files.forEach((file) => {
     if (!file.endsWith('.CDK.ts')) return;
     const parts = file.split('.');
     parts.splice(1, 1);

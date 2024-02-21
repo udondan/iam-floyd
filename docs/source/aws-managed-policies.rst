@@ -4,30 +4,31 @@ AWS Managed Policies
 .. include:: _warning.rst
 .. include:: _links.rst
 
-The ``AwsManagedPolicies`` enum contains an up-to-date collection of AWS managed policy **names**. This helps adding managed policies to IAM roles and users in a type-safe way.
+The ``AwsManagedPolicy`` class provides an up-to-date collection of AWS managed policies. This helps adding managed policies to IAM roles and users in a type-safe way.
 
-.. NOTE::
-   The enum provides the **names** since version 0.605.0. If you instead need the ARN, prefix the string with ``arn:aws:iam::aws:policy/``.
+The class provides the **names** of the policies. If you instead need the ARN, prefix the string with ``arn:aws:iam::aws:policy/``.
 
-First import ``AwsManagedPolicies``:
+The package ``cdk-iam-floyd`` additionally provides methods for directly creating ``aws_iam.IManagedPolicy`` objects.
+
+First import ``AwsManagedPolicy``:
 
 .. tabs::
 
    .. code-tab:: ts
 
       // for use without AWS CDK use the iam-floyd package
-      import { AwsManagedPolicies } from 'iam-floyd';
+      import { AwsManagedPolicy } from 'iam-floyd';
 
       // for use with CDK use the cdk-iam-floyd package
-      import { AwsManagedPolicies } from 'cdk-iam-floyd';
+      import { AwsManagedPolicy } from 'cdk-iam-floyd';
 
    .. code-tab:: js
 
       // for use without AWS CDK use the iam-floyd package
-      const { AwsManagedPolicies } = require('iam-floyd');
+      const { AwsManagedPolicy } = require('iam-floyd');
 
       // for use with CDK use the cdk-iam-floyd package
-      const { AwsManagedPolicies } = require('cdk-iam-floyd');
+      const { AwsManagedPolicy } = require('cdk-iam-floyd');
 
 Usage in aws-sdk v3 and aws-cdk:
 
@@ -36,11 +37,7 @@ Usage in aws-sdk v3 and aws-cdk:
    .. code-tab:: ts aws-cdk
 
       readOnlyRole.addManagedPolicy(
-        aws_iam.ManagedPolicy.fromAwsManagedPolicyName(
-          this,
-          'ReadOnlyAccess',
-          AwsManagedPolicies.ReadOnlyAccess,
-        ),
+        new AwsManagedPolicy().ReadOnlyAccess(),
       );
 
    .. code-tab:: ts aws-sdk
@@ -48,6 +45,6 @@ Usage in aws-sdk v3 and aws-cdk:
       await iamClient.send(
         new AttachRolePolicyCommand({
           RoleName: 'ReadOnlyRole',
-          PolicyArn: `arn:aws:iam::aws:policy/${AwsManagedPolicies.ReadOnlyAccess}`,
+          PolicyArn: `arn:aws:iam::aws:policy/${AwsManagedPolicy.ReadOnlyAccess}`,
         }),
       );
