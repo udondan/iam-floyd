@@ -8,13 +8,26 @@ import {
   Policy,
 } from '@aws-sdk/client-iam';
 import * as fs from 'fs';
-import { EnumDeclaration, Project, QuoteKind, SourceFile } from 'ts-morph';
+import {
+  ClassDeclaration,
+  Project,
+  QuoteKind,
+  Scope,
+  SourceFile,
+} from 'ts-morph';
 
 import { camelCase } from '.';
 
 class ManagedPolicies {
-  private file: SourceFile;
-  private collection: EnumDeclaration;
+  private filesNames = ['iam-floyd', 'cdk-iam-floyd'];
+  private files: Record<
+    string,
+    {
+      source: SourceFile;
+      collection: ClassDeclaration;
+    }
+  > = {};
+  private parentClassName = 'AwsManagedPolicyStatic';
 
   constructor() {
     const project = new Project();
@@ -22,37 +35,90 @@ class ManagedPolicies {
       quoteKind: QuoteKind.Single,
     });
 
-    this.file = project.createSourceFile(
-      'lib/generated/aws-managed-policies.ts',
-      '',
-      {
-        overwrite: true,
-      },
-    );
+    this.filesNames.forEach((name: string) => {
+      const source = project.createSourceFile(
+        `lib/generated/aws-managed-policies/${name}.ts`,
+        '',
+        {
+          overwrite: true,
+        },
+      );
 
-    this.collection = this.file.addEnum({
-      isExported: true,
-      name: 'AwsManagedPolicies',
-    });
+      if (name === 'cdk-iam-floyd') {
+        source.addImportDeclaration({
+          namedImports: ['aws_iam'],
+          moduleSpecifier: 'aws-cdk-lib',
+        });
+        source.addImportDeclaration({
+          namedImports: [`AwsManagedPolicy as ${this.parentClassName}`],
+          moduleSpecifier: './iam-floyd',
+        });
+      }
 
-    this.collection.addJsDoc({
-      description: 'Provides names of all AWS managed policies.',
+      const collection = source.addClass({
+        isExported: true,
+        name: 'AwsManagedPolicy',
+      });
+
+      if (name === 'cdk-iam-floyd') {
+        collection.setExtends(this.parentClassName);
+      } else {
+        source.addTypeAlias({
+          name: 'ExcludePrototype<T> ',
+          type: "Exclude<keyof T, 'prototype'>",
+          isExported: true,
+        });
+
+        source.addTypeAlias({
+          name: 'AwsManagedPolicyName',
+          type: 'ExcludePrototype<typeof AwsManagedPolicy>',
+          isExported: true,
+        });
+      }
+
+      collection.addJsDoc({
+        description: 'Provides names of all AWS managed policies.',
+      });
+
+      this.files[name] = { source, collection };
     });
   }
 
   public save() {
-    this.file.saveSync();
+    this.filesNames.forEach((name: string) => {
+      this.files[name].source.saveSync();
+    });
   }
 
   public add(name: string, value: string, description: string) {
-    this.collection
-      .addMember({
-        name,
-        value: value.replace(/^arn:aws:iam::aws:policy\//, ''),
-      })
-      .addJsDoc({
-        description,
-      });
+    this.filesNames.forEach((fileName: string) => {
+      if (fileName === 'cdk-iam-floyd') {
+        this.files[fileName].collection
+          .addMethod({
+            name,
+            returnType: 'aws_iam.IManagedPolicy',
+            isStatic: false,
+            scope: Scope.Public,
+          })
+          .setBodyText(
+            `return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(${this.parentClassName}.${name});`,
+          )
+          .addJsDoc({
+            description,
+          });
+      } else {
+        this.files[fileName].collection
+          .addProperty({
+            name,
+            initializer: `'${value.replace(/^arn:aws:iam::aws:policy\//, '')}'`,
+            isStatic: true,
+            scope: Scope.Public,
+          })
+          .addJsDoc({
+            description,
+          });
+      }
+    });
   }
 }
 
@@ -111,8 +177,9 @@ async function getPolicies(marker?: string): Promise<Policy[]> {
     Marker: marker,
     MaxItems: 100,
   };
-  console.log('Fetching metadata of 100 policies...');
+
   while (true) {
+    console.log('Fetching metadata of 100 policies...');
     const { Policies, IsTruncated, Marker } = await iamClient.send(
       new ListPoliciesCommand(params),
     );
@@ -127,7 +194,12 @@ async function getPolicies(marker?: string): Promise<Policy[]> {
 
     params.Marker = Marker;
   }
-  return results;
+  return results.sort((a, b) => {
+    if (a.PolicyName && b.PolicyName) {
+      return a.PolicyName.localeCompare(b.PolicyName);
+    }
+    return 0;
+  });
 }
 
 async function getPolicyDocument(
