@@ -2354,5 +2354,5 @@ export class AwsManagedPolicy {
     public static WorkLinkServiceRolePolicy = 'WorkLinkServiceRolePolicy';
 }
 
-export type ExcludePrototype<T>  = Exclude<keyof T, 'prototype'>;
+type ExcludePrototype<T>  = Exclude<keyof T, 'prototype'>;
 export type AwsManagedPolicyName = ExcludePrototype<typeof AwsManagedPolicy>;

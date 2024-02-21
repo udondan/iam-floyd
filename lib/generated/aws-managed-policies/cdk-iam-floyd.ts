@@ -1,7 +1,13 @@
 import { aws_iam } from 'aws-cdk-lib';
-import { AwsManagedPolicy as AwsManagedPolicyStatic } from './iam-loyd';
+import { AwsManagedPolicy as AwsManagedPolicyStatic } from './iam-floyd';
 
-/** Provides names of all AWS managed policies. */
+/**
+ * Provides all AWS managed policies.
+ *
+ * To get the name, access the static properties of this class, e.g. `AwsManagedPolicy.ReadOnlyAccess`.
+ *
+ *  To get an `aws_iam.IManagedPolicy` object, call the methods on an instance of the class, e.g. `new AwsManagedPolicy().ReadOnlyAccess()`.
+ */
 export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allow Access Analyzer to analyze resource metadata */
     public AccessAnalyzerServiceRolePolicy(): aws_iam.IManagedPolicy {

@@ -62,11 +62,19 @@ class ManagedPolicies {
 
       if (name === 'cdk-iam-floyd') {
         collection.setExtends(this.parentClassName);
+
+        collection.addJsDoc({
+          description:
+            'Provides all AWS managed policies.\n\nTo get the name, access the static properties of this class, e.g. `AwsManagedPolicy.ReadOnlyAccess`.\n\n To get an `aws_iam.IManagedPolicy` object, call the methods on an instance of the class, e.g. `new AwsManagedPolicy().ReadOnlyAccess()`.',
+        });
       } else {
+        collection.addJsDoc({
+          description: 'Provides names of all AWS managed policies.',
+        });
+
         source.addTypeAlias({
           name: 'ExcludePrototype<T> ',
           type: "Exclude<keyof T, 'prototype'>",
-          isExported: true,
         });
 
         source.addTypeAlias({
@@ -75,10 +83,6 @@ class ManagedPolicies {
           isExported: true,
         });
       }
-
-      collection.addJsDoc({
-        description: 'Provides names of all AWS managed policies.',
-      });
 
       this.files[name] = { source, collection };
     });
