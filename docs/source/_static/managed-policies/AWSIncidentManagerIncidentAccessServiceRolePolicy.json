@@ -9,7 +9,8 @@
         "cloudformation:DescribeStackResources",
         "codedeploy:BatchGetDeployments",
         "codedeploy:ListDeployments",
-        "codedeploy:ListDeploymentTargets"
+        "codedeploy:ListDeploymentTargets",
+        "autoscaling:DescribeAutoScalingInstances"
       ],
       "Resource": "*"
     }

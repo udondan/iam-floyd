@@ -368,7 +368,7 @@ export function createModule(module: Module): Promise<void> {
 
     method.setBodyText(`return this.to('${name}');`);
 
-    var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
+    let desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
 
     if ('conditions' in action) {
       desc += '\n\nPossible conditions:';

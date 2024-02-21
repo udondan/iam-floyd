@@ -48,7 +48,7 @@ jobs:
       - name: Check for changes # we expect at least 3 changes or we won't trigger a new release
         id: changes
         run: |
-          set -xeuo pipefail
+          set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
           git diff
           echo "CHANGED=$(git diff --unified=0 -- stats | grep '^[+-]' | grep -v +++ | grep -v -- --- | wc -l | xargs)" >> $GITHUB_OUTPUT
 

@@ -6,7 +6,7 @@ import {
   Stack,
   StackProps,
 } from 'aws-cdk-lib';
-import { AwsManagedPolicies, Statement } from 'cdk-iam-floyd';
+import { AwsManagedPolicy, Statement } from 'cdk-iam-floyd';
 import { Construct } from 'constructs';
 
 export class TestStack extends Stack {
@@ -48,9 +48,7 @@ export class TestStack extends Stack {
       assumedBy: new aws_iam.ServicePrincipal('lambda.amazonaws.com'),
       managedPolicies: [
         policy,
-        aws_iam.ManagedPolicy.fromAwsManagedPolicyName(
-          AwsManagedPolicies.ServiceQuotasReadOnlyAccess,
-        ),
+        new AwsManagedPolicy().ServiceQuotasReadOnlyAccess(),
       ],
     });
 

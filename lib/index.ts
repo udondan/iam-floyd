@@ -1,4 +1,4 @@
 export { Collection } from './collection';
 export { Operator } from './shared';
 export * as Statement from './statements';
-export { AwsManagedPolicies } from './generated/aws-managed-policies';
+export * from './generated/aws-managed-policies';
