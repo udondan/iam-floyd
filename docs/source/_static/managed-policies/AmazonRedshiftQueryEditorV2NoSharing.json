@@ -4,7 +4,11 @@
     {
       "Sid": "RedshiftPermissions",
       "Effect": "Allow",
-      "Action": "redshift:DescribeClusters",
+      "Action": [
+        "redshift:DescribeClusters",
+        "redshift-serverless:ListNamespaces",
+        "redshift-serverless:ListWorkgroups"
+      ],
       "Resource": "*"
     },
     {
