@@ -36,8 +36,8 @@ jobs:
         run: |
           set -xuo pipefail # we intentionally do not use -e here, as rc=1 means we have changes
           git diff
-          git diff --quiet
-          echo "CHANGED=$?" >> $GITHUB_OUTPUT
+          git diff --quiet || CHANGED=$?
+          echo "CHANGED=${CHANGED:-0}" >> $GITHUB_OUTPUT
 
       - name: Configure git
         run: |
