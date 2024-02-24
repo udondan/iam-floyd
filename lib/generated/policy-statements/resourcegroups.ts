@@ -38,6 +38,9 @@ export class ResourceGroups extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - cloudformation:DescribeStacks
+   *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
@@ -53,6 +56,17 @@ export class ResourceGroups extends PolicyStatement {
    */
   public toDeleteGroup() {
     return this.to('DeleteGroup');
+  }
+
+  /**
+   * Grants permission to delete a resource-based policy for the specified group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role
+   */
+  public toDeleteGroupPolicy() {
+    return this.to('DeleteGroupPolicy');
   }
 
   /**
@@ -97,6 +111,17 @@ export class ResourceGroups extends PolicyStatement {
    */
   public toGetGroupConfiguration() {
     return this.to('GetGroupConfiguration');
+  }
+
+  /**
+   * Grants permission to get a resource-based policy for the specified group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/management-role.html#service-linked-role-permissions-management-role
+   */
+  public toGetGroupPolicy() {
+    return this.to('GetGroupPolicy');
   }
 
   /**
@@ -157,6 +182,17 @@ export class ResourceGroups extends PolicyStatement {
    */
   public toListGroups() {
     return this.to('ListGroups');
+  }
+
+  /**
+   * Grants permission to list supported resource types
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html
+   */
+  public toListResourceTypes() {
+    return this.to('ListResourceTypes');
   }
 
   /**
@@ -264,6 +300,9 @@ export class ResourceGroups extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cloudformation:DescribeStacks
+   *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html
    */
   public toUpdateGroupQuery() {
@@ -275,6 +314,7 @@ export class ResourceGroups extends PolicyStatement {
       'AssociateResource',
       'CreateGroup',
       'DeleteGroup',
+      'DeleteGroupPolicy',
       'DisassociateResource',
       'GroupResources',
       'PutGroupConfiguration',
@@ -288,12 +328,14 @@ export class ResourceGroups extends PolicyStatement {
       'GetAccountSettings',
       'GetGroup',
       'GetGroupConfiguration',
+      'GetGroupPolicy',
       'GetGroupQuery',
       'GetTags'
     ],
     List: [
       'ListGroupResources',
       'ListGroups',
+      'ListResourceTypes',
       'SearchResources'
     ],
     Tagging: [

@@ -107,6 +107,7 @@ export { Mechanicalturk } from './policy-statements/mechanicalturk';
 export { Mediaimport } from './policy-statements/mediaimport';
 export { Memorydb } from './policy-statements/memorydb';
 export { Ec2messages } from './policy-statements/messagedeliveryservice';
+export { Ssmmessages } from './policy-statements/messagegatewayservice';
 export { Mobileanalytics } from './policy-statements/mobileanalytics';
 export { Monitron } from './policy-statements/monitron';
 export { Mq } from './policy-statements/mq';
@@ -154,7 +155,6 @@ export { SagemakerGeospatial } from './policy-statements/sagemakergeospatialcapa
 export { SagemakerGroundtruthSynthetic } from './policy-statements/sagemakergroundtruthsynthetic';
 export { Securitylake } from './policy-statements/securitylake';
 export { Ses } from './policy-statements/ses';
-export { Ssmmessages } from './policy-statements/sessionmanagermessagegatewayservice';
 export { Sdb } from './policy-statements/simpledb';
 export { SesV2 } from './policy-statements/simpleemailservicev2';
 export { Swf } from './policy-statements/simpleworkflowservice';

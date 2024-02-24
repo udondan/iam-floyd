@@ -663,6 +663,9 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
+   * Dependent actions:
+   * - ec2:CancelCapacityReservation
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelCapacityReservationFleets.html
    */
   public toCancelCapacityReservationFleets() {
@@ -852,7 +855,10 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    *
    * Dependent actions:
+   * - ec2:CreateCapacityReservation
    * - ec2:CreateTags
+   * - ec2:DescribeCapacityReservations
+   * - ec2:DescribeInstances
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservationFleet.html
    */
@@ -1266,6 +1272,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Dependent actions:
    * - ec2:CreateTags
+   * - ssm:GetParameters
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html
    */
@@ -1280,6 +1287,9 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ssm:GetParameters
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html
    */
@@ -4291,6 +4301,9 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
+   * Dependent actions:
+   * - ssm:GetParameters
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html
    */
   public toDescribeLaunchTemplateVersions() {
@@ -7229,6 +7242,9 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
+   * Dependent actions:
+   * - ec2:ModifyCapacityReservation
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyCapacityReservationFleet.html
    */
   public toModifyCapacityReservationFleet() {
@@ -8584,6 +8600,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Dependent actions:
    * - ec2:CreateTags
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html
    */
@@ -8811,6 +8828,8 @@ export class Ec2 extends PolicyStatement {
    *
    * Dependent actions:
    * - ec2:CreateTags
+   * - iam:PassRole
+   * - ssm:GetParameters
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html
    */
