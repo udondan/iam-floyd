@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSThinkboxAWSPortal1",
       "Effect": "Allow",
       "Action": [
         "ec2:AttachInternetGateway",
@@ -72,6 +73,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSThinkboxAWSPortal2",
       "Effect": "Allow",
       "Action": "ec2:RunInstances",
       "Resource": [
@@ -87,6 +89,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal3",
       "Effect": "Allow",
       "Action": "ec2:RunInstances",
       "Resource": "arn:aws:ec2:*:*:instance/*",
@@ -97,6 +100,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal4",
       "Effect": "Allow",
       "Action": "ec2:TerminateInstances",
       "Resource": "*",
@@ -107,6 +111,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal5",
       "Effect": "Allow",
       "Action": "ec2:TerminateInstances",
       "Resource": "*",
@@ -117,6 +122,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal6",
       "Effect": "Allow",
       "Action": "ec2:TerminateInstances",
       "Resource": "*",
@@ -127,6 +133,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal7",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags"
@@ -139,6 +146,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal8",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags"
@@ -151,6 +159,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal9",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags",
@@ -163,10 +172,12 @@
         "arn:aws:ec2:*:*:route-table/*",
         "arn:aws:ec2:*:*:volume/*",
         "arn:aws:ec2:*:*:vpc/*",
-        "arn:aws:ec2:*:*:natgateway/*"
+        "arn:aws:ec2:*:*:natgateway/*",
+        "arn:aws:ec2:*:*:elastic-ip/*"
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal10",
       "Effect": "Allow",
       "Action": [
         "iam:GetUser"
@@ -174,6 +185,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSThinkboxAWSPortal11",
       "Effect": "Allow",
       "Action": [
         "iam:GetInstanceProfile"
@@ -183,6 +195,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal12",
       "Effect": "Allow",
       "Action": [
         "iam:GetPolicy",
@@ -194,6 +207,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal13",
       "Effect": "Allow",
       "Action": [
         "iam:GetRole",
@@ -205,6 +219,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal14",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -226,6 +241,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal15",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "arn:aws:iam::*:role/aws-service-role/*",
@@ -240,6 +256,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal16",
       "Effect": "Allow",
       "Action": [
         "s3:CreateBucket",
@@ -272,6 +289,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal17",
       "Effect": "Allow",
       "Action": [
         "s3:PutBucketPolicy"
@@ -281,6 +299,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal18",
       "Effect": "Allow",
       "Action": [
         "s3:PutBucketOwnershipControls"
@@ -290,6 +309,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal19",
       "Effect": "Allow",
       "Action": [
         "s3:ListAllMyBuckets"
@@ -297,6 +317,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSThinkboxAWSPortal20",
       "Effect": "Allow",
       "Action": [
         "dynamodb:Scan"
@@ -304,6 +325,7 @@
       "Resource": "arn:aws:dynamodb:*:*:table/DeadlineFleetHealth*"
     },
     {
+      "Sid": "AWSThinkboxAWSPortal21",
       "Effect": "Allow",
       "Action": [
         "cloudformation:CreateStack",
@@ -323,6 +345,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxAWSPortal22",
       "Effect": "Allow",
       "Action": [
         "cloudformation:EstimateTemplateCost",
@@ -332,6 +355,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSThinkboxAWSPortal23",
       "Effect": "Allow",
       "Action": [
         "logs:DescribeLogStreams",
@@ -342,6 +366,7 @@
       "Resource": "arn:aws:logs:*:*:log-group:/thinkbox*"
     },
     {
+      "Sid": "AWSThinkboxAWSPortal24",
       "Effect": "Allow",
       "Action": [
         "logs:DescribeLogGroups",
@@ -350,6 +375,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSThinkboxAWSPortal25",
       "Effect": "Allow",
       "Action": [
         "kms:Encrypt",
@@ -368,6 +394,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal26",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:CreateSecret"
@@ -382,6 +409,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxAWSPortal27",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:DeleteSecret",
