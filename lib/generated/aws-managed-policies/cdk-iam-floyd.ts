@@ -1554,6 +1554,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRDSBetaServiceRolePolicy);
     }
 
+    /** Allows Amazon RDS Custom to perform various automation actions and database management tasks through an EC2 instance profile. */
+    public AmazonRDSCustomInstanceProfileRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRDSCustomInstanceProfileRolePolicy);
+    }
+
     /** Amazon RDS Custom Preview Service Role Policy */
     public AmazonRDSCustomPreviewServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRDSCustomPreviewServiceRolePolicy);

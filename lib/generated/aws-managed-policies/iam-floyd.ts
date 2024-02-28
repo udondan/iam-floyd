@@ -618,6 +618,8 @@ export class AwsManagedPolicy {
     public static AmazonQLDBReadOnly = 'AmazonQLDBReadOnly';
     /** Allows Amazon RDS to manage AWS resources on your behalf. */
     public static AmazonRDSBetaServiceRolePolicy = 'aws-service-role/AmazonRDSBetaServiceRolePolicy';
+    /** Allows Amazon RDS Custom to perform various automation actions and database management tasks through an EC2 instance profile. */
+    public static AmazonRDSCustomInstanceProfileRolePolicy = 'AmazonRDSCustomInstanceProfileRolePolicy';
     /** Amazon RDS Custom Preview Service Role Policy */
     public static AmazonRDSCustomPreviewServiceRolePolicy = 'aws-service-role/AmazonRDSCustomPreviewServiceRolePolicy';
     /** Allows Amazon RDS Custom to manage AWS resources on your behalf. */
