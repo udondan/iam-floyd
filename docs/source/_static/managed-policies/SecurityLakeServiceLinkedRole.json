@@ -61,6 +61,43 @@
           "organizations:ServicePrincipal": "securitylake.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "AllowWafLoggingConfiguration",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:PutLoggingConfiguration",
+        "wafv2:GetLoggingConfiguration",
+        "wafv2:ListLoggingConfigurations",
+        "wafv2:DeleteLoggingConfiguration"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "wafv2:LogScope": "SecurityLake"
+        }
+      }
+    },
+    {
+      "Sid": "AllowPutLoggingConfiguration",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:PutLoggingConfiguration"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "wafv2:LogDestinationResource": "arn:aws:s3:::aws-waf-logs-security-lake-*"
+        }
+      }
+    },
+    {
+      "Sid": "ListWebACLs",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:ListWebACLs"
+      ],
+      "Resource": "*"
     }
   ]
 }

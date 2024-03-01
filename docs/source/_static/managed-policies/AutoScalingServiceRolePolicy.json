@@ -12,6 +12,8 @@
         "ec2:DeleteTags",
         "ec2:Describe*",
         "ec2:DetachClassicLinkVpc",
+        "ec2:GetInstanceTypesFromInstanceRequirements",
+        "ec2:GetSecurityGroupsForVpc",
         "ec2:ModifyInstanceAttribute",
         "ec2:RequestSpotInstances",
         "ec2:RunInstances",
