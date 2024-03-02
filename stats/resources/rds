@@ -20,6 +20,5 @@ rds:shardgrp
 rds:snapshot
 rds:snapshot-tenant-database
 rds:subgrp
-rds:target
 rds:target-group
 rds:tenant-database

@@ -567,6 +567,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restart pipelines on a running channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/maintenance-user-initiated.html
+   */
+  public toRestartChannelPipelines() {
+    return this.to('RestartChannelPipelines');
+  }
+
+  /**
    * Grants permission to start a channel
    *
    * Access Level: Write
@@ -782,6 +793,7 @@ export class Medialive extends PolicyStatement {
       'PurchaseOffering',
       'RebootInputDevice',
       'RejectInputDeviceTransfer',
+      'RestartChannelPipelines',
       'StartChannel',
       'StartInputDevice',
       'StartInputDeviceMaintenanceWindow',
@@ -835,7 +847,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Adds a resource of type channel to the statement
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/channels.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/container-channel.html
    *
    * @param channelId - Identifier for the channelId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -852,7 +864,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Adds a resource of type input to the statement
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/inputs.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/creating-input.html
    *
    * @param inputId - Identifier for the inputId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -883,7 +895,7 @@ export class Medialive extends PolicyStatement {
   /**
    * Adds a resource of type input-security-group to the statement
    *
-   * https://docs.aws.amazon.com/medialive/latest/ug/inputsecuritygroups.html
+   * https://docs.aws.amazon.com/medialive/latest/ug/working-with-input-security-groups.html
    *
    * @param inputSecurityGroupId - Identifier for the inputSecurityGroupId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

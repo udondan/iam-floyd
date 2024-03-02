@@ -2745,20 +2745,6 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type target to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html
-   *
-   * @param targetId - Identifier for the targetId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onTarget(targetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target:${ targetId }`);
-  }
-
-  /**
    * Adds a resource of type target-group to the statement
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html

@@ -13,7 +13,3 @@ dms:replication-config-tag/${TagKey}
 dms:req-tag/${TagKey}
 dms:subgrp-tag/${TagKey}
 dms:task-tag/${TagKey}
-dms:test-environment-tag/${TagKey}
-dms:test-plan-tag/${TagKey}
-dms:test-run-tag/${TagKey}
-dms:test-tag/${TagKey}

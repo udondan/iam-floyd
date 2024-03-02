@@ -67,7 +67,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the billing addresses in the user account
+   * Grants permission to list the billing addresses in the AWS Account
    *
    * Access Level: Read
    *
@@ -78,7 +78,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the delivery addresses in the user account
+   * Grants permission to list the delivery addresses in the AWS Account
    *
    * Access Level: Read
    *
@@ -100,7 +100,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the orders in the user account
+   * Grants permission to list the orders in the AWS Account
    *
    * Access Level: Read
    *
@@ -133,7 +133,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the quotes in the user account
+   * Grants permission to list the quotes in the AWS Account
    *
    * Access Level: List
    *

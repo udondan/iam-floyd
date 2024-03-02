@@ -210,6 +210,13 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - glue:DeleteDatabase
+   * - glue:DeleteTable
+   * - glue:PassConnection
+   * - lakeformation:DeregisterResource
+   * - lakeformation:RegisterResource
+   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DisableFederation.html
    */
   public toDisableFederation() {
@@ -220,6 +227,14 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to enable federation of event data store data by using the AWS Glue Data Catalog
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - glue:CreateDatabase
+   * - glue:CreateTable
+   * - iam:GetRole
+   * - iam:PassRole
+   * - lakeformation:DeregisterResource
+   * - lakeformation:RegisterResource
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_EnableFederation.html
    */
@@ -254,7 +269,11 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/query-federation.html#query-federation-permissions
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions
    */
   public toGetEventDataStoreData() {
     return this.to('GetEventDataStoreData');
@@ -782,7 +801,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Filters access by a tag's key and value in a request
+   * Filters access by the tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -801,7 +820,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag key-value pairs in the request
+   * Filters access by the tags attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *

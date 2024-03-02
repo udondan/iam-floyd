@@ -318,50 +318,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a test using the provided settings
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTest.html
-   */
-  public toCreateTest() {
-    return this.to('CreateTest');
-  }
-
-  /**
-   * Grants permission to create a test environment using the provided settings
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestEnvironments.html
-   */
-  public toCreateTestEnvironments() {
-    return this.to('CreateTestEnvironments');
-  }
-
-  /**
-   * Grants permission to create a test plan using the provided settings
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestPlan.html
-   */
-  public toCreateTestPlan() {
-    return this.to('CreateTestPlan');
-  }
-
-  /**
-   * Grants permission to create a test run using the provided settings
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateTestRun.html
-   */
-  public toCreateTestRun() {
-    return this.to('CreateTestRun');
-  }
-
-  /**
    * Grants permission to delete the specified certificate
    *
    * Access Level: Write
@@ -524,28 +480,6 @@ export class Dms extends PolicyStatement {
    */
   public toDeleteReplicationTaskAssessmentRun() {
     return this.to('DeleteReplicationTaskAssessmentRun');
-  }
-
-  /**
-   * Grants permission to delete the specified test
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteTest.html
-   */
-  public toDeleteTest() {
-    return this.to('DeleteTest');
-  }
-
-  /**
-   * Grants permission to delete the specified test plan
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteTestPlan.html
-   */
-  public toDeleteTestPlan() {
-    return this.to('DeleteTestPlan');
   }
 
   /**
@@ -1061,72 +995,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list a test environment for a migration project
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestEnvironments.html
-   */
-  public toDescribeTestEnvironments() {
-    return this.to('DescribeTestEnvironments');
-  }
-
-  /**
-   * Grants permission to list statuses of test generations for a migration project
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestGenerationStatus.html
-   */
-  public toDescribeTestGenerationStatus() {
-    return this.to('DescribeTestGenerationStatus');
-  }
-
-  /**
-   * Grants permission to list all the test plans for a migration project
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestPlans.html
-   */
-  public toDescribeTestPlans() {
-    return this.to('DescribeTestPlans');
-  }
-
-  /**
-   * Grants permission to view the summary of a specific test run
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestRunResultsSummaries.html
-   */
-  public toDescribeTestRunResultsSummaries() {
-    return this.to('DescribeTestRunResultsSummaries');
-  }
-
-  /**
-   * Grants permission to list all the test runs for a migration project
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTestRuns.html
-   */
-  public toDescribeTestRuns() {
-    return this.to('DescribeTestRuns');
-  }
-
-  /**
-   * Grants permission to list all the tests for a test plan
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTests.html
-   */
-  public toDescribeTests() {
-    return this.to('DescribeTests');
-  }
-
-  /**
    * Grants permission to disassociate a extension pack
    *
    * Access Level: Write
@@ -1468,28 +1336,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify the specified test
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyTest.html
-   */
-  public toModifyTest() {
-    return this.to('ModifyTest');
-  }
-
-  /**
-   * Grants permission to modify the specified test plan
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyTestPlan.html
-   */
-  public toModifyTestPlan() {
-    return this.to('ModifyTestPlan');
-  }
-
-  /**
    * Grants permission to move the specified replication task to a different replication instance
    *
    * Access Level: Write
@@ -1594,17 +1440,6 @@ export class Dms extends PolicyStatement {
    */
   public toStartExtensionPackAssociation() {
     return this.to('StartExtensionPackAssociation');
-  }
-
-  /**
-   * Grants permission to start test generation for the specified test plan
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartGenerateTests.html
-   */
-  public toStartGenerateTests() {
-    return this.to('StartGenerateTests');
   }
 
   /**
@@ -1749,17 +1584,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop test generation for the specified test plan
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StopGenerateTests.html
-   */
-  public toStopGenerateTests() {
-    return this.to('StopGenerateTests');
-  }
-
-  /**
    * Grants permission to stop a replication
    *
    * Access Level: Write
@@ -1779,17 +1603,6 @@ export class Dms extends PolicyStatement {
    */
   public toStopReplicationTask() {
     return this.to('StopReplicationTask');
-  }
-
-  /**
-   * Grants permission to stop a test run
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StopTestRun.html
-   */
-  public toStopTestRun() {
-    return this.to('StopTestRun');
   }
 
   /**
@@ -1881,17 +1694,6 @@ export class Dms extends PolicyStatement {
     return this.to('UploadFileMetadataList');
   }
 
-  /**
-   * Grants permission to view the details of a specific test in a test run
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ViewTestRunResults.html
-   */
-  public toViewTestRunResults() {
-    return this.to('ViewTestRunResults');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToResource',
@@ -1916,10 +1718,6 @@ export class Dms extends PolicyStatement {
       'CreateReplicationInstance',
       'CreateReplicationSubnetGroup',
       'CreateReplicationTask',
-      'CreateTest',
-      'CreateTestEnvironments',
-      'CreateTestPlan',
-      'CreateTestRun',
       'DeleteCertificate',
       'DeleteConnection',
       'DeleteDataMigration',
@@ -1935,8 +1733,6 @@ export class Dms extends PolicyStatement {
       'DeleteReplicationSubnetGroup',
       'DeleteReplicationTask',
       'DeleteReplicationTaskAssessmentRun',
-      'DeleteTest',
-      'DeleteTestPlan',
       'DisassociateExtensionPack',
       'ExportMetadataModelAssessment',
       'ImportCertificate',
@@ -1953,8 +1749,6 @@ export class Dms extends PolicyStatement {
       'ModifyReplicationInstance',
       'ModifyReplicationSubnetGroup',
       'ModifyReplicationTask',
-      'ModifyTest',
-      'ModifyTestPlan',
       'MoveReplicationTask',
       'RebootReplicationInstance',
       'RefreshSchemas',
@@ -1963,7 +1757,6 @@ export class Dms extends PolicyStatement {
       'RunFleetAdvisorLsaAnalysis',
       'StartDataMigration',
       'StartExtensionPackAssociation',
-      'StartGenerateTests',
       'StartMetadataModelAssessment',
       'StartMetadataModelConversion',
       'StartMetadataModelExportAsScript',
@@ -1976,10 +1769,8 @@ export class Dms extends PolicyStatement {
       'StartReplicationTaskAssessment',
       'StartReplicationTaskAssessmentRun',
       'StopDataMigration',
-      'StopGenerateTests',
       'StopReplication',
       'StopReplicationTask',
-      'StopTestRun',
       'UpdateConversionConfiguration',
       'UpdateDataProvider',
       'UpdateInstanceProfile',
@@ -2032,12 +1823,6 @@ export class Dms extends PolicyStatement {
       'DescribeReplications',
       'DescribeSchemas',
       'DescribeTableStatistics',
-      'DescribeTestEnvironments',
-      'DescribeTestGenerationStatus',
-      'DescribeTestPlans',
-      'DescribeTestRunResultsSummaries',
-      'DescribeTestRuns',
-      'DescribeTests',
       'GetMetadataModel',
       'ListDataProviders',
       'ListExtensionPacks',
@@ -2048,8 +1833,7 @@ export class Dms extends PolicyStatement {
       'ListMetadataModelExports',
       'ListMigrationProjects',
       'ListTagsForResource',
-      'TestConnection',
-      'ViewTestRunResults'
+      'TestConnection'
     ]
   };
 
@@ -2280,78 +2064,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type TestPlan to the statement
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestPlan.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifTestPlanTag()
-   */
-  public onTestPlan(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test-plan:${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type Test to the statement
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_Test.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifTestTag()
-   */
-  public onTest(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test:${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type TestRun to the statement
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestRun.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifTestRunTag()
-   */
-  public onTestRun(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test-run:${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type TestEnvironment to the statement
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Api_TestEnvironment.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifTestEnvironmentTag()
-   */
-  public onTestEnvironment(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:test-environment:${ resourceName }`);
-  }
-
-  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -2412,10 +2124,6 @@ export class Dms extends PolicyStatement {
    * - ReplicationInstance
    * - ReplicationSubnetGroup
    * - ReplicationTask
-   * - TestPlan
-   * - Test
-   * - TestRun
-   * - TestEnvironment
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2653,69 +2361,5 @@ export class Dms extends PolicyStatement {
    */
   public ifTaskTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`task-tag/${ tagKey }`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the presence of tag key-value pairs in the request for TestEnvironment
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_test-environment-tag___TagKey_
-   *
-   * Applies to resource types:
-   * - TestEnvironment
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifTestEnvironmentTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`test-environment-tag/${ tagKey }`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the presence of tag key-value pairs in the request for TestPlan
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_test-plan-tag___TagKey_
-   *
-   * Applies to resource types:
-   * - TestPlan
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifTestPlanTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`test-plan-tag/${ tagKey }`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the presence of tag key-value pairs in the request for TestRun
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_test-run-tag___TagKey_
-   *
-   * Applies to resource types:
-   * - TestRun
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifTestRunTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`test-run-tag/${ tagKey }`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the presence of tag key-value pairs in the request for Test
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_test-tag___TagKey_
-   *
-   * Applies to resource types:
-   * - Test
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifTestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`test-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }
