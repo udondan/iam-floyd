@@ -11,7 +11,3 @@ dms:ReplicationSubnetGroup
 dms:ReplicationTask
 dms:ReplicationTaskAssessmentRun
 dms:ReplicationTaskIndividualAssessment
-dms:Test
-dms:TestEnvironment
-dms:TestPlan
-dms:TestRun

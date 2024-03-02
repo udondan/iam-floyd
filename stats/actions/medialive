@@ -45,6 +45,7 @@ medialive:ListTagsForResource;List
 medialive:PurchaseOffering;Write
 medialive:RebootInputDevice;Write
 medialive:RejectInputDeviceTransfer;Write
+medialive:RestartChannelPipelines;Write
 medialive:StartChannel;Write
 medialive:StartInputDevice;Write
 medialive:StartInputDeviceMaintenanceWindow;Write
