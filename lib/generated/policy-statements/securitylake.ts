@@ -81,18 +81,22 @@ export class Securitylake extends PolicyStatement {
    * - iam:CreateServiceLinkedRole
    * - iam:DeleteRolePolicy
    * - iam:GetRole
+   * - iam:ListAttachedRolePolicies
    * - iam:PassRole
    * - iam:PutRolePolicy
    * - kms:CreateGrant
    * - kms:DescribeKey
    * - lakeformation:GetDataLakeSettings
    * - lakeformation:PutDataLakeSettings
+   * - lambda:AddPermission
    * - lambda:CreateEventSourceMapping
    * - lambda:CreateFunction
    * - organizations:DescribeOrganization
    * - organizations:ListAccounts
    * - organizations:ListDelegatedServicesForAccount
    * - s3:CreateBucket
+   * - s3:GetObject
+   * - s3:GetObjectVersion
    * - s3:ListBucket
    * - s3:PutBucketPolicy
    * - s3:PutBucketPublicAccessBlock
@@ -483,16 +487,20 @@ export class Securitylake extends PolicyStatement {
    * - iam:CreateServiceLinkedRole
    * - iam:DeleteRolePolicy
    * - iam:GetRole
+   * - iam:ListAttachedRolePolicies
    * - iam:PutRolePolicy
    * - kms:CreateGrant
    * - kms:DescribeKey
    * - lakeformation:GetDataLakeSettings
    * - lakeformation:PutDataLakeSettings
+   * - lambda:AddPermission
    * - lambda:CreateEventSourceMapping
    * - lambda:CreateFunction
    * - organizations:DescribeOrganization
    * - organizations:ListDelegatedServicesForAccount
    * - s3:CreateBucket
+   * - s3:GetObject
+   * - s3:GetObjectVersion
    * - s3:ListBucket
    * - s3:PutBucketPolicy
    * - s3:PutBucketPublicAccessBlock

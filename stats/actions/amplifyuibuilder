@@ -16,11 +16,14 @@ amplifyuibuilder:GetTheme;Read
 amplifyuibuilder:ListCodegenJobs;List
 amplifyuibuilder:ListComponents;List
 amplifyuibuilder:ListForms;List
+amplifyuibuilder:ListTagsForResource;List
 amplifyuibuilder:ListThemes;List
 amplifyuibuilder:PutMetadataFlag;Write
 amplifyuibuilder:RefreshToken;Write
 amplifyuibuilder:ResetMetadataFlag;Write
 amplifyuibuilder:StartCodegenJob;Write
+amplifyuibuilder:TagResource;Tagging
+amplifyuibuilder:UntagResource;Tagging
 amplifyuibuilder:UpdateComponent;Write
 amplifyuibuilder:UpdateForm;Write
 amplifyuibuilder:UpdateTheme;Write

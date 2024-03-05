@@ -14198,10 +14198,8 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCreateFleet()
    * - .toCreateTags()
    * - .toDeleteKeyPair()
-   * - .toModifyFleet()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
@@ -14222,7 +14220,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCreateFleet()
    * - .toCreateKeyPair()
    * - .toCreateTags()
    * - .toDeleteKeyPair()
@@ -14493,7 +14490,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAssignPrivateIpAddresses()
    * - .toAssociateAddress()
    * - .toAttachNetworkInterface()
-   * - .toCreateFleet()
    * - .toCreateFlowLogs()
    * - .toCreateLocalGatewayRoute()
    * - .toCreateNetworkInsightsPath()
@@ -14510,7 +14506,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDisassociateAddress()
    * - .toDisassociateNatGatewayAddress()
-   * - .toModifyFleet()
    * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
@@ -14680,7 +14675,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshot()
@@ -14693,7 +14687,6 @@ export class Ec2 extends PolicyStatement {
    * - .toImportImage()
    * - .toImportSnapshot()
    * - .toLockSnapshot()
-   * - .toModifyFleet()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
    * - .toRegisterImage()
@@ -16725,7 +16718,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
    * - .toCreateClientVpnEndpoint()
-   * - .toCreateFleet()
    * - .toCreateInstanceConnectEndpoint()
    * - .toCreateNetworkInterface()
    * - .toCreateSecurityGroup()
@@ -16735,7 +16727,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteSecurityGroup()
    * - .toImportInstance()
    * - .toModifyClientVpnEndpoint()
-   * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifySecurityGroupRules()
@@ -16818,7 +16809,6 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCopySnapshot()
-   * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshot()
@@ -16831,7 +16821,6 @@ export class Ec2 extends PolicyStatement {
    * - .toImportImage()
    * - .toImportSnapshot()
    * - .toLockSnapshot()
-   * - .toModifyFleet()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
    * - .toRegisterImage()
@@ -16878,7 +16867,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * Applies to actions:
-   * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateTags()
@@ -16889,7 +16877,6 @@ export class Ec2 extends PolicyStatement {
    * - .toImportImage()
    * - .toImportSnapshot()
    * - .toLockSnapshot()
-   * - .toModifyFleet()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
    * - .toRegisterImage()
@@ -16967,7 +16954,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAssignPrivateIpAddresses()
    * - .toAssociateAddress()
    * - .toAttachNetworkInterface()
-   * - .toCreateFleet()
    * - .toCreateFlowLogs()
    * - .toCreateLocalGatewayRoute()
    * - .toCreateNetworkInsightsPath()
@@ -16982,7 +16968,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDisassociateAddress()
    * - .toDisassociateNatGatewayAddress()
-   * - .toModifyFleet()
    * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toRegisterTransitGatewayMulticastGroupMembers()
@@ -17239,7 +17224,6 @@ export class Ec2 extends PolicyStatement {
    * - .toImportSnapshot()
    * - .toImportVolume()
    * - .toLockSnapshot()
-   * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
