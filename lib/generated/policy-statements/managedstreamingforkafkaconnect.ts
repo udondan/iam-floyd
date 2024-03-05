@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [kafkaconnect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforkafkaconnect.html).
@@ -100,6 +100,17 @@ export class Kafkaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an MSK Connect worker configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/MSKC/latest/mskc/API_DeleteWorkerConfiguration.html
+   */
+  public toDeleteWorkerConfiguration() {
+    return this.to('DeleteWorkerConfiguration');
+  }
+
+  /**
    * Grants permission to describe an MSK Connect connector
    *
    * Access Level: Read
@@ -155,6 +166,17 @@ export class Kafkaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags of an MSK Connect resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to list all MSK Connect worker configurations in this account
    *
    * Access Level: Read
@@ -163,6 +185,35 @@ export class Kafkaconnect extends PolicyStatement {
    */
   public toListWorkerConfigurations() {
     return this.to('ListWorkerConfigurations');
+  }
+
+  /**
+   * Grants permission to tag an MSK Connect resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/MSKC/latest/mskc/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from an MSK Connect resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/MSKC/latest/mskc/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -183,6 +234,7 @@ export class Kafkaconnect extends PolicyStatement {
       'CreateWorkerConfiguration',
       'DeleteConnector',
       'DeleteCustomPlugin',
+      'DeleteWorkerConfiguration',
       'UpdateConnector'
     ],
     Read: [
@@ -191,7 +243,12 @@ export class Kafkaconnect extends PolicyStatement {
       'DescribeWorkerConfiguration',
       'ListConnectors',
       'ListCustomPlugins',
+      'ListTagsForResource',
       'ListWorkerConfigurations'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -205,6 +262,9 @@ export class Kafkaconnect extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onConnector(connectorName: string, uUID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:kafkaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorName }/${ uUID }`);
@@ -220,6 +280,9 @@ export class Kafkaconnect extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCustomPlugin(customPluginName: string, uUID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:kafkaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-plugin/${ customPluginName }/${ uUID }`);
@@ -235,8 +298,65 @@ export class Kafkaconnect extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onWorkerConfiguration(workerConfigurationName: string, uUID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:kafkaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:worker-configuration/${ workerConfigurationName }/${ uUID }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - connector
+   * - custom plugin
+   * - worker configuration
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

@@ -120,6 +120,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an API key
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteAPIKey.html
+   */
+  public toDeleteAPIKey() {
+    return this.to('DeleteAPIKey');
+  }
+
+  /**
    * Grants permission to delete FirewallManagedRulesGroups from a WebACL if not managed by Firewall Manager anymore
    *
    * Access Level: Write
@@ -729,6 +740,7 @@ export class Wafv2 extends PolicyStatement {
       'CreateRegexPatternSet',
       'CreateRuleGroup',
       'CreateWebACL',
+      'DeleteAPIKey',
       'DeleteFirewallManagerRuleGroups',
       'DeleteIPSet',
       'DeleteLoggingConfiguration',

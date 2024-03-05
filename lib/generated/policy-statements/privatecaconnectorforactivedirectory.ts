@@ -378,7 +378,7 @@ export class PcaConnectorAd extends PolicyStatement {
   /**
    * Adds a resource of type Connector to the statement
    *
-   * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/API_Connector.html
+   * https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_Connector.html
    *
    * @param connectorId - Identifier for the connectorId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -395,7 +395,7 @@ export class PcaConnectorAd extends PolicyStatement {
   /**
    * Adds a resource of type DirectoryRegistration to the statement
    *
-   * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/API_DirectoryRegistration.html
+   * https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DirectoryRegistration.html
    *
    * @param directoryId - Identifier for the directoryId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -412,7 +412,7 @@ export class PcaConnectorAd extends PolicyStatement {
   /**
    * Adds a resource of type ServicePrincipalName to the statement
    *
-   * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/API_ServicePrincipalName.html
+   * https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ServicePrincipalName.html
    *
    * @param directoryId - Identifier for the directoryId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -426,7 +426,7 @@ export class PcaConnectorAd extends PolicyStatement {
   /**
    * Adds a resource of type Template to the statement
    *
-   * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/API_Template.html
+   * https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_Template.html
    *
    * @param connectorId - Identifier for the connectorId.
    * @param templateId - Identifier for the templateId.
@@ -444,7 +444,7 @@ export class PcaConnectorAd extends PolicyStatement {
   /**
    * Adds a resource of type TemplateGroupAccessControlEntry to the statement
    *
-   * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/API_TemplateGroupAccessControlEntry.html
+   * https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_AccessControlEntry.html
    *
    * @param connectorId - Identifier for the connectorId.
    * @param templateId - Identifier for the templateId.
@@ -459,7 +459,7 @@ export class PcaConnectorAd extends PolicyStatement {
   /**
    * Filters access by on the tags that are passed in the request
    *
-   * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/reference_policies_iam-condition-keys.html#condition-keys-requesttag
+   * https://docs.aws.amazon.com/privateca/latest/userguide/connector-for-ad.htmlreference_policies_iam-condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateConnector()
@@ -478,7 +478,7 @@ export class PcaConnectorAd extends PolicyStatement {
   /**
    * Filters access by on the tags associated with the resource
    *
-   * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/reference_policies_iam-condition-keys.html#condition-keys-resourcetag
+   * https://docs.aws.amazon.com/privateca/latest/userguide/connector-for-ad.htmlreference_policies_iam-condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
    * - Connector
@@ -496,7 +496,7 @@ export class PcaConnectorAd extends PolicyStatement {
   /**
    * Filters access by on the tag keys that are passed in the request
    *
-   * https://docs.aws.amazon.com/pca-connector-ad/latest/userguide/reference_policies_iam-condition-keys.html#condition-keys-tagkeys
+   * https://docs.aws.amazon.com/privateca/latest/userguide/connector-for-ad.htmlreference_policies_iam-condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
    * - .toCreateConnector()

@@ -5,6 +5,7 @@ wafv2:CreateIPSet;Write
 wafv2:CreateRegexPatternSet;Write
 wafv2:CreateRuleGroup;Write
 wafv2:CreateWebACL;Write
+wafv2:DeleteAPIKey;Write
 wafv2:DeleteFirewallManagerRuleGroups;Write
 wafv2:DeleteIPSet;Write
 wafv2:DeleteLoggingConfiguration;Write
