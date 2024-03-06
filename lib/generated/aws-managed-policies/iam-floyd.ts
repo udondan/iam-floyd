@@ -1642,6 +1642,8 @@ export class AwsManagedPolicy {
     public static AWSMarketplacePurchaseOrdersServiceRolePolicy = 'aws-service-role/AWSMarketplacePurchaseOrdersServiceRolePolicy';
     /** Provides the ability to review AWS Marketplace subscriptions */
     public static AWSMarketplaceReadOnly = 'AWSMarketplaceRead-only';
+    /** Enables access to AWS Services and Resources used or managed by AWS Marketplace for Resale Authorization. */
+    public static AWSMarketplaceResaleAuthorizationServiceRolePolicy = 'aws-service-role/AWSMarketplaceResaleAuthorizationServiceRolePolicy';
     /** Provides full access to all seller operations on the AWS Marketplace and other AWS services such as AMI management. */
     public static AWSMarketplaceSellerFullAccess = 'AWSMarketplaceSellerFullAccess';
     /** Provides sellers full access to AWS Marketplace Management Products page and other AWS services such as AMI management. */
