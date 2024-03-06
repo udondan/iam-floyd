@@ -4114,6 +4114,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceReadOnly);
     }
 
+    /** Enables access to AWS Services and Resources used or managed by AWS Marketplace for Resale Authorization. */
+    public AWSMarketplaceResaleAuthorizationServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceResaleAuthorizationServiceRolePolicy);
+    }
+
     /** Provides full access to all seller operations on the AWS Marketplace and other AWS services such as AMI management. */
     public AWSMarketplaceSellerFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceSellerFullAccess);
