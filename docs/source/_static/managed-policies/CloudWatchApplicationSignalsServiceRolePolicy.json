@@ -24,8 +24,7 @@
         "logs:GetQueryResults"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:/aws/appsignals/eks:*",
-        "arn:aws:logs:*:*:log-group:/aws/appsignals/generic:*"
+        "arn:aws:logs:*:*:log-group:/aws/appsignals/*:*"
       ],
       "Condition": {
         "StringEquals": {
