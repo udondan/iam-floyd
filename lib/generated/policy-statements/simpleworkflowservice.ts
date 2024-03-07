@@ -22,8 +22,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to cancel a previously started timer and record a TimerCanceled event in the history
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toCancelTimer() {
     return this.to('CancelTimer');
@@ -33,8 +31,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to close the workflow execution and record a WorkflowExecutionCanceled event in the history
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toCancelWorkflowExecution() {
     return this.to('CancelWorkflowExecution');
@@ -44,8 +40,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to close the workflow execution and record a WorkflowExecutionCompleted event in the history
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toCompleteWorkflowExecution() {
     return this.to('CompleteWorkflowExecution');
@@ -55,8 +49,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to close the workflow execution and start a new workflow execution of the same type using the same workflow ID and a unique run Id
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toContinueAsNewWorkflowExecution() {
     return this.to('ContinueAsNewWorkflowExecution');
@@ -219,8 +211,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to close the workflow execution and record a WorkflowExecutionFailed event in the history
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toFailWorkflowExecution() {
     return this.to('FailWorkflowExecution');
@@ -356,8 +346,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to record a MarkerRecorded event in the history
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toRecordMarker() {
     return this.to('RecordMarker');
@@ -414,8 +402,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to attempt to cancel a previously scheduled activity task
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toRequestCancelActivityTask() {
     return this.to('RequestCancelActivityTask');
@@ -425,8 +411,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to request that a request be made to cancel the specified external workflow execution
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toRequestCancelExternalWorkflowExecution() {
     return this.to('RequestCancelExternalWorkflowExecution');
@@ -503,8 +487,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to schedule an activity task
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toScheduleActivityTask() {
     return this.to('ScheduleActivityTask');
@@ -514,8 +496,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to request a signal to be delivered to the specified external workflow execution and records
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toSignalExternalWorkflowExecution() {
     return this.to('SignalExternalWorkflowExecution');
@@ -536,8 +516,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to request that a child workflow execution be started
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toStartChildWorkflowExecution() {
     return this.to('StartChildWorkflowExecution');
@@ -547,8 +525,6 @@ export class Swf extends PolicyStatement {
    * Grants permission to start a timer for a workflow execution
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_Decision.html
    */
   public toStartTimer() {
     return this.to('StartTimer');
