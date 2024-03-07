@@ -3550,6 +3550,11 @@ export class S3 extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
@@ -3566,7 +3571,9 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onStoragelensconfiguration(configId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:storage-lens/${ configId }`);
@@ -3583,7 +3590,9 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onStoragelensgroup(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:storage-lens-group/${ name }`);
@@ -3640,7 +3649,9 @@ export class S3 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onAccessgrantsinstance(account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default`);
@@ -3655,6 +3666,11 @@ export class S3 extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onAccessgrantslocation(token: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default/location/${ token }`);
@@ -3669,6 +3685,11 @@ export class S3 extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onAccessgrant(token: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-grants/default/grant/${ token }`);
@@ -3689,6 +3710,14 @@ export class S3 extends PolicyStatement {
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - job
+   * - storagelensconfiguration
+   * - storagelensgroup
+   * - accessgrantsinstance
+   * - accessgrantslocation
+   * - accessgrant
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3725,9 +3754,12 @@ export class S3 extends PolicyStatement {
    * - .toUpdateAccessGrantsLocation()
    *
    * Applies to resource types:
+   * - job
    * - storagelensconfiguration
    * - storagelensgroup
    * - accessgrantsinstance
+   * - accessgrantslocation
+   * - accessgrant
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3753,6 +3785,14 @@ export class S3 extends PolicyStatement {
    * - .toPutStorageLensConfigurationTagging()
    * - .toTagResource()
    * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - job
+   * - storagelensconfiguration
+   * - storagelensgroup
+   * - accessgrantsinstance
+   * - accessgrantslocation
+   * - accessgrant
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

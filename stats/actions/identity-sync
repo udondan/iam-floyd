@@ -1,3 +1,4 @@
+identity-sync:AllowVendedLogDeliveryForResource;Permissions management
 identity-sync:CreateSyncFilter;Write
 identity-sync:CreateSyncProfile;Write
 identity-sync:CreateSyncTarget;Write

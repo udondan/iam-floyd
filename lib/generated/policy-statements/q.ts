@@ -41,6 +41,17 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list individual conversations associated with a specific Amazon Q user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListConversations() {
+    return this.to('ListConversations');
+  }
+
+  /**
    * Grants permission to send a message to Amazon Q
    *
    * Access Level: Write
@@ -87,7 +98,8 @@ export class Q extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Read: [
       'GetConversation',
-      'GetTroubleshootingResults'
+      'GetTroubleshootingResults',
+      'ListConversations'
     ],
     Write: [
       'SendMessage',

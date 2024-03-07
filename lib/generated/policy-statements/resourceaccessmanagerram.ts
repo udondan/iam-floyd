@@ -25,6 +25,7 @@ export class Ram extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifShareOwnerAccountId()
+   * - .ifResourceShareName()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html
    */
@@ -280,6 +281,9 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifResourceShareName()
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html
    */
   public toListPendingInvitationResources() {
@@ -416,6 +420,7 @@ export class Ram extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifShareOwnerAccountId()
+   * - .ifResourceShareName()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html
    */
@@ -474,7 +479,6 @@ export class Ram extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html
@@ -630,7 +634,6 @@ export class Ram extends PolicyStatement {
    * - .toCreateResourceShare()
    * - .toGetResourceShares()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -831,10 +834,13 @@ export class Ram extends PolicyStatement {
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
    * Applies to actions:
+   * - .toAcceptResourceShareInvitation()
    * - .toAssociateResourceShare()
    * - .toDeleteResourceShare()
    * - .toDisassociateResourceShare()
+   * - .toListPendingInvitationResources()
    * - .toListResourceSharePermissions()
+   * - .toRejectResourceShareInvitation()
    * - .toUpdateResourceShare()
    *
    * Applies to resource types:

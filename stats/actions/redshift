@@ -23,6 +23,7 @@ redshift:CreateEndpointAccess;Write
 redshift:CreateEventSubscription;Write
 redshift:CreateHsmClientCertificate;Write
 redshift:CreateHsmConfiguration;Write
+redshift:CreateQev2IdcApplication;Write
 redshift:CreateRedshiftIdcApplication;Write
 redshift:CreateSavedQuery;Write
 redshift:CreateScheduledAction;Write
@@ -43,6 +44,7 @@ redshift:DeleteEventSubscription;Write
 redshift:DeleteHsmClientCertificate;Write
 redshift:DeleteHsmConfiguration;Write
 redshift:DeletePartner;Write
+redshift:DeleteQev2IdcApplication;Write
 redshift:DeleteRedshiftIdcApplication;Write
 redshift:DeleteResourcePolicy;Permissions management
 redshift:DeleteSavedQueries;Write
@@ -79,6 +81,7 @@ redshift:DescribeLoggingStatus;Read
 redshift:DescribeNodeConfigurationOptions;List
 redshift:DescribeOrderableClusterOptions;Read
 redshift:DescribePartners;Read
+redshift:DescribeQev2IdcApplications;List
 redshift:DescribeQuery;Read
 redshift:DescribeRedshiftIdcApplications;List
 redshift:DescribeReservedNodeExchangeStatus;Read
@@ -126,6 +129,7 @@ redshift:ModifyClusterSubnetGroup;Write
 redshift:ModifyCustomDomainAssociation;Write
 redshift:ModifyEndpointAccess;Write
 redshift:ModifyEventSubscription;Write
+redshift:ModifyQev2IdcApplication;Write
 redshift:ModifyRedshiftIdcApplication;Write
 redshift:ModifySavedQuery;Write
 redshift:ModifyScheduledAction;Write

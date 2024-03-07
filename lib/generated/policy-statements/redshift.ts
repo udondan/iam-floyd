@@ -344,9 +344,32 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a qev2 idc application
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:CreateApplication
+   * - sso:PutApplicationAccessScope
+   * - sso:PutApplicationAuthenticationMethod
+   * - sso:PutApplicationGrant
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   */
+  public toCreateQev2IdcApplication() {
+    return this.to('CreateQev2IdcApplication');
+  }
+
+  /**
    * Grants permission to create a redshift idc application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:CreateApplication
+   * - sso:PutApplicationAccessScope
+   * - sso:PutApplicationAuthenticationMethod
+   * - sso:PutApplicationGrant
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateRedshiftIdcApplication.html
    */
@@ -581,9 +604,26 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a qev2 idc application
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:DeleteApplication
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   */
+  public toDeleteQev2IdcApplication() {
+    return this.to('DeleteQev2IdcApplication');
+  }
+
+  /**
    * Grants permission to delete a redshift idc application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:DeleteApplication
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteRedshiftIdcApplication.html
    */
@@ -979,6 +1019,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe qev2 idc applications
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   */
+  public toDescribeQev2IdcApplications() {
+    return this.to('DescribeQev2IdcApplications');
+  }
+
+  /**
    * Grants permission to describe a query through the Amazon Redshift console
    *
    * Access Level: Read
@@ -993,6 +1044,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to describe redshift idc applications
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - sso:GetApplicationGrant
+   * - sso:ListApplicationAccessScopes
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeRedshiftIdcApplications.html
    */
@@ -1510,9 +1565,32 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a qev2 idc application
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:UpdateApplication
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   */
+  public toModifyQev2IdcApplication() {
+    return this.to('ModifyQev2IdcApplication');
+  }
+
+  /**
    * Grants permission to modify a redshift idc application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - sso:DeleteApplicationAccessScope
+   * - sso:DeleteApplicationGrant
+   * - sso:GetApplicationGrant
+   * - sso:ListApplicationAccessScopes
+   * - sso:PutApplicationAccessScope
+   * - sso:PutApplicationGrant
+   * - sso:UpdateApplication
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyRedshiftIdcApplication.html
    */
@@ -1788,6 +1866,7 @@ export class Redshift extends PolicyStatement {
       'CreateEventSubscription',
       'CreateHsmClientCertificate',
       'CreateHsmConfiguration',
+      'CreateQev2IdcApplication',
       'CreateRedshiftIdcApplication',
       'CreateSavedQuery',
       'CreateScheduledAction',
@@ -1805,6 +1884,7 @@ export class Redshift extends PolicyStatement {
       'DeleteHsmClientCertificate',
       'DeleteHsmConfiguration',
       'DeletePartner',
+      'DeleteQev2IdcApplication',
       'DeleteRedshiftIdcApplication',
       'DeleteSavedQueries',
       'DeleteScheduledAction',
@@ -1832,6 +1912,7 @@ export class Redshift extends PolicyStatement {
       'ModifyCustomDomainAssociation',
       'ModifyEndpointAccess',
       'ModifyEventSubscription',
+      'ModifyQev2IdcApplication',
       'ModifyRedshiftIdcApplication',
       'ModifySavedQuery',
       'ModifyScheduledAction',
@@ -1918,6 +1999,7 @@ export class Redshift extends PolicyStatement {
       'DescribeEvents',
       'DescribeInboundIntegrations',
       'DescribeNodeConfigurationOptions',
+      'DescribeQev2IdcApplications',
       'DescribeRedshiftIdcApplications',
       'ListDatabases',
       'ListRecommendations',
@@ -2257,6 +2339,20 @@ export class Redshift extends PolicyStatement {
    */
   public onRedshiftidcapplication(redshiftIdcApplicationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:redshiftidcapplication:${ redshiftIdcApplicationId }`);
+  }
+
+  /**
+   * Adds a resource of type qev2idcapplication to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-idp-connect.html
+   *
+   * @param qev2IdcApplicationId - Identifier for the qev2IdcApplicationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onQev2idcapplication(qev2IdcApplicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:qev2idcapplication:${ qev2IdcApplicationId }`);
   }
 
   /**
