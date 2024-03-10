@@ -6,6 +6,7 @@ lex:CreateBot;Write
 lex:CreateBotAlias;Write
 lex:CreateBotChannel;Write
 lex:CreateBotLocale;Write
+lex:CreateBotReplica;Write
 lex:CreateBotVersion;Write
 lex:CreateCustomVocabulary;Write
 lex:CreateExport;Write
@@ -23,6 +24,7 @@ lex:DeleteBotAlias;Write
 lex:DeleteBotChannel;Write
 lex:DeleteBotChannelAssociation;Write
 lex:DeleteBotLocale;Write
+lex:DeleteBotReplica;Write
 lex:DeleteBotVersion;Write
 lex:DeleteCustomVocabulary;Write
 lex:DeleteExport;Write
@@ -41,6 +43,7 @@ lex:DescribeBotAlias;Read
 lex:DescribeBotChannel;Read
 lex:DescribeBotLocale;Read
 lex:DescribeBotRecommendation;Read
+lex:DescribeBotReplica;Read
 lex:DescribeBotResourceGeneration;Read
 lex:DescribeBotVersion;Read
 lex:DescribeCustomVocabulary;Read
@@ -80,11 +83,14 @@ lex:GetSlotTypes;List
 lex:GetTestExecutionArtifactsUrl;Read
 lex:GetUtterancesView;List
 lex:ListAggregatedUtterances;List
+lex:ListBotAliasReplicas;List
 lex:ListBotAliases;List
 lex:ListBotChannels;List
 lex:ListBotLocales;List
 lex:ListBotRecommendations;List
+lex:ListBotReplicas;List
 lex:ListBotResourceGenerations;List
+lex:ListBotVersionReplicas;List
 lex:ListBotVersions;List
 lex:ListBots;List
 lex:ListBuiltInIntents;List

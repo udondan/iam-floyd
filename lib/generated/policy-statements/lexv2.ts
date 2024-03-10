@@ -115,6 +115,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create bot replica for a bot
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBotReplica.html
+   */
+  public toCreateBotReplica() {
+    return this.to('CreateBotReplica');
+  }
+
+  /**
    * Grants permission to create a new version of an existing bot
    *
    * Access Level: Write
@@ -280,6 +291,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toDeleteBotLocale() {
     return this.to('DeleteBotLocale');
+  }
+
+  /**
+   * Grants permission to delete an existing bot replica
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotReplica.html
+   */
+  public toDeleteBotReplica() {
+    return this.to('DeleteBotReplica');
   }
 
   /**
@@ -456,6 +478,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toDescribeBotRecommendation() {
     return this.to('DescribeBotRecommendation');
+  }
+
+  /**
+   * Grants permission to retrieve an existing bot replica
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotReplica.html
+   */
+  public toDescribeBotReplica() {
+    return this.to('DescribeBotReplica');
   }
 
   /**
@@ -668,6 +701,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list alias replicas in a bot replica
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAliasReplicas.html
+   */
+  public toListBotAliasReplicas() {
+    return this.to('ListBotAliasReplicas');
+  }
+
+  /**
    * Grants permission to list bot aliases in an bot
    *
    * Access Level: List
@@ -712,6 +756,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list replicas of a bot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotReplicas.html
+   */
+  public toListBotReplicas() {
+    return this.to('ListBotReplicas');
+  }
+
+  /**
    * Grants permission to list the resource generations for a bot
    *
    * Access Level: List
@@ -720,6 +775,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toListBotResourceGenerations() {
     return this.to('ListBotResourceGenerations');
+  }
+
+  /**
+   * Grants permission to list version replicas in a bot replica
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotVersionReplicas.html
+   */
+  public toListBotVersionReplicas() {
+    return this.to('ListBotVersionReplicas');
   }
 
   /**
@@ -1262,6 +1328,7 @@ export class LexV2 extends PolicyStatement {
       'CreateBotAlias',
       'CreateBotChannel',
       'CreateBotLocale',
+      'CreateBotReplica',
       'CreateBotVersion',
       'CreateCustomVocabulary',
       'CreateExport',
@@ -1276,6 +1343,7 @@ export class LexV2 extends PolicyStatement {
       'DeleteBotAlias',
       'DeleteBotChannel',
       'DeleteBotLocale',
+      'DeleteBotReplica',
       'DeleteBotVersion',
       'DeleteCustomVocabulary',
       'DeleteExport',
@@ -1315,6 +1383,7 @@ export class LexV2 extends PolicyStatement {
       'DescribeBotChannel',
       'DescribeBotLocale',
       'DescribeBotRecommendation',
+      'DescribeBotReplica',
       'DescribeBotResourceGeneration',
       'DescribeBotVersion',
       'DescribeCustomVocabulary',
@@ -1338,11 +1407,14 @@ export class LexV2 extends PolicyStatement {
     ],
     List: [
       'ListAggregatedUtterances',
+      'ListBotAliasReplicas',
       'ListBotAliases',
       'ListBotChannels',
       'ListBotLocales',
       'ListBotRecommendations',
+      'ListBotReplicas',
       'ListBotResourceGenerations',
+      'ListBotVersionReplicas',
       'ListBotVersions',
       'ListBots',
       'ListBuiltInIntents',
