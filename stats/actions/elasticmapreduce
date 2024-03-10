@@ -67,6 +67,7 @@ elasticmapreduce:RemoveTags;Tagging
 elasticmapreduce:RunJobFlow;Write
 elasticmapreduce:SetKeepJobFlowAliveWhenNoSteps;Write
 elasticmapreduce:SetTerminationProtection;Write
+elasticmapreduce:SetUnhealthyNodeReplacement;Write
 elasticmapreduce:SetVisibleToAllUsers;Write
 elasticmapreduce:StartEditor;Write
 elasticmapreduce:StartNotebookExecution;Write

@@ -810,6 +810,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable unhealthy node replacement for a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_SetUnhealthyNodeReplacement.html
+   */
+  public toSetUnhealthyNodeReplacement() {
+    return this.to('SetUnhealthyNodeReplacement');
+  }
+
+  /**
    * Grants permission to set whether all AWS Identity and Access Management (IAM) users in the AWS account can view a cluster. This API is deprecated and your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see AWS Identity and Access Management for Amazon EMR (https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html)
    *
    * Access Level: Write
@@ -983,6 +994,7 @@ export class Elasticmapreduce extends PolicyStatement {
       'RunJobFlow',
       'SetKeepJobFlowAliveWhenNoSteps',
       'SetTerminationProtection',
+      'SetUnhealthyNodeReplacement',
       'SetVisibleToAllUsers',
       'StartEditor',
       'StartNotebookExecution',
