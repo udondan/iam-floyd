@@ -1,5 +1,6 @@
 datazone:AcceptPredictions;Write
 datazone:AcceptSubscriptionRequest;Write
+datazone:CancelMetadataGenerationRun;Write
 datazone:CancelSubscription;Write
 datazone:CreateAsset;Write
 datazone:CreateAssetRevision;Write

@@ -37,6 +37,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel metadata generation run
+   *
+   * Access Level: Write
+   */
+  public toCancelMetadataGenerationRun() {
+    return this.to('CancelMetadataGenerationRun');
+  }
+
+  /**
    * Grants permission to revoke or unsubscribe an approved subscription to Data Asset
    *
    * Access Level: Write
@@ -1140,6 +1149,7 @@ export class Datazone extends PolicyStatement {
     Write: [
       'AcceptPredictions',
       'AcceptSubscriptionRequest',
+      'CancelMetadataGenerationRun',
       'CancelSubscription',
       'CreateAsset',
       'CreateAssetRevision',
