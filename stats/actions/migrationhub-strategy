@@ -17,6 +17,8 @@ migrationhub-strategy:ListCollectors;List
 migrationhub-strategy:ListImportFileTask;List
 migrationhub-strategy:ListJarArtifacts;List
 migrationhub-strategy:ListServers;List
+migrationhub-strategy:PutLogData;List
+migrationhub-strategy:PutMetricData;List
 migrationhub-strategy:PutPortfolioPreferences;Write
 migrationhub-strategy:RegisterCollector;Write
 migrationhub-strategy:SendMessage;Write
