@@ -22,6 +22,7 @@
       }
     },
     {
+      "Sid": "IamPassRolePermissions",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -289,6 +290,39 @@
           "aws:CalledViaFirst": [
             "cloudformation.amazonaws.com"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "RedshiftDataPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:ListSchemas",
+        "redshift-data:ExecuteStatement"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:workgroup/*",
+        "arn:aws:redshift:*:*:cluster:*"
+      ]
+    },
+    {
+      "Sid": "DescribeStatementPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:DescribeStatement"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GetSecretValuePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "secretsmanager:ResourceTag/AmazonDataZoneDomain": "dzd*"
         }
       }
     }

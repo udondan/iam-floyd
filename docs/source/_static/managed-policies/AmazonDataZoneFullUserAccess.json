@@ -100,7 +100,7 @@
         "datazone:ListNotifications",
         "datazone:StartMetadataGenerationRun",
         "datazone:GetMetadataGenerationRun",
-        "datazone:StopMetadataGenerationRun",
+        "datazone:CancelMetadataGenerationRun",
         "datazone:ListMetadataGenerationRuns"
       ],
       "Resource": "*"

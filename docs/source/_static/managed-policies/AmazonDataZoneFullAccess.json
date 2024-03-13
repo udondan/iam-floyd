@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonDataZoneStatement",
       "Effect": "Allow",
       "Action": [
         "datazone:*"
@@ -11,19 +12,26 @@
       ]
     },
     {
+      "Sid": "ReadOnlyStatement",
       "Effect": "Allow",
       "Action": [
         "kms:DescribeKey",
         "kms:ListAliases",
         "iam:ListRoles",
         "sso:DescribeRegisteredRegions",
-        "s3:ListAllMyBuckets"
+        "s3:ListAllMyBuckets",
+        "redshift:DescribeClusters",
+        "redshift-serverless:ListWorkgroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "secretsmanager:ListSecrets"
       ],
       "Resource": [
         "*"
       ]
     },
     {
+      "Sid": "BucketReadOnlyStatement",
       "Effect": "Allow",
       "Action": [
         "s3:ListBucket",
@@ -32,11 +40,13 @@
       "Resource": "arn:aws:s3:::*"
     },
     {
+      "Sid": "CreateBucketStatement",
       "Effect": "Allow",
       "Action": "s3:CreateBucket",
       "Resource": "arn:aws:s3:::amazon-datazone*"
     },
     {
+      "Sid": "RamCreateResourceStatement",
       "Effect": "Allow",
       "Action": [
         "ram:CreateResourceShare"
@@ -49,6 +59,7 @@
       }
     },
     {
+      "Sid": "RamResourceStatement",
       "Effect": "Allow",
       "Action": [
         "ram:DeleteResourceShare",
@@ -66,6 +77,7 @@
       }
     },
     {
+      "Sid": "RamResourceReadOnlyStatement",
       "Effect": "Allow",
       "Action": [
         "ram:GetResourceShares",
@@ -75,6 +87,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "IAMPassRoleStatement",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": [
@@ -84,6 +97,41 @@
       "Condition": {
         "StringEquals": {
           "iam:passedToService": "datazone.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DataZoneTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:TagResource"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:AmazonDataZone-*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "AmazonDataZoneDomain"
+          ]
+        },
+        "StringLike": {
+          "aws:RequestTag/AmazonDataZoneDomain": "dzd_*",
+          "aws:ResourceTag/AmazonDataZoneDomain": "dzd_*"
+        },
+        "Null": {
+          "aws:TagKeys": "false"
+        }
+      }
+    },
+    {
+      "Sid": "CreateSecretStatement",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:AmazonDataZone-*",
+      "Condition": {
+        "StringLike": {
+          "aws:RequestTag/AmazonDataZoneDomain": "dzd_*"
         }
       }
     }
