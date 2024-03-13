@@ -100,7 +100,7 @@
         "datazone:UpdateSubscriptionRequest",
         "datazone:StartMetadataGenerationRun",
         "datazone:GetMetadataGenerationRun",
-        "datazone:StopMetadataGenerationRun",
+        "datazone:CancelMetadataGenerationRun",
         "datazone:ListMetadataGenerationRuns"
       ],
       "Resource": "*"
