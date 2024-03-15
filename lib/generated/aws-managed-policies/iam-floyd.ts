@@ -822,6 +822,10 @@ export class AwsManagedPolicy {
     public static AmazonTimestreamConsoleFullAccess = 'AmazonTimestreamConsoleFullAccess';
     /** Provides full access to Amazon Timestream. Note that this policy also grants certain KMS operation access. If using Customer managed CMK, please refer to documentation for additional permissions needed. */
     public static AmazonTimestreamFullAccess = 'AmazonTimestreamFullAccess';
+    /** Provides full administrative access to create, update, delete and list Amazon Timestream InfluxDB instances and create and list parameter groups. Please refer to documentation for additional permissions needed. */
+    public static AmazonTimestreamInfluxDBFullAccess = 'AmazonTimestreamInfluxDBFullAccess';
+    /** Provides full administrative access to create, update, delete and list Amazon Timestream InfluxDB instances and create and list parameter groups. Please refer to documentation for additional permissions needed. */
+    public static AmazonTimestreamInfluxDBServiceRolePolicy = 'aws-service-role/AmazonTimestreamInfluxDBServiceRolePolicy';
     /** Provides read only access to Amazon Timestream. Policy also provides permission to cancel any running query. If using Customer managed CMK, please refer to documentation for additional permissions needed. */
     public static AmazonTimestreamReadOnlyAccess = 'AmazonTimestreamReadOnlyAccess';
     /** Provides full access to Amazon Transcribe operations */

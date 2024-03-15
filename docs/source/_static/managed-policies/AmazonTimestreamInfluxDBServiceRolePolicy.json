@@ -1,0 +1,105 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DescribeNetworkStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateEniInSubnetStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "CreateEniStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AmazonTimestreamInfluxDBManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "CreateTagWithEniStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AmazonTimestreamInfluxDBManaged": "false"
+        },
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "CreateNetworkInterface"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManageEniStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonTimestreamInfluxDBManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "PutCloudWatchMetricsStatement",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/Timestream/InfluxDB",
+            "AWS/Usage"
+          ]
+        }
+      },
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "ManageSecretStatement",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:DeleteSecret"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:READONLY-InfluxDB-auth-parameters-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

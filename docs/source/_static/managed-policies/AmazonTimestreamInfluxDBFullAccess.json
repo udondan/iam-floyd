@@ -1,0 +1,76 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "TimestreamInfluxDBStatement",
+      "Effect": "Allow",
+      "Action": [
+        "timestream-influxdb:CreateDbParameterGroup",
+        "timestream-influxdb:GetDbParameterGroup",
+        "timestream-influxdb:ListDbParameterGroups",
+        "timestream-influxdb:CreateDbInstance",
+        "timestream-influxdb:DeleteDbInstance",
+        "timestream-influxdb:GetDbInstance",
+        "timestream-influxdb:ListDbInstances",
+        "timestream-influxdb:TagResource",
+        "timestream-influxdb:UntagResource",
+        "timestream-influxdb:ListTagsForResource",
+        "timestream-influxdb:UpdateDbInstance"
+      ],
+      "Resource": [
+        "arn:aws:timestream-influxdb:*:*:*"
+      ]
+    },
+    {
+      "Sid": "ServiceLinkedRoleStatement",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/timestream-influxdb.amazonaws.com/AWSServiceRoleForTimestreamInfluxDB",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "timestream-influxdb.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "NetworkValidationStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSecurityGroups"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "CreateEniInSubnetStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "BucketValidationStatement",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketPolicy"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*"
+      ]
+    }
+  ]
+}
