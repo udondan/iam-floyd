@@ -121,6 +121,7 @@ lightsail:GetRelationalDatabaseParameters;Read
 lightsail:GetRelationalDatabaseSnapshot;Read
 lightsail:GetRelationalDatabaseSnapshots;Read
 lightsail:GetRelationalDatabases;Read
+lightsail:GetSetupHistory;Read
 lightsail:GetStaticIp;Read
 lightsail:GetStaticIps;Read
 lightsail:ImportKeyPair;Write
@@ -137,6 +138,7 @@ lightsail:ResetDistributionCache;Write
 lightsail:SendContactMethodVerification;Write
 lightsail:SetIpAddressType;Write
 lightsail:SetResourceAccessForBucket;Write
+lightsail:SetupInstanceHttps;Write
 lightsail:StartGUISession;Write
 lightsail:StartInstance;Write
 lightsail:StartRelationalDatabase;Write
