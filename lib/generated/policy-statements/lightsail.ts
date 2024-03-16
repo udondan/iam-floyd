@@ -1462,6 +1462,17 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get detailed information for setup requests that were run on the specified resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetSetupHistory.html
+   */
+  public toGetSetupHistory() {
+    return this.to('GetSetupHistory');
+  }
+
+  /**
    * Grants permission to get information about a static IP
    *
    * Access Level: Read
@@ -1638,6 +1649,20 @@ export class Lightsail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an SSL/TLS certificate and install it on a specified instance
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - lightsail:GetInstanceAccessDetails
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetupInstanceHttps.html
+   */
+  public toSetupInstanceHttps() {
+    return this.to('SetupInstanceHttps');
+  }
+
+  /**
    * Grants permission to initiate a graphical user interface (GUI) session used to access an instance's operating system or application
    *
    * Access Level: Write
@@ -1746,7 +1771,6 @@ export class Lightsail extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html
@@ -1943,6 +1967,7 @@ export class Lightsail extends PolicyStatement {
       'SendContactMethodVerification',
       'SetIpAddressType',
       'SetResourceAccessForBucket',
+      'SetupInstanceHttps',
       'StartGUISession',
       'StartInstance',
       'StartRelationalDatabase',
@@ -2023,6 +2048,7 @@ export class Lightsail extends PolicyStatement {
       'GetRelationalDatabaseSnapshot',
       'GetRelationalDatabaseSnapshots',
       'GetRelationalDatabases',
+      'GetSetupHistory',
       'GetStaticIp',
       'GetStaticIps',
       'IsVpcPeered'
@@ -2364,7 +2390,6 @@ export class Lightsail extends PolicyStatement {
    * - .toCreateRelationalDatabaseFromSnapshot()
    * - .toCreateRelationalDatabaseSnapshot()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

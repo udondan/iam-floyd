@@ -162,6 +162,7 @@ export { Sns } from './policy-statements/sns';
 export { Sqs } from './policy-statements/sqs';
 export { Textract } from './policy-statements/textract';
 export { Timestream } from './policy-statements/timestream';
+export { TimestreamInfluxdb } from './policy-statements/timestreaminfluxdb';
 export { Transcribe } from './policy-statements/transcribe';
 export { Translate } from './policy-statements/translate';
 export { Verifiedpermissions } from './policy-statements/verifiedpermissions';

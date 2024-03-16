@@ -1,0 +1,2 @@
+timestream-influxdb:db-instance
+timestream-influxdb:db-parameter-group

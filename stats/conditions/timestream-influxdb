@@ -1,0 +1,3 @@
+timestream-influxdb:RequestTag/${TagKey}
+timestream-influxdb:ResourceTag/${TagKey}
+timestream-influxdb:TagKeys
