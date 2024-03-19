@@ -230,7 +230,7 @@ export class MigrationhubStrategy extends PolicyStatement {
   /**
    * Grants permission to the collector to send logs to the service
    *
-   * Access Level: List
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_PutLogData.html
    */
@@ -241,7 +241,7 @@ export class MigrationhubStrategy extends PolicyStatement {
   /**
    * Grants permission to the collector to send metrics to the service
    *
-   * Access Level: List
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/migrationhub-strategy/latest/APIReference/API_PutMetricData.html
    */
@@ -381,11 +381,11 @@ export class MigrationhubStrategy extends PolicyStatement {
       'ListCollectors',
       'ListImportFileTask',
       'ListJarArtifacts',
-      'ListServers',
-      'PutLogData',
-      'PutMetricData'
+      'ListServers'
     ],
     Write: [
+      'PutLogData',
+      'PutMetricData',
       'PutPortfolioPreferences',
       'RegisterCollector',
       'SendMessage',
