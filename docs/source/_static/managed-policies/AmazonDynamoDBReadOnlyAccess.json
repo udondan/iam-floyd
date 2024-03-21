@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "GeneralReadOnlyAccess",
       "Action": [
         "application-autoscaling:DescribeScalableTargets",
         "application-autoscaling:DescribeScalingActivities",
@@ -21,6 +22,7 @@
         "dynamodb:Describe*",
         "dynamodb:List*",
         "dynamodb:GetItem",
+        "dynamodb:GetResourcePolicy",
         "dynamodb:Query",
         "dynamodb:Scan",
         "dynamodb:PartiQLSelect",
@@ -55,6 +57,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "CCIAccess",
       "Action": "cloudwatch:GetInsightRuleReport",
       "Effect": "Allow",
       "Resource": "arn:aws:cloudwatch:*:*:insight-rule/DynamoDBContributorInsights*"
