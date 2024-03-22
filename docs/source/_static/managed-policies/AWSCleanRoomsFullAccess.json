@@ -82,7 +82,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "ConsolePickQueryResultsBucket",
+      "Sid": "SetQueryResultsBucket",
       "Effect": "Allow",
       "Action": [
         "s3:GetBucketLocation",
