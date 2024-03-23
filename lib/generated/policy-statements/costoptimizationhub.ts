@@ -95,7 +95,7 @@ export class CostOptimizationHub extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_UpdateEnrollmentStatus.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_UpdatePreferences.html
    */
   public toUpdatePreferences() {
     return this.to('UpdatePreferences');

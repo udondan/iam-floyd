@@ -806,6 +806,9 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html
    */
   public toCopyImage() {
@@ -8301,6 +8304,9 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage.html
    */
   public toRegisterImage() {
@@ -11780,7 +11786,6 @@ export class Ec2 extends PolicyStatement {
    * - .ifPhase2EncryptionAlgorithms()
    * - .ifPhase2IntegrityAlgorithms()
    * - .ifPhase2LifetimeSeconds()
-   * - .ifPreSharedKeys()
    * - .ifRegion()
    * - .ifRekeyFuzzPercentage()
    * - .ifRekeyMarginTimeSeconds()
@@ -11825,6 +11830,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateIpamResourceDiscovery()
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
+   * - .toCopyImage()
    * - .toCopySnapshot()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationFleet()
@@ -11894,6 +11900,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportKeyPair()
    * - .toImportSnapshot()
    * - .toPurchaseCapacityBlock()
+   * - .toRegisterImage()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toStartNetworkInsightsAccessScopeAnalysis()
@@ -12493,6 +12500,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateIpamResourceDiscovery()
    * - .toAuthorizeSecurityGroupEgress()
    * - .toAuthorizeSecurityGroupIngress()
+   * - .toCopyImage()
    * - .toCopySnapshot()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationFleet()
@@ -12563,6 +12571,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportKeyPair()
    * - .toImportSnapshot()
    * - .toPurchaseCapacityBlock()
+   * - .toRegisterImage()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toStartNetworkInsightsAccessScopeAnalysis()
@@ -15006,27 +15015,6 @@ export class Ec2 extends PolicyStatement {
    */
   public ifPlacementGroupStrategy(value: string | string[], operator?: Operator | string) {
     return this.if(`PlacementGroupStrategy`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the pre-shared key (PSK) used to establish the initial IKE security association between a virtual private gateway and a customer gateway
-   *
-   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
-   *
-   * Applies to actions:
-   * - .toCreateTags()
-   * - .toCreateVpnConnection()
-   * - .toModifyVpnConnection()
-   * - .toModifyVpnTunnelOptions()
-   *
-   * Applies to resource types:
-   * - vpn-connection
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifPreSharedKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`PreSharedKeys`, value, operator ?? 'StringLike');
   }
 
   /**

@@ -43,6 +43,7 @@ export class States extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - iam:PassRole
    * - states:PublishStateMachineVersion
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html
@@ -472,6 +473,7 @@ export class States extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - iam:PassRole
    * - states:PublishStateMachineVersion
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html

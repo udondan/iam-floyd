@@ -7,6 +7,7 @@ dynamodb:CreateTable;Write
 dynamodb:CreateTableReplica;Write
 dynamodb:DeleteBackup;Write
 dynamodb:DeleteItem;Write
+dynamodb:DeleteResourcePolicy;Permissions management
 dynamodb:DeleteTable;Write
 dynamodb:DeleteTableReplica;Write
 dynamodb:DescribeBackup;Read
@@ -47,6 +48,7 @@ dynamodb:PartiQLSelect;Read
 dynamodb:PartiQLUpdate;Write
 dynamodb:PurchaseReservedCapacityOfferings;Write
 dynamodb:PutItem;Write
+dynamodb:PutResourcePolicy;Permissions management
 dynamodb:Query;Read
 dynamodb:RestoreTableFromAwsBackup;Write
 dynamodb:RestoreTableFromBackup;Write
@@ -61,6 +63,7 @@ dynamodb:UpdateGlobalTable;Write
 dynamodb:UpdateGlobalTableSettings;Write
 dynamodb:UpdateGlobalTableVersion;Write
 dynamodb:UpdateItem;Write
+dynamodb:UpdateKinesisStreamingDestination;Write
 dynamodb:UpdateTable;Write
 dynamodb:UpdateTableReplicaAutoScaling;Write
 dynamodb:UpdateTimeToLive;Write

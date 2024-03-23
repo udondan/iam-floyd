@@ -67,6 +67,21 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a package group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreatePackageGroup.html
+   */
+  public toCreatePackageGroup() {
+    return this.to('CreatePackageGroup');
+  }
+
+  /**
    * Grants permission to create a new repository
    *
    * Access Level: Write
@@ -112,6 +127,17 @@ export class Codeartifact extends PolicyStatement {
    */
   public toDeletePackage() {
     return this.to('DeletePackage');
+  }
+
+  /**
+   * Grants permission to delete a package group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageGroup.html
+   */
+  public toDeletePackageGroup() {
+    return this.to('DeletePackageGroup');
   }
 
   /**
@@ -170,6 +196,17 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return detailed information about a package group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageGroup.html
+   */
+  public toDescribePackageGroup() {
+    return this.to('DescribePackageGroup');
+  }
+
+  /**
    * Grants permission to return information about a package version
    *
    * Access Level: Read
@@ -211,6 +248,17 @@ export class Codeartifact extends PolicyStatement {
    */
   public toDisposePackageVersions() {
     return this.to('DisposePackageVersions');
+  }
+
+  /**
+   * Grants permission to return a package's associated package group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetAssociatedPackageGroup.html
+   */
+  public toGetAssociatedPackageGroup() {
+    return this.to('GetAssociatedPackageGroup');
   }
 
   /**
@@ -280,6 +328,28 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the allowed repositories for a package group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositoriesInDomain.html
+   */
+  public toListAllowedRepositoriesForGroup() {
+    return this.to('ListAllowedRepositoriesForGroup');
+  }
+
+  /**
+   * Grants permission to list the packages associated to a package group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListAssociatedPackages.html
+   */
+  public toListAssociatedPackages() {
+    return this.to('ListAssociatedPackages');
+  }
+
+  /**
    * Grants permission to list the domains in the current user's AWS account
    *
    * Access Level: List
@@ -288,6 +358,17 @@ export class Codeartifact extends PolicyStatement {
    */
   public toListDomains() {
     return this.to('ListDomains');
+  }
+
+  /**
+   * Grants permission to list the package groups in a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageGroups.html
+   */
+  public toListPackageGroups() {
+    return this.to('ListPackageGroups');
   }
 
   /**
@@ -354,6 +435,17 @@ export class Codeartifact extends PolicyStatement {
    */
   public toListRepositoriesInDomain() {
     return this.to('ListRepositoriesInDomain');
+  }
+
+  /**
+   * Grants permission to list the sub package groups for a parent package group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListSubPackageGroups.html
+   */
+  public toListSubPackageGroups() {
+    return this.to('ListSubPackageGroups');
   }
 
   /**
@@ -463,6 +555,28 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the properties of a package group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroup.html
+   */
+  public toUpdatePackageGroup() {
+    return this.to('UpdatePackageGroup');
+  }
+
+  /**
+   * Grants permission to modify the package origin configuration of a package group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroupOriginConfiguration.html
+   */
+  public toUpdatePackageGroupOriginConfiguration() {
+    return this.to('UpdatePackageGroupOriginConfiguration');
+  }
+
+  /**
    * Grants permission to modify the status of one or more versions of a package
    *
    * Access Level: Write
@@ -490,9 +604,11 @@ export class Codeartifact extends PolicyStatement {
       'AssociateWithDownstreamRepository',
       'CopyPackageVersions',
       'CreateDomain',
+      'CreatePackageGroup',
       'CreateRepository',
       'DeleteDomain',
       'DeletePackage',
+      'DeletePackageGroup',
       'DeletePackageVersions',
       'DeleteRepository',
       'DisassociateExternalConnection',
@@ -502,6 +618,8 @@ export class Codeartifact extends PolicyStatement {
       'PutPackageMetadata',
       'PutPackageOriginConfiguration',
       'PutRepositoryPermissionsPolicy',
+      'UpdatePackageGroup',
+      'UpdatePackageGroupOriginConfiguration',
       'UpdatePackageVersionsStatus',
       'UpdateRepository'
     ],
@@ -512,8 +630,10 @@ export class Codeartifact extends PolicyStatement {
     Read: [
       'DescribeDomain',
       'DescribePackage',
+      'DescribePackageGroup',
       'DescribePackageVersion',
       'DescribeRepository',
+      'GetAssociatedPackageGroup',
       'GetAuthorizationToken',
       'GetDomainPermissionsPolicy',
       'GetPackageVersionAsset',
@@ -523,13 +643,17 @@ export class Codeartifact extends PolicyStatement {
       'ReadFromRepository'
     ],
     List: [
+      'ListAllowedRepositoriesForGroup',
+      'ListAssociatedPackages',
       'ListDomains',
+      'ListPackageGroups',
       'ListPackageVersionAssets',
       'ListPackageVersionDependencies',
       'ListPackageVersions',
       'ListPackages',
       'ListRepositories',
       'ListRepositoriesInDomain',
+      'ListSubPackageGroups',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -541,7 +665,7 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Adds a resource of type domain to the statement
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/ug/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/domains.html
    *
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -558,7 +682,7 @@ export class Codeartifact extends PolicyStatement {
   /**
    * Adds a resource of type repository to the statement
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/repos.html
    *
    * @param domainName - Identifier for the domainName.
    * @param repositoryName - Identifier for the repositoryName.
@@ -574,9 +698,27 @@ export class Codeartifact extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type package-group to the statement
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/package-groups.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param encodedPackageGroupPattern - Identifier for the encodedPackageGroupPattern.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPackageGroup(domainName: string, encodedPackageGroupPattern: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codeartifact:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package-group/${ domainName }${ encodedPackageGroupPattern }`);
+  }
+
+  /**
    * Adds a resource of type package to the statement
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/ug/repo-policies.html
+   * https://docs.aws.amazon.com/codeartifact/latest/ug/packages.html
    *
    * @param domainName - Identifier for the domainName.
    * @param repositoryName - Identifier for the repositoryName.
@@ -598,6 +740,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateDomain()
+   * - .toCreatePackageGroup()
    * - .toCreateRepository()
    * - .toTagResource()
    *
@@ -617,6 +760,7 @@ export class Codeartifact extends PolicyStatement {
    * Applies to resource types:
    * - domain
    * - repository
+   * - package-group
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -633,6 +777,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateDomain()
+   * - .toCreatePackageGroup()
    * - .toCreateRepository()
    * - .toTagResource()
    * - .toUntagResource()

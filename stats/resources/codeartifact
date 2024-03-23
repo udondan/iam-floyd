@@ -1,3 +1,4 @@
 codeartifact:domain
 codeartifact:package
+codeartifact:package-group
 codeartifact:repository

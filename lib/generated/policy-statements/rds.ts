@@ -299,7 +299,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new custom endpoint and associates it with an Amazon Aurora DB cluster
+   * Grants permission to create a new custom endpoint and associates it with an Amazon Aurora DB cluster or Amazon DocumentDB cluster
    *
    * Access Level: Write
    *
@@ -546,7 +546,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an Aurora global database spread across multiple regions
+   * Grants permission to create an Aurora global database or DocumentDB global database spread across multiple regions
    *
    * Access Level: Write
    *
@@ -682,7 +682,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a custom endpoint and removes it from an Amazon Aurora DB cluster
+   * Grants permission to delete a custom endpoint and removes it from an Amazon Aurora DB cluster or Amazon DocumentDB cluster
    *
    * Access Level: Write
    *
@@ -996,7 +996,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about provisioned Aurora DB clusters
+   * Grants permission to return information about provisioned Aurora DB clusters or DocumentDB clusters
    *
    * Access Level: List
    *
@@ -1260,7 +1260,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to return information about Aurora global database clusters
+   * Grants permission to return information about Aurora global database clusters or DocumentDB global database clusters
    *
    * Access Level: List
    *
@@ -1527,7 +1527,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify a setting for an Amazon Aurora DB cluster
+   * Grants permission to modify a setting for an Amazon Aurora DB cluster or Amazon DocumentDB cluster
    *
    * Access Level: Write
    *
@@ -1555,7 +1555,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify the properties of an endpoint in an Amazon Aurora DB cluster
+   * Grants permission to modify the properties of an endpoint in an Amazon Aurora DB cluster or Amazon DocumentDB cluster
    *
    * Access Level: Write
    *
@@ -1728,7 +1728,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify a setting for an Amazon Aurora global cluster
+   * Grants permission to modify a setting for an Amazon Aurora global cluster or Amazon DocumentDB global cluster
    *
    * Access Level: Write
    *
@@ -1862,7 +1862,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Grants permission to detach an Aurora secondary cluster from an Aurora global database cluster
+   * Grants permission to detach an Aurora secondary cluster from an Aurora global database cluster or DocumentDB global cluster
    *
    * Access Level: Write
    *

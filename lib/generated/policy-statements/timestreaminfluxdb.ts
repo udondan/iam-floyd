@@ -27,7 +27,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateDbInstance.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_CreateDbInstance.html
    */
   public toCreateDbInstance() {
     return this.to('CreateDbInstance');
@@ -42,7 +42,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateDbParameterGroup.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_CreateDbParameterGroup.html
    */
   public toCreateDbParameterGroup() {
     return this.to('CreateDbParameterGroup');
@@ -53,7 +53,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteDbInstance.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DeleteDbInstance.html
    */
   public toDeleteDbInstance() {
     return this.to('DeleteDbInstance');
@@ -64,7 +64,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_GetDbInstance.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_GetDbInstance.html
    */
   public toGetDbInstance() {
     return this.to('GetDbInstance');
@@ -75,7 +75,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_GetDbParameterGroup.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_GetDbParameterGroup.html
    */
   public toGetDbParameterGroup() {
     return this.to('GetDbParameterGroup');
@@ -86,7 +86,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListDbInstances.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbInstances.html
    */
   public toListDbInstances() {
     return this.to('ListDbInstances');
@@ -97,7 +97,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListDbParameterGroups.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbParameterGroups.html
    */
   public toListDbParameterGroups() {
     return this.to('ListDbParameterGroups');
@@ -111,7 +111,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -127,7 +127,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_TagResource.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -142,7 +142,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UntagResource.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -153,7 +153,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateDbInstance.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_UpdateDbInstance.html
    */
   public toUpdateDbInstance() {
     return this.to('UpdateDbInstance');
@@ -184,7 +184,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
   /**
    * Adds a resource of type db-instance to the statement
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DbInstance.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DbInstanceSummary.html
    *
    * @param dbInstanceIdentifier - Identifier for the dbInstanceIdentifier.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -201,7 +201,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
   /**
    * Adds a resource of type db-parameter-group to the statement
    *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DbParameterGroup.html
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DbParameterGroupSummary.html
    *
    * @param dbParameterGroupIdentifier - Identifier for the dbParameterGroupIdentifier.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

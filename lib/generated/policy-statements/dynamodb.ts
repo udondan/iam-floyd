@@ -142,6 +142,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the resource-based policy attached to the resource
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to the DeleteTable operation which deletes a table and all of its items
    *
    * Access Level: Write
@@ -402,11 +413,11 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a resource-based policy
+   * Grants permission to view a resource-based policy for a resource
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetResourcePolicy.html
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
@@ -620,6 +631,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a resource-based policy to the resource
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to use the primary key of a table or a secondary index to directly access items from that table or index
    *
    * Access Level: Read
@@ -812,6 +834,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update data replication configurations for the specified Kinesis data stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateKinesisStreamingDestination.html
+   */
+  public toUpdateKinesisStreamingDestination() {
+    return this.to('UpdateKinesisStreamingDestination');
+  }
+
+  /**
    * Grants permission to modify the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table
    *
    * Access Level: Write
@@ -903,9 +936,14 @@ export class Dynamodb extends PolicyStatement {
       'UpdateGlobalTableSettings',
       'UpdateGlobalTableVersion',
       'UpdateItem',
+      'UpdateKinesisStreamingDestination',
       'UpdateTable',
       'UpdateTableReplicaAutoScaling',
       'UpdateTimeToLive'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
     List: [
       'ListBackups',
