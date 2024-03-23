@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSLakeFormationDataAdminAllow",
       "Effect": "Allow",
       "Action": [
         "lakeformation:*",
@@ -21,7 +22,6 @@
         "glue:GetTableVersions",
         "glue:GetPartitions",
         "glue:GetTables",
-        "glue:GetWorkflow",
         "glue:ListWorkflows",
         "glue:BatchGetWorkflows",
         "glue:DeleteWorkflow",
@@ -40,6 +40,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSLakeFormationDataAdminDeny",
       "Effect": "Deny",
       "Action": [
         "lakeformation:PutDataLakeSettings"
