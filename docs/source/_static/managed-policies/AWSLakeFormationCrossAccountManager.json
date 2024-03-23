@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowCreateResourceShare",
       "Effect": "Allow",
       "Action": [
         "ram:CreateResourceShare"
@@ -18,6 +19,7 @@
       }
     },
     {
+      "Sid": "AllowManageResourceShare",
       "Effect": "Allow",
       "Action": [
         "ram:UpdateResourceShare",
@@ -36,6 +38,7 @@
       }
     },
     {
+      "Sid": "AllowManageResourceSharePermissions",
       "Effect": "Allow",
       "Action": [
         "ram:AssociateResourceSharePermission"
@@ -50,6 +53,7 @@
       }
     },
     {
+      "Sid": "AllowXAcctManagerPermissions",
       "Effect": "Allow",
       "Action": [
         "glue:PutResourcePolicy",
@@ -62,6 +66,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowOrganizationsPermissions",
       "Effect": "Allow",
       "Action": [
         "organizations:ListRoots",
