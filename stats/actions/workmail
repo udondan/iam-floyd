@@ -1,4 +1,5 @@
 workmail:AddMembersToGroup;Write
+workmail:AllowVendedLogDeliveryForResource;Write
 workmail:AssociateDelegateToResource;Write
 workmail:AssociateMemberToGroup;Write
 workmail:AssumeImpersonationRole;Write

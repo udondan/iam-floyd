@@ -3,6 +3,7 @@ managedblockchain-query:GetAssetContract;Read
 managedblockchain-query:GetTokenBalance;Read
 managedblockchain-query:GetTransaction;Read
 managedblockchain-query:ListAssetContracts;List
+managedblockchain-query:ListFilteredTransactionEvents;List
 managedblockchain-query:ListTokenBalances;List
 managedblockchain-query:ListTransactionEvents;List
 managedblockchain-query:ListTransactions;List

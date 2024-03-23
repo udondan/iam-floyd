@@ -67,7 +67,6 @@ ec2:Phase2LifetimeSeconds
 ec2:PlacementGroup
 ec2:PlacementGroupName
 ec2:PlacementGroupStrategy
-ec2:PreSharedKeys
 ec2:ProductCode
 ec2:Public
 ec2:PublicIpAddress

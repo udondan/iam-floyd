@@ -30,6 +30,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure vended log delivery for WorkMail audit logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/audit-logging.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to add a member (user or group) to the resource's set of delegates
    *
    * Access Level: Write
@@ -1364,7 +1375,6 @@ export class Workmail extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UntagResource.html
    */
@@ -1518,6 +1528,7 @@ export class Workmail extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddMembersToGroup',
+      'AllowVendedLogDeliveryForResource',
       'AssociateDelegateToResource',
       'AssociateMemberToGroup',
       'AssumeImpersonationRole',
@@ -1686,7 +1697,6 @@ export class Workmail extends PolicyStatement {
    * Applies to actions:
    * - .toListTagsForResource()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

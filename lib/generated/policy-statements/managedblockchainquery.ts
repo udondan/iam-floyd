@@ -64,6 +64,15 @@ export class ManagedblockchainQuery extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve events on the blockchain with additional filters
+   *
+   * Access Level: List
+   */
+  public toListFilteredTransactionEvents() {
+    return this.to('ListFilteredTransactionEvents');
+  }
+
+  /**
    * Grants permission to retrieve multiple balances on the blockchain
    *
    * Access Level: List
@@ -99,6 +108,7 @@ export class ManagedblockchainQuery extends PolicyStatement {
     ],
     List: [
       'ListAssetContracts',
+      'ListFilteredTransactionEvents',
       'ListTokenBalances',
       'ListTransactionEvents',
       'ListTransactions'
