@@ -21,7 +21,9 @@
         "cloudformation:DescribeChangeSet",
         "cloudformation:DescribeStackEvents",
         "cloudformation:ExecuteChangeSet",
-        "cloudformation:UpdateStack"
+        "cloudformation:UpdateStack",
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": [
         "arn:*:cloudformation:*:*:stack/a2c-app-*",
