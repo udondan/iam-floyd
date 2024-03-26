@@ -16,7 +16,8 @@
         "kafka-cluster:AlterGroup",
         "kafka-cluster:DescribeGroup",
         "kafka-cluster:DescribeTopicDynamicConfiguration",
-        "kafka-cluster:AlterTopicDynamicConfiguration"
+        "kafka-cluster:AlterTopicDynamicConfiguration",
+        "kafka-cluster:WriteDataIdempotently"
       ],
       "Resource": [
         "arn:aws:kafka:*:*:cluster/*"
