@@ -194,6 +194,65 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "SsmCreateDescribeUpdateDeleteStartAssociationPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeAssociation",
+        "ssm:DeleteAssociation",
+        "ssm:UpdateAssociation",
+        "ssm:CreateAssociation",
+        "ssm:StartAssociationsOnce"
+      ],
+      "Resource": "arn:aws:ssm:*:*:association/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/GuardDutyManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SsmAddTagsToResourcePermission",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:AddTagsToResource"
+      ],
+      "Resource": "arn:aws:ssm:*:*:association/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "GuardDutyManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceTag/GuardDutyManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SsmCreateUpdateAssociationInstanceDocumentPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CreateAssociation",
+        "ssm:UpdateAssociation"
+      ],
+      "Resource": "arn:aws:ssm:*:*:document/AmazonGuardDuty-ConfigureRuntimeMonitoringSsmPlugin"
+    },
+    {
+      "Sid": "SsmSendCommandPermission",
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:document/AmazonGuardDuty-ConfigureRuntimeMonitoringSsmPlugin"
+      ]
+    },
+    {
+      "Sid": "SsmGetCommandStatus",
+      "Effect": "Allow",
+      "Action": "ssm:GetCommandInvocation",
+      "Resource": "*"
     }
   ]
 }
