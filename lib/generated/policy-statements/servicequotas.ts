@@ -23,6 +23,10 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   * - organizations:EnableAWSServiceAccess
+   *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_AssociateServiceQuotaTemplate.html
    */
   public toAssociateServiceQuotaTemplate() {
@@ -34,6 +38,9 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DeleteServiceQuotaIncreaseRequestFromTemplate.html
    */
   public toDeleteServiceQuotaIncreaseRequestFromTemplate() {
@@ -44,6 +51,9 @@ export class Servicequotas extends PolicyStatement {
    * Grants permission to disassociate the Service Quotas template from your organization
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DisassociateServiceQuotaTemplate.html
    */
@@ -67,6 +77,9 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAssociationForServiceQuotaTemplate.html
    */
   public toGetAssociationForServiceQuotaTemplate() {
@@ -89,6 +102,16 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - autoscaling:DescribeAccountLimits
+   * - cloudformation:DescribeAccountLimits
+   * - dynamodb:DescribeLimits
+   * - elasticloadbalancing:DescribeAccountLimits
+   * - iam:GetAccountSummary
+   * - kinesis:DescribeLimits
+   * - rds:DescribeAccountAttributes
+   * - route53:GetAccountLimit
+   *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuota.html
    */
   public toGetServiceQuota() {
@@ -99,6 +122,9 @@ export class Servicequotas extends PolicyStatement {
    * Grants permission to retrieve the details for a service quota increase request from the service quota template
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuotaIncreaseRequestFromTemplate.html
    */
@@ -144,7 +170,10 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotaIncreaseRequestsInTemplate
+   * Dependent actions:
+   * - organizations:DescribeOrganization
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotaIncreaseRequestsInTemplate.html
    */
   public toListServiceQuotaIncreaseRequestsInTemplate() {
     return this.to('ListServiceQuotaIncreaseRequestsInTemplate');
@@ -154,6 +183,16 @@ export class Servicequotas extends PolicyStatement {
    * Grants permission to list all service quotas for the specified AWS service, in that account, in that Region
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - autoscaling:DescribeAccountLimits
+   * - cloudformation:DescribeAccountLimits
+   * - dynamodb:DescribeLimits
+   * - elasticloadbalancing:DescribeAccountLimits
+   * - iam:GetAccountSummary
+   * - kinesis:DescribeLimits
+   * - rds:DescribeAccountAttributes
+   * - route53:GetAccountLimit
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html
    */
@@ -177,7 +216,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListTagsForResource
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -190,6 +229,9 @@ export class Servicequotas extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifService()
+   *
+   * Dependent actions:
+   * - organizations:DescribeOrganization
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_PutServiceQuotaIncreaseRequestIntoTemplate.html
    */
@@ -220,7 +262,7 @@ export class Servicequotas extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_TagResource
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -232,10 +274,9 @@ export class Servicequotas extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UntagResource
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -291,7 +332,6 @@ export class Servicequotas extends PolicyStatement {
    *
    * Applies to actions:
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

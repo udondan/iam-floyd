@@ -1,6 +1,8 @@
+migrationhub-orchestrator:CreateTemplate;Write
 migrationhub-orchestrator:CreateWorkflow;Write
 migrationhub-orchestrator:CreateWorkflowStep;Write
 migrationhub-orchestrator:CreateWorkflowStepGroup;Write
+migrationhub-orchestrator:DeleteTemplate;Write
 migrationhub-orchestrator:DeleteWorkflow;Write
 migrationhub-orchestrator:DeleteWorkflowStep;Write
 migrationhub-orchestrator:DeleteWorkflowStepGroup;Write
@@ -26,6 +28,7 @@ migrationhub-orchestrator:StartWorkflow;Write
 migrationhub-orchestrator:StopWorkflow;Write
 migrationhub-orchestrator:TagResource;Tagging
 migrationhub-orchestrator:UntagResource;Tagging
+migrationhub-orchestrator:UpdateTemplate;Write
 migrationhub-orchestrator:UpdateWorkflow;Write
 migrationhub-orchestrator:UpdateWorkflowStep;Write
 migrationhub-orchestrator:UpdateWorkflowStepGroup;Write

@@ -4,6 +4,7 @@ internetmonitor:GetHealthEvent;Read
 internetmonitor:GetMonitor;Read
 internetmonitor:GetQueryResults;Read
 internetmonitor:GetQueryStatus;Read
+internetmonitor:Link;Write
 internetmonitor:ListHealthEvents;List
 internetmonitor:ListMonitors;List
 internetmonitor:ListTagsForResource;Read

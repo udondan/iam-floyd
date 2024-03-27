@@ -109,6 +109,20 @@ export class Savingsplans extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a savings plan
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_ReturnSavingsPlan.html
+   */
+  public toReturnSavingsPlan() {
+    return this.to('ReturnSavingsPlan');
+  }
+
+  /**
    * Grants permission to tag a savings plan
    *
    * Access Level: Tagging
@@ -140,7 +154,8 @@ export class Savingsplans extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateSavingsPlan',
-      'DeleteQueuedSavingsPlan'
+      'DeleteQueuedSavingsPlan',
+      'ReturnSavingsPlan'
     ],
     Read: [
       'DescribeSavingsPlanRates',
@@ -160,7 +175,7 @@ export class Savingsplans extends PolicyStatement {
   /**
    * Adds a resource of type savingsplan to the statement
    *
-   * https://docs.aws.amazon.com/savingsplans/latest/userguide/API_SavingsPlan.html
+   * https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -174,7 +189,7 @@ export class Savingsplans extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the allowed set of values for each of the tags
+   * Filters access by the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -191,7 +206,7 @@ export class Savingsplans extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag-value assoicated with the resource
+   * Filters access by tag-value assoicated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
@@ -199,6 +214,7 @@ export class Savingsplans extends PolicyStatement {
    * - .toDeleteQueuedSavingsPlan()
    * - .toDescribeSavingsPlanRates()
    * - .toDescribeSavingsPlans()
+   * - .toReturnSavingsPlan()
    *
    * Applies to resource types:
    * - savingsplan
@@ -212,7 +228,7 @@ export class Savingsplans extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of mandatory tags in the request
+   * Filters access by the presence of mandatory tags in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *

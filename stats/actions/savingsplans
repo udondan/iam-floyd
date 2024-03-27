@@ -5,5 +5,6 @@ savingsplans:DescribeSavingsPlans;Read
 savingsplans:DescribeSavingsPlansOfferingRates;Read
 savingsplans:DescribeSavingsPlansOfferings;Read
 savingsplans:ListTagsForResource;List
+savingsplans:ReturnSavingsPlan;Write
 savingsplans:TagResource;Tagging
 savingsplans:UntagResource;Tagging

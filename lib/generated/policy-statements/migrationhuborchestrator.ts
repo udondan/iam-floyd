@@ -19,6 +19,17 @@ export class MigrationhubOrchestrator extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a custom template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_CreateTemplate.html
+   */
+  public toCreateTemplate() {
+    return this.to('CreateTemplate');
+  }
+
+  /**
    * Grants permission to create a workflow based on the selected template
    *
    * Access Level: Write
@@ -53,6 +64,17 @@ export class MigrationhubOrchestrator extends PolicyStatement {
    */
   public toCreateWorkflowStepGroup() {
     return this.to('CreateWorkflowStepGroup');
+  }
+
+  /**
+   * Grants permission to delete a custom template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_DeleteTemplate.html
+   */
+  public toDeleteTemplate() {
+    return this.to('DeleteTemplate');
   }
 
   /**
@@ -203,7 +225,7 @@ export class MigrationhubOrchestrator extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListServers.html
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListTemplateSteps.html
    */
   public toListTemplateSteps() {
     return this.to('ListTemplateSteps');
@@ -236,7 +258,7 @@ export class MigrationhubOrchestrator extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListAntiPatterns.html
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_ListWorkflowSteps.html
    */
   public toListWorkflowSteps() {
     return this.to('ListWorkflowSteps');
@@ -330,12 +352,22 @@ export class MigrationhubOrchestrator extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a custom template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/APIReference/API_UpdateTemplate.html
+   */
+  public toUpdateTemplate() {
+    return this.to('UpdateTemplate');
   }
 
   /**
@@ -373,9 +405,11 @@ export class MigrationhubOrchestrator extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateTemplate',
       'CreateWorkflow',
       'CreateWorkflowStep',
       'CreateWorkflowStepGroup',
+      'DeleteTemplate',
       'DeleteWorkflow',
       'DeleteWorkflowStep',
       'DeleteWorkflowStepGroup',
@@ -384,6 +418,7 @@ export class MigrationhubOrchestrator extends PolicyStatement {
       'SendMessage',
       'StartWorkflow',
       'StopWorkflow',
+      'UpdateTemplate',
       'UpdateWorkflow',
       'UpdateWorkflowStep',
       'UpdateWorkflowStepGroup'
@@ -431,6 +466,23 @@ export class MigrationhubOrchestrator extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type template to the statement
+   *
+   * https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/templates.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:migrationhub-orchestrator:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:template/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -438,7 +490,6 @@ export class MigrationhubOrchestrator extends PolicyStatement {
    * Applies to actions:
    * - .toCreateWorkflow()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -455,6 +506,7 @@ export class MigrationhubOrchestrator extends PolicyStatement {
    *
    * Applies to resource types:
    * - workflow
+   * - template
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
