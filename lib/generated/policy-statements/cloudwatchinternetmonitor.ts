@@ -89,6 +89,17 @@ export class Internetmonitor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to share Internet Monitor resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
    * Grants permission to list all health events for a monitor
    *
    * Access Level: List
@@ -187,6 +198,7 @@ export class Internetmonitor extends PolicyStatement {
     Write: [
       'CreateMonitor',
       'DeleteMonitor',
+      'Link',
       'UpdateMonitor'
     ],
     Read: [

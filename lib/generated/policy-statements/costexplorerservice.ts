@@ -437,6 +437,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Cost Allocation Tag backfill history
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostAllocationTagBackfillHistory.html
+   */
+  public toListCostAllocationTagBackfillHistory() {
+    return this.to('ListCostAllocationTagBackfillHistory');
+  }
+
+  /**
    * Grants permission to list Cost Allocation Tags
    *
    * Access Level: List
@@ -492,6 +503,17 @@ export class Ce extends PolicyStatement {
    */
   public toProvideAnomalyFeedback() {
     return this.to('ProvideAnomalyFeedback');
+  }
+
+  /**
+   * Grants permission to request a Cost Allocation Tag backfill
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_StartCostAllocationTagBackfill.html
+   */
+  public toStartCostAllocationTagBackfill() {
+    return this.to('StartCostAllocationTagBackfill');
   }
 
   /**
@@ -646,6 +668,7 @@ export class Ce extends PolicyStatement {
       'DeleteNotificationSubscription',
       'DeleteReport',
       'ProvideAnomalyFeedback',
+      'StartCostAllocationTagBackfill',
       'StartSavingsPlansPurchaseRecommendationGeneration',
       'UpdateAnomalyMonitor',
       'UpdateAnomalySubscription',
@@ -685,6 +708,7 @@ export class Ce extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListCostAllocationTagBackfillHistory',
       'ListCostAllocationTags',
       'ListCostCategoryDefinitions',
       'ListSavingsPlansPurchaseRecommendationGeneration'
