@@ -202,6 +202,17 @@ export class Finspace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a node from a kdb cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/finspace/latest/management-api/API_DeleteKxClusterNode.html
+   */
+  public toDeleteKxClusterNode() {
+    return this.to('DeleteKxClusterNode');
+  }
+
+  /**
    * Grants permission to delete a kdb database
    *
    * Access Level: Write
@@ -721,6 +732,7 @@ export class Finspace extends PolicyStatement {
       'CreateUser',
       'DeleteEnvironment',
       'DeleteKxCluster',
+      'DeleteKxClusterNode',
       'DeleteKxDatabase',
       'DeleteKxDataview',
       'DeleteKxEnvironment',
