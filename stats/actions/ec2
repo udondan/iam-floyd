@@ -297,6 +297,7 @@ ec2:DescribeLocalGatewayVirtualInterfaceGroups;List
 ec2:DescribeLocalGatewayVirtualInterfaces;List
 ec2:DescribeLocalGateways;List
 ec2:DescribeLockedSnapshots;List
+ec2:DescribeMacHosts;List
 ec2:DescribeManagedPrefixLists;List
 ec2:DescribeMovingAddresses;List
 ec2:DescribeNatGateways;List
@@ -446,6 +447,7 @@ ec2:GetFlowLogsIntegrationTemplate;Read
 ec2:GetGroupsForCapacityReservation;List
 ec2:GetHostReservationPurchasePreview;Read
 ec2:GetImageBlockPublicAccessState;Read
+ec2:GetInstanceMetadataDefaults;List
 ec2:GetInstanceTypesFromInstanceRequirements;List
 ec2:GetInstanceUefiData;Read
 ec2:GetIpamAddressHistory;Read
@@ -511,6 +513,7 @@ ec2:ModifyInstanceCreditSpecification;Write
 ec2:ModifyInstanceEventStartTime;Write
 ec2:ModifyInstanceEventWindow;Write
 ec2:ModifyInstanceMaintenanceOptions;Write
+ec2:ModifyInstanceMetadataDefaults;Write
 ec2:ModifyInstanceMetadataOptions;Write
 ec2:ModifyInstancePlacement;Write
 ec2:ModifyIpam;Write

@@ -11,6 +11,7 @@ finspace:CreateKxVolume;Write
 finspace:CreateUser;Write
 finspace:DeleteEnvironment;Write
 finspace:DeleteKxCluster;Write
+finspace:DeleteKxClusterNode;Write
 finspace:DeleteKxDatabase;Write
 finspace:DeleteKxDataview;Write
 finspace:DeleteKxEnvironment;Write

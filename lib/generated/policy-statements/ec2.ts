@@ -4440,6 +4440,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe your EC2 Mac Dedicated hosts
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeMacHosts.html
+   */
+  public toDescribeMacHosts() {
+    return this.to('DescribeMacHosts');
+  }
+
+  /**
    * Grants permission to describe your managed prefix lists and any AWS-managed prefix lists
    *
    * Access Level: List
@@ -6541,6 +6555,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the default instance metadata service (IMDS) settings set for your account in the specified Region
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceMetadataDefaults.html
+   */
+  public toGetInstanceMetadataDefaults() {
+    return this.to('GetInstanceMetadataDefaults');
+  }
+
+  /**
    * Grants permission to view a list of instance types with specified instance attributes
    *
    * Access Level: List
@@ -7462,6 +7490,21 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyInstanceMaintenanceOptions() {
     return this.to('ModifyInstanceMaintenanceOptions');
+  }
+
+  /**
+   * Grants permission to modify the default instance metadata service (IMDS) settings for your account in the specified Region
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAttribute()
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceMetadataDefaults.html
+   */
+  public toModifyInstanceMetadataDefaults() {
+    return this.to('ModifyInstanceMetadataDefaults');
   }
 
   /**
@@ -9450,6 +9493,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyInstanceEventStartTime',
       'ModifyInstanceEventWindow',
       'ModifyInstanceMaintenanceOptions',
+      'ModifyInstanceMetadataDefaults',
       'ModifyInstanceMetadataOptions',
       'ModifyInstancePlacement',
       'ModifyIpam',
@@ -9649,6 +9693,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeLocalGatewayVirtualInterfaces',
       'DescribeLocalGateways',
       'DescribeLockedSnapshots',
+      'DescribeMacHosts',
       'DescribeManagedPrefixLists',
       'DescribeMovingAddresses',
       'DescribeNatGateways',
@@ -9727,6 +9772,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeVpnConnections',
       'DescribeVpnGateways',
       'GetGroupsForCapacityReservation',
+      'GetInstanceMetadataDefaults',
       'GetInstanceTypesFromInstanceRequirements',
       'GetIpamPoolAllocations',
       'GetTransitGatewayAttachmentPropagations',
@@ -12893,6 +12939,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceCreditSpecification()
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
+   * - .toModifyInstanceMetadataDefaults()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
@@ -15465,6 +15512,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeLocalGatewayVirtualInterfaces()
    * - .toDescribeLocalGateways()
    * - .toDescribeLockedSnapshots()
+   * - .toDescribeMacHosts()
    * - .toDescribeManagedPrefixLists()
    * - .toDescribeMovingAddresses()
    * - .toDescribeNatGateways()
@@ -15614,6 +15662,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetGroupsForCapacityReservation()
    * - .toGetHostReservationPurchasePreview()
    * - .toGetImageBlockPublicAccessState()
+   * - .toGetInstanceMetadataDefaults()
    * - .toGetInstanceTypesFromInstanceRequirements()
    * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
@@ -15679,6 +15728,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceEventWindow()
    * - .toModifyInstanceMaintenanceOptions()
+   * - .toModifyInstanceMetadataDefaults()
    * - .toModifyInstanceMetadataOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
