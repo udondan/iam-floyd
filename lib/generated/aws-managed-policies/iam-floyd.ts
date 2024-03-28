@@ -1278,6 +1278,8 @@ export class AwsManagedPolicy {
     public static AWSEC2SpotFleetServiceRolePolicy = 'aws-service-role/AWSEC2SpotFleetServiceRolePolicy';
     /** Allows EC2 Spot to launch and manage spot instances */
     public static AWSEC2SpotServiceRolePolicy = 'aws-service-role/AWSEC2SpotServiceRolePolicy';
+    /** This policy is attached to the IAM role that's attached to your Amazon EC2 Windows Instances to enable the Amazon EC2 VSS solution to create and add tags to Amazon Machine Images (AMI) and EBS Snapshots. */
+    public static AWSEC2VssSnapshotPolicy = 'AWSEC2VssSnapshotPolicy';
     /** Enables access to AWS services and resources used or managed by AWS ECR pull through cache */
     public static AWSECRPullThroughCacheServiceRolePolicy = 'aws-service-role/AWSECRPullThroughCache_ServiceRolePolicy';
     /** Provide the instance in your custom platform builder environment permission to launch EC2 instance, create EBS snapshot and AMI, stream logs to Amazon CloudWatch Logs, and store artifacts in Amazon S3. */
@@ -1772,6 +1774,10 @@ export class AwsManagedPolicy {
     public static AWSProtonSyncServiceRolePolicy = 'aws-service-role/AWSProtonSyncServiceRolePolicy';
     /** Grants permissions to view and modify purchase orders on billing console */
     public static AWSPurchaseOrdersServiceRolePolicy = 'AWSPurchaseOrdersServiceRolePolicy';
+    /** Provides the set of permissions required to perform QuickSight Asset Bundle Export Operations */
+    public static AWSQuickSightAssetBundleExportPolicy = 'AWSQuickSightAssetBundleExportPolicy';
+    /** Provides the set of permissions required to perform QuickSight Asset Bundle Import Operations */
+    public static AWSQuickSightAssetBundleImportPolicy = 'AWSQuickSightAssetBundleImportPolicy';
     /** Quicksight access to Athena API and S3 buckets used for Athena query results */
     public static AWSQuicksightAthenaAccess = 'service-role/AWSQuicksightAthenaAccess';
     /** Allow QuickSight to describe the RDS resources */
