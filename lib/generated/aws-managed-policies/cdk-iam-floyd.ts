@@ -3204,6 +3204,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2SpotServiceRolePolicy);
     }
 
+    /** This policy is attached to the IAM role that's attached to your Amazon EC2 Windows Instances to enable the Amazon EC2 VSS solution to create and add tags to Amazon Machine Images (AMI) and EBS Snapshots. */
+    public AWSEC2VssSnapshotPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2VssSnapshotPolicy);
+    }
+
     /** Enables access to AWS services and resources used or managed by AWS ECR pull through cache */
     public AWSECRPullThroughCacheServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSECRPullThroughCacheServiceRolePolicy);
@@ -4437,6 +4442,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Grants permissions to view and modify purchase orders on billing console */
     public AWSPurchaseOrdersServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPurchaseOrdersServiceRolePolicy);
+    }
+
+    /** Provides the set of permissions required to perform QuickSight Asset Bundle Export Operations */
+    public AWSQuickSightAssetBundleExportPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSightAssetBundleExportPolicy);
+    }
+
+    /** Provides the set of permissions required to perform QuickSight Asset Bundle Import Operations */
+    public AWSQuickSightAssetBundleImportPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSightAssetBundleImportPolicy);
     }
 
     /** Quicksight access to Athena API and S3 buckets used for Athena query results */
