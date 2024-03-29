@@ -169,7 +169,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the current AWS Control Tower &SSO; configuration
+   * Grants permission to describe the current AWS Control Tower IAM Identity Center configuration
    *
    * Access Level: Read
    *
@@ -414,7 +414,7 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the current directory groups available through &SSO;
+   * Grants permission to list the current directory groups available through IAM Identity Center
    *
    * Access Level: List
    *
