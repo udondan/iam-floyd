@@ -30,6 +30,50 @@ export class Groundtruthlabeling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a GT+ Batch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toCreateBatch() {
+    return this.to('CreateBatch');
+  }
+
+  /**
+   * Grants permission to create intake form
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toCreateIntakeForm() {
+    return this.to('CreateIntakeForm');
+  }
+
+  /**
+   * Grants permission to create a GT+ Project
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toCreateProject() {
+    return this.to('CreateProject');
+  }
+
+  /**
+   * Grants permission to create a GT+ Workflow Definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toCreateWorkflowDefinition() {
+    return this.to('CreateWorkflowDefinition');
+  }
+
+  /**
    * Grants permission to get status of GroundTruthLabeling Jobs
    *
    * Access Level: Read
@@ -41,6 +85,50 @@ export class Groundtruthlabeling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate LiDAR Preview Task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toGenerateLIDARPreviewTaskConfigJob() {
+    return this.to('GenerateLIDARPreviewTaskConfigJob');
+  }
+
+  /**
+   * Grants permission to get a GT+ Batch
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toGetBatch() {
+    return this.to('GetBatch');
+  }
+
+  /**
+   * Grants permission to get a intake forms
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toGetIntakeFormStatus() {
+    return this.to('GetIntakeFormStatus');
+  }
+
+  /**
+   * Grants permission to list a GT+ Batchs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toListBatches() {
+    return this.to('ListBatches');
+  }
+
+  /**
    * Grants permission to list dataset objects in a manifest file
    *
    * Access Level: Read
@@ -49,6 +137,17 @@ export class Groundtruthlabeling extends PolicyStatement {
    */
   public toListDatasetObjects() {
     return this.to('ListDatasetObjects');
+  }
+
+  /**
+   * Grants permission to list a GT+ Projects
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toListProjects() {
+    return this.to('ListProjects');
   }
 
   /**
@@ -73,15 +172,48 @@ export class Groundtruthlabeling extends PolicyStatement {
     return this.to('RunGenerateManifestByCrawlingJob');
   }
 
+  /**
+   * Grants permission to generate metrics from objects in manifest
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toRunGenerateManifestMetricsJob() {
+    return this.to('RunGenerateManifestMetricsJob');
+  }
+
+  /**
+   * Grants permission to update a GT+ Batch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
+   */
+  public toUpdateBatch() {
+    return this.to('UpdateBatch');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociatePatchToManifestJob',
+      'CreateBatch',
+      'CreateIntakeForm',
+      'CreateProject',
+      'CreateWorkflowDefinition',
+      'GenerateLIDARPreviewTaskConfigJob',
       'RunFilterOrSampleDatasetJob',
-      'RunGenerateManifestByCrawlingJob'
+      'RunGenerateManifestByCrawlingJob',
+      'RunGenerateManifestMetricsJob',
+      'UpdateBatch'
     ],
     Read: [
       'DescribeConsoleJob',
-      'ListDatasetObjects'
+      'GetBatch',
+      'GetIntakeFormStatus',
+      'ListBatches',
+      'ListDatasetObjects',
+      'ListProjects'
     ]
   };
 }
