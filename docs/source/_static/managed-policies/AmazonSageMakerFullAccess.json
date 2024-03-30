@@ -17,6 +17,21 @@
       ]
     },
     {
+      "Sid": "AllowAddTagsForSpace",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:AddTags"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:space/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "sagemaker:TaggingAction": "CreateSpace"
+        }
+      }
+    },
+    {
       "Sid": "AllowAddTagsForApp",
       "Effect": "Allow",
       "Action": [
