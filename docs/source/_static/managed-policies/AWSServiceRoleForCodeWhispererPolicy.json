@@ -22,7 +22,8 @@
         "sso:GetProfile",
         "sso:GetManagedApplicationInstance",
         "sso:ListApplicationAssignments",
-        "sso:DescribeInstance"
+        "sso:DescribeInstance",
+        "sso:DescribeApplication"
       ],
       "Resource": [
         "*"
