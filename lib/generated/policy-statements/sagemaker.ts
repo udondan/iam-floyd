@@ -1762,6 +1762,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants AWS Resource Access Manager permission to delete a resource policy on a SageMaker resource that supports cross-account sharing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a Space
    *
    * Access Level: Write
@@ -2657,6 +2668,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toGetRecord() {
     return this.to('GetRecord');
+  }
+
+  /**
+   * Grants AWS Resource Access Manager permission to retrieve a resource policy on a SageMaker resource that supports cross-account sharing
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -3649,6 +3671,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants AWS Resource Access Manager permission to create a resource policy on a SageMaker resource that supports cross-account sharing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to explore the lineage graph
    *
    * Access Level: List
@@ -4581,6 +4614,7 @@ export class Sagemaker extends PolicyStatement {
       'DeletePipeline',
       'DeleteProject',
       'DeleteRecord',
+      'DeleteResourcePolicy',
       'DeleteSpace',
       'DeleteStudioLifecycleConfig',
       'DeleteTrial',
@@ -4596,6 +4630,7 @@ export class Sagemaker extends PolicyStatement {
       'PutLineageGroupPolicy',
       'PutModelPackageGroupPolicy',
       'PutRecord',
+      'PutResourcePolicy',
       'RegisterDevices',
       'RetryPipelineExecution',
       'SendHeartbeat',
@@ -4739,6 +4774,7 @@ export class Sagemaker extends PolicyStatement {
       'GetLineageGroupPolicy',
       'GetModelPackageGroupPolicy',
       'GetRecord',
+      'GetResourcePolicy',
       'GetSagemakerServicecatalogPortfolioStatus',
       'GetScalingConfigurationRecommendation',
       'GetSearchSuggestions',
@@ -5292,7 +5328,7 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-cluster.html
    *
    * @param clusterId - Identifier for the clusterId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
