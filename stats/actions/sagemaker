@@ -107,6 +107,7 @@ sagemaker:DeleteNotebookInstanceLifecycleConfig;Write
 sagemaker:DeletePipeline;Write
 sagemaker:DeleteProject;Write
 sagemaker:DeleteRecord;Write
+sagemaker:DeleteResourcePolicy;Write
 sagemaker:DeleteSpace;Write
 sagemaker:DeleteStudioLifecycleConfig;Write
 sagemaker:DeleteTags;Tagging
@@ -188,6 +189,7 @@ sagemaker:GetDeviceRegistration;Read
 sagemaker:GetLineageGroupPolicy;Read
 sagemaker:GetModelPackageGroupPolicy;Read
 sagemaker:GetRecord;Read
+sagemaker:GetResourcePolicy;Read
 sagemaker:GetSagemakerServicecatalogPortfolioStatus;Read
 sagemaker:GetScalingConfigurationRecommendation;Read
 sagemaker:GetSearchSuggestions;Read
@@ -277,6 +279,7 @@ sagemaker:ListWorkteams;List
 sagemaker:PutLineageGroupPolicy;Write
 sagemaker:PutModelPackageGroupPolicy;Write
 sagemaker:PutRecord;Write
+sagemaker:PutResourcePolicy;Write
 sagemaker:QueryLineage;List
 sagemaker:RegisterDevices;Write
 sagemaker:RenderUiTemplate;Read
