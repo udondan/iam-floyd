@@ -39,6 +39,7 @@ datazone:DeleteProjectMembership;Write
 datazone:DeleteSubscriptionGrant;Write
 datazone:DeleteSubscriptionRequest;Write
 datazone:DeleteSubscriptionTarget;Write
+datazone:DeleteTimeSeriesDataPoints;Write
 datazone:GetAsset;Read
 datazone:GetAssetType;Read
 datazone:GetDataSource;Read
@@ -64,6 +65,7 @@ datazone:GetSubscriptionEligibility;Read
 datazone:GetSubscriptionGrant;Read
 datazone:GetSubscriptionRequestDetails;Read
 datazone:GetSubscriptionTarget;Read
+datazone:GetTimeSeriesDataPoint;Read
 datazone:GetUserProfile;Read
 datazone:ListAccountEnvironments;List
 datazone:ListAssetRevisions;List
@@ -86,7 +88,9 @@ datazone:ListSubscriptionRequests;List
 datazone:ListSubscriptionTargets;List
 datazone:ListSubscriptions;List
 datazone:ListTagsForResource;Read
+datazone:ListTimeSeriesDataPoints;List
 datazone:ListWarehouseMetadata;List
+datazone:PostTimeSeriesDataPoints;Write
 datazone:ProvisionDomain;Write
 datazone:PutDomainSharingPolicy;Permissions management
 datazone:PutEnvironmentBlueprintConfiguration;Write

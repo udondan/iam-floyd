@@ -189,12 +189,13 @@ export class Artifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html
    *
-   * @param resourceName - Identifier for the resourceName.
+   * @param reportId - Identifier for the reportId.
+   * @param version - Identifier for the version.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onReport(resourceName: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:${ region ?? this.defaultRegion }::report/${ resourceName }`);
+  public onReport(reportId: string, version: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:${ region ?? this.defaultRegion }::report/${ reportId }:${ version }`);
   }
 
   /**

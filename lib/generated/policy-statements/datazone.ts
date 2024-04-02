@@ -392,6 +392,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete existing TimeSeriesDataPoints
+   *
+   * Access Level: Write
+   */
+  public toDeleteTimeSeriesDataPoints() {
+    return this.to('DeleteTimeSeriesDataPoints');
+  }
+
+  /**
    * Grants permission to retrieve an asset
    *
    * Access Level: Read
@@ -617,6 +626,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an existing TimeSeriesDataPoints in Amazon DataZone using its identifier
+   *
+   * Access Level: Read
+   */
+  public toGetTimeSeriesDataPoint() {
+    return this.to('GetTimeSeriesDataPoint');
+  }
+
+  /**
    * Grants permission to retrieve a user profile for an existing user in the DataZone Domain
    *
    * Access Level: Read
@@ -815,12 +833,30 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list existing TimeSeriesDataPoints
+   *
+   * Access Level: List
+   */
+  public toListTimeSeriesDataPoints() {
+    return this.to('ListTimeSeriesDataPoints');
+  }
+
+  /**
    * Grants permission to list available Manager Secrets
    *
    * Access Level: List
    */
   public toListWarehouseMetadata() {
     return this.to('ListWarehouseMetadata');
+  }
+
+  /**
+   * Grants permission to post a new TimeSeriesDataPoints
+   *
+   * Access Level: Write
+   */
+  public toPostTimeSeriesDataPoints() {
+    return this.to('PostTimeSeriesDataPoints');
   }
 
   /**
@@ -1187,6 +1223,8 @@ export class Datazone extends PolicyStatement {
       'DeleteSubscriptionGrant',
       'DeleteSubscriptionRequest',
       'DeleteSubscriptionTarget',
+      'DeleteTimeSeriesDataPoints',
+      'PostTimeSeriesDataPoints',
       'ProvisionDomain',
       'PutEnvironmentBlueprintConfiguration',
       'RefreshToken',
@@ -1245,6 +1283,7 @@ export class Datazone extends PolicyStatement {
       'GetSubscriptionGrant',
       'GetSubscriptionRequestDetails',
       'GetSubscriptionTarget',
+      'GetTimeSeriesDataPoint',
       'GetUserProfile',
       'ListTagsForResource'
     ],
@@ -1269,6 +1308,7 @@ export class Datazone extends PolicyStatement {
       'ListSubscriptionRequests',
       'ListSubscriptionTargets',
       'ListSubscriptions',
+      'ListTimeSeriesDataPoints',
       'ListWarehouseMetadata',
       'Search',
       'SearchGroupProfiles',

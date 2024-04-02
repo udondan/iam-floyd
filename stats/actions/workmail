@@ -10,7 +10,6 @@ workmail:CreateGroup;Write
 workmail:CreateImpersonationRole;Write
 workmail:CreateInboundMailFlowRule;Write
 workmail:CreateMailDomain;Write
-workmail:CreateMailUser;Write
 workmail:CreateMobileDeviceAccessRule;Write
 workmail:CreateOrganization;Write
 workmail:CreateOutboundMailFlowRule;Write
@@ -54,13 +53,9 @@ workmail:DescribeOutboundMailFlowRule;Read
 workmail:DescribeResource;List
 workmail:DescribeSmtpGateway;Read
 workmail:DescribeUser;List
-workmail:DisableMailGroups;Write
-workmail:DisableMailUsers;Write
 workmail:DisassociateDelegateFromResource;Write
 workmail:DisassociateMemberFromGroup;Write
 workmail:EnableMailDomain;Write
-workmail:EnableMailGroups;Write
-workmail:EnableMailUsers;Write
 workmail:GetAccessControlEffect;Read
 workmail:GetDefaultRetentionPolicy;Read
 workmail:GetImpersonationRole;Read
@@ -69,7 +64,6 @@ workmail:GetJournalingRules;Read
 workmail:GetMailDomain;Read
 workmail:GetMailDomainDetails;Read
 workmail:GetMailGroupDetails;Read
-workmail:GetMailUserDetails;Read
 workmail:GetMailboxDetails;Read
 workmail:GetMobileDeviceAccessEffect;Read
 workmail:GetMobileDeviceAccessOverride;Read
@@ -112,8 +106,6 @@ workmail:SearchMembers;Read
 workmail:SetAdmin;Write
 workmail:SetDefaultMailDomain;Write
 workmail:SetJournalingRules;Write
-workmail:SetMailGroupDetails;Write
-workmail:SetMailUserDetails;Write
 workmail:SetMobilePolicyDetails;Write
 workmail:StartMailboxExportJob;Write
 workmail:TagResource;Tagging

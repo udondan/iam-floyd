@@ -1,0 +1,11 @@
+deadline:AssociatedMembershipLevel
+deadline:FarmMembershipLevels
+deadline:FleetMembershipLevels
+deadline:JobMembershipLevels
+deadline:MembershipLevel
+deadline:PrincipalId
+deadline:QueueMembershipLevels
+deadline:RequestTag/${TagKey}
+deadline:RequesterPrincipalId
+deadline:ResourceTag/${TagKey}
+deadline:TagKeys

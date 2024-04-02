@@ -1,0 +1,15 @@
+codeconnections:Branch
+codeconnections:BranchName
+codeconnections:FullRepositoryId
+codeconnections:HostArn
+codeconnections:InstallationId
+codeconnections:OwnerId
+codeconnections:PassedToService
+codeconnections:ProviderAction
+codeconnections:ProviderPermissionsRequired
+codeconnections:ProviderType
+codeconnections:ProviderTypeFilter
+codeconnections:RepositoryName
+codeconnections:RequestTag/${TagKey}
+codeconnections:ResourceTag/${TagKey}
+codeconnections:TagKeys
