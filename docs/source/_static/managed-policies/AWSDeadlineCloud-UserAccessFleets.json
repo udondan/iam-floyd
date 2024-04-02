@@ -1,0 +1,153 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AdditionalPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeGroup",
+        "identitystore:DescribeUser",
+        "identitystore:ListGroupMembershipsForMember",
+        "deadline:GetApplicationVersion",
+        "ec2:DescribeInstanceTypes",
+        "identitystore:ListUsers"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "OwnerLevelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssociateMemberToFleet",
+        "deadline:DisassociateMemberFromFleet"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FleetMembershipLevels": [
+            "OWNER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagerLevelMemberAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssociateMemberToFleet"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FleetMembershipLevels": [
+            "MANAGER"
+          ]
+        },
+        "StringEquals": {
+          "deadline:AssociatedMembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER",
+            ""
+          ],
+          "deadline:MembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagerLevelMemberDisassociation",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:DisassociateMemberFromFleet"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FleetMembershipLevels": [
+            "MANAGER"
+          ]
+        },
+        "StringEquals": {
+          "deadline:AssociatedMembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OwnerManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListFleetMembers"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FleetMembershipLevels": [
+            "OWNER",
+            "MANAGER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllLevelsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssumeFleetRoleForRead",
+        "deadline:GetFleet",
+        "deadline:GetQueueFleetAssociation",
+        "deadline:GetWorker",
+        "deadline:ListQueueFleetAssociations",
+        "deadline:ListSessionsForWorker",
+        "deadline:ListWorkers",
+        "deadline:SearchWorkers"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FleetMembershipLevels": [
+            "OWNER",
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ListBasedOnMembership",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListFleets"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "deadline:RequesterPrincipalId": "${deadline:PrincipalId}"
+        }
+      }
+    }
+  ]
+}
