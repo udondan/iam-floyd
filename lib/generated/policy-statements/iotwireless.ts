@@ -544,6 +544,28 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get metric configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMetricConfiguration.html
+   */
+  public toGetMetricConfiguration() {
+    return this.to('GetMetricConfiguration');
+  }
+
+  /**
+   * Grants permission to get metrics
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMetrics.html
+   */
+  public toGetMetrics() {
+    return this.to('GetMetrics');
+  }
+
+  /**
    * Grants permission to get the MulticastGroup
    *
    * Access Level: Read
@@ -1197,6 +1219,17 @@ export class Iotwireless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update metric configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateMetricConfiguration.html
+   */
+  public toUpdateMetricConfiguration() {
+    return this.to('UpdateMetricConfiguration');
+  }
+
+  /**
    * Grants permission to update the MulticastGroup
    *
    * Access Level: Write
@@ -1353,6 +1386,7 @@ export class Iotwireless extends PolicyStatement {
       'UpdateEventConfigurationByResourceTypes',
       'UpdateFuotaTask',
       'UpdateLogLevelsByResourceTypes',
+      'UpdateMetricConfiguration',
       'UpdateMulticastGroup',
       'UpdateNetworkAnalyzerConfiguration',
       'UpdatePartnerAccount',
@@ -1369,6 +1403,8 @@ export class Iotwireless extends PolicyStatement {
       'GetEventConfigurationByResourceTypes',
       'GetFuotaTask',
       'GetLogLevelsByResourceTypes',
+      'GetMetricConfiguration',
+      'GetMetrics',
       'GetMulticastGroup',
       'GetMulticastGroupSession',
       'GetNetworkAnalyzerConfiguration',

@@ -41,6 +41,8 @@ iotwireless:GetDeviceProfile;Read
 iotwireless:GetEventConfigurationByResourceTypes;Read
 iotwireless:GetFuotaTask;Read
 iotwireless:GetLogLevelsByResourceTypes;Read
+iotwireless:GetMetricConfiguration;Read
+iotwireless:GetMetrics;Read
 iotwireless:GetMulticastGroup;Read
 iotwireless:GetMulticastGroupSession;Read
 iotwireless:GetNetworkAnalyzerConfiguration;Read
@@ -99,6 +101,7 @@ iotwireless:UpdateDestination;Write
 iotwireless:UpdateEventConfigurationByResourceTypes;Write
 iotwireless:UpdateFuotaTask;Write
 iotwireless:UpdateLogLevelsByResourceTypes;Write
+iotwireless:UpdateMetricConfiguration;Write
 iotwireless:UpdateMulticastGroup;Write
 iotwireless:UpdateNetworkAnalyzerConfiguration;Write
 iotwireless:UpdatePartnerAccount;Write

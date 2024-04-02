@@ -151,17 +151,6 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user in the directory
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html
-   */
-  public toCreateMailUser() {
-    return this.to('CreateMailUser');
-  }
-
-  /**
    * Grants permission to create a new mobile device access rule
    *
    * Access Level: Write
@@ -635,28 +624,6 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable a mail group when it is not being used, in order to allow it to be deleted
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/remove_group.html
-   */
-  public toDisableMailGroups() {
-    return this.to('DisableMailGroups');
-  }
-
-  /**
-   * Grants permission to disable a user mailbox when it is no longer being used, in order to allow it to be deleted
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-mailboxes.html#delete_user_mailbox
-   */
-  public toDisableMailUsers() {
-    return this.to('DisableMailUsers');
-  }
-
-  /**
    * Grants permission to remove a member from the resource's set of delegates
    *
    * Access Level: Write
@@ -687,28 +654,6 @@ export class Workmail extends PolicyStatement {
    */
   public toEnableMailDomain() {
     return this.to('EnableMailDomain');
-  }
-
-  /**
-   * Grants permission to enable a mail group after it has been created to allow it to receive mail
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/enable_existing_group.html
-   */
-  public toEnableMailGroups() {
-    return this.to('EnableMailGroups');
-  }
-
-  /**
-   * Grants permission to enable a user's mailbox after it has been created to allow it to receive mail
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html#enable_existing_user
-   */
-  public toEnableMailUsers() {
-    return this.to('EnableMailUsers');
   }
 
   /**
@@ -797,17 +742,6 @@ export class Workmail extends PolicyStatement {
    */
   public toGetMailGroupDetails() {
     return this.to('GetMailGroupDetails');
-  }
-
-  /**
-   * Grants permission to get the details of the user's mailbox and account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html
-   */
-  public toGetMailUserDetails() {
-    return this.to('GetMailUserDetails');
   }
 
   /**
@@ -1277,28 +1211,6 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the details of the mail group which has just been created
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_group.html
-   */
-  public toSetMailGroupDetails() {
-    return this.to('SetMailGroupDetails');
-  }
-
-  /**
-   * Grants permission to set the details for the user account which has just been created
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html
-   */
-  public toSetMailUserDetails() {
-    return this.to('SetMailUserDetails');
-  }
-
-  /**
    * Grants permission to set the details of a mobile policy associated with the organization
    *
    * Access Level: Write
@@ -1539,7 +1451,6 @@ export class Workmail extends PolicyStatement {
       'CreateImpersonationRole',
       'CreateInboundMailFlowRule',
       'CreateMailDomain',
-      'CreateMailUser',
       'CreateMobileDeviceAccessRule',
       'CreateOrganization',
       'CreateOutboundMailFlowRule',
@@ -1566,13 +1477,9 @@ export class Workmail extends PolicyStatement {
       'DeleteUser',
       'DeregisterFromWorkMail',
       'DeregisterMailDomain',
-      'DisableMailGroups',
-      'DisableMailUsers',
       'DisassociateDelegateFromResource',
       'DisassociateMemberFromGroup',
       'EnableMailDomain',
-      'EnableMailGroups',
-      'EnableMailUsers',
       'PutAccessControlRule',
       'PutEmailMonitoringConfiguration',
       'PutInboundDmarcSettings',
@@ -1587,8 +1494,6 @@ export class Workmail extends PolicyStatement {
       'SetAdmin',
       'SetDefaultMailDomain',
       'SetJournalingRules',
-      'SetMailGroupDetails',
-      'SetMailUserDetails',
       'SetMobilePolicyDetails',
       'StartMailboxExportJob',
       'TestInboundMailFlowRules',
@@ -1651,7 +1556,6 @@ export class Workmail extends PolicyStatement {
       'GetMailDomain',
       'GetMailDomainDetails',
       'GetMailGroupDetails',
-      'GetMailUserDetails',
       'GetMailboxDetails',
       'GetMobileDeviceAccessEffect',
       'GetMobileDeviceAccessOverride',

@@ -55,6 +55,9 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
   public toAssociateIdentityCenterApplicationToSpace() {
@@ -65,6 +68,9 @@ export class Codecatalyst extends PolicyStatement {
    * Grants permission to associate an identity with an IAM Identity Center application for an Amazon CodeCatalyst space
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
@@ -77,6 +83,9 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
   public toBatchAssociateIdentitiesToIdentityCenterApplication() {
@@ -88,6 +97,9 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
   public toBatchDisassociateIdentitiesFromIdentityCenterApplication() {
@@ -98,6 +110,10 @@ export class Codecatalyst extends PolicyStatement {
    * Grants permission to create an IAM Identity Center application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
@@ -125,6 +141,9 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
   public toCreateSpaceAdminRoleAssignment() {
@@ -149,6 +168,9 @@ export class Codecatalyst extends PolicyStatement {
    * Grants permission to delete an IAM Identity Center application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
@@ -175,6 +197,9 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
   public toDisassociateIdentityCenterApplicationFromSpace() {
@@ -185,6 +210,9 @@ export class Codecatalyst extends PolicyStatement {
    * Grants permission to disassociate an identity from an IAM Identity Center application for an Amazon CodeCatalyst space
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
@@ -224,6 +252,9 @@ export class Codecatalyst extends PolicyStatement {
    * Grants permission to get information about an IAM Identity Center application
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
@@ -294,6 +325,9 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
   public toListSpacesForIdentityCenterApplication() {
@@ -344,6 +378,9 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
   public toSynchronizeIdentityCenterApplication() {
@@ -385,6 +422,9 @@ export class Codecatalyst extends PolicyStatement {
    * Grants permission to update an IAM Identity Center application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/codecatalyst/latest/userguide/security-iam.html#permissions-reference-applications
    */
@@ -459,6 +499,9 @@ export class Codecatalyst extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIdentityCenterApplications(identityCenterApplicationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:codecatalyst:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/identity-center-applications/${ identityCenterApplicationId }`);
@@ -496,6 +539,7 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAcceptConnection()
+   * - .toCreateIdentityCenterApplication()
    * - .toCreateSpace()
    * - .toTagResource()
    *
@@ -514,18 +558,31 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateIamRoleToConnection()
+   * - .toAssociateIdentityCenterApplicationToSpace()
+   * - .toAssociateIdentityToIdentityCenterApplication()
+   * - .toBatchAssociateIdentitiesToIdentityCenterApplication()
+   * - .toBatchDisassociateIdentitiesFromIdentityCenterApplication()
+   * - .toCreateSpaceAdminRoleAssignment()
    * - .toDeleteConnection()
+   * - .toDeleteIdentityCenterApplication()
    * - .toDisassociateIamRoleFromConnection()
+   * - .toDisassociateIdentityCenterApplicationFromSpace()
+   * - .toDisassociateIdentityFromIdentityCenterApplication()
    * - .toGetBillingAuthorization()
    * - .toGetConnection()
+   * - .toGetIdentityCenterApplication()
    * - .toListIamRolesForConnection()
+   * - .toListSpacesForIdentityCenterApplication()
    * - .toListTagsForResource()
    * - .toPutBillingAuthorization()
+   * - .toSynchronizeIdentityCenterApplication()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateIdentityCenterApplication()
    *
    * Applies to resource types:
    * - connections
+   * - identity-center-applications
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -542,6 +599,7 @@ export class Codecatalyst extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAcceptConnection()
+   * - .toCreateIdentityCenterApplication()
    * - .toCreateSpace()
    * - .toTagResource()
    * - .toUntagResource()
