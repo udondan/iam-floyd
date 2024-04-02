@@ -2,6 +2,20 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "GlueDataQualityPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:ListDataQualityResults",
+        "glue:GetDataQualityResult"
+      ],
+      "Resource": "arn:aws:glue:*:*:dataQualityRuleset/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "GlueTableDatabasePermissions",
       "Effect": "Allow",
       "Action": [
@@ -33,6 +47,7 @@
         "lakeformation:GetResourceLFTags",
         "lakeformation:ListLakeFormationOptIns",
         "lakeformation:ListPermissions",
+        "lakeformation:RegisterResource",
         "lakeformation:RevokePermissions",
         "glue:GetDatabase",
         "glue:GetTable",
@@ -143,6 +158,35 @@
       "Condition": {
         "StringEquals": {
           "aws:ResourceTag/datazone:projectId": "proj-all"
+        }
+      }
+    },
+    {
+      "Sid": "GetRoleForDataZone",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/AmazonDataZone*",
+        "arn:aws:iam::*:role/service-role/AmazonDataZone*"
+      ]
+    },
+    {
+      "Sid": "PassRoleForDataLocationRegistration",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/AmazonDataZone*",
+        "arn:aws:iam::*:role/service-role/AmazonDataZone*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "lakeformation.amazonaws.com"
+          ]
         }
       }
     }

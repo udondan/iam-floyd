@@ -1,0 +1,225 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AdditionalPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeGroup",
+        "identitystore:DescribeUser",
+        "identitystore:ListGroupMembershipsForMember",
+        "deadline:GetApplicationVersion",
+        "ec2:DescribeInstanceTypes",
+        "identitystore:ListUsers"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "OwnerLevelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssociateMemberToFarm",
+        "deadline:AssociateMemberToFleet",
+        "deadline:AssociateMemberToJob",
+        "deadline:AssociateMemberToQueue",
+        "deadline:CreateBudget",
+        "deadline:DeleteBudget",
+        "deadline:DisassociateMemberFromFarm",
+        "deadline:DisassociateMemberFromFleet",
+        "deadline:DisassociateMemberFromJob",
+        "deadline:DisassociateMemberFromQueue",
+        "deadline:GetBudget",
+        "deadline:GetSessionsStatisticsAggregation",
+        "deadline:ListBudgets",
+        "deadline:StartSessionsStatisticsAggregation",
+        "deadline:UpdateBudget"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FarmMembershipLevels": [
+            "OWNER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagerLevelMemberAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssociateMemberToFarm",
+        "deadline:AssociateMemberToFleet",
+        "deadline:AssociateMemberToJob",
+        "deadline:AssociateMemberToQueue"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FarmMembershipLevels": [
+            "MANAGER"
+          ]
+        },
+        "StringEquals": {
+          "deadline:AssociatedMembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER",
+            ""
+          ],
+          "deadline:MembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagerLevelMemberDisassociation",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:DisassociateMemberFromFarm",
+        "deadline:DisassociateMemberFromFleet",
+        "deadline:DisassociateMemberFromJob",
+        "deadline:DisassociateMemberFromQueue"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FarmMembershipLevels": [
+            "MANAGER"
+          ]
+        },
+        "StringEquals": {
+          "deadline:AssociatedMembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OwnerManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListFarmMembers",
+        "deadline:ListFleetMembers",
+        "deadline:ListJobMembers",
+        "deadline:ListQueueMembers",
+        "deadline:UpdateJob",
+        "deadline:UpdateSession",
+        "deadline:UpdateStep",
+        "deadline:UpdateTask"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FarmMembershipLevels": [
+            "OWNER",
+            "MANAGER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OwnerManagerContributorPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssumeQueueRoleForUser",
+        "deadline:CreateJob"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FarmMembershipLevels": [
+            "OWNER",
+            "MANAGER",
+            "CONTRIBUTOR"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllLevelsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssumeFleetRoleForRead",
+        "deadline:AssumeQueueRoleForRead",
+        "deadline:GetFarm",
+        "deadline:GetFleet",
+        "deadline:GetJob",
+        "deadline:GetQueue",
+        "deadline:GetQueueEnvironment",
+        "deadline:GetQueueFleetAssociation",
+        "deadline:GetSession",
+        "deadline:GetSessionAction",
+        "deadline:GetStep",
+        "deadline:GetStorageProfile",
+        "deadline:GetStorageProfileForQueue",
+        "deadline:GetTask",
+        "deadline:GetWorker",
+        "deadline:ListQueueEnvironments",
+        "deadline:ListQueueFleetAssociations",
+        "deadline:ListSessionActions",
+        "deadline:ListSessions",
+        "deadline:ListSessionsForWorker",
+        "deadline:ListStepConsumers",
+        "deadline:ListStepDependencies",
+        "deadline:ListSteps",
+        "deadline:ListStorageProfiles",
+        "deadline:ListStorageProfilesForQueue",
+        "deadline:ListTasks",
+        "deadline:ListWorkers",
+        "deadline:SearchJobs",
+        "deadline:SearchSteps",
+        "deadline:SearchTasks",
+        "deadline:SearchWorkers"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:FarmMembershipLevels": [
+            "OWNER",
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ListBasedOnMembership",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListFarms",
+        "deadline:ListFleets",
+        "deadline:ListJobs",
+        "deadline:ListQueues"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "deadline:RequesterPrincipalId": "${deadline:PrincipalId}"
+        }
+      }
+    }
+  ]
+}

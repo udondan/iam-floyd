@@ -5,6 +5,9 @@
       "Sid": "DomainExecutionRoleStatement",
       "Effect": "Allow",
       "Action": [
+        "datazone:ListTimeSeriesDataPoints",
+        "datazone:GetTimeSeriesDataPoint",
+        "datazone:DeleteTimeSeriesDataPoints",
         "datazone:AcceptPredictions",
         "datazone:AcceptSubscriptionRequest",
         "datazone:CancelSubscription",

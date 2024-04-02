@@ -1,0 +1,197 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AdditionalPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeGroup",
+        "identitystore:DescribeUser",
+        "identitystore:ListGroupMembershipsForMember",
+        "deadline:GetApplicationVersion",
+        "ec2:DescribeInstanceTypes",
+        "identitystore:ListUsers"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "OwnerLevelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssociateMemberToJob",
+        "deadline:AssociateMemberToQueue",
+        "deadline:DisassociateMemberFromJob",
+        "deadline:DisassociateMemberFromQueue"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:QueueMembershipLevels": [
+            "OWNER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagerLevelMemberAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssociateMemberToJob",
+        "deadline:AssociateMemberToQueue"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:QueueMembershipLevels": [
+            "MANAGER"
+          ]
+        },
+        "StringEquals": {
+          "deadline:AssociatedMembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER",
+            ""
+          ],
+          "deadline:MembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ManagerLevelMemberDisassociation",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:DisassociateMemberFromJob",
+        "deadline:DisassociateMemberFromQueue"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:QueueMembershipLevels": [
+            "MANAGER"
+          ]
+        },
+        "StringEquals": {
+          "deadline:AssociatedMembershipLevel": [
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OwnerManagerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListJobMembers",
+        "deadline:ListQueueMembers",
+        "deadline:UpdateJob",
+        "deadline:UpdateSession",
+        "deadline:UpdateStep",
+        "deadline:UpdateTask"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:QueueMembershipLevels": [
+            "OWNER",
+            "MANAGER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OwnerManagerContributorPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssumeQueueRoleForUser",
+        "deadline:CreateJob"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:QueueMembershipLevels": [
+            "OWNER",
+            "MANAGER",
+            "CONTRIBUTOR"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllLevelsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:AssumeQueueRoleForRead",
+        "deadline:GetJob",
+        "deadline:GetQueue",
+        "deadline:GetQueueEnvironment",
+        "deadline:GetQueueFleetAssociation",
+        "deadline:GetSession",
+        "deadline:GetSessionAction",
+        "deadline:GetStep",
+        "deadline:GetStorageProfileForQueue",
+        "deadline:GetTask",
+        "deadline:ListQueueEnvironments",
+        "deadline:ListQueueFleetAssociations",
+        "deadline:ListSessionActions",
+        "deadline:ListSessions",
+        "deadline:ListStepConsumers",
+        "deadline:ListStepDependencies",
+        "deadline:ListSteps",
+        "deadline:ListStorageProfilesForQueue",
+        "deadline:ListTasks",
+        "deadline:SearchJobs",
+        "deadline:SearchSteps",
+        "deadline:SearchTasks"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "deadline:QueueMembershipLevels": [
+            "OWNER",
+            "MANAGER",
+            "CONTRIBUTOR",
+            "VIEWER"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ListBasedOnMembership",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:ListJobs",
+        "deadline:ListQueues"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "deadline:RequesterPrincipalId": "${deadline:PrincipalId}"
+        }
+      }
+    }
+  ]
+}

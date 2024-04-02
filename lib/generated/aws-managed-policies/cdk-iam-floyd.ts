@@ -3084,6 +3084,36 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDataSyncReadOnlyAccess);
     }
 
+    /** Provides AWS Deadline Cloud workers with access to run tasks on a farm. */
+    public AWSDeadlineCloudFleetWorker(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDeadlineCloudFleetWorker);
+    }
+
+    /** Provides user workstation access to AWS Deadline Cloud farms with limited Read-Only permissions to call other necessary services. Attach this policy to the user role associated with your studio. */
+    public AWSDeadlineCloudUserAccessFarms(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDeadlineCloudUserAccessFarms);
+    }
+
+    /** Provides user workstation access to AWS Deadline Cloud fleets with limited Read-Only permissions to call other necessary services. Attach this policy to the user role associated with your studio. */
+    public AWSDeadlineCloudUserAccessFleets(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDeadlineCloudUserAccessFleets);
+    }
+
+    /** Provides user workstation access to AWS Deadline Cloud jobs with limited Read-Only permissions to call other necessary services. Attach this policy to the user role associated with your studio. */
+    public AWSDeadlineCloudUserAccessJobs(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDeadlineCloudUserAccessJobs);
+    }
+
+    /** Provides user workstation access to AWS Deadline Cloud queues with limited Read-Only permissions to call other necessary services. Attach this policy to the user role associated with your studio. */
+    public AWSDeadlineCloudUserAccessQueues(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDeadlineCloudUserAccessQueues);
+    }
+
+    /** Provides access for AWS Deadline Cloud worker hosts to join a fleet in a farm. */
+    public AWSDeadlineCloudWorkerHost(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDeadlineCloudWorkerHost);
+    }
+
     /** This policy specifies permissions required by DeepLens Administrative lambda functions that run on a DeepLens device */
     public AWSDeepLensLambdaFunctionAccessPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDeepLensLambdaFunctionAccessPolicy);

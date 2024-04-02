@@ -5,6 +5,10 @@
       "Sid": "AmazonDataZoneUserOperations",
       "Effect": "Allow",
       "Action": [
+        "datazone:PostTimeSeriesDataPoints",
+        "datazone:ListTimeSeriesDataPoints",
+        "datazone:GetTimeSeriesDataPoint",
+        "datazone:DeleteTimeSeriesDataPoints",
         "datazone:GetDomain",
         "datazone:CreateFormType",
         "datazone:GetFormType",
