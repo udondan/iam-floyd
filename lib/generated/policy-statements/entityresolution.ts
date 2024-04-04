@@ -19,6 +19,17 @@ export class Entityresolution extends PolicyStatement {
   }
 
   /**
+   * Grants permission to give an AWS service or another account permission to use an AWS Entity Resolution resources
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_AddPolicyStatement.html
+   */
+  public toAddPolicyStatement() {
+    return this.to('AddPolicyStatement');
+  }
+
+  /**
    * Grants permission to create a idmapping workflow
    *
    * Access Level: Write
@@ -31,6 +42,21 @@ export class Entityresolution extends PolicyStatement {
    */
   public toCreateIdMappingWorkflow() {
     return this.to('CreateIdMappingWorkflow');
+  }
+
+  /**
+   * Grants permission to create a IdNamespace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_CreateIdNamespace.html
+   */
+  public toCreateIdNamespace() {
+    return this.to('CreateIdNamespace');
   }
 
   /**
@@ -75,6 +101,17 @@ export class Entityresolution extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a IdNamespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_DeleteIdNamespace.html
+   */
+  public toDeleteIdNamespace() {
+    return this.to('DeleteIdNamespace');
+  }
+
+  /**
    * Grants permission to delete a matching workflow
    *
    * Access Level: Write
@@ -83,6 +120,17 @@ export class Entityresolution extends PolicyStatement {
    */
   public toDeleteMatchingWorkflow() {
     return this.to('DeleteMatchingWorkflow');
+  }
+
+  /**
+   * Delete permission given to an AWS service or another account permission to use an AWS Entity Resolution resources
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_DeletePolicyStatement.html
+   */
+  public toDeletePolicyStatement() {
+    return this.to('DeletePolicyStatement');
   }
 
   /**
@@ -119,6 +167,17 @@ export class Entityresolution extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a IdNamespace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetIdNamespace.html
+   */
+  public toGetIdNamespace() {
+    return this.to('GetIdNamespace');
+  }
+
+  /**
    * Grants permission to get match Id
    *
    * Access Level: Read
@@ -149,6 +208,17 @@ export class Entityresolution extends PolicyStatement {
    */
   public toGetMatchingWorkflow() {
     return this.to('GetMatchingWorkflow');
+  }
+
+  /**
+   * Get a resource policy for an AWS Entity Resolution resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetPolicy.html
+   */
+  public toGetPolicy() {
+    return this.to('GetPolicy');
   }
 
   /**
@@ -193,6 +263,17 @@ export class Entityresolution extends PolicyStatement {
    */
   public toListIdMappingWorkflows() {
     return this.to('ListIdMappingWorkflows');
+  }
+
+  /**
+   * Grants permission to list IdNamespaces
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListIdNamespaces.html
+   */
+  public toListIdNamespaces() {
+    return this.to('ListIdNamespaces');
   }
 
   /**
@@ -251,6 +332,17 @@ export class Entityresolution extends PolicyStatement {
   }
 
   /**
+   * Put a resource policy for an AWS Entity Resolution resources
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_PutPolicy.html
+   */
+  public toPutPolicy() {
+    return this.to('PutPolicy');
+  }
+
+  /**
    * Grants permission to start a idmapping job
    *
    * Access Level: Write
@@ -293,7 +385,6 @@ export class Entityresolution extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_UntagResource.html
@@ -311,6 +402,17 @@ export class Entityresolution extends PolicyStatement {
    */
   public toUpdateIdMappingWorkflow() {
     return this.to('UpdateIdMappingWorkflow');
+  }
+
+  /**
+   * Grants permission to update a IdNamespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_IdNamespace.html
+   */
+  public toUpdateIdNamespace() {
+    return this.to('UpdateIdNamespace');
   }
 
   /**
@@ -335,26 +437,48 @@ export class Entityresolution extends PolicyStatement {
     return this.to('UpdateSchemaMapping');
   }
 
+  /**
+   * Grants permission to give an AWS service or another account permission to use IdNamespace within a workflow
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_UseIdNamespace.html
+   */
+  public toUseIdNamespace() {
+    return this.to('UseIdNamespace');
+  }
+
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AddPolicyStatement',
+      'DeletePolicyStatement',
+      'PutPolicy',
+      'UseIdNamespace'
+    ],
     Write: [
       'CreateIdMappingWorkflow',
+      'CreateIdNamespace',
       'CreateMatchingWorkflow',
       'CreateSchemaMapping',
       'DeleteIdMappingWorkflow',
+      'DeleteIdNamespace',
       'DeleteMatchingWorkflow',
       'DeleteSchemaMapping',
       'StartIdMappingJob',
       'StartMatchingJob',
       'UpdateIdMappingWorkflow',
+      'UpdateIdNamespace',
       'UpdateMatchingWorkflow',
       'UpdateSchemaMapping'
     ],
     Read: [
       'GetIdMappingJob',
       'GetIdMappingWorkflow',
+      'GetIdNamespace',
       'GetMatchId',
       'GetMatchingJob',
       'GetMatchingWorkflow',
+      'GetPolicy',
       'GetProviderService',
       'GetSchemaMapping',
       'ListTagsForResource'
@@ -362,6 +486,7 @@ export class Entityresolution extends PolicyStatement {
     List: [
       'ListIdMappingJobs',
       'ListIdMappingWorkflows',
+      'ListIdNamespaces',
       'ListMatchingJobs',
       'ListMatchingWorkflows',
       'ListProviderServices',
@@ -439,16 +564,32 @@ export class Entityresolution extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type IdNamespace to the statement
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/
+   *
+   * @param idNamespaceName - Identifier for the idNamespaceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIdNamespace(idNamespaceName: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution::${ account ?? this.defaultAccount }:idnamespace/${ idNamespaceName }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the entity resolution service
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
    * - .toCreateIdMappingWorkflow()
+   * - .toCreateIdNamespace()
    * - .toCreateMatchingWorkflow()
    * - .toCreateSchemaMapping()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -468,6 +609,7 @@ export class Entityresolution extends PolicyStatement {
    * - SchemaMapping
    * - IdMappingWorkflow
    * - ProviderService
+   * - IdNamespace
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -484,6 +626,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateIdMappingWorkflow()
+   * - .toCreateIdNamespace()
    * - .toCreateMatchingWorkflow()
    * - .toCreateSchemaMapping()
    * - .toTagResource()

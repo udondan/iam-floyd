@@ -1,4 +1,5 @@
 entityresolution:IdMappingWorkflow
+entityresolution:IdNamespace
 entityresolution:MatchingWorkflow
 entityresolution:ProviderService
 entityresolution:SchemaMapping

@@ -10,6 +10,7 @@ aws-marketplace:CreateAgreementRequest;Write
 aws-marketplace:CreatePrivateMarketplaceRequests;Write
 aws-marketplace:DeleteResourcePolicy;Permissions management
 aws-marketplace:DescribeAgreement;Read
+aws-marketplace:DescribeAssessment;Read
 aws-marketplace:DescribeBuilds;Read
 aws-marketplace:DescribeChangeSet;Read
 aws-marketplace:DescribeEntity;Read
@@ -25,6 +26,7 @@ aws-marketplace:GetResourcePolicy;Read
 aws-marketplace:GetSellerDashboard;Read
 aws-marketplace:ListAgreementApprovalRequests;List
 aws-marketplace:ListAgreementRequests;List
+aws-marketplace:ListAssessments;List
 aws-marketplace:ListBuilds;Read
 aws-marketplace:ListChangeSets;List
 aws-marketplace:ListEntities;List
