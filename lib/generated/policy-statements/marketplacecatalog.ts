@@ -52,6 +52,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the details of an existing assessment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   */
+  public toDescribeAssessment() {
+    return this.to('DescribeAssessment');
+  }
+
+  /**
    * Grants permission to return the details of an existing change set
    *
    * Access Level: Read
@@ -93,6 +104,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to list existing assessments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   */
+  public toListAssessments() {
+    return this.to('ListAssessments');
   }
 
   /**
@@ -219,6 +241,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'PutResourcePolicy'
     ],
     Read: [
+      'DescribeAssessment',
       'DescribeChangeSet',
       'DescribeEntity',
       'DescribeTask',
@@ -226,6 +249,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListAssessments',
       'ListChangeSets',
       'ListEntities',
       'ListTasks'

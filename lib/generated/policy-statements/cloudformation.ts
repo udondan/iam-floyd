@@ -704,6 +704,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return summary information about StackSet Auto Deployment Targets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html
+   */
+  public toListStackSetAutoDeploymentTargets() {
+    return this.to('ListStackSetAutoDeploymentTargets');
+  }
+
+  /**
    * Grants permission to return summary information about the results of a stack set operation
    *
    * Access Level: List
@@ -1114,6 +1125,7 @@ export class Cloudformation extends PolicyStatement {
       'ListStackInstanceResourceDrifts',
       'ListStackInstances',
       'ListStackResources',
+      'ListStackSetAutoDeploymentTargets',
       'ListStackSetOperationResults',
       'ListStackSetOperations',
       'ListStackSets',

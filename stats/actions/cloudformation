@@ -62,6 +62,7 @@ cloudformation:ListResources;Read
 cloudformation:ListStackInstanceResourceDrifts;List
 cloudformation:ListStackInstances;List
 cloudformation:ListStackResources;List
+cloudformation:ListStackSetAutoDeploymentTargets;List
 cloudformation:ListStackSetOperationResults;List
 cloudformation:ListStackSetOperations;List
 cloudformation:ListStackSets;List
