@@ -19,6 +19,29 @@ export class DocdbElastic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to copy a new Amazon DocDB-Elastic cluster snapshot
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - docdb-elastic:CreateClusterSnapshot
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   *
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_CopyClusterSnapshot.html
+   */
+  public toCopyClusterSnapshot() {
+    return this.to('CopyClusterSnapshot');
+  }
+
+  /**
    * Grants permission to create a new Amazon DocDB-Elastic cluster
    *
    * Access Level: Write
@@ -214,6 +237,7 @@ export class DocdbElastic extends PolicyStatement {
    * - .ifAwsResourceTag()
    *
    * Dependent actions:
+   * - docdb-elastic:CreateCluster
    * - ec2:CreateVpcEndpoint
    * - ec2:DeleteVpcEndpoints
    * - ec2:DescribeAvailabilityZones
@@ -238,6 +262,34 @@ export class DocdbElastic extends PolicyStatement {
    */
   public toRestoreClusterFromSnapshot() {
     return this.to('RestoreClusterFromSnapshot');
+  }
+
+  /**
+   * Grants permission to start a stopped Amazon DocDB-Elastic cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_StartCluster.html
+   */
+  public toStartCluster() {
+    return this.to('StartCluster');
+  }
+
+  /**
+   * Grants permission to stop an existing Amazon DocDB-Elastic cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_StopCluster.html
+   */
+  public toStopCluster() {
+    return this.to('StopCluster');
   }
 
   /**
@@ -306,11 +358,14 @@ export class DocdbElastic extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CopyClusterSnapshot',
       'CreateCluster',
       'CreateClusterSnapshot',
       'DeleteCluster',
       'DeleteClusterSnapshot',
       'RestoreClusterFromSnapshot',
+      'StartCluster',
+      'StopCluster',
       'UpdateCluster'
     ],
     Read: [
@@ -368,6 +423,7 @@ export class DocdbElastic extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCopyClusterSnapshot()
    * - .toCreateCluster()
    * - .toCreateClusterSnapshot()
    * - .toRestoreClusterFromSnapshot()
@@ -387,6 +443,7 @@ export class DocdbElastic extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCopyClusterSnapshot()
    * - .toCreateClusterSnapshot()
    * - .toDeleteCluster()
    * - .toDeleteClusterSnapshot()
@@ -394,6 +451,8 @@ export class DocdbElastic extends PolicyStatement {
    * - .toGetClusterSnapshot()
    * - .toListTagsForResource()
    * - .toRestoreClusterFromSnapshot()
+   * - .toStartCluster()
+   * - .toStopCluster()
    * - .toTagResource()
    * - .toUpdateCluster()
    *
@@ -415,6 +474,7 @@ export class DocdbElastic extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCopyClusterSnapshot()
    * - .toCreateCluster()
    * - .toCreateClusterSnapshot()
    * - .toRestoreClusterFromSnapshot()

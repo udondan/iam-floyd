@@ -1,3 +1,4 @@
+docdb-elastic:CopyClusterSnapshot;Write
 docdb-elastic:CreateCluster;Write
 docdb-elastic:CreateClusterSnapshot;Write
 docdb-elastic:DeleteCluster;Write
@@ -8,6 +9,8 @@ docdb-elastic:ListClusterSnapshots;List
 docdb-elastic:ListClusters;List
 docdb-elastic:ListTagsForResource;List
 docdb-elastic:RestoreClusterFromSnapshot;Write
+docdb-elastic:StartCluster;Write
+docdb-elastic:StopCluster;Write
 docdb-elastic:TagResource;Tagging
 docdb-elastic:UntagResource;Tagging
 docdb-elastic:UpdateCluster;Write
