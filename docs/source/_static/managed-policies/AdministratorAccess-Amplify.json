@@ -20,7 +20,9 @@
         "cloudformation:ListStackResources",
         "cloudformation:DeleteStackSet",
         "cloudformation:DescribeStackSet",
-        "cloudformation:UpdateStackSet"
+        "cloudformation:UpdateStackSet",
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/amplify-*"
