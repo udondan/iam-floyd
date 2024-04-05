@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AMSCDKToolkitS3Permissions",
       "Effect": "Allow",
       "Action": [
         "s3:CreateBucket",
@@ -43,6 +44,7 @@
       "Resource": "arn:aws:s3:::ams-cdktoolkit*"
     },
     {
+      "Sid": "AMSCDKToolkitCloudFormationPermissions",
       "Effect": "Allow",
       "Action": [
         "cloudformation:CreateChangeSet",
@@ -62,8 +64,10 @@
       "Resource": "arn:aws:cloudformation:*:*:stack/ams-cdk-toolkit*"
     },
     {
+      "Sid": "AMSCDKToolkitECRPermissions",
       "Effect": "Allow",
       "Action": [
+        "ecr:BatchGetRepositoryScanningConfiguration",
         "ecr:CreateRepository",
         "ecr:DeleteLifecyclePolicy",
         "ecr:DeleteRepository",
@@ -71,6 +75,7 @@
         "ecr:DescribeRepositories",
         "ecr:GetLifecyclePolicy",
         "ecr:ListTagsForResource",
+        "ecr:PutImageScanningConfiguration",
         "ecr:PutImageTagMutability",
         "ecr:PutLifecyclePolicy",
         "ecr:SetRepositoryPolicy",
