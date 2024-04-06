@@ -9,12 +9,18 @@
         "cloudformation:DescribeStackEvents",
         "cloudformation:GetTemplate",
         "cloudformation:ListStackResources",
-        "cloudformation:GetTemplateSummary"
+        "cloudformation:GetTemplateSummary",
+        "cloudformation:DeleteStack"
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/amplify-*",
         "arn:aws:cloudformation:*:*:stack/CDKToolkit/*"
-      ]
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Sid": "AmplifyMetadata",
@@ -46,11 +52,13 @@
       ]
     },
     {
-      "Sid": "AmplifyHotSwappableSchemaResource",
+      "Sid": "AmplifyHotSwappableFunctionResource",
       "Effect": "Allow",
       "Action": [
         "lambda:InvokeFunction",
-        "lambda:UpdateFunctionCode"
+        "lambda:UpdateFunctionCode",
+        "lambda:GetFunction",
+        "lambda:UpdateFunctionConfiguration"
       ],
       "Resource": [
         "arn:aws:lambda:*:*:function:amplify-*"
