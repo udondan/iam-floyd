@@ -33,10 +33,9 @@
       }
     },
     {
-      "Sid": "CWMetricsPermission",
+      "Sid": "CWListMetricsPermission",
       "Effect": "Allow",
       "Action": [
-        "cloudwatch:GetMetricData",
         "cloudwatch:ListMetrics"
       ],
       "Resource": [
@@ -47,6 +46,16 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "CWGetMetricDataPermission",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": [
+        "*"
+      ]
     },
     {
       "Sid": "TagsPermission",
