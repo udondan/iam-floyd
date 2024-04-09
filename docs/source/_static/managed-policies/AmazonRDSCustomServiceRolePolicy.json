@@ -12,6 +12,7 @@
         "ec2:DescribeNetworkInterfaces",
         "ec2:DescribeVolumes",
         "ec2:DescribeInstanceStatus",
+        "ec2:DescribeInstanceTypes",
         "ec2:DescribeIamInstanceProfileAssociations",
         "ec2:DescribeImages",
         "ec2:DescribeVpcs",
@@ -161,6 +162,24 @@
             "custom-oracle-rac",
             "custom-oracle"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "eccModifyInstanceAttribute1",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyInstanceAttribute"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AWSRDSCustom": [
+            "custom-sqlserver"
+          ],
+          "ec2:Attribute": "InstanceType"
         }
       }
     },
