@@ -1,5 +1,6 @@
 cleanrooms:BatchGetCollaborationAnalysisTemplate;Read
 cleanrooms:BatchGetSchema;Read
+cleanrooms:BatchGetSchemaAnalysisRule;Read
 cleanrooms:CreateAnalysisTemplate;Write
 cleanrooms:CreateCollaboration;Write
 cleanrooms:CreateConfiguredAudienceModelAssociation;Write
