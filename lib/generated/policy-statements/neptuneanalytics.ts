@@ -430,6 +430,20 @@ export class NeptuneGraph extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import data into an existing graph
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#StartImportTask
+   */
+  public toStartImportTask() {
+    return this.to('StartImportTask');
+  }
+
+  /**
    * Grants permission to tag a Neptune Analytics resource
    *
    * Access Level: Tagging
@@ -500,6 +514,7 @@ export class NeptuneGraph extends PolicyStatement {
       'DeletePrivateGraphEndpoint',
       'ResetGraph',
       'RestoreGraphFromSnapshot',
+      'StartImportTask',
       'UpdateGraph',
       'WriteDataViaQuery'
     ],

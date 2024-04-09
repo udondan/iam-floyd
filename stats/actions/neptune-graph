@@ -25,6 +25,7 @@ neptune-graph:ListTagsForResource;Read
 neptune-graph:ReadDataViaQuery;Read
 neptune-graph:ResetGraph;Write
 neptune-graph:RestoreGraphFromSnapshot;Write
+neptune-graph:StartImportTask;Write
 neptune-graph:TagResource;Tagging
 neptune-graph:UntagResource;Tagging
 neptune-graph:UpdateGraph;Write

@@ -128,6 +128,7 @@ rds:ModifyDBSnapshotAttribute;Write
 rds:ModifyDBSubnetGroup;Write
 rds:ModifyEventSubscription;Write
 rds:ModifyGlobalCluster;Write
+rds:ModifyIntegration;Write
 rds:ModifyOptionGroup;Write
 rds:ModifyRecommendation;Write
 rds:ModifyTenantDatabase;Write

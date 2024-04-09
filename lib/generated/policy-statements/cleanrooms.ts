@@ -47,6 +47,20 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view analysis rules associated with schemas
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - cleanrooms:GetSchema
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_BatchGetSchemaAnalysisRule.html
+   */
+  public toBatchGetSchemaAnalysisRule() {
+    return this.to('BatchGetSchemaAnalysisRule');
+  }
+
+  /**
    * Grants permission to create a new analysis template
    *
    * Access Level: Write
@@ -789,6 +803,7 @@ export class Cleanrooms extends PolicyStatement {
     Read: [
       'BatchGetCollaborationAnalysisTemplate',
       'BatchGetSchema',
+      'BatchGetSchemaAnalysisRule',
       'GetAnalysisTemplate',
       'GetCollaboration',
       'GetCollaborationAnalysisTemplate',

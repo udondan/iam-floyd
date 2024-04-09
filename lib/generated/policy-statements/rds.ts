@@ -843,9 +843,6 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteIntegration.html
    */
   public toDeleteIntegration() {
@@ -1739,6 +1736,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an Aurora zero-ETL integration with Redshift
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyIntegration.html
+   */
+  public toModifyIntegration() {
+    return this.to('ModifyIntegration');
+  }
+
+  /**
    * Grants permission to modify an existing option group
    *
    * Access Level: Write
@@ -2333,6 +2341,7 @@ export class Rds extends PolicyStatement {
       'ModifyDBSubnetGroup',
       'ModifyEventSubscription',
       'ModifyGlobalCluster',
+      'ModifyIntegration',
       'ModifyOptionGroup',
       'ModifyRecommendation',
       'ModifyTenantDatabase',
@@ -2904,7 +2913,6 @@ export class Rds extends PolicyStatement {
    * Applies to actions:
    * - .toCreateBlueGreenDeployment()
    * - .toDeleteBlueGreenDeployment()
-   * - .toDeleteIntegration()
    * - .toDescribeIntegrations()
    * - .toSwitchoverBlueGreenDeployment()
    *
