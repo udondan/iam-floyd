@@ -1536,12 +1536,6 @@ export class AwsManagedPolicy {
     public static AWSIoTLogging = 'service-role/AWSIoTLogging';
     /** Allows access to create AWS IoT Job and describe the AWS code signer job */
     public static AWSIoTOTAUpdate = 'service-role/AWSIoTOTAUpdate';
-    /** This policy grants permissions that allow full access to AWS Iot RoboRunner. */
-    public static AWSIotRoboRunnerFullAccess = 'AWSIotRoboRunnerFullAccess';
-    /** This policy grants permissions that allow read-only access to AWS Iot RoboRunner. */
-    public static AWSIotRoboRunnerReadOnly = 'AWSIotRoboRunnerReadOnly';
-    /** Allows AWS IoT RoboRunner to manage associated AWS Resources on behalf of the customer. */
-    public static AWSIotRoboRunnerServiceRolePolicy = 'aws-service-role/AWSIotRoboRunnerServiceRolePolicy';
     /** Allows access to all AWS services supported in AWS IoT Rule Actions */
     public static AWSIoTRuleActions = 'service-role/AWSIoTRuleActions';
     /** Provides full access to manage AWS IoT SiteWise using the AWS Management Console. Note this policy also grants access to create and list data stores used with AWS IoT SiteWise (e.g. AWS IoT Analytics), access to list and view AWS IoT Greengrass resources, list and modify AWS Secrets Manager secrets, retrieve AWS IoT thing shadows, list resources with specific tags, and create and use a service-linked role for AWS IoT SiteWise. */

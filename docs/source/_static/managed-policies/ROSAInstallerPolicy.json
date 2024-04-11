@@ -304,6 +304,20 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "ListPoliciesAttachedToRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListAttachedRolePolicies",
+        "iam:ListRolePolicies"
+      ],
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/red-hat-managed": "true"
+        }
+      }
     }
   ]
 }

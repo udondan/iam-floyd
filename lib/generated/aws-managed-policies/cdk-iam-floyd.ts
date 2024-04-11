@@ -3849,21 +3849,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTOTAUpdate);
     }
 
-    /** This policy grants permissions that allow full access to AWS Iot RoboRunner. */
-    public AWSIotRoboRunnerFullAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIotRoboRunnerFullAccess);
-    }
-
-    /** This policy grants permissions that allow read-only access to AWS Iot RoboRunner. */
-    public AWSIotRoboRunnerReadOnly(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIotRoboRunnerReadOnly);
-    }
-
-    /** Allows AWS IoT RoboRunner to manage associated AWS Resources on behalf of the customer. */
-    public AWSIotRoboRunnerServiceRolePolicy(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIotRoboRunnerServiceRolePolicy);
-    }
-
     /** Allows access to all AWS services supported in AWS IoT Rule Actions */
     public AWSIoTRuleActions(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTRuleActions);
