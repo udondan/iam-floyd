@@ -237,6 +237,7 @@ export { Config } from './policy-statements/config';
 export { Awsconnector } from './policy-statements/connectorservice';
 export { Consoleapp } from './policy-statements/consolemobileapp';
 export { Consolidatedbilling } from './policy-statements/consolidatedbilling';
+export { Controlcatalog } from './policy-statements/controlcatalog';
 export { Controltower } from './policy-statements/controltower';
 export { Cur } from './policy-statements/costandusagereport';
 export { Ce } from './policy-statements/costexplorerservice';
