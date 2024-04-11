@@ -155,7 +155,7 @@
       "Action": [
         "iam:GetInstanceProfile"
       ],
-      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Resource": "arn:aws:iam::*:instance-profile/*",
       "Condition": {
         "StringEquals": {
           "aws:ResourceTag/red-hat-managed": "true"
