@@ -37,6 +37,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a policy grant
+   *
+   * Access Level: Write
+   */
+  public toAddPolicyGrant() {
+    return this.to('AddPolicyGrant');
+  }
+
+  /**
    * Grants permission to cancel metadata generation run
    *
    * Access Level: Write
@@ -770,6 +779,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list policy grants
+   *
+   * Access Level: List
+   */
+  public toListPolicyGrants() {
+    return this.to('ListPolicyGrants');
+  }
+
+  /**
    * Grants permission to list Project Members
    *
    * Access Level: List
@@ -914,6 +932,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove a policy grant
+   *
+   * Access Level: Write
+   */
+  public toRemovePolicyGrant() {
+    return this.to('RemovePolicyGrant');
+  }
+
+  /**
    * Grants permission to revoke a subscription
    *
    * Access Level: Write
@@ -1044,6 +1071,15 @@ export class Datazone extends PolicyStatement {
    */
   public toUpdateDataSource() {
     return this.to('UpdateDataSource');
+  }
+
+  /**
+   * Grants permission to update data source run activities
+   *
+   * Access Level: Write
+   */
+  public toUpdateDataSourceRunActivities() {
+    return this.to('UpdateDataSourceRunActivities');
   }
 
   /**
@@ -1185,6 +1221,7 @@ export class Datazone extends PolicyStatement {
     Write: [
       'AcceptPredictions',
       'AcceptSubscriptionRequest',
+      'AddPolicyGrant',
       'CancelMetadataGenerationRun',
       'CancelSubscription',
       'CreateAsset',
@@ -1230,6 +1267,7 @@ export class Datazone extends PolicyStatement {
       'RefreshToken',
       'RejectPredictions',
       'RejectSubscriptionRequest',
+      'RemovePolicyGrant',
       'RevokeSubscription',
       'SsoLogin',
       'SsoLogout',
@@ -1237,6 +1275,7 @@ export class Datazone extends PolicyStatement {
       'StartMetadataGenerationRun',
       'StopMetadataGenerationRun',
       'UpdateDataSource',
+      'UpdateDataSourceRunActivities',
       'UpdateDomain',
       'UpdateEnvironment',
       'UpdateEnvironmentBlueprint',
@@ -1302,6 +1341,7 @@ export class Datazone extends PolicyStatement {
       'ListGroupsForUser',
       'ListMetadataGenerationRuns',
       'ListNotifications',
+      'ListPolicyGrants',
       'ListProjectMemberships',
       'ListProjects',
       'ListSubscriptionGrants',

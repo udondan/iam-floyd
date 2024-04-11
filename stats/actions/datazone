@@ -1,5 +1,6 @@
 datazone:AcceptPredictions;Write
 datazone:AcceptSubscriptionRequest;Write
+datazone:AddPolicyGrant;Write
 datazone:CancelMetadataGenerationRun;Write
 datazone:CancelSubscription;Write
 datazone:CreateAsset;Write
@@ -81,6 +82,7 @@ datazone:ListEnvironments;List
 datazone:ListGroupsForUser;List
 datazone:ListMetadataGenerationRuns;List
 datazone:ListNotifications;List
+datazone:ListPolicyGrants;List
 datazone:ListProjectMemberships;List
 datazone:ListProjects;List
 datazone:ListSubscriptionGrants;List
@@ -97,6 +99,7 @@ datazone:PutEnvironmentBlueprintConfiguration;Write
 datazone:RefreshToken;Write
 datazone:RejectPredictions;Write
 datazone:RejectSubscriptionRequest;Write
+datazone:RemovePolicyGrant;Write
 datazone:RevokeSubscription;Write
 datazone:Search;List
 datazone:SearchGroupProfiles;List
@@ -111,6 +114,7 @@ datazone:StopMetadataGenerationRun;Write
 datazone:TagResource;Tagging
 datazone:UntagResource;Tagging
 datazone:UpdateDataSource;Write
+datazone:UpdateDataSourceRunActivities;Write
 datazone:UpdateDomain;Write
 datazone:UpdateEnvironment;Write
 datazone:UpdateEnvironmentBlueprint;Write
