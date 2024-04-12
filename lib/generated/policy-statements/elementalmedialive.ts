@@ -111,6 +111,66 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a cloudwatch alarm template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html
+   */
+  public toCreateCloudWatchAlarmTemplate() {
+    return this.to('CreateCloudWatchAlarmTemplate');
+  }
+
+  /**
+   * Grants permission to create a cloudwatch alarm template group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html
+   */
+  public toCreateCloudWatchAlarmTemplateGroup() {
+    return this.to('CreateCloudWatchAlarmTemplateGroup');
+  }
+
+  /**
+   * Grants permission to create a eventbridge rule template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html
+   */
+  public toCreateEventBridgeRuleTemplate() {
+    return this.to('CreateEventBridgeRuleTemplate');
+  }
+
+  /**
+   * Grants permission to create a eventbridge rule template group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html
+   */
+  public toCreateEventBridgeRuleTemplateGroup() {
+    return this.to('CreateEventBridgeRuleTemplateGroup');
+  }
+
+  /**
    * Grants permission to create an input
    *
    * Access Level: Write
@@ -182,7 +242,22 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create tags for channels, inputs, input security groups, multiplexes, and reservations
+   * Grants permission to create a signal map
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-create.html
+   */
+  public toCreateSignalMap() {
+    return this.to('CreateSignalMap');
+  }
+
+  /**
+   * Grants permission to create tags for channels, inputs, input security groups, multiplexes, reservations, signal maps, template groups, and templates
    *
    * Access Level: Tagging
    *
@@ -205,6 +280,50 @@ export class Medialive extends PolicyStatement {
    */
   public toDeleteChannel() {
     return this.to('DeleteChannel');
+  }
+
+  /**
+   * Grants permission to delete a cloudwatch alarm template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html
+   */
+  public toDeleteCloudWatchAlarmTemplate() {
+    return this.to('DeleteCloudWatchAlarmTemplate');
+  }
+
+  /**
+   * Grants permission to delete a cloudwatch alarm template group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html
+   */
+  public toDeleteCloudWatchAlarmTemplateGroup() {
+    return this.to('DeleteCloudWatchAlarmTemplateGroup');
+  }
+
+  /**
+   * Grants permission to delete a eventbridge rule template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html
+   */
+  public toDeleteEventBridgeRuleTemplate() {
+    return this.to('DeleteEventBridgeRuleTemplate');
+  }
+
+  /**
+   * Grants permission to delete a eventbridge rule template group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html
+   */
+  public toDeleteEventBridgeRuleTemplateGroup() {
+    return this.to('DeleteEventBridgeRuleTemplateGroup');
   }
 
   /**
@@ -274,7 +393,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, and reservations
+   * Grants permission to delete a signal map
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-delete.html
+   */
+  public toDeleteSignalMap() {
+    return this.to('DeleteSignalMap');
+  }
+
+  /**
+   * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, reservations, signal maps, template groups, and templates
    *
    * Access Level: Tagging
    *
@@ -420,6 +550,61 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a cloudwatch alarm template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html
+   */
+  public toGetCloudWatchAlarmTemplate() {
+    return this.to('GetCloudWatchAlarmTemplate');
+  }
+
+  /**
+   * Grants permission to get a cloudwatch alarm template group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html
+   */
+  public toGetCloudWatchAlarmTemplateGroup() {
+    return this.to('GetCloudWatchAlarmTemplateGroup');
+  }
+
+  /**
+   * Grants permission to get a eventbridge rule template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html
+   */
+  public toGetEventBridgeRuleTemplate() {
+    return this.to('GetEventBridgeRuleTemplate');
+  }
+
+  /**
+   * Grants permission to get a eventbridge rule template group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html
+   */
+  public toGetEventBridgeRuleTemplateGroup() {
+    return this.to('GetEventBridgeRuleTemplateGroup');
+  }
+
+  /**
+   * Grants permission to get a signal map
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-view.html
+   */
+  public toGetSignalMap() {
+    return this.to('GetSignalMap');
+  }
+
+  /**
    * Grants permission to list channels
    *
    * Access Level: List
@@ -428,6 +613,50 @@ export class Medialive extends PolicyStatement {
    */
   public toListChannels() {
     return this.to('ListChannels');
+  }
+
+  /**
+   * Grants permission to list cloudwatch alarm template groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html
+   */
+  public toListCloudWatchAlarmTemplateGroups() {
+    return this.to('ListCloudWatchAlarmTemplateGroups');
+  }
+
+  /**
+   * Grants permission to list cloudwatch alarm templates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html
+   */
+  public toListCloudWatchAlarmTemplates() {
+    return this.to('ListCloudWatchAlarmTemplates');
+  }
+
+  /**
+   * Grants permission to list eventbridge rule template groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html
+   */
+  public toListEventBridgeRuleTemplateGroups() {
+    return this.to('ListEventBridgeRuleTemplateGroups');
+  }
+
+  /**
+   * Grants permission to list eventbridge rule templates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications.html
+   */
+  public toListEventBridgeRuleTemplates() {
+    return this.to('ListEventBridgeRuleTemplates');
   }
 
   /**
@@ -519,7 +748,18 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for channels, inputs, input security groups, multiplexes, and reservations
+   * Grants permission to list signal maps
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-view.html
+   */
+  public toListSignalMaps() {
+    return this.to('ListSignalMaps');
+  }
+
+  /**
+   * Grants permission to list tags for channels, inputs, input security groups, multiplexes, reservations, signal maps, template groups, and templates
    *
    * Access Level: List
    *
@@ -589,6 +829,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start deletion of a signal map's monitor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-delete.html
+   */
+  public toStartDeleteMonitorDeployment() {
+    return this.to('StartDeleteMonitorDeployment');
+  }
+
+  /**
    * Grants permission to start an input device attached to a MediaConnect flow
    *
    * Access Level: Write
@@ -611,6 +862,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a signal map monitor deployment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-deploy.html
+   */
+  public toStartMonitorDeployment() {
+    return this.to('StartMonitorDeployment');
+  }
+
+  /**
    * Grants permission to start a multiplex
    *
    * Access Level: Write
@@ -619,6 +881,17 @@ export class Medialive extends PolicyStatement {
    */
   public toStartMultiplex() {
     return this.to('StartMultiplex');
+  }
+
+  /**
+   * Grants permission to start a signal map update
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-update.html
+   */
+  public toStartUpdateSignalMap() {
+    return this.to('StartUpdateSignalMap');
   }
 
   /**
@@ -696,6 +969,50 @@ export class Medialive extends PolicyStatement {
    */
   public toUpdateChannelClass() {
     return this.to('UpdateChannelClass');
+  }
+
+  /**
+   * Grants permission to update a cloudwatch alarm template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html
+   */
+  public toUpdateCloudWatchAlarmTemplate() {
+    return this.to('UpdateCloudWatchAlarmTemplate');
+  }
+
+  /**
+   * Grants permission to update a cloudwatch alarm template group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html
+   */
+  public toUpdateCloudWatchAlarmTemplateGroup() {
+    return this.to('UpdateCloudWatchAlarmTemplateGroup');
+  }
+
+  /**
+   * Grants permission to update a eventbridge rule template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html
+   */
+  public toUpdateEventBridgeRuleTemplate() {
+    return this.to('UpdateEventBridgeRuleTemplate');
+  }
+
+  /**
+   * Grants permission to update a eventbridge rule template group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html
+   */
+  public toUpdateEventBridgeRuleTemplateGroup() {
+    return this.to('UpdateEventBridgeRuleTemplateGroup');
   }
 
   /**
@@ -778,26 +1095,39 @@ export class Medialive extends PolicyStatement {
       'CancelInputDeviceTransfer',
       'ClaimDevice',
       'CreateChannel',
+      'CreateCloudWatchAlarmTemplate',
+      'CreateCloudWatchAlarmTemplateGroup',
+      'CreateEventBridgeRuleTemplate',
+      'CreateEventBridgeRuleTemplateGroup',
       'CreateInput',
       'CreateInputSecurityGroup',
       'CreateMultiplex',
       'CreateMultiplexProgram',
       'CreatePartnerInput',
+      'CreateSignalMap',
       'DeleteChannel',
+      'DeleteCloudWatchAlarmTemplate',
+      'DeleteCloudWatchAlarmTemplateGroup',
+      'DeleteEventBridgeRuleTemplate',
+      'DeleteEventBridgeRuleTemplateGroup',
       'DeleteInput',
       'DeleteInputSecurityGroup',
       'DeleteMultiplex',
       'DeleteMultiplexProgram',
       'DeleteReservation',
       'DeleteSchedule',
+      'DeleteSignalMap',
       'PurchaseOffering',
       'RebootInputDevice',
       'RejectInputDeviceTransfer',
       'RestartChannelPipelines',
       'StartChannel',
+      'StartDeleteMonitorDeployment',
       'StartInputDevice',
       'StartInputDeviceMaintenanceWindow',
+      'StartMonitorDeployment',
       'StartMultiplex',
+      'StartUpdateSignalMap',
       'StopChannel',
       'StopInputDevice',
       'StopMultiplex',
@@ -805,6 +1135,10 @@ export class Medialive extends PolicyStatement {
       'UpdateAccountConfiguration',
       'UpdateChannel',
       'UpdateChannelClass',
+      'UpdateCloudWatchAlarmTemplate',
+      'UpdateCloudWatchAlarmTemplateGroup',
+      'UpdateEventBridgeRuleTemplate',
+      'UpdateEventBridgeRuleTemplateGroup',
       'UpdateInput',
       'UpdateInputDevice',
       'UpdateInputSecurityGroup',
@@ -828,10 +1162,19 @@ export class Medialive extends PolicyStatement {
       'DescribeOffering',
       'DescribeReservation',
       'DescribeSchedule',
-      'DescribeThumbnails'
+      'DescribeThumbnails',
+      'GetCloudWatchAlarmTemplate',
+      'GetCloudWatchAlarmTemplateGroup',
+      'GetEventBridgeRuleTemplate',
+      'GetEventBridgeRuleTemplateGroup',
+      'GetSignalMap'
     ],
     List: [
       'ListChannels',
+      'ListCloudWatchAlarmTemplateGroups',
+      'ListCloudWatchAlarmTemplates',
+      'ListEventBridgeRuleTemplateGroups',
+      'ListEventBridgeRuleTemplates',
       'ListInputDeviceTransfers',
       'ListInputDevices',
       'ListInputSecurityGroups',
@@ -840,6 +1183,7 @@ export class Medialive extends PolicyStatement {
       'ListMultiplexes',
       'ListOfferings',
       'ListReservations',
+      'ListSignalMaps',
       'ListTagsForResource'
     ]
   };
@@ -958,16 +1302,106 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type signal-map to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-signal-maps-create.html
+   *
+   * @param signalMapId - Identifier for the signalMapId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSignalMap(signalMapId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:signal-map:${ signalMapId }`);
+  }
+
+  /**
+   * Adds a resource of type cloudwatch-alarm-template-group to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html
+   *
+   * @param cloudWatchAlarmTemplateGroupId - Identifier for the cloudWatchAlarmTemplateGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCloudwatchAlarmTemplateGroup(cloudWatchAlarmTemplateGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cloudwatch-alarm-template-group:${ cloudWatchAlarmTemplateGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type cloudwatch-alarm-template to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms-templates-create.html
+   *
+   * @param cloudWatchAlarmTemplateId - Identifier for the cloudWatchAlarmTemplateId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCloudwatchAlarmTemplate(cloudWatchAlarmTemplateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cloudwatch-alarm-template:${ cloudWatchAlarmTemplateId }`);
+  }
+
+  /**
+   * Adds a resource of type eventbridge-rule-template-group to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html
+   *
+   * @param eventBridgeRuleTemplateGroupId - Identifier for the eventBridgeRuleTemplateGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventbridgeRuleTemplateGroup(eventBridgeRuleTemplateGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eventbridge-rule-template-group:${ eventBridgeRuleTemplateGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type eventbridge-rule-template to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-notifications-template-create.html
+   *
+   * @param eventBridgeRuleTemplateId - Identifier for the eventBridgeRuleTemplateId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventbridgeRuleTemplate(eventBridgeRuleTemplateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eventbridge-rule-template:${ eventBridgeRuleTemplateId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/medialive/latest/ugtagging.html
    *
    * Applies to actions:
    * - .toCreateChannel()
+   * - .toCreateCloudWatchAlarmTemplate()
+   * - .toCreateCloudWatchAlarmTemplateGroup()
+   * - .toCreateEventBridgeRuleTemplate()
+   * - .toCreateEventBridgeRuleTemplateGroup()
    * - .toCreateInput()
    * - .toCreateInputSecurityGroup()
    * - .toCreateMultiplex()
    * - .toCreatePartnerInput()
+   * - .toCreateSignalMap()
    * - .toCreateTags()
    * - .toPurchaseOffering()
    * - .toUpdateInputSecurityGroup()
@@ -991,6 +1425,11 @@ export class Medialive extends PolicyStatement {
    * - input-security-group
    * - multiplex
    * - reservation
+   * - signal-map
+   * - cloudwatch-alarm-template-group
+   * - cloudwatch-alarm-template
+   * - eventbridge-rule-template-group
+   * - eventbridge-rule-template
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1007,10 +1446,15 @@ export class Medialive extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateChannel()
+   * - .toCreateCloudWatchAlarmTemplate()
+   * - .toCreateCloudWatchAlarmTemplateGroup()
+   * - .toCreateEventBridgeRuleTemplate()
+   * - .toCreateEventBridgeRuleTemplateGroup()
    * - .toCreateInput()
    * - .toCreateInputSecurityGroup()
    * - .toCreateMultiplex()
    * - .toCreatePartnerInput()
+   * - .toCreateSignalMap()
    * - .toCreateTags()
    * - .toDeleteTags()
    * - .toPurchaseOffering()

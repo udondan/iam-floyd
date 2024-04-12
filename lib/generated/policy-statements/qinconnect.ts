@@ -523,6 +523,17 @@ export class Wisdom extends PolicyStatement {
     return this.to('UpdateQuickResponse');
   }
 
+  /**
+   * Grants permission to update a session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateSession.html
+   */
+  public toUpdateSession() {
+    return this.to('UpdateSession');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAssistant',
@@ -544,7 +555,8 @@ export class Wisdom extends PolicyStatement {
       'StartImportJob',
       'UpdateContent',
       'UpdateKnowledgeBaseTemplateUri',
-      'UpdateQuickResponse'
+      'UpdateQuickResponse',
+      'UpdateSession'
     ],
     Read: [
       'GetAssistant',

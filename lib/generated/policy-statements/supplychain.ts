@@ -151,6 +151,17 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a DataIntegrationEvent which will ingest data in real-time
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toSendDataIntegrationEvent() {
+    return this.to('SendDataIntegrationEvent');
+  }
+
+  /**
    * Grants permission to tag an AWS Supply Chain instance
    *
    * Access Level: Tagging
@@ -199,6 +210,7 @@ export class Scn extends PolicyStatement {
       'DeleteInstance',
       'DeleteSSOApplication',
       'RemoveAdminPermissionsForUser',
+      'SendDataIntegrationEvent',
       'UpdateInstance'
     ],
     Read: [
