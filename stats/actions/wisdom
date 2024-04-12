@@ -40,3 +40,4 @@ wisdom:UntagResource;Tagging
 wisdom:UpdateContent;Write
 wisdom:UpdateKnowledgeBaseTemplateUri;Write
 wisdom:UpdateQuickResponse;Write
+wisdom:UpdateSession;Write
