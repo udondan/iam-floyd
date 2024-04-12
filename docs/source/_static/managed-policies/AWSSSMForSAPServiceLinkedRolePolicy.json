@@ -257,6 +257,20 @@
       "Resource": [
         "arn:*:resource-groups:*:*:group/AWS_AppRegistry_AppTag_*"
       ]
+    },
+    {
+      "Sid": "StartStopInstances",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "arn:*:ec2:*:*:instance/*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "ec2:resourceTag/SSMForSAPManaged": "True"
+        }
+      }
     }
   ]
 }

@@ -64,7 +64,12 @@
         "glue:UpdateColumnStatisticsForTable",
         "lakeformation:GetDataAccess",
         "s3:GetAccessGrantsInstanceForPrefix",
-        "s3:GetDataAccess"
+        "s3:GetDataAccess",
+        "qbusiness:Chat",
+        "qbusiness:ChatSync",
+        "qbusiness:ListConversations",
+        "qbusiness:ListMessages",
+        "qbusiness:DeleteConversation"
       ],
       "Resource": "*"
     }
