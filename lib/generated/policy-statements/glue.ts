@@ -140,6 +140,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to batch get stage files for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toBatchGetStageFiles() {
+    return this.to('BatchGetStageFiles');
+  }
+
+  /**
    * Grants permission to return the configuration for the specified table optimizers
    *
    * Access Level: Read
@@ -1164,6 +1175,39 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get environment details for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetEnvironment() {
+    return this.to('GetEnvironment');
+  }
+
+  /**
+   * Grants permission to get executors for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetExecutors() {
+    return this.to('GetExecutors');
+  }
+
+  /**
+   * Grants permission to get executor threads for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetExecutorsThreads() {
+    return this.to('GetExecutorsThreads');
+  }
+
+  /**
    * Grants permission to retrieve a job
    *
    * Access Level: Read
@@ -1216,6 +1260,17 @@ export class Glue extends PolicyStatement {
    */
   public toGetJobs() {
     return this.to('GetJobs');
+  }
+
+  /**
+   * Grants permission to get log parsing status for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetLogParsingStatus() {
+    return this.to('GetLogParsingStatus');
   }
 
   /**
@@ -1329,6 +1384,28 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get queries for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetQueries() {
+    return this.to('GetQueries');
+  }
+
+  /**
+   * Grants permission to get a specific query for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetQuery() {
+    return this.to('GetQuery');
+  }
+
+  /**
    * Grants permission to retrieve a schema registry
    *
    * Access Level: Read
@@ -1439,6 +1516,72 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a stage for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetStage() {
+    return this.to('GetStage');
+  }
+
+  /**
+   * Grants permission to get a stage attempt for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetStageAttempt() {
+    return this.to('GetStageAttempt');
+  }
+
+  /**
+   * Grants permission to get the task list for a stage attempt for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetStageAttemptTaskList() {
+    return this.to('GetStageAttemptTaskList');
+  }
+
+  /**
+   * Grants permission to get the task summary for a stage attempt for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetStageAttemptTaskSummary() {
+    return this.to('GetStageAttemptTaskSummary');
+  }
+
+  /**
+   * Grants permission to get stage files for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetStageFiles() {
+    return this.to('GetStageFiles');
+  }
+
+  /**
+   * Grants permission to get stages for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetStages() {
+    return this.to('GetStages');
+  }
+
+  /**
    * Grants permission to retrieve result and information about a statement in an interactive session
    *
    * Access Level: Read
@@ -1447,6 +1590,28 @@ export class Glue extends PolicyStatement {
    */
   public toGetStatement() {
     return this.to('GetStatement');
+  }
+
+  /**
+   * Grants permission to get storage details for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetStorage() {
+    return this.to('GetStorage');
+  }
+
+  /**
+   * Grants permission to get storage unit details for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toGetStorageUnit() {
+    return this.to('GetStorageUnit');
   }
 
   /**
@@ -1970,6 +2135,17 @@ export class Glue extends PolicyStatement {
    */
   public toRemoveSchemaVersionMetadata() {
     return this.to('RemoveSchemaVersionMetadata');
+  }
+
+  /**
+   * Grants permission to request log parsing for SparkUI
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html
+   */
+  public toRequestLogParsing() {
+    return this.to('RequestLogParsing');
   }
 
   /**
@@ -2792,13 +2968,29 @@ export class Glue extends PolicyStatement {
       'SearchTables'
     ],
     'Permissions management': [
+      'BatchGetStageFiles',
       'DeleteResourcePolicy',
       'DeregisterDataPreview',
       'GetDataPreviewStatement',
+      'GetEnvironment',
+      'GetExecutors',
+      'GetExecutorsThreads',
+      'GetLogParsingStatus',
       'GetNotebookInstanceStatus',
+      'GetQueries',
+      'GetQuery',
+      'GetStage',
+      'GetStageAttempt',
+      'GetStageAttemptTaskList',
+      'GetStageAttemptTaskSummary',
+      'GetStageFiles',
+      'GetStages',
+      'GetStorage',
+      'GetStorageUnit',
       'GlueNotebookAuthorize',
       'GlueNotebookRefreshCredentials',
       'PutResourcePolicy',
+      'RequestLogParsing',
       'RunDataPreviewStatement',
       'StartNotebook',
       'TerminateNotebook',

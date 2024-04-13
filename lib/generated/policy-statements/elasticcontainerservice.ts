@@ -458,7 +458,7 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTaskDefinitionFamilies.html
    */
   public toListTaskDefinitionFamilies() {
     return this.to('ListTaskDefinitionFamilies');
@@ -965,7 +965,7 @@ export class Ecs extends PolicyStatement {
   /**
    * Adds a resource of type container-instance to the statement
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/manage-capacity.html
    *
    * @param clusterName - Identifier for the clusterName.
    * @param containerInstanceId - Identifier for the containerInstanceId.
