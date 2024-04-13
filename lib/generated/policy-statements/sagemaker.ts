@@ -6228,7 +6228,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * This context key is included in some requests sent from SageMaker Studio. You can use the domainId as a policy variable to filter requests from specific SageMaker Domains
+   * You can use the domainId as a policy variable to filter requests from specific SageMaker Domains
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -6884,7 +6884,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * This context key is included in some requests sent from SageMaker Studio. You can use the UserProfileName as a policy variable to filter requests from specific user profiles within a SageMaker Domain
+   * You can use the UserProfileName as a policy variable to filter requests from specific user profiles within a SageMaker Domain. This context key is not applicable to user profiles within shared spaces
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *

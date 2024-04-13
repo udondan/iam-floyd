@@ -9,6 +9,7 @@ glue:BatchGetCustomEntityTypes;Read
 glue:BatchGetDevEndpoints;Read
 glue:BatchGetJobs;Read
 glue:BatchGetPartition;Read
+glue:BatchGetStageFiles;Permissions management
 glue:BatchGetTableOptimizer;Read
 glue:BatchGetTriggers;Read
 glue:BatchGetWorkflows;Read
@@ -96,11 +97,15 @@ glue:GetDatabases;Read
 glue:GetDataflowGraph;Read
 glue:GetDevEndpoint;Read
 glue:GetDevEndpoints;Read
+glue:GetEnvironment;Permissions management
+glue:GetExecutors;Permissions management
+glue:GetExecutorsThreads;Permissions management
 glue:GetJob;Read
 glue:GetJobBookmark;Read
 glue:GetJobRun;Read
 glue:GetJobRuns;Read
 glue:GetJobs;Read
+glue:GetLogParsingStatus;Permissions management
 glue:GetMLTaskRun;Read
 glue:GetMLTaskRuns;List
 glue:GetMLTransform;Read
@@ -111,6 +116,8 @@ glue:GetPartition;Read
 glue:GetPartitionIndexes;Read
 glue:GetPartitions;Read
 glue:GetPlan;Read
+glue:GetQueries;Permissions management
+glue:GetQuery;Permissions management
 glue:GetRegistry;Read
 glue:GetResourcePolicies;Read
 glue:GetResourcePolicy;Read
@@ -121,7 +128,15 @@ glue:GetSchemaVersionsDiff;Read
 glue:GetSecurityConfiguration;Read
 glue:GetSecurityConfigurations;Read
 glue:GetSession;Read
+glue:GetStage;Permissions management
+glue:GetStageAttempt;Permissions management
+glue:GetStageAttemptTaskList;Permissions management
+glue:GetStageAttemptTaskSummary;Permissions management
+glue:GetStageFiles;Permissions management
+glue:GetStages;Permissions management
 glue:GetStatement;Read
+glue:GetStorage;Permissions management
+glue:GetStorageUnit;Permissions management
 glue:GetTable;Read
 glue:GetTableOptimizer;Read
 glue:GetTableVersion;Read
@@ -169,6 +184,7 @@ glue:PutWorkflowRunProperties;Write
 glue:QuerySchemaVersionMetadata;List
 glue:RegisterSchemaVersion;Write
 glue:RemoveSchemaVersionMetadata;Write
+glue:RequestLogParsing;Permissions management
 glue:ResetJobBookmark;Write
 glue:ResumeWorkflowRun;Write
 glue:RunDataPreviewStatement;Permissions management
