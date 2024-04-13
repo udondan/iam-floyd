@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker1",
       "Effect": "Allow",
       "Action": [
         "application-autoscaling:DeleteScalingPolicy",
@@ -16,6 +17,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker2",
       "Effect": "Allow",
       "Action": [
         "cloudformation:ListStacks"
@@ -25,19 +27,23 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker3",
       "Effect": "Allow",
       "Action": [
         "cloudformation:CreateStack",
         "cloudformation:DeleteStack",
         "cloudformation:UpdateStack",
         "cloudformation:DescribeStacks",
-        "cloudformation:UpdateTerminationProtection"
+        "cloudformation:UpdateTerminationProtection",
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/DeadlineResourceTracker*"
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker4",
       "Effect": "Allow",
       "Action": [
         "dynamodb:CreateTable",
@@ -54,6 +60,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker5",
       "Effect": "Allow",
       "Action": [
         "dynamodb:BatchWriteItem",
@@ -64,6 +71,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker6",
       "Effect": "Allow",
       "Action": [
         "events:DeleteRule",
@@ -77,6 +85,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker7",
       "Effect": "Allow",
       "Action": [
         "iam:GetRole",
@@ -87,6 +96,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker8",
       "Effect": "Allow",
       "Action": [
         "iam:GetUser"
@@ -96,6 +106,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker9",
       "Effect": "Allow",
       "Action": [
         "iam:CreateServiceLinkedRole"
@@ -112,6 +123,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker10",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -128,6 +140,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker11",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -144,6 +157,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker12",
       "Effect": "Allow",
       "Action": [
         "lambda:GetEventSourceMapping"
@@ -153,6 +167,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker13",
       "Effect": "Allow",
       "Action": [
         "lambda:CreateEventSourceMapping",
@@ -170,6 +185,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker14",
       "Effect": "Allow",
       "Action": [
         "lambda:AddPermission",
@@ -185,6 +201,7 @@
       }
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker15",
       "Effect": "Allow",
       "Action": [
         "lambda:CreateFunction",
@@ -204,6 +221,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker16",
       "Effect": "Allow",
       "Action": [
         "s3:GetObject"
@@ -214,6 +232,7 @@
       ]
     },
     {
+      "Sid": "AWSThinkboxDeadlineResourceTracker17",
       "Effect": "Allow",
       "Action": [
         "sqs:CreateQueue",
