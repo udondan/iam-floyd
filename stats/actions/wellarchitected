@@ -1,5 +1,6 @@
 wellarchitected:AssociateLenses;Write
 wellarchitected:AssociateProfiles;Write
+wellarchitected:ConfigureIntegration;Write
 wellarchitected:CreateLensShare;Write
 wellarchitected:CreateLensVersion;Write
 wellarchitected:CreateMilestone;Write
@@ -22,6 +23,7 @@ wellarchitected:DisassociateProfiles;Write
 wellarchitected:ExportLens;Read
 wellarchitected:GetAnswer;Read
 wellarchitected:GetConsolidatedReport;Read
+wellarchitected:GetGlobalSettings;Read
 wellarchitected:GetLens;Read
 wellarchitected:GetLensReview;Read
 wellarchitected:GetLensReviewReport;Read
@@ -57,6 +59,7 @@ wellarchitected:TagResource;Tagging
 wellarchitected:UntagResource;Tagging
 wellarchitected:UpdateAnswer;Write
 wellarchitected:UpdateGlobalSettings;Write
+wellarchitected:UpdateIntegration;Write
 wellarchitected:UpdateLensReview;Write
 wellarchitected:UpdateProfile;Write
 wellarchitected:UpdateReviewTemplate;Write

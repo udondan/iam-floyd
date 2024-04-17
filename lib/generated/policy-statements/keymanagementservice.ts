@@ -291,6 +291,7 @@ export class Kms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCallerAccount()
+   * - .ifRotationPeriodInDays()
    * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKeyRotation.html
@@ -444,7 +445,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to determine whether automatic key rotation is enabled on the AWS KMS key
+   * Controls permission to view the key rotation status for an AWS KMS key
    *
    * Access Level: Read
    *
@@ -548,6 +549,21 @@ export class Kms extends PolicyStatement {
    */
   public toListKeyPolicies() {
     return this.to('ListKeyPolicies');
+  }
+
+  /**
+   * Controls permission to view the list of completed key rotations for an AWS KMS key
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
+   *
+   * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeyRotations.html
+   */
+  public toListKeyRotations() {
+    return this.to('ListKeyRotations');
   }
 
   /**
@@ -690,6 +706,21 @@ export class Kms extends PolicyStatement {
    */
   public toRevokeGrant() {
     return this.to('RevokeGrant');
+  }
+
+  /**
+   * Controls permission to invoke on-demand rotation of the cryptographic material in an AWS KMS key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
+   *
+   * https://docs.aws.amazon.com/kms/latest/APIReference/API_RotateKeyOnDemand.html
+   */
+  public toRotateKeyOnDemand() {
+    return this.to('RotateKeyOnDemand');
   }
 
   /**
@@ -892,6 +923,7 @@ export class Kms extends PolicyStatement {
       'ReEncryptFrom',
       'ReEncryptTo',
       'ReplicateKey',
+      'RotateKeyOnDemand',
       'ScheduleKeyDeletion',
       'Sign',
       'SynchronizeMultiRegionKey',
@@ -920,6 +952,7 @@ export class Kms extends PolicyStatement {
       'ListAliases',
       'ListGrants',
       'ListKeyPolicies',
+      'ListKeyRotations',
       'ListKeys',
       'ListResourceTags',
       'ListRetirableGrants'
@@ -1071,12 +1104,14 @@ export class Kms extends PolicyStatement {
    * - .toImportKeyMaterial()
    * - .toListGrants()
    * - .toListKeyPolicies()
+   * - .toListKeyRotations()
    * - .toListResourceTags()
    * - .toPutKeyPolicy()
    * - .toReEncryptFrom()
    * - .toReEncryptTo()
    * - .toReplicateKey()
    * - .toRevokeGrant()
+   * - .toRotateKeyOnDemand()
    * - .toScheduleKeyDeletion()
    * - .toSign()
    * - .toTagResource()
@@ -1521,6 +1556,21 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Filters access to the EnableKeyRotation operation based on the value of the RotationPeriodInDays parameter in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days
+   *
+   * Applies to actions:
+   * - .toEnableKeyRotation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifRotationPeriodInDays(value: number | number[], operator?: Operator | string) {
+    return this.if(`RotationPeriodInDays`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
    * Filters access to the ScheduleKeyDeletion operation based on the value of the PendingWindowInDays parameter in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days
@@ -1607,12 +1657,14 @@ export class Kms extends PolicyStatement {
    * - .toImportKeyMaterial()
    * - .toListGrants()
    * - .toListKeyPolicies()
+   * - .toListKeyRotations()
    * - .toListResourceTags()
    * - .toPutKeyPolicy()
    * - .toReEncryptFrom()
    * - .toReEncryptTo()
    * - .toReplicateKey()
    * - .toRevokeGrant()
+   * - .toRotateKeyOnDemand()
    * - .toScheduleKeyDeletion()
    * - .toSign()
    * - .toTagResource()

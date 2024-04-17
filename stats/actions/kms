@@ -30,6 +30,7 @@ kms:ImportKeyMaterial;Write
 kms:ListAliases;List
 kms:ListGrants;List
 kms:ListKeyPolicies;List
+kms:ListKeyRotations;List
 kms:ListKeys;List
 kms:ListResourceTags;List
 kms:ListRetirableGrants;List
@@ -39,6 +40,7 @@ kms:ReEncryptTo;Write
 kms:ReplicateKey;Write
 kms:RetireGrant;Permissions management
 kms:RevokeGrant;Permissions management
+kms:RotateKeyOnDemand;Write
 kms:ScheduleKeyDeletion;Write
 kms:Sign;Write
 kms:SynchronizeMultiRegionKey;Write

@@ -41,6 +41,17 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure the integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ConfigureIntegration.html
+   */
+  public toConfigureIntegration() {
+    return this.to('ConfigureIntegration');
+  }
+
+  /**
    * Grants permission to an owner of a lens to share with other AWS accounts and IAM users
    *
    * Access Level: Write
@@ -133,6 +144,7 @@ export class Wellarchitected extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifJiraProjectKey()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateWorkload.html
    */
@@ -292,6 +304,17 @@ export class Wellarchitected extends PolicyStatement {
    */
   public toGetConsolidatedReport() {
     return this.to('GetConsolidatedReport');
+  }
+
+  /**
+   * Grants permission to get all settings for the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetGlobalSettings.html
+   */
+  public toGetGlobalSettings() {
+    return this.to('GetGlobalSettings');
   }
 
   /**
@@ -695,14 +718,28 @@ export class Wellarchitected extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update settings to enable aws-organization support
+   * Grants permission to manage all settings for the account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifJiraProjectKey()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateGlobalSettings.html
    */
   public toUpdateGlobalSettings() {
     return this.to('UpdateGlobalSettings');
+  }
+
+  /**
+   * Grants permission to update properties of the integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateIntegration.html
+   */
+  public toUpdateIntegration() {
+    return this.to('UpdateIntegration');
   }
 
   /**
@@ -776,6 +813,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifJiraProjectKey()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateWorkload.html
    */
   public toUpdateWorkload() {
@@ -830,6 +870,7 @@ export class Wellarchitected extends PolicyStatement {
     Write: [
       'AssociateLenses',
       'AssociateProfiles',
+      'ConfigureIntegration',
       'CreateLensShare',
       'CreateLensVersion',
       'CreateMilestone',
@@ -852,6 +893,7 @@ export class Wellarchitected extends PolicyStatement {
       'ImportLens',
       'UpdateAnswer',
       'UpdateGlobalSettings',
+      'UpdateIntegration',
       'UpdateLensReview',
       'UpdateProfile',
       'UpdateReviewTemplate',
@@ -868,6 +910,7 @@ export class Wellarchitected extends PolicyStatement {
       'ExportLens',
       'GetAnswer',
       'GetConsolidatedReport',
+      'GetGlobalSettings',
       'GetLens',
       'GetLensReview',
       'GetLensReviewReport',
@@ -1039,5 +1082,22 @@ export class Wellarchitected extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by project key
+   *
+   * https://docs.aws.amazon.com/API_JiraProjectKey.html
+   *
+   * Applies to actions:
+   * - .toCreateWorkload()
+   * - .toUpdateGlobalSettings()
+   * - .toUpdateWorkload()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifJiraProjectKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`JiraProjectKey`, value, operator ?? 'StringLike');
   }
 }
