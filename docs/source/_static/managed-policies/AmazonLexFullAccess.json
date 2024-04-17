@@ -124,7 +124,7 @@
       ],
       "Condition": {
         "StringEquals": {
-          "iam:AWSServiceName": "lexv2.amazonaws.com"
+          "iam:AWSServiceName": "replication.lexv2.amazonaws.com"
         }
       }
     },
