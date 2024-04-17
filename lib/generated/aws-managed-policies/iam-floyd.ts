@@ -2342,6 +2342,8 @@ export class AwsManagedPolicy {
     public static ServiceQuotasServiceRolePolicy = 'aws-service-role/ServiceQuotasServiceRolePolicy';
     /** Provides full access to the Simple Workflow configuration service. */
     public static SimpleWorkflowFullAccess = 'SimpleWorkflowFullAccess';
+    /** Allows split cost allocation data to retrieve AWS Organizations information, if applicable, and collect telemetry data for the split cost allocation data services that the customer has opted in to. */
+    public static SplitCostAllocationDataServiceRolePolicy = 'aws-service-role/SplitCostAllocationDataServiceRolePolicy';
     /** This policy grants permissions to troubleshoot and resolve issues in an AWS account. This policy also enables the user to contact AWS support to create and manage cases. */
     public static SupportUser = 'job-function/SupportUser';
     /** Grants full access permissions necessary for resources required for application and development operations. */

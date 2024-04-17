@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AwsOrganizationsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListParents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonManagedServiceForPrometheusAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aps:ListWorkspaces",
+        "aps:QueryMetrics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
