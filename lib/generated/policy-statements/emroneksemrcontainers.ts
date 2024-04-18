@@ -61,6 +61,21 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a security configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_CreateSecurityConfiguration.html
+   */
+  public toCreateSecurityConfiguration() {
+    return this.to('CreateSecurityConfiguration');
+  }
+
+  /**
    * Grants permission to create a virtual cluster
    *
    * Access Level: Write
@@ -142,6 +157,17 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a security configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DescribeSecurityConfiguration.html
+   */
+  public toDescribeSecurityConfiguration() {
+    return this.to('DescribeSecurityConfiguration');
+  }
+
+  /**
    * Grants permission to describe a virtual cluster
    *
    * Access Level: Read
@@ -194,6 +220,17 @@ export class EmrContainers extends PolicyStatement {
    */
   public toListManagedEndpoints() {
     return this.to('ListManagedEndpoints');
+  }
+
+  /**
+   * Grants permission to list security configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_ListSecurityConfigurations.html
+   */
+  public toListSecurityConfigurations() {
+    return this.to('ListSecurityConfigurations');
   }
 
   /**
@@ -269,6 +306,7 @@ export class EmrContainers extends PolicyStatement {
       'CancelJobRun',
       'CreateJobTemplate',
       'CreateManagedEndpoint',
+      'CreateSecurityConfiguration',
       'CreateVirtualCluster',
       'DeleteJobTemplate',
       'DeleteManagedEndpoint',
@@ -280,12 +318,14 @@ export class EmrContainers extends PolicyStatement {
       'DescribeJobRun',
       'DescribeJobTemplate',
       'DescribeManagedEndpoint',
+      'DescribeSecurityConfiguration',
       'DescribeVirtualCluster'
     ],
     List: [
       'ListJobRuns',
       'ListJobTemplates',
       'ListManagedEndpoints',
+      'ListSecurityConfigurations',
       'ListTagsForResource',
       'ListVirtualClusters'
     ],
@@ -366,6 +406,23 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type securityConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/security-configurations.html
+   *
+   * @param securityConfigurationId - Identifier for the securityConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSecurityConfiguration(securityConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/securityconfigurations/${ securityConfigurationId }`);
+  }
+
+  /**
    * Filters access by the tag key-value pairs present in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -373,6 +430,7 @@ export class EmrContainers extends PolicyStatement {
    * Applies to actions:
    * - .toCreateJobTemplate()
    * - .toCreateManagedEndpoint()
+   * - .toCreateSecurityConfiguration()
    * - .toCreateVirtualCluster()
    * - .toStartJobRun()
    * - .toTagResource()
@@ -395,6 +453,7 @@ export class EmrContainers extends PolicyStatement {
    * - jobRun
    * - jobTemplate
    * - managedEndpoint
+   * - securityConfiguration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -412,6 +471,7 @@ export class EmrContainers extends PolicyStatement {
    * Applies to actions:
    * - .toCreateJobTemplate()
    * - .toCreateManagedEndpoint()
+   * - .toCreateSecurityConfiguration()
    * - .toCreateVirtualCluster()
    * - .toStartJobRun()
    * - .toTagResource()

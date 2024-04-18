@@ -1,6 +1,7 @@
 emr-containers:CancelJobRun;Write
 emr-containers:CreateJobTemplate;Write
 emr-containers:CreateManagedEndpoint;Write
+emr-containers:CreateSecurityConfiguration;Write
 emr-containers:CreateVirtualCluster;Write
 emr-containers:DeleteJobTemplate;Write
 emr-containers:DeleteManagedEndpoint;Write
@@ -8,11 +9,13 @@ emr-containers:DeleteVirtualCluster;Write
 emr-containers:DescribeJobRun;Read
 emr-containers:DescribeJobTemplate;Read
 emr-containers:DescribeManagedEndpoint;Read
+emr-containers:DescribeSecurityConfiguration;Read
 emr-containers:DescribeVirtualCluster;Read
 emr-containers:GetManagedEndpointSessionCredentials;Write
 emr-containers:ListJobRuns;List
 emr-containers:ListJobTemplates;List
 emr-containers:ListManagedEndpoints;List
+emr-containers:ListSecurityConfigurations;List
 emr-containers:ListTagsForResource;List
 emr-containers:ListVirtualClusters;List
 emr-containers:StartJobRun;Write
