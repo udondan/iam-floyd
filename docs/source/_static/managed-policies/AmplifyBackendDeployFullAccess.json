@@ -134,6 +134,29 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "AmplifyDiscoverRDSVpcConfig",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBProxies",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "ec2:DescribeSubnets",
+        "rds:DescribeDBSubnetGroups"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:db:*",
+        "arn:aws:rds:*:*:cluster:*",
+        "arn:aws:rds:*:*:db-proxy:*",
+        "arn:aws:rds:*:*:subgrp:*",
+        "arn:aws:ec2:*:*:subnet/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }
