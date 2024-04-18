@@ -56,6 +56,17 @@ export class Internetmonitor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a specified internet event
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/internet-monitor/latest/api/API_GetInternetEvent.html
+   */
+  public toGetInternetEvent() {
+    return this.to('GetInternetEvent');
+  }
+
+  /**
    * Grants permission to get information about a monitor
    *
    * Access Level: Read
@@ -108,6 +119,17 @@ export class Internetmonitor extends PolicyStatement {
    */
   public toListHealthEvents() {
     return this.to('ListHealthEvents');
+  }
+
+  /**
+   * Grants permission to list all internet events
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/internet-monitor/latest/api/API_ListInternetEvents.html
+   */
+  public toListInternetEvents() {
+    return this.to('ListInternetEvents');
   }
 
   /**
@@ -203,6 +225,7 @@ export class Internetmonitor extends PolicyStatement {
     ],
     Read: [
       'GetHealthEvent',
+      'GetInternetEvent',
       'GetMonitor',
       'GetQueryResults',
       'GetQueryStatus',
@@ -212,6 +235,7 @@ export class Internetmonitor extends PolicyStatement {
     ],
     List: [
       'ListHealthEvents',
+      'ListInternetEvents',
       'ListMonitors'
     ],
     Tagging: [
@@ -250,6 +274,19 @@ export class Internetmonitor extends PolicyStatement {
    */
   public onMonitor(monitorName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:internetmonitor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitor/${ monitorName }`);
+  }
+
+  /**
+   * Adds a resource of type InternetEvent to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-components.html
+   *
+   * @param internetEventId - Identifier for the internetEventId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onInternetEvent(internetEventId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:internetmonitor::${ account ?? this.defaultAccount }:internet-event/${ internetEventId }`);
   }
 
   /**

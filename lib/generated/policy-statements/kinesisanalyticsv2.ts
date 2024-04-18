@@ -23,7 +23,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationCloudWatchLoggingOption.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_AddApplicationCloudWatchLoggingOption.html
    */
   public toAddApplicationCloudWatchLoggingOption() {
     return this.to('AddApplicationCloudWatchLoggingOption');
@@ -34,7 +34,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationInput.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_AddApplicationInput.html
    */
   public toAddApplicationInput() {
     return this.to('AddApplicationInput');
@@ -45,7 +45,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationInputProcessingConfiguration.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_AddApplicationInputProcessingConfiguration.html
    */
   public toAddApplicationInputProcessingConfiguration() {
     return this.to('AddApplicationInputProcessingConfiguration');
@@ -56,7 +56,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationOutput.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_AddApplicationOutput.html
    */
   public toAddApplicationOutput() {
     return this.to('AddApplicationOutput');
@@ -67,7 +67,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationReferenceDataSource.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_AddApplicationReferenceDataSource.html
    */
   public toAddApplicationReferenceDataSource() {
     return this.to('AddApplicationReferenceDataSource');
@@ -78,7 +78,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationVpcConfiguration.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_AddApplicationVpcConfiguration.html
    */
   public toAddApplicationVpcConfiguration() {
     return this.to('AddApplicationVpcConfiguration');
@@ -93,7 +93,10 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_CreateApplication.html
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_CreateApplication.html
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
@@ -104,7 +107,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_CreateApplicationPresignedUrl.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_CreateApplicationPresignedUrl.html
    */
   public toCreateApplicationPresignedUrl() {
     return this.to('CreateApplicationPresignedUrl');
@@ -115,7 +118,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_CreateApplicationSnapshot.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_CreateApplicationSnapshot.html
    */
   public toCreateApplicationSnapshot() {
     return this.to('CreateApplicationSnapshot');
@@ -126,7 +129,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplication.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteApplication.html
    */
   public toDeleteApplication() {
     return this.to('DeleteApplication');
@@ -137,7 +140,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationCloudWatchLoggingOption.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteApplicationCloudWatchLoggingOption.html
    */
   public toDeleteApplicationCloudWatchLoggingOption() {
     return this.to('DeleteApplicationCloudWatchLoggingOption');
@@ -148,7 +151,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationInputProcessingConfiguration.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteApplicationInputProcessingConfiguration.html
    */
   public toDeleteApplicationInputProcessingConfiguration() {
     return this.to('DeleteApplicationInputProcessingConfiguration');
@@ -159,7 +162,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationOutput.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteApplicationOutput.html
    */
   public toDeleteApplicationOutput() {
     return this.to('DeleteApplicationOutput');
@@ -170,7 +173,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationReferenceDataSource.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteApplicationReferenceDataSource.html
    */
   public toDeleteApplicationReferenceDataSource() {
     return this.to('DeleteApplicationReferenceDataSource');
@@ -181,7 +184,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationSnapshot.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteApplicationSnapshot.html
    */
   public toDeleteApplicationSnapshot() {
     return this.to('DeleteApplicationSnapshot');
@@ -192,7 +195,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationVpcConfiguration.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DeleteApplicationVpcConfiguration.html
    */
   public toDeleteApplicationVpcConfiguration() {
     return this.to('DeleteApplicationVpcConfiguration');
@@ -203,7 +206,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DescribeApplication.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DescribeApplication.html
    */
   public toDescribeApplication() {
     return this.to('DescribeApplication');
@@ -214,7 +217,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DescribeApplicationSnapshot.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DescribeApplicationSnapshot.html
    */
   public toDescribeApplicationSnapshot() {
     return this.to('DescribeApplicationSnapshot');
@@ -225,7 +228,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DescribeApplicationVersion.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DescribeApplicationVersion.html
    */
   public toDescribeApplicationVersion() {
     return this.to('DescribeApplicationVersion');
@@ -236,7 +239,10 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DiscoverInputSchema.html
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DiscoverInputSchema.html
    */
   public toDiscoverInputSchema() {
     return this.to('DiscoverInputSchema');
@@ -247,7 +253,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_ListApplicationSnapshots.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListApplicationSnapshots.html
    */
   public toListApplicationSnapshots() {
     return this.to('ListApplicationSnapshots');
@@ -258,7 +264,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_ListApplicationVersions.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListApplicationVersions.html
    */
   public toListApplicationVersions() {
     return this.to('ListApplicationVersions');
@@ -269,7 +275,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_ListApplications.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListApplications.html
    */
   public toListApplications() {
     return this.to('ListApplications');
@@ -280,7 +286,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -291,7 +297,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_RollbackApplication.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_RollbackApplication.html
    */
   public toRollbackApplication() {
     return this.to('RollbackApplication');
@@ -302,7 +308,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_StartApplication.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_StartApplication.html
    */
   public toStartApplication() {
     return this.to('StartApplication');
@@ -313,7 +319,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_StopApplication.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_StopApplication.html
    */
   public toStopApplication() {
     return this.to('StopApplication');
@@ -328,7 +334,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_TagResource.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -342,7 +348,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_UntagResource.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -353,7 +359,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_UpdateApplication.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UpdateApplication.html
    */
   public toUpdateApplication() {
     return this.to('UpdateApplication');
@@ -364,7 +370,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_UpdateApplicationMaintenanceConfiguration.html
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_UpdateApplicationMaintenanceConfiguration.html
    */
   public toUpdateApplicationMaintenanceConfiguration() {
     return this.to('UpdateApplicationMaintenanceConfiguration');

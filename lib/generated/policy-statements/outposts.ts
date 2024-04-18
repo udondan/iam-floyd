@@ -19,6 +19,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a Capacity Task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CancelCapacityTask.html
+   */
+  public toCancelCapacityTask() {
+    return this.to('CancelCapacityTask');
+  }
+
+  /**
    * Grants permission to cancel an order
    *
    * Access Level: Write
@@ -104,6 +115,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about the specified Capacity Task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetCapacityTask.html
+   */
+  public toGetCapacityTask() {
+    return this.to('GetCapacityTask');
+  }
+
+  /**
    * Grants permission to get a catalog item
    *
    * Access Level: Read
@@ -159,6 +181,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the supported instance types for the specified Outpost
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostSupportedInstanceTypes.html
+   */
+  public toGetOutpostSupportedInstanceTypes() {
+    return this.to('GetOutpostSupportedInstanceTypes');
+  }
+
+  /**
    * Grants permission to get a private connectivity configuration
    *
    * Access Level: Read
@@ -200,6 +233,17 @@ export class Outposts extends PolicyStatement {
    */
   public toListAssets() {
     return this.to('ListAssets');
+  }
+
+  /**
+   * Grants permission to list the Capacity Tasks for your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListCapacityTasks.html
+   */
+  public toListCapacityTasks() {
+    return this.to('ListCapacityTasks');
   }
 
   /**
@@ -255,6 +299,17 @@ export class Outposts extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to create a Capacity Task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_StartCapacityTask.html
+   */
+  public toStartCapacityTask() {
+    return this.to('StartCapacityTask');
   }
 
   /**
@@ -343,6 +398,7 @@ export class Outposts extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CancelCapacityTask',
       'CancelOrder',
       'CreateOrder',
       'CreateOutpost',
@@ -350,6 +406,7 @@ export class Outposts extends PolicyStatement {
       'CreateSite',
       'DeleteOutpost',
       'DeleteSite',
+      'StartCapacityTask',
       'StartConnection',
       'UpdateOutpost',
       'UpdateSite',
@@ -357,11 +414,13 @@ export class Outposts extends PolicyStatement {
       'UpdateSiteRackPhysicalProperties'
     ],
     Read: [
+      'GetCapacityTask',
       'GetCatalogItem',
       'GetConnection',
       'GetOrder',
       'GetOutpost',
       'GetOutpostInstanceTypes',
+      'GetOutpostSupportedInstanceTypes',
       'GetPrivateConnectivityConfig',
       'GetSite',
       'GetSiteAddress',
@@ -369,6 +428,7 @@ export class Outposts extends PolicyStatement {
     ],
     List: [
       'ListAssets',
+      'ListCapacityTasks',
       'ListCatalogItems',
       'ListOrders',
       'ListOutposts',
