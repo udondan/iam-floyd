@@ -461,7 +461,10 @@
       "Sid": "iam2",
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "arn:aws:iam::*:role/AWSRDSCustom*",
+      "Resource": [
+        "arn:aws:iam::*:role/AWSRDSCustom*",
+        "arn:aws:iam::*:role/service-role/AWSRDSCustom*"
+      ],
       "Condition": {
         "StringLike": {
           "iam:PassedToService": "ec2.amazonaws.com"

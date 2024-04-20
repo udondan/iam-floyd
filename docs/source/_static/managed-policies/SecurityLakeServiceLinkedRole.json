@@ -98,6 +98,22 @@
         "wafv2:ListWebACLs"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "LogDelivery",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "wafv2.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }
