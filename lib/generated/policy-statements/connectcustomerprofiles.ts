@@ -34,10 +34,6 @@ export class Profile extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateCalculatedAttributeDefinition.html
    */
   public toCreateCalculatedAttributeDefinition() {
@@ -48,10 +44,6 @@ export class Profile extends PolicyStatement {
    * Grants permission to create a Domain
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -67,10 +59,6 @@ export class Profile extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * Dependent actions:
    * - iam:PutRolePolicy
    * - kinesis:DescribeStreamSummary
@@ -85,10 +73,6 @@ export class Profile extends PolicyStatement {
    * Grants permission to create an integration workflow in a domain
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateIntegrationWorkflow.html
    */
@@ -525,10 +509,6 @@ export class Profile extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutIntegration.html
    */
   public toPutIntegration() {
@@ -550,10 +530,6 @@ export class Profile extends PolicyStatement {
    * Grants permission to put a specific profile object type in the domain
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutProfileObjectType.html
    */

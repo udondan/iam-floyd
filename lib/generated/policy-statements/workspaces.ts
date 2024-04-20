@@ -19,6 +19,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept invitations from other AWS accounts to share the same configuration for WorkSpaces BYOL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_AcceptAccountLinkInvitation.html
+   */
+  public toAcceptAccountLinkInvitation() {
+    return this.to('AcceptAccountLinkInvitation');
+  }
+
+  /**
    * Grants permission to associate connection aliases with directories
    *
    * Access Level: Write
@@ -84,6 +95,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toCopyWorkspaceImage() {
     return this.to('CopyWorkspaceImage');
+  }
+
+  /**
+   * Grants permission to invite other AWS accounts to share the same configuration for WorkSpaces BYOL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateAccountLinkInvitation.html
+   */
+  public toCreateAccountLinkInvitation() {
+    return this.to('CreateAccountLinkInvitation');
   }
 
   /**
@@ -218,6 +240,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toCreateWorkspaces() {
     return this.to('CreateWorkspaces');
+  }
+
+  /**
+   * Grants permission to delete invitations to other AWS accounts to share the same configuration for WorkSpaces BYOL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteAccountLinkInvitation.html
+   */
+  public toDeleteAccountLinkInvitation() {
+    return this.to('DeleteAccountLinkInvitation');
   }
 
   /**
@@ -606,6 +639,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a link with another AWS Account for sharing configuration for WorkSpaces BYOL
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_GetAccountLink.html
+   */
+  public toGetAccountLink() {
+    return this.to('GetAccountLink');
+  }
+
+  /**
    * Grants permission to import AWS WorkSpaces Client branding data within a directory
    *
    * Access Level: Write
@@ -629,6 +673,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toImportWorkspaceImage() {
     return this.to('ImportWorkspaceImage');
+  }
+
+  /**
+   * Grants permission to retrieve links with the AWS Account(s) that share your configuration for WorkSpaces BYOL
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_ListAccountLinks.html
+   */
+  public toListAccountLinks() {
+    return this.to('ListAccountLinks');
   }
 
   /**
@@ -790,6 +845,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject invitations from other AWS accounts to share the same configuration for WorkSpaces BYOL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_RejectAccountLinkInvitation.html
+   */
+  public toRejectAccountLinkInvitation() {
+    return this.to('RejectAccountLinkInvitation');
+  }
+
+  /**
    * Grants permission to restore WorkSpaces
    *
    * Access Level: Write
@@ -922,11 +988,13 @@ export class Workspaces extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptAccountLinkInvitation',
       'AssociateConnectionAlias',
       'AssociateIpGroups',
       'AssociateWorkspaceApplication',
       'AuthorizeIpRules',
       'CopyWorkspaceImage',
+      'CreateAccountLinkInvitation',
       'CreateConnectClientAddIn',
       'CreateConnectionAlias',
       'CreateIpGroup',
@@ -935,6 +1003,7 @@ export class Workspaces extends PolicyStatement {
       'CreateWorkspaceBundle',
       'CreateWorkspaceImage',
       'CreateWorkspaces',
+      'DeleteAccountLinkInvitation',
       'DeleteClientBranding',
       'DeleteConnectClientAddIn',
       'DeleteConnectionAlias',
@@ -960,6 +1029,7 @@ export class Workspaces extends PolicyStatement {
       'RebootWorkspaces',
       'RebuildWorkspaces',
       'RegisterWorkspaceDirectory',
+      'RejectAccountLinkInvitation',
       'RestoreWorkspace',
       'RevokeIpRules',
       'StartWorkspaces',
@@ -984,7 +1054,8 @@ export class Workspaces extends PolicyStatement {
       'DescribeTags',
       'DescribeWorkspaceDirectories',
       'DescribeWorkspaceImagePermissions',
-      'DescribeWorkspacesConnectionStatus'
+      'DescribeWorkspacesConnectionStatus',
+      'GetAccountLink'
     ],
     List: [
       'DescribeApplicationAssociations',
@@ -998,6 +1069,7 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspaceImages',
       'DescribeWorkspaceSnapshots',
       'DescribeWorkspaces',
+      'ListAccountLinks',
       'ListAvailableManagementCidrRanges'
     ],
     'Permissions management': [
