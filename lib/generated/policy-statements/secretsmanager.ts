@@ -642,7 +642,7 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ARN of the KMS key in the request
+   * Filters access by the key identifier of the KMS key in the request
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *

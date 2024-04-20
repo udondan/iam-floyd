@@ -30,6 +30,17 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to Amazon Q to get the identity metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   */
+  public toGetIdentityMetadata() {
+    return this.to('GetIdentityMetadata');
+  }
+
+  /**
    * Grants permission to get troubleshooting results with Amazon Q
    *
    * Access Level: Read
@@ -49,6 +60,17 @@ export class Q extends PolicyStatement {
    */
   public toListConversations() {
     return this.to('ListConversations');
+  }
+
+  /**
+   * Grants permission to allow Amazon Q to perform actions on your behalf
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   */
+  public toPassRequest() {
+    return this.to('PassRequest');
   }
 
   /**
@@ -95,17 +117,31 @@ export class Q extends PolicyStatement {
     return this.to('StartTroubleshootingResolutionExplanation');
   }
 
+  /**
+   * Grants permission to update a troubleshooting command result with Amazon Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   */
+  public toUpdateTroubleshootingCommandResult() {
+    return this.to('UpdateTroubleshootingCommandResult');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'GetConversation',
+      'GetIdentityMetadata',
       'GetTroubleshootingResults',
       'ListConversations'
     ],
     Write: [
+      'PassRequest',
       'SendMessage',
       'StartConversation',
       'StartTroubleshootingAnalysis',
-      'StartTroubleshootingResolutionExplanation'
+      'StartTroubleshootingResolutionExplanation',
+      'UpdateTroubleshootingCommandResult'
     ]
   };
 }

@@ -1,8 +1,10 @@
+workspaces:AcceptAccountLinkInvitation;Write
 workspaces:AssociateConnectionAlias;Write
 workspaces:AssociateIpGroups;Write
 workspaces:AssociateWorkspaceApplication;Write
 workspaces:AuthorizeIpRules;Write
 workspaces:CopyWorkspaceImage;Write
+workspaces:CreateAccountLinkInvitation;Write
 workspaces:CreateConnectClientAddIn;Write
 workspaces:CreateConnectionAlias;Write
 workspaces:CreateIpGroup;Write
@@ -12,6 +14,7 @@ workspaces:CreateUpdatedWorkspaceImage;Write
 workspaces:CreateWorkspaceBundle;Write
 workspaces:CreateWorkspaceImage;Write
 workspaces:CreateWorkspaces;Write
+workspaces:DeleteAccountLinkInvitation;Write
 workspaces:DeleteClientBranding;Write
 workspaces:DeleteConnectClientAddIn;Write
 workspaces:DeleteConnectionAlias;Write
@@ -45,8 +48,10 @@ workspaces:DescribeWorkspacesConnectionStatus;Read
 workspaces:DisassociateConnectionAlias;Write
 workspaces:DisassociateIpGroups;Write
 workspaces:DisassociateWorkspaceApplication;Write
+workspaces:GetAccountLink;Read
 workspaces:ImportClientBranding;Write
 workspaces:ImportWorkspaceImage;Write
+workspaces:ListAccountLinks;List
 workspaces:ListAvailableManagementCidrRanges;List
 workspaces:MigrateWorkspace;Write
 workspaces:ModifyAccount;Write
@@ -61,6 +66,7 @@ workspaces:ModifyWorkspaceState;Write
 workspaces:RebootWorkspaces;Write
 workspaces:RebuildWorkspaces;Write
 workspaces:RegisterWorkspaceDirectory;Write
+workspaces:RejectAccountLinkInvitation;Write
 workspaces:RestoreWorkspace;Write
 workspaces:RevokeIpRules;Write
 workspaces:StartWorkspaces;Write
