@@ -69,7 +69,8 @@
         "qbusiness:ChatSync",
         "qbusiness:ListConversations",
         "qbusiness:ListMessages",
-        "qbusiness:DeleteConversation"
+        "qbusiness:DeleteConversation",
+        "sts:SetContext"
       ],
       "Resource": "*"
     }
