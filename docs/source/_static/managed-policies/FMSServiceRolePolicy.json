@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "WafGeneral",
       "Effect": "Allow",
       "Action": [
         "waf:UpdateWebACL",
@@ -33,6 +34,7 @@
       ]
     },
     {
+      "Sid": "Wafv2Logging",
       "Effect": "Allow",
       "Action": [
         "wafv2:PutLoggingConfiguration",
@@ -46,6 +48,7 @@
       ]
     },
     {
+      "Sid": "WafWebaclCreation",
       "Effect": "Allow",
       "Action": [
         "waf:CreateWebACL",
@@ -60,6 +63,7 @@
       ]
     },
     {
+      "Sid": "ElbGeneral",
       "Effect": "Allow",
       "Action": [
         "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
@@ -68,6 +72,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "WafPermissionPolicy",
       "Effect": "Allow",
       "Action": [
         "waf:PutPermissionPolicy",
@@ -85,31 +90,38 @@
       ]
     },
     {
+      "Sid": "CloudfrontGeneral",
       "Effect": "Allow",
       "Action": [
         "cloudfront:GetDistribution",
         "cloudfront:UpdateDistribution",
         "cloudfront:ListDistributionsByWebACLId",
-        "cloudfront:ListDistributions"
+        "cloudfront:ListDistributions",
+        "cloudfront:ListTagsForResource"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "ConfigScoped",
       "Effect": "Allow",
       "Action": [
         "config:DeleteConfigRule",
         "config:GetComplianceDetailsByConfigRule",
         "config:PutConfigRule",
-        "config:StartConfigRulesEvaluation"
+        "config:StartConfigRulesEvaluation",
+        "config:DeleteEvaluationResults"
       ],
       "Resource": "arn:aws:config:*:*:config-rule/aws-service-rule/fms.amazonaws.com/*"
     },
     {
+      "Sid": "ConfigUnscoped",
       "Effect": "Allow",
       "Action": [
         "config:DescribeComplianceByConfigRule",
         "config:DescribeConfigurationRecorders",
         "config:DescribeConfigurationRecorderStatus",
+        "config:DescribeConfigRules",
+        "config:DescribeConfigRuleEvaluationStatus",
         "config:PutConfigurationRecorder",
         "config:StartConfigurationRecorder",
         "config:PutDeliveryChannel",
@@ -123,6 +135,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "SlrDeletion",
       "Effect": "Allow",
       "Action": [
         "iam:DeleteServiceLinkedRole",
@@ -133,12 +146,11 @@
       ]
     },
     {
+      "Sid": "OrganizationsGeneral",
       "Effect": "Allow",
       "Action": [
         "organizations:DescribeAccount",
         "organizations:DescribeOrganization",
-        "config:DescribeConfigRuleEvaluationStatus",
-        "config:DescribeConfigRules",
         "organizations:ListAccounts",
         "organizations:DescribeOrganizationalUnit",
         "organizations:ListChildren",
@@ -152,6 +164,7 @@
       ]
     },
     {
+      "Sid": "ShieldGeneral",
       "Effect": "Allow",
       "Action": [
         "shield:CreateProtection",
@@ -174,6 +187,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "EC2SecurityGroupScoped",
       "Effect": "Allow",
       "Action": [
         "ec2:AuthorizeSecurityGroupEgress",
@@ -191,14 +205,7 @@
       ]
     },
     {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:DescribeNetworkInterfaceAttribute",
-        "ec2:DescribeInstances"
-      ],
-      "Resource": "*"
-    },
-    {
+      "Sid": "SecurityGroupTagCreation",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags"
@@ -213,6 +220,7 @@
       }
     },
     {
+      "Sid": "SecurityGroupTagManagement",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteTags",
@@ -228,6 +236,7 @@
       }
     },
     {
+      "Sid": "Ec2Unscoped",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSecurityGroup",
@@ -237,13 +246,22 @@
         "ec2:DescribeNetworkInterfaces",
         "ec2:ModifyNetworkInterfaceAttribute",
         "ec2:DescribeVpcs",
-        "ec2:DescribeVpcPeeringConnections"
+        "ec2:DescribeVpcPeeringConnections",
+        "ec2:DescribeNetworkInterfaceAttribute",
+        "ec2:DescribeInstances",
+        "ec2:AssociateRouteTable",
+        "ec2:CreateSubnet",
+        "ec2:CreateRouteTable",
+        "ec2:DeleteSubnet",
+        "ec2:DisassociateRouteTable",
+        "ec2:ReplaceRouteTableAssociation"
       ],
       "Resource": [
         "*"
       ]
     },
     {
+      "Sid": "Wafv2General",
       "Effect": "Allow",
       "Action": [
         "wafv2:TagResource",
@@ -262,6 +280,7 @@
       ]
     },
     {
+      "Sid": "Wafv2WebAclAndRuleGroupMutation",
       "Effect": "Allow",
       "Action": [
         "wafv2:UpdateWebACL",
@@ -283,6 +302,7 @@
       ]
     },
     {
+      "Sid": "Wafv2PermissionPolicy",
       "Effect": "Allow",
       "Action": [
         "wafv2:PutPermissionPolicy",
@@ -295,13 +315,7 @@
       ]
     },
     {
-      "Effect": "Allow",
-      "Action": [
-        "cloudfront:ListTagsForResource"
-      ],
-      "Resource": "*"
-    },
-    {
+      "Sid": "Wafv2WebaclDescribe",
       "Effect": "Allow",
       "Action": [
         "wafv2:GetWebACLForResource"
@@ -311,6 +325,7 @@
       ]
     },
     {
+      "Sid": "RouteTableTagManagement",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": "arn:aws:ec2:*:*:route-table/*",
@@ -327,6 +342,7 @@
       }
     },
     {
+      "Sid": "SubnetTagManagement",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": [
@@ -342,6 +358,7 @@
       }
     },
     {
+      "Sid": "VPCEndpointTagManagement",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": [
@@ -360,6 +377,7 @@
       }
     },
     {
+      "Sid": "RouteTableCleanup",
       "Effect": "Allow",
       "Action": "ec2:DeleteRouteTable",
       "Resource": "arn:aws:ec2:*:*:route-table/*",
@@ -370,18 +388,7 @@
       }
     },
     {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:AssociateRouteTable",
-        "ec2:CreateSubnet",
-        "ec2:CreateRouteTable",
-        "ec2:DeleteSubnet",
-        "ec2:DisassociateRouteTable",
-        "ec2:ReplaceRouteTableAssociation"
-      ],
-      "Resource": "*"
-    },
-    {
+      "Sid": "Ec2DescribeUnscoped",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeInternetGateways",
@@ -394,6 +401,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "CreateVpcEndpointScoped",
       "Effect": "Allow",
       "Action": "ec2:CreateVpcEndpoint",
       "Resource": [
@@ -408,6 +416,7 @@
       }
     },
     {
+      "Sid": "CreateVpcEndpointUnscoped",
       "Effect": "Allow",
       "Action": "ec2:CreateVpcEndpoint",
       "Resource": [
@@ -416,6 +425,7 @@
       ]
     },
     {
+      "Sid": "VpcEndpointsDeletion",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteVpcEndpoints"
@@ -428,6 +438,7 @@
       }
     },
     {
+      "Sid": "RamTagManagement",
       "Effect": "Allow",
       "Action": [
         "ram:TagResource"
@@ -445,6 +456,7 @@
       }
     },
     {
+      "Sid": "RamMutation",
       "Effect": "Allow",
       "Action": [
         "ram:AssociateResourceShare",
@@ -459,6 +471,7 @@
       }
     },
     {
+      "Sid": "RamCreation",
       "Effect": "Allow",
       "Action": "ram:CreateResourceShare",
       "Resource": "*",
@@ -477,7 +490,7 @@
       }
     },
     {
-      "Sid": "ram",
+      "Sid": "RamDescribe",
       "Effect": "Allow",
       "Action": [
         "ram:GetResourceShareAssociations",
@@ -486,6 +499,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "SlrCreation",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
@@ -499,11 +513,13 @@
       }
     },
     {
+      "Sid": "IamDescribe",
       "Effect": "Allow",
       "Action": "iam:GetRole",
       "Resource": "*"
     },
     {
+      "Sid": "NetworkFirewallTagManagement",
       "Effect": "Allow",
       "Action": [
         "network-firewall:TagResource"
@@ -519,6 +535,7 @@
       }
     },
     {
+      "Sid": "NetworkFirewallGeneral",
       "Effect": "Allow",
       "Action": [
         "network-firewall:AssociateSubnets",
@@ -545,6 +562,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "NetworkFirewallCleanup",
       "Effect": "Allow",
       "Action": [
         "network-firewall:DeleteFirewallPolicy",
@@ -558,6 +576,7 @@
       }
     },
     {
+      "Sid": "LogsGeneral",
       "Effect": "Allow",
       "Action": [
         "logs:ListLogDeliveries",
@@ -569,6 +588,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "Route53ResolverRuleGroupUnscoped",
       "Effect": "Allow",
       "Action": [
         "route53resolver:ListFirewallRuleGroupAssociations",
@@ -582,6 +602,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "Route53ResolverRuleGroupCleanup",
       "Effect": "Allow",
       "Action": [
         "route53resolver:UpdateFirewallRuleGroupAssociation",
@@ -595,6 +616,7 @@
       }
     },
     {
+      "Sid": "Route53ResolverRuleGroupScoped",
       "Effect": "Allow",
       "Action": [
         "route53resolver:AssociateFirewallRuleGroup",
@@ -606,6 +628,73 @@
           "aws:RequestTag/FMManaged": "true"
         }
       }
+    },
+    {
+      "Sid": "NaclTagCreation",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-acl/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "FMManaged",
+            "FMPolicies"
+          ]
+        },
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkAcl"
+        }
+      }
+    },
+    {
+      "Sid": "NaclTagManagement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-acl/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "Name",
+            "FMManaged",
+            "FMPolicies"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceTag/FMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "NaclScoped",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkAclEntry",
+        "ec2:CreateNetworkAclEntry",
+        "ec2:ReplaceNetworkAclEntry",
+        "ec2:DeleteNetworkAcl"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/FMManaged": "true"
+        }
+      }
+    },
+    {
+      "Sid": "NaclUnscoped",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ReplaceNetworkAclAssociation",
+        "ec2:DescribeNetworkAcls",
+        "ec2:CreateNetworkAcl"
+      ],
+      "Resource": "*"
     }
   ]
 }
