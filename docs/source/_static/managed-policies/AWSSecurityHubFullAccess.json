@@ -24,7 +24,8 @@
       "Action": [
         "guardduty:GetDetector",
         "guardduty:ListDetectors",
-        "inspector2:BatchGetAccountStatus"
+        "inspector2:BatchGetAccountStatus",
+        "pricing:GetProducts"
       ],
       "Resource": "*"
     }

@@ -22,6 +22,7 @@
         "s3:ListAllMyBuckets",
         "redshift:DescribeClusters",
         "redshift-serverless:ListWorkgroups",
+        "ec2:DescribeSecurityGroups",
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcs",
         "secretsmanager:ListSecrets"
@@ -99,6 +100,14 @@
           "iam:passedToService": "datazone.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "IAMGetPolicyStatement",
+      "Effect": "Allow",
+      "Action": "iam:GetPolicy",
+      "Resource": [
+        "arn:aws:iam::*:policy/service-role/AmazonDataZoneRedshiftAccessPolicy*"
+      ]
     },
     {
       "Sid": "DataZoneTagOnCreate",
