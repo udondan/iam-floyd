@@ -1,0 +1,3 @@
+route53profiles:RequestTag/${TagKey}
+route53profiles:ResourceTag/${TagKey}
+route53profiles:TagKeys

@@ -141,6 +141,7 @@ export { Rhelkb } from './policy-statements/rhelknowledgebaseportal';
 export { Route53 } from './policy-statements/route53';
 export { ArcZonalShift } from './policy-statements/route53applicationrecoverycontroller-zonalshift';
 export { Route53domains } from './policy-statements/route53domains';
+export { Route53profiles } from './policy-statements/route53profilesenablessharingdnssettingswithvpcs';
 export { Route53RecoveryCluster } from './policy-statements/route53recoverycluster';
 export { Route53RecoveryControlConfig } from './policy-statements/route53recoverycontrols';
 export { Route53RecoveryReadiness } from './policy-statements/route53recoveryreadiness';
