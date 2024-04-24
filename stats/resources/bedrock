@@ -1,6 +1,7 @@
 bedrock:agent
 bedrock:agent-alias
 bedrock:custom-model
+bedrock:evaluation-job
 bedrock:foundation-model
 bedrock:guardrail
 bedrock:knowledge-base

@@ -1,9 +1,11 @@
+bedrock:ApplyGuardrail;Read
 bedrock:AssociateAgentKnowledgeBase;Write
 bedrock:AssociateThirdPartyKnowledgeBase;Write
 bedrock:CreateAgent;Write
 bedrock:CreateAgentActionGroup;Write
 bedrock:CreateAgentAlias;Write
 bedrock:CreateDataSource;Write
+bedrock:CreateEvaluationJob;Write
 bedrock:CreateFoundationModelAgreement;Write
 bedrock:CreateGuardrail;Write
 bedrock:CreateGuardrailVersion;Write
@@ -32,6 +34,7 @@ bedrock:GetAgentKnowledgeBase;Read
 bedrock:GetAgentVersion;Read
 bedrock:GetCustomModel;Read
 bedrock:GetDataSource;Read
+bedrock:GetEvaluationJob;Read
 bedrock:GetFoundationModel;Read
 bedrock:GetFoundationModelAvailability;Read
 bedrock:GetGuardrail;Read
@@ -53,6 +56,7 @@ bedrock:ListAgentVersions;List
 bedrock:ListAgents;List
 bedrock:ListCustomModels;List
 bedrock:ListDataSources;List
+bedrock:ListEvaluationJobs;List
 bedrock:ListFoundationModelAgreementOffers;List
 bedrock:ListFoundationModels;List
 bedrock:ListGuardrails;List
@@ -70,6 +74,7 @@ bedrock:PutUseCaseForModelAccess;Write
 bedrock:Retrieve;Read
 bedrock:RetrieveAndGenerate;Write
 bedrock:StartIngestionJob;Write
+bedrock:StopEvaluationJob;Write
 bedrock:StopModelCustomizationJob;Write
 bedrock:StopModelInvocationJob;Write
 bedrock:TagResource;Tagging

@@ -1,5 +1,6 @@
 rolesanywhere:CreateProfile;Write
 rolesanywhere:CreateTrustAnchor;Write
+rolesanywhere:DeleteAttributeMapping;Write
 rolesanywhere:DeleteCrl;Write
 rolesanywhere:DeleteProfile;Write
 rolesanywhere:DeleteTrustAnchor;Write
@@ -19,6 +20,7 @@ rolesanywhere:ListProfiles;List
 rolesanywhere:ListSubjects;List
 rolesanywhere:ListTagsForResource;List
 rolesanywhere:ListTrustAnchors;List
+rolesanywhere:PutAttributeMapping;Write
 rolesanywhere:PutNotificationSettings;Write
 rolesanywhere:ResetNotificationSettings;Write
 rolesanywhere:TagResource;Tagging

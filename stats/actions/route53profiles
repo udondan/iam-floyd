@@ -1,0 +1,16 @@
+route53profiles:AssociateProfile;Write
+route53profiles:AssociateResourceToProfile;Write
+route53profiles:CreateProfile;Write
+route53profiles:DeleteProfile;Write
+route53profiles:DisassociateProfile;Write
+route53profiles:DisassociateResourceFromProfile;Write
+route53profiles:GetProfile;Read
+route53profiles:GetProfileAssociation;Read
+route53profiles:GetProfileResourceAssociation;Read
+route53profiles:ListProfileAssociations;List
+route53profiles:ListProfileResourceAssociations;List
+route53profiles:ListProfiles;List
+route53profiles:ListTagsForResource;List
+route53profiles:TagResource;Tagging
+route53profiles:UntagResource;Tagging
+route53profiles:UpdateProfileResourceAssociation;Write

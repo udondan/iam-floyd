@@ -52,6 +52,17 @@ export class Rolesanywhere extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a mapping rule from a profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_DeleteAttributeMapping.html
+   */
+  public toDeleteAttributeMapping() {
+    return this.to('DeleteAttributeMapping');
+  }
+
+  /**
    * Grants permission to delete a certificate revocation list (crl)
    *
    * Access Level: Write
@@ -268,6 +279,17 @@ export class Rolesanywhere extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put a mapping rule into a profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_PutAttributeMapping.html
+   */
+  public toPutAttributeMapping() {
+    return this.to('PutAttributeMapping');
+  }
+
+  /**
    * Grants permission to attach notification settings to a trust anchor
    *
    * Access Level: Write
@@ -310,7 +332,6 @@ export class Rolesanywhere extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_UntagResource.html
@@ -359,6 +380,7 @@ export class Rolesanywhere extends PolicyStatement {
     Write: [
       'CreateProfile',
       'CreateTrustAnchor',
+      'DeleteAttributeMapping',
       'DeleteCrl',
       'DeleteProfile',
       'DeleteTrustAnchor',
@@ -369,6 +391,7 @@ export class Rolesanywhere extends PolicyStatement {
       'EnableProfile',
       'EnableTrustAnchor',
       'ImportCrl',
+      'PutAttributeMapping',
       'PutNotificationSettings',
       'ResetNotificationSettings',
       'UpdateCrl',
@@ -472,7 +495,6 @@ export class Rolesanywhere extends PolicyStatement {
    * - .toCreateTrustAnchor()
    * - .toImportCrl()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
