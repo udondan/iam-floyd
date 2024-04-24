@@ -154,6 +154,12 @@ export class AwsManagedPolicy {
     public static AmazonDataZoneRedshiftGlueProvisioningPolicy = 'AmazonDataZoneRedshiftGlueProvisioningPolicy';
     /** This policy gives Amazon DataZone permissions to publish Amazon Redshift data to the catalog. It also gives Amazon DataZone permissions to grant access or revoke access to Amazon Redshift or Amazon Redshift Serverless published assets in the catalog. */
     public static AmazonDataZoneRedshiftManageAccessRolePolicy = 'service-role/AmazonDataZoneRedshiftManageAccessRolePolicy';
+    /** The AmazonDataZoneSageMakerEnvironmentRolePermissionsBoundary policy is the list of permissions that are permitted on an execution role created in a SageMaker environment provisioned by Amazon DataZone. */
+    public static AmazonDataZoneSageMakerEnvironmentRolePermissionsBoundary = 'AmazonDataZoneSageMakerEnvironmentRolePermissionsBoundary';
+    /** The AmazonDataZoneSageMakerManageAccessRolePolicy policy grants Amazon DataZone the permissions required to grant user access to various resources in the SageMaker environment. */
+    public static AmazonDataZoneSageMakerManageAccessRolePolicy = 'AmazonDataZoneSageMakerManageAccessRolePolicy';
+    /** The AmazonDataZoneSageMakerProvisioningRolePolicy policy grants Amazon DataZone the permissions required to interoperate with Amazon SageMaker. */
+    public static AmazonDataZoneSageMakerProvisioningRolePolicy = 'AmazonDataZoneSageMakerProvisioningRolePolicy';
     /**  Provides full access to Amazon Detective service and scoped access to the console UI dependencies */
     public static AmazonDetectiveFullAccess = 'AmazonDetectiveFullAccess';
     /** Provides investigator access to Amazon Detective service and scoped access to the console UI dependencies. This policy grants permission to dive into Detective for investigation purposes and limited write access to Guardduty. */

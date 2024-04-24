@@ -394,6 +394,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDataZoneRedshiftManageAccessRolePolicy);
     }
 
+    /** The AmazonDataZoneSageMakerEnvironmentRolePermissionsBoundary policy is the list of permissions that are permitted on an execution role created in a SageMaker environment provisioned by Amazon DataZone. */
+    public AmazonDataZoneSageMakerEnvironmentRolePermissionsBoundary(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDataZoneSageMakerEnvironmentRolePermissionsBoundary);
+    }
+
+    /** The AmazonDataZoneSageMakerManageAccessRolePolicy policy grants Amazon DataZone the permissions required to grant user access to various resources in the SageMaker environment. */
+    public AmazonDataZoneSageMakerManageAccessRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDataZoneSageMakerManageAccessRolePolicy);
+    }
+
+    /** The AmazonDataZoneSageMakerProvisioningRolePolicy policy grants Amazon DataZone the permissions required to interoperate with Amazon SageMaker. */
+    public AmazonDataZoneSageMakerProvisioningRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDataZoneSageMakerProvisioningRolePolicy);
+    }
+
     /**  Provides full access to Amazon Detective service and scoped access to the console UI dependencies */
     public AmazonDetectiveFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDetectiveFullAccess);
