@@ -306,6 +306,23 @@
       }
     },
     {
+      "Sid": "CreateTagsK8sSubnet",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "kubernetes.io/cluster/*"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "ListPoliciesAttachedToRoles",
       "Effect": "Allow",
       "Action": [
