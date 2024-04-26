@@ -2,11 +2,13 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowFullAccessToInspectorApis",
       "Effect": "Allow",
       "Action": "inspector2:*",
       "Resource": "*"
     },
     {
+      "Sid": "AllowAccessToCodeGuruApis",
       "Effect": "Allow",
       "Action": [
         "codeguru-security:BatchGetFindings",
@@ -15,16 +17,21 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowAccessToCreateSlr",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "iam:AWSServiceName": "inspector2.amazonaws.com"
+          "iam:AWSServiceName": [
+            "agentless.inspector2.amazonaws.com",
+            "inspector2.amazonaws.com"
+          ]
         }
       }
     },
     {
+      "Sid": "AllowAccessToOrganizationApis",
       "Effect": "Allow",
       "Action": [
         "organizations:EnableAWSServiceAccess",

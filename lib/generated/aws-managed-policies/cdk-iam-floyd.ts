@@ -4714,6 +4714,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForAmazonEKSNodegroup);
     }
 
+    /** This Service Linked Role provides Amazon Q Developer ability to provide usage information. */
+    public AWSServiceRoleForAmazonQDeveloper(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForAmazonQDeveloper);
+    }
+
     /** Provides access to Systems Manager resources used by CloudWatch Alarms */
     public AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy);
@@ -4777,6 +4782,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides access to AWS services and resources necessary to migrate service instances into AWS including EC2, S3 and Cloudformation. */
     public AWSServiceRoleForSMS(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForSMS);
+    }
+
+    /** Provides access to the User Subscriptions service to your Identity Center resources to automatically update your subscriptions. */
+    public AWSServiceRoleForUserSubscriptions(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForUserSubscriptions);
     }
 
     /** Provides AWS Backup permissions to create compliance reports on your behalf */

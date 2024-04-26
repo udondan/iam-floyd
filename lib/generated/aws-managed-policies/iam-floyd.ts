@@ -1882,6 +1882,8 @@ export class AwsManagedPolicy {
     public static AWSServiceCatalogSyncServiceRolePolicy = 'aws-service-role/AWSServiceCatalogSyncServiceRolePolicy';
     /** Permissions required for managing nodegroups in the customer's account. These policies related to management of the following resources: AutoscalingGroups, SecurityGroups, LaunchTemplates and InstanceProfiles. */
     public static AWSServiceRoleForAmazonEKSNodegroup = 'aws-service-role/AWSServiceRoleForAmazonEKSNodegroup';
+    /** This Service Linked Role provides Amazon Q Developer ability to provide usage information. */
+    public static AWSServiceRoleForAmazonQDeveloper = 'aws-service-role/AWSServiceRoleForAmazonQDeveloper';
     /** Provides access to Systems Manager resources used by CloudWatch Alarms */
     public static AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy = 'aws-service-role/AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy';
     /** Allows CloudWatch to access RDS Performance Insights metrics on your behalf */
@@ -1908,6 +1910,8 @@ export class AwsManagedPolicy {
     public static AWSServiceRoleForPrivateMarketplaceAdminPolicy = 'aws-service-role/AWSServiceRoleForPrivateMarketplaceAdminPolicy';
     /** Provides access to AWS services and resources necessary to migrate service instances into AWS including EC2, S3 and Cloudformation. */
     public static AWSServiceRoleForSMS = 'aws-service-role/AWSServiceRoleForSMS';
+    /** Provides access to the User Subscriptions service to your Identity Center resources to automatically update your subscriptions. */
+    public static AWSServiceRoleForUserSubscriptions = 'aws-service-role/AWSServiceRoleForUserSubscriptions';
     /** Provides AWS Backup permissions to create compliance reports on your behalf */
     public static AWSServiceRolePolicyForBackupReports = 'aws-service-role/AWSServiceRolePolicyForBackupReports';
     /** This policy contains permissions for testing restores and for cleaning up resources created during tests. */

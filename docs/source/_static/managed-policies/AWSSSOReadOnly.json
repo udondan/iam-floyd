@@ -22,7 +22,8 @@
         "sso:List*",
         "sso:Search*",
         "sso-directory:DescribeDirectory",
-        "access-analyzer:ValidatePolicy"
+        "access-analyzer:ValidatePolicy",
+        "signin:ListTrustedIdentityPropagationApplicationsForConsole"
       ],
       "Resource": "*"
     }
