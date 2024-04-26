@@ -83,6 +83,9 @@ export class Elasticfilesystem extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
+   * Dependent actions:
+   * - elasticfilesystem:TagResource
+   *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateAccessPoint.html
    */
   public toCreateAccessPoint() {
@@ -98,6 +101,9 @@ export class Elasticfilesystem extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifEncrypted()
+   *
+   * Dependent actions:
+   * - elasticfilesystem:TagResource
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html
    */

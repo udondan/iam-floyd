@@ -7,6 +7,9 @@ cases:CreateLayout;Write
 cases:CreateRelatedItem;Write
 cases:CreateTemplate;Write
 cases:DeleteDomain;Write
+cases:DeleteField;Write
+cases:DeleteLayout;Write
+cases:DeleteTemplate;Write
 cases:GetCase;Read
 cases:GetCaseAuditEvents;Read
 cases:GetCaseEventConfiguration;Read

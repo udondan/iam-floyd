@@ -30,6 +30,7 @@ workdocs:DescribeComments;List
 workdocs:DescribeDocumentVersions;List
 workdocs:DescribeFolderContents;List
 workdocs:DescribeGroups;List
+workdocs:DescribeInstanceExports;List
 workdocs:DescribeInstances;List
 workdocs:DescribeNotificationPermissions;List
 workdocs:DescribeNotificationSubscriptions;List
@@ -51,6 +52,7 @@ workdocs:RemoveAllResourcePermissions;Write
 workdocs:RemoveResourcePermission;Write
 workdocs:RestoreDocumentVersions;Write
 workdocs:SearchResources;List
+workdocs:StartInstanceExport;Write
 workdocs:UpdateDocument;Write
 workdocs:UpdateDocumentVersion;Write
 workdocs:UpdateFolder;Write

@@ -2,6 +2,7 @@ gamelift:AcceptMatch;Write
 gamelift:ClaimGameServer;Write
 gamelift:CreateAlias;Write
 gamelift:CreateBuild;Write
+gamelift:CreateContainerGroupDefinition;Write
 gamelift:CreateFleet;Write
 gamelift:CreateFleetLocations;Write
 gamelift:CreateGameServerGroup;Write
@@ -17,6 +18,7 @@ gamelift:CreateVpcPeeringAuthorization;Write
 gamelift:CreateVpcPeeringConnection;Write
 gamelift:DeleteAlias;Write
 gamelift:DeleteBuild;Write
+gamelift:DeleteContainerGroupDefinition;Write
 gamelift:DeleteFleet;Write
 gamelift:DeleteFleetLocations;Write
 gamelift:DeleteGameServerGroup;Write
@@ -33,6 +35,7 @@ gamelift:DeregisterGameServer;Write
 gamelift:DescribeAlias;Read
 gamelift:DescribeBuild;Read
 gamelift:DescribeCompute;Read
+gamelift:DescribeContainerGroupDefinition;Read
 gamelift:DescribeEC2InstanceLimits;Read
 gamelift:DescribeFleetAttributes;Read
 gamelift:DescribeFleetCapacity;Read
@@ -66,6 +69,7 @@ gamelift:GetInstanceAccess;Read
 gamelift:ListAliases;List
 gamelift:ListBuilds;List
 gamelift:ListCompute;List
+gamelift:ListContainerGroupDefinitions;List
 gamelift:ListFleets;List
 gamelift:ListGameServerGroups;List
 gamelift:ListGameServers;List

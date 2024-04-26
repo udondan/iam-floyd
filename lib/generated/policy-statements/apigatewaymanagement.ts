@@ -325,6 +325,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifRequestStageName()
+   * - .ifAwsResourceTag()
    */
   public onDeployments(restApiId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/deployments`);
@@ -372,6 +373,9 @@ export class Apigateway extends PolicyStatement {
    * @param documentationVersionId - Identifier for the documentationVersionId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDocumentationVersion(restApiId: string, documentationVersionId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/documentation/versions/${ documentationVersionId }`);
@@ -385,6 +389,9 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDocumentationVersions(restApiId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/documentation/versions`);
@@ -495,6 +502,9 @@ export class Apigateway extends PolicyStatement {
    * @param statusCode - Identifier for the statusCode.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIntegrationResponse(restApiId: string, resourceId: string, httpMethodType: string, statusCode: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }/integration/responses/${ statusCode }`);
@@ -533,6 +543,9 @@ export class Apigateway extends PolicyStatement {
    * @param statusCode - Identifier for the statusCode.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMethodResponse(restApiId: string, resourceId: string, httpMethodType: string, statusCode: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/resources/${ resourceId }/methods/${ httpMethodType }/responses/${ statusCode }`);
@@ -580,6 +593,9 @@ export class Apigateway extends PolicyStatement {
    * @param requestValidatorId - Identifier for the requestValidatorId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRequestValidator(restApiId: string, requestValidatorId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/requestvalidators/${ requestValidatorId }`);
@@ -593,6 +609,9 @@ export class Apigateway extends PolicyStatement {
    * @param restApiId - Identifier for the restApiId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRequestValidators(restApiId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/requestvalidators`);
@@ -693,6 +712,9 @@ export class Apigateway extends PolicyStatement {
    * @param sdkType - Identifier for the sdkType.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSdk(restApiId: string, stageName: string, sdkType: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/stages/${ stageName }/sdks/${ sdkType }`);
@@ -745,6 +767,9 @@ export class Apigateway extends PolicyStatement {
    * @param modelName - Identifier for the modelName.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTemplate(modelName: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/models/${ modelName }/template`);
@@ -790,6 +815,9 @@ export class Apigateway extends PolicyStatement {
    * @param id - Identifier for the id.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUsagePlanKey(usagePlanId: string, id: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/usageplans/${ usagePlanId }/keys/${ id }`);
@@ -803,6 +831,9 @@ export class Apigateway extends PolicyStatement {
    * @param usagePlanId - Identifier for the usagePlanId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUsagePlanKeys(usagePlanId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/usageplans/${ usagePlanId }/keys`);
@@ -1282,24 +1313,35 @@ export class Apigateway extends PolicyStatement {
    * - ClientCertificate
    * - ClientCertificates
    * - Deployment
+   * - Deployments
    * - DocumentationPart
    * - DocumentationParts
+   * - DocumentationVersion
+   * - DocumentationVersions
    * - DomainName
    * - DomainNames
    * - GatewayResponse
    * - GatewayResponses
    * - Integration
+   * - IntegrationResponse
    * - Method
+   * - MethodResponse
    * - Model
    * - Models
+   * - RequestValidator
+   * - RequestValidators
    * - Resource
    * - Resources
    * - RestApi
    * - RestApis
+   * - Sdk
    * - Stage
    * - Stages
+   * - Template
    * - UsagePlan
    * - UsagePlans
+   * - UsagePlanKey
+   * - UsagePlanKeys
    * - VpcLink
    * - VpcLinks
    *

@@ -118,6 +118,17 @@ export class AppmeshPreview extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the RAM access control policy for a mesh
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
+   */
+  public toDeleteMeshPolicy() {
+    return this.to('DeleteMeshPolicy');
+  }
+
+  /**
    * Grants permission to delete an existing route
    *
    * Access Level: Write
@@ -250,6 +261,17 @@ export class AppmeshPreview extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read the RAM access control policy for a mesh
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
+   */
+  public toGetMeshPolicy() {
+    return this.to('GetMeshPolicy');
+  }
+
+  /**
    * Grants permission to list existing gateway routes in a service mesh
    *
    * Access Level: List
@@ -324,6 +346,17 @@ export class AppmeshPreview extends PolicyStatement {
    */
   public toListVirtualServices() {
     return this.to('ListVirtualServices');
+  }
+
+  /**
+   * Grants permission to define the RAM access control policy for a mesh
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html
+   */
+  public toPutMeshPolicy() {
+    return this.to('PutMeshPolicy');
   }
 
   /**
@@ -425,11 +458,13 @@ export class AppmeshPreview extends PolicyStatement {
       'CreateVirtualService',
       'DeleteGatewayRoute',
       'DeleteMesh',
+      'DeleteMeshPolicy',
       'DeleteRoute',
       'DeleteVirtualGateway',
       'DeleteVirtualNode',
       'DeleteVirtualRouter',
       'DeleteVirtualService',
+      'PutMeshPolicy',
       'UpdateGatewayRoute',
       'UpdateMesh',
       'UpdateRoute',
@@ -446,6 +481,7 @@ export class AppmeshPreview extends PolicyStatement {
       'DescribeVirtualNode',
       'DescribeVirtualRouter',
       'DescribeVirtualService',
+      'GetMeshPolicy',
       'StreamAggregatedResources'
     ],
     List: [

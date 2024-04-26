@@ -124,6 +124,39 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the field in the case domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteField.html
+   */
+  public toDeleteField() {
+    return this.to('DeleteField');
+  }
+
+  /**
+   * Grants permission to delete the layout in the case domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteLayout.html
+   */
+  public toDeleteLayout() {
+    return this.to('DeleteLayout');
+  }
+
+  /**
+   * Grants permission to delete the template in the case domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteTemplate.html
+   */
+  public toDeleteTemplate() {
+    return this.to('DeleteTemplate');
+  }
+
+  /**
    * Grants permission to retrieve information about a case in the case domain
    *
    * Access Level: Read
@@ -397,6 +430,9 @@ export class Cases extends PolicyStatement {
       'CreateRelatedItem',
       'CreateTemplate',
       'DeleteDomain',
+      'DeleteField',
+      'DeleteLayout',
+      'DeleteTemplate',
       'PutCaseEventConfiguration',
       'UpdateCase',
       'UpdateField',
@@ -581,7 +617,7 @@ export class Cases extends PolicyStatement {
   /**
    * Filters access by connect's UserArn
    *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UserReference.html
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_User.html
    *
    * Applies to actions:
    * - .toCreateCase()
