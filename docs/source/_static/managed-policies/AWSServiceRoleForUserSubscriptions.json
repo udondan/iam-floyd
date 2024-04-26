@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SubscriptionManagementPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeGroup",
+        "identitystore:DescribeUser",
+        "identitystore:IsMemberInGroups",
+        "identitystore:ListGroupMemberships",
+        "organizations:DescribeOrganization",
+        "sso:DescribeApplication",
+        "sso:DescribeInstance",
+        "sso:ListInstances"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

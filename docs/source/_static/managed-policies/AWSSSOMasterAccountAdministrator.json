@@ -47,7 +47,9 @@
         "identitystore:*",
         "identitystore-auth:*",
         "ds:CreateAlias",
-        "access-analyzer:ValidatePolicy"
+        "access-analyzer:ValidatePolicy",
+        "signin:CreateTrustedIdentityPropagationApplicationForConsole",
+        "signin:ListTrustedIdentityPropagationApplicationsForConsole"
       ],
       "Resource": "*"
     },
