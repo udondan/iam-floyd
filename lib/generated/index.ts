@@ -373,6 +373,7 @@ export { Servicecatalog } from './policy-statements/servicecatalog';
 export { PrivateNetworks } from './policy-statements/serviceprovidingmanagedprivatenetworks';
 export { Shield } from './policy-statements/shield';
 export { Signer } from './policy-statements/signer';
+export { Signin } from './policy-statements/signin';
 export { Simspaceweaver } from './policy-statements/simspaceweaver';
 export { Snowball } from './policy-statements/snowball';
 export { SnowDeviceManagement } from './policy-statements/snowdevicemanagement';

@@ -1,5 +1,6 @@
 gamelift:alias
 gamelift:build
+gamelift:containerGroupDefinition
 gamelift:fleet
 gamelift:gameServerGroup
 gamelift:gameSessionQueue

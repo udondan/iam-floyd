@@ -36,3 +36,4 @@ states:UntagResource;Tagging
 states:UpdateMapRun;Write
 states:UpdateStateMachine;Write
 states:UpdateStateMachineAlias;Write
+states:ValidateStateMachineDefinition;Read

@@ -1,0 +1,2 @@
+signin:CreateTrustedIdentityPropagationApplicationForConsole;Write
+signin:ListTrustedIdentityPropagationApplicationsForConsole;List

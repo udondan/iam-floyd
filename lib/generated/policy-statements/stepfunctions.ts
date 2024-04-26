@@ -496,6 +496,17 @@ export class States extends PolicyStatement {
     return this.to('UpdateStateMachineAlias');
   }
 
+  /**
+   * Grants permission to validate a state machine definition
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ValidateStateMachineDefinition.html
+   */
+  public toValidateStateMachineDefinition() {
+    return this.to('ValidateStateMachineDefinition');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateActivity',
@@ -528,7 +539,8 @@ export class States extends PolicyStatement {
       'DescribeStateMachineAlias',
       'DescribeStateMachineForExecution',
       'GetExecutionHistory',
-      'RevealSecrets'
+      'RevealSecrets',
+      'ValidateStateMachineDefinition'
     ],
     List: [
       'ListActivities',

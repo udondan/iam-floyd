@@ -184,6 +184,7 @@ quicksight:UpdatePublicSharingSettings;Write
 quicksight:UpdateRefreshSchedule;Write
 quicksight:UpdateResourcePermissions;Write
 quicksight:UpdateRoleCustomPermission;Write
+quicksight:UpdateSPICECapacityConfiguration;Write
 quicksight:UpdateTemplate;Write
 quicksight:UpdateTemplateAlias;Write
 quicksight:UpdateTemplatePermissions;Permissions management

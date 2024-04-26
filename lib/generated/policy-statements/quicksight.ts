@@ -2272,6 +2272,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update QuickSight SPICE capacity configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSPICECapacityConfiguration.html
+   */
+  public toUpdateSPICECapacityConfiguration() {
+    return this.to('UpdateSPICECapacityConfiguration');
+  }
+
+  /**
    * Grants permission to update a template
    *
    * Access Level: Write
@@ -2501,6 +2512,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateRefreshSchedule',
       'UpdateResourcePermissions',
       'UpdateRoleCustomPermission',
+      'UpdateSPICECapacityConfiguration',
       'UpdateTemplate',
       'UpdateTemplateAlias',
       'UpdateTheme',

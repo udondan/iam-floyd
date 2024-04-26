@@ -371,6 +371,17 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the export history for an instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/migration-tool.html
+   */
+  public toDescribeInstanceExports() {
+    return this.to('DescribeInstanceExports');
+  }
+
+  /**
    * Grants permission to describe instances
    *
    * Access Level: List
@@ -602,6 +613,17 @@ export class Workdocs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an export for an instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/migration-tool.html
+   */
+  public toStartInstanceExport() {
+    return this.to('StartInstanceExport');
+  }
+
+  /**
    * Grants permission to update the specified attributes of the specified document
    *
    * Access Level: Write
@@ -699,6 +721,7 @@ export class Workdocs extends PolicyStatement {
       'RemoveAllResourcePermissions',
       'RemoveResourcePermission',
       'RestoreDocumentVersions',
+      'StartInstanceExport',
       'UpdateDocument',
       'UpdateDocumentVersion',
       'UpdateFolder',
@@ -725,6 +748,7 @@ export class Workdocs extends PolicyStatement {
       'DescribeDocumentVersions',
       'DescribeFolderContents',
       'DescribeGroups',
+      'DescribeInstanceExports',
       'DescribeInstances',
       'DescribeNotificationPermissions',
       'DescribeNotificationSubscriptions',
@@ -734,4 +758,18 @@ export class Workdocs extends PolicyStatement {
       'SearchResources'
     ]
   };
+
+  /**
+   * Adds a resource of type organization to the statement
+   *
+   * https://docs.aws.amazon.com/workdocs/latest/adminguide/migration-tool.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOrganization(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workdocs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:organization/${ resourceId }`);
+  }
 }
