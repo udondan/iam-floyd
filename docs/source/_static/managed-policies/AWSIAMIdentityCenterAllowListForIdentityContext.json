@@ -78,6 +78,7 @@
         "qbusiness:ListConversations",
         "qbusiness:ListMessages",
         "qbusiness:DeleteConversation",
+        "qbusiness:PutFeedback",
         "sts:SetContext"
       ],
       "Resource": "*"

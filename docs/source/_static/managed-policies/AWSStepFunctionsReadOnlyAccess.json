@@ -18,7 +18,8 @@
         "states:ListMapRuns",
         "states:DescribeStateMachineAlias",
         "states:ListStateMachineAliases",
-        "states:ListStateMachineVersions"
+        "states:ListStateMachineVersions",
+        "states:ValidateStateMachineDefinition"
       ],
       "Resource": "*"
     }
