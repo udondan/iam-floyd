@@ -19,17 +19,6 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a list of members (users or groups) to a group
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
-   */
-  public toAddMembersToGroup() {
-    return this.to('AddMembersToGroup');
-  }
-
-  /**
    * Grants permission to configure vended log delivery for WorkMail audit logs
    *
    * Access Level: Write
@@ -437,17 +426,6 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to show a list of directories available for use in creating an organization
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html
-   */
-  public toDescribeDirectories() {
-    return this.to('DescribeDirectories');
-  }
-
-  /**
    * Grants permission to retrieve the email monitoring configuration for an organization
    *
    * Access Level: Read
@@ -503,17 +481,6 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to show a list of KMS Keys available for use in creating an organization
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html
-   */
-  public toDescribeKmsKeys() {
-    return this.to('DescribeKmsKeys');
-  }
-
-  /**
    * Grants permission to show the details of all mail domains associated with the organization
    *
    * Access Level: List
@@ -522,28 +489,6 @@ export class Workmail extends PolicyStatement {
    */
   public toDescribeMailDomains() {
     return this.to('DescribeMailDomains');
-  }
-
-  /**
-   * Grants permission to show the details of all groups associated with the organization
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
-   */
-  public toDescribeMailGroups() {
-    return this.to('DescribeMailGroups');
-  }
-
-  /**
-   * Grants permission to show the details of all users associated with the organization
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html
-   */
-  public toDescribeMailUsers() {
-    return this.to('DescribeMailUsers');
   }
 
   /**
@@ -566,17 +511,6 @@ export class Workmail extends PolicyStatement {
    */
   public toDescribeOrganization() {
     return this.to('DescribeOrganization');
-  }
-
-  /**
-   * Grants permission to show a summary of all organizations associated with the account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html
-   */
-  public toDescribeOrganizations() {
-    return this.to('DescribeOrganizations');
   }
 
   /**
@@ -731,17 +665,6 @@ export class Workmail extends PolicyStatement {
    */
   public toGetMailDomainDetails() {
     return this.to('GetMailDomainDetails');
-  }
-
-  /**
-   * Grants permission to get the details of the mail group
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
-   */
-  public toGetMailGroupDetails() {
-    return this.to('GetMailGroupDetails');
   }
 
   /**
@@ -929,17 +852,6 @@ export class Workmail extends PolicyStatement {
    */
   public toListMailboxPermissions() {
     return this.to('ListMailboxPermissions');
-  }
-
-  /**
-   * Grants permission to get a list of all the members in a mail group
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
-   */
-  public toListMembersInMailGroup() {
-    return this.to('ListMembersInMailGroup');
   }
 
   /**
@@ -1134,17 +1046,6 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove members from a mail group
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
-   */
-  public toRemoveMembersFromGroup() {
-    return this.to('RemoveMembersFromGroup');
-  }
-
-  /**
    * Grants permission to allow the administrator to reset the password for a user
    *
    * Access Level: Write
@@ -1156,17 +1057,6 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reset the password for a user's account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html#reset_user_password
-   */
-  public toResetUserPassword() {
-    return this.to('ResetUserPassword');
-  }
-
-  /**
    * Grants permission to perform a prefix search to find a specific user in a mail group
    *
    * Access Level: Read
@@ -1175,17 +1065,6 @@ export class Workmail extends PolicyStatement {
    */
   public toSearchMembers() {
     return this.to('SearchMembers');
-  }
-
-  /**
-   * Grants permission to mark a user as being an administrator
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html
-   */
-  public toSetAdmin() {
-    return this.to('SetAdmin');
   }
 
   /**
@@ -1439,7 +1318,6 @@ export class Workmail extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'AddMembersToGroup',
       'AllowVendedLogDeliveryForResource',
       'AssociateDelegateToResource',
       'AssociateMemberToGroup',
@@ -1488,10 +1366,7 @@ export class Workmail extends PolicyStatement {
       'PutRetentionPolicy',
       'RegisterMailDomain',
       'RegisterToWorkMail',
-      'RemoveMembersFromGroup',
       'ResetPassword',
-      'ResetUserPassword',
-      'SetAdmin',
       'SetDefaultMailDomain',
       'SetJournalingRules',
       'SetMobilePolicyDetails',
@@ -1512,15 +1387,38 @@ export class Workmail extends PolicyStatement {
       'UpdateUser',
       'WipeMobileDevice'
     ],
+    Read: [
+      'DescribeEmailMonitoringConfiguration',
+      'DescribeEntity',
+      'DescribeInboundDmarcSettings',
+      'DescribeInboundMailFlowRule',
+      'DescribeMailboxExportJob',
+      'DescribeOutboundMailFlowRule',
+      'DescribeSmtpGateway',
+      'GetAccessControlEffect',
+      'GetDefaultRetentionPolicy',
+      'GetImpersonationRole',
+      'GetImpersonationRoleEffect',
+      'GetJournalingRules',
+      'GetMailDomain',
+      'GetMailDomainDetails',
+      'GetMailboxDetails',
+      'GetMobileDeviceAccessEffect',
+      'GetMobileDeviceAccessOverride',
+      'GetMobileDeviceDetails',
+      'GetMobileDevicesForUser',
+      'GetMobilePolicyDetails',
+      'ListAccessControlRules',
+      'ListAvailabilityConfigurations',
+      'ListMobileDeviceAccessOverrides',
+      'ListMobileDeviceAccessRules',
+      'SearchMembers',
+      'TestAvailabilityConfiguration'
+    ],
     List: [
-      'DescribeDirectories',
       'DescribeGroup',
-      'DescribeKmsKeys',
       'DescribeMailDomains',
-      'DescribeMailGroups',
-      'DescribeMailUsers',
       'DescribeOrganization',
-      'DescribeOrganizations',
       'DescribeResource',
       'DescribeUser',
       'ListAliases',
@@ -1539,36 +1437,6 @@ export class Workmail extends PolicyStatement {
       'ListSmtpGateways',
       'ListTagsForResource',
       'ListUsers'
-    ],
-    Read: [
-      'DescribeEmailMonitoringConfiguration',
-      'DescribeEntity',
-      'DescribeInboundDmarcSettings',
-      'DescribeInboundMailFlowRule',
-      'DescribeMailboxExportJob',
-      'DescribeOutboundMailFlowRule',
-      'DescribeSmtpGateway',
-      'GetAccessControlEffect',
-      'GetDefaultRetentionPolicy',
-      'GetImpersonationRole',
-      'GetImpersonationRoleEffect',
-      'GetJournalingRules',
-      'GetMailDomain',
-      'GetMailDomainDetails',
-      'GetMailGroupDetails',
-      'GetMailboxDetails',
-      'GetMobileDeviceAccessEffect',
-      'GetMobileDeviceAccessOverride',
-      'GetMobileDeviceDetails',
-      'GetMobileDevicesForUser',
-      'GetMobilePolicyDetails',
-      'ListAccessControlRules',
-      'ListAvailabilityConfigurations',
-      'ListMembersInMailGroup',
-      'ListMobileDeviceAccessOverrides',
-      'ListMobileDeviceAccessRules',
-      'SearchMembers',
-      'TestAvailabilityConfiguration'
     ],
     Tagging: [
       'TagResource',

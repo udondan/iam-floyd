@@ -1,4 +1,3 @@
-workmail:AddMembersToGroup;Write
 workmail:AllowVendedLogDeliveryForResource;Write
 workmail:AssociateDelegateToResource;Write
 workmail:AssociateMemberToGroup;Write
@@ -36,19 +35,14 @@ workmail:DeleteSmtpGateway;Write
 workmail:DeleteUser;Write
 workmail:DeregisterFromWorkMail;Write
 workmail:DeregisterMailDomain;Write
-workmail:DescribeDirectories;List
 workmail:DescribeEmailMonitoringConfiguration;Read
 workmail:DescribeEntity;Read
 workmail:DescribeGroup;List
 workmail:DescribeInboundDmarcSettings;Read
 workmail:DescribeInboundMailFlowRule;Read
-workmail:DescribeKmsKeys;List
 workmail:DescribeMailDomains;List
-workmail:DescribeMailGroups;List
-workmail:DescribeMailUsers;List
 workmail:DescribeMailboxExportJob;Read
 workmail:DescribeOrganization;List
-workmail:DescribeOrganizations;List
 workmail:DescribeOutboundMailFlowRule;Read
 workmail:DescribeResource;List
 workmail:DescribeSmtpGateway;Read
@@ -63,7 +57,6 @@ workmail:GetImpersonationRoleEffect;Read
 workmail:GetJournalingRules;Read
 workmail:GetMailDomain;Read
 workmail:GetMailDomainDetails;Read
-workmail:GetMailGroupDetails;Read
 workmail:GetMailboxDetails;Read
 workmail:GetMobileDeviceAccessEffect;Read
 workmail:GetMobileDeviceAccessOverride;Read
@@ -81,7 +74,6 @@ workmail:ListInboundMailFlowRules;List
 workmail:ListMailDomains;List
 workmail:ListMailboxExportJobs;List
 workmail:ListMailboxPermissions;List
-workmail:ListMembersInMailGroup;Read
 workmail:ListMobileDeviceAccessOverrides;Read
 workmail:ListMobileDeviceAccessRules;Read
 workmail:ListOrganizations;List
@@ -99,11 +91,8 @@ workmail:PutMobileDeviceAccessOverride;Write
 workmail:PutRetentionPolicy;Write
 workmail:RegisterMailDomain;Write
 workmail:RegisterToWorkMail;Write
-workmail:RemoveMembersFromGroup;Write
 workmail:ResetPassword;Write
-workmail:ResetUserPassword;Write
 workmail:SearchMembers;Read
-workmail:SetAdmin;Write
 workmail:SetDefaultMailDomain;Write
 workmail:SetJournalingRules;Write
 workmail:SetMobilePolicyDetails;Write
