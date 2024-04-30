@@ -124,7 +124,9 @@
         "cloudformation:ListStackResources",
         "cloudformation:UpdateStack",
         "cloudformation:ContinueUpdateRollback",
-        "cloudformation:CancelUpdateStack"
+        "cloudformation:CancelUpdateStack",
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": "arn:aws:cloudformation:*:*:stack/awseb-e-*"
     },

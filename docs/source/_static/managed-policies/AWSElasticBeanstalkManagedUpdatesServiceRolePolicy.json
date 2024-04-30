@@ -101,7 +101,9 @@
         "cloudformation:CancelUpdateStack",
         "cloudformation:DeleteStack",
         "cloudformation:GetTemplate",
-        "cloudformation:UpdateStack"
+        "cloudformation:UpdateStack",
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/awseb-e-*",
