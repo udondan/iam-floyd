@@ -394,6 +394,17 @@ export class Codepipeline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to rollback the stage to a previous successful execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_RollbackStage.html
+   */
+  public toRollbackStage() {
+    return this.to('RollbackStage');
+  }
+
+  /**
    * Grants permission to run the most recent revision through the pipeline
    *
    * Access Level: Write
@@ -489,6 +500,7 @@ export class Codepipeline extends PolicyStatement {
       'PutWebhook',
       'RegisterWebhookWithThirdParty',
       'RetryStageExecution',
+      'RollbackStage',
       'StartPipelineExecution',
       'StopPipelineExecution',
       'UpdateActionType',
