@@ -31,6 +31,7 @@ codepipeline:PutThirdPartyJobSuccessResult;Write
 codepipeline:PutWebhook;Write
 codepipeline:RegisterWebhookWithThirdParty;Write
 codepipeline:RetryStageExecution;Write
+codepipeline:RollbackStage;Write
 codepipeline:StartPipelineExecution;Write
 codepipeline:StopPipelineExecution;Write
 codepipeline:TagResource;Tagging

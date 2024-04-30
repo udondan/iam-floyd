@@ -19,7 +19,7 @@ export class Signin extends PolicyStatement {
   }
 
   /**
-   * Creates trusted identity propagation application for console
+   * Grants permission to create an Identity Center application that represents the AWS Management Console on an Identity Center organization instance
    *
    * Access Level: Write
    *
@@ -27,6 +27,7 @@ export class Signin extends PolicyStatement {
    * - sso:CreateApplication
    * - sso:GetSharedSsoConfiguration
    * - sso:ListApplications
+   * - sso:PutApplicationAccessScope
    * - sso:PutApplicationAssignmentConfiguration
    * - sso:PutApplicationAuthenticationMethod
    * - sso:PutApplicationGrant
@@ -38,7 +39,7 @@ export class Signin extends PolicyStatement {
   }
 
   /**
-   * Lists trusted identity propagation application for console
+   * Grants permission to list all Identity Center applications that represent the AWS Management Console
    *
    * Access Level: List
    *

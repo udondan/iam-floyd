@@ -166,6 +166,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search all resources related to a patient
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/search-healthlake.html
+   */
+  public toSearchEverything() {
+    return this.to('SearchEverything');
+  }
+
+  /**
    * Grants permission to search resources with GET method
    *
    * Access Level: Read
@@ -267,6 +278,7 @@ export class Healthlake extends PolicyStatement {
       'GetCapabilities',
       'ListTagsForResource',
       'ReadResource',
+      'SearchEverything',
       'SearchWithGet',
       'SearchWithPost'
     ],

@@ -8633,6 +8633,9 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html
    */
   public toRequestSpotFleet() {
@@ -11346,6 +11349,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifTransitGatewayAttachmentId()
    */
   public onTransitGatewayAttachment(transitGatewayAttachmentId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transit-gateway-attachment/${ transitGatewayAttachmentId }`);
@@ -11367,6 +11371,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifTransitGatewayConnectPeerId()
    */
   public onTransitGatewayConnectPeer(transitGatewayConnectPeerId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transit-gateway-connect-peer/${ transitGatewayConnectPeerId }`);
@@ -11390,6 +11395,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifTransitGatewayId()
    */
   public onTransitGateway(transitGatewayId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transit-gateway/${ transitGatewayId }`);
@@ -11411,6 +11417,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifTransitGatewayMulticastDomainId()
    */
   public onTransitGatewayMulticastDomain(transitGatewayMulticastDomainId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transit-gateway-multicast-domain/${ transitGatewayMulticastDomainId }`);
@@ -11432,6 +11439,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifTransitGatewayPolicyTableId()
    */
   public onTransitGatewayPolicyTable(transitGatewayPolicyTableId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transit-gateway-policy-table/${ transitGatewayPolicyTableId }`);
@@ -11453,6 +11461,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifTransitGatewayRouteTableAnnouncementId()
    */
   public onTransitGatewayRouteTableAnnouncement(transitGatewayRouteTableAnnouncementId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transit-gateway-route-table-announcement/${ transitGatewayRouteTableAnnouncementId }`);
@@ -11476,6 +11485,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifTransitGatewayRouteTableId()
    */
   public onTransitGatewayRouteTable(transitGatewayRouteTableId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transit-gateway-route-table/${ transitGatewayRouteTableId }`);
@@ -11947,6 +11957,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportSnapshot()
    * - .toPurchaseCapacityBlock()
    * - .toRegisterImage()
+   * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toStartNetworkInsightsAccessScopeAnalysis()
@@ -12618,6 +12629,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportSnapshot()
    * - .toPurchaseCapacityBlock()
    * - .toRegisterImage()
+   * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toRunInstances()
    * - .toStartNetworkInsightsAccessScopeAnalysis()
@@ -17578,5 +17590,196 @@ export class Ec2 extends PolicyStatement {
    */
   public ifVpceServicePrivateDnsName(value: string | string[], operator?: Operator | string) {
     return this.if(`VpceServicePrivateDnsName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a transit gateway attachment
+   *
+   * Applies to actions:
+   * - .toAcceptTransitGatewayMulticastDomainAssociations()
+   * - .toAcceptTransitGatewayPeeringAttachment()
+   * - .toAcceptTransitGatewayVpcAttachment()
+   * - .toAssociateTransitGatewayMulticastDomain()
+   * - .toAssociateTransitGatewayPolicyTable()
+   * - .toAssociateTransitGatewayRouteTable()
+   * - .toCreateFlowLogs()
+   * - .toCreateTags()
+   * - .toCreateTransitGatewayConnect()
+   * - .toCreateTransitGatewayConnectPeer()
+   * - .toCreateTransitGatewayPeeringAttachment()
+   * - .toCreateTransitGatewayPrefixListReference()
+   * - .toCreateTransitGatewayRoute()
+   * - .toCreateTransitGatewayRouteTableAnnouncement()
+   * - .toCreateTransitGatewayVpcAttachment()
+   * - .toCreateVpnConnection()
+   * - .toDeleteTransitGatewayConnect()
+   * - .toDeleteTransitGatewayPeeringAttachment()
+   * - .toDeleteTransitGatewayVpcAttachment()
+   * - .toDisableTransitGatewayRouteTablePropagation()
+   * - .toDisassociateTransitGatewayMulticastDomain()
+   * - .toDisassociateTransitGatewayPolicyTable()
+   * - .toDisassociateTransitGatewayRouteTable()
+   * - .toEnableTransitGatewayRouteTablePropagation()
+   * - .toModifyTransitGatewayPrefixListReference()
+   * - .toModifyTransitGatewayVpcAttachment()
+   * - .toRejectTransitGatewayMulticastDomainAssociations()
+   * - .toRejectTransitGatewayPeeringAttachment()
+   * - .toRejectTransitGatewayVpcAttachment()
+   * - .toReplaceTransitGatewayRoute()
+   *
+   * Applies to resource types:
+   * - transit-gateway-attachment
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransitGatewayAttachmentId(value: string | string[], operator?: Operator | string) {
+    return this.if(`transitGatewayAttachmentId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a transit gateway connect peer
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateTransitGatewayConnectPeer()
+   * - .toDeleteTransitGatewayConnectPeer()
+   *
+   * Applies to resource types:
+   * - transit-gateway-connect-peer
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransitGatewayConnectPeerId(value: string | string[], operator?: Operator | string) {
+    return this.if(`transitGatewayConnectPeerId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a transit gateway
+   *
+   * Applies to actions:
+   * - .toCreateFlowLogs()
+   * - .toCreateNetworkInsightsPath()
+   * - .toCreateTags()
+   * - .toCreateTransitGateway()
+   * - .toCreateTransitGatewayMulticastDomain()
+   * - .toCreateTransitGatewayPeeringAttachment()
+   * - .toCreateTransitGatewayPolicyTable()
+   * - .toCreateTransitGatewayRouteTable()
+   * - .toCreateTransitGatewayVpcAttachment()
+   * - .toCreateVpnConnection()
+   * - .toDeleteTransitGateway()
+   * - .toModifyTransitGateway()
+   *
+   * Applies to resource types:
+   * - transit-gateway
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransitGatewayId(value: string | string[], operator?: Operator | string) {
+    return this.if(`transitGatewayId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a transit gateway multicast domain
+   *
+   * Applies to actions:
+   * - .toAcceptTransitGatewayMulticastDomainAssociations()
+   * - .toAssociateTransitGatewayMulticastDomain()
+   * - .toCreateTags()
+   * - .toCreateTransitGatewayMulticastDomain()
+   * - .toDeleteTransitGatewayMulticastDomain()
+   * - .toDeregisterTransitGatewayMulticastGroupMembers()
+   * - .toDeregisterTransitGatewayMulticastGroupSources()
+   * - .toDisassociateTransitGatewayMulticastDomain()
+   * - .toGetTransitGatewayMulticastDomainAssociations()
+   * - .toRegisterTransitGatewayMulticastGroupMembers()
+   * - .toRegisterTransitGatewayMulticastGroupSources()
+   * - .toRejectTransitGatewayMulticastDomainAssociations()
+   * - .toSearchTransitGatewayMulticastGroups()
+   *
+   * Applies to resource types:
+   * - transit-gateway-multicast-domain
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransitGatewayMulticastDomainId(value: string | string[], operator?: Operator | string) {
+    return this.if(`transitGatewayMulticastDomainId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a transit gateway policy table
+   *
+   * Applies to actions:
+   * - .toAssociateTransitGatewayPolicyTable()
+   * - .toCreateTags()
+   * - .toCreateTransitGatewayPolicyTable()
+   * - .toDeleteTransitGatewayPolicyTable()
+   * - .toDisassociateTransitGatewayPolicyTable()
+   * - .toGetTransitGatewayPolicyTableAssociations()
+   * - .toGetTransitGatewayPolicyTableEntries()
+   *
+   * Applies to resource types:
+   * - transit-gateway-policy-table
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransitGatewayPolicyTableId(value: string | string[], operator?: Operator | string) {
+    return this.if(`transitGatewayPolicyTableId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a transit gateway route table announcement
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateTransitGatewayRouteTableAnnouncement()
+   * - .toDeleteTransitGatewayRouteTableAnnouncement()
+   * - .toDisableTransitGatewayRouteTablePropagation()
+   * - .toEnableTransitGatewayRouteTablePropagation()
+   *
+   * Applies to resource types:
+   * - transit-gateway-route-table-announcement
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransitGatewayRouteTableAnnouncementId(value: string | string[], operator?: Operator | string) {
+    return this.if(`transitGatewayRouteTableAnnouncementId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a transit gateway route table
+   *
+   * Applies to actions:
+   * - .toAssociateTransitGatewayRouteTable()
+   * - .toCreateTags()
+   * - .toCreateTransitGatewayPrefixListReference()
+   * - .toCreateTransitGatewayRoute()
+   * - .toCreateTransitGatewayRouteTable()
+   * - .toCreateTransitGatewayRouteTableAnnouncement()
+   * - .toDeleteTransitGatewayPrefixListReference()
+   * - .toDeleteTransitGatewayRoute()
+   * - .toDeleteTransitGatewayRouteTable()
+   * - .toDisableTransitGatewayRouteTablePropagation()
+   * - .toDisassociateTransitGatewayRouteTable()
+   * - .toEnableTransitGatewayRouteTablePropagation()
+   * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayPrefixListReference()
+   * - .toReplaceTransitGatewayRoute()
+   * - .toSearchTransitGatewayRoutes()
+   *
+   * Applies to resource types:
+   * - transit-gateway-route-table
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransitGatewayRouteTableId(value: string | string[], operator?: Operator | string) {
+    return this.if(`transitGatewayRouteTableId`, value, operator ?? 'StringLike');
   }
 }
