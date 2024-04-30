@@ -8,6 +8,14 @@
         "q:*"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowSetTrustedIdentity",
+      "Effect": "Allow",
+      "Action": [
+        "sts:SetContext"
+      ],
+      "Resource": "arn:aws:sts::*:self"
     }
   ]
 }

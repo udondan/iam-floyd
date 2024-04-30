@@ -10,7 +10,9 @@
         "cloudformation:ExecuteChangeSet",
         "cloudformation:DeleteChangeSet",
         "cloudformation:ListChangeSets",
-        "cloudformation:DescribeStacks"
+        "cloudformation:DescribeStacks",
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/awseb-*",

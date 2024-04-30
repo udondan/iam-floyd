@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowSessionActions",
       "Effect": "Allow",
       "Action": [
         "glue:CreateSession"
@@ -21,6 +22,18 @@
       }
     },
     {
+      "Sid": "AllowCompletionActions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:StartCompletion",
+        "glue:GetCompletion"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:completion/*"
+      ]
+    },
+    {
+      "Sid": "AllowGlueActions",
       "Effect": "Allow",
       "Action": [
         "glue:RunStatement",
@@ -41,6 +54,7 @@
       }
     },
     {
+      "Sid": "AllowListSessions",
       "Effect": "Allow",
       "Action": [
         "glue:ListSessions"
@@ -50,6 +64,7 @@
       ]
     },
     {
+      "Sid": "DenyTagActions",
       "Effect": "Deny",
       "Action": [
         "glue:TagResource",
@@ -69,6 +84,7 @@
       }
     },
     {
+      "Sid": "AllowPassRoleActions",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"

@@ -5724,6 +5724,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.PowerUserAccess);
     }
 
+    /** Grants permissions to AWS Services and Resources used or managed by Amazon Q */
+    public QBusinessServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.QBusinessServiceRolePolicy);
+    }
+
     /** Policy used by QuickSight team to access customer data produced by S3 Storage Management Analytics. */
     public QuickSightAccessForS3StorageManagementAnalyticsReadOnly(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.QuickSightAccessForS3StorageManagementAnalyticsReadOnly);

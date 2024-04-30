@@ -2286,6 +2286,8 @@ export class AwsManagedPolicy {
     public static PartnerCentralAccountManagementUserRoleAssociation = 'PartnerCentralAccountManagementUserRoleAssociation';
     /** Provides full access to AWS services and resources, but does not allow management of Users and groups. */
     public static PowerUserAccess = 'PowerUserAccess';
+    /** Grants permissions to AWS Services and Resources used or managed by Amazon Q */
+    public static QBusinessServiceRolePolicy = 'aws-service-role/QBusinessServiceRolePolicy';
     /** Policy used by QuickSight team to access customer data produced by S3 Storage Management Analytics. */
     public static QuickSightAccessForS3StorageManagementAnalyticsReadOnly = 'service-role/QuickSightAccessForS3StorageManagementAnalyticsReadOnly';
     /** Default policy for the Amazon RDS service role. */
