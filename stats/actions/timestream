@@ -6,6 +6,7 @@ timestream:CreateTable;Write
 timestream:DeleteDatabase;Write
 timestream:DeleteScheduledQuery;Write
 timestream:DeleteTable;Write
+timestream:DescribeAccountSettings;Read
 timestream:DescribeBatchLoadTask;Read
 timestream:DescribeDatabase;Read
 timestream:DescribeEndpoints;List
@@ -29,6 +30,7 @@ timestream:StartAwsRestoreJob;Write
 timestream:TagResource;Tagging
 timestream:Unload;Write
 timestream:UntagResource;Tagging
+timestream:UpdateAccountSettings;Write
 timestream:UpdateDatabase;Write
 timestream:UpdateScheduledQuery;Write
 timestream:UpdateTable;Write

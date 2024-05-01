@@ -46,6 +46,15 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a subscription
+   *
+   * Access Level: Write
+   */
+  public toCancelSubscription() {
+    return this.to('CancelSubscription');
+  }
+
+  /**
    * Grants permission to chat using an application
    *
    * Access Level: Read
@@ -135,6 +144,15 @@ export class Qbusiness extends PolicyStatement {
    */
   public toCreateRetriever() {
     return this.to('CreateRetriever');
+  }
+
+  /**
+   * Grants permission to create a subscription
+   *
+   * Access Level: Write
+   */
+  public toCreateSubscription() {
+    return this.to('CreateSubscription');
   }
 
   /**
@@ -430,6 +448,15 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list subscriptions
+   *
+   * Access Level: List
+   */
+  public toListSubscriptions() {
+    return this.to('ListSubscriptions');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -581,6 +608,15 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a subscription
+   *
+   * Access Level: Write
+   */
+  public toUpdateSubscription() {
+    return this.to('UpdateSubscription');
+  }
+
+  /**
    * Grants permission to update a user
    *
    * Access Level: Write
@@ -603,12 +639,14 @@ export class Qbusiness extends PolicyStatement {
       'AddUserLicenses',
       'BatchDeleteDocument',
       'BatchPutDocument',
+      'CancelSubscription',
       'CreateApplication',
       'CreateDataSource',
       'CreateIndex',
       'CreateLicense',
       'CreatePlugin',
       'CreateRetriever',
+      'CreateSubscription',
       'CreateUser',
       'CreateWebExperience',
       'DeleteApplication',
@@ -632,6 +670,7 @@ export class Qbusiness extends PolicyStatement {
       'UpdateIndex',
       'UpdatePlugin',
       'UpdateRetriever',
+      'UpdateSubscription',
       'UpdateUser',
       'UpdateWebExperience'
     ],
@@ -661,6 +700,7 @@ export class Qbusiness extends PolicyStatement {
       'ListMessages',
       'ListPlugins',
       'ListRetrievers',
+      'ListSubscriptions',
       'ListUserLicenses',
       'ListWebExperiences'
     ],
@@ -777,6 +817,19 @@ export class Qbusiness extends PolicyStatement {
    */
   public onUserLicense(applicationId: string, userLicenseId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/user-license/${ userLicenseId }`);
+  }
+
+  /**
+   * Adds a resource of type subscription to the statement
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param subscriptionId - Identifier for the subscriptionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSubscription(applicationId: string, subscriptionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/subscription/${ subscriptionId }`);
   }
 
   /**

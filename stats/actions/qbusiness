@@ -1,6 +1,7 @@
 qbusiness:AddUserLicenses;Write
 qbusiness:BatchDeleteDocument;Write
 qbusiness:BatchPutDocument;Write
+qbusiness:CancelSubscription;Write
 qbusiness:Chat;Read
 qbusiness:ChatSync;Read
 qbusiness:CreateApplication;Write
@@ -9,6 +10,7 @@ qbusiness:CreateIndex;Write
 qbusiness:CreateLicense;Write
 qbusiness:CreatePlugin;Write
 qbusiness:CreateRetriever;Write
+qbusiness:CreateSubscription;Write
 qbusiness:CreateUser;Write
 qbusiness:CreateWebExperience;Write
 qbusiness:DeleteApplication;Write
@@ -41,6 +43,7 @@ qbusiness:ListIndices;List
 qbusiness:ListMessages;List
 qbusiness:ListPlugins;List
 qbusiness:ListRetrievers;List
+qbusiness:ListSubscriptions;List
 qbusiness:ListTagsForResource;Read
 qbusiness:ListUserLicenses;List
 qbusiness:ListWebExperiences;List
@@ -57,5 +60,6 @@ qbusiness:UpdateDataSource;Write
 qbusiness:UpdateIndex;Write
 qbusiness:UpdatePlugin;Write
 qbusiness:UpdateRetriever;Write
+qbusiness:UpdateSubscription;Write
 qbusiness:UpdateUser;Write
 qbusiness:UpdateWebExperience;Write
