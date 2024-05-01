@@ -1729,6 +1729,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53FullAccess);
     }
 
+    /** This policy grants full access to Amazon Route 53 Profile resources. */
+    public AmazonRoute53ProfilesFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53ProfilesFullAccess);
+    }
+
+    /** This policy grants read-only access to Amazon Route 53 Profile resources. */
+    public AmazonRoute53ProfilesReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53ProfilesReadOnlyAccess);
+    }
+
     /** Provides read only access to all Amazon Route 53 via the AWS Management Console. */
     public AmazonRoute53ReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53ReadOnlyAccess);
