@@ -145,6 +145,20 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe your account settings
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_DescribeAccountSettings.html
+   */
+  public toDescribeAccountSettings() {
+    return this.to('DescribeAccountSettings');
+  }
+
+  /**
    * Grants permission to describe a batch load task in your account
    *
    * Access Level: Read
@@ -477,6 +491,20 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update your account settings
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream:DescribeEndpoints
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_UpdateAccountSettings.html
+   */
+  public toUpdateAccountSettings() {
+    return this.to('UpdateAccountSettings');
+  }
+
+  /**
    * Grants permission to update a database in your account
    *
    * Access Level: Write
@@ -547,12 +575,14 @@ export class Timestream extends PolicyStatement {
       'StartAwsBackupJob',
       'StartAwsRestoreJob',
       'Unload',
+      'UpdateAccountSettings',
       'UpdateDatabase',
       'UpdateScheduledQuery',
       'UpdateTable',
       'WriteRecords'
     ],
     Read: [
+      'DescribeAccountSettings',
       'DescribeBatchLoadTask',
       'DescribeDatabase',
       'DescribeScheduledQuery',

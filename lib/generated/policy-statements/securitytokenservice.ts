@@ -300,6 +300,18 @@ export class Sts extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type self-session to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSelfSession(account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sts::${ account ?? this.defaultAccount }:self`);
+  }
+
+  /**
    * Filters access by the Google application ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
