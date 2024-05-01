@@ -16,7 +16,7 @@
   "dependencies": {
     "@aws-sdk/client-secrets-manager": "^3.511.0",
     "@aws-sdk/client-sqs": "^3.511.0",
-    "@types/node": "20.12.7",
+    "@types/node": "20.12.8",
     "aws-cdk-lib": "2.139.1",
     "constructs": "^10.3.0",
     "esbuild": "^0.20.0",
