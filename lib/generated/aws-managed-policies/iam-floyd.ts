@@ -688,6 +688,10 @@ export class AwsManagedPolicy {
     public static AmazonRoute53DomainsReadOnlyAccess = 'AmazonRoute53DomainsReadOnlyAccess';
     /** Provides full access to all Amazon Route 53 via the AWS Management Console. */
     public static AmazonRoute53FullAccess = 'AmazonRoute53FullAccess';
+    /** This policy grants full access to Amazon Route 53 Profile resources. */
+    public static AmazonRoute53ProfilesFullAccess = 'AmazonRoute53ProfilesFullAccess';
+    /** This policy grants read-only access to Amazon Route 53 Profile resources. */
+    public static AmazonRoute53ProfilesReadOnlyAccess = 'AmazonRoute53ProfilesReadOnlyAccess';
     /** Provides read only access to all Amazon Route 53 via the AWS Management Console. */
     public static AmazonRoute53ReadOnlyAccess = 'AmazonRoute53ReadOnlyAccess';
     /** Provides full access to Amazon Route 53 Recovery Cluster */
