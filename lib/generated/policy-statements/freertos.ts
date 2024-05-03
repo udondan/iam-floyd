@@ -310,9 +310,9 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * A tag key that is present in the request that the user makes to Amazon FreeRTOS
+   * Filters access by tag key present in the request that the user makes to Amazon FreeRTOS
    *
-   * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateSoftwareConfiguration()
@@ -327,9 +327,9 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * The tag key component of a tag attached to an Amazon FreeRTOS resource
+   * Filters access by tag key component attached to an Amazon FreeRTOS resource
    *
-   * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
    * - configuration
@@ -344,9 +344,9 @@ export class Freertos extends PolicyStatement {
   }
 
   /**
-   * The list of all the tag key names associated with the resource in the request
+   * Filters access by the list of all the tag key names associated with the resource in the request
    *
-   * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
    * - .toCreateSoftwareConfiguration()

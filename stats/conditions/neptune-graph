@@ -1,3 +1,4 @@
+neptune-graph:PublicConnectivity
 neptune-graph:RequestTag/${TagKey}
 neptune-graph:ResourceTag/${TagKey}
 neptune-graph:TagKeys
