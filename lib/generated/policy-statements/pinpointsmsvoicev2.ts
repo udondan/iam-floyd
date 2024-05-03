@@ -30,6 +30,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a protect configuration to a configuration set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateProtectConfiguration.html
+   */
+  public toAssociateProtectConfiguration() {
+    return this.to('AssociateProtectConfiguration');
+  }
+
+  /**
    * Grants permission to create a configuration set
    *
    * Access Level: Write
@@ -95,6 +106,24 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public toCreatePool() {
     return this.to('CreatePool');
+  }
+
+  /**
+   * Grants permission to create a protect configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sms-voice:TagResource
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateProtectConfiguration.html
+   */
+  public toCreateProtectConfiguration() {
+    return this.to('CreateProtectConfiguration');
   }
 
   /**
@@ -174,6 +203,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the account default protect configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteAccountDefaultProtectConfiguration.html
+   */
+  public toDeleteAccountDefaultProtectConfiguration() {
+    return this.to('DeleteAccountDefaultProtectConfiguration');
+  }
+
+  /**
    * Grants permission to delete a configuration set
    *
    * Access Level: Write
@@ -229,6 +269,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an override for your account's media messaging monthly spend limit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteMediaMessageSpendLimitOverride.html
+   */
+  public toDeleteMediaMessageSpendLimitOverride() {
+    return this.to('DeleteMediaMessageSpendLimitOverride');
+  }
+
+  /**
    * Grants permission to delete an opt-out list
    *
    * Access Level: Write
@@ -259,6 +310,17 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public toDeletePool() {
     return this.to('DeletePool');
+  }
+
+  /**
+   * Grants permission to delete a protect configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DeleteProtectConfiguration.html
+   */
+  public toDeleteProtectConfiguration() {
+    return this.to('DeleteProtectConfiguration');
   }
 
   /**
@@ -416,6 +478,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the protect configurations in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeProtectConfigurations.html
+   */
+  public toDescribeProtectConfigurations() {
+    return this.to('DescribeProtectConfigurations');
+  }
+
+  /**
    * Grants permission to describe the registration attachments in your account
    *
    * Access Level: Read
@@ -537,6 +610,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a protect configuration from a configuration set
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DisassociateProtectConfiguration.html
+   */
+  public toDisassociateProtectConfiguration() {
+    return this.to('DisassociateProtectConfiguration');
+  }
+
+  /**
    * Grants permission to discard the latest version of a given registration
    *
    * Access Level: Write
@@ -545,6 +629,17 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public toDiscardRegistrationVersion() {
     return this.to('DiscardRegistrationVersion');
+  }
+
+  /**
+   * Grants permission to get the country rule set for a protect configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_GetProtectConfigurationCountryRuleSet.html
+   */
+  public toGetProtectConfigurationCountryRuleSet() {
+    return this.to('GetProtectConfigurationCountryRuleSet');
   }
 
   /**
@@ -688,6 +783,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send a media message to a destination phone number
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SendMediaMessage.html
+   */
+  public toSendMediaMessage() {
+    return this.to('SendMediaMessage');
+  }
+
+  /**
    * Grants permission to send a text message to a destination phone number
    *
    * Access Level: Write
@@ -710,6 +816,17 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set a default protect configuration for the account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetAccountDefaultProtectConfiguration.html
+   */
+  public toSetAccountDefaultProtectConfiguration() {
+    return this.to('SetAccountDefaultProtectConfiguration');
+  }
+
+  /**
    * Grants permission to set the default message type for a configuration set
    *
    * Access Level: Write
@@ -729,6 +846,17 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public toSetDefaultSenderId() {
     return this.to('SetDefaultSenderId');
+  }
+
+  /**
+   * Grants permission to set an override for your account's media messaging monthly spend limit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_SetMediaMessageSpendLimitOverride.html
+   */
+  public toSetMediaMessageSpendLimitOverride() {
+    return this.to('SetMediaMessageSpendLimitOverride');
   }
 
   /**
@@ -836,6 +964,28 @@ export class SmsVoiceV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a protect configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateProtectConfiguration.html
+   */
+  public toUpdateProtectConfiguration() {
+    return this.to('UpdateProtectConfiguration');
+  }
+
+  /**
+   * Grants permission to update a country rule set for a protect configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdateProtectConfigurationCountryRuleSet.html
+   */
+  public toUpdateProtectConfigurationCountryRuleSet() {
+    return this.to('UpdateProtectConfigurationCountryRuleSet');
+  }
+
+  /**
    * Grants permission to update a sender ID's configuration
    *
    * Access Level: Write
@@ -860,23 +1010,28 @@ export class SmsVoiceV2 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateOriginationIdentity',
+      'AssociateProtectConfiguration',
       'CreateConfigurationSet',
       'CreateEventDestination',
       'CreateOptOutList',
       'CreatePool',
+      'CreateProtectConfiguration',
       'CreateRegistration',
       'CreateRegistrationAssociation',
       'CreateRegistrationAttachment',
       'CreateRegistrationVersion',
       'CreateVerifiedDestinationNumber',
+      'DeleteAccountDefaultProtectConfiguration',
       'DeleteConfigurationSet',
       'DeleteDefaultMessageType',
       'DeleteDefaultSenderId',
       'DeleteEventDestination',
       'DeleteKeyword',
+      'DeleteMediaMessageSpendLimitOverride',
       'DeleteOptOutList',
       'DeleteOptedOutNumber',
       'DeletePool',
+      'DeleteProtectConfiguration',
       'DeleteRegistration',
       'DeleteRegistrationAttachment',
       'DeleteRegistrationFieldValue',
@@ -884,6 +1039,7 @@ export class SmsVoiceV2 extends PolicyStatement {
       'DeleteVerifiedDestinationNumber',
       'DeleteVoiceMessageSpendLimitOverride',
       'DisassociateOriginationIdentity',
+      'DisassociateProtectConfiguration',
       'DiscardRegistrationVersion',
       'PutKeyword',
       'PutOptedOutNumber',
@@ -893,16 +1049,21 @@ export class SmsVoiceV2 extends PolicyStatement {
       'RequestPhoneNumber',
       'RequestSenderId',
       'SendDestinationNumberVerificationCode',
+      'SendMediaMessage',
       'SendTextMessage',
       'SendVoiceMessage',
+      'SetAccountDefaultProtectConfiguration',
       'SetDefaultMessageType',
       'SetDefaultSenderId',
+      'SetMediaMessageSpendLimitOverride',
       'SetTextMessageSpendLimitOverride',
       'SetVoiceMessageSpendLimitOverride',
       'SubmitRegistrationVersion',
       'UpdateEventDestination',
       'UpdatePhoneNumber',
       'UpdatePool',
+      'UpdateProtectConfiguration',
+      'UpdateProtectConfigurationCountryRuleSet',
       'UpdateSenderId',
       'VerifyDestinationNumber'
     ],
@@ -915,6 +1076,7 @@ export class SmsVoiceV2 extends PolicyStatement {
       'DescribeOptedOutNumbers',
       'DescribePhoneNumbers',
       'DescribePools',
+      'DescribeProtectConfigurations',
       'DescribeRegistrationAttachments',
       'DescribeRegistrationFieldDefinitions',
       'DescribeRegistrationFieldValues',
@@ -925,6 +1087,7 @@ export class SmsVoiceV2 extends PolicyStatement {
       'DescribeSenderIds',
       'DescribeSpendLimits',
       'DescribeVerifiedDestinationNumbers',
+      'GetProtectConfigurationCountryRuleSet',
       'ListPoolOriginationIdentities',
       'ListRegistrationAssociations',
       'ListTagsForResource'
@@ -1001,6 +1164,23 @@ export class SmsVoiceV2 extends PolicyStatement {
    */
   public onPool(poolId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pool/${ poolId }`);
+  }
+
+  /**
+   * Adds a resource of type ProtectConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ProtectConfiguration.html
+   *
+   * @param protectConfigurationId - Identifier for the protectConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProtectConfiguration(protectConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sms-voice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:protect-configuration/${ protectConfigurationId }`);
   }
 
   /**
@@ -1081,6 +1261,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .toCreateConfigurationSet()
    * - .toCreateOptOutList()
    * - .toCreatePool()
+   * - .toCreateProtectConfiguration()
    * - .toCreateRegistration()
    * - .toCreateRegistrationAttachment()
    * - .toCreateVerifiedDestinationNumber()
@@ -1106,6 +1287,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - OptOutList
    * - PhoneNumber
    * - Pool
+   * - ProtectConfiguration
    * - SenderId
    * - Registration
    * - RegistrationAttachment
@@ -1128,6 +1310,7 @@ export class SmsVoiceV2 extends PolicyStatement {
    * - .toCreateConfigurationSet()
    * - .toCreateOptOutList()
    * - .toCreatePool()
+   * - .toCreateProtectConfiguration()
    * - .toCreateRegistration()
    * - .toCreateRegistrationAttachment()
    * - .toCreateVerifiedDestinationNumber()

@@ -23,7 +23,7 @@ export class NeptuneGraph extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#CancelImportTask
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CancelImportTask.html
    */
   public toCancelImportTask() {
     return this.to('CancelImportTask');
@@ -37,7 +37,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#CancelQuery
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CancelQuery.html
    */
   public toCancelQuery() {
     return this.to('CancelQuery');
@@ -51,6 +51,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifPublicConnectivity()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -58,7 +59,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - kms:Decrypt
    * - kms:DescribeKey
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#CreateGraph
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraph.html
    */
   public toCreateGraph() {
     return this.to('CreateGraph');
@@ -74,7 +75,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#CreateGraphSnapshot
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraphSnapshot.html
    */
   public toCreateGraphSnapshot() {
     return this.to('CreateGraphSnapshot');
@@ -88,6 +89,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifPublicConnectivity()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -96,7 +98,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - kms:Decrypt
    * - kms:DescribeKey
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#CreateGraphUsingImportTask
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraphUsingImportTask.html
    */
   public toCreateGraphUsingImportTask() {
     return this.to('CreateGraphUsingImportTask');
@@ -123,7 +125,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - ec2:ModifyVpcEndpoint
    * - route53:AssociateVPCWithHostedZone
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#CreatePrivateGraphEndpoint
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreatePrivateGraphEndpoint.html
    */
   public toCreatePrivateGraphEndpoint() {
     return this.to('CreatePrivateGraphEndpoint');
@@ -137,7 +139,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#DeleteDataViaQuery
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ExecuteQuery.html
    */
   public toDeleteDataViaQuery() {
     return this.to('DeleteDataViaQuery');
@@ -151,7 +153,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#DeleteGraph
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_DeleteGraph.html
    */
   public toDeleteGraph() {
     return this.to('DeleteGraph');
@@ -165,7 +167,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#DeleteGraphSnapshot
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_DeleteGraphSnapshot.html
    */
   public toDeleteGraphSnapshot() {
     return this.to('DeleteGraphSnapshot');
@@ -190,7 +192,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - ec2:ModifyVpcEndpoint
    * - route53:DisassociateVPCFromHostedZone
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#DeletePrivateGraphEndpoint
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_DeletePrivateGraphEndpoint.html
    */
   public toDeletePrivateGraphEndpoint() {
     return this.to('DeletePrivateGraphEndpoint');
@@ -204,7 +206,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#GetEngineStatus
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/#GetEngineStatus
    */
   public toGetEngineStatus() {
     return this.to('GetEngineStatus');
@@ -218,7 +220,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#GetGraph
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetGraph.html
    */
   public toGetGraph() {
     return this.to('GetGraph');
@@ -232,7 +234,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#GetGraphSnapshot
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetGraphSnapshot.html
    */
   public toGetGraphSnapshot() {
     return this.to('GetGraphSnapshot');
@@ -246,7 +248,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#GetGraphSummary
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetGraphSummary.html
    */
   public toGetGraphSummary() {
     return this.to('GetGraphSummary');
@@ -257,7 +259,7 @@ export class NeptuneGraph extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#GetImportTask
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetImportTask.html
    */
   public toGetImportTask() {
     return this.to('GetImportTask');
@@ -271,7 +273,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#GetPrivateGraphEndpoint
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetPrivateGraphEndpoint.html
    */
   public toGetPrivateGraphEndpoint() {
     return this.to('GetPrivateGraphEndpoint');
@@ -285,7 +287,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#GetQueryStatus
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetQuery.html
    */
   public toGetQueryStatus() {
     return this.to('GetQueryStatus');
@@ -299,7 +301,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#GetStatisticsStatus
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/#GetStatisticsStatus
    */
   public toGetStatisticsStatus() {
     return this.to('GetStatisticsStatus');
@@ -310,7 +312,7 @@ export class NeptuneGraph extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#ListGraphSnapshots
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListGraphSnapshots.html
    */
   public toListGraphSnapshots() {
     return this.to('ListGraphSnapshots');
@@ -321,7 +323,7 @@ export class NeptuneGraph extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#ListGraphs
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListGraphs.html
    */
   public toListGraphs() {
     return this.to('ListGraphs');
@@ -332,7 +334,7 @@ export class NeptuneGraph extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#ListImportTasks
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListImportTasks.html
    */
   public toListImportTasks() {
     return this.to('ListImportTasks');
@@ -346,7 +348,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#ListPrivateGraphEndpoints
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListPrivateGraphEndpoints.html
    */
   public toListPrivateGraphEndpoints() {
     return this.to('ListPrivateGraphEndpoints');
@@ -360,7 +362,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#ListQueries
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListQueries.html
    */
   public toListQueries() {
     return this.to('ListQueries');
@@ -374,7 +376,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#ListTagsForResource
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -388,7 +390,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#ReadDataViaQuery
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ExecuteQuery.html
    */
   public toReadDataViaQuery() {
     return this.to('ReadDataViaQuery');
@@ -402,7 +404,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#ResetGraph
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ResetGraph.html
    */
   public toResetGraph() {
     return this.to('ResetGraph');
@@ -417,13 +419,14 @@ export class NeptuneGraph extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifPublicConnectivity()
    *
    * Dependent actions:
    * - kms:CreateGrant
    * - kms:Decrypt
    * - kms:DescribeKey
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#RestoreGraphFromSnapshot
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_RestoreGraphFromSnapshot.html
    */
   public toRestoreGraphFromSnapshot() {
     return this.to('RestoreGraphFromSnapshot');
@@ -437,7 +440,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#StartImportTask
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartImportTask.html
    */
   public toStartImportTask() {
     return this.to('StartImportTask');
@@ -452,7 +455,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#TagResource
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -466,7 +469,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#UntagResource
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -479,8 +482,9 @@ export class NeptuneGraph extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifPublicConnectivity()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#UpdateGraph
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_UpdateGraph.html
    */
   public toUpdateGraph() {
     return this.to('UpdateGraph');
@@ -494,7 +498,7 @@ export class NeptuneGraph extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-actions.html#WriteDataViaQuery
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ExecuteQuery.html
    */
   public toWriteDataViaQuery() {
     return this.to('WriteDataViaQuery');
@@ -592,7 +596,7 @@ export class NeptuneGraph extends PolicyStatement {
   /**
    * Filters access by a tag's key and value in a request
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/reference_policies_condition-keys.html#condition-keys-requesttag
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateGraph()
@@ -613,7 +617,7 @@ export class NeptuneGraph extends PolicyStatement {
   /**
    * Filters access by the presence of tag key-value pairs in the request
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
    * - .toCancelQuery()
@@ -654,7 +658,7 @@ export class NeptuneGraph extends PolicyStatement {
   /**
    * Filters access by the tag keys in a request
    *
-   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
    * - .toCreateGraph()
@@ -670,5 +674,22 @@ export class NeptuneGraph extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the value of the public connectivity parameter provided in the request or its default value, if unspecified. All access to graphs is IAM authenticated
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-condition-keys.html#publicconnectivity
+   *
+   * Applies to actions:
+   * - .toCreateGraph()
+   * - .toCreateGraphUsingImportTask()
+   * - .toRestoreGraphFromSnapshot()
+   * - .toUpdateGraph()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifPublicConnectivity(value?: boolean) {
+    return this.if(`PublicConnectivity`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }
