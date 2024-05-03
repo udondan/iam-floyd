@@ -178,6 +178,7 @@
         "ec2:DescribeDhcpOptions",
         "ec2:DescribeImages",
         "ec2:DescribeInstances",
+        "ec2:DescribeInstanceTypeOfferings",
         "ec2:DescribeLaunchTemplates",
         "ec2:DescribeNetworkAcls",
         "ec2:DescribeNetworkInterfaces",

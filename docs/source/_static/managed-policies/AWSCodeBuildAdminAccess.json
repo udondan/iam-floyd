@@ -76,7 +76,10 @@
         "codestar-connections:StartOAuthHandshake",
         "codestar-connections:UseConnection"
       ],
-      "Resource": "arn:aws:codestar-connections:*:*:connection/*"
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ]
     },
     {
       "Sid": "CodeStarNotificationsReadWriteAccess",
