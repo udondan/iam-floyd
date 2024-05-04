@@ -19,9 +19,13 @@
       "Sid": "AccessArtifactRepositories",
       "Effect": "Allow",
       "Action": [
-        "codestar-connections:UseConnection"
+        "codestar-connections:UseConnection",
+        "codeconnections:UseConnection"
       ],
-      "Resource": "arn:aws:codestar-connections:*:*:connection/*"
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ]
     },
     {
       "Sid": "ValidateTemplate",
