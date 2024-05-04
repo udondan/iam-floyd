@@ -659,8 +659,11 @@
         "glue:BatchCreatePartition",
         "glue:CreatePartitionIndex",
         "glue:CreateTable",
+        "glue:BatchGetWorkflows",
         "glue:BatchUpdatePartition",
         "glue:BatchDeletePartition",
+        "glue:GetPartition",
+        "glue:GetPartitions",
         "glue:UpdateTable",
         "glue:DeleteTableVersion",
         "glue:DeleteTable",
@@ -679,8 +682,16 @@
         "glue:CreateConnection",
         "glue:CreateCrawler",
         "glue:CreateDataQualityRuleset",
+        "glue:CreateWorkflow",
         "glue:GetDatabases",
-        "glue:GetTables"
+        "glue:GetTables",
+        "glue:GetTable",
+        "glue:SearchTables",
+        "glue:NotifyEvent",
+        "glue:ListSchemas",
+        "glue:BatchGetJobs",
+        "glue:GetConnection",
+        "glue:GetDatabase"
       ],
       "Resource": [
         "*"
