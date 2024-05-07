@@ -1464,6 +1464,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonOpenSearchDashboardsServiceRolePolicy);
     }
 
+    /** Allows OpenSearch DirectQuery Service to access AWS Glue APIs for creating resources on your behalf. */
+    public AmazonOpenSearchDirectQueryGlueCreateAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonOpenSearchDirectQueryGlueCreateAccess);
+    }
+
     /** Allows Amazon OpenSearch Ingestion to access other AWS services on your behalf. */
     public AmazonOpenSearchIngestionFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonOpenSearchIngestionFullAccess);
