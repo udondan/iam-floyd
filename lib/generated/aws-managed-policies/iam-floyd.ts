@@ -582,6 +582,8 @@ export class AwsManagedPolicy {
     public static AmazonOneEnterpriseReadOnlyAccess = 'AmazonOneEnterpriseReadOnlyAccess';
     /** Provides access to Amazon OpenSearch Dashboards Service to access other AWS services such as CloudWatch on your behalf */
     public static AmazonOpenSearchDashboardsServiceRolePolicy = 'aws-service-role/AmazonOpenSearchDashboardsServiceRolePolicy';
+    /** Allows OpenSearch DirectQuery Service to access AWS Glue APIs for creating resources on your behalf. */
+    public static AmazonOpenSearchDirectQueryGlueCreateAccess = 'AmazonOpenSearchDirectQueryGlueCreateAccess';
     /** Allows Amazon OpenSearch Ingestion to access other AWS services on your behalf. */
     public static AmazonOpenSearchIngestionFullAccess = 'AmazonOpenSearchIngestionFullAccess';
     /** Provides read only access to the Amazon OpenSearch Ingestion Service */
