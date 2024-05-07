@@ -33,6 +33,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to federate into an Amazon Connect instance (Log in for emergency access functionality in the Amazon Connect console)
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - connect:DescribeInstance
+   * - connect:ListInstances
+   * - ds:DescribeDirectories
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
+   */
+  public toAdminGetEmergencyAccessToken() {
+    return this.to('AdminGetEmergencyAccessToken');
+  }
+
+  /**
    * Grants permission to associate approved origin for an existing Amazon Connect instance
    *
    * Access Level: Write
@@ -1757,22 +1773,6 @@ export class Connect extends PolicyStatement {
    */
   public toGetFederationToken() {
     return this.to('GetFederationToken');
-  }
-
-  /**
-   * Grants permission to federate into an Amazon Connect instance (Log in for emergency access functionality in the Amazon Connect console)
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - connect:DescribeInstance
-   * - connect:ListInstances
-   * - ds:DescribeDirectories
-   *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
-   */
-  public toGetFederationTokens() {
-    return this.to('GetFederationTokens');
   }
 
   /**
@@ -3758,6 +3758,7 @@ export class Connect extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateEvaluationForm',
+      'AdminGetEmergencyAccessToken',
       'AssociateApprovedOrigin',
       'AssociateBot',
       'AssociateCustomerProfilesDomain',
@@ -3837,7 +3838,6 @@ export class Connect extends PolicyStatement {
       'DisassociateTrafficDistributionGroupUser',
       'DisassociateUserProficiencies',
       'DismissUserContact',
-      'GetFederationTokens',
       'ImportPhoneNumber',
       'MonitorContact',
       'PauseContact',

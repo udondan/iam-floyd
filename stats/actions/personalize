@@ -1,6 +1,7 @@
 personalize:CreateBatchInferenceJob;Write
 personalize:CreateBatchSegmentJob;Write
 personalize:CreateCampaign;Write
+personalize:CreateDataDeletionJob;Write
 personalize:CreateDataInsightsJob;Write
 personalize:CreateDataset;Write
 personalize:CreateDatasetExportJob;Write
@@ -26,6 +27,7 @@ personalize:DescribeAlgorithm;Read
 personalize:DescribeBatchInferenceJob;Read
 personalize:DescribeBatchSegmentJob;Read
 personalize:DescribeCampaign;Read
+personalize:DescribeDataDeletionJob;Read
 personalize:DescribeDataInsightsJob;Read
 personalize:DescribeDataset;Read
 personalize:DescribeDatasetExportJob;Read
@@ -48,6 +50,7 @@ personalize:GetSolutionMetrics;Read
 personalize:ListBatchInferenceJobs;List
 personalize:ListBatchSegmentJobs;List
 personalize:ListCampaigns;List
+personalize:ListDataDeletionJobs;List
 personalize:ListDataInsightsJobs;List
 personalize:ListDatasetExportJobs;List
 personalize:ListDatasetGroups;List

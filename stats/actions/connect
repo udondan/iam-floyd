@@ -1,4 +1,5 @@
 connect:ActivateEvaluationForm;Write
+connect:AdminGetEmergencyAccessToken;Write
 connect:AssociateApprovedOrigin;Write
 connect:AssociateBot;Write
 connect:AssociateCustomerProfilesDomain;Write
@@ -108,7 +109,6 @@ connect:GetContactAttributes;Read
 connect:GetCurrentMetricData;Read
 connect:GetCurrentUserData;Read
 connect:GetFederationToken;Read
-connect:GetFederationTokens;Write
 connect:GetFlowAssociation;Read
 connect:GetMetricData;Read
 connect:GetMetricDataV2;Read

@@ -52,6 +52,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a data deletion job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataDeletionJob.html
+   */
+  public toCreateDataDeletionJob() {
+    return this.to('CreateDataDeletionJob');
+  }
+
+  /**
    * Grants permission to create a data insights job
    *
    * Access Level: Write
@@ -327,6 +338,17 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a data deletion job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html
+   */
+  public toDescribeDataDeletionJob() {
+    return this.to('DescribeDataDeletionJob');
+  }
+
+  /**
    * Grants permission to describe a data insights job
    *
    * Access Level: Read
@@ -566,6 +588,17 @@ export class Personalize extends PolicyStatement {
    */
   public toListCampaigns() {
     return this.to('ListCampaigns');
+  }
+
+  /**
+   * Grants permission to list data deletion jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_ListDataDeletionJobs.html
+   */
+  public toListDataDeletionJobs() {
+    return this.to('ListDataDeletionJobs');
   }
 
   /**
@@ -892,6 +925,7 @@ export class Personalize extends PolicyStatement {
       'CreateBatchInferenceJob',
       'CreateBatchSegmentJob',
       'CreateCampaign',
+      'CreateDataDeletionJob',
       'CreateDataInsightsJob',
       'CreateDataset',
       'CreateDatasetExportJob',
@@ -931,6 +965,7 @@ export class Personalize extends PolicyStatement {
       'DescribeBatchInferenceJob',
       'DescribeBatchSegmentJob',
       'DescribeCampaign',
+      'DescribeDataDeletionJob',
       'DescribeDataInsightsJob',
       'DescribeDataset',
       'DescribeDatasetExportJob',
@@ -955,6 +990,7 @@ export class Personalize extends PolicyStatement {
       'ListBatchInferenceJobs',
       'ListBatchSegmentJobs',
       'ListCampaigns',
+      'ListDataDeletionJobs',
       'ListDataInsightsJobs',
       'ListDatasetExportJobs',
       'ListDatasetGroups',
@@ -1073,6 +1109,20 @@ export class Personalize extends PolicyStatement {
    */
   public onDatasetExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset-export-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type dataDeletionJob to the statement
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_DataDeletionJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDataDeletionJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-deletion-job/${ resourceId }`);
   }
 
   /**
