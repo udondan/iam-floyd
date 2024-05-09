@@ -211,6 +211,9 @@ export class Deadline extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - deadline:TagResource
+   *
    * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateFarm.html
    */
   public toCreateFarm() {
@@ -227,6 +230,7 @@ export class Deadline extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - deadline:TagResource
    * - iam:PassRole
    * - identitystore:ListGroupMembershipsForMember
    * - logs:CreateLogGroup
@@ -261,6 +265,7 @@ export class Deadline extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - deadline:TagResource
    * - ec2:CreateTags
    * - ec2:CreateVpcEndpoint
    * - ec2:DescribeVpcEndpoints
@@ -300,6 +305,7 @@ export class Deadline extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - deadline:TagResource
    * - iam:PassRole
    * - identitystore:ListGroupMembershipsForMember
    * - logs:CreateLogGroup
@@ -1626,7 +1632,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type budget to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_Budget.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/manage-costs.html
    *
    * @param farmId - Identifier for the farmId.
    * @param budgetId - Identifier for the budgetId.
@@ -1644,7 +1650,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type farm to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_Farm.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/farms.html
    *
    * @param farmId - Identifier for the farmId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1662,7 +1668,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type fleet to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_Fleet.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/manage-fleets.html
    *
    * @param farmId - Identifier for the farmId.
    * @param fleetId - Identifier for the fleetId.
@@ -1682,7 +1688,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type job to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_Job.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html
    *
    * @param farmId - Identifier for the farmId.
    * @param queueId - Identifier for the queueId.
@@ -1703,7 +1709,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type license-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_LicenseEndpoint.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/cmf-ubl.html
    *
    * @param licenseEndpointId - Identifier for the licenseEndpointId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1720,7 +1726,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type metered-product to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_MeteredProduct.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/cmf-ubl.html
    *
    * @param licenseEndpointId - Identifier for the licenseEndpointId.
    * @param productId - Identifier for the productId.
@@ -1735,7 +1741,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type monitor to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_Monitor.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/working-with-deadline-monitor.html
    *
    * @param monitorId - Identifier for the monitorId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1749,7 +1755,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type queue to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_Queue.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/queues.html
    *
    * @param farmId - Identifier for the farmId.
    * @param queueId - Identifier for the queueId.
@@ -1769,7 +1775,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Adds a resource of type worker to the statement
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_Worker.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam.html
    *
    * @param farmId - Identifier for the farmId.
    * @param fleetId - Identifier for the fleetId.

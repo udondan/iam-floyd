@@ -1169,7 +1169,7 @@ export class SmsVoiceV2 extends PolicyStatement {
   /**
    * Adds a resource of type ProtectConfiguration to the statement
    *
-   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_ProtectConfiguration.html
+   * https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_CreateProtectConfiguration.html
    *
    * @param protectConfigurationId - Identifier for the protectConfigurationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

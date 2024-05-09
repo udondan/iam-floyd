@@ -1,3 +1,4 @@
+trustedadvisor:BatchUpdateRecommendationResourceExclusion;Write
 trustedadvisor:CreateEngagement;Write
 trustedadvisor:CreateEngagementAttachment;Write
 trustedadvisor:CreateEngagementCommunication;Write

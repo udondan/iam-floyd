@@ -19,6 +19,17 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update one or more exclusion status for a list of recommendation resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor-api.html
+   */
+  public toBatchUpdateRecommendationResourceExclusion() {
+    return this.to('BatchUpdateRecommendationResourceExclusion');
+  }
+
+  /**
    * Grants permission to create an engagement
    *
    * Access Level: Write
@@ -581,6 +592,7 @@ export class Trustedadvisor extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'BatchUpdateRecommendationResourceExclusion',
       'CreateEngagement',
       'CreateEngagementAttachment',
       'CreateEngagementCommunication',

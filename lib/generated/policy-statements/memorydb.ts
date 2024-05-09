@@ -104,6 +104,7 @@ export class Memorydb extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifTLSEnabled()
    *
    * Dependent actions:
    * - ec2:CreateNetworkInterface
@@ -186,6 +187,7 @@ export class Memorydb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifUserAuthenticationMode()
    *
    * Dependent actions:
    * - memorydb:TagResource
@@ -633,6 +635,7 @@ export class Memorydb extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifUserAuthenticationMode()
    *
    * https://docs.aws.amazon.com/memorydb/latest/APIReference/API_UpdateUser.html
    */
@@ -909,5 +912,35 @@ export class Memorydb extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the TLSEnabled parameter present in the request or defaults to true value if parameter is not present
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/devguide/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifTLSEnabled(value?: boolean) {
+    return this.if(`TLSEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the UserAuthenticationMode.Type parameter in the request
+   *
+   * https://docs.aws.amazon.com/memorydb/latest/devguide/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateUser()
+   * - .toUpdateUser()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserAuthenticationMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserAuthenticationMode`, value, operator ?? 'StringLike');
   }
 }
