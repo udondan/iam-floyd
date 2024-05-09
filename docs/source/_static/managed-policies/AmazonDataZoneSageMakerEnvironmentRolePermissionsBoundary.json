@@ -914,7 +914,8 @@
       "Sid": "AllowSSOAction",
       "Effect": "Allow",
       "Action": [
-        "sso:CreateApplicationAssignment"
+        "sso:CreateApplicationAssignment",
+        "sso:AssociateProfile"
       ],
       "Resource": "*"
     },
@@ -1177,7 +1178,8 @@
         "states:StopExecution",
         "states:UpdateStateMachine",
         "tag:GetResources",
-        "sso:CreateApplicationAssignment"
+        "sso:CreateApplicationAssignment",
+        "sso:AssociateProfile"
       ],
       "Resource": "*"
     }
