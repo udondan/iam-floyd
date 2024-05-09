@@ -1,3 +1,5 @@
 memorydb:RequestTag/${TagKey}
 memorydb:ResourceTag/${TagKey}
+memorydb:TLSEnabled
 memorydb:TagKeys
+memorydb:UserAuthenticationMode

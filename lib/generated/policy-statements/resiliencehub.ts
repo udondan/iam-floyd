@@ -338,6 +338,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resource drifts that were detected while running an assessment
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAppAssessmentResourceDrifts.html
+   */
+  public toListAppAssessmentResourceDrifts() {
+    return this.to('ListAppAssessmentResourceDrifts');
+  }
+
+  /**
    * Grants permission to list application assessment
    *
    * Access Level: List
@@ -724,6 +735,7 @@ export class Resiliencehub extends PolicyStatement {
     List: [
       'ListAlarmRecommendations',
       'ListAppAssessmentComplianceDrifts',
+      'ListAppAssessmentResourceDrifts',
       'ListAppAssessments',
       'ListAppComponentCompliances',
       'ListAppComponentRecommendations',

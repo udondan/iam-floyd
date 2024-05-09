@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [budgets](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbudgetservice.html).
@@ -19,14 +19,19 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create and define a response that you can configure to execute once your budget has exceeded a specific budget threshold
+   * Grants permission to configure a response that executes once your budget exceeds a specific budget threshold. Creating a budget action with tags also requires the 'budgets:TagResource' permission
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudgetAction.html
    */
   public toCreateBudgetAction() {
     return this.to('CreateBudgetAction');
@@ -37,7 +42,7 @@ export class Budgets extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DeleteBudgetAction.html
    */
   public toDeleteBudgetAction() {
     return this.to('DeleteBudgetAction');
@@ -48,7 +53,7 @@ export class Budgets extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgetAction.html
    */
   public toDescribeBudgetAction() {
     return this.to('DescribeBudgetAction');
@@ -59,7 +64,7 @@ export class Budgets extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgetActionHistories.html
    */
   public toDescribeBudgetActionHistories() {
     return this.to('DescribeBudgetActionHistories');
@@ -70,7 +75,7 @@ export class Budgets extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgetActionsForAccount.html
    */
   public toDescribeBudgetActionsForAccount() {
     return this.to('DescribeBudgetActionsForAccount');
@@ -81,7 +86,7 @@ export class Budgets extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgetActionsForBudget.html
    */
   public toDescribeBudgetActionsForBudget() {
     return this.to('DescribeBudgetActionsForBudget');
@@ -92,21 +97,61 @@ export class Budgets extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_ExecuteBudgetAction.html
    */
   public toExecuteBudgetAction() {
     return this.to('ExecuteBudgetAction');
   }
 
   /**
-   * Grants permission to modify budgets and budget details
+   * Grants permission to view resource tags for a budget or budget action
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to create and modify budgets, and edit budget details. Creating a budget with tags also requires the 'budgets:TagResource' permission
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Operations_AWS_Budgets.html
    */
   public toModifyBudget() {
     return this.to('ModifyBudget');
+  }
+
+  /**
+   * Grants permission to apply resource tags to a budget or budget action. Also needed to create a budget or budget action with tags
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove resource tags from a budget or budget action
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -117,7 +162,7 @@ export class Budgets extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudgetAction.html
    */
   public toUpdateBudgetAction() {
     return this.to('UpdateBudgetAction');
@@ -128,7 +173,7 @@ export class Budgets extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Operations_AWS_Budgets.html
    */
   public toViewBudget() {
     return this.to('ViewBudget');
@@ -147,18 +192,28 @@ export class Budgets extends PolicyStatement {
       'DescribeBudgetActionHistories',
       'DescribeBudgetActionsForAccount',
       'DescribeBudgetActionsForBudget',
+      'ListTagsForResource',
       'ViewBudget'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
   /**
    * Adds a resource of type budget to the statement
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html
+   * https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html
    *
    * @param budgetName - Identifier for the budgetName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onBudget(budgetName: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:budgets::${ account ?? this.defaultAccount }:budget/${ budgetName }`);
@@ -167,14 +222,81 @@ export class Budgets extends PolicyStatement {
   /**
    * Adds a resource of type budgetAction to the statement
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html
+   * https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-controls.html
    *
    * @param budgetName - Identifier for the budgetName.
    * @param actionId - Identifier for the actionId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
   public onBudgetAction(budgetName: string, actionId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:budgets::${ account ?? this.defaultAccount }:budget/${ budgetName }/action/${ actionId }`);
+  }
+
+  /**
+   * Filters access based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateBudgetAction()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - budget
+   * - budgetAction
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateBudgetAction()
+   *
+   * Applies to resource types:
+   * - budget
+   * - budgetAction
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateBudgetAction()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - budget
+   * - budgetAction
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }
