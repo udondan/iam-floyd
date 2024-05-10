@@ -1,1 +1,2 @@
 vpc-lattice-svcs:Service
+vpc-lattice-svcs:TCP Service
