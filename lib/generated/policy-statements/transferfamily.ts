@@ -550,6 +550,17 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate a list operation on a remote server using a connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_StartDirectoryListing.html
+   */
+  public toStartDirectoryListing() {
+    return this.to('StartDirectoryListing');
+  }
+
+  /**
    * Grants permission to initiate a connector file transfer
    *
    * Access Level: Write
@@ -759,6 +770,7 @@ export class Transfer extends PolicyStatement {
       'ImportHostKey',
       'ImportSshPublicKey',
       'SendWorkflowStepState',
+      'StartDirectoryListing',
       'StartFileTransfer',
       'StartServer',
       'StopServer',

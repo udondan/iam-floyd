@@ -42,6 +42,7 @@ transfer:ListTagsForResource;Read
 transfer:ListUsers;List
 transfer:ListWorkflows;List
 transfer:SendWorkflowStepState;Write
+transfer:StartDirectoryListing;Write
 transfer:StartFileTransfer;Write
 transfer:StartServer;Write
 transfer:StopServer;Write

@@ -19,6 +19,24 @@ export class VpcLatticeSvcs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to connect to a VPC Lattice service
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPort()
+   * - .ifServiceNetworkArn()
+   * - .ifServiceArn()
+   * - .ifSourceVpc()
+   * - .ifSourceVpcOwnerAccount()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/sigv4-authenticated-requests.html
+   */
+  public toConnect() {
+    return this.to('Connect');
+  }
+
+  /**
    * Grants permission to invoke a VPC Lattice service
    *
    * Access Level: Write
@@ -40,6 +58,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'Connect',
       'Invoke'
     ]
   };
@@ -60,11 +79,26 @@ export class VpcLatticeSvcs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type TCP Service to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html
+   *
+   * @param serviceId - Identifier for the serviceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTCPService(serviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }`);
+  }
+
+  /**
    * Filters access by the destination port the request is made to
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
+   * - .toConnect()
    * - .toInvoke()
    *
    * @param value The value(s) to check
@@ -124,6 +158,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
+   * - .toConnect()
    * - .toInvoke()
    *
    * @param value The value(s) to check
@@ -139,6 +174,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
+   * - .toConnect()
    * - .toInvoke()
    *
    * @param value The value(s) to check
@@ -154,6 +190,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
+   * - .toConnect()
    * - .toInvoke()
    *
    * @param value The value(s) to check
@@ -169,6 +206,7 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
    * Applies to actions:
+   * - .toConnect()
    * - .toInvoke()
    *
    * @param value The value(s) to check

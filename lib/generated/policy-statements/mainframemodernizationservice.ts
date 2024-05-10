@@ -286,6 +286,17 @@ export class M2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a batch job execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/m2/latest/APIReference/API_ListBatchJobRestartPoints.html
+   */
+  public toListBatchJobRestartPoints() {
+    return this.to('ListBatchJobRestartPoints');
+  }
+
+  /**
    * Grants permission to list data set import history
    *
    * Access Level: Read
@@ -467,6 +478,7 @@ export class M2 extends PolicyStatement {
       'ListApplicationVersions',
       'ListBatchJobDefinitions',
       'ListBatchJobExecutions',
+      'ListBatchJobRestartPoints',
       'ListDataSetImportHistory',
       'ListDataSets',
       'ListDeployments',
