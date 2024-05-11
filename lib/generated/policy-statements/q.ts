@@ -19,6 +19,28 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a user or group assignment for an Amazon Q Developer Profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   */
+  public toCreateAssignment() {
+    return this.to('CreateAssignment');
+  }
+
+  /**
+   * Grants permission to delete a user or group assignment for an Amazon Q Developer Profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   */
+  public toDeleteAssignment() {
+    return this.to('DeleteAssignment');
+  }
+
+  /**
    * Grants permission to get individual messages associated with a specific conversation with Amazon Q
    *
    * Access Level: Read
@@ -129,19 +151,21 @@ export class Q extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    Read: [
-      'GetConversation',
-      'GetIdentityMetadata',
-      'GetTroubleshootingResults',
-      'ListConversations'
-    ],
     Write: [
+      'CreateAssignment',
+      'DeleteAssignment',
       'PassRequest',
       'SendMessage',
       'StartConversation',
       'StartTroubleshootingAnalysis',
       'StartTroubleshootingResolutionExplanation',
       'UpdateTroubleshootingCommandResult'
+    ],
+    Read: [
+      'GetConversation',
+      'GetIdentityMetadata',
+      'GetTroubleshootingResults',
+      'ListConversations'
     ]
   };
 }
