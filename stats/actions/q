@@ -1,3 +1,5 @@
+q:CreateAssignment;Write
+q:DeleteAssignment;Write
 q:GetConversation;Read
 q:GetIdentityMetadata;Read
 q:GetTroubleshootingResults;Read

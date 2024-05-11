@@ -9,12 +9,15 @@ ssm-sap:GetResourcePermission;Read
 ssm-sap:ListApplications;List
 ssm-sap:ListComponents;List
 ssm-sap:ListDatabases;List
+ssm-sap:ListOperationEvents;List
 ssm-sap:ListOperations;List
 ssm-sap:ListTagsForResource;Read
 ssm-sap:PutResourcePermission;Write
 ssm-sap:RegisterApplication;Write
 ssm-sap:RestoreDatabase;Write
+ssm-sap:StartApplication;Write
 ssm-sap:StartApplicationRefresh;Write
+ssm-sap:StopApplication;Write
 ssm-sap:TagResource;Tagging
 ssm-sap:UntagResource;Tagging
 ssm-sap:UpdateApplicationSettings;Write

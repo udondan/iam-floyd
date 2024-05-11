@@ -140,6 +140,17 @@ export class SsmSap extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of all operation events in a specified operation
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toListOperationEvents() {
+    return this.to('ListOperationEvents');
+  }
+
+  /**
    * Grants permission to retrieve a list of all operations in the account of customer, additional filters can be applied
    *
    * Access Level: List
@@ -199,6 +210,17 @@ export class SsmSap extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a registered SSM for SAP application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toStartApplication() {
+    return this.to('StartApplication');
+  }
+
+  /**
    * Grants permission to start an on-demand discovery of a registered SSM for SAP application
    *
    * Access Level: Write
@@ -207,6 +229,17 @@ export class SsmSap extends PolicyStatement {
    */
   public toStartApplicationRefresh() {
     return this.to('StartApplicationRefresh');
+  }
+
+  /**
+   * Grants permission to stop a registered SSM for SAP application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toStopApplication() {
+    return this.to('StopApplication');
   }
 
   /**
@@ -268,7 +301,9 @@ export class SsmSap extends PolicyStatement {
       'PutResourcePermission',
       'RegisterApplication',
       'RestoreDatabase',
+      'StartApplication',
       'StartApplicationRefresh',
+      'StopApplication',
       'UpdateApplicationSettings',
       'UpdateHANABackupSettings'
     ],
@@ -284,6 +319,7 @@ export class SsmSap extends PolicyStatement {
       'ListApplications',
       'ListComponents',
       'ListDatabases',
+      'ListOperationEvents',
       'ListOperations'
     ],
     Tagging: [
