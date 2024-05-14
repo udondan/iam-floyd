@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonLexReadOnlyStatement1",
       "Effect": "Allow",
       "Action": [
         "lex:GetBot",
@@ -26,6 +27,7 @@
         "lex:DescribeBotChannel",
         "lex:DescribeBotLocale",
         "lex:DescribeBotRecommendation",
+        "lex:DescribeBotReplica",
         "lex:DescribeBotVersion",
         "lex:DescribeExport",
         "lex:DescribeImport",
@@ -36,9 +38,12 @@
         "lex:ListBots",
         "lex:ListBotLocales",
         "lex:ListBotAliases",
+        "lex:ListBotAliasReplicas",
         "lex:ListBotChannels",
         "lex:ListBotRecommendations",
+        "lex:ListBotReplicas",
         "lex:ListBotVersions",
+        "lex:ListBotVersionReplicas",
         "lex:ListBuiltInIntents",
         "lex:ListBuiltInSlotTypes",
         "lex:ListExports",

@@ -5424,6 +5424,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DynamoDBReplicationServiceRolePolicy);
     }
 
+    /** This policy grants full access to EC2 Fast Launch actions */
+    public EC2FastLaunchFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.EC2FastLaunchFullAccess);
+    }
+
     /** Policy grants ec2fastlaunch to prepare and manage preprovisioned snapshots in customer's account & publish related metrics. */
     public EC2FastLaunchServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.EC2FastLaunchServiceRolePolicy);
