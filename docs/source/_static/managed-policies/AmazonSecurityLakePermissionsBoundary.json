@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowActionsForSecurityLake",
       "Effect": "Allow",
       "Action": [
         "s3:GetObject",
@@ -23,6 +24,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "DenyActionsForSecurityLake",
       "Effect": "Deny",
       "NotAction": [
         "s3:GetObject",
@@ -44,6 +46,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "DenyActionsNotOnSecurityLakeBucket",
       "Effect": "Deny",
       "Action": [
         "s3:GetObject",
@@ -58,6 +61,7 @@
       ]
     },
     {
+      "Sid": "DenyActionsNotOnSecurityLakeSQS",
       "Effect": "Deny",
       "Action": [
         "sqs:ReceiveMessage",
@@ -71,6 +75,7 @@
       "NotResource": "arn:aws:sqs:*:*:AmazonSecurityLake*"
     },
     {
+      "Sid": "DenyActionsNotOnSecurityLakeKMSS3SQS",
       "Effect": "Deny",
       "Action": [
         "kms:Decrypt",
@@ -87,6 +92,7 @@
       }
     },
     {
+      "Sid": "DenyActionsNotOnSecurityLakeKMSForS3",
       "Effect": "Deny",
       "Action": [
         "kms:Decrypt",
@@ -105,6 +111,7 @@
       }
     },
     {
+      "Sid": "DenyActionsNotOnSecurityLakeKMSForS3SQS",
       "Effect": "Deny",
       "Action": [
         "kms:Decrypt",
