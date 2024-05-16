@@ -56,3 +56,4 @@ events:UpdateApiDestination;Write
 events:UpdateArchive;Write
 events:UpdateConnection;Write
 events:UpdateEndpoint;Write
+events:UpdateEventBus;Write

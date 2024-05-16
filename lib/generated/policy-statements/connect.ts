@@ -315,6 +315,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get metadata for multiple attached files from an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchGetAttachedFileMetadata.html
+   */
+  public toBatchGetAttachedFileMetadata() {
+    return this.to('BatchGetAttachedFileMetadata');
+  }
+
+  /**
    * Grants permission to get summary information about the flow associations for the specified Amazon Connect instance
    *
    * Access Level: List
@@ -357,6 +373,22 @@ export class Connect extends PolicyStatement {
    */
   public toClaimPhoneNumber() {
     return this.to('ClaimPhoneNumber');
+  }
+
+  /**
+   * Grants permission to complete an attached file upload in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CompleteAttachedFileUpload.html
+   */
+  public toCompleteAttachedFileUpload() {
+    return this.to('CompleteAttachedFileUpload');
   }
 
   /**
@@ -778,6 +810,25 @@ export class Connect extends PolicyStatement {
    */
   public toDeactivateEvaluationForm() {
     return this.to('DeactivateEvaluationForm');
+  }
+
+  /**
+   * Grants permission to delete an attached file from an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * Dependent actions:
+   * - cases:DeleteRelatedItem
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html
+   */
+  public toDeleteAttachedFile() {
+    return this.to('DeleteAttachedFile');
   }
 
   /**
@@ -1715,6 +1766,22 @@ export class Connect extends PolicyStatement {
    */
   public toDismissUserContact() {
     return this.to('DismissUserContact');
+  }
+
+  /**
+   * Grants permission to get an attached file from an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetAttachedFile.html
+   */
+  public toGetAttachedFile() {
+    return this.to('GetAttachedFile');
   }
 
   /**
@@ -2806,6 +2873,26 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an attached file upload in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   * - .ifUserArn()
+   *
+   * Dependent actions:
+   * - cases:CreateRelatedItem
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartAttachedFileUpload.html
+   */
+  public toStartAttachedFileUpload() {
+    return this.to('StartAttachedFileUpload');
+  }
+
+  /**
    * Grants permission to initiate a chat using the Amazon Connect API
    *
    * Access Level: Write
@@ -3777,6 +3864,7 @@ export class Connect extends PolicyStatement {
       'BatchDisassociateAnalyticsDataSet',
       'BatchPutContact',
       'ClaimPhoneNumber',
+      'CompleteAttachedFileUpload',
       'CreateAgentStatus',
       'CreateContactFlow',
       'CreateContactFlowModule',
@@ -3802,6 +3890,7 @@ export class Connect extends PolicyStatement {
       'CreateViewVersion',
       'CreateVocabulary',
       'DeactivateEvaluationForm',
+      'DeleteAttachedFile',
       'DeleteContactEvaluation',
       'DeleteContactFlow',
       'DeleteContactFlowModule',
@@ -3847,6 +3936,7 @@ export class Connect extends PolicyStatement {
       'ResumeContact',
       'ResumeContactRecording',
       'SendChatIntegrationEvent',
+      'StartAttachedFileUpload',
       'StartChatContact',
       'StartContactEvaluation',
       'StartContactRecording',
@@ -3911,6 +4001,55 @@ export class Connect extends PolicyStatement {
       'UpdateViewContent',
       'UpdateViewMetadata'
     ],
+    Read: [
+      'BatchGetAttachedFileMetadata',
+      'DescribeAgentStatus',
+      'DescribeContact',
+      'DescribeContactEvaluation',
+      'DescribeContactFlow',
+      'DescribeContactFlowModule',
+      'DescribeEvaluationForm',
+      'DescribeForecastingPlanningSchedulingIntegration',
+      'DescribeHoursOfOperation',
+      'DescribeInstance',
+      'DescribeInstanceAttribute',
+      'DescribeInstanceStorageConfig',
+      'DescribePhoneNumber',
+      'DescribePredefinedAttribute',
+      'DescribePrompt',
+      'DescribeQueue',
+      'DescribeQuickConnect',
+      'DescribeRoutingProfile',
+      'DescribeRule',
+      'DescribeSecurityProfile',
+      'DescribeTrafficDistributionGroup',
+      'DescribeUser',
+      'DescribeUserHierarchyGroup',
+      'DescribeUserHierarchyStructure',
+      'DescribeView',
+      'DescribeVocabulary',
+      'GetAttachedFile',
+      'GetContactAttributes',
+      'GetCurrentMetricData',
+      'GetCurrentUserData',
+      'GetFederationToken',
+      'GetFlowAssociation',
+      'GetMetricData',
+      'GetMetricDataV2',
+      'GetPromptFile',
+      'GetTaskTemplate',
+      'ListRealtimeContactAnalysisSegments',
+      'ListTagsForResource',
+      'SearchContacts',
+      'SearchHoursOfOperations',
+      'SearchPredefinedAttributes',
+      'SearchPrompts',
+      'SearchQueues',
+      'SearchQuickConnects',
+      'SearchRoutingProfiles',
+      'SearchSecurityProfiles',
+      'SearchUsers'
+    ],
     List: [
       'BatchGetFlowAssociation',
       'GetTrafficDistribution',
@@ -3959,53 +4098,6 @@ export class Connect extends PolicyStatement {
       'SearchAvailablePhoneNumbers',
       'SearchResourceTags',
       'SearchVocabularies'
-    ],
-    Read: [
-      'DescribeAgentStatus',
-      'DescribeContact',
-      'DescribeContactEvaluation',
-      'DescribeContactFlow',
-      'DescribeContactFlowModule',
-      'DescribeEvaluationForm',
-      'DescribeForecastingPlanningSchedulingIntegration',
-      'DescribeHoursOfOperation',
-      'DescribeInstance',
-      'DescribeInstanceAttribute',
-      'DescribeInstanceStorageConfig',
-      'DescribePhoneNumber',
-      'DescribePredefinedAttribute',
-      'DescribePrompt',
-      'DescribeQueue',
-      'DescribeQuickConnect',
-      'DescribeRoutingProfile',
-      'DescribeRule',
-      'DescribeSecurityProfile',
-      'DescribeTrafficDistributionGroup',
-      'DescribeUser',
-      'DescribeUserHierarchyGroup',
-      'DescribeUserHierarchyStructure',
-      'DescribeView',
-      'DescribeVocabulary',
-      'GetContactAttributes',
-      'GetCurrentMetricData',
-      'GetCurrentUserData',
-      'GetFederationToken',
-      'GetFlowAssociation',
-      'GetMetricData',
-      'GetMetricDataV2',
-      'GetPromptFile',
-      'GetTaskTemplate',
-      'ListRealtimeContactAnalysisSegments',
-      'ListTagsForResource',
-      'SearchContacts',
-      'SearchHoursOfOperations',
-      'SearchPredefinedAttributes',
-      'SearchPrompts',
-      'SearchQueues',
-      'SearchQuickConnects',
-      'SearchRoutingProfiles',
-      'SearchSecurityProfiles',
-      'SearchUsers'
     ],
     Tagging: [
       'TagResource',
@@ -4594,12 +4686,32 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type attached-file to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-attachments.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param fileId - Identifier for the fileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAttachedFile(instanceId: string, fileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/file/${ fileId }`);
+  }
+
+  /**
    * Filters access by using tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toBatchGetAttachedFileMetadata()
    * - .toClaimPhoneNumber()
+   * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
@@ -4617,8 +4729,11 @@ export class Connect extends PolicyStatement {
    * - .toCreateUserHierarchyGroup()
    * - .toCreateView()
    * - .toCreateVocabulary()
+   * - .toDeleteAttachedFile()
+   * - .toGetAttachedFile()
    * - .toImportPhoneNumber()
    * - .toReplicateInstance()
+   * - .toStartAttachedFileUpload()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -4765,6 +4880,7 @@ export class Connect extends PolicyStatement {
    * - customer-managed-view
    * - qualified-customer-managed-view
    * - customer-managed-view-version
+   * - attached-file
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4780,7 +4896,9 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toBatchGetAttachedFileMetadata()
    * - .toClaimPhoneNumber()
+   * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
@@ -4798,8 +4916,11 @@ export class Connect extends PolicyStatement {
    * - .toCreateUserHierarchyGroup()
    * - .toCreateView()
    * - .toCreateVocabulary()
+   * - .toDeleteAttachedFile()
+   * - .toGetAttachedFile()
    * - .toImportPhoneNumber()
    * - .toReplicateInstance()
+   * - .toStartAttachedFileUpload()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -4848,9 +4969,11 @@ export class Connect extends PolicyStatement {
    * - .toAssociateUserProficiencies()
    * - .toBatchAssociateAnalyticsDataSet()
    * - .toBatchDisassociateAnalyticsDataSet()
+   * - .toBatchGetAttachedFileMetadata()
    * - .toBatchGetFlowAssociation()
    * - .toBatchPutContact()
    * - .toClaimPhoneNumber()
+   * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
@@ -4874,6 +4997,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateViewVersion()
    * - .toCreateVocabulary()
    * - .toDeactivateEvaluationForm()
+   * - .toDeleteAttachedFile()
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
@@ -4931,6 +5055,7 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateTrafficDistributionGroupUser()
    * - .toDisassociateUserProficiencies()
    * - .toDismissUserContact()
+   * - .toGetAttachedFile()
    * - .toGetContactAttributes()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
@@ -4986,6 +5111,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchSecurityProfiles()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
+   * - .toStartAttachedFileUpload()
    * - .toStartChatContact()
    * - .toStartContactEvaluation()
    * - .toStartForecastingPlanningSchedulingIntegration()
@@ -5118,5 +5244,20 @@ export class Connect extends PolicyStatement {
    */
   public ifStorageResourceType(value: string | string[], operator?: Operator | string) {
     return this.if(`StorageResourceType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by UserArn
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toStartAttachedFileUpload()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifUserArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserArn`, value, operator ?? 'ArnLike');
   }
 }

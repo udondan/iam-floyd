@@ -146,6 +146,17 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a related item associated to a case in the case domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteRelatedItem.html
+   */
+  public toDeleteRelatedItem() {
+    return this.to('DeleteRelatedItem');
+  }
+
+  /**
    * Grants permission to delete the template in the case domain
    *
    * Access Level: Write
@@ -432,6 +443,7 @@ export class Cases extends PolicyStatement {
       'DeleteDomain',
       'DeleteField',
       'DeleteLayout',
+      'DeleteRelatedItem',
       'DeleteTemplate',
       'PutCaseEventConfiguration',
       'UpdateCase',
