@@ -7,3 +7,4 @@ connect:SearchContactsByContactAnalysis
 connect:SearchTag/${TagKey}
 connect:StorageResourceType
 connect:TagKeys
+connect:UserArn

@@ -456,7 +456,7 @@ export class NeptuneDb extends PolicyStatement {
   /**
    * Filters access by graph model
    *
-   * https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-context-keys.html#querylanguage
+   * https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys
    *
    * Applies to actions:
    * - .toDeleteDataViaQuery()

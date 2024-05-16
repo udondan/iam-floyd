@@ -721,6 +721,21 @@ export class Events extends PolicyStatement {
     return this.to('UpdateEndpoint');
   }
 
+  /**
+   * Grants permission to update event buses
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateEventBus.html
+   */
+  public toUpdateEventBus() {
+    return this.to('UpdateEventBus');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateEventSource',
@@ -753,7 +768,8 @@ export class Events extends PolicyStatement {
       'UpdateApiDestination',
       'UpdateArchive',
       'UpdateConnection',
-      'UpdateEndpoint'
+      'UpdateEndpoint',
+      'UpdateEventBus'
     ],
     Read: [
       'DescribeApiDestination',
@@ -936,6 +952,7 @@ export class Events extends PolicyStatement {
    * - .toCreateEventBus()
    * - .toPutRule()
    * - .toTagResource()
+   * - .toUpdateEventBus()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -973,6 +990,7 @@ export class Events extends PolicyStatement {
    * - .toPutRule()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateEventBus()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

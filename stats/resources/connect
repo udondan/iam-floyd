@@ -1,4 +1,5 @@
 connect:agent-status
+connect:attached-file
 connect:aws-managed-view
 connect:contact
 connect:contact-evaluation

@@ -16,9 +16,11 @@ connect:AssociateTrafficDistributionGroupUser;Write
 connect:AssociateUserProficiencies;Write
 connect:BatchAssociateAnalyticsDataSet;Write
 connect:BatchDisassociateAnalyticsDataSet;Write
+connect:BatchGetAttachedFileMetadata;Read
 connect:BatchGetFlowAssociation;List
 connect:BatchPutContact;Write
 connect:ClaimPhoneNumber;Write
+connect:CompleteAttachedFileUpload;Write
 connect:CreateAgentStatus;Write
 connect:CreateContactFlow;Write
 connect:CreateContactFlowModule;Write
@@ -44,6 +46,7 @@ connect:CreateView;Write
 connect:CreateViewVersion;Write
 connect:CreateVocabulary;Write
 connect:DeactivateEvaluationForm;Write
+connect:DeleteAttachedFile;Write
 connect:DeleteContactEvaluation;Write
 connect:DeleteContactFlow;Write
 connect:DeleteContactFlowModule;Write
@@ -105,6 +108,7 @@ connect:DisassociateSecurityKey;Write
 connect:DisassociateTrafficDistributionGroupUser;Write
 connect:DisassociateUserProficiencies;Write
 connect:DismissUserContact;Write
+connect:GetAttachedFile;Read
 connect:GetContactAttributes;Read
 connect:GetCurrentMetricData;Read
 connect:GetCurrentUserData;Read
@@ -180,6 +184,7 @@ connect:SearchSecurityProfiles;Read
 connect:SearchUsers;Read
 connect:SearchVocabularies;List
 connect:SendChatIntegrationEvent;Write
+connect:StartAttachedFileUpload;Write
 connect:StartChatContact;Write
 connect:StartContactEvaluation;Write
 connect:StartContactRecording;Write

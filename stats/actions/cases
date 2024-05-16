@@ -9,6 +9,7 @@ cases:CreateTemplate;Write
 cases:DeleteDomain;Write
 cases:DeleteField;Write
 cases:DeleteLayout;Write
+cases:DeleteRelatedItem;Write
 cases:DeleteTemplate;Write
 cases:GetCase;Read
 cases:GetCaseAuditEvents;Read
