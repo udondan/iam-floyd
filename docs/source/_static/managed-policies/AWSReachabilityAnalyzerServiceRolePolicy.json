@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ReachabilityAnalyzerPermissions",
       "Effect": "Allow",
       "Action": [
         "cloudformation:DescribeStacks",
@@ -45,6 +46,7 @@
         "elasticloadbalancing:DescribeLoadBalancers",
         "elasticloadbalancing:DescribeRules",
         "elasticloadbalancing:DescribeTags",
+        "elasticloadbalancing:DescribeTargetGroupAttributes",
         "elasticloadbalancing:DescribeTargetGroups",
         "elasticloadbalancing:DescribeTargetHealth",
         "globalaccelerator:ListAccelerators",
@@ -78,6 +80,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "ApigatewayPermissions",
       "Effect": "Allow",
       "Action": [
         "apigateway:GET"
