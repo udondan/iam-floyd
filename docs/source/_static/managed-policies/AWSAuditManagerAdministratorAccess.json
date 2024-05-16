@@ -152,6 +152,16 @@
         "tag:GetResources"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ControlCatalogAccess",
+      "Effect": "Allow",
+      "Action": [
+        "controlcatalog:ListCommonControls",
+        "controlcatalog:ListDomains",
+        "controlcatalog:ListObjectives"
+      ],
+      "Resource": "*"
     }
   ]
 }
