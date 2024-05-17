@@ -137,7 +137,8 @@
         "wisdom:ListQuickResponses",
         "wisdom:UpdateQuickResponse",
         "wisdom:DeleteQuickResponse",
-        "wisdom:PutFeedback"
+        "wisdom:PutFeedback",
+        "wisdom:ListContentAssociations"
       ],
       "Resource": "*",
       "Condition": {
