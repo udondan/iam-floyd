@@ -69,6 +69,28 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create service accounts for a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toCreateWorkspaceServiceAccount() {
+    return this.to('CreateWorkspaceServiceAccount');
+  }
+
+  /**
+   * Grants permission to create service account tokens for a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toCreateWorkspaceServiceAccountToken() {
+    return this.to('CreateWorkspaceServiceAccountToken');
+  }
+
+  /**
    * Grants permission to delete a workspace
    *
    * Access Level: Write
@@ -91,6 +113,28 @@ export class Grafana extends PolicyStatement {
    */
   public toDeleteWorkspaceApiKey() {
     return this.to('DeleteWorkspaceApiKey');
+  }
+
+  /**
+   * Grants permission to delete service accounts for a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toDeleteWorkspaceServiceAccount() {
+    return this.to('DeleteWorkspaceServiceAccount');
+  }
+
+  /**
+   * Grants permission to delete service account tokens for a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toDeleteWorkspaceServiceAccountToken() {
+    return this.to('DeleteWorkspaceServiceAccountToken');
   }
 
   /**
@@ -171,6 +215,28 @@ export class Grafana extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list service account tokens for a workspace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toListWorkspaceServiceAccountTokens() {
+    return this.to('ListWorkspaceServiceAccountTokens');
+  }
+
+  /**
+   * Grants permission to list service accounts for a workspace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html
+   */
+  public toListWorkspaceServiceAccounts() {
+    return this.to('ListWorkspaceServiceAccounts');
+  }
+
+  /**
    * Grants permission to list workspaces
    *
    * Access Level: Read
@@ -203,7 +269,6 @@ export class Grafana extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/grafana/latest/APIReference/API_UntagResource.html
    */
@@ -266,8 +331,12 @@ export class Grafana extends PolicyStatement {
       'AssociateLicense',
       'CreateWorkspace',
       'CreateWorkspaceApiKey',
+      'CreateWorkspaceServiceAccount',
+      'CreateWorkspaceServiceAccountToken',
       'DeleteWorkspace',
       'DeleteWorkspaceApiKey',
+      'DeleteWorkspaceServiceAccount',
+      'DeleteWorkspaceServiceAccountToken',
       'DisassociateLicense',
       'UpdateWorkspace',
       'UpdateWorkspaceAuthentication',
@@ -278,6 +347,8 @@ export class Grafana extends PolicyStatement {
       'DescribeWorkspaceAuthentication',
       'DescribeWorkspaceConfiguration',
       'ListTagsForResource',
+      'ListWorkspaceServiceAccountTokens',
+      'ListWorkspaceServiceAccounts',
       'ListWorkspaces'
     ],
     List: [
@@ -318,7 +389,6 @@ export class Grafana extends PolicyStatement {
    * Applies to actions:
    * - .toCreateWorkspace()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

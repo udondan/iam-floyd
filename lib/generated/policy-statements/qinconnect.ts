@@ -64,6 +64,21 @@ export class Wisdom extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a content association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContentAssociation.html
+   */
+  public toCreateContentAssociation() {
+    return this.to('CreateContentAssociation');
+  }
+
+  /**
    * Grants permission to create a knowledge base
    *
    * Access Level: Write
@@ -142,6 +157,17 @@ export class Wisdom extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a content association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteContentAssociation.html
+   */
+  public toDeleteContentAssociation() {
+    return this.to('DeleteContentAssociation');
+  }
+
+  /**
    * Grants permission to delete a import job of a knowledge base
    *
    * Access Level: Write
@@ -205,6 +231,17 @@ export class Wisdom extends PolicyStatement {
    */
   public toGetContent() {
     return this.to('GetContent');
+  }
+
+  /**
+   * Grants permission to retrieve information about a content association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContentAssociation.html
+   */
+  public toGetContentAssociation() {
+    return this.to('GetContentAssociation');
   }
 
   /**
@@ -293,6 +330,17 @@ export class Wisdom extends PolicyStatement {
    */
   public toListAssistants() {
     return this.to('ListAssistants');
+  }
+
+  /**
+   * Grants permission to list information about content associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListContentAssociations.html
+   */
+  public toListContentAssociations() {
+    return this.to('ListContentAssociations');
   }
 
   /**
@@ -539,12 +587,14 @@ export class Wisdom extends PolicyStatement {
       'CreateAssistant',
       'CreateAssistantAssociation',
       'CreateContent',
+      'CreateContentAssociation',
       'CreateKnowledgeBase',
       'CreateQuickResponse',
       'CreateSession',
       'DeleteAssistant',
       'DeleteAssistantAssociation',
       'DeleteContent',
+      'DeleteContentAssociation',
       'DeleteImportJob',
       'DeleteKnowledgeBase',
       'DeleteQuickResponse',
@@ -562,6 +612,7 @@ export class Wisdom extends PolicyStatement {
       'GetAssistant',
       'GetAssistantAssociation',
       'GetContent',
+      'GetContentAssociation',
       'GetContentSummary',
       'GetImportJob',
       'GetKnowledgeBase',
@@ -577,6 +628,7 @@ export class Wisdom extends PolicyStatement {
     List: [
       'ListAssistantAssociations',
       'ListAssistants',
+      'ListContentAssociations',
       'ListContents',
       'ListImportJobs',
       'ListKnowledgeBases',
@@ -642,6 +694,25 @@ export class Wisdom extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ContentAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ContentAssociationData.html
+   *
+   * @param knowledgeBaseId - Identifier for the knowledgeBaseId.
+   * @param contentId - Identifier for the contentId.
+   * @param contentAssociationId - Identifier for the contentAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContentAssociation(knowledgeBaseId: string, contentId: string, contentAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:content-association/${ knowledgeBaseId }/${ contentId }/${ contentAssociationId }`);
+  }
+
+  /**
    * Adds a resource of type KnowledgeBase to the statement
    *
    * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_KnowledgeBaseData.html
@@ -703,6 +774,7 @@ export class Wisdom extends PolicyStatement {
    * - .toCreateAssistant()
    * - .toCreateAssistantAssociation()
    * - .toCreateContent()
+   * - .toCreateContentAssociation()
    * - .toCreateKnowledgeBase()
    * - .toCreateQuickResponse()
    * - .toCreateSession()
@@ -730,6 +802,7 @@ export class Wisdom extends PolicyStatement {
    * - Assistant
    * - AssistantAssociation
    * - Content
+   * - ContentAssociation
    * - KnowledgeBase
    * - Session
    * - QuickResponse
@@ -751,6 +824,7 @@ export class Wisdom extends PolicyStatement {
    * - .toCreateAssistant()
    * - .toCreateAssistantAssociation()
    * - .toCreateContent()
+   * - .toCreateContentAssociation()
    * - .toCreateKnowledgeBase()
    * - .toCreateQuickResponse()
    * - .toCreateSession()
