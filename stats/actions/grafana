@@ -1,8 +1,12 @@
 grafana:AssociateLicense;Write
 grafana:CreateWorkspace;Write
 grafana:CreateWorkspaceApiKey;Write
+grafana:CreateWorkspaceServiceAccount;Write
+grafana:CreateWorkspaceServiceAccountToken;Write
 grafana:DeleteWorkspace;Write
 grafana:DeleteWorkspaceApiKey;Write
+grafana:DeleteWorkspaceServiceAccount;Write
+grafana:DeleteWorkspaceServiceAccountToken;Write
 grafana:DescribeWorkspace;Read
 grafana:DescribeWorkspaceAuthentication;Read
 grafana:DescribeWorkspaceConfiguration;Read
@@ -10,6 +14,8 @@ grafana:DisassociateLicense;Write
 grafana:ListPermissions;List
 grafana:ListTagsForResource;Read
 grafana:ListVersions;List
+grafana:ListWorkspaceServiceAccountTokens;Read
+grafana:ListWorkspaceServiceAccounts;Read
 grafana:ListWorkspaces;Read
 grafana:TagResource;Tagging
 grafana:UntagResource;Tagging
