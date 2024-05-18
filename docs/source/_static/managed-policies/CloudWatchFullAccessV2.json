@@ -6,6 +6,7 @@
       "Effect": "Allow",
       "Action": [
         "application-autoscaling:DescribeScalingPolicies",
+        "application-signals:*",
         "autoscaling:DescribeAutoScalingGroups",
         "autoscaling:DescribePolicies",
         "cloudwatch:*",
