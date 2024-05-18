@@ -326,6 +326,19 @@
       "Resource": [
         "arn:aws:cloudformation:*:*:stack/*"
       ]
+    },
+    {
+      "Sid": "RecoveryPointTaggingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:TagResource"
+      ],
+      "Resource": "arn:aws:backup:*:*:recovery-point:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
     }
   ]
 }

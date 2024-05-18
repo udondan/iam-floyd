@@ -458,6 +458,19 @@
         "ssm-sap:ListTagsForResource"
       ],
       "Resource": "arn:aws:ssm-sap:*:*:*"
+    },
+    {
+      "Sid": "RecoveryPointTaggingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:TagResource"
+      ],
+      "Resource": "arn:aws:backup:*:*:recovery-point:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
     }
   ]
 }

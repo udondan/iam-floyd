@@ -2,11 +2,13 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "CloudWatchGetMetricDataPermissions",
       "Effect": "Allow",
       "Action": "cloudwatch:GetMetricData",
       "Resource": "*"
     },
     {
+      "Sid": "EventBridgePermissionsForAwsBackupManagedRule",
       "Effect": "Allow",
       "Action": [
         "events:DeleteRule",
@@ -23,11 +25,13 @@
       ]
     },
     {
+      "Sid": "EventBridgeListRulesPermissions",
       "Effect": "Allow",
       "Action": "events:ListRules",
       "Resource": "*"
     },
     {
+      "Sid": "KmsPermissions",
       "Effect": "Allow",
       "Action": [
         "kms:Decrypt",
@@ -41,6 +45,7 @@
       }
     },
     {
+      "Sid": "S3BucketPermissions",
       "Effect": "Allow",
       "Action": [
         "s3:GetBucketTagging",
@@ -57,6 +62,7 @@
       "Resource": "arn:aws:s3:::*"
     },
     {
+      "Sid": "S3ObjectPermissions",
       "Effect": "Allow",
       "Action": [
         "s3:GetObjectAcl",
@@ -69,9 +75,23 @@
       "Resource": "arn:aws:s3:::*/*"
     },
     {
+      "Sid": "S3ListBucketPermissions",
       "Effect": "Allow",
       "Action": "s3:ListAllMyBuckets",
       "Resource": "*"
+    },
+    {
+      "Sid": "RecoveryPointTaggingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:TagResource"
+      ],
+      "Resource": "arn:aws:backup:*:*:recovery-point:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
     }
   ]
 }
