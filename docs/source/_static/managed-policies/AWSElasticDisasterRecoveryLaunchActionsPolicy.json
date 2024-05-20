@@ -5,7 +5,8 @@
       "Sid": "LaunchActionsPolicy1",
       "Effect": "Allow",
       "Action": [
-        "ssm:DescribeInstanceInformation"
+        "ssm:DescribeInstanceInformation",
+        "ssm:DescribeParameters"
       ],
       "Resource": [
         "*"

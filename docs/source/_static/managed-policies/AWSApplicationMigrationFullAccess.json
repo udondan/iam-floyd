@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "VisualEditor0",
       "Effect": "Allow",
       "Action": [
         "mgn:*"
@@ -9,6 +10,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor1",
       "Effect": "Allow",
       "Action": [
         "kms:ListAliases",
@@ -17,6 +19,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor2",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeKeyPairs",
@@ -43,21 +46,25 @@
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor3",
       "Effect": "Allow",
       "Action": "license-manager:ListLicenseConfigurations",
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor4",
       "Effect": "Allow",
       "Action": "elasticloadbalancing:DescribeLoadBalancers",
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor5",
       "Effect": "Allow",
       "Action": "iam:ListInstanceProfiles",
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor6",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": [
@@ -74,6 +81,7 @@
       }
     },
     {
+      "Sid": "VisualEditor7",
       "Effect": "Allow",
       "Action": [
         "drs:DescribeSourceServers"
@@ -81,6 +89,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor8",
       "Effect": "Allow",
       "Action": [
         "ssm:SendCommand"
@@ -98,6 +107,7 @@
       }
     },
     {
+      "Sid": "VisualEditor9",
       "Effect": "Allow",
       "Action": [
         "ssm:ListCommandInvocations"
@@ -105,6 +115,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor10",
       "Effect": "Allow",
       "Action": [
         "ssm:DescribeInstanceInformation",
@@ -118,6 +129,7 @@
       }
     },
     {
+      "Sid": "VisualEditor11",
       "Effect": "Allow",
       "Action": [
         "ssm:DescribeDocument",
@@ -134,6 +146,7 @@
       }
     },
     {
+      "Sid": "VisualEditor12",
       "Effect": "Allow",
       "Action": [
         "drs:DisconnectSourceServer"
@@ -149,6 +162,7 @@
       }
     },
     {
+      "Sid": "VisualEditor13",
       "Effect": "Allow",
       "Action": [
         "ssm:GetParameter",
@@ -157,6 +171,7 @@
       "Resource": "arn:aws:ssm:*:*:parameter/ManagedByAWSApplicationMigrationService-*"
     },
     {
+      "Sid": "VisualEditor14",
       "Effect": "Allow",
       "Action": [
         "servicequotas:GetServiceQuota"
@@ -164,6 +179,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "VisualEditor15",
       "Effect": "Allow",
       "Action": [
         "ssm:GetAutomationExecution"
@@ -171,6 +187,7 @@
       "Resource": "arn:aws:ssm:*:*:automation-execution/*"
     },
     {
+      "Sid": "VisualEditor16",
       "Effect": "Allow",
       "Action": [
         "ssm:GetDocument"
@@ -181,6 +198,7 @@
       ]
     },
     {
+      "Sid": "VisualEditor17",
       "Effect": "Allow",
       "Action": [
         "ssm:GetParameters"
@@ -193,6 +211,7 @@
       }
     },
     {
+      "Sid": "VisualEditor18",
       "Effect": "Allow",
       "Action": [
         "ssm:StartAutomationExecution"
@@ -205,12 +224,28 @@
       }
     },
     {
+      "Sid": "VisualEditor19",
       "Effect": "Allow",
       "Action": "ssm:ListCommands",
       "Resource": "*",
       "Condition": {
         "ForAnyValue:StringEquals": {
           "aws:CalledVia": "ssm.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "VisualEditor20",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeParameters"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
         }
       }
     }
