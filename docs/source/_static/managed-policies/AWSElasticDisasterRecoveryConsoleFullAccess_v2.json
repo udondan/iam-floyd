@@ -420,7 +420,8 @@
       "Sid": "ConsoleFullAccess30",
       "Effect": "Allow",
       "Action": [
-        "ssm:DescribeInstanceInformation"
+        "ssm:DescribeInstanceInformation",
+        "ssm:DescribeParameters"
       ],
       "Resource": [
         "*"
