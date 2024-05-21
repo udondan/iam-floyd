@@ -398,6 +398,7 @@ export { Transfer } from './policy-statements/transferfamily';
 export { Trustedadvisor } from './policy-statements/trustedadvisor';
 export { Notifications } from './policy-statements/usernotifications';
 export { NotificationsContacts } from './policy-statements/usernotificationscontacts';
+export { UserSubscriptions } from './policy-statements/usersubscriptions';
 export { VerifiedAccess } from './policy-statements/verifiedaccess';
 export { Waf } from './policy-statements/waf';
 export { WafRegional } from './policy-statements/wafregional';

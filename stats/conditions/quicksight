@@ -2,6 +2,7 @@ quicksight:AllowedEmbeddingDomains
 quicksight:DirectoryType
 quicksight:Edition
 quicksight:IamArn
+quicksight:KmsKeyArns
 quicksight:RequestTag/${TagKey}
 quicksight:ResourceTag/${TagKey}
 quicksight:SessionName

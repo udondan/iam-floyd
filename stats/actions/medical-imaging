@@ -3,6 +3,7 @@ medical-imaging:CreateDatastore;Write
 medical-imaging:DeleteDatastore;Write
 medical-imaging:DeleteImageSet;Write
 medical-imaging:GetDICOMImportJob;Read
+medical-imaging:GetDICOMInstance;Read
 medical-imaging:GetDatastore;Read
 medical-imaging:GetImageFrame;Read
 medical-imaging:GetImageSet;Read
