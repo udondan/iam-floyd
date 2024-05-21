@@ -1054,6 +1054,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe QuickSight key registration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeKeyRegistration.html
+   */
+  public toDescribeKeyRegistration() {
+    return this.to('DescribeKeyRegistration');
+  }
+
+  /**
    * Grants permission to describe a QuickSight namespace
    *
    * Access Level: Read
@@ -2228,6 +2239,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update QuickSight key registration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateKeyRegistration.html
+   */
+  public toUpdateKeyRegistration() {
+    return this.to('UpdateKeyRegistration');
+  }
+
+  /**
    * Grants permission to enable or disable public sharing on an account
    *
    * Access Level: Write
@@ -2508,6 +2530,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateIAMPolicyAssignment',
       'UpdateIdentityPropagationConfig',
       'UpdateIpRestriction',
+      'UpdateKeyRegistration',
       'UpdatePublicSharingSettings',
       'UpdateRefreshSchedule',
       'UpdateResourcePermissions',
@@ -2562,6 +2585,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeIAMPolicyAssignment',
       'DescribeIngestion',
       'DescribeIpRestriction',
+      'DescribeKeyRegistration',
       'DescribeNamespace',
       'DescribeRefreshSchedule',
       'DescribeRoleCustomPermission',
@@ -3172,6 +3196,18 @@ export class Quicksight extends PolicyStatement {
    */
   public ifIamArn(value: string | string[], operator?: Operator | string) {
     return this.if(`IamArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by KMS key ARNs
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifKmsKeyArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`KmsKeyArns`, value, operator ?? 'ArnLike');
   }
 
   /**

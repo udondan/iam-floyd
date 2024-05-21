@@ -1,0 +1,6 @@
+user-subscriptions:CreateClaim;Write
+user-subscriptions:DeleteClaim;Write
+user-subscriptions:ListApplicationClaims;List
+user-subscriptions:ListClaims;List
+user-subscriptions:ListUserSubscriptions;List
+user-subscriptions:UpdateClaim;Write

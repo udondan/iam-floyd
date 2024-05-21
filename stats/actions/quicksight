@@ -81,6 +81,7 @@ quicksight:DescribeGroupMembership;Read
 quicksight:DescribeIAMPolicyAssignment;Read
 quicksight:DescribeIngestion;Read
 quicksight:DescribeIpRestriction;Read
+quicksight:DescribeKeyRegistration;Read
 quicksight:DescribeNamespace;Read
 quicksight:DescribeRefreshSchedule;Read
 quicksight:DescribeRoleCustomPermission;Read
@@ -180,6 +181,7 @@ quicksight:UpdateGroup;Write
 quicksight:UpdateIAMPolicyAssignment;Write
 quicksight:UpdateIdentityPropagationConfig;Write
 quicksight:UpdateIpRestriction;Write
+quicksight:UpdateKeyRegistration;Write
 quicksight:UpdatePublicSharingSettings;Write
 quicksight:UpdateRefreshSchedule;Write
 quicksight:UpdateResourcePermissions;Write
