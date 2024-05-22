@@ -796,6 +796,8 @@ export class AwsManagedPolicy {
     public static AmazonSESFullAccess = 'AmazonSESFullAccess';
     /** Provides read only access to Amazon SES via the AWS Management Console. */
     public static AmazonSESReadOnlyAccess = 'AmazonSESReadOnlyAccess';
+    /** Allows SES to publish Amazon CloudWatch basic monitoring metrics on behalf of your SES resources */
+    public static AmazonSESServiceRolePolicy = 'aws-service-role/AmazonSESServiceRolePolicy';
     /** Provides full access to Amazon SNS via the AWS Management Console. */
     public static AmazonSNSFullAccess = 'AmazonSNSFullAccess';
     /** Provides read only access to Amazon SNS via the AWS Management Console. */

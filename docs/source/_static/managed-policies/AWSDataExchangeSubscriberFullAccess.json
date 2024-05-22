@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DataExchangeReadOnlyActions",
       "Effect": "Allow",
       "Action": [
         "dataexchange:Get*",
@@ -10,6 +11,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "DataExchangeExportActions",
       "Effect": "Allow",
       "Action": [
         "dataexchange:CreateJob",
@@ -28,6 +30,7 @@
       }
     },
     {
+      "Sid": "DataExchangeEventActionActions",
       "Effect": "Allow",
       "Action": [
         "dataexchange:CreateEventAction",
@@ -38,6 +41,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "S3GetActionConditionalResourceAndADX",
       "Effect": "Allow",
       "Action": "s3:GetObject",
       "Resource": "arn:aws:s3:::*aws-data-exchange*",
@@ -50,6 +54,7 @@
       }
     },
     {
+      "Sid": "S3ReadActions",
       "Effect": "Allow",
       "Action": [
         "s3:GetBucketLocation",
@@ -59,6 +64,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AWSMarketplaceSubscriberActions",
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:Subscribe",
@@ -66,11 +72,13 @@
         "aws-marketplace:ViewSubscriptions",
         "aws-marketplace:GetAgreementRequest",
         "aws-marketplace:ListAgreementRequests",
-        "aws-marketplace:CancelAgreementRequest"
+        "aws-marketplace:CancelAgreementRequest",
+        "aws-marketplace:ListPrivateListings"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "KMSActions",
       "Effect": "Allow",
       "Action": [
         "kms:DescribeKey",
