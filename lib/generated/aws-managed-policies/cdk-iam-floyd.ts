@@ -1999,6 +1999,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSESReadOnlyAccess);
     }
 
+    /** Allows SES to publish Amazon CloudWatch basic monitoring metrics on behalf of your SES resources */
+    public AmazonSESServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSESServiceRolePolicy);
+    }
+
     /** Provides full access to Amazon SNS via the AWS Management Console. */
     public AmazonSNSFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSNSFullAccess);

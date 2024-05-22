@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPutMetricDataToSESCloudWatchNamespaces",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "cloudwatch:namespace": [
+            "AWS/SES",
+            "AWS/SES/MailManager",
+            "AWS/SES/Addons"
+          ]
+        }
+      }
+    }
+  ]
+}
