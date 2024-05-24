@@ -43,6 +43,8 @@
         "payments:GetPaymentInstrument",
         "payments:GetPaymentStatus",
         "payments:ListPaymentPreferences",
+        "payments:ListTagsForResource",
+        "payments:ListPaymentInstruments",
         "purchase-orders:GetPurchaseOrder",
         "purchase-orders:ViewPurchaseOrders",
         "purchase-orders:ListPurchaseOrderInvoices",
