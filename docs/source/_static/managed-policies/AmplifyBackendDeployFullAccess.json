@@ -112,7 +112,8 @@
         "ssm:GetParameter"
       ],
       "Resource": [
-        "arn:aws:ssm:*:*:parameter/amplify/*"
+        "arn:aws:ssm:*:*:parameter/amplify/*",
+        "arn:aws:ssm:*:*:parameter/cdk-bootstrap/*"
       ],
       "Condition": {
         "StringEquals": {
