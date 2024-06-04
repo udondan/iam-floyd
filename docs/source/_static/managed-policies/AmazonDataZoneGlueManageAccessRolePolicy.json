@@ -2,6 +2,24 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "GlueTagDatabasePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:TagResource",
+        "glue:UntagResource",
+        "glue:GetTags"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "ForAnyValue:StringLikeIfExists": {
+          "aws:TagKeys": "DataZoneDiscoverable_*"
+        }
+      }
+    },
+    {
       "Sid": "GlueDataQualityPermissions",
       "Effect": "Allow",
       "Action": [
