@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "FirehoseAPIStatement",
       "Effect": "Allow",
       "Action": [
         "firehose:PutRecord",
@@ -12,6 +13,7 @@
       ]
     },
     {
+      "Sid": "DescribeOrganizationAPIStatement",
       "Effect": "Allow",
       "Action": "organizations:DescribeOrganization",
       "Resource": "*"
