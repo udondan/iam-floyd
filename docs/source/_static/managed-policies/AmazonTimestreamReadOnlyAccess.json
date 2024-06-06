@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonTimestreamReadOnlyAccess",
       "Effect": "Allow",
       "Action": [
         "timestream:CancelQuery",
@@ -17,7 +18,8 @@
         "timestream:DescribeScheduledQuery",
         "timestream:ListScheduledQueries",
         "timestream:DescribeBatchLoadTask",
-        "timestream:ListBatchLoadTasks"
+        "timestream:ListBatchLoadTasks",
+        "timestream:DescribeAccountSettings"
       ],
       "Resource": "*"
     }
