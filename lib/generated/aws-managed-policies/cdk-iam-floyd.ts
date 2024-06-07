@@ -5249,6 +5249,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudwatchApplicationInsightsServiceLinkedRolePolicy);
     }
 
+    /** Provide full access to CloudWatch Application Signals service and scoped access to the dependencies needed to use and operate this service. */
+    public CloudWatchApplicationSignalsFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchApplicationSignalsFullAccess);
+    }
+
+    /** Provides read only access to CloudWatch Application Signals service and scoped access to the dependencies needed to use this service */
+    public CloudWatchApplicationSignalsReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchApplicationSignalsReadOnlyAccess);
+    }
+
     /** Policy grants permission to CloudWatch Application Signals to collect monitoring and tagging data from other relevant AWS services. */
     public CloudWatchApplicationSignalsServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchApplicationSignalsServiceRolePolicy);

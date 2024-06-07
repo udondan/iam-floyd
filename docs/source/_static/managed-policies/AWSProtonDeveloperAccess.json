@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ProtonPermissions",
       "Effect": "Allow",
       "Action": [
         "codecommit:ListRepositories",
@@ -65,12 +66,30 @@
       "Resource": "*"
     },
     {
+      "Sid": "CodeStarConnectionsPermissions",
       "Effect": "Allow",
       "Action": "codestar-connections:PassConnection",
-      "Resource": "arn:aws:codestar-connections:*:*:connection/*",
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
       "Condition": {
         "StringEquals": {
           "codestar-connections:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CodeConnectionsPermissions",
+      "Effect": "Allow",
+      "Action": "codeconnections:PassConnection",
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "codeconnections:PassedToService": "proton.amazonaws.com"
         }
       }
     }
