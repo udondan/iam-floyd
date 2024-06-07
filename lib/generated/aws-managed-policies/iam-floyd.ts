@@ -2096,6 +2096,10 @@ export class AwsManagedPolicy {
     public static CloudWatchApplicationInsightsReadOnlyAccess = 'CloudWatchApplicationInsightsReadOnlyAccess';
     /** Cloudwatch Application Insights Service Linked Role Policy */
     public static CloudwatchApplicationInsightsServiceLinkedRolePolicy = 'aws-service-role/CloudwatchApplicationInsightsServiceLinkedRolePolicy';
+    /** Provide full access to CloudWatch Application Signals service and scoped access to the dependencies needed to use and operate this service. */
+    public static CloudWatchApplicationSignalsFullAccess = 'CloudWatchApplicationSignalsFullAccess';
+    /** Provides read only access to CloudWatch Application Signals service and scoped access to the dependencies needed to use this service */
+    public static CloudWatchApplicationSignalsReadOnlyAccess = 'CloudWatchApplicationSignalsReadOnlyAccess';
     /** Policy grants permission to CloudWatch Application Signals to collect monitoring and tagging data from other relevant AWS services. */
     public static CloudWatchApplicationSignalsServiceRolePolicy = 'aws-service-role/CloudWatchApplicationSignalsServiceRolePolicy';
     /** Provides access to the non-CloudWatch APIs used to display CloudWatch Automatic Dashboards, including the contents of objects such as Lambda functions */

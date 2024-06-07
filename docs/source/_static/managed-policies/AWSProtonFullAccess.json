@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ProtonPermissions",
       "Effect": "Allow",
       "Action": [
         "proton:*",
@@ -12,6 +13,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "CreateGrantPermissions",
       "Effect": "Allow",
       "Action": [
         "kms:CreateGrant"
@@ -24,6 +26,7 @@
       }
     },
     {
+      "Sid": "PassRolePermissions",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -36,6 +39,7 @@
       }
     },
     {
+      "Sid": "CreateServiceLinkedRolePermissions",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "arn:aws:iam::*:role/aws-service-role/sync.proton.amazonaws.com/AWSServiceRoleForProtonSync",
@@ -46,14 +50,34 @@
       }
     },
     {
+      "Sid": "CodeStarConnectionsPermissions",
       "Effect": "Allow",
       "Action": [
         "codestar-connections:PassConnection"
       ],
-      "Resource": "arn:aws:codestar-connections:*:*:connection/*",
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
       "Condition": {
         "StringEquals": {
           "codestar-connections:PassedToService": "proton.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "CodeConnectionsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:PassConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "codeconnections:PassedToService": "proton.amazonaws.com"
         }
       }
     }
