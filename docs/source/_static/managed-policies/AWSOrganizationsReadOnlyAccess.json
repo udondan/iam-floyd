@@ -16,7 +16,9 @@
       "Action": [
         "account:GetAlternateContact",
         "account:GetContactInformation",
-        "account:ListRegions"
+        "account:ListRegions",
+        "account:GetRegionOptStatus",
+        "account:GetPrimaryEmail"
       ],
       "Resource": "*"
     }
