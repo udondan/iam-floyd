@@ -1066,6 +1066,8 @@ export class AwsManagedPolicy {
     public static AWSBatchServiceEventTargetRole = 'service-role/AWSBatchServiceEventTargetRole';
     /** Policy for AWS Batch service role which allows access to related services including EC2, Autoscaling, EC2 Container service and Cloudwatch Logs. */
     public static AWSBatchServiceRole = 'service-role/AWSBatchServiceRole';
+    /** A service linked role to provide Billing and Cost Management Data Exports access to AWS service data for exporting the data to a target location, such as Amazon S3, on behalf of a customer. */
+    public static AWSBCMDataExportsServiceRolePolicy = 'aws-service-role/AWSBCMDataExportsServiceRolePolicy';
     /** Use the AWSBillingConductorFullAccess managed policy to allow complete access to AWS Billing Conductor (ABC) console and APIs. This policy allows users to list, create and delete ABC resources. */
     public static AWSBillingConductorFullAccess = 'AWSBillingConductorFullAccess';
     /** Use the AWSBillingConductorReadOnlyAccess managed policy to allow read only access to AWS Billing Conductor (ABC) console and APIs. This policy grants permission to view and list all ABC resources. It does not include the ability to create or delete resources. */
@@ -2296,6 +2298,8 @@ export class AwsManagedPolicy {
     public static OAMFullAccess = 'OAMFullAccess';
     /** Provides Read Only access to CloudWatch Observability Access Manager */
     public static OAMReadOnlyAccess = 'OAMReadOnlyAccess';
+    /** Allows Amazon OpenSearch Ingestion to describe network resources and write service metrics to cloudwatch */
+    public static OpensearchIngestionSelfManagedVpcePolicy = 'aws-service-role/OpensearchIngestionSelfManagedVpcePolicy';
     /** Provides access to associate and dissociate partner central users with IAM roles */
     public static PartnerCentralAccountManagementUserRoleAssociation = 'PartnerCentralAccountManagementUserRoleAssociation';
     /** Provides full access to AWS services and resources, but does not allow management of Users and groups. */

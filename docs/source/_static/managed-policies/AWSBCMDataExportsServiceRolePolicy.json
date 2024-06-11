@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CostOptimizationRecommendationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cost-optimization-hub:ListEnrollmentStatuses",
+        "cost-optimization-hub:ListRecommendations"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

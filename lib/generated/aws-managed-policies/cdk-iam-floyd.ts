@@ -2674,6 +2674,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBatchServiceRole);
     }
 
+    /** A service linked role to provide Billing and Cost Management Data Exports access to AWS service data for exporting the data to a target location, such as Amazon S3, on behalf of a customer. */
+    public AWSBCMDataExportsServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBCMDataExportsServiceRolePolicy);
+    }
+
     /** Use the AWSBillingConductorFullAccess managed policy to allow complete access to AWS Billing Conductor (ABC) console and APIs. This policy allows users to list, create and delete ABC resources. */
     public AWSBillingConductorFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingConductorFullAccess);
@@ -5747,6 +5752,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides Read Only access to CloudWatch Observability Access Manager */
     public OAMReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.OAMReadOnlyAccess);
+    }
+
+    /** Allows Amazon OpenSearch Ingestion to describe network resources and write service metrics to cloudwatch */
+    public OpensearchIngestionSelfManagedVpcePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.OpensearchIngestionSelfManagedVpcePolicy);
     }
 
     /** Provides access to associate and dissociate partner central users with IAM roles */
