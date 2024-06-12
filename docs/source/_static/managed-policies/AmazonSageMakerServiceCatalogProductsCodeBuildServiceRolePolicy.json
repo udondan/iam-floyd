@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonSageMakerCodeBuildCodeCommitPermission",
       "Effect": "Allow",
       "Action": [
         "codecommit:CancelUploadArchive",
@@ -13,6 +14,7 @@
       "Resource": "arn:aws:codecommit:*:*:sagemaker-*"
     },
     {
+      "Sid": "AmazonSageMakerCodeBuildECRReadPermission",
       "Effect": "Allow",
       "Action": [
         "ecr:BatchCheckLayerAvailability",
@@ -30,6 +32,7 @@
       ]
     },
     {
+      "Sid": "AmazonSageMakerCodeBuildECRWritePermission",
       "Effect": "Allow",
       "Action": [
         "ecr:CompleteLayerUpload",
@@ -43,6 +46,7 @@
       ]
     },
     {
+      "Sid": "AmazonSageMakerCodeBuildPassRoletPermission",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -67,6 +71,7 @@
       }
     },
     {
+      "Sid": "AmazonSageMakerCodeBuildLogPermission",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogDelivery",
@@ -92,6 +97,7 @@
       "Resource": "arn:aws:logs:*:*:log-group:/aws/codebuild/*"
     },
     {
+      "Sid": "AmazonSageMakerCodeBuildS3Permission",
       "Effect": "Allow",
       "Action": [
         "s3:CreateBucket",
@@ -115,6 +121,7 @@
       ]
     },
     {
+      "Sid": "AmazonSageMakerCodeBuildSageMakerPermission",
       "Effect": "Allow",
       "Action": [
         "sagemaker:AddAssociation",
@@ -390,6 +397,36 @@
         "arn:aws:sagemaker:*:*:project/*",
         "arn:aws:sagemaker:*:*:model-package/*"
       ]
+    },
+    {
+      "Sid": "AmazonSageMakerCodeBuildCodeStarConnectionPermission",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:UseConnection"
+      ],
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/sagemaker": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonSageMakerCodeBuildCodeConnectionPermission",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:UseConnection"
+      ],
+      "Resource": [
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/sagemaker": "true"
+        }
+      }
     }
   ]
 }
