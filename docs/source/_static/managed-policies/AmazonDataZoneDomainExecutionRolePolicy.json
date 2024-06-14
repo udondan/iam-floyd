@@ -104,7 +104,9 @@
         "datazone:StartMetadataGenerationRun",
         "datazone:GetMetadataGenerationRun",
         "datazone:CancelMetadataGenerationRun",
-        "datazone:ListMetadataGenerationRuns"
+        "datazone:ListMetadataGenerationRuns",
+        "datazone:GetEnvironmentAction",
+        "datazone:ListEnvironmentActions"
       ],
       "Resource": "*"
     },
