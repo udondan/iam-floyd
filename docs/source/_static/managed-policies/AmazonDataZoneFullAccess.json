@@ -83,7 +83,8 @@
       "Action": [
         "ram:GetResourceShares",
         "ram:GetResourceShareInvitations",
-        "ram:GetResourceShareAssociations"
+        "ram:GetResourceShareAssociations",
+        "ram:ListResourceSharePermissions"
       ],
       "Resource": "*"
     },
@@ -110,6 +111,26 @@
       ]
     },
     {
+      "Sid": "DataZoneTagOnCreateDomainProjectTags",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:TagResource"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:AmazonDataZone-*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "AmazonDataZoneDomain",
+            "AmazonDataZoneProject"
+          ]
+        },
+        "StringLike": {
+          "aws:RequestTag/AmazonDataZoneDomain": "dzd_*",
+          "aws:ResourceTag/AmazonDataZoneDomain": "dzd_*"
+        }
+      }
+    },
+    {
       "Sid": "DataZoneTagOnCreate",
       "Effect": "Allow",
       "Action": [
@@ -125,9 +146,6 @@
         "StringLike": {
           "aws:RequestTag/AmazonDataZoneDomain": "dzd_*",
           "aws:ResourceTag/AmazonDataZoneDomain": "dzd_*"
-        },
-        "Null": {
-          "aws:TagKeys": "false"
         }
       }
     },
