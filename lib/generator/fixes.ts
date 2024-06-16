@@ -129,6 +129,9 @@ export const fixes: Fixes = {
       },
     },
   },
+  'simpleemailservice-mailmanager': {
+    name: 'ses-mailmanager',
+  },
   ssm: {
     conditions: {
       'resourceTag/tag-key': {
