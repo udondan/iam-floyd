@@ -1,0 +1,12 @@
+pca-connector-scep:CreateChallenge;Write
+pca-connector-scep:CreateConnector;Write
+pca-connector-scep:DeleteChallenge;Write
+pca-connector-scep:DeleteConnector;Write
+pca-connector-scep:GetChallengeMetadata;Read
+pca-connector-scep:GetChallengePassword;Read
+pca-connector-scep:GetConnector;Read
+pca-connector-scep:ListChallengeMetadata;List
+pca-connector-scep:ListConnectors;List
+pca-connector-scep:ListTagsForResource;Read
+pca-connector-scep:TagResource;Tagging
+pca-connector-scep:UntagResource;Tagging

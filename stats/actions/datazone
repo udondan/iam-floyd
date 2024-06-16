@@ -1,6 +1,7 @@
 datazone:AcceptPredictions;Write
 datazone:AcceptSubscriptionRequest;Write
 datazone:AddPolicyGrant;Write
+datazone:AssociateEnvironmentRole;Write
 datazone:CancelMetadataGenerationRun;Write
 datazone:CancelSubscription;Write
 datazone:CreateAsset;Write
@@ -9,6 +10,7 @@ datazone:CreateAssetType;Write
 datazone:CreateDataSource;Write
 datazone:CreateDomain;Write
 datazone:CreateEnvironment;Write
+datazone:CreateEnvironmentAction;Write
 datazone:CreateEnvironmentBlueprint;Write
 datazone:CreateEnvironmentProfile;Write
 datazone:CreateFormType;Write
@@ -28,6 +30,7 @@ datazone:DeleteDataSource;Write
 datazone:DeleteDomain;Write
 datazone:DeleteDomainSharingPolicy;Permissions management
 datazone:DeleteEnvironment;Write
+datazone:DeleteEnvironmentAction;Write
 datazone:DeleteEnvironmentBlueprint;Write
 datazone:DeleteEnvironmentBlueprintConfiguration;Write
 datazone:DeleteEnvironmentProfile;Write
@@ -41,6 +44,7 @@ datazone:DeleteSubscriptionGrant;Write
 datazone:DeleteSubscriptionRequest;Write
 datazone:DeleteSubscriptionTarget;Write
 datazone:DeleteTimeSeriesDataPoints;Write
+datazone:DisassociateEnvironmentRole;Write
 datazone:GetAsset;Read
 datazone:GetAssetType;Read
 datazone:GetDataSource;Read
@@ -48,6 +52,7 @@ datazone:GetDataSourceRun;Read
 datazone:GetDomain;Read
 datazone:GetDomainSharingPolicy;Read
 datazone:GetEnvironment;Read
+datazone:GetEnvironmentAction;Read
 datazone:GetEnvironmentActionLink;Read
 datazone:GetEnvironmentBlueprint;Read
 datazone:GetEnvironmentBlueprintConfiguration;Read
@@ -74,6 +79,7 @@ datazone:ListDataSourceRunActivities;List
 datazone:ListDataSourceRuns;List
 datazone:ListDataSources;List
 datazone:ListDomains;List
+datazone:ListEnvironmentActions;List
 datazone:ListEnvironmentBlueprintConfigurationSummaries;List
 datazone:ListEnvironmentBlueprintConfigurations;List
 datazone:ListEnvironmentBlueprints;List
@@ -117,6 +123,7 @@ datazone:UpdateDataSource;Write
 datazone:UpdateDataSourceRunActivities;Write
 datazone:UpdateDomain;Write
 datazone:UpdateEnvironment;Write
+datazone:UpdateEnvironmentAction;Write
 datazone:UpdateEnvironmentBlueprint;Write
 datazone:UpdateEnvironmentConfiguration;Write
 datazone:UpdateEnvironmentDeploymentStatus;Write

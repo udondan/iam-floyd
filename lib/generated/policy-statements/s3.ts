@@ -2310,6 +2310,30 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to pause S3 Replication from target source buckets to destination buckets
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDestinationRegion()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * Dependent actions:
+   * - S3:GetReplicationConfiguration
+   * - S3:PutReplicationConfiguration
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#bucket-pause-replication
+   */
+  public toPauseReplication() {
+    return this.to('PauseReplication');
+  }
+
+  /**
    * Grants permission to use the accelerate subresource to set the Transfer Acceleration state of an existing S3 bucket
    *
    * Access Level: Write
@@ -3052,6 +3076,7 @@ export class S3 extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifIsReplicationPauseRequest()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -3359,6 +3384,7 @@ export class S3 extends PolicyStatement {
       'DeleteStorageLensGroup',
       'DissociateAccessGrantsIdentityCenter',
       'InitiateReplication',
+      'PauseReplication',
       'PutAccelerateConfiguration',
       'PutAccessGrantsInstanceResourcePolicy',
       'PutAccessPointConfigurationForObjectLambda',
@@ -4306,6 +4332,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -4474,6 +4501,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -4644,6 +4672,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -4713,6 +4742,35 @@ export class S3 extends PolicyStatement {
    */
   public ifDelimiter(value: string | string[], operator?: Operator | string) {
     return this.if(`delimiter`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a specific replication destination region for targeted buckets of the AWS FIS action aws:s3:bucket-pause-replication
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html
+   *
+   * Applies to actions:
+   * - .toPauseReplication()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDestinationRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`destinationRegion`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by request made via AWS FIS action aws:s3:bucket-pause-replication
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/security_iam_id-based-policy-examples.html#security-iam-policy-examples-s3
+   *
+   * Applies to actions:
+   * - .toPutReplicationConfiguration()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifIsReplicationPauseRequest(value?: boolean) {
+    return this.if(`isReplicationPauseRequest`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -4956,6 +5014,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -5126,6 +5185,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()
@@ -5331,6 +5391,7 @@ export class S3 extends PolicyStatement {
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
    * - .toObjectOwnerOverrideToBucketOwner()
+   * - .toPauseReplication()
    * - .toPutAccelerateConfiguration()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toPutAccessPointConfigurationForObjectLambda()

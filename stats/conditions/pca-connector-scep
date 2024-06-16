@@ -1,0 +1,3 @@
+pca-connector-scep:RequestTag/${TagKey}
+pca-connector-scep:ResourceTag/${TagKey}
+pca-connector-scep:TagKeys

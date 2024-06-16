@@ -192,6 +192,7 @@
                 "ec2:GetHostReservationPurchasePreview",
                 "ec2:GetImageBlockPublicAccessState",
                 "ec2:GetInstanceMetadataDefaults",
+                "ec2:GetInstanceTpmEkPub",
                 "ec2:GetInstanceTypesFromInstanceRequirements",
                 "ec2:GetInstanceUefiData",
                 "ec2:GetIpamAddressHistory",

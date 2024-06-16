@@ -42,6 +42,7 @@ export class Ecs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifCapacityProvider()
+   * - .ifFargateEphemeralStorageKmsKey()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html
    */
@@ -607,6 +608,9 @@ export class Ecs extends PolicyStatement {
    * - .ifEnableEbsVolumes()
    * - .ifEnableExecuteCommand()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html
    */
   public toRunTask() {
@@ -626,6 +630,9 @@ export class Ecs extends PolicyStatement {
    * - .ifContainerInstances()
    * - .ifEnableEbsVolumes()
    * - .ifEnableExecuteCommand()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html
    */
@@ -757,6 +764,7 @@ export class Ecs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifFargateEphemeralStorageKmsKey()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCluster.html
    */
@@ -1381,6 +1389,22 @@ export class Ecs extends PolicyStatement {
    */
   public ifEnableServiceConnect(value: string | string[], operator?: Operator | string) {
     return this.if(`enable-service-connect`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the AWS KMS key id provided in the request
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateCluster()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFargateEphemeralStorageKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`fargate-ephemeral-storage-kms-key`, value, operator ?? 'StringLike');
   }
 
   /**

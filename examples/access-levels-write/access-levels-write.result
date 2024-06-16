@@ -26,6 +26,7 @@
         "s3:DeleteStorageLensGroup",
         "s3:DissociateAccessGrantsIdentityCenter",
         "s3:InitiateReplication",
+        "s3:PauseReplication",
         "s3:PutAccelerateConfiguration",
         "s3:PutAccessGrantsInstanceResourcePolicy",
         "s3:PutAccessPointConfigurationForObjectLambda",

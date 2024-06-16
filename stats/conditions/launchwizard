@@ -1,1 +1,3 @@
-
+launchwizard:RequestTag/${TagKey}
+launchwizard:ResourceTag/${TagKey}
+launchwizard:TagKeys

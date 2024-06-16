@@ -291,6 +291,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameter.html
    */
   public toDeleteParameter() {
@@ -301,6 +304,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to delete multiple specified SSM parameters
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html
    */
@@ -565,6 +571,10 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStates.html
    */
   public toDescribeInstancePatchStates() {
@@ -586,6 +596,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view general details about the patches on a specified instance
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatches.html
    */
@@ -1012,6 +1026,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html
    */
   public toGetParameter() {
@@ -1023,6 +1040,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html
    */
   public toGetParameterHistory() {
@@ -1033,6 +1053,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view information about multiple specified parameters
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html
    */
@@ -1102,6 +1125,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to apply an identifying label to a specified version of a parameter
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_LabelParameterVersion.html
    */
@@ -1611,6 +1637,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to remove an identifying label from a specified version of a parameter
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UnlabelParameterVersion.html
    */
@@ -2349,12 +2378,20 @@ export class Ssm extends PolicyStatement {
    * - .toCreateAssociation()
    * - .toCreateAssociationBatch()
    * - .toDeleteAssociation()
+   * - .toDeleteParameter()
+   * - .toDeleteParameters()
    * - .toDescribeAssociation()
    * - .toDescribeAssociationExecutionTargets()
    * - .toDescribeAssociationExecutions()
    * - .toDescribeEffectiveInstanceAssociations()
    * - .toDescribeInstanceAssociationsStatus()
+   * - .toDescribeInstancePatchStates()
+   * - .toDescribeInstancePatches()
    * - .toGetConnectionStatus()
+   * - .toGetParameter()
+   * - .toGetParameterHistory()
+   * - .toGetParameters()
+   * - .toLabelParameterVersion()
    * - .toListAssociationVersions()
    * - .toListInstanceAssociations()
    * - .toListTagsForResource()
@@ -2362,6 +2399,7 @@ export class Ssm extends PolicyStatement {
    * - .toSendCommand()
    * - .toStartAssociationsOnce()
    * - .toStartSession()
+   * - .toUnlabelParameterVersion()
    * - .toUpdateAssociation()
    * - .toUpdateAssociationStatus()
    * - .toUpdateInstanceAssociationStatus()
@@ -2554,6 +2592,8 @@ export class Ssm extends PolicyStatement {
    *
    * Applies to actions:
    * - .toDeregisterManagedInstance()
+   * - .toDescribeInstancePatchStates()
+   * - .toDescribeInstancePatches()
    * - .toGetConnectionStatus()
    * - .toSendCommand()
    * - .toStartSession()

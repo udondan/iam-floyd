@@ -1,0 +1,4 @@
+apptest:TestCase
+apptest:TestConfiguration
+apptest:TestRun
+apptest:TestSuite

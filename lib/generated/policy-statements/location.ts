@@ -366,6 +366,17 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to forecast events for geofences stored in a given geofence collection
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_ForecastGeofenceEvents.html
+   */
+  public toForecastGeofenceEvents() {
+    return this.to('ForecastGeofenceEvents');
+  }
+
+  /**
    * Grants permission to retrieve the latest device position
    *
    * Access Level: Read
@@ -640,7 +651,6 @@ export class Geo extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_UntagResource.html
@@ -715,6 +725,20 @@ export class Geo extends PolicyStatement {
     return this.to('UpdateTracker');
   }
 
+  /**
+   * Grants permission to verify a device position
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDeviceIds()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_VerifyDevicePosition.html
+   */
+  public toVerifyDevicePosition() {
+    return this.to('VerifyDevicePosition');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateTrackerConsumer',
@@ -754,6 +778,7 @@ export class Geo extends PolicyStatement {
       'DescribePlaceIndex',
       'DescribeRouteCalculator',
       'DescribeTracker',
+      'ForecastGeofenceEvents',
       'GetDevicePosition',
       'GetDevicePositionHistory',
       'GetGeofence',
@@ -768,7 +793,8 @@ export class Geo extends PolicyStatement {
       'ListTrackerConsumers',
       'SearchPlaceIndexForPosition',
       'SearchPlaceIndexForSuggestions',
-      'SearchPlaceIndexForText'
+      'SearchPlaceIndexForText',
+      'VerifyDevicePosition'
     ],
     List: [
       'ListGeofenceCollections',
@@ -901,7 +927,6 @@ export class Geo extends PolicyStatement {
    * - .toCreateRouteCalculator()
    * - .toCreateTracker()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -965,6 +990,7 @@ export class Geo extends PolicyStatement {
    * - .toBatchUpdateDevicePosition()
    * - .toGetDevicePosition()
    * - .toGetDevicePositionHistory()
+   * - .toVerifyDevicePosition()
    *
    * Applies to resource types:
    * - tracker

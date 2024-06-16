@@ -1,8 +1,12 @@
+ses:AddonSubscriptionArn
 ses:ApiVersion
 ses:ExportSourceType
 ses:FeedbackAddress
 ses:FromAddress
 ses:FromDisplayName
+ses:MailManagerIngressPointType
+ses:MailManagerRuleSetArn
+ses:MailManagerTrafficPolicyArn
 ses:Recipients
 ses:RequestTag/${TagKey}
 ses:ResourceTag/${TagKey}

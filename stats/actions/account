@@ -1,3 +1,4 @@
+account:AcceptPrimaryEmailUpdate;Write
 account:CloseAccount;Write
 account:DeleteAlternateContact;Write
 account:DisableRegion;Write
@@ -6,8 +7,10 @@ account:GetAccountInformation;Read
 account:GetAlternateContact;Read
 account:GetChallengeQuestions;Read
 account:GetContactInformation;Read
+account:GetPrimaryEmail;Read
 account:GetRegionOptStatus;Read
 account:ListRegions;List
 account:PutAlternateContact;Write
 account:PutChallengeQuestions;Write
 account:PutContactInformation;Write
+account:StartPrimaryEmailUpdate;Write

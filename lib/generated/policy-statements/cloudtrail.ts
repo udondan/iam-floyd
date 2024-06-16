@@ -99,10 +99,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * Dependent actions:
    * - cloudtrail:AddTags
    * - iam:CreateServiceLinkedRole
@@ -240,6 +236,15 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toEnableFederation() {
     return this.to('EnableFederation');
+  }
+
+  /**
+   * Grants permission to generate a query for a specified event data store using the CloudTrail Lake query generator
+   *
+   * Access Level: Write
+   */
+  public toGenerateQuery() {
+    return this.to('GenerateQuery');
   }
 
   /**
@@ -706,6 +711,7 @@ export class Cloudtrail extends PolicyStatement {
       'DeregisterOrganizationDelegatedAdmin',
       'DisableFederation',
       'EnableFederation',
+      'GenerateQuery',
       'PutEventSelectors',
       'PutInsightSelectors',
       'PutResourcePolicy',
@@ -809,7 +815,6 @@ export class Cloudtrail extends PolicyStatement {
    * - .toAddTags()
    * - .toCreateChannel()
    * - .toCreateEventDataStore()
-   * - .toCreateTrail()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -845,7 +850,6 @@ export class Cloudtrail extends PolicyStatement {
    * - .toAddTags()
    * - .toCreateChannel()
    * - .toCreateEventDataStore()
-   * - .toCreateTrail()
    * - .toRemoveTags()
    *
    * @param value The value(s) to check

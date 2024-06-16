@@ -2,6 +2,11 @@ payments:CreatePaymentInstrument;Write
 payments:DeletePaymentInstrument;Write
 payments:GetPaymentInstrument;List
 payments:GetPaymentStatus;Read
+payments:ListPaymentInstruments;List
 payments:ListPaymentPreferences;List
+payments:ListTagsForResource;List
 payments:MakePayment;Write
+payments:TagResource;Tagging
+payments:UntagResource;Tagging
+payments:UpdatePaymentInstrument;Write
 payments:UpdatePaymentPreferences;Write

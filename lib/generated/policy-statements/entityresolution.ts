@@ -30,6 +30,17 @@ export class Entityresolution extends PolicyStatement {
   }
 
   /**
+   * Grants permission to batch delete unique Id
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/userguide/batch-delete-unique-id.html
+   */
+  public toBatchDeleteUniqueId() {
+    return this.to('BatchDeleteUniqueId');
+  }
+
+  /**
    * Grants permission to create a idmapping workflow
    *
    * Access Level: Write
@@ -456,6 +467,7 @@ export class Entityresolution extends PolicyStatement {
       'UseIdNamespace'
     ],
     Write: [
+      'BatchDeleteUniqueId',
       'CreateIdMappingWorkflow',
       'CreateIdNamespace',
       'CreateMatchingWorkflow',

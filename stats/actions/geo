@@ -26,6 +26,7 @@ geo:DescribePlaceIndex;Read
 geo:DescribeRouteCalculator;Read
 geo:DescribeTracker;Read
 geo:DisassociateTrackerConsumer;Write
+geo:ForecastGeofenceEvents;Read
 geo:GetDevicePosition;Read
 geo:GetDevicePositionHistory;Read
 geo:GetGeofence;Read
@@ -56,3 +57,4 @@ geo:UpdateMap;Write
 geo:UpdatePlaceIndex;Write
 geo:UpdateRouteCalculator;Write
 geo:UpdateTracker;Write
+geo:VerifyDevicePosition;Read

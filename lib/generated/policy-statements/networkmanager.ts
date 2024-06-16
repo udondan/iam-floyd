@@ -23,6 +23,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AcceptAttachment.html
    */
   public toAcceptAttachment() {
@@ -88,6 +91,10 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnectAttachment.html
    */
   public toCreateConnectAttachment() {
@@ -102,6 +109,10 @@ export class Networkmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnectPeer.html
    */
@@ -118,6 +129,9 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateConnection.html
    */
   public toCreateConnection() {
@@ -133,6 +147,10 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetwork.html
    */
   public toCreateCoreNetwork() {
@@ -147,6 +165,9 @@ export class Networkmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html
    */
@@ -165,6 +186,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html
    */
@@ -181,6 +203,9 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateLink.html
    */
   public toCreateLink() {
@@ -195,6 +220,9 @@ export class Networkmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSite.html
    */
@@ -212,6 +240,10 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifVpnConnectionArn()
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSiteToSiteVpnAttachment.html
    */
   public toCreateSiteToSiteVpnAttachment() {
@@ -228,6 +260,10 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifTgwArn()
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateTransitGatewayPeering.html
    */
   public toCreateTransitGatewayPeering() {
@@ -243,6 +279,10 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifTgwRtbArn()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateTransitGatewayRouteTableAttachment.html
    */
@@ -261,6 +301,10 @@ export class Networkmanager extends PolicyStatement {
    * - .ifVpcArn()
    * - .ifSubnetArns()
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateVpcAttachment.html
    */
   public toCreateVpcAttachment() {
@@ -272,6 +316,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteAttachment.html
    */
   public toDeleteAttachment() {
@@ -282,6 +329,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to delete a Connect Peer
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteConnectPeer.html
    */
@@ -304,6 +354,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to delete a core network
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetwork.html
    */
@@ -359,6 +412,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to delete a peering
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeletePeering.html
    */
@@ -467,6 +523,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to apply changes to the core network
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ExecuteCoreNetworkChangeSet.html
    */
@@ -845,6 +904,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutCoreNetworkPolicy.html
    */
   public toPutCoreNetworkPolicy() {
@@ -891,6 +953,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to restore the core network policy to a previous version
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RestoreCoreNetworkPolicyVersion.html
    */
@@ -1036,6 +1101,9 @@ export class Networkmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifSubnetArns()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateVpcAttachment.html
    */

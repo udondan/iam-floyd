@@ -511,6 +511,7 @@ export class Imagebuilder extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - ec2:DescribeImages
    * - ec2:DescribeImportImageTasks
    * - iam:CreateServiceLinkedRole
    *

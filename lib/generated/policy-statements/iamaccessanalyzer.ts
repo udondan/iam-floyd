@@ -63,6 +63,17 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to check that public access is not allowed by a resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckNoPublicAccess.html
+   */
+  public toCheckNoPublicAccess() {
+    return this.to('CheckNoPublicAccess');
+  }
+
+  /**
    * Grants permission to create an access preview for the specified analyzer
    *
    * Access Level: Write
@@ -125,6 +136,17 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate recommendation steps to resolve a finding
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GenerateFindingRecommendation.html
+   */
+  public toGenerateFindingRecommendation() {
+    return this.to('GenerateFindingRecommendation');
+  }
+
+  /**
    * Grants permission to retrieve information about an access preview
    *
    * Access Level: Read
@@ -181,6 +203,17 @@ export class AccessAnalyzer extends PolicyStatement {
    */
   public toGetFinding() {
     return this.to('GetFinding');
+  }
+
+  /**
+   * Grants permission to retrieve recommendation steps to resolve a finding
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFindingRecommendation.html
+   */
+  public toGetFindingRecommendation() {
+    return this.to('GetFindingRecommendation');
   }
 
   /**
@@ -389,6 +422,7 @@ export class AccessAnalyzer extends PolicyStatement {
       'CreateArchiveRule',
       'DeleteAnalyzer',
       'DeleteArchiveRule',
+      'GenerateFindingRecommendation',
       'StartPolicyGeneration',
       'StartResourceScan',
       'UpdateArchiveRule',
@@ -397,11 +431,13 @@ export class AccessAnalyzer extends PolicyStatement {
     Read: [
       'CheckAccessNotGranted',
       'CheckNoNewAccess',
+      'CheckNoPublicAccess',
       'GetAccessPreview',
       'GetAnalyzedResource',
       'GetAnalyzer',
       'GetArchiveRule',
       'GetFinding',
+      'GetFindingRecommendation',
       'GetFindingsStatistics',
       'GetGeneratedPolicy',
       'ListAccessPreviewFindings',

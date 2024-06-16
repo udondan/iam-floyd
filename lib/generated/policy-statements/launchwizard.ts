@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [launchwizard](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslaunchwizard.html).
@@ -34,7 +34,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/launchwizard/
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_CreateDeployment.html
    */
   public toCreateDeployment() {
     return this.to('CreateDeployment');
@@ -78,7 +78,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/launchwizard/
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_DeleteDeployment.html
    */
   public toDeleteDeployment() {
     return this.to('DeleteDeployment');
@@ -144,7 +144,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/launchwizard/
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetDeployment.html
    */
   public toGetDeployment() {
     return this.to('GetDeployment');
@@ -210,7 +210,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/launchwizard/
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkload.html
    */
   public toGetWorkload() {
     return this.to('GetWorkload');
@@ -236,6 +236,17 @@ export class Launchwizard extends PolicyStatement {
    */
   public toGetWorkloadAssets() {
     return this.to('GetWorkloadAssets');
+  }
+
+  /**
+   * Grants permission to get a deployment pattern
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html
+   */
+  public toGetWorkloadDeploymentPattern() {
+    return this.to('GetWorkloadDeploymentPattern');
   }
 
   /**
@@ -265,7 +276,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/launchwizard/
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeploymentEvents.html
    */
   public toListDeploymentEvents() {
     return this.to('ListDeploymentEvents');
@@ -276,7 +287,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/launchwizard/
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeployments.html
    */
   public toListDeployments() {
     return this.to('ListDeployments');
@@ -316,6 +327,17 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a LaunchWizard resource.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to list deployment options of a given workload
    *
    * Access Level: List
@@ -331,7 +353,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/launchwizard/
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html
    */
   public toListWorkloadDeploymentPatterns() {
     return this.to('ListWorkloadDeploymentPatterns');
@@ -342,7 +364,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/launchwizard/
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html
    */
   public toListWorkloads() {
     return this.to('ListWorkloads');
@@ -368,6 +390,28 @@ export class Launchwizard extends PolicyStatement {
    */
   public toStartProvisioning() {
     return this.to('StartProvisioning');
+  }
+
+  /**
+   * Grants permission to tag a LaunchWizard resource.
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a LaunchWizard resource.
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -407,7 +451,9 @@ export class Launchwizard extends PolicyStatement {
       'GetSettingsSet',
       'GetWorkload',
       'GetWorkloadAsset',
-      'GetWorkloadAssets'
+      'GetWorkloadAssets',
+      'GetWorkloadDeploymentPattern',
+      'ListTagsForResource'
     ],
     List: [
       'ListAdditionalNodes',
@@ -420,6 +466,81 @@ export class Launchwizard extends PolicyStatement {
       'ListWorkloadDeploymentOptions',
       'ListWorkloadDeploymentPatterns',
       'ListWorkloads'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type deployment to the statement
+   *
+   * @param deploymentId - Identifier for the deploymentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDeployment(deploymentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:launchwizard:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deployment/${ deploymentId }`);
+  }
+
+  /**
+   * Filters access based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDeployment()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeleteDeployment()
+   * - .toGetDeployment()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - deployment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDeployment()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
 }
