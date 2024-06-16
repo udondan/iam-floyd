@@ -1,3 +1,4 @@
+tax:BatchDeleteTaxRegistration;Write
 tax:BatchPutTaxRegistration;Write
 tax:DeleteTaxRegistration;Write
 tax:GetExemptions;Read

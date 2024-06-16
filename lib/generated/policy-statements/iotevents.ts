@@ -626,7 +626,7 @@ export class Iotevents extends PolicyStatement {
   /**
    * Filters access by the instanceId (key-value) of the message
    *
-   * https://docs.aws.amazon.com/iotevents/latest/developerguide/security_iam_id-based-policy-examples.htmlsecurity_iam_service-with-iam-id-based-policies-conditionkeys
+   * https://docs.aws.amazon.com/iotevents/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

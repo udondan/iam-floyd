@@ -101,6 +101,21 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new Malware Protection plan
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMalwareProtectionPlan.html
+   */
+  public toCreateMalwareProtectionPlan() {
+    return this.to('CreateMalwareProtectionPlan');
+  }
+
+  /**
    * Grants permission to create GuardDuty member accounts, where the account used to create a member becomes the GuardDuty administrator account
    *
    * Access Level: Write
@@ -205,6 +220,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toDeleteInvitations() {
     return this.to('DeleteInvitations');
+  }
+
+  /**
+   * Grants permission to delete a Malware Protection plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMalwareProtectionPlan.html
+   */
+  public toDeleteMalwareProtectionPlan() {
+    return this.to('DeleteMalwareProtectionPlan');
   }
 
   /**
@@ -417,6 +443,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a Malware Protection plan details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMalwareProtectionPlan.html
+   */
+  public toGetMalwareProtectionPlan() {
+    return this.to('GetMalwareProtectionPlan');
+  }
+
+  /**
    * Grants permission to retrieve the malware scan settings
    *
    * Access Level: Read
@@ -579,6 +616,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toListInvitations() {
     return this.to('ListInvitations');
+  }
+
+  /**
+   * Grants permission to retrieve a list of Malware Protection plans
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListMalwareProtectionPlans.html
+   */
+  public toListMalwareProtectionPlans() {
+    return this.to('ListMalwareProtectionPlans');
   }
 
   /**
@@ -769,6 +817,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the Malware Protection plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateMalwareProtectionPlan.html
+   */
+  public toUpdateMalwareProtectionPlan() {
+    return this.to('UpdateMalwareProtectionPlan');
+  }
+
+  /**
    * Grants permission to update the malware scan settings
    *
    * Access Level: Write
@@ -839,6 +898,7 @@ export class Guardduty extends PolicyStatement {
       'CreateDetector',
       'CreateFilter',
       'CreateIPSet',
+      'CreateMalwareProtectionPlan',
       'CreateMembers',
       'CreatePublishingDestination',
       'CreateSampleFindings',
@@ -848,6 +908,7 @@ export class Guardduty extends PolicyStatement {
       'DeleteFilter',
       'DeleteIPSet',
       'DeleteInvitations',
+      'DeleteMalwareProtectionPlan',
       'DeleteMembers',
       'DeletePublishingDestination',
       'DeleteThreatIntelSet',
@@ -866,6 +927,7 @@ export class Guardduty extends PolicyStatement {
       'UpdateFilter',
       'UpdateFindingsFeedback',
       'UpdateIPSet',
+      'UpdateMalwareProtectionPlan',
       'UpdateMalwareScanSettings',
       'UpdateMemberDetectors',
       'UpdateOrganizationConfiguration',
@@ -884,6 +946,7 @@ export class Guardduty extends PolicyStatement {
       'GetFindingsStatistics',
       'GetIPSet',
       'GetInvitationsCount',
+      'GetMalwareProtectionPlan',
       'GetMalwareScanSettings',
       'GetMasterAccount',
       'GetMemberDetectors',
@@ -901,6 +964,7 @@ export class Guardduty extends PolicyStatement {
       'ListFindings',
       'ListIPSets',
       'ListInvitations',
+      'ListMalwareProtectionPlans',
       'ListMembers',
       'ListOrganizationAdminAccounts',
       'ListPublishingDestinations',
@@ -999,6 +1063,23 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type malwareprotectionplan to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param malwareProtectionPlanId - Identifier for the malwareProtectionPlanId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMalwareprotectionplan(malwareProtectionPlanId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:malware-protection-plan/${ malwareProtectionPlanId }`);
+  }
+
+  /**
    * Filters access by tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1007,6 +1088,7 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateDetector()
    * - .toCreateFilter()
    * - .toCreateIPSet()
+   * - .toCreateMalwareProtectionPlan()
    * - .toCreateThreatIntelSet()
    * - .toTagResource()
    *
@@ -1028,6 +1110,7 @@ export class Guardduty extends PolicyStatement {
    * - filter
    * - ipset
    * - threatintelset
+   * - malwareprotectionplan
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1046,6 +1129,7 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateDetector()
    * - .toCreateFilter()
    * - .toCreateIPSet()
+   * - .toCreateMalwareProtectionPlan()
    * - .toCreateThreatIntelSet()
    * - .toTagResource()
    * - .toUntagResource()

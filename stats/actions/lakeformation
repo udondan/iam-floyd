@@ -19,6 +19,7 @@ lakeformation:DescribeTransaction;Read
 lakeformation:ExtendTransaction;Write
 lakeformation:GetDataAccess;Write
 lakeformation:GetDataCellsFilter;Read
+lakeformation:GetDataLakePrincipal;Read
 lakeformation:GetDataLakeSettings;Read
 lakeformation:GetEffectivePermissionsForPath;Read
 lakeformation:GetLFTag;Read

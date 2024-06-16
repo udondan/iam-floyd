@@ -57,6 +57,9 @@ export class Resiliencehub extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateApp.html
    */
   public toCreateApp() {
@@ -641,6 +644,9 @@ export class Resiliencehub extends PolicyStatement {
    * Grants permission to update application
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateApp.html
    */

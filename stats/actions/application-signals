@@ -1,0 +1,15 @@
+application-signals:BatchGetServiceLevelObjectiveBudgetReport;Read
+application-signals:CreateServiceLevelObjective;Write
+application-signals:DeleteServiceLevelObjective;Write
+application-signals:GetService;Read
+application-signals:GetServiceLevelObjective;Read
+application-signals:ListServiceDependencies;Read
+application-signals:ListServiceDependents;Read
+application-signals:ListServiceLevelObjectives;List
+application-signals:ListServiceOperations;Read
+application-signals:ListServices;List
+application-signals:ListTagsForResource;Read
+application-signals:StartDiscovery;Write
+application-signals:TagResource;Tagging
+application-signals:UntagResource;Tagging
+application-signals:UpdateServiceLevelObjective;Write

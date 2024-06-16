@@ -19,6 +19,17 @@ export class Tax extends PolicyStatement {
   }
 
   /**
+   * Grants permission to batch delete tax registration data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toBatchDeleteTaxRegistration() {
+    return this.to('BatchDeleteTaxRegistration');
+  }
+
+  /**
    * Grants permission to batch update tax registrations
    *
    * Access Level: Write
@@ -163,6 +174,7 @@ export class Tax extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'BatchDeleteTaxRegistration',
       'BatchPutTaxRegistration',
       'DeleteTaxRegistration',
       'PutTaxInheritance',

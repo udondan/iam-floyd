@@ -115,6 +115,36 @@ export class Swf extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified activity type
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifActivityTypeName()
+   * - .ifActivityTypeVersion()
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeleteActivityType.html
+   */
+  public toDeleteActivityType() {
+    return this.to('DeleteActivityType');
+  }
+
+  /**
+   * Grants permission to delete the specified workflow type
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeleteWorkflowType.html
+   */
+  public toDeleteWorkflowType() {
+    return this.to('DeleteWorkflowType');
+  }
+
+  /**
    * Grants permission to deprecate the specified activity type
    *
    * Access Level: Write
@@ -638,6 +668,8 @@ export class Swf extends PolicyStatement {
       'CancelWorkflowExecution',
       'CompleteWorkflowExecution',
       'ContinueAsNewWorkflowExecution',
+      'DeleteActivityType',
+      'DeleteWorkflowType',
       'DeprecateActivityType',
       'DeprecateDomain',
       'DeprecateWorkflowType',
@@ -764,6 +796,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
    * Applies to actions:
+   * - .toDeleteActivityType()
    * - .toDeprecateActivityType()
    * - .toDescribeActivityType()
    * - .toRespondActivityTaskCompleted()
@@ -782,6 +815,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
    * Applies to actions:
+   * - .toDeleteActivityType()
    * - .toDeprecateActivityType()
    * - .toDescribeActivityType()
    * - .toRespondActivityTaskCompleted()
@@ -1002,6 +1036,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
    * Applies to actions:
+   * - .toDeleteWorkflowType()
    * - .toDeprecateWorkflowType()
    * - .toDescribeWorkflowType()
    * - .toRespondActivityTaskCompleted()
@@ -1021,6 +1056,7 @@ export class Swf extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
    * Applies to actions:
+   * - .toDeleteWorkflowType()
    * - .toDeprecateWorkflowType()
    * - .toDescribeWorkflowType()
    * - .toRespondActivityTaskCompleted()

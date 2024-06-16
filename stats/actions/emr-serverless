@@ -1,4 +1,5 @@
 emr-serverless:AccessInteractiveEndpoints;Write
+emr-serverless:AccessLivyEndpoints;Write
 emr-serverless:CancelJobRun;Write
 emr-serverless:CreateApplication;Write
 emr-serverless:DeleteApplication;Write
@@ -6,6 +7,7 @@ emr-serverless:GetApplication;Read
 emr-serverless:GetDashboardForJobRun;Read
 emr-serverless:GetJobRun;Read
 emr-serverless:ListApplications;List
+emr-serverless:ListJobRunAttempts;List
 emr-serverless:ListJobRuns;List
 emr-serverless:ListTagsForResource;Read
 emr-serverless:StartApplication;Write

@@ -32,6 +32,7 @@ controltower:GetLandingZoneDriftStatus;Read
 controltower:GetLandingZoneOperation;Read
 controltower:GetLandingZoneStatus;Read
 controltower:ListBaselines;List
+controltower:ListControlOperations;List
 controltower:ListDirectoryGroups;List
 controltower:ListDriftDetails;Read
 controltower:ListEnabledBaselines;List

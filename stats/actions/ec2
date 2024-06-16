@@ -389,6 +389,7 @@ ec2:DisableFastSnapshotRestores;Write
 ec2:DisableImage;Write
 ec2:DisableImageBlockPublicAccess;Write
 ec2:DisableImageDeprecation;Write
+ec2:DisableImageDeregistrationProtection;Write
 ec2:DisableIpamOrganizationAdminAccount;Write
 ec2:DisableSerialConsoleAccess;Write
 ec2:DisableSnapshotBlockPublicAccess;Write
@@ -420,6 +421,7 @@ ec2:EnableFastSnapshotRestores;Write
 ec2:EnableImage;Write
 ec2:EnableImageBlockPublicAccess;Write
 ec2:EnableImageDeprecation;Write
+ec2:EnableImageDeregistrationProtection;Write
 ec2:EnableIpamOrganizationAdminAccount;Write
 ec2:EnableReachabilityAnalyzerOrganizationSharing;Write
 ec2:EnableSerialConsoleAccess;Write
@@ -448,6 +450,7 @@ ec2:GetGroupsForCapacityReservation;List
 ec2:GetHostReservationPurchasePreview;Read
 ec2:GetImageBlockPublicAccessState;Read
 ec2:GetInstanceMetadataDefaults;List
+ec2:GetInstanceTpmEkPub;Read
 ec2:GetInstanceTypesFromInstanceRequirements;List
 ec2:GetInstanceUefiData;Read
 ec2:GetIpamAddressHistory;Read

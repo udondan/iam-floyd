@@ -2056,9 +2056,6 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
   public onDbgroup(clusterName: string, dbGroup: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dbgroup:${ clusterName }/${ dbGroup }`);
@@ -2074,9 +2071,6 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
   public onDbname(clusterName: string, dbName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dbname:${ clusterName }/${ dbName }`);
@@ -2092,9 +2086,6 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
   public onDbuser(clusterName: string, dbUser: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dbuser:${ clusterName }/${ dbUser }`);
@@ -2391,9 +2382,6 @@ export class Redshift extends PolicyStatement {
    * Applies to resource types:
    * - cluster
    * - datashare
-   * - dbgroup
-   * - dbname
-   * - dbuser
    * - eventsubscription
    * - hsmclientcertificate
    * - hsmconfiguration

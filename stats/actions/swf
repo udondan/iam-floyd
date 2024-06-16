@@ -6,6 +6,8 @@ swf:CountClosedWorkflowExecutions;Read
 swf:CountOpenWorkflowExecutions;Read
 swf:CountPendingActivityTasks;Read
 swf:CountPendingDecisionTasks;Read
+swf:DeleteActivityType;Write
+swf:DeleteWorkflowType;Write
 swf:DeprecateActivityType;Write
 swf:DeprecateDomain;Write
 swf:DeprecateWorkflowType;Write

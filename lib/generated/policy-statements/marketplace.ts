@@ -268,7 +268,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Filters access by product id for AWS Marketplace RedHat OpenShift products in the RedHat console. Note: This condition key only applies to the RedHat console, and using it will not restrict access to products in AWS Marketplace
+   * Filters access by product id for AWS Marketplace RedHat OpenShift and Bedrock Products. Note: Using this condition key will not restrict access to products in AWS Marketplace
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    *

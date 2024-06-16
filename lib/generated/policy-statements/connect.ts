@@ -2672,6 +2672,42 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search contact flow module resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeContactFlowModule
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactFlowModules.html
+   */
+  public toSearchContactFlowModules() {
+    return this.to('SearchContactFlowModules');
+  }
+
+  /**
+   * Grants permission to search contact flow resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeContactFlow
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactFlows.html
+   */
+  public toSearchContactFlows() {
+    return this.to('SearchContactFlows');
+  }
+
+  /**
    * Grants permission to search contacts in an Amazon Connect instance
    *
    * Access Level: Read
@@ -4040,6 +4076,8 @@ export class Connect extends PolicyStatement {
       'GetTaskTemplate',
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',
+      'SearchContactFlowModules',
+      'SearchContactFlows',
       'SearchContacts',
       'SearchHoursOfOperations',
       'SearchPredefinedAttributes',
@@ -5100,6 +5138,8 @@ export class Connect extends PolicyStatement {
    * - .toPutUserStatus()
    * - .toReplicateInstance()
    * - .toResumeContact()
+   * - .toSearchContactFlowModules()
+   * - .toSearchContactFlows()
    * - .toSearchContacts()
    * - .toSearchHoursOfOperations()
    * - .toSearchPredefinedAttributes()
@@ -5212,6 +5252,8 @@ export class Connect extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateTrafficDistributionGroupUser()
+   * - .toSearchContactFlowModules()
+   * - .toSearchContactFlows()
    * - .toSearchHoursOfOperations()
    * - .toSearchPrompts()
    * - .toSearchQueues()

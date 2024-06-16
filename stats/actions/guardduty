@@ -4,6 +4,7 @@ guardduty:ArchiveFindings;Write
 guardduty:CreateDetector;Write
 guardduty:CreateFilter;Write
 guardduty:CreateIPSet;Write
+guardduty:CreateMalwareProtectionPlan;Write
 guardduty:CreateMembers;Write
 guardduty:CreatePublishingDestination;Write
 guardduty:CreateSampleFindings;Write
@@ -13,6 +14,7 @@ guardduty:DeleteDetector;Write
 guardduty:DeleteFilter;Write
 guardduty:DeleteIPSet;Write
 guardduty:DeleteInvitations;Write
+guardduty:DeleteMalwareProtectionPlan;Write
 guardduty:DeleteMembers;Write
 guardduty:DeletePublishingDestination;Write
 guardduty:DeleteThreatIntelSet;Write
@@ -32,6 +34,7 @@ guardduty:GetFindings;Read
 guardduty:GetFindingsStatistics;Read
 guardduty:GetIPSet;Read
 guardduty:GetInvitationsCount;Read
+guardduty:GetMalwareProtectionPlan;Read
 guardduty:GetMalwareScanSettings;Read
 guardduty:GetMasterAccount;Read
 guardduty:GetMemberDetectors;Read
@@ -47,6 +50,7 @@ guardduty:ListFilters;List
 guardduty:ListFindings;List
 guardduty:ListIPSets;List
 guardduty:ListInvitations;List
+guardduty:ListMalwareProtectionPlans;List
 guardduty:ListMembers;List
 guardduty:ListOrganizationAdminAccounts;List
 guardduty:ListPublishingDestinations;List
@@ -63,6 +67,7 @@ guardduty:UpdateDetector;Write
 guardduty:UpdateFilter;Write
 guardduty:UpdateFindingsFeedback;Write
 guardduty:UpdateIPSet;Write
+guardduty:UpdateMalwareProtectionPlan;Write
 guardduty:UpdateMalwareScanSettings;Write
 guardduty:UpdateMemberDetectors;Write
 guardduty:UpdateOrganizationConfiguration;Write

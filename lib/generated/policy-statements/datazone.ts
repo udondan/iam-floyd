@@ -46,6 +46,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a role in a default service blueprint environment
+   *
+   * Access Level: Write
+   */
+  public toAssociateEnvironmentRole() {
+    return this.to('AssociateEnvironmentRole');
+  }
+
+  /**
    * Grants permission to cancel metadata generation run
    *
    * Access Level: Write
@@ -119,6 +128,15 @@ export class Datazone extends PolicyStatement {
    */
   public toCreateEnvironment() {
     return this.to('CreateEnvironment');
+  }
+
+  /**
+   * Grants permission to create an environment action in a default service blueprint environment
+   *
+   * Access Level: Write
+   */
+  public toCreateEnvironmentAction() {
+    return this.to('CreateEnvironmentAction');
   }
 
   /**
@@ -293,6 +311,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an environment action in a default service blueprint environment
+   *
+   * Access Level: Write
+   */
+  public toDeleteEnvironmentAction() {
+    return this.to('DeleteEnvironmentAction');
+  }
+
+  /**
    * Grants permission to delete Environment Blueprint
    *
    * Access Level: Write
@@ -410,6 +437,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a role in a default service blueprint environment
+   *
+   * Access Level: Write
+   */
+  public toDisassociateEnvironmentRole() {
+    return this.to('DisassociateEnvironmentRole');
+  }
+
+  /**
    * Grants permission to retrieve an asset
    *
    * Access Level: Read
@@ -470,6 +506,15 @@ export class Datazone extends PolicyStatement {
    */
   public toGetEnvironment() {
     return this.to('GetEnvironment');
+  }
+
+  /**
+   * Grants permission to get an environment action in a default service blueprint environment
+   *
+   * Access Level: Read
+   */
+  public toGetEnvironmentAction() {
+    return this.to('GetEnvironmentAction');
   }
 
   /**
@@ -704,6 +749,15 @@ export class Datazone extends PolicyStatement {
    */
   public toListDomains() {
     return this.to('ListDomains');
+  }
+
+  /**
+   * Grants permission to list environment actions in a default service blueprint environment
+   *
+   * Access Level: List
+   */
+  public toListEnvironmentActions() {
+    return this.to('ListEnvironmentActions');
   }
 
   /**
@@ -1101,6 +1155,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an environment action in a default service blueprint environment
+   *
+   * Access Level: Write
+   */
+  public toUpdateEnvironmentAction() {
+    return this.to('UpdateEnvironmentAction');
+  }
+
+  /**
    * Grants permission to update Environment Blueprint settings
    *
    * Access Level: Write
@@ -1222,6 +1285,7 @@ export class Datazone extends PolicyStatement {
       'AcceptPredictions',
       'AcceptSubscriptionRequest',
       'AddPolicyGrant',
+      'AssociateEnvironmentRole',
       'CancelMetadataGenerationRun',
       'CancelSubscription',
       'CreateAsset',
@@ -1230,6 +1294,7 @@ export class Datazone extends PolicyStatement {
       'CreateDataSource',
       'CreateDomain',
       'CreateEnvironment',
+      'CreateEnvironmentAction',
       'CreateEnvironmentBlueprint',
       'CreateEnvironmentProfile',
       'CreateFormType',
@@ -1248,6 +1313,7 @@ export class Datazone extends PolicyStatement {
       'DeleteDataSource',
       'DeleteDomain',
       'DeleteEnvironment',
+      'DeleteEnvironmentAction',
       'DeleteEnvironmentBlueprint',
       'DeleteEnvironmentBlueprintConfiguration',
       'DeleteEnvironmentProfile',
@@ -1261,6 +1327,7 @@ export class Datazone extends PolicyStatement {
       'DeleteSubscriptionRequest',
       'DeleteSubscriptionTarget',
       'DeleteTimeSeriesDataPoints',
+      'DisassociateEnvironmentRole',
       'PostTimeSeriesDataPoints',
       'ProvisionDomain',
       'PutEnvironmentBlueprintConfiguration',
@@ -1278,6 +1345,7 @@ export class Datazone extends PolicyStatement {
       'UpdateDataSourceRunActivities',
       'UpdateDomain',
       'UpdateEnvironment',
+      'UpdateEnvironmentAction',
       'UpdateEnvironmentBlueprint',
       'UpdateEnvironmentConfiguration',
       'UpdateEnvironmentDeploymentStatus',
@@ -1305,6 +1373,7 @@ export class Datazone extends PolicyStatement {
       'GetDomain',
       'GetDomainSharingPolicy',
       'GetEnvironment',
+      'GetEnvironmentAction',
       'GetEnvironmentActionLink',
       'GetEnvironmentBlueprint',
       'GetEnvironmentBlueprintConfiguration',
@@ -1333,6 +1402,7 @@ export class Datazone extends PolicyStatement {
       'ListDataSourceRuns',
       'ListDataSources',
       'ListDomains',
+      'ListEnvironmentActions',
       'ListEnvironmentBlueprintConfigurationSummaries',
       'ListEnvironmentBlueprintConfigurations',
       'ListEnvironmentBlueprints',

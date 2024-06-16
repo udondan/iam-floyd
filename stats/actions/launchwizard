@@ -18,6 +18,7 @@ launchwizard:GetSettingsSet;Read
 launchwizard:GetWorkload;Read
 launchwizard:GetWorkloadAsset;Read
 launchwizard:GetWorkloadAssets;Read
+launchwizard:GetWorkloadDeploymentPattern;Read
 launchwizard:ListAdditionalNodes;List
 launchwizard:ListAllowedResources;List
 launchwizard:ListDeploymentEvents;List
@@ -25,9 +26,12 @@ launchwizard:ListDeployments;List
 launchwizard:ListProvisionedApps;List
 launchwizard:ListResourceCostEstimates;List
 launchwizard:ListSettingsSets;List
+launchwizard:ListTagsForResource;Read
 launchwizard:ListWorkloadDeploymentOptions;List
 launchwizard:ListWorkloadDeploymentPatterns;List
 launchwizard:ListWorkloads;List
 launchwizard:PutSettingsSet;Write
 launchwizard:StartProvisioning;Write
+launchwizard:TagResource;Tagging
+launchwizard:UntagResource;Tagging
 launchwizard:UpdateSettingsSet;Write

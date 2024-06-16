@@ -49,6 +49,9 @@ export class Pi extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDimensions()
+   *
    * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_DescribeDimensionKeys.html
    */
   public toDescribeDimensionKeys() {
@@ -59,6 +62,9 @@ export class Pi extends PolicyStatement {
    * Grants permission to call GetDimensionKeyDetails API to retrieve the attributes of the specified dimension group
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDimensions()
    *
    * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_GetDimensionKeyDetails.html
    */
@@ -92,6 +98,9 @@ export class Pi extends PolicyStatement {
    * Grants permission to call GetResourceMetrics API to retrieve PI metrics for a set of data sources, over a time period
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDimensions()
    *
    * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_GetResourceMetrics.html
    */
@@ -272,5 +281,20 @@ export class Pi extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the requested dimensions
+   *
+   * Applies to actions:
+   * - .toDescribeDimensionKeys()
+   * - .toGetDimensionKeyDetails()
+   * - .toGetResourceMetrics()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDimensions(value: string | string[], operator?: Operator | string) {
+    return this.if(`Dimensions`, value, operator ?? 'StringLike');
   }
 }

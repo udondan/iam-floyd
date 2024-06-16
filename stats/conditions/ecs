@@ -10,6 +10,7 @@ ecs:container-name
 ecs:enable-ebs-volumes
 ecs:enable-execute-command
 ecs:enable-service-connect
+ecs:fargate-ephemeral-storage-kms-key
 ecs:namespace
 ecs:service
 ecs:task

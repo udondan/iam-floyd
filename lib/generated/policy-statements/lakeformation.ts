@@ -23,7 +23,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-AddLFTagsToResource
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_AddLFTagsToResource.html
    */
   public toAddLFTagsToResource() {
     return this.to('AddLFTagsToResource');
@@ -34,7 +34,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-BatchGrantPermissions
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_BatchGrantPermissions.html
    */
   public toBatchGrantPermissions() {
     return this.to('BatchGrantPermissions');
@@ -45,7 +45,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-BatchRevokePermissions
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_BatchRevokePermissions.html
    */
   public toBatchRevokePermissions() {
     return this.to('BatchRevokePermissions');
@@ -56,7 +56,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-CancelTransaction
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CancelTransaction.html
    */
   public toCancelTransaction() {
     return this.to('CancelTransaction');
@@ -67,7 +67,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-CommitTransaction
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CommitTransaction.html
    */
   public toCommitTransaction() {
     return this.to('CommitTransaction');
@@ -78,7 +78,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-CreateDataCellsFilter
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateDataCellsFilter.html
    */
   public toCreateDataCellsFilter() {
     return this.to('CreateDataCellsFilter');
@@ -89,7 +89,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-CreateLFTag
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLFTag.html
    */
   public toCreateLFTag() {
     return this.to('CreateLFTag');
@@ -100,18 +100,18 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-Identity-center-integ.html#API_CreateLakeFormationIdentityCenterConfiguration.html
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLakeFormationIdentityCenterConfiguration.html
    */
   public toCreateLakeFormationIdentityCenterConfiguration() {
     return this.to('CreateLakeFormationIdentityCenterConfiguration');
   }
 
   /**
-   * Enforce Lake Formation permissions for the given databases, tables, and principals
+   * Grants permission to enforce Lake Formation permissions for the given databases, tables, and principals
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-hybrid-access-mode.html#API_CreateLakeFormationOptIn.html
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLakeFormationOptIn.html
    */
   public toCreateLakeFormationOptIn() {
     return this.to('CreateLakeFormationOptIn');
@@ -122,7 +122,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-DeleteDataCellsFilter
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteDataCellsFilter.html
    */
   public toDeleteDataCellsFilter() {
     return this.to('DeleteDataCellsFilter');
@@ -133,7 +133,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-DeleteLFTag
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteLFTag.html
    */
   public toDeleteLFTag() {
     return this.to('DeleteLFTag');
@@ -144,18 +144,18 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-Identity-center-integ.html#API_DeleteLakeFormationIdentityCenterConfiguration.html
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteLakeFormationIdentityCenterConfiguration.html
    */
   public toDeleteLakeFormationIdentityCenterConfiguration() {
     return this.to('DeleteLakeFormationIdentityCenterConfiguration');
   }
 
   /**
-   * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals
+   * Grants permission to remove the Lake Formation permissions enforcement of the given databases, tables, and principals
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-hybrid-access-mode.html#API_DeleteLakeFormationOptIn.html
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteLakeFormationOptIn.html
    */
   public toDeleteLakeFormationOptIn() {
     return this.to('DeleteLakeFormationOptIn');
@@ -166,7 +166,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-DeleteObjectsOnCancel
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteObjectsOnCancel.html
    */
   public toDeleteObjectsOnCancel() {
     return this.to('DeleteObjectsOnCancel');
@@ -177,7 +177,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-DeregisterResource
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeregisterResource.html
    */
   public toDeregisterResource() {
     return this.to('DeregisterResource');
@@ -188,7 +188,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-Identity-center-integ.html#API_DescribeLakeFormationIdentityCenterConfiguration.html
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DescribeLakeFormationIdentityCenterConfiguration.html
    */
   public toDescribeLakeFormationIdentityCenterConfiguration() {
     return this.to('DescribeLakeFormationIdentityCenterConfiguration');
@@ -199,7 +199,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-DescribeResource
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DescribeResource.html
    */
   public toDescribeResource() {
     return this.to('DescribeResource');
@@ -210,7 +210,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-DescribeTransaction
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DescribeTransaction.html
    */
   public toDescribeTransaction() {
     return this.to('DescribeTransaction');
@@ -221,7 +221,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-ExtendTransaction
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ExtendTransaction.html
    */
   public toExtendTransaction() {
     return this.to('ExtendTransaction');
@@ -232,7 +232,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-GetDataAccess
+   * https://docs.aws.amazon.com/lake-formation/latest/dg/access-control-underlying-data.html
    */
   public toGetDataAccess() {
     return this.to('GetDataAccess');
@@ -243,10 +243,21 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-GetDataCellsFilter
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetDataCellsFilter.html
    */
   public toGetDataCellsFilter() {
     return this.to('GetDataCellsFilter');
+  }
+
+  /**
+   * Grants permission to retrieve the identity of the invoking principal
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetDataLakePrincipal.html
+   */
+  public toGetDataLakePrincipal() {
+    return this.to('GetDataLakePrincipal');
   }
 
   /**
@@ -254,7 +265,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-GetDataLakeSettings
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetDataLakeSettings.html
    */
   public toGetDataLakeSettings() {
     return this.to('GetDataLakeSettings');
@@ -265,7 +276,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-GetEffectivePermissionsForPath
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetEffectivePermissionsForPath.html
    */
   public toGetEffectivePermissionsForPath() {
     return this.to('GetEffectivePermissionsForPath');
@@ -276,7 +287,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-GetLFTag
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetLFTag.html
    */
   public toGetLFTag() {
     return this.to('GetLFTag');
@@ -290,7 +301,7 @@ export class Lakeformation extends PolicyStatement {
    * Dependent actions:
    * - lakeformation:StartQueryPlanning
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetQueryState
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetQueryState.html
    */
   public toGetQueryState() {
     return this.to('GetQueryState');
@@ -304,7 +315,7 @@ export class Lakeformation extends PolicyStatement {
    * Dependent actions:
    * - lakeformation:StartQueryPlanning
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetQueryStatistics
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetQueryStatistics.html
    */
   public toGetQueryStatistics() {
     return this.to('GetQueryStatistics');
@@ -315,7 +326,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-GetResourceLFTags
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetResourceLFTags.html
    */
   public toGetResourceLFTags() {
     return this.to('GetResourceLFTags');
@@ -326,7 +337,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-objects.html#aws-lake-formation-api-objects-GetTableObjects
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetTableObjects.html
    */
   public toGetTableObjects() {
     return this.to('GetTableObjects');
@@ -341,7 +352,7 @@ export class Lakeformation extends PolicyStatement {
    * - lakeformation:GetWorkUnits
    * - lakeformation:StartQueryPlanning
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetWorkUnitResults
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetWorkUnitResults.html
    */
   public toGetWorkUnitResults() {
     return this.to('GetWorkUnitResults');
@@ -355,7 +366,7 @@ export class Lakeformation extends PolicyStatement {
    * Dependent actions:
    * - lakeformation:StartQueryPlanning
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-GetWorkUnits
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetWorkUnits.html
    */
   public toGetWorkUnits() {
     return this.to('GetWorkUnits');
@@ -366,7 +377,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-GrantPermissions
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GrantPermissions.html
    */
   public toGrantPermissions() {
     return this.to('GrantPermissions');
@@ -377,7 +388,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-ListDataCellsFilter
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListDataCellsFilter.html
    */
   public toListDataCellsFilter() {
     return this.to('ListDataCellsFilter');
@@ -388,18 +399,18 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-ListLFTags
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListLFTags.html
    */
   public toListLFTags() {
     return this.to('ListLFTags');
   }
 
   /**
-   * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions
+   * Grants permission to retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-hybrid-access-mode.html#API_ListLakeFormationOptIns.html
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListLakeFormationOptIns.html
    */
   public toListLakeFormationOptIns() {
     return this.to('ListLakeFormationOptIns');
@@ -410,7 +421,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-ListPermissions
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListPermissions.html
    */
   public toListPermissions() {
     return this.to('ListPermissions');
@@ -421,7 +432,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-ListResources
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListResources.html
    */
   public toListResources() {
     return this.to('ListResources');
@@ -432,7 +443,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-optimizers.html#aws-lake-formation-api-optimizers-ListTableStorageOptimizers
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListTableStorageOptimizers.html
    */
   public toListTableStorageOptimizers() {
     return this.to('ListTableStorageOptimizers');
@@ -443,7 +454,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-ListTransactions
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListTransactions.html
    */
   public toListTransactions() {
     return this.to('ListTransactions');
@@ -454,7 +465,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-PutDataLakeSettings
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_PutDataLakeSettings.html
    */
   public toPutDataLakeSettings() {
     return this.to('PutDataLakeSettings');
@@ -465,7 +476,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-RegisterResource
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RegisterResource.html
    */
   public toRegisterResource() {
     return this.to('RegisterResource');
@@ -476,7 +487,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-RemoveLFTagsFromResource
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RemoveLFTagsFromResource.html
    */
   public toRemoveLFTagsFromResource() {
     return this.to('RemoveLFTagsFromResource');
@@ -487,7 +498,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-RevokePermissions
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RevokePermissions.html
    */
   public toRevokePermissions() {
     return this.to('RevokePermissions');
@@ -498,7 +509,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-SearchDatabasesByLFTags
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_SearchTablesByLFTags.html
    */
   public toSearchDatabasesByLFTags() {
     return this.to('SearchDatabasesByLFTags');
@@ -509,7 +520,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-SearchTablesByLFTags
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_SearchTablesByLFTags.html
    */
   public toSearchTablesByLFTags() {
     return this.to('SearchTablesByLFTags');
@@ -520,7 +531,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-querying.html#aws-lake-formation-api-querying-StartQueryPlanning
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_StartQueryPlanning.html
    */
   public toStartQueryPlanning() {
     return this.to('StartQueryPlanning');
@@ -531,7 +542,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-transactions-api.html#aws-lake-formation-api-transactions-api-StartTransaction
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_StartTransaction.html
    */
   public toStartTransaction() {
     return this.to('StartTransaction');
@@ -542,7 +553,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-data-filter.html#aws-lake-formation-api-data-filter-UpdateDataCellsFilter
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateDataCellsFilter.html
    */
   public toUpdateDataCellsFilter() {
     return this.to('UpdateDataCellsFilter');
@@ -553,7 +564,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-UpdateLFTag
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateLFTag.html
    */
   public toUpdateLFTag() {
     return this.to('UpdateLFTag');
@@ -564,7 +575,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-Identity-center-integ.html#API_UpdateLakeFormationIdentityCenterConfiguration.html
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateLakeFormationIdentityCenterConfiguration.html
    */
   public toUpdateLakeFormationIdentityCenterConfiguration() {
     return this.to('UpdateLakeFormationIdentityCenterConfiguration');
@@ -575,7 +586,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-tagging-api.html#aws-lake-formation-api-tagging-api-UpdateResource
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateResource.html
    */
   public toUpdateResource() {
     return this.to('UpdateResource');
@@ -586,7 +597,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-objects.html#aws-lake-formation-api-objects-UpdateTableObjects
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateTableObjects.html
    */
   public toUpdateTableObjects() {
     return this.to('UpdateTableObjects');
@@ -597,7 +608,7 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api-optimizers.html#aws-lake-formation-api-optimizers-UpdateTableStorageOptimizer
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateTableStorageOptimizer.html
    */
   public toUpdateTableStorageOptimizer() {
     return this.to('UpdateTableStorageOptimizer');
@@ -645,6 +656,7 @@ export class Lakeformation extends PolicyStatement {
       'DescribeResource',
       'DescribeTransaction',
       'GetDataCellsFilter',
+      'GetDataLakePrincipal',
       'GetDataLakeSettings',
       'GetEffectivePermissionsForPath',
       'GetLFTag',

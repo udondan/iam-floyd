@@ -1,4 +1,5 @@
 entityresolution:AddPolicyStatement;Permissions management
+entityresolution:BatchDeleteUniqueId;Write
 entityresolution:CreateIdMappingWorkflow;Write
 entityresolution:CreateIdNamespace;Write
 entityresolution:CreateMatchingWorkflow;Write

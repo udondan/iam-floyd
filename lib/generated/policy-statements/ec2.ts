@@ -5728,6 +5728,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable deregistration protection for an AMI. When deregistration protection is disabled, the AMI can be deregistered
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableImageDeregistrationProtection.html
+   */
+  public toDisableImageDeregistrationProtection() {
+    return this.to('DisableImageDeregistrationProtection');
+  }
+
+  /**
    * Grants permission to disable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
    *
    * Access Level: Write
@@ -6165,6 +6179,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable deregistration protection for an AMI. When deregistration protection is enabled, the AMI can't be deregistered
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableImageDeregistrationProtection.html
+   */
+  public toEnableImageDeregistrationProtection() {
+    return this.to('EnableImageDeregistrationProtection');
+  }
+
+  /**
    * Grants permission to enable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
    *
    * Access Level: Write
@@ -6566,6 +6594,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetInstanceMetadataDefaults() {
     return this.to('GetInstanceMetadataDefaults');
+  }
+
+  /**
+   * Grants permission to get the public endorsement key associated with the Nitro Trusted Platform Module (NitroTPM) for the specified instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTpmEkPub.html
+   */
+  public toGetInstanceTpmEkPub() {
+    return this.to('GetInstanceTpmEkPub');
   }
 
   /**
@@ -9426,6 +9468,7 @@ export class Ec2 extends PolicyStatement {
       'DisableImage',
       'DisableImageBlockPublicAccess',
       'DisableImageDeprecation',
+      'DisableImageDeregistrationProtection',
       'DisableIpamOrganizationAdminAccount',
       'DisableSerialConsoleAccess',
       'DisableSnapshotBlockPublicAccess',
@@ -9457,6 +9500,7 @@ export class Ec2 extends PolicyStatement {
       'EnableImage',
       'EnableImageBlockPublicAccess',
       'EnableImageDeprecation',
+      'EnableImageDeregistrationProtection',
       'EnableIpamOrganizationAdminAccount',
       'EnableReachabilityAnalyzerOrganizationSharing',
       'EnableSerialConsoleAccess',
@@ -9813,6 +9857,7 @@ export class Ec2 extends PolicyStatement {
       'GetFlowLogsIntegrationTemplate',
       'GetHostReservationPurchasePreview',
       'GetImageBlockPublicAccessState',
+      'GetInstanceTpmEkPub',
       'GetInstanceUefiData',
       'GetIpamAddressHistory',
       'GetIpamDiscoveredAccounts',
@@ -12237,7 +12282,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterImage()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
-   * - .toDescribeAddressesAttribute()
    * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
    * - .toDescribeClientVpnEndpoints()
@@ -12248,6 +12292,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
+   * - .toDescribeSecurityGroupReferences()
    * - .toDescribeSnapshotAttribute()
    * - .toDescribeSpotFleetInstances()
    * - .toDescribeSpotFleetRequestHistory()
@@ -12265,6 +12310,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
+   * - .toDisableImageDeregistrationProtection()
    * - .toDisableTransitGatewayRouteTablePropagation()
    * - .toDisableVgwRoutePropagation()
    * - .toDisableVpcClassicLink()
@@ -12287,6 +12333,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
+   * - .toEnableImageDeregistrationProtection()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
    * - .toEnableVolumeIO()
@@ -12301,6 +12348,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetConsoleScreenshot()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
    * - .toGetIpamDiscoveredAccounts()
@@ -12797,7 +12845,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateNatGatewayAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
-   * - .toDescribeAddressesAttribute()
    * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
    * - .toDisassociateNatGatewayAddress()
@@ -13173,6 +13220,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -13468,7 +13516,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateNatGatewayAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
-   * - .toDescribeAddressesAttribute()
    * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
    * - .toDisassociateNatGatewayAddress()
@@ -13512,6 +13559,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -13715,9 +13763,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableFastLaunch()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
+   * - .toDisableImageDeregistrationProtection()
    * - .toEnableFastLaunch()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
+   * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
    * - .toImportImage()
    * - .toModifyFleet()
@@ -13755,9 +13805,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableFastLaunch()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
+   * - .toDisableImageDeregistrationProtection()
    * - .toEnableFastLaunch()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
+   * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
    * - .toImportImage()
    * - .toModifyFleet()
@@ -13842,6 +13894,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -13899,6 +13952,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -13958,6 +14012,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -14015,6 +14070,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -14074,6 +14130,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -14135,6 +14192,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -14377,6 +14435,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -14435,6 +14494,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -14493,6 +14553,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIamInstanceProfile()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -14668,10 +14729,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
+   * - .toDisableImageDeregistrationProtection()
    * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
+   * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
    * - .toImportImage()
    * - .toImportSnapshot()
@@ -15145,9 +15208,11 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableFastLaunch()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
+   * - .toDisableImageDeregistrationProtection()
    * - .toEnableFastLaunch()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
+   * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
    * - .toImportImage()
    * - .toModifyFleet()
@@ -15181,7 +15246,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateNatGatewayAddress()
    * - .toCreateNatGateway()
    * - .toCreateTags()
-   * - .toDescribeAddressesAttribute()
    * - .toDisableAddressTransfer()
    * - .toDisassociateAddress()
    * - .toDisassociateNatGatewayAddress()
@@ -15616,6 +15680,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImage()
    * - .toDisableImageBlockPublicAccess()
    * - .toDisableImageDeprecation()
+   * - .toDisableImageDeregistrationProtection()
    * - .toDisableIpamOrganizationAdminAccount()
    * - .toDisableSerialConsoleAccess()
    * - .toDisableSnapshotBlockPublicAccess()
@@ -15647,6 +15712,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImage()
    * - .toEnableImageBlockPublicAccess()
    * - .toEnableImageDeprecation()
+   * - .toEnableImageDeregistrationProtection()
    * - .toEnableIpamOrganizationAdminAccount()
    * - .toEnableReachabilityAnalyzerOrganizationSharing()
    * - .toEnableSerialConsoleAccess()
@@ -15675,6 +15741,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetHostReservationPurchasePreview()
    * - .toGetImageBlockPublicAccessState()
    * - .toGetInstanceMetadataDefaults()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceTypesFromInstanceRequirements()
    * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
@@ -16275,7 +16342,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterImage()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
-   * - .toDescribeAddressesAttribute()
    * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
    * - .toDescribeClientVpnEndpoints()
@@ -16286,6 +16352,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
+   * - .toDescribeSecurityGroupReferences()
    * - .toDescribeSnapshotAttribute()
    * - .toDescribeSpotFleetInstances()
    * - .toDescribeSpotFleetRequestHistory()
@@ -16303,6 +16370,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
+   * - .toDisableImageDeregistrationProtection()
    * - .toDisableTransitGatewayRouteTablePropagation()
    * - .toDisableVgwRoutePropagation()
    * - .toDisableVpcClassicLink()
@@ -16325,6 +16393,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableFastSnapshotRestores()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
+   * - .toEnableImageDeregistrationProtection()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
    * - .toEnableVolumeIO()
@@ -16339,6 +16408,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetConsoleScreenshot()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
    * - .toGetIpamDiscoveredAccounts()
@@ -16624,13 +16694,16 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableFastLaunch()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
+   * - .toDisableImageDeregistrationProtection()
    * - .toDisassociateIamInstanceProfile()
    * - .toEnableFastLaunch()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
+   * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -16775,6 +16848,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVerifiedAccessEndpoint()
    * - .toCreateVpcEndpoint()
    * - .toDeleteSecurityGroup()
+   * - .toDescribeSecurityGroupReferences()
    * - .toImportInstance()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyInstanceAttribute()
@@ -17137,6 +17211,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVpcClassicLinkDnsSupport()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
@@ -17410,6 +17485,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteSubnet()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
+   * - .toDescribeSecurityGroupReferences()
    * - .toDetachNetworkInterface()
    * - .toDisableVgwRoutePropagation()
    * - .toDisassociateAddress()

@@ -172,6 +172,8 @@ connect:ReplicateInstance;Write
 connect:ResumeContact;Write
 connect:ResumeContactRecording;Write
 connect:SearchAvailablePhoneNumbers;List
+connect:SearchContactFlowModules;Read
+connect:SearchContactFlows;Read
 connect:SearchContacts;Read
 connect:SearchHoursOfOperations;Read
 connect:SearchPredefinedAttributes;Read

@@ -1,3 +1,5 @@
+ses:addon-instance
+ses:addon-subscription
 ses:configuration-set
 ses:contact-list
 ses:custom-verification-email-template
@@ -6,4 +8,9 @@ ses:deliverability-test-report
 ses:export-job
 ses:identity
 ses:import-job
+ses:mailmanager-archive
+ses:mailmanager-ingress-point
+ses:mailmanager-rule-set
+ses:mailmanager-smtp-relay
+ses:mailmanager-traffic-policy
 ses:template

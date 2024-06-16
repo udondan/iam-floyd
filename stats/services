@@ -17,6 +17,7 @@ appfabric
 appflow
 application-autoscaling
 application-cost-profiler
+application-signals
 application-transformation
 applicationinsights
 appmesh
@@ -24,6 +25,7 @@ appmesh-preview
 apprunner
 appstream
 appsync
+apptest
 aps
 arc-zonal-shift
 arsenal
@@ -268,6 +270,7 @@ partnercentral-account-management
 payment-cryptography
 payments
 pca-connector-ad
+pca-connector-scep
 personalize
 pi
 pipes
@@ -355,6 +358,7 @@ sts
 support
 supportapp
 supportplans
+supportrecommendations
 sustainability
 swf
 synthetics

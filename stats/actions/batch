@@ -11,6 +11,7 @@ batch:DescribeJobDefinitions;Read
 batch:DescribeJobQueues;Read
 batch:DescribeJobs;Read
 batch:DescribeSchedulingPolicies;Read
+batch:GetJobQueueSnapshot;Read
 batch:ListJobs;List
 batch:ListSchedulingPolicies;Read
 batch:ListTagsForResource;Read

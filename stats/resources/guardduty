@@ -1,5 +1,6 @@
 guardduty:detector
 guardduty:filter
 guardduty:ipset
+guardduty:malwareprotectionplan
 guardduty:publishingDestination
 guardduty:threatintelset

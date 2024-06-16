@@ -187,6 +187,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to annotate datapoints over time for a specific data quality statistic
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-BatchPutDataQualityStatisticAnnotation
+   */
+  public toBatchPutDataQualityStatisticAnnotation() {
+    return this.to('BatchPutDataQualityStatisticAnnotation');
+  }
+
+  /**
    * Grants permission to stop one or more job runs for a job
    *
    * Access Level: Write
@@ -867,6 +878,28 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe connection type in glue studio
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toDescribeConnectionType() {
+    return this.to('DescribeConnectionType');
+  }
+
+  /**
+   * Grants permission to describe entity in glue studio
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toDescribeEntity() {
+    return this.to('DescribeEntity');
+  }
+
+  /**
    * Grants permission to retrieve a blueprint
    *
    * Access Level: Read
@@ -1073,6 +1106,28 @@ export class Glue extends PolicyStatement {
    */
   public toGetDataPreviewStatement() {
     return this.to('GetDataPreviewStatement');
+  }
+
+  /**
+   * Grants permission to retrieve the retraining status of the model
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-GetDataQualityModel
+   */
+  public toGetDataQualityModel() {
+    return this.to('GetDataQualityModel');
+  }
+
+  /**
+   * Grants permission to retrieve the latest predictions for a statistic from the model
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-GetDataQualityModelResult
+   */
+  public toGetDataQualityModelResult() {
+    return this.to('GetDataQualityModelResult');
   }
 
   /**
@@ -1827,6 +1882,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list connection types in glue studio
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toListConnectionTypes() {
+    return this.to('ListConnectionTypes');
+  }
+
+  /**
    * Grants permission to retrieve all crawlers
    *
    * Access Level: List
@@ -1904,6 +1970,28 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve annotations for a data quality statistic
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityStatisticAnnotations
+   */
+  public toListDataQualityStatisticAnnotations() {
+    return this.to('ListDataQualityStatisticAnnotations');
+  }
+
+  /**
+   * Grants permission to retrieve data quality statistics and annotations associated with it
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityStatistics
+   */
+  public toListDataQualityStatistics() {
+    return this.to('ListDataQualityStatistics');
+  }
+
+  /**
    * Grants permission to retrieve all development endpoints
    *
    * Access Level: List
@@ -1912,6 +2000,17 @@ export class Glue extends PolicyStatement {
    */
   public toListDevEndpoints() {
     return this.to('ListDevEndpoints');
+  }
+
+  /**
+   * Grants permission to list entities in glue studio
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toListEntities() {
+    return this.to('ListEntities');
   }
 
   /**
@@ -2072,6 +2171,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to annotate all datapoints for a profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-PutDataQualityProfileAnnotation
+   */
+  public toPutDataQualityProfileAnnotation() {
+    return this.to('PutDataQualityProfileAnnotation');
+  }
+
+  /**
    * Grants permission to update a resource policy
    *
    * Access Level: Permissions management
@@ -2113,6 +2223,17 @@ export class Glue extends PolicyStatement {
    */
   public toQuerySchemaVersionMetadata() {
     return this.to('QuerySchemaVersionMetadata');
+  }
+
+  /**
+   * Grants permission to refresh the oauth2 tokens for connection during job execution
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toRefreshOAuth2Tokens() {
+    return this.to('RefreshOAuth2Tokens');
   }
 
   /**
@@ -2779,6 +2900,7 @@ export class Glue extends PolicyStatement {
       'BatchDeletePartition',
       'BatchDeleteTable',
       'BatchDeleteTableVersion',
+      'BatchPutDataQualityStatisticAnnotation',
       'BatchStopJobRun',
       'BatchUpdatePartition',
       'CancelDataQualityRuleRecommendationRun',
@@ -2837,6 +2959,7 @@ export class Glue extends PolicyStatement {
       'PassConnection',
       'PublishDataQuality',
       'PutDataCatalogEncryptionSettings',
+      'PutDataQualityProfileAnnotation',
       'PutSchemaVersionMetadata',
       'PutWorkflowRunProperties',
       'RegisterSchemaVersion',
@@ -2918,6 +3041,8 @@ export class Glue extends PolicyStatement {
       'GetCrawlers',
       'GetCustomEntityType',
       'GetDataCatalogEncryptionSettings',
+      'GetDataQualityModel',
+      'GetDataQualityModelResult',
       'GetDataQualityResult',
       'GetDataQualityRuleRecommendationRun',
       'GetDataQualityRuleset',
@@ -2971,6 +3096,8 @@ export class Glue extends PolicyStatement {
       'BatchGetStageFiles',
       'DeleteResourcePolicy',
       'DeregisterDataPreview',
+      'DescribeConnectionType',
+      'DescribeEntity',
       'GetDataPreviewStatement',
       'GetEnvironment',
       'GetExecutors',
@@ -2989,7 +3116,10 @@ export class Glue extends PolicyStatement {
       'GetStorageUnit',
       'GlueNotebookAuthorize',
       'GlueNotebookRefreshCredentials',
+      'ListConnectionTypes',
+      'ListEntities',
       'PutResourcePolicy',
+      'RefreshOAuth2Tokens',
       'RequestLogParsing',
       'RunDataPreviewStatement',
       'StartNotebook',
@@ -3008,6 +3138,8 @@ export class Glue extends PolicyStatement {
       'ListDataQualityRuleRecommendationRuns',
       'ListDataQualityRulesetEvaluationRuns',
       'ListDataQualityRulesets',
+      'ListDataQualityStatisticAnnotations',
+      'ListDataQualityStatistics',
       'ListDevEndpoints',
       'ListJobs',
       'ListMLTransforms',

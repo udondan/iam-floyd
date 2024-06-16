@@ -108,6 +108,7 @@ s3:ListStorageLensConfigurations;List
 s3:ListStorageLensGroups;List
 s3:ListTagsForResource;List
 s3:ObjectOwnerOverrideToBucketOwner;Permissions management
+s3:PauseReplication;Write
 s3:PutAccelerateConfiguration;Write
 s3:PutAccessGrantsInstanceResourcePolicy;Write
 s3:PutAccessPointConfigurationForObjectLambda;Write

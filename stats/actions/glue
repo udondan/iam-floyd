@@ -13,6 +13,7 @@ glue:BatchGetStageFiles;Permissions management
 glue:BatchGetTableOptimizer;Read
 glue:BatchGetTriggers;Read
 glue:BatchGetWorkflows;Read
+glue:BatchPutDataQualityStatisticAnnotation;Write
 glue:BatchStopJobRun;Write
 glue:BatchUpdatePartition;Write
 glue:CancelDataQualityRuleRecommendationRun;Write
@@ -69,6 +70,8 @@ glue:DeleteTrigger;Write
 glue:DeleteUserDefinedFunction;Write
 glue:DeleteWorkflow;Write
 glue:DeregisterDataPreview;Permissions management
+glue:DescribeConnectionType;Permissions management
+glue:DescribeEntity;Permissions management
 glue:GetBlueprint;Read
 glue:GetBlueprintRun;Read
 glue:GetBlueprintRuns;Read
@@ -88,6 +91,8 @@ glue:GetCrawlers;Read
 glue:GetCustomEntityType;Read
 glue:GetDataCatalogEncryptionSettings;Read
 glue:GetDataPreviewStatement;Permissions management
+glue:GetDataQualityModel;Read
+glue:GetDataQualityModelResult;Read
 glue:GetDataQualityResult;Read
 glue:GetDataQualityRuleRecommendationRun;Read
 glue:GetDataQualityRuleset;Read
@@ -156,6 +161,7 @@ glue:GlueNotebookRefreshCredentials;Permissions management
 glue:ImportCatalogToGlue;Write
 glue:ListBlueprints;List
 glue:ListColumnStatisticsTaskRuns;Read
+glue:ListConnectionTypes;Permissions management
 glue:ListCrawlers;List
 glue:ListCrawls;List
 glue:ListCustomEntityTypes;List
@@ -163,7 +169,10 @@ glue:ListDataQualityResults;List
 glue:ListDataQualityRuleRecommendationRuns;List
 glue:ListDataQualityRulesetEvaluationRuns;List
 glue:ListDataQualityRulesets;List
+glue:ListDataQualityStatisticAnnotations;List
+glue:ListDataQualityStatistics;List
 glue:ListDevEndpoints;List
+glue:ListEntities;Permissions management
 glue:ListJobs;List
 glue:ListMLTransforms;List
 glue:ListRegistries;List
@@ -178,10 +187,12 @@ glue:NotifyEvent;Write
 glue:PassConnection;Write
 glue:PublishDataQuality;Write
 glue:PutDataCatalogEncryptionSettings;Write
+glue:PutDataQualityProfileAnnotation;Write
 glue:PutResourcePolicy;Permissions management
 glue:PutSchemaVersionMetadata;Write
 glue:PutWorkflowRunProperties;Write
 glue:QuerySchemaVersionMetadata;List
+glue:RefreshOAuth2Tokens;Permissions management
 glue:RegisterSchemaVersion;Write
 glue:RemoveSchemaVersionMetadata;Write
 glue:RequestLogParsing;Permissions management

@@ -414,6 +414,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all control operations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListControlOperations.html
+   */
+  public toListControlOperations() {
+    return this.to('ListControlOperations');
+  }
+
+  /**
    * Grants permission to list the current directory groups available through IAM Identity Center
    *
    * Access Level: List
@@ -780,6 +791,7 @@ export class Controltower extends PolicyStatement {
     ],
     List: [
       'ListBaselines',
+      'ListControlOperations',
       'ListDirectoryGroups',
       'ListEnabledBaselines',
       'ListEnabledControls',

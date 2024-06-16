@@ -261,6 +261,17 @@ export class Chatbot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to List all tags associated with the AWS Chatbot Channel Configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to redeem previously generated parameters with Microsoft APIs, to acquire OAuth tokens to be used by the AWS Chatbot service
    *
    * Access Level: Write
@@ -280,6 +291,28 @@ export class Chatbot extends PolicyStatement {
    */
   public toRedeemSlackOauthCode() {
     return this.to('RedeemSlackOauthCode');
+  }
+
+  /**
+   * Grants permission to create tags on AWS Chatbot Channel Configuration
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags on AWS Chatbot Channel Configuration
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -357,7 +390,12 @@ export class Chatbot extends PolicyStatement {
       'GetSlackOauthParameters',
       'ListMicrosoftTeamsChannelConfigurations',
       'ListMicrosoftTeamsConfiguredTeams',
-      'ListMicrosoftTeamsUserIdentities'
+      'ListMicrosoftTeamsUserIdentities',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

@@ -19,6 +19,20 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept the process to update the primary email address of an account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEmailTargetDomain()
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_AcceptPrimaryEmailUpdate.html
+   */
+  public toAcceptPrimaryEmailUpdate() {
+    return this.to('AcceptPrimaryEmailUpdate');
+  }
+
+  /**
    * Grants permission to close an account
    *
    * Access Level: Write
@@ -119,6 +133,17 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the primary email address of an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_GetPrimaryEmail.html
+   */
+  public toGetPrimaryEmail() {
+    return this.to('GetPrimaryEmail');
+  }
+
+  /**
    * Grants permission to get the opt-in status of a Region
    *
    * Access Level: Read
@@ -179,21 +204,38 @@ export class Account extends PolicyStatement {
     return this.to('PutContactInformation');
   }
 
+  /**
+   * Grants permission to start the process to update the primary email address of an account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEmailTargetDomain()
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_StartPrimaryEmailUpdate.html
+   */
+  public toStartPrimaryEmailUpdate() {
+    return this.to('StartPrimaryEmailUpdate');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptPrimaryEmailUpdate',
       'CloseAccount',
       'DeleteAlternateContact',
       'DisableRegion',
       'EnableRegion',
       'PutAlternateContact',
       'PutChallengeQuestions',
-      'PutContactInformation'
+      'PutContactInformation',
+      'StartPrimaryEmailUpdate'
     ],
     Read: [
       'GetAccountInformation',
       'GetAlternateContact',
       'GetChallengeQuestions',
       'GetContactInformation',
+      'GetPrimaryEmail',
       'GetRegionOptStatus'
     ],
     List: [
@@ -267,6 +309,22 @@ export class Account extends PolicyStatement {
    */
   public ifAlternateContactTypes(value: string | string[], operator?: Operator | string) {
     return this.if(`AlternateContactTypes`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by email domain of the target email address
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toAcceptPrimaryEmailUpdate()
+   * - .toStartPrimaryEmailUpdate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEmailTargetDomain(value: string | string[], operator?: Operator | string) {
+    return this.if(`EmailTargetDomain`, value, operator ?? 'StringLike');
   }
 
   /**

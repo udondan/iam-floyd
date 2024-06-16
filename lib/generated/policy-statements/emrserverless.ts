@@ -33,6 +33,20 @@ export class EmrServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to execute interactive workloads on Livy Endpoint enabled on an EMR Serverless Application
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/interactive-workloads-livy-endpoints.html
+   */
+  public toAccessLivyEndpoints() {
+    return this.to('AccessLivyEndpoints');
+  }
+
+  /**
    * Grants permission to cancel a job run
    *
    * Access Level: Write
@@ -111,6 +125,17 @@ export class EmrServerless extends PolicyStatement {
    */
   public toListApplications() {
     return this.to('ListApplications');
+  }
+
+  /**
+   * Grants permission to list job run attempts associated with a job run
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_ListJobRunAttempts.html
+   */
+  public toListJobRunAttempts() {
+    return this.to('ListJobRunAttempts');
   }
 
   /**
@@ -218,6 +243,7 @@ export class EmrServerless extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AccessInteractiveEndpoints',
+      'AccessLivyEndpoints',
       'CancelJobRun',
       'CreateApplication',
       'DeleteApplication',
@@ -234,6 +260,7 @@ export class EmrServerless extends PolicyStatement {
     ],
     List: [
       'ListApplications',
+      'ListJobRunAttempts',
       'ListJobRuns'
     ],
     Tagging: [

@@ -1,0 +1,3 @@
+application-signals:RequestTag/${TagKey}
+application-signals:ResourceTag/${TagKey}
+application-signals:TagKeys

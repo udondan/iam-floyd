@@ -174,6 +174,17 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a snapshot of an AWS Batch job queue in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_GetJobQueueSnapshot.html
+   */
+  public toGetJobQueueSnapshot() {
+    return this.to('GetJobQueueSnapshot');
+  }
+
+  /**
    * Grants permission to list jobs for a specified AWS Batch job queue in your account
    *
    * Access Level: List
@@ -347,6 +358,7 @@ export class Batch extends PolicyStatement {
       'DescribeJobQueues',
       'DescribeJobs',
       'DescribeSchedulingPolicies',
+      'GetJobQueueSnapshot',
       'ListSchedulingPolicies',
       'ListTagsForResource'
     ],

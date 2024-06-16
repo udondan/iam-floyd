@@ -835,6 +835,9 @@ export class Omics extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/omics/latest/api/API_StartRun.html
    */
   public toStartRun() {

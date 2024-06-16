@@ -23,13 +23,15 @@
         },
         {
             "Action": [
+                "account:AcceptPrimaryEmailUpdate",
                 "account:CloseAccount",
                 "account:DeleteAlternateContact",
                 "account:DisableRegion",
                 "account:EnableRegion",
                 "account:PutAlternateContact",
                 "account:PutChallengeQuestions",
-                "account:PutContactInformation"
+                "account:PutContactInformation",
+                "account:StartPrimaryEmailUpdate"
             ],
             "Resource": "*",
             "Effect": "Deny"

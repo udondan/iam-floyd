@@ -1,0 +1,3 @@
+apptest:RequestTag/${TagKey}
+apptest:ResourceTag/${TagKey}
+apptest:TagKeys

@@ -1,1 +1,3 @@
-
+payments:RequestTag/${TagKey}
+payments:ResourceTag/${TagKey}
+payments:TagKeys
