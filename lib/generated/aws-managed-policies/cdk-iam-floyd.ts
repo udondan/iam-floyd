@@ -2414,6 +2414,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationAutoscalingSageMakerEndpointPolicy);
     }
 
+    /** Policy granting permissions to Application Auto Scaling to access Amazon WorkSpaces and Amazon CloudWatch. */
+    public AWSApplicationAutoscalingWorkSpacesPoolPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationAutoscalingWorkSpacesPoolPolicy);
+    }
+
     /** Provides access for the Discovery Agent to register with AWS Application Discovery Service. */
     public AWSApplicationDiscoveryAgentAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationDiscoveryAgentAccess);

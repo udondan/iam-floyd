@@ -962,6 +962,8 @@ export class AwsManagedPolicy {
     public static AWSApplicationAutoscalingRDSClusterPolicy = 'aws-service-role/AWSApplicationAutoscalingRDSClusterPolicy';
     /** Policy granting permissions to Application Auto Scaling to access SageMaker and CloudWatch. */
     public static AWSApplicationAutoscalingSageMakerEndpointPolicy = 'aws-service-role/AWSApplicationAutoscalingSageMakerEndpointPolicy';
+    /** Policy granting permissions to Application Auto Scaling to access Amazon WorkSpaces and Amazon CloudWatch. */
+    public static AWSApplicationAutoscalingWorkSpacesPoolPolicy = 'aws-service-role/AWSApplicationAutoscalingWorkSpacesPoolPolicy';
     /** Provides access for the Discovery Agent to register with AWS Application Discovery Service. */
     public static AWSApplicationDiscoveryAgentAccess = 'AWSApplicationDiscoveryAgentAccess';
     /** Allows Application Discovery Service Agentless Collectors to auto update, register, and communicate with Application Discovery Service */
