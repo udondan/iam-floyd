@@ -2196,6 +2196,8 @@ export class AwsManagedPolicy {
     public static EC2InstanceProfileForImageBuilderECRContainerBuilds = 'EC2InstanceProfileForImageBuilderECRContainerBuilds';
     /** Enables access to AWS Services and Resources used or managed by ECR Replication */
     public static ECRReplicationServiceRolePolicy = 'aws-service-role/ECRReplicationServiceRolePolicy';
+    /** Allows actions to be performed when using AWS ECR repository creation templates */
+    public static ECRTemplateServiceRolePolicy = 'aws-service-role/ECRTemplateServiceRolePolicy';
     /** This policy allows ElastiCache to manage AWS resources on your behalf as necessary for managing your cache */
     public static ElastiCacheServiceRolePolicy = 'aws-service-role/ElastiCacheServiceRolePolicy';
     /** Provides full access to Amazon ElasticLoadBalancing, and limited access to other services necessary to provide ElasticLoadBalancing features. */

@@ -5499,6 +5499,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ECRReplicationServiceRolePolicy);
     }
 
+    /** Allows actions to be performed when using AWS ECR repository creation templates */
+    public ECRTemplateServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ECRTemplateServiceRolePolicy);
+    }
+
     /** This policy allows ElastiCache to manage AWS resources on your behalf as necessary for managing your cache */
     public ElastiCacheServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ElastiCacheServiceRolePolicy);
