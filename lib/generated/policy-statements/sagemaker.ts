@@ -747,6 +747,25 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an MLflow tracking server
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateMlflowTrackingServer.html
+   */
+  public toCreateMlflowTrackingServer() {
+    return this.to('CreateMlflowTrackingServer');
+  }
+
+  /**
    * Grants permission to create a model in Amazon SageMaker. In the request, you specify a name for the model and describe one or more containers
    *
    * Access Level: Write
@@ -1009,6 +1028,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreatePresignedDomainUrl() {
     return this.to('CreatePresignedDomainUrl');
+  }
+
+  /**
+   * Grants permission to return a URL that you can use from your browser to connect to the MLflow tracking server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePresignedMlflowTrackingServerUrl.html
+   */
+  public toCreatePresignedMlflowTrackingServerUrl() {
+    return this.to('CreatePresignedMlflowTrackingServerUrl');
   }
 
   /**
@@ -1605,6 +1635,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteLineageGroupPolicy() {
     return this.to('DeleteLineageGroupPolicy');
+  }
+
+  /**
+   * Grants permission to delete an MLflow tracking server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteMlflowTrackingServer.html
+   */
+  public toDeleteMlflowTrackingServer() {
+    return this.to('DeleteMlflowTrackingServer');
   }
 
   /**
@@ -2272,6 +2313,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeLineageGroup() {
     return this.to('DescribeLineageGroup');
+  }
+
+  /**
+   * Grants permission to get information about an MLflow tracking server
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeMlflowTrackingServer.html
+   */
+  public toDescribeMlflowTrackingServer() {
+    return this.to('DescribeMlflowTrackingServer');
   }
 
   /**
@@ -3209,6 +3261,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list MLflow tracking servers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListMlflowTrackingServers.html
+   */
+  public toListMlflowTrackingServers() {
+    return this.to('ListMlflowTrackingServers');
+  }
+
+  /**
    * Grants permission to list model bias job definitions
    *
    * Access Level: List
@@ -3824,6 +3887,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an MLfLow tracking server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartMlflowTrackingServer.html
+   */
+  public toStartMlflowTrackingServer() {
+    return this.to('StartMlflowTrackingServer');
+  }
+
+  /**
    * Grants permission to start a monitoring schedule
    *
    * Access Level: Write
@@ -3953,6 +4027,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toStopLabelingJob() {
     return this.to('StopLabelingJob');
+  }
+
+  /**
+   * Grants permission to stop an MLflow tracking server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopMlflowTrackingServer.html
+   */
+  public toStopMlflowTrackingServer() {
+    return this.to('StopMlflowTrackingServer');
   }
 
   /**
@@ -4268,6 +4353,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an MLflow tracking server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateMlflowTrackingServer.html
+   */
+  public toUpdateMlflowTrackingServer() {
+    return this.to('UpdateMlflowTrackingServer');
+  }
+
+  /**
    * Grants permission to update a model card
    *
    * Access Level: Write
@@ -4544,6 +4640,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateInferenceRecommendationsJob',
       'CreateLabelingJob',
       'CreateLineageGroupPolicy',
+      'CreateMlflowTrackingServer',
       'CreateModel',
       'CreateModelBiasJobDefinition',
       'CreateModelCard',
@@ -4557,6 +4654,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateNotebookInstanceLifecycleConfig',
       'CreatePipeline',
       'CreatePresignedDomainUrl',
+      'CreatePresignedMlflowTrackingServerUrl',
       'CreatePresignedNotebookInstanceUrl',
       'CreateProcessingJob',
       'CreateProject',
@@ -4600,6 +4698,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteInferenceComponent',
       'DeleteInferenceExperiment',
       'DeleteLineageGroupPolicy',
+      'DeleteMlflowTrackingServer',
       'DeleteModel',
       'DeleteModelBiasJobDefinition',
       'DeleteModelCard',
@@ -4640,6 +4739,7 @@ export class Sagemaker extends PolicyStatement {
       'StartEdgeDeploymentStage',
       'StartHumanLoop',
       'StartInferenceExperiment',
+      'StartMlflowTrackingServer',
       'StartMonitoringSchedule',
       'StartNotebookInstance',
       'StartPipelineExecution',
@@ -4652,6 +4752,7 @@ export class Sagemaker extends PolicyStatement {
       'StopInferenceExperiment',
       'StopInferenceRecommendationsJob',
       'StopLabelingJob',
+      'StopMlflowTrackingServer',
       'StopMonitoringSchedule',
       'StopNotebookInstance',
       'StopPipelineExecution',
@@ -4679,6 +4780,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdateInferenceComponent',
       'UpdateInferenceComponentRuntimeConfig',
       'UpdateInferenceExperiment',
+      'UpdateMlflowTrackingServer',
       'UpdateModelCard',
       'UpdateModelPackage',
       'UpdateMonitoringAlert',
@@ -4741,6 +4843,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeInferenceRecommendationsJob',
       'DescribeLabelingJob',
       'DescribeLineageGroup',
+      'DescribeMlflowTrackingServer',
       'DescribeModel',
       'DescribeModelBiasJobDefinition',
       'DescribeModelCard',
@@ -4825,6 +4928,7 @@ export class Sagemaker extends PolicyStatement {
       'ListLabelingJobs',
       'ListLabelingJobsForWorkteam',
       'ListLineageGroups',
+      'ListMlflowTrackingServers',
       'ListModelBiasJobDefinitions',
       'ListModelCardExportJobs',
       'ListModelCardVersions',
@@ -5939,6 +6043,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type mlflow-tracking-server to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MlflowTrackingServer.html
+   *
+   * @param mlflowTrackingServerName - Identifier for the mlflowTrackingServerName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onMlflowTrackingServer(mlflowTrackingServerName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-tracking-server/${ mlflowTrackingServerName }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the SageMaker service
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -5975,6 +6097,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateInferenceExperiment()
    * - .toCreateInferenceRecommendationsJob()
    * - .toCreateLabelingJob()
+   * - .toCreateMlflowTrackingServer()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
    * - .toCreateModelCard()
@@ -6067,6 +6190,7 @@ export class Sagemaker extends PolicyStatement {
    * - lineage-group
    * - model-card
    * - model-card-export-job
+   * - mlflow-tracking-server
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -6113,6 +6237,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateInferenceExperiment()
    * - .toCreateInferenceRecommendationsJob()
    * - .toCreateLabelingJob()
+   * - .toCreateMlflowTrackingServer()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
    * - .toCreateModelCard()
@@ -6763,6 +6888,7 @@ export class Sagemaker extends PolicyStatement {
    * - lineage-group
    * - model-card
    * - model-card-export-job
+   * - mlflow-tracking-server
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

@@ -41,6 +41,17 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to an Amazon Macie administrator to change the status of automated sensitive data discovery for one or more accounts in their organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/automated-discovery-accounts.html
+   */
+  public toBatchUpdateAutomatedDiscoveryAccounts() {
+    return this.to('BatchUpdateAutomatedDiscoveryAccounts');
+  }
+
+  /**
    * Grants permission to create and define the settings for an allow list
    *
    * Access Level: Write
@@ -336,7 +347,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the configuration settings and status of automated sensitive data discovery for an account
+   * Grants permission to retrieve the configuration settings and status of automated sensitive data discovery for an Amazon Macie administrator account, organization, or standalone account
    *
    * Access Level: Read
    *
@@ -567,6 +578,17 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the status of automated sensitive data discovery for an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/macie/latest/APIReference/automated-discovery-accounts.html
+   */
+  public toListAutomatedDiscoveryAccounts() {
+    return this.to('ListAutomatedDiscoveryAccounts');
+  }
+
+  /**
    * Grants permission to retrieve a subset of information about the status and settings for one or more sensitive data discovery jobs
    *
    * Access Level: List
@@ -655,7 +677,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about the delegated, Amazon Macie administrator account for an AWS organization
+   * Grants permission to retrieve information about the delegated Amazon Macie administrator account for an AWS organization
    *
    * Access Level: List
    *
@@ -666,7 +688,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about objects that were selected from an S3 bucket for automated sensitive data discovery
+   * Grants permission to retrieve information about objects that Amazon Macie selected from an S3 bucket for automated sensitive data discovery
    *
    * Access Level: List
    *
@@ -794,7 +816,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable or disable automated sensitive data discovery for an account
+   * Grants permission to change the status of automated sensitive data discovery for an Amazon Macie administrator account, organization, or standalone account
    *
    * Access Level: Write
    *
@@ -846,7 +868,7 @@ export class Macie2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to suspend or re-enable an Amazon Macie account, or update the configuration settings for a Macie account
+   * Grants permission to an Amazon Macie administrator account to suspend or re-enable Macie for a member account
    *
    * Access Level: Write
    *
@@ -925,6 +947,7 @@ export class Macie2 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptInvitation',
+      'BatchUpdateAutomatedDiscoveryAccounts',
       'CreateAllowList',
       'CreateClassificationJob',
       'CreateCustomDataIdentifier',
@@ -993,6 +1016,7 @@ export class Macie2 extends PolicyStatement {
     ],
     List: [
       'ListAllowLists',
+      'ListAutomatedDiscoveryAccounts',
       'ListClassificationJobs',
       'ListClassificationScopes',
       'ListCustomDataIdentifiers',

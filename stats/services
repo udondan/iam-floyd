@@ -318,6 +318,7 @@ s3express
 sagemaker
 sagemaker-geospatial
 sagemaker-groundtruth-synthetic
+sagemaker-mlflow
 savingsplans
 scheduler
 schemas

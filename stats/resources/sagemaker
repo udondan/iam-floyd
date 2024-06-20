@@ -33,6 +33,7 @@ sagemaker:inference-experiment
 sagemaker:inference-recommendations-job
 sagemaker:labeling-job
 sagemaker:lineage-group
+sagemaker:mlflow-tracking-server
 sagemaker:model
 sagemaker:model-bias-job-definition
 sagemaker:model-card

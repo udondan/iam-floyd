@@ -37,6 +37,7 @@ sagemaker:CreateInferenceExperiment;Write
 sagemaker:CreateInferenceRecommendationsJob;Write
 sagemaker:CreateLabelingJob;Write
 sagemaker:CreateLineageGroupPolicy;Write
+sagemaker:CreateMlflowTrackingServer;Write
 sagemaker:CreateModel;Write
 sagemaker:CreateModelBiasJobDefinition;Write
 sagemaker:CreateModelCard;Write
@@ -50,6 +51,7 @@ sagemaker:CreateNotebookInstance;Write
 sagemaker:CreateNotebookInstanceLifecycleConfig;Write
 sagemaker:CreatePipeline;Write
 sagemaker:CreatePresignedDomainUrl;Write
+sagemaker:CreatePresignedMlflowTrackingServerUrl;Write
 sagemaker:CreatePresignedNotebookInstanceUrl;Write
 sagemaker:CreateProcessingJob;Write
 sagemaker:CreateProject;Write
@@ -93,6 +95,7 @@ sagemaker:DeleteImageVersion;Write
 sagemaker:DeleteInferenceComponent;Write
 sagemaker:DeleteInferenceExperiment;Write
 sagemaker:DeleteLineageGroupPolicy;Write
+sagemaker:DeleteMlflowTrackingServer;Write
 sagemaker:DeleteModel;Write
 sagemaker:DeleteModelBiasJobDefinition;Write
 sagemaker:DeleteModelCard;Write
@@ -153,6 +156,7 @@ sagemaker:DescribeInferenceExperiment;Read
 sagemaker:DescribeInferenceRecommendationsJob;Read
 sagemaker:DescribeLabelingJob;Read
 sagemaker:DescribeLineageGroup;Read
+sagemaker:DescribeMlflowTrackingServer;Read
 sagemaker:DescribeModel;Read
 sagemaker:DescribeModelBiasJobDefinition;Read
 sagemaker:DescribeModelCard;Read
@@ -237,6 +241,7 @@ sagemaker:ListInferenceRecommendationsJobs;List
 sagemaker:ListLabelingJobs;List
 sagemaker:ListLabelingJobsForWorkteam;List
 sagemaker:ListLineageGroups;List
+sagemaker:ListMlflowTrackingServers;List
 sagemaker:ListModelBiasJobDefinitions;List
 sagemaker:ListModelCardExportJobs;List
 sagemaker:ListModelCardVersions;List
@@ -292,6 +297,7 @@ sagemaker:SendSharedModelEvent;Write
 sagemaker:StartEdgeDeploymentStage;Write
 sagemaker:StartHumanLoop;Write
 sagemaker:StartInferenceExperiment;Write
+sagemaker:StartMlflowTrackingServer;Write
 sagemaker:StartMonitoringSchedule;Write
 sagemaker:StartNotebookInstance;Write
 sagemaker:StartPipelineExecution;Write
@@ -304,6 +310,7 @@ sagemaker:StopHyperParameterTuningJob;Write
 sagemaker:StopInferenceExperiment;Write
 sagemaker:StopInferenceRecommendationsJob;Write
 sagemaker:StopLabelingJob;Write
+sagemaker:StopMlflowTrackingServer;Write
 sagemaker:StopMonitoringSchedule;Write
 sagemaker:StopNotebookInstance;Write
 sagemaker:StopPipelineExecution;Write
@@ -331,6 +338,7 @@ sagemaker:UpdateImageVersion;Write
 sagemaker:UpdateInferenceComponent;Write
 sagemaker:UpdateInferenceComponentRuntimeConfig;Write
 sagemaker:UpdateInferenceExperiment;Write
+sagemaker:UpdateMlflowTrackingServer;Write
 sagemaker:UpdateModelCard;Write
 sagemaker:UpdateModelPackage;Write
 sagemaker:UpdateMonitoringAlert;Write

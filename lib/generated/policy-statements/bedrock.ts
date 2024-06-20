@@ -19,6 +19,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure vended log delivery for a knowledge base
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to apply a guardrail
    *
    * Access Level: Read
@@ -1048,6 +1059,9 @@ export class Bedrock extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Read: [
       'ApplyGuardrail',
       'DetectGeneratedContent',

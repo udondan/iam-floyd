@@ -156,6 +156,7 @@ export { S3Outposts } from './policy-statements/s3onoutposts';
 export { Sagemaker } from './policy-statements/sagemaker';
 export { SagemakerGeospatial } from './policy-statements/sagemakergeospatialcapabilities';
 export { SagemakerGroundtruthSynthetic } from './policy-statements/sagemakergroundtruthsynthetic';
+export { SagemakerMlflow } from './policy-statements/sagemakerwithmlflow';
 export { Securitylake } from './policy-statements/securitylake';
 export { Ses } from './policy-statements/ses';
 export { Sdb } from './policy-statements/simpledb';
