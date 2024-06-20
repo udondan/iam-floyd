@@ -11,6 +11,7 @@ kms:GrantConstraintType
 kms:GrantIsForAWSResource
 kms:GrantOperations
 kms:GranteePrincipal
+kms:KeyAgreementAlgorithm
 kms:KeyOrigin
 kms:KeySpec
 kms:KeyUsage

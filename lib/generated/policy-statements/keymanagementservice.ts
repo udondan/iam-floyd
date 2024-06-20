@@ -196,6 +196,24 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Controls permission to use the specified AWS KMS key to derive shared secrets
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifKeyAgreementAlgorithm()
+   * - .ifRecipientAttestation()
+   * - .ifRequestAlias()
+   * - .ifViaService()
+   *
+   * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeriveSharedSecret.html
+   */
+  public toDeriveSharedSecret() {
+    return this.to('DeriveSharedSecret');
+  }
+
+  /**
    * Controls permission to view detailed information about custom key stores in the account and region
    *
    * Access Level: Read
@@ -907,6 +925,7 @@ export class Kms extends PolicyStatement {
       'DeleteAlias',
       'DeleteCustomKeyStore',
       'DeleteImportedKeyMaterial',
+      'DeriveSharedSecret',
       'DisableKey',
       'DisableKeyRotation',
       'DisconnectCustomKeyStore',
@@ -1084,6 +1103,7 @@ export class Kms extends PolicyStatement {
    * - .toDeleteAlias()
    * - .toDeleteCustomKeyStore()
    * - .toDeleteImportedKeyMaterial()
+   * - .toDeriveSharedSecret()
    * - .toDescribeCustomKeyStores()
    * - .toDescribeKey()
    * - .toDisableKey()
@@ -1315,6 +1335,21 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Filters access to the DeriveSharedSecret operation based on the value of the KeyAgreementAlgorithm parameter in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-agreement-algorithm
+   *
+   * Applies to actions:
+   * - .toDeriveSharedSecret()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKeyAgreementAlgorithm(value: string | string[], operator?: Operator | string) {
+    return this.if(`KeyAgreementAlgorithm`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access to an API operation based on the Origin property of the AWS KMS key created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a KMS key
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-key-origin
@@ -1472,6 +1507,7 @@ export class Kms extends PolicyStatement {
    *
    * Applies to actions:
    * - .toDecrypt()
+   * - .toDeriveSharedSecret()
    * - .toGenerateDataKey()
    * - .toGenerateRandom()
    *
@@ -1504,6 +1540,7 @@ export class Kms extends PolicyStatement {
    *
    * Applies to actions:
    * - .toDecrypt()
+   * - .toDeriveSharedSecret()
    * - .toDescribeKey()
    * - .toEncrypt()
    * - .toGenerateDataKey()
@@ -1639,6 +1676,7 @@ export class Kms extends PolicyStatement {
    * - .toDecrypt()
    * - .toDeleteAlias()
    * - .toDeleteImportedKeyMaterial()
+   * - .toDeriveSharedSecret()
    * - .toDescribeKey()
    * - .toDisableKey()
    * - .toDisableKeyRotation()

@@ -27,7 +27,7 @@ export class PcaConnectorScep extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_CreateChallenge.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateChallenge.html
    */
   public toCreateChallenge() {
     return this.to('CreateChallenge');
@@ -48,7 +48,7 @@ export class PcaConnectorScep extends PolicyStatement {
    * - acm-pca:GetCertificateAuthorityCertificate
    * - acm-pca:IssueCertificate
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_CreateConnector.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateConnector.html
    */
   public toCreateConnector() {
     return this.to('CreateConnector');
@@ -59,7 +59,7 @@ export class PcaConnectorScep extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_DeleteChallenge.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_DeleteChallenge.html
    */
   public toDeleteChallenge() {
     return this.to('DeleteChallenge');
@@ -70,7 +70,7 @@ export class PcaConnectorScep extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_DeleteConnector.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_DeleteConnector.html
    */
   public toDeleteConnector() {
     return this.to('DeleteConnector');
@@ -81,7 +81,7 @@ export class PcaConnectorScep extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_GetChallengeMetadata.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_GetChallengeMetadata.html
    */
   public toGetChallengeMetadata() {
     return this.to('GetChallengeMetadata');
@@ -92,7 +92,7 @@ export class PcaConnectorScep extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_GetChallengePassword.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_GetChallengePassword.html
    */
   public toGetChallengePassword() {
     return this.to('GetChallengePassword');
@@ -103,7 +103,7 @@ export class PcaConnectorScep extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_GetConnector.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_GetConnector.html
    */
   public toGetConnector() {
     return this.to('GetConnector');
@@ -114,7 +114,7 @@ export class PcaConnectorScep extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_ListChallengeMetadata.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListChallengeMetadata.html
    */
   public toListChallengeMetadata() {
     return this.to('ListChallengeMetadata');
@@ -125,7 +125,7 @@ export class PcaConnectorScep extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_ListConnectors.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListConnectors.html
    */
   public toListConnectors() {
     return this.to('ListConnectors');
@@ -136,7 +136,7 @@ export class PcaConnectorScep extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -151,7 +151,7 @@ export class PcaConnectorScep extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -165,7 +165,7 @@ export class PcaConnectorScep extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -197,7 +197,7 @@ export class PcaConnectorScep extends PolicyStatement {
   /**
    * Adds a resource of type Challenge to the statement
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html
    *
    * @param connectorId - Identifier for the connectorId.
    * @param challengeId - Identifier for the challengeId.
@@ -215,7 +215,7 @@ export class PcaConnectorScep extends PolicyStatement {
   /**
    * Adds a resource of type Connector to the statement
    *
-   * https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html
+   * https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html
    *
    * @param connectorId - Identifier for the connectorId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

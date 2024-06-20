@@ -1,3 +1,4 @@
+bedrock:AllowVendedLogDeliveryForResource;Permissions management
 bedrock:ApplyGuardrail;Read
 bedrock:AssociateAgentKnowledgeBase;Write
 bedrock:AssociateThirdPartyKnowledgeBase;Write

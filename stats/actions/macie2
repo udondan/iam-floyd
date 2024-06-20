@@ -1,5 +1,6 @@
 macie2:AcceptInvitation;Write
 macie2:BatchGetCustomDataIdentifiers;Read
+macie2:BatchUpdateAutomatedDiscoveryAccounts;Write
 macie2:CreateAllowList;Write
 macie2:CreateClassificationJob;Write
 macie2:CreateCustomDataIdentifier;Write
@@ -46,6 +47,7 @@ macie2:GetSensitivityInspectionTemplate;Read
 macie2:GetUsageStatistics;Read
 macie2:GetUsageTotals;Read
 macie2:ListAllowLists;List
+macie2:ListAutomatedDiscoveryAccounts;List
 macie2:ListClassificationJobs;List
 macie2:ListClassificationScopes;List
 macie2:ListCustomDataIdentifiers;List

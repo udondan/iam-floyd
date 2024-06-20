@@ -8,6 +8,7 @@ kms:Decrypt;Write
 kms:DeleteAlias;Write
 kms:DeleteCustomKeyStore;Write
 kms:DeleteImportedKeyMaterial;Write
+kms:DeriveSharedSecret;Write
 kms:DescribeCustomKeyStores;Read
 kms:DescribeKey;Read
 kms:DisableKey;Write
