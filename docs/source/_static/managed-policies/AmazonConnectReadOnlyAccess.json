@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowConnectReadOnly",
       "Effect": "Allow",
       "Action": [
         "connect:Get*",
@@ -12,8 +13,9 @@
       "Resource": "*"
     },
     {
+      "Sid": "DenyConnectEmergencyAccess",
       "Effect": "Deny",
-      "Action": "connect:GetFederationTokens",
+      "Action": "connect:AdminGetEmergencyAccessToken",
       "Resource": "*"
     }
   ]
