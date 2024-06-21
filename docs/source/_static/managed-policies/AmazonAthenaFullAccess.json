@@ -36,7 +36,8 @@
         "glue:BatchGetPartition",
         "glue:StartColumnStatisticsTaskRun",
         "glue:GetColumnStatisticsTaskRun",
-        "glue:GetColumnStatisticsTaskRuns"
+        "glue:GetColumnStatisticsTaskRuns",
+        "glue:GetCatalogImportStatus"
       ],
       "Resource": [
         "*"
