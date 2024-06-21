@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [cloudshell](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudshell.html).
@@ -22,6 +22,11 @@ export class Cloudshell extends PolicyStatement {
    * Grants permissions to create a CloudShell environment
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSecurityGroupIds()
+   * - .ifSubnetIds()
+   * - .ifVpcIds()
    *
    * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#CreateEnvironment
    */
@@ -49,6 +54,17 @@ export class Cloudshell extends PolicyStatement {
    */
   public toDeleteEnvironment() {
     return this.to('DeleteEnvironment');
+  }
+
+  /**
+   * Grants permission to return descriptions of existing user's environments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#DescribeEnvironments
+   */
+  public toDescribeEnvironments() {
+    return this.to('DescribeEnvironments');
   }
 
   /**
@@ -128,6 +144,9 @@ export class Cloudshell extends PolicyStatement {
       'StartEnvironment',
       'StopEnvironment'
     ],
+    List: [
+      'DescribeEnvironments'
+    ],
     Read: [
       'GetEnvironmentStatus'
     ]
@@ -145,5 +164,50 @@ export class Cloudshell extends PolicyStatement {
    */
   public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cloudshell:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ environmentId }`);
+  }
+
+  /**
+   * Filters access by security group ids. Available during CreateEnvironment operation
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/aws-cloudshell-vpc-permissions-1.html#vpc-condition-keys-examples-1
+   *
+   * Applies to actions:
+   * - .toCreateEnvironment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecurityGroupIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`SecurityGroupIds`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by subnet ids. Available during CreateEnvironment operation
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/aws-cloudshell-vpc-permissions-1.html#vpc-condition-keys-examples-1
+   *
+   * Applies to actions:
+   * - .toCreateEnvironment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubnetIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`SubnetIds`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by vpc ids. Available during CreateEnvironment operation
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/aws-cloudshell-vpc-permissions-1.html#vpc-condition-keys-examples-1
+   *
+   * Applies to actions:
+   * - .toCreateEnvironment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcIds`, value, operator ?? 'StringLike');
   }
 }

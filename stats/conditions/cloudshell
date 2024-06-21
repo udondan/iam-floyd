@@ -1,1 +1,3 @@
-
+cloudshell:SecurityGroupIds
+cloudshell:SubnetIds
+cloudshell:VpcIds

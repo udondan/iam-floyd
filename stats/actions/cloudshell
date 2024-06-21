@@ -1,6 +1,7 @@
 cloudshell:CreateEnvironment;Write
 cloudshell:CreateSession;Write
 cloudshell:DeleteEnvironment;Write
+cloudshell:DescribeEnvironments;List
 cloudshell:GetEnvironmentStatus;Read
 cloudshell:GetFileDownloadUrls;Write
 cloudshell:GetFileUploadUrls;Write
