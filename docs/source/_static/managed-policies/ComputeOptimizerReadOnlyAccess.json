@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "computeOptimizerReadOnlyAccess",
       "Effect": "Allow",
       "Action": [
         "compute-optimizer:DescribeRecommendationExportJobs",
@@ -17,6 +18,8 @@
         "compute-optimizer:GetEffectiveRecommendationPreferences",
         "compute-optimizer:GetECSServiceRecommendations",
         "compute-optimizer:GetECSServiceRecommendationProjectedMetrics",
+        "compute-optimizer:GetRDSDatabaseRecommendations",
+        "compute-optimizer:GetRDSDatabaseRecommendationProjectedMetrics",
         "compute-optimizer:GetLicenseRecommendations",
         "ec2:DescribeInstances",
         "ec2:DescribeVolumes",
@@ -29,7 +32,9 @@
         "cloudwatch:GetMetricData",
         "organizations:ListAccounts",
         "organizations:DescribeOrganization",
-        "organizations:DescribeAccount"
+        "organizations:DescribeAccount",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters"
       ],
       "Resource": "*"
     }
