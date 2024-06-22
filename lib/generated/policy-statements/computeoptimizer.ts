@@ -29,6 +29,8 @@ export class ComputeOptimizer extends PolicyStatement {
    * Dependent actions:
    * - autoscaling:DescribeAutoScalingGroups
    * - ec2:DescribeInstances
+   * - rds:DescribeDBClusters
+   * - rds:DescribeDBInstances
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DeleteRecommendationPreferences.html
    */
@@ -140,6 +142,22 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export rds recommendations to S3 for the provided accounts
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - compute-optimizer:GetRDSDatabaseRecommendations
+   * - rds:DescribeDBClusters
+   * - rds:DescribeDBInstances
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportRDSDatabaseRecommendations.html
+   */
+  public toExportRDSDatabaseRecommendations() {
+    return this.to('ExportRDSDatabaseRecommendations');
+  }
+
+  /**
    * Grants permission to get recommendations for the provided AutoScaling groups
    *
    * Access Level: List
@@ -233,6 +251,8 @@ export class ComputeOptimizer extends PolicyStatement {
    * - autoscaling:DescribeAutoScalingGroups
    * - autoscaling:DescribeAutoScalingInstances
    * - ec2:DescribeInstances
+   * - rds:DescribeDBClusters
+   * - rds:DescribeDBInstances
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEffectiveRecommendationPreferences.html
    */
@@ -292,6 +312,36 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the recommendation projected metrics of the specified instance
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - rds:DescribeDBClusters
+   * - rds:DescribeDBInstances
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetRDSDatabaseRecommendationProjectedMetrics.html
+   */
+  public toGetRDSDatabaseRecommendationProjectedMetrics() {
+    return this.to('GetRDSDatabaseRecommendationProjectedMetrics');
+  }
+
+  /**
+   * Grants permission to get rds recommendations for the specified account(s)
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - rds:DescribeDBClusters
+   * - rds:DescribeDBInstances
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetRDSDatabaseRecommendations.html
+   */
+  public toGetRDSDatabaseRecommendations() {
+    return this.to('GetRDSDatabaseRecommendations');
+  }
+
+  /**
    * Grants permission to get recommendation preferences
    *
    * Access Level: Read
@@ -328,6 +378,8 @@ export class ComputeOptimizer extends PolicyStatement {
    * - autoscaling:DescribeAutoScalingGroups
    * - autoscaling:DescribeAutoScalingInstances
    * - ec2:DescribeInstances
+   * - rds:DescribeDBClusters
+   * - rds:DescribeDBInstances
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_PutRecommendationPreferences.html
    */
@@ -355,6 +407,7 @@ export class ComputeOptimizer extends PolicyStatement {
       'ExportECSServiceRecommendations',
       'ExportLambdaFunctionRecommendations',
       'ExportLicenseRecommendations',
+      'ExportRDSDatabaseRecommendations',
       'PutRecommendationPreferences',
       'UpdateEnrollmentStatus'
     ],
@@ -370,6 +423,8 @@ export class ComputeOptimizer extends PolicyStatement {
       'GetEnrollmentStatusesForOrganization',
       'GetLambdaFunctionRecommendations',
       'GetLicenseRecommendations',
+      'GetRDSDatabaseRecommendationProjectedMetrics',
+      'GetRDSDatabaseRecommendations',
       'GetRecommendationSummaries'
     ],
     Read: [

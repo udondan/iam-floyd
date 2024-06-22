@@ -22,6 +22,7 @@ connect:BatchPutContact;Write
 connect:ClaimPhoneNumber;Write
 connect:CompleteAttachedFileUpload;Write
 connect:CreateAgentStatus;Write
+connect:CreateAuthenticationProfile;Write
 connect:CreateContactFlow;Write
 connect:CreateContactFlowModule;Write
 connect:CreateEvaluationForm;Write
@@ -70,6 +71,7 @@ connect:DeleteView;Write
 connect:DeleteViewVersion;Write
 connect:DeleteVocabulary;Write
 connect:DescribeAgentStatus;Read
+connect:DescribeAuthenticationProfile;Read
 connect:DescribeContact;Read
 connect:DescribeContactEvaluation;Read
 connect:DescribeContactFlow;Read
@@ -122,6 +124,7 @@ connect:GetTrafficDistribution;List
 connect:ImportPhoneNumber;Write
 connect:ListAgentStatuses;List
 connect:ListApprovedOrigins;List
+connect:ListAuthenticationProfiles;Read
 connect:ListBots;List
 connect:ListContactEvaluations;List
 connect:ListContactFlowModules;List
@@ -207,6 +210,7 @@ connect:TransferContact;Write
 connect:UntagContact;Write
 connect:UntagResource;Tagging
 connect:UpdateAgentStatus;Write
+connect:UpdateAuthenticationProfile;Write
 connect:UpdateContact;Write
 connect:UpdateContactAttributes;Write
 connect:UpdateContactEvaluation;Write

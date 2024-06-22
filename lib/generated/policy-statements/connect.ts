@@ -408,6 +408,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create authentication profile resources in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateAuthenticationProfile.html
+   */
+  public toCreateAuthenticationProfile() {
+    return this.to('CreateAuthenticationProfile');
+  }
+
+  /**
    * Grants permission to create a contact flow in an Amazon Connect instance
    *
    * Access Level: Write
@@ -1187,6 +1201,20 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeAgentStatus() {
     return this.to('DescribeAgentStatus');
+  }
+
+  /**
+   * Grants permission to describe authentication profile resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeAuthenticationProfile.html
+   */
+  public toDescribeAuthenticationProfile() {
+    return this.to('DescribeAuthenticationProfile');
   }
 
   /**
@@ -1972,6 +2000,20 @@ export class Connect extends PolicyStatement {
    */
   public toListApprovedOrigins() {
     return this.to('ListApprovedOrigins');
+  }
+
+  /**
+   * Grants permission to list authentication profile resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListAuthenticationProfiles.html
+   */
+  public toListAuthenticationProfiles() {
+    return this.to('ListAuthenticationProfiles');
   }
 
   /**
@@ -3194,6 +3236,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update authentication profile resources in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateAuthenticationProfile.html
+   */
+  public toUpdateAuthenticationProfile() {
+    return this.to('UpdateAuthenticationProfile');
+  }
+
+  /**
    * Grants permission to update a contact in an Amazon Connect instance
    *
    * Access Level: Write
@@ -3902,6 +3958,7 @@ export class Connect extends PolicyStatement {
       'ClaimPhoneNumber',
       'CompleteAttachedFileUpload',
       'CreateAgentStatus',
+      'CreateAuthenticationProfile',
       'CreateContactFlow',
       'CreateContactFlowModule',
       'CreateEvaluationForm',
@@ -3991,6 +4048,7 @@ export class Connect extends PolicyStatement {
       'TransferContact',
       'UntagContact',
       'UpdateAgentStatus',
+      'UpdateAuthenticationProfile',
       'UpdateContact',
       'UpdateContactAttributes',
       'UpdateContactEvaluation',
@@ -4040,6 +4098,7 @@ export class Connect extends PolicyStatement {
     Read: [
       'BatchGetAttachedFileMetadata',
       'DescribeAgentStatus',
+      'DescribeAuthenticationProfile',
       'DescribeContact',
       'DescribeContactEvaluation',
       'DescribeContactFlow',
@@ -4074,6 +4133,7 @@ export class Connect extends PolicyStatement {
       'GetMetricDataV2',
       'GetPromptFile',
       'GetTaskTemplate',
+      'ListAuthenticationProfiles',
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',
       'SearchContactFlowModules',
@@ -4227,6 +4287,21 @@ export class Connect extends PolicyStatement {
    */
   public onSecurityProfile(instanceId: string, securityProfileId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/security-profile/${ securityProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type authentication-profile to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-authentication-profiles.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param authenticationProfileId - Identifier for the authenticationProfileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAuthenticationProfile(instanceId: string, authenticationProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/authentication-profile/${ authenticationProfileId }`);
   }
 
   /**
@@ -5013,6 +5088,7 @@ export class Connect extends PolicyStatement {
    * - .toClaimPhoneNumber()
    * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
+   * - .toCreateAuthenticationProfile()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
    * - .toCreateEvaluationForm()
@@ -5058,6 +5134,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteViewVersion()
    * - .toDeleteVocabulary()
    * - .toDescribeAgentStatus()
+   * - .toDescribeAuthenticationProfile()
    * - .toDescribeContact()
    * - .toDescribeContactEvaluation()
    * - .toDescribeContactFlow()
@@ -5104,6 +5181,7 @@ export class Connect extends PolicyStatement {
    * - .toGetPromptFile()
    * - .toGetTaskTemplate()
    * - .toListApprovedOrigins()
+   * - .toListAuthenticationProfiles()
    * - .toListBots()
    * - .toListContactEvaluations()
    * - .toListContactReferences()
@@ -5164,6 +5242,7 @@ export class Connect extends PolicyStatement {
    * - .toTransferContact()
    * - .toUntagContact()
    * - .toUpdateAgentStatus()
+   * - .toUpdateAuthenticationProfile()
    * - .toUpdateContact()
    * - .toUpdateContactAttributes()
    * - .toUpdateContactEvaluation()
