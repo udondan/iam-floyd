@@ -98,7 +98,6 @@
         "aws-marketplace:ListAgreementRequests",
         "aws-marketplace:CancelAgreementRequest",
         "aws-marketplace:ListPrivateListings",
-        "aws-marketplace:GetPrivateListing",
         "aws-marketplace:DescribeAgreement"
       ],
       "Resource": "*"
