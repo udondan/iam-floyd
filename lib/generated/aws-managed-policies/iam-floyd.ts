@@ -878,6 +878,8 @@ export class AwsManagedPolicy {
     public static AmazonWorkSpacesApplicationManagerAdminAccess = 'AmazonWorkSpacesApplicationManagerAdminAccess';
     /** This managed policy provides full administrative access to AWS Certificate Manager Private CA resources in your AWS account for certificate-based authentication. */
     public static AmazonWorkspacesPCAAccess = 'AmazonWorkspacesPCAAccess';
+    /** Provides read-only access to Amazon WorkSpaces Secure Browser and its dependencies through the AWS Management Console, SDK, and CLI. */
+    public static AmazonWorkSpacesSecureBrowserReadOnly = 'AmazonWorkSpacesSecureBrowserReadOnly';
     /** Provides access to Amazon WorkSpaces backend service to perform Workspace Self Service actions */
     public static AmazonWorkSpacesSelfServiceAccess = 'AmazonWorkSpacesSelfServiceAccess';
     /** Provides customer account access to AWS WorkSpaces service for launching a Workspace. */

@@ -2204,6 +2204,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkspacesPCAAccess);
     }
 
+    /** Provides read-only access to Amazon WorkSpaces Secure Browser and its dependencies through the AWS Management Console, SDK, and CLI. */
+    public AmazonWorkSpacesSecureBrowserReadOnly(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesSecureBrowserReadOnly);
+    }
+
     /** Provides access to Amazon WorkSpaces backend service to perform Workspace Self Service actions */
     public AmazonWorkSpacesSelfServiceAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesSelfServiceAccess);
