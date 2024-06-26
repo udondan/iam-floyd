@@ -1,0 +1,88 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SSMResourceDataSyncPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:ListResourceDataSync"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMResourceDataSyncGetOpsSummaryPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetOpsSummary"
+      ],
+      "Resource": "arn:aws:ssm:*:*:resource-data-sync/AWS-QuickSetup-*"
+    },
+    {
+      "Sid": "SSMAssociationsReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:ListAssociations",
+        "ssm:DescribeAssociationExecutions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "QuickSetupSSMDocumentsReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeDocument",
+        "ssm:GetDocument"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWSQuickSetupType-*",
+        "arn:aws:ssm:*:*:document/*-AWSQuickSetupType-*"
+      ]
+    },
+    {
+      "Sid": "OrganizationReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListRoots",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListAccountsForParent",
+        "organizations:ListOrganizationalUnitsForParent"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "QuickSetupStackSetReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStackSet",
+        "cloudformation:DescribeStackSetOperation",
+        "cloudformation:ListStackInstances",
+        "cloudformation:ListStackSetOperations",
+        "cloudformation:ListStackSetOperationResults"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stackset/AWS-QuickSetup-*",
+        "arn:aws:cloudformation:*:*:stack/StackSet-AWS-QuickSetup-*"
+      ]
+    },
+    {
+      "Sid": "QuickSetupStackSetDeletePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DeleteStackInstances",
+        "cloudformation:DeleteStackSet"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stackset/AWS-QuickSetup-*",
+        "arn:aws:cloudformation:*:*:stack/StackSet-AWS-QuickSetup-*",
+        "arn:aws:cloudformation:*:*:stackset-target/AWS-QuickSetup-*",
+        "arn:aws:cloudformation:*:*:type/resource/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}
