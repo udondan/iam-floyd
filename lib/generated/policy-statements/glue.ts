@@ -552,6 +552,21 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a usage profile
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-usage-profiles.html#aws-glue-api-usage-profiles-CreateUsageProfile
+   */
+  public toCreateUsageProfile() {
+    return this.to('CreateUsageProfile');
+  }
+
+  /**
    * Grants permission to create a function definition
    *
    * Access Level: Write
@@ -842,6 +857,17 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteTrigger() {
     return this.to('DeleteTrigger');
+  }
+
+  /**
+   * Grants permission to delete a usage profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-usage-profiles.html#aws-glue-api-usage-profiles-DeleteUsageProfile
+   */
+  public toDeleteUsageProfile() {
+    return this.to('DeleteUsageProfile');
   }
 
   /**
@@ -1761,6 +1787,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a usage profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-usage-profiles.html#aws-glue-api-usage-profiles-GetUsageProfile
+   */
+  public toGetUsageProfile() {
+    return this.to('GetUsageProfile');
+  }
+
+  /**
    * Grants permission to retrieve a function definition
    *
    * Access Level: Read
@@ -2113,6 +2150,17 @@ export class Glue extends PolicyStatement {
    */
   public toListTriggers() {
     return this.to('ListTriggers');
+  }
+
+  /**
+   * Grants permission to retrieve a list of usage profiles
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-usage-profiles.html#aws-glue-api-usage-profiles-ListUsageProfiles
+   */
+  public toListUsageProfiles() {
+    return this.to('ListUsageProfiles');
   }
 
   /**
@@ -2850,6 +2898,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a usage profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-usage-profiles.html#aws-glue-api-usage-profiles-UpdateUsageProfile
+   */
+  public toUpdateUsageProfile() {
+    return this.to('UpdateUsageProfile');
+  }
+
+  /**
    * Grants permission to update a function definition
    *
    * Access Level: Write
@@ -2927,6 +2986,7 @@ export class Glue extends PolicyStatement {
       'CreateTable',
       'CreateTableOptimizer',
       'CreateTrigger',
+      'CreateUsageProfile',
       'CreateUserDefinedFunction',
       'CreateWorkflow',
       'DeleteBlueprint',
@@ -2952,6 +3012,7 @@ export class Glue extends PolicyStatement {
       'DeleteTableOptimizer',
       'DeleteTableVersion',
       'DeleteTrigger',
+      'DeleteUsageProfile',
       'DeleteUserDefinedFunction',
       'DeleteWorkflow',
       'ImportCatalogToGlue',
@@ -3008,6 +3069,7 @@ export class Glue extends PolicyStatement {
       'UpdateTable',
       'UpdateTableOptimizer',
       'UpdateTrigger',
+      'UpdateUsageProfile',
       'UpdateUserDefinedFunction',
       'UpdateWorkflow',
       'UseMLTransforms'
@@ -3083,6 +3145,7 @@ export class Glue extends PolicyStatement {
       'GetTags',
       'GetTrigger',
       'GetTriggers',
+      'GetUsageProfile',
       'GetUserDefinedFunction',
       'GetUserDefinedFunctions',
       'GetWorkflow',
@@ -3150,6 +3213,7 @@ export class Glue extends PolicyStatement {
       'ListStatements',
       'ListTableOptimizerRuns',
       'ListTriggers',
+      'ListUsageProfiles',
       'ListWorkflows',
       'QuerySchemaVersionMetadata'
     ],
@@ -3420,6 +3484,23 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type usageProfile to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param usageProfileId - Identifier for the usageProfileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onUsageProfile(usageProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:usageProfile/${ usageProfileId }`);
+  }
+
+  /**
    * Adds a resource of type dataQualityRuleset to the statement
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
@@ -3485,6 +3566,7 @@ export class Glue extends PolicyStatement {
    * - .toCreateSchema()
    * - .toCreateSession()
    * - .toCreateTrigger()
+   * - .toCreateUsageProfile()
    * - .toCreateWorkflow()
    * - .toTagResource()
    *
@@ -3513,6 +3595,7 @@ export class Glue extends PolicyStatement {
    * - registry
    * - schema
    * - session
+   * - usageProfile
    * - dataQualityRuleset
    * - customEntityType
    *
@@ -3542,6 +3625,7 @@ export class Glue extends PolicyStatement {
    * - .toCreateSchema()
    * - .toCreateSession()
    * - .toCreateTrigger()
+   * - .toCreateUsageProfile()
    * - .toCreateWorkflow()
    * - .toTagResource()
    * - .toUntagResource()

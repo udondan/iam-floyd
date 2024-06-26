@@ -15,5 +15,6 @@ glue:session
 glue:table
 glue:tableversion
 glue:trigger
+glue:usageProfile
 glue:userdefinedfunction
 glue:workflow

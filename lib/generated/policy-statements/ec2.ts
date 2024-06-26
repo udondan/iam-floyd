@@ -1068,6 +1068,11 @@ export class Ec2 extends PolicyStatement {
    *
    * Dependent actions:
    * - ec2:CreateTags
+   * - ecs:ListClusters
+   * - ecs:ListContainerInstances
+   * - ecs:ListServices
+   * - ecs:ListTaskDefinitions
+   * - ecs:ListTasks
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html
