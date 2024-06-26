@@ -41,6 +41,7 @@ glue:CreateSession;Write
 glue:CreateTable;Write
 glue:CreateTableOptimizer;Write
 glue:CreateTrigger;Write
+glue:CreateUsageProfile;Write
 glue:CreateUserDefinedFunction;Write
 glue:CreateWorkflow;Write
 glue:DeleteBlueprint;Write
@@ -67,6 +68,7 @@ glue:DeleteTable;Write
 glue:DeleteTableOptimizer;Write
 glue:DeleteTableVersion;Write
 glue:DeleteTrigger;Write
+glue:DeleteUsageProfile;Write
 glue:DeleteUserDefinedFunction;Write
 glue:DeleteWorkflow;Write
 glue:DeregisterDataPreview;Permissions management
@@ -150,6 +152,7 @@ glue:GetTables;Read
 glue:GetTags;Read
 glue:GetTrigger;Read
 glue:GetTriggers;Read
+glue:GetUsageProfile;Read
 glue:GetUserDefinedFunction;Read
 glue:GetUserDefinedFunctions;Read
 glue:GetWorkflow;Read
@@ -182,6 +185,7 @@ glue:ListSessions;List
 glue:ListStatements;List
 glue:ListTableOptimizerRuns;List
 glue:ListTriggers;List
+glue:ListUsageProfiles;List
 glue:ListWorkflows;List
 glue:NotifyEvent;Write
 glue:PassConnection;Write
@@ -247,6 +251,7 @@ glue:UpdateSourceControlFromJob;Write
 glue:UpdateTable;Write
 glue:UpdateTableOptimizer;Write
 glue:UpdateTrigger;Write
+glue:UpdateUsageProfile;Write
 glue:UpdateUserDefinedFunction;Write
 glue:UpdateWorkflow;Write
 glue:UseGlueStudio;Permissions management
