@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "QuickSetupPatchingBaselineOverridesS3SameAccountReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::aws-quicksetup-patchpolicy-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": [
+            "${aws:ResourceAccount}"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "QuickSetupPatchingBaselineOverridesS3OrganizationReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::aws-quicksetup-patchpolicy-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalOrgID": [
+            "${aws:ResourceOrgID}"
+          ]
+        }
+      }
+    }
+  ]
+}

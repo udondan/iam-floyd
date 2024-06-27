@@ -1800,6 +1800,24 @@ export class AwsManagedPolicy {
     public static AWSProtonSyncServiceRolePolicy = 'aws-service-role/AWSProtonSyncServiceRolePolicy';
     /** Grants permissions to view and modify purchase orders on billing console */
     public static AWSPurchaseOrdersServiceRolePolicy = 'AWSPurchaseOrdersServiceRolePolicy';
+    /** The AWSQuickSetupCFGCPacksPermissionsBoundary policy defines the list of permissions that are permitted in an IAM role created by Quick Setup. Quick Setup uses a role created with this policy to deploy AWS Config conformance packs. */
+    public static AWSQuickSetupCFGCPacksPermissionsBoundary = 'AWSQuickSetupCFGCPacksPermissionsBoundary';
+    /** Provides permissions for AWS Systems Manager Quick Setup to deploy multiple configuration types. These configuration types create IAM roles and automations that configure frequently used Amazon Web Services services and features with recommended best practices. */
+    public static AWSQuickSetupDeploymentRolePolicy = 'AWSQuickSetupDeploymentRolePolicy';
+    /** The AWSQuickSetupDevOpsGuruPermissionsBoundary policy defines the list of permissions that are permitted in an IAM role created by Quick Setup. Quick Setup uses a role created with this policy to enable and configure Amazon DevOps Guru. This policy also provides permissions to enable Systems Manager Explorer. */
+    public static AWSQuickSetupDevOpsGuruPermissionsBoundary = 'AWSQuickSetupDevOpsGuruPermissionsBoundary';
+    /** QuickSetup creates IAM roles which enable it to configure the Systems Manager Distributor feature on your behalf, and uses this policy when creating such roles to define the boundary of their permissions. */
+    public static AWSQuickSetupDistributorPermissionsBoundary = 'AWSQuickSetupDistributorPermissionsBoundary';
+    /** Provides read-only permissions to access patch baselines that have been configured by an administrator in the current AWS account or organization using Quick Setup. */
+    public static AWSQuickSetupPatchPolicyBaselineAccess = 'AWSQuickSetupPatchPolicyBaselineAccess';
+    /** Provides permissions that allow Quick Setup to create resources associated with a patch policy configuration. */
+    public static AWSQuickSetupPatchPolicyDeploymentRolePolicy = 'AWSQuickSetupPatchPolicyDeploymentRolePolicy';
+    /** QuickSetup creates IAM roles which enable it to configure the Systems Manager Patch Manager feature on your behalf, and uses this policy when creating such roles to define the boundary of their permissions. */
+    public static AWSQuickSetupPatchPolicyPermissionsBoundary = 'AWSQuickSetupPatchPolicyPermissionsBoundary';
+    /** The AWSQuickSetupSchedulerPermissionsBoundary policy defines the list of permissions that are permitted in an IAM role created by Quick Setup. Quick Setup uses a role created with this policy to enable and configure scheduled operations on Amazon EC2 instances and other resources. */
+    public static AWSQuickSetupSchedulerPermissionsBoundary = 'AWSQuickSetupSchedulerPermissionsBoundary';
+    /** Quick Setup creates IAM roles which enable it to configure the Host Manager Quick Setup type on your behalf, and uses this policy when creating such roles to define the boundary of their permissions. */
+    public static AWSQuickSetupSSMHostMgmtPermissionsBoundary = 'AWSQuickSetupSSMHostMgmtPermissionsBoundary';
     /** Provides the set of permissions required to perform QuickSight Asset Bundle Export Operations */
     public static AWSQuickSightAssetBundleExportPolicy = 'AWSQuickSightAssetBundleExportPolicy';
     /** Provides the set of permissions required to perform QuickSight Asset Bundle Import Operations */
@@ -1980,6 +1998,10 @@ export class AwsManagedPolicy {
     public static AWSSystemsManagerAccountDiscoveryServicePolicy = 'aws-service-role/AWSSystemsManagerAccountDiscoveryServicePolicy';
     /** Provides access to AWS resources managed or used by the AWS Systems Manager change management framework. */
     public static AWSSystemsManagerChangeManagementServicePolicy = 'aws-service-role/AWSSystemsManagerChangeManagementServicePolicy';
+    /** Provides permissions for AWS Systems Manager Quick Setup to enable and configure AWS Config configuration recording. */
+    public static AWSSystemsManagerEnableConfigRecordingExecutionPolicy = 'AWSSystemsManagerEnableConfigRecordingExecutionPolicy';
+    /** This policy grants administrative permissions for enabling Explorer, a capability of AWS Systems Manager. This includes permissions to update related Systems Manager service settings, and to create a service-linked role for Systems Manager. */
+    public static AWSSystemsManagerEnableExplorerExecutionPolicy = 'AWSSystemsManagerEnableExplorerExecutionPolicy';
     /** Provides full access to AWS Systems Manager for SAP service */
     public static AWSSystemsManagerForSAPFullAccess = 'AWSSystemsManagerForSAPFullAccess';
     /** Provides read only access to AWS Systems Manager for SAP service */
