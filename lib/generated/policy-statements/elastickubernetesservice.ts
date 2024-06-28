@@ -116,6 +116,7 @@ export class Eks extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifBootstrapClusterCreatorAdminPermissions()
+   * - .ifBootstrapSelfManagedAddons()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
@@ -1059,6 +1060,20 @@ export class Eks extends PolicyStatement {
    */
   public ifBootstrapClusterCreatorAdminPermissions(value?: boolean) {
     return this.if(`bootstrapClusterCreatorAdminPermissions`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the bootstrapSelfManagedAddons present in the create cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifBootstrapSelfManagedAddons(value?: boolean) {
+    return this.if(`bootstrapSelfManagedAddons`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

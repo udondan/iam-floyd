@@ -1777,6 +1777,9 @@ export class Ec2 extends PolicyStatement {
    * Possible conditions:
    * - .ifRegion()
    *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.html
    */
   public toCreateTrafficMirrorFilterRule() {
@@ -5016,6 +5019,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeTags() {
     return this.to('DescribeTags');
+  }
+
+  /**
+   * Grants permission to describe traffic mirror filters that determine the traffic that is mirrored
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorFilterRules.html
+   */
+  public toDescribeTrafficMirrorFilterRules() {
+    return this.to('DescribeTrafficMirrorFilterRules');
   }
 
   /**
@@ -9786,6 +9803,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeStoreImageTasks',
       'DescribeSubnets',
       'DescribeTags',
+      'DescribeTrafficMirrorFilterRules',
       'DescribeTrafficMirrorFilters',
       'DescribeTrafficMirrorSessions',
       'DescribeTrafficMirrorTargets',
@@ -15634,6 +15652,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeStoreImageTasks()
    * - .toDescribeSubnets()
    * - .toDescribeTags()
+   * - .toDescribeTrafficMirrorFilterRules()
    * - .toDescribeTrafficMirrorFilters()
    * - .toDescribeTrafficMirrorSessions()
    * - .toDescribeTrafficMirrorTargets()

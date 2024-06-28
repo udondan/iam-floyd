@@ -138,6 +138,7 @@
                 "ec2:DescribeStoreImageTasks",
                 "ec2:DescribeSubnets",
                 "ec2:DescribeTags",
+                "ec2:DescribeTrafficMirrorFilterRules",
                 "ec2:DescribeTrafficMirrorFilters",
                 "ec2:DescribeTrafficMirrorSessions",
                 "ec2:DescribeTrafficMirrorTargets",
