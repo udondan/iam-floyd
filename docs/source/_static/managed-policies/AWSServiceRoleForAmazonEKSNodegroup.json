@@ -61,7 +61,8 @@
         "autoscaling:CompleteLifecycleAction",
         "autoscaling:PutLifecycleHook",
         "autoscaling:PutNotificationConfiguration",
-        "autoscaling:EnableMetricsCollection"
+        "autoscaling:EnableMetricsCollection",
+        "autoscaling:PutScheduledUpdateGroupAction"
       ],
       "Resource": "arn:aws:autoscaling:*:*:*:autoScalingGroupName/eks-*"
     },
@@ -134,7 +135,8 @@
         "ec2:DescribeSecurityGroups",
         "ec2:GetConsoleOutput",
         "ec2:DescribeRouteTables",
-        "ec2:DescribeSubnets"
+        "ec2:DescribeSubnets",
+        "ec2:DescribeCapacityReservations"
       ],
       "Resource": "*"
     },

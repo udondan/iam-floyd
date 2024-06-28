@@ -106,7 +106,14 @@
         "datazone:CancelMetadataGenerationRun",
         "datazone:ListMetadataGenerationRuns",
         "datazone:GetEnvironmentAction",
-        "datazone:ListEnvironmentActions"
+        "datazone:ListEnvironmentActions",
+        "datazone:ListLineageNodeHistory",
+        "datazone:GetLineageNode",
+        "datazone:CreateAssetFilter",
+        "datazone:DeleteAssetFilter",
+        "datazone:GetAssetFilter",
+        "datazone:ListAssetFilters",
+        "datazone:UpdateAssetFilter"
       ],
       "Resource": "*"
     },
