@@ -338,6 +338,7 @@ ec2:DescribeStaleSecurityGroups;List
 ec2:DescribeStoreImageTasks;List
 ec2:DescribeSubnets;List
 ec2:DescribeTags;List
+ec2:DescribeTrafficMirrorFilterRules;List
 ec2:DescribeTrafficMirrorFilters;List
 ec2:DescribeTrafficMirrorSessions;List
 ec2:DescribeTrafficMirrorTargets;List

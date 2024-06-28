@@ -43,6 +43,7 @@ controltower:ListExternalConfigRuleCompliance;Read
 controltower:ListGuardrailViolations;List
 controltower:ListGuardrails;List
 controltower:ListGuardrailsForTarget;List
+controltower:ListLandingZoneOperations;List
 controltower:ListLandingZones;List
 controltower:ListManagedAccounts;List
 controltower:ListManagedAccountsForGuardrail;List

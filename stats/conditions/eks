@@ -4,6 +4,7 @@ eks:TagKeys
 eks:accessEntryType
 eks:accessScope
 eks:bootstrapClusterCreatorAdminPermissions
+eks:bootstrapSelfManagedAddons
 eks:clientId
 eks:clusterName
 eks:issuerUrl

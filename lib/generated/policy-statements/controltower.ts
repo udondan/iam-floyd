@@ -535,6 +535,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all landing zone operations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZoneOperations.html
+   */
+  public toListLandingZoneOperations() {
+    return this.to('ListLandingZoneOperations');
+  }
+
+  /**
    * Grants permission to list all landing zones
    *
    * Access Level: List
@@ -800,6 +811,7 @@ export class Controltower extends PolicyStatement {
       'ListGuardrailViolations',
       'ListGuardrails',
       'ListGuardrailsForTarget',
+      'ListLandingZoneOperations',
       'ListLandingZones',
       'ListManagedAccounts',
       'ListManagedAccountsForGuardrail',
