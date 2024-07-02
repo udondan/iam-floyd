@@ -50,14 +50,6 @@
       "Resource": "*"
     },
     {
-      "Sid": "Sns",
-      "Effect": "Allow",
-      "Action": [
-        "sns:Publish"
-      ],
-      "Resource": "*"
-    },
-    {
       "Sid": "CloudWatchLogs",
       "Effect": "Allow",
       "Action": [
