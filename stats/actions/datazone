@@ -5,6 +5,7 @@ datazone:AssociateEnvironmentRole;Write
 datazone:CancelMetadataGenerationRun;Write
 datazone:CancelSubscription;Write
 datazone:CreateAsset;Write
+datazone:CreateAssetFilter;Write
 datazone:CreateAssetRevision;Write
 datazone:CreateAssetType;Write
 datazone:CreateDataSource;Write
@@ -25,6 +26,7 @@ datazone:CreateSubscriptionRequest;Write
 datazone:CreateSubscriptionTarget;Write
 datazone:CreateUserProfile;Write
 datazone:DeleteAsset;Write
+datazone:DeleteAssetFilter;Write
 datazone:DeleteAssetType;Write
 datazone:DeleteDataSource;Write
 datazone:DeleteDomain;Write
@@ -46,6 +48,7 @@ datazone:DeleteSubscriptionTarget;Write
 datazone:DeleteTimeSeriesDataPoints;Write
 datazone:DisassociateEnvironmentRole;Write
 datazone:GetAsset;Read
+datazone:GetAssetFilter;Read
 datazone:GetAssetType;Read
 datazone:GetDataSource;Read
 datazone:GetDataSourceRun;Read
@@ -63,6 +66,7 @@ datazone:GetGlossary;Read
 datazone:GetGlossaryTerm;Read
 datazone:GetGroupProfile;Read
 datazone:GetIamPortalLoginUrl;Permissions management
+datazone:GetLineageNode;Read
 datazone:GetListing;Read
 datazone:GetMetadataGenerationRun;Read
 datazone:GetProject;Read
@@ -74,6 +78,7 @@ datazone:GetSubscriptionTarget;Read
 datazone:GetTimeSeriesDataPoint;Read
 datazone:GetUserProfile;Read
 datazone:ListAccountEnvironments;List
+datazone:ListAssetFilters;List
 datazone:ListAssetRevisions;List
 datazone:ListDataSourceRunActivities;List
 datazone:ListDataSourceRuns;List
@@ -86,6 +91,7 @@ datazone:ListEnvironmentBlueprints;List
 datazone:ListEnvironmentProfiles;List
 datazone:ListEnvironments;List
 datazone:ListGroupsForUser;List
+datazone:ListLineageNodeHistory;List
 datazone:ListMetadataGenerationRuns;List
 datazone:ListNotifications;List
 datazone:ListPolicyGrants;List
@@ -98,6 +104,7 @@ datazone:ListSubscriptions;List
 datazone:ListTagsForResource;Read
 datazone:ListTimeSeriesDataPoints;List
 datazone:ListWarehouseMetadata;List
+datazone:PostLineageEvent;Write
 datazone:PostTimeSeriesDataPoints;Write
 datazone:ProvisionDomain;Write
 datazone:PutDomainSharingPolicy;Permissions management
@@ -119,6 +126,7 @@ datazone:StartMetadataGenerationRun;Write
 datazone:StopMetadataGenerationRun;Write
 datazone:TagResource;Tagging
 datazone:UntagResource;Tagging
+datazone:UpdateAssetFilter;Write
 datazone:UpdateDataSource;Write
 datazone:UpdateDataSourceRunActivities;Write
 datazone:UpdateDomain;Write

@@ -9,12 +9,14 @@ cloudhsm:DeleteCluster;Write
 cloudhsm:DeleteHapg;Write
 cloudhsm:DeleteHsm;Write
 cloudhsm:DeleteLunaClient;Write
+cloudhsm:DeleteResourcePolicy;Write
 cloudhsm:DescribeBackups;Read
 cloudhsm:DescribeClusters;Read
 cloudhsm:DescribeHapg;Read
 cloudhsm:DescribeHsm;Read
 cloudhsm:DescribeLunaClient;Read
 cloudhsm:GetConfig;Read
+cloudhsm:GetResourcePolicy;Read
 cloudhsm:InitializeCluster;Write
 cloudhsm:ListAvailableZones;List
 cloudhsm:ListHapgs;List
@@ -27,6 +29,7 @@ cloudhsm:ModifyCluster;Write
 cloudhsm:ModifyHapg;Write
 cloudhsm:ModifyHsm;Write
 cloudhsm:ModifyLunaClient;Write
+cloudhsm:PutResourcePolicy;Write
 cloudhsm:RemoveTagsFromResource;Tagging
 cloudhsm:RestoreBackup;Write
 cloudhsm:TagResource;Tagging

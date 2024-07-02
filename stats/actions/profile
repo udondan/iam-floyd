@@ -4,6 +4,7 @@ profile:CreateDomain;Write
 profile:CreateEventStream;Write
 profile:CreateIntegrationWorkflow;Write
 profile:CreateProfile;Write
+profile:CreateSnapshot;Write
 profile:DeleteCalculatedAttributeDefinition;Write
 profile:DeleteDomain;Write
 profile:DeleteEventStream;Write
@@ -25,6 +26,7 @@ profile:GetMatches;List
 profile:GetProfileObjectType;Read
 profile:GetProfileObjectTypeTemplate;Read
 profile:GetSimilarProfiles;List
+profile:GetSnapshot;Read
 profile:GetWorkflow;Read
 profile:GetWorkflowSteps;Read
 profile:ListAccountIntegrations;List

@@ -309,9 +309,14 @@ export class Shield extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - apprunner:DescribeWebAclForService
    * - cloudfront:GetDistribution
+   * - cognito-idp:GetWebACLForResource
+   * - ec2:GetVerifiedAccessInstanceWebAcl
    * - iam:CreateServiceLinkedRole
    * - iam:GetRole
+   * - wafv2:GetWebACL
+   * - wafv2:GetWebACLForResource
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_EnableApplicationLayerAutomaticResponse.html
    */
@@ -417,7 +422,6 @@ export class Shield extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UntagResource.html
@@ -430,6 +434,13 @@ export class Shield extends PolicyStatement {
    * Grants permission to update application layer automatic response for Shield Advanced protection for a resource
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - apprunner:DescribeWebAclForService
+   * - cognito-idp:GetWebACLForResource
+   * - ec2:GetVerifiedAccessInstanceWebAcl
+   * - wafv2:GetWebACL
+   * - wafv2:GetWebACLForResource
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateApplicationLayerAutomaticResponse.html
    */
@@ -574,7 +585,6 @@ export class Shield extends PolicyStatement {
    * - .toCreateProtection()
    * - .toCreateProtectionGroup()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

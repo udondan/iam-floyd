@@ -245,13 +245,14 @@ export class Thinclient extends PolicyStatement {
    *
    * @param environmentId - Identifier for the environmentId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onEnvironment(environmentId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:thinclient::${ account ?? this.defaultAccount }:environment/${ environmentId }`);
+  public onEnvironment(environmentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:thinclient:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:environment/${ environmentId }`);
   }
 
   /**
@@ -261,13 +262,14 @@ export class Thinclient extends PolicyStatement {
    *
    * @param deviceId - Identifier for the deviceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDevice(deviceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:thinclient::${ account ?? this.defaultAccount }:device/${ deviceId }`);
+  public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:thinclient:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device/${ deviceId }`);
   }
 
   /**
@@ -277,10 +279,11 @@ export class Thinclient extends PolicyStatement {
    *
    * @param softwareSetId - Identifier for the softwareSetId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onSoftwareset(softwareSetId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:thinclient::${ account ?? this.defaultAccount }:softwareset/${ softwareSetId }`);
+  public onSoftwareset(softwareSetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:thinclient:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:softwareset/${ softwareSetId }`);
   }
 
   /**
