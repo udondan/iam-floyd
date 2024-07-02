@@ -181,6 +181,17 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the policy attached to CloudHSM resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to get information about backups of AWS CloudHSM clusters
    *
    * Access Level: Read
@@ -244,6 +255,17 @@ export class Cloudhsm extends PolicyStatement {
    */
   public toGetConfig() {
     return this.to('GetConfig');
+  }
+
+  /**
+   * Grants permission to get information about the policy attached to a AWS CloudHSM resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -379,6 +401,17 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a policy to an AWS CloudHSM resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Removes one or more tags from the specified AWS CloudHSM resource
    *
    * Access Level: Tagging
@@ -447,12 +480,14 @@ export class Cloudhsm extends PolicyStatement {
       'DeleteHapg',
       'DeleteHsm',
       'DeleteLunaClient',
+      'DeleteResourcePolicy',
       'InitializeCluster',
       'ModifyBackupAttributes',
       'ModifyCluster',
       'ModifyHapg',
       'ModifyHsm',
       'ModifyLunaClient',
+      'PutResourcePolicy',
       'RestoreBackup'
     ],
     Read: [
@@ -462,6 +497,7 @@ export class Cloudhsm extends PolicyStatement {
       'DescribeHsm',
       'DescribeLunaClient',
       'GetConfig',
+      'GetResourcePolicy',
       'ListTags',
       'ListTagsForResource'
     ],

@@ -243,6 +243,21 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a WorkSpaces Pool
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspacesPool.html
+   */
+  public toCreateWorkspacesPool() {
+    return this.to('CreateWorkspacesPool');
+  }
+
+  /**
    * Grants permission to delete invitations to other AWS accounts to share the same configuration for WorkSpaces BYOL
    *
    * Access Level: Write
@@ -603,6 +618,28 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about the sessions of a WorkSpaces Pool
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesPools.html
+   */
+  public toDescribeWorkspacesPoolSessions() {
+    return this.to('DescribeWorkspacesPoolSessions');
+  }
+
+  /**
+   * Grants permission to retrieve information about WorkSpaces Pools
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesPools.html
+   */
+  public toDescribeWorkspacesPools() {
+    return this.to('DescribeWorkspacesPools');
+  }
+
+  /**
    * Grants permission to disassociate connection aliases from directories
    *
    * Access Level: Write
@@ -764,6 +801,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the streaming properties
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyStreamingProperties.html
+   */
+  public toModifyStreamingProperties() {
+    return this.to('ModifyStreamingProperties');
+  }
+
+  /**
    * Grants permission to specify which devices and operating systems users can use to access their WorkSpaces
    *
    * Access Level: Write
@@ -892,6 +940,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a WorkSpaces Pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_StartWorkspacesPool.html
+   */
+  public toStartWorkspacesPool() {
+    return this.to('StartWorkspacesPool');
+  }
+
+  /**
    * Grants permission to stop AutoStop WorkSpaces
    *
    * Access Level: Write
@@ -900,6 +959,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toStopWorkspaces() {
     return this.to('StopWorkspaces');
+  }
+
+  /**
+   * Grants permission to stop a WorkSpaces Pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_StopWorkspacesPool.html
+   */
+  public toStopWorkspacesPool() {
+    return this.to('StopWorkspacesPool');
   }
 
   /**
@@ -925,6 +995,28 @@ export class Workspaces extends PolicyStatement {
    */
   public toTerminateWorkspaces() {
     return this.to('TerminateWorkspaces');
+  }
+
+  /**
+   * Grants permission to terminate a WorkSpaces Pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspacesPool.html
+   */
+  public toTerminateWorkspacesPool() {
+    return this.to('TerminateWorkspacesPool');
+  }
+
+  /**
+   * Grants permission to terminate a WorkSpaces Pool session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspacesPoolSession.html
+   */
+  public toTerminateWorkspacesPoolSession() {
+    return this.to('TerminateWorkspacesPoolSession');
   }
 
   /**
@@ -986,6 +1078,17 @@ export class Workspaces extends PolicyStatement {
     return this.to('UpdateWorkspaceImagePermission');
   }
 
+  /**
+   * Grants permission to update the WorkSpaces pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateWorkspacesPool.html
+   */
+  public toUpdateWorkspacesPool() {
+    return this.to('UpdateWorkspacesPool');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAccountLinkInvitation',
@@ -1003,6 +1106,7 @@ export class Workspaces extends PolicyStatement {
       'CreateWorkspaceBundle',
       'CreateWorkspaceImage',
       'CreateWorkspaces',
+      'CreateWorkspacesPool',
       'DeleteAccountLinkInvitation',
       'DeleteClientBranding',
       'DeleteConnectClientAddIn',
@@ -1022,6 +1126,7 @@ export class Workspaces extends PolicyStatement {
       'ModifyCertificateBasedAuthProperties',
       'ModifyClientProperties',
       'ModifySamlProperties',
+      'ModifyStreamingProperties',
       'ModifyWorkspaceAccessProperties',
       'ModifyWorkspaceCreationProperties',
       'ModifyWorkspaceProperties',
@@ -1033,12 +1138,17 @@ export class Workspaces extends PolicyStatement {
       'RestoreWorkspace',
       'RevokeIpRules',
       'StartWorkspaces',
+      'StartWorkspacesPool',
       'StopWorkspaces',
+      'StopWorkspacesPool',
       'Stream',
       'TerminateWorkspaces',
+      'TerminateWorkspacesPool',
+      'TerminateWorkspacesPoolSession',
       'UpdateConnectClientAddIn',
       'UpdateRulesOfIpGroup',
-      'UpdateWorkspaceBundle'
+      'UpdateWorkspaceBundle',
+      'UpdateWorkspacesPool'
     ],
     Tagging: [
       'CreateTags',
@@ -1069,6 +1179,8 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspaceImages',
       'DescribeWorkspaceSnapshots',
       'DescribeWorkspaces',
+      'DescribeWorkspacesPoolSessions',
+      'DescribeWorkspacesPools',
       'ListAccountLinks',
       'ListAvailableManagementCidrRanges'
     ],
@@ -1165,6 +1277,23 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type workspacespoolid to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-pool.html
+   *
+   * @param poolId - Identifier for the poolId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkspacespoolid(poolId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspacespool/${ poolId }`);
+  }
+
+  /**
    * Adds a resource of type connectionalias to the statement
    *
    * https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html
@@ -1213,6 +1342,7 @@ export class Workspaces extends PolicyStatement {
    * - .toCreateWorkspaceBundle()
    * - .toCreateWorkspaceImage()
    * - .toCreateWorkspaces()
+   * - .toCreateWorkspacesPool()
    * - .toDeleteTags()
    * - .toRegisterWorkspaceDirectory()
    *
@@ -1244,6 +1374,7 @@ export class Workspaces extends PolicyStatement {
    * - workspaceid
    * - workspaceimage
    * - workspaceipgroup
+   * - workspacespoolid
    * - connectionalias
    * - workspaceapplication
    *
@@ -1270,6 +1401,7 @@ export class Workspaces extends PolicyStatement {
    * - .toCreateWorkspaceBundle()
    * - .toCreateWorkspaceImage()
    * - .toCreateWorkspaces()
+   * - .toCreateWorkspacesPool()
    * - .toDeleteTags()
    * - .toRegisterWorkspaceDirectory()
    *

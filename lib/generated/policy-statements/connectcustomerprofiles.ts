@@ -92,6 +92,15 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a snapshot in the domain
+   *
+   * Access Level: Write
+   */
+  public toCreateSnapshot() {
+    return this.to('CreateSnapshot');
+  }
+
+  /**
    * Grants permission to delete a calculated attribute definition in the domain
    *
    * Access Level: Write
@@ -326,6 +335,15 @@ export class Profile extends PolicyStatement {
    */
   public toGetSimilarProfiles() {
     return this.to('GetSimilarProfiles');
+  }
+
+  /**
+   * Grants permission to get a snapshot in the domain
+   *
+   * Access Level: Read
+   */
+  public toGetSnapshot() {
+    return this.to('GetSnapshot');
   }
 
   /**
@@ -621,6 +639,7 @@ export class Profile extends PolicyStatement {
       'CreateEventStream',
       'CreateIntegrationWorkflow',
       'CreateProfile',
+      'CreateSnapshot',
       'DeleteCalculatedAttributeDefinition',
       'DeleteDomain',
       'DeleteEventStream',
@@ -649,6 +668,7 @@ export class Profile extends PolicyStatement {
       'GetIntegration',
       'GetProfileObjectType',
       'GetProfileObjectTypeTemplate',
+      'GetSnapshot',
       'GetWorkflow',
       'GetWorkflowSteps',
       'ListTagsForResource',

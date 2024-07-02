@@ -1,1 +1,3 @@
-
+qapps:RequestTag/${TagKey}
+qapps:ResourceTag/${TagKey}
+qapps:TagKeys

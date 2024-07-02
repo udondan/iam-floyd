@@ -82,6 +82,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create asset filter
+   *
+   * Access Level: Write
+   */
+  public toCreateAssetFilter() {
+    return this.to('CreateAssetFilter');
+  }
+
+  /**
    * Grants permission to create new revision of an asset
    *
    * Access Level: Write
@@ -263,6 +272,15 @@ export class Datazone extends PolicyStatement {
    */
   public toDeleteAsset() {
     return this.to('DeleteAsset');
+  }
+
+  /**
+   * Grants permission to delete asset filter
+   *
+   * Access Level: Write
+   */
+  public toDeleteAssetFilter() {
+    return this.to('DeleteAssetFilter');
   }
 
   /**
@@ -455,6 +473,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get asset filter
+   *
+   * Access Level: Read
+   */
+  public toGetAssetFilter() {
+    return this.to('GetAssetFilter');
+  }
+
+  /**
    * Grants permission to get an asset type
    *
    * Access Level: Read
@@ -608,6 +635,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the lineage node
+   *
+   * Access Level: Read
+   */
+  public toGetLineageNode() {
+    return this.to('GetLineageNode');
+  }
+
+  /**
    * Grants permission to get listing
    *
    * Access Level: Read
@@ -704,6 +740,15 @@ export class Datazone extends PolicyStatement {
    */
   public toListAccountEnvironments() {
     return this.to('ListAccountEnvironments');
+  }
+
+  /**
+   * Grants permission to list asset filters
+   *
+   * Access Level: List
+   */
+  public toListAssetFilters() {
+    return this.to('ListAssetFilters');
   }
 
   /**
@@ -815,6 +860,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list historical versions of lineage node
+   *
+   * Access Level: List
+   */
+  public toListLineageNodeHistory() {
+    return this.to('ListLineageNodeHistory');
+  }
+
+  /**
    * Grants permission to list metadata generation runs
    *
    * Access Level: List
@@ -920,6 +974,15 @@ export class Datazone extends PolicyStatement {
    */
   public toListWarehouseMetadata() {
     return this.to('ListWarehouseMetadata');
+  }
+
+  /**
+   * Grants permission to post lineage events
+   *
+   * Access Level: Write
+   */
+  public toPostLineageEvent() {
+    return this.to('PostLineageEvent');
   }
 
   /**
@@ -1119,6 +1182,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update asset filter
+   *
+   * Access Level: Write
+   */
+  public toUpdateAssetFilter() {
+    return this.to('UpdateAssetFilter');
+  }
+
+  /**
    * Grants permission to update existing DataSource
    *
    * Access Level: Write
@@ -1289,6 +1361,7 @@ export class Datazone extends PolicyStatement {
       'CancelMetadataGenerationRun',
       'CancelSubscription',
       'CreateAsset',
+      'CreateAssetFilter',
       'CreateAssetRevision',
       'CreateAssetType',
       'CreateDataSource',
@@ -1309,6 +1382,7 @@ export class Datazone extends PolicyStatement {
       'CreateSubscriptionTarget',
       'CreateUserProfile',
       'DeleteAsset',
+      'DeleteAssetFilter',
       'DeleteAssetType',
       'DeleteDataSource',
       'DeleteDomain',
@@ -1328,6 +1402,7 @@ export class Datazone extends PolicyStatement {
       'DeleteSubscriptionTarget',
       'DeleteTimeSeriesDataPoints',
       'DisassociateEnvironmentRole',
+      'PostLineageEvent',
       'PostTimeSeriesDataPoints',
       'ProvisionDomain',
       'PutEnvironmentBlueprintConfiguration',
@@ -1341,6 +1416,7 @@ export class Datazone extends PolicyStatement {
       'StartDataSourceRun',
       'StartMetadataGenerationRun',
       'StopMetadataGenerationRun',
+      'UpdateAssetFilter',
       'UpdateDataSource',
       'UpdateDataSourceRunActivities',
       'UpdateDomain',
@@ -1367,6 +1443,7 @@ export class Datazone extends PolicyStatement {
     ],
     Read: [
       'GetAsset',
+      'GetAssetFilter',
       'GetAssetType',
       'GetDataSource',
       'GetDataSourceRun',
@@ -1383,6 +1460,7 @@ export class Datazone extends PolicyStatement {
       'GetGlossary',
       'GetGlossaryTerm',
       'GetGroupProfile',
+      'GetLineageNode',
       'GetListing',
       'GetMetadataGenerationRun',
       'GetProject',
@@ -1397,6 +1475,7 @@ export class Datazone extends PolicyStatement {
     ],
     List: [
       'ListAccountEnvironments',
+      'ListAssetFilters',
       'ListAssetRevisions',
       'ListDataSourceRunActivities',
       'ListDataSourceRuns',
@@ -1409,6 +1488,7 @@ export class Datazone extends PolicyStatement {
       'ListEnvironmentProfiles',
       'ListEnvironments',
       'ListGroupsForUser',
+      'ListLineageNodeHistory',
       'ListMetadataGenerationRuns',
       'ListNotifications',
       'ListPolicyGrants',
