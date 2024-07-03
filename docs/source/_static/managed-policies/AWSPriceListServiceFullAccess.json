@@ -2,10 +2,11 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AWSPriceListServiceFullAccess",
+      "Effect": "Allow",
       "Action": [
         "pricing:*"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     }
   ]
