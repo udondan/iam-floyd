@@ -577,6 +577,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create hub content reference
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHubContentReference.html
+   */
+  public toCreateHubContentReference() {
+    return this.to('CreateHubContentReference');
+  }
+
+  /**
    * Grants permission to define the settings you will use for the human review workflow user interface
    *
    * Access Level: Write
@@ -1550,6 +1568,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete hub content reference
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteHubContentReference.html
+   */
+  public toDeleteHubContentReference() {
+    return this.to('DeleteHubContentReference');
+  }
+
+  /**
    * Grants permission to delete a specified human loop
    *
    * Access Level: Write
@@ -1906,6 +1935,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteWorkteam() {
     return this.to('DeleteWorkteam');
+  }
+
+  /**
+   * Grants permission to deploy a model in hub to an endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs-admin-guide.html
+   */
+  public toDeployHubModel() {
+    return this.to('DeployHubModel');
   }
 
   /**
@@ -4631,6 +4671,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateFeatureGroup',
       'CreateFlowDefinition',
       'CreateHub',
+      'CreateHubContentReference',
       'CreateHumanTaskUi',
       'CreateHyperParameterTuningJob',
       'CreateImage',
@@ -4690,6 +4731,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteFlowDefinition',
       'DeleteHub',
       'DeleteHubContent',
+      'DeleteHubContentReference',
       'DeleteHumanLoop',
       'DeleteHumanTaskUi',
       'DeleteHyperParameterTuningJob',
@@ -4721,6 +4763,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteUserProfile',
       'DeleteWorkforce',
       'DeleteWorkteam',
+      'DeployHubModel',
       'DeregisterDevices',
       'DisableSagemakerServicecatalogPortfolio',
       'DisassociateTrialComponent',
@@ -5104,6 +5147,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onHub(hubName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub/${ hubName }`);
@@ -5120,6 +5167,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onHubContent(hubName: string, hubContentType: string, hubContentName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
@@ -6090,6 +6141,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateFeatureGroup()
    * - .toCreateFlowDefinition()
    * - .toCreateHub()
+   * - .toCreateHubContentReference()
    * - .toCreateHumanTaskUi()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateImage()
@@ -6145,6 +6197,8 @@ export class Sagemaker extends PolicyStatement {
    * - edge-deployment-plan
    * - flow-definition
    * - human-task-ui
+   * - hub
+   * - hub-content
    * - inference-recommendations-job
    * - inference-experiment
    * - labeling-job
@@ -6230,6 +6284,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateFeatureGroup()
    * - .toCreateFlowDefinition()
    * - .toCreateHub()
+   * - .toCreateHubContentReference()
    * - .toCreateHumanTaskUi()
    * - .toCreateHyperParameterTuningJob()
    * - .toCreateImage()
@@ -6843,6 +6898,8 @@ export class Sagemaker extends PolicyStatement {
    * - edge-deployment-plan
    * - flow-definition
    * - human-task-ui
+   * - hub
+   * - hub-content
    * - inference-recommendations-job
    * - inference-experiment
    * - labeling-job

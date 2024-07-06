@@ -28,6 +28,7 @@ sagemaker:CreateExperiment;Write
 sagemaker:CreateFeatureGroup;Write
 sagemaker:CreateFlowDefinition;Write
 sagemaker:CreateHub;Write
+sagemaker:CreateHubContentReference;Write
 sagemaker:CreateHumanTaskUi;Write
 sagemaker:CreateHyperParameterTuningJob;Write
 sagemaker:CreateImage;Write
@@ -87,6 +88,7 @@ sagemaker:DeleteFeatureGroup;Write
 sagemaker:DeleteFlowDefinition;Write
 sagemaker:DeleteHub;Write
 sagemaker:DeleteHubContent;Write
+sagemaker:DeleteHubContentReference;Write
 sagemaker:DeleteHumanLoop;Write
 sagemaker:DeleteHumanTaskUi;Write
 sagemaker:DeleteHyperParameterTuningJob;Write
@@ -119,6 +121,7 @@ sagemaker:DeleteTrialComponent;Write
 sagemaker:DeleteUserProfile;Write
 sagemaker:DeleteWorkforce;Write
 sagemaker:DeleteWorkteam;Write
+sagemaker:DeployHubModel;Write
 sagemaker:DeregisterDevices;Write
 sagemaker:DescribeAction;Read
 sagemaker:DescribeAlgorithm;Read
