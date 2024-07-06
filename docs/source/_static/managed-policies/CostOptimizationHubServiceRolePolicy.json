@@ -16,10 +16,26 @@
       ]
     },
     {
+      "Sid": "AwsOrgsScopedAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:ServicePrincipal": [
+            "cost-optimization-hub.bcm.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "CostExplorerAccess",
       "Effect": "Allow",
       "Action": [
-        "ce:ListCostAllocationTags"
+        "ce:ListCostAllocationTags",
+        "ce:GetCostAndUsage"
       ],
       "Resource": [
         "*"
