@@ -17,7 +17,7 @@
     "@aws-sdk/client-secrets-manager": "^3.511.0",
     "@aws-sdk/client-sqs": "^3.511.0",
     "@types/node": "20.14.10",
-    "aws-cdk-lib": "2.147.3",
+    "aws-cdk-lib": "2.148.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.23.0",
     "megalodon": "^10.0.0",
