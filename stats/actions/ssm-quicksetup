@@ -1,0 +1,12 @@
+ssm-quicksetup:CreateConfigurationManager;Write
+ssm-quicksetup:DeleteConfigurationManager;Write
+ssm-quicksetup:GetConfigurationManager;Read
+ssm-quicksetup:GetServiceSettings;Read
+ssm-quicksetup:ListConfigurationManagers;List
+ssm-quicksetup:ListQuickSetupTypes;Read
+ssm-quicksetup:ListTagsForResource;Read
+ssm-quicksetup:TagResource;Tagging
+ssm-quicksetup:UntagResource;Tagging
+ssm-quicksetup:UpdateConfigurationDefinition;Write
+ssm-quicksetup:UpdateConfigurationManager;Write
+ssm-quicksetup:UpdateServiceSettings;Write

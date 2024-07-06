@@ -397,6 +397,7 @@ export { SsmSap } from './policy-statements/systemsmanagerforsap';
 export { SsmGuiconnect } from './policy-statements/systemsmanagerguiconnect';
 export { SsmIncidents } from './policy-statements/systemsmanagerincidentmanager';
 export { SsmContacts } from './policy-statements/systemsmanagerincidentmanagercontacts';
+export { SsmQuicksetup } from './policy-statements/systemsmanagerquicksetup';
 export { Tax } from './policy-statements/taxsettings';
 export { Tnb } from './policy-statements/telconetworkbuilder';
 export { Tiros } from './policy-statements/tiros';
