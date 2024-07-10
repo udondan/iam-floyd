@@ -1549,6 +1549,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonPrometheusScraperServiceRolePolicy);
     }
 
+    /** Provides developer access to enable interactions with Amazon Q */
+    public AmazonQDeveloperAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonQDeveloperAccess);
+    }
+
     /** Provides full access to enable interactions with Amazon Q */
     public AmazonQFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonQFullAccess);

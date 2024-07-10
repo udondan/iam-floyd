@@ -2,7 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "AllowAmazonQFullAccess",
+      "Sid": "AllowAmazonQDeveloperAccess",
       "Effect": "Allow",
       "Action": [
         "q:StartConversation",
@@ -11,12 +11,10 @@
         "q:ListConversations",
         "q:PassRequest",
         "q:StartTroubleshootingAnalysis",
-        "q:GetTroubleshootingResults",
         "q:StartTroubleshootingResolutionExplanation",
+        "q:GetTroubleshootingResults",
         "q:UpdateTroubleshootingCommandResult",
-        "q:GetIdentityMetadata",
-        "q:CreateAssignment",
-        "q:DeleteAssignment"
+        "q:GetIdentityMetaData"
       ],
       "Resource": "*"
     },

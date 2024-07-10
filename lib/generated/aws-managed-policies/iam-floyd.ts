@@ -616,6 +616,8 @@ export class AwsManagedPolicy {
     public static AmazonPrometheusRemoteWriteAccess = 'AmazonPrometheusRemoteWriteAccess';
     /** Provides access to AWS Resources managed or used by Amazon Managed Service for Prometheus Collector */
     public static AmazonPrometheusScraperServiceRolePolicy = 'aws-service-role/AmazonPrometheusScraperServiceRolePolicy';
+    /** Provides developer access to enable interactions with Amazon Q */
+    public static AmazonQDeveloperAccess = 'AmazonQDeveloperAccess';
     /** Provides full access to enable interactions with Amazon Q */
     public static AmazonQFullAccess = 'AmazonQFullAccess';
     /** Provides full access to Amazon QLDB via the AWS Management Console. */
