@@ -1,3 +1,7 @@
+qapps:AppIsPublished
 qapps:RequestTag/${TagKey}
 qapps:ResourceTag/${TagKey}
+qapps:SessionIsShared
 qapps:TagKeys
+qapps:UserIsAppOwner
+qapps:UserIsSessionModerator

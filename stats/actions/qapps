@@ -18,12 +18,14 @@ qapps:ImportDocumentToQApp;Write
 qapps:ImportDocumentToQAppSession;Write
 qapps:ListLibraryItems;List
 qapps:ListQApps;List
+qapps:ListTagsForResource;Read
 qapps:PredictProblemStatementFromConversation;Write
 qapps:PredictQApp;Write
 qapps:PredictQAppFromProblemStatement;Write
 qapps:StartQAppSession;Write
 qapps:StopQAppSession;Write
 qapps:TagResource;Tagging
+qapps:UntagResource;Tagging
 qapps:UpdateLibraryItem;Write
 qapps:UpdateQApp;Write
 qapps:UpdateQAppSession;Write
