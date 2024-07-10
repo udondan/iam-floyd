@@ -192,6 +192,9 @@ export class Payments extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPaymentInstrument(resourceId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:payments::${ account ?? this.defaultAccount }:payment-instrument:${ resourceId }`);
@@ -218,6 +221,9 @@ export class Payments extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - payment-instrument
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

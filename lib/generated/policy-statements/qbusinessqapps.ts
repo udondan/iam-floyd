@@ -23,6 +23,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociateLibraryItemReview.html
    */
   public toAssociateLibraryItemReview() {
@@ -33,6 +37,10 @@ export class Qapps extends PolicyStatement {
    * Grants permission to associate Q App with a user in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociateQAppWithUser.html
    */
@@ -45,6 +53,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
    */
   public toCopyQApp() {
@@ -55,6 +67,10 @@ export class Qapps extends PolicyStatement {
    * Grants permission to create a library item in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateLibraryItem.html
    */
@@ -67,6 +83,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
    */
   public toCreateLibraryItemReview() {
@@ -77,6 +97,10 @@ export class Qapps extends PolicyStatement {
    * Grants permission to create Q App in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateQApp.html
    */
@@ -100,6 +124,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteLibraryItems.html
    */
   public toDeleteLibraryItem() {
@@ -110,6 +138,10 @@ export class Qapps extends PolicyStatement {
    * Grants permission to delete Q App in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteQApp.html
    */
@@ -122,6 +154,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DisassociateLibraryItemReview.html
    */
   public toDisassociateLibraryItemReview() {
@@ -132,6 +168,10 @@ export class Qapps extends PolicyStatement {
    * Grants permission to disassociate Q App with a user in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DisassociateQAppFromUser.html
    */
@@ -144,6 +184,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetLibraryItem.html
    */
   public toGetLibraryItem() {
@@ -155,6 +199,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetQApp.html
    */
   public toGetQApp() {
@@ -165,6 +213,12 @@ export class Qapps extends PolicyStatement {
    * Grants permission to get Q App session in Q Business application
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   * - .ifUserIsSessionModerator()
+   * - .ifSessionIsShared()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetQAppSession.html
    */
@@ -188,6 +242,12 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   * - .ifUserIsSessionModerator()
+   * - .ifSessionIsShared()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ImportDocument.html
    */
   public toImportDocument() {
@@ -199,6 +259,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
    */
   public toImportDocumentToQApp() {
@@ -209,6 +273,12 @@ export class Qapps extends PolicyStatement {
    * Grants permission to import a document to Q App session in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   * - .ifUserIsSessionModerator()
+   * - .ifSessionIsShared()
    *
    * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
    */
@@ -236,6 +306,17 @@ export class Qapps extends PolicyStatement {
    */
   public toListQApps() {
     return this.to('ListQApps');
+  }
+
+  /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -276,6 +357,12 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_StartQAppSession.html
    */
   public toStartQAppSession() {
@@ -286,6 +373,12 @@ export class Qapps extends PolicyStatement {
    * Grants permission to stop Q App session in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   * - .ifUserIsSessionModerator()
+   * - .ifSessionIsShared()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_StopQAppSession.html
    */
@@ -302,16 +395,34 @@ export class Qapps extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
   }
 
   /**
+   * Grants permission to remove the tag with the given key from a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update a library item in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateLibraryItem.html
    */
@@ -324,6 +435,10 @@ export class Qapps extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateQApps.html
    */
   public toUpdateQApp() {
@@ -334,6 +449,12 @@ export class Qapps extends PolicyStatement {
    * Grants permission to update Q App session in Q Business application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserIsAppOwner()
+   * - .ifAppIsPublished()
+   * - .ifUserIsSessionModerator()
+   * - .ifSessionIsShared()
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateQAppSession.html
    */
@@ -382,14 +503,16 @@ export class Qapps extends PolicyStatement {
       'GetLibraryItem',
       'GetQApp',
       'GetQAppSession',
-      'GetQAppSessionMetadata'
+      'GetQAppSessionMetadata',
+      'ListTagsForResource'
     ],
     List: [
       'ListLibraryItems',
       'ListQApps'
     ],
     Tagging: [
-      'TagResource'
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -450,6 +573,8 @@ export class Qapps extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateQApp()
+   * - .toStartQAppSession()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -483,12 +608,121 @@ export class Qapps extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateQApp()
+   * - .toStartQAppSession()
    * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether Q App is published
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html
+   *
+   * Applies to actions:
+   * - .toAssociateLibraryItemReview()
+   * - .toAssociateQAppWithUser()
+   * - .toCopyQApp()
+   * - .toCreateLibraryItem()
+   * - .toCreateLibraryItemReview()
+   * - .toDeleteLibraryItem()
+   * - .toDeleteQApp()
+   * - .toDisassociateLibraryItemReview()
+   * - .toDisassociateQAppFromUser()
+   * - .toGetLibraryItem()
+   * - .toGetQApp()
+   * - .toGetQAppSession()
+   * - .toImportDocument()
+   * - .toImportDocumentToQApp()
+   * - .toImportDocumentToQAppSession()
+   * - .toStartQAppSession()
+   * - .toStopQAppSession()
+   * - .toUpdateLibraryItem()
+   * - .toUpdateQApp()
+   * - .toUpdateQAppSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAppIsPublished(value: string | string[], operator?: Operator | string) {
+    return this.if(`AppIsPublished`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether Q App Session is shared
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html
+   *
+   * Applies to actions:
+   * - .toGetQAppSession()
+   * - .toImportDocument()
+   * - .toImportDocumentToQAppSession()
+   * - .toStopQAppSession()
+   * - .toUpdateQAppSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSessionIsShared(value: string | string[], operator?: Operator | string) {
+    return this.if(`SessionIsShared`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether requester is Q App owner
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html
+   *
+   * Applies to actions:
+   * - .toAssociateLibraryItemReview()
+   * - .toAssociateQAppWithUser()
+   * - .toCopyQApp()
+   * - .toCreateLibraryItem()
+   * - .toCreateLibraryItemReview()
+   * - .toDeleteLibraryItem()
+   * - .toDeleteQApp()
+   * - .toDisassociateLibraryItemReview()
+   * - .toDisassociateQAppFromUser()
+   * - .toGetLibraryItem()
+   * - .toGetQApp()
+   * - .toGetQAppSession()
+   * - .toImportDocument()
+   * - .toImportDocumentToQApp()
+   * - .toImportDocumentToQAppSession()
+   * - .toStartQAppSession()
+   * - .toStopQAppSession()
+   * - .toUpdateLibraryItem()
+   * - .toUpdateQApp()
+   * - .toUpdateQAppSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserIsAppOwner(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserIsAppOwner`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether requester is Q App Session moderator
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html
+   *
+   * Applies to actions:
+   * - .toGetQAppSession()
+   * - .toImportDocument()
+   * - .toImportDocumentToQAppSession()
+   * - .toStopQAppSession()
+   * - .toUpdateQAppSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserIsSessionModerator(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserIsSessionModerator`, value, operator ?? 'StringLike');
   }
 }

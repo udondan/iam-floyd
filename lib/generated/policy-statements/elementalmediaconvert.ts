@@ -291,6 +291,17 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search AWS Elemental MediaConvert jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/search.html
+   */
+  public toSearchJobs() {
+    return this.to('SearchJobs');
+  }
+
+  /**
    * Grants permission to add tags to a MediaConvert queue, preset, or job template
    *
    * Access Level: Tagging
@@ -375,7 +386,8 @@ export class Mediaconvert extends PolicyStatement {
       'ListJobTemplates',
       'ListJobs',
       'ListPresets',
-      'ListQueues'
+      'ListQueues',
+      'SearchJobs'
     ],
     Read: [
       'GetJob',
