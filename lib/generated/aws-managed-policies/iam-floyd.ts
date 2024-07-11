@@ -910,6 +910,8 @@ export class AwsManagedPolicy {
     public static AppRunnerNetworkingServiceRolePolicy = 'aws-service-role/AppRunnerNetworkingServiceRolePolicy';
     /** Allows AWS AppRunner to manage related AWS resources on your behalf. */
     public static AppRunnerServiceRolePolicy = 'aws-service-role/AppRunnerServiceRolePolicy';
+    /** Allows AppStudio to manage associated AWS resources on your behalf. */
+    public static AppStudioServiceRolePolicy = 'aws-service-role/AppStudioServiceRolePolicy';
     /** Provides full access to Auto Scaling via the AWS Management Console. */
     public static AutoScalingConsoleFullAccess = 'AutoScalingConsoleFullAccess';
     /** Provides read-only access to Auto Scaling via the AWS Management Console. */
