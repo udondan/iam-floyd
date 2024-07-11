@@ -2284,6 +2284,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AppRunnerServiceRolePolicy);
     }
 
+    /** Allows AppStudio to manage associated AWS resources on your behalf. */
+    public AppStudioServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AppStudioServiceRolePolicy);
+    }
+
     /** Provides full access to Auto Scaling via the AWS Management Console. */
     public AutoScalingConsoleFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AutoScalingConsoleFullAccess);

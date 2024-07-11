@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AwsSsmForSapPermissions",
       "Effect": "Allow",
       "Action": [
         "ssm-sap:*"
@@ -9,6 +10,7 @@
       "Resource": "arn:*:ssm-sap:*:*:*"
     },
     {
+      "Sid": "AwsSsmForSapServiceRoleCreationPermission",
       "Effect": "Allow",
       "Action": [
         "iam:CreateServiceLinkedRole"
@@ -19,6 +21,20 @@
       "Condition": {
         "StringEquals": {
           "iam:AWSServiceName": "ssm-sap.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "Ec2StartStopPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "ec2:resourceTag/SSMForSAPManaged": "True"
         }
       }
     }
