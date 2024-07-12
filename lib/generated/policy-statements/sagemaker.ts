@@ -1019,6 +1019,25 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an optimization job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateOptimizationJob.html
+   */
+  public toCreateOptimizationJob() {
+    return this.to('CreateOptimizationJob');
+  }
+
+  /**
    * Grants permission to create a pipeline
    *
    * Access Level: Write
@@ -1799,6 +1818,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an optimization job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteOptimization.html
+   */
+  public toDeleteOptimization() {
+    return this.to('DeleteOptimization');
+  }
+
+  /**
    * Grants permission to delete a pipeline
    *
    * Access Level: Write
@@ -2485,6 +2515,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeNotebookInstanceLifecycleConfig() {
     return this.to('DescribeNotebookInstanceLifecycleConfig');
+  }
+
+  /**
+   * Grants permission to return information about an optimization job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeOptimizationJob.html
+   */
+  public toDescribeOptimizationJob() {
+    return this.to('DescribeOptimizationJob');
   }
 
   /**
@@ -3488,6 +3529,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list optimization jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListOptimizationJobs.html
+   */
+  public toListOptimizationJobs() {
+    return this.to('ListOptimizationJobs');
+  }
+
+  /**
    * Grants permission to list steps for a pipeline execution
    *
    * Access Level: List
@@ -4103,6 +4155,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop an optimization job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopOptimizationJob.html
+   */
+  public toStopOptimizationJob() {
+    return this.to('StopOptimizationJob');
+  }
+
+  /**
    * Grants permission to stop a pipeline execution
    *
    * Access Level: Write
@@ -4693,6 +4756,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateMonitoringSchedule',
       'CreateNotebookInstance',
       'CreateNotebookInstanceLifecycleConfig',
+      'CreateOptimizationJob',
       'CreatePipeline',
       'CreatePresignedDomainUrl',
       'CreatePresignedMlflowTrackingServerUrl',
@@ -4752,6 +4816,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteMonitoringSchedule',
       'DeleteNotebookInstance',
       'DeleteNotebookInstanceLifecycleConfig',
+      'DeleteOptimization',
       'DeletePipeline',
       'DeleteProject',
       'DeleteRecord',
@@ -4798,6 +4863,7 @@ export class Sagemaker extends PolicyStatement {
       'StopMlflowTrackingServer',
       'StopMonitoringSchedule',
       'StopNotebookInstance',
+      'StopOptimizationJob',
       'StopPipelineExecution',
       'StopProcessingJob',
       'StopTrainingJob',
@@ -4898,6 +4964,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeMonitoringSchedule',
       'DescribeNotebookInstance',
       'DescribeNotebookInstanceLifecycleConfig',
+      'DescribeOptimizationJob',
       'DescribePipeline',
       'DescribePipelineDefinitionForExecution',
       'DescribePipelineExecution',
@@ -4988,6 +5055,7 @@ export class Sagemaker extends PolicyStatement {
       'ListMonitoringSchedules',
       'ListNotebookInstanceLifecycleConfigs',
       'ListNotebookInstances',
+      'ListOptimizationJobs',
       'ListPipelineExecutionSteps',
       'ListPipelineExecutions',
       'ListPipelineParametersForExecution',
@@ -5715,6 +5783,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type optimization-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OptimizationJobSummary.html
+   *
+   * @param optimizationJobName - Identifier for the optimizationJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onOptimizationJob(optimizationJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:optimization-job/${ optimizationJobName }`);
+  }
+
+  /**
    * Adds a resource of type automl-job to the statement
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html
@@ -6159,6 +6245,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
+   * - .toCreateOptimizationJob()
    * - .toCreatePipeline()
    * - .toCreateProcessingJob()
    * - .toCreateProject()
@@ -6227,6 +6314,7 @@ export class Sagemaker extends PolicyStatement {
    * - inference-component
    * - transform-job
    * - compilation-job
+   * - optimization-job
    * - automl-job
    * - monitoring-schedule
    * - data-quality-job-definition
@@ -6302,6 +6390,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
+   * - .toCreateOptimizationJob()
    * - .toCreatePipeline()
    * - .toCreateProcessingJob()
    * - .toCreateProject()
@@ -6928,6 +7017,7 @@ export class Sagemaker extends PolicyStatement {
    * - inference-component
    * - transform-job
    * - compilation-job
+   * - optimization-job
    * - automl-job
    * - monitoring-schedule
    * - data-quality-job-definition

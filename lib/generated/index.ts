@@ -199,6 +199,7 @@ export { ApplicationTransformation } from './policy-statements/applicationtransf
 export { Appmesh } from './policy-statements/appmesh';
 export { AppmeshPreview } from './policy-statements/appmeshpreview';
 export { Apprunner } from './policy-statements/apprunner';
+export { Appstudio } from './policy-statements/appstudio';
 export { Appsync } from './policy-statements/appsync';
 export { Artifact } from './policy-statements/artifact';
 export { Auditmanager } from './policy-statements/auditmanager';

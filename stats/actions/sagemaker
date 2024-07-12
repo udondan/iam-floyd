@@ -50,6 +50,7 @@ sagemaker:CreateModelQualityJobDefinition;Write
 sagemaker:CreateMonitoringSchedule;Write
 sagemaker:CreateNotebookInstance;Write
 sagemaker:CreateNotebookInstanceLifecycleConfig;Write
+sagemaker:CreateOptimizationJob;Write
 sagemaker:CreatePipeline;Write
 sagemaker:CreatePresignedDomainUrl;Write
 sagemaker:CreatePresignedMlflowTrackingServerUrl;Write
@@ -109,6 +110,7 @@ sagemaker:DeleteModelQualityJobDefinition;Write
 sagemaker:DeleteMonitoringSchedule;Write
 sagemaker:DeleteNotebookInstance;Write
 sagemaker:DeleteNotebookInstanceLifecycleConfig;Write
+sagemaker:DeleteOptimization;Write
 sagemaker:DeletePipeline;Write
 sagemaker:DeleteProject;Write
 sagemaker:DeleteRecord;Write
@@ -171,6 +173,7 @@ sagemaker:DescribeModelQualityJobDefinition;Read
 sagemaker:DescribeMonitoringSchedule;Read
 sagemaker:DescribeNotebookInstance;Read
 sagemaker:DescribeNotebookInstanceLifecycleConfig;Read
+sagemaker:DescribeOptimizationJob;Read
 sagemaker:DescribePipeline;Read
 sagemaker:DescribePipelineDefinitionForExecution;Read
 sagemaker:DescribePipelineExecution;Read
@@ -261,6 +264,7 @@ sagemaker:ListMonitoringExecutions;List
 sagemaker:ListMonitoringSchedules;List
 sagemaker:ListNotebookInstanceLifecycleConfigs;List
 sagemaker:ListNotebookInstances;List
+sagemaker:ListOptimizationJobs;List
 sagemaker:ListPipelineExecutionSteps;List
 sagemaker:ListPipelineExecutions;List
 sagemaker:ListPipelineParametersForExecution;List
@@ -316,6 +320,7 @@ sagemaker:StopLabelingJob;Write
 sagemaker:StopMlflowTrackingServer;Write
 sagemaker:StopMonitoringSchedule;Write
 sagemaker:StopNotebookInstance;Write
+sagemaker:StopOptimizationJob;Write
 sagemaker:StopPipelineExecution;Write
 sagemaker:StopProcessingJob;Write
 sagemaker:StopTrainingJob;Write

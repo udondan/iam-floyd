@@ -137,6 +137,47 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a prompt flow
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateFlow.html
+   */
+  public toCreateFlow() {
+    return this.to('CreateFlow');
+  }
+
+  /**
+   * Grants permission to create an alias of a prompt flow
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateFlowAlias.html
+   */
+  public toCreateFlowAlias() {
+    return this.to('CreateFlowAlias');
+  }
+
+  /**
+   * Grants permission to create an immutable version of a prompt flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateFlowVersion.html
+   */
+  public toCreateFlowVersion() {
+    return this.to('CreateFlowVersion');
+  }
+
+  /**
    * Grants permission to create a new foundation model agreement
    *
    * Access Level: Write
@@ -234,6 +275,36 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a prompt
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreatePrompt.html
+   */
+  public toCreatePrompt() {
+    return this.to('CreatePrompt');
+  }
+
+  /**
+   * Grants permission to create a version of a prompt
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreatePromptVersion.html
+   */
+  public toCreatePromptVersion() {
+    return this.to('CreatePromptVersion');
+  }
+
+  /**
    * Grants permission to create a new provisioned model throughput
    *
    * Access Level: Write
@@ -282,6 +353,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete existing memory for an alias
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_DeleteAgentMemory.html
+   */
+  public toDeleteAgentMemory() {
+    return this.to('DeleteAgentMemory');
+  }
+
+  /**
    * Grants permission to delete an Agent Version that you created earlier
    *
    * Access Level: Write
@@ -312,6 +394,39 @@ export class Bedrock extends PolicyStatement {
    */
   public toDeleteDataSource() {
     return this.to('DeleteDataSource');
+  }
+
+  /**
+   * Grants permission to delete a prompt flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteFlow.html
+   */
+  public toDeleteFlow() {
+    return this.to('DeleteFlow');
+  }
+
+  /**
+   * Grants permission to delete an alias of a prompt flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteFlowAlias.html
+   */
+  public toDeleteFlowAlias() {
+    return this.to('DeleteFlowAlias');
+  }
+
+  /**
+   * Grants permission to delete a version of a prompt flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteFlowVersion.html
+   */
+  public toDeleteFlowVersion() {
+    return this.to('DeleteFlowVersion');
   }
 
   /**
@@ -356,6 +471,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toDeleteModelInvocationLoggingConfiguration() {
     return this.to('DeleteModelInvocationLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a prompt or its version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeletePrompt.html
+   */
+  public toDeletePrompt() {
+    return this.to('DeletePrompt');
   }
 
   /**
@@ -436,6 +562,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve existing memory for an alias
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetAgentMemory.html
+   */
+  public toGetAgentMemory() {
+    return this.to('GetAgentMemory');
+  }
+
+  /**
    * Grants permission to retrieve an existing version of an agent
    *
    * Access Level: Read
@@ -477,6 +614,39 @@ export class Bedrock extends PolicyStatement {
    */
   public toGetEvaluationJob() {
     return this.to('GetEvaluationJob');
+  }
+
+  /**
+   * Grants permission to retrieve an existing prompt flow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetFlow.html
+   */
+  public toGetFlow() {
+    return this.to('GetFlow');
+  }
+
+  /**
+   * Grants permission to retrieve an existing alias of a prompt flow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetFlowAlias.html
+   */
+  public toGetFlowAlias() {
+    return this.to('GetFlowAlias');
+  }
+
+  /**
+   * Grants permission to retrieve an existing version of a prompt flow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetFlowVersion.html
+   */
+  public toGetFlowVersion() {
+    return this.to('GetFlowVersion');
   }
 
   /**
@@ -579,6 +749,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an existing prompt or its version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetPrompt.html
+   */
+  public toGetPrompt() {
+    return this.to('GetPrompt');
+  }
+
+  /**
    * Grants permission to retrieve a provisioned model throughput
    *
    * Access Level: Read
@@ -609,6 +790,15 @@ export class Bedrock extends PolicyStatement {
    */
   public toInvokeAgent() {
     return this.to('InvokeAgent');
+  }
+
+  /**
+   * Grants permission to invoke a prompt flow with user input
+   *
+   * Access Level: Read
+   */
+  public toInvokeFlow() {
+    return this.to('InvokeFlow');
   }
 
   /**
@@ -722,6 +912,39 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list existing aliases of a prompt flow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListFlowAliases.html
+   */
+  public toListFlowAliases() {
+    return this.to('ListFlowAliases');
+  }
+
+  /**
+   * Grants permission to list existing versions of a prompt flow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListFlowVersions.html
+   */
+  public toListFlowVersions() {
+    return this.to('ListFlowVersions');
+  }
+
+  /**
+   * Grants permission to list existing prompt flows
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListFlows.html
+   */
+  public toListFlows() {
+    return this.to('ListFlows');
+  }
+
+  /**
    * Grants permission to get a list of foundation model agreement offers
    *
    * Access Level: List
@@ -810,6 +1033,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list existing prompts
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListPrompts.html
+   */
+  public toListPrompts() {
+    return this.to('ListPrompts');
+  }
+
+  /**
    * Grants permission to list provisioned model throughputs that you created earlier
    *
    * Access Level: List
@@ -840,6 +1074,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toPrepareAgent() {
     return this.to('PrepareAgent');
+  }
+
+  /**
+   * Grants permission to apply the latest changes made to a prompt flow, so that they are reflected at runtime
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PrepareFlow.html
+   */
+  public toPrepareFlow() {
+    return this.to('PrepareFlow');
   }
 
   /**
@@ -1026,6 +1271,28 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a prompt flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateFlow.html
+   */
+  public toUpdateFlow() {
+    return this.to('UpdateFlow');
+  }
+
+  /**
+   * Grants permission to update the configuration of an alias of a prompt flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateFlowAlias.html
+   */
+  public toUpdateFlowAlias() {
+    return this.to('UpdateFlowAlias');
+  }
+
+  /**
    * Grants permission to update a guardrail
    *
    * Access Level: Write
@@ -1045,6 +1312,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toUpdateKnowledgeBase() {
     return this.to('UpdateKnowledgeBase');
+  }
+
+  /**
+   * Grants permission to update a prompt
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdatePrompt.html
+   */
+  public toUpdatePrompt() {
+    return this.to('UpdatePrompt');
   }
 
   /**
@@ -1069,10 +1347,14 @@ export class Bedrock extends PolicyStatement {
       'GetAgentActionGroup',
       'GetAgentAlias',
       'GetAgentKnowledgeBase',
+      'GetAgentMemory',
       'GetAgentVersion',
       'GetCustomModel',
       'GetDataSource',
       'GetEvaluationJob',
+      'GetFlow',
+      'GetFlowAlias',
+      'GetFlowVersion',
       'GetFoundationModel',
       'GetFoundationModelAvailability',
       'GetGuardrail',
@@ -1082,9 +1364,11 @@ export class Bedrock extends PolicyStatement {
       'GetModelEvaluationJob',
       'GetModelInvocationJob',
       'GetModelInvocationLoggingConfiguration',
+      'GetPrompt',
       'GetProvisionedModelThroughput',
       'GetUseCaseForModelAccess',
       'InvokeAgent',
+      'InvokeFlow',
       'InvokeModel',
       'InvokeModelWithResponseStream',
       'ListTagsForResource',
@@ -1098,6 +1382,9 @@ export class Bedrock extends PolicyStatement {
       'CreateAgentAlias',
       'CreateDataSource',
       'CreateEvaluationJob',
+      'CreateFlow',
+      'CreateFlowAlias',
+      'CreateFlowVersion',
       'CreateFoundationModelAgreement',
       'CreateGuardrail',
       'CreateGuardrailVersion',
@@ -1105,20 +1392,28 @@ export class Bedrock extends PolicyStatement {
       'CreateModelCustomizationJob',
       'CreateModelEvaluationJob',
       'CreateModelInvocationJob',
+      'CreatePrompt',
+      'CreatePromptVersion',
       'CreateProvisionedModelThroughput',
       'DeleteAgent',
       'DeleteAgentActionGroup',
       'DeleteAgentAlias',
+      'DeleteAgentMemory',
       'DeleteAgentVersion',
       'DeleteCustomModel',
       'DeleteDataSource',
+      'DeleteFlow',
+      'DeleteFlowAlias',
+      'DeleteFlowVersion',
       'DeleteFoundationModelAgreement',
       'DeleteGuardrail',
       'DeleteKnowledgeBase',
       'DeleteModelInvocationLoggingConfiguration',
+      'DeletePrompt',
       'DeleteProvisionedModelThroughput',
       'DisassociateAgentKnowledgeBase',
       'PrepareAgent',
+      'PrepareFlow',
       'PutFoundationModelEntitlement',
       'PutModelInvocationLoggingConfiguration',
       'PutUseCaseForModelAccess',
@@ -1132,8 +1427,11 @@ export class Bedrock extends PolicyStatement {
       'UpdateAgentAlias',
       'UpdateAgentKnowledgeBase',
       'UpdateDataSource',
+      'UpdateFlow',
+      'UpdateFlowAlias',
       'UpdateGuardrail',
       'UpdateKnowledgeBase',
+      'UpdatePrompt',
       'UpdateProvisionedModelThroughput'
     ],
     List: [
@@ -1145,6 +1443,9 @@ export class Bedrock extends PolicyStatement {
       'ListCustomModels',
       'ListDataSources',
       'ListEvaluationJobs',
+      'ListFlowAliases',
+      'ListFlowVersions',
+      'ListFlows',
       'ListFoundationModelAgreementOffers',
       'ListFoundationModels',
       'ListGuardrails',
@@ -1153,6 +1454,7 @@ export class Bedrock extends PolicyStatement {
       'ListModelCustomizationJobs',
       'ListModelEvaluationJobs',
       'ListModelInvocationJobs',
+      'ListPrompts',
       'ListProvisionedModelThroughputs'
     ],
     Tagging: [
@@ -1346,6 +1648,76 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type flow to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowSummary.html
+   *
+   * @param flowId - Identifier for the flowId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFlow(flowId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow/${ flowId }`);
+  }
+
+  /**
+   * Adds a resource of type flow-alias to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowAliasSummary.html
+   *
+   * @param flowId - Identifier for the flowId.
+   * @param flowAliasId - Identifier for the flowAliasId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onFlowAlias(flowId: string, flowAliasId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow/${ flowId }/alias/${ flowAliasId }`);
+  }
+
+  /**
+   * Adds a resource of type prompt to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptSummary.html
+   *
+   * @param promptId - Identifier for the promptId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPrompt(promptId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:prompt/${ promptId }`);
+  }
+
+  /**
+   * Adds a resource of type prompt-version to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptSummary.html
+   *
+   * @param promptId - Identifier for the promptId.
+   * @param promptVersion - Identifier for the promptVersion.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPromptVersion(promptId: string, promptVersion: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:prompt/${ promptId }:${ promptVersion }`);
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -1355,11 +1727,15 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateAgentActionGroup()
    * - .toCreateAgentAlias()
    * - .toCreateEvaluationJob()
+   * - .toCreateFlow()
+   * - .toCreateFlowAlias()
    * - .toCreateGuardrail()
    * - .toCreateKnowledgeBase()
    * - .toCreateModelCustomizationJob()
    * - .toCreateModelEvaluationJob()
    * - .toCreateModelInvocationJob()
+   * - .toCreatePrompt()
+   * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
    * - .toTagResource()
    *
@@ -1387,6 +1763,10 @@ export class Bedrock extends PolicyStatement {
    * - evaluation-job
    * - model-invocation-job
    * - guardrail
+   * - flow
+   * - flow-alias
+   * - prompt
+   * - prompt-version
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1406,11 +1786,15 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateAgentActionGroup()
    * - .toCreateAgentAlias()
    * - .toCreateEvaluationJob()
+   * - .toCreateFlow()
+   * - .toCreateFlowAlias()
    * - .toCreateGuardrail()
    * - .toCreateKnowledgeBase()
    * - .toCreateModelCustomizationJob()
    * - .toCreateModelEvaluationJob()
    * - .toCreateModelInvocationJob()
+   * - .toCreatePrompt()
+   * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
    * - .toTagResource()
    * - .toUntagResource()

@@ -89,6 +89,28 @@ export class MedicalImaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get dicom instance frames in format requested by the customer
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstanceFrames.html
+   */
+  public toGetDICOMInstanceFrames() {
+    return this.to('GetDICOMInstanceFrames');
+  }
+
+  /**
+   * Grants permission to get dicom instance metadata in DICOM JSON format
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstanceMetadata.html
+   */
+  public toGetDICOMInstanceMetadata() {
+    return this.to('GetDICOMInstanceMetadata');
+  }
+
+  /**
    * Grants permission to get data store properties
    *
    * Access Level: Read
@@ -251,6 +273,8 @@ export class MedicalImaging extends PolicyStatement {
     Read: [
       'GetDICOMImportJob',
       'GetDICOMInstance',
+      'GetDICOMInstanceFrames',
+      'GetDICOMInstanceMetadata',
       'GetDatastore',
       'GetImageFrame',
       'GetImageSet',
