@@ -1179,6 +1179,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to copy the configuration from a staging web distribution to its corresponding primary web distribution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistributionWithStagingConfig.html
+   */
+  public toUpdateDistributionWithStagingConfig() {
+    return this.to('UpdateDistributionWithStagingConfig');
+  }
+
+  /**
    * Grants permission to update a field-level encryption configuration
    *
    * Access Level: Write
@@ -1355,6 +1366,7 @@ export class Cloudfront extends PolicyStatement {
       'UpdateCloudFrontOriginAccessIdentity',
       'UpdateContinuousDeploymentPolicy',
       'UpdateDistribution',
+      'UpdateDistributionWithStagingConfig',
       'UpdateFieldLevelEncryptionConfig',
       'UpdateFieldLevelEncryptionProfile',
       'UpdateFunction',

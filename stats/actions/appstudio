@@ -1,0 +1,5 @@
+appstudio:GetAccountStatus;Read
+appstudio:GetEnablementJobStatus;Read
+appstudio:StartEnablementJob;Write
+appstudio:StartRollbackEnablementJob;Write
+appstudio:StartTeamDeployment;Write

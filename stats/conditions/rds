@@ -6,7 +6,6 @@ rds:DatabaseName
 rds:EndpointType
 rds:ManageMasterUserPassword
 rds:MultiAz
-rds:MultiTenant
 rds:Piops
 rds:RequestTag/${TagKey}
 rds:ResourceTag/${TagKey}

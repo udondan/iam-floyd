@@ -46,6 +46,7 @@ sagemaker:monitoring-schedule
 sagemaker:monitoring-schedule-alert
 sagemaker:notebook-instance
 sagemaker:notebook-instance-lifecycle-config
+sagemaker:optimization-job
 sagemaker:pipeline
 sagemaker:pipeline-execution
 sagemaker:processing-job

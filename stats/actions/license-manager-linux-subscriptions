@@ -1,4 +1,11 @@
+license-manager-linux-subscriptions:DeregisterSubscriptionProvider;Write
+license-manager-linux-subscriptions:GetRegisteredSubscriptionProvider;Read
 license-manager-linux-subscriptions:GetServiceSettings;Read
 license-manager-linux-subscriptions:ListLinuxSubscriptionInstances;Read
 license-manager-linux-subscriptions:ListLinuxSubscriptions;Read
+license-manager-linux-subscriptions:ListRegisteredSubscriptionProviders;Read
+license-manager-linux-subscriptions:ListTagsForResource;Read
+license-manager-linux-subscriptions:RegisterSubscriptionProvider;Write
+license-manager-linux-subscriptions:TagResource;Tagging
+license-manager-linux-subscriptions:UntagResource;Tagging
 license-manager-linux-subscriptions:UpdateServiceSettings;Write

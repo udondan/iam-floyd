@@ -366,7 +366,6 @@ export class Rds extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    * - .ifManageMasterUserPassword()
-   * - .ifMultiTenant()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -1591,7 +1590,6 @@ export class Rds extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifManageMasterUserPassword()
-   * - .ifMultiTenant()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -3135,22 +3133,6 @@ export class Rds extends PolicyStatement {
    */
   public ifMultiAz(value?: boolean) {
     return this.if(`MultiAz`, (typeof value !== 'undefined' ? value : true), 'Bool');
-  }
-
-  /**
-   * Filters access by the value that specifies whether the DB instance is in the multi-tenant configuration
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
-   *
-   * Applies to actions:
-   * - .toCreateDBInstance()
-   * - .toModifyDBInstance()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifMultiTenant(value: string | string[], operator?: Operator | string) {
-    return this.if(`MultiTenant`, value, operator ?? 'StringLike');
   }
 
   /**

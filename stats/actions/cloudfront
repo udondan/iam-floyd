@@ -102,6 +102,7 @@ cloudfront:UpdateCachePolicy;Write
 cloudfront:UpdateCloudFrontOriginAccessIdentity;Write
 cloudfront:UpdateContinuousDeploymentPolicy;Write
 cloudfront:UpdateDistribution;Write
+cloudfront:UpdateDistributionWithStagingConfig;Write
 cloudfront:UpdateFieldLevelEncryptionConfig;Write
 cloudfront:UpdateFieldLevelEncryptionProfile;Write
 cloudfront:UpdateFunction;Write
