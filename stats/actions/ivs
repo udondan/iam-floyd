@@ -13,6 +13,7 @@ ivs:DeleteChannel;Write
 ivs:DeleteEncoderConfiguration;Write
 ivs:DeletePlaybackKeyPair;Write
 ivs:DeletePlaybackRestrictionPolicy;Write
+ivs:DeletePublicKey;Write
 ivs:DeleteRecordingConfiguration;Write
 ivs:DeleteStage;Write
 ivs:DeleteStorageConfiguration;Write
@@ -24,6 +25,7 @@ ivs:GetEncoderConfiguration;Read
 ivs:GetParticipant;Read
 ivs:GetPlaybackKeyPair;Read
 ivs:GetPlaybackRestrictionPolicy;Read
+ivs:GetPublicKey;Read
 ivs:GetRecordingConfiguration;Read
 ivs:GetStage;Read
 ivs:GetStageSession;Read
@@ -32,6 +34,7 @@ ivs:GetStream;Read
 ivs:GetStreamKey;Read
 ivs:GetStreamSession;Read
 ivs:ImportPlaybackKeyPair;Write
+ivs:ImportPublicKey;Write
 ivs:ListChannels;List
 ivs:ListCompositions;List
 ivs:ListEncoderConfigurations;List
@@ -39,6 +42,7 @@ ivs:ListParticipantEvents;List
 ivs:ListParticipants;List
 ivs:ListPlaybackKeyPairs;List
 ivs:ListPlaybackRestrictionPolicies;List
+ivs:ListPublicKeys;List
 ivs:ListRecordingConfigurations;List
 ivs:ListStageSessions;List
 ivs:ListStages;List
