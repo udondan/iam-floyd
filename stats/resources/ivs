@@ -3,6 +3,7 @@ ivs:Composition
 ivs:Encoder-Configuration
 ivs:Playback-Key-Pair
 ivs:Playback-Restriction-Policy
+ivs:Public-Key
 ivs:Recording-Configuration
 ivs:Stage
 ivs:Storage-Configuration

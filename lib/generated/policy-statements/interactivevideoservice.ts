@@ -216,6 +216,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the public key for the specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeletePublicKey.html
+   */
+  public toDeletePublicKey() {
+    return this.to('DeletePublicKey');
+  }
+
+  /**
    * Grants permission to delete a recording configuration for the specified ARN
    *
    * Access Level: Write
@@ -337,6 +348,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the public key for the specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetPublicKey.html
+   */
+  public toGetPublicKey() {
+    return this.to('GetPublicKey');
+  }
+
+  /**
    * Grants permission to get the recording configuration for the specified ARN
    *
    * Access Level: Read
@@ -429,6 +451,21 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import a public key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ImportPublicKey.html
+   */
+  public toImportPublicKey() {
+    return this.to('ImportPublicKey');
+  }
+
+  /**
    * Grants permission to get summary information about channels
    *
    * Access Level: List
@@ -444,7 +481,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListCompositions.html
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListCompositions.html
    */
   public toListCompositions() {
     return this.to('ListCompositions');
@@ -455,7 +492,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListEncoderConfigurations.html
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListEncoderConfigurations.html
    */
   public toListEncoderConfigurations() {
     return this.to('ListEncoderConfigurations');
@@ -499,10 +536,21 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListPlaybackRestrictionPolicies.html
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListPlaybackRestrictionPolicies.html
    */
   public toListPlaybackRestrictionPolicies() {
     return this.to('ListPlaybackRestrictionPolicies');
+  }
+
+  /**
+   * Grants permission to get summary information about public keys
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListPublicKeys.html
+   */
+  public toListPublicKeys() {
+    return this.to('ListPublicKeys');
   }
 
   /**
@@ -543,7 +591,7 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStorageConfigurations.html
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListStorageConfigurations.html
    */
   public toListStorageConfigurations() {
     return this.to('ListStorageConfigurations');
@@ -728,6 +776,7 @@ export class Ivs extends PolicyStatement {
       'GetParticipant',
       'GetPlaybackKeyPair',
       'GetPlaybackRestrictionPolicy',
+      'GetPublicKey',
       'GetRecordingConfiguration',
       'GetStage',
       'GetStageSession',
@@ -751,12 +800,14 @@ export class Ivs extends PolicyStatement {
       'DeleteEncoderConfiguration',
       'DeletePlaybackKeyPair',
       'DeletePlaybackRestrictionPolicy',
+      'DeletePublicKey',
       'DeleteRecordingConfiguration',
       'DeleteStage',
       'DeleteStorageConfiguration',
       'DeleteStreamKey',
       'DisconnectParticipant',
       'ImportPlaybackKeyPair',
+      'ImportPublicKey',
       'PutMetadata',
       'StartComposition',
       'StartViewerSessionRevocation',
@@ -774,6 +825,7 @@ export class Ivs extends PolicyStatement {
       'ListParticipants',
       'ListPlaybackKeyPairs',
       'ListPlaybackRestrictionPolicies',
+      'ListPublicKeys',
       'ListRecordingConfigurations',
       'ListStageSessions',
       'ListStages',
@@ -942,6 +994,23 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Public-Key to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_PublicKey.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPublicKey(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:public-key/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the tags associated with the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -956,6 +1025,7 @@ export class Ivs extends PolicyStatement {
    * - .toCreateStorageConfiguration()
    * - .toCreateStreamKey()
    * - .toImportPlaybackKeyPair()
+   * - .toImportPublicKey()
    * - .toListTagsForResource()
    * - .toStartComposition()
    * - .toTagResource()
@@ -983,6 +1053,7 @@ export class Ivs extends PolicyStatement {
    * - Composition
    * - Encoder-Configuration
    * - Storage-Configuration
+   * - Public-Key
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1007,6 +1078,7 @@ export class Ivs extends PolicyStatement {
    * - .toCreateStorageConfiguration()
    * - .toCreateStreamKey()
    * - .toImportPlaybackKeyPair()
+   * - .toImportPublicKey()
    * - .toListTagsForResource()
    * - .toStartComposition()
    * - .toTagResource()

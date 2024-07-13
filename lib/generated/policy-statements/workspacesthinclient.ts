@@ -23,6 +23,10 @@ export class Thinclient extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_CreateEnvironment.html
    */
   public toCreateEnvironment() {
@@ -281,6 +285,9 @@ export class Thinclient extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSoftwareset(softwareSetId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:thinclient:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:softwareset/${ softwareSetId }`);
@@ -292,6 +299,7 @@ export class Thinclient extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateEnvironment()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -310,6 +318,7 @@ export class Thinclient extends PolicyStatement {
    * Applies to resource types:
    * - environment
    * - device
+   * - softwareset
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -325,6 +334,7 @@ export class Thinclient extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateEnvironment()
    * - .toTagResource()
    * - .toUntagResource()
    *
