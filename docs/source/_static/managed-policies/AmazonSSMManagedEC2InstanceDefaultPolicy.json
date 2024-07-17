@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowSSMAgentPermissions",
       "Effect": "Allow",
       "Action": [
         "ssm:DescribeAssociation",
@@ -21,6 +22,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowSSMChannelMessaging",
       "Effect": "Allow",
       "Action": [
         "ssmmessages:CreateControlChannel",
@@ -31,6 +33,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowSSMLegacyMessaging",
       "Effect": "Allow",
       "Action": [
         "ec2messages:AcknowledgeMessage",
