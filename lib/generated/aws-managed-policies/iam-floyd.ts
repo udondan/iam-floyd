@@ -888,6 +888,8 @@ export class AwsManagedPolicy {
     public static AmazonWorkSpacesSelfServiceAccess = 'AmazonWorkSpacesSelfServiceAccess';
     /** Provides customer account access to AWS WorkSpaces service for launching a Workspace. */
     public static AmazonWorkSpacesServiceAccess = 'AmazonWorkSpacesServiceAccess';
+    /** Provides read-only access to Amazon WorkSpaces Thin Client and its dependencies */
+    public static AmazonWorkSpacesThinClientReadOnlyAccess = 'AmazonWorkSpacesThinClientReadOnlyAccess';
     /** Provides read-only access to Amazon WorkSpaces Web and its dependencies through the AWS Management Console, SDK, and CLI. */
     public static AmazonWorkSpacesWebReadOnly = 'AmazonWorkSpacesWebReadOnly';
     /** Enables access to AWS Services and Resources used or managed by Amazon WorkSpaces Web */

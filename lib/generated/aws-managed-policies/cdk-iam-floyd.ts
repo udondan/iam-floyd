@@ -2229,6 +2229,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesServiceAccess);
     }
 
+    /** Provides read-only access to Amazon WorkSpaces Thin Client and its dependencies */
+    public AmazonWorkSpacesThinClientReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesThinClientReadOnlyAccess);
+    }
+
     /** Provides read-only access to Amazon WorkSpaces Web and its dependencies through the AWS Management Console, SDK, and CLI. */
     public AmazonWorkSpacesWebReadOnly(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesWebReadOnly);
