@@ -70,6 +70,26 @@
       }
     },
     {
+      "Sid": "AmplifySandboxLambdaLogsStreamingListTags",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:ListTags"
+      ],
+      "Resource": [
+        "arn:aws:lambda:*:*:function:amplify-*"
+      ]
+    },
+    {
+      "Sid": "AmplifySandboxLambdaLogsStreamingFilterLogEvents",
+      "Effect": "Allow",
+      "Action": [
+        "logs:FilterLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/lambda/amplify-*:*"
+      ]
+    },
+    {
       "Sid": "AmplifySchema",
       "Effect": "Allow",
       "Action": [
