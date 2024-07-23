@@ -557,7 +557,9 @@
         "network-firewall:DescribeResourcePolicy",
         "network-firewall:DeleteResourcePolicy",
         "network-firewall:DescribeLoggingConfiguration",
-        "network-firewall:UpdateLoggingConfiguration"
+        "network-firewall:UpdateLoggingConfiguration",
+        "network-firewall:DescribeTLSInspectionConfiguration",
+        "network-firewall:ListTLSInspectionConfigurations"
       ],
       "Resource": "*"
     },
