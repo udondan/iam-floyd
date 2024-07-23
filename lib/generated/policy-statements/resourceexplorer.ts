@@ -85,6 +85,17 @@ export class ResourceExplorer2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified view's resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a view
    *
    * Access Level: Write
@@ -137,6 +148,17 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public toGetIndex() {
     return this.to('GetIndex');
+  }
+
+  /**
+   * Grants permission to retrieve information about the specified view's resource policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -203,6 +225,17 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public toListViews() {
     return this.to('ListViews');
+  }
+
+  /**
+   * Grants permission to update the specified view's resource policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -273,8 +306,10 @@ export class ResourceExplorer2 extends PolicyStatement {
       'CreateIndex',
       'CreateView',
       'DeleteIndex',
+      'DeleteResourcePolicy',
       'DeleteView',
       'DisassociateDefaultView',
+      'PutResourcePolicy',
       'UpdateIndexType',
       'UpdateView'
     ],
@@ -283,6 +318,7 @@ export class ResourceExplorer2 extends PolicyStatement {
       'GetAccountLevelServiceConfiguration',
       'GetDefaultView',
       'GetIndex',
+      'GetResourcePolicy',
       'GetView',
       'ListTagsForResource',
       'Search'

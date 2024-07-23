@@ -23,6 +23,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AssociateLenses.html
    */
   public toAssociateLenses() {
@@ -33,6 +36,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to associate a profile to the specified workload
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_AssociateProfiles.html
    */
@@ -45,7 +51,7 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ConfigureIntegration.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/setting-up-jira.html
    */
   public toConfigureIntegration() {
     return this.to('ConfigureIntegration');
@@ -55,6 +61,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to an owner of a lens to share with other AWS accounts and IAM users
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateLensShare.html
    */
@@ -67,6 +76,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateLensVersion.html
    */
   public toCreateLensVersion() {
@@ -77,6 +89,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to create a new milestone for the specified workload
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateMilestone.html
    */
@@ -104,6 +119,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateProfileShare.html
    */
   public toCreateProfileShare() {
@@ -129,6 +147,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to an owner of a review template to share with other AWS accounts and IAM users
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateTemplateShare.html
    */
@@ -157,6 +178,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_CreateWorkloadShare.html
    */
   public toCreateWorkloadShare() {
@@ -167,6 +191,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to delete a lens
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLens.html
    */
@@ -179,6 +206,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteLensShare.html
    */
   public toDeleteLensShare() {
@@ -189,6 +219,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to delete a profile
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteProfile.html
    */
@@ -201,6 +234,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteProfileShare.html
    */
   public toDeleteProfileShare() {
@@ -211,6 +247,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to delete an existing review template
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteReviewTemplate.html
    */
@@ -223,6 +262,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteTemplateShare.html
    */
   public toDeleteTemplateShare() {
@@ -233,6 +275,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to delete an existing workload
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteWorkload.html
    */
@@ -245,6 +290,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DeleteWorkloadShare.html
    */
   public toDeleteWorkloadShare() {
@@ -255,6 +303,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to disassociate a lens from the specified workload
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DisassociateLenses.html
    */
@@ -267,6 +318,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_DisassociateProfiles.html
    */
   public toDisassociateProfiles() {
@@ -278,6 +332,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ExportLens.html
    */
   public toExportLens() {
@@ -288,6 +345,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to retrieve the specified answer from the specified lens review
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetAnswer.html
    */
@@ -336,6 +396,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensReview.html
    */
   public toGetLensReview() {
@@ -346,6 +409,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to retrieve the report for the specified lens review
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensReviewReport.html
    */
@@ -358,6 +424,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetLensVersionDifference.html
    */
   public toGetLensVersionDifference() {
@@ -368,6 +437,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to retrieve the specified milestone of the specified workload
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetMilestone.html
    */
@@ -419,6 +491,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetReviewTemplateAnswer.html
    */
   public toGetReviewTemplateAnswer() {
@@ -429,6 +504,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to retrieve the specified lens review of the specified review template
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_GetReviewTemplateLensReview.html
    */
@@ -470,6 +548,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListAnswers.html
    */
   public toListAnswers() {
@@ -480,6 +561,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to list the check-details for the workload
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListCheckDetails.html
    */
@@ -492,6 +576,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListCheckSummaries.html
    */
   public toListCheckSummaries() {
@@ -502,6 +589,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to list the improvements of the specified lens review
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensReviewImprovements.html
    */
@@ -514,6 +604,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensReviews.html
    */
   public toListLensReviews() {
@@ -524,6 +617,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to list all shares created for a lens
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListLensShares.html
    */
@@ -546,6 +642,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to list the milestones of the specified workload
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListMilestones.html
    */
@@ -580,6 +679,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListProfileShares.html
    */
   public toListProfileShares() {
@@ -601,6 +703,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to list the answers from the specified review template lens review
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListReviewTemplateAnswers.html
    */
@@ -649,6 +754,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListTemplateShares.html
    */
   public toListTemplateShares() {
@@ -659,6 +767,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to list the workload shares of the specified workload
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_ListWorkloadShares.html
    */
@@ -711,6 +822,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateAnswer.html
    */
   public toUpdateAnswer() {
@@ -736,6 +850,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateIntegration.html
    */
   public toUpdateIntegration() {
@@ -746,6 +863,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to update properties of the specified lens review
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateLensReview.html
    */
@@ -758,6 +878,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateProfile.html
    */
   public toUpdateProfile() {
@@ -768,6 +891,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to update properties of the specified review template
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplate.html
    */
@@ -780,6 +906,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplateAnswer.html
    */
   public toUpdateReviewTemplateAnswer() {
@@ -790,6 +919,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to update properties of the specified review template lens review
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateReviewTemplateLensReview.html
    */
@@ -814,6 +946,7 @@ export class Wellarchitected extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifJiraProjectKey()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateWorkload.html
@@ -827,6 +960,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpdateWorkloadShare.html
    */
   public toUpdateWorkloadShare() {
@@ -837,6 +973,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to upgrade the specified lens review to use the latest version of the associated lens
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeLensReview.html
    */
@@ -849,6 +988,9 @@ export class Wellarchitected extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeProfileVersion.html
    */
   public toUpgradeProfileVersion() {
@@ -859,6 +1001,9 @@ export class Wellarchitected extends PolicyStatement {
    * Grants permission to upgrade the specified lens review of the specified review template
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/wellarchitected/latest/APIReference/API_UpgradeReviewTemplateLensReview.html
    */
@@ -1044,11 +1189,60 @@ export class Wellarchitected extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociateLenses()
+   * - .toAssociateProfiles()
+   * - .toCreateLensShare()
+   * - .toCreateLensVersion()
+   * - .toCreateMilestone()
+   * - .toCreateProfileShare()
+   * - .toCreateTemplateShare()
+   * - .toCreateWorkloadShare()
+   * - .toDeleteLens()
+   * - .toDeleteLensShare()
+   * - .toDeleteProfile()
+   * - .toDeleteProfileShare()
+   * - .toDeleteReviewTemplate()
+   * - .toDeleteTemplateShare()
+   * - .toDeleteWorkload()
+   * - .toDeleteWorkloadShare()
+   * - .toDisassociateLenses()
+   * - .toDisassociateProfiles()
+   * - .toExportLens()
+   * - .toGetAnswer()
    * - .toGetLens()
+   * - .toGetLensReview()
+   * - .toGetLensReviewReport()
+   * - .toGetLensVersionDifference()
+   * - .toGetMilestone()
    * - .toGetProfile()
    * - .toGetReviewTemplate()
+   * - .toGetReviewTemplateAnswer()
+   * - .toGetReviewTemplateLensReview()
    * - .toGetWorkload()
+   * - .toListAnswers()
+   * - .toListCheckDetails()
+   * - .toListCheckSummaries()
+   * - .toListLensReviewImprovements()
+   * - .toListLensReviews()
+   * - .toListLensShares()
+   * - .toListMilestones()
+   * - .toListProfileShares()
+   * - .toListReviewTemplateAnswers()
    * - .toListTagsForResource()
+   * - .toListTemplateShares()
+   * - .toListWorkloadShares()
+   * - .toUpdateAnswer()
+   * - .toUpdateIntegration()
+   * - .toUpdateLensReview()
+   * - .toUpdateProfile()
+   * - .toUpdateReviewTemplate()
+   * - .toUpdateReviewTemplateAnswer()
+   * - .toUpdateReviewTemplateLensReview()
+   * - .toUpdateWorkload()
+   * - .toUpdateWorkloadShare()
+   * - .toUpgradeLensReview()
+   * - .toUpgradeProfileVersion()
+   * - .toUpgradeReviewTemplateLensReview()
    *
    * Applies to resource types:
    * - workload
@@ -1087,7 +1281,7 @@ export class Wellarchitected extends PolicyStatement {
   /**
    * Filters access by project key
    *
-   * https://docs.aws.amazon.com/API_JiraProjectKey.html
+   * https://docs.aws.amazon.com/wellarchitected/latest/userguide/security_iam_id-based-policy-examples.html
    *
    * Applies to actions:
    * - .toCreateWorkload()

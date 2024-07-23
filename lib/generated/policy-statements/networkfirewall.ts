@@ -188,6 +188,10 @@ export class NetworkFirewall extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
+   *
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeLoggingConfiguration.html
    */
   public toDescribeLoggingConfiguration() {
