@@ -10,6 +10,7 @@
         "ec2:CreateNetworkInterfacePermission",
         "ec2:DeleteNetworkInterface",
         "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRegions",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcEndpoints",
