@@ -1822,7 +1822,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteOptimization.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteOptimizationJob.html
    */
   public toDeleteOptimization() {
     return this.to('DeleteOptimization');

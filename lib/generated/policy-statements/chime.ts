@@ -286,7 +286,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an app instance under the AWS account
+   * Grants permission to create an app instance in the AWS account (tag-based access controls are only supported on identity-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -312,7 +312,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a bot under an Amazon Chime AppInstance
+   * Grants permission to create a bot within an AppInstance (tag-based access controls are only supported on identity-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -327,7 +327,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a user under an Amazon Chime AppInstance
+   * Grants permission to create a user within an AppInstance (tag-based access controls are only supported on identity-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -379,7 +379,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a channel for an app instance under the AWS account
+   * Grants permission to create a channel for an app instance in the AWS account (tag-based access controls are only supported on messaging-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -405,7 +405,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a channel flow for an app instance under the AWS account
+   * Grants permission to create a channel flow for an app instance in the AWS account (tag-based access controls are only supported on messaging-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -442,7 +442,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a media capture pipeline
+   * Grants permission to create a media capture pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -460,7 +460,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a media concatenation pipeline
+   * Grants permission to create a media concatenation pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -478,7 +478,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a media insights pipeline
+   * Grants permission to create a media insights pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -497,7 +497,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a media insights pipeline configuration
+   * Grants permission to create a media insights pipeline configuration (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -518,7 +518,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a media live connector pipeline
+   * Grants permission to create a media live connector pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -533,7 +533,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create kinesis video stream pool
+   * Grants permission to create kinesis video stream pool (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -554,7 +554,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a media stream pipeline
+   * Grants permission to create a media stream pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -574,7 +574,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with no initial attendees
+   * Grants permission to create a new meeting in the specified media Region, with no initial attendees (tag-based access controls are only supported on meetings-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -600,7 +600,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with a set of attendees
+   * Grants permission to create a new meeting in the specified media Region, with a set of attendees (tag-based access controls are only supported on meetings-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -659,7 +659,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an Amazon Chime SIP media application under the administrator's AWS account
+   * Grants permission to create an Amazon Chime SIP media application in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -707,7 +707,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Amazon Chime Voice Connector under the administrator's AWS account
+   * Grants permission to create a Voice Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -744,7 +744,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a voice profile domain
+   * Grants permission to create a voice profile domain (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
    *
@@ -3101,7 +3101,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to apply the specified tags to the specified Amazon Chime resource
+   * Grants permission to apply the specified tags to the specified resource (tag-based access controls are only supported on *-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Tagging
    *
@@ -3150,7 +3150,7 @@ export class Chime extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag the specified tags from the specified Amazon Chime resource
+   * Grants permission to untag the specified tags from the specified resource (tag-based access controls are only supported on *-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Tagging
    *

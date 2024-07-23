@@ -2005,7 +2005,7 @@ export class Connect extends PolicyStatement {
   /**
    * Grants permission to list authentication profile resources in an Amazon Connect instance
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifInstanceId()
@@ -2703,6 +2703,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search agent status resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeAgentStatus
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAgentStatuses.html
+   */
+  public toSearchAgentStatuses() {
+    return this.to('SearchAgentStatuses');
+  }
+
+  /**
    * Grants permission to search phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: List
@@ -2908,6 +2926,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search user hierarchy group resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeUserHierarchyGroup
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchUserHierarchyGroups.html
+   */
+  public toSearchUserHierarchyGroups() {
+    return this.to('SearchUserHierarchyGroups');
+  }
+
+  /**
    * Grants permission to search user resources in an Amazon Connect instance
    *
    * Access Level: Read
@@ -2918,6 +2954,7 @@ export class Connect extends PolicyStatement {
    *
    * Dependent actions:
    * - connect:DescribeUser
+   * - connect:ListUserProficiencies
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchUsers.html
    */
@@ -4133,9 +4170,9 @@ export class Connect extends PolicyStatement {
       'GetMetricDataV2',
       'GetPromptFile',
       'GetTaskTemplate',
-      'ListAuthenticationProfiles',
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',
+      'SearchAgentStatuses',
       'SearchContactFlowModules',
       'SearchContactFlows',
       'SearchContacts',
@@ -4146,6 +4183,7 @@ export class Connect extends PolicyStatement {
       'SearchQuickConnects',
       'SearchRoutingProfiles',
       'SearchSecurityProfiles',
+      'SearchUserHierarchyGroups',
       'SearchUsers'
     ],
     List: [
@@ -4153,6 +4191,7 @@ export class Connect extends PolicyStatement {
       'GetTrafficDistribution',
       'ListAgentStatuses',
       'ListApprovedOrigins',
+      'ListAuthenticationProfiles',
       'ListBots',
       'ListContactEvaluations',
       'ListContactFlowModules',
@@ -5216,6 +5255,7 @@ export class Connect extends PolicyStatement {
    * - .toPutUserStatus()
    * - .toReplicateInstance()
    * - .toResumeContact()
+   * - .toSearchAgentStatuses()
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
    * - .toSearchContacts()
@@ -5227,6 +5267,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchResourceTags()
    * - .toSearchRoutingProfiles()
    * - .toSearchSecurityProfiles()
+   * - .toSearchUserHierarchyGroups()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
    * - .toStartAttachedFileUpload()
@@ -5331,6 +5372,7 @@ export class Connect extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateTrafficDistributionGroupUser()
+   * - .toSearchAgentStatuses()
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
    * - .toSearchHoursOfOperations()
@@ -5339,6 +5381,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchQuickConnects()
    * - .toSearchRoutingProfiles()
    * - .toSearchSecurityProfiles()
+   * - .toSearchUserHierarchyGroups()
    * - .toSearchUsers()
    *
    * @param tagKey The tag key to check

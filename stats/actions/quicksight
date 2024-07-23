@@ -1,4 +1,6 @@
 quicksight:AccountConfigurations;Write
+quicksight:BatchCreateTopicReviewedAnswer;Write
+quicksight:BatchDeleteTopicReviewedAnswer;Write
 quicksight:CancelIngestion;Write
 quicksight:CreateAccountCustomization;Write
 quicksight:CreateAccountSubscription;Write
@@ -133,6 +135,7 @@ quicksight:ListThemeAliases;List
 quicksight:ListThemeVersions;List
 quicksight:ListThemes;List
 quicksight:ListTopicRefreshSchedules;List
+quicksight:ListTopicReviewedAnswers;List
 quicksight:ListTopics;List
 quicksight:ListUserGroups;List
 quicksight:ListUsers;List

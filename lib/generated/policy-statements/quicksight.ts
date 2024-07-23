@@ -30,6 +30,36 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create reviewed answers for a topic
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchCreateTopicReviewedAnswer.html
+   */
+  public toBatchCreateTopicReviewedAnswer() {
+    return this.to('BatchCreateTopicReviewedAnswer');
+  }
+
+  /**
+   * Grants permission to delete reviewed answers for a topic
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchDeleteTopicReviewedAnswer.html
+   */
+  public toBatchDeleteTopicReviewedAnswer() {
+    return this.to('BatchDeleteTopicReviewedAnswer');
+  }
+
+  /**
    * Grants permission to cancel a SPICE ingestions on a dataset
    *
    * Access Level: Write
@@ -1662,6 +1692,21 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all reviewed answers for topic
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTopicReviewedAnswers.html
+   */
+  public toListTopicReviewedAnswers() {
+    return this.to('ListTopicReviewedAnswers');
+  }
+
+  /**
    * Grants permission to list all topics
    *
    * Access Level: List
@@ -2446,6 +2491,8 @@ export class Quicksight extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AccountConfigurations',
+      'BatchCreateTopicReviewedAnswer',
+      'BatchDeleteTopicReviewedAnswer',
       'CancelIngestion',
       'CreateAccountCustomization',
       'CreateAccountSubscription',
@@ -2638,6 +2685,7 @@ export class Quicksight extends PolicyStatement {
       'ListThemeVersions',
       'ListThemes',
       'ListTopicRefreshSchedules',
+      'ListTopicReviewedAnswers',
       'ListTopics',
       'ListUserGroups',
       'ListUsers',
@@ -2994,6 +3042,8 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toBatchCreateTopicReviewedAnswer()
+   * - .toBatchDeleteTopicReviewedAnswer()
    * - .toCancelIngestion()
    * - .toCreateAccountCustomization()
    * - .toCreateAnalysis()
@@ -3027,6 +3077,7 @@ export class Quicksight extends PolicyStatement {
    * - .toListDataSets()
    * - .toListDataSources()
    * - .toListIngestions()
+   * - .toListTopicReviewedAnswers()
    * - .toListTopics()
    * - .toListVPCConnections()
    * - .toPassDataSet()
@@ -3081,6 +3132,8 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toBatchCreateTopicReviewedAnswer()
+   * - .toBatchDeleteTopicReviewedAnswer()
    * - .toCancelIngestion()
    * - .toCreateAccountCustomization()
    * - .toCreateAnalysis()
@@ -3114,6 +3167,7 @@ export class Quicksight extends PolicyStatement {
    * - .toListDataSets()
    * - .toListDataSources()
    * - .toListIngestions()
+   * - .toListTopicReviewedAnswers()
    * - .toListTopics()
    * - .toListVPCConnections()
    * - .toPassDataSet()
