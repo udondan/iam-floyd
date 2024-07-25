@@ -2,6 +2,14 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowSageMakerDeleteApp",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DeleteApp"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:app/*"
+    },
+    {
       "Sid": "AllowEFSAccessPointCreation",
       "Effect": "Allow",
       "Action": "elasticfilesystem:CreateAccessPoint",

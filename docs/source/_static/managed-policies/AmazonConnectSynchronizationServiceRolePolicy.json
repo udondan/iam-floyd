@@ -63,8 +63,18 @@
         "connect:ListPhoneNumbersV2",
         "connect:UpdatePhoneNumber",
         "connect:DescribePhoneNumber",
-        "connect:Associate*",
-        "connect:Disassociate*"
+        "connect:AssociatePhoneNumberContactFlow",
+        "connect:DisassociatePhoneNumberContactFlow",
+        "connect:AssociateRoutingProfileQueues",
+        "connect:DisassociateQueueQuickConnects",
+        "connect:AssociateQueueQuickConnects",
+        "connect:DisassociateUserProficiencies",
+        "connect:AssociateUserProficiencies",
+        "connect:DisassociateRoutingProfileQueues",
+        "connect:CreateAuthenticationProfile",
+        "connect:UpdateAuthenticationProfile",
+        "connect:DescribeAuthenticationProfile",
+        "connect:ListAuthenticationProfiles"
       ],
       "Resource": "*"
     },
