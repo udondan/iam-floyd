@@ -24,6 +24,10 @@
         "devops-guru:ListMonitoredResources",
         "dlm:GetLifecyclePolicies",
         "dlm:GetLifecyclePolicy",
+        "docdb-elastic:GetCluster",
+        "docdb-elastic:GetClusterSnapshot",
+        "docdb-elastic:ListClusterSnapshots",
+        "docdb-elastic:ListTagsForResource",
         "drs:DescribeJobs",
         "drs:DescribeSourceServers",
         "drs:GetReplicationConfiguration",
@@ -68,6 +72,7 @@
         "elasticfilesystem:DescribeLifecycleConfiguration",
         "elasticfilesystem:DescribeMountTargets",
         "elasticfilesystem:DescribeReplicationConfigurations",
+        "elasticloadbalancing:DescribeListeners",
         "elasticloadbalancing:DescribeLoadBalancers",
         "elasticloadbalancing:DescribeTargetGroups",
         "elasticloadbalancing:DescribeTargetHealth",
@@ -78,6 +83,8 @@
         "lambda:GetFunctionConcurrency",
         "lambda:GetFunctionConfiguration",
         "lambda:ListAliases",
+        "lambda:ListEventSourceMappings",
+        "lambda:ListFunctionEventInvokeConfigs",
         "lambda:ListVersionsByFunction",
         "rds:DescribeDBClusterSnapshots",
         "rds:DescribeDBClusters",
@@ -87,6 +94,7 @@
         "rds:DescribeDBProxyTargets",
         "rds:DescribeDBSnapshots",
         "rds:DescribeGlobalClusters",
+        "rds:ListTagsForResource",
         "resource-groups:GetGroup",
         "resource-groups:ListGroupResources",
         "route53-recovery-control-config:ListClusters",
@@ -101,17 +109,7 @@
         "route53:ListResourceRecordSets",
         "route53resolver:ListResolverEndpoints",
         "route53resolver:ListResolverEndpointIpAddresses",
-        "s3:GetBucketLocation",
-        "s3:GetBucketLogging",
-        "s3:GetBucketObjectLockConfiguration",
-        "s3:GetBucketPolicyStatus",
-        "s3:GetBucketTagging",
-        "s3:GetBucketVersioning",
-        "s3:GetMultiRegionAccessPointRoutes",
-        "s3:GetReplicationConfiguration",
-        "s3:ListAllMyBuckets",
         "s3:ListBucket",
-        "s3:ListMultiRegionAccessPoints",
         "servicecatalog:GetApplication",
         "servicecatalog:ListAssociatedResources",
         "sns:GetSubscriptionAttributes",
@@ -140,14 +138,41 @@
       ]
     },
     {
-      "Sid": "AWSResilienceHubS3Statement",
+      "Sid": "AWSResilienceHubS3ArtifactStatement",
       "Effect": "Allow",
       "Action": [
         "s3:CreateBucket",
         "s3:PutObject",
         "s3:GetObject"
       ],
-      "Resource": "arn:aws:s3:::aws-resilience-hub-artifacts-*"
+      "Resource": "arn:aws:s3:::aws-resilience-hub-artifacts-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AWSResilienceHubS3AccessStatement",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:GetBucketLogging",
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:GetBucketPolicyStatus",
+        "s3:GetBucketTagging",
+        "s3:GetBucketVersioning",
+        "s3:GetMultiRegionAccessPointRoutes",
+        "s3:GetReplicationConfiguration",
+        "s3:ListAllMyBuckets",
+        "s3:ListMultiRegionAccessPoints"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Sid": "AWSResilienceHubCloudWatchStatement",
