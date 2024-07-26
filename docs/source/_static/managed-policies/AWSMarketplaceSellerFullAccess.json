@@ -5,11 +5,8 @@
       "Sid": "MarketplaceManagement",
       "Effect": "Allow",
       "Action": [
-        "aws-marketplace-management:uploadFiles",
-        "aws-marketplace-management:viewMarketing",
         "aws-marketplace-management:viewReports",
         "aws-marketplace-management:viewSupport",
-        "aws-marketplace-management:viewSettings",
         "aws-marketplace:ListChangeSets",
         "aws-marketplace:DescribeChangeSet",
         "aws-marketplace:StartChangeSet",
