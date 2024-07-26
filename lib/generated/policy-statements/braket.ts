@@ -22,8 +22,6 @@ export class Braket extends PolicyStatement {
    * Grants permission to accept the Amazon Braket user agreement
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/braket/latest/APIReference/API_AcceptUserAgreement.html
    */
   public toAcceptUserAgreement() {
     return this.to('AcceptUserAgreement');
@@ -33,8 +31,6 @@ export class Braket extends PolicyStatement {
    * Grants permission to check if an Amazon Braket feature is enabled for an account. Customers need this permission to use all features available in the console
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/braket/latest/APIReference/API_AccessBraketFeature.html
    */
   public toAccessBraketFeature() {
     return this.to('AccessBraketFeature');
@@ -108,7 +104,7 @@ export class Braket extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/braket/latest/APIReference/API_Job.html
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetJob.html
    */
   public toGetJob() {
     return this.to('GetJob');
@@ -129,8 +125,6 @@ export class Braket extends PolicyStatement {
    * Grants permission to check if the Amazon Braket service linked role has been created
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetServiceLinkedRoleStatus.html
    */
   public toGetServiceLinkedRoleStatus() {
     return this.to('GetServiceLinkedRoleStatus');
@@ -140,8 +134,6 @@ export class Braket extends PolicyStatement {
    * Grants permission to check if the account has accepted the Amazon Braket user agreement
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetUserAgreementStatus.html
    */
   public toGetUserAgreementStatus() {
     return this.to('GetUserAgreementStatus');
@@ -174,7 +166,7 @@ export class Braket extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchJob.html
+   * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchJobs.html
    */
   public toSearchJobs() {
     return this.to('SearchJobs');

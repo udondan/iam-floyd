@@ -8,10 +8,10 @@ ssm:maintenancewindow
 ssm:managed-instance
 ssm:managed-instance-inventory
 ssm:opsitem
+ssm:opsitemgroup
 ssm:opsmetadata
 ssm:parameter
 ssm:patchbaseline
-ssm:resourcearn
 ssm:resourcedatasync
 ssm:servicesetting
 ssm:session

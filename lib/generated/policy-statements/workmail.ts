@@ -404,6 +404,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deliver emails to a WorkMail organization via the SES MailManager DeliverToMailbox action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeliverToMailboxAction.html
+   */
+  public toDeliverToMailbox() {
+    return this.to('DeliverToMailbox');
+  }
+
+  /**
    * Grants permission to mark a user, group, or resource as no longer used in WorkMail
    *
    * Access Level: Write
@@ -1353,6 +1364,7 @@ export class Workmail extends PolicyStatement {
       'DeleteRetentionPolicy',
       'DeleteSmtpGateway',
       'DeleteUser',
+      'DeliverToMailbox',
       'DeregisterFromWorkMail',
       'DeregisterMailDomain',
       'DisassociateDelegateFromResource',

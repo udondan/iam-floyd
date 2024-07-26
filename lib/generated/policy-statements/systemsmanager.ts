@@ -2175,6 +2175,19 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type opsitemgroup to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOpsitemgroup(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:opsitemgroup/default`);
+  }
+
+  /**
    * Adds a resource of type opsmetadata to the statement
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/application-manager.html
@@ -2226,19 +2239,6 @@ export class Ssm extends PolicyStatement {
    */
   public onPatchbaseline(patchBaselineIdResourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:patchbaseline/${ patchBaselineIdResourceId }`);
-  }
-
-  /**
-   * Adds a resource of type resourcearn to the statement
-   *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html
-   *
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onResourcearn(account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:opsitemgroup/default`);
   }
 
   /**

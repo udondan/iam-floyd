@@ -36,3 +36,4 @@ entityresolution:UpdateIdNamespace;Write
 entityresolution:UpdateMatchingWorkflow;Write
 entityresolution:UpdateSchemaMapping;Write
 entityresolution:UseIdNamespace;Permissions management
+entityresolution:UseWorkflow;Permissions management

@@ -3,5 +3,7 @@ cleanrooms:collaboration
 cleanrooms:configuredaudiencemodelassociation
 cleanrooms:configuredtable
 cleanrooms:configuredtableassociation
+cleanrooms:idmappingtable
+cleanrooms:idnamespaceassociation
 cleanrooms:membership
 cleanrooms:privacybudgettemplate

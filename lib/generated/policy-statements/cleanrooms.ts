@@ -145,6 +145,47 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an analysis rule for a configured table association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredTableAssociationAnalysisRule.html
+   */
+  public toCreateConfiguredTableAssociationAnalysisRule() {
+    return this.to('CreateConfiguredTableAssociationAnalysisRule');
+  }
+
+  /**
+   * Grants permission to link an id mapping workflow with a collaboration by creating a new id mapping table
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:AddPolicyStatement
+   * - entityresolution:GetIdMappingWorkflow
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIdMappingTable.html
+   */
+  public toCreateIdMappingTable() {
+    return this.to('CreateIdMappingTable');
+  }
+
+  /**
+   * Grants permission to link an AWS Entity Resolution Id Namespace with a collaboration by creating a new association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:AddPolicyStatement
+   * - entityresolution:GetIdNamespace
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIdNamespaceAssociation.html
+   */
+  public toCreateIdNamespaceAssociation() {
+    return this.to('CreateIdNamespaceAssociation');
+  }
+
+  /**
    * Grants permission to join collaborations by creating a membership
    *
    * Access Level: Write
@@ -256,6 +297,45 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an existing configured table association analysis rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteConfiguredTableAssociationAnalysisRule.html
+   */
+  public toDeleteConfiguredTableAssociationAnalysisRule() {
+    return this.to('DeleteConfiguredTableAssociationAnalysisRule');
+  }
+
+  /**
+   * Grants permission to remove an id mapping table from a collaboration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:DeletePolicyStatement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIdMappingTable.html
+   */
+  public toDeleteIdMappingTable() {
+    return this.to('DeleteIdMappingTable');
+  }
+
+  /**
+   * Grants permission to remove an Id Namespace Association from a collaboration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:DeletePolicyStatement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIdNamespaceAssociation.html
+   */
+  public toDeleteIdNamespaceAssociation() {
+    return this.to('DeleteIdNamespaceAssociation');
+  }
+
+  /**
    * Grants permission to delete members from a collaboration
    *
    * Access Level: Write
@@ -338,6 +418,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get id namespace association within a collaboration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationIdNamespaceAssociation.html
+   */
+  public toGetCollaborationIdNamespaceAssociation() {
+    return this.to('GetCollaborationIdNamespaceAssociation');
+  }
+
+  /**
    * Grants permission to view details for a privacy budget template within a collaboration
    *
    * Access Level: Read
@@ -390,6 +481,42 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toGetConfiguredTableAssociation() {
     return this.to('GetConfiguredTableAssociation');
+  }
+
+  /**
+   * Grants permission to view analysis rules for a configured table association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetConfiguredTableAssociationAnalysisRule.html
+   */
+  public toGetConfiguredTableAssociationAnalysisRule() {
+    return this.to('GetConfiguredTableAssociationAnalysisRule');
+  }
+
+  /**
+   * Grants permission to view details of an id mapping table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIdMappingTable.html
+   */
+  public toGetIdMappingTable() {
+    return this.to('GetIdMappingTable');
+  }
+
+  /**
+   * Grants permission to view details of an id namespace association
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - entityresolution:GetIdNamespace
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIdNamespaceAssociation.html
+   */
+  public toGetIdNamespaceAssociation() {
+    return this.to('GetIdNamespaceAssociation');
   }
 
   /**
@@ -484,6 +611,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list id namespace within a collaboration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationIdNamespaceAssociations.html
+   */
+  public toListCollaborationIdNamespaceAssociations() {
+    return this.to('ListCollaborationIdNamespaceAssociations');
+  }
+
+  /**
    * Grants permission to list available privacy budget templates within a collaboration
    *
    * Access Level: List
@@ -547,6 +685,28 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toListConfiguredTables() {
     return this.to('ListConfiguredTables');
+  }
+
+  /**
+   * Grants permission to list available id mapping tables for a membership
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListIdMappingTables.html
+   */
+  public toListIdMappingTables() {
+    return this.to('ListIdMappingTables');
+  }
+
+  /**
+   * Grants permission to list entity resolution data associations for a membership
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListIdNamespaceAssociations.html
+   */
+  public toListIdNamespaceAssociations() {
+    return this.to('ListIdNamespaceAssociations');
   }
 
   /**
@@ -624,6 +784,20 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to start an Id Mapping Job in AWS Entity Resolution to generate id mapping results in cleanrooms collaboration.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:GetIdMappingWorkflow
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_PopulateIdMappingTable.html
+   */
+  public toPopulateIdMappingTable() {
+    return this.to('PopulateIdMappingTable');
   }
 
   /**
@@ -754,6 +928,42 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update analysis rules for a configured table association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTableAssociationAnalysisRule.html
+   */
+  public toUpdateConfiguredTableAssociationAnalysisRule() {
+    return this.to('UpdateConfiguredTableAssociationAnalysisRule');
+  }
+
+  /**
+   * Grants permission to update an id mapping table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIdMappingTable.html
+   */
+  public toUpdateIdMappingTable() {
+    return this.to('UpdateIdMappingTable');
+  }
+
+  /**
+   * Grants permission to update a entity resolution input association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - entityresolution:GetIdNamespace
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIdNamespaceAssociation.html
+   */
+  public toUpdateIdNamespaceAssociation() {
+    return this.to('UpdateIdNamespaceAssociation');
+  }
+
+  /**
    * Grants permission to update details of a membership
    *
    * Access Level: Write
@@ -808,11 +1018,15 @@ export class Cleanrooms extends PolicyStatement {
       'GetCollaboration',
       'GetCollaborationAnalysisTemplate',
       'GetCollaborationConfiguredAudienceModelAssociation',
+      'GetCollaborationIdNamespaceAssociation',
       'GetCollaborationPrivacyBudgetTemplate',
       'GetConfiguredAudienceModelAssociation',
       'GetConfiguredTable',
       'GetConfiguredTableAnalysisRule',
       'GetConfiguredTableAssociation',
+      'GetConfiguredTableAssociationAnalysisRule',
+      'GetIdMappingTable',
+      'GetIdNamespaceAssociation',
       'GetMembership',
       'GetPrivacyBudgetTemplate',
       'GetProtectedQuery',
@@ -827,6 +1041,9 @@ export class Cleanrooms extends PolicyStatement {
       'CreateConfiguredTable',
       'CreateConfiguredTableAnalysisRule',
       'CreateConfiguredTableAssociation',
+      'CreateConfiguredTableAssociationAnalysisRule',
+      'CreateIdMappingTable',
+      'CreateIdNamespaceAssociation',
       'CreateMembership',
       'CreatePrivacyBudgetTemplate',
       'DeleteAnalysisTemplate',
@@ -835,9 +1052,13 @@ export class Cleanrooms extends PolicyStatement {
       'DeleteConfiguredTable',
       'DeleteConfiguredTableAnalysisRule',
       'DeleteConfiguredTableAssociation',
+      'DeleteConfiguredTableAssociationAnalysisRule',
+      'DeleteIdMappingTable',
+      'DeleteIdNamespaceAssociation',
       'DeleteMember',
       'DeleteMembership',
       'DeletePrivacyBudgetTemplate',
+      'PopulateIdMappingTable',
       'StartProtectedQuery',
       'UpdateAnalysisTemplate',
       'UpdateCollaboration',
@@ -845,6 +1066,9 @@ export class Cleanrooms extends PolicyStatement {
       'UpdateConfiguredTable',
       'UpdateConfiguredTableAnalysisRule',
       'UpdateConfiguredTableAssociation',
+      'UpdateConfiguredTableAssociationAnalysisRule',
+      'UpdateIdMappingTable',
+      'UpdateIdNamespaceAssociation',
       'UpdateMembership',
       'UpdatePrivacyBudgetTemplate',
       'UpdateProtectedQuery'
@@ -853,12 +1077,15 @@ export class Cleanrooms extends PolicyStatement {
       'ListAnalysisTemplates',
       'ListCollaborationAnalysisTemplates',
       'ListCollaborationConfiguredAudienceModelAssociations',
+      'ListCollaborationIdNamespaceAssociations',
       'ListCollaborationPrivacyBudgetTemplates',
       'ListCollaborationPrivacyBudgets',
       'ListCollaborations',
       'ListConfiguredAudienceModelAssociations',
       'ListConfiguredTableAssociations',
       'ListConfiguredTables',
+      'ListIdMappingTables',
+      'ListIdNamespaceAssociations',
       'ListMembers',
       'ListMemberships',
       'ListPrivacyBudgetTemplates',
@@ -962,6 +1189,42 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type idmappingtable to the statement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
+   *
+   * @param membershipId - Identifier for the membershipId.
+   * @param idMappingTableId - Identifier for the idMappingTableId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIdmappingtable(membershipId: string, idMappingTableId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }/idmappingtable/${ idMappingTableId }`);
+  }
+
+  /**
+   * Adds a resource of type idnamespaceassociation to the statement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
+   *
+   * @param membershipId - Identifier for the membershipId.
+   * @param idNamespaceAssociationId - Identifier for the idNamespaceAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIdnamespaceassociation(membershipId: string, idNamespaceAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }/idnamespaceassociation/${ idNamespaceAssociationId }`);
+  }
+
+  /**
    * Adds a resource of type membership to the statement
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
@@ -1007,6 +1270,9 @@ export class Cleanrooms extends PolicyStatement {
    * - .toCreateConfiguredAudienceModelAssociation()
    * - .toCreateConfiguredTable()
    * - .toCreateConfiguredTableAssociation()
+   * - .toCreateConfiguredTableAssociationAnalysisRule()
+   * - .toCreateIdMappingTable()
+   * - .toCreateIdNamespaceAssociation()
    * - .toCreateMembership()
    * - .toCreatePrivacyBudgetTemplate()
    * - .toTagResource()
@@ -1030,6 +1296,9 @@ export class Cleanrooms extends PolicyStatement {
    * - .toCreateConfiguredAudienceModelAssociation()
    * - .toCreateConfiguredTable()
    * - .toCreateConfiguredTableAssociation()
+   * - .toCreateConfiguredTableAssociationAnalysisRule()
+   * - .toCreateIdMappingTable()
+   * - .toCreateIdNamespaceAssociation()
    * - .toCreateMembership()
    * - .toCreatePrivacyBudgetTemplate()
    *
@@ -1039,6 +1308,8 @@ export class Cleanrooms extends PolicyStatement {
    * - configuredaudiencemodelassociation
    * - configuredtable
    * - configuredtableassociation
+   * - idmappingtable
+   * - idnamespaceassociation
    * - membership
    * - privacybudgettemplate
    *
@@ -1061,6 +1332,9 @@ export class Cleanrooms extends PolicyStatement {
    * - .toCreateConfiguredAudienceModelAssociation()
    * - .toCreateConfiguredTable()
    * - .toCreateConfiguredTableAssociation()
+   * - .toCreateConfiguredTableAssociationAnalysisRule()
+   * - .toCreateIdMappingTable()
+   * - .toCreateIdNamespaceAssociation()
    * - .toCreateMembership()
    * - .toCreatePrivacyBudgetTemplate()
    * - .toTagResource()

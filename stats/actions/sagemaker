@@ -110,7 +110,7 @@ sagemaker:DeleteModelQualityJobDefinition;Write
 sagemaker:DeleteMonitoringSchedule;Write
 sagemaker:DeleteNotebookInstance;Write
 sagemaker:DeleteNotebookInstanceLifecycleConfig;Write
-sagemaker:DeleteOptimization;Write
+sagemaker:DeleteOptimizationJob;Write
 sagemaker:DeletePipeline;Write
 sagemaker:DeleteProject;Write
 sagemaker:DeleteRecord;Write
