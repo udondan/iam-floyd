@@ -109,6 +109,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
+   * - ec2:DescribeAvailabilityZones
    * - ec2:DescribeRegions
    * - gamelift:TagResource
    * - iam:PassRole
@@ -125,6 +126,7 @@ export class Gamelift extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - ec2:DescribeAvailabilityZones
    * - ec2:DescribeRegions
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleetLocations.html

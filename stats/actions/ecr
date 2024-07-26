@@ -19,7 +19,7 @@ ecr:DescribeImages;List
 ecr:DescribePullThroughCacheRules;List
 ecr:DescribeRegistry;Read
 ecr:DescribeRepositories;Read
-ecr:DescribeRepositoryCreationTemplate;Read
+ecr:DescribeRepositoryCreationTemplates;Read
 ecr:GetAuthorizationToken;Read
 ecr:GetDownloadUrlForLayer;Read
 ecr:GetLifecyclePolicy;Read
@@ -44,5 +44,6 @@ ecr:StartLifecyclePolicyPreview;Write
 ecr:TagResource;Tagging
 ecr:UntagResource;Tagging
 ecr:UpdatePullThroughCacheRule;Write
+ecr:UpdateRepositoryCreationTemplate;Write
 ecr:UploadLayerPart;Write
 ecr:ValidatePullThroughCacheRule;Read

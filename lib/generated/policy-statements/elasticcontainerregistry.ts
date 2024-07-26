@@ -122,8 +122,11 @@ export class Ecr extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - ecr:CreateRepository
    * - ecr:PutLifecyclePolicy
    * - ecr:SetRepositoryPolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepositoryCreationTemplate.html
    */
@@ -268,10 +271,10 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositoryCreationTemplate.html
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositoryCreationTemplates.html
    */
-  public toDescribeRepositoryCreationTemplate() {
-    return this.to('DescribeRepositoryCreationTemplate');
+  public toDescribeRepositoryCreationTemplates() {
+    return this.to('DescribeRepositoryCreationTemplates');
   }
 
   /**
@@ -459,6 +462,9 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutReplicationConfiguration.html
    */
   public toPutReplicationConfiguration() {
@@ -550,6 +556,24 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the repository creation template
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ecr:CreateRepository
+   * - ecr:PutLifecyclePolicy
+   * - ecr:SetRepositoryPolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UpdateRepositoryCreationTemplate.html
+   */
+  public toUpdateRepositoryCreationTemplate() {
+    return this.to('UpdateRepositoryCreationTemplate');
+  }
+
+  /**
    * Grants permission to upload an image layer part to Amazon ECR
    *
    * Access Level: Write
@@ -580,7 +604,7 @@ export class Ecr extends PolicyStatement {
       'DescribeImageScanFindings',
       'DescribeRegistry',
       'DescribeRepositories',
-      'DescribeRepositoryCreationTemplate',
+      'DescribeRepositoryCreationTemplates',
       'GetAuthorizationToken',
       'GetDownloadUrlForLayer',
       'GetLifecyclePolicy',
@@ -613,6 +637,7 @@ export class Ecr extends PolicyStatement {
       'StartImageScan',
       'StartLifecyclePolicyPreview',
       'UpdatePullThroughCacheRule',
+      'UpdateRepositoryCreationTemplate',
       'UploadLayerPart'
     ],
     'Permissions management': [

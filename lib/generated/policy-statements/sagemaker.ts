@@ -1824,8 +1824,8 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteOptimizationJob.html
    */
-  public toDeleteOptimization() {
-    return this.to('DeleteOptimization');
+  public toDeleteOptimizationJob() {
+    return this.to('DeleteOptimizationJob');
   }
 
   /**
@@ -4816,7 +4816,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteMonitoringSchedule',
       'DeleteNotebookInstance',
       'DeleteNotebookInstanceLifecycleConfig',
-      'DeleteOptimization',
+      'DeleteOptimizationJob',
       'DeletePipeline',
       'DeleteProject',
       'DeleteRecord',

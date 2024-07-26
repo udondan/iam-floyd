@@ -3,6 +3,7 @@ eks:ResourceTag/${TagKey}
 eks:TagKeys
 eks:accessEntryType
 eks:accessScope
+eks:authenticationMode
 eks:bootstrapClusterCreatorAdminPermissions
 eks:bootstrapSelfManagedAddons
 eks:clientId
@@ -12,4 +13,5 @@ eks:kubernetesGroups
 eks:namespaces
 eks:policyArn
 eks:principalArn
+eks:supportType
 eks:username

@@ -9933,7 +9933,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type capacity-reservation-fleet to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param capacityReservationFleetId - Identifier for the capacityReservationFleetId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10245,7 +10245,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type fpga-image to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param fpgaImageId - Identifier for the fpgaImageId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10270,7 +10270,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type host-reservation to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param hostReservationId - Identifier for the hostReservationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10362,7 +10362,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type instance-connect-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param instanceConnectEndpointId - Identifier for the instanceConnectEndpointId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10386,7 +10386,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type instance-event-window to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param instanceEventWindowId - Identifier for the instanceEventWindowId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10470,7 +10470,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type ipam to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param ipamId - Identifier for the ipamId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10492,7 +10492,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type ipam-pool to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param ipamPoolId - Identifier for the ipamPoolId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10514,7 +10514,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type ipam-resource-discovery-association to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param ipamResourceDiscoveryAssociationId - Identifier for the ipamResourceDiscoveryAssociationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10534,7 +10534,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type ipam-resource-discovery to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param ipamResourceDiscoveryId - Identifier for the ipamResourceDiscoveryId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10554,7 +10554,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type ipam-scope to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param ipamScopeId - Identifier for the ipamScopeId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10576,7 +10576,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type coip-pool to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param ipv4PoolCoipId - Identifier for the ipv4PoolCoipId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10873,7 +10873,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type network-insights-access-scope-analysis to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param networkInsightsAccessScopeAnalysisId - Identifier for the networkInsightsAccessScopeAnalysisId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10894,7 +10894,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type network-insights-access-scope to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param networkInsightsAccessScopeId - Identifier for the networkInsightsAccessScopeId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10915,7 +10915,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type network-insights-analysis to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param networkInsightsAnalysisId - Identifier for the networkInsightsAnalysisId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -10936,7 +10936,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type network-insights-path to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param networkInsightsPathId - Identifier for the networkInsightsPathId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11163,7 +11163,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type security-group-rule to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param securityGroupRuleId - Identifier for the securityGroupRuleId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11184,7 +11184,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type snapshot to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html
+   * https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html
    *
    * @param snapshotId - Identifier for the snapshotId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
@@ -11223,7 +11223,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type spot-fleet-request to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param spotFleetRequestId - Identifier for the spotFleetRequestId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11426,7 +11426,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type transit-gateway-connect-peer to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param transitGatewayConnectPeerId - Identifier for the transitGatewayConnectPeerId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11494,7 +11494,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type transit-gateway-policy-table to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param transitGatewayPolicyTableId - Identifier for the transitGatewayPolicyTableId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11516,7 +11516,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type transit-gateway-route-table-announcement to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param transitGatewayRouteTableAnnouncementId - Identifier for the transitGatewayRouteTableAnnouncementId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11562,7 +11562,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type verified-access-endpoint to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param verifiedAccessEndpointId - Identifier for the verifiedAccessEndpointId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11583,7 +11583,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type verified-access-group to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param verifiedAccessGroupId - Identifier for the verifiedAccessGroupId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11604,7 +11604,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type verified-access-instance to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param verifiedAccessInstanceId - Identifier for the verifiedAccessInstanceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11625,7 +11625,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type verified-access-policy to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param verifiedAccessPolicyId - Identifier for the verifiedAccessPolicyId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11646,7 +11646,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type verified-access-trust-provider to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
    *
    * @param verifiedAccessTrustProviderId - Identifier for the verifiedAccessTrustProviderId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -11667,7 +11667,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Adds a resource of type volume to the statement
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html
+   * https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html
    *
    * @param volumeId - Identifier for the volumeId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -12906,7 +12906,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by an attribute of a resource
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#attribute-key
    *
    * Applies to actions:
    * - .toModifyAddressAttribute()
@@ -13005,7 +13005,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by an attribute being set on a resource
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#attribute-key
    *
    * Applies to actions:
    * - .toModifyAddressAttribute()

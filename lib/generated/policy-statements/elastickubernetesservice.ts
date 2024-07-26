@@ -117,6 +117,8 @@ export class Eks extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifBootstrapClusterCreatorAdminPermissions()
    * - .ifBootstrapSelfManagedAddons()
+   * - .ifAuthenticationMode()
+   * - .ifSupportType()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
@@ -645,6 +647,10 @@ export class Eks extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAuthenticationMode()
+   * - .ifSupportType()
+   *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html
    */
   public toUpdateClusterConfig() {
@@ -1049,6 +1055,22 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Filters access by the authenticationMode present in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAuthenticationMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`authenticationMode`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the bootstrapClusterCreatorAdminPermissions present in the create cluster request
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
@@ -1187,6 +1209,22 @@ export class Eks extends PolicyStatement {
    */
   public ifPrincipalArn(value: string | string[], operator?: Operator | string) {
     return this.if(`principalArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the supportType present in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSupportType(value: string | string[], operator?: Operator | string) {
+    return this.if(`supportType`, value, operator ?? 'StringLike');
   }
 
   /**

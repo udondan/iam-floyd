@@ -33,6 +33,7 @@ workmail:DeleteResource;Write
 workmail:DeleteRetentionPolicy;Write
 workmail:DeleteSmtpGateway;Write
 workmail:DeleteUser;Write
+workmail:DeliverToMailbox;Write
 workmail:DeregisterFromWorkMail;Write
 workmail:DeregisterMailDomain;Write
 workmail:DescribeEmailMonitoringConfiguration;Read

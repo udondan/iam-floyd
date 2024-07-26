@@ -23,7 +23,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_AddPolicyStatement.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_AddPolicyStatement.html
    */
   public toAddPolicyStatement() {
     return this.to('AddPolicyStatement');
@@ -34,7 +34,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/batch-delete-unique-id.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_BatchDeleteUniqueId.html
    */
   public toBatchDeleteUniqueId() {
     return this.to('BatchDeleteUniqueId');
@@ -49,7 +49,7 @@ export class Entityresolution extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_CreateIdMappingWorkflow.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateIdMappingWorkflow.html
    */
   public toCreateIdMappingWorkflow() {
     return this.to('CreateIdMappingWorkflow');
@@ -64,7 +64,7 @@ export class Entityresolution extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_CreateIdNamespace.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateIdNamespace.html
    */
   public toCreateIdNamespace() {
     return this.to('CreateIdNamespace');
@@ -79,7 +79,7 @@ export class Entityresolution extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_CreateMatchingWorkflow.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateMatchingWorkflow.html
    */
   public toCreateMatchingWorkflow() {
     return this.to('CreateMatchingWorkflow');
@@ -94,7 +94,7 @@ export class Entityresolution extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_CreateSchemaMapping.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_CreateSchemaMapping.html
    */
   public toCreateSchemaMapping() {
     return this.to('CreateSchemaMapping');
@@ -105,7 +105,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_DeleteIdMappingWorkflow.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeleteIdMappingWorkflow.html
    */
   public toDeleteIdMappingWorkflow() {
     return this.to('DeleteIdMappingWorkflow');
@@ -116,7 +116,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_DeleteIdNamespace.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeleteIdNamespace.html
    */
   public toDeleteIdNamespace() {
     return this.to('DeleteIdNamespace');
@@ -127,18 +127,18 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_DeleteMatchingWorkflow.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeleteMatchingWorkflow.html
    */
   public toDeleteMatchingWorkflow() {
     return this.to('DeleteMatchingWorkflow');
   }
 
   /**
-   * Delete permission given to an AWS service or another account permission to use an AWS Entity Resolution resources
+   * Grants permission to delete permission given to an AWS service or another account permission to use an AWS Entity Resolution resources
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_DeletePolicyStatement.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeletePolicyStatement.html
    */
   public toDeletePolicyStatement() {
     return this.to('DeletePolicyStatement');
@@ -149,7 +149,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_DeleteSchemaMapping.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_DeleteSchemaMapping.html
    */
   public toDeleteSchemaMapping() {
     return this.to('DeleteSchemaMapping');
@@ -160,7 +160,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetIdMappingJob.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetIdMappingJob.html
    */
   public toGetIdMappingJob() {
     return this.to('GetIdMappingJob');
@@ -171,7 +171,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetIdMappingWorkflow.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetIdMappingWorkflow.html
    */
   public toGetIdMappingWorkflow() {
     return this.to('GetIdMappingWorkflow');
@@ -182,7 +182,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetIdNamespace.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetIdNamespace.html
    */
   public toGetIdNamespace() {
     return this.to('GetIdNamespace');
@@ -193,7 +193,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetMatchId.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetMatchId.html
    */
   public toGetMatchId() {
     return this.to('GetMatchId');
@@ -204,7 +204,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetMatchingJob.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetMatchingJob.html
    */
   public toGetMatchingJob() {
     return this.to('GetMatchingJob');
@@ -215,18 +215,18 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetMatchingWorkflow.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetMatchingWorkflow.html
    */
   public toGetMatchingWorkflow() {
     return this.to('GetMatchingWorkflow');
   }
 
   /**
-   * Get a resource policy for an AWS Entity Resolution resources
+   * Grants permission to get a resource policy for an AWS Entity Resolution resources
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetPolicy.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetPolicy.html
    */
   public toGetPolicy() {
     return this.to('GetPolicy');
@@ -237,7 +237,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetProviderService.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetProviderService.html
    */
   public toGetProviderService() {
     return this.to('GetProviderService');
@@ -248,7 +248,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_GetSchemaMapping.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GetSchemaMapping.html
    */
   public toGetSchemaMapping() {
     return this.to('GetSchemaMapping');
@@ -259,7 +259,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListIdMappingJobs.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListIdMappingJobs.html
    */
   public toListIdMappingJobs() {
     return this.to('ListIdMappingJobs');
@@ -270,7 +270,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListIdMappingWorkflows.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListIdMappingWorkflows.html
    */
   public toListIdMappingWorkflows() {
     return this.to('ListIdMappingWorkflows');
@@ -281,7 +281,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListIdNamespaces.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListIdNamespaces.html
    */
   public toListIdNamespaces() {
     return this.to('ListIdNamespaces');
@@ -292,7 +292,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListMatchingJobs.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListMatchingJobs.html
    */
   public toListMatchingJobs() {
     return this.to('ListMatchingJobs');
@@ -303,7 +303,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListMatchingWorkflows.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListMatchingWorkflows.html
    */
   public toListMatchingWorkflows() {
     return this.to('ListMatchingWorkflows');
@@ -314,7 +314,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListProviderServices.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListProviderServices.html
    */
   public toListProviderServices() {
     return this.to('ListProviderServices');
@@ -325,7 +325,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListSchemaMappings.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListSchemaMappings.html
    */
   public toListSchemaMappings() {
     return this.to('ListSchemaMappings');
@@ -336,18 +336,18 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
   }
 
   /**
-   * Put a resource policy for an AWS Entity Resolution resources
+   * Grants permission to put a resource policy for an AWS Entity Resolution resources
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_PutPolicy.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_PutPolicy.html
    */
   public toPutPolicy() {
     return this.to('PutPolicy');
@@ -358,7 +358,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_StartIdMappingJob.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_StartIdMappingJob.html
    */
   public toStartIdMappingJob() {
     return this.to('StartIdMappingJob');
@@ -369,7 +369,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_StartMatchingJob.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_StartMatchingJob.html
    */
   public toStartMatchingJob() {
     return this.to('StartMatchingJob');
@@ -384,7 +384,7 @@ export class Entityresolution extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_TagResource.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -398,7 +398,7 @@ export class Entityresolution extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_UntagResource.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -409,7 +409,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_UpdateIdMappingWorkflow.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UpdateIdMappingWorkflow.html
    */
   public toUpdateIdMappingWorkflow() {
     return this.to('UpdateIdMappingWorkflow');
@@ -420,7 +420,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_IdNamespace.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UpdateIdNamespace.html
    */
   public toUpdateIdNamespace() {
     return this.to('UpdateIdNamespace');
@@ -431,7 +431,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_UpdateMatchingWorkflow.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UpdateMatchingWorkflow.html
    */
   public toUpdateMatchingWorkflow() {
     return this.to('UpdateMatchingWorkflow');
@@ -442,7 +442,7 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_UpdateSchemaMapping.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UpdateSchemaMapping.html
    */
   public toUpdateSchemaMapping() {
     return this.to('UpdateSchemaMapping');
@@ -453,10 +453,21 @@ export class Entityresolution extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/entityresolution/latest/userguide/API_UseIdNamespace.html
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UseIdNamespace.html
    */
   public toUseIdNamespace() {
     return this.to('UseIdNamespace');
+  }
+
+  /**
+   * Grants permission to give an AWS service or another account permission to use workflow within a IdNamespace
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_UseWorkflow.html
+   */
+  public toUseWorkflow() {
+    return this.to('UseWorkflow');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -464,7 +475,8 @@ export class Entityresolution extends PolicyStatement {
       'AddPolicyStatement',
       'DeletePolicyStatement',
       'PutPolicy',
-      'UseIdNamespace'
+      'UseIdNamespace',
+      'UseWorkflow'
     ],
     Write: [
       'BatchDeleteUniqueId',
@@ -517,13 +529,14 @@ export class Entityresolution extends PolicyStatement {
    *
    * @param workflowName - Identifier for the workflowName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onMatchingWorkflow(workflowName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution::${ account ?? this.defaultAccount }:matchingworkflow/${ workflowName }`);
+  public onMatchingWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:matchingworkflow/${ workflowName }`);
   }
 
   /**
@@ -533,13 +546,14 @@ export class Entityresolution extends PolicyStatement {
    *
    * @param schemaName - Identifier for the schemaName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onSchemaMapping(schemaName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution::${ account ?? this.defaultAccount }:schemamapping/${ schemaName }`);
+  public onSchemaMapping(schemaName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:schemamapping/${ schemaName }`);
   }
 
   /**
@@ -549,13 +563,14 @@ export class Entityresolution extends PolicyStatement {
    *
    * @param workflowName - Identifier for the workflowName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onIdMappingWorkflow(workflowName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution::${ account ?? this.defaultAccount }:idmappingworkflow/${ workflowName }`);
+  public onIdMappingWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:idmappingworkflow/${ workflowName }`);
   }
 
   /**
@@ -566,13 +581,14 @@ export class Entityresolution extends PolicyStatement {
    * @param providerName - Identifier for the providerName.
    * @param providerServiceName - Identifier for the providerServiceName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onProviderService(providerName: string, providerServiceName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution::${ account ?? this.defaultAccount }:providerservice/${ providerName }/${ providerServiceName }`);
+  public onProviderService(providerName: string, providerServiceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:providerservice/${ providerName }/${ providerServiceName }`);
   }
 
   /**
@@ -582,13 +598,14 @@ export class Entityresolution extends PolicyStatement {
    *
    * @param idNamespaceName - Identifier for the idNamespaceName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onIdNamespace(idNamespaceName: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution::${ account ?? this.defaultAccount }:idnamespace/${ idNamespaceName }`);
+  public onIdNamespace(idNamespaceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:entityresolution:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:idnamespace/${ idNamespaceName }`);
   }
 
   /**
