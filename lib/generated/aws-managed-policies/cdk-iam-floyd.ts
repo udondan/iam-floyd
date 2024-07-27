@@ -1844,6 +1844,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerCanvasDirectDeployAccess);
     }
 
+    /** This policy grants permissions to Amazon EMR Serverless for services such as S3, used by Amazon SageMaker Canvas for large data processing. */
+    public AmazonSageMakerCanvasEMRServerlessExecutionRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerCanvasEMRServerlessExecutionRolePolicy);
+    }
+
     /** This policy grants permissions commonly needed to use SageMaker Canvas with Amazon Forecast. */
     public AmazonSageMakerCanvasForecastAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerCanvasForecastAccess);

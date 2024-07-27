@@ -734,6 +734,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerCanvasDataPrepFullAccess = 'AmazonSageMakerCanvasDataPrepFullAccess';
     /** Allows Amazon SageMaker Canvas to create, manage and view endpoint details for endpoints created through Canvas. Allows Amazon SageMaker Canvas to retrieve endpoint invocation metrics from CloudWatch. */
     public static AmazonSageMakerCanvasDirectDeployAccess = 'service-role/AmazonSageMakerCanvasDirectDeployAccess';
+    /** This policy grants permissions to Amazon EMR Serverless for services such as S3, used by Amazon SageMaker Canvas for large data processing. */
+    public static AmazonSageMakerCanvasEMRServerlessExecutionRolePolicy = 'AmazonSageMakerCanvasEMRServerlessExecutionRolePolicy';
     /** This policy grants permissions commonly needed to use SageMaker Canvas with Amazon Forecast. */
     public static AmazonSageMakerCanvasForecastAccess = 'service-role/AmazonSageMakerCanvasForecastAccess';
     /** Provides full access to Amazon SageMaker Canvas resources and operations. The policy also provides select access to related services (e.g., S3, IAM, VPC, ECR, CloudWatch Logs, Redshift, Secrets Manager, and Forecast). This policy should be attached to the Amazon SageMaker Domain/User Profile execution role. */
