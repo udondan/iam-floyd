@@ -30,6 +30,17 @@ export class CustomerVerification extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create upload URLs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toCreateUploadUrls() {
+    return this.to('CreateUploadUrls');
+  }
+
+  /**
    * Grants permission to get customer verification data
    *
    * Access Level: Read
@@ -65,6 +76,7 @@ export class CustomerVerification extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateCustomerVerificationDetails',
+      'CreateUploadUrls',
       'UpdateCustomerVerificationDetails'
     ],
     Read: [
