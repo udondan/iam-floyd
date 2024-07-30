@@ -217,6 +217,21 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified shared trust store association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteSharedTrustStoreAssociation.html
+   */
+  public toDeleteSharedTrustStoreAssociation() {
+    return this.to('DeleteSharedTrustStoreAssociation');
+  }
+
+  /**
    * Grants permission to delete the specified target group
    *
    * Access Level: Write
@@ -413,6 +428,21 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    */
   public toDescribeTrustStores() {
     return this.to('DescribeTrustStores');
+  }
+
+  /**
+   * Grants permission to retrieve the resource policy associated with the resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -680,6 +710,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'DeleteListener',
       'DeleteLoadBalancer',
       'DeleteRule',
+      'DeleteSharedTrustStoreAssociation',
       'DeleteTargetGroup',
       'DeleteTrustStore',
       'DeregisterTargets',
@@ -717,6 +748,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'DescribeTrustStoreAssociations',
       'DescribeTrustStoreRevocations',
       'DescribeTrustStores',
+      'GetResourcePolicy',
       'GetTrustStoreCaCertificatesBundle',
       'GetTrustStoreRevocationContent'
     ]
@@ -919,9 +951,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toDeleteListener()
    * - .toDeleteLoadBalancer()
    * - .toDeleteRule()
+   * - .toDeleteSharedTrustStoreAssociation()
    * - .toDeleteTargetGroup()
    * - .toDeleteTrustStore()
    * - .toDeregisterTargets()
+   * - .toGetResourcePolicy()
    * - .toGetTrustStoreCaCertificatesBundle()
    * - .toGetTrustStoreRevocationContent()
    * - .toModifyListener()
@@ -1025,9 +1059,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toDeleteListener()
    * - .toDeleteLoadBalancer()
    * - .toDeleteRule()
+   * - .toDeleteSharedTrustStoreAssociation()
    * - .toDeleteTargetGroup()
    * - .toDeleteTrustStore()
    * - .toDeregisterTargets()
+   * - .toGetResourcePolicy()
    * - .toGetTrustStoreCaCertificatesBundle()
    * - .toGetTrustStoreRevocationContent()
    * - .toModifyListener()
