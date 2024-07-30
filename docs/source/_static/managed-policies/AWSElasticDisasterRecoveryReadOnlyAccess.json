@@ -28,7 +28,8 @@
         "ec2:DescribeInstances",
         "ec2:DescribeLaunchTemplateVersions",
         "ec2:DescribeSecurityGroups",
-        "ec2:DescribeSubnets"
+        "ec2:DescribeSubnets",
+        "ec2:GetInstanceTypesFromInstanceRequirements"
       ],
       "Resource": "*"
     },
