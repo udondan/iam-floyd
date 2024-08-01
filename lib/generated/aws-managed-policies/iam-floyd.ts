@@ -52,6 +52,8 @@ export class AwsManagedPolicy {
     public static AmazonBedrockFullAccess = 'AmazonBedrockFullAccess';
     /** Provides read only access to Amazon Bedrock */
     public static AmazonBedrockReadOnly = 'AmazonBedrockReadOnly';
+    /** Defines the maximum permissions of IAM roles that Amazon Bedrock Studio creates for operating Amazon Bedrock Studio resources. */
+    public static AmazonBedrockStudioPermissionsBoundary = 'AmazonBedrockStudioPermissionsBoundary';
     /** Provides full access to Amazon Braket via the AWS Management Console and SDK. Also provides access to related services (e.g., S3, logs). */
     public static AmazonBraketFullAccess = 'AmazonBraketFullAccess';
     /** Grants access to AWS Services and resources necessary for executing an Amazon Braket Job including S3, Cloudwatch, IAM and Braket */
