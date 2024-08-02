@@ -68,6 +68,17 @@ export class ArcZonalShift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get autoshift observer notification status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_GetAutoshiftObserverNotificationStatus.html
+   */
+  public toGetAutoshiftObserverNotificationStatus() {
+    return this.to('GetAutoshiftObserverNotificationStatus');
+  }
+
+  /**
    * Grants permission to get information about a managed resource
    *
    * Access Level: Read
@@ -131,6 +142,17 @@ export class ArcZonalShift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update autoshift observer notification status
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdateAutoshiftObserverNotificationStatus.html
+   */
+  public toUpdateAutoshiftObserverNotificationStatus() {
+    return this.to('UpdateAutoshiftObserverNotificationStatus');
+  }
+
+  /**
    * Grants permission to update a practice run configuration
    *
    * Access Level: Write
@@ -185,11 +207,13 @@ export class ArcZonalShift extends PolicyStatement {
       'CreatePracticeRunConfiguration',
       'DeletePracticeRunConfiguration',
       'StartZonalShift',
+      'UpdateAutoshiftObserverNotificationStatus',
       'UpdatePracticeRunConfiguration',
       'UpdateZonalAutoshiftConfiguration',
       'UpdateZonalShift'
     ],
     Read: [
+      'GetAutoshiftObserverNotificationStatus',
       'GetManagedResource'
     ],
     List: [

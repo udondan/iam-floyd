@@ -14,6 +14,7 @@ bedrock:CreateFoundationModelAgreement;Write
 bedrock:CreateGuardrail;Write
 bedrock:CreateGuardrailVersion;Write
 bedrock:CreateKnowledgeBase;Write
+bedrock:CreateModelCopyJob;Write
 bedrock:CreateModelCustomizationJob;Write
 bedrock:CreateModelEvaluationJob;Write
 bedrock:CreateModelInvocationJob;Write
@@ -55,6 +56,7 @@ bedrock:GetFoundationModelAvailability;Read
 bedrock:GetGuardrail;Read
 bedrock:GetIngestionJob;Read
 bedrock:GetKnowledgeBase;Read
+bedrock:GetModelCopyJob;Read
 bedrock:GetModelCustomizationJob;Read
 bedrock:GetModelEvaluationJob;Read
 bedrock:GetModelInvocationJob;Read
@@ -82,6 +84,7 @@ bedrock:ListFoundationModels;List
 bedrock:ListGuardrails;List
 bedrock:ListIngestionJobs;List
 bedrock:ListKnowledgeBases;List
+bedrock:ListModelCopyJobs;List
 bedrock:ListModelCustomizationJobs;List
 bedrock:ListModelEvaluationJobs;List
 bedrock:ListModelInvocationJobs;List
