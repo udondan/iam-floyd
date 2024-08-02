@@ -19,6 +19,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept resource grouping recommendations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_AcceptResourceGroupingRecommendations.html
+   */
+  public toAcceptResourceGroupingRecommendations() {
+    return this.to('AcceptResourceGroupingRecommendations');
+  }
+
+  /**
    * Grants permission to add draft application version resource mappings
    *
    * Access Level: Write
@@ -300,6 +311,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the latest status of the grouping recommendation process
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeResourceGroupingRecommendationTask.html
+   */
+  public toDescribeResourceGroupingRecommendationTask() {
+    return this.to('DescribeResourceGroupingRecommendationTask');
+  }
+
+  /**
    * Grants permission to import resources to draft application version
    *
    * Access Level: Write
@@ -473,6 +495,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resource grouping recommendations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListResourceGroupingRecommendations.html
+   */
+  public toListResourceGroupingRecommendations() {
+    return this.to('ListResourceGroupingRecommendations');
+  }
+
+  /**
    * Grants permission to list SOP recommendations
    *
    * Access Level: List
@@ -550,6 +583,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject resource grouping recommendations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_RejectResourceGroupingRecommendations.html
+   */
+  public toRejectResourceGroupingRecommendations() {
+    return this.to('RejectResourceGroupingRecommendations');
+  }
+
+  /**
    * Grants permission to remove draft application version mappings
    *
    * Access Level: Write
@@ -609,6 +653,17 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toStartAppAssessment() {
     return this.to('StartAppAssessment');
+  }
+
+  /**
+   * Grants permission to start the grouping recommendation generation process
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartResourceGroupingRecommendationTask.html
+   */
+  public toStartResourceGroupingRecommendationTask() {
+    return this.to('StartResourceGroupingRecommendationTask');
   }
 
   /**
@@ -700,6 +755,7 @@ export class Resiliencehub extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptResourceGroupingRecommendations',
       'AddDraftAppVersionResourceMappings',
       'BatchUpdateRecommendationStatus',
       'CreateApp',
@@ -717,9 +773,11 @@ export class Resiliencehub extends PolicyStatement {
       'ImportResourcesToDraftAppVersion',
       'PublishAppVersion',
       'PutDraftAppVersionTemplate',
+      'RejectResourceGroupingRecommendations',
       'RemoveDraftAppVersionResourceMappings',
       'ResolveAppVersionResources',
       'StartAppAssessment',
+      'StartResourceGroupingRecommendationTask',
       'UpdateApp',
       'UpdateAppVersion',
       'UpdateAppVersionAppComponent',
@@ -736,6 +794,7 @@ export class Resiliencehub extends PolicyStatement {
       'DescribeAppVersionTemplate',
       'DescribeDraftAppVersionResourcesImportStatus',
       'DescribeResiliencyPolicy',
+      'DescribeResourceGroupingRecommendationTask',
       'ListTagsForResource'
     ],
     List: [
@@ -753,6 +812,7 @@ export class Resiliencehub extends PolicyStatement {
       'ListApps',
       'ListRecommendationTemplates',
       'ListResiliencyPolicies',
+      'ListResourceGroupingRecommendations',
       'ListSopRecommendations',
       'ListSuggestedResiliencyPolicies',
       'ListTestRecommendations',

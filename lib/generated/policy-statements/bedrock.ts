@@ -230,6 +230,21 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a job for copying a custom model across region or across account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCopyJob.html
+   */
+  public toCreateModelCopyJob() {
+    return this.to('CreateModelCopyJob');
+  }
+
+  /**
    * Grants permission to create a job for customizing the model with your custom training data
    *
    * Access Level: Write
@@ -705,6 +720,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the properties associated with a model-copy job. Use this operation to get the status of a model-copy job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCopyJob.html
+   */
+  public toGetModelCopyJob() {
+    return this.to('GetModelCopyJob');
+  }
+
+  /**
    * Grants permission to get the properties associated with a model-customization job. Use this operation to get the status of a model-customization job
    *
    * Access Level: Read
@@ -796,6 +822,8 @@ export class Bedrock extends PolicyStatement {
    * Grants permission to invoke a prompt flow with user input
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html
    */
   public toInvokeFlow() {
     return this.to('InvokeFlow');
@@ -997,6 +1025,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toListKnowledgeBases() {
     return this.to('ListKnowledgeBases');
+  }
+
+  /**
+   * Grants permission to get the list of model copy jobs that you have submitted
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListModelCopyJobs.html
+   */
+  public toListModelCopyJobs() {
+    return this.to('ListModelCopyJobs');
   }
 
   /**
@@ -1360,6 +1399,7 @@ export class Bedrock extends PolicyStatement {
       'GetGuardrail',
       'GetIngestionJob',
       'GetKnowledgeBase',
+      'GetModelCopyJob',
       'GetModelCustomizationJob',
       'GetModelEvaluationJob',
       'GetModelInvocationJob',
@@ -1389,6 +1429,7 @@ export class Bedrock extends PolicyStatement {
       'CreateGuardrail',
       'CreateGuardrailVersion',
       'CreateKnowledgeBase',
+      'CreateModelCopyJob',
       'CreateModelCustomizationJob',
       'CreateModelEvaluationJob',
       'CreateModelInvocationJob',
@@ -1451,6 +1492,7 @@ export class Bedrock extends PolicyStatement {
       'ListGuardrails',
       'ListIngestionJobs',
       'ListKnowledgeBases',
+      'ListModelCopyJobs',
       'ListModelCustomizationJobs',
       'ListModelEvaluationJobs',
       'ListModelInvocationJobs',
@@ -1683,6 +1725,23 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type model-copy-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onModelCopyJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-copy-job/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type prompt to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptSummary.html
@@ -1731,6 +1790,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateFlowAlias()
    * - .toCreateGuardrail()
    * - .toCreateKnowledgeBase()
+   * - .toCreateModelCopyJob()
    * - .toCreateModelCustomizationJob()
    * - .toCreateModelEvaluationJob()
    * - .toCreateModelInvocationJob()
@@ -1765,6 +1825,7 @@ export class Bedrock extends PolicyStatement {
    * - guardrail
    * - flow
    * - flow-alias
+   * - model-copy-job
    * - prompt
    * - prompt-version
    *
@@ -1790,6 +1851,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateFlowAlias()
    * - .toCreateGuardrail()
    * - .toCreateKnowledgeBase()
+   * - .toCreateModelCopyJob()
    * - .toCreateModelCustomizationJob()
    * - .toCreateModelEvaluationJob()
    * - .toCreateModelInvocationJob()
