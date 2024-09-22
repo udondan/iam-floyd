@@ -19,7 +19,7 @@
     "@types/node": "20.16.5",
     "aws-cdk-lib": "2.159.1",
     "constructs": "^10.3.0",
-    "esbuild": "^0.23.0",
+    "esbuild": "^0.24.0",
     "megalodon": "^10.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
