@@ -214,6 +214,8 @@ export class AwsManagedPolicy {
     public static AmazonEC2ContainerRegistryFullAccess = 'AmazonEC2ContainerRegistryFullAccess';
     /** Provides full access to Amazon EC2 Container Registry repositories, but does not allow repository deletion or policy changes. */
     public static AmazonEC2ContainerRegistryPowerUser = 'AmazonEC2ContainerRegistryPowerUser';
+    /** Provides access to pull images from Amazon EC2 Container Registry repositories. */
+    public static AmazonEC2ContainerRegistryPullOnly = 'AmazonEC2ContainerRegistryPullOnly';
     /** Provides read-only access to Amazon EC2 Container Registry repositories. */
     public static AmazonEC2ContainerRegistryReadOnly = 'AmazonEC2ContainerRegistryReadOnly';
     /**   Policy to enable Task Autoscaling for Amazon EC2 Container Service */
@@ -274,6 +276,8 @@ export class AwsManagedPolicy {
     public static AmazonEKSServiceRolePolicy = 'aws-service-role/AmazonEKSServiceRolePolicy';
     /** Policy used by VPC Resource Controller to manage ENI and IPs for worker nodes. */
     public static AmazonEKSVPCResourceController = 'AmazonEKSVPCResourceController';
+    /** This policy allows Amazon EKS worker nodes to connect to Amazon EKS Clusters. */
+    public static AmazonEKSWorkerNodeMinimalPolicy = 'AmazonEKSWorkerNodeMinimalPolicy';
     /** This policy allows Amazon EKS worker nodes to connect to Amazon EKS Clusters. */
     public static AmazonEKSWorkerNodePolicy = 'AmazonEKSWorkerNodePolicy';
     /** Provides full access to Amazon ElastiCache via the AWS Management Console. */
@@ -758,6 +762,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerGeospatialFullAccess = 'service-role/AmazonSageMakerGeospatialFullAccess';
     /** Provides access to AWS services that are required to run SageMaker GroundTruth Labeling job */
     public static AmazonSageMakerGroundTruthExecution = 'AmazonSageMakerGroundTruthExecution';
+    /** This policy grants permissions to Amazon SageMaker HyperPod to related AWS services such as Amazon EKS, Amazon CloudWatch etc. */
+    public static AmazonSageMakerHyperPodServiceRolePolicy = 'aws-service-role/AmazonSageMakerHyperPodServiceRolePolicy';
     /** Provides access to create Amazon Augmented AI FlowDefinition resources against any Workteam. */
     public static AmazonSageMakerMechanicalTurkAccess = 'AmazonSageMakerMechanicalTurkAccess';
     /** This AWS managed policy grants permissions needed to use all Amazon SageMaker Governance features. The policy also provides select access to related services (e.g., S3, KMS). */
@@ -892,6 +898,8 @@ export class AwsManagedPolicy {
     public static AmazonWorkSpacesSelfServiceAccess = 'AmazonWorkSpacesSelfServiceAccess';
     /** Provides customer account access to AWS WorkSpaces service for launching a Workspace. */
     public static AmazonWorkSpacesServiceAccess = 'AmazonWorkSpacesServiceAccess';
+    /** Provides full access to Amazon WorkSpaces Thin Client as well as limited access to required related services */
+    public static AmazonWorkSpacesThinClientFullAccess = 'AmazonWorkSpacesThinClientFullAccess';
     /** Provides read-only access to Amazon WorkSpaces Thin Client and its dependencies */
     public static AmazonWorkSpacesThinClientReadOnlyAccess = 'AmazonWorkSpacesThinClientReadOnlyAccess';
     /** Provides read-only access to Amazon WorkSpaces Web and its dependencies through the AWS Management Console, SDK, and CLI. */
@@ -1218,6 +1226,8 @@ export class AwsManagedPolicy {
     public static AWSCompromisedKeyQuarantine = 'AWSCompromisedKeyQuarantine';
     /** Denies access to certain actions, applied by the AWS team in the event that an IAM user's credentials have been compromised or exposed publicly. Do NOT remove this policy. Instead, please follow the instructions specified in the support case created for you regarding this event. */
     public static AWSCompromisedKeyQuarantineV2 = 'AWSCompromisedKeyQuarantineV2';
+    /** Denies access to certain actions, applied by AWS in the event that an IAM user's credentials have been compromised or exposed publicly. The policy aims to limit the potential damage that may be caused by fraud-related activity leading to unauthorized charges, while not impacting the existing resources. Do NOT remove this policy. Instead, please follow the instructions specified in the support case created for you regarding this event. */
+    public static AWSCompromisedKeyQuarantineV3 = 'AWSCompromisedKeyQuarantineV3';
     /** Allows Config to call AWS services and deploy config resources across organization */
     public static AWSConfigMultiAccountSetupPolicy = 'aws-service-role/AWSConfigMultiAccountSetupPolicy';
     /** Allows AWS Config to remediate noncompliant resources on your behalf. */
@@ -1262,6 +1272,8 @@ export class AwsManagedPolicy {
     public static AWSDataSyncFullAccess = 'AWSDataSyncFullAccess';
     /** Provides read-only access to AWS DataSync */
     public static AWSDataSyncReadOnlyAccess = 'AWSDataSyncReadOnlyAccess';
+    /** Allows DataSync to integrate with other AWS services on your behalf */
+    public static AWSDataSyncServiceRolePolicy = 'aws-service-role/AWSDataSyncServiceRolePolicy';
     /** Provides AWS Deadline Cloud workers with access to run tasks on a farm. */
     public static AWSDeadlineCloudFleetWorker = 'AWSDeadlineCloud-FleetWorker';
     /** Provides user workstation access to AWS Deadline Cloud farms with limited Read-Only permissions to call other necessary services. Attach this policy to the user role associated with your studio. */
@@ -1304,6 +1316,10 @@ export class AwsManagedPolicy {
     public static AWSDirectConnectReadOnlyAccess = 'AWSDirectConnectReadOnlyAccess';
     /** Provides AWS Direct Connect permission to create and manage AWS resources on your behalf. */
     public static AWSDirectConnectServiceRolePolicy = 'aws-service-role/AWSDirectConnectServiceRolePolicy';
+    /** Provides full access to AWS Directory Service Data. */
+    public static AWSDirectoryServiceDataFullAccess = 'AWSDirectoryServiceDataFullAccess';
+    /** Provides read-only access to AWS Directory Service Data */
+    public static AWSDirectoryServiceDataReadOnlyAccess = 'AWSDirectoryServiceDataReadOnlyAccess';
     /** Provides full access to AWS Directory Service. */
     public static AWSDirectoryServiceFullAccess = 'AWSDirectoryServiceFullAccess';
     /** Provides read only access to AWS Directory Service. */
@@ -1778,6 +1794,8 @@ export class AwsManagedPolicy {
     public static AWSPanoramaServiceLinkedRolePolicy = 'aws-service-role/AWSPanoramaServiceLinkedRolePolicy';
     /** Allows AWS Panorama to manage resources in Amazon S3, AWS IoT, AWS IoT GreenGrass, AWS Lambda, Amazon SageMaker, and Amazon CloudWatch Logs, and to pass service roles to AWS IoT, AWS IoT GreenGrass, and Amazon SageMaker. */
     public static AWSPanoramaServiceRolePolicy = 'service-role/AWSPanoramaServiceRolePolicy';
+    /** Grants permissions to PCS to manage resources on your behalf. */
+    public static AWSPCSServiceRolePolicy = 'aws-service-role/AWSPCSServiceRolePolicy';
     /** Provides full access to AWS Price List Service. */
     public static AWSPriceListServiceFullAccess = 'AWSPriceListServiceFullAccess';
     /** Provides auditor access to AWS Private Certificate Authority */
@@ -1952,6 +1970,8 @@ export class AwsManagedPolicy {
     public static AWSServiceRoleForNeptuneGraphPolicy = 'aws-service-role/AWSServiceRoleForNeptuneGraphPolicy';
     /** Provides permissions to describe and update Private Marketplace resources and describe AWS Organizations */
     public static AWSServiceRoleForPrivateMarketplaceAdminPolicy = 'aws-service-role/AWSServiceRoleForPrivateMarketplaceAdminPolicy';
+    /** Policy for Procurement Insights to obtain Organization Account details */
+    public static AWSServiceRoleForProcurementInsightsPolicy = 'aws-service-role/AWSServiceRoleForProcurementInsightsPolicy';
     /** Provides access to AWS services and resources necessary to migrate service instances into AWS including EC2, S3 and Cloudformation. */
     public static AWSServiceRoleForSMS = 'aws-service-role/AWSServiceRoleForSMS';
     /** Provides access to the User Subscriptions service to your Identity Center resources to automatically update your subscriptions. */
@@ -2344,6 +2364,8 @@ export class AwsManagedPolicy {
     public static PartnerCentralAccountManagementUserRoleAssociation = 'PartnerCentralAccountManagementUserRoleAssociation';
     /** Provides full access to AWS services and resources, but does not allow management of Users and groups. */
     public static PowerUserAccess = 'PowerUserAccess';
+    /** Grants permissions to AWS Services and Resources used or managed by Amazon Q Apps. */
+    public static QAppsServiceRolePolicy = 'aws-service-role/QAppsServiceRolePolicy';
     /** Grants permissions to AWS Services and Resources used or managed by Amazon Q */
     public static QBusinessServiceRolePolicy = 'aws-service-role/QBusinessServiceRolePolicy';
     /** Policy used by QuickSight team to access customer data produced by S3 Storage Management Analytics. */
