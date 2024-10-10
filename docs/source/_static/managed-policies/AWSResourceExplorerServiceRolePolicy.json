@@ -5,7 +5,8 @@
       "Sid": "CloudTrailEventsAccess",
       "Effect": "Allow",
       "Action": [
-        "cloudtrail:CreateServiceLinkedChannel"
+        "cloudtrail:CreateServiceLinkedChannel",
+        "cloudtrail:GetServiceLinkedChannel"
       ],
       "Resource": [
         "arn:aws:cloudtrail:*:*:channel/aws-service-channel/resource-explorer-2/*"

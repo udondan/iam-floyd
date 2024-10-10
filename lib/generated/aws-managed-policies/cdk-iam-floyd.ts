@@ -544,6 +544,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEC2ContainerRegistryPowerUser);
     }
 
+    /** Provides access to pull images from Amazon EC2 Container Registry repositories. */
+    public AmazonEC2ContainerRegistryPullOnly(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEC2ContainerRegistryPullOnly);
+    }
+
     /** Provides read-only access to Amazon EC2 Container Registry repositories. */
     public AmazonEC2ContainerRegistryReadOnly(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEC2ContainerRegistryReadOnly);
@@ -692,6 +697,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Policy used by VPC Resource Controller to manage ENI and IPs for worker nodes. */
     public AmazonEKSVPCResourceController(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSVPCResourceController);
+    }
+
+    /** This policy allows Amazon EKS worker nodes to connect to Amazon EKS Clusters. */
+    public AmazonEKSWorkerNodeMinimalPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSWorkerNodeMinimalPolicy);
     }
 
     /** This policy allows Amazon EKS worker nodes to connect to Amazon EKS Clusters. */
@@ -1904,6 +1914,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerGroundTruthExecution);
     }
 
+    /** This policy grants permissions to Amazon SageMaker HyperPod to related AWS services such as Amazon EKS, Amazon CloudWatch etc. */
+    public AmazonSageMakerHyperPodServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodServiceRolePolicy);
+    }
+
     /** Provides access to create Amazon Augmented AI FlowDefinition resources against any Workteam. */
     public AmazonSageMakerMechanicalTurkAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerMechanicalTurkAccess);
@@ -2237,6 +2252,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides customer account access to AWS WorkSpaces service for launching a Workspace. */
     public AmazonWorkSpacesServiceAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesServiceAccess);
+    }
+
+    /** Provides full access to Amazon WorkSpaces Thin Client as well as limited access to required related services */
+    public AmazonWorkSpacesThinClientFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesThinClientFullAccess);
     }
 
     /** Provides read-only access to Amazon WorkSpaces Thin Client and its dependencies */
@@ -3054,6 +3074,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCompromisedKeyQuarantineV2);
     }
 
+    /** Denies access to certain actions, applied by AWS in the event that an IAM user's credentials have been compromised or exposed publicly. The policy aims to limit the potential damage that may be caused by fraud-related activity leading to unauthorized charges, while not impacting the existing resources. Do NOT remove this policy. Instead, please follow the instructions specified in the support case created for you regarding this event. */
+    public AWSCompromisedKeyQuarantineV3(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCompromisedKeyQuarantineV3);
+    }
+
     /** Allows Config to call AWS services and deploy config resources across organization */
     public AWSConfigMultiAccountSetupPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSConfigMultiAccountSetupPolicy);
@@ -3164,6 +3189,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDataSyncReadOnlyAccess);
     }
 
+    /** Allows DataSync to integrate with other AWS services on your behalf */
+    public AWSDataSyncServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDataSyncServiceRolePolicy);
+    }
+
     /** Provides AWS Deadline Cloud workers with access to run tasks on a farm. */
     public AWSDeadlineCloudFleetWorker(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDeadlineCloudFleetWorker);
@@ -3267,6 +3297,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides AWS Direct Connect permission to create and manage AWS resources on your behalf. */
     public AWSDirectConnectServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDirectConnectServiceRolePolicy);
+    }
+
+    /** Provides full access to AWS Directory Service Data. */
+    public AWSDirectoryServiceDataFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDirectoryServiceDataFullAccess);
+    }
+
+    /** Provides read-only access to AWS Directory Service Data */
+    public AWSDirectoryServiceDataReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDirectoryServiceDataReadOnlyAccess);
     }
 
     /** Provides full access to AWS Directory Service. */
@@ -4454,6 +4494,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPanoramaServiceRolePolicy);
     }
 
+    /** Grants permissions to PCS to manage resources on your behalf. */
+    public AWSPCSServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPCSServiceRolePolicy);
+    }
+
     /** Provides full access to AWS Price List Service. */
     public AWSPriceListServiceFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPriceListServiceFullAccess);
@@ -4887,6 +4932,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides permissions to describe and update Private Marketplace resources and describe AWS Organizations */
     public AWSServiceRoleForPrivateMarketplaceAdminPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForPrivateMarketplaceAdminPolicy);
+    }
+
+    /** Policy for Procurement Insights to obtain Organization Account details */
+    public AWSServiceRoleForProcurementInsightsPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForProcurementInsightsPolicy);
     }
 
     /** Provides access to AWS services and resources necessary to migrate service instances into AWS including EC2, S3 and Cloudformation. */
@@ -5867,6 +5917,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides full access to AWS services and resources, but does not allow management of Users and groups. */
     public PowerUserAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.PowerUserAccess);
+    }
+
+    /** Grants permissions to AWS Services and Resources used or managed by Amazon Q Apps. */
+    public QAppsServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.QAppsServiceRolePolicy);
     }
 
     /** Grants permissions to AWS Services and Resources used or managed by Amazon Q */

@@ -15,7 +15,15 @@
         "bedrock:ListCustomModels",
         "bedrock:GetCustomModel",
         "bedrock:ListTagsForResource",
-        "bedrock:GetFoundationModelAvailability"
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:GetGuardrail",
+        "bedrock:ListGuardrails",
+        "bedrock:GetEvaluationJob",
+        "bedrock:ListEvaluationJobs",
+        "bedrock:GetModelInvocationJob",
+        "bedrock:ListModelInvocationJobs",
+        "bedrock:GetInferenceProfile",
+        "bedrock:ListInferenceProfiles"
       ],
       "Resource": "*"
     }
