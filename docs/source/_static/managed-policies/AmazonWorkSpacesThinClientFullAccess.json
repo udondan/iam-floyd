@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowThinClientFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "thinclient:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowWorkSpacesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "workspaces:DescribeWorkspaceDirectories"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowWorkSpacesWebAccess",
+      "Effect": "Allow",
+      "Action": [
+        "workspaces-web:GetPortal",
+        "workspaces-web:GetUserSettings",
+        "workspaces-web:ListPortals"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAppStreamAccess",
+      "Effect": "Allow",
+      "Action": [
+        "appstream:DescribeStacks"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

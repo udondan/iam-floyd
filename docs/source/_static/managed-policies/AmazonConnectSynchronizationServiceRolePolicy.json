@@ -74,7 +74,12 @@
         "connect:CreateAuthenticationProfile",
         "connect:UpdateAuthenticationProfile",
         "connect:DescribeAuthenticationProfile",
-        "connect:ListAuthenticationProfiles"
+        "connect:ListAuthenticationProfiles",
+        "connect:CreateHoursOfOperationOverride",
+        "connect:UpdateHoursOfOperationOverride",
+        "connect:DeleteHoursOfOperationOverride",
+        "connect:DescribeHoursOfOperationOverride",
+        "connect:ListHoursOfOperationOverrides"
       ],
       "Resource": "*"
     },

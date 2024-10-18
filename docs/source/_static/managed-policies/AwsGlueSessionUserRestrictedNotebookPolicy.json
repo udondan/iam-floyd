@@ -22,6 +22,20 @@
       }
     },
     {
+      "Sid": "AllowGlueTaggingAction",
+      "Effect": "Allow",
+      "Action": [
+        "glue:TagResource"
+      ],
+      "Resource": "arn:aws:glue:*:*:session/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/owner": "${aws:PrincipalTag/owner}",
+          "aws:RequestTag/owner": "${aws:PrincipalTag/owner}"
+        }
+      }
+    },
+    {
       "Sid": "NotebookAllowActions1",
       "Effect": "Allow",
       "Action": [
@@ -67,7 +81,6 @@
       "Sid": "NotebookDenyActions",
       "Effect": "Deny",
       "Action": [
-        "glue:TagResource",
         "glue:UntagResource",
         "tag:TagResources",
         "tag:UntagResources"
@@ -90,7 +103,8 @@
         "iam:PassRole"
       ],
       "Resource": [
-        "arn:aws:iam::*:role/service-role/AwsGlueSessionServiceRoleUserRestrictedForNotebook*"
+        "arn:aws:iam::*:role/service-role/AwsGlueSessionServiceRoleUserRestrictedForNotebook*",
+        "arn:aws:iam::*:role/AwsGlueSessionUserRestrictedNotebookServiceRole*"
       ],
       "Condition": {
         "StringLike": {
