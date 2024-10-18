@@ -62,7 +62,9 @@
         "autoscaling:PutLifecycleHook",
         "autoscaling:PutNotificationConfiguration",
         "autoscaling:EnableMetricsCollection",
-        "autoscaling:PutScheduledUpdateGroupAction"
+        "autoscaling:PutScheduledUpdateGroupAction",
+        "autoscaling:ResumeProcesses",
+        "autoscaling:SuspendProcesses"
       ],
       "Resource": "arn:aws:autoscaling:*:*:*:autoScalingGroupName/eks-*"
     },

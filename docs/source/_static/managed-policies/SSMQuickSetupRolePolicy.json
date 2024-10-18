@@ -62,7 +62,9 @@
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stackset/AWS-QuickSetup-*",
-        "arn:aws:cloudformation:*:*:stack/StackSet-AWS-QuickSetup-*"
+        "arn:aws:cloudformation:*:*:stackset/SSMQuickSetup*",
+        "arn:aws:cloudformation:*:*:stack/StackSet-AWS-QuickSetup-*",
+        "arn:aws:cloudformation:*:*:stack/StackSet-SSMQuickSetup*"
       ]
     },
     {
@@ -74,8 +76,11 @@
       ],
       "Resource": [
         "arn:aws:cloudformation:*:*:stackset/AWS-QuickSetup-*",
+        "arn:aws:cloudformation:*:*:stackset/SSMQuickSetup*",
         "arn:aws:cloudformation:*:*:stack/StackSet-AWS-QuickSetup-*",
+        "arn:aws:cloudformation:*:*:stack/StackSet-SSMQuickSetup*",
         "arn:aws:cloudformation:*:*:stackset-target/AWS-QuickSetup-*",
+        "arn:aws:cloudformation:*:*:stackset-target/SSMQuickSetup*",
         "arn:aws:cloudformation:*:*:type/resource/*"
       ],
       "Condition": {

@@ -114,7 +114,10 @@
         "lambda:UpdateFunctionCode",
         "lambda:UpdateFunctionConfiguration",
         "lambda:GetFunctionConfiguration",
-        "lambda:DeleteFunction"
+        "lambda:DeleteFunction",
+        "lambda:ListTags",
+        "lambda:TagResource",
+        "lambda:UntagResource"
       ],
       "Resource": [
         "arn:aws:lambda:*:*:function:cwsyn-*"
@@ -129,7 +132,8 @@
       ],
       "Resource": [
         "arn:aws:lambda:*:*:layer:cwsyn-*",
-        "arn:aws:lambda:*:*:layer:Synthetics:*"
+        "arn:aws:lambda:*:*:layer:Synthetics:*",
+        "arn:aws:lambda:*:*:layer:Synthetics_Selenium:*"
       ]
     },
     {
