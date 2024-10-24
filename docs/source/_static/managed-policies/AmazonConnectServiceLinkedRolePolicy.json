@@ -77,7 +77,14 @@
         "profile:ListCalculatedAttributeDefinitions",
         "profile:ListCalculatedAttributesForProfile",
         "profile:GetDomain",
-        "profile:ListIntegrations"
+        "profile:ListIntegrations",
+        "profile:ListSegmentDefinitions",
+        "profile:ListProfileAttributeValues",
+        "profile:CreateSegmentEstimate",
+        "profile:GetSegmentEstimate",
+        "profile:BatchGetProfile",
+        "profile:BatchGetCalculatedAttributeForProfile",
+        "profile:GetSegmentMembership"
       ],
       "Resource": "arn:aws:profile:*:*:domains/amazon-connect-*"
     },
@@ -86,7 +93,8 @@
       "Effect": "Allow",
       "Action": [
         "profile:ListProfileObjects",
-        "profile:GetProfileObjectType"
+        "profile:GetProfileObjectType",
+        "profile:ListObjectTypeAttributes"
       ],
       "Resource": [
         "arn:aws:profile:*:*:domains/amazon-connect-*/object-types/*"
@@ -138,7 +146,21 @@
         "wisdom:UpdateQuickResponse",
         "wisdom:DeleteQuickResponse",
         "wisdom:PutFeedback",
-        "wisdom:ListContentAssociations"
+        "wisdom:ListContentAssociations",
+        "wisdom:CreateMessageTemplate",
+        "wisdom:UpdateMessageTemplate",
+        "wisdom:UpdateMessageTemplateMetadata",
+        "wisdom:GetMessageTemplate",
+        "wisdom:DeleteMessageTemplate",
+        "wisdom:ListMessageTemplates",
+        "wisdom:SearchMessageTemplates",
+        "wisdom:ActivateMessageTemplate",
+        "wisdom:DeactivateMessageTemplate",
+        "wisdom:CreateMessageTemplateVersion",
+        "wisdom:ListMessageTemplateVersions",
+        "wisdom:CreateMessageTemplateAttachment",
+        "wisdom:DeleteMessageTemplateAttachment",
+        "wisdom:RenderMessageTemplate"
       ],
       "Resource": "*",
       "Condition": {
@@ -168,6 +190,20 @@
       ],
       "Resource": [
         "arn:aws:profile:*:*:domains/amazon-connect-*/calculated-attributes/*"
+      ]
+    },
+    {
+      "Sid": "AllowCustomerProfilesSegmentationForConnectDomain",
+      "Effect": "Allow",
+      "Action": [
+        "profile:CreateSegmentDefinition",
+        "profile:GetSegmentDefinition",
+        "profile:DeleteSegmentDefinition",
+        "profile:CreateSegmentSnapshot",
+        "profile:GetSegmentSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:profile:*:*:domains/amazon-connect-*/segment-definitions/*"
       ]
     },
     {

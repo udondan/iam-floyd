@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "CognitoUnAuthedIdentitiesSessionPolicy",
       "Effect": "Allow",
       "Action": [
         "rum:PutRumEvents",
@@ -13,7 +14,14 @@
         "rekognition:*",
         "mobiletargeting:*",
         "firehose:*",
-        "personalize:*"
+        "personalize:*",
+        "geo:GetMap*",
+        "geo:SearchPlaceIndex*",
+        "geo:GetPlace",
+        "geo:CalculateRoute*",
+        "geo:*Geofence",
+        "geo:*Geofences",
+        "geo:*DevicePosition*"
       ],
       "Resource": "*"
     }

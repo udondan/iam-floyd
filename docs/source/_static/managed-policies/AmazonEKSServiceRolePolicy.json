@@ -15,7 +15,8 @@
         "ec2:DescribeVpcs",
         "ec2:CreateNetworkInterfacePermission",
         "iam:ListAttachedRolePolicies",
-        "ec2:CreateSecurityGroup"
+        "ec2:CreateSecurityGroup",
+        "ec2:GetSecurityGroupsForVpc"
       ],
       "Resource": "*"
     },
@@ -28,7 +29,7 @@
       ],
       "Resource": "arn:aws:ec2:*:*:security-group/*",
       "Condition": {
-        "ForAnyValue:StringLike": {
+        "StringLike": {
           "ec2:ResourceTag/Name": "eks-cluster-sg*"
         }
       }
@@ -41,7 +42,9 @@
       ],
       "Resource": [
         "arn:aws:ec2:*:*:vpc/*",
-        "arn:aws:ec2:*:*:subnet/*"
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:security-group/*"
       ],
       "Condition": {
         "ForAnyValue:StringLike": {
@@ -58,14 +61,12 @@
         "ec2:DeleteTags"
       ],
       "Resource": [
-        "arn:aws:ec2:*:*:security-group/*"
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*:*:network-interface/*"
       ],
       "Condition": {
-        "ForAnyValue:StringLike": {
-          "aws:TagKeys": [
-            "kubernetes.io/cluster/*"
-          ],
-          "aws:RequestTag/Name": "eks-cluster-sg*"
+        "StringLike": {
+          "aws:RequestTag/Name": "eks-cluster-*"
         }
       }
     },
