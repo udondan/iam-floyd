@@ -41,6 +41,20 @@
       }
     },
     {
+      "Sid": "AllowGlueTaggingAction",
+      "Effect": "Allow",
+      "Action": [
+        "glue:TagResource"
+      ],
+      "Resource": "arn:aws:glue:*:*:session/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/owner": "${aws:PrincipalTag/owner}",
+          "aws:RequestTag/owner": "${aws:PrincipalTag/owner}"
+        }
+      }
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "glue:RunStatement",
@@ -72,7 +86,6 @@
     {
       "Effect": "Deny",
       "Action": [
-        "glue:TagResource",
         "glue:UntagResource",
         "tag:TagResources",
         "tag:UntagResources"

@@ -512,7 +512,10 @@
       "Sid": "IAMPassOperationForEMRServerless",
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "arn:aws:iam::*:role/AmazonSageMakerCanvasEMRSExecutionAccess-*",
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerCanvasEMRSExecutionAccess-*",
+        "arn:aws:iam::*:role/AmazonSageMakerCanvasEMRSExecutionAccess-*"
+      ],
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": "emr-serverless.amazonaws.com",
