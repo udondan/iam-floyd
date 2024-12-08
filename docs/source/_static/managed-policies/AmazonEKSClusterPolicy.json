@@ -32,6 +32,7 @@
         "ec2:DescribeAccountAttributes",
         "ec2:DescribeAddresses",
         "ec2:DescribeInternetGateways",
+        "ec2:DescribeInstanceTopology",
         "elasticloadbalancing:AddTags",
         "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
         "elasticloadbalancing:AttachLoadBalancerToSubnets",

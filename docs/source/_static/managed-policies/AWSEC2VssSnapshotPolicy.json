@@ -11,8 +11,8 @@
         "arn:aws:ec2:*:*:instance/*"
       ],
       "Condition": {
-        "StringLike": {
-          "ec2:SourceInstanceARN": "*${ec2:InstanceId}"
+        "ArnLike": {
+          "ec2:SourceInstanceARN": "arn:aws:ec2:*:*:instance/${ec2:InstanceId}"
         }
       }
     },
@@ -41,8 +41,8 @@
         "arn:aws:ec2:*:*:instance/*"
       ],
       "Condition": {
-        "StringLike": {
-          "ec2:SourceInstanceARN": "*${ec2:InstanceId}"
+        "ArnLike": {
+          "ec2:SourceInstanceARN": "arn:aws:ec2:*:*:instance/${ec2:InstanceId}"
         }
       }
     },
@@ -82,8 +82,8 @@
         "arn:aws:ec2:*:*:instance/*"
       ],
       "Condition": {
-        "StringLike": {
-          "ec2:SourceInstanceARN": "*${ec2:InstanceId}"
+        "ArnLike": {
+          "ec2:SourceInstanceARN": "arn:aws:ec2:*:*:instance/${ec2:InstanceId}"
         }
       }
     },

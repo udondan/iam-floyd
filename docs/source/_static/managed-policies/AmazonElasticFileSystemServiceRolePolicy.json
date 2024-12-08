@@ -76,7 +76,9 @@
         "elasticfilesystem:DescribeFileSystems",
         "elasticfilesystem:CreateReplicationConfiguration",
         "elasticfilesystem:DescribeReplicationConfigurations",
-        "elasticfilesystem:DeleteReplicationConfiguration"
+        "elasticfilesystem:DeleteReplicationConfiguration",
+        "elasticfilesystem:ReplicationRead",
+        "elasticfilesystem:ReplicationWrite"
       ],
       "Resource": "*"
     }

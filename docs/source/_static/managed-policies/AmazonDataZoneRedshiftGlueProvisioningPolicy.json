@@ -225,7 +225,8 @@
         "iam:DeletePolicy",
         "iam:CreatePolicy",
         "iam:GetPolicy",
-        "iam:ListPolicyVersions"
+        "iam:ListPolicyVersions",
+        "iam:DeletePolicyVersion"
       ],
       "Resource": [
         "arn:aws:iam::*:policy/datazone*"

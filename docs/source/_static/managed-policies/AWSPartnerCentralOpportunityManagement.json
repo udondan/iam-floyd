@@ -1,0 +1,63 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OpportunityManagement",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:AcceptEngagementInvitation",
+        "partnercentral:AssignOpportunity",
+        "partnercentral:AssociateOpportunity",
+        "partnercentral:CreateEngagement",
+        "partnercentral:CreateEngagementInvitation",
+        "partnercentral:CreateOpportunity",
+        "partnercentral:CreateResourceSnapshot",
+        "partnercentral:CreateResourceSnapshotJob",
+        "partnercentral:DeleteResourceSnapshotJob",
+        "partnercentral:DisassociateOpportunity",
+        "partnercentral:GetAwsOpportunitySummary",
+        "partnercentral:GetEngagement",
+        "partnercentral:GetEngagementInvitation",
+        "partnercentral:GetOpportunity",
+        "partnercentral:GetResourceSnapshot",
+        "partnercentral:GetResourceSnapshotJob",
+        "partnercentral:ListEngagementByAcceptingInvitationTasks",
+        "partnercentral:ListEngagementFromOpportunityTasks",
+        "partnercentral:ListEngagementInvitations",
+        "partnercentral:ListEngagementMembers",
+        "partnercentral:ListEngagementResourceAssociations",
+        "partnercentral:ListEngagements",
+        "partnercentral:ListOpportunities",
+        "partnercentral:ListResourceSnapshotJobs",
+        "partnercentral:ListResourceSnapshots",
+        "partnercentral:ListSolutions",
+        "partnercentral:RejectEngagementInvitation",
+        "partnercentral:StartEngagementByAcceptingInvitationTask",
+        "partnercentral:StartEngagementFromOpportunityTask",
+        "partnercentral:StartResourceSnapshotJob",
+        "partnercentral:StopResourceSnapshotJob",
+        "partnercentral:SubmitOpportunity",
+        "partnercentral:UpdateOpportunity"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListingAWSMarketplaceEntities",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceOffersAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/Offer/*"
+      ]
+    }
+  ]
+}

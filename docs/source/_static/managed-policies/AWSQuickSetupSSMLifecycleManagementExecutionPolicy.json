@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetAutomationExecution"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/QuickSetupDocument": "AWSQuickSetupType-SSM"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/AWS-QuickSetup-SSM-ManageResources*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "ssm.amazonaws.com"
+          ],
+          "iam:ResourceTag/QuickSetupDocument": [
+            "AWSQuickSetupType-SSM"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:StartAutomationExecution",
+        "ssm:AddTagsToResource"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:automation-definition/AWSQuickSetupType-SSM-ManageResources*",
+        "arn:aws:ssm:*:*:automation-execution/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/QuickSetupDocument": "AWSQuickSetupType-SSM",
+          "aws:ResourceTag/QuickSetupDocument": "AWSQuickSetupType-SSM"
+        }
+      }
+    }
+  ]
+}
