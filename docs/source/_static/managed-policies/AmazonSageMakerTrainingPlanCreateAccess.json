@@ -1,0 +1,53 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateTrainingPlanPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateTrainingPlan",
+        "sagemaker:CreateReservedCapacity"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:training-plan/*",
+        "arn:aws:sagemaker:*:*:reserved-capacity/*"
+      ]
+    },
+    {
+      "Sid": "AggTagsToTrainingPlanPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:AddTags"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:training-plan/*",
+        "arn:aws:sagemaker:*:*:reserved-capacity/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "sagemaker:TaggingAction": [
+            "CreateTrainingPlan",
+            "CreateReservedCapacity"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DescribeTrainingPlanPermissions",
+      "Effect": "Allow",
+      "Action": "sagemaker:DescribeTrainingPlan",
+      "Resource": [
+        "arn:aws:sagemaker:*:*:training-plan/*"
+      ]
+    },
+    {
+      "Sid": "NonResourceLevelTrainingPlanPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:SearchTrainingPlanOfferings",
+        "sagemaker:ListTrainingPlans"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

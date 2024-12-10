@@ -68,6 +68,8 @@
         "elasticache:DescribeGlobalReplicationGroups",
         "elasticache:DescribeReplicationGroups",
         "elasticache:DescribeSnapshots",
+        "elasticache:DescribeServerlessCaches",
+        "elasticache:DescribeServerlessCacheSnapshots",
         "elasticfilesystem:DescribeFileSystems",
         "elasticfilesystem:DescribeLifecycleConfiguration",
         "elasticfilesystem:DescribeMountTargets",

@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSPartnerCentralSandboxAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": "Sandbox"
+        }
+      }
+    }
+  ]
+}
