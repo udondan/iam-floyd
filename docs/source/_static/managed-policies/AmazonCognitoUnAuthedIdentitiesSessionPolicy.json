@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "CognitoUnAuthedIdentitiesSessionPolicy",
       "Effect": "Allow",
       "Action": [
         "rum:PutRumEvents",
@@ -13,7 +14,22 @@
         "rekognition:*",
         "mobiletargeting:*",
         "firehose:*",
-        "personalize:*"
+        "personalize:*",
+        "geo:GetMap*",
+        "geo:SearchPlaceIndex*",
+        "geo:GetPlace",
+        "geo:CalculateRoute*",
+        "geo:*Geofence",
+        "geo:*Geofences",
+        "geo:*DevicePosition*",
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncryptTo",
+        "kms:ReEncryptFrom",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyPair",
+        "kms:GenerateDataKeyPairWithoutPlaintext",
+        "kms:GenerateDataKeyWithoutPlaintext"
       ],
       "Resource": "*"
     }

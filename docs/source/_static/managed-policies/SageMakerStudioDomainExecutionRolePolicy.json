@@ -1,0 +1,224 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DataZonePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:AcceptPredictions",
+        "datazone:AcceptSubscriptionRequest",
+        "datazone:AddEntityOwner",
+        "datazone:AddPolicyGrant",
+        "datazone:CancelMetadataGenerationRun",
+        "datazone:CancelSubscription",
+        "datazone:CreateAsset",
+        "datazone:CreateAssetFilter",
+        "datazone:CreateAssetRevision",
+        "datazone:CreateAssetType",
+        "datazone:CreateConnection",
+        "datazone:CreateDataProduct",
+        "datazone:CreateDataProductRevision",
+        "datazone:CreateDataSource",
+        "datazone:CreateDomainUnit",
+        "datazone:CreateEnvironment",
+        "datazone:CreateEnvironmentProfile",
+        "datazone:CreateFormType",
+        "datazone:CreateGlossary",
+        "datazone:CreateGlossaryTerm",
+        "datazone:CreateListingChangeSet",
+        "datazone:CreateProject",
+        "datazone:CreateProjectMembership",
+        "datazone:CreateSubscriptionGrant",
+        "datazone:CreateSubscriptionRequest",
+        "datazone:DeleteAsset",
+        "datazone:DeleteAssetFilter",
+        "datazone:DeleteAssetType",
+        "datazone:DeleteConnection",
+        "datazone:DeleteDataProduct",
+        "datazone:DeleteDataSource",
+        "datazone:DeleteDomainUnit",
+        "datazone:DeleteEnvironment",
+        "datazone:DeleteEnvironmentProfile",
+        "datazone:DeleteFormType",
+        "datazone:DeleteGlossary",
+        "datazone:DeleteGlossaryTerm",
+        "datazone:DeleteListing",
+        "datazone:DeleteProject",
+        "datazone:DeleteProjectMembership",
+        "datazone:DeleteSubscriptionGrant",
+        "datazone:DeleteSubscriptionRequest",
+        "datazone:DeleteSubscriptionTarget",
+        "datazone:DeleteTimeSeriesDataPoints",
+        "datazone:GetAsset",
+        "datazone:GetAssetFilter",
+        "datazone:GetAssetType",
+        "datazone:GetConnection",
+        "datazone:GetDataProduct",
+        "datazone:GetDataSource",
+        "datazone:GetDataSourceRun",
+        "datazone:GetDomain",
+        "datazone:GetDomainUnit",
+        "datazone:GetEnvironment",
+        "datazone:GetEnvironmentAction",
+        "datazone:GetEnvironmentActionLink",
+        "datazone:GetEnvironmentBlueprint",
+        "datazone:GetEnvironmentBlueprintConfiguration",
+        "datazone:GetEnvironmentCredentials",
+        "datazone:GetEnvironmentProfile",
+        "datazone:GetFormType",
+        "datazone:GetGlossary",
+        "datazone:GetGlossaryTerm",
+        "datazone:GetGroupProfile",
+        "datazone:GetLineageNode",
+        "datazone:GetListing",
+        "datazone:GetMetadataGenerationRun",
+        "datazone:GetProject",
+        "datazone:GetSubscription",
+        "datazone:GetSubscriptionEligibility",
+        "datazone:GetSubscriptionGrant",
+        "datazone:GetSubscriptionRequestDetails",
+        "datazone:GetSubscriptionTarget",
+        "datazone:GetTimeSeriesDataPoint",
+        "datazone:GetUserProfile",
+        "datazone:ListAccountEnvironments",
+        "datazone:ListAssetFilters",
+        "datazone:ListAssetRevisions",
+        "datazone:ListConnections",
+        "datazone:ListDataProductRevisions",
+        "datazone:ListDataSourceRunActivities",
+        "datazone:ListDataSourceRuns",
+        "datazone:ListDataSources",
+        "datazone:ListDomainUnitsForParent",
+        "datazone:ListEntityOwners",
+        "datazone:ListEnvironmentActions",
+        "datazone:ListEnvironmentBlueprintConfigurationSummaries",
+        "datazone:ListEnvironmentBlueprintConfigurations",
+        "datazone:ListEnvironmentBlueprints",
+        "datazone:ListEnvironmentProfiles",
+        "datazone:ListEnvironments",
+        "datazone:ListGroupsForUser",
+        "datazone:ListLineageNodeHistory",
+        "datazone:ListMetadataGenerationRuns",
+        "datazone:ListNotifications",
+        "datazone:ListPolicyGrants",
+        "datazone:ListProjectMemberships",
+        "datazone:ListProjects",
+        "datazone:ListSubscriptionGrants",
+        "datazone:ListSubscriptionRequests",
+        "datazone:ListSubscriptionTargets",
+        "datazone:ListSubscriptions",
+        "datazone:ListTimeSeriesDataPoints",
+        "datazone:ListWarehouseMetadata",
+        "datazone:RejectPredictions",
+        "datazone:RejectSubscriptionRequest",
+        "datazone:RemoveEntityOwner",
+        "datazone:RemovePolicyGrant",
+        "datazone:RevokeSubscription",
+        "datazone:Search",
+        "datazone:SearchGroupProfiles",
+        "datazone:SearchListings",
+        "datazone:SearchTypes",
+        "datazone:SearchUserProfiles",
+        "datazone:StartDataSourceRun",
+        "datazone:StartMetadataGenerationRun",
+        "datazone:UpdateAssetFilter",
+        "datazone:UpdateConnection",
+        "datazone:UpdateDataSource",
+        "datazone:UpdateDomainUnit",
+        "datazone:UpdateEnvironment",
+        "datazone:UpdateEnvironmentDeploymentStatus",
+        "datazone:UpdateEnvironmentProfile",
+        "datazone:UpdateGlossary",
+        "datazone:UpdateGlossaryTerm",
+        "datazone:UpdateProject",
+        "datazone:UpdateSubscriptionGrantStatus",
+        "datazone:UpdateSubscriptionRequest"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RAMResourceShareStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ram:GetResourceShareAssociations",
+        "ram:GetResourceShares"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonQPermissionsStatement",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:ListConversations",
+        "q:GetConversation",
+        "q:PassRequest",
+        "glue:StartCompletion",
+        "glue:GetCompletion"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSetTrustedIdentity",
+      "Effect": "Allow",
+      "Action": [
+        "sts:SetContext"
+      ],
+      "Resource": "arn:aws:sts::*:self"
+    },
+    {
+      "Sid": "SSMGetParameterStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:parameter/amazon/datazone/q/${aws:PrincipalTag/datazone-domainId}*",
+        "arn:aws:ssm:*:*:parameter/amazon/datazone/genAI/${aws:PrincipalTag/datazone-domainId}/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListCodeConnectionsPermissionsStatement",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:ListConnections",
+        "codeconnections:ListTagsForResource",
+        "codestar-connections:ListConnections",
+        "codestar-connections:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "UseCodeConnectionsPermissionsStatement",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:UseConnection",
+        "codestar-connections:UseConnection"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/for-use-with-all-datazone-projects": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceTag/for-use-with-all-datazone-projects": "true"
+        }
+      }
+    },
+    {
+      "Sid": "ProjectProfilePermissionsStatement",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:GetProjectProfile",
+        "datazone:ListProjectProfiles"
+      ],
+      "Resource": "arn:aws:datazone:*:*:domain/*"
+    }
+  ]
+}

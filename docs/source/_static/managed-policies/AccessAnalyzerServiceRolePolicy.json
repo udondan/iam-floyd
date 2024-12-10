@@ -23,6 +23,8 @@
         "iam:ListEntitiesForPolicy",
         "iam:ListRoles",
         "iam:ListUsers",
+        "iam:ListRoleTags",
+        "iam:ListUserTags",
         "iam:GetUser",
         "iam:GetGroup",
         "iam:GenerateServiceLastAccessedDetails",

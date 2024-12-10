@@ -1,0 +1,816 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowManageSageMakerEniOnVpc",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:AttachNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:CreateVpcEndpoint"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:route-table/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": [
+            "sagemaker.amazonaws.com",
+            "airflow.amazonaws.com"
+          ],
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "ArnLike": {
+          "ec2:Vpc": "arn:aws:ec2:*:*:vpc/${aws:PrincipalTag/VpcId}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowManageSageMakerTrainingEniOnVpc",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterfacePermission"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:route-table/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "ArnLike": {
+          "ec2:Vpc": "arn:aws:ec2:*:*:vpc/${aws:PrincipalTag/VpcId}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowManageSageMakerEni",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:AttachNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*",
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringEqualsIfExists": {
+          "aws:CalledViaLast": "sagemaker.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSageMakerCreateVpcEndpointOnVpcId",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc/${aws:PrincipalTag/VpcId}",
+      "Condition": {
+        "StringEquals": {
+          "ec2:VpcID": "${aws:PrincipalTag/VpcId}"
+        },
+        "StringEqualsIfExists": {
+          "aws:CalledViaLast": "sagemaker.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSageMakerCreateVpcEndpoint",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:vpc-endpoint/*"
+      ],
+      "Condition": {
+        "StringEqualsIfExists": {
+          "aws:CalledViaLast": "sagemaker.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSageMakerDescribeVPCResources",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "glue:ListSessions",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeDhcpOptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSageMakerLogAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/sagemaker/*"
+    },
+    {
+      "Sid": "SageMakerMlflowPermission",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:UpdateMlflowTrackingServer",
+        "sagemaker:StartMlflowTrackingServer",
+        "sagemaker:StopMlflowTrackingServer",
+        "sagemaker:DescribeMlflowTrackingServer",
+        "sagemaker:CreatePresignedMlflowTrackingServerUrl",
+        "sagemaker-mlflow:AccessUI",
+        "sagemaker-mlflow:CreateExperiment",
+        "sagemaker-mlflow:SearchExperiments",
+        "sagemaker-mlflow:GetExperiment",
+        "sagemaker-mlflow:GetExperimentByName",
+        "sagemaker-mlflow:DeleteExperiment",
+        "sagemaker-mlflow:RestoreExperiment",
+        "sagemaker-mlflow:UpdateExperiment",
+        "sagemaker-mlflow:CreateRun",
+        "sagemaker-mlflow:DeleteRun",
+        "sagemaker-mlflow:RestoreRun",
+        "sagemaker-mlflow:GetRun",
+        "sagemaker-mlflow:LogMetric",
+        "sagemaker-mlflow:LogBatch",
+        "sagemaker-mlflow:LogModel",
+        "sagemaker-mlflow:LogInputs",
+        "sagemaker-mlflow:SetExperimentTag",
+        "sagemaker-mlflow:SetTag",
+        "sagemaker-mlflow:DeleteTag",
+        "sagemaker-mlflow:LogParam",
+        "sagemaker-mlflow:GetMetricHistory",
+        "sagemaker-mlflow:SearchRuns",
+        "sagemaker-mlflow:ListArtifacts",
+        "sagemaker-mlflow:UpdateRun",
+        "sagemaker-mlflow:CreateRegisteredModel",
+        "sagemaker-mlflow:GetRegisteredModel",
+        "sagemaker-mlflow:RenameRegisteredModel",
+        "sagemaker-mlflow:UpdateRegisteredModel",
+        "sagemaker-mlflow:DeleteRegisteredModel",
+        "sagemaker-mlflow:GetLatestModelVersions",
+        "sagemaker-mlflow:CreateModelVersion",
+        "sagemaker-mlflow:GetModelVersion",
+        "sagemaker-mlflow:UpdateModelVersion",
+        "sagemaker-mlflow:DeleteModelVersion",
+        "sagemaker-mlflow:SearchModelVersions",
+        "sagemaker-mlflow:GetDownloadURIForModelVersionArtifacts",
+        "sagemaker-mlflow:TransitionModelVersionStage",
+        "sagemaker-mlflow:SearchRegisteredModels",
+        "sagemaker-mlflow:SetRegisteredModelTag",
+        "sagemaker-mlflow:DeleteRegisteredModelTag",
+        "sagemaker-mlflow:DeleteModelVersionTag",
+        "sagemaker-mlflow:DeleteRegisteredModelAlias",
+        "sagemaker-mlflow:SetRegisteredModelAlias",
+        "sagemaker-mlflow:GetModelVersionByAlias"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:mlflow-tracking-server/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerBYOFSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:DescribeMountTargets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerBYOIPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeImageVersion",
+        "sagemaker:ListImageVersions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerStudioAppDescribeImageActionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeImage"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:image/*"
+    },
+    {
+      "Sid": "SageMakerPipelinesSTSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sts:GetCallerIdentity"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerLogPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/sagemaker/*"
+    },
+    {
+      "Sid": "SageMakerCreatePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateTrainingJob",
+        "sagemaker:CreateTransformJob",
+        "sagemaker:CreateProcessingJob",
+        "sagemaker:CreateAutoMLJob",
+        "sagemaker:CreateAutoMLJobV2",
+        "sagemaker:CreateHyperParameterTuningJob",
+        "sagemaker:CreateEndpointConfig",
+        "sagemaker:CreateEndpoint",
+        "sagemaker:CreateModel",
+        "sagemaker:CreateModelPackage",
+        "sagemaker:CreateModelPackageGroup",
+        "sagemaker:CreateInferenceComponent",
+        "sagemaker:CreatePipeline",
+        "sagemaker:CreateInferenceRecommendationsJob"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerInferencePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:StopTrainingJob",
+        "sagemaker:StopProcessingJob",
+        "sagemaker:StopAutoMLJob",
+        "sagemaker:StopHyperParameterTuningJob",
+        "sagemaker:UpdateTrainingJob",
+        "sagemaker:BatchGetMetrics",
+        "sagemaker:BatchPutMetrics",
+        "sagemaker:DeleteEndpointConfig",
+        "sagemaker:DeleteEndpoint",
+        "sagemaker:UpdateEndpoint",
+        "sagemaker:UpdateEndpointWeightsAndCapacities",
+        "sagemaker:UpdateInferenceComponentRuntimeConfig",
+        "sagemaker:BatchDescribeModelPackage",
+        "sagemaker:UpdateModelPackage",
+        "sagemaker:DeleteModel",
+        "sagemaker:DeleteModelPackage",
+        "sagemaker:DeleteModelPackageGroup",
+        "sagemaker:DeleteInferenceComponent",
+        "sagemaker:InvokeEndpoint",
+        "sagemaker:InvokeEndpointAsync",
+        "sagemaker:InvokeEndpointWithResponseStream",
+        "sagemaker:DescribeInferenceComponent",
+        "sagemaker:DescribeEndpointConfig",
+        "sagemaker:DescribeModel",
+        "sagemaker:DescribeOptimizationJob",
+        "sagemaker:DescribeEndpoint"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerUpdateInferenceComponentRuntimeConfigAutoscalingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:UpdateInferenceComponentRuntimeConfig"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "application-autoscaling.amazonaws.com",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerDescribeUpdateDeletePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeInferenceRecommendationsJob",
+        "sagemaker:DescribeModelPackage",
+        "sagemaker:DescribeModelPackageGroup",
+        "sagemaker:UpdatePipeline",
+        "sagemaker:DescribePipeline",
+        "sagemaker:DescribePipelineExecution",
+        "sagemaker:DescribePipelineDefinitionForExecution",
+        "sagemaker:DeletePipeline",
+        "sagemaker:UpdatePipelineExecution",
+        "sagemaker:StartPipelineExecution",
+        "sagemaker:StopPipelineExecution",
+        "sagemaker:DescribeTransformJob",
+        "sagemaker:StopTransformJob",
+        "sagemaker:RetryPipelineExecution",
+        "sagemaker:SendPipelineExecutionStepSuccess",
+        "sagemaker:SendPipelineExecutionStepFailure",
+        "sagemaker:DescribeHyperParameterTuningJob",
+        "sagemaker:DescribeAutoMLJob",
+        "sagemaker:DescribeProcessingJob",
+        "sagemaker:DescribeTrainingJob"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerLineageSpecialPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateContext",
+        "sagemaker:CreateArtifact",
+        "sagemaker:CreateAction",
+        "sagemaker:AddAssociation",
+        "sagemaker:DeleteAssociation",
+        "sagemaker:DeleteContext",
+        "sagemaker:DeleteAction",
+        "sagemaker:DeleteArtifact"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerModelRegistryLineageSpecialPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:QueryLineage",
+        "sagemaker:DescribeAction",
+        "sagemaker:DescribeArtifact",
+        "sagemaker:DescribeTrialComponent",
+        "sagemaker:DescribeContext"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:Search",
+        "sagemaker:GetSearchSuggestions",
+        "sagemaker:ListTrainingJobs",
+        "sagemaker:ListTransformJobs",
+        "sagemaker:ListProcessingJobs",
+        "sagemaker:ListAutoMLJobs",
+        "sagemaker:ListCandidatesForAutoMLJob",
+        "sagemaker:ListHyperParameterTuningJobs",
+        "sagemaker:ListTrainingJobsForHyperParameterTuningJob",
+        "sagemaker:ListInferenceComponents",
+        "sagemaker:ListEndpoints",
+        "sagemaker:ListEndpointConfigs",
+        "sagemaker:ListModels",
+        "sagemaker:ListModelPackages",
+        "sagemaker:ListModelPackageGroups",
+        "sagemaker:ListModelMetadata",
+        "sagemaker:ListMlflowTrackingServers",
+        "sagemaker:ListArtifacts",
+        "sagemaker:ListAssociations",
+        "sagemaker:ListHubContents",
+        "sagemaker:ListHubs",
+        "sagemaker:ListPipelineExecutionSteps",
+        "sagemaker:ListPipelineExecutions",
+        "sagemaker:ListPipelineParametersForExecution",
+        "sagemaker:ListPipelines",
+        "sagemaker:ListContexts"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerECRPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:BatchGetImage",
+        "ecr:DescribeImages",
+        "ecr:GetDownloadUrlForLayer"
+      ],
+      "Resource": "arn:aws:ecr:*:*:repository/*"
+    },
+    {
+      "Sid": "SageMakerECRGetAuthorizationTokenPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonSageMakerModelRegistryResourceGroupGetPermission",
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:GetGroupQuery"
+      ],
+      "Resource": "arn:aws:resource-groups:*:*:group/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonSageMakerModelRegistryResourceGroupListPermission",
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:ListGroupResources"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonSageMakerModelRegistryResourceGroupWritePermission",
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:CreateGroup",
+        "resource-groups:Tag"
+      ],
+      "Resource": "arn:aws:resource-groups:*:*:group/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/sagemaker:collection": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonSageMakerModelRegistryResourceGroupDeletePermission",
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:DeleteGroup"
+      ],
+      "Resource": "arn:aws:resource-groups:*:*:group/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/sagemaker:collection": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerMLFlowModelRegistrationPermission",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeModelPackageGroup"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:model-package-group/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerStudioCreatePresignedDomainUrlForUserProfile",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreatePresignedDomainUrl"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:user-profile/*/${aws:PrincipalTag/datazone:userId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerStudioAppListActionsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListApps",
+        "sagemaker:ListDomains",
+        "sagemaker:ListUserProfiles",
+        "sagemaker:ListSpaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerStudioAppDescribeDomainActionsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeDomain"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerStudioAppDescribeJupyterLabAppActionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeApp"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:app/*/*/jupyterlab/*",
+        "arn:aws:sagemaker:*:*:app/*/*/JupyterLab/*"
+      ]
+    },
+    {
+      "Sid": "SageMakerStudioAppDescribeUserProfileActionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeUserProfile"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:user-profile/*/${aws:PrincipalTag/datazone:userId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "SMStudioAppDescribeSpaceActionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeSpace"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerTagPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        },
+        "ForAllValues:StringNotLike": {
+          "aws:TagKeys": [
+            "AmazonDataZone*",
+            "sagemaker:shared-with:*"
+          ]
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "ProjectUserTag*",
+            "sagemaker*",
+            "sm-jumpstart*",
+            "endpoint-has-jumpstart-model"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerStudioAllowCreatingDeletingOwnerUserProfile",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateUserProfile",
+        "sagemaker:DeleteUserProfile"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:user-profile/*/${aws:PrincipalTag/datazone:userId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerStudioRestrictPrivateSpaceToOwnerUserProfile",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateSpace",
+        "sagemaker:UpdateSpace",
+        "sagemaker:DeleteSpace"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:space/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "sagemaker:SpaceSharingType": [
+            "Private"
+          ]
+        },
+        "ArnLike": {
+          "sagemaker:OwnerUserProfileArn": "arn:aws:sagemaker:*:*:user-profile/*/${aws:PrincipalTag/datazone:userId}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerStudioRestrictPrivateSpaceAppsToOwnerUserProfile",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateApp",
+        "sagemaker:DeleteApp"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:app/*/*/jupyterlab/*",
+        "arn:aws:sagemaker:*:*:app/*/*/JupyterLab/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "sagemaker:SpaceSharingType": [
+            "Private"
+          ]
+        },
+        "ArnLike": {
+          "sagemaker:OwnerUserProfileArn": "arn:aws:sagemaker:*:*:user-profile/*/${aws:PrincipalTag/datazone:userId}"
+        }
+      }
+    },
+    {
+      "Sid": "PublishSagemakerMetric",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "cloudwatch:namespace": "/aws/sagemaker/*"
+        }
+      }
+    },
+    {
+      "Sid": "ManageSageMakerEndpointsAutoscalingAlarms",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarms"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "MutateSageMakerEndpointsAutoscalingAlarms",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DeleteAlarms"
+      ],
+      "Resource": "arn:aws:cloudwatch:*:*:alarm:TargetTracking*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:CalledViaLast": "application-autoscaling.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SSMPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:GetParametersByPath"
+      ],
+      "Resource": "arn:aws:ssm:*::parameter/aws/service/sagemaker-distribution/*"
+    },
+    {
+      "Sid": "SageMakerJumpstartS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::jumpstart-cache-prod-*/*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerCrossAccountReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DescribeModelPackage",
+        "sagemaker:DescribeModelPackageGroup",
+        "sagemaker:BatchDescribeModelPackage"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerListTagsRestrictionOnSharedResources",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListTags"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEqualsIfExists": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerAutoScalingPermissionsWithserviceNamespace",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DeregisterScalableTarget",
+        "application-autoscaling:PutScalingPolicy",
+        "application-autoscaling:PutScheduledAction",
+        "application-autoscaling:RegisterScalableTarget"
+      ],
+      "Resource": "arn:aws:application-autoscaling:*:*:scalable-target/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "application-autoscaling:service-namespace": "sagemaker"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerAutoScalingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DescribeScalableTargets",
+        "application-autoscaling:DescribeScalingActivities",
+        "application-autoscaling:DescribeScalingPolicies",
+        "application-autoscaling:DescribeScheduledActions"
+      ],
+      "Resource": "arn:aws:application-autoscaling:*:*:scalable-target/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerSLRForAutoScalingPermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/sagemaker.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_SageMakerEndpoint",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "sagemaker.application-autoscaling.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
