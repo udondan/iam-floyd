@@ -14,7 +14,9 @@
         "q:StartTroubleshootingResolutionExplanation",
         "q:GetTroubleshootingResults",
         "q:UpdateTroubleshootingCommandResult",
-        "q:GetIdentityMetaData"
+        "q:GetIdentityMetaData",
+        "q:GenerateCodeFromCommands",
+        "q:UsePlugin"
       ],
       "Resource": "*"
     },

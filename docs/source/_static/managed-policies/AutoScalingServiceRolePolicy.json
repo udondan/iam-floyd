@@ -114,6 +114,14 @@
         "vpc-lattice:RegisterTargets"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ResourceGroupsManagement",
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:ListGroupResources"
+      ],
+      "Resource": "arn:*:resource-groups:*:*:group/*"
     }
   ]
 }

@@ -37,7 +37,8 @@
       "Effect": "Allow",
       "Action": [
         "ec2:CreateSecurityGroup",
-        "ec2:DescribeSecurityGroups"
+        "ec2:DescribeSecurityGroups",
+        "ec2:GetSecurityGroupsForVpc"
       ],
       "Resource": "*"
     },
