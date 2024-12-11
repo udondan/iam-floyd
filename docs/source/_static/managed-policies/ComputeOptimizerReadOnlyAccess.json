@@ -21,6 +21,7 @@
         "compute-optimizer:GetRDSDatabaseRecommendations",
         "compute-optimizer:GetRDSDatabaseRecommendationProjectedMetrics",
         "compute-optimizer:GetLicenseRecommendations",
+        "compute-optimizer:GetIdleRecommendations",
         "ec2:DescribeInstances",
         "ec2:DescribeVolumes",
         "ecs:ListServices",

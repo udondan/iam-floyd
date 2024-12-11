@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AccountLevelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "verifiedpermissions:CreatePolicyStore",
+        "verifiedpermissions:ListPolicyStores"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PolicyStoreLevelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "verifiedpermissions:*"
+      ],
+      "Resource": [
+        "arn:aws:verifiedpermissions::*:policy-store/*"
+      ]
+    }
+  ]
+}

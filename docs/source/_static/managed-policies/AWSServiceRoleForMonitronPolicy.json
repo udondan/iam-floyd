@@ -11,7 +11,9 @@
         "sso:AssociateProfile",
         "sso:ListDirectoryAssociations",
         "sso-directory:DescribeUsers",
-        "sso-directory:SearchUsers"
+        "sso-directory:SearchUsers",
+        "sso:CreateApplicationAssignment",
+        "sso:ListApplicationAssignments"
       ],
       "Resource": "*"
     }

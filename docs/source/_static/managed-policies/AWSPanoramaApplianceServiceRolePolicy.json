@@ -48,7 +48,7 @@
         "arn:aws:s3:*:*:accesspoint/panorama*"
       ],
       "Condition": {
-        "StringLike": {
+        "ArnLike": {
           "s3:DataAccessPointArn": "arn:aws:s3:*:*:accesspoint/panorama*"
         }
       }

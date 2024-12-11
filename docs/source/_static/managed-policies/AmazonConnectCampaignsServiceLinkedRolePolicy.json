@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ConnectCampaignAccess",
       "Effect": "Allow",
       "Action": [
         "connect-campaigns:ListCampaigns"
@@ -9,12 +10,72 @@
       "Resource": "*"
     },
     {
+      "Sid": "ConnectAccess",
       "Effect": "Allow",
       "Action": [
         "connect:BatchPutContact",
-        "connect:StopContact"
+        "connect:StopContact",
+        "connect:DescribeContactFlow",
+        "connect:SendOutboundEmail"
       ],
       "Resource": "arn:aws:connect:*:*:instance/*"
+    },
+    {
+      "Sid": "EventBridgeListRuleAccess",
+      "Effect": "Allow",
+      "Action": [
+        "events:ListRules"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeManagedResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/ConnectCampaignsRule*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "events:ManagedBy": "connect-campaigns.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeListTargetsByRuleAccess",
+      "Effect": "Allow",
+      "Action": [
+        "events:ListTargetsByRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/ConnectCampaignsRule*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowWisdomForConnectCampaignsEnabledTaggedResources",
+      "Effect": "Allow",
+      "Action": [
+        "wisdom:GetMessageTemplate",
+        "wisdom:RenderMessageTemplate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectCampaignsEnabled": "True"
+        }
+      }
     }
   ]
 }

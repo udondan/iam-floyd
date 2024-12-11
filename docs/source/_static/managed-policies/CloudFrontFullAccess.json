@@ -20,7 +20,10 @@
         "waf:GetWebACL",
         "wafv2:ListWebACLs",
         "wafv2:GetWebACL",
-        "kinesis:ListStreams"
+        "kinesis:ListStreams",
+        "ec2:DescribeInstances",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "ec2:DescribeInternetGateways"
       ],
       "Effect": "Allow",
       "Resource": "*"

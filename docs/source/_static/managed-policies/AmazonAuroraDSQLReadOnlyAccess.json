@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DsqlReadOnlyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:GetCluster",
+        "dsql:ListClusters",
+        "dsql:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RelatedServicesPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvokeDomainInferenceProfiles",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "Resource": "arn:aws:bedrock:*:*:application-inference-profile/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneDomain": "${datazone:domainId}",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "true"
+        }
+      }
+    }
+  ]
+}
