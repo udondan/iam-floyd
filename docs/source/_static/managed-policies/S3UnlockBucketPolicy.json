@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyAllOtherActionsOnAnyResource",
+      "Effect": "Deny",
+      "NotAction": [
+        "s3:DeleteBucketPolicy",
+        "s3:PutBucketPolicy",
+        "s3:GetBucketPolicy",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DenyManagingBucketPolicyForNonRootCallers",
+      "Effect": "Deny",
+      "Action": [
+        "s3:DeleteBucketPolicy",
+        "s3:PutBucketPolicy",
+        "s3:GetBucketPolicy",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotLike": {
+          "aws:PrincipalArn": "arn:aws:iam::*:root"
+        }
+      }
+    }
+  ]
+}

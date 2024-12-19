@@ -204,7 +204,7 @@
       ],
       "Resource": "arn:aws:iam::*:role/aws-elasticbeanstalk*",
       "Condition": {
-        "StringLike": {
+        "ArnLike": {
           "iam:PolicyArn": [
             "arn:aws:iam::aws:policy/AWSElasticBeanstalk*",
             "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalk*"
