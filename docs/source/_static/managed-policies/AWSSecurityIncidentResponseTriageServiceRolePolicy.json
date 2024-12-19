@@ -1,0 +1,68 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "triage.security-ir.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:ListTargetsByRule"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:ArchiveFindings",
+        "guardduty:CreateFilter",
+        "guardduty:DescribeMalwareScans",
+        "guardduty:GetDetector",
+        "guardduty:GetFilter",
+        "guardduty:GetFindings",
+        "guardduty:ListDetectors",
+        "guardduty:StartMalwareScan",
+        "guardduty:UpdateFindingsFeedback"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "securityhub:BatchUpdateFindings",
+        "securityhub:DescribeHub",
+        "securityhub:GetEnabledStandards",
+        "securityhub:GetFindings",
+        "securityhub:ListEnabledProductsForImport",
+        "securityhub:UpdateFindings"
+      ],
+      "Resource": "arn:aws:securityhub:*:*:hub/default"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:CreateCase",
+        "security-ir:TagResource"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/SecurityIncidentResponseManaged": "true"
+        }
+      },
+      "Resource": "*"
+    }
+  ]
+}

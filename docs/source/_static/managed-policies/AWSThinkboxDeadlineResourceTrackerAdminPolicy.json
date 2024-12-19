@@ -177,7 +177,7 @@
         "*"
       ],
       "Condition": {
-        "StringLike": {
+        "ArnLike": {
           "lambda:FunctionArn": [
             "arn:aws:lambda:*:*:function:DeadlineResourceTracker*"
           ]

@@ -21,6 +21,7 @@
         "dynamodb:BatchGetItem",
         "dynamodb:Describe*",
         "dynamodb:List*",
+        "dynamodb:GetAbacStatus",
         "dynamodb:GetItem",
         "dynamodb:GetResourcePolicy",
         "dynamodb:Query",

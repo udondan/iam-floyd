@@ -77,16 +77,41 @@
         "profile:ListCalculatedAttributeDefinitions",
         "profile:ListCalculatedAttributesForProfile",
         "profile:GetDomain",
-        "profile:ListIntegrations"
+        "profile:ListIntegrations",
+        "profile:GetIntegration",
+        "profile:PutIntegration",
+        "profile:DeleteIntegration",
+        "profile:ListEventTriggers",
+        "profile:ListSegmentDefinitions",
+        "profile:ListProfileAttributeValues",
+        "profile:CreateSegmentEstimate",
+        "profile:GetSegmentEstimate",
+        "profile:BatchGetProfile",
+        "profile:BatchGetCalculatedAttributeForProfile",
+        "profile:GetSegmentMembership"
       ],
       "Resource": "arn:aws:profile:*:*:domains/amazon-connect-*"
+    },
+    {
+      "Sid": "AllowCustomerProfilesEventTriggerForConnectDomain",
+      "Effect": "Allow",
+      "Action": [
+        "profile:CreateEventTrigger",
+        "profile:GetEventTrigger",
+        "profile:UpdateEventTrigger",
+        "profile:DeleteEventTrigger"
+      ],
+      "Resource": [
+        "arn:aws:profile:*:*:domains/amazon-connect-*/event-triggers/*"
+      ]
     },
     {
       "Sid": "AllowReadPermissionForCustomerProfileObjects",
       "Effect": "Allow",
       "Action": [
         "profile:ListProfileObjects",
-        "profile:GetProfileObjectType"
+        "profile:GetProfileObjectType",
+        "profile:ListObjectTypeAttributes"
       ],
       "Resource": [
         "arn:aws:profile:*:*:domains/amazon-connect-*/object-types/*"
@@ -138,7 +163,21 @@
         "wisdom:UpdateQuickResponse",
         "wisdom:DeleteQuickResponse",
         "wisdom:PutFeedback",
-        "wisdom:ListContentAssociations"
+        "wisdom:ListContentAssociations",
+        "wisdom:CreateMessageTemplate",
+        "wisdom:UpdateMessageTemplate",
+        "wisdom:UpdateMessageTemplateMetadata",
+        "wisdom:GetMessageTemplate",
+        "wisdom:DeleteMessageTemplate",
+        "wisdom:ListMessageTemplates",
+        "wisdom:SearchMessageTemplates",
+        "wisdom:ActivateMessageTemplate",
+        "wisdom:DeactivateMessageTemplate",
+        "wisdom:CreateMessageTemplateVersion",
+        "wisdom:ListMessageTemplateVersions",
+        "wisdom:CreateMessageTemplateAttachment",
+        "wisdom:DeleteMessageTemplateAttachment",
+        "wisdom:RenderMessageTemplate"
       ],
       "Resource": "*",
       "Condition": {
@@ -168,6 +207,20 @@
       ],
       "Resource": [
         "arn:aws:profile:*:*:domains/amazon-connect-*/calculated-attributes/*"
+      ]
+    },
+    {
+      "Sid": "AllowCustomerProfilesSegmentationForConnectDomain",
+      "Effect": "Allow",
+      "Action": [
+        "profile:CreateSegmentDefinition",
+        "profile:GetSegmentDefinition",
+        "profile:DeleteSegmentDefinition",
+        "profile:CreateSegmentSnapshot",
+        "profile:GetSegmentSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:profile:*:*:domains/amazon-connect-*/segment-definitions/*"
       ]
     },
     {
@@ -218,6 +271,116 @@
       "Resource": [
         "arn:aws:profile:*:*:domains/amazon-connect-*/object-types/*"
       ]
+    },
+    {
+      "Sid": "AllowChimeSDKVoiceConnectorGetOperationForConnect",
+      "Effect": "Allow",
+      "Action": [
+        "chime:GetVoiceConnector"
+      ],
+      "Resource": "arn:aws:chime:*:*:vc/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectEnabled": "True",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowChimeSDKVoiceConnectorListOperationForConnect",
+      "Effect": "Allow",
+      "Action": [
+        "chime:ListVoiceConnectors"
+      ],
+      "Resource": "arn:aws:chime:*:*:vc/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SESPermissionsForManagingReceiptRules",
+      "Effect": "Allow",
+      "Action": [
+        "ses:DescribeReceiptRule",
+        "ses:UpdateReceiptRule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SESPermissionForManagingConnectProvidedSESIdentity",
+      "Effect": "Allow",
+      "Action": [
+        "ses:DeleteEmailIdentity"
+      ],
+      "Resource": "arn:aws:ses:*:*:identity/*.email.connect.aws*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SESConfigurationSetPermissionsForSendingEmail",
+      "Effect": "Allow",
+      "Action": [
+        "ses:SendRawEmail"
+      ],
+      "Resource": "arn:aws:ses:*:*:configuration-set/configuration-set-for-connect-DO-NOT-DELETE",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "PassRoleToSESForReceiptRuleManagement",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonConnectEmailSESAccessRole"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "ses.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSocialMessagingOperations",
+      "Effect": "Allow",
+      "Action": [
+        "social-messaging:SendWhatsAppMessage",
+        "social-messaging:PostWhatsAppMessageMedia",
+        "social-messaging:GetWhatsAppMessageMedia",
+        "social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber"
+      ],
+      "Resource": "arn:aws:social-messaging:*:*:phone-number-id/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectEnabled": "True",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowMobileTargetingOperationsForConnect",
+      "Effect": "Allow",
+      "Action": "mobiletargeting:SendMessages",
+      "Resource": "arn:aws:mobiletargeting:*:*:apps/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }
