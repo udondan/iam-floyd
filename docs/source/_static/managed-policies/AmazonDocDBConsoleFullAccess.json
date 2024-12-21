@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DocdbSids",
       "Effect": "Allow",
       "Action": [
         "docdb-elastic:CreateCluster",
@@ -17,6 +18,9 @@
         "docdb-elastic:TagResource",
         "docdb-elastic:UntagResource",
         "docdb-elastic:ListTagsForResource",
+        "docdb-elastic:CopyClusterSnapshot",
+        "docdb-elastic:StartCluster",
+        "docdb-elastic:StopCluster",
         "rds:AddRoleToDBCluster",
         "rds:AddSourceIdentifierToSubscription",
         "rds:AddTagsToResource",
@@ -91,6 +95,7 @@
       ]
     },
     {
+      "Sid": "DependencySids",
       "Effect": "Allow",
       "Action": [
         "iam:GetRole",
@@ -153,6 +158,7 @@
       ]
     },
     {
+      "Sid": "DocdbSLRSid",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "arn:aws:iam::*:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
@@ -163,6 +169,7 @@
       }
     },
     {
+      "Sid": "DocdbElasticSLRSid",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "arn:aws:iam::*:role/aws-service-role/docdb-elastic.amazonaws.com/AWSServiceRoleForDocDB-Elastic",
