@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DsqlAllPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:CreateCluster",
+        "dsql:GetCluster",
+        "dsql:UpdateCluster",
+        "dsql:DeleteCluster",
+        "dsql:ListClusters",
+        "dsql:CreateMultiRegionClusters",
+        "dsql:DeleteMultiRegionClusters",
+        "dsql:TagResource",
+        "dsql:UntagResource",
+        "dsql:ListTagsForResource",
+        "dsql:DbConnectAdmin",
+        "dsql:DbConnect"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DsqlConsolePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetTagKeys",
+        "tag:GetTagValues",
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateDsqlServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "dsql.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

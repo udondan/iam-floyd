@@ -149,10 +149,17 @@
       "Effect": "Allow",
       "Action": [
         "storagegateway:DescribeGatewayInformation",
-        "storagegateway:ListVolumes",
         "storagegateway:ListLocalDisks"
       ],
       "Resource": "arn:aws:storagegateway:*:*:gateway/*"
+    },
+    {
+      "Sid": "StorageGatewayGatewayStarPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "storagegateway:ListVolumes"
+      ],
+      "Resource": "*"
     },
     {
       "Sid": "IamRolePermissions",

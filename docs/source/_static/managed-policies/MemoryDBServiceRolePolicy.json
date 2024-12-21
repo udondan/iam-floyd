@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "CreateMemoryDBTagsOnNetworkInterfaces",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags"
@@ -19,6 +20,7 @@
       }
     },
     {
+      "Sid": "CreateNetworkInterfaces",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateNetworkInterface"
@@ -30,6 +32,7 @@
       ]
     },
     {
+      "Sid": "DeleteMemoryDBTaggedNetworkInterfaces",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteNetworkInterface",
@@ -43,6 +46,7 @@
       }
     },
     {
+      "Sid": "DeleteNetworkInterfaces",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteNetworkInterface",
@@ -51,6 +55,7 @@
       "Resource": "arn:aws:ec2:*:*:security-group/*"
     },
     {
+      "Sid": "DescribeEC2Resources",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeSecurityGroups",
@@ -62,6 +67,7 @@
       "Resource": "*"
     },
     {
+      "Sid": "PutCloudWatchMetricData",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:PutMetricData"
@@ -72,6 +78,14 @@
           "cloudwatch:namespace": "AWS/MemoryDB"
         }
       }
+    },
+    {
+      "Sid": "ReplicateMemoryDBMultiRegionClusterData",
+      "Effect": "Allow",
+      "Action": [
+        "memorydb:ReplicateMultiRegionClusterData"
+      ],
+      "Resource": "arn:aws:memorydb:*:*:cluster/*"
     }
   ]
 }

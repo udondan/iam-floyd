@@ -1,0 +1,81 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSMarketplaceChangeSetReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeChangeSet",
+        "aws-marketplace:ListChangeSets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceOfferManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartChangeSet"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/Offer/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ChangeSet/*"
+      ]
+    },
+    {
+      "Sid": "AWSMarketplaceCreateOfferOnProduct",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartChangeSet"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "catalog:ChangeType": "CreateOfferOnProduct"
+        }
+      }
+    },
+    {
+      "Sid": "AWSMarketplaceListEntities",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceEntitiesReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/Offer/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ContainerProduct/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ProfessionalServicesProduct/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/SaaSProduct/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/AmiProduct/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ResaleAuthorization/*"
+      ]
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:DescribeAgreement",
+        "aws-marketplace:GetAgreementTerms"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws-marketplace:PartyType": "Proposer"
+        },
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        }
+      }
+    }
+  ]
+}

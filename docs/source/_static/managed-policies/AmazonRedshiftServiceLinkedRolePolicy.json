@@ -225,6 +225,23 @@
         "arn:aws:servicequotas:*:*:ec2/L-0263D0A3",
         "arn:aws:servicequotas:*:*:vpc/L-29B6F2EB"
       ]
+    },
+    {
+      "Sid": "DiscoverRedshiftCatalogs",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetCatalog",
+        "glue:GetCatalogs"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:catalog/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "glue:EnabledForRedshiftAutoDiscovery": "true"
+        }
+      }
     }
   ]
 }

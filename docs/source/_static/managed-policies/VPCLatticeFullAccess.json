@@ -22,7 +22,9 @@
         "s3:ListAllMyBuckets",
         "lambda:ListAliases",
         "lambda:ListFunctions",
-        "lambda:ListVersionsByFunction"
+        "lambda:ListVersionsByFunction",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters"
       ],
       "Resource": "*"
     },
