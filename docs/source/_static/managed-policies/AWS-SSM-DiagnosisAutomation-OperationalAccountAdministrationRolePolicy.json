@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowReadOnlyAccessOrganization",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListRoots",
+        "organizations:ListChildren"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAssumeDiagnosisExecutionRoleWithinOrg",
+      "Effect": "Allow",
+      "Action": "sts:AssumeRole",
+      "Resource": "arn:aws:iam::*:role/AWS-SSM-DiagnosisExecutionRole*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceOrgId": "${aws:PrincipalOrgId}"
+        }
+      }
+    }
+  ]
+}

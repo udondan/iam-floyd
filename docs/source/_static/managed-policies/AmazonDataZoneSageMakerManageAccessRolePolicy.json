@@ -123,7 +123,8 @@
         "arn:aws:s3:::SageMaker-DataZone*",
         "arn:aws:s3:::datazone-sagemaker*",
         "arn:aws:s3:::DataZone-SageMaker*",
-        "arn:aws:s3:::amazon-datazone*"
+        "arn:aws:s3:::amazon-datazone*",
+        "arn:aws:s3:::amazon-sagemaker*"
       ]
     },
     {
@@ -138,7 +139,8 @@
         "arn:aws:s3:::SageMaker-DataZone*",
         "arn:aws:s3:::datazone-sagemaker*",
         "arn:aws:s3:::DataZone-SageMaker*",
-        "arn:aws:s3:::amazon-datazone*"
+        "arn:aws:s3:::amazon-datazone*",
+        "arn:aws:s3:::amazon-sagemaker*"
       ]
     },
     {

@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityIRReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:BatchGetMemberAccountDetails",
+        "security-ir:GetMembership",
+        "security-ir:ListMemberships",
+        "security-ir:GetCase",
+        "security-ir:ListCases",
+        "security-ir:GetCaseAttachmentDownloadUrl",
+        "security-ir:ListComments",
+        "security-ir:ListCaseEdits",
+        "security-ir:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

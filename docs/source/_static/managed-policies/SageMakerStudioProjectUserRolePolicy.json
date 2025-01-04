@@ -1,0 +1,1856 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CommonUserCodeCommitPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "codecommit:BatchGetCommits",
+        "codecommit:BatchGetPullRequests",
+        "codecommit:BatchGetRepositories",
+        "codecommit:BatchDescribeMergeConflicts",
+        "codecommit:CreateBranch",
+        "codecommit:CreateCommit",
+        "codecommit:CreatePullRequest",
+        "codecommit:DeleteBranch",
+        "codecommit:DeleteFile",
+        "codecommit:DescribeMergeConflicts",
+        "codecommit:DescribePullRequestEvents",
+        "codecommit:GetBlob",
+        "codecommit:GetBranch",
+        "codecommit:GetComment",
+        "codecommit:GetCommentReactions",
+        "codecommit:GetCommentsForComparedCommit",
+        "codecommit:GetCommentsForPullRequest",
+        "codecommit:GetCommit",
+        "codecommit:GetCommitHistory",
+        "codecommit:GetCommitsFromMergeBase",
+        "codecommit:GetDifferences",
+        "codecommit:GetFile",
+        "codecommit:GetFolder",
+        "codecommit:GetMergeCommit",
+        "codecommit:GetMergeConflicts",
+        "codecommit:GetMergeOptions",
+        "codecommit:GetObjectIdentifier",
+        "codecommit:GetPullRequest",
+        "codecommit:GetPullRequestApprovalStates",
+        "codecommit:GetPullRequestOverrideState",
+        "codecommit:GetReferences",
+        "codecommit:GetRepository",
+        "codecommit:GetRepositoryTriggers",
+        "codecommit:GetTree",
+        "codecommit:GetUploadArchiveStatus",
+        "codecommit:GitPull",
+        "codecommit:GitPush",
+        "codecommit:ListAssociatedApprovalRuleTemplatesForRepository",
+        "codecommit:ListBranches",
+        "codecommit:ListFileCommitHistory",
+        "codecommit:ListPullRequests",
+        "codecommit:ListTagsForResource",
+        "codecommit:MergeBranchesByFastForward",
+        "codecommit:MergeBranchesBySquash",
+        "codecommit:MergeBranchesByThreeWay",
+        "codecommit:MergePullRequestByFastForward",
+        "codecommit:MergePullRequestBySquash",
+        "codecommit:MergePullRequestByThreeWay",
+        "codecommit:UpdateComment",
+        "codecommit:UpdateDefaultBranch",
+        "codecommit:UpdatePullRequestApprovalRuleContent",
+        "codecommit:UpdatePullRequestApprovalState",
+        "codecommit:UpdatePullRequestDescription",
+        "codecommit:UpdatePullRequestStatus",
+        "codecommit:UpdatePullRequestTitle",
+        "codecommit:UpdateRepositoryDescription",
+        "codecommit:PostCommentForComparedCommit",
+        "codecommit:PostCommentForPullRequest",
+        "codecommit:PostCommentReply",
+        "codecommit:PutCommentReaction",
+        "codecommit:PutFile"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "CodeCommitKmsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "codecommit.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "kms:EncryptionContext:aws:codecommit:id": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AllowCodeWhispererGenerateRecommendations",
+      "Effect": "Allow",
+      "Action": [
+        "codewhisperer:GenerateRecommendations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowGlueCreateEni",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "glue:RoleAssumedBy": "glue.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "aws:TagKeys": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowGlueCreateEniOnSecurityGroup",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:security-group/*",
+      "Condition": {
+        "StringEquals": {
+          "glue:RoleAssumedBy": "glue.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowGlueCreateEniOnSubnet",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:subnet/*",
+      "Condition": {
+        "StringEquals": {
+          "glue:RoleAssumedBy": "glue.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowManageGlueEni",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:AttachNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "glue:RoleAssumedBy": "glue.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "aws:ResourceTag/aws-glue-service-resource": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAttachGlueEniOnInstance",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringEquals": {
+          "glue:RoleAssumedBy": "glue.amazonaws.com"
+        },
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowDescribeGlueEni",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "glue:RoleAssumedBy": "glue.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "FederatedDataConnectionGlueSecret",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "glue:RoleAssumedBy": "glue.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "GlueKernelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeSecurityGroups",
+        "glue:ListSessions",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GlueCreateAndTagPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateSession",
+        "glue:CreateBlueprint",
+        "glue:CreateJob",
+        "glue:CreateDataQualityRuleset",
+        "glue:CreateWorkflow",
+        "glue:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*",
+        "arn:aws:glue:*:*:blueprint/*",
+        "arn:aws:glue:*:*:job/*",
+        "arn:aws:glue:*:*:dataQualityRuleset/*",
+        "arn:aws:glue:*:*:workflow/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:TagKeys": "false"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "AmazonDataZone*",
+            "ProjectUserTag*"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:PrincipalTag/EnableGlueWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GlueTagSessionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*",
+        "arn:aws:glue:*:*:blueprint/*",
+        "arn:aws:glue:*:*:job/*",
+        "arn:aws:glue:*:*:dataQualityRuleset/*",
+        "arn:aws:glue:*:*:workflow/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotLike": {
+          "aws:TagKeys": [
+            "AmazonDataZone*"
+          ]
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "ProjectUserTag*"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:PrincipalTag/EnableGlueWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GluePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CancelStatement",
+        "glue:GetSession",
+        "glue:ListStatements",
+        "glue:DeleteSession",
+        "glue:RunStatement",
+        "glue:GetStatement",
+        "glue:StopSession",
+        "glue:GetDashboardUrl",
+        "glue:NotifyEvent",
+        "glue:StartBlueprintRun",
+        "glue:PutWorkflowRunProperties",
+        "glue:DeleteJob",
+        "glue:DeleteWorkflow",
+        "glue:DeleteBlueprint",
+        "glue:UpdateWorkflow",
+        "glue:UpdateJob",
+        "glue:StartWorkflowRun",
+        "glue:ResumeWorkflowRun",
+        "glue:UpdateBlueprint",
+        "glue:BatchStopJobRun",
+        "glue:StopWorkflowRun",
+        "glue:StartJobRun",
+        "glue:CancelDataQualityRuleRecommendationRun",
+        "glue:CancelDataQualityRulesetEvaluationRun",
+        "glue:DeleteDataQualityRuleset",
+        "glue:GetDataQualityModel",
+        "glue:GetDataQualityModelResult",
+        "glue:GetDataQualityResult",
+        "glue:GetDataQualityRuleRecommendationRun",
+        "glue:GetDataQualityRuleset",
+        "glue:GetDataQualityRulesetEvaluationRun",
+        "glue:ListDataQualityResults",
+        "glue:ListDataQualityRuleRecommendationRuns",
+        "glue:ListDataQualityRulesetEvaluationRuns",
+        "glue:ListDataQualityRulesets",
+        "glue:PublishDataQuality",
+        "glue:PutDataQualityProfileAnnotation",
+        "glue:PutDataQualityStatisticAnnotation",
+        "glue:StartDataQualityRuleRecommendationRun",
+        "glue:StartDataQualityRulesetEvaluationRun",
+        "glue:UpdateDataQualityRuleset"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*",
+        "arn:aws:glue:*:*:blueprint/*",
+        "arn:aws:glue:*:*:job/*",
+        "arn:aws:glue:*:*:dataQualityRuleset/*",
+        "arn:aws:glue:*:*:workflow/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:PrincipalTag/EnableGlueWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GlueVisualETLPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetGeneratedCode"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GlueCompletionsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:StartCompletion",
+        "glue:GetCompletion"
+      ],
+      "Resource": "arn:aws:glue:*:*:completion/*"
+    },
+    {
+      "Sid": "EC2TagsPermissionsForGlue",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:TagKeys": "false"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "aws-glue-*"
+          ]
+        },
+        "StringEquals": {
+          "glue:RoleAssumedBy": "glue.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "GlueKmsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "glue.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "kms:EncryptionContext:glue_catalog_id": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AirflowActionsForTaggedEnvironments",
+      "Effect": "Allow",
+      "Action": [
+        "airflow:GetEnvironment",
+        "airflow:UpdateEnvironment"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "AirflowListEnvironments",
+      "Effect": "Allow",
+      "Action": [
+        "airflow:ListEnvironments"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AirflowUiApiAccess",
+      "Effect": "Allow",
+      "Action": [
+        "airflow:CreateWebLoginToken",
+        "airflow:InvokeRestApi"
+      ],
+      "Resource": [
+        "arn:aws:airflow:*:*:role/DataZoneMWAAEnv-${aws:PrincipalTag/AmazonDataZoneDomain}-${aws:PrincipalTag/AmazonDataZoneProject}-${aws:PrincipalTag/AmazonDataZoneScopeName}/User"
+      ]
+    },
+    {
+      "Sid": "AirflowCloudwatchLogsActions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup",
+        "logs:PutLogEvents",
+        "logs:GetLogEvents",
+        "logs:GetLogRecord",
+        "logs:GetLogGroupFields",
+        "logs:GetQueryResults"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:airflow-DataZoneMWAAEnv-${aws:PrincipalTag/AmazonDataZoneDomain}-${aws:PrincipalTag/AmazonDataZoneProject}-${aws:PrincipalTag/AmazonDataZoneScopeName}-*"
+      ]
+    },
+    {
+      "Sid": "AirflowCloudwatchActions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "cloudwatch:namespace": "AmazonMWAA"
+        }
+      }
+    },
+    {
+      "Sid": "AirflowS3GetAccountPublicAccessBlock",
+      "Effect": "Allow",
+      "Action": "s3:GetAccountPublicAccessBlock",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AirflowSqsActions",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:ChangeMessageVisibility",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes",
+        "sqs:GetQueueUrl",
+        "sqs:ReceiveMessage",
+        "sqs:SendMessage"
+      ],
+      "Resource": [
+        "arn:aws:sqs:*:*:airflow-celery-*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AirflowS3BucketActions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetEncryptionConfiguration"
+      ],
+      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}"
+    },
+    {
+      "Sid": "DataLakeS3BucketActions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DataLakeCrossAccountS3Permissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject*",
+        "s3:ListMultipartUploadParts",
+        "s3:ListBucket"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DataLakeCrossAccountKMSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListGrants",
+        "kms:GetPublicKey",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:ViaService": "s3.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DataLakeCrossAccountDecryptKMSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:ViaService": "s3.*.amazonaws.com"
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:s3:arn"
+        }
+      }
+    },
+    {
+      "Sid": "ListDomainS3BucketPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:ListBucketVersions"
+      ],
+      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}",
+            "${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}/*"
+          ]
+        },
+        "StringNotEquals": {
+          "aws:PrincipalTag/DomainBucketName": "",
+          "aws:PrincipalTag/AmazonDataZoneDomain": "",
+          "aws:PrincipalTag/AmazonDataZoneProject": ""
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AirflowListDomainS3BucketPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalTag/DomainBucketName": ""
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListDomainBucketFromAthenaFederatedCatalog",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}"
+      ],
+      "Condition": {
+        "ArnEquals": {
+          "lambda:SourceFunctionArn": "arn:aws:lambda:*:*:function:athenafederatedcatalog_*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AccessDomainS3BucketPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject*",
+        "s3:PutObject",
+        "s3:PutObjectRetention",
+        "s3:RestoreObject",
+        "s3:ReplicateObject",
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion",
+        "s3:ListMultipartUploadParts",
+        "s3:AbortMultipartUpload"
+      ],
+      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}/*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalTag/DomainBucketName": "",
+          "aws:PrincipalTag/AmazonDataZoneDomain": "",
+          "aws:PrincipalTag/AmazonDataZoneProject": ""
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TagS3ObjectPermissionsForBedrockEvaluation",
+      "Effect": "Allow",
+      "Action": "s3:PutObjectTagging",
+      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}/genAI/assets/evaluations/*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalTag/DomainBucketName": "",
+          "aws:PrincipalTag/AmazonDataZoneDomain": "",
+          "aws:PrincipalTag/AmazonDataZoneProject": ""
+        },
+        "StringEquals": {
+          "s3:RequestObjectTag/BasicValidationStatus": [
+            "valid",
+            "invalid"
+          ],
+          "s3:RequestObjectTag/ContainsReferenceResponseForAllPrompts": [
+            "true",
+            "false"
+          ]
+        },
+        "ForAllValues:StringEquals": {
+          "s3:RequestObjectTagKeys": [
+            "BasicValidationStatus",
+            "ContainsReferenceResponseForAllPrompts"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AccessDomainS3BucketKmsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "s3.*.amazonaws.com"
+        },
+        "ArnLike": {
+          "kms:EncryptionContext:aws:s3:arn": [
+            "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}",
+            "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ListLogGroupsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ProjectLogGroupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogStreams",
+        "logs:StartQuery",
+        "logs:GetLogEvents",
+        "logs:GetLogRecord",
+        "logs:GetLogGroupFields",
+        "logs:GetQueryResults",
+        "logs:PutLogEvents",
+        "logs:CreateLogStream",
+        "logs:FilterLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}",
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}:log-stream:*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchStopQuery",
+      "Effect": "Allow",
+      "Action": [
+        "logs:StopQuery"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DataLakeEC2Permissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "DataLakeAthenaPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "athena:TerminateSession",
+        "athena:CreatePreparedStatement",
+        "athena:StopCalculationExecution",
+        "athena:StartQueryExecution",
+        "athena:UpdatePreparedStatement",
+        "athena:BatchGetNamedQuery",
+        "athena:BatchGetPreparedStatement",
+        "athena:BatchGetQueryExecution",
+        "athena:UpdateNotebook",
+        "athena:DeleteNotebook",
+        "athena:DeletePreparedStatement",
+        "athena:UpdateNotebookMetadata",
+        "athena:DeleteNamedQuery",
+        "athena:GetCalculationExecution",
+        "athena:GetCalculationExecutionCode",
+        "athena:GetCalculationExecutionStatus",
+        "athena:GetNamedQuery",
+        "athena:GetNotebookMetadata",
+        "athena:GetPreparedStatement",
+        "athena:GetQueryExecution",
+        "athena:GetQueryResults",
+        "athena:GetQueryResultsStream",
+        "athena:GetQueryRuntimeStatistics",
+        "athena:GetSession",
+        "athena:GetSessionStatus",
+        "athena:GetWorkGroup",
+        "athena:UpdateNamedQuery",
+        "athena:CreateNamedQuery",
+        "athena:ExportNotebook",
+        "athena:StopQueryExecution",
+        "athena:StartCalculationExecution",
+        "athena:StartSession",
+        "athena:CreatePresignedNotebookUrl",
+        "athena:CreateNotebook",
+        "athena:ImportNotebook",
+        "athena:ListQueryExecutions",
+        "athena:ListTagsForResource",
+        "athena:ListNamedQueries",
+        "athena:ListPreparedStatements"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "DefaultAthenaDataCatalogPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "athena:GetDatabase",
+        "athena:GetDataCatalog",
+        "athena:GetTableMetadata",
+        "athena:ListDatabases",
+        "athena:ListTableMetadata"
+      ],
+      "Resource": [
+        "arn:aws:athena:*:*:datacatalog/AwsDataCatalog",
+        "arn:aws:athena:*:*:datacatalog/awsdatacatalog"
+      ]
+    },
+    {
+      "Sid": "AthenaListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "athena:ListDataCatalogs",
+        "athena:ListEngineVersions",
+        "athena:ListWorkGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DataZoneUserPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:CreateConnection",
+        "datazone:DeleteConnection",
+        "datazone:GetConnection",
+        "datazone:GetDomain",
+        "datazone:GetDomainExecutionRoleCredentials",
+        "datazone:GetEnvironment",
+        "datazone:GetEnvironmentBlueprintConfiguration",
+        "datazone:GetProject",
+        "datazone:GetUserProfile",
+        "datazone:ListConnections",
+        "datazone:ListEnvironments",
+        "datazone:ListEnvironmentBlueprints",
+        "datazone:ListProjects",
+        "datazone:UpdateConnection"
+      ],
+      "Resource": "arn:aws:datazone:*:*:domain/${aws:PrincipalTag/AmazonDataZoneDomain}"
+    },
+    {
+      "Sid": "GlueGetDefaultDatabase",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetDatabase"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:database/default"
+      ]
+    },
+    {
+      "Sid": "GlueListDatabasesOnNoDatabases",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetDatabases"
+      ],
+      "Resource": "arn:aws:glue:*:*:catalog"
+    },
+    {
+      "Sid": "GlueFileUploadPermissions",
+      "Action": [
+        "glue:GetClassifier",
+        "glue:GetClassifiers",
+        "glue:UseGlueStudio"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    },
+    {
+      "Sid": "GlueProjectConnectionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:PassConnection",
+        "glue:GetConnection",
+        "glue:GetConnections"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "GlueGetConnectionOnlyOnCatalog",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetConnection",
+        "glue:GetConnections"
+      ],
+      "Resource": "arn:aws:glue:*:*:catalog"
+    },
+    {
+      "Sid": "GlueDatalakePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateTable",
+        "glue:DeleteTable",
+        "glue:BatchDeleteTable",
+        "glue:UpdateTable",
+        "glue:BatchCreatePartition",
+        "glue:CreatePartition",
+        "glue:DeletePartition",
+        "glue:BatchDeletePartition",
+        "glue:UpdatePartition",
+        "glue:BatchGetPartition",
+        "glue:BatchGetTableOptimizer",
+        "glue:GetCatalogImportStatus",
+        "glue:GetColumnStatisticsForPartition",
+        "glue:GetColumnStatisticsForTable",
+        "glue:GetColumnStatisticsTaskRun",
+        "glue:GetColumnStatisticsTaskRuns",
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:GetPartition",
+        "glue:GetPartitionIndexes",
+        "glue:GetPartitions",
+        "glue:GetTable",
+        "glue:GetTableOptimizer",
+        "glue:GetTableVersion",
+        "glue:GetTableVersions",
+        "glue:GetTables",
+        "glue:SearchTables",
+        "glue:ListTableOptimizerRuns",
+        "glue:CreatePartitionIndex",
+        "glue:BatchUpdatePartition",
+        "glue:DeleteTableVersion",
+        "glue:DeleteColumnStatisticsForPartition",
+        "glue:DeleteColumnStatisticsForTable",
+        "glue:DeletePartitionIndex",
+        "glue:UpdateColumnStatisticsForPartition",
+        "glue:UpdateColumnStatisticsForTable",
+        "glue:BatchDeleteTableVersion",
+        "glue:GetCatalogs",
+        "glue:GetCatalog"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "glue:LakeFormationPermissions": "Enabled"
+        }
+      }
+    },
+    {
+      "Sid": "GlueCrawlerPermissions",
+      "Effect": "Allow",
+      "Action": "glue:ListCrawls",
+      "Resource": "arn:aws:glue:*:*:crawler/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "GlueGlobalTempDatabasePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateDatabase",
+        "glue:DeleteDatabase",
+        "glue:GetDatabase"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:database/global_temp",
+        "arn:aws:glue:*:*:catalog"
+      ]
+    },
+    {
+      "Sid": "GlueDefaultCatalogsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetCatalog",
+        "glue:UpdateCatalog"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "glue:LakeFormationPermissions": "Enabled"
+        }
+      }
+    },
+    {
+      "Sid": "GlueNonDefaultCatalogsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetCatalog",
+        "glue:UpdateCatalog"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "glue:LakeFormationPermissions": "Enabled",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "GlueCatalogDatabasePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:CreateDatabase",
+        "glue:DeleteDatabase",
+        "glue:GetDatabase"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:database/*",
+        "arn:aws:glue:*:*:catalog/*"
+      ]
+    },
+    {
+      "Sid": "LakeFormationPermissionForDataLakeAccess",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:GetDataAccess"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMListRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMGetRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAssumeAccessRole",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalTag/AmazonDataZoneProject": ""
+        }
+      }
+    },
+    {
+      "Sid": "SetSourceIdentityForAssumeAccessRole",
+      "Effect": "Allow",
+      "Action": "sts:SetSourceIdentity",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "sts:SourceIdentity": "${aws:PrincipalTag/datazone:userId}"
+        }
+      }
+    },
+    {
+      "Sid": "FederatedDataConnectionPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetConnection",
+        "glue:GetConnections",
+        "glue:GetTags"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "UnRestrictedAccessForGlueEntities",
+      "Effect": "Allow",
+      "Action": [
+        "glue:ListConnectionTypes",
+        "glue:DescribeConnectionType"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GlueEntitiesAccessForFederatedDatabase",
+      "Effect": "Allow",
+      "Action": [
+        "glue:ListEntities",
+        "glue:DescribeEntity",
+        "glue:GetEntityRecords"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowPassRoleOnProjectRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/${aws:PrincipalTag/RoleName}",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "sagemaker.amazonaws.com",
+            "glue.amazonaws.com",
+            "airflow.amazonaws.com",
+            "emr-serverless.amazonaws.com"
+          ],
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SQLWorkBenchActionsWithoutResourceType",
+      "Effect": "Allow",
+      "Action": [
+        "sqlworkbench:PutTab",
+        "sqlworkbench:DeleteTab",
+        "sqlworkbench:DriverExecute",
+        "sqlworkbench:GetUserInfo",
+        "sqlworkbench:ListTabs",
+        "sqlworkbench:GetAutocompletionMetadata",
+        "sqlworkbench:GetAutocompletionResource",
+        "sqlworkbench:PassAccountSettings",
+        "sqlworkbench:ListQueryExecutionHistory",
+        "sqlworkbench:GetQueryExecutionHistory",
+        "sqlworkbench:CreateConnection",
+        "sqlworkbench:PutQCustomContext",
+        "sqlworkbench:GetQCustomContext",
+        "sqlworkbench:DeleteQCustomContext",
+        "sqlworkbench:GetQSqlRecommendations",
+        "sqlworkbench:GetQSqlPromptQuotas"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RedshiftDataActionsIAMSessionRestriction",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:DescribeStatement",
+        "redshift-data:GetStatementResult",
+        "redshift-data:CancelStatement",
+        "redshift-data:ListStatements"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "redshift-data:statement-owner-iam-userid": "${aws:userid}"
+        }
+      }
+    },
+    {
+      "Sid": "RedshiftDataActionsForResources",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:BatchExecuteStatement",
+        "redshift-data:ExecuteStatement",
+        "redshift-data:DescribeTable",
+        "redshift-data:ListDatabases",
+        "redshift-data:ListSchemas",
+        "redshift-data:ListTables"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAccessExistingRedshiftCompute",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:GetWorkgroup",
+        "redshift-serverless:GetNamespace",
+        "redshift-serverless:ListTagsForResource",
+        "redshift-serverless:GetCredentials",
+        "redshift:DescribeTags",
+        "redshift:GetClusterCredentialsWithIAM",
+        "redshift-data:BatchExecuteStatement",
+        "redshift-data:ExecuteStatement",
+        "redshift-data:DescribeTable",
+        "redshift-data:ListDatabases",
+        "redshift-data:ListSchemas",
+        "redshift-data:ListTables"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/for-use-with-all-datazone-projects": "true"
+        }
+      }
+    },
+    {
+      "Sid": "RedshiftWithoutResourceType",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:ListNamespaces",
+        "redshift-serverless:ListWorkgroups",
+        "redshift:DescribeClusters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RedshiftServerlessWorkgroupWithResourceType",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:GetWorkgroup",
+        "redshift-serverless:ListTagsForResource",
+        "redshift-serverless:GetNamespace",
+        "redshift:DescribeTags"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "RedshiftExistingComputeConnectToCatalog",
+      "Effect": "Allow",
+      "Action": [
+        "redshift:GetClusterCredentialsWithIAM"
+      ],
+      "Resource": "arn:aws:redshift:*:*:dbname:*/*",
+      "Condition": {
+        "Bool": {
+          "aws:ViaAWSService": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowListSecrets",
+      "Effect": "Allow",
+      "Action": "secretsmanager:ListSecrets",
+      "Resource": "*"
+    },
+    {
+      "Sid": "RedshiftServerlessGetCredentialsOnlyForDbUser",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:GetCredentials",
+        "redshift:GetClusterCredentialsWithIAM"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        },
+        "StringLike": {
+          "aws:PrincipalTag/RedshiftDbUser": [
+            "user-${aws:PrincipalTag/datazone:userId}*",
+            "user-project@${aws:PrincipalTag/AmazonDataZoneProject}",
+            "user-*@*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RedshiftDataActionsForManagedWorkgroup",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-data:BatchExecuteStatement",
+        "redshift-data:ExecuteStatement",
+        "redshift-data:DescribeStatement",
+        "redshift-data:GetStatementResult",
+        "redshift-data:CancelStatement",
+        "redshift-data:GetStagingBucketLocation",
+        "redshift-serverless:GetManagedWorkgroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "redshift-data:glue-catalog-arn": "arn:aws:glue:*:*:catalog/*"
+        }
+      }
+    },
+    {
+      "Sid": "RedshifServerlessCredentialsForManagedWorkgroup",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:GetCredentials"
+      ],
+      "Resource": "arn:aws:redshift-serverless:*:*:workgroup/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "redshift-data.amazonaws.com"
+        },
+        "Bool": {
+          "aws:ViaAWSService": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AllowTagGetResources",
+      "Effect": "Allow",
+      "Action": "tag:GetResources",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "sqlworkbench.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowGetSecretForRedShift",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchMetricsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AmazonQChatPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EMRClusterWithDataZoneTags",
+      "Effect": "Allow",
+      "Action": [
+        "elasticmapreduce:DescribeCluster",
+        "elasticmapreduce:ListInstances",
+        "elasticmapreduce:ListInstanceFleets",
+        "elasticmapreduce:ListInstanceGroups",
+        "elasticmapreduce:ListBootstrapActions",
+        "elasticmapreduce:TerminateJobFlows",
+        "elasticmapreduce:GetManagedScalingPolicy",
+        "elasticmapreduce:GetOnClusterAppUIPresignedURL"
+      ],
+      "Resource": [
+        "arn:aws:elasticmapreduce:*:*:cluster/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "EMRClusterInfoPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "elasticmapreduce:ListReleaseLabels",
+        "elasticmapreduce:ListSupportedInstanceTypes",
+        "elasticmapreduce:ListClusters",
+        "pricing:GetProducts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EMRGetClusterSessionCredentials",
+      "Effect": "Allow",
+      "Action": [
+        "elasticmapreduce:GetClusterSessionCredentials"
+      ],
+      "Resource": [
+        "arn:aws:elasticmapreduce:*:*:cluster/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        },
+        "ArnLike": {
+          "elasticmapreduce:ExecutionRoleArn": "arn:aws:iam::*:role/${aws:PrincipalTag/RoleName}"
+        }
+      }
+    },
+    {
+      "Sid": "KmsWithEncryptPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "sqs.*.amazonaws.com",
+            "sagemaker.*.amazonaws.com",
+            "bedrock.*.amazonaws.com",
+            "s3.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "kms:EncryptionContextKeys": "false"
+        }
+      }
+    },
+    {
+      "Sid": "KmsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
+        "kms:Decrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "emr-serverless.*.amazonaws.com",
+            "redshift.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "kms:EncryptionContextKeys": "false"
+        }
+      }
+    },
+    {
+      "Sid": "KmsManagementPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListGrants",
+        "kms:RevokeGrant",
+        "kms:DescribeKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "sqs.*.amazonaws.com",
+            "sagemaker.*.amazonaws.com",
+            "emr-serverless.*.amazonaws.com",
+            "s3.*.amazonaws.com",
+            "redshift.*.amazonaws.com",
+            "codecommit.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AwsOwnedKmsKeyPermissions",
+      "Action": [
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:kms:*:*:key/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "s3.*.amazonaws.com",
+            "sqs.*.amazonaws.com",
+            "sagemaker.*.amazonaws.com"
+          ]
+        },
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "kms:EncryptionContextKeys": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AwsOwnedKmsManagementPermissions",
+      "Action": [
+        "kms:DescribeKey"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:kms:*:*:key/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "sqs.*.amazonaws.com",
+            "sagemaker.*.amazonaws.com"
+          ]
+        },
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "ListKMSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListAliases"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EC2PermissionsForNotebookExecution",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstanceTypes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "InvokeBedrockModelPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/*",
+        "arn:aws:bedrock:*:*:custom-model/*",
+        "arn:aws:bedrock:*:*:provisioned-model/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true"
+        },
+        "Null": {
+          "bedrock:InferenceProfileArn": "false"
+        }
+      }
+    },
+    {
+      "Sid": "InvokeBedrockModelAppInferenceProfilePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:GetInferenceProfile",
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "Resource": "arn:aws:bedrock:*:*:application-inference-profile/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "AccessBedrockResourcePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeAgent",
+        "bedrock:Retrieve",
+        "bedrock:ListIngestionJobs",
+        "bedrock:StartIngestionJob",
+        "bedrock:GetIngestionJob",
+        "bedrock:ApplyGuardrail",
+        "bedrock:ListPrompts",
+        "bedrock:GetPrompt",
+        "bedrock:CreatePrompt",
+        "bedrock:DeletePrompt",
+        "bedrock:CreatePromptVersion",
+        "bedrock:InvokeFlow",
+        "bedrock:GetEvaluationJob",
+        "bedrock:CreateEvaluationJob",
+        "bedrock:StopEvaluationJob",
+        "bedrock:BatchDeleteEvaluationJob",
+        "bedrock:ListTagsForResource",
+        "bedrock:CreateAgentAlias",
+        "bedrock:ListAgentAliases",
+        "bedrock:GetAgentVersion",
+        "bedrock:ListAgentVersions",
+        "bedrock:DeleteAgentVersion",
+        "bedrock:DeleteAgentAlias",
+        "bedrock:GetAgentAlias",
+        "bedrock:UpdateAgentAlias"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "CreateEvaluationJobForFoundationModelPermissions",
+      "Effect": "Allow",
+      "Action": "bedrock:CreateEvaluationJob",
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/*",
+        "arn:aws:bedrock:*:*:custom-model/*"
+      ]
+    },
+    {
+      "Sid": "InvokeBedrockInlineAgentPermissions",
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeInlineAgent",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "BedrockRetrieveAndGeneratePermissions",
+      "Effect": "Allow",
+      "Action": "bedrock:RetrieveAndGenerate",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "ListBedrockEvaluationJobPermissions",
+      "Effect": "Allow",
+      "Action": "bedrock:ListEvaluationJobs",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "PassRoleToBedrockEvaluation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/AmazonBedrockEvaluationRole-${aws:PrincipalTag/AmazonDataZoneProject}-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "iam:PassedToService": [
+            "bedrock.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "TagBedrockResourcePermissions",
+      "Effect": "Allow",
+      "Action": "bedrock:TagResource",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "aws:RequestTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "AmazonDataZone*",
+            "AmazonBedrockManaged",
+            "ProjectUserTag*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "BedrockKmsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:ViaService": "bedrock.*.amazonaws.com"
+        },
+        "Null": {
+          "kms:EncryptionContext:aws:bedrock:arn": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AccessSecretPermissionsForAmazonBedrockIDE",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:PutSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:amazon-bedrock-ide/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "AccessSecretKmsPermissionsForAmazonBedrockIDE",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:ViaService": "secretsmanager.*.amazonaws.com"
+        },
+        "ArnLike": {
+          "kms:EncryptionContext:SecretARN": "arn:aws:secretsmanager:*:*:secret:amazon-bedrock-ide/*"
+        }
+      }
+    },
+    {
+      "Sid": "InvokeFunctionPermissionsForAmazonBedrockIDE",
+      "Effect": "Allow",
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:*:*:function:amazon-bedrock-ide-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:CalledViaFirst": "bedrock.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "GetDataZoneEnvironmentCloudFormationStackPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:GetTemplate",
+        "cloudformation:DescribeStacks"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/DataZone-Env-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableAmazonBedrockIDEPermissions": "true",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "GetGlueUserDefinedFuncLakeFormationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetUserDefinedFunction",
+        "glue:GetUserDefinedFunctions"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:catalog/*",
+        "arn:aws:glue:*:*:database/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "glue:LakeFormationPermissions": "Enabled"
+        }
+      }
+    },
+    {
+      "Sid": "GetGlueUserDefinedFuncPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetUserDefinedFunction",
+        "glue:GetUserDefinedFunctions"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:userDefinedFunction/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

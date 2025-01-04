@@ -27,6 +27,7 @@
         "ec2:DescribeSecurityGroupReferences",
         "ec2:DescribeSecurityGroupRules",
         "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSecurityGroupVpcAssociations",
         "ec2:DescribeStaleSecurityGroups",
         "ec2:DescribeSubnets",
         "ec2:DescribeTags",
