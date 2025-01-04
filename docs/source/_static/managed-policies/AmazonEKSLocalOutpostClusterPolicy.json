@@ -9,6 +9,7 @@
         "ec2:DescribeTags",
         "ec2:DescribeNetworkInterfaces",
         "ec2:DescribeInstanceTypes",
+        "ec2:DescribeAvailabilityZones",
         "ec2messages:AcknowledgeMessage",
         "ec2messages:DeleteMessage",
         "ec2messages:FailMessage",

@@ -44,13 +44,6 @@
     {
       "Effect": "Allow",
       "Action": [
-        "sns:Publish"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
         "logs:CreateLogGroup"
       ],
       "Resource": [

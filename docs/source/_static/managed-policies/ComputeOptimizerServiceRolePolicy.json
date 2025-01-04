@@ -26,7 +26,8 @@
       "Sid": "CloudWatchAccess",
       "Effect": "Allow",
       "Action": [
-        "cloudwatch:GetMetricData"
+        "cloudwatch:GetMetricData",
+        "cloudwatch:DescribeAlarms"
       ],
       "Resource": "*"
     },
@@ -35,7 +36,9 @@
       "Effect": "Allow",
       "Action": [
         "autoscaling:DescribeAutoScalingInstances",
-        "autoscaling:DescribeAutoScalingGroups"
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribePolicies",
+        "autoscaling:DescribeScheduledActions"
       ],
       "Resource": "*"
     },

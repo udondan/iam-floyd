@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DataSyncCloudWatchLogCreateAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream"
+      ],
+      "Resource": [
+        "arn:*:logs:*:*:log-group:/aws/datasync*"
+      ]
+    },
+    {
+      "Sid": "DataSyncCloudWatchLogStreamUpdateAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:*:logs:*:*:log-group:/aws/datasync*:log-stream:*"
+      ]
+    }
+  ]
+}

@@ -17,6 +17,8 @@
       "Action": [
         "glue:CreateDatabase",
         "glue:DeleteDatabase",
+        "glue:GetCatalog",
+        "glue:GetCatalogs",
         "glue:GetDatabase",
         "glue:GetDatabases",
         "glue:UpdateDatabase",
