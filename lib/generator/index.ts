@@ -121,6 +121,10 @@ export function getAwsServices(): Promise<string[]> {
 }
 
 function getAwsServicesFromIamDocs(): Promise<string[]> {
+  const skipServices = Object.keys(fixes).filter(
+    (key) => fixes[key].ignore === true,
+  );
+
   return new Promise((resolve, reject) => {
     const url =
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html';
@@ -131,7 +135,7 @@ function getAwsServicesFromIamDocs(): Promise<string[]> {
         const services: string[] = [];
         do {
           match = re.exec(body)!;
-          if (match) {
+          if (match && !skipServices.includes(match[1])) {
             services.push(match[1]);
           }
         } while (match);
@@ -811,7 +815,11 @@ function addActions($: cheerio.Root, module: Module): Module {
     if (tdLength == 6) {
       // it's a new action
 
-      action = first.text().replace('[permission only]', '').trim();
+      action = first
+        .text()
+        .replace('[permission only]', '')
+        .replace('-', '')
+        .trim();
       actions[action] = {
         url: validateUrl(first.find('a[href]').attr('href')?.trim()),
         description: cleanDescription(first.next().text().trim()),

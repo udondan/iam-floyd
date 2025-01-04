@@ -18,6 +18,9 @@ type Fixes = Record<string, any>;
  * resourceTypes.$name.arn: Fixes ARN of the given resource type
  */
 export const fixes: Fixes = {
+  'awsiot1-click': {
+    ignore: true, // is EOL. the page exists but doesn't have the expected content format
+  },
   cloudcontrolapi: {
     name: 'aws-cloud-control-api',
   },
@@ -56,6 +59,9 @@ export const fixes: Fixes = {
   },
   marketplaceprivatemarketplace: {
     name: 'aws-marketplace-private',
+  },
+  marketplacereporting: {
+    name: 'aws-marketplace-reporting',
   },
   marketplacesellerreporting: {
     name: 'aws-marketplace-seller-reporting',
