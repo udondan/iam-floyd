@@ -53,7 +53,7 @@
     "aws-cdk-lib": "2.174.0",
     "cheerio": "^1.0.0-rc.12",
     "colors": "1.4.0",
-    "eslint": "8.57.1",
+    "eslint": "9.17.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-deprecation": "3.0.0",
     "eslint-plugin-prettier": "5.2.1",
