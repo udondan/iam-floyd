@@ -30,6 +30,28 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a calculated attribute for the specific profiles in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_BatchGetCalculatedAttributeForProfile.html
+   */
+  public toBatchGetCalculatedAttributeForProfile() {
+    return this.to('BatchGetCalculatedAttributeForProfile');
+  }
+
+  /**
+   * Grants permission to get profiles in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_BatchGetProfile.html
+   */
+  public toBatchGetProfile() {
+    return this.to('BatchGetProfile');
+  }
+
+  /**
    * Grants permission to create a calculated attribute definition in the domain
    *
    * Access Level: Write
@@ -70,6 +92,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an event trigger in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateEventTrigger.html
+   */
+  public toCreateEventTrigger() {
+    return this.to('CreateEventTrigger');
+  }
+
+  /**
    * Grants permission to create an integration workflow in a domain
    *
    * Access Level: Write
@@ -89,6 +122,39 @@ export class Profile extends PolicyStatement {
    */
   public toCreateProfile() {
     return this.to('CreateProfile');
+  }
+
+  /**
+   * Grants permission to create a segment definition in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateSegmentDefinition.html
+   */
+  public toCreateSegmentDefinition() {
+    return this.to('CreateSegmentDefinition');
+  }
+
+  /**
+   * Grants permission to create a segment estimate in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateSegmentEstimate.html
+   */
+  public toCreateSegmentEstimate() {
+    return this.to('CreateSegmentEstimate');
+  }
+
+  /**
+   * Grants permission to create a segment snapshot in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateSegmentSnapshot.html
+   */
+  public toCreateSegmentSnapshot() {
+    return this.to('CreateSegmentSnapshot');
   }
 
   /**
@@ -134,6 +200,17 @@ export class Profile extends PolicyStatement {
    */
   public toDeleteEventStream() {
     return this.to('DeleteEventStream');
+  }
+
+  /**
+   * Grants permission to delete an event trigger in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteEventTrigger.html
+   */
+  public toDeleteEventTrigger() {
+    return this.to('DeleteEventTrigger');
   }
 
   /**
@@ -189,6 +266,17 @@ export class Profile extends PolicyStatement {
    */
   public toDeleteProfileObjectType() {
     return this.to('DeleteProfileObjectType');
+  }
+
+  /**
+   * Grants permission to delete a segment definition in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteSegmentDefinition.html
+   */
+  public toDeleteSegmentDefinition() {
+    return this.to('DeleteSegmentDefinition');
   }
 
   /**
@@ -272,6 +360,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an event trigger in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetEventTrigger.html
+   */
+  public toGetEventTrigger() {
+    return this.to('GetEventTrigger');
+  }
+
+  /**
    * Grants permission to get an identity resolution job in a domain
    *
    * Access Level: Read
@@ -324,6 +423,50 @@ export class Profile extends PolicyStatement {
    */
   public toGetProfileObjectTypeTemplate() {
     return this.to('GetProfileObjectTypeTemplate');
+  }
+
+  /**
+   * Grants permission to get a segment definition in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentDefinition.html
+   */
+  public toGetSegmentDefinition() {
+    return this.to('GetSegmentDefinition');
+  }
+
+  /**
+   * Grants permission to get a segment estimate in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentEstimate.html
+   */
+  public toGetSegmentEstimate() {
+    return this.to('GetSegmentEstimate');
+  }
+
+  /**
+   * Grants permission to determine if the given profiles are part of a segment in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentMembership.html
+   */
+  public toGetSegmentMembership() {
+    return this.to('GetSegmentMembership');
+  }
+
+  /**
+   * Grants permission to get a segment snapshot in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetSegmentSnapshot.html
+   */
+  public toGetSegmentSnapshot() {
+    return this.to('GetSegmentSnapshot');
   }
 
   /**
@@ -424,6 +567,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the event triggers in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListEventTriggers.html
+   */
+  public toListEventTriggers() {
+    return this.to('ListEventTriggers');
+  }
+
+  /**
    * Grants permission to list identity resolution jobs in a domain
    *
    * Access Level: List
@@ -443,6 +597,28 @@ export class Profile extends PolicyStatement {
    */
   public toListIntegrations() {
     return this.to('ListIntegrations');
+  }
+
+  /**
+   * Grants permission to list all the attributes of a specific object type in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListObjectTypeAttributes.html
+   */
+  public toListObjectTypeAttributes() {
+    return this.to('ListObjectTypeAttributes');
+  }
+
+  /**
+   * Grants permission to list all the values of a profile attribute in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileAttributeValues.html
+   */
+  public toListProfileAttributeValues() {
+    return this.to('ListProfileAttributeValues');
   }
 
   /**
@@ -487,6 +663,17 @@ export class Profile extends PolicyStatement {
    */
   public toListRuleBasedMatches() {
     return this.to('ListRuleBasedMatches');
+  }
+
+  /**
+   * Grants permission to list all the segment definitions in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListSegmentDefinitions.html
+   */
+  public toListSegmentDefinitions() {
+    return this.to('ListSegmentDefinitions');
   }
 
   /**
@@ -621,6 +808,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an event trigger in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateEventTrigger.html
+   */
+  public toUpdateEventTrigger() {
+    return this.to('UpdateEventTrigger');
+  }
+
+  /**
    * Grants permission to update a profile in the domain
    *
    * Access Level: Write
@@ -637,17 +835,23 @@ export class Profile extends PolicyStatement {
       'CreateCalculatedAttributeDefinition',
       'CreateDomain',
       'CreateEventStream',
+      'CreateEventTrigger',
       'CreateIntegrationWorkflow',
       'CreateProfile',
+      'CreateSegmentDefinition',
+      'CreateSegmentEstimate',
+      'CreateSegmentSnapshot',
       'CreateSnapshot',
       'DeleteCalculatedAttributeDefinition',
       'DeleteDomain',
       'DeleteEventStream',
+      'DeleteEventTrigger',
       'DeleteIntegration',
       'DeleteProfile',
       'DeleteProfileKey',
       'DeleteProfileObject',
       'DeleteProfileObjectType',
+      'DeleteSegmentDefinition',
       'DeleteWorkflow',
       'MergeProfiles',
       'PutIntegration',
@@ -655,19 +859,27 @@ export class Profile extends PolicyStatement {
       'PutProfileObjectType',
       'UpdateCalculatedAttributeDefinition',
       'UpdateDomain',
+      'UpdateEventTrigger',
       'UpdateProfile'
     ],
     Read: [
+      'BatchGetCalculatedAttributeForProfile',
+      'BatchGetProfile',
       'DetectProfileObjectType',
       'GetAutoMergingPreview',
       'GetCalculatedAttributeDefinition',
       'GetCalculatedAttributeForProfile',
       'GetDomain',
       'GetEventStream',
+      'GetEventTrigger',
       'GetIdentityResolutionJob',
       'GetIntegration',
       'GetProfileObjectType',
       'GetProfileObjectTypeTemplate',
+      'GetSegmentDefinition',
+      'GetSegmentEstimate',
+      'GetSegmentMembership',
+      'GetSegmentSnapshot',
       'GetSnapshot',
       'GetWorkflow',
       'GetWorkflowSteps',
@@ -682,12 +894,16 @@ export class Profile extends PolicyStatement {
       'ListCalculatedAttributesForProfile',
       'ListDomains',
       'ListEventStreams',
+      'ListEventTriggers',
       'ListIdentityResolutionJobs',
       'ListIntegrations',
+      'ListObjectTypeAttributes',
+      'ListProfileAttributeValues',
       'ListProfileObjectTypeTemplates',
       'ListProfileObjectTypes',
       'ListProfileObjects',
       'ListRuleBasedMatches',
+      'ListSegmentDefinitions',
       'ListWorkflows'
     ],
     Tagging: [
@@ -786,6 +1002,42 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type segment-definitions to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param segmentDefinitionName - Identifier for the segmentDefinitionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSegmentDefinitions(domainName: string, segmentDefinitionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/segment-definitions/${ segmentDefinitionName }`);
+  }
+
+  /**
+   * Adds a resource of type event-triggers to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param eventTriggerName - Identifier for the eventTriggerName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventTriggers(domainName: string, eventTriggerName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/event-triggers/${ eventTriggerName }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the customer profile service
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
@@ -794,7 +1046,9 @@ export class Profile extends PolicyStatement {
    * - .toCreateCalculatedAttributeDefinition()
    * - .toCreateDomain()
    * - .toCreateEventStream()
+   * - .toCreateEventTrigger()
    * - .toCreateIntegrationWorkflow()
+   * - .toCreateSegmentDefinition()
    * - .toPutIntegration()
    * - .toPutProfileObjectType()
    * - .toTagResource()
@@ -818,6 +1072,8 @@ export class Profile extends PolicyStatement {
    * - integrations
    * - event-streams
    * - calculated-attributes
+   * - segment-definitions
+   * - event-triggers
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -836,7 +1092,9 @@ export class Profile extends PolicyStatement {
    * - .toCreateCalculatedAttributeDefinition()
    * - .toCreateDomain()
    * - .toCreateEventStream()
+   * - .toCreateEventTrigger()
    * - .toCreateIntegrationWorkflow()
+   * - .toCreateSegmentDefinition()
    * - .toPutIntegration()
    * - .toPutProfileObjectType()
    * - .toTagResource()

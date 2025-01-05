@@ -7,9 +7,11 @@ glue:customEntityType
 glue:dataQualityRuleset
 glue:database
 glue:devendpoint
+glue:integration
 glue:job
 glue:mlTransform
 glue:registry
+glue:rootcatalog
 glue:schema
 glue:session
 glue:table

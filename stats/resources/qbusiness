@@ -1,6 +1,8 @@
 qbusiness:application
+qbusiness:data-accessor
 qbusiness:data-source
 qbusiness:index
+qbusiness:integration
 qbusiness:plugin
 qbusiness:retriever
 qbusiness:subscription

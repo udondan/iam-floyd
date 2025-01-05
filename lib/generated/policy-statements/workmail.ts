@@ -107,6 +107,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an Identity Center application for WorkMail
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateIdentityCenterApplication.html
+   */
+  public toCreateIdentityCenterApplication() {
+    return this.to('CreateIdentityCenterApplication');
+  }
+
+  /**
    * Grants permission to create an impersonation role for the given Amazon WorkMail organization
    *
    * Access Level: Write
@@ -261,6 +272,28 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an Identity Center application for WorkMail
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteIdentityCenterApplication.html
+   */
+  public toDeleteIdentityCenterApplication() {
+    return this.to('DeleteIdentityCenterApplication');
+  }
+
+  /**
+   * Grants permission to delete the identity provider configuration for the organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteIdentityProviderConfiguration.html
+   */
+  public toDeleteIdentityProviderConfiguration() {
+    return this.to('DeleteIdentityProviderConfiguration');
+  }
+
+  /**
    * Grants permission to delete an impersonation role for the given Amazon WorkMail organization
    *
    * Access Level: Write
@@ -357,6 +390,17 @@ export class Workmail extends PolicyStatement {
    */
   public toDeleteOutboundMailFlowRule() {
     return this.to('DeleteOutboundMailFlowRule');
+  }
+
+  /**
+   * Grants permission to delete a personal access token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeletePersonalAccessToken.html
+   */
+  public toDeletePersonalAccessToken() {
+    return this.to('DeletePersonalAccessToken');
   }
 
   /**
@@ -467,6 +511,17 @@ export class Workmail extends PolicyStatement {
    */
   public toDescribeGroup() {
     return this.to('DescribeGroup');
+  }
+
+  /**
+   * Grants permission to read the identity provider configuration for the organization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeIdentityProviderConfiguration.html
+   */
+  public toDescribeIdentityProviderConfiguration() {
+    return this.to('DescribeIdentityProviderConfiguration');
   }
 
   /**
@@ -745,6 +800,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read metadata for a personal access token
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetPersonalAccessTokenMetadata.html
+   */
+  public toGetPersonalAccessTokenMetadata() {
+    return this.to('GetPersonalAccessTokenMetadata');
+  }
+
+  /**
    * Grants permission to list the access control rules
    *
    * Access Level: Read
@@ -910,6 +976,17 @@ export class Workmail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list metadata for personal access tokens
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListPersonalAccessTokens.html
+   */
+  public toListPersonalAccessTokens() {
+    return this.to('ListPersonalAccessTokens');
+  }
+
+  /**
    * Grants permission to list the delegates associated with a resource
    *
    * Access Level: List
@@ -988,6 +1065,17 @@ export class Workmail extends PolicyStatement {
    */
   public toPutEmailMonitoringConfiguration() {
     return this.to('PutEmailMonitoringConfiguration');
+  }
+
+  /**
+   * Grants permission to add or update the identity provider configuration for the organization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutIdentityProviderConfiguration.html
+   */
+  public toPutIdentityProviderConfiguration() {
+    return this.to('PutIdentityProviderConfiguration');
   }
 
   /**
@@ -1337,6 +1425,7 @@ export class Workmail extends PolicyStatement {
       'CreateAlias',
       'CreateAvailabilityConfiguration',
       'CreateGroup',
+      'CreateIdentityCenterApplication',
       'CreateImpersonationRole',
       'CreateInboundMailFlowRule',
       'CreateMailDomain',
@@ -1351,6 +1440,8 @@ export class Workmail extends PolicyStatement {
       'DeleteAvailabilityConfiguration',
       'DeleteEmailMonitoringConfiguration',
       'DeleteGroup',
+      'DeleteIdentityCenterApplication',
+      'DeleteIdentityProviderConfiguration',
       'DeleteImpersonationRole',
       'DeleteInboundMailFlowRule',
       'DeleteMailDomain',
@@ -1360,6 +1451,7 @@ export class Workmail extends PolicyStatement {
       'DeleteMobileDeviceAccessRule',
       'DeleteOrganization',
       'DeleteOutboundMailFlowRule',
+      'DeletePersonalAccessToken',
       'DeleteResource',
       'DeleteRetentionPolicy',
       'DeleteSmtpGateway',
@@ -1372,6 +1464,7 @@ export class Workmail extends PolicyStatement {
       'EnableMailDomain',
       'PutAccessControlRule',
       'PutEmailMonitoringConfiguration',
+      'PutIdentityProviderConfiguration',
       'PutInboundDmarcSettings',
       'PutMailboxPermissions',
       'PutMobileDeviceAccessOverride',
@@ -1402,6 +1495,7 @@ export class Workmail extends PolicyStatement {
     Read: [
       'DescribeEmailMonitoringConfiguration',
       'DescribeEntity',
+      'DescribeIdentityProviderConfiguration',
       'DescribeInboundDmarcSettings',
       'DescribeInboundMailFlowRule',
       'DescribeMailboxExportJob',
@@ -1420,6 +1514,7 @@ export class Workmail extends PolicyStatement {
       'GetMobileDeviceDetails',
       'GetMobileDevicesForUser',
       'GetMobilePolicyDetails',
+      'GetPersonalAccessTokenMetadata',
       'ListAccessControlRules',
       'ListAvailabilityConfigurations',
       'ListMobileDeviceAccessOverrides',
@@ -1444,6 +1539,7 @@ export class Workmail extends PolicyStatement {
       'ListMailboxPermissions',
       'ListOrganizations',
       'ListOutboundMailFlowRules',
+      'ListPersonalAccessTokens',
       'ListResourceDelegates',
       'ListResources',
       'ListSmtpGateways',

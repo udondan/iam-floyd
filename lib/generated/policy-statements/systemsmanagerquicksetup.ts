@@ -41,6 +41,17 @@ export class SsmQuicksetup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get Quick Setup configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_GetConfiguration.html
+   */
+  public toGetConfiguration() {
+    return this.to('GetConfiguration');
+  }
+
+  /**
    * Grants permission to get a configuration manager
    *
    * Access Level: Read
@@ -71,6 +82,17 @@ export class SsmQuicksetup extends PolicyStatement {
    */
   public toListConfigurationManagers() {
     return this.to('ListConfigurationManagers');
+  }
+
+  /**
+   * Grants permission to list Quick Setup configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_ListConfigurations.html
+   */
+  public toListConfigurations() {
+    return this.to('ListConfigurations');
   }
 
   /**
@@ -166,13 +188,15 @@ export class SsmQuicksetup extends PolicyStatement {
       'UpdateServiceSettings'
     ],
     Read: [
+      'GetConfiguration',
       'GetConfigurationManager',
       'GetServiceSettings',
       'ListQuickSetupTypes',
       'ListTagsForResource'
     ],
     List: [
-      'ListConfigurationManagers'
+      'ListConfigurationManagers',
+      'ListConfigurations'
     ],
     Tagging: [
       'TagResource',
@@ -183,17 +207,18 @@ export class SsmQuicksetup extends PolicyStatement {
   /**
    * Adds a resource of type configuration-manager to the statement
    *
-   * https://docs.aws.amazon.com/quick-setup/latest/userguide/API_ConfigurationManager.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-quick-setup.html
    *
    * @param configurationManagerId - Identifier for the configurationManagerId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onConfigurationManager(configurationManagerId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-quicksetup::${ account ?? this.defaultAccount }:configuration-manager/${ configurationManagerId }`);
+  public onConfigurationManager(configurationManagerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm-quicksetup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-manager/${ configurationManagerId }`);
   }
 
   /**

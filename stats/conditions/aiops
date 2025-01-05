@@ -1,0 +1,3 @@
+aiops:RequestTag/${TagKey}
+aiops:ResourceTag/${TagKey}
+aiops:TagKeys

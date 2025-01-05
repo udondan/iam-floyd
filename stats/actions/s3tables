@@ -1,0 +1,28 @@
+s3tables:CreateNamespace;Write
+s3tables:CreateTable;Write
+s3tables:CreateTableBucket;Write
+s3tables:DeleteNamespace;Write
+s3tables:DeleteTable;Write
+s3tables:DeleteTableBucket;Write
+s3tables:DeleteTableBucketPolicy;Permissions management
+s3tables:DeleteTablePolicy;Permissions management
+s3tables:GetNamespace;Read
+s3tables:GetTable;Read
+s3tables:GetTableBucket;Read
+s3tables:GetTableBucketMaintenanceConfiguration;Read
+s3tables:GetTableBucketPolicy;Read
+s3tables:GetTableData;Read
+s3tables:GetTableMaintenanceConfiguration;Read
+s3tables:GetTableMaintenanceJobStatus;Read
+s3tables:GetTableMetadataLocation;Read
+s3tables:GetTablePolicy;Read
+s3tables:ListNamespaces;List
+s3tables:ListTableBuckets;List
+s3tables:ListTables;List
+s3tables:PutTableBucketMaintenanceConfiguration;Write
+s3tables:PutTableBucketPolicy;Permissions management
+s3tables:PutTableData;Write
+s3tables:PutTableMaintenanceConfiguration;Write
+s3tables:PutTablePolicy;Permissions management
+s3tables:RenameTable;Write
+s3tables:UpdateTableMetadataLocation;Write

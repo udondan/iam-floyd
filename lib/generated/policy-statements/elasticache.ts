@@ -1549,6 +1549,8 @@ export class Elasticache extends PolicyStatement {
    * - .ifKmsKeyId()
    * - .ifMaximumDataStorage()
    * - .ifMaximumECPUPerSecond()
+   * - .ifMinimumDataStorage()
+   * - .ifMinimumECPUPerSecond()
    * - .ifSnapshotRetentionLimit()
    */
   public onServerlesscache(serverlessCacheName: string, account?: string, region?: string, partition?: string) {
@@ -1952,7 +1954,7 @@ export class Elasticache extends PolicyStatement {
   }
 
   /**
-   * Filters access by the KmsKeyId parameter in the request
+   * Filters access by the Key ID of the KMS key
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
    *
@@ -2014,6 +2016,44 @@ export class Elasticache extends PolicyStatement {
    */
   public ifMaximumECPUPerSecond(value: number | number[], operator?: Operator | string) {
     return this.if(`MaximumECPUPerSecond`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the CacheUsageLimits.DataStorage.Minimum parameter in the CreateServerlessCache and ModifyServerlessCache request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateServerlessCache()
+   * - .toModifyServerlessCache()
+   *
+   * Applies to resource types:
+   * - serverlesscache
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMinimumDataStorage(value: number | number[], operator?: Operator | string) {
+    return this.if(`MinimumDataStorage`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the CacheUsageLimits.ECPUPerSecond.Minimum parameter in the CreateServerlessCache and ModifyServerlessCache request
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateServerlessCache()
+   * - .toModifyServerlessCache()
+   *
+   * Applies to resource types:
+   * - serverlesscache
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMinimumECPUPerSecond(value: number | number[], operator?: Operator | string) {
+    return this.if(`MinimumECPUPerSecond`, value, operator ?? 'NumericEquals');
   }
 
   /**

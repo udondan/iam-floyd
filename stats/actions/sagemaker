@@ -1,10 +1,12 @@
 sagemaker:AddAssociation;Write
 sagemaker:AddTags;Tagging
 sagemaker:AssociateTrialComponent;Write
+sagemaker:BatchDeleteClusterNodes;Write
 sagemaker:BatchDescribeModelPackage;Read
 sagemaker:BatchGetMetrics;Read
 sagemaker:BatchGetRecord;Read
 sagemaker:BatchPutMetrics;Write
+sagemaker:CallPartnerAppApi;Write
 sagemaker:CreateAction;Write
 sagemaker:CreateAlgorithm;Write
 sagemaker:CreateApp;Write
@@ -13,8 +15,10 @@ sagemaker:CreateArtifact;Write
 sagemaker:CreateAutoMLJob;Write
 sagemaker:CreateAutoMLJobV2;Write
 sagemaker:CreateCluster;Write
+sagemaker:CreateClusterSchedulerConfig;Write
 sagemaker:CreateCodeRepository;Write
 sagemaker:CreateCompilationJob;Write
+sagemaker:CreateComputeQuota;Write
 sagemaker:CreateContext;Write
 sagemaker:CreateDataQualityJobDefinition;Write
 sagemaker:CreateDeviceFleet;Write
@@ -51,16 +55,20 @@ sagemaker:CreateMonitoringSchedule;Write
 sagemaker:CreateNotebookInstance;Write
 sagemaker:CreateNotebookInstanceLifecycleConfig;Write
 sagemaker:CreateOptimizationJob;Write
+sagemaker:CreatePartnerApp;Write
+sagemaker:CreatePartnerAppPresignedUrl;Write
 sagemaker:CreatePipeline;Write
 sagemaker:CreatePresignedDomainUrl;Write
 sagemaker:CreatePresignedMlflowTrackingServerUrl;Write
 sagemaker:CreatePresignedNotebookInstanceUrl;Write
 sagemaker:CreateProcessingJob;Write
 sagemaker:CreateProject;Write
+sagemaker:CreateReservedCapacity;Write
 sagemaker:CreateSharedModel;Write
 sagemaker:CreateSpace;Write
 sagemaker:CreateStudioLifecycleConfig;Write
 sagemaker:CreateTrainingJob;Write
+sagemaker:CreateTrainingPlan;Write
 sagemaker:CreateTransformJob;Write
 sagemaker:CreateTrial;Write
 sagemaker:CreateTrialComponent;Write
@@ -74,8 +82,10 @@ sagemaker:DeleteAppImageConfig;Write
 sagemaker:DeleteArtifact;Write
 sagemaker:DeleteAssociation;Write
 sagemaker:DeleteCluster;Write
+sagemaker:DeleteClusterSchedulerConfig;Write
 sagemaker:DeleteCodeRepository;Write
 sagemaker:DeleteCompilationJob;Write
+sagemaker:DeleteComputeQuota;Write
 sagemaker:DeleteContext;Write
 sagemaker:DeleteDataQualityJobDefinition;Write
 sagemaker:DeleteDeviceFleet;Write
@@ -111,6 +121,7 @@ sagemaker:DeleteMonitoringSchedule;Write
 sagemaker:DeleteNotebookInstance;Write
 sagemaker:DeleteNotebookInstanceLifecycleConfig;Write
 sagemaker:DeleteOptimizationJob;Write
+sagemaker:DeletePartnerApp;Write
 sagemaker:DeletePipeline;Write
 sagemaker:DeleteProject;Write
 sagemaker:DeleteRecord;Write
@@ -134,8 +145,10 @@ sagemaker:DescribeAutoMLJob;Read
 sagemaker:DescribeAutoMLJobV2;Read
 sagemaker:DescribeCluster;Read
 sagemaker:DescribeClusterNode;Read
+sagemaker:DescribeClusterSchedulerConfig;Read
 sagemaker:DescribeCodeRepository;Read
 sagemaker:DescribeCompilationJob;Read
+sagemaker:DescribeComputeQuota;Read
 sagemaker:DescribeContext;Read
 sagemaker:DescribeDataQualityJobDefinition;Read
 sagemaker:DescribeDevice;Read
@@ -174,6 +187,7 @@ sagemaker:DescribeMonitoringSchedule;Read
 sagemaker:DescribeNotebookInstance;Read
 sagemaker:DescribeNotebookInstanceLifecycleConfig;Read
 sagemaker:DescribeOptimizationJob;Read
+sagemaker:DescribePartnerApp;Read
 sagemaker:DescribePipeline;Read
 sagemaker:DescribePipelineDefinitionForExecution;Read
 sagemaker:DescribePipelineExecution;Read
@@ -184,6 +198,7 @@ sagemaker:DescribeSpace;Read
 sagemaker:DescribeStudioLifecycleConfig;Read
 sagemaker:DescribeSubscribedWorkteam;Read
 sagemaker:DescribeTrainingJob;Read
+sagemaker:DescribeTrainingPlan;Read
 sagemaker:DescribeTransformJob;Read
 sagemaker:DescribeTrial;Read
 sagemaker:DescribeTrialComponent;Read
@@ -217,9 +232,11 @@ sagemaker:ListAssociations;List
 sagemaker:ListAutoMLJobs;List
 sagemaker:ListCandidatesForAutoMLJob;List
 sagemaker:ListClusterNodes;List
+sagemaker:ListClusterSchedulerConfigs;List
 sagemaker:ListClusters;List
 sagemaker:ListCodeRepositories;List
 sagemaker:ListCompilationJobs;List
+sagemaker:ListComputeQuotas;List
 sagemaker:ListContexts;List
 sagemaker:ListDataQualityJobDefinitions;List
 sagemaker:ListDeviceFleets;List
@@ -265,6 +282,7 @@ sagemaker:ListMonitoringSchedules;List
 sagemaker:ListNotebookInstanceLifecycleConfigs;List
 sagemaker:ListNotebookInstances;List
 sagemaker:ListOptimizationJobs;List
+sagemaker:ListPartnerApps;List
 sagemaker:ListPipelineExecutionSteps;List
 sagemaker:ListPipelineExecutions;List
 sagemaker:ListPipelineParametersForExecution;List
@@ -282,6 +300,7 @@ sagemaker:ListSubscribedWorkteams;List
 sagemaker:ListTags;List
 sagemaker:ListTrainingJobs;List
 sagemaker:ListTrainingJobsForHyperParameterTuningJob;List
+sagemaker:ListTrainingPlans;List
 sagemaker:ListTransformJobs;List
 sagemaker:ListTrialComponents;List
 sagemaker:ListTrials;List
@@ -297,6 +316,7 @@ sagemaker:RegisterDevices;Write
 sagemaker:RenderUiTemplate;Read
 sagemaker:RetryPipelineExecution;Write
 sagemaker:Search;Read
+sagemaker:SearchTrainingPlanOfferings;Read
 sagemaker:SendHeartbeat;Write
 sagemaker:SendPipelineExecutionStepFailure;Write
 sagemaker:SendPipelineExecutionStepSuccess;Write
@@ -329,8 +349,10 @@ sagemaker:UpdateAction;Write
 sagemaker:UpdateAppImageConfig;Write
 sagemaker:UpdateArtifact;Write
 sagemaker:UpdateCluster;Write
+sagemaker:UpdateClusterSchedulerConfig;Write
 sagemaker:UpdateClusterSoftware;Write
 sagemaker:UpdateCodeRepository;Write
+sagemaker:UpdateComputeQuota;Write
 sagemaker:UpdateContext;Write
 sagemaker:UpdateDeviceFleet;Write
 sagemaker:UpdateDevices;Write
@@ -353,6 +375,7 @@ sagemaker:UpdateMonitoringAlert;Write
 sagemaker:UpdateMonitoringSchedule;Write
 sagemaker:UpdateNotebookInstance;Write
 sagemaker:UpdateNotebookInstanceLifecycleConfig;Write
+sagemaker:UpdatePartnerApp;Write
 sagemaker:UpdatePipeline;Write
 sagemaker:UpdatePipelineExecution;Write
 sagemaker:UpdateProject;Write

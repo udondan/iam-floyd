@@ -23,7 +23,7 @@ export class SsmGuiconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-rdp.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html
    */
   public toCancelConnection() {
     return this.to('CancelConnection');
@@ -34,10 +34,21 @@ export class SsmGuiconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-rdp.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html
    */
   public toGetConnection() {
     return this.to('GetConnection');
+  }
+
+  /**
+   * Grants permission to list the metadata for GUI Connect connections
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html
+   */
+  public toListConnections() {
+    return this.to('ListConnections');
   }
 
   /**
@@ -45,7 +56,7 @@ export class SsmGuiconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-rdp.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-remote-desktop-connections.html
    */
   public toStartConnection() {
     return this.to('StartConnection');
@@ -58,6 +69,9 @@ export class SsmGuiconnect extends PolicyStatement {
     ],
     Read: [
       'GetConnection'
+    ],
+    List: [
+      'ListConnections'
     ]
   };
 }

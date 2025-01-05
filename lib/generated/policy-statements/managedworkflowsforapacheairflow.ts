@@ -85,6 +85,17 @@ export class Airflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke Airflow REST API via an endpoint on the Apache Airflow Webserver
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mwaa/latest/API/API_InvokeRestApi.html
+   */
+  public toInvokeRestApi() {
+    return this.to('InvokeRestApi');
+  }
+
+  /**
    * Grants permission to list the Amazon MWAA environments in your account
    *
    * Access Level: List
@@ -171,6 +182,7 @@ export class Airflow extends PolicyStatement {
       'CreateEnvironment',
       'CreateWebLoginToken',
       'DeleteEnvironment',
+      'InvokeRestApi',
       'PublishMetrics',
       'UpdateEnvironment'
     ],

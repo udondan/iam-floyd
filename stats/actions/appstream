@@ -16,6 +16,7 @@ appstream:CreateImageBuilder;Write
 appstream:CreateImageBuilderStreamingURL;Write
 appstream:CreateStack;Write
 appstream:CreateStreamingURL;Write
+appstream:CreateThemeForStack;Write
 appstream:CreateUpdatedImage;Write
 appstream:CreateUsageReportSubscription;Write
 appstream:CreateUser;Write
@@ -29,6 +30,7 @@ appstream:DeleteImage;Write
 appstream:DeleteImageBuilder;Write
 appstream:DeleteImagePermissions;Write
 appstream:DeleteStack;Write
+appstream:DeleteThemeForStack;Write
 appstream:DeleteUsageReportSubscription;Write
 appstream:DeleteUser;Write
 appstream:DescribeAppBlockBuilderAppBlockAssociations;Read
@@ -44,6 +46,7 @@ appstream:DescribeImagePermissions;Read
 appstream:DescribeImages;Read
 appstream:DescribeSessions;Read
 appstream:DescribeStacks;Read
+appstream:DescribeThemeForStack;Read
 appstream:DescribeUsageReportSubscriptions;Read
 appstream:DescribeUserStackAssociations;Read
 appstream:DescribeUsers;Read
@@ -74,3 +77,4 @@ appstream:UpdateEntitlement;Write
 appstream:UpdateFleet;Write
 appstream:UpdateImagePermissions;Write
 appstream:UpdateStack;Write
+appstream:UpdateThemeForStack;Write

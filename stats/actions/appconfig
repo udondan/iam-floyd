@@ -12,6 +12,7 @@ appconfig:DeleteEnvironment;Write
 appconfig:DeleteExtension;Write
 appconfig:DeleteExtensionAssociation;Write
 appconfig:DeleteHostedConfigurationVersion;Write
+appconfig:GetAccountSettings;Read
 appconfig:GetApplication;Read
 appconfig:GetConfiguration;Read
 appconfig:GetConfigurationProfile;Read
@@ -36,6 +37,7 @@ appconfig:StartDeployment;Write
 appconfig:StopDeployment;Write
 appconfig:TagResource;Tagging
 appconfig:UntagResource;Tagging
+appconfig:UpdateAccountSettings;Write
 appconfig:UpdateApplication;Write
 appconfig:UpdateConfigurationProfile;Write
 appconfig:UpdateDeploymentStrategy;Write

@@ -1,3 +1,8 @@
+cleanrooms-ml:ConfiguredModelAlgorithm
+cleanrooms-ml:ConfiguredModelAlgorithmAssociation
+cleanrooms-ml:MLInputChannel
+cleanrooms-ml:TrainedModel
+cleanrooms-ml:TrainedModelInferenceJob
 cleanrooms-ml:audiencegenerationjob
 cleanrooms-ml:audiencemodel
 cleanrooms-ml:configuredaudiencemodel

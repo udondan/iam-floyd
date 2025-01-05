@@ -75,6 +75,10 @@ export class Rekognition extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html
    */
   public toCreateDataset() {
@@ -96,6 +100,10 @@ export class Rekognition extends PolicyStatement {
    * Grants permission to create an Amazon Rekognition Custom Labels project
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProject.html
    */
@@ -1008,6 +1016,9 @@ export class Rekognition extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProject(projectName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/${ creationTimestamp }`);
@@ -1043,6 +1054,9 @@ export class Rekognition extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDataset(projectName: string, datasetType: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:rekognition:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }/dataset/${ datasetType }/${ creationTimestamp }`);
@@ -1056,6 +1070,8 @@ export class Rekognition extends PolicyStatement {
    * Applies to actions:
    * - .toCopyProjectVersion()
    * - .toCreateCollection()
+   * - .toCreateDataset()
+   * - .toCreateProject()
    * - .toCreateProjectVersion()
    * - .toCreateStreamProcessor()
    * - .toTagResource()
@@ -1076,7 +1092,9 @@ export class Rekognition extends PolicyStatement {
    * Applies to resource types:
    * - collection
    * - streamprocessor
+   * - project
    * - projectversion
+   * - dataset
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1094,6 +1112,8 @@ export class Rekognition extends PolicyStatement {
    * Applies to actions:
    * - .toCopyProjectVersion()
    * - .toCreateCollection()
+   * - .toCreateDataset()
+   * - .toCreateProject()
    * - .toCreateProjectVersion()
    * - .toCreateStreamProcessor()
    * - .toTagResource()

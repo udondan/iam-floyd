@@ -15,6 +15,7 @@ ce:GetAnomalies;Read
 ce:GetAnomalyMonitors;Read
 ce:GetAnomalySubscriptions;Read
 ce:GetApproximateUsageRecords;Read
+ce:GetCommitmentPurchaseAnalysis;Read
 ce:GetConsoleActionSetEnforced;Read
 ce:GetCostAndUsage;Read
 ce:GetCostAndUsageWithResources;Read
@@ -33,12 +34,14 @@ ce:GetSavingsPlansUtilization;Read
 ce:GetSavingsPlansUtilizationDetails;Read
 ce:GetTags;Read
 ce:GetUsageForecast;Read
+ce:ListCommitmentPurchaseAnalyses;List
 ce:ListCostAllocationTagBackfillHistory;List
 ce:ListCostAllocationTags;List
 ce:ListCostCategoryDefinitions;List
 ce:ListSavingsPlansPurchaseRecommendationGeneration;List
 ce:ListTagsForResource;Read
 ce:ProvideAnomalyFeedback;Write
+ce:StartCommitmentPurchaseAnalysis;Write
 ce:StartCostAllocationTagBackfill;Write
 ce:StartSavingsPlansPurchaseRecommendationGeneration;Write
 ce:TagResource;Tagging

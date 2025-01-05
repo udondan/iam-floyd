@@ -1,0 +1,4 @@
+dsql:RequestTag/${TagKey}
+dsql:ResourceTag/${TagKey}
+dsql:TagKeys
+dsql:WitnessRegion

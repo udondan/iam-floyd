@@ -118,6 +118,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate the specified Amazon Connect instance with an Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions
+   */
+  public toAssociateVoiceConnectorConnect() {
+    return this.to('AssociateVoiceConnectorConnect');
+  }
+
+  /**
    * Grants permission to authorize an Active Directory for your Amazon Chime Enterprise account
    *
    * Access Level: Write
@@ -442,6 +453,42 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an Amazon Connect Analytics Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - chime:CreateVoiceConnector
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
+   */
+  public toCreateConnectAnalyticsConnector() {
+    return this.to('CreateConnectAnalyticsConnector');
+  }
+
+  /**
+   * Grants permission to create an Amazon Connect Call Transfer Connector in the AWS account (tag-based access controls are only supported on voice-chime.<region>.amazonaws.com endpoints)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - chime:CreateVoiceConnector
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
+   */
+  public toCreateConnectCallTransferConnector() {
+    return this.to('CreateConnectCallTransferConnector');
+  }
+
+  /**
    * Grants permission to create a media capture pipeline (tag-based access controls are only supported on media-pipelines-chime.<region>.amazonaws.com endpoints)
    *
    * Access Level: Write
@@ -715,7 +762,11 @@ export class Chime extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateVoiceConnector.html
+   * Dependent actions:
+   * - chime:CreateConnectAnalyticsConnector
+   * - chime:CreateConnectCallTransferConnector
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html
    */
   public toCreateVoiceConnector() {
     return this.to('CreateVoiceConnector');
@@ -1150,6 +1201,17 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the configuration of the external system that is connected with the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorExternalSystemsConfiguration.html
+   */
+  public toDeleteVoiceConnectorExternalSystemsConfiguration() {
+    return this.to('DeleteVoiceConnectorExternalSystemsConfiguration');
+  }
+
+  /**
    * Grants permission to delete the specified Amazon Chime Voice Connector Group
    *
    * Access Level: Write
@@ -1433,6 +1495,17 @@ export class Chime extends PolicyStatement {
    */
   public toDisassociateSigninDelegateGroupsFromAccount() {
     return this.to('DisassociateSigninDelegateGroupsFromAccount');
+  }
+
+  /**
+   * Grants permission to disassociate the Amazon Connect instance from the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions
+   */
+  public toDisassociateVoiceConnectorConnect() {
+    return this.to('DisassociateVoiceConnectorConnect');
   }
 
   /**
@@ -1902,6 +1975,17 @@ export class Chime extends PolicyStatement {
    */
   public toGetVoiceConnectorEmergencyCallingConfiguration() {
     return this.to('GetVoiceConnectorEmergencyCallingConfiguration');
+  }
+
+  /**
+   * Grants permission to get the configuration of the external system that is connected with the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorExternalSystemsConfiguration.html
+   */
+  public toGetVoiceConnectorExternalSystemsConfiguration() {
+    return this.to('GetVoiceConnectorExternalSystemsConfiguration');
   }
 
   /**
@@ -2738,6 +2822,17 @@ export class Chime extends PolicyStatement {
    */
   public toPutVoiceConnectorEmergencyCallingConfiguration() {
     return this.to('PutVoiceConnectorEmergencyCallingConfiguration');
+  }
+
+  /**
+   * Grants permission to update the configuration of the external system that is connected with the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorExternalSystemsConfiguration.html
+   */
+  public toPutVoiceConnectorExternalSystemsConfiguration() {
+    return this.to('PutVoiceConnectorExternalSystemsConfiguration');
   }
 
   /**
@@ -3592,6 +3687,7 @@ export class Chime extends PolicyStatement {
       'AssociatePhoneNumbersWithVoiceConnector',
       'AssociatePhoneNumbersWithVoiceConnectorGroup',
       'AssociateSigninDelegateGroupsWithAccount',
+      'AssociateVoiceConnectorConnect',
       'AuthorizeDirectory',
       'BatchCreateAttendee',
       'BatchCreateChannelMembership',
@@ -3619,6 +3715,8 @@ export class Chime extends PolicyStatement {
       'CreateChannelFlow',
       'CreateChannelMembership',
       'CreateChannelModerator',
+      'CreateConnectAnalyticsConnector',
+      'CreateConnectCallTransferConnector',
       'CreateMediaCapturePipeline',
       'CreateMediaConcatenationPipeline',
       'CreateMediaInsightsPipeline',
@@ -3675,6 +3773,7 @@ export class Chime extends PolicyStatement {
       'DeleteSipRule',
       'DeleteVoiceConnector',
       'DeleteVoiceConnectorEmergencyCallingConfiguration',
+      'DeleteVoiceConnectorExternalSystemsConfiguration',
       'DeleteVoiceConnectorGroup',
       'DeleteVoiceConnectorOrigination',
       'DeleteVoiceConnectorProxy',
@@ -3689,6 +3788,7 @@ export class Chime extends PolicyStatement {
       'DisassociatePhoneNumbersFromVoiceConnector',
       'DisassociatePhoneNumbersFromVoiceConnectorGroup',
       'DisassociateSigninDelegateGroupsFromAccount',
+      'DisassociateVoiceConnectorConnect',
       'DisconnectDirectory',
       'InviteDelegate',
       'InviteUsers',
@@ -3705,6 +3805,7 @@ export class Chime extends PolicyStatement {
       'PutSipMediaApplicationAlexaSkillConfiguration',
       'PutSipMediaApplicationLoggingConfiguration',
       'PutVoiceConnectorEmergencyCallingConfiguration',
+      'PutVoiceConnectorExternalSystemsConfiguration',
       'PutVoiceConnectorLoggingConfiguration',
       'PutVoiceConnectorOrigination',
       'PutVoiceConnectorProxy',
@@ -3822,6 +3923,7 @@ export class Chime extends PolicyStatement {
       'GetUserSettings',
       'GetVoiceConnector',
       'GetVoiceConnectorEmergencyCallingConfiguration',
+      'GetVoiceConnectorExternalSystemsConfiguration',
       'GetVoiceConnectorGroup',
       'GetVoiceConnectorLoggingConfiguration',
       'GetVoiceConnectorOrigination',
@@ -4133,6 +4235,8 @@ export class Chime extends PolicyStatement {
    * - .toCreateAppInstanceUser()
    * - .toCreateChannel()
    * - .toCreateChannelFlow()
+   * - .toCreateConnectAnalyticsConnector()
+   * - .toCreateConnectCallTransferConnector()
    * - .toCreateMediaCapturePipeline()
    * - .toCreateMediaConcatenationPipeline()
    * - .toCreateMediaInsightsPipeline()
@@ -4198,6 +4302,8 @@ export class Chime extends PolicyStatement {
    * - .toCreateAppInstanceUser()
    * - .toCreateChannel()
    * - .toCreateChannelFlow()
+   * - .toCreateConnectAnalyticsConnector()
+   * - .toCreateConnectCallTransferConnector()
    * - .toCreateMediaCapturePipeline()
    * - .toCreateMediaConcatenationPipeline()
    * - .toCreateMediaInsightsPipeline()

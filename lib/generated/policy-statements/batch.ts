@@ -49,10 +49,6 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html
    */
   public toCreateJobQueue() {
@@ -236,6 +232,7 @@ export class Batch extends PolicyStatement {
    * - .ifEKSRunAsUser()
    * - .ifEKSRunAsGroup()
    * - .ifEKSPrivileged()
+   * - .ifEKSNamespace()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -249,12 +246,6 @@ export class Batch extends PolicyStatement {
    * Grants permission to submit an AWS Batch job from a job definition in your account
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifShareIdentifier()
-   * - .ifEKSImage()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
@@ -606,6 +597,22 @@ export class Batch extends PolicyStatement {
    */
   public ifEKSImage(value: string | string[], operator?: Operator | string) {
     return this.if(`EKSImage`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the namespace of a cluster used to run the pod for an Amazon EKS job
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   * - .toSubmitJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEKSNamespace(value: string | string[], operator?: Operator | string) {
+    return this.if(`EKSNamespace`, value, operator ?? 'StringLike');
   }
 
   /**

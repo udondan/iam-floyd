@@ -23,6 +23,10 @@ export class RedshiftData extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifSessionOwnerIamUserid()
+   * - .ifGlueCatalogArn()
+   *
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_BatchExecuteStatement.html
    */
   public toBatchExecuteStatement() {
@@ -73,10 +77,25 @@ export class RedshiftData extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifSessionOwnerIamUserid()
+   * - .ifGlueCatalogArn()
+   *
    * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html
    */
   public toExecuteStatement() {
     return this.to('ExecuteStatement');
+  }
+
+  /**
+   * Grants permission to get staging bucket location for a given managed workgroup
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStagingBucketLocation.html
+   */
+  public toGetStagingBucketLocation() {
+    return this.to('GetStagingBucketLocation');
   }
 
   /**
@@ -149,6 +168,7 @@ export class RedshiftData extends PolicyStatement {
     Read: [
       'DescribeStatement',
       'DescribeTable',
+      'GetStagingBucketLocation',
       'GetStatementResult',
       'ListDatabases',
       'ListSchemas'
@@ -194,6 +214,20 @@ export class RedshiftData extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type managed-workgroup to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-serverless.html
+   *
+   * @param managedWorkgroupId - Identifier for the managedWorkgroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onManagedWorkgroup(managedWorkgroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:managed-workgroup/${ managedWorkgroupId }`);
+  }
+
+  /**
    * Filters access by tag-value associated with the resource
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
@@ -208,6 +242,38 @@ export class RedshiftData extends PolicyStatement {
    */
   public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by glue catalog arn
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .toBatchExecuteStatement()
+   * - .toExecuteStatement()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifGlueCatalogArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`glue-catalog-arn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by session owner iam userid
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .toBatchExecuteStatement()
+   * - .toExecuteStatement()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSessionOwnerIamUserid(value: string | string[], operator?: Operator | string) {
+    return this.if(`session-owner-iam-userid`, value, operator ?? 'StringLike');
   }
 
   /**

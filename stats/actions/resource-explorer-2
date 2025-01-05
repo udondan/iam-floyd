@@ -1,6 +1,7 @@
 resource-explorer-2:AssociateDefaultView;Write
 resource-explorer-2:BatchGetView;Read
 resource-explorer-2:CreateIndex;Write
+resource-explorer-2:CreateManagedView;Write
 resource-explorer-2:CreateView;Write
 resource-explorer-2:DeleteIndex;Write
 resource-explorer-2:DeleteResourcePolicy;Write
@@ -9,10 +10,12 @@ resource-explorer-2:DisassociateDefaultView;Write
 resource-explorer-2:GetAccountLevelServiceConfiguration;Read
 resource-explorer-2:GetDefaultView;Read
 resource-explorer-2:GetIndex;Read
+resource-explorer-2:GetManagedView;Read
 resource-explorer-2:GetResourcePolicy;Read
 resource-explorer-2:GetView;Read
 resource-explorer-2:ListIndexes;List
 resource-explorer-2:ListIndexesForMembers;List
+resource-explorer-2:ListManagedViews;List
 resource-explorer-2:ListSupportedResourceTypes;List
 resource-explorer-2:ListTagsForResource;Read
 resource-explorer-2:ListViews;List

@@ -7,6 +7,7 @@ codestar-connections:DeleteHost;Write
 codestar-connections:DeleteRepositoryLink;Write
 codestar-connections:DeleteSyncConfiguration;Write
 codestar-connections:GetConnection;Read
+codestar-connections:GetConnectionToken;Read
 codestar-connections:GetHost;Read
 codestar-connections:GetIndividualAccessToken;Read
 codestar-connections:GetInstallationUrl;Read

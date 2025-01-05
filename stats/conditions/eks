@@ -4,10 +4,13 @@ eks:TagKeys
 eks:accessEntryType
 eks:accessScope
 eks:authenticationMode
+eks:blockStorageEnabled
 eks:bootstrapClusterCreatorAdminPermissions
 eks:bootstrapSelfManagedAddons
 eks:clientId
 eks:clusterName
+eks:computeConfigEnabled
+eks:elasticLoadBalancingEnabled
 eks:issuerUrl
 eks:kubernetesGroups
 eks:namespaces

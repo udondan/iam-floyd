@@ -5,4 +5,5 @@ transfer:host-key
 transfer:profile
 transfer:server
 transfer:user
+transfer:webapp
 transfer:workflow

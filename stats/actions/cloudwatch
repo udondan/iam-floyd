@@ -31,6 +31,7 @@ cloudwatch:GetTopologyDiscoveryStatus;Read
 cloudwatch:GetTopologyMap;Read
 cloudwatch:Link;Write
 cloudwatch:ListDashboards;List
+cloudwatch:ListEntitiesForMetric;List
 cloudwatch:ListManagedInsightRules;Read
 cloudwatch:ListMetricStreams;List
 cloudwatch:ListMetrics;List

@@ -23,7 +23,7 @@ export class Appstudio extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/API_GetAccountStatus.html
+   * https://docs.aws.amazon.com/appstudio/latest/userguide/
    */
   public toGetAccountStatus() {
     return this.to('GetAccountStatus');
@@ -34,7 +34,7 @@ export class Appstudio extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/API_GetEnablementJobStatus.html
+   * https://docs.aws.amazon.com/appstudio/latest/userguide/
    */
   public toGetEnablementJobStatus() {
     return this.to('GetEnablementJobStatus');
@@ -45,7 +45,7 @@ export class Appstudio extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/API_StartEnablementJob.html
+   * https://docs.aws.amazon.com/appstudio/latest/userguide/
    */
   public toStartEnablementJob() {
     return this.to('StartEnablementJob');
@@ -56,7 +56,7 @@ export class Appstudio extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/API_StartRollbackEnablementJob.html
+   * https://docs.aws.amazon.com/appstudio/latest/userguide/
    */
   public toStartRollbackEnablementJob() {
     return this.to('StartRollbackEnablementJob');
@@ -67,7 +67,7 @@ export class Appstudio extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/API_StartTeamDeployment.html
+   * https://docs.aws.amazon.com/appstudio/latest/userguide/
    */
   public toStartTeamDeployment() {
     return this.to('StartTeamDeployment');

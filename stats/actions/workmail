@@ -6,6 +6,7 @@ workmail:CancelMailboxExportJob;Write
 workmail:CreateAlias;Write
 workmail:CreateAvailabilityConfiguration;Write
 workmail:CreateGroup;Write
+workmail:CreateIdentityCenterApplication;Write
 workmail:CreateImpersonationRole;Write
 workmail:CreateInboundMailFlowRule;Write
 workmail:CreateMailDomain;Write
@@ -20,6 +21,8 @@ workmail:DeleteAlias;Write
 workmail:DeleteAvailabilityConfiguration;Write
 workmail:DeleteEmailMonitoringConfiguration;Write
 workmail:DeleteGroup;Write
+workmail:DeleteIdentityCenterApplication;Write
+workmail:DeleteIdentityProviderConfiguration;Write
 workmail:DeleteImpersonationRole;Write
 workmail:DeleteInboundMailFlowRule;Write
 workmail:DeleteMailDomain;Write
@@ -29,6 +32,7 @@ workmail:DeleteMobileDeviceAccessOverride;Write
 workmail:DeleteMobileDeviceAccessRule;Write
 workmail:DeleteOrganization;Write
 workmail:DeleteOutboundMailFlowRule;Write
+workmail:DeletePersonalAccessToken;Write
 workmail:DeleteResource;Write
 workmail:DeleteRetentionPolicy;Write
 workmail:DeleteSmtpGateway;Write
@@ -39,6 +43,7 @@ workmail:DeregisterMailDomain;Write
 workmail:DescribeEmailMonitoringConfiguration;Read
 workmail:DescribeEntity;Read
 workmail:DescribeGroup;List
+workmail:DescribeIdentityProviderConfiguration;Read
 workmail:DescribeInboundDmarcSettings;Read
 workmail:DescribeInboundMailFlowRule;Read
 workmail:DescribeMailDomains;List
@@ -64,6 +69,7 @@ workmail:GetMobileDeviceAccessOverride;Read
 workmail:GetMobileDeviceDetails;Read
 workmail:GetMobileDevicesForUser;Read
 workmail:GetMobilePolicyDetails;Read
+workmail:GetPersonalAccessTokenMetadata;Read
 workmail:ListAccessControlRules;Read
 workmail:ListAliases;List
 workmail:ListAvailabilityConfigurations;Read
@@ -79,6 +85,7 @@ workmail:ListMobileDeviceAccessOverrides;Read
 workmail:ListMobileDeviceAccessRules;Read
 workmail:ListOrganizations;List
 workmail:ListOutboundMailFlowRules;List
+workmail:ListPersonalAccessTokens;List
 workmail:ListResourceDelegates;List
 workmail:ListResources;List
 workmail:ListSmtpGateways;List
@@ -86,6 +93,7 @@ workmail:ListTagsForResource;List
 workmail:ListUsers;List
 workmail:PutAccessControlRule;Write
 workmail:PutEmailMonitoringConfiguration;Write
+workmail:PutIdentityProviderConfiguration;Write
 workmail:PutInboundDmarcSettings;Write
 workmail:PutMailboxPermissions;Write
 workmail:PutMobileDeviceAccessOverride;Write

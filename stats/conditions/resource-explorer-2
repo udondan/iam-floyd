@@ -1,3 +1,4 @@
+resource-explorer-2:Operation
 resource-explorer-2:RequestTag/${TagKey}
 resource-explorer-2:ResourceTag/${TagKey}
 resource-explorer-2:TagKeys

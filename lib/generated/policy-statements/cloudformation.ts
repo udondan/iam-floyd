@@ -627,6 +627,20 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return Hook invocations result information for the specified target
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifChangeSetName()
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListHookResults.html
+   */
+  public toListHookResults() {
+    return this.to('ListHookResults');
+  }
+
+  /**
    * Grants permission to list all stacks that are importing an exported output value
    *
    * Access Level: List
@@ -926,6 +940,7 @@ export class Cloudformation extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TagResource.html
    */
@@ -951,6 +966,7 @@ export class Cloudformation extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UntagResource.html
    */
@@ -1118,6 +1134,7 @@ export class Cloudformation extends PolicyStatement {
       'ListChangeSets',
       'ListExports',
       'ListGeneratedTemplates',
+      'ListHookResults',
       'ListImports',
       'ListResourceScanRelatedResources',
       'ListResourceScanResources',
@@ -1325,12 +1342,29 @@ export class Cloudformation extends PolicyStatement {
    * - .toDescribeChangeSet()
    * - .toDescribeChangeSetHooks()
    * - .toExecuteChangeSet()
+   * - .toListHookResults()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChangeSetName(value: string | string[], operator?: Operator | string) {
     return this.if(`ChangeSetName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the name of a resource-mutating API action. Use to control which APIs IAM users can use to add or remove tags on a stack or stack set
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreateAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`CreateAction`, value, operator ?? 'StringLike');
   }
 
   /**

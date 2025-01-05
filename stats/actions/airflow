@@ -3,6 +3,7 @@ airflow:CreateEnvironment;Write
 airflow:CreateWebLoginToken;Write
 airflow:DeleteEnvironment;Write
 airflow:GetEnvironment;Read
+airflow:InvokeRestApi;Write
 airflow:ListEnvironments;List
 airflow:ListTagsForResource;Read
 airflow:PublishMetrics;Write

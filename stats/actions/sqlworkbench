@@ -18,7 +18,9 @@ sqlworkbench:DeleteConnection;Write
 sqlworkbench:DeleteNotebook;Write
 sqlworkbench:DeleteNotebookCell;Write
 sqlworkbench:DeleteNotebookVersion;Write
+sqlworkbench:DeleteQCustomContext;Write
 sqlworkbench:DeleteSavedQuery;Write
+sqlworkbench:DeleteSqlGenerationContext;Write
 sqlworkbench:DeleteTab;Write
 sqlworkbench:DriverExecute;Write
 sqlworkbench:DuplicateNotebook;Write
@@ -32,10 +34,14 @@ sqlworkbench:GetChart;Read
 sqlworkbench:GetConnection;Read
 sqlworkbench:GetNotebook;Read
 sqlworkbench:GetNotebookVersion;Read
+sqlworkbench:GetQCustomContext;Read
+sqlworkbench:GetQSqlPromptQuotas;Read
 sqlworkbench:GetQSqlRecommendations;Read
 sqlworkbench:GetQueryExecutionHistory;Read
 sqlworkbench:GetSavedQuery;Read
 sqlworkbench:GetSchemaInference;Read
+sqlworkbench:GetSqlGenerationContext;Read
+sqlworkbench:GetSqlRecommendations;Read
 sqlworkbench:GetUserInfo;Read
 sqlworkbench:GetUserWorkspaceSettings;Read
 sqlworkbench:ImportNotebook;Write
@@ -51,6 +57,9 @@ sqlworkbench:ListSavedQueryVersions;List
 sqlworkbench:ListTabs;List
 sqlworkbench:ListTaggedResources;Read
 sqlworkbench:ListTagsForResource;Read
+sqlworkbench:PassAccountSettings;Write
+sqlworkbench:PutQCustomContext;Write
+sqlworkbench:PutSqlGenerationContext;Write
 sqlworkbench:PutTab;Write
 sqlworkbench:PutUserWorkspaceSettings;Write
 sqlworkbench:RestoreNotebookVersion;Write

@@ -2,6 +2,8 @@ ecs:capacity-provider
 ecs:cluster
 ecs:container-instance
 ecs:service
+ecs:service-deployment
+ecs:service-revision
 ecs:task
 ecs:task-definition
 ecs:task-set

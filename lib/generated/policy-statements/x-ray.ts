@@ -41,6 +41,15 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an ongoing trace retrieval job initiated by StartTraceRetrieval using the provided RetrievalToken. A successful cancellation will return an HTTP 200 response
+   *
+   * Access Level: Read
+   */
+  public toCancelTraceRetrieval() {
+    return this.to('CancelTraceRetrieval');
+  }
+
+  /**
    * Grants permission to create a group resource with a name and a filter expression
    *
    * Access Level: Write
@@ -157,6 +166,17 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve all indexing rules. Indexing rules are used to determine the server-side sampling rate for spans ingested through the CloudWatchLogs destination and indexed by X-Ray
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/xray/latest/api/API_GetIndexingRules.html
+   */
+  public toGetIndexingRules() {
+    return this.to('GetIndexingRules');
+  }
+
+  /**
    * Grants permission to retrieve the details of a specific insight
    *
    * Access Level: Read
@@ -198,6 +218,15 @@ export class Xray extends PolicyStatement {
    */
   public toGetInsightSummaries() {
     return this.to('GetInsightSummaries');
+  }
+
+  /**
+   * Grants permission to retrieve a service graph for traces based on the specified RetrievalToken from the Transaction Search CloudWatch log group
+   *
+   * Access Level: Read
+   */
+  public toGetRetrievedTracesGraph() {
+    return this.to('GetRetrievedTracesGraph');
   }
 
   /**
@@ -267,6 +296,17 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the current destination of data sent to PutTraceSegments and OpenTelemetry API
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/xray/latest/api/API_GetTraceSegmentDestination.html
+   */
+  public toGetTraceSegmentDestination() {
+    return this.to('GetTraceSegmentDestination');
+  }
+
+  /**
    * Grants permission to retrieve IDs and metadata for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to BatchGetTraces
    *
    * Access Level: Read
@@ -297,6 +337,15 @@ export class Xray extends PolicyStatement {
    */
   public toListResourcePolicies() {
     return this.to('ListResourcePolicies');
+  }
+
+  /**
+   * Grants permission to retrieve a list of traces for a given RetrievalToken from the Transaction Search CloudWatch log group
+   *
+   * Access Level: List
+   */
+  public toListRetrievedTraces() {
+    return this.to('ListRetrievedTraces');
   }
 
   /**
@@ -333,6 +382,28 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to upload OpenTelemetry spans to AWS X-Ray
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/xray/latest/api/API_PutSpans.html
+   */
+  public toPutSpans() {
+    return this.to('PutSpans');
+  }
+
+  /**
+   * Grants permission to upload spans to AWS X-Ray to be indexed
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-console
+   */
+  public toPutSpansForIndexing() {
+    return this.to('PutSpansForIndexing');
+  }
+
+  /**
    * Grants permission to send AWS X-Ray daemon telemetry to the service
    *
    * Access Level: Write
@@ -352,6 +423,15 @@ export class Xray extends PolicyStatement {
    */
   public toPutTraceSegments() {
     return this.to('PutTraceSegments');
+  }
+
+  /**
+   * Grants permission to initiate a trace retrieval process using the specified time range and for the given trace IDs on the Transaction Search CloudWatch log group
+   *
+   * Access Level: Read
+   */
+  public toStartTraceRetrieval() {
+    return this.to('StartTraceRetrieval');
   }
 
   /**
@@ -398,6 +478,17 @@ export class Xray extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an indexing rule's configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/xray/latest/api/API_UpdateIndexingRule.html
+   */
+  public toUpdateIndexingRule() {
+    return this.to('UpdateIndexingRule');
+  }
+
+  /**
    * Grants permission to modify a sampling rule's configuration
    *
    * Access Level: Write
@@ -411,28 +502,45 @@ export class Xray extends PolicyStatement {
     return this.to('UpdateSamplingRule');
   }
 
+  /**
+   * Grants permission to modify the destination of data sent to PutTraceSegments and OpenTelemetry API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/xray/latest/api/API_UpdateTraceSegmentDestination.html
+   */
+  public toUpdateTraceSegmentDestination() {
+    return this.to('UpdateTraceSegmentDestination');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetTraceSummaryById',
+      'CancelTraceRetrieval',
       'GetDistinctTraceGraphs',
       'GetEncryptionConfig',
       'GetGroup',
       'GetGroups',
+      'GetIndexingRules',
       'GetInsight',
       'GetInsightEvents',
       'GetInsightImpactGraph',
       'GetInsightSummaries',
+      'GetRetrievedTracesGraph',
       'GetSamplingRules',
       'GetSamplingStatisticSummaries',
       'GetSamplingTargets',
       'GetServiceGraph',
       'GetTimeSeriesServiceStatistics',
       'GetTraceGraph',
-      'GetTraceSummaries'
+      'GetTraceSegmentDestination',
+      'GetTraceSummaries',
+      'StartTraceRetrieval'
     ],
     List: [
       'BatchGetTraces',
       'ListResourcePolicies',
+      'ListRetrievedTraces',
       'ListTagsForResource'
     ],
     Write: [
@@ -443,10 +551,14 @@ export class Xray extends PolicyStatement {
       'DeleteSamplingRule',
       'Link',
       'PutResourcePolicy',
+      'PutSpans',
+      'PutSpansForIndexing',
       'PutTelemetryRecords',
       'PutTraceSegments',
       'UpdateGroup',
-      'UpdateSamplingRule'
+      'UpdateIndexingRule',
+      'UpdateSamplingRule',
+      'UpdateTraceSegmentDestination'
     ],
     'Permissions management': [
       'PutEncryptionConfig'

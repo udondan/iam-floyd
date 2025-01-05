@@ -37,6 +37,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add an owner to an entity like domain unit
+   *
+   * Access Level: Write
+   */
+  public toAddEntityOwner() {
+    return this.to('AddEntityOwner');
+  }
+
+  /**
    * Grants permission to add a policy grant
    *
    * Access Level: Write
@@ -52,6 +61,24 @@ export class Datazone extends PolicyStatement {
    */
   public toAssociateEnvironmentRole() {
     return this.to('AssociateEnvironmentRole');
+  }
+
+  /**
+   * Grants permission to remove linked type items from an Amazon DataZone Domain
+   *
+   * Access Level: Write
+   */
+  public toBatchDeleteLinkedTypes() {
+    return this.to('BatchDeleteLinkedTypes');
+  }
+
+  /**
+   * Grants permission to put linked type items to an Amazon DataZone Domain
+   *
+   * Access Level: Write
+   */
+  public toBatchPutLinkedTypes() {
+    return this.to('BatchPutLinkedTypes');
   }
 
   /**
@@ -109,6 +136,33 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create connections
+   *
+   * Access Level: Write
+   */
+  public toCreateConnection() {
+    return this.to('CreateConnection');
+  }
+
+  /**
+   * Grants permission to create data product
+   *
+   * Access Level: Write
+   */
+  public toCreateDataProduct() {
+    return this.to('CreateDataProduct');
+  }
+
+  /**
+   * Grants permission to create data product revision
+   *
+   * Access Level: Write
+   */
+  public toCreateDataProductRevision() {
+    return this.to('CreateDataProductRevision');
+  }
+
+  /**
    * Grants permission to create a new DataSource
    *
    * Access Level: Write
@@ -128,6 +182,15 @@ export class Datazone extends PolicyStatement {
    */
   public toCreateDomain() {
     return this.to('CreateDomain');
+  }
+
+  /**
+   * Grants permission to create a domain unit
+   *
+   * Access Level: Write
+   */
+  public toCreateDomainUnit() {
+    return this.to('CreateDomainUnit');
   }
 
   /**
@@ -230,6 +293,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a project profile
+   *
+   * Access Level: Write
+   */
+  public toCreateProjectProfile() {
+    return this.to('CreateProjectProfile');
+  }
+
+  /**
+   * Grants permission to create rule
+   *
+   * Access Level: Write
+   */
+  public toCreateRule() {
+    return this.to('CreateRule');
+  }
+
+  /**
    * Grants permission to create a grant for an approved subscription on a subscription target
    *
    * Access Level: Write
@@ -293,6 +374,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete connections
+   *
+   * Access Level: Write
+   */
+  public toDeleteConnection() {
+    return this.to('DeleteConnection');
+  }
+
+  /**
+   * Grants permission to delete data product
+   *
+   * Access Level: Write
+   */
+  public toDeleteDataProduct() {
+    return this.to('DeleteDataProduct');
+  }
+
+  /**
    * Grants permission to update existing DataSource
    *
    * Access Level: Write
@@ -317,6 +416,15 @@ export class Datazone extends PolicyStatement {
    */
   public toDeleteDomainSharingPolicy() {
     return this.to('DeleteDomainSharingPolicy');
+  }
+
+  /**
+   * Grants permission to delete an existing domain unit
+   *
+   * Access Level: Write
+   */
+  public toDeleteDomainUnit() {
+    return this.to('DeleteDomainUnit');
   }
 
   /**
@@ -419,6 +527,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a project profile
+   *
+   * Access Level: Write
+   */
+  public toDeleteProjectProfile() {
+    return this.to('DeleteProjectProfile');
+  }
+
+  /**
+   * Grants permission to delete rule
+   *
+   * Access Level: Write
+   */
+  public toDeleteRule() {
+    return this.to('DeleteRule');
+  }
+
+  /**
    * Grants permission to delete a subscription grant from a subscription target
    *
    * Access Level: Write
@@ -491,6 +617,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get connections
+   *
+   * Access Level: Read
+   */
+  public toGetConnection() {
+    return this.to('GetConnection');
+  }
+
+  /**
+   * Grants permission to get data product
+   *
+   * Access Level: Read
+   */
+  public toGetDataProduct() {
+    return this.to('GetDataProduct');
+  }
+
+  /**
    * Grants permission to Get a existing DataSource in Amazon DataZone using its identifier
    *
    * Access Level: Read
@@ -518,12 +662,30 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to use features that require access to domain execution role credentials
+   *
+   * Access Level: Read
+   */
+  public toGetDomainExecutionRoleCredentials() {
+    return this.to('GetDomainExecutionRoleCredentials');
+  }
+
+  /**
    * Grants permission to retrieve a resource policy for a DataZone Domain
    *
    * Access Level: Read
    */
   public toGetDomainSharingPolicy() {
     return this.to('GetDomainSharingPolicy');
+  }
+
+  /**
+   * Grants permission to get an existing domain unit
+   *
+   * Access Level: Read
+   */
+  public toGetDomainUnit() {
+    return this.to('GetDomainUnit');
   }
 
   /**
@@ -635,6 +797,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get job runs
+   *
+   * Access Level: Read
+   */
+  public toGetJobRun() {
+    return this.to('GetJobRun');
+  }
+
+  /**
+   * Grants permission to get lineage events
+   *
+   * Access Level: Read
+   */
+  public toGetLineageEvent() {
+    return this.to('GetLineageEvent');
+  }
+
+  /**
    * Grants permission to get the lineage node
    *
    * Access Level: Read
@@ -668,6 +848,24 @@ export class Datazone extends PolicyStatement {
    */
   public toGetProject() {
     return this.to('GetProject');
+  }
+
+  /**
+   * Grants permission to get project profile details
+   *
+   * Access Level: Read
+   */
+  public toGetProjectProfile() {
+    return this.to('GetProjectProfile');
+  }
+
+  /**
+   * Grants permission to get rule
+   *
+   * Access Level: Read
+   */
+  public toGetRule() {
+    return this.to('GetRule');
   }
 
   /**
@@ -761,6 +959,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list connections
+   *
+   * Access Level: List
+   */
+  public toListConnections() {
+    return this.to('ListConnections');
+  }
+
+  /**
+   * Grants permission to list data product revisions
+   *
+   * Access Level: List
+   */
+  public toListDataProductRevisions() {
+    return this.to('ListDataProductRevisions');
+  }
+
+  /**
    * Grants permission to list DataSource runs job's activities on Asset
    *
    * Access Level: List
@@ -788,12 +1004,30 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list child domain units for a given parent domain unit
+   *
+   * Access Level: List
+   */
+  public toListDomainUnitsForParent() {
+    return this.to('ListDomainUnitsForParent');
+  }
+
+  /**
    * Grants permission to retrieve all domains
    *
    * Access Level: List
    */
   public toListDomains() {
     return this.to('ListDomains');
+  }
+
+  /**
+   * Grants permission to list owners of an entity like domain unit
+   *
+   * Access Level: List
+   */
+  public toListEntityOwners() {
+    return this.to('ListEntityOwners');
   }
 
   /**
@@ -860,12 +1094,39 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list job runs
+   *
+   * Access Level: List
+   */
+  public toListJobRuns() {
+    return this.to('ListJobRuns');
+  }
+
+  /**
+   * Grants permission to list lineage events
+   *
+   * Access Level: List
+   */
+  public toListLineageEvents() {
+    return this.to('ListLineageEvents');
+  }
+
+  /**
    * Grants permission to list historical versions of lineage node
    *
    * Access Level: List
    */
   public toListLineageNodeHistory() {
     return this.to('ListLineageNodeHistory');
+  }
+
+  /**
+   * Grants permission to list linked type items linked to an Amazon DataZone Domain
+   *
+   * Access Level: List
+   */
+  public toListLinkedTypes() {
+    return this.to('ListLinkedTypes');
   }
 
   /**
@@ -905,12 +1166,30 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list project profiles
+   *
+   * Access Level: List
+   */
+  public toListProjectProfiles() {
+    return this.to('ListProjectProfiles');
+  }
+
+  /**
    * Grants permission to list Projects
    *
    * Access Level: List
    */
   public toListProjects() {
     return this.to('ListProjects');
+  }
+
+  /**
+   * Grants permission to list rules
+   *
+   * Access Level: List
+   */
+  public toListRules() {
+    return this.to('ListRules');
   }
 
   /**
@@ -1049,6 +1328,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove an existing owner of an entity like domain unit
+   *
+   * Access Level: Write
+   */
+  public toRemoveEntityOwner() {
+    return this.to('RemoveEntityOwner');
+  }
+
+  /**
    * Grants permission to remove a policy grant
    *
    * Access Level: Write
@@ -1091,6 +1379,15 @@ export class Datazone extends PolicyStatement {
    */
   public toSearchListings() {
     return this.to('SearchListings');
+  }
+
+  /**
+   * Grants permission to search rules
+   *
+   * Access Level: List
+   */
+  public toSearchRules() {
+    return this.to('SearchRules');
   }
 
   /**
@@ -1191,6 +1488,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update connections
+   *
+   * Access Level: Write
+   */
+  public toUpdateConnection() {
+    return this.to('UpdateConnection');
+  }
+
+  /**
    * Grants permission to update existing DataSource
    *
    * Access Level: Write
@@ -1215,6 +1521,15 @@ export class Datazone extends PolicyStatement {
    */
   public toUpdateDomain() {
     return this.to('UpdateDomain');
+  }
+
+  /**
+   * Grants permission to update an existing domain unit
+   *
+   * Access Level: Write
+   */
+  public toUpdateDomainUnit() {
+    return this.to('UpdateDomainUnit');
   }
 
   /**
@@ -1308,6 +1623,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a project profile
+   *
+   * Access Level: Write
+   */
+  public toUpdateProjectProfile() {
+    return this.to('UpdateProjectProfile');
+  }
+
+  /**
+   * Grants permission to update rule
+   *
+   * Access Level: Write
+   */
+  public toUpdateRule() {
+    return this.to('UpdateRule');
+  }
+
+  /**
    * Grants permission to update a subscription grant status for custom grants
    *
    * Access Level: Write
@@ -1356,16 +1689,23 @@ export class Datazone extends PolicyStatement {
     Write: [
       'AcceptPredictions',
       'AcceptSubscriptionRequest',
+      'AddEntityOwner',
       'AddPolicyGrant',
       'AssociateEnvironmentRole',
+      'BatchDeleteLinkedTypes',
+      'BatchPutLinkedTypes',
       'CancelMetadataGenerationRun',
       'CancelSubscription',
       'CreateAsset',
       'CreateAssetFilter',
       'CreateAssetRevision',
       'CreateAssetType',
+      'CreateConnection',
+      'CreateDataProduct',
+      'CreateDataProductRevision',
       'CreateDataSource',
       'CreateDomain',
+      'CreateDomainUnit',
       'CreateEnvironment',
       'CreateEnvironmentAction',
       'CreateEnvironmentBlueprint',
@@ -1377,6 +1717,8 @@ export class Datazone extends PolicyStatement {
       'CreateListingChangeSet',
       'CreateProject',
       'CreateProjectMembership',
+      'CreateProjectProfile',
+      'CreateRule',
       'CreateSubscriptionGrant',
       'CreateSubscriptionRequest',
       'CreateSubscriptionTarget',
@@ -1384,8 +1726,11 @@ export class Datazone extends PolicyStatement {
       'DeleteAsset',
       'DeleteAssetFilter',
       'DeleteAssetType',
+      'DeleteConnection',
+      'DeleteDataProduct',
       'DeleteDataSource',
       'DeleteDomain',
+      'DeleteDomainUnit',
       'DeleteEnvironment',
       'DeleteEnvironmentAction',
       'DeleteEnvironmentBlueprint',
@@ -1397,6 +1742,8 @@ export class Datazone extends PolicyStatement {
       'DeleteListing',
       'DeleteProject',
       'DeleteProjectMembership',
+      'DeleteProjectProfile',
+      'DeleteRule',
       'DeleteSubscriptionGrant',
       'DeleteSubscriptionRequest',
       'DeleteSubscriptionTarget',
@@ -1409,6 +1756,7 @@ export class Datazone extends PolicyStatement {
       'RefreshToken',
       'RejectPredictions',
       'RejectSubscriptionRequest',
+      'RemoveEntityOwner',
       'RemovePolicyGrant',
       'RevokeSubscription',
       'SsoLogin',
@@ -1417,9 +1765,11 @@ export class Datazone extends PolicyStatement {
       'StartMetadataGenerationRun',
       'StopMetadataGenerationRun',
       'UpdateAssetFilter',
+      'UpdateConnection',
       'UpdateDataSource',
       'UpdateDataSourceRunActivities',
       'UpdateDomain',
+      'UpdateDomainUnit',
       'UpdateEnvironment',
       'UpdateEnvironmentAction',
       'UpdateEnvironmentBlueprint',
@@ -1430,6 +1780,8 @@ export class Datazone extends PolicyStatement {
       'UpdateGlossaryTerm',
       'UpdateGroupProfile',
       'UpdateProject',
+      'UpdateProjectProfile',
+      'UpdateRule',
       'UpdateSubscriptionGrantStatus',
       'UpdateSubscriptionRequest',
       'UpdateSubscriptionTarget',
@@ -1445,10 +1797,14 @@ export class Datazone extends PolicyStatement {
       'GetAsset',
       'GetAssetFilter',
       'GetAssetType',
+      'GetConnection',
+      'GetDataProduct',
       'GetDataSource',
       'GetDataSourceRun',
       'GetDomain',
+      'GetDomainExecutionRoleCredentials',
       'GetDomainSharingPolicy',
+      'GetDomainUnit',
       'GetEnvironment',
       'GetEnvironmentAction',
       'GetEnvironmentActionLink',
@@ -1460,10 +1816,14 @@ export class Datazone extends PolicyStatement {
       'GetGlossary',
       'GetGlossaryTerm',
       'GetGroupProfile',
+      'GetJobRun',
+      'GetLineageEvent',
       'GetLineageNode',
       'GetListing',
       'GetMetadataGenerationRun',
       'GetProject',
+      'GetProjectProfile',
+      'GetRule',
       'GetSubscription',
       'GetSubscriptionEligibility',
       'GetSubscriptionGrant',
@@ -1477,10 +1837,14 @@ export class Datazone extends PolicyStatement {
       'ListAccountEnvironments',
       'ListAssetFilters',
       'ListAssetRevisions',
+      'ListConnections',
+      'ListDataProductRevisions',
       'ListDataSourceRunActivities',
       'ListDataSourceRuns',
       'ListDataSources',
+      'ListDomainUnitsForParent',
       'ListDomains',
+      'ListEntityOwners',
       'ListEnvironmentActions',
       'ListEnvironmentBlueprintConfigurationSummaries',
       'ListEnvironmentBlueprintConfigurations',
@@ -1488,12 +1852,17 @@ export class Datazone extends PolicyStatement {
       'ListEnvironmentProfiles',
       'ListEnvironments',
       'ListGroupsForUser',
+      'ListJobRuns',
+      'ListLineageEvents',
       'ListLineageNodeHistory',
+      'ListLinkedTypes',
       'ListMetadataGenerationRuns',
       'ListNotifications',
       'ListPolicyGrants',
       'ListProjectMemberships',
+      'ListProjectProfiles',
       'ListProjects',
+      'ListRules',
       'ListSubscriptionGrants',
       'ListSubscriptionRequests',
       'ListSubscriptionTargets',
@@ -1503,6 +1872,7 @@ export class Datazone extends PolicyStatement {
       'Search',
       'SearchGroupProfiles',
       'SearchListings',
+      'SearchRules',
       'SearchTypes',
       'SearchUserProfiles'
     ],

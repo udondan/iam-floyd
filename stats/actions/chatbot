@@ -1,7 +1,10 @@
+chatbot:AssociateToConfiguration;Write
 chatbot:CreateChimeWebhookConfiguration;Write
+chatbot:CreateCustomAction;Write
 chatbot:CreateMicrosoftTeamsChannelConfiguration;Write
 chatbot:CreateSlackChannelConfiguration;Write
 chatbot:DeleteChimeWebhookConfiguration;Write
+chatbot:DeleteCustomAction;Write
 chatbot:DeleteMicrosoftTeamsChannelConfiguration;Write
 chatbot:DeleteMicrosoftTeamsConfiguredTeam;Write
 chatbot:DeleteMicrosoftTeamsUserIdentity;Write
@@ -13,10 +16,14 @@ chatbot:DescribeSlackChannelConfigurations;Read
 chatbot:DescribeSlackChannels;Read
 chatbot:DescribeSlackUserIdentities;Read
 chatbot:DescribeSlackWorkspaces;Read
+chatbot:DisassociateFromConfiguration;Write
 chatbot:GetAccountPreferences;Read
+chatbot:GetCustomAction;Read
 chatbot:GetMicrosoftTeamsChannelConfiguration;Read
 chatbot:GetMicrosoftTeamsOauthParameters;Read
 chatbot:GetSlackOauthParameters;Read
+chatbot:ListAssociations;Read
+chatbot:ListCustomActions;List
 chatbot:ListMicrosoftTeamsChannelConfigurations;Read
 chatbot:ListMicrosoftTeamsConfiguredTeams;Read
 chatbot:ListMicrosoftTeamsUserIdentities;Read
@@ -27,5 +34,6 @@ chatbot:TagResource;Tagging
 chatbot:UntagResource;Tagging
 chatbot:UpdateAccountPreferences;Write
 chatbot:UpdateChimeWebhookConfiguration;Write
+chatbot:UpdateCustomAction;Write
 chatbot:UpdateMicrosoftTeamsChannelConfiguration;Write
 chatbot:UpdateSlackChannelConfiguration;Write

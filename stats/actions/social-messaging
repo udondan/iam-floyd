@@ -1,0 +1,13 @@
+social-messaging:AssociateWhatsAppBusinessAccount;Write
+social-messaging:DeleteWhatsAppMessageMedia;Write
+social-messaging:DisassociateWhatsAppBusinessAccount;Write
+social-messaging:GetLinkedWhatsAppBusinessAccount;Read
+social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber;Read
+social-messaging:GetWhatsAppMessageMedia;Write
+social-messaging:ListLinkedWhatsAppBusinessAccounts;List
+social-messaging:ListTagsForResource;Read
+social-messaging:PostWhatsAppMessageMedia;Write
+social-messaging:PutWhatsAppBusinessAccountEventDestinations;Write
+social-messaging:SendWhatsAppMessage;Write
+social-messaging:TagResource;Tagging
+social-messaging:UntagResource;Tagging

@@ -6,6 +6,7 @@ rds:ApplyPendingMaintenanceAction;Write
 rds:AuthorizeDBSecurityGroupIngress;Permissions management
 rds:BacktrackDBCluster;Write
 rds:CancelExportTask;Write
+rds:CopyCustomDBEngineVersion;Write
 rds:CopyDBClusterParameterGroup;Write
 rds:CopyDBClusterSnapshot;Write
 rds:CopyDBParameterGroup;Write
@@ -79,9 +80,9 @@ rds:DescribeDBRecommendations;List
 rds:DescribeDBSecurityGroups;List
 rds:DescribeDBShardGroups;List
 rds:DescribeDBSnapshotAttributes;List
+rds:DescribeDBSnapshotTenantDatabases;List
 rds:DescribeDBSnapshots;List
 rds:DescribeDBSubnetGroups;List
-rds:DescribeDbSnapshotTenantDatabases;List
 rds:DescribeEngineDefaultClusterParameters;List
 rds:DescribeEngineDefaultParameters;List
 rds:DescribeEventCategories;List

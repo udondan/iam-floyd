@@ -19,6 +19,20 @@ export class DocdbElastic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to apply pending maintenance actions on Amazon DocDB-Elastic cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ApplyPendingMaintenanceAction.html
+   */
+  public toApplyPendingMaintenanceAction() {
+    return this.to('ApplyPendingMaintenanceAction');
+  }
+
+  /**
    * Grants permission to copy a new Amazon DocDB-Elastic cluster snapshot
    *
    * Access Level: Write
@@ -191,6 +205,20 @@ export class DocdbElastic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about pending maintenance actions on Amazon DocDB-Elastic cluster
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_GetPendingMaintenanceAction.html
+   */
+  public toGetPendingMaintenanceAction() {
+    return this.to('GetPendingMaintenanceAction');
+  }
+
+  /**
    * Grants permission to list the cluster snapshots in your account
    *
    * Access Level: List
@@ -210,6 +238,20 @@ export class DocdbElastic extends PolicyStatement {
    */
   public toListClusters() {
     return this.to('ListClusters');
+  }
+
+  /**
+   * Grants permission to list details about pending maintenance actions on any Amazon DocDB-Elastic cluster
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/documentdb/latest/developerguide/API_elastic_ListPendingMaintenanceActions.html
+   */
+  public toListPendingMaintenanceActions() {
+    return this.to('ListPendingMaintenanceActions');
   }
 
   /**
@@ -358,6 +400,7 @@ export class DocdbElastic extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ApplyPendingMaintenanceAction',
       'CopyClusterSnapshot',
       'CreateCluster',
       'CreateClusterSnapshot',
@@ -370,11 +413,13 @@ export class DocdbElastic extends PolicyStatement {
     ],
     Read: [
       'GetCluster',
-      'GetClusterSnapshot'
+      'GetClusterSnapshot',
+      'GetPendingMaintenanceAction'
     ],
     List: [
       'ListClusterSnapshots',
       'ListClusters',
+      'ListPendingMaintenanceActions',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -443,12 +488,15 @@ export class DocdbElastic extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toApplyPendingMaintenanceAction()
    * - .toCopyClusterSnapshot()
    * - .toCreateClusterSnapshot()
    * - .toDeleteCluster()
    * - .toDeleteClusterSnapshot()
    * - .toGetCluster()
    * - .toGetClusterSnapshot()
+   * - .toGetPendingMaintenanceAction()
+   * - .toListPendingMaintenanceActions()
    * - .toListTagsForResource()
    * - .toRestoreClusterFromSnapshot()
    * - .toStartCluster()

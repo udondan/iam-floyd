@@ -1,0 +1,12 @@
+backup-search:GetSearchJob;Read
+backup-search:GetSearchResultExportJob;Read
+backup-search:ListSearchJobBackups;Read
+backup-search:ListSearchJobResults;Read
+backup-search:ListSearchJobs;List
+backup-search:ListSearchResultExportJobs;List
+backup-search:ListTagsForResource;Read
+backup-search:StartSearchJob;Write
+backup-search:StartSearchResultExportJob;Write
+backup-search:StopSearchJob;Write
+backup-search:TagResource;Tagging
+backup-search:UntagResource;Tagging

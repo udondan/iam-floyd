@@ -628,6 +628,28 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable the management of member account root user credentials for an organization managed under the current account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DisableOrganizationsRootCredentialsManagement.html
+   */
+  public toDisableOrganizationsRootCredentialsManagement() {
+    return this.to('DisableOrganizationsRootCredentialsManagement');
+  }
+
+  /**
+   * Grants permission to disable privileged root actions in member accounts for an organization managed under the current account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DisableOrganizationsRootSessions.html
+   */
+  public toDisableOrganizationsRootSessions() {
+    return this.to('DisableOrganizationsRootSessions');
+  }
+
+  /**
    * Grants permission to enable an MFA device and associate it with the specified IAM user
    *
    * Access Level: Write
@@ -642,6 +664,28 @@ export class Iam extends PolicyStatement {
    */
   public toEnableMFADevice() {
     return this.to('EnableMFADevice');
+  }
+
+  /**
+   * Grants permission to enable the management of member account root user credentials for an organization managed under the current account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableOrganizationsRootCredentialsManagement.html
+   */
+  public toEnableOrganizationsRootCredentialsManagement() {
+    return this.to('EnableOrganizationsRootCredentialsManagement');
+  }
+
+  /**
+   * Grants permission to enable privileged root actions in member accounts for an organization managed under the current account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableOrganizationsRootSessions.html
+   */
+  public toEnableOrganizationsRootSessions() {
+    return this.to('EnableOrganizationsRootSessions');
   }
 
   /**
@@ -1192,6 +1236,17 @@ export class Iam extends PolicyStatement {
    */
   public toListOpenIDConnectProviders() {
     return this.to('ListOpenIDConnectProviders');
+  }
+
+  /**
+   * Grants permission to list the centralized root access features enabled for your organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOrganizationsFeatures.html
+   */
+  public toListOrganizationsFeatures() {
+    return this.to('ListOrganizationsFeatures');
   }
 
   /**
@@ -2097,7 +2152,11 @@ export class Iam extends PolicyStatement {
       'DeleteSigningCertificate',
       'DeleteUser',
       'DeleteVirtualMFADevice',
+      'DisableOrganizationsRootCredentialsManagement',
+      'DisableOrganizationsRootSessions',
       'EnableMFADevice',
+      'EnableOrganizationsRootCredentialsManagement',
+      'EnableOrganizationsRootSessions',
       'PassRole',
       'RemoveClientIDFromOpenIDConnectProvider',
       'RemoveRoleFromInstanceProfile',
@@ -2206,6 +2265,7 @@ export class Iam extends PolicyStatement {
       'ListMFADevices',
       'ListOpenIDConnectProviderTags',
       'ListOpenIDConnectProviders',
+      'ListOrganizationsFeatures',
       'ListPolicies',
       'ListPoliciesGrantingServiceAccess',
       'ListPolicyTags',

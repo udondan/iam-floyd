@@ -8,6 +8,7 @@ networkmanager:CreateConnectPeer;Write
 networkmanager:CreateConnection;Write
 networkmanager:CreateCoreNetwork;Write
 networkmanager:CreateDevice;Write
+networkmanager:CreateDirectConnectGatewayAttachment;Write
 networkmanager:CreateGlobalNetwork;Write
 networkmanager:CreateLink;Write
 networkmanager:CreateSite;Write
@@ -43,6 +44,7 @@ networkmanager:GetCoreNetworkChangeSet;Read
 networkmanager:GetCoreNetworkPolicy;Read
 networkmanager:GetCustomerGatewayAssociations;List
 networkmanager:GetDevices;List
+networkmanager:GetDirectConnectGatewayAttachment;Read
 networkmanager:GetLinkAssociations;List
 networkmanager:GetLinks;List
 networkmanager:GetNetworkResourceCounts;Read
@@ -78,6 +80,7 @@ networkmanager:UntagResource;Tagging
 networkmanager:UpdateConnection;Write
 networkmanager:UpdateCoreNetwork;Write
 networkmanager:UpdateDevice;Write
+networkmanager:UpdateDirectConnectGatewayAttachment;Write
 networkmanager:UpdateGlobalNetwork;Write
 networkmanager:UpdateLink;Write
 networkmanager:UpdateNetworkResourceMetadata;Write

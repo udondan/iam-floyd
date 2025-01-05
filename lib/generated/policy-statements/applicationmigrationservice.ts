@@ -141,6 +141,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a network migration definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateNetworkMigrationDefinition.html
+   */
+  public toCreateNetworkMigrationDefinition() {
+    return this.to('CreateNetworkMigrationDefinition');
+  }
+
+  /**
    * Grants permission to create replication configuration template
    *
    * Access Level: Write
@@ -227,6 +238,17 @@ export class Mgn extends PolicyStatement {
    */
   public toDeleteLaunchConfigurationTemplate() {
     return this.to('DeleteLaunchConfigurationTemplate');
+  }
+
+  /**
+   * Grants permission to delete a network migration definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_DeleteNetworkMigrationDefinition.html
+   */
+  public toDeleteNetworkMigrationDefinition() {
+    return this.to('DeleteNetworkMigrationDefinition');
   }
 
   /**
@@ -494,6 +516,28 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a network migration definition
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetNetworkMigrationDefinition.html
+   */
+  public toGetNetworkMigrationDefinition() {
+    return this.to('GetNetworkMigrationDefinition');
+  }
+
+  /**
+   * Grants permission to get a network migration mapper segment construct
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetNetworkMigrationMapperSegmentConstruct.html
+   */
+  public toGetNetworkMigrationMapperSegmentConstruct() {
+    return this.to('GetNetworkMigrationMapperSegmentConstruct');
+  }
+
+  /**
    * Grants permission to get replication configuration
    *
    * Access Level: Read
@@ -618,6 +662,138 @@ export class Mgn extends PolicyStatement {
    */
   public toListManagedAccounts() {
     return this.to('ListManagedAccounts');
+  }
+
+  /**
+   * Grants permission to list network migration analyses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationAnalyses.html
+   */
+  public toListNetworkMigrationAnalyses() {
+    return this.to('ListNetworkMigrationAnalyses');
+  }
+
+  /**
+   * Grants permission to list network migration analysis results
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationAnalysisResults.html
+   */
+  public toListNetworkMigrationAnalysisResults() {
+    return this.to('ListNetworkMigrationAnalysisResults');
+  }
+
+  /**
+   * Grants permission to list network migration code generation segments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationCodeGenerationSegments.html
+   */
+  public toListNetworkMigrationCodeGenerationSegments() {
+    return this.to('ListNetworkMigrationCodeGenerationSegments');
+  }
+
+  /**
+   * Grants permission to list network migration code generations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationCodeGenerations.html
+   */
+  public toListNetworkMigrationCodeGenerations() {
+    return this.to('ListNetworkMigrationCodeGenerations');
+  }
+
+  /**
+   * Grants permission to list network migration definitions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationDefinitions.html
+   */
+  public toListNetworkMigrationDefinitions() {
+    return this.to('ListNetworkMigrationDefinitions');
+  }
+
+  /**
+   * Grants permission to list network migration deployed stacks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationDeployedStacks.html
+   */
+  public toListNetworkMigrationDeployedStacks() {
+    return this.to('ListNetworkMigrationDeployedStacks');
+  }
+
+  /**
+   * Grants permission to list network migration deployed stacks deletions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationDeployedStacksDeletions.html
+   */
+  public toListNetworkMigrationDeployedStacksDeletions() {
+    return this.to('ListNetworkMigrationDeployedStacksDeletions');
+  }
+
+  /**
+   * Grants permission to list network migration deployments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationDeployments.html
+   */
+  public toListNetworkMigrationDeployments() {
+    return this.to('ListNetworkMigrationDeployments');
+  }
+
+  /**
+   * Grants permission to list network migration executions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationExecutions.html
+   */
+  public toListNetworkMigrationExecutions() {
+    return this.to('ListNetworkMigrationExecutions');
+  }
+
+  /**
+   * Grants permission to list network migration mapper segment constructs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMapperSegmentConstructs.html
+   */
+  public toListNetworkMigrationMapperSegmentConstructs() {
+    return this.to('ListNetworkMigrationMapperSegmentConstructs');
+  }
+
+  /**
+   * Grants permission to list network migration mapper segments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMapperSegments.html
+   */
+  public toListNetworkMigrationMapperSegments() {
+    return this.to('ListNetworkMigrationMapperSegments');
+  }
+
+  /**
+   * Grants permission to list network migration mappings
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMappings.html
+   */
+  public toListNetworkMigrationMappings() {
+    return this.to('ListNetworkMigrationMappings');
   }
 
   /**
@@ -1006,6 +1182,306 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a network migration analysis
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - directconnect:DescribeConnections
+   * - directconnect:DescribeDirectConnectGatewayAssociations
+   * - directconnect:DescribeDirectConnectGatewayAttachments
+   * - directconnect:DescribeDirectConnectGateways
+   * - directconnect:DescribeVirtualGateways
+   * - directconnect:DescribeVirtualInterfaces
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInsightsPath
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateTags
+   * - ec2:DeleteNetworkInsightsAnalysis
+   * - ec2:DeleteNetworkInsightsPath
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteSecurityGroup
+   * - ec2:DeleteTags
+   * - ec2:DescribeAvailabilityZones
+   * - ec2:DescribeCustomerGateways
+   * - ec2:DescribeInstances
+   * - ec2:DescribeInternetGateways
+   * - ec2:DescribeManagedPrefixLists
+   * - ec2:DescribeNatGateways
+   * - ec2:DescribeNetworkAcls
+   * - ec2:DescribeNetworkInsightsAnalyses
+   * - ec2:DescribeNetworkInsightsPaths
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribePrefixLists
+   * - ec2:DescribeRegions
+   * - ec2:DescribeRouteTables
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeTransitGatewayAttachments
+   * - ec2:DescribeTransitGatewayConnects
+   * - ec2:DescribeTransitGatewayPeeringAttachments
+   * - ec2:DescribeTransitGatewayRouteTables
+   * - ec2:DescribeTransitGatewayVpcAttachments
+   * - ec2:DescribeTransitGateways
+   * - ec2:DescribeVpcEndpointServiceConfigurations
+   * - ec2:DescribeVpcEndpoints
+   * - ec2:DescribeVpcPeeringConnections
+   * - ec2:DescribeVpcs
+   * - ec2:DescribeVpnConnections
+   * - ec2:DescribeVpnGateways
+   * - ec2:GetManagedPrefixListEntries
+   * - ec2:GetTransitGatewayRouteTablePropagations
+   * - ec2:SearchTransitGatewayRoutes
+   * - ec2:StartNetworkInsightsAnalysis
+   * - elasticloadbalancing:DescribeListeners
+   * - elasticloadbalancing:DescribeLoadBalancerAttributes
+   * - elasticloadbalancing:DescribeLoadBalancers
+   * - elasticloadbalancing:DescribeRules
+   * - elasticloadbalancing:DescribeTags
+   * - elasticloadbalancing:DescribeTargetGroupAttributes
+   * - elasticloadbalancing:DescribeTargetGroups
+   * - elasticloadbalancing:DescribeTargetHealth
+   * - globalaccelerator:ListAccelerators
+   * - globalaccelerator:ListCustomRoutingAccelerators
+   * - globalaccelerator:ListCustomRoutingEndpointGroups
+   * - globalaccelerator:ListCustomRoutingListeners
+   * - globalaccelerator:ListCustomRoutingPortMappings
+   * - globalaccelerator:ListEndpointGroups
+   * - globalaccelerator:ListListeners
+   * - network-firewall:DescribeFirewall
+   * - network-firewall:DescribeFirewallPolicy
+   * - network-firewall:DescribeResourcePolicy
+   * - network-firewall:DescribeRuleGroup
+   * - network-firewall:ListFirewallPolicies
+   * - network-firewall:ListFirewalls
+   * - network-firewall:ListRuleGroups
+   * - tiros:CreateQuery
+   * - tiros:ExtendQuery
+   * - tiros:GetQueryAnswer
+   * - tiros:GetQueryExplanation
+   * - tiros:GetQueryExtensionAccounts
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationAnalysis.html
+   */
+  public toStartNetworkMigrationAnalysis() {
+    return this.to('StartNetworkMigrationAnalysis');
+  }
+
+  /**
+   * Grants permission to start network migration code generation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationCodeGeneration.html
+   */
+  public toStartNetworkMigrationCodeGeneration() {
+    return this.to('StartNetworkMigrationCodeGeneration');
+  }
+
+  /**
+   * Grants permission to start deletion of network migration deployed stacks
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:AcceptTransitGatewayVpcAttachment
+   * - ec2:AssociateNatGatewayAddress
+   * - ec2:AssociateRouteTable
+   * - ec2:AssociateSubnetCidrBlock
+   * - ec2:AssociateTransitGatewayRouteTable
+   * - ec2:AssociateVpcCidrBlock
+   * - ec2:AttachInternetGateway
+   * - ec2:AttachVolume
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:DeleteInternetGateway
+   * - ec2:DeleteLaunchTemplate
+   * - ec2:DeleteLaunchTemplateVersions
+   * - ec2:DeleteNatGateway
+   * - ec2:DeleteNetworkAcl
+   * - ec2:DeleteNetworkAclEntry
+   * - ec2:DeleteNetworkInsightsAnalysis
+   * - ec2:DeleteNetworkInsightsPath
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteRoute
+   * - ec2:DeleteRouteTable
+   * - ec2:DeleteSecurityGroup
+   * - ec2:DeleteSnapshot
+   * - ec2:DeleteSubnet
+   * - ec2:DeleteTransitGateway
+   * - ec2:DeleteTransitGatewayRoute
+   * - ec2:DeleteTransitGatewayRouteTable
+   * - ec2:DeleteTransitGatewayVpcAttachment
+   * - ec2:DeleteVolume
+   * - ec2:DeleteVpc
+   * - ec2:DetachInternetGateway
+   * - ec2:DetachVolume
+   * - ec2:DisableTransitGatewayRouteTablePropagation
+   * - ec2:DisassociateNatGatewayAddress
+   * - ec2:DisassociateRouteTable
+   * - ec2:DisassociateTransitGatewayRouteTable
+   * - ec2:EnableTransitGatewayRouteTablePropagation
+   * - ec2:ModifyInstanceAttribute
+   * - ec2:ModifyLaunchTemplate
+   * - ec2:ModifySubnetAttribute
+   * - ec2:ModifyTransitGateway
+   * - ec2:ModifyTransitGatewayVpcAttachment
+   * - ec2:ModifyVolume
+   * - ec2:ModifyVpcAttribute
+   * - ec2:RejectTransitGatewayVpcAttachment
+   * - ec2:ReleaseAddress
+   * - ec2:ReplaceNetworkAclAssociation
+   * - ec2:ReplaceNetworkAclEntry
+   * - ec2:ReplaceRoute
+   * - ec2:ReplaceTransitGatewayRoute
+   * - ec2:RevokeSecurityGroupEgress
+   * - ec2:RevokeSecurityGroupIngress
+   * - ec2:SearchTransitGatewayRoutes
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationDeployedStacksDeletion.html
+   */
+  public toStartNetworkMigrationDeployedStacksDeletion() {
+    return this.to('StartNetworkMigrationDeployedStacksDeletion');
+  }
+
+  /**
+   * Grants permission to start a network migration deployment
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:AcceptTransitGatewayVpcAttachment
+   * - ec2:AssociateNatGatewayAddress
+   * - ec2:AssociateRouteTable
+   * - ec2:AssociateSubnetCidrBlock
+   * - ec2:AssociateTransitGatewayRouteTable
+   * - ec2:AssociateVpcCidrBlock
+   * - ec2:AttachInternetGateway
+   * - ec2:AttachVolume
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNatGateway
+   * - ec2:CreateNetworkAcl
+   * - ec2:CreateNetworkAclEntry
+   * - ec2:CreateNetworkInsightsPath
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateRoute
+   * - ec2:CreateRouteTable
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateSubnet
+   * - ec2:CreateTags
+   * - ec2:CreateTransitGatewayRoute
+   * - ec2:CreateTransitGatewayRouteTable
+   * - ec2:CreateTransitGatewayVpcAttachment
+   * - ec2:DeleteInternetGateway
+   * - ec2:DeleteLaunchTemplate
+   * - ec2:DeleteLaunchTemplateVersions
+   * - ec2:DeleteNatGateway
+   * - ec2:DeleteNetworkAcl
+   * - ec2:DeleteNetworkAclEntry
+   * - ec2:DeleteNetworkInsightsAnalysis
+   * - ec2:DeleteNetworkInsightsPath
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteRoute
+   * - ec2:DeleteRouteTable
+   * - ec2:DeleteSecurityGroup
+   * - ec2:DeleteSnapshot
+   * - ec2:DeleteSubnet
+   * - ec2:DeleteTransitGateway
+   * - ec2:DeleteTransitGatewayRoute
+   * - ec2:DeleteTransitGatewayRouteTable
+   * - ec2:DeleteTransitGatewayVpcAttachment
+   * - ec2:DeleteVolume
+   * - ec2:DeleteVpc
+   * - ec2:DescribeAccountAttributes
+   * - ec2:DescribeAddresses
+   * - ec2:DescribeAvailabilityZones
+   * - ec2:DescribeCustomerGateways
+   * - ec2:DescribeEgressOnlyInternetGateways
+   * - ec2:DescribeHosts
+   * - ec2:DescribeImages
+   * - ec2:DescribeInstanceAttribute
+   * - ec2:DescribeInstanceStatus
+   * - ec2:DescribeInstanceTypes
+   * - ec2:DescribeInstances
+   * - ec2:DescribeInternetGateways
+   * - ec2:DescribeLaunchTemplateVersions
+   * - ec2:DescribeLaunchTemplates
+   * - ec2:DescribeManagedPrefixLists
+   * - ec2:DescribeNatGateways
+   * - ec2:DescribeNetworkAcls
+   * - ec2:DescribeNetworkInsightsAnalyses
+   * - ec2:DescribeNetworkInsightsPaths
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribePrefixLists
+   * - ec2:DescribeRegions
+   * - ec2:DescribeRouteTables
+   * - ec2:DescribeSecurityGroupRules
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSnapshots
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeTransitGatewayAttachments
+   * - ec2:DescribeTransitGatewayConnects
+   * - ec2:DescribeTransitGatewayPeeringAttachments
+   * - ec2:DescribeTransitGatewayRouteTables
+   * - ec2:DescribeTransitGatewayVpcAttachments
+   * - ec2:DescribeTransitGateways
+   * - ec2:DescribeVolumes
+   * - ec2:DescribeVpcEndpointServiceConfigurations
+   * - ec2:DescribeVpcEndpoints
+   * - ec2:DescribeVpcPeeringConnections
+   * - ec2:DescribeVpcs
+   * - ec2:DescribeVpnConnections
+   * - ec2:DescribeVpnGateways
+   * - ec2:DetachInternetGateway
+   * - ec2:DetachVolume
+   * - ec2:DisableTransitGatewayRouteTablePropagation
+   * - ec2:DisassociateNatGatewayAddress
+   * - ec2:DisassociateRouteTable
+   * - ec2:DisassociateTransitGatewayRouteTable
+   * - ec2:EnableTransitGatewayRouteTablePropagation
+   * - ec2:GetEbsDefaultKmsKeyId
+   * - ec2:GetEbsEncryptionByDefault
+   * - ec2:GetManagedPrefixListEntries
+   * - ec2:GetTransitGatewayRouteTableAssociations
+   * - ec2:GetTransitGatewayRouteTablePropagations
+   * - ec2:ModifyInstanceAttribute
+   * - ec2:ModifyLaunchTemplate
+   * - ec2:ModifySubnetAttribute
+   * - ec2:ModifyTransitGateway
+   * - ec2:ModifyTransitGatewayVpcAttachment
+   * - ec2:ModifyVolume
+   * - ec2:ModifyVpcAttribute
+   * - ec2:RejectTransitGatewayVpcAttachment
+   * - ec2:ReleaseAddress
+   * - ec2:ReplaceNetworkAclAssociation
+   * - ec2:ReplaceNetworkAclEntry
+   * - ec2:ReplaceRoute
+   * - ec2:ReplaceTransitGatewayRoute
+   * - ec2:RevokeSecurityGroupEgress
+   * - ec2:RevokeSecurityGroupIngress
+   * - ec2:SearchTransitGatewayRoutes
+   * - ec2:StartNetworkInsightsAnalysis
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationDeployment.html
+   */
+  public toStartNetworkMigrationDeployment() {
+    return this.to('StartNetworkMigrationDeployment');
+  }
+
+  /**
+   * Grants permission to start a network migration mapping
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationMapping.html
+   */
+  public toStartNetworkMigrationMapping() {
+    return this.to('StartNetworkMigrationMapping');
+  }
+
+  /**
    * Grants permission to start replication
    *
    * Access Level: Write
@@ -1253,6 +1729,39 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a network migration definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateNetworkMigrationDefinition.html
+   */
+  public toUpdateNetworkMigrationDefinition() {
+    return this.to('UpdateNetworkMigrationDefinition');
+  }
+
+  /**
+   * Grants permission to update a network migration mapper segment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateNetworkMigrationMapperSegment.html
+   */
+  public toUpdateNetworkMigrationMapperSegment() {
+    return this.to('UpdateNetworkMigrationMapperSegment');
+  }
+
+  /**
+   * Grants permission to update a network migration mapper segment construct
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateNetworkMigrationMapperSegmentConstruct.html
+   */
+  public toUpdateNetworkMigrationMapperSegmentConstruct() {
+    return this.to('UpdateNetworkMigrationMapperSegmentConstruct');
+  }
+
+  /**
    * Grants permission to update replication configuration
    *
    * Access Level: Write
@@ -1330,6 +1839,7 @@ export class Mgn extends PolicyStatement {
       'CreateApplication',
       'CreateConnector',
       'CreateLaunchConfigurationTemplate',
+      'CreateNetworkMigrationDefinition',
       'CreateReplicationConfigurationTemplate',
       'CreateVcenterClientForMgn',
       'CreateWave',
@@ -1337,6 +1847,7 @@ export class Mgn extends PolicyStatement {
       'DeleteConnector',
       'DeleteJob',
       'DeleteLaunchConfigurationTemplate',
+      'DeleteNetworkMigrationDefinition',
       'DeleteReplicationConfigurationTemplate',
       'DeleteSourceServer',
       'DeleteVcenterClient',
@@ -1372,6 +1883,11 @@ export class Mgn extends PolicyStatement {
       'StartCutover',
       'StartExport',
       'StartImport',
+      'StartNetworkMigrationAnalysis',
+      'StartNetworkMigrationCodeGeneration',
+      'StartNetworkMigrationDeployedStacksDeletion',
+      'StartNetworkMigrationDeployment',
+      'StartNetworkMigrationMapping',
       'StartReplication',
       'StartTest',
       'StopReplication',
@@ -1387,6 +1903,9 @@ export class Mgn extends PolicyStatement {
       'UpdateConnector',
       'UpdateLaunchConfiguration',
       'UpdateLaunchConfigurationTemplate',
+      'UpdateNetworkMigrationDefinition',
+      'UpdateNetworkMigrationMapperSegment',
+      'UpdateNetworkMigrationMapperSegmentConstruct',
       'UpdateReplicationConfiguration',
       'UpdateReplicationConfigurationTemplate',
       'UpdateSourceServer',
@@ -1405,6 +1924,8 @@ export class Mgn extends PolicyStatement {
       'GetAgentSnapshotCreditsForMgn',
       'GetChannelCommandsForMgn',
       'GetLaunchConfiguration',
+      'GetNetworkMigrationDefinition',
+      'GetNetworkMigrationMapperSegmentConstruct',
       'GetReplicationConfiguration',
       'GetVcenterClientCommandsForMgn',
       'ListConnectors',
@@ -1423,6 +1944,18 @@ export class Mgn extends PolicyStatement {
       'ListImportErrors',
       'ListImports',
       'ListManagedAccounts',
+      'ListNetworkMigrationAnalyses',
+      'ListNetworkMigrationAnalysisResults',
+      'ListNetworkMigrationCodeGenerationSegments',
+      'ListNetworkMigrationCodeGenerations',
+      'ListNetworkMigrationDefinitions',
+      'ListNetworkMigrationDeployedStacks',
+      'ListNetworkMigrationDeployedStacksDeletions',
+      'ListNetworkMigrationDeployments',
+      'ListNetworkMigrationExecutions',
+      'ListNetworkMigrationMapperSegmentConstructs',
+      'ListNetworkMigrationMapperSegments',
+      'ListNetworkMigrationMappings',
       'ListSourceServerActions',
       'ListTemplateActions',
       'ListWaves'
@@ -1604,6 +2137,23 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type NetworkMigrationDefinitionResource to the statement
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/network-migration-definition.html
+   *
+   * @param networkMigrationDefinitionID - Identifier for the networkMigrationDefinitionID.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNetworkMigrationDefinitionResource(networkMigrationDefinitionID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mgn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-migration-definition/${ networkMigrationDefinitionID }`);
+  }
+
+  /**
    * Filters access by presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1645,6 +2195,7 @@ export class Mgn extends PolicyStatement {
    * - ImportResource
    * - ExportResource
    * - ConnectorResource
+   * - NetworkMigrationDefinitionResource
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

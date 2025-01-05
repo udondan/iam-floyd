@@ -1,3 +1,5 @@
+appsync:api
+appsync:channelNamespace
 appsync:datasource
 appsync:domain
 appsync:field

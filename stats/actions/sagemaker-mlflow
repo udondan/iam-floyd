@@ -11,6 +11,9 @@ sagemaker-mlflow:DeleteRegisteredModelAlias;Write
 sagemaker-mlflow:DeleteRegisteredModelTag;Write
 sagemaker-mlflow:DeleteRun;Write
 sagemaker-mlflow:DeleteTag;Write
+sagemaker-mlflow:DeleteTraceTag;Write
+sagemaker-mlflow:DeleteTraces;Write
+sagemaker-mlflow:EndTrace;Write
 sagemaker-mlflow:GetDownloadURIForModelVersionArtifacts;Read
 sagemaker-mlflow:GetExperiment;Read
 sagemaker-mlflow:GetExperimentByName;Read
@@ -20,6 +23,7 @@ sagemaker-mlflow:GetModelVersion;Read
 sagemaker-mlflow:GetModelVersionByAlias;Read
 sagemaker-mlflow:GetRegisteredModel;Read
 sagemaker-mlflow:GetRun;Read
+sagemaker-mlflow:GetTraceInfo;Read
 sagemaker-mlflow:ListArtifacts;List
 sagemaker-mlflow:LogBatch;Write
 sagemaker-mlflow:LogInputs;Write
@@ -33,11 +37,14 @@ sagemaker-mlflow:SearchExperiments;Read
 sagemaker-mlflow:SearchModelVersions;Read
 sagemaker-mlflow:SearchRegisteredModels;Read
 sagemaker-mlflow:SearchRuns;Read
+sagemaker-mlflow:SearchTraces;Read
 sagemaker-mlflow:SetExperimentTag;Write
 sagemaker-mlflow:SetModelVersionTag;Write
 sagemaker-mlflow:SetRegisteredModelAlias;Write
 sagemaker-mlflow:SetRegisteredModelTag;Write
 sagemaker-mlflow:SetTag;Write
+sagemaker-mlflow:SetTraceTag;Write
+sagemaker-mlflow:StartTrace;Write
 sagemaker-mlflow:TransitionModelVersionStage;Write
 sagemaker-mlflow:UpdateExperiment;Write
 sagemaker-mlflow:UpdateModelVersion;Write

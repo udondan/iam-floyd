@@ -254,6 +254,9 @@ export class Internetmonitor extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onHealthEvent(monitorName: string, eventId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:internetmonitor:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitor/${ monitorName }/health-event/${ eventId }`);
@@ -312,6 +315,7 @@ export class Internetmonitor extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
+   * - HealthEvent
    * - Monitor
    *
    * @param tagKey The tag key to check

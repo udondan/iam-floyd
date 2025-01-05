@@ -394,6 +394,28 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read file system data for replication
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html
+   */
+  public toReplicationRead() {
+    return this.to('ReplicationRead');
+  }
+
+  /**
+   * Grants permission to replicate data to a file system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html
+   */
+  public toReplicationWrite() {
+    return this.to('ReplicationWrite');
+  }
+
+  /**
    * Grants permission to start a restore job for a backup of a file system
    *
    * Access Level: Write
@@ -473,6 +495,7 @@ export class Elasticfilesystem extends PolicyStatement {
       'PutAccountPreferences',
       'PutBackupPolicy',
       'PutLifecycleConfiguration',
+      'ReplicationWrite',
       'Restore',
       'UpdateFileSystem',
       'UpdateFileSystemProtection'
@@ -485,7 +508,8 @@ export class Elasticfilesystem extends PolicyStatement {
       'DescribeMountTargetSecurityGroups',
       'DescribeMountTargets',
       'DescribeTags',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ReplicationRead'
     ],
     Tagging: [
       'CreateTags',
@@ -508,7 +532,7 @@ export class Elasticfilesystem extends PolicyStatement {
   /**
    * Adds a resource of type file-system to the statement
    *
-   * https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html
    *
    * @param fileSystemId - Identifier for the fileSystemId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -525,7 +549,7 @@ export class Elasticfilesystem extends PolicyStatement {
   /**
    * Adds a resource of type access-point to the statement
    *
-   * https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources
+   * https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html
    *
    * @param accessPointId - Identifier for the accessPointId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

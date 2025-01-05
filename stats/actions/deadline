@@ -40,6 +40,7 @@ deadline:GetBudget;Read
 deadline:GetFarm;Read
 deadline:GetFleet;Read
 deadline:GetJob;Read
+deadline:GetJobTemplate;Write
 deadline:GetLicenseEndpoint;Read
 deadline:GetMonitor;Read
 deadline:GetQueue;Read
@@ -60,6 +61,7 @@ deadline:ListFarms;List
 deadline:ListFleetMembers;List
 deadline:ListFleets;List
 deadline:ListJobMembers;List
+deadline:ListJobParameterDefinitions;List
 deadline:ListJobs;List
 deadline:ListLicenseEndpoints;List
 deadline:ListMeteredProducts;List

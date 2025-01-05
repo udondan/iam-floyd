@@ -1,0 +1,5 @@
+opensearch:ApplicationAccessAll;Write
+opensearch:CancelDirectQuery;Write
+opensearch:GetDirectQuery;Read
+opensearch:GetDirectQueryResult;Read
+opensearch:StartDirectQuery;Write

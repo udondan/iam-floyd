@@ -7,7 +7,9 @@ ses:FromDisplayName
 ses:MailManagerIngressPointType
 ses:MailManagerRuleSetArn
 ses:MailManagerTrafficPolicyArn
+ses:MultiRegionEndpointId
 ses:Recipients
+ses:ReplicaRegion
 ses:RequestTag/${TagKey}
 ses:ResourceTag/${TagKey}
 ses:TagKeys

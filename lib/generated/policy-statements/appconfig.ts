@@ -197,6 +197,17 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view account-wide AppConfig settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetAccountSettings.html
+   */
+  public toGetAccountSettings() {
+    return this.to('GetAccountSettings');
+  }
+
+  /**
    * Grants permission to view details about an application
    *
    * Access Level: Read
@@ -506,6 +517,17 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify account-wide AppConfig settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateAccountSettings.html
+   */
+  public toUpdateAccountSettings() {
+    return this.to('UpdateAccountSettings');
+  }
+
+  /**
    * Grants permission to modify an application
    *
    * Access Level: Write
@@ -619,6 +641,7 @@ export class Appconfig extends PolicyStatement {
       'StartConfigurationSession',
       'StartDeployment',
       'StopDeployment',
+      'UpdateAccountSettings',
       'UpdateApplication',
       'UpdateConfigurationProfile',
       'UpdateDeploymentStrategy',
@@ -628,6 +651,7 @@ export class Appconfig extends PolicyStatement {
       'ValidateConfiguration'
     ],
     Read: [
+      'GetAccountSettings',
       'GetApplication',
       'GetConfiguration',
       'GetConfigurationProfile',
@@ -659,7 +683,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type application to the statement
    *
-   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-application.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-namespace.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -694,7 +718,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type configurationprofile to the statement
    *
-   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param configurationProfileId - Identifier for the configurationProfileId.
@@ -748,7 +772,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type hostedconfigurationversion to the statement
    *
-   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param configurationProfileId - Identifier for the configurationProfileId.

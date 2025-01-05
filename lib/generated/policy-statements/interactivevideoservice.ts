@@ -82,6 +82,21 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new ingest configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_CreateIngestConfiguration.html
+   */
+  public toCreateIngestConfiguration() {
+    return this.to('CreateIngestConfiguration');
+  }
+
+  /**
    * Grants permission to create a participant token
    *
    * Access Level: Write
@@ -191,6 +206,17 @@ export class Ivs extends PolicyStatement {
    */
   public toDeleteEncoderConfiguration() {
     return this.to('DeleteEncoderConfiguration');
+  }
+
+  /**
+   * Grants permission to delete an ingest configuration for the specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_DeleteIngestConfiguration.html
+   */
+  public toDeleteIngestConfiguration() {
+    return this.to('DeleteIngestConfiguration');
   }
 
   /**
@@ -312,6 +338,17 @@ export class Ivs extends PolicyStatement {
    */
   public toGetEncoderConfiguration() {
     return this.to('GetEncoderConfiguration');
+  }
+
+  /**
+   * Grants permission to get the ingest configuration for the specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_GetIngestConfiguration.html
+   */
+  public toGetIngestConfiguration() {
+    return this.to('GetIngestConfiguration');
   }
 
   /**
@@ -496,6 +533,17 @@ export class Ivs extends PolicyStatement {
    */
   public toListEncoderConfigurations() {
     return this.to('ListEncoderConfigurations');
+  }
+
+  /**
+   * Grants permission to get summary information about ingest configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListIngestConfigurations.html
+   */
+  public toListIngestConfigurations() {
+    return this.to('ListIngestConfigurations');
   }
 
   /**
@@ -745,6 +793,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update ingest configuration for a specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_UpdateIngestConfiguration.html
+   */
+  public toUpdateIngestConfiguration() {
+    return this.to('UpdateIngestConfiguration');
+  }
+
+  /**
    * Grants permission to update a playback restriction policy for a specified ARN
    *
    * Access Level: Write
@@ -773,6 +832,7 @@ export class Ivs extends PolicyStatement {
       'GetChannel',
       'GetComposition',
       'GetEncoderConfiguration',
+      'GetIngestConfiguration',
       'GetParticipant',
       'GetPlaybackKeyPair',
       'GetPlaybackRestrictionPolicy',
@@ -790,6 +850,7 @@ export class Ivs extends PolicyStatement {
       'BatchStartViewerSessionRevocation',
       'CreateChannel',
       'CreateEncoderConfiguration',
+      'CreateIngestConfiguration',
       'CreateParticipantToken',
       'CreatePlaybackRestrictionPolicy',
       'CreateRecordingConfiguration',
@@ -798,6 +859,7 @@ export class Ivs extends PolicyStatement {
       'CreateStreamKey',
       'DeleteChannel',
       'DeleteEncoderConfiguration',
+      'DeleteIngestConfiguration',
       'DeletePlaybackKeyPair',
       'DeletePlaybackRestrictionPolicy',
       'DeletePublicKey',
@@ -814,6 +876,7 @@ export class Ivs extends PolicyStatement {
       'StopComposition',
       'StopStream',
       'UpdateChannel',
+      'UpdateIngestConfiguration',
       'UpdatePlaybackRestrictionPolicy',
       'UpdateStage'
     ],
@@ -821,6 +884,7 @@ export class Ivs extends PolicyStatement {
       'ListChannels',
       'ListCompositions',
       'ListEncoderConfigurations',
+      'ListIngestConfigurations',
       'ListParticipantEvents',
       'ListParticipants',
       'ListPlaybackKeyPairs',
@@ -1011,6 +1075,23 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Ingest-Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_IngestConfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIngestConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ingest-configuration/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the tags associated with the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1018,6 +1099,7 @@ export class Ivs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateChannel()
    * - .toCreateEncoderConfiguration()
+   * - .toCreateIngestConfiguration()
    * - .toCreateParticipantToken()
    * - .toCreatePlaybackRestrictionPolicy()
    * - .toCreateRecordingConfiguration()
@@ -1054,6 +1136,7 @@ export class Ivs extends PolicyStatement {
    * - Encoder-Configuration
    * - Storage-Configuration
    * - Public-Key
+   * - Ingest-Configuration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1071,6 +1154,7 @@ export class Ivs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateChannel()
    * - .toCreateEncoderConfiguration()
+   * - .toCreateIngestConfiguration()
    * - .toCreateParticipantToken()
    * - .toCreatePlaybackRestrictionPolicy()
    * - .toCreateRecordingConfiguration()

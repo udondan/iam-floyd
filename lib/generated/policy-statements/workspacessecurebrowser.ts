@@ -383,6 +383,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to expire a session from a specific portal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ExpireSession.html
+   */
+  public toExpireSession() {
+    return this.to('ExpireSession');
+  }
+
+  /**
    * Grants permission to get details on browser settings
    *
    * Access Level: Read
@@ -446,6 +457,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toGetPortalServiceProviderMetadata() {
     return this.to('GetPortalServiceProviderMetadata');
+  }
+
+  /**
+   * Grants permission to get information about a particular session for a portal
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetSession.html
+   */
+  public toGetSession() {
+    return this.to('GetSession');
   }
 
   /**
@@ -545,6 +567,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toListPortals() {
     return this.to('ListPortals');
+  }
+
+  /**
+   * Grants permission to list sessions for a Portal using optional filters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListSessions.html
+   */
+  public toListSessions() {
+    return this.to('ListSessions');
   }
 
   /**
@@ -761,6 +794,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'DisassociateTrustStore',
       'DisassociateUserAccessLoggingSettings',
       'DisassociateUserSettings',
+      'ExpireSession',
       'UpdateBrowserSettings',
       'UpdateIdentityProvider',
       'UpdateIpAccessSettings',
@@ -777,6 +811,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'GetNetworkSettings',
       'GetPortal',
       'GetPortalServiceProviderMetadata',
+      'GetSession',
       'GetTrustStore',
       'GetTrustStoreCertificate',
       'GetUserAccessLoggingSettings',
@@ -786,6 +821,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'ListIpAccessSettings',
       'ListNetworkSettings',
       'ListPortals',
+      'ListSessions',
       'ListTagsForResource',
       'ListTrustStoreCertificates',
       'ListTrustStores',

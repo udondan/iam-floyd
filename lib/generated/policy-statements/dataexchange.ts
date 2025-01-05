@@ -19,6 +19,17 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept a data grant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_AcceptDataGrant.html
+   */
+  public toAcceptDataGrant() {
+    return this.to('AcceptDataGrant');
+  }
+
+  /**
    * Grants permission to cancel a job
    *
    * Access Level: Write
@@ -38,6 +49,24 @@ export class Dataexchange extends PolicyStatement {
    */
   public toCreateAsset() {
     return this.to('CreateAsset');
+  }
+
+  /**
+   * Grants permission to create a data grant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - dataexchange:PublishToDataGrant
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataGrant.html
+   */
+  public toCreateDataGrant() {
+    return this.to('CreateDataGrant');
   }
 
   /**
@@ -104,6 +133,17 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a data grant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_DeleteDataGrant.html
+   */
+  public toDeleteDataGrant() {
+    return this.to('DeleteDataGrant');
+  }
+
+  /**
    * Grants permission to delete a data set
    *
    * Access Level: Write
@@ -148,6 +188,17 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a data grant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetDataGrant.html
+   */
+  public toGetDataGrant() {
+    return this.to('GetDataGrant');
+  }
+
+  /**
    * Grants permission to get information about a data set
    *
    * Access Level: Read
@@ -181,6 +232,17 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a received data grant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_GetReceivedDataGrant.html
+   */
+  public toGetReceivedDataGrant() {
+    return this.to('GetReceivedDataGrant');
+  }
+
+  /**
    * Grants permission to get information about a revision
    *
    * Access Level: Read
@@ -189,6 +251,17 @@ export class Dataexchange extends PolicyStatement {
    */
   public toGetRevision() {
     return this.to('GetRevision');
+  }
+
+  /**
+   * Grants permission to list data grants for the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListDataGrants.html
+   */
+  public toListDataGrants() {
+    return this.to('ListDataGrants');
   }
 
   /**
@@ -236,6 +309,17 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list received data grants for the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_ListReceivedDataGrants.html
+   */
+  public toListReceivedDataGrants() {
+    return this.to('ListReceivedDataGrants');
+  }
+
+  /**
    * Grants permission to get list the assets of a revision
    *
    * Access Level: List
@@ -258,7 +342,7 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Grants permission to publish a data set
+   * Grants permission to publish a data set to a product
    *
    * Access Level: Write
    *
@@ -266,6 +350,17 @@ export class Dataexchange extends PolicyStatement {
    */
   public toPublishDataSet() {
     return this.to('PublishDataSet');
+  }
+
+  /**
+   * Grants permission to publish a data set to a data grant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
+   */
+  public toPublishToDataGrant() {
+    return this.to('PublishToDataGrant');
   }
 
   /**
@@ -390,6 +485,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Dependent actions:
    * - dataexchange:PublishDataSet
+   * - dataexchange:PublishToDataGrant
    *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_UpdateRevision.html
    */
@@ -399,17 +495,21 @@ export class Dataexchange extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptDataGrant',
       'CancelJob',
       'CreateAsset',
+      'CreateDataGrant',
       'CreateDataSet',
       'CreateEventAction',
       'CreateJob',
       'CreateRevision',
       'DeleteAsset',
+      'DeleteDataGrant',
       'DeleteDataSet',
       'DeleteEventAction',
       'DeleteRevision',
       'PublishDataSet',
+      'PublishToDataGrant',
       'RevokeRevision',
       'SendApiAsset',
       'SendDataSetNotification',
@@ -421,16 +521,20 @@ export class Dataexchange extends PolicyStatement {
     ],
     Read: [
       'GetAsset',
+      'GetDataGrant',
       'GetDataSet',
       'GetEventAction',
       'GetJob',
+      'GetReceivedDataGrant',
       'GetRevision'
     ],
     List: [
+      'ListDataGrants',
       'ListDataSetRevisions',
       'ListDataSets',
       'ListEventActions',
       'ListJobs',
+      'ListReceivedDataGrants',
       'ListRevisionAssets',
       'ListTagsForResource'
     ],
@@ -565,11 +669,29 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type data-grants to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
+   *
+   * @param dataGrantId - Identifier for the dataGrantId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataGrants(dataGrantId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-grants/${ dataGrantId }`);
+  }
+
+  /**
    * Filters access by the allowed set of values for each of the mandatory tags in the create request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateDataGrant()
    * - .toCreateDataSet()
    * - .toCreateRevision()
    * - .toTagResource()
@@ -590,6 +712,7 @@ export class Dataexchange extends PolicyStatement {
    * Applies to resource types:
    * - data-sets
    * - revisions
+   * - data-grants
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -605,6 +728,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateDataGrant()
    * - .toCreateDataSet()
    * - .toCreateRevision()
    * - .toTagResource()

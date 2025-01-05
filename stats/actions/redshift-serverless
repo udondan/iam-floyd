@@ -20,6 +20,7 @@ redshift-serverless:DescribeOneTimeCredit;Read
 redshift-serverless:GetCredentials;Write
 redshift-serverless:GetCustomDomainAssociation;Read
 redshift-serverless:GetEndpointAccess;Read
+redshift-serverless:GetManagedWorkgroup;Read
 redshift-serverless:GetNamespace;Read
 redshift-serverless:GetRecoveryPoint;Read
 redshift-serverless:GetResourcePolicy;Read
@@ -30,6 +31,7 @@ redshift-serverless:GetUsageLimit;Read
 redshift-serverless:GetWorkgroup;Read
 redshift-serverless:ListCustomDomainAssociations;List
 redshift-serverless:ListEndpointAccess;List
+redshift-serverless:ListManagedWorkgroups;List
 redshift-serverless:ListNamespaces;List
 redshift-serverless:ListRecoveryPoints;List
 redshift-serverless:ListScheduledActions;List

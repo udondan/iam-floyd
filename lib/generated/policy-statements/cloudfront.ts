@@ -19,6 +19,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure vended log delivery for a distribution
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-logs-infrastructure-V2-service-specific
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to associate an alias to a CloudFront distribution
    *
    * Access Level: Write
@@ -43,6 +54,21 @@ export class Cloudfront extends PolicyStatement {
    */
   public toCopyDistribution() {
     return this.to('CopyDistribution');
+  }
+
+  /**
+   * Grants permission to create an Anycast static IP list
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateAnycastIpList.html
+   */
+  public toCreateAnycastIpList() {
+    return this.to('CreateAnycastIpList');
   }
 
   /**
@@ -259,6 +285,32 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a VPC origin
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateVpcOrigin.html
+   */
+  public toCreateVpcOrigin() {
+    return this.to('CreateVpcOrigin');
+  }
+
+  /**
+   * Grants permission to delete an Anycast static IP list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteAnycastIpList.html
+   */
+  public toDeleteAnycastIpList() {
+    return this.to('DeleteAnycastIpList');
+  }
+
+  /**
    * Grants permission to delete a cache policy
    *
    * Access Level: Write
@@ -435,6 +487,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a VPC origin
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteVpcOrigin.html
+   */
+  public toDeleteVpcOrigin() {
+    return this.to('DeleteVpcOrigin');
+  }
+
+  /**
    * Grants permission to get a CloudFront function summary
    *
    * Access Level: Read
@@ -454,6 +517,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDescribeKeyValueStore() {
     return this.to('DescribeKeyValueStore');
+  }
+
+  /**
+   * Grants permission to get an Anycast static IP list
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetAnycastIpList.html
+   */
+  public toGetAnycastIpList() {
+    return this.to('GetAnycastIpList');
   }
 
   /**
@@ -776,6 +850,28 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the information about a VPC origin
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetVpcOrigin.html
+   */
+  public toGetVpcOrigin() {
+    return this.to('GetVpcOrigin');
+  }
+
+  /**
+   * Grants permission to list your Anycast static IP lists
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListAnycastIpLists.html
+   */
+  public toListAnycastIpLists() {
+    return this.to('ListAnycastIpLists');
+  }
+
+  /**
    * Grants permission to list all cache policies that have been created in CloudFront for this account
    *
    * Access Level: List
@@ -831,6 +927,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the distributions in your account that are associated with the specified AnycastIpListId
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByAnycastIpListId.html
+   */
+  public toListDistributionsByAnycastIpListId() {
+    return this.to('ListDistributionsByAnycastIpListId');
+  }
+
+  /**
    * Grants permission to list distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy
    *
    * Access Level: List
@@ -875,7 +982,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a list of distributions that have a cache behavior that’s associated with the specified real-time log configuration
+   * Grants permission to get a list of distributions that have a cache behavior that's associated with the specified real-time log configuration
    *
    * Access Level: List
    *
@@ -894,6 +1001,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListDistributionsByResponseHeadersPolicyId() {
     return this.to('ListDistributionsByResponseHeadersPolicyId');
+  }
+
+  /**
+   * Grants permission to list IDs for distributions associated with the specified VPC origin
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByVpcOriginId.html
+   */
+  public toListDistributionsByVpcOriginId() {
+    return this.to('ListDistributionsByVpcOriginId');
   }
 
   /**
@@ -1081,6 +1199,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListUsages() {
     return this.to('ListUsages');
+  }
+
+  /**
+   * Grants permission to list VPC origins
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListVpcOrigins.html
+   */
+  public toListVpcOrigins() {
+    return this.to('ListVpcOrigins');
   }
 
   /**
@@ -1321,10 +1450,25 @@ export class Cloudfront extends PolicyStatement {
     return this.to('UpdateStreamingDistribution');
   }
 
+  /**
+   * Grants permission to update a VPC origin
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateVpcOrigin.html
+   */
+  public toUpdateVpcOrigin() {
+    return this.to('UpdateVpcOrigin');
+  }
+
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Write: [
       'AssociateAlias',
       'CopyDistribution',
+      'CreateAnycastIpList',
       'CreateCachePolicy',
       'CreateCloudFrontOriginAccessIdentity',
       'CreateContinuousDeploymentPolicy',
@@ -1344,6 +1488,8 @@ export class Cloudfront extends PolicyStatement {
       'CreateSavingsPlan',
       'CreateStreamingDistribution',
       'CreateStreamingDistributionWithTags',
+      'CreateVpcOrigin',
+      'DeleteAnycastIpList',
       'DeleteCachePolicy',
       'DeleteCloudFrontOriginAccessIdentity',
       'DeleteContinuousDeploymentPolicy',
@@ -1360,6 +1506,7 @@ export class Cloudfront extends PolicyStatement {
       'DeleteRealtimeLogConfig',
       'DeleteResponseHeadersPolicy',
       'DeleteStreamingDistribution',
+      'DeleteVpcOrigin',
       'PublishFunction',
       'TestFunction',
       'UpdateCachePolicy',
@@ -1378,11 +1525,13 @@ export class Cloudfront extends PolicyStatement {
       'UpdateRealtimeLogConfig',
       'UpdateResponseHeadersPolicy',
       'UpdateSavingsPlan',
-      'UpdateStreamingDistribution'
+      'UpdateStreamingDistribution',
+      'UpdateVpcOrigin'
     ],
     Read: [
       'DescribeFunction',
       'DescribeKeyValueStore',
+      'GetAnycastIpList',
       'GetCachePolicy',
       'GetCachePolicyConfig',
       'GetCloudFrontOriginAccessIdentity',
@@ -1412,20 +1561,24 @@ export class Cloudfront extends PolicyStatement {
       'GetSavingsPlan',
       'GetStreamingDistribution',
       'GetStreamingDistributionConfig',
+      'GetVpcOrigin',
       'ListTagsForResource'
     ],
     List: [
+      'ListAnycastIpLists',
       'ListCachePolicies',
       'ListCloudFrontOriginAccessIdentities',
       'ListConflictingAliases',
       'ListContinuousDeploymentPolicies',
       'ListDistributions',
+      'ListDistributionsByAnycastIpListId',
       'ListDistributionsByCachePolicyId',
       'ListDistributionsByKeyGroup',
       'ListDistributionsByLambdaFunction',
       'ListDistributionsByOriginRequestPolicyId',
       'ListDistributionsByRealtimeLogConfig',
       'ListDistributionsByResponseHeadersPolicyId',
+      'ListDistributionsByVpcOriginId',
       'ListDistributionsByWebACLId',
       'ListFieldLevelEncryptionConfigs',
       'ListFieldLevelEncryptionProfiles',
@@ -1441,7 +1594,8 @@ export class Cloudfront extends PolicyStatement {
       'ListResponseHeadersPolicies',
       'ListSavingsPlans',
       'ListStreamingDistributions',
-      'ListUsages'
+      'ListUsages',
+      'ListVpcOrigins'
     ],
     Tagging: [
       'TagResource',
@@ -1625,12 +1779,46 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type anycast-ip-list to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/request-static-ips.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAnycastIpList(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:anycast-ip-list/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type vpcorigin to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-vpc-origins.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcorigin(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:vpcorigin/${ id }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateAnycastIpList()
    * - .toCreateStreamingDistributionWithTags()
+   * - .toCreateVpcOrigin()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1649,6 +1837,8 @@ export class Cloudfront extends PolicyStatement {
    * Applies to resource types:
    * - distribution
    * - streaming-distribution
+   * - anycast-ip-list
+   * - vpcorigin
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1664,7 +1854,9 @@ export class Cloudfront extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateAnycastIpList()
    * - .toCreateStreamingDistributionWithTags()
+   * - .toCreateVpcOrigin()
    * - .toTagResource()
    * - .toUntagResource()
    *

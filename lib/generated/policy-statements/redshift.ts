@@ -93,6 +93,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to Amazon Redshift to continuously validate that the target data warehouse can receive data replicated from the source ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.setting-up.html
+   */
+  public toAuthorizeInboundIntegration() {
+    return this.to('AuthorizeInboundIntegration');
+  }
+
+  /**
    * Grants permission to the specified AWS account to restore a snapshot
    *
    * Access Level: Permissions management
@@ -192,6 +203,20 @@ export class Redshift extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateCluster.html
    */
@@ -341,6 +366,38 @@ export class Redshift extends PolicyStatement {
    */
   public toCreateHsmConfiguration() {
     return this.to('CreateHsmConfiguration');
+  }
+
+  /**
+   * Grants permission to the source principal to create an inbound integration for data to be replicated from the source into the target data warehouse
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.setting-up.html
+   */
+  public toCreateInboundIntegration() {
+    return this.to('CreateInboundIntegration');
+  }
+
+  /**
+   * Grants permission to create an Amazon Redshift zero-ETL integration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifIntegrationSourceArn()
+   * - .ifIntegrationTargetArn()
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateIntegration.html
+   */
+  public toCreateIntegration() {
+    return this.to('CreateIntegration');
   }
 
   /**
@@ -593,6 +650,20 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an Amazon Redshift zero-ETL integration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteIntegration.html
+   */
+  public toDeleteIntegration() {
+    return this.to('DeleteIntegration');
+  }
+
+  /**
    * Grants permission to delete a partner integration from a cluster
    *
    * Access Level: Write
@@ -707,6 +778,17 @@ export class Redshift extends PolicyStatement {
    */
   public toDeleteUsageLimit() {
     return this.to('DeleteUsageLimit');
+  }
+
+  /**
+   * Grants permission to deregister the specified namespace from a consumer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeregisterNamespace.html
+   */
+  public toDeregisterNamespace() {
+    return this.to('DeregisterNamespace');
   }
 
   /**
@@ -972,6 +1054,20 @@ export class Redshift extends PolicyStatement {
    */
   public toDescribeInboundIntegrations() {
     return this.to('DescribeInboundIntegrations');
+  }
+
+  /**
+   * Grants permission to describe an Amazon Redshift zero-ETL integration
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeIntegrations.html
+   */
+  public toDescribeIntegrations() {
+    return this.to('DescribeIntegrations');
   }
 
   /**
@@ -1444,6 +1540,18 @@ export class Redshift extends PolicyStatement {
    *
    * Dependent actions:
    * - acm:DescribeCertificate
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyCluster.html
    */
@@ -1562,6 +1670,20 @@ export class Redshift extends PolicyStatement {
    */
   public toModifyEventSubscription() {
     return this.to('ModifyEventSubscription');
+  }
+
+  /**
+   * Grants permission to modify an Amazon Redshift zero-ETL integration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyIntegration.html
+   */
+  public toModifyIntegration() {
+    return this.to('ModifyIntegration');
   }
 
   /**
@@ -1698,6 +1820,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register the specified namespace to a consumer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RegisterNamespace.html
+   */
+  public toRegisterNamespace() {
+    return this.to('RegisterNamespace');
+  }
+
+  /**
    * Grants permission to decline a datashare shared from another account
    *
    * Access Level: Permissions management
@@ -1737,6 +1870,20 @@ export class Redshift extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_RestoreFromClusterSnapshot.html
    */
@@ -1849,6 +1996,7 @@ export class Redshift extends PolicyStatement {
       'AddPartner',
       'AssociateDataShareConsumer',
       'AuthorizeClusterSecurityGroupIngress',
+      'AuthorizeInboundIntegration',
       'BatchDeleteClusterSnapshots',
       'BatchModifyClusterSnapshots',
       'CancelQuery',
@@ -1866,6 +2014,8 @@ export class Redshift extends PolicyStatement {
       'CreateEventSubscription',
       'CreateHsmClientCertificate',
       'CreateHsmConfiguration',
+      'CreateInboundIntegration',
+      'CreateIntegration',
       'CreateQev2IdcApplication',
       'CreateRedshiftIdcApplication',
       'CreateSavedQuery',
@@ -1883,6 +2033,7 @@ export class Redshift extends PolicyStatement {
       'DeleteEventSubscription',
       'DeleteHsmClientCertificate',
       'DeleteHsmConfiguration',
+      'DeleteIntegration',
       'DeletePartner',
       'DeleteQev2IdcApplication',
       'DeleteRedshiftIdcApplication',
@@ -1891,6 +2042,7 @@ export class Redshift extends PolicyStatement {
       'DeleteSnapshotCopyGrant',
       'DeleteSnapshotSchedule',
       'DeleteUsageLimit',
+      'DeregisterNamespace',
       'DisableLogging',
       'DisableSnapshotCopy',
       'DisassociateDataShareConsumer',
@@ -1912,6 +2064,7 @@ export class Redshift extends PolicyStatement {
       'ModifyCustomDomainAssociation',
       'ModifyEndpointAccess',
       'ModifyEventSubscription',
+      'ModifyIntegration',
       'ModifyQev2IdcApplication',
       'ModifyRedshiftIdcApplication',
       'ModifySavedQuery',
@@ -1922,6 +2075,7 @@ export class Redshift extends PolicyStatement {
       'PauseCluster',
       'PurchaseReservedNodeOffering',
       'RebootCluster',
+      'RegisterNamespace',
       'ResetClusterParameterGroup',
       'ResizeCluster',
       'RestoreFromClusterSnapshot',
@@ -1998,6 +2152,7 @@ export class Redshift extends PolicyStatement {
       'DescribeEndpointAuthorization',
       'DescribeEvents',
       'DescribeInboundIntegrations',
+      'DescribeIntegrations',
       'DescribeNodeConfigurationOptions',
       'DescribeQev2IdcApplications',
       'DescribeRedshiftIdcApplications',
@@ -2143,6 +2298,23 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type integration to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.html
+   *
+   * @param integrationIdentifier - Identifier for the integrationIdentifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntegration(integrationIdentifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integration:${ integrationIdentifier }`);
+  }
+
+  /**
    * Adds a resource of type namespace to the statement
    *
    * https://docs.aws.amazon.com/redshift/latest/dg/concepts.html
@@ -2272,7 +2444,7 @@ export class Redshift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html
    *
-   * @param parameterGroupName - Identifier for the parameterGroupName.
+   * @param scheduleIdentifier - Identifier for the scheduleIdentifier.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -2280,8 +2452,8 @@ export class Redshift extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onSnapshotschedule(parameterGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshotschedule:${ parameterGroupName }`);
+  public onSnapshotschedule(scheduleIdentifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:snapshotschedule:${ scheduleIdentifier }`);
   }
 
   /**
@@ -2361,6 +2533,7 @@ export class Redshift extends PolicyStatement {
    * - .toCreateEventSubscription()
    * - .toCreateHsmClientCertificate()
    * - .toCreateHsmConfiguration()
+   * - .toCreateIntegration()
    * - .toCreateSnapshotCopyGrant()
    * - .toCreateSnapshotSchedule()
    * - .toCreateTags()
@@ -2379,12 +2552,18 @@ export class Redshift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
    *
+   * Applies to actions:
+   * - .toDeleteIntegration()
+   * - .toDescribeIntegrations()
+   * - .toModifyIntegration()
+   *
    * Applies to resource types:
    * - cluster
    * - datashare
    * - eventsubscription
    * - hsmclientcertificate
    * - hsmconfiguration
+   * - integration
    * - namespace
    * - parametergroup
    * - securitygroup
@@ -2419,6 +2598,7 @@ export class Redshift extends PolicyStatement {
    * - .toCreateEventSubscription()
    * - .toCreateHsmClientCertificate()
    * - .toCreateHsmConfiguration()
+   * - .toCreateIntegration()
    * - .toCreateSnapshotCopyGrant()
    * - .toCreateSnapshotSchedule()
    * - .toCreateTags()
@@ -2537,9 +2717,39 @@ export class Redshift extends PolicyStatement {
    * - .toDescribeInboundIntegrations()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifInboundIntegrationArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`InboundIntegrationArn`, value, operator ?? 'StringLike');
+    return this.if(`InboundIntegrationArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of a zero-ETL Integration source
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .toCreateIntegration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifIntegrationSourceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`IntegrationSourceArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of a zero-ETL Integration target
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .toCreateIntegration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifIntegrationTargetArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`IntegrationTargetArn`, value, operator ?? 'ArnLike');
   }
 }

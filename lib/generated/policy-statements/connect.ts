@@ -49,6 +49,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to grant access and to associate a dataset with the specified AWS account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   */
+  public toAssociateAnalyticsDataSet() {
+    return this.to('AssociateAnalyticsDataSet');
+  }
+
+  /**
    * Grants permission to associate approved origin for an existing Amazon Connect instance
    *
    * Access Level: Write
@@ -293,8 +305,6 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
    */
   public toBatchAssociateAnalyticsDataSet() {
     return this.to('BatchAssociateAnalyticsDataSet');
@@ -307,8 +317,6 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
    */
   public toBatchDisassociateAnalyticsDataSet() {
     return this.to('BatchDisassociateAnalyticsDataSet');
@@ -430,6 +438,7 @@ export class Connect extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInstanceId()
+   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlow.html
    */
@@ -451,6 +460,22 @@ export class Connect extends PolicyStatement {
    */
   public toCreateContactFlowModule() {
     return this.to('CreateContactFlowModule');
+  }
+
+  /**
+   * Grants permission to create a version a flow in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifFlowType()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowVersion.html
+   */
+  public toCreateContactFlowVersion() {
+    return this.to('CreateContactFlowVersion');
   }
 
   /**
@@ -481,6 +506,20 @@ export class Connect extends PolicyStatement {
    */
   public toCreateHoursOfOperation() {
     return this.to('CreateHoursOfOperation');
+  }
+
+  /**
+   * Grants permission to create an hours of operation override in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateHoursOfOperationOverride.html
+   */
+  public toCreateHoursOfOperationOverride() {
+    return this.to('CreateHoursOfOperationOverride');
   }
 
   /**
@@ -526,6 +565,10 @@ export class Connect extends PolicyStatement {
    * - app-integrations:CreateEventIntegrationAssociation
    * - app-integrations:GetApplication
    * - cases:GetDomain
+   * - chime:AssociateVoiceConnectorConnect
+   * - chime:DisassociateVoiceConnectorConnect
+   * - chime:TagResource
+   * - chime:UntagResource
    * - connect:DescribeInstance
    * - ds:DescribeDirectories
    * - events:PutRule
@@ -606,6 +649,20 @@ export class Connect extends PolicyStatement {
    */
   public toCreatePrompt() {
     return this.to('CreatePrompt');
+  }
+
+  /**
+   * Grants permission to create a push notification registration for an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePushNotificationRegistration.html
+   */
+  public toCreatePushNotificationRegistration() {
+    return this.to('CreatePushNotificationRegistration');
   }
 
   /**
@@ -868,6 +925,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifInstanceId()
+   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlow.html
    */
@@ -918,6 +976,20 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteHoursOfOperation() {
     return this.to('DeleteHoursOfOperation');
+  }
+
+  /**
+   * Grants permission to delete an hours of operation override in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteHoursOfOperationOverride.html
+   */
+  public toDeleteHoursOfOperationOverride() {
+    return this.to('DeleteHoursOfOperationOverride');
   }
 
   /**
@@ -990,6 +1062,20 @@ export class Connect extends PolicyStatement {
    */
   public toDeletePrompt() {
     return this.to('DeletePrompt');
+  }
+
+  /**
+   * Grants permission to delete a push notification registration for an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeletePushNotificationRegistration.html
+   */
+  public toDeletePushNotificationRegistration() {
+    return this.to('DeletePushNotificationRegistration');
   }
 
   /**
@@ -1254,6 +1340,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifInstanceId()
+   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlow.html
    */
@@ -1318,6 +1405,20 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeHoursOfOperation() {
     return this.to('DescribeHoursOfOperation');
+  }
+
+  /**
+   * Grants permission to describe an hours of operation override in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeHoursOfOperationOverride.html
+   */
+  public toDescribeHoursOfOperationOverride() {
+    return this.to('DescribeHoursOfOperationOverride');
   }
 
   /**
@@ -1571,6 +1672,18 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeVocabulary() {
     return this.to('DescribeVocabulary');
+  }
+
+  /**
+   * Grants permission to revoke access and to disassociate a dataset with the specified AWS account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   */
+  public toDisassociateAnalyticsDataSet() {
+    return this.to('DisassociateAnalyticsDataSet');
   }
 
   /**
@@ -1857,6 +1970,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get effective hours of operation resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetEffectiveHoursOfOperations.html
+   */
+  public toGetEffectiveHoursOfOperations() {
+    return this.to('GetEffectiveHoursOfOperations');
+  }
+
+  /**
    * Grants permission to federate into an Amazon Connect instance when using SAML-based authentication for identity management
    *
    * Access Level: Read
@@ -1970,6 +2097,8 @@ export class Connect extends PolicyStatement {
    *
    * Dependent actions:
    * - sms-voice:DescribePhoneNumbers
+   * - social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber
+   * - social-messaging:TagResource
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ImportPhoneNumber.html
    */
@@ -1986,6 +2115,18 @@ export class Connect extends PolicyStatement {
    */
   public toListAgentStatuses() {
     return this.to('ListAgentStatuses');
+  }
+
+  /**
+   * Grants permission to list the association status of a dataset for a given Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   */
+  public toListAnalyticsDataAssociations() {
+    return this.to('ListAnalyticsDataAssociations');
   }
 
   /**
@@ -2056,9 +2197,28 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the versions a flow in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifFlowType()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlowVersions.html
+   */
+  public toListContactFlowVersions() {
+    return this.to('ListContactFlowVersions');
+  }
+
+  /**
    * Grants permission to list contact flow resources in an Amazon Connect instance
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlows.html
    */
@@ -2134,6 +2294,20 @@ export class Connect extends PolicyStatement {
    */
   public toListFlowAssociations() {
     return this.to('ListFlowAssociations');
+  }
+
+  /**
+   * Grants permission to list hours of operation override resources in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperationOverrides.html
+   */
+  public toListHoursOfOperationOverrides() {
+    return this.to('ListHoursOfOperationOverrides');
   }
 
   /**
@@ -2757,6 +2931,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifInstanceId()
    * - .ifSearchTag()
+   * - .ifFlowType()
    *
    * Dependent actions:
    * - connect:DescribeContactFlow
@@ -2783,6 +2958,25 @@ export class Connect extends PolicyStatement {
    */
   public toSearchContacts() {
     return this.to('SearchContacts');
+  }
+
+  /**
+   * Grants permission to search hours of operation override resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeHoursOfOperation
+   * - connect:ListHoursOfOperationOverrides
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchHoursOfOperationOverrides.html
+   */
+  public toSearchHoursOfOperationOverrides() {
+    return this.to('SearchHoursOfOperationOverrides');
   }
 
   /**
@@ -2988,6 +3182,31 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send integration events using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html
+   */
+  public toSendIntegrationEvent() {
+    return this.to('SendIntegrationEvent');
+  }
+
+  /**
+   * Grants permission to send outbound email using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundEmail.html
+   */
+  public toSendOutboundEmail() {
+    return this.to('SendOutboundEmail');
+  }
+
+  /**
    * Grants permission to start an attached file upload in an Amazon Connect instance
    *
    * Access Level: Write
@@ -3058,6 +3277,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate an inbound email using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEmailContact.html
+   */
+  public toStartEmailContact() {
+    return this.to('StartEmailContact');
+  }
+
+  /**
    * Grants permission to enable forecasting, planning, and scheduling integration on an Amazon Connect instance
    *
    * Access Level: Write
@@ -3072,6 +3306,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate an outbound chat using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSubtype()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html
+   */
+  public toStartOutboundChatContact() {
+    return this.to('StartOutboundChatContact');
+  }
+
+  /**
    * Grants permission to initiate outbound calls using the Amazon Connect API
    *
    * Access Level: Write
@@ -3083,6 +3332,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start screen sharing for contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartScreenSharing.html
+   */
+  public toStartScreenSharing() {
+    return this.to('StartScreenSharing');
+  }
+
+  /**
    * Grants permission to initiate a task using the Amazon Connect API
    *
    * Access Level: Write
@@ -3090,6 +3353,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifInstanceId()
+   * - .ifAssignmentType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartTaskContact.html
    */
@@ -3336,6 +3600,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifInstanceId()
+   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowContent.html
    */
@@ -3351,6 +3616,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifInstanceId()
+   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowMetadata.html
    */
@@ -3396,6 +3662,7 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifInstanceId()
+   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowName.html
    */
@@ -3461,6 +3728,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an hours of operation override in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateHoursOfOperationOverride.html
+   */
+  public toUpdateHoursOfOperationOverride() {
+    return this.to('UpdateHoursOfOperationOverride');
+  }
+
+  /**
    * Grants permission to update the attribute for an existing Amazon Connect instance
    *
    * Access Level: Write
@@ -3507,6 +3788,20 @@ export class Connect extends PolicyStatement {
    */
   public toUpdateInstanceStorageConfig() {
     return this.to('UpdateInstanceStorageConfig');
+  }
+
+  /**
+   * Grants permission to update and continue authentication for a specific contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateParticipantAuthentication.html
+   */
+  public toUpdateParticipantAuthentication() {
+    return this.to('UpdateParticipantAuthentication');
   }
 
   /**
@@ -3975,6 +4270,7 @@ export class Connect extends PolicyStatement {
     Write: [
       'ActivateEvaluationForm',
       'AdminGetEmergencyAccessToken',
+      'AssociateAnalyticsDataSet',
       'AssociateApprovedOrigin',
       'AssociateBot',
       'AssociateCustomerProfilesDomain',
@@ -3998,14 +4294,17 @@ export class Connect extends PolicyStatement {
       'CreateAuthenticationProfile',
       'CreateContactFlow',
       'CreateContactFlowModule',
+      'CreateContactFlowVersion',
       'CreateEvaluationForm',
       'CreateHoursOfOperation',
+      'CreateHoursOfOperationOverride',
       'CreateInstance',
       'CreateIntegrationAssociation',
       'CreateParticipant',
       'CreatePersistentContactAssociation',
       'CreatePredefinedAttribute',
       'CreatePrompt',
+      'CreatePushNotificationRegistration',
       'CreateQueue',
       'CreateQuickConnect',
       'CreateRoutingProfile',
@@ -4026,10 +4325,12 @@ export class Connect extends PolicyStatement {
       'DeleteContactFlowModule',
       'DeleteEvaluationForm',
       'DeleteHoursOfOperation',
+      'DeleteHoursOfOperationOverride',
       'DeleteInstance',
       'DeleteIntegrationAssociation',
       'DeletePredefinedAttribute',
       'DeletePrompt',
+      'DeletePushNotificationRegistration',
       'DeleteQueue',
       'DeleteQuickConnect',
       'DeleteRoutingProfile',
@@ -4043,6 +4344,7 @@ export class Connect extends PolicyStatement {
       'DeleteView',
       'DeleteViewVersion',
       'DeleteVocabulary',
+      'DisassociateAnalyticsDataSet',
       'DisassociateApprovedOrigin',
       'DisassociateBot',
       'DisassociateCustomerProfilesDomain',
@@ -4066,13 +4368,18 @@ export class Connect extends PolicyStatement {
       'ResumeContact',
       'ResumeContactRecording',
       'SendChatIntegrationEvent',
+      'SendIntegrationEvent',
+      'SendOutboundEmail',
       'StartAttachedFileUpload',
       'StartChatContact',
       'StartContactEvaluation',
       'StartContactRecording',
       'StartContactStreaming',
+      'StartEmailContact',
       'StartForecastingPlanningSchedulingIntegration',
+      'StartOutboundChatContact',
       'StartOutboundVoiceContact',
+      'StartScreenSharing',
       'StartTaskContact',
       'StartWebRTCContact',
       'StopContact',
@@ -4098,8 +4405,10 @@ export class Connect extends PolicyStatement {
       'UpdateContactSchedule',
       'UpdateEvaluationForm',
       'UpdateHoursOfOperation',
+      'UpdateHoursOfOperationOverride',
       'UpdateInstanceAttribute',
       'UpdateInstanceStorageConfig',
+      'UpdateParticipantAuthentication',
       'UpdateParticipantRoleConfig',
       'UpdatePhoneNumber',
       'UpdatePhoneNumberMetadata',
@@ -4143,6 +4452,7 @@ export class Connect extends PolicyStatement {
       'DescribeEvaluationForm',
       'DescribeForecastingPlanningSchedulingIntegration',
       'DescribeHoursOfOperation',
+      'DescribeHoursOfOperationOverride',
       'DescribeInstance',
       'DescribeInstanceAttribute',
       'DescribeInstanceStorageConfig',
@@ -4164,6 +4474,7 @@ export class Connect extends PolicyStatement {
       'GetContactAttributes',
       'GetCurrentMetricData',
       'GetCurrentUserData',
+      'GetEffectiveHoursOfOperations',
       'GetFederationToken',
       'GetFlowAssociation',
       'GetMetricData',
@@ -4176,6 +4487,7 @@ export class Connect extends PolicyStatement {
       'SearchContactFlowModules',
       'SearchContactFlows',
       'SearchContacts',
+      'SearchHoursOfOperationOverrides',
       'SearchHoursOfOperations',
       'SearchPredefinedAttributes',
       'SearchPrompts',
@@ -4190,17 +4502,20 @@ export class Connect extends PolicyStatement {
       'BatchGetFlowAssociation',
       'GetTrafficDistribution',
       'ListAgentStatuses',
+      'ListAnalyticsDataAssociations',
       'ListApprovedOrigins',
       'ListAuthenticationProfiles',
       'ListBots',
       'ListContactEvaluations',
       'ListContactFlowModules',
+      'ListContactFlowVersions',
       'ListContactFlows',
       'ListContactReferences',
       'ListDefaultVocabularies',
       'ListEvaluationFormVersions',
       'ListEvaluationForms',
       'ListFlowAssociations',
+      'ListHoursOfOperationOverrides',
       'ListHoursOfOperations',
       'ListInstanceAttributes',
       'ListInstanceStorageConfigs',
@@ -4908,6 +5223,7 @@ export class Connect extends PolicyStatement {
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateTrafficDistributionGroupUser()
    * - .toBatchGetFlowAssociation()
+   * - .toCreateContactFlowVersion()
    * - .toCreateViewVersion()
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
@@ -4959,6 +5275,7 @@ export class Connect extends PolicyStatement {
    * - .toGetPromptFile()
    * - .toGetTaskTemplate()
    * - .toGetTrafficDistribution()
+   * - .toListContactFlowVersions()
    * - .toListQueueQuickConnects()
    * - .toListRoutingProfileQueues()
    * - .toListSecurityProfileApplications()
@@ -4972,6 +5289,7 @@ export class Connect extends PolicyStatement {
    * - .toReleasePhoneNumber()
    * - .toResumeContact()
    * - .toSearchResourceTags()
+   * - .toStartEmailContact()
    * - .toStartTaskContact()
    * - .toUpdateAgentStatus()
    * - .toUpdateContactFlowContent()
@@ -5084,6 +5402,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Filters access by restricting access to create contacts based on Assignment Type
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toStartTaskContact()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAssignmentType(value: string | string[], operator?: Operator | string) {
+    return this.if(`AssignmentType`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the attribute type of the Amazon Connect instance
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -5100,12 +5433,36 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Filters access by Flow type
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateContactFlow()
+   * - .toCreateContactFlowVersion()
+   * - .toDeleteContactFlow()
+   * - .toDescribeContactFlow()
+   * - .toListContactFlowVersions()
+   * - .toSearchContactFlows()
+   * - .toUpdateContactFlowContent()
+   * - .toUpdateContactFlowMetadata()
+   * - .toUpdateContactFlowName()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFlowType(value: string | string[], operator?: Operator | string) {
+    return this.if(`FlowType`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by restricting federation into specified Amazon Connect instances
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
    * - .toActivateEvaluationForm()
+   * - .toAssociateAnalyticsDataSet()
    * - .toAssociateApprovedOrigin()
    * - .toAssociateBot()
    * - .toAssociateDefaultVocabulary()
@@ -5130,13 +5487,16 @@ export class Connect extends PolicyStatement {
    * - .toCreateAuthenticationProfile()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
+   * - .toCreateContactFlowVersion()
    * - .toCreateEvaluationForm()
    * - .toCreateHoursOfOperation()
+   * - .toCreateHoursOfOperationOverride()
    * - .toCreateIntegrationAssociation()
    * - .toCreateParticipant()
    * - .toCreatePersistentContactAssociation()
    * - .toCreatePredefinedAttribute()
    * - .toCreatePrompt()
+   * - .toCreatePushNotificationRegistration()
    * - .toCreateQueue()
    * - .toCreateQuickConnect()
    * - .toCreateRoutingProfile()
@@ -5156,10 +5516,12 @@ export class Connect extends PolicyStatement {
    * - .toDeleteContactFlowModule()
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
+   * - .toDeleteHoursOfOperationOverride()
    * - .toDeleteInstance()
    * - .toDeleteIntegrationAssociation()
    * - .toDeletePredefinedAttribute()
    * - .toDeletePrompt()
+   * - .toDeletePushNotificationRegistration()
    * - .toDeleteQueue()
    * - .toDeleteQuickConnect()
    * - .toDeleteRoutingProfile()
@@ -5181,6 +5543,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeEvaluationForm()
    * - .toDescribeForecastingPlanningSchedulingIntegration()
    * - .toDescribeHoursOfOperation()
+   * - .toDescribeHoursOfOperationOverride()
    * - .toDescribeInstance()
    * - .toDescribeInstanceAttribute()
    * - .toDescribeInstanceStorageConfig()
@@ -5196,6 +5559,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeUserHierarchyStructure()
    * - .toDescribeView()
    * - .toDescribeVocabulary()
+   * - .toDisassociateAnalyticsDataSet()
    * - .toDisassociateApprovedOrigin()
    * - .toDisassociateBot()
    * - .toDisassociateFlow()
@@ -5213,21 +5577,26 @@ export class Connect extends PolicyStatement {
    * - .toGetContactAttributes()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
+   * - .toGetEffectiveHoursOfOperations()
    * - .toGetFederationToken()
    * - .toGetFlowAssociation()
    * - .toGetMetricData()
    * - .toGetMetricDataV2()
    * - .toGetPromptFile()
    * - .toGetTaskTemplate()
+   * - .toListAnalyticsDataAssociations()
    * - .toListApprovedOrigins()
    * - .toListAuthenticationProfiles()
    * - .toListBots()
    * - .toListContactEvaluations()
+   * - .toListContactFlowVersions()
+   * - .toListContactFlows()
    * - .toListContactReferences()
    * - .toListDefaultVocabularies()
    * - .toListEvaluationFormVersions()
    * - .toListEvaluationForms()
    * - .toListFlowAssociations()
+   * - .toListHoursOfOperationOverrides()
    * - .toListHoursOfOperations()
    * - .toListInstanceAttributes()
    * - .toListInstanceStorageConfigs()
@@ -5259,6 +5628,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
    * - .toSearchContacts()
+   * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
    * - .toSearchPredefinedAttributes()
    * - .toSearchPrompts()
@@ -5270,10 +5640,14 @@ export class Connect extends PolicyStatement {
    * - .toSearchUserHierarchyGroups()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
+   * - .toSendOutboundEmail()
    * - .toStartAttachedFileUpload()
    * - .toStartChatContact()
    * - .toStartContactEvaluation()
+   * - .toStartEmailContact()
    * - .toStartForecastingPlanningSchedulingIntegration()
+   * - .toStartOutboundChatContact()
+   * - .toStartScreenSharing()
    * - .toStartTaskContact()
    * - .toStartWebRTCContact()
    * - .toStopContact()
@@ -5296,8 +5670,10 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContactSchedule()
    * - .toUpdateEvaluationForm()
    * - .toUpdateHoursOfOperation()
+   * - .toUpdateHoursOfOperationOverride()
    * - .toUpdateInstanceAttribute()
    * - .toUpdateInstanceStorageConfig()
+   * - .toUpdateParticipantAuthentication()
    * - .toUpdateParticipantRoleConfig()
    * - .toUpdatePhoneNumber()
    * - .toUpdatePredefinedAttribute()
@@ -5375,6 +5751,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchAgentStatuses()
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
+   * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
    * - .toSearchPrompts()
    * - .toSearchQueues()
@@ -5408,6 +5785,21 @@ export class Connect extends PolicyStatement {
    */
   public ifStorageResourceType(value: string | string[], operator?: Operator | string) {
     return this.if(`StorageResourceType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by restricting creation of a contact for specific subtypes
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toStartOutboundChatContact()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubtype(value: string | string[], operator?: Operator | string) {
+    return this.if(`Subtype`, value, operator ?? 'StringLike');
   }
 
   /**

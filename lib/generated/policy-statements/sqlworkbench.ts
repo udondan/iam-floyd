@@ -267,6 +267,17 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete account-wide custom context
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDeleteQCustomContext() {
+    return this.to('DeleteQCustomContext');
+  }
+
+  /**
    * Grants permission to remove saved queries on your account
    *
    * Access Level: Write
@@ -275,6 +286,17 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toDeleteSavedQuery() {
     return this.to('DeleteSavedQuery');
+  }
+
+  /**
+   * Grants permission to delete sql generation context
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toDeleteSqlGenerationContext() {
+    return this.to('DeleteSqlGenerationContext');
   }
 
   /**
@@ -425,6 +447,28 @@ export class Sqlworkbench extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get account-wide custom context
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetQCustomContext() {
+    return this.to('GetQCustomContext');
+  }
+
+  /**
+   * Grants permission to get Q generative SQL maximum prompt quotas
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetQSqlPromptQuotas() {
+    return this.to('GetQSqlPromptQuotas');
+  }
+
+  /**
    * Grants permission to get text to SQL recommendations
    *
    * Access Level: Read
@@ -466,6 +510,28 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toGetSchemaInference() {
     return this.to('GetSchemaInference');
+  }
+
+  /**
+   * Grants permission to get sql generation context
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetSqlGenerationContext() {
+    return this.to('GetSqlGenerationContext');
+  }
+
+  /**
+   * Grants permission to get text to SQL recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toGetSqlRecommendations() {
+    return this.to('GetSqlRecommendations');
   }
 
   /**
@@ -635,6 +701,39 @@ export class Sqlworkbench extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to provide account settings with the request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toPassAccountSettings() {
+    return this.to('PassAccountSettings');
+  }
+
+  /**
+   * Grants permission to update account-wide custom context
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toPutQCustomContext() {
+    return this.to('PutQCustomContext');
+  }
+
+  /**
+   * Grants permission to update sql generation context
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   */
+  public toPutSqlGenerationContext() {
+    return this.to('PutSqlGenerationContext');
   }
 
   /**
@@ -880,12 +979,17 @@ export class Sqlworkbench extends PolicyStatement {
       'DeleteNotebook',
       'DeleteNotebookCell',
       'DeleteNotebookVersion',
+      'DeleteQCustomContext',
       'DeleteSavedQuery',
+      'DeleteSqlGenerationContext',
       'DeleteTab',
       'DriverExecute',
       'DuplicateNotebook',
       'GenerateSession',
       'ImportNotebook',
+      'PassAccountSettings',
+      'PutQCustomContext',
+      'PutSqlGenerationContext',
       'PutTab',
       'PutUserWorkspaceSettings',
       'RestoreNotebookVersion',
@@ -913,10 +1017,14 @@ export class Sqlworkbench extends PolicyStatement {
       'GetConnection',
       'GetNotebook',
       'GetNotebookVersion',
+      'GetQCustomContext',
+      'GetQSqlPromptQuotas',
       'GetQSqlRecommendations',
       'GetQueryExecutionHistory',
       'GetSavedQuery',
       'GetSchemaInference',
+      'GetSqlGenerationContext',
+      'GetSqlRecommendations',
       'GetUserInfo',
       'GetUserWorkspaceSettings',
       'ListSampleDatabases',

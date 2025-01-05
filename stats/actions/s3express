@@ -3,5 +3,9 @@ s3express:CreateSession;Read
 s3express:DeleteBucket;Write
 s3express:DeleteBucketPolicy;Permissions management
 s3express:GetBucketPolicy;Read
+s3express:GetEncryptionConfiguration;Read
+s3express:GetLifecycleConfiguration;Read
 s3express:ListAllMyDirectoryBuckets;List
 s3express:PutBucketPolicy;Permissions management
+s3express:PutEncryptionConfiguration;Write
+s3express:PutLifecycleConfiguration;Write

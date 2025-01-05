@@ -104,6 +104,7 @@ export class Cleanrooms extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - athena:GetTableMetadata
    * - glue:BatchGetPartition
    * - glue:GetDatabase
    * - glue:GetDatabases
@@ -787,6 +788,28 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to access a collaboration in the context of Clean Rooms ML custom models
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access
+   */
+  public toPassCollaboration() {
+    return this.to('PassCollaboration');
+  }
+
+  /**
+   * Grants permission to access a membership in the context of Clean Rooms ML custom models
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/ml-behaviors-byom.html#ml-behaviors-byom-membership-collaboration-access
+   */
+  public toPassMembership() {
+    return this.to('PassMembership');
+  }
+
+  /**
    * Grants permission to start an Id Mapping Job in AWS Entity Resolution to generate id mapping results in cleanrooms collaboration.
    *
    * Access Level: Write
@@ -1032,6 +1055,8 @@ export class Cleanrooms extends PolicyStatement {
       'GetProtectedQuery',
       'GetSchema',
       'GetSchemaAnalysisRule',
+      'PassCollaboration',
+      'PassMembership',
       'PreviewPrivacyImpact'
     ],
     Write: [

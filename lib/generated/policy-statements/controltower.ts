@@ -656,6 +656,17 @@ export class Controltower extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reset an enabled control for an organizational unit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetEnabledControl.html
+   */
+  public toResetEnabledControl() {
+    return this.to('ResetEnabledControl');
+  }
+
+  /**
    * Grants permission to reset a landing zone
    *
    * Access Level: Write
@@ -765,6 +776,7 @@ export class Controltower extends PolicyStatement {
       'EnableGuardrail',
       'ManageOrganizationalUnit',
       'ResetEnabledBaseline',
+      'ResetEnabledControl',
       'ResetLandingZone',
       'SetupLandingZone',
       'UpdateAccountFactoryConfig',

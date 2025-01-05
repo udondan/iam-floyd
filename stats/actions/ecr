@@ -20,6 +20,7 @@ ecr:DescribePullThroughCacheRules;List
 ecr:DescribeRegistry;Read
 ecr:DescribeRepositories;Read
 ecr:DescribeRepositoryCreationTemplates;Read
+ecr:GetAccountSetting;Read
 ecr:GetAuthorizationToken;Read
 ecr:GetDownloadUrlForLayer;Read
 ecr:GetLifecyclePolicy;Read
@@ -30,6 +31,7 @@ ecr:GetRepositoryPolicy;Read
 ecr:InitiateLayerUpload;Write
 ecr:ListImages;List
 ecr:ListTagsForResource;Read
+ecr:PutAccountSetting;Write
 ecr:PutImage;Write
 ecr:PutImageScanningConfiguration;Write
 ecr:PutImageTagMutability;Write

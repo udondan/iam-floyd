@@ -44,6 +44,7 @@ backup:GetBackupVaultAccessPolicy;Read
 backup:GetBackupVaultNotifications;Read
 backup:GetBackupVaultSharingPolicy;Read
 backup:GetLegalHold;Read
+backup:GetRecoveryPointIndexDetails;Read
 backup:GetRecoveryPointRestoreMetadata;Read
 backup:GetRestoreJobMetadata;Read
 backup:GetRestoreTestingInferredMetadata;Read
@@ -60,6 +61,8 @@ backup:ListBackupVaults;List
 backup:ListCopyJobSummaries;List
 backup:ListCopyJobs;List
 backup:ListFrameworks;List
+backup:ListIndexedRecoveryPoints;List
+backup:ListIndexedRecoveryPointsForSearch;Permissions management
 backup:ListLegalHolds;List
 backup:ListProtectedResources;List
 backup:ListProtectedResourcesByBackupVault;List
@@ -79,6 +82,7 @@ backup:PutBackupVaultLockConfiguration;Write
 backup:PutBackupVaultNotifications;Write
 backup:PutBackupVaultSharingPolicy;Permissions management
 backup:PutRestoreValidationResult;Write
+backup:SearchRecoveryPoint;Permissions management
 backup:StartBackupJob;Write
 backup:StartCopyJob;Write
 backup:StartReportJob;Write
@@ -89,6 +93,7 @@ backup:UntagResource;Tagging
 backup:UpdateBackupPlan;Write
 backup:UpdateFramework;Write
 backup:UpdateGlobalSettings;Write
+backup:UpdateRecoveryPointIndexSettings;Write
 backup:UpdateRecoveryPointLifecycle;Write
 backup:UpdateRegionSettings;Write
 backup:UpdateReportPlan;Write

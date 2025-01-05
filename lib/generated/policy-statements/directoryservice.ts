@@ -30,6 +30,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to access directory data using the Directory Service Data API
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html
+   */
+  public toAccessDSData() {
+    return this.to('AccessDSData');
+  }
+
+  /**
    * Grants permission to add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services
    *
    * Access Level: Write
@@ -402,6 +413,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the Directory Service Data API status for the specified directory
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectoryDataAccess.html
+   */
+  public toDescribeDirectoryDataAccess() {
+    return this.to('DescribeDirectoryDataAccess');
+  }
+
+  /**
    * Grants permission to provide information about any domain controllers in your directory
    *
    * Access Level: Read
@@ -512,6 +534,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable the Directory Service Data API for the specified directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableDirectoryDataAccess.html
+   */
+  public toDisableDirectoryDataAccess() {
+    return this.to('DisableDirectoryDataAccess');
+  }
+
+  /**
    * Grants permission to deactivate LDAP secure calls for the specified directory
    *
    * Access Level: Write
@@ -564,6 +597,17 @@ export class Ds extends PolicyStatement {
    */
   public toEnableClientAuthentication() {
     return this.to('EnableClientAuthentication');
+  }
+
+  /**
+   * Grants permission to enable the Directory Service Data API for the specified directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableDirectoryDataAccess.html
+   */
+  public toEnableDirectoryDataAccess() {
+    return this.to('EnableDirectoryDataAccess');
   }
 
   /**
@@ -978,11 +1022,13 @@ export class Ds extends PolicyStatement {
       'DeregisterCertificate',
       'DeregisterEventTopic',
       'DisableClientAuthentication',
+      'DisableDirectoryDataAccess',
       'DisableLDAPS',
       'DisableRadius',
       'DisableRoleAccess',
       'DisableSso',
       'EnableClientAuthentication',
+      'EnableDirectoryDataAccess',
       'EnableLDAPS',
       'EnableRadius',
       'EnableRoleAccess',
@@ -1007,6 +1053,9 @@ export class Ds extends PolicyStatement {
       'UpdateSettings',
       'UpdateTrust'
     ],
+    'Permissions management': [
+      'AccessDSData'
+    ],
     Tagging: [
       'AddTagsToResource',
       'RemoveTagsFromResource'
@@ -1016,6 +1065,7 @@ export class Ds extends PolicyStatement {
       'DescribeCertificate',
       'DescribeClientAuthenticationSettings',
       'DescribeConditionalForwarders',
+      'DescribeDirectoryDataAccess',
       'DescribeDomainControllers',
       'DescribeEventTopics',
       'DescribeLDAPSSettings',

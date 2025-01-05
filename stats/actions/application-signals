@@ -3,6 +3,7 @@ application-signals:CreateServiceLevelObjective;Write
 application-signals:DeleteServiceLevelObjective;Write
 application-signals:GetService;Read
 application-signals:GetServiceLevelObjective;Read
+application-signals:ListObservedEntities;List
 application-signals:ListServiceDependencies;Read
 application-signals:ListServiceDependents;Read
 application-signals:ListServiceLevelObjectives;List

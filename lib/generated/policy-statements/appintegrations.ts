@@ -69,6 +69,8 @@ export class AppIntegrations extends PolicyStatement {
    * - iam:CreateServiceLinkedRole
    * - iam:PutRolePolicy
    * - kms:CreateGrant
+   * - profile:GetDomain
+   * - profile:GetProfileObjectType
    * - s3:GetBucketNotification
    * - s3:GetEncryptionConfiguration
    * - s3:PutBucketNotification
@@ -95,6 +97,8 @@ export class AppIntegrations extends PolicyStatement {
    * - appflow:DescribeConnectorProfiles
    * - appflow:TagResource
    * - appflow:UseConnectorProfile
+   * - profile:CreateSnapshot
+   * - profile:GetSnapshot
    *
    * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html
    */
@@ -412,6 +416,24 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a DataIntegrationAssociation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - profile:CreateSnapshot
+   * - profile:GetSnapshot
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegrationAssociation.html
+   */
+  public toUpdateDataIntegrationAssociation() {
+    return this.to('UpdateDataIntegrationAssociation');
+  }
+
+  /**
    * Grants permission to modify an EventIntegration
    *
    * Access Level: Write
@@ -441,6 +463,7 @@ export class AppIntegrations extends PolicyStatement {
       'DeleteEventIntegrationAssociation',
       'UpdateApplication',
       'UpdateDataIntegration',
+      'UpdateDataIntegrationAssociation',
       'UpdateEventIntegration'
     ],
     Read: [
@@ -607,6 +630,7 @@ export class AppIntegrations extends PolicyStatement {
    * - .toUntagResource()
    * - .toUpdateApplication()
    * - .toUpdateDataIntegration()
+   * - .toUpdateDataIntegrationAssociation()
    * - .toUpdateEventIntegration()
    *
    * Applies to resource types:

@@ -2,6 +2,9 @@ dynamodb:Attributes
 dynamodb:EnclosingOperation
 dynamodb:FullTableScan
 dynamodb:LeadingKeys
+dynamodb:RequestTag/${TagKey}
+dynamodb:ResourceTag/${TagKey}
 dynamodb:ReturnConsumedCapacity
 dynamodb:ReturnValues
 dynamodb:Select
+dynamodb:TagKeys

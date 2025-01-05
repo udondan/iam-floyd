@@ -14,14 +14,19 @@ ec2:CapacityReservationFleet
 ec2:ClientRootCertificateChainArn
 ec2:CloudwatchLogGroupArn
 ec2:CloudwatchLogStreamArn
+ec2:CpuOptionsAmdSevSnp
 ec2:CreateAction
+ec2:CreateDate
 ec2:DPDTimeoutSeconds
+ec2:DestinationCapacityReservationId
 ec2:DhcpOptionsID
 ec2:DirectoryArn
 ec2:Domain
 ec2:EbsOptimized
 ec2:ElasticGpuType
 ec2:Encrypted
+ec2:EndDate
+ec2:EndDateType
 ec2:FisActionId
 ec2:FisTargetArns
 ec2:GatewayType
@@ -32,9 +37,12 @@ ec2:ImageType
 ec2:InsideTunnelCidr
 ec2:InsideTunnelIpv6Cidr
 ec2:InstanceAutoRecovery
+ec2:InstanceCount
 ec2:InstanceID
 ec2:InstanceMarketType
+ec2:InstanceMatchCriteria
 ec2:InstanceMetadataTags
+ec2:InstancePlatform
 ec2:InstanceProfile
 ec2:InstanceType
 ec2:InternetGatewayID
@@ -45,6 +53,8 @@ ec2:KeyPairName
 ec2:KeyPairType
 ec2:KmsKeyId
 ec2:LaunchTemplate
+ec2:Location
+ec2:ManagedResourceOperator
 ec2:MetadataHttpEndpoint
 ec2:MetadataHttpPutResponseHopLimit
 ec2:MetadataHttpTokens
@@ -92,6 +102,8 @@ ec2:SnapshotCoolOffPeriod
 ec2:SnapshotID
 ec2:SnapshotLockDuration
 ec2:SnapshotTime
+ec2:SourceAvailabilityZone
+ec2:SourceCapacityReservationId
 ec2:SourceInstanceARN
 ec2:SourceOutpostArn
 ec2:Subnet
@@ -116,3 +128,6 @@ ec2:transitGatewayMulticastDomainId
 ec2:transitGatewayPolicyTableId
 ec2:transitGatewayRouteTableAnnouncementId
 ec2:transitGatewayRouteTableId
+ec2:vpceMultiRegion
+ec2:vpceServiceRegion
+ec2:vpceSupportedRegion

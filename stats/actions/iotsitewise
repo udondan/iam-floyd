@@ -12,6 +12,7 @@ iotsitewise:CreateAssetModel;Write
 iotsitewise:CreateAssetModelCompositeModel;Write
 iotsitewise:CreateBulkImportJob;Write
 iotsitewise:CreateDashboard;Write
+iotsitewise:CreateDataset;Write
 iotsitewise:CreateGateway;Write
 iotsitewise:CreatePortal;Write
 iotsitewise:CreateProject;Write
@@ -20,6 +21,7 @@ iotsitewise:DeleteAsset;Write
 iotsitewise:DeleteAssetModel;Write
 iotsitewise:DeleteAssetModelCompositeModel;Write
 iotsitewise:DeleteDashboard;Write
+iotsitewise:DeleteDataset;Write
 iotsitewise:DeleteGateway;Write
 iotsitewise:DeletePortal;Write
 iotsitewise:DeleteProject;Write
@@ -33,6 +35,7 @@ iotsitewise:DescribeAssetModelCompositeModel;Read
 iotsitewise:DescribeAssetProperty;Read
 iotsitewise:DescribeBulkImportJob;Read
 iotsitewise:DescribeDashboard;Read
+iotsitewise:DescribeDataset;Read
 iotsitewise:DescribeDefaultEncryptionConfiguration;Read
 iotsitewise:DescribeGateway;Read
 iotsitewise:DescribeGatewayCapabilityConfiguration;Read
@@ -50,6 +53,7 @@ iotsitewise:GetAssetPropertyAggregates;Read
 iotsitewise:GetAssetPropertyValue;Read
 iotsitewise:GetAssetPropertyValueHistory;Read
 iotsitewise:GetInterpolatedAssetPropertyValues;Read
+iotsitewise:InvokeAssistant;Read
 iotsitewise:ListAccessPolicies;List
 iotsitewise:ListActions;List
 iotsitewise:ListAssetModelCompositeModels;List
@@ -62,6 +66,7 @@ iotsitewise:ListAssociatedAssets;List
 iotsitewise:ListBulkImportJobs;List
 iotsitewise:ListCompositionRelationships;List
 iotsitewise:ListDashboards;List
+iotsitewise:ListDatasets;List
 iotsitewise:ListGateways;List
 iotsitewise:ListPortals;List
 iotsitewise:ListProjectAssets;List
@@ -80,6 +85,7 @@ iotsitewise:UpdateAssetModelCompositeModel;Write
 iotsitewise:UpdateAssetModelPropertyRouting;Write
 iotsitewise:UpdateAssetProperty;Write
 iotsitewise:UpdateDashboard;Write
+iotsitewise:UpdateDataset;Write
 iotsitewise:UpdateGateway;Write
 iotsitewise:UpdateGatewayCapabilityConfiguration;Write
 iotsitewise:UpdatePortal;Write

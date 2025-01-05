@@ -7,6 +7,7 @@ chime:AssociatePhoneNumberWithUser;Write
 chime:AssociatePhoneNumbersWithVoiceConnector;Write
 chime:AssociatePhoneNumbersWithVoiceConnectorGroup;Write
 chime:AssociateSigninDelegateGroupsWithAccount;Write
+chime:AssociateVoiceConnectorConnect;Write
 chime:AuthorizeDirectory;Write
 chime:BatchCreateAttendee;Write
 chime:BatchCreateChannelMembership;Write
@@ -34,6 +35,8 @@ chime:CreateChannelBan;Write
 chime:CreateChannelFlow;Write
 chime:CreateChannelMembership;Write
 chime:CreateChannelModerator;Write
+chime:CreateConnectAnalyticsConnector;Write
+chime:CreateConnectCallTransferConnector;Write
 chime:CreateMediaCapturePipeline;Write
 chime:CreateMediaConcatenationPipeline;Write
 chime:CreateMediaInsightsPipeline;Write
@@ -90,6 +93,7 @@ chime:DeleteSipMediaApplication;Write
 chime:DeleteSipRule;Write
 chime:DeleteVoiceConnector;Write
 chime:DeleteVoiceConnectorEmergencyCallingConfiguration;Write
+chime:DeleteVoiceConnectorExternalSystemsConfiguration;Write
 chime:DeleteVoiceConnectorGroup;Write
 chime:DeleteVoiceConnectorOrigination;Write
 chime:DeleteVoiceConnectorProxy;Write
@@ -116,6 +120,7 @@ chime:DisassociatePhoneNumberFromUser;Write
 chime:DisassociatePhoneNumbersFromVoiceConnector;Write
 chime:DisassociatePhoneNumbersFromVoiceConnectorGroup;Write
 chime:DisassociateSigninDelegateGroupsFromAccount;Write
+chime:DisassociateVoiceConnectorConnect;Write
 chime:DisconnectDirectory;Write
 chime:GetAccount;Read
 chime:GetAccountResource;Read
@@ -158,6 +163,7 @@ chime:GetUserByEmail;Read
 chime:GetUserSettings;Read
 chime:GetVoiceConnector;Read
 chime:GetVoiceConnectorEmergencyCallingConfiguration;Read
+chime:GetVoiceConnectorExternalSystemsConfiguration;Read
 chime:GetVoiceConnectorGroup;Read
 chime:GetVoiceConnectorLoggingConfiguration;Read
 chime:GetVoiceConnectorOrigination;Read
@@ -234,6 +240,7 @@ chime:PutRetentionSettings;Write
 chime:PutSipMediaApplicationAlexaSkillConfiguration;Write
 chime:PutSipMediaApplicationLoggingConfiguration;Write
 chime:PutVoiceConnectorEmergencyCallingConfiguration;Write
+chime:PutVoiceConnectorExternalSystemsConfiguration;Write
 chime:PutVoiceConnectorLoggingConfiguration;Write
 chime:PutVoiceConnectorOrigination;Write
 chime:PutVoiceConnectorProxy;Write

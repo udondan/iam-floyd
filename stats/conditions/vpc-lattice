@@ -1,10 +1,12 @@
 vpc-lattice:AuthType
 vpc-lattice:Protocol
 vpc-lattice:RequestTag/${TagKey}
+vpc-lattice:ResourceConfigurationArn
 vpc-lattice:ResourceTag/${TagKey}
 vpc-lattice:SecurityGroupIds
 vpc-lattice:ServiceArn
 vpc-lattice:ServiceNetworkArn
 vpc-lattice:TagKeys
 vpc-lattice:TargetGroupArns
+vpc-lattice:VpcEndpointId
 vpc-lattice:VpcId

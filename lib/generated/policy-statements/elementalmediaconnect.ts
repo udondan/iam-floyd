@@ -195,6 +195,17 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view flow's source thumbnail
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-thumbnail.html
+   */
+  public toDescribeFlowSourceThumbnail() {
+    return this.to('DescribeFlowSourceThumbnail');
+  }
+
+  /**
    * Grants permission to display the details of a gateway including the gateway ARN, name, and CIDR blocks, as well as details about the networks
    *
    * Access Level: Read
@@ -656,6 +667,7 @@ export class Mediaconnect extends PolicyStatement {
       'DescribeBridge',
       'DescribeFlow',
       'DescribeFlowSourceMetadata',
+      'DescribeFlowSourceThumbnail',
       'DescribeGateway',
       'DescribeGatewayInstance',
       'DescribeOffering',

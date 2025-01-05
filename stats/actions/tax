@@ -1,5 +1,6 @@
 tax:BatchDeleteTaxRegistration;Write
 tax:BatchPutTaxRegistration;Write
+tax:DeleteSupplementalTaxRegistration;Write
 tax:DeleteTaxRegistration;Write
 tax:GetExemptions;Read
 tax:GetTaxInfoReportingDocument;Read
@@ -7,7 +8,9 @@ tax:GetTaxInheritance;Read
 tax:GetTaxInterview;Read
 tax:GetTaxRegistration;Read
 tax:GetTaxRegistrationDocument;Read
+tax:ListSupplementalTaxRegistrations;Read
 tax:ListTaxRegistrations;Read
+tax:PutSupplementalTaxRegistration;Write
 tax:PutTaxInheritance;Write
 tax:PutTaxInterview;Write
 tax:PutTaxRegistration;Write

@@ -119,6 +119,9 @@ export class Eks extends PolicyStatement {
    * - .ifBootstrapSelfManagedAddons()
    * - .ifAuthenticationMode()
    * - .ifSupportType()
+   * - .ifComputeConfigEnabled()
+   * - .ifElasticLoadBalancingEnabled()
+   * - .ifBlockStorageEnabled()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
@@ -327,6 +330,17 @@ export class Eks extends PolicyStatement {
    */
   public toDescribeCluster() {
     return this.to('DescribeCluster');
+  }
+
+  /**
+   * Grants permission to retrieve descriptive information about Kubernetes versions that Amazon EKS clusters support
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeClusterVersions.html
+   */
+  public toDescribeClusterVersions() {
+    return this.to('DescribeClusterVersions');
   }
 
   /**
@@ -650,6 +664,9 @@ export class Eks extends PolicyStatement {
    * Possible conditions:
    * - .ifAuthenticationMode()
    * - .ifSupportType()
+   * - .ifComputeConfigEnabled()
+   * - .ifElasticLoadBalancingEnabled()
+   * - .ifBlockStorageEnabled()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html
    */
@@ -720,6 +737,7 @@ export class Eks extends PolicyStatement {
       'DescribeAddonConfiguration',
       'DescribeAddonVersions',
       'DescribeCluster',
+      'DescribeClusterVersions',
       'DescribeEksAnywhereSubscription',
       'DescribeFargateProfile',
       'DescribeIdentityProviderConfig',
@@ -1071,6 +1089,21 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Filters access by the block storage enabled parameter in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifBlockStorageEnabled(value?: boolean) {
+    return this.if(`blockStorageEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the bootstrapClusterCreatorAdminPermissions present in the create cluster request
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
@@ -1126,6 +1159,36 @@ export class Eks extends PolicyStatement {
    */
   public ifClusterName(value: string | string[], operator?: Operator | string) {
     return this.if(`clusterName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the compute config enabled parameter in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifComputeConfigEnabled(value?: boolean) {
+    return this.if(`computeConfigEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the elastic load balancing enabled parameter in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifElasticLoadBalancingEnabled(value?: boolean) {
+    return this.if(`elasticLoadBalancingEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

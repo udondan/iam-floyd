@@ -41,6 +41,17 @@ export class Wickr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a delete Wickr networks
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html
+   */
+  public toDeleteNetwork() {
+    return this.to('DeleteNetwork');
+  }
+
+  /**
    * Grants permission to view Wickr networks
    *
    * Access Level: Write
@@ -107,6 +118,7 @@ export class Wickr extends PolicyStatement {
     Write: [
       'CreateAdminSession',
       'CreateNetwork',
+      'DeleteNetwork',
       'ListNetworks',
       'UpdateNetworkDetails'
     ],

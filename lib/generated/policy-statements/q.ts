@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [q](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonq.html).
@@ -23,10 +23,29 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * Possible conditions:
+   * - .ifIdentitystoreUserId()
+   * - .ifIdentitystoreGroupId()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toCreateAssignment() {
     return this.to('CreateAssignment');
+  }
+
+  /**
+   * Grants permission to create and configure a third party plugin in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toCreatePlugin() {
+    return this.to('CreatePlugin');
   }
 
   /**
@@ -34,10 +53,39 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * Possible conditions:
+   * - .ifIdentitystoreUserId()
+   * - .ifIdentitystoreGroupId()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toDeleteAssignment() {
     return this.to('DeleteAssignment');
+  }
+
+  /**
+   * Grants permission to delete a configured plugin in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toDeletePlugin() {
+    return this.to('DeletePlugin');
+  }
+
+  /**
+   * Grants permission to generate code from CLI commands in Amazon Q
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toGenerateCodeFromCommands() {
+    return this.to('GenerateCodeFromCommands');
   }
 
   /**
@@ -45,7 +93,7 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toGetConversation() {
     return this.to('GetConversation');
@@ -56,10 +104,24 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toGetIdentityMetadata() {
     return this.to('GetIdentityMetadata');
+  }
+
+  /**
+   * Grants permission to view information about a specific configured Amazon Q plugin
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toGetPlugin() {
+    return this.to('GetPlugin');
   }
 
   /**
@@ -67,7 +129,7 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toGetTroubleshootingResults() {
     return this.to('GetTroubleshootingResults');
@@ -78,10 +140,57 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toListConversations() {
     return this.to('ListConversations');
+  }
+
+  /**
+   * Grants permission to read metrics to populate Amazon Q dashboard
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListDashboardMetrics() {
+    return this.to('ListDashboardMetrics');
+  }
+
+  /**
+   * Grants permission to list available plugins in Amazon Q
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListPluginProviders() {
+    return this.to('ListPluginProviders');
+  }
+
+  /**
+   * Grants permission to list configured plugins in Amazon Q
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListPlugins() {
+    return this.to('ListPlugins');
+  }
+
+  /**
+   * Grants permission to list all tags associated with an Amazon Q resource
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -89,7 +198,7 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toPassRequest() {
     return this.to('PassRequest');
@@ -100,7 +209,7 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toSendMessage() {
     return this.to('SendMessage');
@@ -111,7 +220,7 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toStartConversation() {
     return this.to('StartConversation');
@@ -122,7 +231,7 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toStartTroubleshootingAnalysis() {
     return this.to('StartTroubleshootingAnalysis');
@@ -133,10 +242,41 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toStartTroubleshootingResolutionExplanation() {
     return this.to('StartTroubleshootingResolutionExplanation');
+  }
+
+  /**
+   * Grants permission to associate tags with an Amazon Q resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags associated with an Amazon Q resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -144,28 +284,174 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/amazonq/latest/aws-builder-use-ug/security_iam_manage-access-with-policies.html
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toUpdateTroubleshootingCommandResult() {
     return this.to('UpdateTroubleshootingCommandResult');
   }
 
+  /**
+   * Grants permission to use Amazon Q plugins
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toUsePlugin() {
+    return this.to('UsePlugin');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAssignment',
+      'CreatePlugin',
       'DeleteAssignment',
+      'DeletePlugin',
       'PassRequest',
       'SendMessage',
       'StartConversation',
       'StartTroubleshootingAnalysis',
       'StartTroubleshootingResolutionExplanation',
-      'UpdateTroubleshootingCommandResult'
+      'UpdateTroubleshootingCommandResult',
+      'UsePlugin'
     ],
     Read: [
+      'GenerateCodeFromCommands',
       'GetConversation',
       'GetIdentityMetadata',
+      'GetPlugin',
       'GetTroubleshootingResults',
       'ListConversations'
+    ],
+    List: [
+      'ListDashboardMetrics',
+      'ListPluginProviders',
+      'ListPlugins',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type profile to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/as-whisper-admin.html#about-profiles
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onProfile(identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codewhisperer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type plugin to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/plugins.html
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPlugin(identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qdeveloper:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:plugin/${ identifier }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreatePlugin()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the Amazon Q resource
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toDeletePlugin()
+   * - .toGetPlugin()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - plugin
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreatePlugin()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by IAM Identity Center Group ID
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateAssignment()
+   * - .toDeleteAssignment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIdentitystoreGroupId(value: string | string[], operator?: Operator | string) {
+    return this.if(`identitystore:GroupId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by IAM Identity Center User ID
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateAssignment()
+   * - .toDeleteAssignment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIdentitystoreUserId(value: string | string[], operator?: Operator | string) {
+    return this.if(`identitystore:UserId`, value, operator ?? 'StringLike');
+  }
 }

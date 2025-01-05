@@ -1,4 +1,5 @@
 ds:AcceptSharedDirectory;Write
+ds:AccessDSData;Permissions management
 ds:AddIpRoutes;Write
 ds:AddRegion;Write
 ds:AddTagsToResource;Tagging
@@ -26,6 +27,7 @@ ds:DescribeCertificate;Read
 ds:DescribeClientAuthenticationSettings;Read
 ds:DescribeConditionalForwarders;Read
 ds:DescribeDirectories;List
+ds:DescribeDirectoryDataAccess;Read
 ds:DescribeDomainControllers;Read
 ds:DescribeEventTopics;Read
 ds:DescribeLDAPSSettings;Read
@@ -36,11 +38,13 @@ ds:DescribeSnapshots;Read
 ds:DescribeTrusts;Read
 ds:DescribeUpdateDirectory;Read
 ds:DisableClientAuthentication;Write
+ds:DisableDirectoryDataAccess;Write
 ds:DisableLDAPS;Write
 ds:DisableRadius;Write
 ds:DisableRoleAccess;Write
 ds:DisableSso;Write
 ds:EnableClientAuthentication;Write
+ds:EnableDirectoryDataAccess;Write
 ds:EnableLDAPS;Write
 ds:EnableRadius;Write
 ds:EnableRoleAccess;Write

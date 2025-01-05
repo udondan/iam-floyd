@@ -30,6 +30,20 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a tag-sync task for an application group
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - resource-groups:DeleteGroup
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_CancelTagSyncTask.html
+   */
+  public toCancelTagSyncTask() {
+    return this.to('CancelTagSyncTask');
+  }
+
+  /**
    * Grants permission to create a resource group with a specified name, description, and resource query
    *
    * Access Level: Write
@@ -51,6 +65,9 @@ export class ResourceGroups extends PolicyStatement {
    * Grants permission to delete a specified resource group
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - tag:GetResources
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html
    */
@@ -136,6 +153,17 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information of a specified tag-sync task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTagSyncTask.html
+   */
+  public toGetTagSyncTask() {
+    return this.to('GetTagSyncTask');
+  }
+
+  /**
    * Grants permission to get the tags associated with a specified resource group
    *
    * Access Level: Read
@@ -150,6 +178,10 @@ export class ResourceGroups extends PolicyStatement {
    * Grants permission to add the specified resources to the specified group
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - resource-groups:Tag
+   * - tag:TagResources
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GroupResources.html
    */
@@ -174,6 +206,17 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list grouping statuses for a specified application group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupingStatuses.html
+   */
+  public toListGroupingStatuses() {
+    return this.to('ListGroupingStatuses');
+  }
+
+  /**
    * Grants permission to list all resource groups in your account
    *
    * Access Level: List
@@ -193,6 +236,17 @@ export class ResourceGroups extends PolicyStatement {
    */
   public toListResourceTypes() {
     return this.to('ListResourceTypes');
+  }
+
+  /**
+   * Grants permission to list all tag-sync tasks in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListTagSyncTasks.html
+   */
+  public toListTagSyncTasks() {
+    return this.to('ListTagSyncTasks');
   }
 
   /**
@@ -234,6 +288,21 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a tag-sync task for an application group
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - resource-groups:CreateGroup
+   *
+   * https://docs.aws.amazon.com/ARG/latest/APIReference/API_StartTagSyncTask.html
+   */
+  public toStartTagSyncTask() {
+    return this.to('StartTagSyncTask');
+  }
+
+  /**
    * Grants permission to tag a specified resource group
    *
    * Access Level: Tagging
@@ -252,6 +321,10 @@ export class ResourceGroups extends PolicyStatement {
    * Grants permission to remove the specified resources from the specified group
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - resource-groups:Untag
+   * - tag:UntagResources
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UngroupResources.html
    */
@@ -312,6 +385,7 @@ export class ResourceGroups extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateResource',
+      'CancelTagSyncTask',
       'CreateGroup',
       'DeleteGroup',
       'DeleteGroupPolicy',
@@ -319,6 +393,7 @@ export class ResourceGroups extends PolicyStatement {
       'GroupResources',
       'PutGroupConfiguration',
       'PutGroupPolicy',
+      'StartTagSyncTask',
       'UngroupResources',
       'UpdateAccountSettings',
       'UpdateGroup',
@@ -330,12 +405,15 @@ export class ResourceGroups extends PolicyStatement {
       'GetGroupConfiguration',
       'GetGroupPolicy',
       'GetGroupQuery',
+      'GetTagSyncTask',
       'GetTags'
     ],
     List: [
       'ListGroupResources',
+      'ListGroupingStatuses',
       'ListGroups',
       'ListResourceTypes',
+      'ListTagSyncTasks',
       'SearchResources'
     ],
     Tagging: [
@@ -362,6 +440,24 @@ export class ResourceGroups extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type tagSyncTask to the statement
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html
+   *
+   * @param groupName - Identifier for the groupName.
+   * @param taskId - Identifier for the taskId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTagSyncTask(groupName: string, taskId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resource-groups:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:group/${ groupName }/tag-sync-task/${ taskId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -385,6 +481,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * Applies to resource types:
    * - group
+   * - tagSyncTask
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

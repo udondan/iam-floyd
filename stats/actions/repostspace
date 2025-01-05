@@ -1,3 +1,5 @@
+repostspace:BatchAddRole;Write
+repostspace:BatchRemoveRole;Write
 repostspace:CreateSpace;Write
 repostspace:DeleteSpace;Write
 repostspace:DeregisterAdmin;Write

@@ -140,6 +140,21 @@ export class Iotfleetwise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a state template
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateStateTemplate.html
+   */
+  public toCreateStateTemplate() {
+    return this.to('CreateStateTemplate');
+  }
+
+  /**
    * Grants permission to create a vehicle
    *
    * Access Level: Write
@@ -214,6 +229,17 @@ export class Iotfleetwise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a state template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteStateTemplate.html
+   */
+  public toDeleteStateTemplate() {
+    return this.to('DeleteStateTemplate');
+  }
+
+  /**
    * Grants permission to delete a vehicle
    *
    * Access Level: Write
@@ -233,6 +259,20 @@ export class Iotfleetwise extends PolicyStatement {
    */
   public toDisassociateVehicleFleet() {
     return this.to('DisassociateVehicleFleet');
+  }
+
+  /**
+   * Grants permission to generate the payload for running a command on a vehicle
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifSignals()
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/controlling-access.html#generate-command-payload
+   */
+  public toGenerateCommandPayload() {
+    return this.to('GenerateCommandPayload');
   }
 
   /**
@@ -321,6 +361,17 @@ export class Iotfleetwise extends PolicyStatement {
    */
   public toGetSignalCatalog() {
     return this.to('GetSignalCatalog');
+  }
+
+  /**
+   * Grants permission to get summary information for a given state template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_GetStateTemplate.html
+   */
+  public toGetStateTemplate() {
+    return this.to('GetStateTemplate');
   }
 
   /**
@@ -482,6 +533,17 @@ export class Iotfleetwise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list state templates
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_ListStateTemplates.html
+   */
+  public toListStateTemplates() {
+    return this.to('ListStateTemplates');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -635,6 +697,17 @@ export class Iotfleetwise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the given state template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_UpdateStateTemplate.html
+   */
+  public toUpdateStateTemplate() {
+    return this.to('UpdateStateTemplate');
+  }
+
+  /**
    * Grants permission to update the vehicle
    *
    * Access Level: Write
@@ -659,12 +732,14 @@ export class Iotfleetwise extends PolicyStatement {
       'CreateFleet',
       'CreateModelManifest',
       'CreateSignalCatalog',
+      'CreateStateTemplate',
       'CreateVehicle',
       'DeleteCampaign',
       'DeleteDecoderManifest',
       'DeleteFleet',
       'DeleteModelManifest',
       'DeleteSignalCatalog',
+      'DeleteStateTemplate',
       'DeleteVehicle',
       'DisassociateVehicleFleet',
       'ImportDecoderManifest',
@@ -677,7 +752,11 @@ export class Iotfleetwise extends PolicyStatement {
       'UpdateFleet',
       'UpdateModelManifest',
       'UpdateSignalCatalog',
+      'UpdateStateTemplate',
       'UpdateVehicle'
+    ],
+    'Permissions management': [
+      'GenerateCommandPayload'
     ],
     Read: [
       'GetCampaign',
@@ -688,6 +767,7 @@ export class Iotfleetwise extends PolicyStatement {
       'GetModelManifest',
       'GetRegisterAccountStatus',
       'GetSignalCatalog',
+      'GetStateTemplate',
       'GetVehicle',
       'GetVehicleStatus',
       'ListCampaigns',
@@ -697,6 +777,7 @@ export class Iotfleetwise extends PolicyStatement {
       'ListModelManifests',
       'ListSignalCatalogNodes',
       'ListSignalCatalogs',
+      'ListStateTemplates',
       'ListTagsForResource',
       'ListVehicles',
       'ListVehiclesInFleet'
@@ -815,6 +896,23 @@ export class Iotfleetwise extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type statetemplate to the statement
+   *
+   * https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/last-known-state.html
+   *
+   * @param stateTemplateId - Identifier for the stateTemplateId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStatetemplate(stateTemplateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotfleetwise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:state-template/${ stateTemplateId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -826,6 +924,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateModelManifest()
    * - .toCreateSignalCatalog()
+   * - .toCreateStateTemplate()
    * - .toCreateVehicle()
    * - .toImportSignalCatalog()
    * - .toTagResource()
@@ -850,6 +949,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - modelmanifest
    * - signalcatalog
    * - vehicle
+   * - statetemplate
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -871,6 +971,7 @@ export class Iotfleetwise extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateModelManifest()
    * - .toCreateSignalCatalog()
+   * - .toCreateStateTemplate()
    * - .toCreateVehicle()
    * - .toImportSignalCatalog()
    * - .toTagResource()
@@ -896,6 +997,21 @@ export class Iotfleetwise extends PolicyStatement {
    */
   public ifDestinationArn(value: string | string[], operator?: Operator | string) {
     return this.if(`DestinationArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by fully qualified signal names
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleetwise.html
+   *
+   * Applies to actions:
+   * - .toGenerateCommandPayload()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSignals(value: string | string[], operator?: Operator | string) {
+    return this.if(`Signals`, value, operator ?? 'StringLike');
   }
 
   /**

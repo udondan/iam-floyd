@@ -5,10 +5,12 @@ lakeformation:CancelTransaction;Write
 lakeformation:CommitTransaction;Write
 lakeformation:CreateDataCellsFilter;Write
 lakeformation:CreateLFTag;Write
+lakeformation:CreateLFTagExpression;Write
 lakeformation:CreateLakeFormationIdentityCenterConfiguration;Write
 lakeformation:CreateLakeFormationOptIn;Write
 lakeformation:DeleteDataCellsFilter;Write
 lakeformation:DeleteLFTag;Write
+lakeformation:DeleteLFTagExpression;Write
 lakeformation:DeleteLakeFormationIdentityCenterConfiguration;Write
 lakeformation:DeleteLakeFormationOptIn;Write
 lakeformation:DeleteObjectsOnCancel;Write
@@ -23,6 +25,7 @@ lakeformation:GetDataLakePrincipal;Read
 lakeformation:GetDataLakeSettings;Read
 lakeformation:GetEffectivePermissionsForPath;Read
 lakeformation:GetLFTag;Read
+lakeformation:GetLFTagExpression;Read
 lakeformation:GetQueryState;Read
 lakeformation:GetQueryStatistics;Read
 lakeformation:GetResourceLFTags;Read
@@ -31,6 +34,7 @@ lakeformation:GetWorkUnitResults;Read
 lakeformation:GetWorkUnits;Read
 lakeformation:GrantPermissions;Permissions management
 lakeformation:ListDataCellsFilter;List
+lakeformation:ListLFTagExpressions;Read
 lakeformation:ListLFTags;Read
 lakeformation:ListLakeFormationOptIns;List
 lakeformation:ListPermissions;List
@@ -47,6 +51,7 @@ lakeformation:StartQueryPlanning;Write
 lakeformation:StartTransaction;Write
 lakeformation:UpdateDataCellsFilter;Write
 lakeformation:UpdateLFTag;Write
+lakeformation:UpdateLFTagExpression;Write
 lakeformation:UpdateLakeFormationIdentityCenterConfiguration;Write
 lakeformation:UpdateResource;Write
 lakeformation:UpdateTableObjects;Write

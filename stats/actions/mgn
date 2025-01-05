@@ -8,6 +8,7 @@ mgn:ChangeServerLifeCycleState;Write
 mgn:CreateApplication;Write
 mgn:CreateConnector;Write
 mgn:CreateLaunchConfigurationTemplate;Write
+mgn:CreateNetworkMigrationDefinition;Write
 mgn:CreateReplicationConfigurationTemplate;Write
 mgn:CreateVcenterClientForMgn;Write
 mgn:CreateWave;Write
@@ -15,6 +16,7 @@ mgn:DeleteApplication;Write
 mgn:DeleteConnector;Write
 mgn:DeleteJob;Write
 mgn:DeleteLaunchConfigurationTemplate;Write
+mgn:DeleteNetworkMigrationDefinition;Write
 mgn:DeleteReplicationConfigurationTemplate;Write
 mgn:DeleteSourceServer;Write
 mgn:DeleteVcenterClient;Write
@@ -39,6 +41,8 @@ mgn:GetAgentRuntimeConfigurationForMgn;Read
 mgn:GetAgentSnapshotCreditsForMgn;Read
 mgn:GetChannelCommandsForMgn;Read
 mgn:GetLaunchConfiguration;Read
+mgn:GetNetworkMigrationDefinition;Read
+mgn:GetNetworkMigrationMapperSegmentConstruct;Read
 mgn:GetReplicationConfiguration;Read
 mgn:GetVcenterClientCommandsForMgn;Read
 mgn:InitializeService;Write
@@ -50,6 +54,18 @@ mgn:ListExports;List
 mgn:ListImportErrors;List
 mgn:ListImports;List
 mgn:ListManagedAccounts;List
+mgn:ListNetworkMigrationAnalyses;List
+mgn:ListNetworkMigrationAnalysisResults;List
+mgn:ListNetworkMigrationCodeGenerationSegments;List
+mgn:ListNetworkMigrationCodeGenerations;List
+mgn:ListNetworkMigrationDefinitions;List
+mgn:ListNetworkMigrationDeployedStacks;List
+mgn:ListNetworkMigrationDeployedStacksDeletions;List
+mgn:ListNetworkMigrationDeployments;List
+mgn:ListNetworkMigrationExecutions;List
+mgn:ListNetworkMigrationMapperSegmentConstructs;List
+mgn:ListNetworkMigrationMapperSegments;List
+mgn:ListNetworkMigrationMappings;List
 mgn:ListSourceServerActions;List
 mgn:ListTagsForResource;Read
 mgn:ListTemplateActions;List
@@ -79,6 +95,11 @@ mgn:SendVcenterClientMetricsForMgn;Write
 mgn:StartCutover;Write
 mgn:StartExport;Write
 mgn:StartImport;Write
+mgn:StartNetworkMigrationAnalysis;Write
+mgn:StartNetworkMigrationCodeGeneration;Write
+mgn:StartNetworkMigrationDeployedStacksDeletion;Write
+mgn:StartNetworkMigrationDeployment;Write
+mgn:StartNetworkMigrationMapping;Write
 mgn:StartReplication;Write
 mgn:StartTest;Write
 mgn:StopReplication;Write
@@ -96,6 +117,9 @@ mgn:UpdateApplication;Write
 mgn:UpdateConnector;Write
 mgn:UpdateLaunchConfiguration;Write
 mgn:UpdateLaunchConfigurationTemplate;Write
+mgn:UpdateNetworkMigrationDefinition;Write
+mgn:UpdateNetworkMigrationMapperSegment;Write
+mgn:UpdateNetworkMigrationMapperSegmentConstruct;Write
 mgn:UpdateReplicationConfiguration;Write
 mgn:UpdateReplicationConfigurationTemplate;Write
 mgn:UpdateSourceServer;Write

@@ -381,6 +381,17 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an analyzer's configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateAnalyzer.html
+   */
+  public toUpdateAnalyzer() {
+    return this.to('UpdateAnalyzer');
+  }
+
+  /**
    * Grants permission to modify an archive rule
    *
    * Access Level: Write
@@ -425,6 +436,7 @@ export class AccessAnalyzer extends PolicyStatement {
       'GenerateFindingRecommendation',
       'StartPolicyGeneration',
       'StartResourceScan',
+      'UpdateAnalyzer',
       'UpdateArchiveRule',
       'UpdateFindings'
     ],

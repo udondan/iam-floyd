@@ -102,6 +102,17 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete specified attributes from a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteServiceAttributes.html
+   */
+  public toDeleteServiceAttributes() {
+    return this.to('DeleteServiceAttributes');
+  }
+
+  /**
    * Grants permission to delete the records and the health check, if any, that Amazon Route 53 created for the specified instance
    *
    * Access Level: Write
@@ -204,6 +215,17 @@ export class Servicediscovery extends PolicyStatement {
    */
   public toGetService() {
     return this.to('GetService');
+  }
+
+  /**
+   * Grants permission to get the attributes for a specified service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetServiceAttributes.html
+   */
+  public toGetServiceAttributes() {
+    return this.to('GetServiceAttributes');
   }
 
   /**
@@ -365,6 +387,17 @@ export class Servicediscovery extends PolicyStatement {
     return this.to('UpdateService');
   }
 
+  /**
+   * Grants permission to update the attributes in a specified service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateServiceAttributes.html
+   */
+  public toUpdateServiceAttributes() {
+    return this.to('UpdateServiceAttributes');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateHttpNamespace',
@@ -373,13 +406,15 @@ export class Servicediscovery extends PolicyStatement {
       'CreateService',
       'DeleteNamespace',
       'DeleteService',
+      'DeleteServiceAttributes',
       'DeregisterInstance',
       'RegisterInstance',
       'UpdateHttpNamespace',
       'UpdateInstanceCustomHealthStatus',
       'UpdatePrivateDnsNamespace',
       'UpdatePublicDnsNamespace',
-      'UpdateService'
+      'UpdateService',
+      'UpdateServiceAttributes'
     ],
     Read: [
       'DiscoverInstances',
@@ -389,6 +424,7 @@ export class Servicediscovery extends PolicyStatement {
       'GetNamespace',
       'GetOperation',
       'GetService',
+      'GetServiceAttributes',
       'ListInstances',
       'ListNamespaces',
       'ListServices',

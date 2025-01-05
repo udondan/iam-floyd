@@ -23,10 +23,21 @@ export class Artifact extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_AcceptAgreement.html
    */
   public toAcceptAgreement() {
     return this.to('AcceptAgreement');
+  }
+
+  /**
+   * Grants permission to accept the terms of an NDA Document for a given agreement resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_AcceptNdaForAgreement.html
+   */
+  public toAcceptNdaForAgreement() {
+    return this.to('AcceptNdaForAgreement');
   }
 
   /**
@@ -63,6 +74,39 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an AWS agreement that has not yet been accepted by the customer account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetAgreement.html
+   */
+  public toGetAgreement() {
+    return this.to('GetAgreement');
+  }
+
+  /**
+   * Grants permission to get an AWS agreement that has been accepted by the customer account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetCustomerAgreement.html
+   */
+  public toGetCustomerAgreement() {
+    return this.to('GetCustomerAgreement');
+  }
+
+  /**
+   * Grants permission to retrieve the NDA Document for a given agreement resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetNdaForAgreement.html
+   */
+  public toGetNdaForAgreement() {
+    return this.to('GetNdaForAgreement');
+  }
+
+  /**
    * Grants permission to download a report
    *
    * Access Level: Read
@@ -96,6 +140,28 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list AWS agreements
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListAgreements.html
+   */
+  public toListAgreements() {
+    return this.to('ListAgreements');
+  }
+
+  /**
+   * Grants permission to list customer-agreement resources that have been accepted by the customer account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListCustomerAgreements.html
+   */
+  public toListCustomerAgreements() {
+    return this.to('ListCustomerAgreements');
+  }
+
+  /**
    * Grants permission to list reports in your account
    *
    * Access Level: List
@@ -122,7 +188,7 @@ export class Artifact extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_TerminateAgreement.html
    */
   public toTerminateAgreement() {
     return this.to('TerminateAgreement');
@@ -131,6 +197,7 @@ export class Artifact extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAgreement',
+      'AcceptNdaForAgreement',
       'PutAccountSettings',
       'TerminateAgreement'
     ],
@@ -138,11 +205,16 @@ export class Artifact extends PolicyStatement {
       'DownloadAgreement',
       'Get',
       'GetAccountSettings',
+      'GetAgreement',
+      'GetCustomerAgreement',
+      'GetNdaForAgreement',
       'GetReport',
       'GetReportMetadata',
       'GetTermForReport'
     ],
     List: [
+      'ListAgreements',
+      'ListCustomerAgreements',
       'ListReports'
     ]
   };

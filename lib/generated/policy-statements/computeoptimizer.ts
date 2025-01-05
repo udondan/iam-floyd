@@ -111,6 +111,20 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export idle recommendations to S3 for the provided accounts
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - compute-optimizer:GetIdleRecommendations
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportIdleRecommendations.html
+   */
+  public toExportIdleRecommendations() {
+    return this.to('ExportIdleRecommendations');
+  }
+
+  /**
    * Grants permission to export Lambda function recommendations to S3 for the provided accounts
    *
    * Access Level: Write
@@ -283,6 +297,17 @@ export class ComputeOptimizer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get idle recommendations for the specified account(s)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetIdleRecommendations.html
+   */
+  public toGetIdleRecommendations() {
+    return this.to('GetIdleRecommendations');
+  }
+
+  /**
    * Grants permission to get recommendations for the provided Lambda functions
    *
    * Access Level: List
@@ -405,6 +430,7 @@ export class ComputeOptimizer extends PolicyStatement {
       'ExportEBSVolumeRecommendations',
       'ExportEC2InstanceRecommendations',
       'ExportECSServiceRecommendations',
+      'ExportIdleRecommendations',
       'ExportLambdaFunctionRecommendations',
       'ExportLicenseRecommendations',
       'ExportRDSDatabaseRecommendations',
@@ -421,6 +447,7 @@ export class ComputeOptimizer extends PolicyStatement {
       'GetECSServiceRecommendations',
       'GetEnrollmentStatus',
       'GetEnrollmentStatusesForOrganization',
+      'GetIdleRecommendations',
       'GetLambdaFunctionRecommendations',
       'GetLicenseRecommendations',
       'GetRDSDatabaseRecommendationProjectedMetrics',

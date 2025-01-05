@@ -1,5 +1,7 @@
+mediapackagev2:CancelHarvestJob;Write
 mediapackagev2:CreateChannel;Write
 mediapackagev2:CreateChannelGroup;Write
+mediapackagev2:CreateHarvestJob;Write
 mediapackagev2:CreateOriginEndpoint;Write
 mediapackagev2:DeleteChannel;Write
 mediapackagev2:DeleteChannelGroup;Write
@@ -9,12 +11,15 @@ mediapackagev2:DeleteOriginEndpointPolicy;Write
 mediapackagev2:GetChannel;Read
 mediapackagev2:GetChannelGroup;Read
 mediapackagev2:GetChannelPolicy;Read
+mediapackagev2:GetHarvestJob;Read
 mediapackagev2:GetHeadObject;Read
 mediapackagev2:GetObject;Read
 mediapackagev2:GetOriginEndpoint;Read
 mediapackagev2:GetOriginEndpointPolicy;Read
+mediapackagev2:HarvestObject;Read
 mediapackagev2:ListChannelGroups;List
 mediapackagev2:ListChannels;List
+mediapackagev2:ListHarvestJobs;List
 mediapackagev2:ListOriginEndpoints;List
 mediapackagev2:ListTagsForResource;Read
 mediapackagev2:PutChannelPolicy;Write

@@ -1,8 +1,12 @@
 vpc-lattice:AccessLogSubscription
 vpc-lattice:Listener
+vpc-lattice:ResourceConfiguration
+vpc-lattice:ResourceEndpointAssociation
+vpc-lattice:ResourceGateway
 vpc-lattice:Rule
 vpc-lattice:Service
 vpc-lattice:ServiceNetwork
+vpc-lattice:ServiceNetworkResourceAssociation
 vpc-lattice:ServiceNetworkServiceAssociation
 vpc-lattice:ServiceNetworkVpcAssociation
 vpc-lattice:TargetGroup

@@ -1,6 +1,7 @@
 iot:AcceptCertificateTransfer;Write
 iot:AddThingToBillingGroup;Write
 iot:AddThingToThingGroup;Write
+iot:AssociateSbomWithPackageVersion;Write
 iot:AssociateTargetsWithJob;Write
 iot:AttachPolicy;Permissions management
 iot:AttachPrincipalPolicy;Permissions management
@@ -21,6 +22,7 @@ iot:CreateAuthorizer;Write
 iot:CreateBillingGroup;Write
 iot:CreateCertificateFromCsr;Write
 iot:CreateCertificateProvider;Write
+iot:CreateCommand;Write
 iot:CreateCustomMetric;Write
 iot:CreateDimension;Write
 iot:CreateDomainConfiguration;Write
@@ -54,6 +56,8 @@ iot:DeleteBillingGroup;Write
 iot:DeleteCACertificate;Write
 iot:DeleteCertificate;Write
 iot:DeleteCertificateProvider;Write
+iot:DeleteCommand;Write
+iot:DeleteCommandExecution;Write
 iot:DeleteCustomMetric;Write
 iot:DeleteDimension;Write
 iot:DeleteDomainConfiguration;Write
@@ -123,10 +127,13 @@ iot:DetachPrincipalPolicy;Permissions management
 iot:DetachSecurityProfile;Write
 iot:DetachThingPrincipal;Write
 iot:DisableTopicRule;Write
+iot:DisassociateSbomFromPackageVersion;Write
 iot:EnableTopicRule;Write
 iot:GetBehaviorModelTrainingSummaries;List
 iot:GetBucketsAggregation;Read
 iot:GetCardinality;Read
+iot:GetCommand;Read
+iot:GetCommandExecution;Read
 iot:GetEffectivePolicies;Read
 iot:GetIndexingConfiguration;Read
 iot:GetJobDocument;Read
@@ -141,6 +148,7 @@ iot:GetPolicyVersion;Read
 iot:GetRegistrationCode;Read
 iot:GetRetainedMessage;Read
 iot:GetStatistics;Read
+iot:GetThingConnectivityData;Read
 iot:GetThingShadow;Read
 iot:GetTopicRule;Read
 iot:GetTopicRuleDestination;Read
@@ -158,6 +166,8 @@ iot:ListCACertificates;List
 iot:ListCertificateProviders;List
 iot:ListCertificates;List
 iot:ListCertificatesByCA;List
+iot:ListCommandExecutions;List
+iot:ListCommands;List
 iot:ListCustomMetrics;List
 iot:ListDetectMitigationActionsExecutions;List
 iot:ListDetectMitigationActionsTasks;List
@@ -187,6 +197,7 @@ iot:ListProvisioningTemplates;List
 iot:ListRelatedResourcesForAuditFinding;List
 iot:ListRetainedMessages;List
 iot:ListRoleAliases;List
+iot:ListSbomValidationResults;List
 iot:ListScheduledAudits;List
 iot:ListSecurityProfiles;List
 iot:ListSecurityProfilesForTarget;List
@@ -229,6 +240,7 @@ iot:SetLoggingOptions;Write
 iot:SetV2LoggingLevel;Write
 iot:SetV2LoggingOptions;Write
 iot:StartAuditMitigationActionsTask;Write
+iot:StartCommandExecution;Write
 iot:StartDetectMitigationActionsTask;Write
 iot:StartOnDemandAuditTask;Write
 iot:StartThingRegistrationTask;Write
@@ -246,6 +258,7 @@ iot:UpdateBillingGroup;Write
 iot:UpdateCACertificate;Write
 iot:UpdateCertificate;Write
 iot:UpdateCertificateProvider;Write
+iot:UpdateCommand;Write
 iot:UpdateCustomMetric;Write
 iot:UpdateDimension;Write
 iot:UpdateDomainConfiguration;Write
@@ -267,5 +280,6 @@ iot:UpdateThing;Write
 iot:UpdateThingGroup;Write
 iot:UpdateThingGroupsForThing;Write
 iot:UpdateThingShadow;Write
+iot:UpdateThingType;Write
 iot:UpdateTopicRuleDestination;Write
 iot:ValidateSecurityProfileBehaviors;Read

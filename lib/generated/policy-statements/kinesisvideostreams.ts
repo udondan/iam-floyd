@@ -229,7 +229,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_AWSAcuitySignalingService_GetIceServerConfig.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_signaling_GetIceServerConfig.html
    */
   public toGetIceServerConfig() {
     return this.to('GetIceServerConfig');
@@ -284,10 +284,21 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_AWSAcuityRoutingServiceLambda_JoinStorageSession.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_webrtc_JoinStorageSession.html
    */
   public toJoinStorageSession() {
     return this.to('JoinStorageSession');
+  }
+
+  /**
+   * Grants permission to join a storage session for a channel as viewer
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_webrtc_JoinStorageSessionAsViewer.html
+   */
+  public toJoinStorageSessionAsViewer() {
+    return this.to('JoinStorageSessionAsViewer');
   }
 
   /**
@@ -372,7 +383,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_AWSAcuitySignalingService_SendAlexaOfferToMaster.html
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_signaling_SendAlexaOfferToMaster.html
    */
   public toSendAlexaOfferToMaster() {
     return this.to('SendAlexaOfferToMaster');
@@ -523,6 +534,7 @@ export class Kinesisvideo extends PolicyStatement {
       'DeleteSignalingChannel',
       'DeleteStream',
       'JoinStorageSession',
+      'JoinStorageSessionAsViewer',
       'PutMedia',
       'SendAlexaOfferToMaster',
       'StartEdgeConfigurationUpdate',

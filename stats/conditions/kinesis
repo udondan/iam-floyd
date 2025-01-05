@@ -1,1 +1,3 @@
-
+kinesis:RequestTag/${TagKey}
+kinesis:ResourceTag/${TagKey}
+kinesis:TagKeys

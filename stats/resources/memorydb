@@ -1,5 +1,7 @@
 memorydb:acl
 memorydb:cluster
+memorydb:multiregioncluster
+memorydb:multiregionparametergroup
 memorydb:parametergroup
 memorydb:reservednode
 memorydb:snapshot

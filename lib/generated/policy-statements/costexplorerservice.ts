@@ -239,6 +239,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the commitment purchase analysis for your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCommitmentPurchaseAnalysis.html
+   */
+  public toGetCommitmentPurchaseAnalysis() {
+    return this.to('GetCommitmentPurchaseAnalysis');
+  }
+
+  /**
    * Grants permission to view whether existing or fine-grained IAM actions are being used to control authorization to Billing, Cost Management, and Account consoles
    *
    * Access Level: Read
@@ -254,6 +265,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html
    */
   public toGetCostAndUsage() {
@@ -264,6 +278,9 @@ export class Ce extends PolicyStatement {
    * Grants permission to retrieve the cost and usage metrics with resources for your account
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html
    */
@@ -276,6 +293,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostCategories.html
    */
   public toGetCostCategories() {
@@ -287,6 +307,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html
    */
   public toGetCostForecast() {
@@ -297,6 +320,9 @@ export class Ce extends PolicyStatement {
    * Grants permission to retrieve all available filter values for a filter for a period of time
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html
    */
@@ -419,6 +445,9 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html
    */
   public toGetTags() {
@@ -430,10 +459,24 @@ export class Ce extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetUsageForecast.html
    */
   public toGetUsageForecast() {
     return this.to('GetUsageForecast');
+  }
+
+  /**
+   * Grants permission to retrieve a list of your historical commitment purchase analyses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCommitmentPurchaseAnalyses.html
+   */
+  public toListCommitmentPurchaseAnalyses() {
+    return this.to('ListCommitmentPurchaseAnalyses');
   }
 
   /**
@@ -503,6 +546,17 @@ export class Ce extends PolicyStatement {
    */
   public toProvideAnomalyFeedback() {
     return this.to('ProvideAnomalyFeedback');
+  }
+
+  /**
+   * Grants permission to request a commitment purchase analysis
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_StartCommitmentPurchaseAnalysis.html
+   */
+  public toStartCommitmentPurchaseAnalysis() {
+    return this.to('StartCommitmentPurchaseAnalysis');
   }
 
   /**
@@ -668,6 +722,7 @@ export class Ce extends PolicyStatement {
       'DeleteNotificationSubscription',
       'DeleteReport',
       'ProvideAnomalyFeedback',
+      'StartCommitmentPurchaseAnalysis',
       'StartCostAllocationTagBackfill',
       'StartSavingsPlansPurchaseRecommendationGeneration',
       'UpdateAnomalyMonitor',
@@ -687,6 +742,7 @@ export class Ce extends PolicyStatement {
       'GetAnomalyMonitors',
       'GetAnomalySubscriptions',
       'GetApproximateUsageRecords',
+      'GetCommitmentPurchaseAnalysis',
       'GetConsoleActionSetEnforced',
       'GetCostAndUsage',
       'GetCostAndUsageWithResources',
@@ -708,6 +764,7 @@ export class Ce extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListCommitmentPurchaseAnalyses',
       'ListCostAllocationTagBackfillHistory',
       'ListCostAllocationTags',
       'ListCostCategoryDefinitions',
@@ -768,6 +825,22 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type billingview to the statement
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBillingview(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:billing::${ account ?? this.defaultAccount }:billingview/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -799,6 +872,13 @@ export class Ce extends PolicyStatement {
    * - .toGetAnomalies()
    * - .toGetAnomalyMonitors()
    * - .toGetAnomalySubscriptions()
+   * - .toGetCostAndUsage()
+   * - .toGetCostAndUsageWithResources()
+   * - .toGetCostCategories()
+   * - .toGetCostForecast()
+   * - .toGetDimensionValues()
+   * - .toGetTags()
+   * - .toGetUsageForecast()
    * - .toListTagsForResource()
    * - .toTagResource()
    * - .toUntagResource()
@@ -810,6 +890,7 @@ export class Ce extends PolicyStatement {
    * - anomalysubscription
    * - anomalymonitor
    * - costcategory
+   * - billingview
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

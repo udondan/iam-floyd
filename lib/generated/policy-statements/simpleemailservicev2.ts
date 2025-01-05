@@ -231,6 +231,25 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new multi-region endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateMultiRegionEndpoint.html
+   */
+  public toCreateMultiRegionEndpoint() {
+    return this.to('CreateMultiRegionEndpoint');
+  }
+
+  /**
    * Grants permission to delete an existing configuration set
    *
    * Access Level: Write
@@ -361,6 +380,21 @@ export class SesV2 extends PolicyStatement {
    */
   public toDeleteEmailTemplate() {
     return this.to('DeleteEmailTemplate');
+  }
+
+  /**
+   * Grants permission to delete a multi-region endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteMultiRegionEndpoint.html
+   */
+  public toDeleteMultiRegionEndpoint() {
+    return this.to('DeleteMultiRegionEndpoint');
   }
 
   /**
@@ -668,6 +702,21 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a multi-region endpoint
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetMultiRegionEndpoint.html
+   */
+  public toGetMultiRegionEndpoint() {
+    return this.to('GetMultiRegionEndpoint');
+  }
+
+  /**
    * Grants permission to retrieve information about a specific email address that's on the suppression list for your account
    *
    * Access Level: Read
@@ -834,6 +883,20 @@ export class SesV2 extends PolicyStatement {
    */
   public toListImportJobs() {
     return this.to('ListImportJobs');
+  }
+
+  /**
+   * Grants permission to list all of the multi-region endpoints for your account
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListMultiRegionEndpoints.html
+   */
+  public toListMultiRegionEndpoints() {
+    return this.to('ListMultiRegionEndpoints');
   }
 
   /**
@@ -1187,12 +1250,25 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to replicate email identity DKIM signing key
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifReplicaRegion()
+   */
+  public toReplicateEmailIdentityDkimSigningKey() {
+    return this.to('ReplicateEmailIdentityDkimSigningKey');
+  }
+
+  /**
    * Grants permission to compose an email message to multiple destinations
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifMultiRegionEndpointId()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html
    */
@@ -1225,6 +1301,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifFromAddress()
    * - .ifFromDisplayName()
    * - .ifRecipients()
+   * - .ifMultiRegionEndpointId()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html
    */
@@ -1388,6 +1465,7 @@ export class SesV2 extends PolicyStatement {
       'GetExportJob',
       'GetImportJob',
       'GetMessageInsights',
+      'GetMultiRegionEndpoint',
       'GetSuppressedDestination',
       'ListDomainDeliverabilityCampaigns',
       'ListRecommendations',
@@ -1407,6 +1485,7 @@ export class SesV2 extends PolicyStatement {
       'CreateEmailTemplate',
       'CreateExportJob',
       'CreateImportJob',
+      'CreateMultiRegionEndpoint',
       'DeleteConfigurationSet',
       'DeleteConfigurationSetEventDestination',
       'DeleteContact',
@@ -1415,6 +1494,7 @@ export class SesV2 extends PolicyStatement {
       'DeleteDedicatedIpPool',
       'DeleteEmailIdentity',
       'DeleteEmailTemplate',
+      'DeleteMultiRegionEndpoint',
       'DeleteSuppressedDestination',
       'PutAccountDedicatedIpWarmupAttributes',
       'PutAccountDetails',
@@ -1450,6 +1530,7 @@ export class SesV2 extends PolicyStatement {
     'Permissions management': [
       'CreateEmailIdentityPolicy',
       'DeleteEmailIdentityPolicy',
+      'ReplicateEmailIdentityDkimSigningKey',
       'UpdateEmailIdentityPolicy'
     ],
     List: [
@@ -1462,7 +1543,8 @@ export class SesV2 extends PolicyStatement {
       'ListEmailIdentities',
       'ListEmailTemplates',
       'ListExportJobs',
-      'ListImportJobs'
+      'ListImportJobs',
+      'ListMultiRegionEndpoints'
     ],
     Tagging: [
       'TagResource',
@@ -1612,6 +1694,20 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type multi-region-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_MultiRegionEndpoint.html
+   *
+   * @param endpointName - Identifier for the endpointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMultiRegionEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:multi-region-endpoint/${ endpointName }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1622,6 +1718,7 @@ export class SesV2 extends PolicyStatement {
    * - .toCreateDedicatedIpPool()
    * - .toCreateDeliverabilityTestReport()
    * - .toCreateEmailIdentity()
+   * - .toCreateMultiRegionEndpoint()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1649,6 +1746,7 @@ export class SesV2 extends PolicyStatement {
    * - .toDeleteDedicatedIpPool()
    * - .toDeleteEmailIdentity()
    * - .toDeleteEmailIdentityPolicy()
+   * - .toDeleteMultiRegionEndpoint()
    * - .toGetConfigurationSet()
    * - .toGetConfigurationSetEventDestinations()
    * - .toGetContact()
@@ -1658,6 +1756,7 @@ export class SesV2 extends PolicyStatement {
    * - .toGetDomainStatisticsReport()
    * - .toGetEmailIdentity()
    * - .toGetEmailIdentityPolicies()
+   * - .toGetMultiRegionEndpoint()
    * - .toListRecommendations()
    * - .toPutConfigurationSetDeliveryOptions()
    * - .toPutConfigurationSetReputationOptions()
@@ -1703,6 +1802,7 @@ export class SesV2 extends PolicyStatement {
    * - .toCreateDedicatedIpPool()
    * - .toCreateDeliverabilityTestReport()
    * - .toCreateEmailIdentity()
+   * - .toCreateMultiRegionEndpoint()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -1733,6 +1833,7 @@ export class SesV2 extends PolicyStatement {
    * - .toCreateEmailTemplate()
    * - .toCreateExportJob()
    * - .toCreateImportJob()
+   * - .toCreateMultiRegionEndpoint()
    * - .toDeleteConfigurationSet()
    * - .toDeleteConfigurationSetEventDestination()
    * - .toDeleteContact()
@@ -1742,6 +1843,7 @@ export class SesV2 extends PolicyStatement {
    * - .toDeleteEmailIdentity()
    * - .toDeleteEmailIdentityPolicy()
    * - .toDeleteEmailTemplate()
+   * - .toDeleteMultiRegionEndpoint()
    * - .toDeleteSuppressedDestination()
    * - .toGetAccount()
    * - .toGetBlacklistReports()
@@ -1763,6 +1865,7 @@ export class SesV2 extends PolicyStatement {
    * - .toGetExportJob()
    * - .toGetImportJob()
    * - .toGetMessageInsights()
+   * - .toGetMultiRegionEndpoint()
    * - .toGetSuppressedDestination()
    * - .toListConfigurationSets()
    * - .toListContactLists()
@@ -1775,6 +1878,7 @@ export class SesV2 extends PolicyStatement {
    * - .toListEmailTemplates()
    * - .toListExportJobs()
    * - .toListImportJobs()
+   * - .toListMultiRegionEndpoints()
    * - .toListRecommendations()
    * - .toListSuppressedDestinations()
    * - .toListTagsForResource()
@@ -1883,6 +1987,22 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the multi-region endpoint ID that is used to send email
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toSendBulkEmail()
+   * - .toSendEmail()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMultiRegionEndpointId(value: string | string[], operator?: Operator | string) {
+    return this.if(`MultiRegionEndpointId`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the recipient addresses of a message, which include the "To", "CC", and "BCC" addresses
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
@@ -1895,5 +2015,20 @@ export class SesV2 extends PolicyStatement {
    */
   public ifRecipients(value: string | string[], operator?: Operator | string) {
     return this.if(`Recipients`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the replica regions for Replicating domain DKIM signing key
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toReplicateEmailIdentityDkimSigningKey()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifReplicaRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`ReplicaRegion`, value, operator ?? 'StringLike');
   }
 }

@@ -23,6 +23,10 @@ export class Aoss extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifCollectionId()
+   *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_APIAccessAll.html
    */
   public toAPIAccessAll() {
@@ -158,6 +162,10 @@ export class Aoss extends PolicyStatement {
    * Grants permission to Opensearch Serverless Dashboards
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollection()
+   * - .ifCollectionId()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DashboardsAccessAll.html
    */
@@ -387,6 +395,7 @@ export class Aoss extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -581,6 +590,10 @@ export class Aoss extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys
    *
+   * Applies to actions:
+   * - .toAPIAccessAll()
+   * - .toDashboardsAccessAll()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -594,9 +607,11 @@ export class Aoss extends PolicyStatement {
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys
    *
    * Applies to actions:
+   * - .toAPIAccessAll()
    * - .toCreateAccessPolicy()
    * - .toCreateLifecyclePolicy()
    * - .toCreateSecurityPolicy()
+   * - .toDashboardsAccessAll()
    * - .toDeleteAccessPolicy()
    * - .toDeleteLifecyclePolicy()
    * - .toDeleteSecurityPolicy()
@@ -651,6 +666,9 @@ export class Aoss extends PolicyStatement {
 
   /**
    * Filters access based on the tags associated with the resource
+   *
+   * Applies to actions:
+   * - .toTagResource()
    *
    * Applies to resource types:
    * - Collection

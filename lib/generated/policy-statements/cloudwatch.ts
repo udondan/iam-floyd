@@ -386,6 +386,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve all the entities that are emitting a given metric
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toListEntitiesForMetric() {
+    return this.to('ListEntitiesForMetric');
+  }
+
+  /**
    * Grants permission to list available managed Insight Rules for a given Resource ARN
    *
    * Access Level: Read
@@ -696,6 +707,7 @@ export class Cloudwatch extends PolicyStatement {
     ],
     List: [
       'ListDashboards',
+      'ListEntitiesForMetric',
       'ListMetricStreams',
       'ListMetrics',
       'ListServiceLevelObjectives',

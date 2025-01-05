@@ -1,2 +1,3 @@
 redshift-data:cluster
+redshift-data:managed-workgroup
 redshift-data:workgroup

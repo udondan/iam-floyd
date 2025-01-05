@@ -196,6 +196,28 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an index policy attached to a log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteIndexPolicy.html
+   */
+  public toDeleteIndexPolicy() {
+    return this.to('DeleteIndexPolicy');
+  }
+
+  /**
+   * Grants permission to delete the integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteIntegration.html
+   */
+  public toDeleteIntegration() {
+    return this.to('DeleteIntegration');
+  }
+
+  /**
    * Grants permission to delete a log anomaly detector
    *
    * Access Level: Write
@@ -295,6 +317,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a transformer associated with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteTransformer.html
+   */
+  public toDeleteTransformer() {
+    return this.to('DeleteTransformer');
+  }
+
+  /**
    * Grants permission to retrieve a data protection policy attached to an account
    *
    * Access Level: List
@@ -303,6 +336,17 @@ export class Logs extends PolicyStatement {
    */
   public toDescribeAccountPolicies() {
     return this.to('DescribeAccountPolicies');
+  }
+
+  /**
+   * Grants permission to retrieve a list of configuration templates of available log types
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html
+   */
+  public toDescribeConfigurationTemplates() {
+    return this.to('DescribeConfigurationTemplates');
   }
 
   /**
@@ -358,6 +402,28 @@ export class Logs extends PolicyStatement {
    */
   public toDescribeExportTasks() {
     return this.to('DescribeExportTasks');
+  }
+
+  /**
+   * Grants permission to return all the indexing attributes that are attached with the log groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeFieldIndexes.html
+   */
+  public toDescribeFieldIndexes() {
+    return this.to('DescribeFieldIndexes');
+  }
+
+  /**
+   * Grants permission to return all the index policies that are attached with the log groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeIndexPolicies.html
+   */
+  public toDescribeIndexPolicies() {
+    return this.to('DescribeIndexPolicies');
   }
 
   /**
@@ -515,6 +581,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a single integration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetIntegration.html
+   */
+  public toGetIntegration() {
+    return this.to('GetIntegration');
+  }
+
+  /**
    * Grants permission to get a log anomaly detector
    *
    * Access Level: Read
@@ -581,6 +658,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return transformer associated with the specified log group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetTransformer.html
+   */
+  public toGetTransformer() {
+    return this.to('GetTransformer');
+  }
+
+  /**
    * Grants permission to share CloudWatch resources with a monitoring account
    *
    * Access Level: Write
@@ -603,6 +691,28 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve all the entities that are associated with log group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toListEntitiesForLogGroup() {
+    return this.to('ListEntitiesForLogGroup');
+  }
+
+  /**
+   * Grants permission to list all integrations associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListIntegrations.html
+   */
+  public toListIntegrations() {
+    return this.to('ListIntegrations');
+  }
+
+  /**
    * Grants permission to return all the anomaly detectors that are associated with the AWS account making the request
    *
    * Access Level: List
@@ -622,6 +732,28 @@ export class Logs extends PolicyStatement {
    */
   public toListLogDeliveries() {
     return this.to('ListLogDeliveries');
+  }
+
+  /**
+   * Grants permission to retrieve all the log groups that are associated with entity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toListLogGroupsForEntity() {
+    return this.to('ListLogGroupsForEntity');
+  }
+
+  /**
+   * Grants permission to return all the log groups that are associated with the specified query
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogGroupsForQuery.html
+   */
+  public toListLogGroupsForQuery() {
+    return this.to('ListLogGroupsForQuery');
   }
 
   /**
@@ -741,6 +873,28 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach an index policy at log group level to optimize search and query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html
+   */
+  public toPutIndexPolicy() {
+    return this.to('PutIndexPolicy');
+  }
+
+  /**
+   * Grants permission to create integration between cloudwatch logs and opensearch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIntegration.html
+   */
+  public toPutIntegration() {
+    return this.to('PutIntegration');
+  }
+
+  /**
    * Grants permission to upload a batch of log events to the specified log stream
    *
    * Access Level: Write
@@ -807,6 +961,17 @@ export class Logs extends PolicyStatement {
    */
   public toPutSubscriptionFilter() {
     return this.to('PutSubscriptionFilter');
+  }
+
+  /**
+   * Grants permission to create or update a transformer and associates it with the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html
+   */
+  public toPutTransformer() {
+    return this.to('PutTransformer');
   }
 
   /**
@@ -895,6 +1060,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to test the transformer against a sample of log event messages
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TestTransformer.html
+   */
+  public toTestTransformer() {
+    return this.to('TestTransformer');
+  }
+
+  /**
    * Grants permission to fetch unmasked log events that have been redacted with a data protection policy
    *
    * Access Level: Read
@@ -945,6 +1121,21 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update configuration related to a delivery
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html
+   */
+  public toUpdateDeliveryConfiguration() {
+    return this.to('UpdateDeliveryConfiguration');
+  }
+
+  /**
    * Grants permission to update a log anomaly detector
    *
    * Access Level: Write
@@ -983,6 +1174,8 @@ export class Logs extends PolicyStatement {
       'DeleteDeliveryDestinationPolicy',
       'DeleteDeliverySource',
       'DeleteDestination',
+      'DeleteIndexPolicy',
+      'DeleteIntegration',
       'DeleteLogAnomalyDetector',
       'DeleteLogDelivery',
       'DeleteLogGroup',
@@ -991,6 +1184,7 @@ export class Logs extends PolicyStatement {
       'DeleteQueryDefinition',
       'DeleteRetentionPolicy',
       'DeleteSubscriptionFilter',
+      'DeleteTransformer',
       'DisassociateKmsKey',
       'Link',
       'PutAccountPolicy',
@@ -1000,12 +1194,16 @@ export class Logs extends PolicyStatement {
       'PutDeliverySource',
       'PutDestination',
       'PutDestinationPolicy',
+      'PutIndexPolicy',
+      'PutIntegration',
       'PutLogEvents',
       'PutMetricFilter',
       'PutQueryDefinition',
       'PutRetentionPolicy',
       'PutSubscriptionFilter',
+      'PutTransformer',
       'UpdateAnomaly',
+      'UpdateDeliveryConfiguration',
       'UpdateLogAnomalyDetector',
       'UpdateLogDelivery'
     ],
@@ -1015,11 +1213,14 @@ export class Logs extends PolicyStatement {
     ],
     List: [
       'DescribeAccountPolicies',
+      'DescribeConfigurationTemplates',
       'DescribeDeliveries',
       'DescribeDeliveryDestinations',
       'DescribeDeliverySources',
       'DescribeDestinations',
       'DescribeExportTasks',
+      'DescribeFieldIndexes',
+      'DescribeIndexPolicies',
       'DescribeLogGroups',
       'DescribeLogStreams',
       'DescribeMetricFilters',
@@ -1028,8 +1229,12 @@ export class Logs extends PolicyStatement {
       'DescribeResourcePolicies',
       'DescribeSubscriptionFilters',
       'ListAnomalies',
+      'ListEntitiesForLogGroup',
+      'ListIntegrations',
       'ListLogAnomalyDetectors',
       'ListLogDeliveries',
+      'ListLogGroupsForEntity',
+      'ListLogGroupsForQuery',
       'ListTagsForResource',
       'ListTagsLogGroup'
     ],
@@ -1040,17 +1245,20 @@ export class Logs extends PolicyStatement {
       'GetDeliveryDestination',
       'GetDeliveryDestinationPolicy',
       'GetDeliverySource',
+      'GetIntegration',
       'GetLogAnomalyDetector',
       'GetLogDelivery',
       'GetLogEvents',
       'GetLogGroupFields',
       'GetLogRecord',
       'GetQueryResults',
+      'GetTransformer',
       'StartLiveTail',
       'StartQuery',
       'StopLiveTail',
       'StopQuery',
       'TestMetricFilter',
+      'TestTransformer',
       'Unmask'
     ],
     Tagging: [
@@ -1195,6 +1403,7 @@ export class Logs extends PolicyStatement {
    * - .toPutDestination()
    * - .toTagLogGroup()
    * - .toTagResource()
+   * - .toUpdateDeliveryConfiguration()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1242,6 +1451,7 @@ export class Logs extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagLogGroup()
    * - .toUntagResource()
+   * - .toUpdateDeliveryConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

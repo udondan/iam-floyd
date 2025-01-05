@@ -476,7 +476,7 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
-   * Grants permission to evaluate an event against a detector version. If a version ID is not provided, the detector’s (ACTIVE) version is used
+   * Grants permission to evaluate an event against a detector version. If a version ID is not provided, the detector's (ACTIVE) version is used
    *
    * Access Level: Read
    *
@@ -814,7 +814,7 @@ export class Frauddetector extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the detector version’s status. You can perform the following promotions or demotions using UpdateDetectorVersionStatus: DRAFT to ACTIVE, ACTIVE to INACTIVE, and INACTIVE to ACTIVE
+   * Grants permission to update the detector version's status. You can perform the following promotions or demotions using UpdateDetectorVersionStatus: DRAFT to ACTIVE, ACTIVE to INACTIVE, and INACTIVE to ACTIVE
    *
    * Access Level: Write
    *

@@ -26,6 +26,7 @@ lambda:GetFunctionCodeSigningConfig;Read
 lambda:GetFunctionConcurrency;Read
 lambda:GetFunctionConfiguration;Read
 lambda:GetFunctionEventInvokeConfig;Read
+lambda:GetFunctionRecursionConfig;Read
 lambda:GetFunctionUrlConfig;Read
 lambda:GetLayerVersion;Read
 lambda:GetLayerVersionPolicy;Read
@@ -52,6 +53,7 @@ lambda:PublishVersion;Write
 lambda:PutFunctionCodeSigningConfig;Write
 lambda:PutFunctionConcurrency;Write
 lambda:PutFunctionEventInvokeConfig;Write
+lambda:PutFunctionRecursionConfig;Write
 lambda:PutProvisionedConcurrencyConfig;Write
 lambda:PutRuntimeManagementConfig;Write
 lambda:RemoveLayerVersionPermission;Permissions management

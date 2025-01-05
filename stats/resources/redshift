@@ -6,6 +6,7 @@ redshift:dbuser
 redshift:eventsubscription
 redshift:hsmclientcertificate
 redshift:hsmconfiguration
+redshift:integration
 redshift:namespace
 redshift:parametergroup
 redshift:qev2idcapplication

@@ -8,6 +8,7 @@ sts:ResourceTag/${TagKey}
 sts:RoleSessionName
 sts:SourceIdentity
 sts:TagKeys
+sts:TaskPolicyArn
 sts:TransitiveTagKeys
 sts:amr
 sts:app_id

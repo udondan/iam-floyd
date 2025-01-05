@@ -22,6 +22,7 @@ kinesisvideo:GetMedia;Read
 kinesisvideo:GetMediaForFragmentList;Read
 kinesisvideo:GetSignalingChannelEndpoint;Read
 kinesisvideo:JoinStorageSession;Write
+kinesisvideo:JoinStorageSessionAsViewer;Write
 kinesisvideo:ListEdgeAgentConfigurations;List
 kinesisvideo:ListFragments;List
 kinesisvideo:ListSignalingChannels;List

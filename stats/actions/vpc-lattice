@@ -1,18 +1,27 @@
+vpc-lattice:AssociateViaAWSServiceEventsAndStates;Permissions management
 vpc-lattice:CreateAccessLogSubscription;Write
 vpc-lattice:CreateListener;Write
+vpc-lattice:CreateResourceConfiguration;Write
+vpc-lattice:CreateResourceGateway;Write
 vpc-lattice:CreateRule;Write
 vpc-lattice:CreateService;Write
 vpc-lattice:CreateServiceNetwork;Write
+vpc-lattice:CreateServiceNetworkResourceAssociation;Write
 vpc-lattice:CreateServiceNetworkServiceAssociation;Write
 vpc-lattice:CreateServiceNetworkVpcAssociation;Write
+vpc-lattice:CreateServiceNetworkVpcEndpointAssociation;Permissions management
 vpc-lattice:CreateTargetGroup;Write
 vpc-lattice:DeleteAccessLogSubscription;Write
 vpc-lattice:DeleteAuthPolicy;Permissions management
 vpc-lattice:DeleteListener;Write
+vpc-lattice:DeleteResourceConfiguration;Write
+vpc-lattice:DeleteResourceEndpointAssociation;Write
+vpc-lattice:DeleteResourceGateway;Write
 vpc-lattice:DeleteResourcePolicy;Write
 vpc-lattice:DeleteRule;Write
 vpc-lattice:DeleteService;Write
 vpc-lattice:DeleteServiceNetwork;Write
+vpc-lattice:DeleteServiceNetworkResourceAssociation;Write
 vpc-lattice:DeleteServiceNetworkServiceAssociation;Write
 vpc-lattice:DeleteServiceNetworkVpcAssociation;Write
 vpc-lattice:DeleteTargetGroup;Write
@@ -20,18 +29,26 @@ vpc-lattice:DeregisterTargets;Write
 vpc-lattice:GetAccessLogSubscription;Read
 vpc-lattice:GetAuthPolicy;Read
 vpc-lattice:GetListener;Read
+vpc-lattice:GetResourceConfiguration;Read
+vpc-lattice:GetResourceGateway;Read
 vpc-lattice:GetResourcePolicy;Read
 vpc-lattice:GetRule;Read
 vpc-lattice:GetService;Read
 vpc-lattice:GetServiceNetwork;Read
+vpc-lattice:GetServiceNetworkResourceAssociation;Read
 vpc-lattice:GetServiceNetworkServiceAssociation;Read
 vpc-lattice:GetServiceNetworkVpcAssociation;Read
 vpc-lattice:GetTargetGroup;Read
 vpc-lattice:ListAccessLogSubscriptions;List
 vpc-lattice:ListListeners;List
+vpc-lattice:ListResourceConfigurations;List
+vpc-lattice:ListResourceEndpointAssociations;List
+vpc-lattice:ListResourceGateways;List
 vpc-lattice:ListRules;List
+vpc-lattice:ListServiceNetworkResourceAssociations;List
 vpc-lattice:ListServiceNetworkServiceAssociations;List
 vpc-lattice:ListServiceNetworkVpcAssociations;List
+vpc-lattice:ListServiceNetworkVpcEndpointAssociations;List
 vpc-lattice:ListServiceNetworks;List
 vpc-lattice:ListServices;List
 vpc-lattice:ListTagsForResource;Read
@@ -44,6 +61,8 @@ vpc-lattice:TagResource;Tagging
 vpc-lattice:UntagResource;Tagging
 vpc-lattice:UpdateAccessLogSubscription;Write
 vpc-lattice:UpdateListener;Write
+vpc-lattice:UpdateResourceConfiguration;Write
+vpc-lattice:UpdateResourceGateway;Write
 vpc-lattice:UpdateRule;Write
 vpc-lattice:UpdateService;Write
 vpc-lattice:UpdateServiceNetwork;Write

@@ -3,6 +3,7 @@ batch:AWSLogsGroup
 batch:AWSLogsRegion
 batch:AWSLogsStreamPrefix
 batch:EKSImage
+batch:EKSNamespace
 batch:EKSPrivileged
 batch:EKSRunAsGroup
 batch:EKSRunAsUser

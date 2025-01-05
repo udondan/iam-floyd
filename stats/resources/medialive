@@ -1,12 +1,16 @@
 medialive:channel
+medialive:channel-placement-group
 medialive:cloudwatch-alarm-template
 medialive:cloudwatch-alarm-template-group
+medialive:cluster
 medialive:eventbridge-rule-template
 medialive:eventbridge-rule-template-group
 medialive:input
 medialive:input-device
 medialive:input-security-group
 medialive:multiplex
+medialive:network
+medialive:node
 medialive:offering
 medialive:reservation
 medialive:signal-map

@@ -1,4 +1,5 @@
 glue:CredentialIssuingService
+glue:EnabledForRedshiftAutoDiscovery
 glue:RequestTag/${TagKey}
 glue:ResourceTag/${TagKey}
 glue:RoleAssumedBy

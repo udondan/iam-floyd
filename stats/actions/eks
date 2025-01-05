@@ -22,6 +22,7 @@ eks:DescribeAddon;Read
 eks:DescribeAddonConfiguration;Read
 eks:DescribeAddonVersions;Read
 eks:DescribeCluster;Read
+eks:DescribeClusterVersions;Read
 eks:DescribeEksAnywhereSubscription;Read
 eks:DescribeFargateProfile;Read
 eks:DescribeIdentityProviderConfig;Read

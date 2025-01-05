@@ -1,5 +1,7 @@
+cloudfront:AllowVendedLogDeliveryForResource;Permissions management
 cloudfront:AssociateAlias;Write
 cloudfront:CopyDistribution;Write
+cloudfront:CreateAnycastIpList;Write
 cloudfront:CreateCachePolicy;Write
 cloudfront:CreateCloudFrontOriginAccessIdentity;Write
 cloudfront:CreateContinuousDeploymentPolicy;Write
@@ -19,6 +21,8 @@ cloudfront:CreateResponseHeadersPolicy;Write
 cloudfront:CreateSavingsPlan;Write
 cloudfront:CreateStreamingDistribution;Write
 cloudfront:CreateStreamingDistributionWithTags;Write
+cloudfront:CreateVpcOrigin;Write
+cloudfront:DeleteAnycastIpList;Write
 cloudfront:DeleteCachePolicy;Write
 cloudfront:DeleteCloudFrontOriginAccessIdentity;Write
 cloudfront:DeleteContinuousDeploymentPolicy;Write
@@ -35,8 +39,10 @@ cloudfront:DeletePublicKey;Write
 cloudfront:DeleteRealtimeLogConfig;Write
 cloudfront:DeleteResponseHeadersPolicy;Write
 cloudfront:DeleteStreamingDistribution;Write
+cloudfront:DeleteVpcOrigin;Write
 cloudfront:DescribeFunction;Read
 cloudfront:DescribeKeyValueStore;Read
+cloudfront:GetAnycastIpList;Read
 cloudfront:GetCachePolicy;Read
 cloudfront:GetCachePolicyConfig;Read
 cloudfront:GetCloudFrontOriginAccessIdentity;Read
@@ -66,17 +72,21 @@ cloudfront:GetResponseHeadersPolicyConfig;Read
 cloudfront:GetSavingsPlan;Read
 cloudfront:GetStreamingDistribution;Read
 cloudfront:GetStreamingDistributionConfig;Read
+cloudfront:GetVpcOrigin;Read
+cloudfront:ListAnycastIpLists;List
 cloudfront:ListCachePolicies;List
 cloudfront:ListCloudFrontOriginAccessIdentities;List
 cloudfront:ListConflictingAliases;List
 cloudfront:ListContinuousDeploymentPolicies;List
 cloudfront:ListDistributions;List
+cloudfront:ListDistributionsByAnycastIpListId;List
 cloudfront:ListDistributionsByCachePolicyId;List
 cloudfront:ListDistributionsByKeyGroup;List
 cloudfront:ListDistributionsByLambdaFunction;List
 cloudfront:ListDistributionsByOriginRequestPolicyId;List
 cloudfront:ListDistributionsByRealtimeLogConfig;List
 cloudfront:ListDistributionsByResponseHeadersPolicyId;List
+cloudfront:ListDistributionsByVpcOriginId;List
 cloudfront:ListDistributionsByWebACLId;List
 cloudfront:ListFieldLevelEncryptionConfigs;List
 cloudfront:ListFieldLevelEncryptionProfiles;List
@@ -94,6 +104,7 @@ cloudfront:ListSavingsPlans;List
 cloudfront:ListStreamingDistributions;List
 cloudfront:ListTagsForResource;Read
 cloudfront:ListUsages;List
+cloudfront:ListVpcOrigins;List
 cloudfront:PublishFunction;Write
 cloudfront:TagResource;Tagging
 cloudfront:TestFunction;Write
@@ -115,3 +126,4 @@ cloudfront:UpdateRealtimeLogConfig;Write
 cloudfront:UpdateResponseHeadersPolicy;Write
 cloudfront:UpdateSavingsPlan;Write
 cloudfront:UpdateStreamingDistribution;Write
+cloudfront:UpdateVpcOrigin;Write

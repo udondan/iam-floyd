@@ -3,6 +3,7 @@ ssm:automation-definition
 ssm:automation-execution
 ssm:bucket
 ssm:document
+ssm:iam-role
 ssm:instance
 ssm:maintenancewindow
 ssm:managed-instance

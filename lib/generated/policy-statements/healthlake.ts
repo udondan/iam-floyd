@@ -19,6 +19,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an on going FHIR Export job with Delete
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/export-datastore-rest.html
+   */
+  public toCancelFHIRExportJobWithDelete() {
+    return this.to('CancelFHIRExportJobWithDelete');
+  }
+
+  /**
    * Grants permission to create a datastore that can ingest and export FHIR data
    *
    * Access Level: Write
@@ -89,6 +100,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to display the properties of a FHIR export job, including the ID, ARN, name, and the status of the datastore with Get
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/export-datastore-rest.html
+   */
+  public toDescribeFHIRExportJobWithGet() {
+    return this.to('DescribeFHIRExportJobWithGet');
+  }
+
+  /**
    * Grants permission to display the properties of a FHIR import job, including the ID, ARN, name, and the status of the datastore
    *
    * Access Level: Read
@@ -111,7 +133,7 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all FHIR datastores that are in the user’s account, regardless of datastore status
+   * Grants permission to list all FHIR datastores that are in the user's account, regardless of datastore status
    *
    * Access Level: List
    *
@@ -146,7 +168,7 @@ export class Healthlake extends PolicyStatement {
   /**
    * Grants permission to get a list of tags for the specified datastore
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_ListTagsForResource.html
    */
@@ -210,6 +232,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to begin a FHIR Export job with Post
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/export-datastore-rest.html
+   */
+  public toStartFHIRExportJobWithPost() {
+    return this.to('StartFHIRExportJobWithPost');
+  }
+
+  /**
    * Grants permission to begin a FHIR Import job
    *
    * Access Level: Write
@@ -263,20 +296,22 @@ export class Healthlake extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CancelFHIRExportJobWithDelete',
       'CreateFHIRDatastore',
       'CreateResource',
       'DeleteFHIRDatastore',
       'DeleteResource',
       'StartFHIRExportJob',
+      'StartFHIRExportJobWithPost',
       'StartFHIRImportJob',
       'UpdateResource'
     ],
     Read: [
       'DescribeFHIRDatastore',
       'DescribeFHIRExportJob',
+      'DescribeFHIRExportJobWithGet',
       'DescribeFHIRImportJob',
       'GetCapabilities',
-      'ListTagsForResource',
       'ReadResource',
       'SearchEverything',
       'SearchWithGet',
@@ -285,7 +320,8 @@ export class Healthlake extends PolicyStatement {
     List: [
       'ListFHIRDatastores',
       'ListFHIRExportJobs',
-      'ListFHIRImportJobs'
+      'ListFHIRImportJobs',
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',

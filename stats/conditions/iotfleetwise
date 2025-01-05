@@ -1,6 +1,7 @@
 iotfleetwise:DestinationArn
 iotfleetwise:RequestTag/${TagKey}
 iotfleetwise:ResourceTag/${TagKey}
+iotfleetwise:Signals
 iotfleetwise:TagKeys
 iotfleetwise:UpdateToDecoderManifestArn
 iotfleetwise:UpdateToModelManifestArn

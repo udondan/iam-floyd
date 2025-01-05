@@ -50,6 +50,8 @@ export class S3express extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifXAmzServerSideEncryption()
+   * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html
    */
@@ -112,6 +114,42 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the default encryption configuration for a directory bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html
+   */
+  public toGetEncryptionConfiguration() {
+    return this.to('GetEncryptionConfiguration');
+  }
+
+  /**
+   * Grants permission to return the lifecycle configuration information set on a directory bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html
+   */
+  public toGetLifecycleConfiguration() {
+    return this.to('GetLifecycleConfiguration');
+  }
+
+  /**
    * Grants permission to list all directory buckets owned by the authenticated sender of the request
    *
    * Access Level: List
@@ -147,14 +185,54 @@ export class S3express extends PolicyStatement {
     return this.to('PutBucketPolicy');
   }
 
+  /**
+   * Grants permission to set the encryption configuration for a directory bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html
+   */
+  public toPutEncryptionConfiguration() {
+    return this.to('PutEncryptionConfiguration');
+  }
+
+  /**
+   * Grants permission to create a new lifecycle configuration for the directory bucket or replace an existing lifecycle configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html
+   */
+  public toPutLifecycleConfiguration() {
+    return this.to('PutLifecycleConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateBucket',
-      'DeleteBucket'
+      'DeleteBucket',
+      'PutEncryptionConfiguration',
+      'PutLifecycleConfiguration'
     ],
     Read: [
       'CreateSession',
-      'GetBucketPolicy'
+      'GetBucketPolicy',
+      'GetEncryptionConfiguration',
+      'GetLifecycleConfiguration'
     ],
     'Permissions management': [
       'DeleteBucketPolicy',
@@ -168,7 +246,7 @@ export class S3express extends PolicyStatement {
   /**
    * Adds a resource of type bucket to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-zonal-buckets.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html
    *
    * @param bucketName - Identifier for the bucketName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -177,6 +255,16 @@ export class S3express extends PolicyStatement {
    */
   public onBucket(bucketName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3express:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bucket/${ bucketName }`);
+  }
+
+  /**
+   * Filters all access to the bucket unless the request originates from the AWS Local Zone network border group(s) provided in this condition key
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAllAccessRestrictedToLocalZoneGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`AllAccessRestrictedToLocalZoneGroup`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -205,8 +293,12 @@ export class S3express extends PolicyStatement {
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
    * - .toGetBucketPolicy()
+   * - .toGetEncryptionConfiguration()
+   * - .toGetLifecycleConfiguration()
    * - .toListAllMyDirectoryBuckets()
    * - .toPutBucketPolicy()
+   * - .toPutEncryptionConfiguration()
+   * - .toPutLifecycleConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -239,8 +331,12 @@ export class S3express extends PolicyStatement {
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
    * - .toGetBucketPolicy()
+   * - .toGetEncryptionConfiguration()
+   * - .toGetLifecycleConfiguration()
    * - .toListAllMyDirectoryBuckets()
    * - .toPutBucketPolicy()
+   * - .toPutEncryptionConfiguration()
+   * - .toPutLifecycleConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -260,8 +356,12 @@ export class S3express extends PolicyStatement {
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
    * - .toGetBucketPolicy()
+   * - .toGetEncryptionConfiguration()
+   * - .toGetLifecycleConfiguration()
    * - .toListAllMyDirectoryBuckets()
    * - .toPutBucketPolicy()
+   * - .toPutEncryptionConfiguration()
+   * - .toPutLifecycleConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -296,8 +396,12 @@ export class S3express extends PolicyStatement {
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
    * - .toGetBucketPolicy()
+   * - .toGetEncryptionConfiguration()
+   * - .toGetLifecycleConfiguration()
    * - .toListAllMyDirectoryBuckets()
    * - .toPutBucketPolicy()
+   * - .toPutEncryptionConfiguration()
+   * - .toPutLifecycleConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -317,13 +421,47 @@ export class S3express extends PolicyStatement {
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
    * - .toGetBucketPolicy()
+   * - .toGetEncryptionConfiguration()
+   * - .toGetLifecycleConfiguration()
    * - .toListAllMyDirectoryBuckets()
    * - .toPutBucketPolicy()
+   * - .toPutEncryptionConfiguration()
+   * - .toPutLifecycleConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifXAmzContentSha256(value: string | string[], operator?: Operator | string) {
     return this.if(`x-amz-content-sha256`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by server-side encryption
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-data-protection.html
+   *
+   * Applies to actions:
+   * - .toCreateSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifXAmzServerSideEncryption(value: string | string[], operator?: Operator | string) {
+    return this.if(`x-amz-server-side-encryption`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by AWS KMS customer managed key for server-side encryption
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-UsingKMSEncryption.html#s3-express-require-sse-kms
+   *
+   * Applies to actions:
+   * - .toCreateSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: Operator | string) {
+    return this.if(`x-amz-server-side-encryption-aws-kms-key-id`, value, operator ?? 'ArnLike');
   }
 }

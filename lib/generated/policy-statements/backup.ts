@@ -569,6 +569,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get indexing details for a recovery point
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetRecoveryPointIndexDetails.html
+   */
+  public toGetRecoveryPointIndexDetails() {
+    return this.to('GetRecoveryPointIndexDetails');
+  }
+
+  /**
    * Grants permission to get recovery point restore metadata
    *
    * Access Level: Read
@@ -742,6 +753,28 @@ export class Backup extends PolicyStatement {
    */
   public toListFrameworks() {
     return this.to('ListFrameworks');
+  }
+
+  /**
+   * Grants permission to get list indexed recovery points
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListIndexedRecoveryPoints.html
+   */
+  public toListIndexedRecoveryPoints() {
+    return this.to('ListIndexedRecoveryPoints');
+  }
+
+  /**
+   * Grants permission to list indexed recovery points to search
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListIndexedRecoveryPointsForSearch.html
+   */
+  public toListIndexedRecoveryPointsForSearch() {
+    return this.to('ListIndexedRecoveryPointsForSearch');
   }
 
   /**
@@ -959,6 +992,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search a recovery point
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_SearchRecoveryPoint.html
+   */
+  public toSearchRecoveryPoint() {
+    return this.to('SearchRecoveryPoint');
+  }
+
+  /**
    * Grants permission to start a new backup job
    *
    * Access Level: Write
@@ -1085,6 +1129,20 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update recovery point index settings
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifIndex()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRecoveryPointIndexSettings.html
+   */
+  public toUpdateRecoveryPointIndexSettings() {
+    return this.to('UpdateRecoveryPointIndexSettings');
+  }
+
+  /**
    * Grants permission to update the lifecycle of the recovery point
    *
    * Access Level: Write
@@ -1182,6 +1240,7 @@ export class Backup extends PolicyStatement {
       'UpdateBackupPlan',
       'UpdateFramework',
       'UpdateGlobalSettings',
+      'UpdateRecoveryPointIndexSettings',
       'UpdateRecoveryPointLifecycle',
       'UpdateRegionSettings',
       'UpdateReportPlan',
@@ -1191,8 +1250,10 @@ export class Backup extends PolicyStatement {
     'Permissions management': [
       'DeleteBackupVaultAccessPolicy',
       'DeleteBackupVaultSharingPolicy',
+      'ListIndexedRecoveryPointsForSearch',
       'PutBackupVaultAccessPolicy',
-      'PutBackupVaultSharingPolicy'
+      'PutBackupVaultSharingPolicy',
+      'SearchRecoveryPoint'
     ],
     Read: [
       'DescribeBackupJob',
@@ -1215,6 +1276,7 @@ export class Backup extends PolicyStatement {
       'GetBackupVaultNotifications',
       'GetBackupVaultSharingPolicy',
       'GetLegalHold',
+      'GetRecoveryPointIndexDetails',
       'GetRecoveryPointRestoreMetadata',
       'GetRestoreJobMetadata',
       'GetRestoreTestingInferredMetadata',
@@ -1234,6 +1296,7 @@ export class Backup extends PolicyStatement {
       'ListCopyJobSummaries',
       'ListCopyJobs',
       'ListFrameworks',
+      'ListIndexedRecoveryPoints',
       'ListLegalHolds',
       'ListProtectedResources',
       'ListProtectedResourcesByBackupVault',
@@ -1504,6 +1567,21 @@ export class Backup extends PolicyStatement {
    */
   public ifFrameworkArns(value: string | string[], operator?: Operator | string) {
     return this.if(`FrameworkArns`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the value of Index parameter
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
+   *
+   * Applies to actions:
+   * - .toUpdateRecoveryPointIndexSettings()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIndex(value: string | string[], operator?: Operator | string) {
+    return this.if(`Index`, value, operator ?? 'StringLike');
   }
 
   /**

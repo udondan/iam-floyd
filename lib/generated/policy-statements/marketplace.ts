@@ -129,6 +129,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to view charges associated with their agreements
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toListAgreementCharges() {
+    return this.to('ListAgreementCharges');
+  }
+
+  /**
    * Grants permission to users to list their subscription requests for products that require subscription verification
    *
    * Access Level: List
@@ -206,6 +217,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to update purchase orders for charges associated with their agreements
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toUpdatePurchaseOrders() {
+    return this.to('UpdatePurchaseOrders');
+  }
+
+  /**
    * Grants permission to users to see their account's subscriptions
    *
    * Access Level: List
@@ -226,7 +248,8 @@ export class AwsMarketplace extends PolicyStatement {
       'RejectAgreementApprovalRequest',
       'Subscribe',
       'Unsubscribe',
-      'UpdateAgreementApprovalRequest'
+      'UpdateAgreementApprovalRequest',
+      'UpdatePurchaseOrders'
     ],
     Read: [
       'DescribeAgreement',
@@ -237,6 +260,7 @@ export class AwsMarketplace extends PolicyStatement {
     List: [
       'GetAgreementTerms',
       'ListAgreementApprovalRequests',
+      'ListAgreementCharges',
       'ListAgreementRequests',
       'SearchAgreements',
       'ViewSubscriptions'

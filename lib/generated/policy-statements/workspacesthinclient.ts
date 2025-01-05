@@ -27,6 +27,12 @@ export class Thinclient extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
+   * Dependent actions:
+   * - appstream:DescribeStacks
+   * - workspaces-web:GetPortal
+   * - workspaces-web:GetUserSettings
+   * - workspaces:DescribeWorkspaceDirectories
+   *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_CreateEnvironment.html
    */
   public toCreateEnvironment() {
@@ -37,6 +43,9 @@ export class Thinclient extends PolicyStatement {
    * Grants permission to delete devices
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_DeleteDevice.html
    */
@@ -49,6 +58,9 @@ export class Thinclient extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_DeleteEnvironment.html
    */
   public toDeleteEnvironment() {
@@ -60,6 +72,9 @@ export class Thinclient extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_DeregisterDevice.html
    */
   public toDeregisterDevice() {
@@ -67,9 +82,12 @@ export class Thinclient extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details of devices
+   * Grants permission to get devices
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_GetDevice.html
    */
@@ -78,9 +96,24 @@ export class Thinclient extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of devices
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public toGetDeviceDetails() {
+    return this.to('GetDeviceDetails');
+  }
+
+  /**
    * Grants permission to get details of environments
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_GetEnvironment.html
    */
@@ -93,6 +126,9 @@ export class Thinclient extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_GetSoftwareSet.html
    */
   public toGetSoftwareSet() {
@@ -103,6 +139,9 @@ export class Thinclient extends PolicyStatement {
    * Grants permission to list device sessions
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public toListDeviceSessions() {
     return this.to('ListDeviceSessions');
@@ -160,6 +199,7 @@ export class Thinclient extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_TagResource.html
    */
@@ -174,6 +214,7 @@ export class Thinclient extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_UntagResource.html
    */
@@ -186,6 +227,9 @@ export class Thinclient extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_UpdateDevice.html
    */
   public toUpdateDevice() {
@@ -197,6 +241,15 @@ export class Thinclient extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - appstream:DescribeStacks
+   * - workspaces-web:GetPortal
+   * - workspaces-web:GetUserSettings
+   * - workspaces:DescribeWorkspaceDirectories
+   *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_UpdateEnvironment.html
    */
   public toUpdateEnvironment() {
@@ -207,6 +260,9 @@ export class Thinclient extends PolicyStatement {
    * Grants permission to update software set
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_UpdateSoftwareSet.html
    */
@@ -226,6 +282,7 @@ export class Thinclient extends PolicyStatement {
     ],
     Read: [
       'GetDevice',
+      'GetDeviceDetails',
       'GetEnvironment',
       'GetSoftwareSet'
     ],
@@ -314,6 +371,21 @@ export class Thinclient extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeleteDevice()
+   * - .toDeleteEnvironment()
+   * - .toDeregisterDevice()
+   * - .toGetDevice()
+   * - .toGetDeviceDetails()
+   * - .toGetEnvironment()
+   * - .toGetSoftwareSet()
+   * - .toListDeviceSessions()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDevice()
+   * - .toUpdateEnvironment()
+   * - .toUpdateSoftwareSet()
    *
    * Applies to resource types:
    * - environment

@@ -1,3 +1,5 @@
+bedrock:InferenceProfileArn
+bedrock:PromptRouterArn
 bedrock:RequestTag/${TagKey}
 bedrock:ResourceTag/${TagKey}
 bedrock:TagKeys

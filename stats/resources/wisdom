@@ -1,7 +1,11 @@
+wisdom:AIAgent
+wisdom:AIGuardrail
+wisdom:AIPrompt
 wisdom:Assistant
 wisdom:AssistantAssociation
 wisdom:Content
 wisdom:ContentAssociation
 wisdom:KnowledgeBase
+wisdom:MessageTemplate
 wisdom:QuickResponse
 wisdom:Session

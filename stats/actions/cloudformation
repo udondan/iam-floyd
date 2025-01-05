@@ -53,6 +53,7 @@ cloudformation:ImportStacksToStackSet;Write
 cloudformation:ListChangeSets;List
 cloudformation:ListExports;List
 cloudformation:ListGeneratedTemplates;List
+cloudformation:ListHookResults;List
 cloudformation:ListImports;List
 cloudformation:ListResourceRequests;Read
 cloudformation:ListResourceScanRelatedResources;List

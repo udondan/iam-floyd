@@ -34,6 +34,9 @@ export class Route53 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVPCs()
+   *
    * Dependent actions:
    * - ec2:DescribeVpcs
    *
@@ -107,6 +110,9 @@ export class Route53 extends PolicyStatement {
    * Grants permission to create a public hosted zone, which you use to specify how the Domain Name System (DNS) routes traffic on the Internet for a domain, such as example.com, and its subdomains
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVPCs()
    *
    * Dependent actions:
    * - ec2:DescribeVpcs
@@ -187,6 +193,9 @@ export class Route53 extends PolicyStatement {
    * Grants permission to authorize the AWS account that created a specified VPC to submit an AssociateVPCWithHostedZone request, which associates the VPC with a specified hosted zone that was created by a different account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVPCs()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html
    */
@@ -298,6 +307,9 @@ export class Route53 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVPCs()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteVPCAssociationAuthorization.html
    */
   public toDeleteVPCAssociationAuthorization() {
@@ -319,6 +331,9 @@ export class Route53 extends PolicyStatement {
    * Grants permission to disassociate an Amazon Virtual Private Cloud from a Route 53 private hosted zone
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVPCs()
    *
    * Dependent actions:
    * - ec2:DescribeVpcs
@@ -619,6 +634,9 @@ export class Route53 extends PolicyStatement {
    * Grants permission to get a list of all the private hosted zones that a specified VPC is associated with
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifVPCs()
    *
    * Dependent actions:
    * - ec2:DescribeVpcs
@@ -997,7 +1015,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Filters access by the change actions, CREATE, UPSERT, or DELETE, in a ChangeResourceRecordSets request
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-rrset-conditions.html#route53_rrset_ConditionKeys
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-conditions-route53.html#route53_rrsetConditionKeys
    *
    * Applies to actions:
    * - .toChangeResourceRecordSets()
@@ -1012,7 +1030,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Filters access by the normalized DNS record names in a ChangeResourceRecordSets request
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-rrset-conditions.html#route53_rrset_ConditionKeys
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-conditions-route53.html#route53_rrsetConditionKeys
    *
    * Applies to actions:
    * - .toChangeResourceRecordSets()
@@ -1027,7 +1045,7 @@ export class Route53 extends PolicyStatement {
   /**
    * Filters access by the DNS record types in a ChangeResourceRecordSets request
    *
-   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-rrset-conditions.html#route53_rrset_ConditionKeys
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-conditions-route53.html#route53_rrsetConditionKeys
    *
    * Applies to actions:
    * - .toChangeResourceRecordSets()
@@ -1037,5 +1055,25 @@ export class Route53 extends PolicyStatement {
    */
   public ifChangeResourceRecordSetsRecordTypes(value: string | string[], operator?: Operator | string) {
     return this.if(`ChangeResourceRecordSetsRecordTypes`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by VPCs in request
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/specifying-conditions-route53.html#route53_rrsetConditionKeys
+   *
+   * Applies to actions:
+   * - .toAssociateVPCWithHostedZone()
+   * - .toCreateHostedZone()
+   * - .toCreateVPCAssociationAuthorization()
+   * - .toDeleteVPCAssociationAuthorization()
+   * - .toDisassociateVPCFromHostedZone()
+   * - .toListHostedZonesByVPC()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVPCs(value: string | string[], operator?: Operator | string) {
+    return this.if(`VPCs`, value, operator ?? 'StringLike');
   }
 }

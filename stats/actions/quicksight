@@ -6,7 +6,8 @@ quicksight:CreateAccountCustomization;Write
 quicksight:CreateAccountSubscription;Write
 quicksight:CreateAdmin;Write
 quicksight:CreateAnalysis;Write
-quicksight:CreateCustomPermissions;Permissions management
+quicksight:CreateBrand;Write
+quicksight:CreateCustomPermissions;Write
 quicksight:CreateDashboard;Write
 quicksight:CreateDataSet;Write
 quicksight:CreateDataSource;Write
@@ -32,11 +33,14 @@ quicksight:CreateVPCConnection;Write
 quicksight:DeleteAccountCustomization;Write
 quicksight:DeleteAccountSubscription;Write
 quicksight:DeleteAnalysis;Write
-quicksight:DeleteCustomPermissions;Permissions management
+quicksight:DeleteBrand;Write
+quicksight:DeleteBrandAssignment;Write
+quicksight:DeleteCustomPermissions;Write
 quicksight:DeleteDashboard;Write
 quicksight:DeleteDataSet;Write
 quicksight:DeleteDataSetRefreshProperties;Write
 quicksight:DeleteDataSource;Write
+quicksight:DeleteDefaultQBusinessApplication;Write
 quicksight:DeleteEmailCustomizationTemplate;Write
 quicksight:DeleteFolder;Write
 quicksight:DeleteFolderMembership;Write
@@ -56,6 +60,7 @@ quicksight:DeleteTopic;Write
 quicksight:DeleteTopicRefreshSchedule;Write
 quicksight:DeleteUser;Write
 quicksight:DeleteUserByPrincipalId;Write
+quicksight:DeleteUserCustomPermission;Write
 quicksight:DeleteVPCConnection;Write
 quicksight:DescribeAccountCustomization;Read
 quicksight:DescribeAccountSettings;Read
@@ -64,16 +69,21 @@ quicksight:DescribeAnalysis;Read
 quicksight:DescribeAnalysisPermissions;Read
 quicksight:DescribeAssetBundleExportJob;Read
 quicksight:DescribeAssetBundleImportJob;Read
-quicksight:DescribeCustomPermissions;Write
+quicksight:DescribeBrand;Read
+quicksight:DescribeBrandAssignment;Read
+quicksight:DescribeBrandPublishedVersion;Read
+quicksight:DescribeCustomPermissions;Read
 quicksight:DescribeDashboard;Read
 quicksight:DescribeDashboardPermissions;Read
 quicksight:DescribeDashboardSnapshotJob;Read
 quicksight:DescribeDashboardSnapshotJobResult;Read
+quicksight:DescribeDashboardsQAConfiguration;Read
 quicksight:DescribeDataSet;Read
 quicksight:DescribeDataSetPermissions;Permissions management
 quicksight:DescribeDataSetRefreshProperties;Read
 quicksight:DescribeDataSource;Read
 quicksight:DescribeDataSourcePermissions;Permissions management
+quicksight:DescribeDefaultQBusinessApplication;Read
 quicksight:DescribeEmailCustomizationTemplate;Read
 quicksight:DescribeFolder;Read
 quicksight:DescribeFolderPermissions;Read
@@ -85,6 +95,8 @@ quicksight:DescribeIngestion;Read
 quicksight:DescribeIpRestriction;Read
 quicksight:DescribeKeyRegistration;Read
 quicksight:DescribeNamespace;Read
+quicksight:DescribeQPersonalizationConfiguration;Read
+quicksight:DescribeQuickSightQSearchConfiguration;Read
 quicksight:DescribeRefreshSchedule;Read
 quicksight:DescribeRoleCustomPermission;Read
 quicksight:DescribeTemplate;Read
@@ -101,6 +113,7 @@ quicksight:DescribeUser;Read
 quicksight:DescribeVPCConnection;Read
 quicksight:GenerateEmbedUrlForAnonymousUser;Write
 quicksight:GenerateEmbedUrlForRegisteredUser;Write
+quicksight:GenerateEmbedUrlForRegisteredUserWithIdentity;Write
 quicksight:GetAnonymousUserEmbedUrl;Read
 quicksight:GetAuthCode;Read
 quicksight:GetDashboardEmbedUrl;Read
@@ -109,7 +122,8 @@ quicksight:GetSessionEmbedUrl;Read
 quicksight:ListAnalyses;List
 quicksight:ListAssetBundleExportJobs;List
 quicksight:ListAssetBundleImportJobs;List
-quicksight:ListCustomPermissions;Write
+quicksight:ListBrands;List
+quicksight:ListCustomPermissions;List
 quicksight:ListCustomerManagedKeys;List
 quicksight:ListDashboardVersions;List
 quicksight:ListDashboards;List
@@ -117,6 +131,7 @@ quicksight:ListDataSets;List
 quicksight:ListDataSources;List
 quicksight:ListFolderMembers;Read
 quicksight:ListFolders;List
+quicksight:ListFoldersForResource;List
 quicksight:ListGroupMemberships;List
 quicksight:ListGroups;List
 quicksight:ListIAMPolicyAssignments;List
@@ -142,6 +157,7 @@ quicksight:ListUsers;List
 quicksight:ListVPCConnections;List
 quicksight:PassDataSet;Read
 quicksight:PassDataSource;Read
+quicksight:PredictQAResults;Read
 quicksight:PutDataSetRefreshProperties;Write
 quicksight:RegisterCustomerManagedKey;Write
 quicksight:RegisterUser;Write
@@ -155,11 +171,13 @@ quicksight:SearchDataSources;List
 quicksight:SearchDirectoryGroups;List
 quicksight:SearchFolders;Read
 quicksight:SearchGroups;List
+quicksight:SearchTopics;List
 quicksight:SearchUsers;List
 quicksight:SetGroupMapping;Write
 quicksight:StartAssetBundleExportJob;Write
 quicksight:StartAssetBundleImportJob;Write
 quicksight:StartDashboardSnapshotJob;Write
+quicksight:StartDashboardSnapshotJobSchedule;Write
 quicksight:Subscribe;Write
 quicksight:TagResource;Tagging
 quicksight:Unsubscribe;Write
@@ -168,15 +186,21 @@ quicksight:UpdateAccountCustomization;Write
 quicksight:UpdateAccountSettings;Write
 quicksight:UpdateAnalysis;Write
 quicksight:UpdateAnalysisPermissions;Permissions management
-quicksight:UpdateCustomPermissions;Permissions management
+quicksight:UpdateApplicationWithTokenExchangeGrant;Write
+quicksight:UpdateBrand;Write
+quicksight:UpdateBrandAssignment;Write
+quicksight:UpdateBrandPublishedVersion;Write
+quicksight:UpdateCustomPermissions;Write
 quicksight:UpdateDashboard;Write
 quicksight:UpdateDashboardLinks;Write
 quicksight:UpdateDashboardPermissions;Permissions management
 quicksight:UpdateDashboardPublishedVersion;Write
+quicksight:UpdateDashboardsQAConfiguration;Write
 quicksight:UpdateDataSet;Write
 quicksight:UpdateDataSetPermissions;Permissions management
 quicksight:UpdateDataSource;Write
 quicksight:UpdateDataSourcePermissions;Permissions management
+quicksight:UpdateDefaultQBusinessApplication;Write
 quicksight:UpdateEmailCustomizationTemplate;Write
 quicksight:UpdateFolder;Write
 quicksight:UpdateFolderPermissions;Permissions management
@@ -186,6 +210,8 @@ quicksight:UpdateIdentityPropagationConfig;Write
 quicksight:UpdateIpRestriction;Write
 quicksight:UpdateKeyRegistration;Write
 quicksight:UpdatePublicSharingSettings;Write
+quicksight:UpdateQPersonalizationConfiguration;Write
+quicksight:UpdateQuickSightQSearchConfiguration;Write
 quicksight:UpdateRefreshSchedule;Write
 quicksight:UpdateResourcePermissions;Write
 quicksight:UpdateRoleCustomPermission;Write
@@ -200,4 +226,5 @@ quicksight:UpdateTopic;Write
 quicksight:UpdateTopicPermissions;Permissions management
 quicksight:UpdateTopicRefreshSchedule;Write
 quicksight:UpdateUser;Write
+quicksight:UpdateUserCustomPermission;Write
 quicksight:UpdateVPCConnection;Write

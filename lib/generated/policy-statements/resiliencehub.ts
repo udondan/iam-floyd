@@ -300,6 +300,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe metrics export
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DescribeMetricsExport.html
+   */
+  public toDescribeMetricsExport() {
+    return this.to('DescribeMetricsExport');
+  }
+
+  /**
    * Grants permission to describe resiliency policy
    *
    * Access Level: Read
@@ -470,6 +481,17 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toListApps() {
     return this.to('ListApps');
+  }
+
+  /**
+   * Grants permission to list metrics
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListMetrics.html
+   */
+  public toListMetrics() {
+    return this.to('ListMetrics');
   }
 
   /**
@@ -656,6 +678,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start the metrics export
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartMetricsExport.html
+   */
+  public toStartMetricsExport() {
+    return this.to('StartMetricsExport');
+  }
+
+  /**
    * Grants permission to start the grouping recommendation generation process
    *
    * Access Level: Write
@@ -777,6 +810,7 @@ export class Resiliencehub extends PolicyStatement {
       'RemoveDraftAppVersionResourceMappings',
       'ResolveAppVersionResources',
       'StartAppAssessment',
+      'StartMetricsExport',
       'StartResourceGroupingRecommendationTask',
       'UpdateApp',
       'UpdateAppVersion',
@@ -793,6 +827,7 @@ export class Resiliencehub extends PolicyStatement {
       'DescribeAppVersionResourcesResolutionStatus',
       'DescribeAppVersionTemplate',
       'DescribeDraftAppVersionResourcesImportStatus',
+      'DescribeMetricsExport',
       'DescribeResiliencyPolicy',
       'DescribeResourceGroupingRecommendationTask',
       'ListTagsForResource'
@@ -810,6 +845,7 @@ export class Resiliencehub extends PolicyStatement {
       'ListAppVersionResources',
       'ListAppVersions',
       'ListApps',
+      'ListMetrics',
       'ListRecommendationTemplates',
       'ListResiliencyPolicies',
       'ListResourceGroupingRecommendations',

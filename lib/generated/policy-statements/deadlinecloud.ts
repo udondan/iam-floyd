@@ -655,6 +655,15 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read job template
+   *
+   * Access Level: Write
+   */
+  public toGetJobTemplate() {
+    return this.to('GetJobTemplate');
+  }
+
+  /**
    * Grants permission to get a license endpoint
    *
    * Access Level: Read
@@ -935,6 +944,20 @@ export class Deadline extends PolicyStatement {
    */
   public toListJobMembers() {
     return this.to('ListJobMembers');
+  }
+
+  /**
+   * Grants permission to get a job's parameter definitions in the job template
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListJobParameterDefinitions.html
+   */
+  public toListJobParameterDefinitions() {
+    return this.to('ListJobParameterDefinitions');
   }
 
   /**
@@ -1553,6 +1576,7 @@ export class Deadline extends PolicyStatement {
       'DeleteQueueFleetAssociation',
       'DeleteStorageProfile',
       'DeleteWorker',
+      'GetJobTemplate',
       'PutMeteredProduct',
       'UpdateBudget',
       'UpdateFarm',
@@ -1599,6 +1623,7 @@ export class Deadline extends PolicyStatement {
       'ListFleetMembers',
       'ListFleets',
       'ListJobMembers',
+      'ListJobParameterDefinitions',
       'ListJobs',
       'ListLicenseEndpoints',
       'ListMeteredProducts',

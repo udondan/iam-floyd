@@ -1,13 +1,24 @@
+billing:CreateBillingView;Write
+billing:DeleteBillingView;Write
+billing:DeleteResourcePolicy;Permissions management
 billing:GetBillingData;Read
 billing:GetBillingDetails;Read
 billing:GetBillingNotifications;Read
 billing:GetBillingPreferences;Read
+billing:GetBillingView;Read
 billing:GetContractInformation;Read
 billing:GetCredits;Read
 billing:GetIAMAccessPreference;Read
+billing:GetResourcePolicy;Permissions management
 billing:GetSellerOfRecord;Read
 billing:ListBillingViews;Read
+billing:ListSourceViewsForBillingView;List
+billing:ListTagsForResource;Read
 billing:PutContractInformation;Write
+billing:PutResourcePolicy;Permissions management
 billing:RedeemCredits;Write
+billing:TagResource;Tagging
+billing:UntagResource;Tagging
 billing:UpdateBillingPreferences;Write
+billing:UpdateBillingView;Write
 billing:UpdateIAMAccessPreference;Write

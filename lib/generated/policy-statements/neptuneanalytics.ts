@@ -19,6 +19,20 @@ export class NeptuneGraph extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an ongoing export task
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CancelExportTask.html
+   */
+  public toCancelExportTask() {
+    return this.to('CancelExportTask');
+  }
+
+  /**
    * Grants permission to cancel an ongoing import task
    *
    * Access Level: Write
@@ -213,6 +227,20 @@ export class NeptuneGraph extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details about an export task
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_GetExportTask.html
+   */
+  public toGetExportTask() {
+    return this.to('GetExportTask');
+  }
+
+  /**
    * Grants permission to get details about a graph
    *
    * Access Level: Read
@@ -305,6 +333,17 @@ export class NeptuneGraph extends PolicyStatement {
    */
   public toGetStatisticsStatus() {
     return this.to('GetStatisticsStatus');
+  }
+
+  /**
+   * Grants permission to list the export tasks in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_ListExportTasks.html
+   */
+  public toListExportTasks() {
+    return this.to('ListExportTasks');
   }
 
   /**
@@ -433,6 +472,25 @@ export class NeptuneGraph extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export data from an existing graph
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartExportTask.html
+   */
+  public toStartExportTask() {
+    return this.to('StartExportTask');
+  }
+
+  /**
    * Grants permission to import data into an existing graph
    *
    * Access Level: Write
@@ -506,6 +564,7 @@ export class NeptuneGraph extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CancelExportTask',
       'CancelImportTask',
       'CancelQuery',
       'CreateGraph',
@@ -518,12 +577,14 @@ export class NeptuneGraph extends PolicyStatement {
       'DeletePrivateGraphEndpoint',
       'ResetGraph',
       'RestoreGraphFromSnapshot',
+      'StartExportTask',
       'StartImportTask',
       'UpdateGraph',
       'WriteDataViaQuery'
     ],
     Read: [
       'GetEngineStatus',
+      'GetExportTask',
       'GetGraph',
       'GetGraphSnapshot',
       'GetGraphSummary',
@@ -531,6 +592,7 @@ export class NeptuneGraph extends PolicyStatement {
       'GetPrivateGraphEndpoint',
       'GetQueryStatus',
       'GetStatisticsStatus',
+      'ListExportTasks',
       'ListGraphSnapshots',
       'ListGraphs',
       'ListImportTasks',
@@ -594,6 +656,20 @@ export class NeptuneGraph extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type export-task to the statement
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/userguide/iam-resources.html#export-task
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onExportTask(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:neptune-graph:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:export-task/${ resourceId }`);
+  }
+
+  /**
    * Filters access by a tag's key and value in a request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -604,6 +680,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - .toCreateGraphUsingImportTask()
    * - .toCreatePrivateGraphEndpoint()
    * - .toRestoreGraphFromSnapshot()
+   * - .toStartExportTask()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -620,6 +697,7 @@ export class NeptuneGraph extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCancelExportTask()
    * - .toCancelQuery()
    * - .toCreateGraphSnapshot()
    * - .toCreatePrivateGraphEndpoint()
@@ -628,6 +706,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - .toDeleteGraphSnapshot()
    * - .toDeletePrivateGraphEndpoint()
    * - .toGetEngineStatus()
+   * - .toGetExportTask()
    * - .toGetGraph()
    * - .toGetGraphSnapshot()
    * - .toGetGraphSummary()
@@ -640,6 +719,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - .toReadDataViaQuery()
    * - .toResetGraph()
    * - .toRestoreGraphFromSnapshot()
+   * - .toStartExportTask()
    * - .toUpdateGraph()
    * - .toWriteDataViaQuery()
    *
@@ -666,6 +746,7 @@ export class NeptuneGraph extends PolicyStatement {
    * - .toCreateGraphUsingImportTask()
    * - .toCreatePrivateGraphEndpoint()
    * - .toRestoreGraphFromSnapshot()
+   * - .toStartExportTask()
    * - .toTagResource()
    * - .toUntagResource()
    *

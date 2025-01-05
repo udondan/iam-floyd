@@ -19,7 +19,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Grants permission to cancel a Capacity Task
+   * Grants permission to cancel a capacity task
    *
    * Access Level: Write
    *
@@ -115,7 +115,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about the specified Capacity Task
+   * Grants permission to get information about the specified capacity task
    *
    * Access Level: Read
    *
@@ -225,6 +225,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all running instances for the specified Outpost
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListAssetInstances.html
+   */
+  public toListAssetInstances() {
+    return this.to('ListAssetInstances');
+  }
+
+  /**
    * Grants permission to list the assets for your Outpost
    *
    * Access Level: List
@@ -236,7 +247,18 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the Capacity Tasks for your AWS account
+   * Grants permission to list all running instances that are blocking the capacity task from running for the specified Outpost
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListBlockingInstancesForCapacityTask.html
+   */
+  public toListBlockingInstancesForCapacityTask() {
+    return this.to('ListBlockingInstancesForCapacityTask');
+  }
+
+  /**
+   * Grants permission to list the capacity tasks for your AWS account
    *
    * Access Level: List
    *
@@ -302,7 +324,7 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Capacity Task
+   * Grants permission to create a capacity task
    *
    * Access Level: Write
    *
@@ -427,7 +449,9 @@ export class Outposts extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListAssetInstances',
       'ListAssets',
+      'ListBlockingInstancesForCapacityTask',
       'ListCapacityTasks',
       'ListCatalogItems',
       'ListOrders',
@@ -443,7 +467,7 @@ export class Outposts extends PolicyStatement {
   /**
    * Adds a resource of type outpost to the statement
    *
-   * https://docs.aws.amazon.com/outposts/latest/userguide/work-with-outposts.html
+   * https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html
    *
    * @param outpostId - Identifier for the outpostId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -460,7 +484,7 @@ export class Outposts extends PolicyStatement {
   /**
    * Adds a resource of type site to the statement
    *
-   * https://docs.aws.amazon.com/outposts/latest/userguide/work-with-outposts.html
+   * https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html
    *
    * @param siteId - Identifier for the siteId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

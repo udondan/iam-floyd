@@ -726,10 +726,6 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdateEventBus.html
    */
   public toUpdateEventBus() {
@@ -944,6 +940,58 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type create-snapshot to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCreateSnapshot(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target/create-snapshot`);
+  }
+
+  /**
+   * Adds a resource of type reboot-instance to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRebootInstance(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target/reboot-instance`);
+  }
+
+  /**
+   * Adds a resource of type stop-instance to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onStopInstance(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target/stop-instance`);
+  }
+
+  /**
+   * Adds a resource of type terminate-instance to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-manage-iam-access.html#eventbridge-arn-format
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTerminateInstance(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target/terminate-instance`);
+  }
+
+  /**
    * Filters access by the allowed set of values for each of the tags to event bus and rule actions
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -952,7 +1000,6 @@ export class Events extends PolicyStatement {
    * - .toCreateEventBus()
    * - .toPutRule()
    * - .toTagResource()
-   * - .toUpdateEventBus()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -990,7 +1037,6 @@ export class Events extends PolicyStatement {
    * - .toPutRule()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toUpdateEventBus()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
