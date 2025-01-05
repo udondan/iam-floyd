@@ -16,7 +16,17 @@
         "q:UpdateTroubleshootingCommandResult",
         "q:GetIdentityMetadata",
         "q:CreateAssignment",
-        "q:DeleteAssignment"
+        "q:DeleteAssignment",
+        "q:GenerateCodeFromCommands",
+        "q:CreatePlugin",
+        "q:DeletePlugin",
+        "q:GetPlugin",
+        "q:UsePlugin",
+        "q:ListPlugins",
+        "q:ListPluginProviders",
+        "q:ListTagsForResource",
+        "q:UntagResource",
+        "q:TagResource"
       ],
       "Resource": "*"
     },
@@ -36,6 +46,21 @@
         "sts:SetContext"
       ],
       "Resource": "arn:aws:sts::*:self"
+    },
+    {
+      "Sid": "AllowPassRoleToAmazonQ",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "q.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }

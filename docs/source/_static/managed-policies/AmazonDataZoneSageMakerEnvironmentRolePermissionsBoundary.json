@@ -36,20 +36,22 @@
       "Resource": "*"
     },
     {
-      "Sid": "AllowAddTagsForAppAndSpace",
+      "Sid": "AllowAddTagsForDomainResources",
       "Effect": "Allow",
       "Action": [
         "sagemaker:AddTags"
       ],
       "Resource": [
         "arn:aws:sagemaker:*:*:app/*",
-        "arn:aws:sagemaker:*:*:space/*"
+        "arn:aws:sagemaker:*:*:space/*",
+        "arn:aws:sagemaker:*:*:user-profile/*"
       ],
       "Condition": {
         "StringEquals": {
           "sagemaker:TaggingAction": [
             "CreateApp",
-            "CreateSpace"
+            "CreateSpace",
+            "CreateUserProfile"
           ]
         }
       }

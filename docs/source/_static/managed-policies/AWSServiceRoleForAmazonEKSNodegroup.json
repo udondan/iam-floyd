@@ -62,7 +62,9 @@
         "autoscaling:PutLifecycleHook",
         "autoscaling:PutNotificationConfiguration",
         "autoscaling:EnableMetricsCollection",
-        "autoscaling:PutScheduledUpdateGroupAction"
+        "autoscaling:PutScheduledUpdateGroupAction",
+        "autoscaling:ResumeProcesses",
+        "autoscaling:SuspendProcesses"
       ],
       "Resource": "arn:aws:autoscaling:*:*:*:autoScalingGroupName/eks-*"
     },
@@ -152,14 +154,74 @@
       "Resource": "arn:aws:iam::*:instance-profile/eks-*"
     },
     {
-      "Sid": "PermissionsToManageEKSAndKubernetesTags",
+      "Sid": "PermissionsToDeleteEKSAndKubernetesTags",
       "Effect": "Allow",
       "Action": [
-        "ec2:CreateTags",
         "ec2:DeleteTags"
       ],
       "Resource": "*",
       "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:TagKeys": [
+            "eks",
+            "eks:cluster-name",
+            "eks:nodegroup-name",
+            "kubernetes.io/cluster/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PermissionsForManagedNodegroupsAutoRepair",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:RebootInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/eks:nodegroup-name": "*"
+        }
+      }
+    },
+    {
+      "Sid": "PermissionsToCreateEKSAndKubernetesTags",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:*:ec2:*:*:security-group/*",
+        "arn:*:ec2:*:*:launch-template/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:TagKeys": [
+            "eks",
+            "eks:cluster-name",
+            "eks:nodegroup-name",
+            "kubernetes.io/cluster/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowTaggingEC2ResourcesOnlyDuringInstanceCreation",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:*:ec2:*:*:instance/*",
+        "arn:*:ec2:*:*:volume/*",
+        "arn:*:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "RunInstances"
+          ]
+        },
         "ForAnyValue:StringLike": {
           "aws:TagKeys": [
             "eks",

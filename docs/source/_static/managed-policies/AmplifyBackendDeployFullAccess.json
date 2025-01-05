@@ -86,7 +86,8 @@
         "logs:FilterLogEvents"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:/aws/lambda/amplify-*:*"
+        "arn:aws:logs:*:*:log-group:/aws/lambda/amplify-*:*",
+        "arn:aws:logs:*:*:log-group:amplify-*:*"
       ]
     },
     {

@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DSDataReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ds:AccessDSData",
+        "ds-data:DescribeGroup",
+        "ds-data:DescribeUser",
+        "ds-data:ListGroupMembers",
+        "ds-data:ListGroups",
+        "ds-data:ListGroupsForMember",
+        "ds-data:ListUsers",
+        "ds-data:SearchGroups",
+        "ds-data:SearchUsers"
+      ],
+      "Resource": [
+        "arn:aws:ds:*:*:directory/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityIncidentResponseOrganizationsPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAccounts",
+        "organizations:ListChildren"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityIncidentResponseCreateCasePolicyTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:TagResource",
+        "security-ir:CreateCase"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "SecurityIncidentResponseManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/SecurityIncidentResponseManaged": "true",
+          "aws:ResourceTag/SecurityIncidentResponseManaged": "true"
+        }
+      },
+      "Resource": "arn:aws:security-ir:*:*:case/*"
+    }
+  ]
+}

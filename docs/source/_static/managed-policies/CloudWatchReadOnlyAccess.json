@@ -34,7 +34,10 @@
         "synthetics:Get*",
         "synthetics:List*",
         "xray:BatchGet*",
-        "xray:Get*"
+        "xray:Get*",
+        "xray:List*",
+        "xray:StartTraceRetrieval",
+        "xray:CancelTraceRetrieval"
       ],
       "Resource": "*"
     },

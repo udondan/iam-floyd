@@ -126,7 +126,10 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "cloudwatch:namespace": "AWS/ES"
+          "cloudwatch:namespace": [
+            "AWS/ES",
+            "AWS/OpenSearch"
+          ]
         }
       }
     },

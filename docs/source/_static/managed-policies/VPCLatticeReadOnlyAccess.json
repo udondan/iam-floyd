@@ -23,7 +23,9 @@
         "logs:DescribeLogGroups",
         "logs:GetLogDelivery",
         "logs:ListLogDeliveries",
-        "s3:ListAllMyBuckets"
+        "s3:ListAllMyBuckets",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters"
       ],
       "Resource": "*"
     }

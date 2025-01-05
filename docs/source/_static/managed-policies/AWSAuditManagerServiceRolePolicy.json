@@ -15,6 +15,7 @@
         "bedrock:GetModelInvocationLoggingConfiguration",
         "bedrock:ListCustomModels",
         "bedrock:ListFoundationModels",
+        "bedrock:ListGuardrails",
         "bedrock:ListModelCustomizationJobs",
         "cloudfront:GetDistribution",
         "cloudfront:GetDistributionConfig",

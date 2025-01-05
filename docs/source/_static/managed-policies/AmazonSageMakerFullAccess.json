@@ -13,7 +13,10 @@
         "arn:aws:sagemaker:*:*:user-profile/*",
         "arn:aws:sagemaker:*:*:app/*",
         "arn:aws:sagemaker:*:*:space/*",
-        "arn:aws:sagemaker:*:*:flow-definition/*"
+        "arn:aws:sagemaker:*:*:partner-app/*",
+        "arn:aws:sagemaker:*:*:flow-definition/*",
+        "arn:aws:sagemaker:*:*:training-plan/*",
+        "arn:aws:sagemaker:*:*:reserved-capacity/*"
       ]
     },
     {
@@ -39,6 +42,20 @@
       ],
       "Resource": [
         "arn:aws:sagemaker:*:*:app/*"
+      ]
+    },
+    {
+      "Sid": "AllowUseOfTrainingPlanResources",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateTrainingJob",
+        "sagemaker:CreateCluster",
+        "sagemaker:UpdateCluster",
+        "sagemaker:DescribeTrainingPlan"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:training-plan/*",
+        "arn:aws:sagemaker:*:*:reserved-capacity/*"
       ]
     },
     {

@@ -42,7 +42,11 @@
           "ec2:productCode": [
             "bz0vcy31ooqlzk5tsash4r1ik",
             "d44g89hc0gp9jdzm99rznthpw",
-            "77yzkpa7kvee1y1tt7wnsdwoc"
+            "77yzkpa7kvee1y1tt7wnsdwoc",
+            "a8jthu9h8pjsn4b8ylvfl6sfr",
+            "7at6der8hnlov1g347e6tdkde",
+            "3t0v0vuhvxjzm6m462f9v8iz4",
+            "4gs2prcp03ojilgkjx8m3ifh7"
           ]
         }
       },
@@ -74,6 +78,47 @@
           "aws:ResourceTag/AWSLicenseManager": "UserSubscriptions"
         }
       }
+    },
+    {
+      "Sid": "ReadHostedZonePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "route53:GetHostedZone",
+        "route53:ListResourceRecordSets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadSecurityGroupRulePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSecurityGroupRules"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Sid": "DescribeSubnetsPermissions",
+      "Action": [
+        "ec2:DescribeSubnets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeNetworkInterfacePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadSecretPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:license-manager-user-*"
     }
   ]
 }

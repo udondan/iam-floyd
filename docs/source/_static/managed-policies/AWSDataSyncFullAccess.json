@@ -49,6 +49,17 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "DataSyncCreateSLRPermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/datasync.amazonaws.com/AWSServiceRoleForDataSync",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "datasync.amazonaws.com"
+        }
+      }
     }
   ]
 }

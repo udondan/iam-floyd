@@ -1,0 +1,88 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateFleet",
+        "ec2:RunInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*::image/*",
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*:*:subnet/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateFleet",
+        "ec2:RunInstances"
+      ],
+      "Resource": "arn:aws:ec2:*:*:launch-template/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/eks:eks-cluster-name": "${aws:PrincipalTag/eks:eks-cluster-name}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateFleet",
+        "ec2:RunInstances",
+        "ec2:CreateLaunchTemplate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/eks:eks-cluster-name": "${aws:PrincipalTag/eks:eks-cluster-name}"
+        },
+        "StringLike": {
+          "aws:RequestTag/eks:kubernetes-node-class-name": "*",
+          "aws:RequestTag/eks:kubernetes-node-pool-name": "*"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "eks:eks-cluster-name",
+            "eks:kubernetes-node-class-name",
+            "eks:kubernetes-node-pool-name",
+            "kubernetes.io/cluster/*"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "CreateFleet",
+            "RunInstances",
+            "CreateLaunchTemplate"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:AddRoleToInstanceProfile",
+      "Resource": "arn:aws:iam::*:instance-profile/eks*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "ec2.amazonaws.com",
+            "ec2.amazonaws.com.cn"
+          ]
+        }
+      }
+    }
+  ]
+}

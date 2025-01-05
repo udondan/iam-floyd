@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityIRCaseReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:GetCase",
+        "security-ir:ListCases",
+        "security-ir:GetCaseAttachmentDownloadUrl",
+        "security-ir:ListComments",
+        "security-ir:ListCaseEdits"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityIRCaseTagReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:security-ir:*:*:case/*"
+    },
+    {
+      "Sid": "SecurityIRCaseWriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:CreateCase",
+        "security-ir:UpdateCase",
+        "security-ir:CloseCase",
+        "security-ir:UpdateCaseStatus",
+        "security-ir:UpdateResolverType",
+        "security-ir:GetCaseAttachmentUploadUrl",
+        "security-ir:CreateCaseComment",
+        "security-ir:UpdateCaseComment"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SecurityIRCaseTagWriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:TagResource",
+        "security-ir:UntagResource"
+      ],
+      "Resource": "arn:aws:security-ir:*:*:case/*",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "true"
+        }
+      }
+    }
+  ]
+}

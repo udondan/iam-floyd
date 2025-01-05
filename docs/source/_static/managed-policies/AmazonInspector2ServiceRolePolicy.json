@@ -93,6 +93,7 @@
         "lambda:ListFunctions",
         "lambda:GetFunction",
         "lambda:GetLayerVersion",
+        "lambda:ListTags",
         "cloudwatch:GetMetricData"
       ],
       "Resource": "*"

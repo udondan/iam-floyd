@@ -116,10 +116,12 @@
       "Effect": "Allow",
       "Action": [
         "deadline:GetJob",
+        "deadline:GetJobTemplate",
         "deadline:GetSession",
         "deadline:GetSessionAction",
         "deadline:GetStep",
         "deadline:GetTask",
+        "deadline:ListJobParameterDefinitions",
         "deadline:ListSessionActions",
         "deadline:ListSessions",
         "deadline:ListStepConsumers",

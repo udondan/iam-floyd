@@ -94,8 +94,8 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringLike": {
-          "codestar-notifications:NotificationsForResource": "arn:aws:codebuild:*"
+        "ArnLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codebuild:*:*:project/*"
         }
       }
     },

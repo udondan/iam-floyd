@@ -144,7 +144,8 @@
         "ssm:GetDocument"
       ],
       "Resource": [
-        "arn:aws:ssm:*:*:document/AWSSAP-InstallBackint"
+        "arn:aws:ssm:*:*:document/AWSSAP-InstallBackint",
+        "arn:aws:ssm:*:*:document/AWSSAP-InstallBackintForAWSBackup"
       ]
     },
     {

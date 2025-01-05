@@ -17,7 +17,8 @@
         "ec2:ModifySnapshotAttribute",
         "ec2:DescribeSnapshotAttribute",
         "ec2:DescribeSnapshotTierStatus",
-        "ec2:ModifySnapshotTier"
+        "ec2:ModifySnapshotTier",
+        "ec2:DescribeAvailabilityZones"
       ],
       "Resource": "*"
     },

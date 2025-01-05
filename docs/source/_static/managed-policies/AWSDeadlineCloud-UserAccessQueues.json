@@ -142,6 +142,7 @@
       "Action": [
         "deadline:AssumeQueueRoleForRead",
         "deadline:GetJob",
+        "deadline:GetJobTemplate",
         "deadline:GetQueue",
         "deadline:GetQueueEnvironment",
         "deadline:GetQueueFleetAssociation",
@@ -150,6 +151,7 @@
         "deadline:GetStep",
         "deadline:GetStorageProfileForQueue",
         "deadline:GetTask",
+        "deadline:ListJobParameterDefinitions",
         "deadline:ListQueueEnvironments",
         "deadline:ListQueueFleetAssociations",
         "deadline:ListSessionActions",

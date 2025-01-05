@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ElasticFileSystemReadOnlyAccess",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:DescribeAlarmsForMetric",
@@ -24,6 +25,7 @@
         "elasticfilesystem:DescribeAccessPoints",
         "elasticfilesystem:DescribeReplicationConfigurations",
         "elasticfilesystem:ListTagsForResource",
+        "elasticfilesystem:ReplicationRead",
         "kms:ListAliases"
       ],
       "Resource": "*"

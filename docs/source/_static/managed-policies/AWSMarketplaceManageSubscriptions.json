@@ -2,21 +2,21 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
         "aws-marketplace:ViewSubscriptions",
         "aws-marketplace:Subscribe",
         "aws-marketplace:Unsubscribe"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     },
     {
+      "Effect": "Allow",
       "Action": [
         "aws-marketplace:CreatePrivateMarketplaceRequests",
         "aws-marketplace:ListPrivateMarketplaceRequests",
         "aws-marketplace:DescribePrivateMarketplaceRequests"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     },
     {
@@ -25,6 +25,24 @@
         "aws-marketplace:ListPrivateListings"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:UpdatePurchaseOrders",
+        "aws-marketplace:ListAgreementCharges"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "Null": {
+          "aws-marketplace:AgreementType": "false"
+        }
+      }
     }
   ]
 }

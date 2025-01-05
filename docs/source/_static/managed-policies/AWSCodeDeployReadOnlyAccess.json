@@ -18,8 +18,8 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringLike": {
-          "codestar-notifications:NotificationsForResource": "arn:aws:codedeploy:*"
+        "ArnLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codedeploy:*:*:application:*"
         }
       }
     },

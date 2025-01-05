@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SSMGetParameterStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:parameter/amazon/datazone/profiles/*"
+      ]
+    },
+    {
+      "Sid": "UseKMSKeyPermissionsStatement",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/EnableKeyForAmazonDataZone": "true"
+        },
+        "Null": {
+          "aws:ResourceTag/EnableKeyForAmazonDataZone": "false"
+        },
+        "StringLike": {
+          "kms:ViaService": "ssm.*.amazonaws.com",
+          "kms:EncryptionContext:PARAMETER_ARN": "arn:aws:ssm:*:*:parameter/amazon/datazone/profiles*"
+        }
+      }
+    }
+  ]
+}

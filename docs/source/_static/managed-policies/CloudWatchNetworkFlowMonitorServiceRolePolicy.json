@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/NetworkFlowMonitor"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators",
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeAccount",
+        "organizations:ListAccounts"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:account/*",
+        "arn:aws:organizations::*:organization/*"
+      ]
+    }
+  ]
+}
