@@ -13,6 +13,7 @@ import {
   DeleteBucketCommand,
   PutBucketPolicyCommand,
   S3Client,
+  S3ClientConfig,
 } from '@aws-sdk/client-s3';
 import { randomBytes } from 'crypto';
 
@@ -36,9 +37,7 @@ if (
 }
 
 const iamClient = new IAMClient(clientConfig);
-const s3Client = new S3Client(clientConfig);
-
-//import { Construct } from 'constructs';
+const s3Client = new S3Client(clientConfig as S3ClientConfig);
 
 export function out(statements: PolicyStatement[]) {
   statements.forEach((statement) => {
