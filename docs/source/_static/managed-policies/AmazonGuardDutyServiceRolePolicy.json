@@ -27,6 +27,7 @@
         "eks:ListClusters",
         "eks:DescribeCluster",
         "ec2:DescribeVpcEndpointServices",
+        "ec2:DescribeVpcs",
         "ec2:DescribeSecurityGroups",
         "ecs:ListClusters",
         "ecs:DescribeClusters"

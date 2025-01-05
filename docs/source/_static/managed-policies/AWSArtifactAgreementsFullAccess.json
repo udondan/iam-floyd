@@ -1,0 +1,67 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListAgreementActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:ListAgreements",
+        "artifact:ListCustomerAgreements"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSAgreementActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:GetAgreement",
+        "artifact:AcceptNdaForAgreement",
+        "artifact:GetNdaForAgreement",
+        "artifact:AcceptAgreement"
+      ],
+      "Resource": "arn:aws:artifact:::agreement/*"
+    },
+    {
+      "Sid": "CustomerAgreementActions",
+      "Effect": "Allow",
+      "Action": [
+        "artifact:GetCustomerAgreement",
+        "artifact:TerminateAgreement"
+      ],
+      "Resource": "arn:aws:artifact::*:customer-agreement/*"
+    },
+    {
+      "Sid": "CreateServiceLinkedRoleForOrganizationsIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/artifact.amazonaws.com/AWSServiceRoleForArtifact",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "artifact.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "GetRoleToCheckForRoleExistence",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/artifact.amazonaws.com/AWSServiceRoleForArtifact"
+    },
+    {
+      "Sid": "EnableServiceTrust",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -19,6 +19,22 @@
         "iam:DeleteRole"
       ],
       "Resource": "arn:aws:iam::*:role/aws-service-role/profile.amazonaws.com/AWSServiceRoleForProfile_*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "connect-campaigns:PutProfileOutboundRequestBatch"
+      ],
+      "Resource": [
+        "arn:aws:connect-campaigns:*:*:campaign/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "profile:BatchGetProfile"
+      ],
+      "Resource": "*"
     }
   ]
 }

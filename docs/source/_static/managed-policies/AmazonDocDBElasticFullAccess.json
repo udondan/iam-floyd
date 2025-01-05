@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DocdbElasticSid",
       "Effect": "Allow",
       "Action": [
         "docdb-elastic:CreateCluster",
@@ -16,13 +17,17 @@
         "docdb-elastic:RestoreClusterFromSnapshot",
         "docdb-elastic:TagResource",
         "docdb-elastic:UntagResource",
-        "docdb-elastic:ListTagsForResource"
+        "docdb-elastic:ListTagsForResource",
+        "docdb-elastic:CopyClusterSnapshot",
+        "docdb-elastic:StartCluster",
+        "docdb-elastic:StopCluster"
       ],
       "Resource": [
         "*"
       ]
     },
     {
+      "Sid": "EC2Sid",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateVpcEndpoint",
@@ -46,6 +51,7 @@
       }
     },
     {
+      "Sid": "KMSSid",
       "Effect": "Allow",
       "Action": [
         "kms:Decrypt",
@@ -63,6 +69,7 @@
       }
     },
     {
+      "Sid": "KMSGrantSid",
       "Effect": "Allow",
       "Action": [
         "kms:CreateGrant"
@@ -81,6 +88,7 @@
       }
     },
     {
+      "Sid": "SecretManagerSid",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:ListSecretVersionIds",
@@ -99,6 +107,7 @@
       }
     },
     {
+      "Sid": "CloudwatchSid",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:GetMetricData",
@@ -110,6 +119,7 @@
       ]
     },
     {
+      "Sid": "SLRSid",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "arn:aws:iam::*:role/aws-service-role/docdb-elastic.amazonaws.com/AWSServiceRoleForDocDB-Elastic",

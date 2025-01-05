@@ -38,14 +38,10 @@
       "Resource": "*"
     },
     {
-      "Sid": "RDSModifyPermissions",
+      "Sid": "RDSInstanceAutomatedBackupPermissions",
       "Effect": "Allow",
-      "Action": [
-        "rds:ModifyDBInstance"
-      ],
-      "Resource": [
-        "arn:aws:rds:*:*:db:*"
-      ]
+      "Action": "rds:DeleteDBInstanceAutomatedBackup",
+      "Resource": "arn:aws:rds:*:*:auto-backup:*"
     },
     {
       "Sid": "RDSClusterPermissions",
@@ -60,10 +56,18 @@
     {
       "Sid": "RDSClusterBackupPermissions",
       "Effect": "Allow",
-      "Action": [
-        "rds:DeleteDBClusterAutomatedBackup"
-      ],
+      "Action": "rds:DeleteDBClusterAutomatedBackup",
       "Resource": "arn:aws:rds:*:*:cluster-auto-backup:*"
+    },
+    {
+      "Sid": "RDSModifyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "rds:ModifyDBInstance"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:db:*"
+      ]
     },
     {
       "Sid": "RDSBackupPermissions",

@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AIOpsReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aiops:Get*",
+        "aiops:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSOManagementAccess",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeUser",
+        "sso:DescribeInstance",
+        "sso-directory:DescribeUsers"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

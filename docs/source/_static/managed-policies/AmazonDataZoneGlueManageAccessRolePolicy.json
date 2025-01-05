@@ -6,8 +6,7 @@
       "Effect": "Allow",
       "Action": [
         "glue:TagResource",
-        "glue:UntagResource",
-        "glue:GetTags"
+        "glue:UntagResource"
       ],
       "Resource": "*",
       "Condition": {
@@ -34,18 +33,49 @@
       }
     },
     {
+      "Sid": "GlueCrawlerPermissions",
+      "Effect": "Allow",
+      "Action": "glue:ListCrawls",
+      "Resource": "arn:aws:glue:*:*:crawler/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "GlueTableDatabasePermissions",
       "Effect": "Allow",
       "Action": [
         "glue:CreateTable",
         "glue:DeleteTable",
         "glue:GetDatabases",
-        "glue:GetTables"
+        "glue:GetTables",
+        "glue:SearchTables"
       ],
       "Resource": [
         "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:catalog/*",
         "arn:aws:glue:*:*:database/*",
         "arn:aws:glue:*:*:table/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "GlueGetTagsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetTags",
+        "glue:GetCatalog"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:catalog/*",
+        "arn:aws:glue:*:*:database/*"
       ],
       "Condition": {
         "StringEquals": {
@@ -81,6 +111,25 @@
       "Resource": "*"
     },
     {
+      "Sid": "LakeformationResourceFederatedSharingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:GetDataAccess"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "lakeformation:GlueARN": "true"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "glue.amazonaws.com",
+            "lakeformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "CrossAccountRAMResourceSharingPermissions",
       "Effect": "Allow",
       "Action": [
@@ -89,6 +138,7 @@
       ],
       "Resource": [
         "arn:aws:glue:*:*:catalog",
+        "arn:aws:glue:*:*:catalog/*",
         "arn:aws:glue:*:*:database/*",
         "arn:aws:glue:*:*:table/*"
       ],
@@ -161,7 +211,7 @@
       "Action": "ram:AssociateResourceSharePermission",
       "Resource": "*",
       "Condition": {
-        "StringLike": {
+        "ArnLike": {
           "ram:PermissionArn": "arn:aws:ram::aws:permission/AWSRAMLFEnabled*"
         },
         "ForAnyValue:StringEquals": {

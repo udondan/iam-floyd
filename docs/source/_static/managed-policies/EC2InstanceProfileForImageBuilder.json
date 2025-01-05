@@ -4,7 +4,71 @@
     {
       "Effect": "Allow",
       "Action": [
-        "imagebuilder:GetComponent"
+        "ec2:DescribeVolumes",
+        "ec2:DescribeSnapshots"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:snapshot/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/CreatedBy": "EC2 Image Builder"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:volume/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "EC2 Image Builder"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateSnapshot",
+          "aws:RequestTag/CreatedBy": [
+            "EC2 Image Builder"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::*/*.ISO",
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "imagebuilder:GetComponent",
+        "imagebuilder:GetMarketplaceResource"
       ],
       "Resource": "*"
     },

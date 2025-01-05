@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonRoute53ResolverReadOnlyAccess",
       "Effect": "Allow",
       "Action": [
         "route53resolver:Get*",

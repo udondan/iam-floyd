@@ -9,6 +9,7 @@
         "aws-portal:*Billing",
         "consolidatedbilling:GetAccountBillingRole",
         "invoicing:GetInvoicePDF",
+        "invoicing:ListInvoiceUnits",
         "payments:GetPaymentInstrument",
         "payments:ListPaymentPreferences",
         "purchase-orders:AddPurchaseOrder",

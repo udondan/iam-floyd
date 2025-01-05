@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FullAccessActions",
+      "Effect": "Allow",
+      "Action": [
+        "internetmonitor:CreateMonitor",
+        "internetmonitor:DeleteMonitor",
+        "internetmonitor:GetHealthEvent",
+        "internetmonitor:GetInternetEvent",
+        "internetmonitor:GetMonitor",
+        "internetmonitor:GetQueryResults",
+        "internetmonitor:GetQueryStatus",
+        "internetmonitor:Link",
+        "internetmonitor:ListHealthEvents",
+        "internetmonitor:ListInternetEvents",
+        "internetmonitor:ListMonitors",
+        "internetmonitor:ListTagsForResource",
+        "internetmonitor:StartQuery",
+        "internetmonitor:StopQuery",
+        "internetmonitor:TagResource",
+        "internetmonitor:UntagResource",
+        "internetmonitor:UpdateMonitor"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ServiceLinkedRoleActions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/internetmonitor.amazonaws.com/AWSServiceRoleForInternetMonitor",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "internetmonitor.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "RolePolicyActions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/internetmonitor.amazonaws.com/AWSServiceRoleForInternetMonitor",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": "arn:aws:iam::aws:policy/aws-service-role/CloudWatchInternetMonitorServiceRolePolicy"
+        }
+      }
+    },
+    {
+      "Sid": "ReadOnlyActions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "cloudfront:GetDistribution",
+        "cloudfront:ListDistributions",
+        "ec2:DescribeVpcs",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "logs:DescribeLogGroups",
+        "logs:GetQueryResults",
+        "logs:StartQuery",
+        "logs:StopQuery",
+        "workspaces:DescribeWorkspaceDirectories"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

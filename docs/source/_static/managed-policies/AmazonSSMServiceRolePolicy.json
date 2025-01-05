@@ -213,6 +213,11 @@
       "Effect": "Allow",
       "Action": "securityhub:DescribeHub",
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "resource-explorer-2:CreateManagedView",
+      "Resource": "arn:aws:resource-explorer-2:*:*:managed-view/AWSManagedViewForSSM*"
     }
   ]
 }

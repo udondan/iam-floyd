@@ -1,0 +1,60 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DataExchangeReadOnlyActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:GetDataSet",
+        "dataexchange:ListDataSets",
+        "dataexchange:GetRevision",
+        "dataexchange:ListDataSetRevisions",
+        "dataexchange:GetAsset",
+        "dataexchange:ListRevisionAssets",
+        "dataexchange:SendApiAsset"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DataExchangeExportActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:CreateJob",
+        "dataexchange:StartJob",
+        "dataexchange:CancelJob"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "dataexchange:JobType": [
+            "EXPORT_ASSETS_TO_S3",
+            "EXPORT_ASSET_TO_SIGNED_URL",
+            "EXPORT_REVISIONS_TO_S3"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DataExchangeEventActionActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:CreateEventAction",
+        "dataexchange:UpdateEventAction",
+        "dataexchange:DeleteEventAction",
+        "dataexchange:GetEventAction",
+        "dataexchange:ListEventActions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DataExchangeDataGrantActions",
+      "Effect": "Allow",
+      "Action": [
+        "dataexchange:AcceptDataGrant",
+        "dataexchange:ListReceivedDataGrants",
+        "dataexchange:GetReceivedDataGrant"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

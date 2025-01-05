@@ -1,0 +1,44 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManagedVpcLatticeTargetRegistration",
+      "Effect": "Allow",
+      "Action": [
+        "vpc-lattice:RegisterTargets",
+        "vpc-lattice:DeregisterTargets"
+      ],
+      "Resource": [
+        "arn:aws:vpc-lattice:*:*:targetgroup/*"
+      ]
+    },
+    {
+      "Sid": "DescribeVpcLatticeTargetGroup",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:GetTargetGroup",
+      "Resource": [
+        "arn:aws:vpc-lattice:*:*:targetgroup/*"
+      ]
+    },
+    {
+      "Sid": "ListVpcLatticeTargets",
+      "Effect": "Allow",
+      "Action": "vpc-lattice:ListTargets",
+      "Resource": [
+        "arn:aws:vpc-lattice:*:*:targetgroup/*"
+      ]
+    },
+    {
+      "Sid": "DescribeEc2Resources",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeInstances"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

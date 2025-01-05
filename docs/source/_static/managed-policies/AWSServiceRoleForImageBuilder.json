@@ -3,6 +3,30 @@
   "Statement": [
     {
       "Effect": "Allow",
+      "Action": "ec2:RegisterImage",
+      "Resource": [
+        "arn:aws:ec2:*::image/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/CreatedBy": "EC2 Image Builder"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:RegisterImage",
+      "Resource": [
+        "arn:aws:ec2:*::snapshot/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/CreatedBy": "EC2 Image Builder"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
       ],

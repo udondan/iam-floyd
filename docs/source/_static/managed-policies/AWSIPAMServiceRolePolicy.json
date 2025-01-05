@@ -24,7 +24,10 @@
         "organizations:DescribeAccount",
         "organizations:DescribeOrganization",
         "organizations:ListAccounts",
-        "organizations:ListDelegatedAdministrators"
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListChildren",
+        "organizations:ListParents",
+        "organizations:DescribeOrganizationalUnit"
       ],
       "Resource": "*"
     },

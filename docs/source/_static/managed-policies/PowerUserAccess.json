@@ -13,12 +13,13 @@
     {
       "Effect": "Allow",
       "Action": [
+        "account:GetAccountInformation",
+        "account:GetPrimaryEmail",
+        "account:ListRegions",
         "iam:CreateServiceLinkedRole",
         "iam:DeleteServiceLinkedRole",
         "iam:ListRoles",
-        "organizations:DescribeOrganization",
-        "account:ListRegions",
-        "account:GetAccountInformation"
+        "organizations:DescribeOrganization"
       ],
       "Resource": "*"
     }

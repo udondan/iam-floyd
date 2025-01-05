@@ -72,7 +72,11 @@
         "sso:DisassociateProfile",
         "sso:ListProfiles",
         "sso:GetProfile",
-        "sso:ListProfileAssociations"
+        "sso:ListProfileAssociations",
+        "sso:ListApplicationAssignments",
+        "sso:DescribeApplication",
+        "sso:DescribeInstance",
+        "sso:GetApplicationAssignmentConfiguration"
       ],
       "Resource": "*"
     },

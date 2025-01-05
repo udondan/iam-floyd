@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PassAWSPartnerCentralRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/PartnerCentralRoleFor*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "partnercentral-account-management.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "PartnerUserRoleAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "Partnercentral-account-management:AssociatePartnerUser",
+        "Partnercentral-account-management:DisassociatePartnerUser"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSPartnerCentralAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PassAWSPartnerCentralSnapshotJobRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "resource-snapshot-job.partnercentral-selling.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
