@@ -2,10 +2,12 @@
     "Action": [
         "ec2:Describe*",
         "ec2:ExportClientVpnClientC*",
+        "ec2:ExportVerifiedAccessInstanceClientConfiguration",
         "ec2:Get*",
         "ec2:List*",
         "ec2:SearchLocalGatewayRoutes",
-        "ec2:SearchTransitGateway*"
+        "ec2:SearchTransitGateway*",
+        "ec2:StartDeclarativePoliciesReport"
     ],
     "Resource": "*",
     "Effect": "Allow"

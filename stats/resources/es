@@ -1,3 +1,5 @@
+es:application
+es:datasource
 es:domain
 es:es_role
 es:opensearchservice_role

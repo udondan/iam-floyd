@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement, Operator } from '../../shared';
+import { PolicyStatement } from '../../shared';
 
 /**
  * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalappliancesandsoftwareactivationservice.html).
@@ -21,7 +21,7 @@ export class ElementalActivations extends PolicyStatement {
   /**
    * Grants permission to complete the process of registering customer account for AWS Elemental Appliances and Software Purchases
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
@@ -32,12 +32,34 @@ export class ElementalActivations extends PolicyStatement {
   /**
    * Grants permission to complete the process of uploading a Software file for AWS Elemental Appliances and Software Purchases
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
   public toCompleteFileUpload() {
     return this.to('CompleteFileUpload');
+  }
+
+  /**
+   * Grants permission to confirm asset ownership
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toConfirmAccount() {
+    return this.to('ConfirmAccount');
+  }
+
+  /**
+   * Grants permission to download the kickstart files for AWS Elemental Appliances and Software purchases
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toDownloadKickstart() {
+    return this.to('DownloadKickstart');
   }
 
   /**
@@ -52,9 +74,20 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a software license for an AWS Elemental Appliances and Software purchase
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toGenerateLicense() {
+    return this.to('GenerateLicense');
+  }
+
+  /**
    * Grants permission to generate Software Licenses for AWS Elemental Appliances and Software Purchases
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
@@ -63,42 +96,64 @@ export class ElementalActivations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe an activation
+   * Grants permission to describe the software version of an artifact group
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public toGetActivation() {
-    return this.to('GetActivation');
+  public toGetArtifactGroupSoftwareVersions() {
+    return this.to('GetArtifactGroupSoftwareVersions');
   }
 
   /**
-   * Grants permission to list tags for an AWS Elemental Activations resource
+   * Grants permission to describe an asset
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public toListTagsForResource() {
-    return this.to('ListTagsForResource');
+  public toGetAsset() {
+    return this.to('GetAsset');
   }
 
   /**
-   * Grants permission to start the process of registering customer account for AWS Elemental Appliances and Software Purchases
+   * Grants permission to describe assets associated to the requesting account
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public toStartAccountRegistration() {
-    return this.to('StartAccountRegistration');
+  public toGetAssets() {
+    return this.to('GetAssets');
+  }
+
+  /**
+   * Grants permission to get all product advisories
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toGetProductAdvisories() {
+    return this.to('GetProductAdvisories');
+  }
+
+  /**
+   * Grants permission to describe available software versions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-appliances-software/
+   */
+  public toGetSoftwareVersions() {
+    return this.to('GetSoftwareVersions');
   }
 
   /**
    * Grants permission to start the process of uploading a Software file for AWS Elemental Appliances and Software Purchases
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
@@ -106,120 +161,23 @@ export class ElementalActivations extends PolicyStatement {
     return this.to('StartFileUpload');
   }
 
-  /**
-   * Grants permission to add a tag for an AWS Elemental Activations resource
-   *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   *
-   * https://docs.aws.amazon.com/elemental-appliances-software/
-   */
-  public toTagResource() {
-    return this.to('TagResource');
-  }
-
-  /**
-   * Grants permission to remove a tag from an AWS Elemental Activations resource
-   *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
-   *
-   * https://docs.aws.amazon.com/elemental-appliances-software/
-   */
-  public toUntagResource() {
-    return this.to('UntagResource');
-  }
-
   protected accessLevelList: AccessLevelList = {
-    Read: [
+    Write: [
       'CompleteAccountRegistration',
       'CompleteFileUpload',
-      'DownloadSoftware',
+      'ConfirmAccount',
+      'GenerateLicense',
       'GenerateLicenses',
-      'GetActivation',
-      'ListTagsForResource',
-      'StartAccountRegistration',
       'StartFileUpload'
     ],
-    Tagging: [
-      'TagResource',
-      'UntagResource'
+    Read: [
+      'DownloadKickstart',
+      'DownloadSoftware',
+      'GetArtifactGroupSoftwareVersions',
+      'GetAsset',
+      'GetAssets',
+      'GetProductAdvisories',
+      'GetSoftwareVersions'
     ]
   };
-
-  /**
-   * Adds a resource of type activation to the statement
-   *
-   * https://docs.aws.amazon.com/elemental-appliances-software/
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onActivation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:elemental-activations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:activation/${ resourceId }`);
-  }
-
-  /**
-   * Filters access by tags that are passed in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
-   *
-   * Applies to actions:
-   * - .toTagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by tags associated with the resource
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * Applies to resource types:
-   * - activation
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by tag keys that are passed in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
-   *
-   * Applies to actions:
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
-    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
-  }
 }

@@ -79,7 +79,28 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new container group definition for a container fleet
+   * Grants permission to create a new container fleet of computing resources to run your game servers
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeAvailabilityZones
+   * - ec2:DescribeRegions
+   * - gamelift:TagResource
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html
+   */
+  public toCreateContainerFleet() {
+    return this.to('CreateContainerFleet');
+  }
+
+  /**
+   * Grants permission to create a new container group definition using images stored in an Amazon ECR repository
    *
    * Access Level: Write
    *
@@ -90,6 +111,7 @@ export class Gamelift extends PolicyStatement {
    * Dependent actions:
    * - ecr:BatchGetImage
    * - ecr:DescribeImages
+   * - ecr:GetAuthorizationToken
    * - ecr:GetDownloadUrlForLayer
    * - gamelift:TagResource
    *
@@ -343,7 +365,18 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a container group definition that is not being used in a fleet
+   * Grants permission to delete a container fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteContainerFleet.html
+   */
+  public toDeleteContainerFleet() {
+    return this.to('DeleteContainerFleet');
+  }
+
+  /**
+   * Grants permission to delete a container group definition
    *
    * Access Level: Write
    *
@@ -527,7 +560,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve general properties of the compute such as ARN, fleet details, SDK endpoints, and location
+   * Grants permission to retrieve information for a compute in a fleet
    *
    * Access Level: Read
    *
@@ -538,7 +571,18 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve general properties, including status, for a container group definition
+   * Grants permission to retrieve the properties of an existing container fleet
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerFleet.html
+   */
+  public toDescribeContainerFleet() {
+    return this.to('DescribeContainerFleet');
+  }
+
+  /**
+   * Grants permission to retrieve the properties of an existing container group definition
    *
    * Access Level: Read
    *
@@ -571,7 +615,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the current capacity setting for fleets
+   * Grants permission to retrieve the current capacity settings for managed fleets
    *
    * Access Level: Read
    *
@@ -579,6 +623,17 @@ export class Gamelift extends PolicyStatement {
    */
   public toDescribeFleetCapacity() {
     return this.to('DescribeFleetCapacity');
+  }
+
+  /**
+   * Grants permission to retrieve the properties of an existing fleet deployment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html
+   */
+  public toDescribeFleetDeployment() {
+    return this.to('DescribeFleetDeployment');
   }
 
   /**
@@ -725,7 +780,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about instances in a fleet
+   * Grants permission to retrieve information about instances in a managed fleet
    *
    * Access Level: Read
    *
@@ -835,7 +890,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve access credentials of the compute
+   * Grants permission to retrieve credentials to remotely access a compute in a managed fleet
    *
    * Access Level: Read
    *
@@ -846,7 +901,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve an authorization token for a compute and fleet to use in game server processes
+   * Grants permission to retrieve an authentication token that allows processes on a compute to send requests to the Amazon GameLift service
    *
    * Access Level: Read
    *
@@ -912,7 +967,29 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of names for all container group definitions in the current Region
+   * Grants permission to retrieve the properties of all existing container fleets in the current Region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerFleets.html
+   */
+  public toListContainerFleets() {
+    return this.to('ListContainerFleets');
+  }
+
+  /**
+   * Grants permission to retrieve the properties of all versions of an existing container group definition
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html
+   */
+  public toListContainerGroupDefinitionVersions() {
+    return this.to('ListContainerGroupDefinitionVersions');
+  }
+
+  /**
+   * Grants permission to retrieve the properties of all existing container group definitions in the current Region
    *
    * Access Level: List
    *
@@ -920,6 +997,17 @@ export class Gamelift extends PolicyStatement {
    */
   public toListContainerGroupDefinitions() {
     return this.to('ListContainerGroupDefinitions');
+  }
+
+  /**
+   * Grants permission to retrieve the properties of all existing fleet deployments in the current Region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html
+   */
+  public toListFleetDeployments() {
+    return this.to('ListFleetDeployments');
   }
 
   /**
@@ -1169,6 +1257,17 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to shut down an existing game session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_TerminateGameSession.html
+   */
+  public toTerminateGameSession() {
+    return this.to('TerminateGameSession');
+  }
+
+  /**
    * Grants permission to untag GameLift resources
    *
    * Access Level: Tagging
@@ -1205,6 +1304,34 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing container fleet
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerFleet.html
+   */
+  public toUpdateContainerFleet() {
+    return this.to('UpdateContainerFleet');
+  }
+
+  /**
+   * Grants permission to update the properties of an existing container group definition
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ecr:BatchGetImage
+   * - ecr:DescribeImages
+   * - ecr:GetAuthorizationToken
+   * - ecr:GetDownloadUrlForLayer
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html
+   */
+  public toUpdateContainerGroupDefinition() {
+    return this.to('UpdateContainerGroupDefinition');
+  }
+
+  /**
    * Grants permission to update the general properties of an existing fleet
    *
    * Access Level: Write
@@ -1216,7 +1343,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to adjust a fleet's capacity settings
+   * Grants permission to adjust a managed fleet's capacity settings
    *
    * Access Level: Write
    *
@@ -1338,6 +1465,7 @@ export class Gamelift extends PolicyStatement {
       'ClaimGameServer',
       'CreateAlias',
       'CreateBuild',
+      'CreateContainerFleet',
       'CreateContainerGroupDefinition',
       'CreateFleet',
       'CreateFleetLocations',
@@ -1354,6 +1482,7 @@ export class Gamelift extends PolicyStatement {
       'CreateVpcPeeringConnection',
       'DeleteAlias',
       'DeleteBuild',
+      'DeleteContainerFleet',
       'DeleteContainerGroupDefinition',
       'DeleteFleet',
       'DeleteFleetLocations',
@@ -1380,8 +1509,11 @@ export class Gamelift extends PolicyStatement {
       'StopGameSessionPlacement',
       'StopMatchmaking',
       'SuspendGameServerGroup',
+      'TerminateGameSession',
       'UpdateAlias',
       'UpdateBuild',
+      'UpdateContainerFleet',
+      'UpdateContainerGroupDefinition',
       'UpdateFleetAttributes',
       'UpdateFleetCapacity',
       'UpdateFleetPortSettings',
@@ -1397,10 +1529,12 @@ export class Gamelift extends PolicyStatement {
       'DescribeAlias',
       'DescribeBuild',
       'DescribeCompute',
+      'DescribeContainerFleet',
       'DescribeContainerGroupDefinition',
       'DescribeEC2InstanceLimits',
       'DescribeFleetAttributes',
       'DescribeFleetCapacity',
+      'DescribeFleetDeployment',
       'DescribeFleetEvents',
       'DescribeFleetLocationAttributes',
       'DescribeFleetLocationCapacity',
@@ -1438,7 +1572,10 @@ export class Gamelift extends PolicyStatement {
       'ListAliases',
       'ListBuilds',
       'ListCompute',
+      'ListContainerFleets',
+      'ListContainerGroupDefinitionVersions',
       'ListContainerGroupDefinitions',
+      'ListFleetDeployments',
       'ListFleets',
       'ListGameServerGroups',
       'ListGameServers',
@@ -1487,7 +1624,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type containerGroupDefinition to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-intro.html
    *
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1499,6 +1636,23 @@ export class Gamelift extends PolicyStatement {
    */
   public onContainerGroupDefinition(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:containergroupdefinition/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type containerFleet to the statement
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-intro.html
+   *
+   * @param fleetId - Identifier for the fleetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContainerFleet(fleetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:gamelift:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:containerfleet/${ fleetId }`);
   }
 
   /**
@@ -1628,6 +1782,7 @@ export class Gamelift extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAlias()
    * - .toCreateBuild()
+   * - .toCreateContainerFleet()
    * - .toCreateContainerGroupDefinition()
    * - .toCreateFleet()
    * - .toCreateGameServerGroup()
@@ -1655,6 +1810,7 @@ export class Gamelift extends PolicyStatement {
    * - alias
    * - build
    * - containerGroupDefinition
+   * - containerFleet
    * - fleet
    * - gameServerGroup
    * - gameSessionQueue
@@ -1679,6 +1835,7 @@ export class Gamelift extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAlias()
    * - .toCreateBuild()
+   * - .toCreateContainerFleet()
    * - .toCreateContainerGroupDefinition()
    * - .toCreateFleet()
    * - .toCreateGameServerGroup()

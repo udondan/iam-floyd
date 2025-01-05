@@ -1,3 +1,4 @@
+ses:AllowVendedLogDeliveryForResource;Permissions management
 ses:BatchGetMetricData;Read
 ses:CancelExportJob;Write
 ses:CloneReceiptRuleSet;Write
@@ -18,6 +19,7 @@ ses:CreateEmailTemplate;Write
 ses:CreateExportJob;Write
 ses:CreateImportJob;Write
 ses:CreateIngressPoint;Write
+ses:CreateMultiRegionEndpoint;Write
 ses:CreateReceiptFilter;Write
 ses:CreateReceiptRule;Write
 ses:CreateReceiptRuleSet;Write
@@ -41,6 +43,7 @@ ses:DeleteEmailTemplate;Write
 ses:DeleteIdentity;Write
 ses:DeleteIdentityPolicy;Permissions management
 ses:DeleteIngressPoint;Write
+ses:DeleteMultiRegionEndpoint;Write
 ses:DeleteReceiptFilter;Write
 ses:DeleteReceiptRule;Write
 ses:DeleteReceiptRuleSet;Write
@@ -89,6 +92,7 @@ ses:GetIdentityVerificationAttributes;Read
 ses:GetImportJob;Read
 ses:GetIngressPoint;Read
 ses:GetMessageInsights;Read
+ses:GetMultiRegionEndpoint;Read
 ses:GetRelay;Read
 ses:GetRuleSet;Read
 ses:GetSendQuota;Read
@@ -115,6 +119,7 @@ ses:ListIdentities;List
 ses:ListIdentityPolicies;List
 ses:ListImportJobs;List
 ses:ListIngressPoints;List
+ses:ListMultiRegionEndpoints;List
 ses:ListReceiptFilters;Read
 ses:ListReceiptRuleSets;Read
 ses:ListRecommendations;Read
@@ -148,6 +153,7 @@ ses:PutEmailIdentityMailFromAttributes;Write
 ses:PutIdentityPolicy;Permissions management
 ses:PutSuppressedDestination;Write
 ses:ReorderReceiptRuleSet;Write
+ses:ReplicateEmailIdentityDkimSigningKey;Permissions management
 ses:SendBounce;Write
 ses:SendBulkEmail;Write
 ses:SendBulkTemplatedEmail;Write

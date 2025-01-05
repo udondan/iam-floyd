@@ -10,6 +10,8 @@ elasticache:EngineVersion
 elasticache:KmsKeyId
 elasticache:MaximumDataStorage
 elasticache:MaximumECPUPerSecond
+elasticache:MinimumDataStorage
+elasticache:MinimumECPUPerSecond
 elasticache:MultiAZEnabled
 elasticache:NumNodeGroups
 elasticache:ReplicasPerNodeGroup

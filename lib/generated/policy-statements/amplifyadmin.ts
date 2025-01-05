@@ -276,6 +276,9 @@ export class Amplifybackend extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - s3:ListAllMyBuckets
+   *
    * https://docs.aws.amazon.com/amplify-admin-ui/latest/APIReference/backend-appid-storage.html#ListS3Buckets
    */
   public toListS3Buckets() {

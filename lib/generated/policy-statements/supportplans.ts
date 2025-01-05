@@ -52,6 +52,17 @@ export class Supportplans extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view a list of all support plan modifiers for this AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/security-support-plans.html
+   */
+  public toListSupportPlanModifiers() {
+    return this.to('ListSupportPlanModifiers');
+  }
+
+  /**
    * Grants permission to update the support plan for this AWS account
    *
    * Access Level: Write
@@ -70,6 +81,9 @@ export class Supportplans extends PolicyStatement {
     Read: [
       'GetSupportPlan',
       'GetSupportPlanUpdateStatus'
+    ],
+    List: [
+      'ListSupportPlanModifiers'
     ]
   };
 }

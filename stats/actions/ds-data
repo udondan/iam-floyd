@@ -1,0 +1,17 @@
+ds-data:AddGroupMember;Write
+ds-data:CreateGroup;Write
+ds-data:CreateUser;Write
+ds-data:DeleteGroup;Write
+ds-data:DeleteUser;Write
+ds-data:DescribeGroup;Read
+ds-data:DescribeUser;Read
+ds-data:DisableUser;Write
+ds-data:ListGroupMembers;List
+ds-data:ListGroups;List
+ds-data:ListGroupsForMember;List
+ds-data:ListUsers;List
+ds-data:RemoveGroupMember;Write
+ds-data:SearchGroups;Read
+ds-data:SearchUsers;Read
+ds-data:UpdateGroup;Write
+ds-data:UpdateUser;Write

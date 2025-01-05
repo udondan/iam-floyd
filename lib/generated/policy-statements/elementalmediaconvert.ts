@@ -280,6 +280,17 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list AWS Elemental MediaConvert job engine versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/versions.html
+   */
+  public toListVersions() {
+    return this.to('ListVersions');
+  }
+
+  /**
    * Grants permission to put an AWS Elemental MediaConvert policy
    *
    * Access Level: Write
@@ -387,6 +398,7 @@ export class Mediaconvert extends PolicyStatement {
       'ListJobs',
       'ListPresets',
       'ListQueues',
+      'ListVersions',
       'SearchJobs'
     ],
     Read: [

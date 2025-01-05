@@ -4,6 +4,7 @@ mgn:ExportResource
 mgn:ImportResource
 mgn:JobResource
 mgn:LaunchConfigurationTemplateResource
+mgn:NetworkMigrationDefinitionResource
 mgn:ReplicationConfigurationTemplateResource
 mgn:SourceServerResource
 mgn:VcenterClientResource

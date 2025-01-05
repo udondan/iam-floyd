@@ -80,3 +80,4 @@ personalize:UpdateCampaign;Write
 personalize:UpdateDataset;Write
 personalize:UpdateMetricAttribution;Write
 personalize:UpdateRecommender;Write
+personalize:UpdateSolution;Write

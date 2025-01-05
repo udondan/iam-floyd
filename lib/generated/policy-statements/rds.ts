@@ -118,6 +118,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to copy a custom engine version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html
+   */
+  public toCopyCustomDBEngineVersion() {
+    return this.to('CopyCustomDBEngineVersion');
+  }
+
+  /**
    * Grants permission to copy the specified DB cluster parameter group
    *
    * Access Level: Write
@@ -183,6 +194,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - rds:AddTagsToResource
+   * - rds:CopyCustomDBEngineVersion
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html
    */
@@ -480,6 +492,13 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBShardGroup.html
    */
   public toCreateDBShardGroup() {
@@ -637,6 +656,8 @@ export class Rds extends PolicyStatement {
    * - rds:DeleteDBCluster
    * - rds:DeleteDBClusterEndpoint
    * - rds:DeleteDBInstance
+   * - rds:PromoteReadReplica
+   * - rds:PromoteReadReplicaDBCluster
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteBlueGreenDeployment.html
    */
@@ -661,6 +682,8 @@ export class Rds extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - rds:AddTagsToResource
+   * - rds:CreateDBClusterSnapshot
    * - rds:DeleteDBInstance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBCluster.html
@@ -719,6 +742,8 @@ export class Rds extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - rds:AddTagsToResource
+   * - rds:CreateDBSnapshot
    * - rds:DeleteTenantDatabase
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstance.html
@@ -863,6 +888,10 @@ export class Rds extends PolicyStatement {
    * Grants permission to delete a tenant database
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   * - rds:CreateDBSnapshot
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteTenantDatabase.html
    */
@@ -1157,6 +1186,17 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about tenant databases in DB snapshots. You can filter by Region or snapshot
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotTenantDatabases.html
+   */
+  public toDescribeDBSnapshotTenantDatabases() {
+    return this.to('DescribeDBSnapshotTenantDatabases');
+  }
+
+  /**
    * Grants permission to return information about DB snapshots
    *
    * Access Level: List
@@ -1176,17 +1216,6 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeDBSubnetGroups() {
     return this.to('DescribeDBSubnetGroups');
-  }
-
-  /**
-   * Grants permission to return information about tenant databases in DB snapshots. You can filter by Region or snapshot
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotTenantDatabases.html
-   */
-  public toDescribeDbSnapshotTenantDatabases() {
-    return this.to('DescribeDbSnapshotTenantDatabases');
   }
 
   /**
@@ -2200,6 +2229,10 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   * - rds:CreateDBSnapshot
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBInstance.html
    */
   public toStopDBInstance() {
@@ -2267,6 +2300,7 @@ export class Rds extends PolicyStatement {
       'ApplyPendingMaintenanceAction',
       'BacktrackDBCluster',
       'CancelExportTask',
+      'CopyCustomDBEngineVersion',
       'CopyDBClusterParameterGroup',
       'CopyDBClusterSnapshot',
       'CopyDBParameterGroup',
@@ -2409,9 +2443,9 @@ export class Rds extends PolicyStatement {
       'DescribeDBSecurityGroups',
       'DescribeDBShardGroups',
       'DescribeDBSnapshotAttributes',
+      'DescribeDBSnapshotTenantDatabases',
       'DescribeDBSnapshots',
       'DescribeDBSubnetGroups',
-      'DescribeDbSnapshotTenantDatabases',
       'DescribeEngineDefaultClusterParameters',
       'DescribeEngineDefaultParameters',
       'DescribeEventCategories',
@@ -2466,6 +2500,9 @@ export class Rds extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onShardgrp(dbShardGroupResourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:shard-group:${ dbShardGroupResourceId }`);
@@ -2880,6 +2917,7 @@ export class Rds extends PolicyStatement {
    * - .toCreateDBProxy()
    * - .toCreateDBProxyEndpoint()
    * - .toCreateDBSecurityGroup()
+   * - .toCreateDBShardGroup()
    * - .toCreateDBSnapshot()
    * - .toCreateDBSubnetGroup()
    * - .toCreateEventSubscription()
@@ -2916,6 +2954,7 @@ export class Rds extends PolicyStatement {
    *
    * Applies to resource types:
    * - cluster
+   * - shardgrp
    * - cluster-endpoint
    * - cluster-pg
    * - cluster-snapshot
@@ -2968,6 +3007,7 @@ export class Rds extends PolicyStatement {
    * - .toCreateDBProxy()
    * - .toCreateDBProxyEndpoint()
    * - .toCreateDBSecurityGroup()
+   * - .toCreateDBShardGroup()
    * - .toCreateDBSnapshot()
    * - .toCreateDBSubnetGroup()
    * - .toCreateEventSubscription()
@@ -2991,7 +3031,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Filters access by the type of backup target. One of: REGION, OUTPOSTS
+   * Filters access by the type of backup target. One of: region, outposts
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *

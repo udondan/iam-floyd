@@ -41,6 +41,17 @@ export class Tax extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete supplemental tax registration data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   */
+  public toDeleteSupplementalTaxRegistration() {
+    return this.to('DeleteSupplementalTaxRegistration');
+  }
+
+  /**
    * Grants permission to delete tax registration data
    *
    * Access Level: Write
@@ -118,6 +129,17 @@ export class Tax extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view supplemental tax registrations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   */
+  public toListSupplementalTaxRegistrations() {
+    return this.to('ListSupplementalTaxRegistrations');
+  }
+
+  /**
    * Grants permission to view tax registrations
    *
    * Access Level: Read
@@ -126,6 +148,17 @@ export class Tax extends PolicyStatement {
    */
   public toListTaxRegistrations() {
     return this.to('ListTaxRegistrations');
+  }
+
+  /**
+   * Grants permission to update supplemental tax registrations data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   */
+  public toPutSupplementalTaxRegistration() {
+    return this.to('PutSupplementalTaxRegistration');
   }
 
   /**
@@ -176,7 +209,9 @@ export class Tax extends PolicyStatement {
     Write: [
       'BatchDeleteTaxRegistration',
       'BatchPutTaxRegistration',
+      'DeleteSupplementalTaxRegistration',
       'DeleteTaxRegistration',
+      'PutSupplementalTaxRegistration',
       'PutTaxInheritance',
       'PutTaxInterview',
       'PutTaxRegistration',
@@ -189,6 +224,7 @@ export class Tax extends PolicyStatement {
       'GetTaxInterview',
       'GetTaxRegistration',
       'GetTaxRegistrationDocument',
+      'ListSupplementalTaxRegistrations',
       'ListTaxRegistrations'
     ]
   };

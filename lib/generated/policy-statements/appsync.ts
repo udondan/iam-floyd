@@ -52,6 +52,25 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApi.html
+   */
+  public toCreateApi() {
+    return this.to('CreateApi');
+  }
+
+  /**
    * Grants permission to create an API cache in AppSync
    *
    * Access Level: Write
@@ -71,6 +90,22 @@ export class Appsync extends PolicyStatement {
    */
   public toCreateApiKey() {
     return this.to('CreateApiKey');
+  }
+
+  /**
+   * Grants permission to create a channel namespace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateChannelNamespace.html
+   */
+  public toCreateChannelNamespace() {
+    return this.to('CreateChannelNamespace');
   }
 
   /**
@@ -148,6 +183,20 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a API. This will also clean up every AppSync resource below that API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteApi.html
+   */
+  public toDeleteApi() {
+    return this.to('DeleteApi');
+  }
+
+  /**
    * Grants permission to delete an API cache in AppSync
    *
    * Access Level: Write
@@ -167,6 +216,20 @@ export class Appsync extends PolicyStatement {
    */
   public toDeleteApiKey() {
     return this.to('DeleteApiKey');
+  }
+
+  /**
+   * Grants permission to delete a channel namespace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteChannelNamespace.html
+   */
+  public toDeleteChannelNamespace() {
+    return this.to('DeleteChannelNamespace');
   }
 
   /**
@@ -305,6 +368,39 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to connect to an Event API
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-event-api.html
+   */
+  public toEventConnect() {
+    return this.to('EventConnect');
+  }
+
+  /**
+   * Grants permission to publish events to a channel namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-event-api.html
+   */
+  public toEventPublish() {
+    return this.to('EventPublish');
+  }
+
+  /**
+   * Grants permission to subscribe to a channel namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-event-api.html
+   */
+  public toEventSubscribe() {
+    return this.to('EventSubscribe');
+  }
+
+  /**
    * Grants permission to flush an API cache in AppSync
    *
    * Access Level: Write
@@ -313,6 +409,20 @@ export class Appsync extends PolicyStatement {
    */
   public toFlushApiCache() {
     return this.to('FlushApiCache');
+  }
+
+  /**
+   * Grants permission to retrieve an API
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetApi.html
+   */
+  public toGetApi() {
+    return this.to('GetApi');
   }
 
   /**
@@ -335,6 +445,20 @@ export class Appsync extends PolicyStatement {
    */
   public toGetApiCache() {
     return this.to('GetApiCache');
+  }
+
+  /**
+   * Grants permission to retrieve a channel namespace
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetChannelNamespace.html
+   */
+  public toGetChannelNamespace() {
+    return this.to('GetChannelNamespace');
   }
 
   /**
@@ -492,6 +616,34 @@ export class Appsync extends PolicyStatement {
    */
   public toListApiKeys() {
     return this.to('ListApiKeys');
+  }
+
+  /**
+   * Grants permission to list APIs
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListApis.html
+   */
+  public toListApis() {
+    return this.to('ListApis');
+  }
+
+  /**
+   * Grants permission to list channel namespace
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListChannelNamespaces.html
+   */
+  public toListChannelNamespaces() {
+    return this.to('ListChannelNamespaces');
   }
 
   /**
@@ -707,11 +859,29 @@ export class Appsync extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateApi.html
+   */
+  public toUpdateApi() {
+    return this.to('UpdateApi');
   }
 
   /**
@@ -734,6 +904,20 @@ export class Appsync extends PolicyStatement {
    */
   public toUpdateApiKey() {
     return this.to('UpdateApiKey');
+  }
+
+  /**
+   * Grants permission to update a channel namespace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateChannelNamespace.html
+   */
+  public toUpdateChannelNamespace() {
+    return this.to('UpdateChannelNamespace');
   }
 
   /**
@@ -824,16 +1008,20 @@ export class Appsync extends PolicyStatement {
       'AssociateApi',
       'AssociateMergedGraphqlApi',
       'AssociateSourceGraphqlApi',
+      'CreateApi',
       'CreateApiCache',
       'CreateApiKey',
+      'CreateChannelNamespace',
       'CreateDataSource',
       'CreateDomainName',
       'CreateFunction',
       'CreateGraphqlApi',
       'CreateResolver',
       'CreateType',
+      'DeleteApi',
       'DeleteApiCache',
       'DeleteApiKey',
+      'DeleteChannelNamespace',
       'DeleteDataSource',
       'DeleteDomainName',
       'DeleteFunction',
@@ -844,6 +1032,9 @@ export class Appsync extends PolicyStatement {
       'DisassociateApi',
       'DisassociateMergedGraphqlApi',
       'DisassociateSourceGraphqlApi',
+      'EventConnect',
+      'EventPublish',
+      'EventSubscribe',
       'FlushApiCache',
       'GraphQL',
       'PutGraphqlApiEnvironmentVariables',
@@ -853,8 +1044,10 @@ export class Appsync extends PolicyStatement {
       'StartDataSourceIntrospection',
       'StartSchemaCreation',
       'StartSchemaMerge',
+      'UpdateApi',
       'UpdateApiCache',
       'UpdateApiKey',
+      'UpdateChannelNamespace',
       'UpdateDataSource',
       'UpdateDomainName',
       'UpdateFunction',
@@ -866,8 +1059,10 @@ export class Appsync extends PolicyStatement {
     Read: [
       'EvaluateCode',
       'EvaluateMappingTemplate',
+      'GetApi',
       'GetApiAssociation',
       'GetApiCache',
+      'GetChannelNamespace',
       'GetDataSource',
       'GetDataSourceIntrospection',
       'GetDomainName',
@@ -884,6 +1079,8 @@ export class Appsync extends PolicyStatement {
     ],
     List: [
       'ListApiKeys',
+      'ListApis',
+      'ListChannelNamespaces',
       'ListDataSources',
       'ListDomainNames',
       'ListFunctions',
@@ -1023,6 +1220,41 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type api to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/eventapi/event-api-welcome.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApi(apiId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ apiId }`);
+  }
+
+  /**
+   * Adds a resource of type channelNamespace to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/eventapi/channel-namespaces.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param channelNamespaceName - Identifier for the channelNamespaceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onChannelNamespace(apiId: string, channelNamespaceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ apiId }/channelNamespace/${ channelNamespaceName }`);
+  }
+
+  /**
    * Filters access by the visibility of an API
    *
    * Applies to actions:
@@ -1041,6 +1273,8 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateApi()
+   * - .toCreateChannelNamespace()
    * - .toCreateGraphqlApi()
    * - .toTagResource()
    *
@@ -1058,14 +1292,27 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCreateApi()
+   * - .toCreateChannelNamespace()
+   * - .toDeleteApi()
+   * - .toDeleteChannelNamespace()
    * - .toDeleteGraphqlApi()
+   * - .toGetApi()
+   * - .toGetChannelNamespace()
    * - .toGetGraphqlApi()
+   * - .toListApis()
+   * - .toListChannelNamespaces()
    * - .toListTagsForResource()
    * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateApi()
+   * - .toUpdateChannelNamespace()
    * - .toUpdateGraphqlApi()
    *
    * Applies to resource types:
    * - graphqlapi
+   * - api
+   * - channelNamespace
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1081,6 +1328,8 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateApi()
+   * - .toCreateChannelNamespace()
    * - .toCreateGraphqlApi()
    * - .toTagResource()
    * - .toUntagResource()

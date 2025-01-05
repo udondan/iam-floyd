@@ -19,6 +19,28 @@ export class Payments extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept financing application terms provided by a lender
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toAcceptFinancingApplicationTerms() {
+    return this.to('AcceptFinancingApplicationTerms');
+  }
+
+  /**
+   * Grants permission to create a financing application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toCreateFinancingApplication() {
+    return this.to('CreateFinancingApplication');
+  }
+
+  /**
    * Grants permission to create a payment instrument
    *
    * Access Level: Write
@@ -45,6 +67,50 @@ export class Payments extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a financing application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toGetFinancingApplication() {
+    return this.to('GetFinancingApplication');
+  }
+
+  /**
+   * Grants permission to get information about a financing line
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toGetFinancingLine() {
+    return this.to('GetFinancingLine');
+  }
+
+  /**
+   * Grants permission to get information about a financing line withdrawal
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toGetFinancingLineWithdrawal() {
+    return this.to('GetFinancingLineWithdrawal');
+  }
+
+  /**
+   * Grants permission to get information about a financing option
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toGetFinancingOption() {
+    return this.to('GetFinancingOption');
+  }
+
+  /**
    * Grants permission to get information about a payment instrument
    *
    * Access Level: List
@@ -67,6 +133,39 @@ export class Payments extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list financing application metadata
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toListFinancingApplications() {
+    return this.to('ListFinancingApplications');
+  }
+
+  /**
+   * Grants permission to list financing line withdrawals metadata
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toListFinancingLineWithdrawals() {
+    return this.to('ListFinancingLineWithdrawals');
+  }
+
+  /**
+   * Grants permission to list financing line metadata
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toListFinancingLines() {
+    return this.to('ListFinancingLines');
+  }
+
+  /**
    * Grants permission to list payment instrument metadata
    *
    * Access Level: List
@@ -86,6 +185,28 @@ export class Payments extends PolicyStatement {
    */
   public toListPaymentPreferences() {
     return this.to('ListPaymentPreferences');
+  }
+
+  /**
+   * Grants permission to list information about payment options
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toListPaymentProgramOptions() {
+    return this.to('ListPaymentProgramOptions');
+  }
+
+  /**
+   * Grants permission to list information about payment program eligibility and enrolment status
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toListPaymentProgramStatus() {
+    return this.to('ListPaymentProgramStatus');
   }
 
   /**
@@ -140,6 +261,17 @@ export class Payments extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a financing application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   */
+  public toUpdateFinancingApplication() {
+    return this.to('UpdateFinancingApplication');
+  }
+
+  /**
    * Grants permission to update a payment instrument
    *
    * Access Level: Write
@@ -163,20 +295,32 @@ export class Payments extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptFinancingApplicationTerms',
+      'CreateFinancingApplication',
       'CreatePaymentInstrument',
       'DeletePaymentInstrument',
       'MakePayment',
+      'UpdateFinancingApplication',
       'UpdatePaymentInstrument',
       'UpdatePaymentPreferences'
     ],
+    Read: [
+      'GetFinancingApplication',
+      'GetFinancingLine',
+      'GetFinancingLineWithdrawal',
+      'GetFinancingOption',
+      'GetPaymentStatus'
+    ],
     List: [
       'GetPaymentInstrument',
+      'ListFinancingApplications',
+      'ListFinancingLineWithdrawals',
+      'ListFinancingLines',
       'ListPaymentInstruments',
       'ListPaymentPreferences',
+      'ListPaymentProgramOptions',
+      'ListPaymentProgramStatus',
       'ListTagsForResource'
-    ],
-    Read: [
-      'GetPaymentStatus'
     ],
     Tagging: [
       'TagResource',

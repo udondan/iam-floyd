@@ -176,6 +176,27 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Direct Connect gateway attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifDirectConnectGatewayArn()
+   * - .ifEdgeLocations()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   * - networkmanager:TagResource
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDirectConnectGatewayAttachment.html
+   */
+  public toCreateDirectConnectGatewayAttachment() {
+    return this.to('CreateDirectConnectGatewayAttachment');
+  }
+
+  /**
    * Grants permission to create a new global network
    *
    * Access Level: Write
@@ -644,6 +665,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a Direct Connect gateway attachment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetDirectConnectGatewayAttachment.html
+   */
+  public toGetDirectConnectGatewayAttachment() {
+    return this.to('GetDirectConnectGatewayAttachment');
+  }
+
+  /**
    * Grants permission to describe link associations
    *
    * Access Level: List
@@ -1049,6 +1081,25 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a Direct Connect gateway attachment
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifEdgeLocations()
+   *
+   * Dependent actions:
+   * - ec2:DescribeRegions
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateDirectConnectGatewayAttachment.html
+   */
+  public toUpdateDirectConnectGatewayAttachment() {
+    return this.to('UpdateDirectConnectGatewayAttachment');
+  }
+
+  /**
    * Grants permission to update a global network
    *
    * Access Level: Write
@@ -1123,6 +1174,7 @@ export class Networkmanager extends PolicyStatement {
       'CreateConnection',
       'CreateCoreNetwork',
       'CreateDevice',
+      'CreateDirectConnectGatewayAttachment',
       'CreateGlobalNetwork',
       'CreateLink',
       'CreateSite',
@@ -1157,6 +1209,7 @@ export class Networkmanager extends PolicyStatement {
       'UpdateConnection',
       'UpdateCoreNetwork',
       'UpdateDevice',
+      'UpdateDirectConnectGatewayAttachment',
       'UpdateGlobalNetwork',
       'UpdateLink',
       'UpdateNetworkResourceMetadata',
@@ -1188,6 +1241,7 @@ export class Networkmanager extends PolicyStatement {
       'GetCoreNetworkChangeEvents',
       'GetCoreNetworkChangeSet',
       'GetCoreNetworkPolicy',
+      'GetDirectConnectGatewayAttachment',
       'GetNetworkResourceCounts',
       'GetNetworkResourceRelationships',
       'GetNetworkResources',
@@ -1366,6 +1420,7 @@ export class Networkmanager extends PolicyStatement {
    * - .toCreateConnection()
    * - .toCreateCoreNetwork()
    * - .toCreateDevice()
+   * - .toCreateDirectConnectGatewayAttachment()
    * - .toCreateGlobalNetwork()
    * - .toCreateLink()
    * - .toCreateSite()
@@ -1374,6 +1429,7 @@ export class Networkmanager extends PolicyStatement {
    * - .toCreateTransitGatewayRouteTableAttachment()
    * - .toCreateVpcAttachment()
    * - .toTagResource()
+   * - .toUpdateDirectConnectGatewayAttachment()
    * - .toUpdateVpcAttachment()
    *
    * @param tagKey The tag key to check
@@ -1423,6 +1479,7 @@ export class Networkmanager extends PolicyStatement {
    * - .toCreateConnection()
    * - .toCreateCoreNetwork()
    * - .toCreateDevice()
+   * - .toCreateDirectConnectGatewayAttachment()
    * - .toCreateGlobalNetwork()
    * - .toCreateLink()
    * - .toCreateSite()
@@ -1432,6 +1489,7 @@ export class Networkmanager extends PolicyStatement {
    * - .toCreateVpcAttachment()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateDirectConnectGatewayAttachment()
    * - .toUpdateVpcAttachment()
    *
    * @param value The value(s) to check
@@ -1455,6 +1513,37 @@ export class Networkmanager extends PolicyStatement {
    */
   public ifCgwArn(value: string | string[], operator?: Operator | string) {
     return this.if(`cgwArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by which Direct Connect gateway can be used to a create/update attachment
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateDirectConnectGatewayAttachment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDirectConnectGatewayArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`directConnectGatewayArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by which edge locations can be added or removed from a Direct Connect gateway attachment
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateDirectConnectGatewayAttachment()
+   * - .toUpdateDirectConnectGatewayAttachment()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEdgeLocations(value: string | string[], operator?: Operator | string) {
+    return this.if(`edgeLocations`, value, operator ?? 'StringLike');
   }
 
   /**

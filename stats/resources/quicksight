@@ -3,7 +3,9 @@ quicksight:analysis
 quicksight:assetBundleExportJob
 quicksight:assetBundleImportJob
 quicksight:assignment
+quicksight:brand
 quicksight:customization
+quicksight:custompermissions
 quicksight:dashboard
 quicksight:dashboardSnapshotJob
 quicksight:dataset

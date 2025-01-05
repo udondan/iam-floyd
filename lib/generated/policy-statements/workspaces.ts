@@ -622,7 +622,7 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesPools.html
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesPoolSessions.html
    */
   public toDescribeWorkspacesPoolSessions() {
     return this.to('DescribeWorkspacesPoolSessions');

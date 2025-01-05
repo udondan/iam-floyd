@@ -95,6 +95,10 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html
    */
   public toCreateTable() {
@@ -381,6 +385,17 @@ export class Dynamodb extends PolicyStatement {
    */
   public toExportTableToPointInTime() {
     return this.to('ExportTableToPointInTime');
+  }
+
+  /**
+   * Grants permission to view the status of Attribute Based Access Control for the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/abac-enable-ddb.html
+   */
+  public toGetAbacStatus() {
+    return this.to('GetAbacStatus');
   }
 
   /**
@@ -743,6 +758,10 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -754,10 +773,24 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the status of Attribute Based Access Control for the account
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/abac-enable-ddb.html
+   */
+  public toUpdateAbacStatus() {
+    return this.to('UpdateAbacStatus');
   }
 
   /**
@@ -897,6 +930,7 @@ export class Dynamodb extends PolicyStatement {
       'DescribeTable',
       'DescribeTableReplicaAutoScaling',
       'DescribeTimeToLive',
+      'GetAbacStatus',
       'GetItem',
       'GetRecords',
       'GetResourcePolicy',
@@ -943,7 +977,8 @@ export class Dynamodb extends PolicyStatement {
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
-      'PutResourcePolicy'
+      'PutResourcePolicy',
+      'UpdateAbacStatus'
     ],
     List: [
       'ListBackups',
@@ -969,6 +1004,9 @@ export class Dynamodb extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIndex(tableName: string, indexName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/index/${ indexName }`);
@@ -998,6 +1036,9 @@ export class Dynamodb extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTable(tableName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }`);
@@ -1059,6 +1100,57 @@ export class Dynamodb extends PolicyStatement {
    */
   public onImport(tableName: string, importName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/import/${ importName }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateTable()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - index
+   * - table
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateTable()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**

@@ -39,4 +39,5 @@ aps:RemoteWrite;Write
 aps:TagResource;Tagging
 aps:UntagResource;Tagging
 aps:UpdateLoggingConfiguration;Write
+aps:UpdateScraper;Write
 aps:UpdateWorkspaceAlias;Write

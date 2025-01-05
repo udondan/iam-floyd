@@ -402,6 +402,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a branding settings for managed login and associate it with an app client
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateManagedLoginBranding.html
+   */
+  public toCreateManagedLoginBranding() {
+    return this.to('CreateManagedLoginBranding');
+  }
+
+  /**
    * Grants permission to create and configure scopes for OAuth 2.0 resource servers
    *
    * Access Level: Write
@@ -484,6 +495,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the managed login branding style for any app client
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html
+   */
+  public toDeleteManagedLoginBranding() {
+    return this.to('DeleteManagedLoginBranding');
+  }
+
+  /**
    * Grants permission to delete any OAuth 2.0 resource server from user pools
    *
    * Access Level: Write
@@ -558,6 +580,28 @@ export class CognitoIdp extends PolicyStatement {
    */
   public toDescribeIdentityProvider() {
     return this.to('DescribeIdentityProvider');
+  }
+
+  /**
+   * Grants permission to get the detailed information about the branding style of managed login
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBranding.html
+   */
+  public toDescribeManagedLoginBranding() {
+    return this.to('DescribeManagedLoginBranding');
+  }
+
+  /**
+   * Grants permission to get the detailed information about the branding style of managed login associated with an appclient
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBrandingByClient.html
+   */
+  public toDescribeManagedLoginBrandingByClient() {
+    return this.to('DescribeManagedLoginBrandingByClient');
   }
 
   /**
@@ -1123,6 +1167,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the branding settings of a managed login
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateManagedLoginBranding.html
+   */
+  public toUpdateManagedLoginBranding() {
+    return this.to('UpdateManagedLoginBranding');
+  }
+
+  /**
    * Grants permission to update the configuration of any OAuth 2.0 resource server
    *
    * Access Level: Write
@@ -1235,6 +1290,7 @@ export class CognitoIdp extends PolicyStatement {
       'ConfirmSignUp',
       'CreateGroup',
       'CreateIdentityProvider',
+      'CreateManagedLoginBranding',
       'CreateResourceServer',
       'CreateUserImportJob',
       'CreateUserPool',
@@ -1242,6 +1298,7 @@ export class CognitoIdp extends PolicyStatement {
       'CreateUserPoolDomain',
       'DeleteGroup',
       'DeleteIdentityProvider',
+      'DeleteManagedLoginBranding',
       'DeleteResourceServer',
       'DeleteUser',
       'DeleteUserAttributes',
@@ -1269,6 +1326,7 @@ export class CognitoIdp extends PolicyStatement {
       'UpdateDeviceStatus',
       'UpdateGroup',
       'UpdateIdentityProvider',
+      'UpdateManagedLoginBranding',
       'UpdateResourceServer',
       'UpdateUserAttributes',
       'UpdateUserPool',
@@ -1282,6 +1340,8 @@ export class CognitoIdp extends PolicyStatement {
       'AdminGetUser',
       'AdminListUserAuthEvents',
       'DescribeIdentityProvider',
+      'DescribeManagedLoginBranding',
+      'DescribeManagedLoginBrandingByClient',
       'DescribeResourceServer',
       'DescribeRiskConfiguration',
       'DescribeUserImportJob',

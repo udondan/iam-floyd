@@ -7,6 +7,7 @@ s3:ExistingJobPriority
 s3:ExistingObjectTag/<key>
 s3:InventoryAccessibleOptionalFields
 s3:JobSuspendedCause
+s3:ObjectCreationOperation
 s3:RequestJobOperation
 s3:RequestJobPriority
 s3:RequestObjectTag/<key>
@@ -19,6 +20,8 @@ s3:TlsVersion
 s3:authType
 s3:delimiter
 s3:destinationRegion
+s3:if-match
+s3:if-none-match
 s3:isReplicationPauseRequest
 s3:locationconstraint
 s3:max-keys

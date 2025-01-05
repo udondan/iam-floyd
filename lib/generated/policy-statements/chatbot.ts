@@ -19,14 +19,36 @@ export class Chatbot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a resource with a configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_AssociateToConfiguration.html
+   */
+  public toAssociateToConfiguration() {
+    return this.to('AssociateToConfiguration');
+  }
+
+  /**
    * Grants permission to create an AWS Chatbot Chime Webhook Configuration
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateChimeWebhookConfiguration.html
    */
   public toCreateChimeWebhookConfiguration() {
     return this.to('CreateChimeWebhookConfiguration');
+  }
+
+  /**
+   * Grants permission to create a custom action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateCustomAction.html
+   */
+  public toCreateCustomAction() {
+    return this.to('CreateCustomAction');
   }
 
   /**
@@ -34,7 +56,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateMicrosoftTeamsChannelConfiguration.html
    */
   public toCreateMicrosoftTeamsChannelConfiguration() {
     return this.to('CreateMicrosoftTeamsChannelConfiguration');
@@ -45,7 +67,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateSlackChannelConfiguration.html
    */
   public toCreateSlackChannelConfiguration() {
     return this.to('CreateSlackChannelConfiguration');
@@ -56,10 +78,21 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteChimeWebhookConfiguration.html
    */
   public toDeleteChimeWebhookConfiguration() {
     return this.to('DeleteChimeWebhookConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a custom action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteCustomAction.html
+   */
+  public toDeleteCustomAction() {
+    return this.to('DeleteCustomAction');
   }
 
   /**
@@ -67,7 +100,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteMicrosoftTeamsChannelConfiguration.html
    */
   public toDeleteMicrosoftTeamsChannelConfiguration() {
     return this.to('DeleteMicrosoftTeamsChannelConfiguration');
@@ -78,7 +111,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteMicrosoftTeamsConfiguredTeam.html
    */
   public toDeleteMicrosoftTeamsConfiguredTeam() {
     return this.to('DeleteMicrosoftTeamsConfiguredTeam');
@@ -89,7 +122,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteMicrosoftTeamsUserIdentity.html
    */
   public toDeleteMicrosoftTeamsUserIdentity() {
     return this.to('DeleteMicrosoftTeamsUserIdentity');
@@ -100,7 +133,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteSlackChannelConfiguration.html
    */
   public toDeleteSlackChannelConfiguration() {
     return this.to('DeleteSlackChannelConfiguration');
@@ -111,7 +144,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteSlackUserIdentity.html
    */
   public toDeleteSlackUserIdentity() {
     return this.to('DeleteSlackUserIdentity');
@@ -122,7 +155,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteSlackWorkspaceAuthorization.html
    */
   public toDeleteSlackWorkspaceAuthorization() {
     return this.to('DeleteSlackWorkspaceAuthorization');
@@ -133,7 +166,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DescribeChimeWebhookConfigurations.html
    */
   public toDescribeChimeWebhookConfigurations() {
     return this.to('DescribeChimeWebhookConfigurations');
@@ -144,7 +177,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DescribeSlackChannelConfigurations.html
    */
   public toDescribeSlackChannelConfigurations() {
     return this.to('DescribeSlackChannelConfigurations');
@@ -155,7 +188,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html
    */
   public toDescribeSlackChannels() {
     return this.to('DescribeSlackChannels');
@@ -166,7 +199,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DescribeSlackUserIdentities.html
    */
   public toDescribeSlackUserIdentities() {
     return this.to('DescribeSlackUserIdentities');
@@ -177,10 +210,21 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DescribeSlackWorkspaces.html
    */
   public toDescribeSlackWorkspaces() {
     return this.to('DescribeSlackWorkspaces');
+  }
+
+  /**
+   * Grants permission to disassociate a resource from a configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DisassociateFromConfiguration.html
+   */
+  public toDisassociateFromConfiguration() {
+    return this.to('DisassociateFromConfiguration');
   }
 
   /**
@@ -188,10 +232,21 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetAccountPreferences.html
    */
   public toGetAccountPreferences() {
     return this.to('GetAccountPreferences');
+  }
+
+  /**
+   * Grants permission to get a custom action
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetCustomAction.html
+   */
+  public toGetCustomAction() {
+    return this.to('GetCustomAction');
   }
 
   /**
@@ -199,7 +254,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetMicrosoftTeamsChannelConfiguration.html
    */
   public toGetMicrosoftTeamsChannelConfiguration() {
     return this.to('GetMicrosoftTeamsChannelConfiguration');
@@ -210,7 +265,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html
    */
   public toGetMicrosoftTeamsOauthParameters() {
     return this.to('GetMicrosoftTeamsOauthParameters');
@@ -221,10 +276,32 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html
    */
   public toGetSlackOauthParameters() {
     return this.to('GetSlackOauthParameters');
+  }
+
+  /**
+   * Grants permission to list resources associated with a configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListAssociations.html
+   */
+  public toListAssociations() {
+    return this.to('ListAssociations');
+  }
+
+  /**
+   * Grants permission to list custom actions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListCustomActions.html
+   */
+  public toListCustomActions() {
+    return this.to('ListCustomActions');
   }
 
   /**
@@ -232,7 +309,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListMicrosoftTeamsChannelConfigurations.html
    */
   public toListMicrosoftTeamsChannelConfigurations() {
     return this.to('ListMicrosoftTeamsChannelConfigurations');
@@ -243,7 +320,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListMicrosoftTeamsConfiguredTeams.html
    */
   public toListMicrosoftTeamsConfiguredTeams() {
     return this.to('ListMicrosoftTeamsConfiguredTeams');
@@ -254,7 +331,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListMicrosoftTeamsUserIdentities.html
    */
   public toListMicrosoftTeamsUserIdentities() {
     return this.to('ListMicrosoftTeamsUserIdentities');
@@ -265,7 +342,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -276,7 +353,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html
    */
   public toRedeemMicrosoftTeamsOauthCode() {
     return this.to('RedeemMicrosoftTeamsOauthCode');
@@ -287,7 +364,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_Operations.html
    */
   public toRedeemSlackOauthCode() {
     return this.to('RedeemSlackOauthCode');
@@ -298,7 +375,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -309,7 +386,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -320,7 +397,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateAccountPreferences.html
    */
   public toUpdateAccountPreferences() {
     return this.to('UpdateAccountPreferences');
@@ -331,10 +408,21 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateChimeWebhookConfiguration.html
    */
   public toUpdateChimeWebhookConfiguration() {
     return this.to('UpdateChimeWebhookConfiguration');
+  }
+
+  /**
+   * Grants permission to update a custom action
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateCustomAction.html
+   */
+  public toUpdateCustomAction() {
+    return this.to('UpdateCustomAction');
   }
 
   /**
@@ -342,7 +430,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateMicrosoftTeamsChannelConfiguration.html
    */
   public toUpdateMicrosoftTeamsChannelConfiguration() {
     return this.to('UpdateMicrosoftTeamsChannelConfiguration');
@@ -353,7 +441,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateSlackChannelConfiguration.html
    */
   public toUpdateSlackChannelConfiguration() {
     return this.to('UpdateSlackChannelConfiguration');
@@ -361,20 +449,25 @@ export class Chatbot extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateToConfiguration',
       'CreateChimeWebhookConfiguration',
+      'CreateCustomAction',
       'CreateMicrosoftTeamsChannelConfiguration',
       'CreateSlackChannelConfiguration',
       'DeleteChimeWebhookConfiguration',
+      'DeleteCustomAction',
       'DeleteMicrosoftTeamsChannelConfiguration',
       'DeleteMicrosoftTeamsConfiguredTeam',
       'DeleteMicrosoftTeamsUserIdentity',
       'DeleteSlackChannelConfiguration',
       'DeleteSlackUserIdentity',
       'DeleteSlackWorkspaceAuthorization',
+      'DisassociateFromConfiguration',
       'RedeemMicrosoftTeamsOauthCode',
       'RedeemSlackOauthCode',
       'UpdateAccountPreferences',
       'UpdateChimeWebhookConfiguration',
+      'UpdateCustomAction',
       'UpdateMicrosoftTeamsChannelConfiguration',
       'UpdateSlackChannelConfiguration'
     ],
@@ -385,13 +478,18 @@ export class Chatbot extends PolicyStatement {
       'DescribeSlackUserIdentities',
       'DescribeSlackWorkspaces',
       'GetAccountPreferences',
+      'GetCustomAction',
       'GetMicrosoftTeamsChannelConfiguration',
       'GetMicrosoftTeamsOauthParameters',
       'GetSlackOauthParameters',
+      'ListAssociations',
       'ListMicrosoftTeamsChannelConfigurations',
       'ListMicrosoftTeamsConfiguredTeams',
       'ListMicrosoftTeamsUserIdentities',
       'ListTagsForResource'
+    ],
+    List: [
+      'ListCustomActions'
     ],
     Tagging: [
       'TagResource',
@@ -411,5 +509,18 @@ export class Chatbot extends PolicyStatement {
    */
   public onChatbotConfiguration(configurationType: string, chatbotConfigurationName: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:chatbot::${ account ?? this.defaultAccount }:chat-configuration/${ configurationType }/${ chatbotConfigurationName }`);
+  }
+
+  /**
+   * Adds a resource of type custom-action to the statement
+   *
+   * https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html
+   *
+   * @param actionName - Identifier for the actionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCustomAction(actionName: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chatbot::${ account ?? this.defaultAccount }:custom-action/${ actionName }`);
   }
 }

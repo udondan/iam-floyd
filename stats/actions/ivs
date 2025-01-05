@@ -3,6 +3,7 @@ ivs:BatchGetStreamKey;Read
 ivs:BatchStartViewerSessionRevocation;Write
 ivs:CreateChannel;Write
 ivs:CreateEncoderConfiguration;Write
+ivs:CreateIngestConfiguration;Write
 ivs:CreateParticipantToken;Write
 ivs:CreatePlaybackRestrictionPolicy;Write
 ivs:CreateRecordingConfiguration;Write
@@ -11,6 +12,7 @@ ivs:CreateStorageConfiguration;Write
 ivs:CreateStreamKey;Write
 ivs:DeleteChannel;Write
 ivs:DeleteEncoderConfiguration;Write
+ivs:DeleteIngestConfiguration;Write
 ivs:DeletePlaybackKeyPair;Write
 ivs:DeletePlaybackRestrictionPolicy;Write
 ivs:DeletePublicKey;Write
@@ -22,6 +24,7 @@ ivs:DisconnectParticipant;Write
 ivs:GetChannel;Read
 ivs:GetComposition;Read
 ivs:GetEncoderConfiguration;Read
+ivs:GetIngestConfiguration;Read
 ivs:GetParticipant;Read
 ivs:GetPlaybackKeyPair;Read
 ivs:GetPlaybackRestrictionPolicy;Read
@@ -38,6 +41,7 @@ ivs:ImportPublicKey;Write
 ivs:ListChannels;List
 ivs:ListCompositions;List
 ivs:ListEncoderConfigurations;List
+ivs:ListIngestConfigurations;List
 ivs:ListParticipantEvents;List
 ivs:ListParticipants;List
 ivs:ListPlaybackKeyPairs;List
@@ -59,5 +63,6 @@ ivs:StopStream;Write
 ivs:TagResource;Tagging
 ivs:UntagResource;Tagging
 ivs:UpdateChannel;Write
+ivs:UpdateIngestConfiguration;Write
 ivs:UpdatePlaybackRestrictionPolicy;Write
 ivs:UpdateStage;Write

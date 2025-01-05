@@ -19,6 +19,17 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure vended log delivery for Mail Manager resources
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/ses/latest/dg/eb-policies.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to create an addon instance
    *
    * Access Level: Write
@@ -636,6 +647,9 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Write: [
       'CreateAddonInstance',
       'CreateAddonSubscription',

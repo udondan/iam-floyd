@@ -4,6 +4,7 @@ iot:cacert
 iot:cert
 iot:certificateprovider
 iot:client
+iot:command
 iot:custommetric
 iot:destination
 iot:dimension

@@ -1,4 +1,6 @@
+connect:AssignmentType
 connect:AttributeType
+connect:FlowType
 connect:InstanceId
 connect:MonitorCapabilities
 connect:RequestTag/${TagKey}
@@ -6,5 +8,6 @@ connect:ResourceTag/${TagKey}
 connect:SearchContactsByContactAnalysis
 connect:SearchTag/${TagKey}
 connect:StorageResourceType
+connect:Subtype
 connect:TagKeys
 connect:UserArn

@@ -3,6 +3,7 @@ redshift-data:CancelStatement;Write
 redshift-data:DescribeStatement;Read
 redshift-data:DescribeTable;Read
 redshift-data:ExecuteStatement;Write
+redshift-data:GetStagingBucketLocation;Read
 redshift-data:GetStatementResult;Read
 redshift-data:ListDatabases;Read
 redshift-data:ListSchemas;Read

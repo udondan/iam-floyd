@@ -19,6 +19,15 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to Glue to continuously validate that the target Arn can receive data replicated from the source ARN
+   *
+   * Access Level: Write
+   */
+  public toAuthorizeInboundIntegration() {
+    return this.to('AuthorizeInboundIntegration');
+  }
+
+  /**
    * Grants permission to create one or more partitions
    *
    * Access Level: Write
@@ -187,17 +196,6 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to annotate datapoints over time for a specific data quality statistic
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-BatchPutDataQualityStatisticAnnotation
-   */
-  public toBatchPutDataQualityStatisticAnnotation() {
-    return this.to('BatchPutDataQualityStatisticAnnotation');
-  }
-
-  /**
    * Grants permission to stop one or more job runs for a job
    *
    * Access Level: Write
@@ -290,6 +288,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a catalog
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
+   */
+  public toCreateCatalog() {
+    return this.to('CreateCatalog');
+  }
+
+  /**
    * Grants permission to create a classifier
    *
    * Access Level: Write
@@ -298,6 +307,17 @@ export class Glue extends PolicyStatement {
    */
   public toCreateClassifier() {
     return this.to('CreateClassifier');
+  }
+
+  /**
+   * Grants permission to create settings for a column statistics task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-CreateColumnStatisticsTaskSettings
+   */
+  public toCreateColumnStatisticsTaskSettings() {
+    return this.to('CreateColumnStatisticsTaskSettings');
   }
 
   /**
@@ -384,6 +404,56 @@ export class Glue extends PolicyStatement {
    */
   public toCreateDevEndpoint() {
     return this.to('CreateDevEndpoint');
+  }
+
+  /**
+   * Grants permission to the source principal to create an inbound integration for data to be replicated from the source into the target
+   *
+   * Access Level: Write
+   */
+  public toCreateInboundIntegration() {
+    return this.to('CreateInboundIntegration');
+  }
+
+  /**
+   * Grants permission to create an integration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-CreateIntegration
+   */
+  public toCreateIntegration() {
+    return this.to('CreateIntegration');
+  }
+
+  /**
+   * Grants permission to create integration resource property
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-CreateIntegrationResourceProperty
+   */
+  public toCreateIntegrationResourceProperty() {
+    return this.to('CreateIntegrationResourceProperty');
+  }
+
+  /**
+   * Grants permission to create integration table properties
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-CreateIntegrationTableProperties
+   */
+  public toCreateIntegrationTableProperties() {
+    return this.to('CreateIntegrationTableProperties');
   }
 
   /**
@@ -604,6 +674,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a catalog
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
+   */
+  public toDeleteCatalog() {
+    return this.to('DeleteCatalog');
+  }
+
+  /**
    * Grants permission to delete a classifier
    *
    * Access Level: Write
@@ -634,6 +715,17 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteColumnStatisticsForTable() {
     return this.to('DeleteColumnStatisticsForTable');
+  }
+
+  /**
+   * Grants permission to delete settings for a column statistics task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-DeleteColumnStatisticsTaskSettings
+   */
+  public toDeleteColumnStatisticsTaskSettings() {
+    return this.to('DeleteColumnStatisticsTaskSettings');
   }
 
   /**
@@ -700,6 +792,31 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteDevEndpoint() {
     return this.to('DeleteDevEndpoint');
+  }
+
+  /**
+   * Grants permission to delete an integration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DeleteIntegration
+   */
+  public toDeleteIntegration() {
+    return this.to('DeleteIntegration');
+  }
+
+  /**
+   * Grants permission to delete integration table properties
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DeleteIntegrationTableProperties
+   */
+  public toDeleteIntegrationTableProperties() {
+    return this.to('DeleteIntegrationTableProperties');
   }
 
   /**
@@ -926,6 +1043,31 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the inbound integrations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DescribeInboundIntegrations
+   */
+  public toDescribeInboundIntegrations() {
+    return this.to('DescribeInboundIntegrations');
+  }
+
+  /**
+   * Grants permission to describe zero-ETL integrations
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DescribeIntegrations
+   */
+  public toDescribeIntegrations() {
+    return this.to('DescribeIntegrations');
+  }
+
+  /**
    * Grants permission to retrieve a blueprint
    *
    * Access Level: Read
@@ -959,6 +1101,20 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a catalog
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifEnabledForRedshiftAutoDiscovery()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
+   */
+  public toGetCatalog() {
+    return this.to('GetCatalog');
+  }
+
+  /**
    * Grants permission to retrieve the catalog import status
    *
    * Access Level: Read
@@ -967,6 +1123,20 @@ export class Glue extends PolicyStatement {
    */
   public toGetCatalogImportStatus() {
     return this.to('GetCatalogImportStatus');
+  }
+
+  /**
+   * Grants permission to retrieve all catalogs
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifEnabledForRedshiftAutoDiscovery()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
+   */
+  public toGetCatalogs() {
+    return this.to('GetCatalogs');
   }
 
   /**
@@ -1033,6 +1203,17 @@ export class Glue extends PolicyStatement {
    */
   public toGetColumnStatisticsTaskRuns() {
     return this.to('GetColumnStatisticsTaskRuns');
+  }
+
+  /**
+   * Grants permission to retrieve settings for a column statistics task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-GetColumnStatisticsTaskSettings
+   */
+  public toGetColumnStatisticsTaskSettings() {
+    return this.to('GetColumnStatisticsTaskSettings');
   }
 
   /**
@@ -1113,6 +1294,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate presigned url for accessing spark live UI
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html
+   */
+  public toGetDashboardUrl() {
+    return this.to('GetDashboardUrl');
+  }
+
+  /**
    * Grants permission to retrieve catalog encryption settings
    *
    * Access Level: Read
@@ -1135,7 +1327,7 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the retraining status of the model
+   * Grants permission to retrieve the training status of the prediction model for a statistic
    *
    * Access Level: Read
    *
@@ -1146,7 +1338,7 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the latest predictions for a statistic from the model
+   * Grants permission to retrieve the predictions for a statistic from the latest model
    *
    * Access Level: Read
    *
@@ -1256,6 +1448,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to preview entity records in glue
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toGetEntityRecords() {
+    return this.to('GetEntityRecords');
+  }
+
+  /**
    * Grants permission to get environment details for SparkUI
    *
    * Access Level: Permissions management
@@ -1286,6 +1489,39 @@ export class Glue extends PolicyStatement {
    */
   public toGetExecutorsThreads() {
     return this.to('GetExecutorsThreads');
+  }
+
+  /**
+   * Transforms a directed acyclic graph (DAG) into code
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetGeneratedCode
+   */
+  public toGetGeneratedCode() {
+    return this.to('GetGeneratedCode');
+  }
+
+  /**
+   * Grants permission to retrieve the integration resource property
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-GetIntegrationResourceProperty
+   */
+  public toGetIntegrationResourceProperty() {
+    return this.to('GetIntegrationResourceProperty');
+  }
+
+  /**
+   * Grants permission to retrieve the integration table properties
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-GetIntegrationTableProperties
+   */
+  public toGetIntegrationTableProperties() {
+    return this.to('GetIntegrationTableProperties');
   }
 
   /**
@@ -1330,6 +1566,17 @@ export class Glue extends PolicyStatement {
    */
   public toGetJobRuns() {
     return this.to('GetJobRuns');
+  }
+
+  /**
+   * Grants permission to retrieve an upgrade analysis for a job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-upgrade-analysis.html#aws-glue-api-upgrade-analysis-GetJobUpgradeAnalysis
+   */
+  public toGetJobUpgradeAnalysis() {
+    return this.to('GetJobUpgradeAnalysis');
   }
 
   /**
@@ -1484,6 +1731,17 @@ export class Glue extends PolicyStatement {
    */
   public toGetQuery() {
     return this.to('GetQuery');
+  }
+
+  /**
+   * Grants permission to get the result of a Data Preparation Recipe statement
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/setting-up.html#getting-started-min-privs
+   */
+  public toGetRecipeAction() {
+    return this.to('GetRecipeAction');
   }
 
   /**
@@ -2007,28 +2265,6 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve annotations for a data quality statistic
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityStatisticAnnotations
-   */
-  public toListDataQualityStatisticAnnotations() {
-    return this.to('ListDataQualityStatisticAnnotations');
-  }
-
-  /**
-   * Grants permission to retrieve data quality statistics and annotations associated with it
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-ListDataQualityStatistics
-   */
-  public toListDataQualityStatistics() {
-    return this.to('ListDataQualityStatistics');
-  }
-
-  /**
    * Grants permission to retrieve all development endpoints
    *
    * Access Level: List
@@ -2048,6 +2284,17 @@ export class Glue extends PolicyStatement {
    */
   public toListEntities() {
     return this.to('ListEntities');
+  }
+
+  /**
+   * Grants permission to list upgrade analyses for a job
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-upgrade-analysis.html#aws-glue-api-upgrade-analysis-ListJobUpgradeAnalyses
+   */
+  public toListJobUpgradeAnalyses() {
+    return this.to('ListJobUpgradeAnalyses');
   }
 
   /**
@@ -2175,6 +2422,20 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a zero-ETL integration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-ModifyIntegration
+   */
+  public toModifyIntegration() {
+    return this.to('ModifyIntegration');
+  }
+
+  /**
    * Grants permission to notify an event to the event-driven workflow
    *
    * Access Level: Write
@@ -2227,6 +2488,17 @@ export class Glue extends PolicyStatement {
    */
   public toPutDataQualityProfileAnnotation() {
     return this.to('PutDataQualityProfileAnnotation');
+  }
+
+  /**
+   * Grants permission to annotate datapoints over time for a specific data quality statistic
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-data-quality-api.html#aws-glue-api-data-quality-api-BatchPutDataQualityStatisticAnnotation
+   */
+  public toPutDataQualityStatisticAnnotation() {
+    return this.to('PutDataQualityStatisticAnnotation');
   }
 
   /**
@@ -2384,6 +2656,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to execute a Data Preparation Recipe statement in data preview
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/ug/setting-up.html#getting-started-min-privs
+   */
+  public toSendRecipeAction() {
+    return this.to('SendRecipeAction');
+  }
+
+  /**
    * Grants permission to start running a blueprint
    *
    * Access Level: Write
@@ -2407,6 +2690,17 @@ export class Glue extends PolicyStatement {
    */
   public toStartColumnStatisticsTaskRun() {
     return this.to('StartColumnStatisticsTaskRun');
+  }
+
+  /**
+   * Grants permission to start a column statistics task run schedule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-StartColumnStatisticsTaskRunSchedule
+   */
+  public toStartColumnStatisticsTaskRunSchedule() {
+    return this.to('StartColumnStatisticsTaskRunSchedule');
   }
 
   /**
@@ -2498,6 +2792,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start running upgrade analysis for a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-upgrade-analysis.html#aws-glue-api-upgrade-analysis-StartJobUpgradeAnalysis
+   */
+  public toStartJobUpgradeAnalysis() {
+    return this.to('StartJobUpgradeAnalysis');
+  }
+
+  /**
    * Grants permission to start an Evaluation ML Task Run
    *
    * Access Level: Write
@@ -2564,6 +2869,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop a column statistics task run schedule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-StopColumnStatisticsTaskRunSchedule
+   */
+  public toStopColumnStatisticsTaskRunSchedule() {
+    return this.to('StopColumnStatisticsTaskRunSchedule');
+  }
+
+  /**
    * Grants permission to stop a running crawler
    *
    * Access Level: Write
@@ -2583,6 +2899,17 @@ export class Glue extends PolicyStatement {
    */
   public toStopCrawlerSchedule() {
     return this.to('StopCrawlerSchedule');
+  }
+
+  /**
+   * Grants permission to stop an on-going upgrade analysis for a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-upgrade-analysis.html#aws-glue-api-upgrade-analysis-StopJobUpgradeAnalysis
+   */
+  public toStopJobUpgradeAnalysis() {
+    return this.to('StopJobUpgradeAnalysis');
   }
 
   /**
@@ -2681,6 +3008,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a catalog
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
+   */
+  public toUpdateCatalog() {
+    return this.to('UpdateCatalog');
+  }
+
+  /**
    * Grants permission to update a classifier
    *
    * Access Level: Write
@@ -2711,6 +3049,17 @@ export class Glue extends PolicyStatement {
    */
   public toUpdateColumnStatisticsForTable() {
     return this.to('UpdateColumnStatisticsForTable');
+  }
+
+  /**
+   * Grants permission to update settings for a column statistics task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-column-statistics.html#aws-glue-api-crawler-column-statistics-UpdateColumnStatisticsTaskSettings
+   */
+  public toUpdateColumnStatisticsTaskSettings() {
+    return this.to('UpdateColumnStatisticsTaskSettings');
   }
 
   /**
@@ -2777,6 +3126,28 @@ export class Glue extends PolicyStatement {
    */
   public toUpdateDevEndpoint() {
     return this.to('UpdateDevEndpoint');
+  }
+
+  /**
+   * Grants permission to update the integration resource property
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-UpdateIntegrationResourceProperty
+   */
+  public toUpdateIntegrationResourceProperty() {
+    return this.to('UpdateIntegrationResourceProperty');
+  }
+
+  /**
+   * Grants permission to update the integration table properties
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-UpdateIntegrationTableProperties
+   */
+  public toUpdateIntegrationTableProperties() {
+    return this.to('UpdateIntegrationTableProperties');
   }
 
   /**
@@ -2931,6 +3302,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to upgrade a job to the latest version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-upgrade-analysis.html#aws-glue-api-upgrade-analysis-UpgradeJob
+   */
+  public toUpgradeJob() {
+    return this.to('UpgradeJob');
+  }
+
+  /**
    * Grants permission to use Glue Studio and access its internal APIs
    *
    * Access Level: Permissions management
@@ -2954,12 +3336,12 @@ export class Glue extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AuthorizeInboundIntegration',
       'BatchCreatePartition',
       'BatchDeleteConnection',
       'BatchDeletePartition',
       'BatchDeleteTable',
       'BatchDeleteTableVersion',
-      'BatchPutDataQualityStatisticAnnotation',
       'BatchStopJobRun',
       'BatchUpdatePartition',
       'CancelDataQualityRuleRecommendationRun',
@@ -2967,13 +3349,19 @@ export class Glue extends PolicyStatement {
       'CancelMLTaskRun',
       'CancelStatement',
       'CreateBlueprint',
+      'CreateCatalog',
       'CreateClassifier',
+      'CreateColumnStatisticsTaskSettings',
       'CreateConnection',
       'CreateCrawler',
       'CreateCustomEntityType',
       'CreateDataQualityRuleset',
       'CreateDatabase',
       'CreateDevEndpoint',
+      'CreateInboundIntegration',
+      'CreateIntegration',
+      'CreateIntegrationResourceProperty',
+      'CreateIntegrationTableProperties',
       'CreateJob',
       'CreateMLTransform',
       'CreatePartition',
@@ -2990,15 +3378,19 @@ export class Glue extends PolicyStatement {
       'CreateUserDefinedFunction',
       'CreateWorkflow',
       'DeleteBlueprint',
+      'DeleteCatalog',
       'DeleteClassifier',
       'DeleteColumnStatisticsForPartition',
       'DeleteColumnStatisticsForTable',
+      'DeleteColumnStatisticsTaskSettings',
       'DeleteConnection',
       'DeleteCrawler',
       'DeleteCustomEntityType',
       'DeleteDataQualityRuleset',
       'DeleteDatabase',
       'DeleteDevEndpoint',
+      'DeleteIntegration',
+      'DeleteIntegrationTableProperties',
       'DeleteJob',
       'DeleteMLTransform',
       'DeletePartition',
@@ -3016,11 +3408,13 @@ export class Glue extends PolicyStatement {
       'DeleteUserDefinedFunction',
       'DeleteWorkflow',
       'ImportCatalogToGlue',
+      'ModifyIntegration',
       'NotifyEvent',
       'PassConnection',
       'PublishDataQuality',
       'PutDataCatalogEncryptionSettings',
       'PutDataQualityProfileAnnotation',
+      'PutDataQualityStatisticAnnotation',
       'PutSchemaVersionMetadata',
       'PutWorkflowRunProperties',
       'RegisterSchemaVersion',
@@ -3031,6 +3425,7 @@ export class Glue extends PolicyStatement {
       'SendFeedback',
       'StartBlueprintRun',
       'StartColumnStatisticsTaskRun',
+      'StartColumnStatisticsTaskRunSchedule',
       'StartCompletion',
       'StartCrawler',
       'StartCrawlerSchedule',
@@ -3039,26 +3434,33 @@ export class Glue extends PolicyStatement {
       'StartExportLabelsTaskRun',
       'StartImportLabelsTaskRun',
       'StartJobRun',
+      'StartJobUpgradeAnalysis',
       'StartMLEvaluationTaskRun',
       'StartMLLabelingSetGenerationTaskRun',
       'StartTrigger',
       'StartWorkflowRun',
       'StopColumnStatisticsTaskRun',
+      'StopColumnStatisticsTaskRunSchedule',
       'StopCrawler',
       'StopCrawlerSchedule',
+      'StopJobUpgradeAnalysis',
       'StopSession',
       'StopTrigger',
       'StopWorkflowRun',
       'UpdateBlueprint',
+      'UpdateCatalog',
       'UpdateClassifier',
       'UpdateColumnStatisticsForPartition',
       'UpdateColumnStatisticsForTable',
+      'UpdateColumnStatisticsTaskSettings',
       'UpdateConnection',
       'UpdateCrawler',
       'UpdateCrawlerSchedule',
       'UpdateDataQualityRuleset',
       'UpdateDatabase',
       'UpdateDevEndpoint',
+      'UpdateIntegrationResourceProperty',
+      'UpdateIntegrationTableProperties',
       'UpdateJob',
       'UpdateJobFromSourceControl',
       'UpdateMLTransform',
@@ -3072,6 +3474,7 @@ export class Glue extends PolicyStatement {
       'UpdateUsageProfile',
       'UpdateUserDefinedFunction',
       'UpdateWorkflow',
+      'UpgradeJob',
       'UseMLTransforms'
     ],
     Read: [
@@ -3088,13 +3491,16 @@ export class Glue extends PolicyStatement {
       'GetBlueprint',
       'GetBlueprintRun',
       'GetBlueprintRuns',
+      'GetCatalog',
       'GetCatalogImportStatus',
+      'GetCatalogs',
       'GetClassifier',
       'GetClassifiers',
       'GetColumnStatisticsForPartition',
       'GetColumnStatisticsForTable',
       'GetColumnStatisticsTaskRun',
       'GetColumnStatisticsTaskRuns',
+      'GetColumnStatisticsTaskSettings',
       'GetCompletion',
       'GetConnection',
       'GetConnections',
@@ -3102,6 +3508,7 @@ export class Glue extends PolicyStatement {
       'GetCrawlerMetrics',
       'GetCrawlers',
       'GetCustomEntityType',
+      'GetDashboardUrl',
       'GetDataCatalogEncryptionSettings',
       'GetDataQualityModel',
       'GetDataQualityModelResult',
@@ -3114,10 +3521,15 @@ export class Glue extends PolicyStatement {
       'GetDataflowGraph',
       'GetDevEndpoint',
       'GetDevEndpoints',
+      'GetEntityRecords',
+      'GetGeneratedCode',
+      'GetIntegrationResourceProperty',
+      'GetIntegrationTableProperties',
       'GetJob',
       'GetJobBookmark',
       'GetJobRun',
       'GetJobRuns',
+      'GetJobUpgradeAnalysis',
       'GetJobs',
       'GetMLTaskRun',
       'GetMLTransform',
@@ -3169,6 +3581,7 @@ export class Glue extends PolicyStatement {
       'GetNotebookInstanceStatus',
       'GetQueries',
       'GetQuery',
+      'GetRecipeAction',
       'GetStage',
       'GetStageAttempt',
       'GetStageAttemptTaskList',
@@ -3185,12 +3598,15 @@ export class Glue extends PolicyStatement {
       'RefreshOAuth2Tokens',
       'RequestLogParsing',
       'RunDataPreviewStatement',
+      'SendRecipeAction',
       'StartNotebook',
       'TerminateNotebook',
       'TestConnection',
       'UseGlueStudio'
     ],
     List: [
+      'DescribeInboundIntegrations',
+      'DescribeIntegrations',
       'GetMLTaskRuns',
       'GetMLTransforms',
       'ListBlueprints',
@@ -3201,9 +3617,8 @@ export class Glue extends PolicyStatement {
       'ListDataQualityRuleRecommendationRuns',
       'ListDataQualityRulesetEvaluationRuns',
       'ListDataQualityRulesets',
-      'ListDataQualityStatisticAnnotations',
-      'ListDataQualityStatistics',
       'ListDevEndpoints',
+      'ListJobUpgradeAnalyses',
       'ListJobs',
       'ListMLTransforms',
       'ListRegistries',
@@ -3224,7 +3639,7 @@ export class Glue extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type catalog to the statement
+   * Adds a resource of type rootcatalog to the statement
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
    *
@@ -3232,8 +3647,22 @@ export class Glue extends PolicyStatement {
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onCatalog(account?: string, region?: string, partition?: string) {
+  public onRootcatalog(account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog`);
+  }
+
+  /**
+   * Adds a resource of type catalog to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param catalogName - Identifier for the catalogName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCatalog(catalogName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalogName }`);
   }
 
   /**
@@ -3549,6 +3978,23 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type integration to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param integrationId - Identifier for the integrationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntegration(integrationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integration:${ integrationId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -3560,6 +4006,7 @@ export class Glue extends PolicyStatement {
    * - .toCreateCustomEntityType()
    * - .toCreateDataQualityRuleset()
    * - .toCreateDevEndpoint()
+   * - .toCreateIntegration()
    * - .toCreateJob()
    * - .toCreateMLTransform()
    * - .toCreateRegistry()
@@ -3583,6 +4030,11 @@ export class Glue extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toDeleteIntegration()
+   * - .toDescribeIntegrations()
+   * - .toModifyIntegration()
+   *
    * Applies to resource types:
    * - connection
    * - devendpoint
@@ -3598,6 +4050,7 @@ export class Glue extends PolicyStatement {
    * - usageProfile
    * - dataQualityRuleset
    * - customEntityType
+   * - integration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3619,6 +4072,7 @@ export class Glue extends PolicyStatement {
    * - .toCreateCustomEntityType()
    * - .toCreateDataQualityRuleset()
    * - .toCreateDevEndpoint()
+   * - .toCreateIntegration()
    * - .toCreateJob()
    * - .toCreateMLTransform()
    * - .toCreateRegistry()
@@ -3647,6 +4101,21 @@ export class Glue extends PolicyStatement {
    */
   public ifCredentialIssuingService(value: string | string[], operator?: Operator | string) {
     return this.if(`CredentialIssuingService`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of the key configured for role's identity-based policy
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
+   *
+   * Applies to actions:
+   * - .toGetCatalog()
+   * - .toGetCatalogs()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnabledForRedshiftAutoDiscovery(value?: boolean) {
+    return this.if(`EnabledForRedshiftAutoDiscovery`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

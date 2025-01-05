@@ -1,3 +1,6 @@
 mediapackagev2:Channel
 mediapackagev2:ChannelGroup
+mediapackagev2:ChannelPolicy
+mediapackagev2:HarvestJob
 mediapackagev2:OriginEndpoint
+mediapackagev2:OriginEndpointPolicy

@@ -111,6 +111,21 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toCreateChannelPlacementGroup() {
+    return this.to('CreateChannelPlacementGroup');
+  }
+
+  /**
    * Grants permission to create a cloudwatch alarm template
    *
    * Access Level: Write
@@ -138,6 +153,21 @@ export class Medialive extends PolicyStatement {
    */
   public toCreateCloudWatchAlarmTemplateGroup() {
     return this.to('CreateCloudWatchAlarmTemplateGroup');
+  }
+
+  /**
+   * Grants permission to create a cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toCreateCluster() {
+    return this.to('CreateCluster');
   }
 
   /**
@@ -227,6 +257,47 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a network
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toCreateNetwork() {
+    return this.to('CreateNetwork');
+  }
+
+  /**
+   * Grants permission to create a node
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toCreateNode() {
+    return this.to('CreateNode');
+  }
+
+  /**
+   * Grants permission to create a node registration script
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toCreateNodeRegistrationScript() {
+    return this.to('CreateNodeRegistrationScript');
+  }
+
+  /**
    * Grants permission to create a partner input
    *
    * Access Level: Write
@@ -257,7 +328,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create tags for channels, inputs, input security groups, multiplexes, reservations, signal maps, template groups, and templates
+   * Grants permission to create tags for channels, inputs, input security groups, multiplexes, reservations, nodes, networks, clusters, channel placement groups, signal maps, template groups, and templates
    *
    * Access Level: Tagging
    *
@@ -283,6 +354,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toDeleteChannelPlacementGroup() {
+    return this.to('DeleteChannelPlacementGroup');
+  }
+
+  /**
    * Grants permission to delete a cloudwatch alarm template
    *
    * Access Level: Write
@@ -302,6 +384,17 @@ export class Medialive extends PolicyStatement {
    */
   public toDeleteCloudWatchAlarmTemplateGroup() {
     return this.to('DeleteCloudWatchAlarmTemplateGroup');
+  }
+
+  /**
+   * Grants permission to delete a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toDeleteCluster() {
+    return this.to('DeleteCluster');
   }
 
   /**
@@ -371,6 +464,28 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toDeleteNetwork() {
+    return this.to('DeleteNetwork');
+  }
+
+  /**
+   * Grants permission to delete a node
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toDeleteNode() {
+    return this.to('DeleteNode');
+  }
+
+  /**
    * Grants permission to delete an expired reservation
    *
    * Access Level: Write
@@ -404,7 +519,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, reservations, signal maps, template groups, and templates
+   * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, reservations, nodes, clusters, networks, channel placement groups, signal maps, template groups, and templates
    *
    * Access Level: Tagging
    *
@@ -437,6 +552,28 @@ export class Medialive extends PolicyStatement {
    */
   public toDescribeChannel() {
     return this.to('DescribeChannel');
+  }
+
+  /**
+   * Grants permission to describe a channel placement group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html
+   */
+  public toDescribeChannelPlacementGroup() {
+    return this.to('DescribeChannelPlacementGroup');
+  }
+
+  /**
+   * Grants permission to describe a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html
+   */
+  public toDescribeCluster() {
+    return this.to('DescribeCluster');
   }
 
   /**
@@ -503,6 +640,28 @@ export class Medialive extends PolicyStatement {
    */
   public toDescribeMultiplexProgram() {
     return this.to('DescribeMultiplexProgram');
+  }
+
+  /**
+   * Grants permission to describe a network
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-networks.html
+   */
+  public toDescribeNetwork() {
+    return this.to('DescribeNetwork');
+  }
+
+  /**
+   * Grants permission to describe a node
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-nodes-create.html
+   */
+  public toDescribeNode() {
+    return this.to('DescribeNode');
   }
 
   /**
@@ -605,6 +764,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list channel placement groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toListChannelPlacementGroups() {
+    return this.to('ListChannelPlacementGroups');
+  }
+
+  /**
    * Grants permission to list channels
    *
    * Access Level: List
@@ -635,6 +805,17 @@ export class Medialive extends PolicyStatement {
    */
   public toListCloudWatchAlarmTemplates() {
     return this.to('ListCloudWatchAlarmTemplates');
+  }
+
+  /**
+   * Grants permission to list clusters
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toListClusters() {
+    return this.to('ListClusters');
   }
 
   /**
@@ -726,6 +907,28 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list networks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toListNetworks() {
+    return this.to('ListNetworks');
+  }
+
+  /**
+   * Grants permission to list nodes
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toListNodes() {
+    return this.to('ListNodes');
+  }
+
+  /**
    * Grants permission to list reservation offerings
    *
    * Access Level: List
@@ -759,7 +962,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for channels, inputs, input security groups, multiplexes, reservations, signal maps, template groups, and templates
+   * Grants permission to list tags for channels, inputs, input security groups, multiplexes, reservations, nodes, clusters, networks, channel placement groups, signal maps, template groups, and templates
    *
    * Access Level: List
    *
@@ -767,6 +970,17 @@ export class Medialive extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to the node to poll the cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/about-emla.html
+   */
+  public toPollAnywhere() {
+    return this.to('PollAnywhere');
   }
 
   /**
@@ -928,6 +1142,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to the node to submit state changes to the cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/about-emla.html
+   */
+  public toSubmitAnywhereStateChange() {
+    return this.to('SubmitAnywhereStateChange');
+  }
+
+  /**
    * Grants permission to transfer an input device
    *
    * Access Level: Write
@@ -972,6 +1197,21 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a node
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toUpdateChannelPlacementGroup() {
+    return this.to('UpdateChannelPlacementGroup');
+  }
+
+  /**
    * Grants permission to update a cloudwatch alarm template
    *
    * Access Level: Write
@@ -991,6 +1231,21 @@ export class Medialive extends PolicyStatement {
    */
   public toUpdateCloudWatchAlarmTemplateGroup() {
     return this.to('UpdateCloudWatchAlarmTemplateGroup');
+  }
+
+  /**
+   * Grants permission to update a cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html
+   */
+  public toUpdateCluster() {
+    return this.to('UpdateCluster');
   }
 
   /**
@@ -1075,6 +1330,51 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the state of a node
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/emla-deploy-identify-network-requirements.html
+   */
+  public toUpdateNetwork() {
+    return this.to('UpdateNetwork');
+  }
+
+  /**
+   * Grants permission to update a node
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-nodes-create.html
+   */
+  public toUpdateNode() {
+    return this.to('UpdateNode');
+  }
+
+  /**
+   * Grants permission to update the state of a node
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toUpdateNodeState() {
+    return this.to('UpdateNodeState');
+  }
+
+  /**
    * Grants permission to update a reservation
    *
    * Access Level: Write
@@ -1095,28 +1395,38 @@ export class Medialive extends PolicyStatement {
       'CancelInputDeviceTransfer',
       'ClaimDevice',
       'CreateChannel',
+      'CreateChannelPlacementGroup',
       'CreateCloudWatchAlarmTemplate',
       'CreateCloudWatchAlarmTemplateGroup',
+      'CreateCluster',
       'CreateEventBridgeRuleTemplate',
       'CreateEventBridgeRuleTemplateGroup',
       'CreateInput',
       'CreateInputSecurityGroup',
       'CreateMultiplex',
       'CreateMultiplexProgram',
+      'CreateNetwork',
+      'CreateNode',
+      'CreateNodeRegistrationScript',
       'CreatePartnerInput',
       'CreateSignalMap',
       'DeleteChannel',
+      'DeleteChannelPlacementGroup',
       'DeleteCloudWatchAlarmTemplate',
       'DeleteCloudWatchAlarmTemplateGroup',
+      'DeleteCluster',
       'DeleteEventBridgeRuleTemplate',
       'DeleteEventBridgeRuleTemplateGroup',
       'DeleteInput',
       'DeleteInputSecurityGroup',
       'DeleteMultiplex',
       'DeleteMultiplexProgram',
+      'DeleteNetwork',
+      'DeleteNode',
       'DeleteReservation',
       'DeleteSchedule',
       'DeleteSignalMap',
+      'PollAnywhere',
       'PurchaseOffering',
       'RebootInputDevice',
       'RejectInputDeviceTransfer',
@@ -1131,12 +1441,15 @@ export class Medialive extends PolicyStatement {
       'StopChannel',
       'StopInputDevice',
       'StopMultiplex',
+      'SubmitAnywhereStateChange',
       'TransferInputDevice',
       'UpdateAccountConfiguration',
       'UpdateChannel',
       'UpdateChannelClass',
+      'UpdateChannelPlacementGroup',
       'UpdateCloudWatchAlarmTemplate',
       'UpdateCloudWatchAlarmTemplateGroup',
+      'UpdateCluster',
       'UpdateEventBridgeRuleTemplate',
       'UpdateEventBridgeRuleTemplateGroup',
       'UpdateInput',
@@ -1144,6 +1457,9 @@ export class Medialive extends PolicyStatement {
       'UpdateInputSecurityGroup',
       'UpdateMultiplex',
       'UpdateMultiplexProgram',
+      'UpdateNetwork',
+      'UpdateNode',
+      'UpdateNodeState',
       'UpdateReservation'
     ],
     Tagging: [
@@ -1153,12 +1469,16 @@ export class Medialive extends PolicyStatement {
     Read: [
       'DescribeAccountConfiguration',
       'DescribeChannel',
+      'DescribeChannelPlacementGroup',
+      'DescribeCluster',
       'DescribeInput',
       'DescribeInputDevice',
       'DescribeInputDeviceThumbnail',
       'DescribeInputSecurityGroup',
       'DescribeMultiplex',
       'DescribeMultiplexProgram',
+      'DescribeNetwork',
+      'DescribeNode',
       'DescribeOffering',
       'DescribeReservation',
       'DescribeSchedule',
@@ -1170,9 +1490,11 @@ export class Medialive extends PolicyStatement {
       'GetSignalMap'
     ],
     List: [
+      'ListChannelPlacementGroups',
       'ListChannels',
       'ListCloudWatchAlarmTemplateGroups',
       'ListCloudWatchAlarmTemplates',
+      'ListClusters',
       'ListEventBridgeRuleTemplateGroups',
       'ListEventBridgeRuleTemplates',
       'ListInputDeviceTransfers',
@@ -1181,6 +1503,8 @@ export class Medialive extends PolicyStatement {
       'ListInputs',
       'ListMultiplexPrograms',
       'ListMultiplexes',
+      'ListNetworks',
+      'ListNodes',
       'ListOfferings',
       'ListReservations',
       'ListSignalMaps',
@@ -1387,24 +1711,103 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   *
+   * @param clusterId - Identifier for the clusterId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster:${ clusterId }`);
+  }
+
+  /**
+   * Adds a resource of type node to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   *
+   * @param clusterId - Identifier for the clusterId.
+   * @param nodeId - Identifier for the nodeId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNode(clusterId: string, nodeId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:node:${ clusterId }/${ nodeId }`);
+  }
+
+  /**
+   * Adds a resource of type network to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   *
+   * @param networkId - Identifier for the networkId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNetwork(networkId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network:${ networkId }`);
+  }
+
+  /**
+   * Adds a resource of type channel-placement-group to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   *
+   * @param clusterId - Identifier for the clusterId.
+   * @param channelPlacementGroupId - Identifier for the channelPlacementGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onChannelPlacementGroup(clusterId: string, channelPlacementGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channelPlacementGroup:${ clusterId }/${ channelPlacementGroupId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/medialive/latest/ugtagging.html
    *
    * Applies to actions:
    * - .toCreateChannel()
+   * - .toCreateChannelPlacementGroup()
    * - .toCreateCloudWatchAlarmTemplate()
    * - .toCreateCloudWatchAlarmTemplateGroup()
+   * - .toCreateCluster()
    * - .toCreateEventBridgeRuleTemplate()
    * - .toCreateEventBridgeRuleTemplateGroup()
    * - .toCreateInput()
    * - .toCreateInputSecurityGroup()
    * - .toCreateMultiplex()
+   * - .toCreateNetwork()
+   * - .toCreateNode()
    * - .toCreatePartnerInput()
    * - .toCreateSignalMap()
    * - .toCreateTags()
    * - .toPurchaseOffering()
+   * - .toUpdateChannelPlacementGroup()
+   * - .toUpdateCluster()
    * - .toUpdateInputSecurityGroup()
+   * - .toUpdateNetwork()
+   * - .toUpdateNode()
+   * - .toUpdateNodeState()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1430,6 +1833,10 @@ export class Medialive extends PolicyStatement {
    * - cloudwatch-alarm-template
    * - eventbridge-rule-template-group
    * - eventbridge-rule-template
+   * - cluster
+   * - node
+   * - network
+   * - channel-placement-group
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1446,19 +1853,28 @@ export class Medialive extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateChannel()
+   * - .toCreateChannelPlacementGroup()
    * - .toCreateCloudWatchAlarmTemplate()
    * - .toCreateCloudWatchAlarmTemplateGroup()
+   * - .toCreateCluster()
    * - .toCreateEventBridgeRuleTemplate()
    * - .toCreateEventBridgeRuleTemplateGroup()
    * - .toCreateInput()
    * - .toCreateInputSecurityGroup()
    * - .toCreateMultiplex()
+   * - .toCreateNetwork()
+   * - .toCreateNode()
    * - .toCreatePartnerInput()
    * - .toCreateSignalMap()
    * - .toCreateTags()
    * - .toDeleteTags()
    * - .toPurchaseOffering()
+   * - .toUpdateChannelPlacementGroup()
+   * - .toUpdateCluster()
    * - .toUpdateInputSecurityGroup()
+   * - .toUpdateNetwork()
+   * - .toUpdateNode()
+   * - .toUpdateNodeState()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

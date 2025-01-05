@@ -34,7 +34,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toCreateSyncFilter() {
     return this.to('CreateSyncFilter');
@@ -48,7 +48,7 @@ export class IdentitySync extends PolicyStatement {
    * Dependent actions:
    * - ds:AuthorizeApplication
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toCreateSyncProfile() {
     return this.to('CreateSyncProfile');
@@ -59,7 +59,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toCreateSyncTarget() {
     return this.to('CreateSyncTarget');
@@ -70,7 +70,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toDeleteSyncFilter() {
     return this.to('DeleteSyncFilter');
@@ -84,7 +84,7 @@ export class IdentitySync extends PolicyStatement {
    * Dependent actions:
    * - ds:UnauthorizeApplication
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toDeleteSyncProfile() {
     return this.to('DeleteSyncProfile');
@@ -95,7 +95,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toDeleteSyncTarget() {
     return this.to('DeleteSyncTarget');
@@ -106,7 +106,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toGetSyncProfile() {
     return this.to('GetSyncProfile');
@@ -117,7 +117,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toGetSyncTarget() {
     return this.to('GetSyncTarget');
@@ -128,7 +128,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toListSyncFilters() {
     return this.to('ListSyncFilters');
@@ -139,7 +139,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toStartSync() {
     return this.to('StartSync');
@@ -150,7 +150,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toStopSync() {
     return this.to('StopSync');
@@ -161,7 +161,7 @@ export class IdentitySync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    */
   public toUpdateSyncTarget() {
     return this.to('UpdateSyncTarget');
@@ -194,7 +194,7 @@ export class IdentitySync extends PolicyStatement {
   /**
    * Adds a resource of type SyncProfileResource to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    *
    * @param syncProfileName - Identifier for the syncProfileName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -208,7 +208,7 @@ export class IdentitySync extends PolicyStatement {
   /**
    * Adds a resource of type SyncTargetResource to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/security-iam-awsmanpol.html
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-users-groups-AD.html
    *
    * @param syncProfileName - Identifier for the syncProfileName.
    * @param syncTargetName - Identifier for the syncTargetName.

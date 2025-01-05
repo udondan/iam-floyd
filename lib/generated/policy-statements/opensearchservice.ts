@@ -52,7 +52,22 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach resource tags to an OpenSearch Service domain
+   * Grants permission to add the data source for the provided OpenSearch arns
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AddDirectQueryDataSource.html
+   */
+  public toAddDirectQueryDataSource() {
+    return this.to('AddDirectQueryDataSource');
+  }
+
+  /**
+   * Grants permission to attach resource tags to an OpenSearch Service domain, data source, or application
    *
    * Access Level: Tagging
    *
@@ -75,6 +90,17 @@ export class Es extends PolicyStatement {
    */
   public toAssociatePackage() {
     return this.to('AssociatePackage');
+  }
+
+  /**
+   * Grants permission to associate multiple packages with an OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AssociatePackages.html
+   */
+  public toAssociatePackages() {
+    return this.to('AssociatePackages');
   }
 
   /**
@@ -119,6 +145,21 @@ export class Es extends PolicyStatement {
    */
   public toCancelServiceSoftwareUpdate() {
     return this.to('CancelServiceSoftwareUpdate');
+  }
+
+  /**
+   * Grants permission to create an OpenSearch Application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreateApplication.html
+   */
+  public toCreateApplication() {
+    return this.to('CreateApplication');
   }
 
   /**
@@ -218,6 +259,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an OpenSearch Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteApplication.html
+   */
+  public toDeleteApplication() {
+    return this.to('DeleteApplication');
+  }
+
+  /**
    * Grants permission to delete the data source for the OpenSearch Service domain
    *
    * Access Level: Write
@@ -226,6 +278,17 @@ export class Es extends PolicyStatement {
    */
   public toDeleteDataSource() {
     return this.to('DeleteDataSource');
+  }
+
+  /**
+   * Grants permission to delete the data source for the provided OpenSearch arns
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteDirectQueryDataSource.html
+   */
+  public toDeleteDirectQueryDataSource() {
+    return this.to('DeleteDirectQueryDataSource');
   }
 
   /**
@@ -592,6 +655,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate multiple packages from the specified OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DissociatePackages.html
+   */
+  public toDissociatePackages() {
+    return this.to('DissociatePackages');
+  }
+
+  /**
    * Grants permission to send cross-cluster requests to a destination domain
    *
    * Access Level: Read
@@ -669,6 +743,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an OpenSearch Application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetApplication.html
+   */
+  public toGetApplication() {
+    return this.to('GetApplication');
+  }
+
+  /**
    * Grants permission to fetch a list of compatible OpenSearch and Elasticsearch versions to which an OpenSearch Service domain can be upgraded. This permission is deprecated. Use GetCompatibleVersions instead
    *
    * Access Level: List
@@ -699,6 +784,17 @@ export class Es extends PolicyStatement {
    */
   public toGetDataSource() {
     return this.to('GetDataSource');
+  }
+
+  /**
+   * Grants permission to get the data source for the provided OpenSearch arns
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetDirectQueryDataSource.html
+   */
+  public toGetDirectQueryDataSource() {
+    return this.to('GetDirectQueryDataSource');
   }
 
   /**
@@ -746,6 +842,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list OpenSearch Applications
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListApplications.html
+   */
+  public toListApplications() {
+    return this.to('ListApplications');
+  }
+
+  /**
    * Grants permission to retrieve a list of data source for the OpenSearch Service domain
    *
    * Access Level: List
@@ -754,6 +861,17 @@ export class Es extends PolicyStatement {
    */
   public toListDataSources() {
     return this.to('ListDataSources');
+  }
+
+  /**
+   * Grants permission to retrieve a list of data source for the provided OpenSearch arns
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListDirectQueryDataSources.html
+   */
+  public toListDirectQueryDataSources() {
+    return this.to('ListDirectQueryDataSources');
   }
 
   /**
@@ -856,7 +974,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to display all resource tags for an OpenSearch Service domain
+   * Grants permission to display all resource tags for an OpenSearch Service domain, data source, or application
    *
    * Access Level: Read
    *
@@ -955,7 +1073,7 @@ export class Es extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove resource tags from an OpenSearch Service domain
+   * Grants permission to remove resource tags from an OpenSearch Service domain, data source, or application
    *
    * Access Level: Tagging
    *
@@ -1013,6 +1131,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an OpenSearch Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateApplication.html
+   */
+  public toUpdateApplication() {
+    return this.to('UpdateApplication');
+  }
+
+  /**
    * Grants permission to update the data source for the OpenSearch Service domain
    *
    * Access Level: Write
@@ -1021,6 +1150,17 @@ export class Es extends PolicyStatement {
    */
   public toUpdateDataSource() {
     return this.to('UpdateDataSource');
+  }
+
+  /**
+   * Grants permission to update the data source for the provided OpenSearch arns
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateDirectQueryDataSource.html
+   */
+  public toUpdateDirectQueryDataSource() {
+    return this.to('UpdateDirectQueryDataSource');
   }
 
   /**
@@ -1054,6 +1194,17 @@ export class Es extends PolicyStatement {
    */
   public toUpdatePackage() {
     return this.to('UpdatePackage');
+  }
+
+  /**
+   * Grants permission to update scope a package
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdatePackageScope.html
+   */
+  public toUpdatePackageScope() {
+    return this.to('UpdatePackageScope');
   }
 
   /**
@@ -1105,11 +1256,14 @@ export class Es extends PolicyStatement {
       'AcceptInboundConnection',
       'AcceptInboundCrossClusterSearchConnection',
       'AddDataSource',
+      'AddDirectQueryDataSource',
       'AssociatePackage',
+      'AssociatePackages',
       'AuthorizeVpcEndpointAccess',
       'CancelDomainConfigChange',
       'CancelElasticsearchServiceSoftwareUpdate',
       'CancelServiceSoftwareUpdate',
+      'CreateApplication',
       'CreateDomain',
       'CreateElasticsearchDomain',
       'CreateElasticsearchServiceRole',
@@ -1118,7 +1272,9 @@ export class Es extends PolicyStatement {
       'CreatePackage',
       'CreateServiceRole',
       'CreateVpcEndpoint',
+      'DeleteApplication',
       'DeleteDataSource',
+      'DeleteDirectQueryDataSource',
       'DeleteDomain',
       'DeleteElasticsearchDomain',
       'DeleteElasticsearchServiceRole',
@@ -1129,6 +1285,7 @@ export class Es extends PolicyStatement {
       'DeletePackage',
       'DeleteVpcEndpoint',
       'DissociatePackage',
+      'DissociatePackages',
       'ESHttpDelete',
       'ESHttpPatch',
       'ESHttpPost',
@@ -1141,10 +1298,13 @@ export class Es extends PolicyStatement {
       'StartDomainMaintenance',
       'StartElasticsearchServiceSoftwareUpdate',
       'StartServiceSoftwareUpdate',
+      'UpdateApplication',
       'UpdateDataSource',
+      'UpdateDirectQueryDataSource',
       'UpdateDomainConfig',
       'UpdateElasticsearchDomainConfig',
       'UpdatePackage',
+      'UpdatePackageScope',
       'UpdateScheduledAction',
       'UpdateVpcEndpoint',
       'UpgradeDomain',
@@ -1168,7 +1328,9 @@ export class Es extends PolicyStatement {
       'ESCrossClusterGet',
       'ESHttpGet',
       'ESHttpHead',
+      'GetApplication',
       'GetDataSource',
+      'GetDirectQueryDataSource',
       'GetDomainMaintenanceStatus',
       'GetPackageVersionHistory',
       'GetUpgradeHistory',
@@ -1191,7 +1353,9 @@ export class Es extends PolicyStatement {
       'DescribeVpcEndpoints',
       'GetCompatibleElasticsearchVersions',
       'GetCompatibleVersions',
+      'ListApplications',
       'ListDataSources',
+      'ListDirectQueryDataSources',
       'ListDomainMaintenances',
       'ListDomainNames',
       'ListDomainsForPackage',
@@ -1226,6 +1390,23 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplication(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:opensearch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ appId }`);
+  }
+
+  /**
    * Adds a resource of type es_role to the statement
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/slr.html
@@ -1256,12 +1437,31 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type datasource to the statement
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/datasource.html
+   *
+   * @param dataSourceName - Identifier for the dataSourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDatasource(dataSourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:opensearch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datasource/${ dataSourceName }`);
+  }
+
+  /**
    * Filters access based on the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toAddDirectQueryDataSource()
    * - .toAddTags()
+   * - .toCreateApplication()
    * - .toCreateDomain()
    * - .toCreateElasticsearchDomain()
    *
@@ -1280,8 +1480,10 @@ export class Es extends PolicyStatement {
    *
    * Applies to resource types:
    * - domain
+   * - application
    * - es_role
    * - opensearchservice_role
+   * - datasource
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1297,7 +1499,9 @@ export class Es extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toAddDirectQueryDataSource()
    * - .toAddTags()
+   * - .toCreateApplication()
    * - .toCreateDomain()
    * - .toCreateElasticsearchDomain()
    * - .toRemoveTags()

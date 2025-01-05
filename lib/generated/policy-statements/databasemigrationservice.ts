@@ -2044,6 +2044,10 @@ export class Dms extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAssessmentRunTag()
    */
   public onReplicationTaskAssessmentRun(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessment-run:${ resourceName }`);
@@ -2058,6 +2062,10 @@ export class Dms extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifIndividualAssessmentTag()
    */
   public onReplicationTaskIndividualAssessment(resourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:individual-assessment:${ resourceName }`);
@@ -2124,6 +2132,8 @@ export class Dms extends PolicyStatement {
    * - ReplicationInstance
    * - ReplicationSubnetGroup
    * - ReplicationTask
+   * - ReplicationTaskAssessmentRun
+   * - ReplicationTaskIndividualAssessment
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2159,6 +2169,22 @@ export class Dms extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request for AssessmentRun
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_assessment-run-tag___TagKey_
+   *
+   * Applies to resource types:
+   * - ReplicationTaskAssessmentRun
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAssessmentRunTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`assessment-run-tag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2242,6 +2268,22 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Filters access by the presence of tag key-value pairs in the request for IndividualAssessment
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_individual-assessment-tag___TagKey_
+   *
+   * Applies to resource types:
+   * - ReplicationTaskIndividualAssessment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIndividualAssessmentTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`individual-assessment-tag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request for InstanceProfile
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice--dms_ip-tag___TagKey_
@@ -2292,7 +2334,7 @@ export class Dms extends PolicyStatement {
   /**
    * Filters access by the presence of tag key-value pairs in the request for ReplicationConfig
    *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice%E2%80%94dms_replication-config-tag___TagKey_
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html#awsdatabasemigrationservice-dms_replication-config-tag___TagKey_
    *
    * Applies to resource types:
    * - ReplicationConfig

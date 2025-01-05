@@ -41,6 +41,28 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create DataIntegrationFlow that can transform from multiple sources to one target
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toCreateDataIntegrationFlow() {
+    return this.to('CreateDataIntegrationFlow');
+  }
+
+  /**
+   * Grants permission to create the data lake dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toCreateDataLakeDataset() {
+    return this.to('CreateDataLakeDataset');
+  }
+
+  /**
    * Grants permission to create a new AWS Supply Chain instance
    *
    * Access Level: Write
@@ -60,6 +82,28 @@ export class Scn extends PolicyStatement {
    */
   public toCreateSSOApplication() {
     return this.to('CreateSSOApplication');
+  }
+
+  /**
+   * Grants permission to delete the DataIntegrationFlow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toDeleteDataIntegrationFlow() {
+    return this.to('DeleteDataIntegrationFlow');
+  }
+
+  /**
+   * Grants permission to delete the data lake dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toDeleteDataLakeDataset() {
+    return this.to('DeleteDataLakeDataset');
   }
 
   /**
@@ -107,6 +151,39 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the DataIntegrationFlow details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toGetDataIntegrationFlow() {
+    return this.to('GetDataIntegrationFlow');
+  }
+
+  /**
+   * Grants permission to get the dataset details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toGetDataLakeDataset() {
+    return this.to('GetDataLakeDataset');
+  }
+
+  /**
+   * Grants permission to view details of an AWS Supply Chain instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toGetInstance() {
+    return this.to('GetInstance');
+  }
+
+  /**
    * Grants permission to list AWS Supply Chain administrators of an instance
    *
    * Access Level: List
@@ -115,6 +192,28 @@ export class Scn extends PolicyStatement {
    */
   public toListAdminUsers() {
     return this.to('ListAdminUsers');
+  }
+
+  /**
+   * Grants permission to list all the DataIntegrationFlows in a paginated way
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toListDataIntegrationFlows() {
+    return this.to('ListDataIntegrationFlows');
+  }
+
+  /**
+   * Grants permission to list the data lake datasets under specific instance and namespace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toListDataLakeDatasets() {
+    return this.to('ListDataLakeDatasets');
   }
 
   /**
@@ -129,7 +228,7 @@ export class Scn extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for an AWS Supply Chain instance
+   * Grants permission to list tags for an AWS Supply Chain resource
    *
    * Access Level: List
    *
@@ -162,7 +261,7 @@ export class Scn extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag an AWS Supply Chain instance
+   * Grants permission to tag an AWS Supply Chain resource
    *
    * Access Level: Tagging
    *
@@ -177,7 +276,7 @@ export class Scn extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tag from an AWS Supply Chain instance
+   * Grants permission to remove tag from an AWS Supply Chain resource
    *
    * Access Level: Tagging
    *
@@ -188,6 +287,28 @@ export class Scn extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the DataIntegrationFlow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toUpdateDataIntegrationFlow() {
+    return this.to('UpdateDataIntegrationFlow');
+  }
+
+  /**
+   * Grants permission to update the data lake dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toUpdateDataLakeDataset() {
+    return this.to('UpdateDataLakeDataset');
   }
 
   /**
@@ -205,20 +326,31 @@ export class Scn extends PolicyStatement {
     Write: [
       'AssignAdminPermissionsToUser',
       'CreateBillOfMaterialsImportJob',
+      'CreateDataIntegrationFlow',
+      'CreateDataLakeDataset',
       'CreateInstance',
       'CreateSSOApplication',
+      'DeleteDataIntegrationFlow',
+      'DeleteDataLakeDataset',
       'DeleteInstance',
       'DeleteSSOApplication',
       'RemoveAdminPermissionsForUser',
       'SendDataIntegrationEvent',
+      'UpdateDataIntegrationFlow',
+      'UpdateDataLakeDataset',
       'UpdateInstance'
     ],
     Read: [
       'DescribeInstance',
-      'GetBillOfMaterialsImportJob'
+      'GetBillOfMaterialsImportJob',
+      'GetDataIntegrationFlow',
+      'GetDataLakeDataset',
+      'GetInstance'
     ],
     List: [
       'ListAdminUsers',
+      'ListDataIntegrationFlows',
+      'ListDataLakeDatasets',
       'ListInstances',
       'ListTagsForResource'
     ],
@@ -255,6 +387,37 @@ export class Scn extends PolicyStatement {
    */
   public onBillOfMaterialsImportJob(instanceId: string, jobId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/bill-of-materials-import-job/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type data-integration-flow to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param flowName - Identifier for the flowName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDataIntegrationFlow(instanceId: string, flowName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/data-integration-flows/${ flowName }`);
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param namespace - Identifier for the namespace.
+   * @param datasetName - Identifier for the datasetName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDataset(instanceId: string, namespace: string, datasetName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/namespaces/${ namespace }/datasets/${ datasetName }`);
   }
 
   /**

@@ -1,0 +1,3 @@
+pcs:cluster
+pcs:computenodegroup
+pcs:queue

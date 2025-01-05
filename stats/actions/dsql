@@ -1,0 +1,12 @@
+dsql:CreateCluster;Write
+dsql:CreateMultiRegionClusters;Write
+dsql:DbConnect;Write
+dsql:DbConnectAdmin;Write
+dsql:DeleteCluster;Write
+dsql:DeleteMultiRegionClusters;Write
+dsql:GetCluster;Read
+dsql:ListClusters;List
+dsql:ListTagsForResource;Read
+dsql:TagResource;Tagging
+dsql:UntagResource;Tagging
+dsql:UpdateCluster;Write

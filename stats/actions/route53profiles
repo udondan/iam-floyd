@@ -6,11 +6,13 @@ route53profiles:DisassociateProfile;Write
 route53profiles:DisassociateResourceFromProfile;Write
 route53profiles:GetProfile;Read
 route53profiles:GetProfileAssociation;Read
+route53profiles:GetProfilePolicy;Read
 route53profiles:GetProfileResourceAssociation;Read
 route53profiles:ListProfileAssociations;List
 route53profiles:ListProfileResourceAssociations;List
 route53profiles:ListProfiles;List
 route53profiles:ListTagsForResource;List
+route53profiles:PutProfilePolicy;Write
 route53profiles:TagResource;Tagging
 route53profiles:UntagResource;Tagging
 route53profiles:UpdateProfileResourceAssociation;Write

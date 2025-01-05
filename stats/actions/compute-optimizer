@@ -4,6 +4,7 @@ compute-optimizer:ExportAutoScalingGroupRecommendations;Write
 compute-optimizer:ExportEBSVolumeRecommendations;Write
 compute-optimizer:ExportEC2InstanceRecommendations;Write
 compute-optimizer:ExportECSServiceRecommendations;Write
+compute-optimizer:ExportIdleRecommendations;Write
 compute-optimizer:ExportLambdaFunctionRecommendations;Write
 compute-optimizer:ExportLicenseRecommendations;Write
 compute-optimizer:ExportRDSDatabaseRecommendations;Write
@@ -16,6 +17,7 @@ compute-optimizer:GetECSServiceRecommendations;List
 compute-optimizer:GetEffectiveRecommendationPreferences;Read
 compute-optimizer:GetEnrollmentStatus;List
 compute-optimizer:GetEnrollmentStatusesForOrganization;List
+compute-optimizer:GetIdleRecommendations;List
 compute-optimizer:GetLambdaFunctionRecommendations;List
 compute-optimizer:GetLicenseRecommendations;List
 compute-optimizer:GetRDSDatabaseRecommendationProjectedMetrics;List

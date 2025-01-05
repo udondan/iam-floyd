@@ -129,6 +129,20 @@ export class Sts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to obtain a set of temporary security credentials that you can use to perform privileged tasks in member accounts in your organization
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTaskPolicyArn()
+   *
+   * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoot.html
+   */
+  public toAssumeRoot() {
+    return this.to('AssumeRoot');
+  }
+
+  /**
    * Grants permission to decode additional information about the authorization status of a request from an encoded message returned in response to an AWS request
    *
    * Access Level: Write
@@ -253,6 +267,7 @@ export class Sts extends PolicyStatement {
       'AssumeRole',
       'AssumeRoleWithSAML',
       'AssumeRoleWithWebIdentity',
+      'AssumeRoot',
       'DecodeAuthorizationMessage',
       'SetContext',
       'SetSourceIdentity'
@@ -297,6 +312,18 @@ export class Sts extends PolicyStatement {
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:user/${ userNameWithPath }`);
+  }
+
+  /**
+   * Adds a resource of type root-user to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRootUser(account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:root`);
   }
 
   /**
@@ -1105,6 +1132,21 @@ export class Sts extends PolicyStatement {
    */
   public ifSourceIdentity(value: string | string[], operator?: Operator | string) {
     return this.if(`SourceIdentity`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by TaskPolicyARN
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-sts
+   *
+   * Applies to actions:
+   * - .toAssumeRoot()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTaskPolicyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`TaskPolicyArn`, value, operator ?? 'StringLike');
   }
 
   /**

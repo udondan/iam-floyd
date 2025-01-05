@@ -23,7 +23,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroupMembership.html
    */
   public toAddMemberToGroup() {
     return this.to('AddMemberToGroup');
@@ -89,7 +89,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
     return this.to('CreateGroup');
@@ -111,7 +111,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateUser.html
    */
   public toCreateUser() {
     return this.to('CreateUser');
@@ -155,7 +155,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroup.html
    */
   public toDeleteGroup() {
     return this.to('DeleteGroup');
@@ -188,7 +188,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteUser.html
    */
   public toDeleteUser() {
     return this.to('DeleteUser');
@@ -210,7 +210,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html
    */
   public toDescribeGroup() {
     return this.to('DescribeGroup');
@@ -221,7 +221,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html
    */
   public toDescribeGroups() {
     return this.to('DescribeGroups');
@@ -243,7 +243,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html
    */
   public toDescribeUser() {
     return this.to('DescribeUser');
@@ -265,7 +265,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html
    */
   public toDescribeUsers() {
     return this.to('DescribeUsers');
@@ -327,6 +327,28 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve ID information about group from the directory that AWS IAM Identity Center provides by default
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupId.html
+   */
+  public toGetGroupId() {
+    return this.to('GetGroupId');
+  }
+
+  /**
+   * Grants permission to retrieve ID information about user from the directory that AWS IAM Identity Center provides by default
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetUserId.html
+   */
+  public toGetUserId() {
+    return this.to('GetUserId');
+  }
+
+  /**
    * (Deprecated) Grants permission to get UserPool Info
    *
    * Access Level: Read
@@ -353,7 +375,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html
    */
   public toIsMemberInGroup() {
     return this.to('IsMemberInGroup');
@@ -393,11 +415,22 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list groups from the directory that AWS IAM Identity Center provides by default
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html
+   */
+  public toListGroups() {
+    return this.to('ListGroups');
+  }
+
+  /**
    * Grants permission to list groups of the target member
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html
    */
   public toListGroupsForMember() {
     return this.to('ListGroupsForMember');
@@ -408,7 +441,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html
    */
   public toListGroupsForUser() {
     return this.to('ListGroupsForUser');
@@ -419,7 +452,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMemberships.html
    */
   public toListMembersInGroup() {
     return this.to('ListMembersInGroup');
@@ -448,11 +481,22 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list users from the directory that AWS IAM Identity Center provides by default
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html
+   */
+  public toListUsers() {
+    return this.to('ListUsers');
+  }
+
+  /**
    * Grants permission to remove a member that is part of a group in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroupMembership.html
    */
   public toRemoveMemberFromGroup() {
     return this.to('RemoveMemberFromGroup');
@@ -518,7 +562,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateGroup.html
    */
   public toUpdateGroup() {
     return this.to('UpdateGroup');
@@ -562,7 +606,7 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateUser.html
    */
   public toUpdateUser() {
     return this.to('UpdateUser');
@@ -634,16 +678,20 @@ export class SsoDirectory extends PolicyStatement {
       'DescribeUserByUniqueAttribute',
       'DescribeUsers',
       'GetAWSSPConfigurationForDirectory',
+      'GetGroupId',
+      'GetUserId',
       'GetUserPoolInfo',
       'IsMemberInGroup',
       'ListBearerTokens',
       'ListExternalIdPCertificates',
       'ListExternalIdPConfigurationsForDirectory',
+      'ListGroups',
       'ListGroupsForMember',
       'ListGroupsForUser',
       'ListMembersInGroup',
       'ListMfaDevicesForUser',
       'ListProvisioningTenants',
+      'ListUsers',
       'SearchGroups',
       'SearchUsers'
     ]

@@ -597,7 +597,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an Elastic Beanstalk resource, remove tags, and to update tag values
+   * Doesn't grant permission to update tags. To grant permission to add tags to an Elastic Beanstalk resource, remove tags, and to update tag values, specify elasticbeanstalk:AddTags and elasticbeanstalk:RemoveTags
    *
    * Access Level: Tagging
    *

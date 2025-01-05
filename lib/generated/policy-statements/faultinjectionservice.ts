@@ -120,6 +120,17 @@ export class Fis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about the safety lever
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fis/latest/APIReference/API_GetSafetyLever.html
+   */
+  public toGetSafetyLever() {
+    return this.to('GetSafetyLever');
+  }
+
+  /**
    * Grants permission to retrieve an AWS FIS target account configuration for an AWS FIS experiment template
    *
    * Access Level: Read
@@ -354,6 +365,17 @@ export class Fis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the state of the safety lever
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fis/latest/APIReference/API_UpdateSafetyLeverState.html
+   */
+  public toUpdateSafetyLeverState() {
+    return this.to('UpdateSafetyLeverState');
+  }
+
+  /**
    * Grants permission to update an AWS FIS target account configuration
    *
    * Access Level: Write
@@ -376,6 +398,7 @@ export class Fis extends PolicyStatement {
       'StartExperiment',
       'StopExperiment',
       'UpdateExperimentTemplate',
+      'UpdateSafetyLeverState',
       'UpdateTargetAccountConfiguration'
     ],
     Read: [
@@ -383,6 +406,7 @@ export class Fis extends PolicyStatement {
       'GetExperiment',
       'GetExperimentTargetAccountConfiguration',
       'GetExperimentTemplate',
+      'GetSafetyLever',
       'GetTargetAccountConfiguration',
       'GetTargetResourceType',
       'ListTagsForResource'
@@ -451,6 +475,20 @@ export class Fis extends PolicyStatement {
    */
   public onExperimentTemplate(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:fis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:experiment-template/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type safety-lever to the statement
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/safety-lever.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSafetyLever(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:fis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:safety-lever/${ id }`);
   }
 
   /**

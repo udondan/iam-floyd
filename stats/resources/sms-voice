@@ -1,4 +1,5 @@
 sms-voice:ConfigurationSet
+sms-voice:Message
 sms-voice:OptOutList
 sms-voice:PhoneNumber
 sms-voice:Pool

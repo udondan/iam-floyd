@@ -2,6 +2,7 @@ redshift-serverless:RequestTag/${TagKey}
 redshift-serverless:ResourceTag/${TagKey}
 redshift-serverless:TagKeys
 redshift-serverless:endpointAccessId
+redshift-serverless:managedWorkgroupName
 redshift-serverless:namespaceId
 redshift-serverless:recoveryPointId
 redshift-serverless:snapshotId

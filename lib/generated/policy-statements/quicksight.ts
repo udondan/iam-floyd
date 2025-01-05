@@ -131,15 +131,30 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a custom permissions resource for restricting user access
+   * Grants permission to create an Amazon QuickSight brand
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateBrand.html
+   */
+  public toCreateBrand() {
+    return this.to('CreateBrand');
+  }
+
+  /**
+   * Grants permission to create a QuickSight custom permissions resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateCustomPermissions.html
    */
   public toCreateCustomPermissions() {
     return this.to('CreateCustomPermissions');
@@ -326,6 +341,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifGroup()
+   * - .ifIdentitystoreGroupId()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateRoleMembership.html
    */
   public toCreateRoleMembership() {
@@ -484,11 +503,33 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a custom permissions resource
+   * Grants permission to delete an Amazon QuickSight brand
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteBrand.html
+   */
+  public toDeleteBrand() {
+    return this.to('DeleteBrand');
+  }
+
+  /**
+   * Grants permission to delete a brand assignment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteBrandAssignment.html
+   */
+  public toDeleteBrandAssignment() {
+    return this.to('DeleteBrandAssignment');
+  }
+
+  /**
+   * Grants permission to delete a QuickSight custom permissions resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteCustomPermissions.html
    */
   public toDeleteCustomPermissions() {
     return this.to('DeleteCustomPermissions');
@@ -544,6 +585,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteDataSource() {
     return this.to('DeleteDataSource');
+  }
+
+  /**
+   * Grants permission to delete linked QBusiness application for QuickSight account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDefaultQBusinessApplication.html
+   */
+  public toDeleteDefaultQBusinessApplication() {
+    return this.to('DeleteDefaultQBusinessApplication');
   }
 
   /**
@@ -664,6 +716,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifGroup()
+   * - .ifIdentitystoreGroupId()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteRoleMembership.html
    */
   public toDeleteRoleMembership() {
@@ -763,6 +819,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove the custom permission associated with a user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteUserCustomPermission.html
+   */
+  public toDeleteUserCustomPermission() {
+    return this.to('DeleteUserCustomPermission');
+  }
+
+  /**
    * Grants permission to delete a vpc connection
    *
    * Access Level: Write
@@ -855,11 +922,44 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a brand
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeBrand.html
+   */
+  public toDescribeBrand() {
+    return this.to('DescribeBrand');
+  }
+
+  /**
+   * Grants permission to describe a brand assignment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeBrandAssignment.html
+   */
+  public toDescribeBrandAssignment() {
+    return this.to('DescribeBrandAssignment');
+  }
+
+  /**
+   * Grants permission to describes the published version of the brand
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeBrandPublishedVersion.html
+   */
+  public toDescribeBrandPublishedVersion() {
+    return this.to('DescribeBrandPublishedVersion');
+  }
+
+  /**
    * Grants permission to describe a custom permissions resource in a QuickSight account
    *
-   * Access Level: Write
+   * Access Level: Read
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeCustomPermissions.html
    */
   public toDescribeCustomPermissions() {
     return this.to('DescribeCustomPermissions');
@@ -907,6 +1007,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeDashboardSnapshotJobResult() {
     return this.to('DescribeDashboardSnapshotJobResult');
+  }
+
+  /**
+   * Grants permission to describe dashboards qa configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardsQAConfiguration.html
+   */
+  public toDescribeDashboardsQAConfiguration() {
+    return this.to('DescribeDashboardsQAConfiguration');
   }
 
   /**
@@ -978,6 +1089,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeDataSourcePermissions() {
     return this.to('DescribeDataSourcePermissions');
+  }
+
+  /**
+   * Grants permission to describe linked QBusiness application Id for QuickSight account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDefaultQBusinessApplication.html
+   */
+  public toDescribeDefaultQBusinessApplication() {
+    return this.to('DescribeDefaultQBusinessApplication');
   }
 
   /**
@@ -1103,6 +1225,28 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeNamespace() {
     return this.to('DescribeNamespace');
+  }
+
+  /**
+   * Grants permission to describe a personalization configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeQPersonalizationConfiguration.html
+   */
+  public toDescribeQPersonalizationConfiguration() {
+    return this.to('DescribeQPersonalizationConfiguration');
+  }
+
+  /**
+   * Grants permission to describe QuickSight Q Search configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeQuickSightQSearchConfiguration.html
+   */
+  public toDescribeQuickSightQSearchConfiguration() {
+    return this.to('DescribeQuickSightQSearchConfiguration');
   }
 
   /**
@@ -1306,6 +1450,20 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a URL used to embed a QuickSight Experience for a user registered with QuickSight using Identity-enhanced role session
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAllowedEmbeddingDomains()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUserWithIdentity.html
+   */
+  public toGenerateEmbedUrlForRegisteredUserWithIdentity() {
+    return this.to('GenerateEmbedUrlForRegisteredUserWithIdentity');
+  }
+
+  /**
    * Grants permission to get a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
    *
    * Access Level: Read
@@ -1394,11 +1552,22 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to lists all brands in an Amazon QuickSight account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListBrands.html
+   */
+  public toListBrands() {
+    return this.to('ListBrands');
+  }
+
+  /**
    * Grants permission to list custom permissions resources in QuickSight account
    *
-   * Access Level: Write
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListCustomPermissions.html
    */
   public toListCustomPermissions() {
     return this.to('ListCustomPermissions');
@@ -1487,6 +1656,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListFolders() {
     return this.to('ListFolders');
+  }
+
+  /**
+   * Grants permission to list all Folders in which a QuickSight resource is a member
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListFoldersForResource.html
+   */
+  public toListFoldersForResource() {
+    return this.to('ListFoldersForResource');
   }
 
   /**
@@ -1789,6 +1969,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to predict QA results
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_PredictQAResults.html
+   */
+  public toPredictQAResults() {
+    return this.to('PredictQAResults');
+  }
+
+  /**
    * Grants permission to put dataset refresh properties for a dataset
    *
    * Access Level: Write
@@ -1932,6 +2123,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search for a sub-set of topics
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchTopics.html
+   */
+  public toSearchTopics() {
+    return this.to('SearchTopics');
+  }
+
+  /**
    * Grants permission to search the QuickSight users belonging to this account
    *
    * Access Level: List
@@ -1984,6 +2186,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toStartDashboardSnapshotJob() {
     return this.to('StartDashboardSnapshotJob');
+  }
+
+  /**
+   * Grants permission to start a dashboard snapshot job schedule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartDashboardSnapshotJobSchedule.html
+   */
+  public toStartDashboardSnapshotJobSchedule() {
+    return this.to('StartDashboardSnapshotJobSchedule');
   }
 
   /**
@@ -2086,11 +2299,55 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a custom permissions resource
+   * Grants permission to update QuickSight IAM Identity Center application with Token Exchange grant
    *
-   * Access Level: Permissions management
+   * Access Level: Write
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateApplicationWithTokenExchangeGrant.html
+   */
+  public toUpdateApplicationWithTokenExchangeGrant() {
+    return this.to('UpdateApplicationWithTokenExchangeGrant');
+  }
+
+  /**
+   * Grants permission to update a brand
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateBrand.html
+   */
+  public toUpdateBrand() {
+    return this.to('UpdateBrand');
+  }
+
+  /**
+   * Grants permission to update a brand assignment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateBrandAssignment.html
+   */
+  public toUpdateBrandAssignment() {
+    return this.to('UpdateBrandAssignment');
+  }
+
+  /**
+   * Grants permission to update the published version of a brand
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateBrandPublishedVersion.html
+   */
+  public toUpdateBrandPublishedVersion() {
+    return this.to('UpdateBrandPublishedVersion');
+  }
+
+  /**
+   * Grants permission to update a QuickSight custom permissions resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateCustomPermissions.html
    */
   public toUpdateCustomPermissions() {
     return this.to('UpdateCustomPermissions');
@@ -2108,7 +2365,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a QuickSight Dashboard’s links
+   * Grants permission to update a QuickSight Dashboard's links
    *
    * Access Level: Write
    *
@@ -2130,7 +2387,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a QuickSight Dashboard’s Published Version
+   * Grants permission to update a QuickSight Dashboard's Published Version
    *
    * Access Level: Write
    *
@@ -2138,6 +2395,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateDashboardPublishedVersion() {
     return this.to('UpdateDashboardPublishedVersion');
+  }
+
+  /**
+   * Grants permission to update dashboards qa configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardsQAConfiguration.html
+   */
+  public toUpdateDashboardsQAConfiguration() {
+    return this.to('UpdateDashboardsQAConfiguration');
   }
 
   /**
@@ -2204,6 +2472,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateDataSourcePermissions() {
     return this.to('UpdateDataSourcePermissions');
+  }
+
+  /**
+   * Grants permission to update linked QBusiness application Id for QuickSight account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDefaultQBusinessApplication.html
+   */
+  public toUpdateDefaultQBusinessApplication() {
+    return this.to('UpdateDefaultQBusinessApplication');
   }
 
   /**
@@ -2303,6 +2582,28 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdatePublicSharingSettings() {
     return this.to('UpdatePublicSharingSettings');
+  }
+
+  /**
+   * Grants permission to update a personalization configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateQPersonalizationConfiguration.html
+   */
+  public toUpdateQPersonalizationConfiguration() {
+    return this.to('UpdateQPersonalizationConfiguration');
+  }
+
+  /**
+   * Grants permission to update QuickSight Q Search configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateQuickSightQSearchConfiguration.html
+   */
+  public toUpdateQuickSightQSearchConfiguration() {
+    return this.to('UpdateQuickSightQSearchConfiguration');
   }
 
   /**
@@ -2471,6 +2772,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the custom permission associated with a user
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUserCustomPermission.html
+   */
+  public toUpdateUserCustomPermission() {
+    return this.to('UpdateUserCustomPermission');
+  }
+
+  /**
    * Grants permission to update a vpc connection
    *
    * Access Level: Write
@@ -2498,6 +2810,8 @@ export class Quicksight extends PolicyStatement {
       'CreateAccountSubscription',
       'CreateAdmin',
       'CreateAnalysis',
+      'CreateBrand',
+      'CreateCustomPermissions',
       'CreateDashboard',
       'CreateDataSet',
       'CreateDataSource',
@@ -2523,10 +2837,14 @@ export class Quicksight extends PolicyStatement {
       'DeleteAccountCustomization',
       'DeleteAccountSubscription',
       'DeleteAnalysis',
+      'DeleteBrand',
+      'DeleteBrandAssignment',
+      'DeleteCustomPermissions',
       'DeleteDashboard',
       'DeleteDataSet',
       'DeleteDataSetRefreshProperties',
       'DeleteDataSource',
+      'DeleteDefaultQBusinessApplication',
       'DeleteEmailCustomizationTemplate',
       'DeleteFolder',
       'DeleteFolderMembership',
@@ -2546,11 +2864,11 @@ export class Quicksight extends PolicyStatement {
       'DeleteTopicRefreshSchedule',
       'DeleteUser',
       'DeleteUserByPrincipalId',
+      'DeleteUserCustomPermission',
       'DeleteVPCConnection',
-      'DescribeCustomPermissions',
       'GenerateEmbedUrlForAnonymousUser',
       'GenerateEmbedUrlForRegisteredUser',
-      'ListCustomPermissions',
+      'GenerateEmbedUrlForRegisteredUserWithIdentity',
       'PutDataSetRefreshProperties',
       'RegisterCustomerManagedKey',
       'RegisterUser',
@@ -2561,16 +2879,24 @@ export class Quicksight extends PolicyStatement {
       'StartAssetBundleExportJob',
       'StartAssetBundleImportJob',
       'StartDashboardSnapshotJob',
+      'StartDashboardSnapshotJobSchedule',
       'Subscribe',
       'Unsubscribe',
       'UpdateAccountCustomization',
       'UpdateAccountSettings',
       'UpdateAnalysis',
+      'UpdateApplicationWithTokenExchangeGrant',
+      'UpdateBrand',
+      'UpdateBrandAssignment',
+      'UpdateBrandPublishedVersion',
+      'UpdateCustomPermissions',
       'UpdateDashboard',
       'UpdateDashboardLinks',
       'UpdateDashboardPublishedVersion',
+      'UpdateDashboardsQAConfiguration',
       'UpdateDataSet',
       'UpdateDataSource',
+      'UpdateDefaultQBusinessApplication',
       'UpdateEmailCustomizationTemplate',
       'UpdateFolder',
       'UpdateGroup',
@@ -2579,6 +2905,8 @@ export class Quicksight extends PolicyStatement {
       'UpdateIpRestriction',
       'UpdateKeyRegistration',
       'UpdatePublicSharingSettings',
+      'UpdateQPersonalizationConfiguration',
+      'UpdateQuickSightQSearchConfiguration',
       'UpdateRefreshSchedule',
       'UpdateResourcePermissions',
       'UpdateRoleCustomPermission',
@@ -2590,23 +2918,8 @@ export class Quicksight extends PolicyStatement {
       'UpdateTopic',
       'UpdateTopicRefreshSchedule',
       'UpdateUser',
+      'UpdateUserCustomPermission',
       'UpdateVPCConnection'
-    ],
-    'Permissions management': [
-      'CreateCustomPermissions',
-      'DeleteCustomPermissions',
-      'DescribeDataSetPermissions',
-      'DescribeDataSourcePermissions',
-      'DescribeTopicPermissions',
-      'UpdateAnalysisPermissions',
-      'UpdateCustomPermissions',
-      'UpdateDashboardPermissions',
-      'UpdateDataSetPermissions',
-      'UpdateDataSourcePermissions',
-      'UpdateFolderPermissions',
-      'UpdateTemplatePermissions',
-      'UpdateThemePermissions',
-      'UpdateTopicPermissions'
     ],
     Read: [
       'DescribeAccountCustomization',
@@ -2616,13 +2929,19 @@ export class Quicksight extends PolicyStatement {
       'DescribeAnalysisPermissions',
       'DescribeAssetBundleExportJob',
       'DescribeAssetBundleImportJob',
+      'DescribeBrand',
+      'DescribeBrandAssignment',
+      'DescribeBrandPublishedVersion',
+      'DescribeCustomPermissions',
       'DescribeDashboard',
       'DescribeDashboardPermissions',
       'DescribeDashboardSnapshotJob',
       'DescribeDashboardSnapshotJobResult',
+      'DescribeDashboardsQAConfiguration',
       'DescribeDataSet',
       'DescribeDataSetRefreshProperties',
       'DescribeDataSource',
+      'DescribeDefaultQBusinessApplication',
       'DescribeEmailCustomizationTemplate',
       'DescribeFolder',
       'DescribeFolderPermissions',
@@ -2634,6 +2953,8 @@ export class Quicksight extends PolicyStatement {
       'DescribeIpRestriction',
       'DescribeKeyRegistration',
       'DescribeNamespace',
+      'DescribeQPersonalizationConfiguration',
+      'DescribeQuickSightQSearchConfiguration',
       'DescribeRefreshSchedule',
       'DescribeRoleCustomPermission',
       'DescribeTemplate',
@@ -2656,18 +2977,35 @@ export class Quicksight extends PolicyStatement {
       'ListTagsForResource',
       'PassDataSet',
       'PassDataSource',
+      'PredictQAResults',
       'SearchFolders'
+    ],
+    'Permissions management': [
+      'DescribeDataSetPermissions',
+      'DescribeDataSourcePermissions',
+      'DescribeTopicPermissions',
+      'UpdateAnalysisPermissions',
+      'UpdateDashboardPermissions',
+      'UpdateDataSetPermissions',
+      'UpdateDataSourcePermissions',
+      'UpdateFolderPermissions',
+      'UpdateTemplatePermissions',
+      'UpdateThemePermissions',
+      'UpdateTopicPermissions'
     ],
     List: [
       'ListAnalyses',
       'ListAssetBundleExportJobs',
       'ListAssetBundleImportJobs',
+      'ListBrands',
+      'ListCustomPermissions',
       'ListCustomerManagedKeys',
       'ListDashboardVersions',
       'ListDashboards',
       'ListDataSets',
       'ListDataSources',
       'ListFolders',
+      'ListFoldersForResource',
       'ListGroupMemberships',
       'ListGroups',
       'ListIAMPolicyAssignments',
@@ -2696,6 +3034,7 @@ export class Quicksight extends PolicyStatement {
       'SearchDataSources',
       'SearchDirectoryGroups',
       'SearchGroups',
+      'SearchTopics',
       'SearchUsers'
     ],
     Tagging: [
@@ -3037,6 +3376,40 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type brand to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BrandDetail.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBrand(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:brand/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type custompermissions to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CustomPermissions.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustompermissions(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custompermissions/${ resourceId }`);
+  }
+
+  /**
    * Filters access by tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -3047,6 +3420,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCancelIngestion()
    * - .toCreateAccountCustomization()
    * - .toCreateAnalysis()
+   * - .toCreateBrand()
    * - .toCreateCustomPermissions()
    * - .toCreateDashboard()
    * - .toCreateDataSet()
@@ -3117,6 +3491,8 @@ export class Quicksight extends PolicyStatement {
    * - folder
    * - topic
    * - dashboardSnapshotJob
+   * - brand
+   * - custompermissions
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3137,6 +3513,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCancelIngestion()
    * - .toCreateAccountCustomization()
    * - .toCreateAnalysis()
+   * - .toCreateBrand()
    * - .toCreateCustomPermissions()
    * - .toCreateDashboard()
    * - .toCreateDataSet()
@@ -3190,6 +3567,22 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Filters access by IdentityStore group ARN
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   *
+   * Applies to actions:
+   * - .toCreateRoleMembership()
+   * - .toDeleteRoleMembership()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifIdentitystoreGroupId(value: string | string[], operator?: Operator | string) {
+    return this.if(`identitystore:GroupId`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by the allowed embedding domains
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/embedded-dashboards-for-authenticated-users-step-1.html
@@ -3197,6 +3590,7 @@ export class Quicksight extends PolicyStatement {
    * Applies to actions:
    * - .toGenerateEmbedUrlForAnonymousUser()
    * - .toGenerateEmbedUrlForRegisteredUser()
+   * - .toGenerateEmbedUrlForRegisteredUserWithIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3235,6 +3629,22 @@ export class Quicksight extends PolicyStatement {
    */
   public ifEdition(value: string | string[], operator?: Operator | string) {
     return this.if(`Edition`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by QuickSight group ARN
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   *
+   * Applies to actions:
+   * - .toCreateRoleMembership()
+   * - .toDeleteRoleMembership()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`Group`, value, operator ?? 'ArnLike');
   }
 
   /**

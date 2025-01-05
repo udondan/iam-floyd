@@ -278,6 +278,20 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve account settings
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAccountSetting()
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAccountSetting.html
+   */
+  public toGetAccountSetting() {
+    return this.to('GetAccountSetting');
+  }
+
+  /**
    * Grants permission to retrieve a token that is valid for a specified registry for 12 hours
    *
    * Access Level: Read
@@ -389,6 +403,20 @@ export class Ecr extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to update account settings
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAccountSetting()
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutAccountSetting.html
+   */
+  public toPutAccountSetting() {
+    return this.to('PutAccountSetting');
   }
 
   /**
@@ -605,6 +633,7 @@ export class Ecr extends PolicyStatement {
       'DescribeRegistry',
       'DescribeRepositories',
       'DescribeRepositoryCreationTemplates',
+      'GetAccountSetting',
       'GetAuthorizationToken',
       'GetDownloadUrlForLayer',
       'GetLifecyclePolicy',
@@ -627,6 +656,7 @@ export class Ecr extends PolicyStatement {
       'DeleteRepository',
       'DeleteRepositoryCreationTemplate',
       'InitiateLayerUpload',
+      'PutAccountSetting',
       'PutImage',
       'PutImageScanningConfiguration',
       'PutImageTagMutability',
@@ -725,6 +755,22 @@ export class Ecr extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ECR account setting name
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toGetAccountSetting()
+   * - .toPutAccountSetting()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAccountSetting(value: string | string[], operator?: Operator | string) {
+    return this.if(`AccountSetting`, value, operator ?? 'StringLike');
   }
 
   /**

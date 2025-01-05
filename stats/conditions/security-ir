@@ -1,0 +1,3 @@
+security-ir:RequestTag/${TagKey}
+security-ir:ResourceTag/${TagKey}
+security-ir:TagKeys

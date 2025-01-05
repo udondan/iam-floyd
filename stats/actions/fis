@@ -6,6 +6,7 @@ fis:GetAction;Read
 fis:GetExperiment;Read
 fis:GetExperimentTargetAccountConfiguration;Read
 fis:GetExperimentTemplate;Read
+fis:GetSafetyLever;Read
 fis:GetTargetAccountConfiguration;Read
 fis:GetTargetResourceType;Read
 fis:InjectApiInternalError;Write
@@ -24,4 +25,5 @@ fis:StopExperiment;Write
 fis:TagResource;Tagging
 fis:UntagResource;Tagging
 fis:UpdateExperimentTemplate;Write
+fis:UpdateSafetyLeverState;Write
 fis:UpdateTargetAccountConfiguration;Write

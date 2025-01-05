@@ -1,9 +1,11 @@
 deepracer:AddLeaderboardAccessPermission;Write
+deepracer:AdminDescribeAccountKey;Read
 deepracer:AdminGetAccountConfig;Read
 deepracer:AdminListAssociatedResources;Read
 deepracer:AdminListAssociatedUsers;Read
 deepracer:AdminManageUser;Write
 deepracer:AdminSetAccountConfig;Write
+deepracer:AdminUpdateAccountKey;Write
 deepracer:CloneReinforcementLearningModel;Write
 deepracer:CreateCar;Write
 deepracer:CreateLeaderboard;Write

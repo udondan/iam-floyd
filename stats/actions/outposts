@@ -16,7 +16,9 @@ outposts:GetOutpostSupportedInstanceTypes;Read
 outposts:GetPrivateConnectivityConfig;Read
 outposts:GetSite;Read
 outposts:GetSiteAddress;Read
+outposts:ListAssetInstances;List
 outposts:ListAssets;List
+outposts:ListBlockingInstancesForCapacityTask;List
 outposts:ListCapacityTasks;List
 outposts:ListCatalogItems;List
 outposts:ListOrders;List

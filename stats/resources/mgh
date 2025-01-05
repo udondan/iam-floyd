@@ -1,2 +1,5 @@
+mgh:AutomationRunResource
+mgh:AutomationUnitResource
+mgh:ConnectionResource
 mgh:migrationTask
 mgh:progressUpdateStream

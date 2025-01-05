@@ -29,6 +29,8 @@ elasticfilesystem:PutAccountPreferences;Write
 elasticfilesystem:PutBackupPolicy;Write
 elasticfilesystem:PutFileSystemPolicy;Permissions management
 elasticfilesystem:PutLifecycleConfiguration;Write
+elasticfilesystem:ReplicationRead;Read
+elasticfilesystem:ReplicationWrite;Write
 elasticfilesystem:Restore;Write
 elasticfilesystem:TagResource;Tagging
 elasticfilesystem:UntagResource;Tagging

@@ -31,6 +31,7 @@ imagebuilder:GetImageRecipePolicy;Read
 imagebuilder:GetInfrastructureConfiguration;Read
 imagebuilder:GetLifecycleExecution;Read
 imagebuilder:GetLifecyclePolicy;Read
+imagebuilder:GetMarketplaceResource;Read
 imagebuilder:GetWorkflow;Read
 imagebuilder:GetWorkflowExecution;Read
 imagebuilder:GetWorkflowStepExecution;Read

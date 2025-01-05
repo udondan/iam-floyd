@@ -597,6 +597,24 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a scraper
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - aps:CreateScraper
+   * - aps:TagResource
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateScraper
+   */
+  public toUpdateScraper() {
+    return this.to('UpdateScraper');
+  }
+
+  /**
    * Grants permission to modify the alias of existing AMP workspace
    *
    * Access Level: Write
@@ -629,6 +647,7 @@ export class Aps extends PolicyStatement {
       'PutRuleGroupsNamespace',
       'RemoteWrite',
       'UpdateLoggingConfiguration',
+      'UpdateScraper',
       'UpdateWorkspaceAlias'
     ],
     Read: [
@@ -802,6 +821,7 @@ export class Aps extends PolicyStatement {
    * - .toQueryMetrics()
    * - .toRemoteWrite()
    * - .toUpdateLoggingConfiguration()
+   * - .toUpdateScraper()
    * - .toUpdateWorkspaceAlias()
    *
    * Applies to resource types:

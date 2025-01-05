@@ -19,7 +19,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more tags to a trail, event data store, or channel, up to a limit of 50
+   * Grants permission to add one or more tags to a trail, event data store, channel or dashboard, up to a limit of 50
    *
    * Access Level: Tagging
    *
@@ -60,6 +60,26 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toCreateChannel() {
     return this.to('CreateChannel');
+  }
+
+  /**
+   * Grants permission to create a dashboard
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - cloudtrail:AddTags
+   * - cloudtrail:StartDashboardRefresh
+   * - cloudtrail:StartQuery
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateDashboard.html
+   */
+  public toCreateDashboard() {
+    return this.to('CreateDashboard');
   }
 
   /**
@@ -126,6 +146,17 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toDeleteChannel() {
     return this.to('DeleteChannel');
+  }
+
+  /**
+   * Grants permission to delete a dashboard
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteDashboard.html
+   */
+  public toDeleteDashboard() {
+    return this.to('DeleteDashboard');
   }
 
   /**
@@ -258,6 +289,22 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a results summary for specified queries using the CloudTrail natural language generator
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - cloudtrail:GetQueryResults
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-results-summary.html
+   */
+  public toGenerateQueryResultsSummary() {
+    return this.to('GenerateQueryResultsSummary');
+  }
+
+  /**
    * Grants permission to return information about a specific channel
    *
    * Access Level: Read
@@ -266,6 +313,17 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toGetChannel() {
     return this.to('GetChannel');
+  }
+
+  /**
+   * Grants permission to list settings for the dashboard
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetDashboard.html
+   */
+  public toGetDashboard() {
+    return this.to('GetDashboard');
   }
 
   /**
@@ -398,6 +456,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list dashboards associated with the current region for your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListDashboards.html
+   */
+  public toListDashboards() {
+    return this.to('ListDashboards');
+  }
+
+  /**
    * Grants permission to list event data stores associated with the current region for your account
    *
    * Access Level: List
@@ -464,7 +533,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the tags for trails, event data stores, or channels in the current region
+   * Grants permission to list the tags for trails, event data stores, channels or dashboards in the current region
    *
    * Access Level: Read
    *
@@ -547,7 +616,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from a trail, event data store, or channel
+   * Grants permission to remove tags from a trail, event data store, channel or dashboard
    *
    * Access Level: Tagging
    *
@@ -569,6 +638,20 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toRestoreEventDataStore() {
     return this.to('RestoreEventDataStore');
+  }
+
+  /**
+   * Grants permission to start a refresh on the specified dashboard
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cloudtrail:StartQuery
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartDashboardRefresh.html
+   */
+  public toStartDashboardRefresh() {
+    return this.to('StartDashboardRefresh');
   }
 
   /**
@@ -664,6 +747,21 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a dashboard
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cloudtrail:StartDashboardRefresh
+   * - cloudtrail:StartQuery
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateDashboard.html
+   */
+  public toUpdateDashboard() {
+    return this.to('UpdateDashboard');
+  }
+
+  /**
    * Grants permission to update an event data store
    *
    * Access Level: Write
@@ -716,10 +814,12 @@ export class Cloudtrail extends PolicyStatement {
     Write: [
       'CancelQuery',
       'CreateChannel',
+      'CreateDashboard',
       'CreateEventDataStore',
       'CreateServiceLinkedChannel',
       'CreateTrail',
       'DeleteChannel',
+      'DeleteDashboard',
       'DeleteEventDataStore',
       'DeleteResourcePolicy',
       'DeleteServiceLinkedChannel',
@@ -733,6 +833,7 @@ export class Cloudtrail extends PolicyStatement {
       'PutResourcePolicy',
       'RegisterOrganizationDelegatedAdmin',
       'RestoreEventDataStore',
+      'StartDashboardRefresh',
       'StartEventDataStoreIngestion',
       'StartImport',
       'StartLogging',
@@ -741,6 +842,7 @@ export class Cloudtrail extends PolicyStatement {
       'StopImport',
       'StopLogging',
       'UpdateChannel',
+      'UpdateDashboard',
       'UpdateEventDataStore',
       'UpdateServiceLinkedChannel',
       'UpdateTrail'
@@ -748,7 +850,9 @@ export class Cloudtrail extends PolicyStatement {
     Read: [
       'DescribeQuery',
       'DescribeTrails',
+      'GenerateQueryResultsSummary',
       'GetChannel',
+      'GetDashboard',
       'GetEventDataStore',
       'GetEventDataStoreData',
       'GetEventSelectors',
@@ -766,6 +870,7 @@ export class Cloudtrail extends PolicyStatement {
     ],
     List: [
       'ListChannels',
+      'ListDashboards',
       'ListEventDataStores',
       'ListImports',
       'ListQueries',
@@ -826,6 +931,23 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type dashboard to the statement
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-dashboard.html
+   *
+   * @param dashboardName - Identifier for the dashboardName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDashboard(dashboardName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudtrail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ dashboardName }`);
+  }
+
+  /**
    * Filters access by the tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -833,6 +955,7 @@ export class Cloudtrail extends PolicyStatement {
    * Applies to actions:
    * - .toAddTags()
    * - .toCreateChannel()
+   * - .toCreateDashboard()
    * - .toCreateEventDataStore()
    * - .toCreateTrail()
    *
@@ -853,6 +976,7 @@ export class Cloudtrail extends PolicyStatement {
    * - trail
    * - eventdatastore
    * - channel
+   * - dashboard
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -870,6 +994,7 @@ export class Cloudtrail extends PolicyStatement {
    * Applies to actions:
    * - .toAddTags()
    * - .toCreateChannel()
+   * - .toCreateDashboard()
    * - .toCreateEventDataStore()
    * - .toCreateTrail()
    * - .toRemoveTags()

@@ -242,6 +242,31 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new S3 Metadata configuration for a specified bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * Dependent actions:
+   * - s3tables:CreateNamespace
+   * - s3tables:CreateTable
+   * - s3tables:GetTable
+   * - s3tables:PutTablePolicy
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html
+   */
+  public toCreateBucketMetadataTableConfiguration() {
+    return this.to('CreateBucketMetadataTableConfiguration');
+  }
+
+  /**
    * Grants permission to create a new Amazon S3 Batch Operations job
    *
    * Access Level: Write
@@ -494,6 +519,25 @@ export class S3 extends PolicyStatement {
    */
   public toDeleteBucket() {
     return this.to('DeleteBucket');
+  }
+
+  /**
+   * Grants permission to delete the S3 Metadata configuration for a specified bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html
+   */
+  public toDeleteBucketMetadataTableConfiguration() {
+    return this.to('DeleteBucketMetadataTableConfiguration');
   }
 
   /**
@@ -970,7 +1014,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to returns the access point policy associated with the specified access point
+   * Grants permission to return the access point policy associated with the specified access point
    *
    * Access Level: Read
    *
@@ -992,7 +1036,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to returns the access point policy associated with the specified object lambda enabled access point
+   * Grants permission to return the access point policy associated with the specified object lambda enabled access point
    *
    * Access Level: Read
    *
@@ -1169,6 +1213,25 @@ export class S3 extends PolicyStatement {
    */
   public toGetBucketLogging() {
     return this.to('GetBucketLogging');
+  }
+
+  /**
+   * Grants permission to return the S3 Metadata configuration for a specified bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html
+   */
+  public toGetBucketMetadataTableConfiguration() {
+    return this.to('GetBucketMetadataTableConfiguration');
   }
 
   /**
@@ -1517,7 +1580,7 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to returns the access point policy associated with the specified Multi-Region Access Point
+   * Grants permission to return the access point policy associated with the specified Multi-Region Access Point
    *
    * Access Level: Read
    *
@@ -1596,6 +1659,8 @@ export class S3 extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifIfMatch()
+   * - .ifIfNoneMatch()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
@@ -2174,6 +2239,26 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list caller's Access Grant
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListCallerAccessGrants.html
+   */
+  public toListCallerAccessGrants() {
+    return this.to('ListCallerAccessGrants');
+  }
+
+  /**
    * Grants permission to list current jobs and jobs that have ended recently
    *
    * Access Level: List
@@ -2324,8 +2409,8 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzContentSha256()
    *
    * Dependent actions:
-   * - S3:GetReplicationConfiguration
-   * - S3:PutReplicationConfiguration
+   * - s3:GetReplicationConfiguration
+   * - s3:PutReplicationConfiguration
    *
    * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#bucket-pause-replication
    */
@@ -2895,6 +2980,9 @@ export class S3 extends PolicyStatement {
    * - .ifObjectLockRetainUntilDate()
    * - .ifObjectLockRemainingRetentionDays()
    * - .ifObjectLockLegalHold()
+   * - .ifIfMatch()
+   * - .ifIfNoneMatch()
+   * - .ifObjectCreationOperation()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
    */
@@ -3366,6 +3454,7 @@ export class S3 extends PolicyStatement {
       'CreateAccessPoint',
       'CreateAccessPointForObjectLambda',
       'CreateBucket',
+      'CreateBucketMetadataTableConfiguration',
       'CreateJob',
       'CreateMultiRegionAccessPoint',
       'CreateStorageLensGroup',
@@ -3376,6 +3465,7 @@ export class S3 extends PolicyStatement {
       'DeleteAccessPoint',
       'DeleteAccessPointForObjectLambda',
       'DeleteBucket',
+      'DeleteBucketMetadataTableConfiguration',
       'DeleteBucketWebsite',
       'DeleteMultiRegionAccessPoint',
       'DeleteObject',
@@ -3469,6 +3559,7 @@ export class S3 extends PolicyStatement {
       'GetBucketCORS',
       'GetBucketLocation',
       'GetBucketLogging',
+      'GetBucketMetadataTableConfiguration',
       'GetBucketNotification',
       'GetBucketObjectLockConfiguration',
       'GetBucketOwnershipControls',
@@ -3519,6 +3610,7 @@ export class S3 extends PolicyStatement {
       'ListBucket',
       'ListBucketMultipartUploads',
       'ListBucketVersions',
+      'ListCallerAccessGrants',
       'ListJobs',
       'ListMultiRegionAccessPoints',
       'ListMultipartUploadParts',
@@ -3776,6 +3868,7 @@ export class S3 extends PolicyStatement {
    * - .toGetDataAccess()
    * - .toListAccessGrants()
    * - .toListAccessGrantsLocations()
+   * - .toListCallerAccessGrants()
    * - .toPutAccessGrantsInstanceResourcePolicy()
    * - .toUpdateAccessGrantsLocation()
    *
@@ -4149,6 +4242,20 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Filters access by whether or not the operation creates an object
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes-enforce.html
+   *
+   * Applies to actions:
+   * - .toPutObject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifObjectCreationOperation(value?: boolean) {
+    return this.if(`ObjectCreationOperation`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by operation to creating jobs
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-job-tags-examples.html
@@ -4231,6 +4338,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
+   * - .toCreateBucketMetadataTableConfiguration()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
    * - .toCreateStorageLensGroup()
@@ -4243,6 +4351,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
+   * - .toDeleteBucketMetadataTableConfiguration()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -4276,6 +4385,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
    * - .toGetBucketLogging()
+   * - .toGetBucketMetadataTableConfiguration()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
    * - .toGetBucketOwnershipControls()
@@ -4325,6 +4435,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
+   * - .toListCallerAccessGrants()
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
@@ -4391,6 +4502,8 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the TLS version used by the client
    *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#example-object-tls-version
+   *
    * Applies to actions:
    * - .toAbortMultipartUpload()
    * - .toAssociateAccessGrantsIdentityCenter()
@@ -4401,6 +4514,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
+   * - .toCreateBucketMetadataTableConfiguration()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
    * - .toCreateStorageLensGroup()
@@ -4413,6 +4527,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
+   * - .toDeleteBucketMetadataTableConfiguration()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -4446,6 +4561,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
    * - .toGetBucketLogging()
+   * - .toGetBucketMetadataTableConfiguration()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
    * - .toGetBucketOwnershipControls()
@@ -4494,6 +4610,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
+   * - .toListCallerAccessGrants()
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
@@ -4572,6 +4689,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
+   * - .toCreateBucketMetadataTableConfiguration()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
    * - .toCreateStorageLensGroup()
@@ -4584,6 +4702,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
+   * - .toDeleteBucketMetadataTableConfiguration()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -4617,6 +4736,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
    * - .toGetBucketLogging()
+   * - .toGetBucketMetadataTableConfiguration()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
    * - .toGetBucketOwnershipControls()
@@ -4665,6 +4785,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
+   * - .toListCallerAccessGrants()
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
@@ -4757,6 +4878,38 @@ export class S3 extends PolicyStatement {
    */
   public ifDestinationRegion(value: string | string[], operator?: Operator | string) {
     return this.if(`destinationRegion`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the request's 'If-Match' conditional header
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes-enforce.html
+   *
+   * Applies to actions:
+   * - .toGetObject()
+   * - .toPutObject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIfMatch(value: string | string[], operator?: Operator | string) {
+    return this.if(`if-match`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the request's 'If-None-Match' conditional header
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes-enforce.html
+   *
+   * Applies to actions:
+   * - .toGetObject()
+   * - .toPutObject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIfNoneMatch(value: string | string[], operator?: Operator | string) {
+    return this.if(`if-none-match`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4914,6 +5067,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
+   * - .toCreateBucketMetadataTableConfiguration()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
    * - .toCreateStorageLensGroup()
@@ -4926,6 +5080,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
+   * - .toDeleteBucketMetadataTableConfiguration()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -4959,6 +5114,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
    * - .toGetBucketLogging()
+   * - .toGetBucketMetadataTableConfiguration()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
    * - .toGetBucketOwnershipControls()
@@ -5007,6 +5163,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
+   * - .toListCallerAccessGrants()
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
@@ -5085,6 +5242,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
+   * - .toCreateBucketMetadataTableConfiguration()
    * - .toCreateJob()
    * - .toCreateMultiRegionAccessPoint()
    * - .toCreateStorageLensGroup()
@@ -5097,6 +5255,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
+   * - .toDeleteBucketMetadataTableConfiguration()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -5130,6 +5289,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
    * - .toGetBucketLogging()
+   * - .toGetBucketMetadataTableConfiguration()
    * - .toGetBucketNotification()
    * - .toGetBucketObjectLockConfiguration()
    * - .toGetBucketOwnershipControls()
@@ -5178,6 +5338,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
+   * - .toListCallerAccessGrants()
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
@@ -5300,6 +5461,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessPoint()
    * - .toCreateAccessPointForObjectLambda()
    * - .toCreateBucket()
+   * - .toCreateBucketMetadataTableConfiguration()
    * - .toCreateJob()
    * - .toCreateStorageLensGroup()
    * - .toDeleteAccessGrant()
@@ -5311,6 +5473,7 @@ export class S3 extends PolicyStatement {
    * - .toDeleteAccessPointPolicy()
    * - .toDeleteAccessPointPolicyForObjectLambda()
    * - .toDeleteBucket()
+   * - .toDeleteBucketMetadataTableConfiguration()
    * - .toDeleteBucketPolicy()
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
@@ -5342,6 +5505,7 @@ export class S3 extends PolicyStatement {
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
    * - .toGetBucketLogging()
+   * - .toGetBucketMetadataTableConfiguration()
    * - .toGetBucketNotification()
    * - .toGetBucketOwnershipControls()
    * - .toGetBucketPolicy()
@@ -5385,6 +5549,7 @@ export class S3 extends PolicyStatement {
    * - .toListBucket()
    * - .toListBucketMultipartUploads()
    * - .toListBucketVersions()
+   * - .toListCallerAccessGrants()
    * - .toListJobs()
    * - .toListMultipartUploadParts()
    * - .toListStorageLensConfigurations()

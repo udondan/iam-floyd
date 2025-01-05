@@ -1,3 +1,5 @@
+controlcatalog:GetControl;Read
 controlcatalog:ListCommonControls;List
+controlcatalog:ListControls;List
 controlcatalog:ListDomains;List
 controlcatalog:ListObjectives;List

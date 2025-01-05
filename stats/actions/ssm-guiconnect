@@ -1,3 +1,4 @@
 ssm-guiconnect:CancelConnection;Write
 ssm-guiconnect:GetConnection;Read
+ssm-guiconnect:ListConnections;List
 ssm-guiconnect:StartConnection;Write

@@ -64,6 +64,17 @@ export class B2bi extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a starter JSONATA/XSLT template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/b2bi/latest/APIReference/API_CreateStarterMappingTemplate.html
+   */
+  public toCreateStarterMappingTemplate() {
+    return this.to('CreateStarterMappingTemplate');
+  }
+
+  /**
    * Grants permission to create a transformer
    *
    * Access Level: Write
@@ -120,6 +131,17 @@ export class B2bi extends PolicyStatement {
    */
   public toDeleteTransformer() {
     return this.to('DeleteTransformer');
+  }
+
+  /**
+   * Grants permission to generate a starter JSONATA/XSLT mapping template from Amazon Bedrock
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GenerateMapping.html
+   */
+  public toGenerateMapping() {
+    return this.to('GenerateMapping');
   }
 
   /**
@@ -259,6 +281,17 @@ export class B2bi extends PolicyStatement {
   }
 
   /**
+   * Grants permission to convert a JSON/XML to an edi document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/b2bi/latest/APIReference/API_TestConversion.html
+   */
+  public toTestConversion() {
+    return this.to('TestConversion');
+  }
+
+  /**
    * Grants permission to map a sample file
    *
    * Access Level: Write
@@ -343,12 +376,15 @@ export class B2bi extends PolicyStatement {
       'CreateCapability',
       'CreatePartnership',
       'CreateProfile',
+      'CreateStarterMappingTemplate',
       'CreateTransformer',
       'DeleteCapability',
       'DeletePartnership',
       'DeleteProfile',
       'DeleteTransformer',
+      'GenerateMapping',
       'StartTransformerJob',
+      'TestConversion',
       'TestMapping',
       'TestParsing',
       'UpdateCapability',

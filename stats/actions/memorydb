@@ -3,12 +3,14 @@ memorydb:Connect;Write
 memorydb:CopySnapshot;Write
 memorydb:CreateAcl;Write
 memorydb:CreateCluster;Write
+memorydb:CreateMultiRegionCluster;Write
 memorydb:CreateParameterGroup;Write
 memorydb:CreateSnapshot;Write
 memorydb:CreateSubnetGroup;Write
 memorydb:CreateUser;Write
 memorydb:DeleteAcl;Write
 memorydb:DeleteCluster;Write
+memorydb:DeleteMultiRegionCluster;Write
 memorydb:DeleteParameterGroup;Write
 memorydb:DeleteSnapshot;Write
 memorydb:DeleteSubnetGroup;Write
@@ -17,6 +19,9 @@ memorydb:DescribeAcls;Read
 memorydb:DescribeClusters;Read
 memorydb:DescribeEngineVersions;Read
 memorydb:DescribeEvents;Read
+memorydb:DescribeMultiRegionClusters;Read
+memorydb:DescribeMultiRegionParameterGroups;Read
+memorydb:DescribeMultiRegionParameters;Read
 memorydb:DescribeParameterGroups;Read
 memorydb:DescribeParameters;Read
 memorydb:DescribeReservedNodes;Read
@@ -26,6 +31,7 @@ memorydb:DescribeSnapshots;Read
 memorydb:DescribeSubnetGroups;Read
 memorydb:DescribeUsers;Read
 memorydb:FailoverShard;Write
+memorydb:ListAllowedMultiRegionClusterUpdates;Read
 memorydb:ListAllowedNodeTypeUpdates;Read
 memorydb:ListTags;Read
 memorydb:PurchaseReservedNodesOffering;Write
@@ -34,6 +40,7 @@ memorydb:TagResource;Tagging
 memorydb:UntagResource;Tagging
 memorydb:UpdateAcl;Write
 memorydb:UpdateCluster;Write
+memorydb:UpdateMultiRegionCluster;Write
 memorydb:UpdateParameterGroup;Write
 memorydb:UpdateSubnetGroup;Write
 memorydb:UpdateUser;Write

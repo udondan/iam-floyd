@@ -19,17 +19,6 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Adds or overwrites one or more tags for the specified AWS CloudHSM resource
-   *
-   * Access Level: Tagging
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_AddTagsToResource.html
-   */
-  public toAddTagsToResource() {
-    return this.to('AddTagsToResource');
-  }
-
-  /**
    * Grants permission to create a copy of a backup in the specified region
    *
    * Access Level: Write
@@ -75,17 +64,6 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Creates a high-availability partition group
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHapg.html
-   */
-  public toCreateHapg() {
-    return this.to('CreateHapg');
-  }
-
-  /**
    * Grants permission to create a new hardware security module (HSM) in the specified AWS CloudHSM cluster
    *
    * Access Level: Write
@@ -105,17 +83,6 @@ export class Cloudhsm extends PolicyStatement {
    */
   public toCreateHsm() {
     return this.to('CreateHsm');
-  }
-
-  /**
-   * Creates an HSM client
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateLunaClient.html
-   */
-  public toCreateLunaClient() {
-    return this.to('CreateLunaClient');
   }
 
   /**
@@ -145,17 +112,6 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Deletes a high-availability partition group
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHapg.html
-   */
-  public toDeleteHapg() {
-    return this.to('DeleteHapg');
-  }
-
-  /**
    * Grants permission to delete the specified HSM
    *
    * Access Level: Write
@@ -167,17 +123,6 @@ export class Cloudhsm extends PolicyStatement {
    */
   public toDeleteHsm() {
     return this.to('DeleteHsm');
-  }
-
-  /**
-   * Deletes a client
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteLunaClient.html
-   */
-  public toDeleteLunaClient() {
-    return this.to('DeleteLunaClient');
   }
 
   /**
@@ -214,50 +159,6 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Retrieves information about a high-availability partition group
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHapg.html
-   */
-  public toDescribeHapg() {
-    return this.to('DescribeHapg');
-  }
-
-  /**
-   * Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHsm.html
-   */
-  public toDescribeHsm() {
-    return this.to('DescribeHsm');
-  }
-
-  /**
-   * Retrieves information about an HSM client
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeLunaClient.html
-   */
-  public toDescribeLunaClient() {
-    return this.to('DescribeLunaClient');
-  }
-
-  /**
-   * Gets the configuration files necessary to connect to all high availability partition groups the client is associated with
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_GetConfig.html
-   */
-  public toGetConfig() {
-    return this.to('GetConfig');
-  }
-
-  /**
    * Grants permission to get information about the policy attached to a AWS CloudHSM resource
    *
    * Access Level: Read
@@ -280,50 +181,6 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Lists the Availability Zones that have available AWS CloudHSM capacity
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListAvailableZones.html
-   */
-  public toListAvailableZones() {
-    return this.to('ListAvailableZones');
-  }
-
-  /**
-   * Lists the high-availability partition groups for the account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHapgs.html
-   */
-  public toListHapgs() {
-    return this.to('ListHapgs');
-  }
-
-  /**
-   * Retrieves the identifiers of all of the HSMs provisioned for the current customer
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHsms.html
-   */
-  public toListHsms() {
-    return this.to('ListHsms');
-  }
-
-  /**
-   * Lists all of the clients
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListLunaClients.html
-   */
-  public toListLunaClients() {
-    return this.to('ListLunaClients');
-  }
-
-  /**
    * Grants permission to get a list of tags for the specified AWS CloudHSM cluster
    *
    * Access Level: Read
@@ -332,17 +189,6 @@ export class Cloudhsm extends PolicyStatement {
    */
   public toListTags() {
     return this.to('ListTags');
-  }
-
-  /**
-   * Returns a list of all tags for the specified AWS CloudHSM resource
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListTagsForResource.html
-   */
-  public toListTagsForResource() {
-    return this.to('ListTagsForResource');
   }
 
   /**
@@ -368,39 +214,6 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   /**
-   * Modifies an existing high-availability partition group
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHapg.html
-   */
-  public toModifyHapg() {
-    return this.to('ModifyHapg');
-  }
-
-  /**
-   * Modifies an HSM
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHsm.html
-   */
-  public toModifyHsm() {
-    return this.to('ModifyHsm');
-  }
-
-  /**
-   * Modifies the certificate used by the client
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyLunaClient.html
-   */
-  public toModifyLunaClient() {
-    return this.to('ModifyLunaClient');
-  }
-
-  /**
    * Grants permission to attach a policy to an AWS CloudHSM resource
    *
    * Access Level: Write
@@ -409,17 +222,6 @@ export class Cloudhsm extends PolicyStatement {
    */
   public toPutResourcePolicy() {
     return this.to('PutResourcePolicy');
-  }
-
-  /**
-   * Removes one or more tags from the specified AWS CloudHSM resource
-   *
-   * Access Level: Tagging
-   *
-   * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_RemoveTagsFromResource.html
-   */
-  public toRemoveTagsFromResource() {
-    return this.to('RemoveTagsFromResource');
   }
 
   /**
@@ -463,49 +265,29 @@ export class Cloudhsm extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    Tagging: [
-      'AddTagsToResource',
-      'RemoveTagsFromResource',
-      'TagResource',
-      'UntagResource'
-    ],
     Write: [
       'CopyBackupToRegion',
       'CreateCluster',
-      'CreateHapg',
       'CreateHsm',
-      'CreateLunaClient',
       'DeleteBackup',
       'DeleteCluster',
-      'DeleteHapg',
       'DeleteHsm',
-      'DeleteLunaClient',
       'DeleteResourcePolicy',
       'InitializeCluster',
       'ModifyBackupAttributes',
       'ModifyCluster',
-      'ModifyHapg',
-      'ModifyHsm',
-      'ModifyLunaClient',
       'PutResourcePolicy',
       'RestoreBackup'
     ],
     Read: [
       'DescribeBackups',
       'DescribeClusters',
-      'DescribeHapg',
-      'DescribeHsm',
-      'DescribeLunaClient',
-      'GetConfig',
       'GetResourcePolicy',
-      'ListTags',
-      'ListTagsForResource'
+      'ListTags'
     ],
-    List: [
-      'ListAvailableZones',
-      'ListHapgs',
-      'ListHsms',
-      'ListLunaClients'
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 

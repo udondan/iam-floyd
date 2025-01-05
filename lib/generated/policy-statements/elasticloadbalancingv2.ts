@@ -288,6 +288,28 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the capacity reservation for a load balancer
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeCapacityReservation.html
+   */
+  public toDescribeCapacityReservation() {
+    return this.to('DescribeCapacityReservation');
+  }
+
+  /**
+   * Grants permission to describe the attributes for the specified listener
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeListenerAttributes.html
+   */
+  public toDescribeListenerAttributes() {
+    return this.to('DescribeListenerAttributes');
+  }
+
+  /**
    * Grants permission to describe the certificates for the specified secure listener
    *
    * Access Level: Read
@@ -476,6 +498,21 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the capacity reservation for a load balancer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyCapacityReservation.html
+   */
+  public toModifyCapacityReservation() {
+    return this.to('ModifyCapacityReservation');
+  }
+
+  /**
    * Grants permission to modify the specified properties of the specified listener
    *
    * Access Level: Write
@@ -490,6 +527,21 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    */
   public toModifyListener() {
     return this.to('ModifyListener');
+  }
+
+  /**
+   * Grants permission to modify the attributes of the specified listener
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyListenerAttributes.html
+   */
+  public toModifyListenerAttributes() {
+    return this.to('ModifyListenerAttributes');
   }
 
   /**
@@ -714,7 +766,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'DeleteTargetGroup',
       'DeleteTrustStore',
       'DeregisterTargets',
+      'ModifyCapacityReservation',
       'ModifyListener',
+      'ModifyListenerAttributes',
       'ModifyLoadBalancerAttributes',
       'ModifyRule',
       'ModifyTargetGroup',
@@ -735,6 +789,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     ],
     Read: [
       'DescribeAccountLimits',
+      'DescribeCapacityReservation',
+      'DescribeListenerAttributes',
       'DescribeListenerCertificates',
       'DescribeListeners',
       'DescribeLoadBalancerAttributes',
@@ -958,7 +1014,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toGetResourcePolicy()
    * - .toGetTrustStoreCaCertificatesBundle()
    * - .toGetTrustStoreRevocationContent()
+   * - .toModifyCapacityReservation()
    * - .toModifyListener()
+   * - .toModifyListenerAttributes()
    * - .toModifyLoadBalancerAttributes()
    * - .toModifyRule()
    * - .toModifyTargetGroup()
@@ -1066,7 +1124,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toGetResourcePolicy()
    * - .toGetTrustStoreCaCertificatesBundle()
    * - .toGetTrustStoreRevocationContent()
+   * - .toModifyCapacityReservation()
    * - .toModifyListener()
+   * - .toModifyListenerAttributes()
    * - .toModifyLoadBalancerAttributes()
    * - .toModifyRule()
    * - .toModifyTargetGroup()

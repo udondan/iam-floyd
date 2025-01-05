@@ -3,6 +3,7 @@ thinclient:DeleteDevice;Write
 thinclient:DeleteEnvironment;Write
 thinclient:DeregisterDevice;Write
 thinclient:GetDevice;Read
+thinclient:GetDeviceDetails;Read
 thinclient:GetEnvironment;Read
 thinclient:GetSoftwareSet;Read
 thinclient:ListDeviceSessions;List

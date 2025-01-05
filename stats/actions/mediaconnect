@@ -14,6 +14,7 @@ mediaconnect:DeregisterGatewayInstance;Write
 mediaconnect:DescribeBridge;Read
 mediaconnect:DescribeFlow;Read
 mediaconnect:DescribeFlowSourceMetadata;Read
+mediaconnect:DescribeFlowSourceThumbnail;Read
 mediaconnect:DescribeGateway;Read
 mediaconnect:DescribeGatewayInstance;Read
 mediaconnect:DescribeOffering;Read

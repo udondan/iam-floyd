@@ -52,6 +52,20 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate SBOM files to a package version
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iot:GetIndexingConfiguration
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_AssociateSbomWithPackageVersion.html
+   */
+  public toAssociateSbomWithPackageVersion() {
+    return this.to('AssociateSbomWithPackageVersion');
+  }
+
+  /**
    * Grants permission to associate a group with a continuous job
    *
    * Access Level: Write
@@ -287,6 +301,21 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a command that can be used to start new executions against a device
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCommand.html
+   */
+  public toCreateCommand() {
+    return this.to('CreateCommand');
+  }
+
+  /**
    * Grants permission to create a custom metric for device side metric reporting and monitoring
    *
    * Access Level: Write
@@ -462,6 +491,7 @@ export class Iot extends PolicyStatement {
    *
    * Dependent actions:
    * - iot:GetIndexingConfiguration
+   * - s3:GetObjectVersion
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackageVersion.html
    */
@@ -740,6 +770,28 @@ export class Iot extends PolicyStatement {
    */
   public toDeleteCertificateProvider() {
     return this.to('DeleteCertificateProvider');
+  }
+
+  /**
+   * Grants permission to delete a command
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCommand.html
+   */
+  public toDeleteCommand() {
+    return this.to('DeleteCommand');
+  }
+
+  /**
+   * Grants permission to delete a command execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCommandExecution.html
+   */
+  public toDeleteCommandExecution() {
+    return this.to('DeleteCommandExecution');
   }
 
   /**
@@ -1502,6 +1554,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate SBOM files from a package version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DisassociateSbomFromPackageVersion.html
+   */
+  public toDisassociateSbomFromPackageVersion() {
+    return this.to('DisassociateSbomFromPackageVersion');
+  }
+
+  /**
    * Grants permission to enable the specified rule
    *
    * Access Level: Write
@@ -1543,6 +1606,28 @@ export class Iot extends PolicyStatement {
    */
   public toGetCardinality() {
     return this.to('GetCardinality');
+  }
+
+  /**
+   * Grants permission to get the information about the command
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetCommand.html
+   */
+  public toGetCommand() {
+    return this.to('GetCommand');
+  }
+
+  /**
+   * Grants permission to get the information of a command execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetCommandExecution.html
+   */
+  public toGetCommandExecution() {
+    return this.to('GetCommandExecution');
   }
 
   /**
@@ -1697,6 +1782,17 @@ export class Iot extends PolicyStatement {
    */
   public toGetStatistics() {
     return this.to('GetStatistics');
+  }
+
+  /**
+   * Grants permission to get the thing's connectivity data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
+   */
+  public toGetThingConnectivityData() {
+    return this.to('GetThingConnectivityData');
   }
 
   /**
@@ -1884,6 +1980,28 @@ export class Iot extends PolicyStatement {
    */
   public toListCertificatesByCA() {
     return this.to('ListCertificatesByCA');
+  }
+
+  /**
+   * Grants permission to list commands executions in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListCommandExecutions.html
+   */
+  public toListCommandExecutions() {
+    return this.to('ListCommandExecutions');
+  }
+
+  /**
+   * Grants permission to list commands in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListCommands.html
+   */
+  public toListCommands() {
+    return this.to('ListCommands');
   }
 
   /**
@@ -2203,6 +2321,17 @@ export class Iot extends PolicyStatement {
    */
   public toListRoleAliases() {
     return this.to('ListRoleAliases');
+  }
+
+  /**
+   * Grants permission to list SBOM validation results of a package version
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListSbomValidationResults.html
+   */
+  public toListSbomValidationResults() {
+    return this.to('ListSbomValidationResults');
   }
 
   /**
@@ -2686,6 +2815,22 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a new command execution
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCommandExecutionParameterString()
+   * - .ifCommandExecutionParameterBoolean()
+   * - .ifCommandExecutionParameterNumber()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-jobs-data_StartCommandExecution.html
+   */
+  public toStartCommandExecution() {
+    return this.to('StartCommandExecution');
+  }
+
+  /**
    * Grants permission to start a Device Defender ML Detect mitigation actions task
    *
    * Access Level: Write
@@ -2883,6 +3028,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a command
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCommand.html
+   */
+  public toUpdateCommand() {
+    return this.to('UpdateCommand');
+  }
+
+  /**
    * Grants permission to update the specified custom metric
    *
    * Access Level: Write
@@ -3016,6 +3172,7 @@ export class Iot extends PolicyStatement {
    *
    * Dependent actions:
    * - iot:GetIndexingConfiguration
+   * - s3:GetObjectVersion
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageVersion.html
    */
@@ -3129,6 +3286,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update information associated with the specified thing type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateThingType.html
+   */
+  public toUpdateThingType() {
+    return this.to('UpdateThingType');
+  }
+
+  /**
    * Grants permission to update a TopicRuleDestination
    *
    * Access Level: Write
@@ -3155,6 +3323,7 @@ export class Iot extends PolicyStatement {
       'AcceptCertificateTransfer',
       'AddThingToBillingGroup',
       'AddThingToThingGroup',
+      'AssociateSbomWithPackageVersion',
       'AssociateTargetsWithJob',
       'AttachSecurityProfile',
       'AttachThingPrincipal',
@@ -3173,6 +3342,7 @@ export class Iot extends PolicyStatement {
       'CreateBillingGroup',
       'CreateCertificateFromCsr',
       'CreateCertificateProvider',
+      'CreateCommand',
       'CreateCustomMetric',
       'CreateDimension',
       'CreateDomainConfiguration',
@@ -3206,6 +3376,8 @@ export class Iot extends PolicyStatement {
       'DeleteCACertificate',
       'DeleteCertificate',
       'DeleteCertificateProvider',
+      'DeleteCommand',
+      'DeleteCommandExecution',
       'DeleteCustomMetric',
       'DeleteDimension',
       'DeleteDomainConfiguration',
@@ -3238,6 +3410,7 @@ export class Iot extends PolicyStatement {
       'DetachSecurityProfile',
       'DetachThingPrincipal',
       'DisableTopicRule',
+      'DisassociateSbomFromPackageVersion',
       'EnableTopicRule',
       'OpenTunnel',
       'Publish',
@@ -3257,6 +3430,7 @@ export class Iot extends PolicyStatement {
       'SetV2LoggingLevel',
       'SetV2LoggingOptions',
       'StartAuditMitigationActionsTask',
+      'StartCommandExecution',
       'StartDetectMitigationActionsTask',
       'StartOnDemandAuditTask',
       'StartThingRegistrationTask',
@@ -3270,6 +3444,7 @@ export class Iot extends PolicyStatement {
       'UpdateCACertificate',
       'UpdateCertificate',
       'UpdateCertificateProvider',
+      'UpdateCommand',
       'UpdateCustomMetric',
       'UpdateDimension',
       'UpdateDomainConfiguration',
@@ -3291,6 +3466,7 @@ export class Iot extends PolicyStatement {
       'UpdateThingGroup',
       'UpdateThingGroupsForThing',
       'UpdateThingShadow',
+      'UpdateThingType',
       'UpdateTopicRuleDestination'
     ],
     'Permissions management': [
@@ -3339,6 +3515,8 @@ export class Iot extends PolicyStatement {
       'DescribeTunnel',
       'GetBucketsAggregation',
       'GetCardinality',
+      'GetCommand',
+      'GetCommandExecution',
       'GetEffectivePolicies',
       'GetIndexingConfiguration',
       'GetJobDocument',
@@ -3353,6 +3531,7 @@ export class Iot extends PolicyStatement {
       'GetRegistrationCode',
       'GetRetainedMessage',
       'GetStatistics',
+      'GetThingConnectivityData',
       'GetThingShadow',
       'GetTopicRule',
       'GetTopicRuleDestination',
@@ -3378,6 +3557,8 @@ export class Iot extends PolicyStatement {
       'ListCertificateProviders',
       'ListCertificates',
       'ListCertificatesByCA',
+      'ListCommandExecutions',
+      'ListCommands',
       'ListCustomMetrics',
       'ListDetectMitigationActionsExecutions',
       'ListDetectMitigationActionsTasks',
@@ -3407,6 +3588,7 @@ export class Iot extends PolicyStatement {
       'ListRelatedResourcesForAuditFinding',
       'ListRetainedMessages',
       'ListRoleAliases',
+      'ListSbomValidationResults',
       'ListScheduledAudits',
       'ListSecurityProfiles',
       'ListSecurityProfilesForTarget',
@@ -3961,6 +4143,23 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type command to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-remote-command.html
+   *
+   * @param commandId - Identifier for the commandId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCommand(commandId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:command/${ commandId }`);
+  }
+
+  /**
    * Filters access by a tag key that is present in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
@@ -3969,6 +4168,7 @@ export class Iot extends PolicyStatement {
    * - .toCreateAuthorizer()
    * - .toCreateBillingGroup()
    * - .toCreateCertificateProvider()
+   * - .toCreateCommand()
    * - .toCreateCustomMetric()
    * - .toCreateDimension()
    * - .toCreateDomainConfiguration()
@@ -4032,6 +4232,7 @@ export class Iot extends PolicyStatement {
    * - package
    * - packageversion
    * - certificateprovider
+   * - command
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4050,6 +4251,7 @@ export class Iot extends PolicyStatement {
    * - .toCreateAuthorizer()
    * - .toCreateBillingGroup()
    * - .toCreateCertificateProvider()
+   * - .toCreateCommand()
    * - .toCreateCustomMetric()
    * - .toCreateDimension()
    * - .toCreateDomainConfiguration()
@@ -4095,6 +4297,53 @@ export class Iot extends PolicyStatement {
    */
   public ifClientMode(value: string | string[], operator?: Operator | string) {
     return this.if(`ClientMode`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the command parameter name and boolean value
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
+   *
+   * Applies to actions:
+   * - .toStartCommandExecution()
+   *
+   * @param commandParameterName The tag key to check
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifCommandExecutionParameterBoolean(commandParameterName: string, value?: boolean) {
+    return this.if(`CommandExecutionParameterBoolean/${ commandParameterName }`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the command parameter name and numeric value
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
+   *
+   * Applies to actions:
+   * - .toStartCommandExecution()
+   *
+   * @param commandParameterName The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifCommandExecutionParameterNumber(commandParameterName: string, value: number | number[], operator?: Operator | string) {
+    return this.if(`CommandExecutionParameterNumber/${ commandParameterName }`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the command parameter name and string value
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
+   *
+   * Applies to actions:
+   * - .toStartCommandExecution()
+   *
+   * @param commandParameterName The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCommandExecutionParameterString(commandParameterName: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`CommandExecutionParameterString/${ commandParameterName }`, value, operator ?? 'StringLike');
   }
 
   /**

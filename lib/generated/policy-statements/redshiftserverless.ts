@@ -67,6 +67,20 @@ export class RedshiftServerless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
+   *
    * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateNamespace.html
    */
   public toCreateNamespace() {
@@ -162,6 +176,12 @@ export class RedshiftServerless extends PolicyStatement {
    * Grants permission to delete a namespace from Amazon Redshift Serverless
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:DescribeKey
+   * - kms:RetireGrant
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
    *
    * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_DeleteNamespace.html
    */
@@ -280,6 +300,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Amazon Redshift Managed Serverless workgroup with the specified configuration settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetManagedWorkgroup.html
+   */
+  public toGetManagedWorkgroup() {
+    return this.to('GetManagedWorkgroup');
+  }
+
+  /**
    * Grants permission to get information about a namespace in Amazon Redshift Serverless
    *
    * Access Level: Read
@@ -387,6 +418,17 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toListEndpointAccess() {
     return this.to('ListEndpointAccess');
+  }
+
+  /**
+   * Grants permission to list managed workgroups in Amazon Redshift Serverless
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListManagedWorkgroups.html
+   */
+  public toListManagedWorkgroups() {
+    return this.to('ListManagedWorkgroups');
   }
 
   /**
@@ -518,6 +560,20 @@ export class RedshiftServerless extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
+   *
    * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_RestoreFromSnapshot.html
    */
   public toRestoreFromSnapshot() {
@@ -605,6 +661,20 @@ export class RedshiftServerless extends PolicyStatement {
    * Grants permission to update a namespace with the specified configuration settings
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKey
+   * - kms:RetireGrant
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:RotateSecret
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
    *
    * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_UpdateNamespace.html
    */
@@ -706,6 +776,7 @@ export class RedshiftServerless extends PolicyStatement {
       'DescribeOneTimeCredit',
       'GetCustomDomainAssociation',
       'GetEndpointAccess',
+      'GetManagedWorkgroup',
       'GetNamespace',
       'GetRecoveryPoint',
       'GetResourcePolicy',
@@ -718,6 +789,7 @@ export class RedshiftServerless extends PolicyStatement {
     List: [
       'ListCustomDomainAssociations',
       'ListEndpointAccess',
+      'ListManagedWorkgroups',
       'ListNamespaces',
       'ListRecoveryPoints',
       'ListScheduledActions',
@@ -783,6 +855,20 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public onWorkgroup(workgroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workgroup/${ workgroupId }`);
+  }
+
+  /**
+   * Adds a resource of type managed-workgroup to the statement
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-managed-workgroup-namespace.html
+   *
+   * @param managedWorkgroupName - Identifier for the managedWorkgroupName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onManagedWorkgroup(managedWorkgroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:redshift-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:managed-workgroup/${ managedWorkgroupName }`);
   }
 
   /**
@@ -889,6 +975,18 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public ifEndpointAccessId(value: string | string[], operator?: Operator | string) {
     return this.if(`endpointAccessId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the managed workgroup identifier
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifManagedWorkgroupName(value: string | string[], operator?: Operator | string) {
+    return this.if(`managedWorkgroupName`, value, operator ?? 'StringLike');
   }
 
   /**

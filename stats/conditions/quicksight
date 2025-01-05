@@ -1,6 +1,8 @@
 quicksight:AllowedEmbeddingDomains
 quicksight:DirectoryType
 quicksight:Edition
+quicksight:Group
+quicksight:GroupId
 quicksight:IamArn
 quicksight:KmsKeyArns
 quicksight:RequestTag/${TagKey}

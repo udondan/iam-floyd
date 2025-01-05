@@ -189,6 +189,21 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a dataset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDataset.html
+   */
+  public toCreateDataset() {
+    return this.to('CreateDataset');
+  }
+
+  /**
    * Grants permission to create a gateway
    *
    * Access Level: Write
@@ -290,6 +305,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDeleteDashboard() {
     return this.to('DeleteDashboard');
+  }
+
+  /**
+   * Grants permission to delete a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteDataset.html
+   */
+  public toDeleteDataset() {
+    return this.to('DeleteDataset');
   }
 
   /**
@@ -436,6 +462,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDescribeDashboard() {
     return this.to('DescribeDashboard');
+  }
+
+  /**
+   * Grants permission to describe dataset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDataset.html
+   */
+  public toDescribeDataset() {
+    return this.to('DescribeDataset');
   }
 
   /**
@@ -628,6 +665,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke an assistant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_InvokeAssistant.html
+   */
+  public toInvokeAssistant() {
+    return this.to('InvokeAssistant');
+  }
+
+  /**
    * Grants permission to list all access policies for an identity or a resource
    *
    * Access Level: List
@@ -757,6 +805,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListDashboards() {
     return this.to('ListDashboards');
+  }
+
+  /**
+   * Grants permission to list all datasets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasets.html
+   */
+  public toListDatasets() {
+    return this.to('ListDatasets');
   }
 
   /**
@@ -966,6 +1025,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateDataset.html
+   */
+  public toUpdateDataset() {
+    return this.to('UpdateDataset');
+  }
+
+  /**
    * Grants permission to update a gateway
    *
    * Access Level: Write
@@ -1022,6 +1092,7 @@ export class Iotsitewise extends PolicyStatement {
       'CreateAssetModelCompositeModel',
       'CreateBulkImportJob',
       'CreateDashboard',
+      'CreateDataset',
       'CreateGateway',
       'CreatePortal',
       'CreateProject',
@@ -1030,6 +1101,7 @@ export class Iotsitewise extends PolicyStatement {
       'DeleteAssetModel',
       'DeleteAssetModelCompositeModel',
       'DeleteDashboard',
+      'DeleteDataset',
       'DeleteGateway',
       'DeletePortal',
       'DeleteProject',
@@ -1048,6 +1120,7 @@ export class Iotsitewise extends PolicyStatement {
       'UpdateAssetModelPropertyRouting',
       'UpdateAssetProperty',
       'UpdateDashboard',
+      'UpdateDataset',
       'UpdateGateway',
       'UpdateGatewayCapabilityConfiguration',
       'UpdatePortal',
@@ -1066,6 +1139,7 @@ export class Iotsitewise extends PolicyStatement {
       'DescribeAssetProperty',
       'DescribeBulkImportJob',
       'DescribeDashboard',
+      'DescribeDataset',
       'DescribeDefaultEncryptionConfiguration',
       'DescribeGateway',
       'DescribeGatewayCapabilityConfiguration',
@@ -1079,6 +1153,7 @@ export class Iotsitewise extends PolicyStatement {
       'GetAssetPropertyValue',
       'GetAssetPropertyValueHistory',
       'GetInterpolatedAssetPropertyValues',
+      'InvokeAssistant',
       'ListTagsForResource'
     ],
     List: [
@@ -1094,6 +1169,7 @@ export class Iotsitewise extends PolicyStatement {
       'ListBulkImportJobs',
       'ListCompositionRelationships',
       'ListDashboards',
+      'ListDatasets',
       'ListGateways',
       'ListPortals',
       'ListProjectAssets',
@@ -1243,6 +1319,23 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDataset.html
+   *
+   * @param datasetId - Identifier for the datasetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataset(datasetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }`);
+  }
+
+  /**
    * Filters access by the tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1252,6 +1345,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .toCreateAsset()
    * - .toCreateAssetModel()
    * - .toCreateDashboard()
+   * - .toCreateDataset()
    * - .toCreateGateway()
    * - .toCreatePortal()
    * - .toCreateProject()
@@ -1283,6 +1377,7 @@ export class Iotsitewise extends PolicyStatement {
    * - project
    * - dashboard
    * - access-policy
+   * - dataset
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1302,6 +1397,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .toCreateAsset()
    * - .toCreateAssetModel()
    * - .toCreateDashboard()
+   * - .toCreateDataset()
    * - .toCreateGateway()
    * - .toCreatePortal()
    * - .toCreateProject()

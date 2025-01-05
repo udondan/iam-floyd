@@ -7,6 +7,7 @@ s3:CreateAccessGrantsLocation;Write
 s3:CreateAccessPoint;Write
 s3:CreateAccessPointForObjectLambda;Write
 s3:CreateBucket;Write
+s3:CreateBucketMetadataTableConfiguration;Write
 s3:CreateJob;Write
 s3:CreateMultiRegionAccessPoint;Write
 s3:CreateStorageLensGroup;Write
@@ -19,6 +20,7 @@ s3:DeleteAccessPointForObjectLambda;Write
 s3:DeleteAccessPointPolicy;Permissions management
 s3:DeleteAccessPointPolicyForObjectLambda;Permissions management
 s3:DeleteBucket;Write
+s3:DeleteBucketMetadataTableConfiguration;Write
 s3:DeleteBucketPolicy;Permissions management
 s3:DeleteBucketWebsite;Write
 s3:DeleteJobTagging;Tagging
@@ -52,6 +54,7 @@ s3:GetBucketAcl;Read
 s3:GetBucketCORS;Read
 s3:GetBucketLocation;Read
 s3:GetBucketLogging;Read
+s3:GetBucketMetadataTableConfiguration;Read
 s3:GetBucketNotification;Read
 s3:GetBucketObjectLockConfiguration;Read
 s3:GetBucketOwnershipControls;Read
@@ -101,6 +104,7 @@ s3:ListAllMyBuckets;List
 s3:ListBucket;List
 s3:ListBucketMultipartUploads;List
 s3:ListBucketVersions;List
+s3:ListCallerAccessGrants;List
 s3:ListJobs;List
 s3:ListMultiRegionAccessPoints;List
 s3:ListMultipartUploadParts;List

@@ -47,7 +47,11 @@ iam:DeleteVirtualMFADevice;Write
 iam:DetachGroupPolicy;Permissions management
 iam:DetachRolePolicy;Permissions management
 iam:DetachUserPolicy;Permissions management
+iam:DisableOrganizationsRootCredentialsManagement;Write
+iam:DisableOrganizationsRootSessions;Write
 iam:EnableMFADevice;Write
+iam:EnableOrganizationsRootCredentialsManagement;Write
+iam:EnableOrganizationsRootSessions;Write
 iam:GenerateCredentialReport;Read
 iam:GenerateOrganizationsAccessReport;Read
 iam:GenerateServiceLastAccessedDetails;Read
@@ -97,6 +101,7 @@ iam:ListMFADeviceTags;List
 iam:ListMFADevices;List
 iam:ListOpenIDConnectProviderTags;List
 iam:ListOpenIDConnectProviders;List
+iam:ListOrganizationsFeatures;List
 iam:ListPolicies;List
 iam:ListPoliciesGrantingServiceAccess;List
 iam:ListPolicyTags;List

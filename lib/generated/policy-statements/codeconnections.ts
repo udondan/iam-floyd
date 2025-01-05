@@ -143,6 +143,17 @@ export class Codeconnections extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a Connection token to call provider actions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-getconnectiontoken
+   */
+  public toGetConnectionToken() {
+    return this.to('GetConnectionToken');
+  }
+
+  /**
    * Grants permission to get details about a host resource
    *
    * Access Level: Read
@@ -532,6 +543,7 @@ export class Codeconnections extends PolicyStatement {
     ],
     Read: [
       'GetConnection',
+      'GetConnectionToken',
       'GetHost',
       'GetIndividualAccessToken',
       'GetInstallationUrl',

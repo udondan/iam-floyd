@@ -13,6 +13,8 @@ logs:DeleteDeliveryDestination;Write
 logs:DeleteDeliveryDestinationPolicy;Write
 logs:DeleteDeliverySource;Write
 logs:DeleteDestination;Write
+logs:DeleteIndexPolicy;Write
+logs:DeleteIntegration;Write
 logs:DeleteLogAnomalyDetector;Write
 logs:DeleteLogDelivery;Write
 logs:DeleteLogGroup;Write
@@ -22,12 +24,16 @@ logs:DeleteQueryDefinition;Write
 logs:DeleteResourcePolicy;Permissions management
 logs:DeleteRetentionPolicy;Write
 logs:DeleteSubscriptionFilter;Write
+logs:DeleteTransformer;Write
 logs:DescribeAccountPolicies;List
+logs:DescribeConfigurationTemplates;List
 logs:DescribeDeliveries;List
 logs:DescribeDeliveryDestinations;List
 logs:DescribeDeliverySources;List
 logs:DescribeDestinations;List
 logs:DescribeExportTasks;List
+logs:DescribeFieldIndexes;List
+logs:DescribeIndexPolicies;List
 logs:DescribeLogGroups;List
 logs:DescribeLogStreams;List
 logs:DescribeMetricFilters;List
@@ -42,16 +48,22 @@ logs:GetDelivery;Read
 logs:GetDeliveryDestination;Read
 logs:GetDeliveryDestinationPolicy;Read
 logs:GetDeliverySource;Read
+logs:GetIntegration;Read
 logs:GetLogAnomalyDetector;Read
 logs:GetLogDelivery;Read
 logs:GetLogEvents;Read
 logs:GetLogGroupFields;Read
 logs:GetLogRecord;Read
 logs:GetQueryResults;Read
+logs:GetTransformer;Read
 logs:Link;Write
 logs:ListAnomalies;List
+logs:ListEntitiesForLogGroup;List
+logs:ListIntegrations;List
 logs:ListLogAnomalyDetectors;List
 logs:ListLogDeliveries;List
+logs:ListLogGroupsForEntity;List
+logs:ListLogGroupsForQuery;List
 logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
 logs:PutAccountPolicy;Write
@@ -61,12 +73,15 @@ logs:PutDeliveryDestinationPolicy;Write
 logs:PutDeliverySource;Write
 logs:PutDestination;Write
 logs:PutDestinationPolicy;Write
+logs:PutIndexPolicy;Write
+logs:PutIntegration;Write
 logs:PutLogEvents;Write
 logs:PutMetricFilter;Write
 logs:PutQueryDefinition;Write
 logs:PutResourcePolicy;Permissions management
 logs:PutRetentionPolicy;Write
 logs:PutSubscriptionFilter;Write
+logs:PutTransformer;Write
 logs:StartLiveTail;Read
 logs:StartQuery;Read
 logs:StopLiveTail;Read
@@ -74,9 +89,11 @@ logs:StopQuery;Read
 logs:TagLogGroup;Tagging
 logs:TagResource;Tagging
 logs:TestMetricFilter;Read
+logs:TestTransformer;Read
 logs:Unmask;Read
 logs:UntagLogGroup;Tagging
 logs:UntagResource;Tagging
 logs:UpdateAnomaly;Write
+logs:UpdateDeliveryConfiguration;Write
 logs:UpdateLogAnomalyDetector;Write
 logs:UpdateLogDelivery;Write

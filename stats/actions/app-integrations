@@ -24,4 +24,5 @@ app-integrations:TagResource;Tagging
 app-integrations:UntagResource;Tagging
 app-integrations:UpdateApplication;Write
 app-integrations:UpdateDataIntegration;Write
+app-integrations:UpdateDataIntegrationAssociation;Write
 app-integrations:UpdateEventIntegration;Write

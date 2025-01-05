@@ -1,3 +1,4 @@
+glue:AuthorizeInboundIntegration;Write
 glue:BatchCreatePartition;Write
 glue:BatchDeleteConnection;Write
 glue:BatchDeletePartition;Write
@@ -13,7 +14,6 @@ glue:BatchGetStageFiles;Permissions management
 glue:BatchGetTableOptimizer;Read
 glue:BatchGetTriggers;Read
 glue:BatchGetWorkflows;Read
-glue:BatchPutDataQualityStatisticAnnotation;Write
 glue:BatchStopJobRun;Write
 glue:BatchUpdatePartition;Write
 glue:CancelDataQualityRuleRecommendationRun;Write
@@ -22,13 +22,19 @@ glue:CancelMLTaskRun;Write
 glue:CancelStatement;Write
 glue:CheckSchemaVersionValidity;Read
 glue:CreateBlueprint;Write
+glue:CreateCatalog;Write
 glue:CreateClassifier;Write
+glue:CreateColumnStatisticsTaskSettings;Write
 glue:CreateConnection;Write
 glue:CreateCrawler;Write
 glue:CreateCustomEntityType;Write
 glue:CreateDataQualityRuleset;Write
 glue:CreateDatabase;Write
 glue:CreateDevEndpoint;Write
+glue:CreateInboundIntegration;Write
+glue:CreateIntegration;Write
+glue:CreateIntegrationResourceProperty;Write
+glue:CreateIntegrationTableProperties;Write
 glue:CreateJob;Write
 glue:CreateMLTransform;Write
 glue:CreatePartition;Write
@@ -45,15 +51,19 @@ glue:CreateUsageProfile;Write
 glue:CreateUserDefinedFunction;Write
 glue:CreateWorkflow;Write
 glue:DeleteBlueprint;Write
+glue:DeleteCatalog;Write
 glue:DeleteClassifier;Write
 glue:DeleteColumnStatisticsForPartition;Write
 glue:DeleteColumnStatisticsForTable;Write
+glue:DeleteColumnStatisticsTaskSettings;Write
 glue:DeleteConnection;Write
 glue:DeleteCrawler;Write
 glue:DeleteCustomEntityType;Write
 glue:DeleteDataQualityRuleset;Write
 glue:DeleteDatabase;Write
 glue:DeleteDevEndpoint;Write
+glue:DeleteIntegration;Write
+glue:DeleteIntegrationTableProperties;Write
 glue:DeleteJob;Write
 glue:DeleteMLTransform;Write
 glue:DeletePartition;Write
@@ -74,16 +84,21 @@ glue:DeleteWorkflow;Write
 glue:DeregisterDataPreview;Permissions management
 glue:DescribeConnectionType;Permissions management
 glue:DescribeEntity;Permissions management
+glue:DescribeInboundIntegrations;List
+glue:DescribeIntegrations;List
 glue:GetBlueprint;Read
 glue:GetBlueprintRun;Read
 glue:GetBlueprintRuns;Read
+glue:GetCatalog;Read
 glue:GetCatalogImportStatus;Read
+glue:GetCatalogs;Read
 glue:GetClassifier;Read
 glue:GetClassifiers;Read
 glue:GetColumnStatisticsForPartition;Read
 glue:GetColumnStatisticsForTable;Read
 glue:GetColumnStatisticsTaskRun;Read
 glue:GetColumnStatisticsTaskRuns;Read
+glue:GetColumnStatisticsTaskSettings;Read
 glue:GetCompletion;Read
 glue:GetConnection;Read
 glue:GetConnections;Read
@@ -91,6 +106,7 @@ glue:GetCrawler;Read
 glue:GetCrawlerMetrics;Read
 glue:GetCrawlers;Read
 glue:GetCustomEntityType;Read
+glue:GetDashboardUrl;Read
 glue:GetDataCatalogEncryptionSettings;Read
 glue:GetDataPreviewStatement;Permissions management
 glue:GetDataQualityModel;Read
@@ -104,13 +120,18 @@ glue:GetDatabases;Read
 glue:GetDataflowGraph;Read
 glue:GetDevEndpoint;Read
 glue:GetDevEndpoints;Read
+glue:GetEntityRecords;Read
 glue:GetEnvironment;Permissions management
 glue:GetExecutors;Permissions management
 glue:GetExecutorsThreads;Permissions management
+glue:GetGeneratedCode;Read
+glue:GetIntegrationResourceProperty;Read
+glue:GetIntegrationTableProperties;Read
 glue:GetJob;Read
 glue:GetJobBookmark;Read
 glue:GetJobRun;Read
 glue:GetJobRuns;Read
+glue:GetJobUpgradeAnalysis;Read
 glue:GetJobs;Read
 glue:GetLogParsingStatus;Permissions management
 glue:GetMLTaskRun;Read
@@ -125,6 +146,7 @@ glue:GetPartitions;Read
 glue:GetPlan;Read
 glue:GetQueries;Permissions management
 glue:GetQuery;Permissions management
+glue:GetRecipeAction;Permissions management
 glue:GetRegistry;Read
 glue:GetResourcePolicies;Read
 glue:GetResourcePolicy;Read
@@ -172,10 +194,9 @@ glue:ListDataQualityResults;List
 glue:ListDataQualityRuleRecommendationRuns;List
 glue:ListDataQualityRulesetEvaluationRuns;List
 glue:ListDataQualityRulesets;List
-glue:ListDataQualityStatisticAnnotations;List
-glue:ListDataQualityStatistics;List
 glue:ListDevEndpoints;List
 glue:ListEntities;Permissions management
+glue:ListJobUpgradeAnalyses;List
 glue:ListJobs;List
 glue:ListMLTransforms;List
 glue:ListRegistries;List
@@ -187,11 +208,13 @@ glue:ListTableOptimizerRuns;List
 glue:ListTriggers;List
 glue:ListUsageProfiles;List
 glue:ListWorkflows;List
+glue:ModifyIntegration;Write
 glue:NotifyEvent;Write
 glue:PassConnection;Write
 glue:PublishDataQuality;Write
 glue:PutDataCatalogEncryptionSettings;Write
 glue:PutDataQualityProfileAnnotation;Write
+glue:PutDataQualityStatisticAnnotation;Write
 glue:PutResourcePolicy;Permissions management
 glue:PutSchemaVersionMetadata;Write
 glue:PutWorkflowRunProperties;Write
@@ -206,8 +229,10 @@ glue:RunDataPreviewStatement;Permissions management
 glue:RunStatement;Write
 glue:SearchTables;Read
 glue:SendFeedback;Write
+glue:SendRecipeAction;Permissions management
 glue:StartBlueprintRun;Write
 glue:StartColumnStatisticsTaskRun;Write
+glue:StartColumnStatisticsTaskRunSchedule;Write
 glue:StartCompletion;Write
 glue:StartCrawler;Write
 glue:StartCrawlerSchedule;Write
@@ -216,14 +241,17 @@ glue:StartDataQualityRulesetEvaluationRun;Write
 glue:StartExportLabelsTaskRun;Write
 glue:StartImportLabelsTaskRun;Write
 glue:StartJobRun;Write
+glue:StartJobUpgradeAnalysis;Write
 glue:StartMLEvaluationTaskRun;Write
 glue:StartMLLabelingSetGenerationTaskRun;Write
 glue:StartNotebook;Permissions management
 glue:StartTrigger;Write
 glue:StartWorkflowRun;Write
 glue:StopColumnStatisticsTaskRun;Write
+glue:StopColumnStatisticsTaskRunSchedule;Write
 glue:StopCrawler;Write
 glue:StopCrawlerSchedule;Write
+glue:StopJobUpgradeAnalysis;Write
 glue:StopSession;Write
 glue:StopTrigger;Write
 glue:StopWorkflowRun;Write
@@ -232,15 +260,19 @@ glue:TerminateNotebook;Permissions management
 glue:TestConnection;Permissions management
 glue:UntagResource;Tagging
 glue:UpdateBlueprint;Write
+glue:UpdateCatalog;Write
 glue:UpdateClassifier;Write
 glue:UpdateColumnStatisticsForPartition;Write
 glue:UpdateColumnStatisticsForTable;Write
+glue:UpdateColumnStatisticsTaskSettings;Write
 glue:UpdateConnection;Write
 glue:UpdateCrawler;Write
 glue:UpdateCrawlerSchedule;Write
 glue:UpdateDataQualityRuleset;Write
 glue:UpdateDatabase;Write
 glue:UpdateDevEndpoint;Write
+glue:UpdateIntegrationResourceProperty;Write
+glue:UpdateIntegrationTableProperties;Write
 glue:UpdateJob;Write
 glue:UpdateJobFromSourceControl;Write
 glue:UpdateMLTransform;Write
@@ -254,5 +286,6 @@ glue:UpdateTrigger;Write
 glue:UpdateUsageProfile;Write
 glue:UpdateUserDefinedFunction;Write
 glue:UpdateWorkflow;Write
+glue:UpgradeJob;Write
 glue:UseGlueStudio;Permissions management
 glue:UseMLTransforms;Write

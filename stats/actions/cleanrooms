@@ -61,6 +61,8 @@ cleanrooms:ListPrivacyBudgets;List
 cleanrooms:ListProtectedQueries;List
 cleanrooms:ListSchemas;List
 cleanrooms:ListTagsForResource;List
+cleanrooms:PassCollaboration;Read
+cleanrooms:PassMembership;Read
 cleanrooms:PopulateIdMappingTable;Write
 cleanrooms:PreviewPrivacyImpact;Read
 cleanrooms:StartProtectedQuery;Write

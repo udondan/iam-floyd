@@ -258,7 +258,7 @@ export class Identitystore extends PolicyStatement {
   /**
    * Adds a resource of type Identitystore to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/
    *
    * @param identityStoreId - Identifier for the identityStoreId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -271,7 +271,7 @@ export class Identitystore extends PolicyStatement {
   /**
    * Adds a resource of type User to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html
    *
    * @param userId - Identifier for the userId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -283,7 +283,7 @@ export class Identitystore extends PolicyStatement {
   /**
    * Adds a resource of type Group to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html
    *
    * @param groupId - Identifier for the groupId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -295,7 +295,7 @@ export class Identitystore extends PolicyStatement {
   /**
    * Adds a resource of type GroupMembership to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GroupMembership.html
    *
    * @param membershipId - Identifier for the membershipId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -307,7 +307,7 @@ export class Identitystore extends PolicyStatement {
   /**
    * Adds a resource of type AllUsers to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html
    *
    * @param resourceName - Identifier for the resourceName.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -319,7 +319,7 @@ export class Identitystore extends PolicyStatement {
   /**
    * Adds a resource of type AllGroups to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html
    *
    * @param resourceName - Identifier for the resourceName.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -331,7 +331,7 @@ export class Identitystore extends PolicyStatement {
   /**
    * Adds a resource of type AllGroupMemberships to the statement
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GroupMembership.html
    *
    * @param resourceName - Identifier for the resourceName.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -343,7 +343,7 @@ export class Identitystore extends PolicyStatement {
   /**
    * Filters access by IAM Identity Center User ID
    *
-   * https://docs.aws.amazon.com/singlesignon/latest/
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/condition-context-keys-sts-idc.html#condition-keys-identity-store-user-id
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

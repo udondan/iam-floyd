@@ -27,6 +27,7 @@ servicecatalog:DeletePortfolioShare;Permissions management
 servicecatalog:DeleteProduct;Write
 servicecatalog:DeleteProvisionedProductPlan;Write
 servicecatalog:DeleteProvisioningArtifact;Write
+servicecatalog:DeleteResourcePolicy;Write
 servicecatalog:DeleteServiceAction;Write
 servicecatalog:DeleteTagOption;Write
 servicecatalog:DescribeConstraint;Read
@@ -62,6 +63,7 @@ servicecatalog:GetAssociatedResource;Read
 servicecatalog:GetAttributeGroup;Read
 servicecatalog:GetConfiguration;Read
 servicecatalog:GetProvisionedProductOutputs;Read
+servicecatalog:GetResourcePolicy;Read
 servicecatalog:ImportAsProvisionedProduct;Write
 servicecatalog:ListAcceptedPortfolioShares;List
 servicecatalog:ListApplications;List
@@ -92,6 +94,7 @@ servicecatalog:NotifyTerminateProvisionedProductEngineWorkflowResult;Write
 servicecatalog:NotifyUpdateProvisionedProductEngineWorkflowResult;Write
 servicecatalog:ProvisionProduct;Write
 servicecatalog:PutConfiguration;Write
+servicecatalog:PutResourcePolicy;Write
 servicecatalog:RejectPortfolioShare;Write
 servicecatalog:ScanProvisionedProducts;List
 servicecatalog:SearchProducts;List

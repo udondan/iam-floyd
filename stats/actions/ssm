@@ -62,6 +62,7 @@ ssm:DescribePatchGroups;List
 ssm:DescribePatchProperties;List
 ssm:DescribeSessions;List
 ssm:DisassociateOpsItemRelatedItem;Write
+ssm:ExecuteAPI;Read
 ssm:GetAutomationExecution;Read
 ssm:GetCalendar;Read
 ssm:GetCalendarState;Read
@@ -70,6 +71,7 @@ ssm:GetConnectionStatus;Read
 ssm:GetDefaultPatchBaseline;Read
 ssm:GetDeployablePatchSnapshotForInstance;Read
 ssm:GetDocument;Read
+ssm:GetExecutionPreview;Read
 ssm:GetInventory;Read
 ssm:GetInventorySchema;Read
 ssm:GetMaintenanceWindow;Read
@@ -101,6 +103,8 @@ ssm:ListDocumentVersions;List
 ssm:ListDocuments;List
 ssm:ListInstanceAssociations;List
 ssm:ListInventoryEntries;List
+ssm:ListNodes;List
+ssm:ListNodesSummary;List
 ssm:ListOpsItemEvents;List
 ssm:ListOpsItemRelatedItems;List
 ssm:ListOpsMetadata;List
@@ -127,6 +131,7 @@ ssm:SendCommand;Write
 ssm:StartAssociationsOnce;Write
 ssm:StartAutomationExecution;Write
 ssm:StartChangeRequestExecution;Write
+ssm:StartExecutionPreview;Read
 ssm:StartSession;Write
 ssm:StopAutomationExecution;Write
 ssm:TerminateSession;Write

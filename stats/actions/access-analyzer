@@ -29,6 +29,7 @@ access-analyzer:StartPolicyGeneration;Write
 access-analyzer:StartResourceScan;Write
 access-analyzer:TagResource;Tagging
 access-analyzer:UntagResource;Tagging
+access-analyzer:UpdateAnalyzer;Write
 access-analyzer:UpdateArchiveRule;Write
 access-analyzer:UpdateFindings;Write
 access-analyzer:ValidatePolicy;Read

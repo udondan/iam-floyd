@@ -23,9 +23,11 @@ sms-voice:DeleteOptOutList;Write
 sms-voice:DeleteOptedOutNumber;Write
 sms-voice:DeletePool;Write
 sms-voice:DeleteProtectConfiguration;Write
+sms-voice:DeleteProtectConfigurationRuleSetNumberOverride;Write
 sms-voice:DeleteRegistration;Write
 sms-voice:DeleteRegistrationAttachment;Write
 sms-voice:DeleteRegistrationFieldValue;Write
+sms-voice:DeleteResourcePolicy;Permissions management
 sms-voice:DeleteTextMessageSpendLimitOverride;Write
 sms-voice:DeleteVerifiedDestinationNumber;Write
 sms-voice:DeleteVoiceMessageSpendLimitOverride;Write
@@ -53,13 +55,18 @@ sms-voice:DisassociateProtectConfiguration;Write
 sms-voice:DiscardRegistrationVersion;Write
 sms-voice:GetConfigurationSetEventDestinations;Read
 sms-voice:GetProtectConfigurationCountryRuleSet;Read
+sms-voice:GetResourcePolicy;Read
 sms-voice:ListConfigurationSets;Read
 sms-voice:ListPoolOriginationIdentities;Read
+sms-voice:ListProtectConfigurationRuleSetNumberOverrides;Read
 sms-voice:ListRegistrationAssociations;Read
 sms-voice:ListTagsForResource;Read
 sms-voice:PutKeyword;Write
+sms-voice:PutMessageFeedback;Write
 sms-voice:PutOptedOutNumber;Write
+sms-voice:PutProtectConfigurationRuleSetNumberOverride;Write
 sms-voice:PutRegistrationFieldValue;Write
+sms-voice:PutResourcePolicy;Permissions management
 sms-voice:ReleasePhoneNumber;Write
 sms-voice:ReleaseSenderId;Write
 sms-voice:RequestPhoneNumber;Write
@@ -69,6 +76,7 @@ sms-voice:SendMediaMessage;Write
 sms-voice:SendTextMessage;Write
 sms-voice:SendVoiceMessage;Write
 sms-voice:SetAccountDefaultProtectConfiguration;Write
+sms-voice:SetDefaultMessageFeedbackEnabled;Write
 sms-voice:SetDefaultMessageType;Write
 sms-voice:SetDefaultSenderId;Write
 sms-voice:SetMediaMessageSpendLimitOverride;Write

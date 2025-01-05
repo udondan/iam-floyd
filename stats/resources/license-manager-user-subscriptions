@@ -1,1 +1,4 @@
-
+license-manager-user-subscriptions:identity-provider
+license-manager-user-subscriptions:instance-user
+license-manager-user-subscriptions:license-server-endpoint
+license-manager-user-subscriptions:product-subscription

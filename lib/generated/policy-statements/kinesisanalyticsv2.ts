@@ -213,6 +213,17 @@ export class KinesisanalyticsV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an application operation of an application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_DescribeApplicationOperation.html
+   */
+  public toDescribeApplicationOperation() {
+    return this.to('DescribeApplicationOperation');
+  }
+
+  /**
    * Grants permission to describe an application snapshot
    *
    * Access Level: Read
@@ -246,6 +257,17 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    */
   public toDiscoverInputSchema() {
     return this.to('DiscoverInputSchema');
+  }
+
+  /**
+   * Grants permission to list application operations of an application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/managed-flink/latest/apiv2/API_ListApplicationOperations.html
+   */
+  public toListApplicationOperations() {
+    return this.to('ListApplicationOperations');
   }
 
   /**
@@ -402,9 +424,11 @@ export class KinesisanalyticsV2 extends PolicyStatement {
     Read: [
       'CreateApplicationPresignedUrl',
       'DescribeApplication',
+      'DescribeApplicationOperation',
       'DescribeApplicationSnapshot',
       'DescribeApplicationVersion',
       'DiscoverInputSchema',
+      'ListApplicationOperations',
       'ListApplicationSnapshots',
       'ListApplicationVersions',
       'ListTagsForResource'

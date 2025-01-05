@@ -78,6 +78,17 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list entities associated with other entities
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Application_Signals_Permissions.html
+   */
+  public toListObservedEntities() {
+    return this.to('ListObservedEntities');
+  }
+
+  /**
    * Grants permission to list service dependencies
    *
    * Access Level: Read
@@ -211,6 +222,7 @@ export class ApplicationSignals extends PolicyStatement {
       'UpdateServiceLevelObjective'
     ],
     List: [
+      'ListObservedEntities',
       'ListServiceLevelObjectives',
       'ListServices'
     ],

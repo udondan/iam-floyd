@@ -54,6 +54,7 @@ controltower:ListTagsForResource;Read
 controltower:ManageOrganizationalUnit;Write
 controltower:PerformPreLaunchChecks;Read
 controltower:ResetEnabledBaseline;Write
+controltower:ResetEnabledControl;Write
 controltower:ResetLandingZone;Write
 controltower:SetupLandingZone;Write
 controltower:TagResource;Tagging

@@ -1,10 +1,16 @@
 artifact:AcceptAgreement;Write
+artifact:AcceptNdaForAgreement;Write
 artifact:DownloadAgreement;Read
 artifact:Get;Read
 artifact:GetAccountSettings;Read
+artifact:GetAgreement;Read
+artifact:GetCustomerAgreement;Read
+artifact:GetNdaForAgreement;Read
 artifact:GetReport;Read
 artifact:GetReportMetadata;Read
 artifact:GetTermForReport;Read
+artifact:ListAgreements;List
+artifact:ListCustomerAgreements;List
 artifact:ListReports;List
 artifact:PutAccountSettings;Write
 artifact:TerminateAgreement;Write

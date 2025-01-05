@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [kinesis](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisdatastreams.html).
@@ -422,6 +422,9 @@ export class Kinesis extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStream(streamName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:kinesis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stream/${ streamName }`);
@@ -456,5 +459,80 @@ export class Kinesis extends PolicyStatement {
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:kms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key/${ keyId }`);
+  }
+
+  /**
+   * Filters access by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTagsToStream()
+   * - .toCreateStream()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddTagsToStream()
+   * - .toCreateStream()
+   * - .toDecreaseStreamRetentionPeriod()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteStream()
+   * - .toDescribeStream()
+   * - .toDescribeStreamSummary()
+   * - .toGetRecords()
+   * - .toGetResourcePolicy()
+   * - .toGetShardIterator()
+   * - .toIncreaseStreamRetentionPeriod()
+   * - .toListShards()
+   * - .toListStreamConsumers()
+   * - .toListTagsForStream()
+   * - .toMergeShards()
+   * - .toPutRecord()
+   * - .toPutRecords()
+   * - .toPutResourcePolicy()
+   * - .toRegisterStreamConsumer()
+   * - .toRemoveTagsFromStream()
+   * - .toSplitShard()
+   * - .toStartStreamEncryption()
+   * - .toStopStreamEncryption()
+   *
+   * Applies to resource types:
+   * - stream
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTagsToStream()
+   * - .toCreateStream()
+   * - .toRemoveTagsFromStream()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

@@ -29,6 +29,7 @@ dynamodb:DescribeTimeToLive;Read
 dynamodb:DisableKinesisStreamingDestination;Write
 dynamodb:EnableKinesisStreamingDestination;Write
 dynamodb:ExportTableToPointInTime;Write
+dynamodb:GetAbacStatus;Read
 dynamodb:GetItem;Read
 dynamodb:GetRecords;Read
 dynamodb:GetResourcePolicy;Read
@@ -57,6 +58,7 @@ dynamodb:Scan;Read
 dynamodb:StartAwsBackupJob;Write
 dynamodb:TagResource;Tagging
 dynamodb:UntagResource;Tagging
+dynamodb:UpdateAbacStatus;Permissions management
 dynamodb:UpdateContinuousBackups;Write
 dynamodb:UpdateContributorInsights;Write
 dynamodb:UpdateGlobalTable;Write

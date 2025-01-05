@@ -1,3 +1,4 @@
 sts:role
+sts:root-user
 sts:self-session
 sts:user

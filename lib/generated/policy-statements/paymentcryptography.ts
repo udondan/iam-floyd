@@ -129,6 +129,17 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a MAC (Message Authentication Code) cryptogram
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateMacEmvPinChange.html
+   */
+  public toGenerateMacEmvPinChange() {
+    return this.to('GenerateMacEmvPinChange');
+  }
+
+  /**
    * Grants permission to generate pin-related data such as PIN, PIN Verification Value (PVV), PIN Block and PIN Offset during new card issuance or card re-issuance
    *
    * Access Level: Write
@@ -403,6 +414,7 @@ export class PaymentCryptography extends PolicyStatement {
       'ExportKey',
       'GenerateCardValidationData',
       'GenerateMac',
+      'GenerateMacEmvPinChange',
       'GeneratePinData',
       'ImportKey',
       'ReEncryptData',

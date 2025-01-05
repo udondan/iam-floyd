@@ -59,6 +59,17 @@ export class ResourceExplorer2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create managed view
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_ManagedView.html
+   */
+  public toCreateManagedView() {
+    return this.to('CreateManagedView');
+  }
+
+  /**
    * Grants permission to create a view that users can query
    *
    * Access Level: Write
@@ -151,6 +162,17 @@ export class ResourceExplorer2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get managed view
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetManagedView.html
+   */
+  public toGetManagedView() {
+    return this.to('GetManagedView');
+  }
+
+  /**
    * Grants permission to retrieve information about the specified view's resource policy
    *
    * Access Level: Read
@@ -192,6 +214,17 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public toListIndexesForMembers() {
     return this.to('ListIndexesForMembers');
+  }
+
+  /**
+   * Grants permission to list managed views
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListManagedViews.html
+   */
+  public toListManagedViews() {
+    return this.to('ListManagedViews');
   }
 
   /**
@@ -242,6 +275,9 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to search for resources and display details about all resources that match the specified criteria
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifOperation()
    *
    * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_Search.html
    */
@@ -304,6 +340,7 @@ export class ResourceExplorer2 extends PolicyStatement {
     Write: [
       'AssociateDefaultView',
       'CreateIndex',
+      'CreateManagedView',
       'CreateView',
       'DeleteIndex',
       'DeleteResourcePolicy',
@@ -318,6 +355,7 @@ export class ResourceExplorer2 extends PolicyStatement {
       'GetAccountLevelServiceConfiguration',
       'GetDefaultView',
       'GetIndex',
+      'GetManagedView',
       'GetResourcePolicy',
       'GetView',
       'ListTagsForResource',
@@ -326,6 +364,7 @@ export class ResourceExplorer2 extends PolicyStatement {
     List: [
       'ListIndexes',
       'ListIndexesForMembers',
+      'ListManagedViews',
       'ListSupportedResourceTypes',
       'ListViews'
     ],
@@ -368,6 +407,21 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public onIndex(indexUuid: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:resource-explorer-2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexUuid }`);
+  }
+
+  /**
+   * Adds a resource of type managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_ManagedView.html
+   *
+   * @param managedViewName - Identifier for the managedViewName.
+   * @param managedViewUuid - Identifier for the managedViewUuid.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onManagedView(managedViewName: string, managedViewUuid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resource-explorer-2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:managed-view/${ managedViewName }/${ managedViewUuid }`);
   }
 
   /**
@@ -421,5 +475,20 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the actual operation that is being invoked, available values: Search, ListResources
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsresourceexplorer.html
+   *
+   * Applies to actions:
+   * - .toSearch()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOperation(value: string | string[], operator?: Operator | string) {
+    return this.if(`Operation`, value, operator ?? 'StringLike');
   }
 }

@@ -18,8 +18,11 @@ codepipeline:ListActionExecutions;Read
 codepipeline:ListActionTypes;Read
 codepipeline:ListPipelineExecutions;List
 codepipeline:ListPipelines;List
+codepipeline:ListRuleExecutions;Read
+codepipeline:ListRuleTypes;Read
 codepipeline:ListTagsForResource;Read
 codepipeline:ListWebhooks;List
+codepipeline:OverrideStageCondition;Write
 codepipeline:PollForJobs;Write
 codepipeline:PollForThirdPartyJobs;Write
 codepipeline:PutActionRevision;Write

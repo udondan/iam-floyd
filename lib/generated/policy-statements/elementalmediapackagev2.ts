@@ -19,6 +19,17 @@ export class Mediapackagev2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a harvest job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_CancelHarvestJob.html
+   */
+  public toCancelHarvestJob() {
+    return this.to('CancelHarvestJob');
+  }
+
+  /**
    * Grants permission to create a channel in a channel group
    *
    * Access Level: Write
@@ -46,6 +57,21 @@ export class Mediapackagev2 extends PolicyStatement {
    */
   public toCreateChannelGroup() {
     return this.to('CreateChannelGroup');
+  }
+
+  /**
+   * Grants permission to create a harvest job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_CreateHarvestJob.html
+   */
+  public toCreateHarvestJob() {
+    return this.to('CreateHarvestJob');
   }
 
   /**
@@ -152,6 +178,17 @@ export class Mediapackagev2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of an harvest job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_GetHarvestJob.html
+   */
+  public toGetHarvestJob() {
+    return this.to('GetHarvestJob');
+  }
+
+  /**
    * Grants permission to make GetHeadObject requests to MediaPackage
    *
    * Access Level: Read
@@ -196,6 +233,17 @@ export class Mediapackagev2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to make HarvestObject requests to MediaPackage
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/userguide/dataplane-apis.html
+   */
+  public toHarvestObject() {
+    return this.to('HarvestObject');
+  }
+
+  /**
    * Grants permission to list all channel groups for an aws account
    *
    * Access Level: List
@@ -215,6 +263,17 @@ export class Mediapackagev2 extends PolicyStatement {
    */
   public toListChannels() {
     return this.to('ListChannels');
+  }
+
+  /**
+   * Grants permission to list all harvest jobs in a channel group, channel, origin endpoint
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ListHarvestJobs.html
+   */
+  public toListHarvestJobs() {
+    return this.to('ListHarvestJobs');
   }
 
   /**
@@ -336,8 +395,10 @@ export class Mediapackagev2 extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CancelHarvestJob',
       'CreateChannel',
       'CreateChannelGroup',
+      'CreateHarvestJob',
       'CreateOriginEndpoint',
       'DeleteChannel',
       'DeleteChannelGroup',
@@ -355,15 +416,18 @@ export class Mediapackagev2 extends PolicyStatement {
       'GetChannel',
       'GetChannelGroup',
       'GetChannelPolicy',
+      'GetHarvestJob',
       'GetHeadObject',
       'GetObject',
       'GetOriginEndpoint',
       'GetOriginEndpointPolicy',
+      'HarvestObject',
       'ListTagsForResource'
     ],
     List: [
       'ListChannelGroups',
       'ListChannels',
+      'ListHarvestJobs',
       'ListOriginEndpoints'
     ],
     Tagging: [
@@ -390,6 +454,21 @@ export class Mediapackagev2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ChannelPolicy to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/userguide/API_GetChannelPolicy.html
+   *
+   * @param channelGroupName - Identifier for the channelGroupName.
+   * @param channelName - Identifier for the channelName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onChannelPolicy(channelGroupName: string, channelName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackagev2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }`);
+  }
+
+  /**
    * Adds a resource of type Channel to the statement
    *
    * https://docs.aws.amazon.com/mediapackage/latest/userguide/channels.html
@@ -405,6 +484,22 @@ export class Mediapackagev2 extends PolicyStatement {
    */
   public onChannel(channelGroupName: string, channelName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackagev2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }`);
+  }
+
+  /**
+   * Adds a resource of type OriginEndpointPolicy to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/userguide/API_GetOriginEndpointPolicy.html
+   *
+   * @param channelGroupName - Identifier for the channelGroupName.
+   * @param channelName - Identifier for the channelName.
+   * @param originEndpointName - Identifier for the originEndpointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOriginEndpointPolicy(channelGroupName: string, channelName: string, originEndpointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackagev2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }/originEndpoint/${ originEndpointName }`);
   }
 
   /**
@@ -427,6 +522,26 @@ export class Mediapackagev2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type HarvestJob to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/userguide/API_HarvestJobListConfiguration.html
+   *
+   * @param channelGroupName - Identifier for the channelGroupName.
+   * @param channelName - Identifier for the channelName.
+   * @param originEndpointName - Identifier for the originEndpointName.
+   * @param harvestJobName - Identifier for the harvestJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHarvestJob(channelGroupName: string, channelName: string, originEndpointName: string, harvestJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediapackagev2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:channelGroup/${ channelGroupName }/channel/${ channelName }/originEndpoint/${ originEndpointName }/harvestJob/${ harvestJobName }`);
+  }
+
+  /**
    * Filters access by tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -434,6 +549,7 @@ export class Mediapackagev2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateChannel()
    * - .toCreateChannelGroup()
+   * - .toCreateHarvestJob()
    * - .toCreateOriginEndpoint()
    * - .toTagResource()
    *
@@ -454,6 +570,7 @@ export class Mediapackagev2 extends PolicyStatement {
    * - ChannelGroup
    * - Channel
    * - OriginEndpoint
+   * - HarvestJob
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -471,6 +588,7 @@ export class Mediapackagev2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateChannel()
    * - .toCreateChannelGroup()
+   * - .toCreateHarvestJob()
    * - .toCreateOriginEndpoint()
    * - .toTagResource()
    * - .toUntagResource()

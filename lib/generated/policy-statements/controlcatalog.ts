@@ -19,6 +19,17 @@ export class Controlcatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return details about a specific control
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_GetControl.html
+   */
+  public toGetControl() {
+    return this.to('GetControl');
+  }
+
+  /**
    * Grants permission to return a paginated list of common controls from the AWS Control Catalog
    *
    * Access Level: List
@@ -27,6 +38,17 @@ export class Controlcatalog extends PolicyStatement {
    */
   public toListCommonControls() {
     return this.to('ListCommonControls');
+  }
+
+  /**
+   * Grants permission to return a paginated list of all available controls in the AWS Control Catalog library
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListControls.html
+   */
+  public toListControls() {
+    return this.to('ListControls');
   }
 
   /**
@@ -52,8 +74,12 @@ export class Controlcatalog extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Read: [
+      'GetControl'
+    ],
     List: [
       'ListCommonControls',
+      'ListControls',
       'ListDomains',
       'ListObjectives'
     ]
@@ -69,6 +95,18 @@ export class Controlcatalog extends PolicyStatement {
    */
   public onCommonControl(commonControlId: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:controlcatalog:::common-control/${ commonControlId }`);
+  }
+
+  /**
+   * Adds a resource of type control to the statement
+   *
+   * https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ControlSummary.html
+   *
+   * @param controlId - Identifier for the controlId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onControl(controlId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:controlcatalog:::control/${ controlId }`);
   }
 
   /**

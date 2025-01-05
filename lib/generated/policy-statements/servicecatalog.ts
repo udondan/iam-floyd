@@ -377,6 +377,17 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a resource-based policy for the specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a self-service action
    *
    * Access Level: Write
@@ -803,6 +814,17 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a resource-based policy for the specified resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to import a resource into a provisioned product
    *
    * Access Level: Write
@@ -1153,6 +1175,17 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a resource-based policy for the specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/arguide/sharing-definitions.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to reject a portfolio that has been shared with you that you previously accepted
    *
    * Access Level: Write
@@ -1269,7 +1302,6 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_UntagResource.html
    */
@@ -1443,6 +1475,7 @@ export class Servicecatalog extends PolicyStatement {
       'DeleteProduct',
       'DeleteProvisionedProductPlan',
       'DeleteProvisioningArtifact',
+      'DeleteResourcePolicy',
       'DeleteServiceAction',
       'DeleteTagOption',
       'DisableAWSOrganizationsAccess',
@@ -1462,6 +1495,7 @@ export class Servicecatalog extends PolicyStatement {
       'NotifyUpdateProvisionedProductEngineWorkflowResult',
       'ProvisionProduct',
       'PutConfiguration',
+      'PutResourcePolicy',
       'RejectPortfolioShare',
       'SyncResource',
       'TerminateProvisionedProduct',
@@ -1503,6 +1537,7 @@ export class Servicecatalog extends PolicyStatement {
       'GetAttributeGroup',
       'GetConfiguration',
       'GetProvisionedProductOutputs',
+      'GetResourcePolicy',
       'ListTagsForResource'
     ],
     List: [
@@ -1620,7 +1655,6 @@ export class Servicecatalog extends PolicyStatement {
    * - .toCreatePortfolio()
    * - .toCreateProduct()
    * - .toTagResource()
-   * - .toUntagResource()
    * - .toUpdatePortfolio()
    * - .toUpdateProduct()
    *

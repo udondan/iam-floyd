@@ -1,3 +1,4 @@
+docdb-elastic:ApplyPendingMaintenanceAction;Write
 docdb-elastic:CopyClusterSnapshot;Write
 docdb-elastic:CreateCluster;Write
 docdb-elastic:CreateClusterSnapshot;Write
@@ -5,8 +6,10 @@ docdb-elastic:DeleteCluster;Write
 docdb-elastic:DeleteClusterSnapshot;Write
 docdb-elastic:GetCluster;Read
 docdb-elastic:GetClusterSnapshot;Read
+docdb-elastic:GetPendingMaintenanceAction;Read
 docdb-elastic:ListClusterSnapshots;List
 docdb-elastic:ListClusters;List
+docdb-elastic:ListPendingMaintenanceActions;List
 docdb-elastic:ListTagsForResource;List
 docdb-elastic:RestoreClusterFromSnapshot;Write
 docdb-elastic:StartCluster;Write

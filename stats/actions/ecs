@@ -14,6 +14,8 @@ ecs:DeregisterTaskDefinition;Write
 ecs:DescribeCapacityProviders;Read
 ecs:DescribeClusters;Read
 ecs:DescribeContainerInstances;Read
+ecs:DescribeServiceDeployments;Read
+ecs:DescribeServiceRevisions;Read
 ecs:DescribeServices;Read
 ecs:DescribeTaskDefinition;Read
 ecs:DescribeTaskSets;Read
@@ -25,6 +27,7 @@ ecs:ListAccountSettings;Read
 ecs:ListAttributes;List
 ecs:ListClusters;List
 ecs:ListContainerInstances;List
+ecs:ListServiceDeployments;List
 ecs:ListServices;List
 ecs:ListServicesByNamespace;List
 ecs:ListTagsForResource;Read

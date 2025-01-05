@@ -100,6 +100,10 @@ export class Omics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/omics/latest/api/API_CreateAnnotationStore.html
    */
   public toCreateAnnotationStore() {
@@ -110,6 +114,10 @@ export class Omics extends PolicyStatement {
    * Grants permission to create a Version in an Annotation Store
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/omics/latest/api/API_CreateAnnotationStoreVersion.html
    */
@@ -141,6 +149,21 @@ export class Omics extends PolicyStatement {
    */
   public toCreateReferenceStore() {
     return this.to('CreateReferenceStore');
+  }
+
+  /**
+   * Grants permission to create a new workflow run cache
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateRunCache.html
+   */
+  public toCreateRunCache() {
+    return this.to('CreateRunCache');
   }
 
   /**
@@ -188,6 +211,10 @@ export class Omics extends PolicyStatement {
    * Grants permission to create a Variant Store
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/omics/latest/api/API_CreateVariantStore.html
    */
@@ -266,6 +293,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a workflow run cache
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteRunCache.html
+   */
+  public toDeleteRunCache() {
+    return this.to('DeleteRunCache');
+  }
+
+  /**
    * Grants permission to delete a workflow run group
    *
    * Access Level: Write
@@ -274,6 +312,17 @@ export class Omics extends PolicyStatement {
    */
   public toDeleteRunGroup() {
     return this.to('DeleteRunGroup');
+  }
+
+  /**
+   * Grants permission to delete an access policy on a given store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteS3AccessPolicy.html
+   */
+  public toDeleteS3AccessPolicy() {
+    return this.to('DeleteS3AccessPolicy');
   }
 
   /**
@@ -464,6 +513,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve workflow run cache details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetRunCache.html
+   */
+  public toGetRunCache() {
+    return this.to('GetRunCache');
+  }
+
+  /**
    * Grants permission to retrieve workflow run group details
    *
    * Access Level: Read
@@ -483,6 +543,17 @@ export class Omics extends PolicyStatement {
    */
   public toGetRunTask() {
     return this.to('GetRunTask');
+  }
+
+  /**
+   * Grants permission to get details about an access policy on a given store
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetS3AccessPolicy.html
+   */
+  public toGetS3AccessPolicy() {
+    return this.to('GetS3AccessPolicy');
   }
 
   /**
@@ -673,6 +744,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of workflow run caches
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListRunCaches.html
+   */
+  public toListRunCaches() {
+    return this.to('ListRunCaches');
+  }
+
+  /**
    * Grants permission to retrieve a list of workflow run groups
    *
    * Access Level: List
@@ -769,6 +851,17 @@ export class Omics extends PolicyStatement {
    */
   public toListWorkflows() {
     return this.to('ListWorkflows');
+  }
+
+  /**
+   * Grants permission to put an access policy on a given store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_PutS3AccessPolicy.html
+   */
+  public toPutS3AccessPolicy() {
+    return this.to('PutS3AccessPolicy');
   }
 
   /**
@@ -907,6 +1000,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a workflow run cache
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_UpdateRunCache.html
+   */
+  public toUpdateRunCache() {
+    return this.to('UpdateRunCache');
+  }
+
+  /**
    * Grants permission to update a workflow run group
    *
    * Access Level: Write
@@ -915,6 +1019,17 @@ export class Omics extends PolicyStatement {
    */
   public toUpdateRunGroup() {
     return this.to('UpdateRunGroup');
+  }
+
+  /**
+   * Grants permission to update details about a Sequence Store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_UpdateSequenceStore.html
+   */
+  public toUpdateSequenceStore() {
+    return this.to('UpdateSequenceStore');
   }
 
   /**
@@ -963,6 +1078,7 @@ export class Omics extends PolicyStatement {
       'CreateAnnotationStoreVersion',
       'CreateMultipartReadSetUpload',
       'CreateReferenceStore',
+      'CreateRunCache',
       'CreateRunGroup',
       'CreateSequenceStore',
       'CreateShare',
@@ -973,11 +1089,14 @@ export class Omics extends PolicyStatement {
       'DeleteReference',
       'DeleteReferenceStore',
       'DeleteRun',
+      'DeleteRunCache',
       'DeleteRunGroup',
+      'DeleteS3AccessPolicy',
       'DeleteSequenceStore',
       'DeleteShare',
       'DeleteVariantStore',
       'DeleteWorkflow',
+      'PutS3AccessPolicy',
       'StartAnnotationImportJob',
       'StartReadSetActivationJob',
       'StartReadSetExportJob',
@@ -987,7 +1106,9 @@ export class Omics extends PolicyStatement {
       'StartVariantImportJob',
       'UpdateAnnotationStore',
       'UpdateAnnotationStoreVersion',
+      'UpdateRunCache',
       'UpdateRunGroup',
+      'UpdateSequenceStore',
       'UpdateVariantStore',
       'UpdateWorkflow',
       'UploadReadSetPart'
@@ -1006,8 +1127,10 @@ export class Omics extends PolicyStatement {
       'GetReferenceMetadata',
       'GetReferenceStore',
       'GetRun',
+      'GetRunCache',
       'GetRunGroup',
       'GetRunTask',
+      'GetS3AccessPolicy',
       'GetSequenceStore',
       'GetShare',
       'GetVariantImportJob',
@@ -1027,6 +1150,7 @@ export class Omics extends PolicyStatement {
       'ListReferenceImportJobs',
       'ListReferenceStores',
       'ListReferences',
+      'ListRunCaches',
       'ListRunGroups',
       'ListRunTasks',
       'ListRuns',
@@ -1044,37 +1168,20 @@ export class Omics extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type AnnotationImportJob to the statement
-   *
-   * https://docs.aws.amazon.com/omics/latest/api/API_AnnotationImportJobItem.html
-   *
-   * @param annotationImportJobId - Identifier for the annotationImportJobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAnnotationImportJobJobId()
-   */
-  public onAnnotationImportJob(annotationImportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:annotationImportJob/${ annotationImportJobId }`);
-  }
-
-  /**
    * Adds a resource of type AnnotationStore to the statement
    *
    * https://docs.aws.amazon.com/omics/latest/api/API_AnnotationStoreItem.html
    *
-   * @param annotationStoreId - Identifier for the annotationStoreId.
+   * @param annotationStoreName - Identifier for the annotationStoreName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifAnnotationStoreName()
+   * - .ifAwsResourceTag()
    */
-  public onAnnotationStore(annotationStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:annotationStore/${ annotationStoreId }`);
+  public onAnnotationStore(annotationStoreName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:annotationStore/${ annotationStoreName }`);
   }
 
   /**
@@ -1089,7 +1196,7 @@ export class Omics extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifAnnotationStoreVersionName()
+   * - .ifAwsResourceTag()
    */
   public onAnnotationStoreVersion(annotationStoreName: string, annotationStoreVersionName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:annotationStore/${ annotationStoreName }/version/${ annotationStoreVersionName }`);
@@ -1166,6 +1273,23 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type runCache to the statement
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_RunCacheListItem.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRunCache(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:runCache/${ id }`);
+  }
+
+  /**
    * Adds a resource of type runGroup to the statement
    *
    * https://docs.aws.amazon.com/omics/latest/api/API_RunGroupListItem.html
@@ -1228,37 +1352,20 @@ export class Omics extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type VariantImportJob to the statement
-   *
-   * https://docs.aws.amazon.com/omics/latest/api/API_VariantImportJobItem.html
-   *
-   * @param variantImportJobId - Identifier for the variantImportJobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifVariantImportJobJobId()
-   */
-  public onVariantImportJob(variantImportJobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:variantImportJob/${ variantImportJobId }`);
-  }
-
-  /**
    * Adds a resource of type VariantStore to the statement
    *
    * https://docs.aws.amazon.com/omics/latest/api/API_VariantStoreItem.html
    *
-   * @param variantStoreId - Identifier for the variantStoreId.
+   * @param variantStoreName - Identifier for the variantStoreName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifVariantStoreName()
+   * - .ifAwsResourceTag()
    */
-  public onVariantStore(variantStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:variantStore/${ variantStoreId }`);
+  public onVariantStore(variantStoreName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:variantStore/${ variantStoreName }`);
   }
 
   /**
@@ -1284,9 +1391,13 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateAnnotationStore()
+   * - .toCreateAnnotationStoreVersion()
    * - .toCreateReferenceStore()
+   * - .toCreateRunCache()
    * - .toCreateRunGroup()
    * - .toCreateSequenceStore()
+   * - .toCreateVariantStore()
    * - .toCreateWorkflow()
    * - .toStartRun()
    * - .toTagResource()
@@ -1305,12 +1416,16 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
+   * - AnnotationStore
+   * - AnnotationStoreVersion
    * - readSet
    * - reference
    * - referenceStore
    * - run
+   * - runCache
    * - runGroup
    * - sequenceStore
+   * - VariantStore
    * - workflow
    *
    * @param tagKey The tag key to check
@@ -1327,9 +1442,13 @@ export class Omics extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateAnnotationStore()
+   * - .toCreateAnnotationStoreVersion()
    * - .toCreateReferenceStore()
+   * - .toCreateRunCache()
    * - .toCreateRunGroup()
    * - .toCreateSequenceStore()
+   * - .toCreateVariantStore()
    * - .toCreateWorkflow()
    * - .toStartRun()
    * - .toTagResource()
@@ -1340,80 +1459,5 @@ export class Omics extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by a unique resource identifier
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-annotation-import-job-id
-   *
-   * Applies to resource types:
-   * - AnnotationImportJob
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAnnotationImportJobJobId(value: string | string[], operator?: Operator | string) {
-    return this.if(`AnnotationImportJobJobId`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the name of the store
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-annotation-store-name
-   *
-   * Applies to resource types:
-   * - AnnotationStore
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAnnotationStoreName(value: string | string[], operator?: Operator | string) {
-    return this.if(`AnnotationStoreName`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the name of the annotation store version
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-annotation-store-version-name
-   *
-   * Applies to resource types:
-   * - AnnotationStoreVersion
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAnnotationStoreVersionName(value: string | string[], operator?: Operator | string) {
-    return this.if(`AnnotationStoreVersionName`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by a unique resource identifier
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-variant-import-job-id
-   *
-   * Applies to resource types:
-   * - VariantImportJob
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifVariantImportJobJobId(value: string | string[], operator?: Operator | string) {
-    return this.if(`VariantImportJobJobId`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the name of the store
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-variant-store-name
-   *
-   * Applies to resource types:
-   * - VariantStore
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifVariantStoreName(value: string | string[], operator?: Operator | string) {
-    return this.if(`VariantStoreName`, value, operator ?? 'StringLike');
   }
 }

@@ -1,6 +1,7 @@
 ivs:Channel
 ivs:Composition
 ivs:Encoder-Configuration
+ivs:Ingest-Configuration
 ivs:Playback-Key-Pair
 ivs:Playback-Restriction-Policy
 ivs:Public-Key

@@ -1,0 +1,3 @@
+bcm-pricing-calculator:RequestTag/${TagKey}
+bcm-pricing-calculator:ResourceTag/${TagKey}
+bcm-pricing-calculator:TagKeys

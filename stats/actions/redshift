@@ -4,6 +4,7 @@ redshift:AssociateDataShareConsumer;Write
 redshift:AuthorizeClusterSecurityGroupIngress;Write
 redshift:AuthorizeDataShare;Permissions management
 redshift:AuthorizeEndpointAccess;Permissions management
+redshift:AuthorizeInboundIntegration;Write
 redshift:AuthorizeSnapshotAccess;Permissions management
 redshift:BatchDeleteClusterSnapshots;Write
 redshift:BatchModifyClusterSnapshots;Write
@@ -23,6 +24,8 @@ redshift:CreateEndpointAccess;Write
 redshift:CreateEventSubscription;Write
 redshift:CreateHsmClientCertificate;Write
 redshift:CreateHsmConfiguration;Write
+redshift:CreateInboundIntegration;Write
+redshift:CreateIntegration;Write
 redshift:CreateQev2IdcApplication;Write
 redshift:CreateRedshiftIdcApplication;Write
 redshift:CreateSavedQuery;Write
@@ -43,6 +46,7 @@ redshift:DeleteEndpointAccess;Write
 redshift:DeleteEventSubscription;Write
 redshift:DeleteHsmClientCertificate;Write
 redshift:DeleteHsmConfiguration;Write
+redshift:DeleteIntegration;Write
 redshift:DeletePartner;Write
 redshift:DeleteQev2IdcApplication;Write
 redshift:DeleteRedshiftIdcApplication;Write
@@ -53,6 +57,7 @@ redshift:DeleteSnapshotCopyGrant;Write
 redshift:DeleteSnapshotSchedule;Write
 redshift:DeleteTags;Tagging
 redshift:DeleteUsageLimit;Write
+redshift:DeregisterNamespace;Write
 redshift:DescribeAccountAttributes;Read
 redshift:DescribeAuthenticationProfiles;Read
 redshift:DescribeClusterDbRevisions;List
@@ -77,6 +82,7 @@ redshift:DescribeEvents;List
 redshift:DescribeHsmClientCertificates;Read
 redshift:DescribeHsmConfigurations;Read
 redshift:DescribeInboundIntegrations;List
+redshift:DescribeIntegrations;List
 redshift:DescribeLoggingStatus;Read
 redshift:DescribeNodeConfigurationOptions;List
 redshift:DescribeOrderableClusterOptions;Read
@@ -129,6 +135,7 @@ redshift:ModifyClusterSubnetGroup;Write
 redshift:ModifyCustomDomainAssociation;Write
 redshift:ModifyEndpointAccess;Write
 redshift:ModifyEventSubscription;Write
+redshift:ModifyIntegration;Write
 redshift:ModifyQev2IdcApplication;Write
 redshift:ModifyRedshiftIdcApplication;Write
 redshift:ModifySavedQuery;Write
@@ -140,6 +147,7 @@ redshift:PauseCluster;Write
 redshift:PurchaseReservedNodeOffering;Write
 redshift:PutResourcePolicy;Permissions management
 redshift:RebootCluster;Write
+redshift:RegisterNamespace;Write
 redshift:RejectDataShare;Permissions management
 redshift:ResetClusterParameterGroup;Write
 redshift:ResizeCluster;Write

@@ -7,6 +7,7 @@ codeconnections:DeleteHost;Write
 codeconnections:DeleteRepositoryLink;Write
 codeconnections:DeleteSyncConfiguration;Write
 codeconnections:GetConnection;Read
+codeconnections:GetConnectionToken;Read
 codeconnections:GetHost;Read
 codeconnections:GetIndividualAccessToken;Read
 codeconnections:GetInstallationUrl;Read

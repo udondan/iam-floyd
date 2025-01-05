@@ -1,5 +1,17 @@
+elemental-support-cases:AddCaseComment;Write
 elemental-support-cases:CheckCasePermission;Write
+elemental-support-cases:CompleteMultipartUpload;Write
 elemental-support-cases:CreateCase;Write
+elemental-support-cases:CreateS3CLIUploadCommand;Write
+elemental-support-cases:CreateS3DownloadUrl;Write
 elemental-support-cases:GetCase;Read
+elemental-support-cases:GetCasePermission;Read
 elemental-support-cases:GetCases;Read
+elemental-support-cases:GetUICache;Read
+elemental-support-cases:ListTagsForCase;Read
+elemental-support-cases:StartMultipartUpload;Write
+elemental-support-cases:TagCase;Tagging
+elemental-support-cases:UntagCase;Tagging
 elemental-support-cases:UpdateCase;Write
+elemental-support-cases:UpdateCaseStatus;Write
+elemental-support-cases:UpdateMultipartUpload;Write

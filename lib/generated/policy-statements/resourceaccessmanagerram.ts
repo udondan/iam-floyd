@@ -873,7 +873,7 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Filters access by resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID
+   * Filters access by resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner's account ID
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *

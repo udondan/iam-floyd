@@ -108,6 +108,17 @@ export class ApplicationAutoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the forecast data for a predictive scaling policy
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_GetPredictiveScalingForecast.html
+   */
+  public toGetPredictiveScalingForecast() {
+    return this.to('GetPredictiveScalingForecast');
+  }
+
+  /**
    * Grants permission to list tags for a scalable target
    *
    * Access Level: Read
@@ -212,6 +223,9 @@ export class ApplicationAutoscaling extends PolicyStatement {
       'DescribeScalingPolicies',
       'DescribeScheduledActions',
       'ListTagsForResource'
+    ],
+    List: [
+      'GetPredictiveScalingForecast'
     ],
     Tagging: [
       'TagResource',

@@ -338,7 +338,7 @@ export class Securitylake extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get an organization’s configuration setting for automatically enabling Amazon Security Lake access for new organization accounts
+   * Grants permission to get an organization's configuration setting for automatically enabling Amazon Security Lake access for new organization accounts
    *
    * Access Level: Read
    *

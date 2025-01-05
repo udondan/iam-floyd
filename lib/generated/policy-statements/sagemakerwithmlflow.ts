@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [sagemaker-mlflow](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerwithmlflow.html).
@@ -136,6 +136,33 @@ export class SagemakerMlflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a trace tag in MLflow
+   *
+   * Access Level: Write
+   */
+  public toDeleteTraceTag() {
+    return this.to('DeleteTraceTag');
+  }
+
+  /**
+   * Grants permission to delete traces in MLflow
+   *
+   * Access Level: Write
+   */
+  public toDeleteTraces() {
+    return this.to('DeleteTraces');
+  }
+
+  /**
+   * Grants permission to end a trace in MLflow
+   *
+   * Access Level: Write
+   */
+  public toEndTrace() {
+    return this.to('EndTrace');
+  }
+
+  /**
    * Grants permission to get a URI to download model artifacts for a specific model version
    *
    * Access Level: Read
@@ -214,6 +241,15 @@ export class SagemakerMlflow extends PolicyStatement {
    */
   public toGetRun() {
     return this.to('GetRun');
+  }
+
+  /**
+   * Grants permission to get information about a trace in MLflow
+   *
+   * Access Level: Read
+   */
+  public toGetTraceInfo() {
+    return this.to('GetTraceInfo');
   }
 
   /**
@@ -334,6 +370,15 @@ export class SagemakerMlflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search for traces in MLflow
+   *
+   * Access Level: Read
+   */
+  public toSearchTraces() {
+    return this.to('SearchTraces');
+  }
+
+  /**
    * Grants permission to set a tag on an experiment
    *
    * Access Level: Write
@@ -376,6 +421,24 @@ export class SagemakerMlflow extends PolicyStatement {
    */
   public toSetTag() {
     return this.to('SetTag');
+  }
+
+  /**
+   * Grants permission to set a trace tag in MLflow
+   *
+   * Access Level: Write
+   */
+  public toSetTraceTag() {
+    return this.to('SetTraceTag');
+  }
+
+  /**
+   * Grants permission to start a trace in MLflow
+   *
+   * Access Level: Write
+   */
+  public toStartTrace() {
+    return this.to('StartTrace');
   }
 
   /**
@@ -434,10 +497,12 @@ export class SagemakerMlflow extends PolicyStatement {
       'GetModelVersionByAlias',
       'GetRegisteredModel',
       'GetRun',
+      'GetTraceInfo',
       'SearchExperiments',
       'SearchModelVersions',
       'SearchRegisteredModels',
-      'SearchRuns'
+      'SearchRuns',
+      'SearchTraces'
     ],
     Write: [
       'CreateExperiment',
@@ -452,6 +517,9 @@ export class SagemakerMlflow extends PolicyStatement {
       'DeleteRegisteredModelTag',
       'DeleteRun',
       'DeleteTag',
+      'DeleteTraceTag',
+      'DeleteTraces',
+      'EndTrace',
       'LogBatch',
       'LogInputs',
       'LogMetric',
@@ -465,6 +533,8 @@ export class SagemakerMlflow extends PolicyStatement {
       'SetRegisteredModelAlias',
       'SetRegisteredModelTag',
       'SetTag',
+      'SetTraceTag',
+      'StartTrace',
       'TransitionModelVersionStage',
       'UpdateExperiment',
       'UpdateModelVersion',
@@ -486,8 +556,44 @@ export class SagemakerMlflow extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifSagemakerResourceTag()
    */
   public onMlflowTrackingServer(mlflowTrackingServerName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-tracking-server/${ mlflowTrackingServerName }`);
+  }
+
+  /**
+   * Filters access by a tag key and value pair
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to resource types:
+   * - mlflow-tracking-server
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to resource types:
+   * - mlflow-tracking-server
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSagemakerResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`sagemaker:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 }

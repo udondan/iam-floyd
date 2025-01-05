@@ -33,6 +33,7 @@ cognito-idp:ConfirmForgotPassword;Write
 cognito-idp:ConfirmSignUp;Write
 cognito-idp:CreateGroup;Write
 cognito-idp:CreateIdentityProvider;Write
+cognito-idp:CreateManagedLoginBranding;Write
 cognito-idp:CreateResourceServer;Write
 cognito-idp:CreateUserImportJob;Write
 cognito-idp:CreateUserPool;Write
@@ -40,6 +41,7 @@ cognito-idp:CreateUserPoolClient;Write
 cognito-idp:CreateUserPoolDomain;Write
 cognito-idp:DeleteGroup;Write
 cognito-idp:DeleteIdentityProvider;Write
+cognito-idp:DeleteManagedLoginBranding;Write
 cognito-idp:DeleteResourceServer;Write
 cognito-idp:DeleteUser;Write
 cognito-idp:DeleteUserAttributes;Write
@@ -47,6 +49,8 @@ cognito-idp:DeleteUserPool;Write
 cognito-idp:DeleteUserPoolClient;Write
 cognito-idp:DeleteUserPoolDomain;Write
 cognito-idp:DescribeIdentityProvider;Read
+cognito-idp:DescribeManagedLoginBranding;Read
+cognito-idp:DescribeManagedLoginBrandingByClient;Read
 cognito-idp:DescribeResourceServer;Read
 cognito-idp:DescribeRiskConfiguration;Read
 cognito-idp:DescribeUserImportJob;Read
@@ -98,6 +102,7 @@ cognito-idp:UpdateAuthEventFeedback;Write
 cognito-idp:UpdateDeviceStatus;Write
 cognito-idp:UpdateGroup;Write
 cognito-idp:UpdateIdentityProvider;Write
+cognito-idp:UpdateManagedLoginBranding;Write
 cognito-idp:UpdateResourceServer;Write
 cognito-idp:UpdateUserAttributes;Write
 cognito-idp:UpdateUserPool;Write

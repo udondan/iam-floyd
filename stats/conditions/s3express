@@ -1,3 +1,4 @@
+s3express:AllAccessRestrictedToLocalZoneGroup
 s3express:LocationName
 s3express:ResourceAccount
 s3express:SessionMode
@@ -6,3 +7,5 @@ s3express:authType
 s3express:signatureAge
 s3express:signatureversion
 s3express:x-amz-content-sha256
+s3express:x-amz-server-side-encryption
+s3express:x-amz-server-side-encryption-aws-kms-key-id

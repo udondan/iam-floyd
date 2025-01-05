@@ -2,6 +2,8 @@ networkmanager:RequestTag/${TagKey}
 networkmanager:ResourceTag/${TagKey}
 networkmanager:TagKeys
 networkmanager:cgwArn
+networkmanager:directConnectGatewayArn
+networkmanager:edgeLocations
 networkmanager:subnetArns
 networkmanager:tgwArn
 networkmanager:tgwConnectPeerArn

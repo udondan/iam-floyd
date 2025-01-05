@@ -60,6 +60,10 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCodeSigningConfig.html
    */
   public toCreateCodeSigningConfig() {
@@ -73,6 +77,8 @@ export class Lambda extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifFunctionArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html
    */
@@ -360,6 +366,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the recursion configuration of an AWS Lambda function
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionRecursionConfig.html
+   */
+  public toGetFunctionRecursionConfig() {
+    return this.to('GetFunctionRecursionConfig');
+  }
+
+  /**
    * Grants permission to read function url configuration for a Lambda function
    *
    * Access Level: Read
@@ -584,7 +601,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of tags for an AWS Lambda function
+   * Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping or code signing configuration resource
    *
    * Access Level: Read
    *
@@ -664,6 +681,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the recursion configuration of an AWS Lambda function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionRecursionConfig.html
+   */
+  public toPutFunctionRecursionConfig() {
+    return this.to('PutFunctionRecursionConfig');
+  }
+
+  /**
    * Grants permission to configure provisioned concurrency for an AWS Lambda function's alias or version
    *
    * Access Level: Write
@@ -712,7 +740,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an AWS Lambda function
+   * Grants permission to add tags to an AWS Lambda function, event source mapping or code signing configuration resource
    *
    * Access Level: Tagging
    *
@@ -727,7 +755,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from an AWS Lambda function
+   * Grants permission to remove tags from an AWS Lambda function, event source mapping or code signing configuration resource
    *
    * Access Level: Tagging
    *
@@ -874,6 +902,7 @@ export class Lambda extends PolicyStatement {
       'PutFunctionCodeSigningConfig',
       'PutFunctionConcurrency',
       'PutFunctionEventInvokeConfig',
+      'PutFunctionRecursionConfig',
       'PutProvisionedConcurrencyConfig',
       'PutRuntimeManagementConfig',
       'UpdateAlias',
@@ -895,6 +924,7 @@ export class Lambda extends PolicyStatement {
       'GetFunctionConcurrency',
       'GetFunctionConfiguration',
       'GetFunctionEventInvokeConfig',
+      'GetFunctionRecursionConfig',
       'GetFunctionUrlConfig',
       'GetLayerVersion',
       'GetLayerVersionPolicy',
@@ -931,6 +961,9 @@ export class Lambda extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCodeSigningConfig(codeSigningConfigId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:code-signing-config:${ codeSigningConfigId }`);
@@ -945,6 +978,9 @@ export class Lambda extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEventSourceMapping(uUID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-source-mapping:${ uUID }`);
@@ -1038,6 +1074,8 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateCodeSigningConfig()
+   * - .toCreateEventSourceMapping()
    * - .toCreateFunction()
    * - .toTagResource()
    *
@@ -1055,6 +1093,8 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
+   * - code signing config
+   * - eventSourceMapping
    * - function
    * - function alias
    * - function version
@@ -1073,6 +1113,8 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateCodeSigningConfig()
+   * - .toCreateEventSourceMapping()
    * - .toCreateFunction()
    * - .toTagResource()
    * - .toUntagResource()

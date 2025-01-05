@@ -1,4 +1,5 @@
 aws-marketplace:ChangeSet
+aws-marketplace:Dashboard
 aws-marketplace:DeploymentParameter
 aws-marketplace:Entity
 aws-marketplace:SellerDashboard

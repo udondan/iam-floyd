@@ -5,6 +5,7 @@ ec2:certificate
 ec2:client-vpn-endpoint
 ec2:coip-pool
 ec2:customer-gateway
+ec2:declarative-policies-report
 ec2:dedicated-host
 ec2:dhcp-options
 ec2:egress-only-internet-gateway
@@ -25,6 +26,7 @@ ec2:instance-connect-endpoint
 ec2:instance-event-window
 ec2:internet-gateway
 ec2:ipam
+ec2:ipam-external-resource-verification-token
 ec2:ipam-pool
 ec2:ipam-resource-discovery
 ec2:ipam-resource-discovery-association
@@ -72,12 +74,14 @@ ec2:transit-gateway-policy-table
 ec2:transit-gateway-route-table
 ec2:transit-gateway-route-table-announcement
 ec2:verified-access-endpoint
+ec2:verified-access-endpoint-target
 ec2:verified-access-group
 ec2:verified-access-instance
 ec2:verified-access-policy
 ec2:verified-access-trust-provider
 ec2:volume
 ec2:vpc
+ec2:vpc-block-public-access-exclusion
 ec2:vpc-endpoint
 ec2:vpc-endpoint-connection
 ec2:vpc-endpoint-service

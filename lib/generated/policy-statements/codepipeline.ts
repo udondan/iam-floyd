@@ -247,6 +247,28 @@ export class Codepipeline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the rule executions that have occurred in a pipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListRuleExecutions.html
+   */
+  public toListRuleExecutions() {
+    return this.to('ListRuleExecutions');
+  }
+
+  /**
+   * Grants permission to list a summary of all the rule types available for pipelines in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListRuleTypes.html
+   */
+  public toListRuleTypes() {
+    return this.to('ListRuleTypes');
+  }
+
+  /**
    * Grants permission to list tags for a CodePipeline resource
    *
    * Access Level: Read
@@ -266,6 +288,17 @@ export class Codepipeline extends PolicyStatement {
    */
   public toListWebhooks() {
     return this.to('ListWebhooks');
+  }
+
+  /**
+   * Grants permission to resume the pipeline execution by overriding a condition in a stage
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_OverrideStageCondition.html
+   */
+  public toOverrideStageCondition() {
+    return this.to('OverrideStageCondition');
   }
 
   /**
@@ -489,6 +522,7 @@ export class Codepipeline extends PolicyStatement {
       'DeregisterWebhookWithThirdParty',
       'DisableStageTransition',
       'EnableStageTransition',
+      'OverrideStageCondition',
       'PollForJobs',
       'PollForThirdPartyJobs',
       'PutActionRevision',
@@ -515,6 +549,8 @@ export class Codepipeline extends PolicyStatement {
       'GetThirdPartyJobDetails',
       'ListActionExecutions',
       'ListActionTypes',
+      'ListRuleExecutions',
+      'ListRuleTypes',
       'ListTagsForResource'
     ],
     List: [

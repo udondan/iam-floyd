@@ -9,6 +9,7 @@
         "s3:ListBucket",
         "s3:ListBucketMultipartUploads",
         "s3:ListBucketVersions",
+        "s3:ListCallerAccessGrants",
         "s3:ListJobs",
         "s3:ListMultiRegionAccessPoints",
         "s3:ListMultipartUploadParts",

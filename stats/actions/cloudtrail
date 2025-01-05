@@ -1,10 +1,12 @@
 cloudtrail:AddTags;Tagging
 cloudtrail:CancelQuery;Write
 cloudtrail:CreateChannel;Write
+cloudtrail:CreateDashboard;Write
 cloudtrail:CreateEventDataStore;Write
 cloudtrail:CreateServiceLinkedChannel;Write
 cloudtrail:CreateTrail;Write
 cloudtrail:DeleteChannel;Write
+cloudtrail:DeleteDashboard;Write
 cloudtrail:DeleteEventDataStore;Write
 cloudtrail:DeleteResourcePolicy;Write
 cloudtrail:DeleteServiceLinkedChannel;Write
@@ -15,7 +17,9 @@ cloudtrail:DescribeTrails;Read
 cloudtrail:DisableFederation;Write
 cloudtrail:EnableFederation;Write
 cloudtrail:GenerateQuery;Write
+cloudtrail:GenerateQueryResultsSummary;Read
 cloudtrail:GetChannel;Read
+cloudtrail:GetDashboard;Read
 cloudtrail:GetEventDataStore;Read
 cloudtrail:GetEventDataStoreData;Read
 cloudtrail:GetEventSelectors;Read
@@ -27,6 +31,7 @@ cloudtrail:GetServiceLinkedChannel;Read
 cloudtrail:GetTrail;Read
 cloudtrail:GetTrailStatus;Read
 cloudtrail:ListChannels;List
+cloudtrail:ListDashboards;List
 cloudtrail:ListEventDataStores;List
 cloudtrail:ListImportFailures;Read
 cloudtrail:ListImports;List
@@ -42,6 +47,7 @@ cloudtrail:PutResourcePolicy;Write
 cloudtrail:RegisterOrganizationDelegatedAdmin;Write
 cloudtrail:RemoveTags;Tagging
 cloudtrail:RestoreEventDataStore;Write
+cloudtrail:StartDashboardRefresh;Write
 cloudtrail:StartEventDataStoreIngestion;Write
 cloudtrail:StartImport;Write
 cloudtrail:StartLogging;Write
@@ -50,6 +56,7 @@ cloudtrail:StopEventDataStoreIngestion;Write
 cloudtrail:StopImport;Write
 cloudtrail:StopLogging;Write
 cloudtrail:UpdateChannel;Write
+cloudtrail:UpdateDashboard;Write
 cloudtrail:UpdateEventDataStore;Write
 cloudtrail:UpdateServiceLinkedChannel;Write
 cloudtrail:UpdateTrail;Write

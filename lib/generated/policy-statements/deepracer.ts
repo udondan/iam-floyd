@@ -34,6 +34,21 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information of the KMS key that the user currently has assigned to their account
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-describe-account-key.html
+   */
+  public toAdminDescribeAccountKey() {
+    return this.to('AdminDescribeAccountKey');
+  }
+
+  /**
    * Grants permission to get current admin multiuser configuration for this account
    *
    * Access Level: Read
@@ -86,6 +101,21 @@ export class Deepracer extends PolicyStatement {
    */
   public toAdminSetAccountConfig() {
     return this.to('AdminSetAccountConfig');
+  }
+
+  /**
+   * Grants permission to update the KMS key that is assigned to the user's account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserToken()
+   * - .ifMultiUser()
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-admin-update-account-key.html
+   */
+  public toAdminUpdateAccountKey() {
+    return this.to('AdminUpdateAccountKey');
   }
 
   /**
@@ -769,6 +799,7 @@ export class Deepracer extends PolicyStatement {
       'AddLeaderboardAccessPermission',
       'AdminManageUser',
       'AdminSetAccountConfig',
+      'AdminUpdateAccountKey',
       'CloneReinforcementLearningModel',
       'CreateCar',
       'CreateLeaderboard',
@@ -790,6 +821,7 @@ export class Deepracer extends PolicyStatement {
       'UpdateCar'
     ],
     Read: [
+      'AdminDescribeAccountKey',
       'AdminGetAccountConfig',
       'AdminListAssociatedResources',
       'AdminListAssociatedUsers',
@@ -939,7 +971,7 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
-   * Filters actions by tag key-value pairs in the request
+   * Filters access by tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -961,7 +993,7 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
-   * Filters actions by tag key-value pairs attached to the resource
+   * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
@@ -986,7 +1018,7 @@ export class Deepracer extends PolicyStatement {
   }
 
   /**
-   * Filters actions by tag keys in the request
+   * Filters access by tag keys in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
@@ -1014,6 +1046,8 @@ export class Deepracer extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddLeaderboardAccessPermission()
+   * - .toAdminDescribeAccountKey()
+   * - .toAdminUpdateAccountKey()
    * - .toCloneReinforcementLearningModel()
    * - .toCreateCar()
    * - .toCreateLeaderboard()
@@ -1069,6 +1103,8 @@ export class Deepracer extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddLeaderboardAccessPermission()
+   * - .toAdminDescribeAccountKey()
+   * - .toAdminUpdateAccountKey()
    * - .toCloneReinforcementLearningModel()
    * - .toCreateCar()
    * - .toCreateLeaderboard()

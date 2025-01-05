@@ -96,6 +96,17 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Lake Formation tag expression
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_CreateLFTagExpression.html
+   */
+  public toCreateLFTagExpression() {
+    return this.to('CreateLFTagExpression');
+  }
+
+  /**
    * Grants permission to create an IAM Identity Center connection with Lake Formation to allow IAM Identity Center users and groups to access Data Catalog resources
    *
    * Access Level: Write
@@ -137,6 +148,17 @@ export class Lakeformation extends PolicyStatement {
    */
   public toDeleteLFTag() {
     return this.to('DeleteLFTag');
+  }
+
+  /**
+   * Grants permission to delete a Lake Formation expression
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_DeleteLFTagExpression.html
+   */
+  public toDeleteLFTagExpression() {
+    return this.to('DeleteLFTagExpression');
   }
 
   /**
@@ -294,6 +316,17 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a Lake Formation tag expression
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetLFTagExpression.html
+   */
+  public toGetLFTagExpression() {
+    return this.to('GetLFTagExpression');
+  }
+
+  /**
    * Grants permission to retrieve the state of the given query
    *
    * Access Level: Read
@@ -392,6 +425,17 @@ export class Lakeformation extends PolicyStatement {
    */
   public toListDataCellsFilter() {
     return this.to('ListDataCellsFilter');
+  }
+
+  /**
+   * Grants permission to list Lake Foramtion tag expressions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_ListLFTagExpressions.html
+   */
+  public toListLFTagExpressions() {
+    return this.to('ListLFTagExpressions');
   }
 
   /**
@@ -571,6 +615,17 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a Lake Formation expression
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_UpdateLFTagExpression.html
+   */
+  public toUpdateLFTagExpression() {
+    return this.to('UpdateLFTagExpression');
+  }
+
+  /**
    * Grants permission to update the IAM Identity Center connection parameters
    *
    * Access Level: Write
@@ -631,10 +686,12 @@ export class Lakeformation extends PolicyStatement {
       'CommitTransaction',
       'CreateDataCellsFilter',
       'CreateLFTag',
+      'CreateLFTagExpression',
       'CreateLakeFormationIdentityCenterConfiguration',
       'CreateLakeFormationOptIn',
       'DeleteDataCellsFilter',
       'DeleteLFTag',
+      'DeleteLFTagExpression',
       'DeleteLakeFormationIdentityCenterConfiguration',
       'DeleteLakeFormationOptIn',
       'DeleteObjectsOnCancel',
@@ -646,6 +703,7 @@ export class Lakeformation extends PolicyStatement {
       'StartTransaction',
       'UpdateDataCellsFilter',
       'UpdateLFTag',
+      'UpdateLFTagExpression',
       'UpdateLakeFormationIdentityCenterConfiguration',
       'UpdateResource',
       'UpdateTableObjects',
@@ -660,12 +718,14 @@ export class Lakeformation extends PolicyStatement {
       'GetDataLakeSettings',
       'GetEffectivePermissionsForPath',
       'GetLFTag',
+      'GetLFTagExpression',
       'GetQueryState',
       'GetQueryStatistics',
       'GetResourceLFTags',
       'GetTableObjects',
       'GetWorkUnitResults',
       'GetWorkUnits',
+      'ListLFTagExpressions',
       'ListLFTags',
       'SearchDatabasesByLFTags',
       'SearchTablesByLFTags'

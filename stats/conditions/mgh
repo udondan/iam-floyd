@@ -1,1 +1,6 @@
-
+mgh:AutomationRunResourceRunID
+mgh:AutomationUnitResourceAutomationUnitArn
+mgh:ConnectionResourceConnectionArn
+mgh:RequestTag/${TagKey}
+mgh:ResourceTag/${TagKey}
+mgh:TagKeys

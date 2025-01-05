@@ -202,7 +202,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the tags that are passed in the request
+   * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -219,7 +219,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the tags associated with the resource
+   * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
@@ -235,7 +235,7 @@ export class Firehose extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the tag keys that are passed in the request
+   * Filters access by the tag keys that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *

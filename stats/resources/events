@@ -1,9 +1,13 @@
 events:api-destination
 events:archive
 events:connection
+events:create-snapshot
 events:endpoint
 events:event-bus
 events:event-source
+events:reboot-instance
 events:replay
 events:rule-on-custom-event-bus
 events:rule-on-default-event-bus
+events:stop-instance
+events:terminate-instance

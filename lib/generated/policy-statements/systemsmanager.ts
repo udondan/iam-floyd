@@ -806,6 +806,17 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to a Systems Manager delegated administrator to view related resource details about OpsItems across multiple AWS accounts in the AWS Management Console
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html#systems-manager-namespace-other-API-operations
+   */
+  public toExecuteAPI() {
+    return this.to('ExecuteAPI');
+  }
+
+  /**
    * Grants permission to view details of a specified Automation execution
    *
    * Access Level: Read
@@ -898,6 +909,17 @@ export class Ssm extends PolicyStatement {
    */
   public toGetDocument() {
     return this.to('GetDocument');
+  }
+
+  /**
+   * Grants permission to retrieve an existing preview that shows the effects that running a specified Automation runbook would have on the targeted resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetExecutionPreview.html
+   */
+  public toGetExecutionPreview() {
+    return this.to('GetExecutionPreview');
   }
 
   /**
@@ -1263,6 +1285,28 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about managed nodes based on specified filters
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListNodes.html
+   */
+  public toListNodes() {
+    return this.to('ListNodes');
+  }
+
+  /**
+   * Grants permission to view summary information about managed nodes based on specified filters and aggregators
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListNodesSummary.html
+   */
+  public toListNodesSummary() {
+    return this.to('ListNodesSummary');
+  }
+
+  /**
    * Grants permission to view details about OpsItemEvents
    *
    * Access Level: List
@@ -1402,6 +1446,7 @@ export class Ssm extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifOverwrite()
+   * - .ifPolicies()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html
    */
@@ -1592,12 +1637,22 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a preview showing the effects that running a specified Automation runbook would have on the targeted resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartExecutionPreview.html
+   */
+  public toStartExecutionPreview() {
+    return this.to('StartExecutionPreview');
+  }
+
+  /**
    * Grants permission to initiate a connection to a specified target for a Session Manager session
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifSessionDocumentAccessCheck()
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    *
@@ -1944,6 +1999,7 @@ export class Ssm extends PolicyStatement {
       'DescribeInstanceProperties',
       'DescribeInventoryDeletions',
       'DescribeOpsItems',
+      'ExecuteAPI',
       'GetAutomationExecution',
       'GetCalendar',
       'GetCalendarState',
@@ -1952,6 +2008,7 @@ export class Ssm extends PolicyStatement {
       'GetDefaultPatchBaseline',
       'GetDeployablePatchSnapshotForInstance',
       'GetDocument',
+      'GetExecutionPreview',
       'GetInventory',
       'GetInventorySchema',
       'GetMaintenanceWindow',
@@ -1970,7 +2027,8 @@ export class Ssm extends PolicyStatement {
       'GetPatchBaseline',
       'GetPatchBaselineForPatchGroup',
       'GetServiceSetting',
-      'PutConfigurePackageResult'
+      'PutConfigurePackageResult',
+      'StartExecutionPreview'
     ],
     List: [
       'DescribeMaintenanceWindowExecutionTaskInvocations',
@@ -1999,6 +2057,8 @@ export class Ssm extends PolicyStatement {
       'ListDocuments',
       'ListInstanceAssociations',
       'ListInventoryEntries',
+      'ListNodes',
+      'ListNodesSummary',
       'ListOpsItemEvents',
       'ListOpsItemRelatedItems',
       'ListOpsMetadata',
@@ -2087,6 +2147,19 @@ export class Ssm extends PolicyStatement {
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:document/${ documentName }`);
+  }
+
+  /**
+   * Adds a resource of type iam-role to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
+   *
+   * @param roleName - Identifier for the roleName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onIamRole(roleName: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:role/${ roleName }`);
   }
 
   /**
@@ -2508,7 +2581,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Filters access by controling whether Systems Manager parameters can be overwritten
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policy-conditions.html#overwrite-condition
    *
    * Applies to actions:
    * - .toPutParameter()
@@ -2521,9 +2594,24 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Filters access by controlling whether an IAM Entity (user or role) can create or update a parameter that includes a parameter policy
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policy-conditions.html#parameter-policies-condition
+   *
+   * Applies to actions:
+   * - .toPutParameter()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPolicies(value: string | string[], operator?: Operator | string) {
+    return this.if(`Policies`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by Systems Manager parameters created in a hierarchical structure
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policy-conditions.html#recursive-condition
    *
    * Applies to actions:
    * - .toGetParametersByPath()
@@ -2533,20 +2621,6 @@ export class Ssm extends PolicyStatement {
    */
   public ifRecursive(value: string | string[], operator?: Operator | string) {
     return this.if(`Recursive`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by verifying that a user has permission to access either the default Session Manager configuration document or the custom configuration document specified in a request
-   *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-sessiondocumentaccesscheck.html
-   *
-   * Applies to actions:
-   * - .toStartSession()
-   *
-   * @param value `true` or `false`. **Default:** `true`
-   */
-  public ifSessionDocumentAccessCheck(value?: boolean) {
-    return this.if(`SessionDocumentAccessCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

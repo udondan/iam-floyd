@@ -127,10 +127,6 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
   public toRestore() {
@@ -141,10 +137,6 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to restore multiregion table from a backup
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/keyspaces/latest/devguide/
    */
@@ -210,7 +202,6 @@ export class Cassandra extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/keyspaces/latest/devguide/
@@ -225,7 +216,6 @@ export class Cassandra extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/keyspaces/latest/devguide/
@@ -316,12 +306,8 @@ export class Cassandra extends PolicyStatement {
    * - .toAlterMultiRegionResource()
    * - .toCreate()
    * - .toCreateMultiRegionResource()
-   * - .toRestore()
-   * - .toRestoreMultiRegionTable()
    * - .toTagMultiRegionResource()
    * - .toTagResource()
-   * - .toUnTagMultiRegionResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -358,8 +344,6 @@ export class Cassandra extends PolicyStatement {
    * - .toAlterMultiRegionResource()
    * - .toCreate()
    * - .toCreateMultiRegionResource()
-   * - .toRestore()
-   * - .toRestoreMultiRegionTable()
    * - .toTagMultiRegionResource()
    * - .toTagResource()
    * - .toUnTagMultiRegionResource()

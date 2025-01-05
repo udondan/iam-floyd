@@ -21,10 +21,12 @@ aws-marketplace:DisassociateProductsFromPrivateMarketplace;Write
 aws-marketplace:GetAgreementApprovalRequest;Read
 aws-marketplace:GetAgreementRequest;Read
 aws-marketplace:GetAgreementTerms;List
+aws-marketplace:GetBuyerDashboard;Read
 aws-marketplace:GetEntitlements;Read
 aws-marketplace:GetResourcePolicy;Read
 aws-marketplace:GetSellerDashboard;Read
 aws-marketplace:ListAgreementApprovalRequests;List
+aws-marketplace:ListAgreementCharges;List
 aws-marketplace:ListAgreementRequests;List
 aws-marketplace:ListAssessments;List
 aws-marketplace:ListBuilds;Read
@@ -50,5 +52,6 @@ aws-marketplace:TagResource;Tagging
 aws-marketplace:Unsubscribe;Write
 aws-marketplace:UntagResource;Tagging
 aws-marketplace:UpdateAgreementApprovalRequest;Write
+aws-marketplace:UpdatePurchaseOrders;Write
 aws-marketplace:UpdateTask;Write
 aws-marketplace:ViewSubscriptions;List

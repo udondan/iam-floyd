@@ -6,14 +6,17 @@ iotfleetwise:CreateDecoderManifest;Write
 iotfleetwise:CreateFleet;Write
 iotfleetwise:CreateModelManifest;Write
 iotfleetwise:CreateSignalCatalog;Write
+iotfleetwise:CreateStateTemplate;Write
 iotfleetwise:CreateVehicle;Write
 iotfleetwise:DeleteCampaign;Write
 iotfleetwise:DeleteDecoderManifest;Write
 iotfleetwise:DeleteFleet;Write
 iotfleetwise:DeleteModelManifest;Write
 iotfleetwise:DeleteSignalCatalog;Write
+iotfleetwise:DeleteStateTemplate;Write
 iotfleetwise:DeleteVehicle;Write
 iotfleetwise:DisassociateVehicleFleet;Write
+iotfleetwise:GenerateCommandPayload;Permissions management
 iotfleetwise:GetCampaign;Read
 iotfleetwise:GetDecoderManifest;Read
 iotfleetwise:GetEncryptionConfiguration;Read
@@ -22,6 +25,7 @@ iotfleetwise:GetLoggingOptions;Read
 iotfleetwise:GetModelManifest;Read
 iotfleetwise:GetRegisterAccountStatus;Read
 iotfleetwise:GetSignalCatalog;Read
+iotfleetwise:GetStateTemplate;Read
 iotfleetwise:GetVehicle;Read
 iotfleetwise:GetVehicleStatus;Read
 iotfleetwise:ImportDecoderManifest;Write
@@ -36,6 +40,7 @@ iotfleetwise:ListModelManifestNodes;List
 iotfleetwise:ListModelManifests;Read
 iotfleetwise:ListSignalCatalogNodes;Read
 iotfleetwise:ListSignalCatalogs;Read
+iotfleetwise:ListStateTemplates;Read
 iotfleetwise:ListTagsForResource;Read
 iotfleetwise:ListVehicles;Read
 iotfleetwise:ListVehiclesInFleet;Read
@@ -49,4 +54,5 @@ iotfleetwise:UpdateDecoderManifest;Write
 iotfleetwise:UpdateFleet;Write
 iotfleetwise:UpdateModelManifest;Write
 iotfleetwise:UpdateSignalCatalog;Write
+iotfleetwise:UpdateStateTemplate;Write
 iotfleetwise:UpdateVehicle;Write

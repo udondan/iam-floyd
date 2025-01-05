@@ -4,6 +4,7 @@ transfer:CreateConnector;Write
 transfer:CreateProfile;Write
 transfer:CreateServer;Write
 transfer:CreateUser;Write
+transfer:CreateWebApp;Write
 transfer:CreateWorkflow;Write
 transfer:DeleteAccess;Write
 transfer:DeleteAgreement;Write
@@ -14,6 +15,8 @@ transfer:DeleteProfile;Write
 transfer:DeleteServer;Write
 transfer:DeleteSshPublicKey;Write
 transfer:DeleteUser;Write
+transfer:DeleteWebApp;Write
+transfer:DeleteWebAppCustomization;Write
 transfer:DeleteWorkflow;Write
 transfer:DescribeAccess;Read
 transfer:DescribeAgreement;Read
@@ -25,6 +28,8 @@ transfer:DescribeProfile;Read
 transfer:DescribeSecurityPolicy;Read
 transfer:DescribeServer;Read
 transfer:DescribeUser;Read
+transfer:DescribeWebApp;Read
+transfer:DescribeWebAppCustomization;Read
 transfer:DescribeWorkflow;Read
 transfer:ImportCertificate;Write
 transfer:ImportHostKey;Write
@@ -34,12 +39,14 @@ transfer:ListAgreements;Read
 transfer:ListCertificates;Read
 transfer:ListConnectors;Read
 transfer:ListExecutions;Read
+transfer:ListFileTransferResults;Read
 transfer:ListHostKeys;Read
 transfer:ListProfiles;Read
 transfer:ListSecurityPolicies;List
 transfer:ListServers;List
 transfer:ListTagsForResource;Read
 transfer:ListUsers;List
+transfer:ListWebApps;List
 transfer:ListWorkflows;List
 transfer:SendWorkflowStepState;Write
 transfer:StartDirectoryListing;Write
@@ -58,3 +65,5 @@ transfer:UpdateHostKey;Write
 transfer:UpdateProfile;Write
 transfer:UpdateServer;Write
 transfer:UpdateUser;Write
+transfer:UpdateWebApp;Write
+transfer:UpdateWebAppCustomization;Write

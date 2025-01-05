@@ -120,6 +120,24 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a webapp
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateWebApp.html
+   */
+  public toCreateWebApp() {
+    return this.to('CreateWebApp');
+  }
+
+  /**
    * Grants permission to create a workflow
    *
    * Access Level: Write
@@ -231,6 +249,28 @@ export class Transfer extends PolicyStatement {
    */
   public toDeleteUser() {
     return this.to('DeleteUser');
+  }
+
+  /**
+   * Grants permission to delete webapp
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteWebApp.html
+   */
+  public toDeleteWebApp() {
+    return this.to('DeleteWebApp');
+  }
+
+  /**
+   * Grants permission to delete webapp customization
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteWebAppCustomization.html
+   */
+  public toDeleteWebAppCustomization() {
+    return this.to('DeleteWebAppCustomization');
   }
 
   /**
@@ -355,6 +395,28 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a webapp
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeWebApp.html
+   */
+  public toDescribeWebApp() {
+    return this.to('DescribeWebApp');
+  }
+
+  /**
+   * Grants permission to describe a webapp customization
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeWebAppCustomization.html
+   */
+  public toDescribeWebAppCustomization() {
+    return this.to('DescribeWebAppCustomization');
+  }
+
+  /**
    * Grants permission to describe a workflow
    *
    * Access Level: Read
@@ -462,6 +524,17 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list file transfer statuses for connectors
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListFileTransferResults.html
+   */
+  public toListFileTransferResults() {
+    return this.to('ListFileTransferResults');
+  }
+
+  /**
    * Grants permission to list host keys associated with a server
    *
    * Access Level: Read
@@ -525,6 +598,17 @@ export class Transfer extends PolicyStatement {
    */
   public toListUsers() {
     return this.to('ListUsers');
+  }
+
+  /**
+   * Grants permission to list webapps
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListWebApps.html
+   */
+  public toListWebApps() {
+    return this.to('ListWebApps');
   }
 
   /**
@@ -747,6 +831,34 @@ export class Transfer extends PolicyStatement {
     return this.to('UpdateUser');
   }
 
+  /**
+   * Grants permission to update the configuration of a webapp
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateWebApp.html
+   */
+  public toUpdateWebApp() {
+    return this.to('UpdateWebApp');
+  }
+
+  /**
+   * Grants permission to update the configuration of a webapp cutomization
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateWebAppCustomization.html
+   */
+  public toUpdateWebAppCustomization() {
+    return this.to('UpdateWebAppCustomization');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAccess',
@@ -755,6 +867,7 @@ export class Transfer extends PolicyStatement {
       'CreateProfile',
       'CreateServer',
       'CreateUser',
+      'CreateWebApp',
       'CreateWorkflow',
       'DeleteAccess',
       'DeleteAgreement',
@@ -765,6 +878,8 @@ export class Transfer extends PolicyStatement {
       'DeleteServer',
       'DeleteSshPublicKey',
       'DeleteUser',
+      'DeleteWebApp',
+      'DeleteWebAppCustomization',
       'DeleteWorkflow',
       'ImportCertificate',
       'ImportHostKey',
@@ -782,7 +897,9 @@ export class Transfer extends PolicyStatement {
       'UpdateHostKey',
       'UpdateProfile',
       'UpdateServer',
-      'UpdateUser'
+      'UpdateUser',
+      'UpdateWebApp',
+      'UpdateWebAppCustomization'
     ],
     Read: [
       'DescribeAccess',
@@ -795,12 +912,15 @@ export class Transfer extends PolicyStatement {
       'DescribeSecurityPolicy',
       'DescribeServer',
       'DescribeUser',
+      'DescribeWebApp',
+      'DescribeWebAppCustomization',
       'DescribeWorkflow',
       'ListAccesses',
       'ListAgreements',
       'ListCertificates',
       'ListConnectors',
       'ListExecutions',
+      'ListFileTransferResults',
       'ListHostKeys',
       'ListProfiles',
       'ListTagsForResource',
@@ -810,6 +930,7 @@ export class Transfer extends PolicyStatement {
       'ListSecurityPolicies',
       'ListServers',
       'ListUsers',
+      'ListWebApps',
       'ListWorkflows'
     ],
     Tagging: [
@@ -957,6 +1078,23 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type webapp to the statement
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/web-app.html
+   *
+   * @param webAppId - Identifier for the webAppId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWebapp(webAppId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:webapp/${ webAppId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -967,6 +1105,7 @@ export class Transfer extends PolicyStatement {
    * - .toCreateProfile()
    * - .toCreateServer()
    * - .toCreateUser()
+   * - .toCreateWebApp()
    * - .toCreateWorkflow()
    * - .toImportCertificate()
    * - .toImportHostKey()
@@ -994,6 +1133,7 @@ export class Transfer extends PolicyStatement {
    * - profile
    * - agreement
    * - host-key
+   * - webapp
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1014,6 +1154,7 @@ export class Transfer extends PolicyStatement {
    * - .toCreateProfile()
    * - .toCreateServer()
    * - .toCreateUser()
+   * - .toCreateWebApp()
    * - .toCreateWorkflow()
    * - .toImportCertificate()
    * - .toImportHostKey()

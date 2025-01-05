@@ -21,6 +21,7 @@ resiliencehub:DescribeAppVersionResource;Read
 resiliencehub:DescribeAppVersionResourcesResolutionStatus;Read
 resiliencehub:DescribeAppVersionTemplate;Read
 resiliencehub:DescribeDraftAppVersionResourcesImportStatus;Read
+resiliencehub:DescribeMetricsExport;Read
 resiliencehub:DescribeResiliencyPolicy;Read
 resiliencehub:DescribeResourceGroupingRecommendationTask;Read
 resiliencehub:ImportResourcesToDraftAppVersion;Write
@@ -36,6 +37,7 @@ resiliencehub:ListAppVersionResourceMappings;List
 resiliencehub:ListAppVersionResources;List
 resiliencehub:ListAppVersions;List
 resiliencehub:ListApps;List
+resiliencehub:ListMetrics;List
 resiliencehub:ListRecommendationTemplates;List
 resiliencehub:ListResiliencyPolicies;List
 resiliencehub:ListResourceGroupingRecommendations;List
@@ -50,6 +52,7 @@ resiliencehub:RejectResourceGroupingRecommendations;Write
 resiliencehub:RemoveDraftAppVersionResourceMappings;Write
 resiliencehub:ResolveAppVersionResources;Write
 resiliencehub:StartAppAssessment;Write
+resiliencehub:StartMetricsExport;Write
 resiliencehub:StartResourceGroupingRecommendationTask;Write
 resiliencehub:TagResource;Tagging
 resiliencehub:UntagResource;Tagging

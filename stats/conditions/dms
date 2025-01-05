@@ -1,11 +1,13 @@
 dms:RequestTag/${TagKey}
 dms:ResourceTag/${TagKey}
 dms:TagKeys
+dms:assessment-run-tag/${TagKey}
 dms:cert-tag/${TagKey}
 dms:data-migration-tag/${TagKey}
 dms:data-provider-tag/${TagKey}
 dms:endpoint-tag/${TagKey}
 dms:es-tag/${TagKey}
+dms:individual-assessment-tag/${TagKey}
 dms:instance-profile-tag/${TagKey}
 dms:migration-project-tag/${TagKey}
 dms:rep-tag/${TagKey}

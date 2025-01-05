@@ -1,4 +1,5 @@
 cloudformation:ChangeSetName
+cloudformation:CreateAction
 cloudformation:ImportResourceTypes
 cloudformation:RequestTag/${TagKey}
 cloudformation:ResourceTag/${TagKey}

@@ -1,3 +1,4 @@
+config:AssociateResourceTypes;Write
 config:BatchGetAggregateResourceConfig;Read
 config:BatchGetResourceConfig;Read
 config:DeleteAggregationAuthorization;Write
@@ -14,6 +15,7 @@ config:DeleteRemediationConfiguration;Write
 config:DeleteRemediationExceptions;Write
 config:DeleteResourceConfig;Write
 config:DeleteRetentionConfiguration;Write
+config:DeleteServiceLinkedConfigurationRecorder;Write
 config:DeleteStoredQuery;Write
 config:DeliverConfigSnapshot;Read
 config:DescribeAggregateComplianceByConfigRules;Read
@@ -26,7 +28,7 @@ config:DescribeConfigRules;List
 config:DescribeConfigurationAggregatorSourcesStatus;Read
 config:DescribeConfigurationAggregators;List
 config:DescribeConfigurationRecorderStatus;Read
-config:DescribeConfigurationRecorders;List
+config:DescribeConfigurationRecorders;Read
 config:DescribeConformancePackCompliance;Read
 config:DescribeConformancePackStatus;Read
 config:DescribeConformancePacks;List
@@ -41,6 +43,7 @@ config:DescribeRemediationConfigurations;List
 config:DescribeRemediationExceptions;List
 config:DescribeRemediationExecutionStatus;Read
 config:DescribeRetentionConfigurations;List
+config:DisassociateResourceTypes;Write
 config:GetAggregateComplianceDetailsByConfigRule;Read
 config:GetAggregateConfigRuleComplianceSummary;Read
 config:GetAggregateConformancePackComplianceSummary;Read
@@ -61,6 +64,7 @@ config:GetResourceConfigHistory;Read
 config:GetResourceEvaluationSummary;Read
 config:GetStoredQuery;Read
 config:ListAggregateDiscoveredResources;List
+config:ListConfigurationRecorders;List
 config:ListConformancePackComplianceScores;List
 config:ListDiscoveredResources;List
 config:ListResourceEvaluations;List
@@ -80,6 +84,7 @@ config:PutRemediationConfigurations;Write
 config:PutRemediationExceptions;Write
 config:PutResourceConfig;Write
 config:PutRetentionConfiguration;Write
+config:PutServiceLinkedConfigurationRecorder;Write
 config:PutStoredQuery;Write
 config:SelectAggregateResourceConfig;Read
 config:SelectResourceConfig;Read

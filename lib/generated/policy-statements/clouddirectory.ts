@@ -679,7 +679,7 @@ export class Clouddirectory extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its IdentityAttributeOrder
+   * Grants permission to update a given typed link's attributes. Attributes to be updated must not contribute to the typed link's identity, as defined by its IdentityAttributeOrder
    *
    * Access Level: Write
    *

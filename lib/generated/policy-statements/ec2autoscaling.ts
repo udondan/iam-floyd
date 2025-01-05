@@ -121,6 +121,8 @@ export class Autoscaling extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifCapacityReservationIds()
+   * - .ifCapacityReservationResourceGroupArns()
    * - .ifInstanceTypes()
    * - .ifLaunchConfigurationName()
    * - .ifLaunchTemplateVersionSpecified()
@@ -783,6 +785,8 @@ export class Autoscaling extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifCapacityReservationIds()
+   * - .ifCapacityReservationResourceGroupArns()
    * - .ifInstanceTypes()
    * - .ifLaunchConfigurationName()
    * - .ifLaunchTemplateVersionSpecified()
@@ -907,6 +911,38 @@ export class Autoscaling extends PolicyStatement {
    */
   public onLaunchConfiguration(id: string, launchConfigurationName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:autoscaling:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:launchConfiguration:${ id }:launchConfigurationName/${ launchConfigurationName }`);
+  }
+
+  /**
+   * Filters access based on the Capacity Reservation IDs
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCapacityReservationIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`CapacityReservationIds`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access based on the ARN of a Capacity Reservation resource group
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCapacityReservationResourceGroupArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`CapacityReservationResourceGroupArns`, value, operator ?? 'StringLike');
   }
 
   /**

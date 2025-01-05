@@ -19,13 +19,22 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a resource configuration through Amazon EventBridge and AWS Step Functions service networks
+   *
+   * Access Level: Permissions management
+   */
+  public toAssociateViaAWSServiceEventsAndStates() {
+    return this.to('AssociateViaAWSServiceEventsAndStates');
+  }
+
+  /**
    * Grants permission to create an access log subscription
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - logs:CreateLogDelivery
@@ -43,10 +52,10 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifProtocol()
    * - .ifTargetGroupArns()
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateListener.html
    */
@@ -55,14 +64,50 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a resource configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateResourceConfiguration.html
+   */
+  public toCreateResourceConfiguration() {
+    return this.to('CreateResourceConfiguration');
+  }
+
+  /**
+   * Grants permission to create a resource gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVpcId()
+   *
+   * Dependent actions:
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateResourceGateway.html
+   */
+  public toCreateResourceGateway() {
+    return this.to('CreateResourceGateway');
+  }
+
+  /**
    * Grants permission to create a rule
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifTargetGroupArns()
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTargetGroupArns()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateRule.html
    */
@@ -76,9 +121,9 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAuthType()
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAuthType()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -95,9 +140,9 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAuthType()
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAuthType()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -109,15 +154,32 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an association between a service network and a resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifResourceConfigurationArn()
+   * - .ifServiceNetworkArn()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateServiceNetworkResourceAssociation.html
+   */
+  public toCreateServiceNetworkResourceAssociation() {
+    return this.to('CreateServiceNetworkResourceAssociation');
+  }
+
+  /**
    * Grants permission to create a service network and service association
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifServiceNetworkArn()
-   * - .ifServiceArn()
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifServiceArn()
+   * - .ifServiceNetworkArn()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_CreateServiceNetworkServiceAssociation.html
    */
@@ -131,11 +193,11 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifVpcId()
-   * - .ifServiceNetworkArn()
-   * - .ifSecurityGroupIds()
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifSecurityGroupIds()
+   * - .ifServiceNetworkArn()
+   * - .ifVpcId()
    *
    * Dependent actions:
    * - ec2:DescribeVpcs
@@ -147,14 +209,23 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an association between a service network and VPC endpoint
+   *
+   * Access Level: Permissions management
+   */
+  public toCreateServiceNetworkVpcEndpointAssociation() {
+    return this.to('CreateServiceNetworkVpcEndpointAssociation');
+  }
+
+  /**
    * Grants permission to create a target group
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifVpcId()
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifVpcId()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -206,6 +277,48 @@ export class VpcLattice extends PolicyStatement {
    */
   public toDeleteListener() {
     return this.to('DeleteListener');
+  }
+
+  /**
+   * Grants permission to delete a resource configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteResourceConfiguration.html
+   */
+  public toDeleteResourceConfiguration() {
+    return this.to('DeleteResourceConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a resource endpoint association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteResourceEndpointAssociation.html
+   */
+  public toDeleteResourceEndpointAssociation() {
+    return this.to('DeleteResourceEndpointAssociation');
+  }
+
+  /**
+   * Grants permission to delete a resource gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteResourceGateway.html
+   */
+  public toDeleteResourceGateway() {
+    return this.to('DeleteResourceGateway');
   }
 
   /**
@@ -262,14 +375,28 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the association between a service network and resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteServiceNetworkResourceAssociation.html
+   */
+  public toDeleteServiceNetworkResourceAssociation() {
+    return this.to('DeleteServiceNetworkResourceAssociation');
+  }
+
+  /**
    * Grants permission to delete a service network service association
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifServiceNetworkArn()
-   * - .ifServiceArn()
    * - .ifAwsResourceTag()
+   * - .ifServiceArn()
+   * - .ifServiceNetworkArn()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteServiceNetworkServiceAssociation.html
    */
@@ -283,9 +410,9 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifVpcId()
-   * - .ifServiceNetworkArn()
    * - .ifAwsResourceTag()
+   * - .ifServiceNetworkArn()
+   * - .ifVpcId()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteServiceNetworkVpcAssociation.html
    */
@@ -361,6 +488,34 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a resource configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetResourceConfiguration.html
+   */
+  public toGetResourceConfiguration() {
+    return this.to('GetResourceConfiguration');
+  }
+
+  /**
+   * Grants permission to get information about a resource gateway
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetResourceGateway.html
+   */
+  public toGetResourceGateway() {
+    return this.to('GetResourceGateway');
+  }
+
+  /**
    * Grants permission to get information about a resource policy
    *
    * Access Level: Read
@@ -414,14 +569,28 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an association between a service network and resource configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetServiceNetworkResourceAssociation.html
+   */
+  public toGetServiceNetworkResourceAssociation() {
+    return this.to('GetServiceNetworkResourceAssociation');
+  }
+
+  /**
    * Grants permission to get information about a service network and service association
    *
    * Access Level: Read
    *
    * Possible conditions:
-   * - .ifServiceNetworkArn()
-   * - .ifServiceArn()
    * - .ifAwsResourceTag()
+   * - .ifServiceArn()
+   * - .ifServiceNetworkArn()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetServiceNetworkServiceAssociation.html
    */
@@ -435,9 +604,9 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
-   * - .ifVpcId()
-   * - .ifServiceNetworkArn()
    * - .ifAwsResourceTag()
+   * - .ifServiceNetworkArn()
+   * - .ifVpcId()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetServiceNetworkVpcAssociation.html
    */
@@ -482,6 +651,43 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list some or all resource configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListResourceConfigurations.html
+   */
+  public toListResourceConfigurations() {
+    return this.to('ListResourceConfigurations');
+  }
+
+  /**
+   * Grants permission to list some or all associations between a resource configuration and VPC endpoint
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifResourceConfigurationArn()
+   * - .ifVpcEndpointId()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListResourceEndpointAssociations.html
+   */
+  public toListResourceEndpointAssociations() {
+    return this.to('ListResourceEndpointAssociations');
+  }
+
+  /**
+   * Grants permission to list some or all resource gateways
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListResourceGateways.html
+   */
+  public toListResourceGateways() {
+    return this.to('ListResourceGateways');
+  }
+
+  /**
    * Grants permission to list some or all rules
    *
    * Access Level: List
@@ -493,13 +699,24 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list some or all associations between a service network and resource configuration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkResourceAssociations.html
+   */
+  public toListServiceNetworkResourceAssociations() {
+    return this.to('ListServiceNetworkResourceAssociations');
+  }
+
+  /**
    * Grants permission to list some or all service network and service associations
    *
    * Access Level: List
    *
    * Possible conditions:
-   * - .ifServiceNetworkArn()
    * - .ifServiceArn()
+   * - .ifServiceNetworkArn()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkServiceAssociations.html
    */
@@ -513,13 +730,24 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
-   * - .ifVpcId()
    * - .ifServiceNetworkArn()
+   * - .ifVpcId()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkVpcAssociations.html
    */
   public toListServiceNetworkVpcAssociations() {
     return this.to('ListServiceNetworkVpcAssociations');
+  }
+
+  /**
+   * Grants permission to list some or all associations between a service network and VPC endpoint
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListServiceNetworkVpcEndpointAssociations.html
+   */
+  public toListServiceNetworkVpcEndpointAssociations() {
+    return this.to('ListServiceNetworkVpcEndpointAssociations');
   }
 
   /**
@@ -589,7 +817,7 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a resource policy for a service network or a service
+   * Grants permission to create a resource policy for a resource configuration, service, or service network
    *
    * Access Level: Write
    *
@@ -616,9 +844,9 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_TagResource.html
    */
@@ -664,8 +892,8 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifTargetGroupArns()
    * - .ifAwsResourceTag()
+   * - .ifTargetGroupArns()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateListener.html
    */
@@ -674,13 +902,42 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a resource configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateResourceConfiguration.html
+   */
+  public toUpdateResourceConfiguration() {
+    return this.to('UpdateResourceConfiguration');
+  }
+
+  /**
+   * Grants permission to update a resource gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifSecurityGroupIds()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateResourceGateway.html
+   */
+  public toUpdateResourceGateway() {
+    return this.to('UpdateResourceGateway');
+  }
+
+  /**
    * Grants permission to update a rule
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifTargetGroupArns()
    * - .ifAwsResourceTag()
+   * - .ifTargetGroupArns()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateRule.html
    */
@@ -694,8 +951,8 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAuthType()
    * - .ifAwsResourceTag()
+   * - .ifAuthType()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateService.html
    */
@@ -709,8 +966,8 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAuthType()
    * - .ifAwsResourceTag()
+   * - .ifAuthType()
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_UpdateServiceNetwork.html
    */
@@ -724,10 +981,11 @@ export class VpcLattice extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifVpcId()
-   * - .ifServiceNetworkArn()
-   * - .ifSecurityGroupIds()
    * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifSecurityGroupIds()
+   * - .ifServiceNetworkArn()
+   * - .ifVpcId()
    *
    * Dependent actions:
    * - ec2:DescribeSecurityGroups
@@ -754,21 +1012,34 @@ export class VpcLattice extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AssociateViaAWSServiceEventsAndStates',
+      'CreateServiceNetworkVpcEndpointAssociation',
+      'DeleteAuthPolicy',
+      'PutAuthPolicy'
+    ],
     Write: [
       'CreateAccessLogSubscription',
       'CreateListener',
+      'CreateResourceConfiguration',
+      'CreateResourceGateway',
       'CreateRule',
       'CreateService',
       'CreateServiceNetwork',
+      'CreateServiceNetworkResourceAssociation',
       'CreateServiceNetworkServiceAssociation',
       'CreateServiceNetworkVpcAssociation',
       'CreateTargetGroup',
       'DeleteAccessLogSubscription',
       'DeleteListener',
+      'DeleteResourceConfiguration',
+      'DeleteResourceEndpointAssociation',
+      'DeleteResourceGateway',
       'DeleteResourcePolicy',
       'DeleteRule',
       'DeleteService',
       'DeleteServiceNetwork',
+      'DeleteServiceNetworkResourceAssociation',
       'DeleteServiceNetworkServiceAssociation',
       'DeleteServiceNetworkVpcAssociation',
       'DeleteTargetGroup',
@@ -777,24 +1048,25 @@ export class VpcLattice extends PolicyStatement {
       'RegisterTargets',
       'UpdateAccessLogSubscription',
       'UpdateListener',
+      'UpdateResourceConfiguration',
+      'UpdateResourceGateway',
       'UpdateRule',
       'UpdateService',
       'UpdateServiceNetwork',
       'UpdateServiceNetworkVpcAssociation',
       'UpdateTargetGroup'
     ],
-    'Permissions management': [
-      'DeleteAuthPolicy',
-      'PutAuthPolicy'
-    ],
     Read: [
       'GetAccessLogSubscription',
       'GetAuthPolicy',
       'GetListener',
+      'GetResourceConfiguration',
+      'GetResourceGateway',
       'GetResourcePolicy',
       'GetRule',
       'GetService',
       'GetServiceNetwork',
+      'GetServiceNetworkResourceAssociation',
       'GetServiceNetworkServiceAssociation',
       'GetServiceNetworkVpcAssociation',
       'GetTargetGroup',
@@ -803,9 +1075,14 @@ export class VpcLattice extends PolicyStatement {
     List: [
       'ListAccessLogSubscriptions',
       'ListListeners',
+      'ListResourceConfigurations',
+      'ListResourceEndpointAssociations',
+      'ListResourceGateways',
       'ListRules',
+      'ListServiceNetworkResourceAssociations',
       'ListServiceNetworkServiceAssociations',
       'ListServiceNetworkVpcAssociations',
+      'ListServiceNetworkVpcEndpointAssociations',
       'ListServiceNetworks',
       'ListServices',
       'ListTargetGroups',
@@ -818,11 +1095,11 @@ export class VpcLattice extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type ServiceNetwork to the statement
+   * Adds a resource of type AccessLogSubscription to the statement
    *
-   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html
    *
-   * @param serviceNetworkId - Identifier for the serviceNetworkId.
+   * @param accessLogSubscriptionId - Identifier for the accessLogSubscriptionId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -831,93 +1108,9 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifAuthType()
    */
-  public onServiceNetwork(serviceNetworkId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetwork/${ serviceNetworkId }`);
-  }
-
-  /**
-   * Adds a resource of type Service to the statement
-   *
-   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html
-   *
-   * @param serviceId - Identifier for the serviceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifAuthType()
-   */
-  public onService(serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }`);
-  }
-
-  /**
-   * Adds a resource of type ServiceNetworkVpcAssociation to the statement
-   *
-   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-vpc-associations
-   *
-   * @param serviceNetworkVpcAssociationId - Identifier for the serviceNetworkVpcAssociationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifSecurityGroupIds()
-   * - .ifServiceNetworkArn()
-   * - .ifVpcId()
-   */
-  public onServiceNetworkVpcAssociation(serviceNetworkVpcAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
-  }
-
-  /**
-   * Adds a resource of type ServiceNetworkServiceAssociation to the statement
-   *
-   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations
-   *
-   * @param serviceNetworkServiceAssociationId - Identifier for the serviceNetworkServiceAssociationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifServiceArn()
-   * - .ifServiceNetworkArn()
-   */
-  public onServiceNetworkServiceAssociation(serviceNetworkServiceAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
-  }
-
-  /**
-   * Adds a resource of type TargetGroup to the statement
-   *
-   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html
-   *
-   * @param targetGroupId - Identifier for the targetGroupId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifVpcId()
-   */
-  public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:targetgroup/${ targetGroupId }`);
+  public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesslogsubscription/${ accessLogSubscriptionId }`);
   }
 
   /**
@@ -943,6 +1136,66 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ResourceConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-configurations.html
+   *
+   * @param resourceConfigurationId - Identifier for the resourceConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   */
+  public onResourceConfiguration(resourceConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resourceconfiguration/${ resourceConfigurationId }`);
+  }
+
+  /**
+   * Adds a resource of type ResourceEndpointAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-endpoint-associations.html
+   *
+   * @param resourceEndpointAssociationId - Identifier for the resourceEndpointAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifResourceConfigurationArn()
+   * - .ifVpcEndpointId()
+   */
+  public onResourceEndpointAssociation(resourceEndpointAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resourceendpointassociation/${ resourceEndpointAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type ResourceGateway to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-gateways.html
+   *
+   * @param resourceGatewayId - Identifier for the resourceGatewayId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifVpcId()
+   */
+  public onResourceGateway(resourceGatewayId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resourcegateway/${ resourceGatewayId }`);
+  }
+
+  /**
    * Adds a resource of type Rule to the statement
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules
@@ -965,11 +1218,11 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type AccessLogSubscription to the statement
+   * Adds a resource of type Service to the statement
    *
-   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html
    *
-   * @param accessLogSubscriptionId - Identifier for the accessLogSubscriptionId.
+   * @param serviceId - Identifier for the serviceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -978,9 +1231,114 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifAuthType()
    */
-  public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesslogsubscription/${ accessLogSubscriptionId }`);
+  public onService(serviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }`);
+  }
+
+  /**
+   * Adds a resource of type ServiceNetwork to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html
+   *
+   * @param serviceNetworkId - Identifier for the serviceNetworkId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAuthType()
+   */
+  public onServiceNetwork(serviceNetworkId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetwork/${ serviceNetworkId }`);
+  }
+
+  /**
+   * Adds a resource of type ServiceNetworkResourceAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-resource-configuration
+   *
+   * @param serviceNetworkResourceAssociationId - Identifier for the serviceNetworkResourceAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifResourceConfigurationArn()
+   * - .ifServiceNetworkArn()
+   */
+  public onServiceNetworkResourceAssociation(serviceNetworkResourceAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetworkresourceassociation/${ serviceNetworkResourceAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type ServiceNetworkServiceAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations
+   *
+   * @param serviceNetworkServiceAssociationId - Identifier for the serviceNetworkServiceAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifServiceArn()
+   * - .ifServiceNetworkArn()
+   */
+  public onServiceNetworkServiceAssociation(serviceNetworkServiceAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetworkserviceassociation/${ serviceNetworkServiceAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type ServiceNetworkVpcAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-vpc-associations
+   *
+   * @param serviceNetworkVpcAssociationId - Identifier for the serviceNetworkVpcAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifSecurityGroupIds()
+   * - .ifServiceNetworkArn()
+   * - .ifVpcId()
+   */
+  public onServiceNetworkVpcAssociation(serviceNetworkVpcAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:servicenetworkvpcassociation/${ serviceNetworkVpcAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type TargetGroup to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html
+   *
+   * @param targetGroupId - Identifier for the targetGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifVpcId()
+   */
+  public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:targetgroup/${ targetGroupId }`);
   }
 
   /**
@@ -991,23 +1349,30 @@ export class VpcLattice extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAccessLogSubscription()
    * - .toCreateListener()
+   * - .toCreateResourceConfiguration()
+   * - .toCreateResourceGateway()
    * - .toCreateRule()
    * - .toCreateService()
    * - .toCreateServiceNetwork()
+   * - .toCreateServiceNetworkResourceAssociation()
    * - .toCreateServiceNetworkServiceAssociation()
    * - .toCreateServiceNetworkVpcAssociation()
    * - .toCreateTargetGroup()
    * - .toTagResource()
    *
    * Applies to resource types:
-   * - ServiceNetwork
-   * - Service
-   * - ServiceNetworkVpcAssociation
-   * - ServiceNetworkServiceAssociation
-   * - TargetGroup
-   * - Listener
-   * - Rule
    * - AccessLogSubscription
+   * - Listener
+   * - ResourceConfiguration
+   * - ResourceEndpointAssociation
+   * - ResourceGateway
+   * - Rule
+   * - Service
+   * - ServiceNetwork
+   * - ServiceNetworkResourceAssociation
+   * - ServiceNetworkServiceAssociation
+   * - ServiceNetworkVpcAssociation
+   * - TargetGroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1025,23 +1390,32 @@ export class VpcLattice extends PolicyStatement {
    * Applies to actions:
    * - .toDeleteAccessLogSubscription()
    * - .toDeleteListener()
+   * - .toDeleteResourceConfiguration()
+   * - .toDeleteResourceEndpointAssociation()
+   * - .toDeleteResourceGateway()
    * - .toDeleteRule()
    * - .toDeleteService()
    * - .toDeleteServiceNetwork()
+   * - .toDeleteServiceNetworkResourceAssociation()
    * - .toDeleteServiceNetworkServiceAssociation()
    * - .toDeleteServiceNetworkVpcAssociation()
    * - .toDeleteTargetGroup()
    * - .toGetAccessLogSubscription()
    * - .toGetListener()
+   * - .toGetResourceConfiguration()
+   * - .toGetResourceGateway()
    * - .toGetRule()
    * - .toGetService()
    * - .toGetServiceNetwork()
+   * - .toGetServiceNetworkResourceAssociation()
    * - .toGetServiceNetworkServiceAssociation()
    * - .toGetServiceNetworkVpcAssociation()
    * - .toGetTargetGroup()
    * - .toTagResource()
    * - .toUpdateAccessLogSubscription()
    * - .toUpdateListener()
+   * - .toUpdateResourceConfiguration()
+   * - .toUpdateResourceGateway()
    * - .toUpdateRule()
    * - .toUpdateService()
    * - .toUpdateServiceNetwork()
@@ -1049,14 +1423,18 @@ export class VpcLattice extends PolicyStatement {
    * - .toUpdateTargetGroup()
    *
    * Applies to resource types:
-   * - ServiceNetwork
-   * - Service
-   * - ServiceNetworkVpcAssociation
-   * - ServiceNetworkServiceAssociation
-   * - TargetGroup
-   * - Listener
-   * - Rule
    * - AccessLogSubscription
+   * - Listener
+   * - ResourceConfiguration
+   * - ResourceEndpointAssociation
+   * - ResourceGateway
+   * - Rule
+   * - Service
+   * - ServiceNetwork
+   * - ServiceNetworkResourceAssociation
+   * - ServiceNetworkServiceAssociation
+   * - ServiceNetworkVpcAssociation
+   * - TargetGroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1074,24 +1452,32 @@ export class VpcLattice extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAccessLogSubscription()
    * - .toCreateListener()
+   * - .toCreateResourceConfiguration()
+   * - .toCreateResourceGateway()
    * - .toCreateRule()
    * - .toCreateService()
    * - .toCreateServiceNetwork()
+   * - .toCreateServiceNetworkResourceAssociation()
    * - .toCreateServiceNetworkServiceAssociation()
    * - .toCreateServiceNetworkVpcAssociation()
    * - .toCreateTargetGroup()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateServiceNetworkVpcAssociation()
    *
    * Applies to resource types:
-   * - ServiceNetwork
-   * - Service
-   * - ServiceNetworkVpcAssociation
-   * - ServiceNetworkServiceAssociation
-   * - TargetGroup
-   * - Listener
-   * - Rule
    * - AccessLogSubscription
+   * - Listener
+   * - ResourceConfiguration
+   * - ResourceEndpointAssociation
+   * - ResourceGateway
+   * - Rule
+   * - Service
+   * - ServiceNetwork
+   * - ServiceNetworkResourceAssociation
+   * - ServiceNetworkServiceAssociation
+   * - ServiceNetworkVpcAssociation
+   * - TargetGroup
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1112,8 +1498,8 @@ export class VpcLattice extends PolicyStatement {
    * - .toUpdateServiceNetwork()
    *
    * Applies to resource types:
-   * - ServiceNetwork
    * - Service
+   * - ServiceNetwork
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1141,12 +1527,33 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of a resource configuration
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
+   *
+   * Applies to actions:
+   * - .toCreateServiceNetworkResourceAssociation()
+   * - .toListResourceEndpointAssociations()
+   *
+   * Applies to resource types:
+   * - ResourceEndpointAssociation
+   * - ServiceNetworkResourceAssociation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifResourceConfigurationArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceConfigurationArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by the IDs of security groups
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
    *
    * Applies to actions:
    * - .toCreateServiceNetworkVpcAssociation()
+   * - .toUpdateResourceGateway()
    * - .toUpdateServiceNetworkVpcAssociation()
    *
    * Applies to resource types:
@@ -1186,6 +1593,7 @@ export class VpcLattice extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
    *
    * Applies to actions:
+   * - .toCreateServiceNetworkResourceAssociation()
    * - .toCreateServiceNetworkServiceAssociation()
    * - .toCreateServiceNetworkVpcAssociation()
    * - .toDeleteServiceNetworkServiceAssociation()
@@ -1197,8 +1605,9 @@ export class VpcLattice extends PolicyStatement {
    * - .toUpdateServiceNetworkVpcAssociation()
    *
    * Applies to resource types:
-   * - ServiceNetworkVpcAssociation
+   * - ServiceNetworkResourceAssociation
    * - ServiceNetworkServiceAssociation
+   * - ServiceNetworkVpcAssociation
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1230,11 +1639,30 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ID of a VPC endpoint
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
+   *
+   * Applies to actions:
+   * - .toListResourceEndpointAssociations()
+   *
+   * Applies to resource types:
+   * - ResourceEndpointAssociation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcEndpointId(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcEndpointId`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the ID of a virtual private cloud (VPC)
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
    *
    * Applies to actions:
+   * - .toCreateResourceGateway()
    * - .toCreateServiceNetworkVpcAssociation()
    * - .toCreateTargetGroup()
    * - .toDeleteServiceNetworkVpcAssociation()
@@ -1243,6 +1671,7 @@ export class VpcLattice extends PolicyStatement {
    * - .toUpdateServiceNetworkVpcAssociation()
    *
    * Applies to resource types:
+   * - ResourceGateway
    * - ServiceNetworkVpcAssociation
    * - TargetGroup
    *

@@ -5,6 +5,8 @@ redshift:DbName
 redshift:DbUser
 redshift:DurationSeconds
 redshift:InboundIntegrationArn
+redshift:IntegrationSourceArn
+redshift:IntegrationTargetArn
 redshift:RequestTag/${TagKey}
 redshift:ResourceTag/${TagKey}
 redshift:TagKeys

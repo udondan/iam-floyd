@@ -452,6 +452,17 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve Marketplace provided resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetMarketplaceResource.html
+   */
+  public toGetMarketplaceResource() {
+    return this.to('GetMarketplaceResource');
+  }
+
+  /**
    * Grants permission to view details about a workflow
    *
    * Access Level: Read
@@ -975,6 +986,7 @@ export class Imagebuilder extends PolicyStatement {
       'GetInfrastructureConfiguration',
       'GetLifecycleExecution',
       'GetLifecyclePolicy',
+      'GetMarketplaceResource',
       'GetWorkflow',
       'GetWorkflowExecution',
       'GetWorkflowStepExecution',

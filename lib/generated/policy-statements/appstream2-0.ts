@@ -270,6 +270,17 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a custom branding theme, which might includes a custom logo, website links, and other branding to display to your users
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateThemeForStack.html
+   */
+  public toCreateThemeForStack() {
+    return this.to('CreateThemeForStack');
+  }
+
+  /**
    * Grants permission to update an existing image within customer account
    *
    * Access Level: Write
@@ -442,6 +453,17 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a custom branding theme, which might includes a custom logo, website links, and other branding to display to your users
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteThemeForStack.html
+   */
+  public toDeleteThemeForStack() {
+    return this.to('DeleteThemeForStack');
+  }
+
+  /**
    * Grants permission to disable usage report generation
    *
    * Access Level: Write
@@ -604,6 +626,17 @@ export class Appstream extends PolicyStatement {
    */
   public toDescribeStacks() {
     return this.to('DescribeStacks');
+  }
+
+  /**
+   * Grants permission to get the custom branding theme information, which might includes a custom logo, website links, and other branding to display to your users
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeThemeForStack.html
+   */
+  public toDescribeThemeForStack() {
+    return this.to('DescribeThemeForStack');
   }
 
   /**
@@ -989,6 +1022,17 @@ export class Appstream extends PolicyStatement {
     return this.to('UpdateStack');
   }
 
+  /**
+   * Grants permission to update the custom branding theme information, which might includes a custom logo, website links, and other branding to display to your users
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateThemeForStack.html
+   */
+  public toUpdateThemeForStack() {
+    return this.to('UpdateThemeForStack');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAppBlockBuilderAppBlock',
@@ -1009,6 +1053,7 @@ export class Appstream extends PolicyStatement {
       'CreateImageBuilderStreamingURL',
       'CreateStack',
       'CreateStreamingURL',
+      'CreateThemeForStack',
       'CreateUpdatedImage',
       'CreateUsageReportSubscription',
       'CreateUser',
@@ -1022,6 +1067,7 @@ export class Appstream extends PolicyStatement {
       'DeleteImageBuilder',
       'DeleteImagePermissions',
       'DeleteStack',
+      'DeleteThemeForStack',
       'DeleteUsageReportSubscription',
       'DeleteUser',
       'DisableUser',
@@ -1044,7 +1090,8 @@ export class Appstream extends PolicyStatement {
       'UpdateEntitlement',
       'UpdateFleet',
       'UpdateImagePermissions',
-      'UpdateStack'
+      'UpdateStack',
+      'UpdateThemeForStack'
     ],
     Read: [
       'DescribeAppBlockBuilderAppBlockAssociations',
@@ -1060,6 +1107,7 @@ export class Appstream extends PolicyStatement {
       'DescribeImages',
       'DescribeSessions',
       'DescribeStacks',
+      'DescribeThemeForStack',
       'DescribeUsageReportSubscriptions',
       'DescribeUserStackAssociations',
       'DescribeUsers',

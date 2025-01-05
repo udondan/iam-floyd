@@ -920,6 +920,17 @@ export class Personalize extends PolicyStatement {
     return this.to('UpdateRecommender');
   }
 
+  /**
+   * Grants permission to update a solution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html
+   */
+  public toUpdateSolution() {
+    return this.to('UpdateSolution');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateBatchInferenceJob',
@@ -958,7 +969,8 @@ export class Personalize extends PolicyStatement {
       'UpdateCampaign',
       'UpdateDataset',
       'UpdateMetricAttribution',
-      'UpdateRecommender'
+      'UpdateRecommender',
+      'UpdateSolution'
     ],
     Read: [
       'DescribeAlgorithm',
@@ -1033,12 +1045,10 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_FeatureTransformation.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onFeatureTransformation(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:feature-transformation/${ resourceId }`);
+  public onFeatureTransformation(resourceId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::feature-transformation/${ resourceId }`);
   }
 
   /**
@@ -1173,12 +1183,10 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Recipe.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recipe/${ resourceId }`);
+  public onRecipe(resourceId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::recipe/${ resourceId }`);
   }
 
   /**
@@ -1187,12 +1195,10 @@ export class Personalize extends PolicyStatement {
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Algorithm.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onAlgorithm(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:algorithm/${ resourceId }`);
+  public onAlgorithm(resourceId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:personalize:::algorithm/${ resourceId }`);
   }
 
   /**

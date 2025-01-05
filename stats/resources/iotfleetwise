@@ -3,4 +3,5 @@ iotfleetwise:decodermanifest
 iotfleetwise:fleet
 iotfleetwise:modelmanifest
 iotfleetwise:signalcatalog
+iotfleetwise:statetemplate
 iotfleetwise:vehicle

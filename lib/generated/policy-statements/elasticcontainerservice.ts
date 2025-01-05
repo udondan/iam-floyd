@@ -66,6 +66,7 @@ export class Ecs extends PolicyStatement {
    * - .ifEnableExecuteCommand()
    * - .ifEnableServiceConnect()
    * - .ifNamespace()
+   * - .ifEnableVpcLattice()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html
    */
@@ -263,6 +264,28 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more of your service deployments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html
+   */
+  public toDescribeServiceDeployments() {
+    return this.to('DescribeServiceDeployments');
+  }
+
+  /**
+   * Grants permission to describe one or more of your service revisions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceRevisions.html
+   */
+  public toDescribeServiceRevisions() {
+    return this.to('DescribeServiceRevisions');
+  }
+
+  /**
    * Grants permission to describe the specified services running in your cluster
    *
    * Access Level: Read
@@ -410,6 +433,17 @@ export class Ecs extends PolicyStatement {
    */
   public toListContainerInstances() {
     return this.to('ListContainerInstances');
+  }
+
+  /**
+   * Grants permission to get a list of service deployments for a specified service
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServiceDeployments.html
+   */
+  public toListServiceDeployments() {
+    return this.to('ListServiceDeployments');
   }
 
   /**
@@ -830,6 +864,7 @@ export class Ecs extends PolicyStatement {
    * - .ifEnableServiceConnect()
    * - .ifNamespace()
    * - .ifTaskDefinition()
+   * - .ifEnableVpcLattice()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
    */
@@ -928,6 +963,8 @@ export class Ecs extends PolicyStatement {
       'DescribeCapacityProviders',
       'DescribeClusters',
       'DescribeContainerInstances',
+      'DescribeServiceDeployments',
+      'DescribeServiceRevisions',
       'DescribeServices',
       'DescribeTaskDefinition',
       'DescribeTaskSets',
@@ -940,6 +977,7 @@ export class Ecs extends PolicyStatement {
       'ListAttributes',
       'ListClusters',
       'ListContainerInstances',
+      'ListServiceDeployments',
       'ListServices',
       'ListServicesByNamespace',
       'ListTaskDefinitionFamilies',
@@ -1006,6 +1044,48 @@ export class Ecs extends PolicyStatement {
    */
   public onService(clusterName: string, serviceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ clusterName }/${ serviceName }`);
+  }
+
+  /**
+   * Adds a resource of type service-deployment to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param serviceName - Identifier for the serviceName.
+   * @param serviceDeploymentId - Identifier for the serviceDeploymentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCluster()
+   * - .ifService()
+   */
+  public onServiceDeployment(clusterName: string, serviceName: string, serviceDeploymentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-deployment/${ clusterName }/${ serviceName }/${ serviceDeploymentId }`);
+  }
+
+  /**
+   * Adds a resource of type service-revision to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-revision.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param serviceName - Identifier for the serviceName.
+   * @param serviceRevisionId - Identifier for the serviceRevisionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCluster()
+   * - .ifService()
+   */
+  public onServiceRevision(clusterName: string, serviceName: string, serviceRevisionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-revision/${ clusterName }/${ serviceName }/${ serviceRevisionId }`);
   }
 
   /**
@@ -1125,6 +1205,8 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeCapacityProviders()
    * - .toDescribeClusters()
    * - .toDescribeContainerInstances()
+   * - .toDescribeServiceDeployments()
+   * - .toDescribeServiceRevisions()
    * - .toDescribeServices()
    * - .toDescribeTaskSets()
    * - .toDescribeTasks()
@@ -1132,6 +1214,7 @@ export class Ecs extends PolicyStatement {
    * - .toGetTaskProtection()
    * - .toListAttributes()
    * - .toListContainerInstances()
+   * - .toListServiceDeployments()
    * - .toListTagsForResource()
    * - .toListTasks()
    * - .toPutAttributes()
@@ -1159,6 +1242,8 @@ export class Ecs extends PolicyStatement {
    * - cluster
    * - container-instance
    * - service
+   * - service-deployment
+   * - service-revision
    * - task
    * - task-definition
    * - capacity-provider
@@ -1282,11 +1367,14 @@ export class Ecs extends PolicyStatement {
    * - .toDeleteService()
    * - .toDeleteTaskSet()
    * - .toDescribeContainerInstances()
+   * - .toDescribeServiceDeployments()
+   * - .toDescribeServiceRevisions()
    * - .toDescribeServices()
    * - .toDescribeTaskSets()
    * - .toDescribeTasks()
    * - .toExecuteCommand()
    * - .toGetTaskProtection()
+   * - .toListServiceDeployments()
    * - .toListServices()
    * - .toListTasks()
    * - .toPoll()
@@ -1301,6 +1389,10 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateServicePrimaryTaskSet()
    * - .toUpdateTaskProtection()
    * - .toUpdateTaskSet()
+   *
+   * Applies to resource types:
+   * - service-deployment
+   * - service-revision
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1392,6 +1484,22 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters access by the VPC lattice capability of your Amazon ECS service
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnableVpcLattice(value: string | string[], operator?: Operator | string) {
+    return this.if(`enable-vpc-lattice`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the AWS KMS key id provided in the request
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -1432,8 +1540,14 @@ export class Ecs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTaskSet()
    * - .toDeleteTaskSet()
+   * - .toDescribeServiceDeployments()
+   * - .toDescribeServiceRevisions()
    * - .toDescribeTaskSets()
    * - .toUpdateTaskSet()
+   *
+   * Applies to resource types:
+   * - service-deployment
+   * - service-revision
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

@@ -1,2 +1,4 @@
 redshift-data:ResourceTag/${TagKey}
+redshift-data:glue-catalog-arn
+redshift-data:session-owner-iam-userid
 redshift-data:statement-owner-iam-userid

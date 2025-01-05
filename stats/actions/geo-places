@@ -1,0 +1,7 @@
+geo-places:Autocomplete;Read
+geo-places:Geocode;Read
+geo-places:GetPlace;Read
+geo-places:ReverseGeocode;Read
+geo-places:SearchNearby;Read
+geo-places:SearchText;Read
+geo-places:Suggest;Read

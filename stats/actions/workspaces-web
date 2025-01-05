@@ -26,12 +26,14 @@ workspaces-web:DisassociateNetworkSettings;Write
 workspaces-web:DisassociateTrustStore;Write
 workspaces-web:DisassociateUserAccessLoggingSettings;Write
 workspaces-web:DisassociateUserSettings;Write
+workspaces-web:ExpireSession;Write
 workspaces-web:GetBrowserSettings;Read
 workspaces-web:GetIdentityProvider;Read
 workspaces-web:GetIpAccessSettings;Read
 workspaces-web:GetNetworkSettings;Read
 workspaces-web:GetPortal;Read
 workspaces-web:GetPortalServiceProviderMetadata;Read
+workspaces-web:GetSession;Read
 workspaces-web:GetTrustStore;Read
 workspaces-web:GetTrustStoreCertificate;Read
 workspaces-web:GetUserAccessLoggingSettings;Read
@@ -41,6 +43,7 @@ workspaces-web:ListIdentityProviders;Read
 workspaces-web:ListIpAccessSettings;Read
 workspaces-web:ListNetworkSettings;Read
 workspaces-web:ListPortals;Read
+workspaces-web:ListSessions;Read
 workspaces-web:ListTagsForResource;Read
 workspaces-web:ListTrustStoreCertificates;Read
 workspaces-web:ListTrustStores;Read

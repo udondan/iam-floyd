@@ -1,0 +1,3 @@
+pcs:RequestTag/${TagKey}
+pcs:ResourceTag/${TagKey}
+pcs:TagKeys
