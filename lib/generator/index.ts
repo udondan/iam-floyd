@@ -818,7 +818,7 @@ function addActions($: cheerio.Root, module: Module): Module {
       action = first
         .text()
         .replace('[permission only]', '')
-        .replace('-', '')
+        .replace(/-/g, '')
         .trim();
       actions[action] = {
         url: validateUrl(first.find('a[href]').attr('href')?.trim()),
