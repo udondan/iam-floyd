@@ -66,7 +66,8 @@
         "ec2:DescribeDhcpOptions",
         "ec2:DescribeManagedPrefixLists",
         "ec2:GetManagedPrefixListEntries",
-        "ec2:GetManagedPrefixListAssociations"
+        "ec2:GetManagedPrefixListAssociations",
+        "ec2:DescribeNetworkInterfaces"
       ],
       "Resource": "*"
     },
@@ -327,7 +328,8 @@
         "arn:aws:ec2:*:*:security-group/*",
         "arn:aws:ec2:*:*:volume/*",
         "arn:aws:ec2:*:*:snapshot/*",
-        "arn:aws:ec2:*:*:instance/*"
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ec2:*:*:network-interface/*"
       ],
       "Condition": {
         "StringEquals": {
@@ -336,7 +338,8 @@
             "CreateSecurityGroup",
             "CreateVolume",
             "CreateSnapshot",
-            "RunInstances"
+            "RunInstances",
+            "CreateNetworkInterface"
           ]
         }
       }
@@ -359,6 +362,68 @@
       "Effect": "Allow",
       "Action": "cloudwatch:GetMetricData",
       "Resource": "*"
+    },
+    {
+      "Sid": "DRSServiceRolePolicy29",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVolume"
+      ],
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DRSServiceRolePolicy30",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DRSServiceRolePolicy31",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "DRSServiceRolePolicy32",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface",
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DRSServiceRolePolicy33",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ]
     }
   ]
 }

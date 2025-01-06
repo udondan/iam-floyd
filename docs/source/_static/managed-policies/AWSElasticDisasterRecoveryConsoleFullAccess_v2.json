@@ -370,7 +370,8 @@
         "arn:aws:ec2:*:*:security-group/*",
         "arn:aws:ec2:*:*:volume/*",
         "arn:aws:ec2:*:*:snapshot/*",
-        "arn:aws:ec2:*:*:instance/*"
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ec2:*:*:network-interface/*"
       ],
       "Condition": {
         "StringEquals": {
@@ -378,7 +379,8 @@
             "CreateSecurityGroup",
             "CreateVolume",
             "CreateSnapshot",
-            "RunInstances"
+            "RunInstances",
+            "CreateNetworkInterface"
           ]
         },
         "Bool": {
@@ -598,6 +600,65 @@
           "aws:CalledVia": [
             "drs.amazonaws.com"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "ConsoleFullAccess41",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVolume"
+      ],
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
+        },
+        "Bool": {
+          "aws:ViaAWSService": "true"
+        }
+      }
+    },
+    {
+      "Sid": "ConsoleFullAccess42",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AWSElasticDisasterRecoveryManaged": "false"
+        },
+        "Bool": {
+          "aws:ViaAWSService": "true"
+        }
+      }
+    },
+    {
+      "Sid": "ConsoleFullAccess43",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "ConsoleFullAccess44",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterfacePermission"
+      ],
+      "Resource": "arn:aws:ec2:*:*:network-interface/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSElasticDisasterRecoveryManaged": "false"
+        },
+        "Bool": {
+          "aws:ViaAWSService": "true"
         }
       }
     }
