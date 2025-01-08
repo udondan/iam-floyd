@@ -136,6 +136,16 @@
       "Resource": "arn:aws:rds:*:*:cluster-snapshot:awsbackup:*"
     },
     {
+      "Sid": "RDSSnapshotTenantDatabasePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "rds:AddTagsToResource"
+      ],
+      "Resource": [
+        "arn:aws:rds:*:*:snapshot-tenant-database:awsbackup:*"
+      ]
+    },
+    {
       "Sid": "KMSDescribePermissions",
       "Effect": "Allow",
       "Action": "kms:DescribeKey",
