@@ -99,7 +99,9 @@
         "rds:DeleteDBCluster",
         "rds:RestoreDBInstanceToPointInTime",
         "rds:DescribeDBClusterSnapshots",
-        "rds:RestoreDBClusterToPointInTime"
+        "rds:RestoreDBClusterToPointInTime",
+        "rds:CreateTenantDatabase",
+        "rds:DeleteTenantDatabase"
       ],
       "Resource": "*"
     },
