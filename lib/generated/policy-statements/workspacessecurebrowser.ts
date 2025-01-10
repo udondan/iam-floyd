@@ -30,6 +30,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate data protection settings with web portals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateDataProtectionSettings.html
+   */
+  public toAssociateDataProtectionSettings() {
+    return this.to('AssociateDataProtectionSettings');
+  }
+
+  /**
    * Grants permission to associate ip access settings with web portals
    *
    * Access Level: Write
@@ -118,9 +129,28 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create data protection settings
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateDataProtectionSettings.html
+   */
+  public toCreateDataProtectionSettings() {
+    return this.to('CreateDataProtectionSettings');
+  }
+
+  /**
    * Grants permission to create identity providers
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIdentityProvider.html
    */
@@ -240,6 +270,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete data protection settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteDataProtectionSettings.html
+   */
+  public toDeleteDataProtectionSettings() {
+    return this.to('DeleteDataProtectionSettings');
+  }
+
+  /**
    * Grants permission to delete identity providers
    *
    * Access Level: Write
@@ -328,6 +369,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate data protection logging from web portals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateDataProtectionSettings.html
+   */
+  public toDisassociateDataProtectionSettings() {
+    return this.to('DisassociateDataProtectionSettings');
+  }
+
+  /**
    * Grants permission to disassociate ip access logging from web portals
    *
    * Access Level: Write
@@ -402,6 +454,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toGetBrowserSettings() {
     return this.to('GetBrowserSettings');
+  }
+
+  /**
+   * Grants permission to get details on data protection settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetDataProtectionSettings.html
+   */
+  public toGetDataProtectionSettings() {
+    return this.to('GetDataProtectionSettings');
   }
 
   /**
@@ -523,6 +586,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toListBrowserSettings() {
     return this.to('ListBrowserSettings');
+  }
+
+  /**
+   * Grants permission to list data protection settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListDataProtectionSettings.html
+   */
+  public toListDataProtectionSettings() {
+    return this.to('ListDataProtectionSettings');
   }
 
   /**
@@ -676,6 +750,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update data protection settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateDataProtectionSettings.html
+   */
+  public toUpdateDataProtectionSettings() {
+    return this.to('UpdateDataProtectionSettings');
+  }
+
+  /**
    * Grants permission to update identity provider
    *
    * Access Level: Write
@@ -767,12 +852,14 @@ export class WorkspacesWeb extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateBrowserSettings',
+      'AssociateDataProtectionSettings',
       'AssociateIpAccessSettings',
       'AssociateNetworkSettings',
       'AssociateTrustStore',
       'AssociateUserAccessLoggingSettings',
       'AssociateUserSettings',
       'CreateBrowserSettings',
+      'CreateDataProtectionSettings',
       'CreateIdentityProvider',
       'CreateIpAccessSettings',
       'CreateNetworkSettings',
@@ -781,6 +868,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'CreateUserAccessLoggingSettings',
       'CreateUserSettings',
       'DeleteBrowserSettings',
+      'DeleteDataProtectionSettings',
       'DeleteIdentityProvider',
       'DeleteIpAccessSettings',
       'DeleteNetworkSettings',
@@ -789,6 +877,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'DeleteUserAccessLoggingSettings',
       'DeleteUserSettings',
       'DisassociateBrowserSettings',
+      'DisassociateDataProtectionSettings',
       'DisassociateIpAccessSettings',
       'DisassociateNetworkSettings',
       'DisassociateTrustStore',
@@ -796,6 +885,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'DisassociateUserSettings',
       'ExpireSession',
       'UpdateBrowserSettings',
+      'UpdateDataProtectionSettings',
       'UpdateIdentityProvider',
       'UpdateIpAccessSettings',
       'UpdateNetworkSettings',
@@ -806,6 +896,7 @@ export class WorkspacesWeb extends PolicyStatement {
     ],
     Read: [
       'GetBrowserSettings',
+      'GetDataProtectionSettings',
       'GetIdentityProvider',
       'GetIpAccessSettings',
       'GetNetworkSettings',
@@ -817,6 +908,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'GetUserAccessLoggingSettings',
       'GetUserSettings',
       'ListBrowserSettings',
+      'ListDataProtectionSettings',
       'ListIdentityProviders',
       'ListIpAccessSettings',
       'ListNetworkSettings',
@@ -861,6 +953,9 @@ export class WorkspacesWeb extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIdentityProvider(portalId: string, identityProviderId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identityProvider/${ portalId }/${ identityProviderId }`);
@@ -969,12 +1064,31 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type dataProtectionSettings to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateDataProtectionSettings.html
+   *
+   * @param dataProtectionSettingsId - Identifier for the dataProtectionSettingsId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataProtectionSettings(dataProtectionSettingsId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataProtectionSettings/${ dataProtectionSettingsId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateBrowserSettings()
+   * - .toCreateDataProtectionSettings()
+   * - .toCreateIdentityProvider()
    * - .toCreateIpAccessSettings()
    * - .toCreateNetworkSettings()
    * - .toCreatePortal()
@@ -998,12 +1112,14 @@ export class WorkspacesWeb extends PolicyStatement {
    *
    * Applies to resource types:
    * - browserSettings
+   * - identityProvider
    * - networkSettings
    * - portal
    * - trustStore
    * - userSettings
    * - userAccessLoggingSettings
    * - ipAccessSettings
+   * - dataProtectionSettings
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1020,6 +1136,8 @@ export class WorkspacesWeb extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateBrowserSettings()
+   * - .toCreateDataProtectionSettings()
+   * - .toCreateIdentityProvider()
    * - .toCreateIpAccessSettings()
    * - .toCreateNetworkSettings()
    * - .toCreatePortal()

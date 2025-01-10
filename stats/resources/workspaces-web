@@ -1,4 +1,5 @@
 workspaces-web:browserSettings
+workspaces-web:dataProtectionSettings
 workspaces-web:identityProvider
 workspaces-web:ipAccessSettings
 workspaces-web:networkSettings

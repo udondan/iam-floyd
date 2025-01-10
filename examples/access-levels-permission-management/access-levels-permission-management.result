@@ -10,6 +10,7 @@
         "s3:PutAccessPointPublicAccessBlock",
         "s3:PutAccountPublicAccessBlock",
         "s3:PutBucketAcl",
+        "s3:PutBucketOwnershipControls",
         "s3:PutBucketPolicy",
         "s3:PutBucketPublicAccessBlock",
         "s3:PutMultiRegionAccessPointPolicy",

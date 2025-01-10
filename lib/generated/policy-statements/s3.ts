@@ -2675,7 +2675,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to add, replace or delete ownership controls on a bucket
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -3483,7 +3483,6 @@ export class S3 extends PolicyStatement {
       'PutBucketLogging',
       'PutBucketNotification',
       'PutBucketObjectLockConfiguration',
-      'PutBucketOwnershipControls',
       'PutBucketRequestPayment',
       'PutBucketVersioning',
       'PutBucketWebsite',
@@ -3517,6 +3516,7 @@ export class S3 extends PolicyStatement {
       'PutAccessPointPublicAccessBlock',
       'PutAccountPublicAccessBlock',
       'PutBucketAcl',
+      'PutBucketOwnershipControls',
       'PutBucketPolicy',
       'PutBucketPublicAccessBlock',
       'PutMultiRegionAccessPointPolicy',

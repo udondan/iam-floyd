@@ -37,7 +37,6 @@
         "s3:PutBucketLogging",
         "s3:PutBucketNotification",
         "s3:PutBucketObjectLockConfiguration",
-        "s3:PutBucketOwnershipControls",
         "s3:PutBucketRequestPayment",
         "s3:PutBucketVersioning",
         "s3:PutBucketWebsite",

@@ -126,7 +126,7 @@ s3:PutBucketCORS;Write
 s3:PutBucketLogging;Write
 s3:PutBucketNotification;Write
 s3:PutBucketObjectLockConfiguration;Write
-s3:PutBucketOwnershipControls;Write
+s3:PutBucketOwnershipControls;Permissions management
 s3:PutBucketPolicy;Permissions management
 s3:PutBucketPublicAccessBlock;Permissions management
 s3:PutBucketRequestPayment;Write
