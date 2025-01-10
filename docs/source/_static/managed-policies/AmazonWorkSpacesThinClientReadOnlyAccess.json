@@ -6,6 +6,7 @@
       "Effect": "Allow",
       "Action": [
         "thinclient:GetDevice",
+        "thinclient:GetDeviceDetails",
         "thinclient:GetEnvironment",
         "thinclient:GetSoftwareSet",
         "thinclient:ListDevices",
@@ -20,12 +21,13 @@
       "Sid": "AllowWorkSpacesAccess",
       "Effect": "Allow",
       "Action": [
+        "workspaces:DescribeConnectionAliases",
         "workspaces:DescribeWorkspaceDirectories"
       ],
       "Resource": "*"
     },
     {
-      "Sid": "AllowWorkSpacesWebAccess",
+      "Sid": "AllowWorkSpacesSecureBrowserAccess",
       "Effect": "Allow",
       "Action": [
         "workspaces-web:GetPortal",

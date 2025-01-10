@@ -1752,6 +1752,8 @@ export class AwsManagedPolicy {
     public static AWSManagedServicesDetectiveControlsConfigServiceRolePolicy = 'aws-service-role/AWSManagedServices_DetectiveControlsConfig_ServiceRolePolicy';
     /** AWS Managed Services policy to enable AMS event processor feature. */
     public static AWSManagedServicesEventsServiceRolePolicy = 'aws-service-role/AWSManagedServices_EventsServiceRolePolicy';
+    /** Allows Amazon's AWS Managed Service's Self Service Reporting feature to read AWS Organization data on your behalf to enable organization level aggregated reporting */
+    public static AWSManagedServicesSelfServiceReportingServiceRolePolicy = 'aws-service-role/AWSManagedServices_SelfServiceReporting_ServiceRolePolicy';
     /** Allows AWS Managed Services to manage deployment toolkit on your behalf. */
     public static AWSManagedServicesDeploymentToolkitPolicy = 'aws-service-role/AWSManagedServicesDeploymentToolkitPolicy';
     /** Allows AWS Marketplace to copy your Amazon Machine Images (AMIs) in order to list them on AWS Marketplace */
