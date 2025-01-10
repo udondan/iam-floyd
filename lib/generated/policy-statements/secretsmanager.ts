@@ -55,6 +55,7 @@ export class Secretsmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifName()
    * - .ifDescription()
+   * - .ifKmsKeyArn()
    * - .ifKmsKeyId()
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
@@ -382,6 +383,7 @@ export class Secretsmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifSecretId()
    * - .ifDescription()
+   * - .ifKmsKeyArn()
    * - .ifKmsKeyId()
    * - .ifResource()
    * - .ifResourceTag()
@@ -642,7 +644,23 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by the key identifier of the KMS key in the request
+   * Filters access by the key ARN of the KMS key in the request
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .toCreateSecret()
+   * - .toUpdateSecret()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`KmsKeyArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the key identifier of the KMS key in the request. Deprecated: Use secretsmanager:KmsKeyArn
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *

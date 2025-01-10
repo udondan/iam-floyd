@@ -26,6 +26,7 @@ export class Thinclient extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - appstream:DescribeStacks
@@ -184,6 +185,9 @@ export class Thinclient extends PolicyStatement {
    * Grants permission to list tags for a resource
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/workspaces-thin-client/latest/api/API_ListTagsForResource.html
    */
@@ -373,6 +377,7 @@ export class Thinclient extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCreateEnvironment()
    * - .toDeleteDevice()
    * - .toDeleteEnvironment()
    * - .toDeregisterDevice()
@@ -381,6 +386,7 @@ export class Thinclient extends PolicyStatement {
    * - .toGetEnvironment()
    * - .toGetSoftwareSet()
    * - .toListDeviceSessions()
+   * - .toListTagsForResource()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateDevice()

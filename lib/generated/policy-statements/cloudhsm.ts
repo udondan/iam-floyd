@@ -207,6 +207,9 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DescribeSubnets
+   *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ModifyCluster.html
    */
   public toModifyCluster() {

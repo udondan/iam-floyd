@@ -601,7 +601,7 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-api.html
+   * https://docs.aws.amazon.com/appsync/latest/devguide/security-authz.html#aws-iam-authorization
    */
   public toGraphQL() {
     return this.to('GraphQL');
@@ -786,7 +786,7 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appsync/latest/APIReference/API_SetWebACL.html
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
    */
   public toSetWebACL() {
     return this.to('SetWebACL');
