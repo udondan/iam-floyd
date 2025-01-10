@@ -177,7 +177,8 @@
       "Effect": "Allow",
       "Action": [
         "glue:CreateConnection",
-        "glue:DeleteConnection"
+        "glue:DeleteConnection",
+        "glue:GetConnection"
       ],
       "Resource": [
         "arn:aws:glue:*:*:connection/dz-sm-athena-glue-connection-*",

@@ -13,12 +13,13 @@
       "Sid": "AllowWorkSpacesAccess",
       "Effect": "Allow",
       "Action": [
+        "workspaces:DescribeConnectionAliases",
         "workspaces:DescribeWorkspaceDirectories"
       ],
       "Resource": "*"
     },
     {
-      "Sid": "AllowWorkSpacesWebAccess",
+      "Sid": "AllowWorkSpacesSecureBrowserAccess",
       "Effect": "Allow",
       "Action": [
         "workspaces-web:GetPortal",

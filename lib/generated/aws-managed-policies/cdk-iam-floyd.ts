@@ -4389,6 +4389,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedServicesEventsServiceRolePolicy);
     }
 
+    /** Allows Amazon's AWS Managed Service's Self Service Reporting feature to read AWS Organization data on your behalf to enable organization level aggregated reporting */
+    public AWSManagedServicesSelfServiceReportingServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedServicesSelfServiceReportingServiceRolePolicy);
+    }
+
     /** Allows AWS Managed Services to manage deployment toolkit on your behalf. */
     public AWSManagedServicesDeploymentToolkitPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedServicesDeploymentToolkitPolicy);

@@ -299,6 +299,18 @@
           ]
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVolume"
+      ],
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+        }
+      }
     }
   ]
 }
