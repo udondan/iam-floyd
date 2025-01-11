@@ -30,6 +30,15 @@
         "cleanrooms-ml:List*"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "PassCleanRoomsResources",
+      "Effect": "Allow",
+      "Action": [
+        "cleanrooms:PassMembership",
+        "cleanrooms:PassCollaboration"
+      ],
+      "Resource": "*"
     }
   ]
 }

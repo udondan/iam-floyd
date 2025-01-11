@@ -29,6 +29,7 @@
       "Effect": "Allow",
       "Action": [
         "cleanrooms:GetCollaboration",
+        "cleanrooms:BatchGetSchema",
         "cleanrooms:GetConfiguredAudienceModelAssociation",
         "cleanrooms:GetMembership",
         "cleanrooms:ListAnalysisTemplates",
@@ -146,6 +147,24 @@
         "s3:GetBucketLocation"
       ],
       "Resource": "arn:aws:s3:::*cleanrooms-ml*"
+    },
+    {
+      "Sid": "ConsoleDescribeECRRepositories",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:DescribeRepositories",
+        "ecr:ListImages"
+      ],
+      "Resource": "arn:aws:ecr:*:*:repository/*"
+    },
+    {
+      "Sid": "PassCleanRoomsResources",
+      "Effect": "Allow",
+      "Action": [
+        "cleanrooms:PassMembership",
+        "cleanrooms:PassCollaboration"
+      ],
+      "Resource": "*"
     }
   ]
 }

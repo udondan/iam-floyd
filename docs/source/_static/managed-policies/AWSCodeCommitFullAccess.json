@@ -107,8 +107,8 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringLike": {
-          "codestar-notifications:NotificationsForResource": "arn:aws:codecommit:*"
+        "ArnLike": {
+          "codestar-notifications:NotificationsForResource": "arn:aws:codecommit:*:*:*"
         }
       }
     },
