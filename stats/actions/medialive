@@ -79,6 +79,7 @@ medialive:ListOfferings;List
 medialive:ListReservations;List
 medialive:ListSignalMaps;List
 medialive:ListTagsForResource;List
+medialive:ListVersions;List
 medialive:PollAnywhere;Write
 medialive:PurchaseOffering;Write
 medialive:RebootInputDevice;Write

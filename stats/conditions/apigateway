@@ -1,3 +1,4 @@
+apigateway:Request/AccessAssociationSource
 apigateway:Request/AccessLoggingDestination
 apigateway:Request/AccessLoggingFormat
 apigateway:Request/ApiKeyRequired
@@ -5,6 +6,7 @@ apigateway:Request/ApiName
 apigateway:Request/AuthorizerType
 apigateway:Request/AuthorizerUri
 apigateway:Request/DisableExecuteApiEndpoint
+apigateway:Request/DomainNameArn
 apigateway:Request/EndpointType
 apigateway:Request/MtlsTrustStoreUri
 apigateway:Request/MtlsTrustStoreVersion
