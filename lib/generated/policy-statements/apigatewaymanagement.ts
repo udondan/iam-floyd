@@ -30,6 +30,17 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an access association from an access association source to a custom domain name for private APIs
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
+   */
+  public toCreateAccessAssociation() {
+    return this.to('CreateAccessAssociation');
+  }
+
+  /**
    * Grants permission to delete a particular resource
    *
    * Access Level: Write
@@ -101,6 +112,17 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject an existing access association owned by another account to a custom domain name for private APIs
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
+   */
+  public toRejectAccessAssociation() {
+    return this.to('RejectAccessAssociation');
+  }
+
+  /**
    * Grants permission to remove certificates for mutual TLS authentication from a domain name. This is an additional authorization control for managing the DomainName resource due to the sensitive nature of mTLS
    *
    * Access Level: Permissions management
@@ -123,6 +145,28 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the management policy of a custom domain name for private APIs
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
+   */
+  public toUpdateDomainNameManagementPolicy() {
+    return this.to('UpdateDomainNameManagementPolicy');
+  }
+
+  /**
+   * Grants permission to update the invoke policy of a custom domain name for private APIs
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_Operations.html
+   */
+  public toUpdateDomainNamePolicy() {
+    return this.to('UpdateDomainNamePolicy');
+  }
+
+  /**
    * Grants permission to manage the IAM resource policy for an API. This is an additional authorization control for managing an API due to the sensitive nature of the resource policy
    *
    * Access Level: Permissions management
@@ -136,8 +180,12 @@ export class Apigateway extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AddCertificateToDomain',
+      'CreateAccessAssociation',
+      'RejectAccessAssociation',
       'RemoveCertificateFromDomain',
       'SetWebACL',
+      'UpdateDomainNameManagementPolicy',
+      'UpdateDomainNamePolicy',
       'UpdateRestApiPolicy'
     ],
     Write: [
@@ -441,6 +489,40 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type DomainNameAccessAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DomainNameAccessAssociation.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param sourceType - Identifier for the sourceType.
+   * @param sourceId - Identifier for the sourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDomainNameAccessAssociation(domainName: string, sourceType: string, sourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/domainnameaccessassociations/domainname/${ domainName }/${ sourceType }/${ sourceId }`);
+  }
+
+  /**
+   * Adds a resource of type DomainNameAccessAssociations to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DomainNameAccessAssociation.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifRequestAccessAssociationSource()
+   * - .ifRequestDomainNameArn()
+   * - .ifAwsResourceTag()
+   */
+  public onDomainNameAccessAssociations(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/domainnameaccessassociations`);
+  }
+
+  /**
    * Adds a resource of type GatewayResponse to the statement
    *
    * https://docs.aws.amazon.com/apigateway/latest/api/API_GatewayResponse.html
@@ -582,6 +664,61 @@ export class Apigateway extends PolicyStatement {
    */
   public onModels(restApiId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/restapis/${ restApiId }/models`);
+  }
+
+  /**
+   * Adds a resource of type PrivateBasePathMapping to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_BasePathMapping.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param domainIdentifier - Identifier for the domainIdentifier.
+   * @param basePath - Identifier for the basePath.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPrivateBasePathMapping(domainName: string, domainIdentifier: string, basePath: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/domainnames/${ domainName }+${ domainIdentifier }/basepathmappings/${ basePath }`);
+  }
+
+  /**
+   * Adds a resource of type PrivateBasePathMappings to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_BasePathMapping.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param domainIdentifier - Identifier for the domainIdentifier.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPrivateBasePathMappings(domainName: string, domainIdentifier: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }::/domainnames/${ domainName }+${ domainIdentifier }/basepathmappings`);
+  }
+
+  /**
+   * Adds a resource of type PrivateDomainName to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/api/API_DomainName.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param domainIdentifier - Identifier for the domainIdentifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifRequestEndpointType()
+   * - .ifResourceEndpointType()
+   * - .ifAwsResourceTag()
+   */
+  public onPrivateDomainName(domainName: string, domainIdentifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/domainnames/${ domainName }+${ domainIdentifier }`);
   }
 
   /**
@@ -884,6 +1021,21 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
+   * Filters access by access association source. Available during the CreateDomainNameAccessAssociation operation
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - DomainNameAccessAssociations
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestAccessAssociationSource(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/AccessAssociationSource`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by access log destination. Available during the CreateStage and UpdateStage operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -999,6 +1151,21 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
+   * Filters access by domain name ARN. Available during the CreateDomainNameAccessAssociation operation
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - DomainNameAccessAssociations
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifRequestDomainNameArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/DomainNameArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by endpoint type. Available during the CreateDomainName, UpdateDomainName, CreateRestApi, and UpdateRestApi operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -1006,6 +1173,7 @@ export class Apigateway extends PolicyStatement {
    * Applies to resource types:
    * - DomainName
    * - DomainNames
+   * - PrivateDomainName
    * - RestApi
    * - RestApis
    *
@@ -1209,6 +1377,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Applies to resource types:
    * - DomainName
+   * - PrivateDomainName
    * - RestApi
    *
    * @param value The value(s) to check
@@ -1320,6 +1489,7 @@ export class Apigateway extends PolicyStatement {
    * - DocumentationVersions
    * - DomainName
    * - DomainNames
+   * - DomainNameAccessAssociations
    * - GatewayResponse
    * - GatewayResponses
    * - Integration
@@ -1328,6 +1498,9 @@ export class Apigateway extends PolicyStatement {
    * - MethodResponse
    * - Model
    * - Models
+   * - PrivateBasePathMapping
+   * - PrivateBasePathMappings
+   * - PrivateDomainName
    * - RequestValidator
    * - RequestValidators
    * - Resource

@@ -21,6 +21,8 @@ apigateway:DocumentationParts
 apigateway:DocumentationVersion
 apigateway:DocumentationVersions
 apigateway:DomainName
+apigateway:DomainNameAccessAssociation
+apigateway:DomainNameAccessAssociations
 apigateway:DomainNames
 apigateway:ExportedAPI
 apigateway:GatewayResponse
@@ -34,6 +36,9 @@ apigateway:MethodResponse
 apigateway:Model
 apigateway:ModelTemplate
 apigateway:Models
+apigateway:PrivateBasePathMapping
+apigateway:PrivateBasePathMappings
+apigateway:PrivateDomainName
 apigateway:RequestValidator
 apigateway:RequestValidators
 apigateway:Resource

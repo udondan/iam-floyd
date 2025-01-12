@@ -36,6 +36,7 @@ imagebuilder:GetWorkflow;Read
 imagebuilder:GetWorkflowExecution;Read
 imagebuilder:GetWorkflowStepExecution;Read
 imagebuilder:ImportComponent;Write
+imagebuilder:ImportDiskImage;Write
 imagebuilder:ImportVmImage;Write
 imagebuilder:ListComponentBuildVersions;List
 imagebuilder:ListComponents;List

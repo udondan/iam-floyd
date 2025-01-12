@@ -517,6 +517,26 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import a disk image
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   * - imagebuilder:GetInfrastructureConfiguration
+   * - imagebuilder:GetWorkflow
+   * - imagebuilder:TagResource
+   * - s3:GetObject
+   * - s3:ListBucket
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ImportDiskImage.html
+   */
+  public toImportDiskImage() {
+    return this.to('ImportDiskImage');
+  }
+
+  /**
    * Grants permission to import an image
    *
    * Access Level: Write
@@ -963,6 +983,7 @@ export class Imagebuilder extends PolicyStatement {
       'DeleteLifecyclePolicy',
       'DeleteWorkflow',
       'ImportComponent',
+      'ImportDiskImage',
       'ImportVmImage',
       'SendWorkflowStepAction',
       'StartImagePipelineExecution',
@@ -1316,6 +1337,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .toCreateLifecyclePolicy()
    * - .toCreateWorkflow()
    * - .toImportComponent()
+   * - .toImportDiskImage()
    * - .toImportVmImage()
    * - .toTagResource()
    *
@@ -1378,6 +1400,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .toCreateLifecyclePolicy()
    * - .toCreateWorkflow()
    * - .toImportComponent()
+   * - .toImportDiskImage()
    * - .toImportVmImage()
    * - .toTagResource()
    * - .toUntagResource()

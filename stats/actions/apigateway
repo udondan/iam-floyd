@@ -1,9 +1,13 @@
 apigateway:AddCertificateToDomain;Permissions management
+apigateway:CreateAccessAssociation;Permissions management
 apigateway:DELETE;Write
 apigateway:GET;Read
 apigateway:PATCH;Write
 apigateway:POST;Write
 apigateway:PUT;Write
+apigateway:RejectAccessAssociation;Permissions management
 apigateway:RemoveCertificateFromDomain;Permissions management
 apigateway:SetWebACL;Permissions management
+apigateway:UpdateDomainNameManagementPolicy;Permissions management
+apigateway:UpdateDomainNamePolicy;Permissions management
 apigateway:UpdateRestApiPolicy;Permissions management

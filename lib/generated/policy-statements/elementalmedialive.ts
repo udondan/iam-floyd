@@ -973,6 +973,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list available versions of MediaLive
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/medialive-versions.html
+   */
+  public toListVersions() {
+    return this.to('ListVersions');
+  }
+
+  /**
    * Grants permission to the node to poll the cluster
    *
    * Access Level: Write
@@ -1508,7 +1519,8 @@ export class Medialive extends PolicyStatement {
       'ListOfferings',
       'ListReservations',
       'ListSignalMaps',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListVersions'
     ]
   };
 
