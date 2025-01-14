@@ -23,6 +23,10 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateCallAnalyticsCategory.html
    */
   public toCreateCallAnalyticsCategory() {
@@ -418,6 +422,8 @@ export class Transcribe extends PolicyStatement {
    * Possible conditions:
    * - .ifOutputEncryptionKMSKeyId()
    * - .ifOutputLocation()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - s3:GetObject
@@ -809,6 +815,9 @@ export class Transcribe extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCallanalyticsjob(jobName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics-job/${ jobName }`);
@@ -823,6 +832,9 @@ export class Transcribe extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCallanalyticscategory(categoryName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics-category/${ categoryName }`);
@@ -851,10 +863,12 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateCallAnalyticsCategory()
    * - .toCreateLanguageModel()
    * - .toCreateMedicalVocabulary()
    * - .toCreateVocabulary()
    * - .toCreateVocabularyFilter()
+   * - .toStartCallAnalyticsJob()
    * - .toStartMedicalScribeJob()
    * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
@@ -880,6 +894,8 @@ export class Transcribe extends PolicyStatement {
    * - languagemodel
    * - medicaltranscriptionjob
    * - medicalvocabulary
+   * - callanalyticsjob
+   * - callanalyticscategory
    * - medicalscribejob
    *
    * @param tagKey The tag key to check
@@ -896,10 +912,12 @@ export class Transcribe extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateCallAnalyticsCategory()
    * - .toCreateLanguageModel()
    * - .toCreateMedicalVocabulary()
    * - .toCreateVocabulary()
    * - .toCreateVocabularyFilter()
+   * - .toStartCallAnalyticsJob()
    * - .toStartMedicalScribeJob()
    * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
