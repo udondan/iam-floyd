@@ -680,6 +680,61 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an EFS sync Location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationEfs.html
+   */
+  public toUpdateLocationEfs() {
+    return this.to('UpdateLocationEfs');
+  }
+
+  /**
+   * Grants permission to update an FSx Lustre sync Location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationFsxLustre.html
+   */
+  public toUpdateLocationFsxLustre() {
+    return this.to('UpdateLocationFsxLustre');
+  }
+
+  /**
+   * Grants permission to update an FSx ONTAP sync Location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationFsxOntap.html
+   */
+  public toUpdateLocationFsxOntap() {
+    return this.to('UpdateLocationFsxOntap');
+  }
+
+  /**
+   * Grants permission to update an FSx OpenZFS sync Location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationFsxOpenZfs.html
+   */
+  public toUpdateLocationFsxOpenZfs() {
+    return this.to('UpdateLocationFsxOpenZfs');
+  }
+
+  /**
+   * Grants permission to update an FSx Windows sync Location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationFsxWindows.html
+   */
+  public toUpdateLocationFsxWindows() {
+    return this.to('UpdateLocationFsxWindows');
+  }
+
+  /**
    * Grants permission to update an HDFS sync Location
    *
    * Access Level: Write
@@ -710,6 +765,17 @@ export class Datasync extends PolicyStatement {
    */
   public toUpdateLocationObjectStorage() {
     return this.to('UpdateLocationObjectStorage');
+  }
+
+  /**
+   * Grants permission to update an S3 sync Location
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateLocationS3.html
+   */
+  public toUpdateLocationS3() {
+    return this.to('UpdateLocationS3');
   }
 
   /**
@@ -787,9 +853,15 @@ export class Datasync extends PolicyStatement {
       'UpdateAgent',
       'UpdateDiscoveryJob',
       'UpdateLocationAzureBlob',
+      'UpdateLocationEfs',
+      'UpdateLocationFsxLustre',
+      'UpdateLocationFsxOntap',
+      'UpdateLocationFsxOpenZfs',
+      'UpdateLocationFsxWindows',
       'UpdateLocationHdfs',
       'UpdateLocationNfs',
       'UpdateLocationObjectStorage',
+      'UpdateLocationS3',
       'UpdateLocationSmb',
       'UpdateStorageSystem',
       'UpdateTask',

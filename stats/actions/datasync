@@ -51,9 +51,15 @@ datasync:UntagResource;Tagging
 datasync:UpdateAgent;Write
 datasync:UpdateDiscoveryJob;Write
 datasync:UpdateLocationAzureBlob;Write
+datasync:UpdateLocationEfs;Write
+datasync:UpdateLocationFsxLustre;Write
+datasync:UpdateLocationFsxOntap;Write
+datasync:UpdateLocationFsxOpenZfs;Write
+datasync:UpdateLocationFsxWindows;Write
 datasync:UpdateLocationHdfs;Write
 datasync:UpdateLocationNfs;Write
 datasync:UpdateLocationObjectStorage;Write
+datasync:UpdateLocationS3;Write
 datasync:UpdateLocationSmb;Write
 datasync:UpdateStorageSystem;Write
 datasync:UpdateTask;Write
