@@ -184,6 +184,16 @@
         "account:GetRegionOptStatus"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowActionsForCloudFormationHooksIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:SetTypeConfiguration",
+        "cloudformation:DeactivateType",
+        "cloudformation:ActivateType"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:type/hook/AWS-ControlTower*"
     }
   ]
 }

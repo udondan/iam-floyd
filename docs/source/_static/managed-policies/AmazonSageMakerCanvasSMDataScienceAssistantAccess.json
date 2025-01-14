@@ -18,7 +18,8 @@
       "Sid": "AmazonQDeveloperAccess",
       "Effect": "Allow",
       "Action": [
-        "q:SendMessage"
+        "q:SendMessage",
+        "q:StartConversation"
       ],
       "Resource": "*",
       "Condition": {
