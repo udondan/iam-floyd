@@ -122,6 +122,17 @@ export class Kafkaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a MSK Connect connector operation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/MSKC/latest/mskc/API_DescribeConnectorOperation.html
+   */
+  public toDescribeConnectorOperation() {
+    return this.to('DescribeConnectorOperation');
+  }
+
+  /**
    * Grants permission to describe an MSK Connect custom plugin
    *
    * Access Level: Read
@@ -141,6 +152,17 @@ export class Kafkaconnect extends PolicyStatement {
    */
   public toDescribeWorkerConfiguration() {
     return this.to('DescribeWorkerConfiguration');
+  }
+
+  /**
+   * Grants permission to list all operations of a given MSK Connect connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/MSKC/latest/mskc/API_ListConnectorOperations.html
+   */
+  public toListConnectorOperations() {
+    return this.to('ListConnectorOperations');
   }
 
   /**
@@ -239,8 +261,10 @@ export class Kafkaconnect extends PolicyStatement {
     ],
     Read: [
       'DescribeConnector',
+      'DescribeConnectorOperation',
       'DescribeCustomPlugin',
       'DescribeWorkerConfiguration',
+      'ListConnectorOperations',
       'ListConnectors',
       'ListCustomPlugins',
       'ListTagsForResource',
@@ -307,6 +331,25 @@ export class Kafkaconnect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type connector operation to the statement
+   *
+   * https://docs.aws.amazon.com/MSKC/latest/mskc/API_ConnectorOperation.html
+   *
+   * @param connectorName - Identifier for the connectorName.
+   * @param connectorUUID - Identifier for the connectorUUID.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnectorOperation(connectorName: string, connectorUUID: string, uUID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kafkaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector-operation/${ connectorName }/${ connectorUUID }/${ uUID }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -335,6 +378,7 @@ export class Kafkaconnect extends PolicyStatement {
    * - connector
    * - custom plugin
    * - worker configuration
+   * - connector operation
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
