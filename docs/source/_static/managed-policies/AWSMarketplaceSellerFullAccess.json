@@ -104,7 +104,11 @@
         "payments:CreatePaymentInstrument",
         "tax:GetTaxInterview",
         "tax:PutTaxInterview",
-        "tax:GetTaxInfoReportingDocument"
+        "tax:GetTaxInfoReportingDocument",
+        "tax:ListSupplementalTaxRegistrations",
+        "tax:PutSupplementalTaxRegistration",
+        "tax:DeleteSupplementalTaxRegistration",
+        "tax:GetTaxRegistration"
       ],
       "Resource": "*"
     },

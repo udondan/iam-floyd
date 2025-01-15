@@ -184,6 +184,25 @@
       }
     },
     {
+      "Sid": "GetCodeConnectionsPermissionsStatement",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:GetConnection",
+        "codeconnections:GetHost",
+        "codestar-connections:GetConnection",
+        "codestar-connections:GetHost"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/for-use-with-all-datazone-projects": "false"
+        },
+        "StringEquals": {
+          "aws:ResourceTag/for-use-with-all-datazone-projects": "true"
+        }
+      }
+    },
+    {
       "Sid": "ListCodeConnectionsPermissionsStatement",
       "Effect": "Allow",
       "Action": [
