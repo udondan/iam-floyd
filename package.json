@@ -55,7 +55,7 @@
     "colors": "1.4.0",
     "eslint": "9.18.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-prettier": "5.2.2",
     "glob": "^11.0.0",
     "prettier": "3.4.2",
     "publib": "^0.2.930",
