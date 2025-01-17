@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "LogDeliveryToFirehose",
       "Effect": "Allow",
       "Action": [
         "firehose:PutRecord",
