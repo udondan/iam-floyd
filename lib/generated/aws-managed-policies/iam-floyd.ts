@@ -808,6 +808,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerModelRegistryFullAccess = 'AmazonSageMakerModelRegistryFullAccess';
     /** Managed policy for Service Linked Role for Amazon SageMaker Notebooks */
     public static AmazonSageMakerNotebooksServiceRolePolicy = 'aws-service-role/AmazonSageMakerNotebooksServiceRolePolicy';
+    /** Enables Amazon SageMaker partner app users to access applications, list available applications, launch application web UIs, and connect via the application SDK. */
+    public static AmazonSageMakerPartnerAppsFullAccess = 'AmazonSageMakerPartnerAppsFullAccess';
     /** Service role policy used by the AWS APIGateway within the AWS ServiceCatalog provisioned products from Amazon SageMaker portfolio of products. Grants permissions to a set of related services including Lambda and others. */
     public static AmazonSageMakerPartnerServiceCatalogProductsApiGatewayServiceRolePolicy = 'service-role/AmazonSageMakerPartnerServiceCatalogProductsApiGatewayServiceRolePolicy';
     /** Service role policy used by the AWS CloudFormation within the AWS ServiceCatalog provisioned products from Amazon SageMaker portfolio of products. Grants permissions to a subset of related services including Lambda, APIGateway and others. */

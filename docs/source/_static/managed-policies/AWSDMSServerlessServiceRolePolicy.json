@@ -30,7 +30,9 @@
       "Action": [
         "dms:StartReplicationTask",
         "dms:StopReplicationTask",
+        "dms:ModifyReplicationTask",
         "dms:DeleteReplicationTask",
+        "dms:ModifyReplicationInstance",
         "dms:DeleteReplicationInstance"
       ],
       "Resource": [

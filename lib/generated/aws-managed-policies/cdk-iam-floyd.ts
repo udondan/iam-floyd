@@ -2029,6 +2029,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerNotebooksServiceRolePolicy);
     }
 
+    /** Enables Amazon SageMaker partner app users to access applications, list available applications, launch application web UIs, and connect via the application SDK. */
+    public AmazonSageMakerPartnerAppsFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerPartnerAppsFullAccess);
+    }
+
     /** Service role policy used by the AWS APIGateway within the AWS ServiceCatalog provisioned products from Amazon SageMaker portfolio of products. Grants permissions to a set of related services including Lambda and others. */
     public AmazonSageMakerPartnerServiceCatalogProductsApiGatewayServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerPartnerServiceCatalogProductsApiGatewayServiceRolePolicy);
