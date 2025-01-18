@@ -23,10 +23,32 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_AssociateChannel.html
    */
   public toAssociateChannel() {
     return this.to('AssociateChannel');
+  }
+
+  /**
+   * Grants permission to associate an Account contact to a particular Managed Notification Configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_AssociateManagedNotificationAccountContact.html
+   */
+  public toAssociateManagedNotificationAccountContact() {
+    return this.to('AssociateManagedNotificationAccountContact');
+  }
+
+  /**
+   * Grants permission to associate a Channel to a particular Managed Notification Configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_AssociateManagedNotificationAdditionalChannel.html
+   */
+  public toAssociateManagedNotificationAdditionalChannel() {
+    return this.to('AssociateManagedNotificationAdditionalChannel');
   }
 
   /**
@@ -34,7 +56,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_CreateEventRule.html
    */
   public toCreateEventRule() {
     return this.to('CreateEventRule');
@@ -49,7 +71,7 @@ export class Notifications extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_CreateNotificationConfiguration.html
    */
   public toCreateNotificationConfiguration() {
     return this.to('CreateNotificationConfiguration');
@@ -60,7 +82,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_DeleteEventRule.html
    */
   public toDeleteEventRule() {
     return this.to('DeleteEventRule');
@@ -71,7 +93,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_DeleteNotificationConfiguration.html
    */
   public toDeleteNotificationConfiguration() {
     return this.to('DeleteNotificationConfiguration');
@@ -82,10 +104,24 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_DeregisterNotificationHub.html
    */
   public toDeregisterNotificationHub() {
     return this.to('DeregisterNotificationHub');
+  }
+
+  /**
+   * Grants permission to disable Service Trust for AWS User Notifications
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - organizations:DisableAWSServiceAccess
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisableNotificationsAccessForOrganization.html
+   */
+  public toDisableNotificationsAccessForOrganization() {
+    return this.to('DisableNotificationsAccessForOrganization');
   }
 
   /**
@@ -93,10 +129,47 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisassociateChannel.html
    */
   public toDisassociateChannel() {
     return this.to('DisassociateChannel');
+  }
+
+  /**
+   * Grants permission to remove an Account contact from a Managed Notification Configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisassociateManagedNotificationAccountContact.html
+   */
+  public toDisassociateManagedNotificationAccountContact() {
+    return this.to('DisassociateManagedNotificationAccountContact');
+  }
+
+  /**
+   * Grants permission to remove a Channel from a Managed Notification Configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisassociateManagedNotificationAdditionalChannel.html
+   */
+  public toDisassociateManagedNotificationAdditionalChannel() {
+    return this.to('DisassociateManagedNotificationAdditionalChannel');
+  }
+
+  /**
+   * Grants permission to enable Service Trust for AWS User Notifications
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:EnableAWSServiceAccess
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_EnableNotificationsAccessForOrganization.html
+   */
+  public toEnableNotificationsAccessForOrganization() {
+    return this.to('EnableNotificationsAccessForOrganization');
   }
 
   /**
@@ -104,10 +177,54 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetEventRule.html
    */
   public toGetEventRule() {
     return this.to('GetEventRule');
+  }
+
+  /**
+   * Grants permission to read the opt-in status of an AWS User Notification Service feature
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/managing-notification-features.html
+   */
+  public toGetFeatureOptInStatus() {
+    return this.to('GetFeatureOptInStatus');
+  }
+
+  /**
+   * Grants permission to get a Managed Notification Child Event
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetManagedNotificationChildEvent.html
+   */
+  public toGetManagedNotificationChildEvent() {
+    return this.to('GetManagedNotificationChildEvent');
+  }
+
+  /**
+   * Grants permission to get a Managed Notification Configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetManagedNotificationConfiguration.html
+   */
+  public toGetManagedNotificationConfiguration() {
+    return this.to('GetManagedNotificationConfiguration');
+  }
+
+  /**
+   * Grants permission to get a Managed NotificationEvent
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetManagedNotificationEvent.html
+   */
+  public toGetManagedNotificationEvent() {
+    return this.to('GetManagedNotificationEvent');
   }
 
   /**
@@ -115,7 +232,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetNotificationConfiguration.html
    */
   public toGetNotificationConfiguration() {
     return this.to('GetNotificationConfiguration');
@@ -126,10 +243,21 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetNotificationEvent.html
    */
   public toGetNotificationEvent() {
     return this.to('GetNotificationEvent');
+  }
+
+  /**
+   * Grants permission to read Service Trust for AWS User Notifications
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetNotificationsAccessForOrganization.html
+   */
+  public toGetNotificationsAccessForOrganization() {
+    return this.to('GetNotificationsAccessForOrganization');
   }
 
   /**
@@ -137,7 +265,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListChannels.html
    */
   public toListChannels() {
     return this.to('ListChannels');
@@ -148,10 +276,54 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListEventRules.html
    */
   public toListEventRules() {
     return this.to('ListEventRules');
+  }
+
+  /**
+   * Grants permission to list Account contacts and Channels associated with a Managed Notification Configuration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListManagedNotificationChannelAssociations.html
+   */
+  public toListManagedNotificationChannelAssociations() {
+    return this.to('ListManagedNotificationChannelAssociations');
+  }
+
+  /**
+   * Grants permission to list Managed Notification Child Events
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListManagedNotificationChildEvents.html
+   */
+  public toListManagedNotificationChildEvents() {
+    return this.to('ListManagedNotificationChildEvents');
+  }
+
+  /**
+   * Grants permission to list Managed Notification Configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListManagedNotificationConfigurations.html
+   */
+  public toListManagedNotificationConfigurations() {
+    return this.to('ListManagedNotificationConfigurations');
+  }
+
+  /**
+   * Grants permission to list Managed Notification Events
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListManagedNotificationEvents.html
+   */
+  public toListManagedNotificationEvents() {
+    return this.to('ListManagedNotificationEvents');
   }
 
   /**
@@ -159,7 +331,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListNotificationConfigurations.html
    */
   public toListNotificationConfigurations() {
     return this.to('ListNotificationConfigurations');
@@ -170,7 +342,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListNotificationEvents.html
    */
   public toListNotificationEvents() {
     return this.to('ListNotificationEvents');
@@ -181,7 +353,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListNotificationHubs.html
    */
   public toListNotificationHubs() {
     return this.to('ListNotificationHubs');
@@ -190,12 +362,23 @@ export class Notifications extends PolicyStatement {
   /**
    * Grants permission to get tags for a resource
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to update the opt-in status of an AWS User Notification Service feature
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/managing-notification-features.html
+   */
+  public toPutFeatureOptInStatus() {
+    return this.to('PutFeatureOptInStatus');
   }
 
   /**
@@ -203,7 +386,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_RegisterNotificationHub.html
    */
   public toRegisterNotificationHub() {
     return this.to('RegisterNotificationHub');
@@ -218,7 +401,7 @@ export class Notifications extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -232,7 +415,7 @@ export class Notifications extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -243,7 +426,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_UpdateEventRule.html
    */
   public toUpdateEventRule() {
     return this.to('UpdateEventRule');
@@ -254,7 +437,7 @@ export class Notifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_UpdateNotificationConfiguration.html
    */
   public toUpdateNotificationConfiguration() {
     return this.to('UpdateNotificationConfiguration');
@@ -263,28 +446,44 @@ export class Notifications extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateChannel',
+      'AssociateManagedNotificationAccountContact',
+      'AssociateManagedNotificationAdditionalChannel',
       'CreateEventRule',
       'CreateNotificationConfiguration',
       'DeleteEventRule',
       'DeleteNotificationConfiguration',
       'DeregisterNotificationHub',
+      'DisableNotificationsAccessForOrganization',
       'DisassociateChannel',
+      'DisassociateManagedNotificationAccountContact',
+      'DisassociateManagedNotificationAdditionalChannel',
+      'EnableNotificationsAccessForOrganization',
+      'PutFeatureOptInStatus',
       'RegisterNotificationHub',
       'UpdateEventRule',
       'UpdateNotificationConfiguration'
     ],
     Read: [
       'GetEventRule',
+      'GetFeatureOptInStatus',
+      'GetManagedNotificationChildEvent',
+      'GetManagedNotificationConfiguration',
+      'GetManagedNotificationEvent',
       'GetNotificationConfiguration',
       'GetNotificationEvent',
-      'ListTagsForResource'
+      'GetNotificationsAccessForOrganization'
     ],
     List: [
       'ListChannels',
       'ListEventRules',
+      'ListManagedNotificationChannelAssociations',
+      'ListManagedNotificationChildEvents',
+      'ListManagedNotificationConfigurations',
+      'ListManagedNotificationEvents',
       'ListNotificationConfigurations',
       'ListNotificationEvents',
-      'ListNotificationHubs'
+      'ListNotificationHubs',
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',
@@ -335,6 +534,51 @@ export class Notifications extends PolicyStatement {
    */
   public onNotificationEvent(notificationConfigurationId: string, notificationEventId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:notifications:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration/${ notificationConfigurationId }/event/${ notificationEventId }`);
+  }
+
+  /**
+   * Adds a resource of type ManagedNotificationChildEvent to the statement
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   *
+   * @param category - Identifier for the category.
+   * @param subcategory - Identifier for the subcategory.
+   * @param notificationEventId - Identifier for the notificationEventId.
+   * @param notificationChildEventId - Identifier for the notificationChildEventId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onManagedNotificationChildEvent(category: string, subcategory: string, notificationEventId: string, notificationChildEventId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:notifications::${ account ?? this.defaultAccount }:managed-notification-configuration/category/${ category }/sub-category/${ subcategory }/event/${ notificationEventId }/child-event/${ notificationChildEventId }`);
+  }
+
+  /**
+   * Adds a resource of type ManagedNotificationConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   *
+   * @param category - Identifier for the category.
+   * @param subcategory - Identifier for the subcategory.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onManagedNotificationConfiguration(category: string, subcategory: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:notifications::${ account ?? this.defaultAccount }:managed-notification-configuration/category/${ category }/sub-category/${ subcategory }`);
+  }
+
+  /**
+   * Adds a resource of type ManagedNotificationEvent to the statement
+   *
+   * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
+   *
+   * @param category - Identifier for the category.
+   * @param subcategory - Identifier for the subcategory.
+   * @param notificationEventId - Identifier for the notificationEventId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onManagedNotificationEvent(category: string, subcategory: string, notificationEventId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:notifications::${ account ?? this.defaultAccount }:managed-notification-configuration/category/${ category }/sub-category/${ subcategory }/event/${ notificationEventId }`);
   }
 
   /**

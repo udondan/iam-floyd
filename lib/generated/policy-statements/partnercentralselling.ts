@@ -62,7 +62,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create engagements on AWS Partner Central
+   * Grants permission to creating engagements in AWS Partner Central
    *
    * Access Level: Write
    *
@@ -76,7 +76,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create engagement invitations on AWS Partner Central
+   * Grants permission to creating engagement invitations in AWS Partner Central
    *
    * Access Level: Write
    *
@@ -104,7 +104,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create resource snapshots on AWS Partner Central
+   * Grants permission to creating resource snapshots in AWS Partner Central
    *
    * Access Level: Write
    *
@@ -118,9 +118,14 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create resource snapshot jobs on AWS Partner Central
+   * Grants permission to creating resource snapshot jobs in AWS Partner Central
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateResourceSnapshotJob.html
    */
@@ -129,9 +134,14 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete resource snapshot jobs on AWS Partner Central
+   * Grants permission to deleting resource snapshot jobs on AWS Partner Central
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteResourceSnapshotJob.html
    */
@@ -169,7 +179,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve engagement details on AWS Partner Central
+   * Grants permission to retrieval of engagement details in AWS Partner Central
    *
    * Access Level: Read
    *
@@ -211,7 +221,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve resource snapshot details on AWS Partner Central
+   * Grants permission to retrieving resource snapshot details in AWS Partner Central
    *
    * Access Level: Read
    *
@@ -225,11 +235,13 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve resource snapshot job details on AWS Partner Central
+   * Grants permission to retrieving resource snapshot job details in AWS Partner Central
    *
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetResourceSnapshotJob.html
@@ -239,7 +251,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve system settings settings on AWS Partner Central
+   * Grants permission to retrieving system settings settings in AWS Partner Central
    *
    * Access Level: Read
    *
@@ -253,7 +265,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list engagements by accepting invitation tasks on AWS Partner Central
+   * Grants permission to listing engagements by accepting invitation tasks in AWS Partner Central
    *
    * Access Level: List
    *
@@ -267,7 +279,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list engagements from opportunity tasks on AWS Partner Central
+   * Grants permission to listing engagements from opportunity tasks in AWS Partner Central
    *
    * Access Level: List
    *
@@ -295,7 +307,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list engagement members on AWS Partner Central
+   * Grants permission to listing engagement members in AWS Partner Central
    *
    * Access Level: Read
    *
@@ -309,7 +321,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list engagement resource associations on AWS Partner Central
+   * Grants permission to listing engagement resource associations in AWS Partner Central
    *
    * Access Level: Read
    *
@@ -323,7 +335,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list engagements on AWS Partner Central
+   * Grants permission to listing engagements in AWS Partner Central
    *
    * Access Level: List
    *
@@ -351,7 +363,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list resource snapshot jobs on AWS Partner Central
+   * Grants permission to listing resource snapshot jobs in AWS Partner Central
    *
    * Access Level: List
    *
@@ -365,7 +377,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list resource snapshots on AWS Partner Central
+   * Grants permission to listing resource snapshots in AWS Partner Central
    *
    * Access Level: Read
    *
@@ -393,7 +405,23 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to put system settings settings on AWS Partner Central
+   * Grants permission to add lists tags to a resource. Supported resource: ResourceSnapshotJob
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to put system settings settings in AWS Partner Central
    *
    * Access Level: Write
    *
@@ -423,6 +451,8 @@ export class Partnercentral extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
    * Dependent actions:
@@ -445,6 +475,8 @@ export class Partnercentral extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
    * Dependent actions:
@@ -462,9 +494,14 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start resource snapshot jobs on AWS Partner Central
+   * Grants permission to starting resource snapshot jobs in AWS Partner Central
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartResourceSnapshotJob.html
    */
@@ -473,9 +510,14 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to stop resource snapshot jobs on AWS Partner Central
+   * Grants permission to stopping resource snapshot jobs in AWS Partner Central
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StopResourceSnapshotJob.html
    */
@@ -495,6 +537,39 @@ export class Partnercentral extends PolicyStatement {
    */
   public toSubmitOpportunity() {
     return this.to('SubmitOpportunity');
+  }
+
+  /**
+   * Grants permission to add new tags to a resource. Supported resource: ResourceSnapshotJob
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from a resource. Supported resource: ResourceSnapshotJob
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -542,7 +617,8 @@ export class Partnercentral extends PolicyStatement {
       'GetSellingSystemSettings',
       'ListEngagementMembers',
       'ListEngagementResourceAssociations',
-      'ListResourceSnapshots'
+      'ListResourceSnapshots',
+      'ListTagsForResource'
     ],
     List: [
       'ListEngagementByAcceptingInvitationTasks',
@@ -552,13 +628,17 @@ export class Partnercentral extends PolicyStatement {
       'ListOpportunities',
       'ListResourceSnapshotJobs',
       'ListSolutions'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
   /**
    * Adds a resource of type Engagement to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-engagements.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html
    *
    * @param catalog - Identifier for the catalog.
    * @param identifier - Identifier for the identifier.
@@ -572,7 +652,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Adds a resource of type engagement-by-accepting-invitation-task to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-tasks.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html
    *
    * @param catalog - Identifier for the catalog.
    * @param taskId - Identifier for the taskId.
@@ -586,7 +666,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Adds a resource of type engagement-from-opportunity-task to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-tasks.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html
    *
    * @param catalog - Identifier for the catalog.
    * @param taskId - Identifier for the taskId.
@@ -600,7 +680,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Adds a resource of type engagement-invitation to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-engagement-invitations.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html
    *
    * @param catalog - Identifier for the catalog.
    * @param identifier - Identifier for the identifier.
@@ -661,9 +741,23 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type selling-system-settings to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutSellingSystemSettings.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSellingSystemSettings(catalog: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/selling-system-settings`);
+  }
+
+  /**
    * Adds a resource of type Solution to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-solutions.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListSolutions.html
    *
    * @param catalog - Identifier for the catalog.
    * @param identifier - Identifier for the identifier.
@@ -673,6 +767,71 @@ export class Partnercentral extends PolicyStatement {
    */
   public onSolution(catalog: string, identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/solution/${ identifier }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateResourceSnapshotJob()
+   * - .toStartEngagementByAcceptingInvitationTask()
+   * - .toStartEngagementFromOpportunityTask()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeleteResourceSnapshotJob()
+   * - .toGetResourceSnapshotJob()
+   * - .toListTagsForResource()
+   * - .toStartResourceSnapshotJob()
+   * - .toStopResourceSnapshotJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateResourceSnapshotJob()
+   * - .toDeleteResourceSnapshotJob()
+   * - .toGetResourceSnapshotJob()
+   * - .toListTagsForResource()
+   * - .toStartEngagementByAcceptingInvitationTask()
+   * - .toStartEngagementFromOpportunityTask()
+   * - .toStartResourceSnapshotJob()
+   * - .toStopResourceSnapshotJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -688,6 +847,8 @@ export class Partnercentral extends PolicyStatement {
    * - .toCreateEngagementInvitation()
    * - .toCreateOpportunity()
    * - .toCreateResourceSnapshot()
+   * - .toCreateResourceSnapshotJob()
+   * - .toDeleteResourceSnapshotJob()
    * - .toDisassociateOpportunity()
    * - .toGetAwsOpportunitySummary()
    * - .toGetEngagement()
@@ -706,10 +867,15 @@ export class Partnercentral extends PolicyStatement {
    * - .toListResourceSnapshotJobs()
    * - .toListResourceSnapshots()
    * - .toListSolutions()
+   * - .toListTagsForResource()
    * - .toRejectEngagementInvitation()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
+   * - .toStartResourceSnapshotJob()
+   * - .toStopResourceSnapshotJob()
    * - .toSubmitOpportunity()
+   * - .toTagResource()
+   * - .toUntagResource()
    * - .toUpdateOpportunity()
    *
    * @param value The value(s) to check

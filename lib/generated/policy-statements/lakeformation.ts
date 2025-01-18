@@ -254,6 +254,9 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifEnabledOnlyForMetaDataAccess()
+   *
    * https://docs.aws.amazon.com/lake-formation/latest/dg/access-control-underlying-data.html
    */
   public toGetDataAccess() {
@@ -739,4 +742,18 @@ export class Lakeformation extends PolicyStatement {
       'ListTransactions'
     ]
   };
+
+  /**
+   * Filters access by the presence of the key configured for role's identity-based policy
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslakeformation.html#awslakeformation-policy-keys
+   *
+   * Applies to actions:
+   * - .toGetDataAccess()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnabledOnlyForMetaDataAccess(value?: boolean) {
+    return this.if(`EnabledOnlyForMetaDataAccess`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
 }

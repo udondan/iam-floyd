@@ -1,2 +1,5 @@
 partnercentral:Catalog
 partnercentral:RelatedEntityType
+partnercentral:RequestTag/${TagKey}
+partnercentral:ResourceTag/${TagKey}
+partnercentral:TagKeys
