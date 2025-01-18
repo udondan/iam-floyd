@@ -25,6 +25,7 @@ partnercentral:ListOpportunities;List
 partnercentral:ListResourceSnapshotJobs;List
 partnercentral:ListResourceSnapshots;Read
 partnercentral:ListSolutions;List
+partnercentral:ListTagsForResource;Read
 partnercentral:PutSellingSystemSettings;Write
 partnercentral:RejectEngagementInvitation;Write
 partnercentral:StartEngagementByAcceptingInvitationTask;Write
@@ -32,4 +33,6 @@ partnercentral:StartEngagementFromOpportunityTask;Write
 partnercentral:StartResourceSnapshotJob;Write
 partnercentral:StopResourceSnapshotJob;Write
 partnercentral:SubmitOpportunity;Write
+partnercentral:TagResource;Tagging
+partnercentral:UntagResource;Tagging
 partnercentral:UpdateOpportunity;Write
