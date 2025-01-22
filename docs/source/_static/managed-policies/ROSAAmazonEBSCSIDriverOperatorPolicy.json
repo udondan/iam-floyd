@@ -58,6 +58,16 @@
       }
     },
     {
+      "Sid": "CreateVolumeFromSnapshot",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVolume"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:snapshot/*"
+      ]
+    },
+    {
       "Sid": "CreateSnapshotResourceTag",
       "Effect": "Allow",
       "Action": [

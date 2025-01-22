@@ -211,7 +211,8 @@
         "codeconnections:TagResource"
       ],
       "Resource": [
-        "arn:aws:codeconnections:*:*:connection/*"
+        "arn:aws:codeconnections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:host/*"
       ],
       "Condition": {
         "ForAllValues:StringEquals": {
@@ -231,7 +232,8 @@
         "codeconnections:UntagResource"
       ],
       "Resource": [
-        "arn:aws:codeconnections:*:*:connection/*"
+        "arn:aws:codeconnections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:host/*"
       ],
       "Condition": {
         "ForAllValues:StringEquals": {
