@@ -1,3 +1,5 @@
 codebuild:RequestTag/${TagKey}
 codebuild:ResourceTag/${TagKey}
 codebuild:TagKeys
+codebuild:buildArn
+codebuild:projectArn

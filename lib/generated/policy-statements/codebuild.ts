@@ -904,4 +904,28 @@ export class Codebuild extends PolicyStatement {
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
+
+  /**
+   * Filters access by the ARN of the AWS CodeBuild build from which the request originated
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-permissions-reference.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifBuildArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`buildArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of the AWS CodeBuild project from which the request originated
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-permissions-reference.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifProjectArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`projectArn`, value, operator ?? 'ArnLike');
+  }
 }

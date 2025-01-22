@@ -8,6 +8,7 @@ connect:contact-flow
 connect:contact-flow-module
 connect:customer-managed-view
 connect:customer-managed-view-version
+connect:email-address
 connect:evaluation-form
 connect:hierarchy-group
 connect:hours-of-operation

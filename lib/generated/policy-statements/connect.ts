@@ -479,6 +479,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an email address resource in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html
+   */
+  public toCreateEmailAddress() {
+    return this.to('CreateEmailAddress');
+  }
+
+  /**
    * Grants permission to create an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form
    *
    * Access Level: Write
@@ -949,6 +965,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an email address resource in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html
+   */
+  public toDeleteEmailAddress() {
+    return this.to('DeleteEmailAddress');
+  }
+
+  /**
    * Grants permission to delete an evaluation form in the specified Amazon Connect instance. If the version property is provided, only the specified version of the evaluation form is deleted
    *
    * Access Level: Write
@@ -1361,6 +1392,21 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeContactFlowModule() {
     return this.to('DescribeContactFlowModule');
+  }
+
+  /**
+   * Grants permission to describe an email address resource in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html
+   */
+  public toDescribeEmailAddress() {
+    return this.to('DescribeEmailAddress');
   }
 
   /**
@@ -2141,6 +2187,20 @@ export class Connect extends PolicyStatement {
    */
   public toListApprovedOrigins() {
     return this.to('ListApprovedOrigins');
+  }
+
+  /**
+   * Grants permission to list the contacts associated with an email address in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListAssociatedContacts.html
+   */
+  public toListAssociatedContacts() {
+    return this.to('ListAssociatedContacts');
   }
 
   /**
@@ -2961,6 +3021,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search email address resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeEmailAddress
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html
+   */
+  public toSearchEmailAddresses() {
+    return this.to('SearchEmailAddresses');
+  }
+
+  /**
    * Grants permission to search hours of operation override resources in an Amazon Connect instance
    *
    * Access Level: Read
@@ -3318,6 +3396,21 @@ export class Connect extends PolicyStatement {
    */
   public toStartOutboundChatContact() {
     return this.to('StartOutboundChatContact');
+  }
+
+  /**
+   * Grants permission to initiate an outbound email using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundEmailContact.html
+   */
+  public toStartOutboundEmailContact() {
+    return this.to('StartOutboundEmailContact');
   }
 
   /**
@@ -3699,6 +3792,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the metadata of an email address resource in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html
+   */
+  public toUpdateEmailAddressMetadata() {
+    return this.to('UpdateEmailAddressMetadata');
+  }
+
+  /**
    * Grants permission to update details about a specific evaluation form version in the specified Amazon Connect instance. Question and section identifiers cannot be duplicated within the same evaluation form
    *
    * Access Level: Write
@@ -3939,6 +4047,21 @@ export class Connect extends PolicyStatement {
    */
   public toUpdateQueueOutboundCallerConfig() {
     return this.to('UpdateQueueOutboundCallerConfig');
+  }
+
+  /**
+   * Grants permission to update the outbound email configuration for a queue in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueOutboundEmailConfig.html
+   */
+  public toUpdateQueueOutboundEmailConfig() {
+    return this.to('UpdateQueueOutboundEmailConfig');
   }
 
   /**
@@ -4295,6 +4418,7 @@ export class Connect extends PolicyStatement {
       'CreateContactFlow',
       'CreateContactFlowModule',
       'CreateContactFlowVersion',
+      'CreateEmailAddress',
       'CreateEvaluationForm',
       'CreateHoursOfOperation',
       'CreateHoursOfOperationOverride',
@@ -4323,6 +4447,7 @@ export class Connect extends PolicyStatement {
       'DeleteContactEvaluation',
       'DeleteContactFlow',
       'DeleteContactFlowModule',
+      'DeleteEmailAddress',
       'DeleteEvaluationForm',
       'DeleteHoursOfOperation',
       'DeleteHoursOfOperationOverride',
@@ -4378,6 +4503,7 @@ export class Connect extends PolicyStatement {
       'StartEmailContact',
       'StartForecastingPlanningSchedulingIntegration',
       'StartOutboundChatContact',
+      'StartOutboundEmailContact',
       'StartOutboundVoiceContact',
       'StartScreenSharing',
       'StartTaskContact',
@@ -4403,6 +4529,7 @@ export class Connect extends PolicyStatement {
       'UpdateContactFlowName',
       'UpdateContactRoutingData',
       'UpdateContactSchedule',
+      'UpdateEmailAddressMetadata',
       'UpdateEvaluationForm',
       'UpdateHoursOfOperation',
       'UpdateHoursOfOperationOverride',
@@ -4418,6 +4545,7 @@ export class Connect extends PolicyStatement {
       'UpdateQueueMaxContacts',
       'UpdateQueueName',
       'UpdateQueueOutboundCallerConfig',
+      'UpdateQueueOutboundEmailConfig',
       'UpdateQueueStatus',
       'UpdateQuickConnectConfig',
       'UpdateQuickConnectName',
@@ -4449,6 +4577,7 @@ export class Connect extends PolicyStatement {
       'DescribeContactEvaluation',
       'DescribeContactFlow',
       'DescribeContactFlowModule',
+      'DescribeEmailAddress',
       'DescribeEvaluationForm',
       'DescribeForecastingPlanningSchedulingIntegration',
       'DescribeHoursOfOperation',
@@ -4487,6 +4616,7 @@ export class Connect extends PolicyStatement {
       'SearchContactFlowModules',
       'SearchContactFlows',
       'SearchContacts',
+      'SearchEmailAddresses',
       'SearchHoursOfOperationOverrides',
       'SearchHoursOfOperations',
       'SearchPredefinedAttributes',
@@ -4504,6 +4634,7 @@ export class Connect extends PolicyStatement {
       'ListAgentStatuses',
       'ListAnalyticsDataAssociations',
       'ListApprovedOrigins',
+      'ListAssociatedContacts',
       'ListAuthenticationProfiles',
       'ListBots',
       'ListContactEvaluations',
@@ -5171,6 +5302,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type email-address to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/email-address.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param emailAddressId - Identifier for the emailAddressId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEmailAddress(instanceId: string, emailAddressId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/email-address/${ emailAddressId }`);
+  }
+
+  /**
    * Filters access by using tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -5182,6 +5331,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
+   * - .toCreateEmailAddress()
    * - .toCreateHoursOfOperation()
    * - .toCreateInstance()
    * - .toCreateIntegrationAssociation()
@@ -5228,6 +5378,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
+   * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
    * - .toDeleteInstance()
@@ -5247,6 +5398,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeContactEvaluation()
    * - .toDescribeContactFlow()
    * - .toDescribeContactFlowModule()
+   * - .toDescribeEmailAddress()
    * - .toDescribeEvaluationForm()
    * - .toDescribeHoursOfOperation()
    * - .toDescribeInstance()
@@ -5290,6 +5442,7 @@ export class Connect extends PolicyStatement {
    * - .toResumeContact()
    * - .toSearchResourceTags()
    * - .toStartEmailContact()
+   * - .toStartOutboundEmailContact()
    * - .toStartTaskContact()
    * - .toUpdateAgentStatus()
    * - .toUpdateContactFlowContent()
@@ -5297,6 +5450,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContactFlowModuleContent()
    * - .toUpdateContactFlowModuleMetadata()
    * - .toUpdateContactFlowName()
+   * - .toUpdateEmailAddressMetadata()
    * - .toUpdateHoursOfOperation()
    * - .toUpdatePhoneNumber()
    * - .toUpdatePhoneNumberMetadata()
@@ -5305,6 +5459,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateQueueMaxContacts()
    * - .toUpdateQueueName()
    * - .toUpdateQueueOutboundCallerConfig()
+   * - .toUpdateQueueOutboundEmailConfig()
    * - .toUpdateQueueStatus()
    * - .toUpdateQuickConnectConfig()
    * - .toUpdateQuickConnectName()
@@ -5351,6 +5506,7 @@ export class Connect extends PolicyStatement {
    * - qualified-customer-managed-view
    * - customer-managed-view-version
    * - attached-file
+   * - email-address
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -5372,6 +5528,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateAgentStatus()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
+   * - .toCreateEmailAddress()
    * - .toCreateHoursOfOperation()
    * - .toCreateInstance()
    * - .toCreateIntegrationAssociation()
@@ -5488,6 +5645,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
    * - .toCreateContactFlowVersion()
+   * - .toCreateEmailAddress()
    * - .toCreateEvaluationForm()
    * - .toCreateHoursOfOperation()
    * - .toCreateHoursOfOperationOverride()
@@ -5514,6 +5672,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
+   * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
    * - .toDeleteHoursOfOperationOverride()
@@ -5540,6 +5699,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeContactEvaluation()
    * - .toDescribeContactFlow()
    * - .toDescribeContactFlowModule()
+   * - .toDescribeEmailAddress()
    * - .toDescribeEvaluationForm()
    * - .toDescribeForecastingPlanningSchedulingIntegration()
    * - .toDescribeHoursOfOperation()
@@ -5586,6 +5746,7 @@ export class Connect extends PolicyStatement {
    * - .toGetTaskTemplate()
    * - .toListAnalyticsDataAssociations()
    * - .toListApprovedOrigins()
+   * - .toListAssociatedContacts()
    * - .toListAuthenticationProfiles()
    * - .toListBots()
    * - .toListContactEvaluations()
@@ -5628,6 +5789,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
    * - .toSearchContacts()
+   * - .toSearchEmailAddresses()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
    * - .toSearchPredefinedAttributes()
@@ -5647,6 +5809,7 @@ export class Connect extends PolicyStatement {
    * - .toStartEmailContact()
    * - .toStartForecastingPlanningSchedulingIntegration()
    * - .toStartOutboundChatContact()
+   * - .toStartOutboundEmailContact()
    * - .toStartScreenSharing()
    * - .toStartTaskContact()
    * - .toStartWebRTCContact()
@@ -5668,6 +5831,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContactFlowName()
    * - .toUpdateContactRoutingData()
    * - .toUpdateContactSchedule()
+   * - .toUpdateEmailAddressMetadata()
    * - .toUpdateEvaluationForm()
    * - .toUpdateHoursOfOperation()
    * - .toUpdateHoursOfOperationOverride()
@@ -5682,6 +5846,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateQueueMaxContacts()
    * - .toUpdateQueueName()
    * - .toUpdateQueueOutboundCallerConfig()
+   * - .toUpdateQueueOutboundEmailConfig()
    * - .toUpdateQueueStatus()
    * - .toUpdateQuickConnectConfig()
    * - .toUpdateQuickConnectName()
@@ -5751,6 +5916,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchAgentStatuses()
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
+   * - .toSearchEmailAddresses()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
    * - .toSearchPrompts()

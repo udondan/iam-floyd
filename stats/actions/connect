@@ -27,6 +27,7 @@ connect:CreateAuthenticationProfile;Write
 connect:CreateContactFlow;Write
 connect:CreateContactFlowModule;Write
 connect:CreateContactFlowVersion;Write
+connect:CreateEmailAddress;Write
 connect:CreateEvaluationForm;Write
 connect:CreateHoursOfOperation;Write
 connect:CreateHoursOfOperationOverride;Write
@@ -55,6 +56,7 @@ connect:DeleteAttachedFile;Write
 connect:DeleteContactEvaluation;Write
 connect:DeleteContactFlow;Write
 connect:DeleteContactFlowModule;Write
+connect:DeleteEmailAddress;Write
 connect:DeleteEvaluationForm;Write
 connect:DeleteHoursOfOperation;Write
 connect:DeleteHoursOfOperationOverride;Write
@@ -82,6 +84,7 @@ connect:DescribeContact;Read
 connect:DescribeContactEvaluation;Read
 connect:DescribeContactFlow;Read
 connect:DescribeContactFlowModule;Read
+connect:DescribeEmailAddress;Read
 connect:DescribeEvaluationForm;Read
 connect:DescribeForecastingPlanningSchedulingIntegration;Read
 connect:DescribeHoursOfOperation;Read
@@ -134,6 +137,7 @@ connect:ImportPhoneNumber;Write
 connect:ListAgentStatuses;List
 connect:ListAnalyticsDataAssociations;List
 connect:ListApprovedOrigins;List
+connect:ListAssociatedContacts;List
 connect:ListAuthenticationProfiles;List
 connect:ListBots;List
 connect:ListContactEvaluations;List
@@ -191,6 +195,7 @@ connect:SearchAvailablePhoneNumbers;List
 connect:SearchContactFlowModules;Read
 connect:SearchContactFlows;Read
 connect:SearchContacts;Read
+connect:SearchEmailAddresses;Read
 connect:SearchHoursOfOperationOverrides;Read
 connect:SearchHoursOfOperations;Read
 connect:SearchPredefinedAttributes;Read
@@ -214,6 +219,7 @@ connect:StartContactStreaming;Write
 connect:StartEmailContact;Write
 connect:StartForecastingPlanningSchedulingIntegration;Write
 connect:StartOutboundChatContact;Write
+connect:StartOutboundEmailContact;Write
 connect:StartOutboundVoiceContact;Write
 connect:StartScreenSharing;Write
 connect:StartTaskContact;Write
@@ -241,6 +247,7 @@ connect:UpdateContactFlowModuleMetadata;Write
 connect:UpdateContactFlowName;Write
 connect:UpdateContactRoutingData;Write
 connect:UpdateContactSchedule;Write
+connect:UpdateEmailAddressMetadata;Write
 connect:UpdateEvaluationForm;Write
 connect:UpdateHoursOfOperation;Write
 connect:UpdateHoursOfOperationOverride;Write
@@ -256,6 +263,7 @@ connect:UpdateQueueHoursOfOperation;Write
 connect:UpdateQueueMaxContacts;Write
 connect:UpdateQueueName;Write
 connect:UpdateQueueOutboundCallerConfig;Write
+connect:UpdateQueueOutboundEmailConfig;Write
 connect:UpdateQueueStatus;Write
 connect:UpdateQuickConnectConfig;Write
 connect:UpdateQuickConnectName;Write
