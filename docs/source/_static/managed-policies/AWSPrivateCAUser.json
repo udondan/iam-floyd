@@ -8,9 +8,9 @@
       ],
       "Resource": "arn:aws:acm-pca:*:*:certificate-authority/*",
       "Condition": {
-        "StringLike": {
+        "ArnLike": {
           "acm-pca:TemplateArn": [
-            "arn:aws:acm-pca:::template/EndEntityCertificate/V*"
+            "arn:aws:acm-pca:*:*:template/EndEntityCertificate/V*"
           ]
         }
       }
@@ -22,9 +22,9 @@
       ],
       "Resource": "arn:aws:acm-pca:*:*:certificate-authority/*",
       "Condition": {
-        "StringNotLike": {
+        "ArnNotLike": {
           "acm-pca:TemplateArn": [
-            "arn:aws:acm-pca:::template/EndEntityCertificate/V*"
+            "arn:aws:acm-pca:*:*:template/EndEntityCertificate/V*"
           ]
         }
       }
