@@ -16,7 +16,7 @@
       "Sid": "IAMCreateServiceLinkedRoleForApiDestinations",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
-      "Resource": "arn:aws:iam::*:role/aws-service-role/AmazonEventBridgeApiDestinationsServiceRolePolicy",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/apidestinations.events.amazonaws.com/AWSServiceRoleForAmazonEventBridgeApiDestinations",
       "Condition": {
         "StringEquals": {
           "iam:AWSServiceName": "apidestinations.events.amazonaws.com"
