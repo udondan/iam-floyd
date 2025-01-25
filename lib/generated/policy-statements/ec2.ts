@@ -11969,6 +11969,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifAttribute()
    * - .ifRegion()
+   * - .ifResourceTag()
    */
   public onTrafficMirrorFilterRule(trafficMirrorFilterRuleId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:traffic-mirror-filter-rule/${ trafficMirrorFilterRuleId }`);
@@ -12662,6 +12663,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateSubnet()
+   * - .toCreateTags()
    * - .toCreateTrafficMirrorFilter()
    * - .toCreateTrafficMirrorFilterRule()
    * - .toCreateTrafficMirrorSession()
@@ -12681,11 +12683,13 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVerifiedAccessTrustProvider()
    * - .toCreateVolume()
    * - .toCreateVpc()
+   * - .toCreateVpcBlockPublicAccessExclusion()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointServiceConfiguration()
    * - .toCreateVpcPeeringConnection()
    * - .toCreateVpnConnection()
    * - .toCreateVpnGateway()
+   * - .toDeleteTags()
    * - .toExportImage()
    * - .toImportImage()
    * - .toImportKeyPair()
@@ -13371,6 +13375,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateSubnet()
+   * - .toCreateTags()
    * - .toCreateTrafficMirrorFilter()
    * - .toCreateTrafficMirrorFilterRule()
    * - .toCreateTrafficMirrorSession()
@@ -13390,6 +13395,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVerifiedAccessTrustProvider()
    * - .toCreateVolume()
    * - .toCreateVpc()
+   * - .toCreateVpcBlockPublicAccessExclusion()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointServiceConfiguration()
    * - .toCreateVpcPeeringConnection()
@@ -14946,6 +14952,7 @@ export class Ec2 extends PolicyStatement {
    * - .toPauseVolumeIO()
    * - .toRebootInstances()
    * - .toReplaceIamInstanceProfileAssociation()
+   * - .toReportInstanceStatus()
    * - .toResetInstanceAttribute()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
@@ -17868,6 +17875,7 @@ export class Ec2 extends PolicyStatement {
    * - subnet-cidr-reservation
    * - subnet
    * - traffic-mirror-filter
+   * - traffic-mirror-filter-rule
    * - traffic-mirror-session
    * - traffic-mirror-target
    * - transit-gateway-attachment

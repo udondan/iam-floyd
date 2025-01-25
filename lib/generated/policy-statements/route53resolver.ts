@@ -531,7 +531,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall domain under a speicfied Firewall domain list
+   * Grants permission to list all the Firewall domain under a specified Firewall domain list
    *
    * Access Level: List
    *
@@ -564,7 +564,7 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Firewall rule under a speicfied Firewall rule group
+   * Grants permission to list all the Firewall rule under a specified Firewall rule group
    *
    * Access Level: List
    *

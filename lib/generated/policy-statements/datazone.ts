@@ -1948,4 +1948,40 @@ export class Datazone extends PolicyStatement {
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
+
+  /**
+   * Filters access by the domain ID passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#amazondatazone-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDomainId(value: string | string[], operator?: Operator | string) {
+    return this.if(`domainId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the project ID passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#amazondatazone-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProjectId(value: string | string[], operator?: Operator | string) {
+    return this.if(`projectId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the user ID passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#amazondatazone-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserId(value: string | string[], operator?: Operator | string) {
+    return this.if(`userId`, value, operator ?? 'StringLike');
+  }
 }

@@ -119,11 +119,11 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a data protection policy attached to an account
+   * Grants permission to delete an account policy
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDataProtectionPolicy.html
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html
    */
   public toDeleteAccountPolicy() {
     return this.to('DeleteAccountPolicy');
@@ -328,7 +328,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a data protection policy attached to an account
+   * Grants permission to retrieve account policies
    *
    * Access Level: List
    *
@@ -779,7 +779,7 @@ export class Logs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to attach a data protection policy at account level to detect and redact sensitive information from log events
+   * Grants permission to attach an account policy
    *
    * Access Level: Write
    *

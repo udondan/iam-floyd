@@ -1,3 +1,6 @@
 datazone:RequestTag/${TagKey}
 datazone:ResourceTag/${TagKey}
 datazone:TagKeys
+datazone:domainId
+datazone:projectId
+datazone:userId
