@@ -8,6 +8,7 @@ healthlake:DescribeFHIRExportJob;Read
 healthlake:DescribeFHIRExportJobWithGet;Read
 healthlake:DescribeFHIRImportJob;Read
 healthlake:GetCapabilities;Read
+healthlake:GetExportedFile;Read
 healthlake:ListFHIRDatastores;List
 healthlake:ListFHIRExportJobs;List
 healthlake:ListFHIRImportJobs;List
@@ -17,6 +18,7 @@ healthlake:SearchEverything;Read
 healthlake:SearchWithGet;Read
 healthlake:SearchWithPost;Read
 healthlake:StartFHIRExportJob;Write
+healthlake:StartFHIRExportJobWithGet;Write
 healthlake:StartFHIRExportJobWithPost;Write
 healthlake:StartFHIRImportJob;Write
 healthlake:TagResource;Tagging

@@ -965,6 +965,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a version of a flow in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifFlowType()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowVersion.html
+   */
+  public toDeleteContactFlowVersion() {
+    return this.to('DeleteContactFlowVersion');
+  }
+
+  /**
    * Grants permission to delete an email address resource in an Amazon Connect instance
    *
    * Access Level: Write
@@ -4447,6 +4463,7 @@ export class Connect extends PolicyStatement {
       'DeleteContactEvaluation',
       'DeleteContactFlow',
       'DeleteContactFlowModule',
+      'DeleteContactFlowVersion',
       'DeleteEmailAddress',
       'DeleteEvaluationForm',
       'DeleteHoursOfOperation',
@@ -5378,6 +5395,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
+   * - .toDeleteContactFlowVersion()
    * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
@@ -5598,6 +5616,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateContactFlow()
    * - .toCreateContactFlowVersion()
    * - .toDeleteContactFlow()
+   * - .toDeleteContactFlowVersion()
    * - .toDescribeContactFlow()
    * - .toListContactFlowVersions()
    * - .toSearchContactFlows()
@@ -5672,6 +5691,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
+   * - .toDeleteContactFlowVersion()
    * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()

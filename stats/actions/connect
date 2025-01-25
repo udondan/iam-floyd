@@ -56,6 +56,7 @@ connect:DeleteAttachedFile;Write
 connect:DeleteContactEvaluation;Write
 connect:DeleteContactFlow;Write
 connect:DeleteContactFlowModule;Write
+connect:DeleteContactFlowVersion;Write
 connect:DeleteEmailAddress;Write
 connect:DeleteEvaluationForm;Write
 connect:DeleteHoursOfOperation;Write

@@ -1788,8 +1788,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to get the thing's connectivity data
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
   public toGetThingConnectivityData() {
     return this.to('GetThingConnectivityData');
