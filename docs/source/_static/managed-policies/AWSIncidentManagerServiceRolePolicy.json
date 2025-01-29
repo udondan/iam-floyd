@@ -34,7 +34,10 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "cloudwatch:namespace": "AWS/IncidentManager"
+          "cloudwatch:namespace": [
+            "AWS/IncidentManager",
+            "AWS/Usage"
+          ]
         }
       }
     }
