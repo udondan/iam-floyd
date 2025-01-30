@@ -250,6 +250,17 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about the specified AWS HealthScribe streaming session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_GetMedicalScribeStream.html
+   */
+  public toGetMedicalScribeStream() {
+    return this.to('GetMedicalScribeStream');
+  }
+
+  /**
    * Grants permission to return information about a medical transcription job
    *
    * Access Level: Read
@@ -477,6 +488,17 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a bidirectional HTTP2 stream where audio is streamed to AWS HealthScribe and the transcription results are streamed to your application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartMedicalScribeStream.html
+   */
+  public toStartMedicalScribeStream() {
+    return this.to('StartMedicalScribeStream');
+  }
+
+  /**
    * Grants permission to start a protocol where audio is streamed to Transcribe Medical and the transcription results are streamed to your application
    *
    * Access Level: Write
@@ -664,6 +686,7 @@ export class Transcribe extends PolicyStatement {
       'StartCallAnalyticsStreamTranscription',
       'StartCallAnalyticsStreamTranscriptionWebSocket',
       'StartMedicalScribeJob',
+      'StartMedicalScribeStream',
       'StartMedicalStreamTranscription',
       'StartMedicalStreamTranscriptionWebSocket',
       'StartMedicalTranscriptionJob',
@@ -680,6 +703,7 @@ export class Transcribe extends PolicyStatement {
       'GetCallAnalyticsCategory',
       'GetCallAnalyticsJob',
       'GetMedicalScribeJob',
+      'GetMedicalScribeStream',
       'GetMedicalTranscriptionJob',
       'GetMedicalVocabulary',
       'GetTranscriptionJob',

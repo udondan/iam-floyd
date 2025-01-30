@@ -641,6 +641,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to perform semantic search for CloudTrail Lake sample queries
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-console-queries.html
+   */
+  public toSearchSampleQueries() {
+    return this.to('SearchSampleQueries');
+  }
+
+  /**
    * Grants permission to start a refresh on the specified dashboard
    *
    * Access Level: Write
@@ -866,7 +877,8 @@ export class Cloudtrail extends PolicyStatement {
       'ListImportFailures',
       'ListPublicKeys',
       'ListTags',
-      'LookupEvents'
+      'LookupEvents',
+      'SearchSampleQueries'
     ],
     List: [
       'ListChannels',

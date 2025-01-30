@@ -1011,7 +1011,7 @@ export class Ecs extends PolicyStatement {
   /**
    * Adds a resource of type container-instance to the statement
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/manage-capacity.html
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-capacity.html
    *
    * @param clusterName - Identifier for the clusterName.
    * @param containerInstanceId - Identifier for the containerInstanceId.
@@ -1129,7 +1129,7 @@ export class Ecs extends PolicyStatement {
   /**
    * Adds a resource of type capacity-provider to the statement
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-capacity-provider-console-v2.html
    *
    * @param capacityProviderName - Identifier for the capacityProviderName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
