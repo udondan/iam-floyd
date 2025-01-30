@@ -689,7 +689,7 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Adds a resource of type report-generator to the statement
    *
-   * https://docs.aws.amazon.com/license-manager/latest/userguide/report-generators.html
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/license-reporting.html
    *
    * @param reportGeneratorId - Identifier for the reportGeneratorId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

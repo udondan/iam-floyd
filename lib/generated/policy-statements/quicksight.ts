@@ -3156,7 +3156,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Adds a resource of type assetBundleExportJob to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AssetBundleExportJob.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleExportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -3170,7 +3170,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Adds a resource of type assetBundleImportJob to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AssetBundleImportJob.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleImportJob.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

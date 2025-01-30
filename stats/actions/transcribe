@@ -16,6 +16,7 @@ transcribe:DescribeLanguageModel;Read
 transcribe:GetCallAnalyticsCategory;Read
 transcribe:GetCallAnalyticsJob;Read
 transcribe:GetMedicalScribeJob;Read
+transcribe:GetMedicalScribeStream;Read
 transcribe:GetMedicalTranscriptionJob;Read
 transcribe:GetMedicalVocabulary;Read
 transcribe:GetTranscriptionJob;Read
@@ -35,6 +36,7 @@ transcribe:StartCallAnalyticsJob;Write
 transcribe:StartCallAnalyticsStreamTranscription;Write
 transcribe:StartCallAnalyticsStreamTranscriptionWebSocket;Write
 transcribe:StartMedicalScribeJob;Write
+transcribe:StartMedicalScribeStream;Write
 transcribe:StartMedicalStreamTranscription;Write
 transcribe:StartMedicalStreamTranscriptionWebSocket;Write
 transcribe:StartMedicalTranscriptionJob;Write

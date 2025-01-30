@@ -247,6 +247,7 @@ export class Deadline extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - deadline:GetJobTemplate
    * - identitystore:ListGroupMembershipsForMember
    *
    * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateJob.html
@@ -274,6 +275,20 @@ export class Deadline extends PolicyStatement {
    */
   public toCreateLicenseEndpoint() {
     return this.to('CreateLicenseEndpoint');
+  }
+
+  /**
+   * Grants permission to create a limit for a farm
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateLimit.html
+   */
+  public toCreateLimit() {
+    return this.to('CreateLimit');
   }
 
   /**
@@ -343,6 +358,20 @@ export class Deadline extends PolicyStatement {
    */
   public toCreateQueueFleetAssociation() {
     return this.to('CreateQueueFleetAssociation');
+  }
+
+  /**
+   * Grants permission to create a queue-limit association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateQueueLimitAssociation.html
+   */
+  public toCreateQueueLimitAssociation() {
+    return this.to('CreateQueueLimitAssociation');
   }
 
   /**
@@ -428,6 +457,20 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a limit
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteLimit.html
+   */
+  public toDeleteLimit() {
+    return this.to('DeleteLimit');
+  }
+
+  /**
    * Grants permission to delete a metered product
    *
    * Access Level: Write
@@ -492,6 +535,20 @@ export class Deadline extends PolicyStatement {
    */
   public toDeleteQueueFleetAssociation() {
     return this.to('DeleteQueueFleetAssociation');
+  }
+
+  /**
+   * Grants permission to delete a queue-limit association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteQueueLimitAssociation.html
+   */
+  public toDeleteQueueLimitAssociation() {
+    return this.to('DeleteQueueLimitAssociation');
   }
 
   /**
@@ -657,7 +714,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Grants permission to read job template
    *
-   * Access Level: Write
+   * Access Level: Read
    */
   public toGetJobTemplate() {
     return this.to('GetJobTemplate');
@@ -672,6 +729,20 @@ export class Deadline extends PolicyStatement {
    */
   public toGetLicenseEndpoint() {
     return this.to('GetLicenseEndpoint');
+  }
+
+  /**
+   * Grants permission to get a limit
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetLimit.html
+   */
+  public toGetLimit() {
+    return this.to('GetLimit');
   }
 
   /**
@@ -725,6 +796,20 @@ export class Deadline extends PolicyStatement {
    */
   public toGetQueueFleetAssociation() {
     return this.to('GetQueueFleetAssociation');
+  }
+
+  /**
+   * Grants permission to get a queue-limit association
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetQueueLimitAssociation.html
+   */
+  public toGetQueueLimitAssociation() {
+    return this.to('GetQueueLimitAssociation');
   }
 
   /**
@@ -992,6 +1077,20 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all limits in a farm
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListLimits.html
+   */
+  public toListLimits() {
+    return this.to('ListLimits');
+  }
+
+  /**
    * Grants permission to list all metered products in a license endpoint
    *
    * Access Level: List
@@ -1039,6 +1138,20 @@ export class Deadline extends PolicyStatement {
    */
   public toListQueueFleetAssociations() {
     return this.to('ListQueueFleetAssociations');
+  }
+
+  /**
+   * Grants permission to list all queue-limit associations
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListQueueLimitAssociations.html
+   */
+  public toListQueueLimitAssociations() {
+    return this.to('ListQueueLimitAssociations');
   }
 
   /**
@@ -1394,6 +1507,20 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a limit for a farm
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateLimit.html
+   */
+  public toUpdateLimit() {
+    return this.to('UpdateLimit');
+  }
+
+  /**
    * Grants permission to update a monitor
    *
    * Access Level: Write
@@ -1450,6 +1577,20 @@ export class Deadline extends PolicyStatement {
    */
   public toUpdateQueueFleetAssociation() {
     return this.to('UpdateQueueFleetAssociation');
+  }
+
+  /**
+   * Grants permission to update a queue-limit association
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateQueueLimitAssociation.html
+   */
+  public toUpdateQueueLimitAssociation() {
+    return this.to('UpdateQueueLimitAssociation');
   }
 
   /**
@@ -1559,33 +1700,38 @@ export class Deadline extends PolicyStatement {
       'CreateFleet',
       'CreateJob',
       'CreateLicenseEndpoint',
+      'CreateLimit',
       'CreateMonitor',
       'CreateQueue',
       'CreateQueueEnvironment',
       'CreateQueueFleetAssociation',
+      'CreateQueueLimitAssociation',
       'CreateStorageProfile',
       'CreateWorker',
       'DeleteBudget',
       'DeleteFarm',
       'DeleteFleet',
       'DeleteLicenseEndpoint',
+      'DeleteLimit',
       'DeleteMeteredProduct',
       'DeleteMonitor',
       'DeleteQueue',
       'DeleteQueueEnvironment',
       'DeleteQueueFleetAssociation',
+      'DeleteQueueLimitAssociation',
       'DeleteStorageProfile',
       'DeleteWorker',
-      'GetJobTemplate',
       'PutMeteredProduct',
       'UpdateBudget',
       'UpdateFarm',
       'UpdateFleet',
       'UpdateJob',
+      'UpdateLimit',
       'UpdateMonitor',
       'UpdateQueue',
       'UpdateQueueEnvironment',
       'UpdateQueueFleetAssociation',
+      'UpdateQueueLimitAssociation',
       'UpdateSession',
       'UpdateStep',
       'UpdateStorageProfile',
@@ -1600,11 +1746,14 @@ export class Deadline extends PolicyStatement {
       'GetFarm',
       'GetFleet',
       'GetJob',
+      'GetJobTemplate',
       'GetLicenseEndpoint',
+      'GetLimit',
       'GetMonitor',
       'GetQueue',
       'GetQueueEnvironment',
       'GetQueueFleetAssociation',
+      'GetQueueLimitAssociation',
       'GetSession',
       'GetSessionAction',
       'GetSessionsStatisticsAggregation',
@@ -1626,10 +1775,12 @@ export class Deadline extends PolicyStatement {
       'ListJobParameterDefinitions',
       'ListJobs',
       'ListLicenseEndpoints',
+      'ListLimits',
       'ListMeteredProducts',
       'ListMonitors',
       'ListQueueEnvironments',
       'ListQueueFleetAssociations',
+      'ListQueueLimitAssociations',
       'ListQueueMembers',
       'ListQueues',
       'ListSessionActions',

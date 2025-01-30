@@ -47,6 +47,7 @@ cloudtrail:PutResourcePolicy;Write
 cloudtrail:RegisterOrganizationDelegatedAdmin;Write
 cloudtrail:RemoveTags;Tagging
 cloudtrail:RestoreEventDataStore;Write
+cloudtrail:SearchSampleQueries;Read
 cloudtrail:StartDashboardRefresh;Write
 cloudtrail:StartEventDataStoreIngestion;Write
 cloudtrail:StartImport;Write
