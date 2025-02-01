@@ -2566,6 +2566,8 @@ export class AwsManagedPolicy {
     public static SageMakerStudioDomainExecutionRolePolicy = 'service-role/SageMakerStudioDomainExecutionRolePolicy';
     /** Service role for domain level actions in the portal that are performed by Amazon SageMaker Studio. */
     public static SageMakerStudioDomainServiceRolePolicy = 'service-role/SageMakerStudioDomainServiceRolePolicy';
+    /** Amazon SageMaker Studio creates IAM roles for projects users to perform data analytics, artificial intelligence, and machine learning actions, and uses this policy when creating these roles to define the permissions related to EMR. */
+    public static SageMakerStudioEMRServiceRolePolicy = 'service-role/SageMakerStudioEMRServiceRolePolicy';
     /** This policy provides full access to Amazon SageMaker Unified Studio via the Amazon SageMaker management console. */
     public static SageMakerStudioFullAccess = 'SageMakerStudioFullAccess';
     /** Amazon SageMaker Studio uses this policy to provision and manage resources in your account. */
@@ -2576,6 +2578,8 @@ export class AwsManagedPolicy {
     public static SageMakerStudioProjectUserRolePermissionsBoundary = 'SageMakerStudioProjectUserRolePermissionsBoundary';
     /** Amazon SageMaker Studio creates IAM roles for projects users to perform data analytics, artificial intelligence, and machine learning actions, and uses this policy when creating these roles to define the permissions. */
     public static SageMakerStudioProjectUserRolePolicy = 'SageMakerStudioProjectUserRolePolicy';
+    /** Amazon SageMaker Studio uses this policy when running query executions on federated connections. */
+    public static SageMakerStudioQueryExecutionRolePolicy = 'service-role/SageMakerStudioQueryExecutionRolePolicy';
     /** Provides read/write access to AWS Secrets Manager via the AWS Management Console. Note: this exludes IAM actions, so combine with IAMFullAccess if rotation configuration is required. */
     public static SecretsManagerReadWrite = 'SecretsManagerReadWrite';
     /** The security audit template grants access to read security configuration metadata. It is useful for software that audits the configuration of an AWS account. */
