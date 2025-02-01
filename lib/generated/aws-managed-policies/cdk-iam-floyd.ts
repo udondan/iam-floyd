@@ -6424,6 +6424,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioDomainServiceRolePolicy);
     }
 
+    /** Amazon SageMaker Studio creates IAM roles for projects users to perform data analytics, artificial intelligence, and machine learning actions, and uses this policy when creating these roles to define the permissions related to EMR. */
+    public SageMakerStudioEMRServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioEMRServiceRolePolicy);
+    }
+
     /** This policy provides full access to Amazon SageMaker Unified Studio via the Amazon SageMaker management console. */
     public SageMakerStudioFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioFullAccess);
@@ -6447,6 +6452,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Amazon SageMaker Studio creates IAM roles for projects users to perform data analytics, artificial intelligence, and machine learning actions, and uses this policy when creating these roles to define the permissions. */
     public SageMakerStudioProjectUserRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioProjectUserRolePolicy);
+    }
+
+    /** Amazon SageMaker Studio uses this policy when running query executions on federated connections. */
+    public SageMakerStudioQueryExecutionRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioQueryExecutionRolePolicy);
     }
 
     /** Provides read/write access to AWS Secrets Manager via the AWS Management Console. Note: this exludes IAM actions, so combine with IAMFullAccess if rotation configuration is required. */
