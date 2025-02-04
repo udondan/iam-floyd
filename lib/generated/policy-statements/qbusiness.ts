@@ -40,7 +40,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Associate resource based policy statement to the application
+   * Grants permission to associate resource based policy statement to the application
    *
    * Access Level: Write
    *
@@ -110,7 +110,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Create DataAccessor to the application
+   * Grants permission to create DataAccessor to the application
    *
    * Access Level: Write
    */
@@ -237,6 +237,15 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an attachment in the current chat context
+   *
+   * Access Level: Write
+   */
+  public toDeleteAttachment() {
+    return this.to('DeleteAttachment');
+  }
+
+  /**
    * Grants permission to delete chat controls configuration for an application
    *
    * Access Level: Write
@@ -255,7 +264,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Delete DataAccessor
+   * Grants permission to delete DataAccessor
    *
    * Access Level: Write
    */
@@ -345,7 +354,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Disassociate resource based policy statement to the application
+   * Grants permission to disassociate resource based policy statement to the application
    *
    * Access Level: Write
    *
@@ -375,7 +384,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Get DataAccessor
+   * Grants permission to get DataAccessor
    *
    * Access Level: Read
    */
@@ -447,7 +456,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Get resource based policy of the application
+   * Grants permission to get resource based policy of the application
    *
    * Access Level: Read
    */
@@ -510,7 +519,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * List DataAccessor for the application
+   * Grants permission to list DataAccessors for the application
    *
    * Access Level: List
    */
@@ -681,7 +690,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Put resource based policy statement to the application
+   * Grants permission to put resource based policy statement to the application
    *
    * Access Level: Write
    */
@@ -699,7 +708,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Search relevant content from the Amazon Q Business Application
+   * Grants permission to search relevant content from the Amazon Q Business Application
    *
    * Access Level: Read
    */
@@ -778,7 +787,7 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Update DataAccessor
+   * Grants permission to update DataAccessor
    *
    * Access Level: Write
    */
@@ -877,6 +886,7 @@ export class Qbusiness extends PolicyStatement {
       'CreateUser',
       'CreateWebExperience',
       'DeleteApplication',
+      'DeleteAttachment',
       'DeleteChatControlsConfiguration',
       'DeleteConversation',
       'DeleteDataAccessor',

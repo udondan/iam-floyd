@@ -547,6 +547,7 @@ ec2:ModifyInstanceEventWindow;Write
 ec2:ModifyInstanceMaintenanceOptions;Write
 ec2:ModifyInstanceMetadataDefaults;Write
 ec2:ModifyInstanceMetadataOptions;Write
+ec2:ModifyInstanceNetworkPerformanceOptions;Write
 ec2:ModifyInstancePlacement;Write
 ec2:ModifyIpam;Write
 ec2:ModifyIpamPool;Write
