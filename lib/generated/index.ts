@@ -60,7 +60,6 @@ export { Ecr } from './policy-statements/elasticcontainerregistry';
 export { EcrPublic } from './policy-statements/elasticcontainerregistrypublic';
 export { Ecs } from './policy-statements/elasticcontainerservice';
 export { Elasticfilesystem } from './policy-statements/elasticfilesystem';
-export { ElasticInference } from './policy-statements/elasticinference';
 export { Eks } from './policy-statements/elastickubernetesservice';
 export { Elasticmapreduce } from './policy-statements/elasticmapreduce';
 export { Elastictranscoder } from './policy-statements/elastictranscoder';

@@ -8006,6 +8006,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the network performance options for an instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceNetworkPerformanceOptions.html
+   */
+  public toModifyInstanceNetworkPerformanceOptions() {
+    return this.to('ModifyInstanceNetworkPerformanceOptions');
+  }
+
+  /**
    * Grants permission to modify the placement attributes for an instance
    *
    * Access Level: Write
@@ -10096,6 +10110,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyInstanceMaintenanceOptions',
       'ModifyInstanceMetadataDefaults',
       'ModifyInstanceMetadataOptions',
+      'ModifyInstanceNetworkPerformanceOptions',
       'ModifyInstancePlacement',
       'ModifyIpam',
       'ModifyIpamPool',
@@ -11012,6 +11027,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifCpuOptionsAmdSevSnp()
    * - .ifEbsOptimized()
    * - .ifInstanceAutoRecovery()
+   * - .ifInstanceBandwidthWeighting()
    * - .ifInstanceID()
    * - .ifInstanceMarketType()
    * - .ifInstanceMetadataTags()
@@ -12901,6 +12917,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayVpcAttachment()
    * - .toCreateVerifiedAccessEndpoint()
    * - .toCreateVerifiedAccessGroup()
+   * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
    * - .toCreateVpcEndpoint()
@@ -13112,6 +13129,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventWindow()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
    * - .toModifyIpamPool()
@@ -13636,6 +13654,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceCreditSpecification()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
    * - .toModifyIpamPool()
@@ -13739,6 +13758,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataDefaults()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
    * - .toModifyIpamPool()
@@ -13982,6 +14002,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyLocalGatewayRoute()
    * - .toModifyNetworkInterfaceAttribute()
@@ -14213,6 +14234,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -14461,6 +14483,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -14860,6 +14883,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -14883,6 +14907,69 @@ export class Ec2 extends PolicyStatement {
    */
   public ifInstanceAutoRecovery(value: string | string[], operator?: Operator | string) {
     return this.if(`InstanceAutoRecovery`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the bandwidth weighting of an instance
+   *
+   * Applies to actions:
+   * - .toAssociateAddress()
+   * - .toAssociateIamInstanceProfile()
+   * - .toAttachClassicLinkVpc()
+   * - .toAttachNetworkInterface()
+   * - .toAttachVolume()
+   * - .toCreateFleet()
+   * - .toCreateImage()
+   * - .toCreateInstanceExportTask()
+   * - .toCreateNetworkInsightsPath()
+   * - .toCreateReplaceRootVolumeTask()
+   * - .toCreateSnapshots()
+   * - .toCreateTags()
+   * - .toDescribeInstanceAttribute()
+   * - .toDetachClassicLinkVpc()
+   * - .toDetachNetworkInterface()
+   * - .toDetachVolume()
+   * - .toDisassociateIamInstanceProfile()
+   * - .toGetConsoleOutput()
+   * - .toGetConsoleScreenshot()
+   * - .toGetInstanceTpmEkPub()
+   * - .toGetInstanceUefiData()
+   * - .toGetLaunchTemplateData()
+   * - .toGetPasswordData()
+   * - .toImportInstance()
+   * - .toModifyInstanceAttribute()
+   * - .toModifyInstanceCapacityReservationAttributes()
+   * - .toModifyInstanceCpuOptions()
+   * - .toModifyInstanceCreditSpecification()
+   * - .toModifyInstanceEventStartTime()
+   * - .toModifyInstanceMaintenanceOptions()
+   * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
+   * - .toModifyInstancePlacement()
+   * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyPrivateDnsNameOptions()
+   * - .toMonitorInstances()
+   * - .toPauseVolumeIO()
+   * - .toRebootInstances()
+   * - .toReplaceIamInstanceProfileAssociation()
+   * - .toReportInstanceStatus()
+   * - .toResetInstanceAttribute()
+   * - .toRunInstances()
+   * - .toSendDiagnosticInterrupt()
+   * - .toSendSpotInstanceInterruptions()
+   * - .toStartInstances()
+   * - .toStopInstances()
+   * - .toTerminateInstances()
+   * - .toUnmonitorInstances()
+   *
+   * Applies to resource types:
+   * - instance
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInstanceBandwidthWeighting(value: string | string[], operator?: Operator | string) {
+    return this.if(`InstanceBandwidthWeighting`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -14945,6 +15032,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -15006,6 +15094,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -15090,6 +15179,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -15176,6 +15266,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -15245,6 +15336,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -15543,6 +15635,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyLaunchTemplate()
    * - .toModifyLocalGatewayRoute()
@@ -15618,6 +15711,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -15678,6 +15772,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -15738,6 +15833,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -15903,6 +15999,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateRestoreImageTask()
    * - .toCreateStoreImageTask()
    * - .toCreateTags()
+   * - .toCreateVolume()
    * - .toDeleteFpgaImage()
    * - .toDeleteSnapshot()
    * - .toDeregisterImage()
@@ -15995,6 +16092,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toCreateTags()
+   * - .toCreateVolume()
    * - .toDeleteSnapshot()
    * - .toDescribeSnapshotAttribute()
    * - .toDisableFastSnapshotRestores()
@@ -16254,6 +16352,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -16364,6 +16463,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -17033,6 +17133,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataDefaults()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
    * - .toModifyIpamPool()
@@ -17496,6 +17597,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayVpcAttachment()
    * - .toCreateVerifiedAccessEndpoint()
    * - .toCreateVerifiedAccessGroup()
+   * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
    * - .toCreateVpcEndpoint()
@@ -17704,6 +17806,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventWindow()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
    * - .toModifyIpamPool()
@@ -17975,6 +18078,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
@@ -18255,6 +18359,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateTags()
+   * - .toCreateVolume()
    * - .toDeleteSnapshot()
    * - .toDescribeSnapshotAttribute()
    * - .toDisableFastSnapshotRestores()
@@ -18539,6 +18644,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceEventStartTime()
    * - .toModifyInstanceMaintenanceOptions()
    * - .toModifyInstanceMetadataOptions()
+   * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()

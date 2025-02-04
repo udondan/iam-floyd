@@ -18,6 +18,7 @@ qbusiness:CreateSubscription;Write
 qbusiness:CreateUser;Write
 qbusiness:CreateWebExperience;Write
 qbusiness:DeleteApplication;Write
+qbusiness:DeleteAttachment;Write
 qbusiness:DeleteChatControlsConfiguration;Write
 qbusiness:DeleteConversation;Write
 qbusiness:DeleteDataAccessor;Write
