@@ -13,7 +13,9 @@
         "elasticloadbalancing:DescribeInstanceHealth",
         "elasticloadbalancing:DescribeLoadBalancers",
         "elasticloadbalancing:DescribeTargetGroups",
-        "elasticloadbalancing:DescribeTargetHealth"
+        "elasticloadbalancing:DescribeTargetHealth",
+        "eks:ListPodIdentityAssociations",
+        "eks:DescribePodIdentityAssociation"
       ],
       "Resource": "*"
     },
