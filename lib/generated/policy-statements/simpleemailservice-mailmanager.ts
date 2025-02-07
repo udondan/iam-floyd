@@ -61,6 +61,32 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an address list
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddressList.html
+   */
+  public toCreateAddressList() {
+    return this.to('CreateAddressList');
+  }
+
+  /**
+   * Grants permission to create an import job on an address list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateAddressListImportJob.html
+   */
+  public toCreateAddressListImportJob() {
+    return this.to('CreateAddressListImportJob');
+  }
+
+  /**
    * Grants permission to create an archive
    *
    * Access Level: Write
@@ -169,6 +195,17 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an address list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteAddressList.html
+   */
+  public toDeleteAddressList() {
+    return this.to('DeleteAddressList');
+  }
+
+  /**
    * Grants permission to delete an archive
    *
    * Access Level: Write
@@ -239,6 +276,17 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove a member from an address list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeregisterMemberFromAddressList.html
+   */
+  public toDeregisterMemberFromAddressList() {
+    return this.to('DeregisterMemberFromAddressList');
+  }
+
+  /**
    * Grants permission to get information about an addon instance
    *
    * Access Level: Read
@@ -264,6 +312,28 @@ export class SesMailmanager extends PolicyStatement {
    */
   public toGetAddonSubscription() {
     return this.to('GetAddonSubscription');
+  }
+
+  /**
+   * Grants permission to get information about an address list
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetAddressList.html
+   */
+  public toGetAddressList() {
+    return this.to('GetAddressList');
+  }
+
+  /**
+   * Grants permission to get information about an import job on an address list
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetAddressListImportJob.html
+   */
+  public toGetAddressListImportJob() {
+    return this.to('GetAddressListImportJob');
   }
 
   /**
@@ -350,6 +420,17 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a member in an address list
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetMemberOfAddressList.html
+   */
+  public toGetMemberOfAddressList() {
+    return this.to('GetMemberOfAddressList');
+  }
+
+  /**
    * Grants permission to get information about a SMTP relay
    *
    * Access Level: Read
@@ -414,6 +495,28 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all of the import jobs associated with an address list
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListAddressListImportJobs.html
+   */
+  public toListAddressListImportJobs() {
+    return this.to('ListAddressListImportJobs');
+  }
+
+  /**
+   * Grants permission to list all of the address lists associated with your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListAddressLists.html
+   */
+  public toListAddressLists() {
+    return this.to('ListAddressLists');
+  }
+
+  /**
    * Grants permission to list all of the archive exports associated with your account
    *
    * Access Level: List
@@ -455,6 +558,17 @@ export class SesMailmanager extends PolicyStatement {
    */
   public toListIngressPoints() {
     return this.to('ListIngressPoints');
+  }
+
+  /**
+   * Grants permission to list all of the members associated with an address list
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_ListMembersOfAddressList.html
+   */
+  public toListMembersOfAddressList() {
+    return this.to('ListMembersOfAddressList');
   }
 
   /**
@@ -502,6 +616,28 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a member to an address list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_RegisterMemberToAddressList.html
+   */
+  public toRegisterMemberToAddressList() {
+    return this.to('RegisterMemberToAddressList');
+  }
+
+  /**
+   * Grants permission to start an import job on an address list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_StartAddressListImportJob.html
+   */
+  public toStartAddressListImportJob() {
+    return this.to('StartAddressListImportJob');
+  }
+
+  /**
    * Grants permission to start an archive export
    *
    * Access Level: Write
@@ -521,6 +657,17 @@ export class SesMailmanager extends PolicyStatement {
    */
   public toStartArchiveSearch() {
     return this.to('StartArchiveSearch');
+  }
+
+  /**
+   * Grants permission to stop an ongoing import job on an address list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_StopAddressListImportJob.html
+   */
+  public toStopAddressListImportJob() {
+    return this.to('StopAddressListImportJob');
   }
 
   /**
@@ -653,6 +800,8 @@ export class SesMailmanager extends PolicyStatement {
     Write: [
       'CreateAddonInstance',
       'CreateAddonSubscription',
+      'CreateAddressList',
+      'CreateAddressListImportJob',
       'CreateArchive',
       'CreateIngressPoint',
       'CreateRelay',
@@ -660,13 +809,18 @@ export class SesMailmanager extends PolicyStatement {
       'CreateTrafficPolicy',
       'DeleteAddonInstance',
       'DeleteAddonSubscription',
+      'DeleteAddressList',
       'DeleteArchive',
       'DeleteIngressPoint',
       'DeleteRelay',
       'DeleteRuleSet',
       'DeleteTrafficPolicy',
+      'DeregisterMemberFromAddressList',
+      'RegisterMemberToAddressList',
+      'StartAddressListImportJob',
       'StartArchiveExport',
       'StartArchiveSearch',
+      'StopAddressListImportJob',
       'StopArchiveExport',
       'StopArchiveSearch',
       'UpdateArchive',
@@ -678,6 +832,8 @@ export class SesMailmanager extends PolicyStatement {
     Read: [
       'GetAddonInstance',
       'GetAddonSubscription',
+      'GetAddressList',
+      'GetAddressListImportJob',
       'GetArchive',
       'GetArchiveExport',
       'GetArchiveMessage',
@@ -685,6 +841,7 @@ export class SesMailmanager extends PolicyStatement {
       'GetArchiveSearch',
       'GetArchiveSearchResults',
       'GetIngressPoint',
+      'GetMemberOfAddressList',
       'GetRelay',
       'GetRuleSet',
       'GetTrafficPolicy',
@@ -693,10 +850,13 @@ export class SesMailmanager extends PolicyStatement {
     List: [
       'ListAddonInstances',
       'ListAddonSubscriptions',
+      'ListAddressListImportJobs',
+      'ListAddressLists',
       'ListArchiveExports',
       'ListArchiveSearches',
       'ListArchives',
       'ListIngressPoints',
+      'ListMembersOfAddressList',
       'ListRelays',
       'ListRuleSets',
       'ListTrafficPolicies'
@@ -828,6 +988,23 @@ export class SesMailmanager extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type mailmanager-address-list to the statement
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_AddressList.html
+   *
+   * @param addressListId - Identifier for the addressListId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMailmanagerAddressList(addressListId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mailmanager-address-list/${ addressListId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -835,6 +1012,7 @@ export class SesMailmanager extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAddonInstance()
    * - .toCreateAddonSubscription()
+   * - .toCreateAddressList()
    * - .toCreateArchive()
    * - .toCreateIngressPoint()
    * - .toCreateRelay()
@@ -874,6 +1052,19 @@ export class SesMailmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateAddressListImportJob()
+   * - .toDeleteAddressList()
+   * - .toDeregisterMemberFromAddressList()
+   * - .toGetAddressList()
+   * - .toGetAddressListImportJob()
+   * - .toGetMemberOfAddressList()
+   * - .toListAddressListImportJobs()
+   * - .toListMembersOfAddressList()
+   * - .toRegisterMemberToAddressList()
+   * - .toStartAddressListImportJob()
+   * - .toStopAddressListImportJob()
+   *
    * Applies to resource types:
    * - addon-instance
    * - addon-subscription
@@ -882,6 +1073,7 @@ export class SesMailmanager extends PolicyStatement {
    * - mailmanager-smtp-relay
    * - mailmanager-rule-set
    * - mailmanager-traffic-policy
+   * - mailmanager-address-list
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -899,6 +1091,7 @@ export class SesMailmanager extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAddonInstance()
    * - .toCreateAddonSubscription()
+   * - .toCreateAddressList()
    * - .toCreateArchive()
    * - .toCreateIngressPoint()
    * - .toCreateRelay()

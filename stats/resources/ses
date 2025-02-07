@@ -8,6 +8,7 @@ ses:deliverability-test-report
 ses:export-job
 ses:identity
 ses:import-job
+ses:mailmanager-address-list
 ses:mailmanager-archive
 ses:mailmanager-ingress-point
 ses:mailmanager-rule-set

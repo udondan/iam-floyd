@@ -1,3 +1,4 @@
+amplify:AssociateWebACL;Write
 amplify:CreateApp;Write
 amplify:CreateBackendEnvironment;Write
 amplify:CreateBranch;Write
@@ -10,6 +11,7 @@ amplify:DeleteBranch;Write
 amplify:DeleteDomainAssociation;Write
 amplify:DeleteJob;Write
 amplify:DeleteWebHook;Write
+amplify:DisassociateWebACL;Write
 amplify:GenerateAccessLogs;Write
 amplify:GetApp;Read
 amplify:GetArtifactUrl;Read
@@ -17,6 +19,7 @@ amplify:GetBackendEnvironment;Read
 amplify:GetBranch;Read
 amplify:GetDomainAssociation;Read
 amplify:GetJob;Read
+amplify:GetWebACLForResource;Read
 amplify:GetWebHook;Read
 amplify:ListApps;List
 amplify:ListArtifacts;List
@@ -24,6 +27,7 @@ amplify:ListBackendEnvironments;List
 amplify:ListBranches;List
 amplify:ListDomainAssociations;List
 amplify:ListJobs;List
+amplify:ListResourcesForWebACL;List
 amplify:ListTagsForResource;Read
 amplify:ListWebHooks;List
 amplify:StartDeployment;Write

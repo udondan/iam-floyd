@@ -19,6 +19,17 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a WebACL to a Resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   */
+  public toAssociateWebACL() {
+    return this.to('AssociateWebACL');
+  }
+
+  /**
    * Grants permission to create a new Amplify App
    *
    * Access Level: Write
@@ -163,6 +174,17 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a WebACL from a Resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   */
+  public toDisassociateWebACL() {
+    return this.to('DisassociateWebACL');
+  }
+
+  /**
    * Grants permission to generate website access logs for a specific time range via a pre-signed URL
    *
    * Access Level: Write
@@ -240,6 +262,17 @@ export class Amplify extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the WebACL associated with a Resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   */
+  public toGetWebACLForResource() {
+    return this.to('GetWebACLForResource');
+  }
+
+  /**
    * Grants permission to retrieve webhook info that corresponds to a webhookId
    *
    * Access Level: Read
@@ -314,6 +347,17 @@ export class Amplify extends PolicyStatement {
    */
   public toListJobs() {
     return this.to('ListJobs');
+  }
+
+  /**
+   * Grants permission to list the Resources associated with a WebACL
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   */
+  public toListResourcesForWebACL() {
+    return this.to('ListResourcesForWebACL');
   }
 
   /**
@@ -446,6 +490,7 @@ export class Amplify extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateWebACL',
       'CreateApp',
       'CreateBackendEnvironment',
       'CreateBranch',
@@ -458,6 +503,7 @@ export class Amplify extends PolicyStatement {
       'DeleteDomainAssociation',
       'DeleteJob',
       'DeleteWebHook',
+      'DisassociateWebACL',
       'GenerateAccessLogs',
       'StartDeployment',
       'StartJob',
@@ -474,6 +520,7 @@ export class Amplify extends PolicyStatement {
       'GetBranch',
       'GetDomainAssociation',
       'GetJob',
+      'GetWebACLForResource',
       'GetWebHook',
       'ListTagsForResource'
     ],
@@ -484,6 +531,7 @@ export class Amplify extends PolicyStatement {
       'ListBranches',
       'ListDomainAssociations',
       'ListJobs',
+      'ListResourcesForWebACL',
       'ListWebHooks'
     ],
     Tagging: [

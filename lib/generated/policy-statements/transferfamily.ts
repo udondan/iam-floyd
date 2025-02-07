@@ -1047,6 +1047,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html
    *
+   * @param serverId - Identifier for the serverId.
    * @param agreementId - Identifier for the agreementId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
@@ -1055,8 +1056,8 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAgreement(agreementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agreement/${ agreementId }`);
+  public onAgreement(serverId: string, agreementId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transfer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agreement/${ serverId }/${ agreementId }`);
   }
 
   /**

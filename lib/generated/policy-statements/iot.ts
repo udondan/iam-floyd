@@ -4050,7 +4050,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onDestination(destinationType: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:destination/${ destinationType }/${ uuid }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ruledestination/${ destinationType }/${ uuid }`);
   }
 
   /**

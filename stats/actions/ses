@@ -4,6 +4,8 @@ ses:CancelExportJob;Write
 ses:CloneReceiptRuleSet;Write
 ses:CreateAddonInstance;Write
 ses:CreateAddonSubscription;Write
+ses:CreateAddressList;Write
+ses:CreateAddressListImportJob;Write
 ses:CreateArchive;Write
 ses:CreateConfigurationSet;Write
 ses:CreateConfigurationSetEventDestination;Write
@@ -29,6 +31,7 @@ ses:CreateTemplate;Write
 ses:CreateTrafficPolicy;Write
 ses:DeleteAddonInstance;Write
 ses:DeleteAddonSubscription;Write
+ses:DeleteAddressList;Write
 ses:DeleteArchive;Write
 ses:DeleteConfigurationSet;Write
 ses:DeleteConfigurationSetEventDestination;Write
@@ -53,6 +56,7 @@ ses:DeleteSuppressedDestination;Write
 ses:DeleteTemplate;Write
 ses:DeleteTrafficPolicy;Write
 ses:DeleteVerifiedEmailAddress;Write
+ses:DeregisterMemberFromAddressList;Write
 ses:DescribeActiveReceiptRuleSet;Read
 ses:DescribeConfigurationSet;Read
 ses:DescribeReceiptRule;Read
@@ -61,6 +65,8 @@ ses:GetAccount;Read
 ses:GetAccountSendingEnabled;Read
 ses:GetAddonInstance;Read
 ses:GetAddonSubscription;Read
+ses:GetAddressList;Read
+ses:GetAddressListImportJob;Read
 ses:GetArchive;Read
 ses:GetArchiveExport;Read
 ses:GetArchiveMessage;Read
@@ -91,6 +97,7 @@ ses:GetIdentityPolicies;Read
 ses:GetIdentityVerificationAttributes;Read
 ses:GetImportJob;Read
 ses:GetIngressPoint;Read
+ses:GetMemberOfAddressList;Read
 ses:GetMessageInsights;Read
 ses:GetMultiRegionEndpoint;Read
 ses:GetRelay;Read
@@ -102,6 +109,8 @@ ses:GetTemplate;Read
 ses:GetTrafficPolicy;Read
 ses:ListAddonInstances;List
 ses:ListAddonSubscriptions;List
+ses:ListAddressListImportJobs;List
+ses:ListAddressLists;List
 ses:ListArchiveExports;List
 ses:ListArchiveSearches;List
 ses:ListArchives;List
@@ -119,6 +128,7 @@ ses:ListIdentities;List
 ses:ListIdentityPolicies;List
 ses:ListImportJobs;List
 ses:ListIngressPoints;List
+ses:ListMembersOfAddressList;List
 ses:ListMultiRegionEndpoints;List
 ses:ListReceiptFilters;Read
 ses:ListReceiptRuleSets;Read
@@ -152,6 +162,7 @@ ses:PutEmailIdentityFeedbackAttributes;Write
 ses:PutEmailIdentityMailFromAttributes;Write
 ses:PutIdentityPolicy;Permissions management
 ses:PutSuppressedDestination;Write
+ses:RegisterMemberToAddressList;Write
 ses:ReorderReceiptRuleSet;Write
 ses:ReplicateEmailIdentityDkimSigningKey;Permissions management
 ses:SendBounce;Write
@@ -168,8 +179,10 @@ ses:SetIdentityHeadersInNotificationsEnabled;Write
 ses:SetIdentityMailFromDomain;Write
 ses:SetIdentityNotificationTopic;Write
 ses:SetReceiptRulePosition;Write
+ses:StartAddressListImportJob;Write
 ses:StartArchiveExport;Write
 ses:StartArchiveSearch;Write
+ses:StopAddressListImportJob;Write
 ses:StopArchiveExport;Write
 ses:StopArchiveSearch;Write
 ses:TagResource;Tagging
