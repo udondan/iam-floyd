@@ -9,6 +9,7 @@ cloudformation:CreateGeneratedTemplate;Write
 cloudformation:CreateResource;Write
 cloudformation:CreateStack;Write
 cloudformation:CreateStackInstances;Write
+cloudformation:CreateStackRefactor;Write
 cloudformation:CreateStackSet;Write
 cloudformation:CreateUploadBucket;Write
 cloudformation:DeactivateOrganizationsAccess;Write
@@ -30,6 +31,7 @@ cloudformation:DescribeResourceScan;Read
 cloudformation:DescribeStackDriftDetectionStatus;Read
 cloudformation:DescribeStackEvents;Read
 cloudformation:DescribeStackInstance;Read
+cloudformation:DescribeStackRefactor;Read
 cloudformation:DescribeStackResource;Read
 cloudformation:DescribeStackResourceDrifts;Read
 cloudformation:DescribeStackResources;Read
@@ -43,6 +45,7 @@ cloudformation:DetectStackResourceDrift;Read
 cloudformation:DetectStackSetDrift;Read
 cloudformation:EstimateTemplateCost;Read
 cloudformation:ExecuteChangeSet;Write
+cloudformation:ExecuteStackRefactor;Write
 cloudformation:GetGeneratedTemplate;Read
 cloudformation:GetResource;Read
 cloudformation:GetResourceRequestStatus;Read
@@ -62,6 +65,8 @@ cloudformation:ListResourceScans;List
 cloudformation:ListResources;Read
 cloudformation:ListStackInstanceResourceDrifts;List
 cloudformation:ListStackInstances;List
+cloudformation:ListStackRefactorActions;List
+cloudformation:ListStackRefactors;List
 cloudformation:ListStackResources;List
 cloudformation:ListStackSetAutoDeploymentTargets;List
 cloudformation:ListStackSetOperationResults;List
