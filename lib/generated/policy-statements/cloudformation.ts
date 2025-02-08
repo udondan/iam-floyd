@@ -143,6 +143,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a stack refactor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackRefactor.html
+   */
+  public toCreateStackRefactor() {
+    return this.to('CreateStackRefactor');
+  }
+
+  /**
    * Grants permission to create a stackset as specified in the template
    *
    * Access Level: Write
@@ -384,6 +395,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the description for the specified stack refactor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackRefactor.html
+   */
+  public toDescribeStackRefactor() {
+    return this.to('DescribeStackRefactor');
+  }
+
+  /**
    * Grants permission to return a description of the specified resource in the specified stack
    *
    * Access Level: Read
@@ -533,6 +555,17 @@ export class Cloudformation extends PolicyStatement {
    */
   public toExecuteChangeSet() {
     return this.to('ExecuteChangeSet');
+  }
+
+  /**
+   * Grants permission to execute a stack refactor using the input information that was provided when the specified stack refactor was created
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteStackRefactor.html
+   */
+  public toExecuteStackRefactor() {
+    return this.to('ExecuteStackRefactor');
   }
 
   /**
@@ -704,6 +737,28 @@ export class Cloudformation extends PolicyStatement {
    */
   public toListStackInstances() {
     return this.to('ListStackInstances');
+  }
+
+  /**
+   * Grants permission to return the list of actions of the specified stack refactor
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackRefactorActions.html
+   */
+  public toListStackRefactorActions() {
+    return this.to('ListStackRefactorActions');
+  }
+
+  /**
+   * Grants permission to return the ID and status of each active stack refactor
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackRefactors.html
+   */
+  public toListStackRefactors() {
+    return this.to('ListStackRefactors');
   }
 
   /**
@@ -1071,6 +1126,7 @@ export class Cloudformation extends PolicyStatement {
       'CreateGeneratedTemplate',
       'CreateStack',
       'CreateStackInstances',
+      'CreateStackRefactor',
       'CreateStackSet',
       'CreateUploadBucket',
       'DeactivateOrganizationsAccess',
@@ -1082,6 +1138,7 @@ export class Cloudformation extends PolicyStatement {
       'DeleteStackSet',
       'DeregisterType',
       'ExecuteChangeSet',
+      'ExecuteStackRefactor',
       'ImportStacksToStackSet',
       'PublishType',
       'RecordHandlerProgress',
@@ -1112,6 +1169,7 @@ export class Cloudformation extends PolicyStatement {
       'DescribeStackDriftDetectionStatus',
       'DescribeStackEvents',
       'DescribeStackInstance',
+      'DescribeStackRefactor',
       'DescribeStackResource',
       'DescribeStackResourceDrifts',
       'DescribeStackResources',
@@ -1141,6 +1199,8 @@ export class Cloudformation extends PolicyStatement {
       'ListResourceScans',
       'ListStackInstanceResourceDrifts',
       'ListStackInstances',
+      'ListStackRefactorActions',
+      'ListStackRefactors',
       'ListStackResources',
       'ListStackSetAutoDeploymentTargets',
       'ListStackSetOperationResults',
