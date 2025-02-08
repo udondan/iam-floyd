@@ -56,6 +56,57 @@
         "arn:aws:dms:*:*:rep:*",
         "arn:aws:dms:*:*:endpoint:*"
       ]
+    },
+    {
+      "Sid": "id4",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:PutObjectTagging"
+      ],
+      "Resource": [
+        "arn:aws:s3:::dms-serverless-premigration-results-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "id5",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutBucketPolicy",
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:CreateBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::dms-serverless-premigration-results-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "id6",
+      "Effect": "Allow",
+      "Action": [
+        "dms:StartReplicationTaskAssessmentRun"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/ResourceCreatedBy": "DMSServerless"
+        }
+      }
     }
   ]
 }
