@@ -19,6 +19,17 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an AWS resource with an Amazon Q connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toAssociateConnectorResource() {
+    return this.to('AssociateConnectorResource');
+  }
+
+  /**
    * Grants permission to create a user or group assignment for an Amazon Q Developer Profile
    *
    * Access Level: Write
@@ -31,6 +42,28 @@ export class Q extends PolicyStatement {
    */
   public toCreateAssignment() {
     return this.to('CreateAssignment');
+  }
+
+  /**
+   * Grants permission to create OAuth user in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toCreateAuthGrant() {
+    return this.to('CreateAuthGrant');
+  }
+
+  /**
+   * Grants permission to register an OAuth application in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toCreateOAuthAppConnection() {
+    return this.to('CreateOAuthAppConnection');
   }
 
   /**
@@ -86,6 +119,17 @@ export class Q extends PolicyStatement {
    */
   public toGenerateCodeFromCommands() {
     return this.to('GenerateCodeFromCommands');
+  }
+
+  /**
+   * Grants permission to view information about a specific Amazon Q connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toGetConnector() {
+    return this.to('GetConnector');
   }
 
   /**
@@ -205,6 +249,28 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject a connection request for an Amazon Q connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toRejectConnector() {
+    return this.to('RejectConnector');
+  }
+
+  /**
+   * Grants permission to trigger asynchronous Amazon Q actions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toSendEvent() {
+    return this.to('SendEvent');
+  }
+
+  /**
    * Grants permission to send a message to Amazon Q
    *
    * Access Level: Write
@@ -280,6 +346,28 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update OAuth user in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toUpdateAuthGrant() {
+    return this.to('UpdateAuthGrant');
+  }
+
+  /**
+   * Grants permission to update an OAuth application in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toUpdateOAuthAppConnection() {
+    return this.to('UpdateOAuthAppConnection');
+  }
+
+  /**
    * Grants permission to update a troubleshooting command result with Amazon Q
    *
    * Access Level: Write
@@ -303,20 +391,28 @@ export class Q extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateConnectorResource',
       'CreateAssignment',
+      'CreateAuthGrant',
+      'CreateOAuthAppConnection',
       'CreatePlugin',
       'DeleteAssignment',
       'DeletePlugin',
       'PassRequest',
+      'RejectConnector',
+      'SendEvent',
       'SendMessage',
       'StartConversation',
       'StartTroubleshootingAnalysis',
       'StartTroubleshootingResolutionExplanation',
+      'UpdateAuthGrant',
+      'UpdateOAuthAppConnection',
       'UpdateTroubleshootingCommandResult',
       'UsePlugin'
     ],
     Read: [
       'GenerateCodeFromCommands',
+      'GetConnector',
       'GetConversation',
       'GetIdentityMetadata',
       'GetPlugin',

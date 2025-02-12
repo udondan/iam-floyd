@@ -17,7 +17,7 @@
 Support for:
 
 - 416 Services
-- 18252 Actions
+- 18260 Actions
 - 1960 Resource Types
 - 1910 Condition keys
 <!-- /stats -->
