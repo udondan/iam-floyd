@@ -130,7 +130,8 @@
         "config:GetComplianceSummaryByConfigRule",
         "config:GetDiscoveredResourceCounts",
         "config:PutEvaluations",
-        "config:SelectResourceConfig"
+        "config:SelectResourceConfig",
+        "config:BatchGetResourceConfig"
       ],
       "Resource": "*"
     },
@@ -553,7 +554,6 @@
         "network-firewall:ListFirewallPolicies",
         "network-firewall:ListFirewalls",
         "network-firewall:ListRuleGroups",
-        "network-firewall:PutResourcePolicy",
         "network-firewall:DescribeResourcePolicy",
         "network-firewall:DeleteResourcePolicy",
         "network-firewall:DescribeLoggingConfiguration",
@@ -562,6 +562,18 @@
         "network-firewall:ListTLSInspectionConfigurations"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "NetworkFirewallResourcePolicy",
+      "Effect": "Allow",
+      "Action": [
+        "network-firewall:PutResourcePolicy"
+      ],
+      "Resource": [
+        "arn:aws:network-firewall:*:*:firewall-policy/*",
+        "arn:aws:network-firewall:*:*:stateful-rulegroup/*",
+        "arn:aws:network-firewall:*:*:stateless-rulegroup/*"
+      ]
     },
     {
       "Sid": "NetworkFirewallCleanup",
