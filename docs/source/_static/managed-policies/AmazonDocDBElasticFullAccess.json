@@ -20,7 +20,10 @@
         "docdb-elastic:ListTagsForResource",
         "docdb-elastic:CopyClusterSnapshot",
         "docdb-elastic:StartCluster",
-        "docdb-elastic:StopCluster"
+        "docdb-elastic:StopCluster",
+        "docdb-elastic:GetPendingMaintenanceAction",
+        "docdb-elastic:ListPendingMaintenanceActions",
+        "docdb-elastic:ApplyPendingMaintenanceAction"
       ],
       "Resource": [
         "*"

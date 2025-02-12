@@ -98,6 +98,7 @@
         "ec2:GetHostReservationPurchasePreview",
         "ec2:GetLaunchTemplateData",
         "ec2:GetPasswordData",
+        "ec2:GetSecurityGroupsForVpc",
         "ec2:Import*",
         "ec2:Modify*",
         "ec2:MonitorInstances",

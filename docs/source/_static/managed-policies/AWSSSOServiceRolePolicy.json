@@ -143,6 +143,16 @@
       "Resource": [
         "*"
       ]
+    },
+    {
+      "Sid": "AllowDeleteSyncProfile",
+      "Effect": "Allow",
+      "Action": [
+        "identity-sync:DeleteSyncProfile"
+      ],
+      "Resource": [
+        "arn:aws:identity-sync:*:*:profile/*"
+      ]
     }
   ]
 }
