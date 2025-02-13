@@ -1492,6 +1492,10 @@ export class AwsManagedPolicy {
     public static AWSElasticLoadBalancingClassicServiceRolePolicy = 'aws-service-role/AWSElasticLoadBalancingClassicServiceRolePolicy';
     /** Service Linked Role Policy for AWS Elastic Load Balancing Control Plane */
     public static AWSElasticLoadBalancingServiceRolePolicy = 'aws-service-role/AWSElasticLoadBalancingServiceRolePolicy';
+    /** Provides full access to AWS Elemental MediaConnect resources. */
+    public static AWSElementalMediaConnectFullAccess = 'AWSElementalMediaConnectFullAccess';
+    /** Provides read-only access to AWS Elemental MediaConnect resources. */
+    public static AWSElementalMediaConnectReadOnlyAccess = 'AWSElementalMediaConnectReadOnlyAccess';
     /** Provides full access to AWS Elemental MediaConvert via the AWS Management Console and SDK. */
     public static AWSElementalMediaConvertFullAccess = 'AWSElementalMediaConvertFullAccess';
     /** Provides read only access to AWS Elemental MediaConvert via the AWS Management Console and SDK. */

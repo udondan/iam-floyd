@@ -3739,6 +3739,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElasticLoadBalancingServiceRolePolicy);
     }
 
+    /** Provides full access to AWS Elemental MediaConnect resources. */
+    public AWSElementalMediaConnectFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElementalMediaConnectFullAccess);
+    }
+
+    /** Provides read-only access to AWS Elemental MediaConnect resources. */
+    public AWSElementalMediaConnectReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElementalMediaConnectReadOnlyAccess);
+    }
+
     /** Provides full access to AWS Elemental MediaConvert via the AWS Management Console and SDK. */
     public AWSElementalMediaConvertFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElementalMediaConvertFullAccess);
