@@ -120,15 +120,6 @@
       "Resource": "*"
     },
     {
-      "Sid": "AllowSageMakerLogAccess",
-      "Effect": "Allow",
-      "Action": [
-        "logs:DescribeLogStreams",
-        "logs:GetLogEvents"
-      ],
-      "Resource": "arn:aws:logs:*:*:log-group:/aws/sagemaker/*"
-    },
-    {
       "Sid": "SageMakerMlflowPermission",
       "Effect": "Allow",
       "Action": [
@@ -228,8 +219,6 @@
       "Action": [
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
-        "logs:DescribeLogStreams",
-        "logs:GetLogEvents",
         "logs:PutLogEvents"
       ],
       "Resource": "arn:aws:logs:*:*:log-group:/aws/sagemaker/*"
@@ -336,6 +325,7 @@
         "sagemaker:SendPipelineExecutionStepFailure",
         "sagemaker:DescribeHyperParameterTuningJob",
         "sagemaker:DescribeAutoMLJob",
+        "sagemaker:DescribeAutoMLJobV2",
         "sagemaker:DescribeProcessingJob",
         "sagemaker:DescribeTrainingJob"
       ],
@@ -390,9 +380,7 @@
         "sagemaker:ListTransformJobs",
         "sagemaker:ListProcessingJobs",
         "sagemaker:ListAutoMLJobs",
-        "sagemaker:ListCandidatesForAutoMLJob",
         "sagemaker:ListHyperParameterTuningJobs",
-        "sagemaker:ListTrainingJobsForHyperParameterTuningJob",
         "sagemaker:ListInferenceComponents",
         "sagemaker:ListEndpoints",
         "sagemaker:ListEndpointConfigs",
@@ -402,18 +390,33 @@
         "sagemaker:ListModelMetadata",
         "sagemaker:ListMlflowTrackingServers",
         "sagemaker:ListArtifacts",
-        "sagemaker:ListAssociations",
-        "sagemaker:ListHubContents",
         "sagemaker:ListHubs",
-        "sagemaker:ListPipelineExecutionSteps",
-        "sagemaker:ListPipelineExecutions",
-        "sagemaker:ListPipelineParametersForExecution",
         "sagemaker:ListPipelines",
         "sagemaker:ListContexts"
       ],
       "Resource": "*",
       "Condition": {
         "StringEquals": {
+          "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerListPermissionsTagRestricted",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListCandidatesForAutoMLJob",
+        "sagemaker:ListTrainingJobsForHyperParameterTuningJob",
+        "sagemaker:ListAssociations",
+        "sagemaker:ListHubContents",
+        "sagemaker:ListPipelineExecutionSteps",
+        "sagemaker:ListPipelineExecutions",
+        "sagemaker:ListPipelineParametersForExecution"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
           "aws:PrincipalTag/EnableSageMakerMLWorkloadsPermissions": "true"
         }
       }
@@ -739,12 +742,14 @@
       }
     },
     {
-      "Sid": "SageMakerCrossAccountReadPermissions",
+      "Sid": "SageMakerCrossAccountPermissions",
       "Effect": "Allow",
       "Action": [
         "sagemaker:DescribeModelPackage",
         "sagemaker:DescribeModelPackageGroup",
-        "sagemaker:BatchDescribeModelPackage"
+        "sagemaker:BatchDescribeModelPackage",
+        "sagemaker:ListModelPackages",
+        "sagemaker:CreateModel"
       ],
       "Resource": "*",
       "Condition": {
@@ -763,7 +768,7 @@
         "*"
       ],
       "Condition": {
-        "StringEqualsIfExists": {
+        "StringEquals": {
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
         }
       }
@@ -809,6 +814,24 @@
       "Condition": {
         "StringLike": {
           "iam:AWSServiceName": "sagemaker.application-autoscaling.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SageMakerKmsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "sagemaker.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     }
