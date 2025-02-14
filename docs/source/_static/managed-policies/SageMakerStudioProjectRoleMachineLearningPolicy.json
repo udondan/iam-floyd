@@ -120,6 +120,15 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowSageMakerLogAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/sagemaker/*"
+    },
+    {
       "Sid": "SageMakerMlflowPermission",
       "Effect": "Allow",
       "Action": [

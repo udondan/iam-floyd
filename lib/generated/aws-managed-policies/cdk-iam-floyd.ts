@@ -6424,6 +6424,31 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.S3UnlockBucketPolicy);
     }
 
+    /** Allows Amazon Bedrock Agents to access Amazon Bedrock models and other resources attached to an agent in SageMaker Studio. */
+    public SageMakerStudioBedrockAgentServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockAgentServiceRolePolicy);
+    }
+
+    /** Provides access to an Amazon Bedrock chat agent app's configuration and Amazon Bedrock agent in SageMaker Studio. */
+    public SageMakerStudioBedrockChatAgentUserRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockChatAgentUserRolePolicy);
+    }
+
+    /** Allows Amazon Bedrock to access Amazon Bedrock models and datasets for evaluation jobs in SageMaker Studio. */
+    public SageMakerStudioBedrockEvaluationJobServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockEvaluationJobServiceRolePolicy);
+    }
+
+    /** Allows Amazon Bedrock Flows to access Amazon Bedrock models and other resources attached to a flow in SageMaker Studio. */
+    public SageMakerStudioBedrockFlowServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockFlowServiceRolePolicy);
+    }
+
+    /** Provides access to an Amazon Bedrock prompt and its configuration in SageMaker Studio. */
+    public SageMakerStudioBedrockPromptUserRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockPromptUserRolePolicy);
+    }
+
     /** This policy is used by Amazon SageMaker Studio to catalog, discover, govern, share, and analyze data in the Amazon SageMaker Studio domain. */
     public SageMakerStudioDomainExecutionRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioDomainExecutionRolePolicy);

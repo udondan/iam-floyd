@@ -2566,6 +2566,16 @@ export class AwsManagedPolicy {
     public static S3StorageLensServiceRolePolicy = 'aws-service-role/S3StorageLensServiceRolePolicy';
     /** Provides access required to unlock a S3 bucket policy using the Security Token Service (STS) AssumeRoot API. Use this managed policy only with the STS AssumeRoot action. */
     public static S3UnlockBucketPolicy = 'root-task/S3UnlockBucketPolicy';
+    /** Allows Amazon Bedrock Agents to access Amazon Bedrock models and other resources attached to an agent in SageMaker Studio. */
+    public static SageMakerStudioBedrockAgentServiceRolePolicy = 'service-role/SageMakerStudioBedrockAgentServiceRolePolicy';
+    /** Provides access to an Amazon Bedrock chat agent app's configuration and Amazon Bedrock agent in SageMaker Studio. */
+    public static SageMakerStudioBedrockChatAgentUserRolePolicy = 'service-role/SageMakerStudioBedrockChatAgentUserRolePolicy';
+    /** Allows Amazon Bedrock to access Amazon Bedrock models and datasets for evaluation jobs in SageMaker Studio. */
+    public static SageMakerStudioBedrockEvaluationJobServiceRolePolicy = 'service-role/SageMakerStudioBedrockEvaluationJobServiceRolePolicy';
+    /** Allows Amazon Bedrock Flows to access Amazon Bedrock models and other resources attached to a flow in SageMaker Studio. */
+    public static SageMakerStudioBedrockFlowServiceRolePolicy = 'service-role/SageMakerStudioBedrockFlowServiceRolePolicy';
+    /** Provides access to an Amazon Bedrock prompt and its configuration in SageMaker Studio. */
+    public static SageMakerStudioBedrockPromptUserRolePolicy = 'service-role/SageMakerStudioBedrockPromptUserRolePolicy';
     /** This policy is used by Amazon SageMaker Studio to catalog, discover, govern, share, and analyze data in the Amazon SageMaker Studio domain. */
     public static SageMakerStudioDomainExecutionRolePolicy = 'service-role/SageMakerStudioDomainExecutionRolePolicy';
     /** Service role for domain level actions in the portal that are performed by Amazon SageMaker Studio. */
