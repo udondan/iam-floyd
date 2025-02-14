@@ -68,6 +68,6 @@
   },
   "dependencies": {
     "@udondan/common-substrings": "3.0.2",
-    "regex-parser": "2.3.0"
+    "regex-parser": "2.3.1"
   }
 }
