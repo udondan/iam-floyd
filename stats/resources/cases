@@ -1,4 +1,5 @@
 cases:Case
+cases:CaseRule
 cases:Domain
 cases:Field
 cases:Layout

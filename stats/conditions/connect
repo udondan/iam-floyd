@@ -1,5 +1,6 @@
 connect:AssignmentType
 connect:AttributeType
+connect:ContactInitiationMethod
 connect:FlowType
 connect:InstanceId
 connect:MonitorCapabilities

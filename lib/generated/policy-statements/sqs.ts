@@ -241,7 +241,6 @@ export class Sqs extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html
@@ -306,7 +305,6 @@ export class Sqs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateQueue()
    * - .toTagQueue()
-   * - .toUntagQueue()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

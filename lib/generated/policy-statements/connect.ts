@@ -430,6 +430,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new contact using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifContactInitiationMethod()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContact.html
+   */
+  public toCreateContact() {
+    return this.to('CreateContact');
+  }
+
+  /**
    * Grants permission to create a contact flow in an Amazon Connect instance
    *
    * Access Level: Write
@@ -4431,6 +4447,7 @@ export class Connect extends PolicyStatement {
       'CompleteAttachedFileUpload',
       'CreateAgentStatus',
       'CreateAuthenticationProfile',
+      'CreateContact',
       'CreateContactFlow',
       'CreateContactFlowModule',
       'CreateContactFlowVersion',
@@ -5390,6 +5407,7 @@ export class Connect extends PolicyStatement {
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateTrafficDistributionGroupUser()
    * - .toBatchGetFlowAssociation()
+   * - .toCreateContact()
    * - .toCreateContactFlowVersion()
    * - .toCreateViewVersion()
    * - .toDeleteContactEvaluation()
@@ -5608,6 +5626,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Filters access by restricting access to create contacts based on the initiation method of the contact
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateContact()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifContactInitiationMethod(value: string | string[], operator?: Operator | string) {
+    return this.if(`ContactInitiationMethod`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by Flow type
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -5661,6 +5694,7 @@ export class Connect extends PolicyStatement {
    * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
    * - .toCreateAuthenticationProfile()
+   * - .toCreateContact()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
    * - .toCreateContactFlowVersion()

@@ -24,6 +24,7 @@ connect:ClaimPhoneNumber;Write
 connect:CompleteAttachedFileUpload;Write
 connect:CreateAgentStatus;Write
 connect:CreateAuthenticationProfile;Write
+connect:CreateContact;Write
 connect:CreateContactFlow;Write
 connect:CreateContactFlowModule;Write
 connect:CreateContactFlowVersion;Write

@@ -821,6 +821,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AutomationExecution.html
    */
   public toGetAutomationExecution() {
@@ -1570,6 +1573,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendAutomationSignal.html
    */
   public toSendAutomationSignal() {
@@ -1666,6 +1672,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to stop a specified Automation execution that is already in progress
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StopAutomationExecution.html
    */
@@ -2460,6 +2469,7 @@ export class Ssm extends PolicyStatement {
    * - .toDescribeInstanceAssociationsStatus()
    * - .toDescribeInstancePatchStates()
    * - .toDescribeInstancePatches()
+   * - .toGetAutomationExecution()
    * - .toGetConnectionStatus()
    * - .toGetParameter()
    * - .toGetParameterHistory()
@@ -2469,9 +2479,11 @@ export class Ssm extends PolicyStatement {
    * - .toListInstanceAssociations()
    * - .toListTagsForResource()
    * - .toRemoveTagsFromResource()
+   * - .toSendAutomationSignal()
    * - .toSendCommand()
    * - .toStartAssociationsOnce()
    * - .toStartSession()
+   * - .toStopAutomationExecution()
    * - .toUnlabelParameterVersion()
    * - .toUpdateAssociation()
    * - .toUpdateAssociationStatus()
