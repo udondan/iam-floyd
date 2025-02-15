@@ -19,6 +19,17 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about the case rules in the case domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_BatchGetCaseRule.html
+   */
+  public toBatchGetCaseRule() {
+    return this.to('BatchGetCaseRule');
+  }
+
+  /**
    * Grants permission to retrieve information about the fields in the case domain
    *
    * Access Level: Read
@@ -52,6 +63,17 @@ export class Cases extends PolicyStatement {
    */
   public toCreateCase() {
     return this.to('CreateCase');
+  }
+
+  /**
+   * Grants permission to create a case rule in the case domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateCaseRule.html
+   */
+  public toCreateCaseRule() {
+    return this.to('CreateCaseRule');
   }
 
   /**
@@ -110,6 +132,17 @@ export class Cases extends PolicyStatement {
    */
   public toCreateTemplate() {
     return this.to('CreateTemplate');
+  }
+
+  /**
+   * Grants permission to delete the case rule in the case domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_DeleteCaseRule.html
+   */
+  public toDeleteCaseRule() {
+    return this.to('DeleteCaseRule');
   }
 
   /**
@@ -231,6 +264,17 @@ export class Cases extends PolicyStatement {
    */
   public toGetTemplate() {
     return this.to('GetTemplate');
+  }
+
+  /**
+   * Grants permission to list case rules in the case domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_ListCaseRules.html
+   */
+  public toListCaseRules() {
+    return this.to('ListCaseRules');
   }
 
   /**
@@ -387,6 +431,17 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the case rule in the case domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateCaseRule.html
+   */
+  public toUpdateCaseRule() {
+    return this.to('UpdateCaseRule');
+  }
+
+  /**
    * Grants permission to update the field in the case domain
    *
    * Access Level: Write
@@ -421,6 +476,7 @@ export class Cases extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Read: [
+      'BatchGetCaseRule',
       'BatchGetField',
       'GetCase',
       'GetCaseAuditEvents',
@@ -435,11 +491,13 @@ export class Cases extends PolicyStatement {
     Write: [
       'BatchPutFieldOptions',
       'CreateCase',
+      'CreateCaseRule',
       'CreateDomain',
       'CreateField',
       'CreateLayout',
       'CreateRelatedItem',
       'CreateTemplate',
+      'DeleteCaseRule',
       'DeleteDomain',
       'DeleteField',
       'DeleteLayout',
@@ -447,11 +505,13 @@ export class Cases extends PolicyStatement {
       'DeleteTemplate',
       'PutCaseEventConfiguration',
       'UpdateCase',
+      'UpdateCaseRule',
       'UpdateField',
       'UpdateLayout',
       'UpdateTemplate'
     ],
     List: [
+      'ListCaseRules',
       'ListCasesForContact',
       'ListDomains',
       'ListFieldOptions',
@@ -574,6 +634,24 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type CaseRule to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/case-rules.html
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param caseRuleId - Identifier for the caseRuleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCaseRule(domainId: string, caseRuleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cases:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/case-rule/${ caseRuleId }`);
+  }
+
+  /**
    * Filters access by tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -601,6 +679,7 @@ export class Cases extends PolicyStatement {
    * - Layout
    * - RelatedItem
    * - Template
+   * - CaseRule
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

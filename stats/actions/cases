@@ -1,11 +1,14 @@
+cases:BatchGetCaseRule;Read
 cases:BatchGetField;Read
 cases:BatchPutFieldOptions;Write
 cases:CreateCase;Write
+cases:CreateCaseRule;Write
 cases:CreateDomain;Write
 cases:CreateField;Write
 cases:CreateLayout;Write
 cases:CreateRelatedItem;Write
 cases:CreateTemplate;Write
+cases:DeleteCaseRule;Write
 cases:DeleteDomain;Write
 cases:DeleteField;Write
 cases:DeleteLayout;Write
@@ -17,6 +20,7 @@ cases:GetCaseEventConfiguration;Read
 cases:GetDomain;Read
 cases:GetLayout;Read
 cases:GetTemplate;Read
+cases:ListCaseRules;List
 cases:ListCasesForContact;List
 cases:ListDomains;List
 cases:ListFieldOptions;List
@@ -30,6 +34,7 @@ cases:SearchRelatedItems;Read
 cases:TagResource;Tagging
 cases:UntagResource;Tagging
 cases:UpdateCase;Write
+cases:UpdateCaseRule;Write
 cases:UpdateField;Write
 cases:UpdateLayout;Write
 cases:UpdateTemplate;Write

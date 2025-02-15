@@ -9,6 +9,7 @@ healthlake:DescribeFHIRExportJobWithGet;Read
 healthlake:DescribeFHIRImportJob;Read
 healthlake:GetCapabilities;Read
 healthlake:GetExportedFile;Read
+healthlake:GetHistoryByResourceId;Read
 healthlake:ListFHIRDatastores;List
 healthlake:ListFHIRExportJobs;List
 healthlake:ListFHIRImportJobs;List
@@ -24,3 +25,4 @@ healthlake:StartFHIRImportJob;Write
 healthlake:TagResource;Tagging
 healthlake:UntagResource;Tagging
 healthlake:UpdateResource;Write
+healthlake:VersionReadResource;Read

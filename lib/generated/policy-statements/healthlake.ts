@@ -144,6 +144,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read resource history
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html
+   */
+  public toGetHistoryByResourceId() {
+    return this.to('GetHistoryByResourceId');
+  }
+
+  /**
    * Grants permission to list all FHIR datastores that are in the user's account, regardless of datastore status
    *
    * Access Level: List
@@ -316,6 +327,17 @@ export class Healthlake extends PolicyStatement {
     return this.to('UpdateResource');
   }
 
+  /**
+   * Grants permission to read version of a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html
+   */
+  public toVersionReadResource() {
+    return this.to('VersionReadResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelFHIRExportJobWithDelete',
@@ -336,10 +358,12 @@ export class Healthlake extends PolicyStatement {
       'DescribeFHIRImportJob',
       'GetCapabilities',
       'GetExportedFile',
+      'GetHistoryByResourceId',
       'ReadResource',
       'SearchEverything',
       'SearchWithGet',
-      'SearchWithPost'
+      'SearchWithPost',
+      'VersionReadResource'
     ],
     List: [
       'ListFHIRDatastores',

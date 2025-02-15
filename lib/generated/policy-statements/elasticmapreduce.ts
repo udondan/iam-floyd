@@ -429,6 +429,9 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifExecutionRoleArn()
+   *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html
    */
   public toGetPersistentAppUIPresignedURL() {
@@ -1191,6 +1194,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * Applies to actions:
    * - .toAddJobFlowSteps()
    * - .toGetClusterSessionCredentials()
+   * - .toGetPersistentAppUIPresignedURL()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

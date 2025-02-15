@@ -477,7 +477,6 @@ export class Sns extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_UntagResource.html
@@ -576,7 +575,6 @@ export class Sns extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTopic()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
