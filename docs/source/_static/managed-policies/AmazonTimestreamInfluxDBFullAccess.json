@@ -15,7 +15,13 @@
         "timestream-influxdb:TagResource",
         "timestream-influxdb:UntagResource",
         "timestream-influxdb:ListTagsForResource",
-        "timestream-influxdb:UpdateDbInstance"
+        "timestream-influxdb:UpdateDbInstance",
+        "timestream-influxdb:CreateDbCluster",
+        "timestream-influxdb:GetDbCluster",
+        "timestream-influxdb:UpdateDbCluster",
+        "timestream-influxdb:DeleteDbCluster",
+        "timestream-influxdb:ListDbClusters",
+        "timestream-influxdb:ListDbInstancesForCluster"
       ],
       "Resource": [
         "arn:aws:timestream-influxdb:*:*:*"

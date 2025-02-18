@@ -32,6 +32,7 @@
         "ec2:ReleaseAddress",
         "ec2:UnassignIpv6Addresses",
         "ec2:DescribeVpcPeeringConnections",
+        "ec2:AllocateIpamPoolCidr",
         "logs:CreateLogDelivery",
         "logs:GetLogDelivery",
         "logs:UpdateLogDelivery",
