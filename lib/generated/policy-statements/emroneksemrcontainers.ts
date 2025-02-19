@@ -30,6 +30,17 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_CreateCertificate.html
+   */
+  public toCreateCertificate() {
+    return this.to('CreateCertificate');
+  }
+
+  /**
    * Grants permission to create a job template
    *
    * Access Level: Write
@@ -304,6 +315,7 @@ export class EmrContainers extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJobRun',
+      'CreateCertificate',
       'CreateJobTemplate',
       'CreateManagedEndpoint',
       'CreateSecurityConfiguration',
@@ -420,6 +432,20 @@ export class EmrContainers extends PolicyStatement {
    */
   public onSecurityConfiguration(securityConfigurationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/securityconfigurations/${ securityConfigurationId }`);
+  }
+
+  /**
+   * Adds a resource of type certificate to the statement
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/certificate.html
+   *
+   * @param certificateId - Identifier for the certificateId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/certificates/${ certificateId }`);
   }
 
   /**

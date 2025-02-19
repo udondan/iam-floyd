@@ -1,4 +1,5 @@
 emr-containers:CancelJobRun;Write
+emr-containers:CreateCertificate;Write
 emr-containers:CreateJobTemplate;Write
 emr-containers:CreateManagedEndpoint;Write
 emr-containers:CreateSecurityConfiguration;Write

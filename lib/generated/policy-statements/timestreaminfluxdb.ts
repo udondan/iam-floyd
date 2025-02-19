@@ -19,6 +19,24 @@ export class TimestreamInfluxdb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new Timestream InfluxDB Cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - timestream-influxdb:CreateDbInstance
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_CreateDbCluster.html
+   */
+  public toCreateDbCluster() {
+    return this.to('CreateDbCluster');
+  }
+
+  /**
    * Grants permission to create a new Timestream InfluxDB instance
    *
    * Access Level: Write
@@ -49,6 +67,20 @@ export class TimestreamInfluxdb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Timestream InfluxDB Cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream-influxdb:DeleteDbInstance
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DeleteDbCluster.html
+   */
+  public toDeleteDbCluster() {
+    return this.to('DeleteDbCluster');
+  }
+
+  /**
    * Grants permission to delete a Timestream InfluxDB instance
    *
    * Access Level: Write
@@ -57,6 +89,17 @@ export class TimestreamInfluxdb extends PolicyStatement {
    */
   public toDeleteDbInstance() {
     return this.to('DeleteDbInstance');
+  }
+
+  /**
+   * Grants permission to get information about a Timestream InfluxDB Cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_GetDbCluster.html
+   */
+  public toGetDbCluster() {
+    return this.to('GetDbCluster');
   }
 
   /**
@@ -82,6 +125,17 @@ export class TimestreamInfluxdb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list information about all Timestream InfluxDB clusters in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbClusters.html
+   */
+  public toListDbClusters() {
+    return this.to('ListDbClusters');
+  }
+
+  /**
    * Grants permission to list information about all Timestream InfluxDB instances in the account
    *
    * Access Level: List
@@ -90,6 +144,17 @@ export class TimestreamInfluxdb extends PolicyStatement {
    */
   public toListDbInstances() {
     return this.to('ListDbInstances');
+  }
+
+  /**
+   * Grants permission to list information about all Timestream InfluxDB Instances belonging to a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_ListDbInstancesForCluster.html
+   */
+  public toListDbInstancesForCluster() {
+    return this.to('ListDbInstancesForCluster');
   }
 
   /**
@@ -149,6 +214,20 @@ export class TimestreamInfluxdb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a Timestream InfluxDB Cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream-influxdb:UpdateDbInstance
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_UpdateDbCluster.html
+   */
+  public toUpdateDbCluster() {
+    return this.to('UpdateDbCluster');
+  }
+
+  /**
    * Grants permission to update a Timestream InfluxDB instance
    *
    * Access Level: Write
@@ -161,17 +240,23 @@ export class TimestreamInfluxdb extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateDbCluster',
       'CreateDbInstance',
       'CreateDbParameterGroup',
+      'DeleteDbCluster',
       'DeleteDbInstance',
+      'UpdateDbCluster',
       'UpdateDbInstance'
     ],
     Read: [
+      'GetDbCluster',
       'GetDbInstance',
       'GetDbParameterGroup',
+      'ListDbInstancesForCluster',
       'ListTagsForResource'
     ],
     List: [
+      'ListDbClusters',
       'ListDbInstances',
       'ListDbParameterGroups'
     ],
@@ -180,6 +265,23 @@ export class TimestreamInfluxdb extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type db-cluster to the statement
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_DbClusterSummary.html
+   *
+   * @param dbClusterId - Identifier for the dbClusterId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDbCluster(dbClusterId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:timestream-influxdb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:db-cluster/${ dbClusterId }`);
+  }
 
   /**
    * Adds a resource of type db-instance to the statement
@@ -221,6 +323,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateDbCluster()
    * - .toCreateDbInstance()
    * - .toCreateDbParameterGroup()
    * - .toTagResource()
@@ -244,6 +347,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    * - .toUntagResource()
    *
    * Applies to resource types:
+   * - db-cluster
    * - db-instance
    * - db-parameter-group
    *
@@ -261,6 +365,7 @@ export class TimestreamInfluxdb extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateDbCluster()
    * - .toCreateDbInstance()
    * - .toCreateDbParameterGroup()
    * - .toTagResource()
