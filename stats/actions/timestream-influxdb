@@ -1,11 +1,17 @@
+timestream-influxdb:CreateDbCluster;Write
 timestream-influxdb:CreateDbInstance;Write
 timestream-influxdb:CreateDbParameterGroup;Write
+timestream-influxdb:DeleteDbCluster;Write
 timestream-influxdb:DeleteDbInstance;Write
+timestream-influxdb:GetDbCluster;Read
 timestream-influxdb:GetDbInstance;Read
 timestream-influxdb:GetDbParameterGroup;Read
+timestream-influxdb:ListDbClusters;List
 timestream-influxdb:ListDbInstances;List
+timestream-influxdb:ListDbInstancesForCluster;Read
 timestream-influxdb:ListDbParameterGroups;List
 timestream-influxdb:ListTagsForResource;Read
 timestream-influxdb:TagResource;Tagging
 timestream-influxdb:UntagResource;Tagging
+timestream-influxdb:UpdateDbCluster;Write
 timestream-influxdb:UpdateDbInstance;Write
