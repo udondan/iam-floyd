@@ -240,6 +240,30 @@
       "Condition": {
         "Bool": {
           "glue:EnabledForRedshiftAutoDiscovery": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "LakeFormationGetMetadataAccessForFederatedCatalogs",
+      "Effect": "Allow",
+      "Action": [
+        "lakeformation:GetDataAccess"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "Bool": {
+          "lakeformation:EnabledOnlyForMetaDataAccess": "true"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "glue.amazonaws.com"
         }
       }
     }
