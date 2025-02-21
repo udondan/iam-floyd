@@ -151,6 +151,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a cache report
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CancelCacheReport.html
+   */
+  public toCancelCacheReport() {
+    return this.to('CancelCacheReport');
+  }
+
+  /**
    * Grants permission to cancel retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated
    *
    * Access Level: Write
@@ -319,6 +330,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the metadata associated with a cache report
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteCacheReport.html
+   */
+  public toDeleteCacheReport() {
+    return this.to('DeleteCacheReport');
+  }
+
+  /**
    * Grants permission to delete Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair
    *
    * Access Level: Write
@@ -448,6 +470,17 @@ export class Storagegateway extends PolicyStatement {
    */
   public toDescribeCache() {
     return this.to('DescribeCache');
+  }
+
+  /**
+   * Grants permission to get a description of a cache report
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeCacheReport.html
+   */
+  public toDescribeCacheReport() {
+    return this.to('DescribeCacheReport');
   }
 
   /**
@@ -682,6 +715,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of the cache reports owned by your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListCacheReports.html
+   */
+  public toListCacheReports() {
+    return this.to('ListCacheReports');
+  }
+
+  /**
    * Grants permission to get a list of the file shares for a specific file gateway, or the list of file shares owned by your AWS account
    *
    * Access Level: List
@@ -905,6 +949,21 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a cache report for an existing file share
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartCacheReport.html
+   */
+  public toStartCacheReport() {
+    return this.to('StartCacheReport');
+  }
+
+  /**
    * Grants permission to start a gateway that you previously shut down
    *
    * Access Level: Write
@@ -1102,6 +1161,7 @@ export class Storagegateway extends PolicyStatement {
       'AttachVolume',
       'BypassGovernanceRetention',
       'CancelArchival',
+      'CancelCacheReport',
       'CancelRetrieval',
       'CreateCachediSCSIVolume',
       'CreateNFSFileShare',
@@ -1114,6 +1174,7 @@ export class Storagegateway extends PolicyStatement {
       'CreateTapes',
       'DeleteAutomaticTapeCreationPolicy',
       'DeleteBandwidthRateLimit',
+      'DeleteCacheReport',
       'DeleteChapCredentials',
       'DeleteFileShare',
       'DeleteGateway',
@@ -1135,6 +1196,7 @@ export class Storagegateway extends PolicyStatement {
       'SetSMBGuestPassword',
       'ShutdownGateway',
       'StartAvailabilityMonitorTest',
+      'StartCacheReport',
       'StartGateway',
       'UpdateAutomaticTapeCreationPolicy',
       'UpdateBandwidthRateLimit',
@@ -1161,6 +1223,7 @@ export class Storagegateway extends PolicyStatement {
       'DescribeBandwidthRateLimit',
       'DescribeBandwidthRateLimitSchedule',
       'DescribeCache',
+      'DescribeCacheReport',
       'DescribeCachediSCSIVolumes',
       'DescribeChapCredentials',
       'DescribeFileSystemAssociations',
@@ -1180,6 +1243,7 @@ export class Storagegateway extends PolicyStatement {
     ],
     List: [
       'ListAutomaticTapeCreationPolicies',
+      'ListCacheReports',
       'ListFileShares',
       'ListFileSystemAssociations',
       'ListGateways',
@@ -1192,6 +1256,24 @@ export class Storagegateway extends PolicyStatement {
       'ListVolumes'
     ]
   };
+
+  /**
+   * Adds a resource of type cache-report to the statement
+   *
+   * https://docs.aws.amazon.com/filegateway/latest/files3/cache-report.html
+   *
+   * @param shareId - Identifier for the shareId.
+   * @param cacheReportId - Identifier for the cacheReportId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCacheReport(shareId: string, cacheReportId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:storagegateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:share/${ shareId }/cache-report/${ cacheReportId }`);
+  }
 
   /**
    * Adds a resource of type device to the statement
@@ -1344,6 +1426,7 @@ export class Storagegateway extends PolicyStatement {
    * - .toCreateTapePool()
    * - .toCreateTapeWithBarcode()
    * - .toCreateTapes()
+   * - .toStartCacheReport()
    * - .toUpdateSnapshotSchedule()
    *
    * @param tagKey The tag key to check
@@ -1360,6 +1443,7 @@ export class Storagegateway extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
+   * - cache-report
    * - fs-association
    * - gateway
    * - share
@@ -1394,6 +1478,7 @@ export class Storagegateway extends PolicyStatement {
    * - .toCreateTapeWithBarcode()
    * - .toCreateTapes()
    * - .toRemoveTagsFromResource()
+   * - .toStartCacheReport()
    * - .toUpdateSnapshotSchedule()
    *
    * @param value The value(s) to check

@@ -442,7 +442,7 @@ export class Athena extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
+   * https://docs.aws.amazon.com/athena/latest/ug/jdbc-v3-driver.html#jdbc-v3-driver-download
    */
   public toGetQueryResultsStream() {
     return this.to('GetQueryResultsStream');

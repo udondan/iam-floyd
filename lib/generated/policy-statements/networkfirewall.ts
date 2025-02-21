@@ -254,6 +254,28 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve analysis report results of a firewall
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_GetAnalysisReportResults.html
+   */
+  public toGetAnalysisReportResults() {
+    return this.to('GetAnalysisReportResults');
+  }
+
+  /**
+   * Grants permission to list firewall analysis reports
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListAnalysisReports.html
+   */
+  public toListAnalysisReports() {
+    return this.to('ListAnalysisReports');
+  }
+
+  /**
    * Grants permission to retrieve the metadata for firewall policies
    *
    * Access Level: List
@@ -320,6 +342,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an analysis report on a firewall
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_GetAnalysisReportResults.html
+   */
+  public toStartAnalysisReport() {
+    return this.to('StartAnalysisReport');
+  }
+
+  /**
    * Grants permission to attach tags to a resource
    *
    * Access Level: Tagging
@@ -346,6 +379,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to modify firewall analysis settings of a firewall
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateFirewallAnalysisSettings.html
+   */
+  public toUpdateFirewallAnalysisSettings() {
+    return this.to('UpdateFirewallAnalysisSettings');
   }
 
   /**
@@ -462,6 +506,8 @@ export class NetworkFirewall extends PolicyStatement {
       'DeleteTLSInspectionConfiguration',
       'DisassociateSubnets',
       'PutResourcePolicy',
+      'StartAnalysisReport',
+      'UpdateFirewallAnalysisSettings',
       'UpdateFirewallDeleteProtection',
       'UpdateFirewallDescription',
       'UpdateFirewallEncryptionConfiguration',
@@ -479,9 +525,11 @@ export class NetworkFirewall extends PolicyStatement {
       'DescribeResourcePolicy',
       'DescribeRuleGroup',
       'DescribeRuleGroupMetadata',
-      'DescribeTLSInspectionConfiguration'
+      'DescribeTLSInspectionConfiguration',
+      'GetAnalysisReportResults'
     ],
     List: [
+      'ListAnalysisReports',
       'ListFirewallPolicies',
       'ListFirewalls',
       'ListRuleGroups',
