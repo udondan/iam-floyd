@@ -741,20 +741,6 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type selling-system-settings to the statement
-   *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutSellingSystemSettings.html
-   *
-   * @param catalog - Identifier for the catalog.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onSellingSystemSettings(catalog: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/selling-system-settings`);
-  }
-
-  /**
    * Adds a resource of type Solution to the statement
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListSolutions.html
