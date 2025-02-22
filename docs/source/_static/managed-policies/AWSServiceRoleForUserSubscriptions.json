@@ -12,7 +12,8 @@
         "organizations:DescribeOrganization",
         "sso:DescribeApplication",
         "sso:DescribeInstance",
-        "sso:ListInstances"
+        "sso:ListInstances",
+        "sso-directory:DescribeUser"
       ],
       "Resource": [
         "*"
