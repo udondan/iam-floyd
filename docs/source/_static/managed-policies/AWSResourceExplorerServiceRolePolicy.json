@@ -64,6 +64,7 @@
         "batch:ListSchedulingPolicies",
         "ce:GetAnomalyMonitors",
         "ce:GetAnomalySubscriptions",
+        "cloudformation:ListResources",
         "cloudformation:ListStackSets",
         "cloudformation:ListStacks",
         "cloudfront:ListCachePolicies",
