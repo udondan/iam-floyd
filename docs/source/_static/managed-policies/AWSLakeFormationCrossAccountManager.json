@@ -45,7 +45,7 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringLike": {
+        "ArnLike": {
           "ram:PermissionArn": [
             "arn:aws:ram::aws:permission/AWSRAMLFEnabled*"
           ]
