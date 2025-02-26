@@ -2574,6 +2574,12 @@ export class AwsManagedPolicy {
     public static SageMakerStudioBedrockEvaluationJobServiceRolePolicy = 'service-role/SageMakerStudioBedrockEvaluationJobServiceRolePolicy';
     /** Allows Amazon Bedrock Flows to access Amazon Bedrock models and other resources attached to a flow in SageMaker Studio. */
     public static SageMakerStudioBedrockFlowServiceRolePolicy = 'service-role/SageMakerStudioBedrockFlowServiceRolePolicy';
+    /** Allows AWS Lambda to access an Amazon Bedrock function component's configuration in SageMaker Studio. */
+    public static SageMakerStudioBedrockFunctionExecutionRolePolicy = 'service-role/SageMakerStudioBedrockFunctionExecutionRolePolicy';
+    /** Provides access to configure vector stores and Amazon Bedrock knowledge bases in SageMaker Studio. */
+    public static SageMakerStudioBedrockKnowledgeBaseCustomResourcePolicy = 'service-role/SageMakerStudioBedrockKnowledgeBaseCustomResourcePolicy';
+    /** Allows Amazon Bedrock Knowledge Bases to access Amazon Bedrock models and data sources in SageMaker Studio. */
+    public static SageMakerStudioBedrockKnowledgeBaseServiceRolePolicy = 'service-role/SageMakerStudioBedrockKnowledgeBaseServiceRolePolicy';
     /** Provides access to an Amazon Bedrock prompt and its configuration in SageMaker Studio. */
     public static SageMakerStudioBedrockPromptUserRolePolicy = 'service-role/SageMakerStudioBedrockPromptUserRolePolicy';
     /** This policy is used by Amazon SageMaker Studio to catalog, discover, govern, share, and analyze data in the Amazon SageMaker Studio domain. */

@@ -6444,6 +6444,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockFlowServiceRolePolicy);
     }
 
+    /** Allows AWS Lambda to access an Amazon Bedrock function component's configuration in SageMaker Studio. */
+    public SageMakerStudioBedrockFunctionExecutionRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockFunctionExecutionRolePolicy);
+    }
+
+    /** Provides access to configure vector stores and Amazon Bedrock knowledge bases in SageMaker Studio. */
+    public SageMakerStudioBedrockKnowledgeBaseCustomResourcePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockKnowledgeBaseCustomResourcePolicy);
+    }
+
+    /** Allows Amazon Bedrock Knowledge Bases to access Amazon Bedrock models and data sources in SageMaker Studio. */
+    public SageMakerStudioBedrockKnowledgeBaseServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockKnowledgeBaseServiceRolePolicy);
+    }
+
     /** Provides access to an Amazon Bedrock prompt and its configuration in SageMaker Studio. */
     public SageMakerStudioBedrockPromptUserRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioBedrockPromptUserRolePolicy);
