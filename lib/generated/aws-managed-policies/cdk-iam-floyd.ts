@@ -6475,6 +6475,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     }
 
     /** Amazon SageMaker Studio creates IAM roles for projects users to perform data analytics, artificial intelligence, and machine learning actions, and uses this policy when creating these roles to define the permissions related to EMR. */
+    public SageMakerStudioEMRInstanceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioEMRInstanceRolePolicy);
+    }
+
+    /** Amazon SageMaker Studio creates IAM roles for projects users to perform data analytics, artificial intelligence, and machine learning actions, and uses this policy when creating these roles to define the permissions related to EMR. */
     public SageMakerStudioEMRServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SageMakerStudioEMRServiceRolePolicy);
     }
