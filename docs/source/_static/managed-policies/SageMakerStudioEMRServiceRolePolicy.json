@@ -23,6 +23,23 @@
       }
     },
     {
+      "Sid": "CreateInNetworkForSharedSubnet",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:RunInstances",
+        "ec2:CreateFleet"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "ec2:Vpc": "arn:aws:ec2:*:*:vpc/${aws:PrincipalTag/VpcId}"
+        }
+      }
+    },
+    {
       "Sid": "EMRKMSPermissions",
       "Effect": "Allow",
       "Action": [

@@ -257,6 +257,21 @@
     {
       "Effect": "Allow",
       "Action": [
+        "ec2:DeleteLaunchTemplate",
+        "ec2:TerminateInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ManagedResourceOperator": [
+            "eks.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "ec2:DeleteVolume"
       ],
       "Resource": "*",

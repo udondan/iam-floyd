@@ -2587,6 +2587,8 @@ export class AwsManagedPolicy {
     /** Service role for domain level actions in the portal that are performed by Amazon SageMaker Studio. */
     public static SageMakerStudioDomainServiceRolePolicy = 'service-role/SageMakerStudioDomainServiceRolePolicy';
     /** Amazon SageMaker Studio creates IAM roles for projects users to perform data analytics, artificial intelligence, and machine learning actions, and uses this policy when creating these roles to define the permissions related to EMR. */
+    public static SageMakerStudioEMRInstanceRolePolicy = 'service-role/SageMakerStudioEMRInstanceRolePolicy';
+    /** Amazon SageMaker Studio creates IAM roles for projects users to perform data analytics, artificial intelligence, and machine learning actions, and uses this policy when creating these roles to define the permissions related to EMR. */
     public static SageMakerStudioEMRServiceRolePolicy = 'service-role/SageMakerStudioEMRServiceRolePolicy';
     /** This policy provides full access to Amazon SageMaker Unified Studio via the Amazon SageMaker management console. */
     public static SageMakerStudioFullAccess = 'SageMakerStudioFullAccess';
