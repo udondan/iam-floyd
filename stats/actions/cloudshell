@@ -1,3 +1,4 @@
+cloudshell:ApproveCommand;Read
 cloudshell:CreateEnvironment;Write
 cloudshell:CreateSession;Write
 cloudshell:DeleteEnvironment;Write

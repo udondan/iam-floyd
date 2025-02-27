@@ -57,9 +57,7 @@ export class Ecs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCluster()
    * - .ifCapacityProvider()
    * - .ifTaskDefinition()
    * - .ifEnableEbsVolumes()
@@ -67,6 +65,12 @@ export class Ecs extends PolicyStatement {
    * - .ifEnableServiceConnect()
    * - .ifNamespace()
    * - .ifEnableVpcLattice()
+   * - .ifEnableEcsManagedTags()
+   * - .ifPropagateTags()
+   * - .ifAutoAssignPublicIp()
+   * - .ifSubnet()
+   * - .ifTaskCpu()
+   * - .ifTaskMemory()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html
    */
@@ -621,6 +625,10 @@ export class Ecs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifComputeCompatibility()
+   * - .ifPrivileged()
+   * - .ifTaskCpu()
+   * - .ifTaskMemory()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterTaskDefinition.html
    */
@@ -856,8 +864,6 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifCluster()
    * - .ifCapacityProvider()
    * - .ifEnableEbsVolumes()
    * - .ifEnableExecuteCommand()
@@ -865,6 +871,12 @@ export class Ecs extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTaskDefinition()
    * - .ifEnableVpcLattice()
+   * - .ifEnableEcsManagedTags()
+   * - .ifPropagateTags()
+   * - .ifAutoAssignPublicIp()
+   * - .ifSubnet()
+   * - .ifTaskCpu()
+   * - .ifTaskMemory()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
    */
@@ -1220,6 +1232,7 @@ export class Ecs extends PolicyStatement {
    * - .toPutAttributes()
    * - .toPutClusterCapacityProviders()
    * - .toRegisterContainerInstance()
+   * - .toRegisterTaskDefinition()
    * - .toRunTask()
    * - .toStartTask()
    * - .toStopTask()
@@ -1336,6 +1349,21 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters access by the public IP assignment configuration of your Amazon ECS task or Amazon ECS service that uses awsvpc network mode
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toUpdateService()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAutoAssignPublicIp(value?: boolean) {
+    return this.if(`auto-assign-public-ip`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the ARN of an Amazon ECS capacity provider
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -1402,6 +1430,21 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters access by the required compatibilities field provided in the request
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toRegisterTaskDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifComputeCompatibility(value: string | string[], operator?: Operator | string) {
+    return this.if(`compute-compatibility`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of an Amazon ECS container instance
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -1447,6 +1490,21 @@ export class Ecs extends PolicyStatement {
    */
   public ifEnableEbsVolumes(value: string | string[], operator?: Operator | string) {
     return this.if(`enable-ebs-volumes`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the enableECSManagedTags configuration of your Amazon ECS task or Amazon ECS service
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toUpdateService()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnableEcsManagedTags(value?: boolean) {
+    return this.if(`enable-ecs-managed-tags`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1533,6 +1591,37 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters access by the privileged field provided in the request
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toRegisterTaskDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrivileged(value: string | string[], operator?: Operator | string) {
+    return this.if(`privileged`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag propagation configuration of your Amazon ECS task or Amazon ECS service
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPropagateTags(value: string | string[], operator?: Operator | string) {
+    return this.if(`propagate-tags`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of an Amazon ECS service
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -1557,6 +1646,22 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters access by the subnet configuration of your Amazon ECS task or Amazon ECS service that uses awsvpc network mode
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubnet(value: string | string[], operator?: Operator | string) {
+    return this.if(`subnet`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the ARN of an Amazon ECS task
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -1569,6 +1674,23 @@ export class Ecs extends PolicyStatement {
    */
   public ifTask(value: string | string[], operator?: Operator | string) {
     return this.if(`task`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the task cpu, as an integer with 1024 = 1 vCPU, provided in the request
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toRegisterTaskDefinition()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifTaskCpu(value: number | number[], operator?: Operator | string) {
+    return this.if(`task-cpu`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -1586,5 +1708,22 @@ export class Ecs extends PolicyStatement {
    */
   public ifTaskDefinition(value: string | string[], operator?: Operator | string) {
     return this.if(`task-definition`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the task memory, as an integer representing MiB, provided in the request
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateService()
+   * - .toRegisterTaskDefinition()
+   * - .toUpdateService()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifTaskMemory(value: number | number[], operator?: Operator | string) {
+    return this.if(`task-memory`, value, operator ?? 'NumericEquals');
   }
 }

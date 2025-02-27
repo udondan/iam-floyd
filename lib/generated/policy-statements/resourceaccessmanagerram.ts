@@ -112,6 +112,7 @@ export class Ram extends PolicyStatement {
    * - .ifResourceArn()
    * - .ifRequestedAllowsExternalPrincipals()
    * - .ifPrincipal()
+   * - .ifAllowsExternalPrincipals()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html
    */
@@ -695,6 +696,7 @@ export class Ram extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateResourceShare()
+   * - .toCreateResourceShare()
    * - .toDeleteResourceShare()
    * - .toDisassociateResourceShare()
    * - .toListResourceSharePermissions()

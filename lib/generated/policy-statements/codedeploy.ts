@@ -136,6 +136,8 @@ export class Codedeploy extends PolicyStatement {
    * Grants permission to create CloudFormation deployment to cooperate ochestration for a CloudFormation stack update
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codedeploy/latest/APIReference/codedeploy/latest/userguide/deployments-create-ecs-cfn.html
    */
   public toCreateCloudFormationDeployment() {
     return this.to('CreateCloudFormationDeployment');
@@ -627,6 +629,9 @@ export class Codedeploy extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:codedeploy:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application:${ applicationName }`);
@@ -656,6 +661,9 @@ export class Codedeploy extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDeploymentgroup(applicationName: string, deploymentGroupName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:codedeploy:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:deploymentgroup:${ applicationName }/${ deploymentGroupName }`);
@@ -697,6 +705,10 @@ export class Codedeploy extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - application
+   * - deploymentgroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

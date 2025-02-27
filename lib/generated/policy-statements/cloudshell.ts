@@ -19,6 +19,17 @@ export class Cloudshell extends PolicyStatement {
   }
 
   /**
+   * Grants permission to approve a command sent by another AWS service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudshell/latest/userguide/sec-auth-with-identities.html#ApproveCommand
+   */
+  public toApproveCommand() {
+    return this.to('ApproveCommand');
+  }
+
+  /**
    * Grants permissions to create a CloudShell environment
    *
    * Access Level: Write
@@ -134,6 +145,10 @@ export class Cloudshell extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Read: [
+      'ApproveCommand',
+      'GetEnvironmentStatus'
+    ],
     Write: [
       'CreateEnvironment',
       'CreateSession',
@@ -146,9 +161,6 @@ export class Cloudshell extends PolicyStatement {
     ],
     List: [
       'DescribeEnvironments'
-    ],
-    Read: [
-      'GetEnvironmentStatus'
     ]
   };
 
