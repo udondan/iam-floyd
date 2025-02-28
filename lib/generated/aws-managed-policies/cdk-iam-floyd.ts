@@ -2849,6 +2849,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupRestoreAccessForSAPHANA);
     }
 
+    /** The search operator role has access to create backup indexes, create searches of backup metadata that has been indexed. This policy contains the necessary permissions for these search operator functions. */
+    public AWSBackupSearchOperatorAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupSearchOperatorAccess);
+    }
+
     /** Provides AWS Backup permission to create backups on your behalf across AWS services */
     public AWSBackupServiceLinkedRolePolicyForBackup(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupServiceLinkedRolePolicyForBackup);

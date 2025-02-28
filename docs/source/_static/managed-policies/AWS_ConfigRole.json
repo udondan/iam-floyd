@@ -376,6 +376,7 @@
         "ec2:DescribeVolumeAttribute",
         "ec2:DescribeVolumes",
         "ec2:DescribeVpcEndpoints",
+        "ec2:GetAllowedImagesSettings",
         "ec2:GetEbsEncryptionByDefault",
         "ec2:GetInstanceTypesFromInstanceRequirements",
         "ec2:GetIpamPoolAllocations",

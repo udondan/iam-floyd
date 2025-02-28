@@ -281,6 +281,20 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "LaunchTemplateTagPropagationPermissions",
+      "Effect": "Allow",
+      "Action": "ec2:createTags",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "CreateLaunchTemplate",
+            "RunInstances"
+          ]
+        }
+      }
     }
   ]
 }
