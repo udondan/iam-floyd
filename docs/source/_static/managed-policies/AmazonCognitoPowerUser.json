@@ -20,7 +20,8 @@
         "ses:ListIdentities",
         "ses:GetIdentityVerificationAttributes",
         "mobiletargeting:GetApps",
-        "acm:ListCertificates"
+        "acm:ListCertificates",
+        "sms-voice:DescribeAccountAttributes"
       ],
       "Resource": "*"
     },

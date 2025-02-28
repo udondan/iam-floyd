@@ -1136,6 +1136,8 @@ export class AwsManagedPolicy {
     public static AWSBackupOrganizationAdminAccess = 'AWSBackupOrganizationAdminAccess';
     /** Provides AWS Backup permission to restore a backup of SAP HANA on Amazon EC2 */
     public static AWSBackupRestoreAccessForSAPHANA = 'AWSBackupRestoreAccessForSAPHANA';
+    /** The search operator role has access to create backup indexes, create searches of backup metadata that has been indexed. This policy contains the necessary permissions for these search operator functions. */
+    public static AWSBackupSearchOperatorAccess = 'AWSBackupSearchOperatorAccess';
     /** Provides AWS Backup permission to create backups on your behalf across AWS services */
     public static AWSBackupServiceLinkedRolePolicyForBackup = 'aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup';
     /** Provides AWS Backup permission to create backups on your behalf across AWS services */
