@@ -19,6 +19,7 @@ bedrock:CreateFoundationModelAgreement;Write
 bedrock:CreateGuardrail;Write
 bedrock:CreateGuardrailVersion;Write
 bedrock:CreateInferenceProfile;Write
+bedrock:CreateInvocation;Write
 bedrock:CreateKnowledgeBase;Write
 bedrock:CreateMarketplaceModelEndpoint;Write
 bedrock:CreateModelCopyJob;Write
@@ -29,6 +30,7 @@ bedrock:CreateModelInvocationJob;Write
 bedrock:CreatePrompt;Write
 bedrock:CreatePromptVersion;Write
 bedrock:CreateProvisionedModelThroughput;Write
+bedrock:CreateSession;Write
 bedrock:DeleteAgent;Write
 bedrock:DeleteAgentActionGroup;Write
 bedrock:DeleteAgentAlias;Write
@@ -53,10 +55,12 @@ bedrock:DeleteModelInvocationLoggingConfiguration;Write
 bedrock:DeletePrompt;Write
 bedrock:DeleteProvisionedModelThroughput;Write
 bedrock:DeleteResourcePolicy;Write
+bedrock:DeleteSession;Write
 bedrock:DeregisterMarketplaceModelEndpoint;Write
 bedrock:DetectGeneratedContent;Read
 bedrock:DisassociateAgentCollaborator;Write
 bedrock:DisassociateAgentKnowledgeBase;Write
+bedrock:EndSession;Write
 bedrock:GenerateQuery;Read
 bedrock:GetAgent;Read
 bedrock:GetAgentActionGroup;Read
@@ -82,6 +86,7 @@ bedrock:GetGuardrail;Read
 bedrock:GetImportedModel;Read
 bedrock:GetInferenceProfile;Read
 bedrock:GetIngestionJob;Read
+bedrock:GetInvocationStep;Read
 bedrock:GetKnowledgeBase;Read
 bedrock:GetKnowledgeBaseDocuments;Read
 bedrock:GetMarketplaceModelEndpoint;Read
@@ -95,6 +100,7 @@ bedrock:GetPrompt;Read
 bedrock:GetPromptRouter;Read
 bedrock:GetProvisionedModelThroughput;Read
 bedrock:GetResourcePolicy;Read
+bedrock:GetSession;Read
 bedrock:GetUseCaseForModelAccess;Read
 bedrock:IngestKnowledgeBaseDocuments;Write
 bedrock:InvokeAgent;Read
@@ -126,6 +132,8 @@ bedrock:ListGuardrails;List
 bedrock:ListImportedModels;List
 bedrock:ListInferenceProfiles;List
 bedrock:ListIngestionJobs;List
+bedrock:ListInvocationSteps;List
+bedrock:ListInvocations;List
 bedrock:ListKnowledgeBaseDocuments;List
 bedrock:ListKnowledgeBases;List
 bedrock:ListMarketplaceModelEndpoints;Read
@@ -137,11 +145,13 @@ bedrock:ListModelInvocationJobs;List
 bedrock:ListPromptRouters;List
 bedrock:ListPrompts;List
 bedrock:ListProvisionedModelThroughputs;List
+bedrock:ListSessions;List
 bedrock:ListTagsForResource;Read
 bedrock:OptimizePrompt;Read
 bedrock:PrepareAgent;Write
 bedrock:PrepareFlow;Write
 bedrock:PutFoundationModelEntitlement;Write
+bedrock:PutInvocationStep;Write
 bedrock:PutModelInvocationLoggingConfiguration;Write
 bedrock:PutResourcePolicy;Write
 bedrock:PutUseCaseForModelAccess;Write
@@ -172,4 +182,5 @@ bedrock:UpdateKnowledgeBase;Write
 bedrock:UpdateMarketplaceModelEndpoint;Write
 bedrock:UpdatePrompt;Write
 bedrock:UpdateProvisionedModelThroughput;Write
+bedrock:UpdateSession;Write
 bedrock:ValidateFlowDefinition;Read

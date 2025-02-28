@@ -78,6 +78,17 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to share Application Signals resources with a monitoring account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions
+   */
+  public toLink() {
+    return this.to('Link');
+  }
+
+  /**
    * Grants permission to list entities associated with other entities
    *
    * Access Level: List
@@ -218,6 +229,7 @@ export class ApplicationSignals extends PolicyStatement {
     Write: [
       'CreateServiceLevelObjective',
       'DeleteServiceLevelObjective',
+      'Link',
       'StartDiscovery',
       'UpdateServiceLevelObjective'
     ],
