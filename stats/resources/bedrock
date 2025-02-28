@@ -24,3 +24,4 @@ bedrock:model-invocation-job
 bedrock:prompt
 bedrock:prompt-version
 bedrock:provisioned-model
+bedrock:session

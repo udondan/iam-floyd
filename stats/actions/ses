@@ -145,6 +145,7 @@ ses:PutAccountDetails;Write
 ses:PutAccountSendingAttributes;Write
 ses:PutAccountSuppressionAttributes;Write
 ses:PutAccountVdmAttributes;Write
+ses:PutConfigurationSetArchivingOptions;Write
 ses:PutConfigurationSetDeliveryOptions;Write
 ses:PutConfigurationSetReputationOptions;Write
 ses:PutConfigurationSetSendingOptions;Write

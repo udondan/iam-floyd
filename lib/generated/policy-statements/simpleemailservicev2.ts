@@ -1013,6 +1013,21 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a configuration set with a Mail Manager archive
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutConfigurationSetArchivingOptions.html
+   */
+  public toPutConfigurationSetArchivingOptions() {
+    return this.to('PutConfigurationSetArchivingOptions');
+  }
+
+  /**
    * Grants permission to associate a configuration set with a dedicated IP pool
    *
    * Access Level: Write
@@ -1501,6 +1516,7 @@ export class SesV2 extends PolicyStatement {
       'PutAccountSendingAttributes',
       'PutAccountSuppressionAttributes',
       'PutAccountVdmAttributes',
+      'PutConfigurationSetArchivingOptions',
       'PutConfigurationSetDeliveryOptions',
       'PutConfigurationSetReputationOptions',
       'PutConfigurationSetSendingOptions',
@@ -1758,6 +1774,7 @@ export class SesV2 extends PolicyStatement {
    * - .toGetEmailIdentityPolicies()
    * - .toGetMultiRegionEndpoint()
    * - .toListRecommendations()
+   * - .toPutConfigurationSetArchivingOptions()
    * - .toPutConfigurationSetDeliveryOptions()
    * - .toPutConfigurationSetReputationOptions()
    * - .toPutConfigurationSetSendingOptions()
@@ -1887,6 +1904,7 @@ export class SesV2 extends PolicyStatement {
    * - .toPutAccountSendingAttributes()
    * - .toPutAccountSuppressionAttributes()
    * - .toPutAccountVdmAttributes()
+   * - .toPutConfigurationSetArchivingOptions()
    * - .toPutConfigurationSetDeliveryOptions()
    * - .toPutConfigurationSetReputationOptions()
    * - .toPutConfigurationSetSendingOptions()

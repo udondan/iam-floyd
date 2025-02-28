@@ -844,7 +844,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCallanalyticsjob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics-job/${ jobName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:transcribe:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analytics/${ jobName }`);
   }
 
   /**

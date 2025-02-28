@@ -285,6 +285,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new invocation in an existing session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_CreateInvocation.html
+   */
+  public toCreateInvocation() {
+    return this.to('CreateInvocation');
+  }
+
+  /**
    * Grants permission to create a knowledge base
    *
    * Access Level: Write
@@ -426,6 +437,21 @@ export class Bedrock extends PolicyStatement {
    */
   public toCreateProvisionedModelThroughput() {
     return this.to('CreateProvisionedModelThroughput');
+  }
+
+  /**
+   * Grants permission to create a new session
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_CreateSession.html
+   */
+  public toCreateSession() {
+    return this.to('CreateSession');
   }
 
   /**
@@ -691,6 +717,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Session that you created earlier
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_DeleteSession.html
+   */
+  public toDeleteSession() {
+    return this.to('DeleteSession');
+  }
+
+  /**
    * Grants permission to deregister a marketplace model endpoint to make it unusable in Bedrock Marketplace
    *
    * Access Level: Write
@@ -730,6 +767,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toDisassociateAgentKnowledgeBase() {
     return this.to('DisassociateAgentKnowledgeBase');
+  }
+
+  /**
+   * Grants permission to end a Session that you created earlier
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_EndSession.html
+   */
+  public toEndSession() {
+    return this.to('EndSession');
   }
 
   /**
@@ -1008,6 +1056,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an invocation step from a session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetInvocationStep.html
+   */
+  public toGetInvocationStep() {
+    return this.to('GetInvocationStep');
+  }
+
+  /**
    * Grants permission to retrieve an existing knowledge base
    *
    * Access Level: Read
@@ -1146,6 +1205,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve an existing session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetSession.html
+   */
+  public toGetSession() {
+    return this.to('GetSession');
   }
 
   /**
@@ -1500,6 +1570,28 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get list of invocation step from a session
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocationSteps.html
+   */
+  public toListInvocationSteps() {
+    return this.to('ListInvocationSteps');
+  }
+
+  /**
+   * Grants permission to list invocations in a session
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html
+   */
+  public toListInvocations() {
+    return this.to('ListInvocations');
+  }
+
+  /**
    * Grants permission to list documents in a knowledge base
    *
    * Access Level: List
@@ -1619,6 +1711,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list existing sessions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html
+   */
+  public toListSessions() {
+    return this.to('ListSessions');
+  }
+
+  /**
    * Grants permission to list tags for a Bedrock resource
    *
    * Access Level: Read
@@ -1671,6 +1774,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toPutFoundationModelEntitlement() {
     return this.to('PutFoundationModelEntitlement');
+  }
+
+  /**
+   * Grants permission to put an invocation step into an invocation in session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_PutInvocationStep.html
+   */
+  public toPutInvocationStep() {
+    return this.to('PutInvocationStep');
   }
 
   /**
@@ -2011,6 +2125,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_UpdateSession.html
+   */
+  public toUpdateSession() {
+    return this.to('UpdateSession');
+  }
+
+  /**
    * Grants permission to validate prompt flow definitions
    *
    * Access Level: Read
@@ -2053,6 +2178,7 @@ export class Bedrock extends PolicyStatement {
       'GetImportedModel',
       'GetInferenceProfile',
       'GetIngestionJob',
+      'GetInvocationStep',
       'GetKnowledgeBase',
       'GetKnowledgeBaseDocuments',
       'GetMarketplaceModelEndpoint',
@@ -2066,6 +2192,7 @@ export class Bedrock extends PolicyStatement {
       'GetPromptRouter',
       'GetProvisionedModelThroughput',
       'GetResourcePolicy',
+      'GetSession',
       'GetUseCaseForModelAccess',
       'InvokeAgent',
       'InvokeFlow',
@@ -2099,6 +2226,7 @@ export class Bedrock extends PolicyStatement {
       'CreateGuardrail',
       'CreateGuardrailVersion',
       'CreateInferenceProfile',
+      'CreateInvocation',
       'CreateKnowledgeBase',
       'CreateMarketplaceModelEndpoint',
       'CreateModelCopyJob',
@@ -2109,6 +2237,7 @@ export class Bedrock extends PolicyStatement {
       'CreatePrompt',
       'CreatePromptVersion',
       'CreateProvisionedModelThroughput',
+      'CreateSession',
       'DeleteAgent',
       'DeleteAgentActionGroup',
       'DeleteAgentAlias',
@@ -2133,9 +2262,11 @@ export class Bedrock extends PolicyStatement {
       'DeletePrompt',
       'DeleteProvisionedModelThroughput',
       'DeleteResourcePolicy',
+      'DeleteSession',
       'DeregisterMarketplaceModelEndpoint',
       'DisassociateAgentCollaborator',
       'DisassociateAgentKnowledgeBase',
+      'EndSession',
       'IngestKnowledgeBaseDocuments',
       'InvokeBlueprintRecommendationAsync',
       'InvokeBuilder',
@@ -2143,6 +2274,7 @@ export class Bedrock extends PolicyStatement {
       'PrepareAgent',
       'PrepareFlow',
       'PutFoundationModelEntitlement',
+      'PutInvocationStep',
       'PutModelInvocationLoggingConfiguration',
       'PutResourcePolicy',
       'PutUseCaseForModelAccess',
@@ -2168,7 +2300,8 @@ export class Bedrock extends PolicyStatement {
       'UpdateKnowledgeBase',
       'UpdateMarketplaceModelEndpoint',
       'UpdatePrompt',
-      'UpdateProvisionedModelThroughput'
+      'UpdateProvisionedModelThroughput',
+      'UpdateSession'
     ],
     List: [
       'ListAgentActionGroups',
@@ -2192,6 +2325,8 @@ export class Bedrock extends PolicyStatement {
       'ListImportedModels',
       'ListInferenceProfiles',
       'ListIngestionJobs',
+      'ListInvocationSteps',
+      'ListInvocations',
       'ListKnowledgeBaseDocuments',
       'ListKnowledgeBases',
       'ListModelCopyJobs',
@@ -2201,7 +2336,8 @@ export class Bedrock extends PolicyStatement {
       'ListModelInvocationJobs',
       'ListPromptRouters',
       'ListPrompts',
-      'ListProvisionedModelThroughputs'
+      'ListProvisionedModelThroughputs',
+      'ListSessions'
     ],
     Tagging: [
       'TagResource',
@@ -2632,6 +2768,23 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type session to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param sessionId - Identifier for the sessionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session/${ sessionId }`);
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -2654,6 +2807,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreatePrompt()
    * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
+   * - .toCreateSession()
    * - .toInvokeModel()
    * - .toPutResourcePolicy()
    * - .toTagResource()
@@ -2691,6 +2845,7 @@ export class Bedrock extends PolicyStatement {
    * - prompt-version
    * - model-import-job
    * - imported-model
+   * - session
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2723,6 +2878,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreatePrompt()
    * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
+   * - .toCreateSession()
    * - .toInvokeModel()
    * - .toPutResourcePolicy()
    * - .toTagResource()
