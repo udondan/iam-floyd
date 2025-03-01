@@ -345,6 +345,7 @@ sagemaker:StopPipelineExecution;Write
 sagemaker:StopProcessingJob;Write
 sagemaker:StopTrainingJob;Write
 sagemaker:StopTransformJob;Write
+sagemaker:TrainHubModel;Write
 sagemaker:UpdateAction;Write
 sagemaker:UpdateAppImageConfig;Write
 sagemaker:UpdateArtifact;Write
@@ -363,6 +364,8 @@ sagemaker:UpdateExperiment;Write
 sagemaker:UpdateFeatureGroup;Write
 sagemaker:UpdateFeatureMetadata;Write
 sagemaker:UpdateHub;Write
+sagemaker:UpdateHubContent;Write
+sagemaker:UpdateHubContentReference;Write
 sagemaker:UpdateImage;Write
 sagemaker:UpdateImageVersion;Write
 sagemaker:UpdateInferenceComponent;Write

@@ -6,6 +6,7 @@ bedrock:bedrock-marketplace-model-endpoint
 bedrock:blueprint
 bedrock:custom-model
 bedrock:data-automation-invocation-job
+bedrock:data-automation-profile
 bedrock:data-automation-project
 bedrock:default-prompt-router
 bedrock:evaluation-job

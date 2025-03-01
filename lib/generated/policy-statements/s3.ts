@@ -91,10 +91,6 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
    * - .ifXAmzStorageClass()
    * - .ifXAmzWebsiteRedirectLocation()
-   * - .ifObjectLockMode()
-   * - .ifObjectLockRetainUntilDate()
-   * - .ifObjectLockRemainingRetentionDays()
-   * - .ifObjectLockLegalHold()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-bypass
    */
@@ -4964,7 +4960,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-legal-holds
    *
    * Applies to actions:
-   * - .toBypassGovernanceRetention()
    * - .toPutObject()
    * - .toPutObjectLegalHold()
    *
@@ -4981,7 +4976,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-retention-modes
    *
    * Applies to actions:
-   * - .toBypassGovernanceRetention()
    * - .toPutObject()
    * - .toPutObjectRetention()
    *
@@ -4998,7 +4992,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-retention-limits
    *
    * Applies to actions:
-   * - .toBypassGovernanceRetention()
    * - .toPutObject()
    * - .toPutObjectRetention()
    *
@@ -5015,7 +5008,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-retention-periods
    *
    * Applies to actions:
-   * - .toBypassGovernanceRetention()
    * - .toPutObject()
    * - .toPutObjectRetention()
    *

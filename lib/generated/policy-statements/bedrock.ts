@@ -137,7 +137,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateBlueprint.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateBlueprint.html
    */
   public toCreateBlueprint() {
     return this.to('CreateBlueprint');
@@ -148,7 +148,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateBlueprintVersion.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateBlueprintVersion.html
    */
   public toCreateBlueprintVersion() {
     return this.to('CreateBlueprintVersion');
@@ -159,7 +159,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateDataAutomationProject.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationProject.html
    */
   public toCreateDataAutomationProject() {
     return this.to('CreateDataAutomationProject');
@@ -514,7 +514,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteBlueprint.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_DeleteBlueprint.html
    */
   public toDeleteBlueprint() {
     return this.to('DeleteBlueprint');
@@ -536,7 +536,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DeleteDataAutomationProject.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_DeleteDataAutomationProject.html
    */
   public toDeleteDataAutomationProject() {
     return this.to('DeleteDataAutomationProject');
@@ -884,7 +884,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetBlueprint.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetBlueprint.html
    */
   public toGetBlueprint() {
     return this.to('GetBlueprint');
@@ -895,7 +895,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetBlueprintRecommendation.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
   public toGetBlueprintRecommendation() {
     return this.to('GetBlueprintRecommendation');
@@ -917,7 +917,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetDataAutomationProject.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationProject.html
    */
   public toGetDataAutomationProject() {
     return this.to('GetDataAutomationProject');
@@ -928,7 +928,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetDataAutomationStatus.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_GetDataAutomationStatus.html
    */
   public toGetDataAutomationStatus() {
     return this.to('GetDataAutomationStatus');
@@ -1256,7 +1256,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_InvokeBlueprintRecommendationAsync.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
   public toInvokeBlueprintRecommendationAsync() {
     return this.to('InvokeBlueprintRecommendationAsync');
@@ -1278,7 +1278,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_InvokeDataAutomationAsync.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomationAsync.html
    */
   public toInvokeDataAutomationAsync() {
     return this.to('InvokeDataAutomationAsync');
@@ -1420,7 +1420,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListBlueprints.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListBlueprints.html
    */
   public toListBlueprints() {
     return this.to('ListBlueprints');
@@ -1442,7 +1442,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListDataAutomationProjects.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationProjects.html
    */
   public toListDataAutomationProjects() {
     return this.to('ListDataAutomationProjects');
@@ -2021,7 +2021,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateBlueprint.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateBlueprint.html
    */
   public toUpdateBlueprint() {
     return this.to('UpdateBlueprint');
@@ -2032,7 +2032,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateDataAutomationProject.html
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateDataAutomationProject.html
    */
   public toUpdateDataAutomationProject() {
     return this.to('UpdateDataAutomationProject');
@@ -2765,6 +2765,20 @@ export class Bedrock extends PolicyStatement {
    */
   public onDataAutomationInvocationJob(jobId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-invocation/${ jobId }`);
+  }
+
+  /**
+   * Adds a resource of type data-automation-profile to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param profileId - Identifier for the profileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDataAutomationProfile(profileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-profile/${ profileId }`);
   }
 
   /**
