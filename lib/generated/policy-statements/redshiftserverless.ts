@@ -377,6 +377,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a track in Amazon Redshift Serverless
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetTrack.html
+   */
+  public toGetTrack() {
+    return this.to('GetTrack');
+  }
+
+  /**
    * Grants permission to get information about a usage limit in Amazon Redshift Serverless
    *
    * Access Level: Read
@@ -509,6 +520,17 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list tracks available in Amazon Redshift Serverless
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListTracks.html
+   */
+  public toListTracks() {
+    return this.to('ListTracks');
   }
 
   /**
@@ -783,6 +805,7 @@ export class RedshiftServerless extends PolicyStatement {
       'GetScheduledAction',
       'GetSnapshot',
       'GetTableRestoreStatus',
+      'GetTrack',
       'GetUsageLimit',
       'GetWorkgroup'
     ],
@@ -797,6 +820,7 @@ export class RedshiftServerless extends PolicyStatement {
       'ListSnapshots',
       'ListTableRestoreStatus',
       'ListTagsForResource',
+      'ListTracks',
       'ListUsageLimits',
       'ListWorkgroups'
     ],

@@ -1,0 +1,7 @@
+qdeveloper:ExportArtifact;Write
+qdeveloper:ImportArtifact;Write
+qdeveloper:ListTagsForResource;List
+qdeveloper:StartAgentSession;Write
+qdeveloper:TagResource;Tagging
+qdeveloper:TransformCode;Write
+qdeveloper:UntagResource;Tagging

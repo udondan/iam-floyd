@@ -869,6 +869,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifNetworkIsolation()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
+   * - .ifDirectGatedModelAccess()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -1330,6 +1331,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSubnets()
    * - .ifKeepAlivePeriod()
    * - .ifEnableRemoteDebug()
+   * - .ifDirectGatedModelAccess()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -4486,6 +4488,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to train a model in hub
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs-admin-guide.html
+   */
+  public toTrainHubModel() {
+    return this.to('TrainHubModel');
+  }
+
+  /**
    * Grants permission to update an action
    *
    * Access Level: Write
@@ -4702,6 +4715,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toUpdateHub() {
     return this.to('UpdateHub');
+  }
+
+  /**
+   * Grants permission to update hub content
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateHubContent.html
+   */
+  public toUpdateHubContent() {
+    return this.to('UpdateHubContent');
+  }
+
+  /**
+   * Grants permission to update hub content reference
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateHubContentReference.html
+   */
+  public toUpdateHubContentReference() {
+    return this.to('UpdateHubContentReference');
   }
 
   /**
@@ -5197,6 +5232,7 @@ export class Sagemaker extends PolicyStatement {
       'StopProcessingJob',
       'StopTrainingJob',
       'StopTransformJob',
+      'TrainHubModel',
       'UpdateAction',
       'UpdateAppImageConfig',
       'UpdateArtifact',
@@ -5215,6 +5251,8 @@ export class Sagemaker extends PolicyStatement {
       'UpdateFeatureGroup',
       'UpdateFeatureMetadata',
       'UpdateHub',
+      'UpdateHubContent',
+      'UpdateHubContentReference',
       'UpdateImage',
       'UpdateImageVersion',
       'UpdateInferenceComponent',
@@ -6925,6 +6963,22 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifCustomerMetadataPropertiesToRemove(value: string | string[], operator?: Operator | string) {
     return this.if(`CustomerMetadataPropertiesToRemove`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Used to deny direct access to SageMaker gated ModelReferences
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateModel()
+   * - .toCreateTrainingJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDirectGatedModelAccess(value: string | string[], operator?: Operator | string) {
+    return this.if(`DirectGatedModelAccess`, value, operator ?? 'StringLike');
   }
 
   /**

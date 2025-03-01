@@ -135,6 +135,7 @@ export { Polly } from './policy-statements/polly';
 export { Q } from './policy-statements/q';
 export { Qbusiness } from './policy-statements/qbusiness';
 export { Qapps } from './policy-statements/qbusinessqapps';
+export { Qdeveloper } from './policy-statements/qdeveloper';
 export { Wisdom } from './policy-statements/qinconnect';
 export { Qldb } from './policy-statements/qldb';
 export { Quicksight } from './policy-statements/quicksight';
