@@ -2071,7 +2071,6 @@
       "Sid": "EMRServerlessApplicationManagement",
       "Effect": "Allow",
       "Action": [
-        "emr-serverless:GetApplication",
         "emr-serverless:UpdateApplication",
         "emr-serverless:DeleteApplication"
       ],
@@ -2081,6 +2080,22 @@
       "Condition": {
         "StringEquals": {
           "aws:CalledViaFirst": "cloudformation.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EMRServerlessGetApplication",
+      "Effect": "Allow",
+      "Action": "emr-serverless:GetApplication",
+      "Resource": [
+        "arn:aws:emr-serverless:*:*:/applications/*"
+      ],
+      "Condition": {
+        "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         },
         "Null": {
