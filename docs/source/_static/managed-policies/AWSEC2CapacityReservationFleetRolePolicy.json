@@ -20,7 +20,7 @@
         "arn:aws:ec2:*:*:capacity-reservation/*"
       ],
       "Condition": {
-        "StringLike": {
+        "ArnLike": {
           "ec2:CapacityReservationFleet": "arn:aws:ec2:*:*:capacity-reservation-fleet/crf-*"
         }
       }

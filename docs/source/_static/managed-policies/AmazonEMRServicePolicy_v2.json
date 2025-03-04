@@ -322,6 +322,56 @@
           "iam:PassedToService": "ec2.amazonaws.com*"
         }
       }
+    },
+    {
+      "Sid": "CreateAndModifyEmrServiceVPCEndpoint",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyVpcEndpoint",
+        "ec2:CreateVpcEndpoint"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:vpc-endpoint/*",
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*:*:vpc/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/for-use-with-amazon-emr-managed-policies": "true"
+        }
+      }
+    },
+    {
+      "Sid": "CreateEmrServiceVPCEndpoint",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpoint"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:vpc-endpoint/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/for-use-with-amazon-emr-managed-policies": "true",
+          "aws:RequestTag/Name": "emr-service-vpce"
+        }
+      }
+    },
+    {
+      "Sid": "TagEmrServiceVPCEndpoint",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVpcEndpoint",
+          "aws:RequestTag/for-use-with-amazon-emr-managed-policies": "true",
+          "aws:RequestTag/Name": "emr-service-vpce"
+        }
+      }
     }
   ]
 }
