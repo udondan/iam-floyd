@@ -314,6 +314,17 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the status about an image copy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html
+   */
+  public toGetImageCopyStatus() {
+    return this.to('GetImageCopyStatus');
+  }
+
+  /**
    * Grants permission to retrieve the specified lifecycle policy
    *
    * Access Level: Read
@@ -636,6 +647,7 @@ export class Ecr extends PolicyStatement {
       'GetAccountSetting',
       'GetAuthorizationToken',
       'GetDownloadUrlForLayer',
+      'GetImageCopyStatus',
       'GetLifecyclePolicy',
       'GetLifecyclePolicyPreview',
       'GetRegistryPolicy',

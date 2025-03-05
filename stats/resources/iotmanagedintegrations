@@ -1,0 +1,4 @@
+iotmanagedintegrations:CredentialLockerResource
+iotmanagedintegrations:ManagedThingResource
+iotmanagedintegrations:OtaTaskResource
+iotmanagedintegrations:ProvisioningProfileResource

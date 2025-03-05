@@ -54,6 +54,7 @@ storagegateway:DescribeWorkingStorage;Read
 storagegateway:DetachVolume;Write
 storagegateway:DisableGateway;Write
 storagegateway:DisassociateFileSystem;Write
+storagegateway:EvictFilesFailingUpload;Write
 storagegateway:JoinDomain;Write
 storagegateway:ListAutomaticTapeCreationPolicies;List
 storagegateway:ListCacheReports;List

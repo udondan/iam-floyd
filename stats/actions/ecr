@@ -23,6 +23,7 @@ ecr:DescribeRepositoryCreationTemplates;Read
 ecr:GetAccountSetting;Read
 ecr:GetAuthorizationToken;Read
 ecr:GetDownloadUrlForLayer;Read
+ecr:GetImageCopyStatus;Read
 ecr:GetLifecyclePolicy;Read
 ecr:GetLifecyclePolicyPreview;Read
 ecr:GetRegistryPolicy;Read

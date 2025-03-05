@@ -693,6 +693,17 @@ export class Storagegateway extends PolicyStatement {
   }
 
   /**
+   * Grants permission to clean a share's cache of file entries that are failing upload to Amazon S3
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_EvictFilesFailingUpload.html
+   */
+  public toEvictFilesFailingUpload() {
+    return this.to('EvictFilesFailingUpload');
+  }
+
+  /**
    * Grants permission to enable you to join an Active Directory Domain
    *
    * Access Level: Write
@@ -1186,6 +1197,7 @@ export class Storagegateway extends PolicyStatement {
       'DetachVolume',
       'DisableGateway',
       'DisassociateFileSystem',
+      'EvictFilesFailingUpload',
       'JoinDomain',
       'NotifyWhenUploaded',
       'RefreshCache',
@@ -1293,7 +1305,7 @@ export class Storagegateway extends PolicyStatement {
   /**
    * Adds a resource of type fs-association to the statement
    *
-   * https://docs.aws.amazon.com/storagegateway/latest/userguide/API_AssociateFileSystem.html
+   * https://docs.aws.amazon.com/filegateway/latest/filefsxw/attach-fsxw-filesystem.html
    *
    * @param fsaId - Identifier for the fsaId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

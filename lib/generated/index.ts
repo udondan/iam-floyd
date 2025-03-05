@@ -324,6 +324,7 @@ export { Iotfleetwise } from './policy-statements/iotfleetwise';
 export { Greengrass } from './policy-statements/iotgreengrass';
 export { GreengrassV2 } from './policy-statements/iotgreengrassv2';
 export { Iotjobsdata } from './policy-statements/iotjobsdataplane';
+export { Iotmanagedintegrations } from './policy-statements/iotmanagedintegrationsfeatureofiotdevicemanagement';
 export { Iotsitewise } from './policy-statements/iotsitewise';
 export { Iottwinmaker } from './policy-statements/iottwinmaker';
 export { Iotwireless } from './policy-statements/iotwireless';
