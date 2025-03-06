@@ -1,0 +1,52 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/iotmanagedintegrations/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchStreams",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/iotmanagedintegrations/*:log-stream:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchMetrics",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "AWS/IoTManagedIntegrations",
+            "AWS/Usage"
+          ]
+        }
+      }
+    }
+  ]
+}

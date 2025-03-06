@@ -315,7 +315,8 @@
             "arn:aws:iam::aws:policy/SageMakerStudioProjectRoleMachineLearningPolicy",
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRServiceRolePolicy",
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRInstanceRolePolicy",
-            "arn:aws:iam::aws:policy/service-role/AmazonEMRServicePolicy_v2"
+            "arn:aws:iam::aws:policy/service-role/AmazonEMRServicePolicy_v2",
+            "arn:aws:iam::aws:policy/AmazonSageMakerPartnerAppsFullAccess"
           ]
         }
       }
@@ -525,7 +526,10 @@
         "iam:UpdateAssumeRolePolicy"
       ],
       "Resource": [
-        "arn:aws:iam::*:role/datazone_usr_role_*"
+        "arn:aws:iam::*:role/datazone_usr_role_*",
+        "arn:aws:iam::*:role/datazone_emr_*",
+        "arn:aws:iam::*:role/datazone-partner-apps-*",
+        "arn:aws:iam::*:role/AmazonBedrock*"
       ],
       "Condition": {
         "StringEquals": {
@@ -2676,20 +2680,6 @@
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        }
-      }
-    },
-    {
-      "Sid": "IamGetEmrRoleFromDataZone",
-      "Effect": "Allow",
-      "Action": "iam:GetRole",
-      "Resource": "arn:aws:iam::*:role/datazone_emr_*",
-      "Condition": {
-        "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        },
-        "Null": {
-          "aws:ResourceTag/AmazonDataZoneProject": "false"
         }
       }
     }
