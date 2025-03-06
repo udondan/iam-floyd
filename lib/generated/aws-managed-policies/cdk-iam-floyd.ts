@@ -4174,6 +4174,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTLogging);
     }
 
+    /** Provides full access to managed integrations for AWS IoT Device Management and related services. */
+    public AWSIoTManagedIntegrationsFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTManagedIntegrationsFullAccess);
+    }
+
+    /** Provides managed integrations for AWS IoT Device Management permission to publish logs and metrics on your behalf. */
+    public AWSIoTManagedIntegrationsRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTManagedIntegrationsRolePolicy);
+    }
+
     /** Allows access to create AWS IoT Job and describe the AWS code signer job */
     public AWSIoTOTAUpdate(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTOTAUpdate);

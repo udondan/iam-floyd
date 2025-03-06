@@ -1666,6 +1666,10 @@ export class AwsManagedPolicy {
     public static AWSIoTFullAccess = 'AWSIoTFullAccess';
     /** Allows creation of Amazon CloudWatch Log groups and streaming logs to the groups */
     public static AWSIoTLogging = 'service-role/AWSIoTLogging';
+    /** Provides full access to managed integrations for AWS IoT Device Management and related services. */
+    public static AWSIoTManagedIntegrationsFullAccess = 'AWSIoTManagedIntegrationsFullAccess';
+    /** Provides managed integrations for AWS IoT Device Management permission to publish logs and metrics on your behalf. */
+    public static AWSIoTManagedIntegrationsRolePolicy = 'aws-service-role/AWSIoTManagedIntegrationsRolePolicy';
     /** Allows access to create AWS IoT Job and describe the AWS code signer job */
     public static AWSIoTOTAUpdate = 'service-role/AWSIoTOTAUpdate';
     /** Allows access to all AWS services supported in AWS IoT Rule Actions */
