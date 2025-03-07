@@ -42,6 +42,28 @@
       }
     },
     {
+      "Sid": "createAndDeleteWorkgroupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:CreateWorkgroup",
+        "redshift-serverless:DeleteWorkgroup"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:workgroup/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "glue.amazonaws.com",
+            "lakeformation.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "getNamespacePermission",
       "Effect": "Allow",
       "Action": "redshift-serverless:GetNamespace",
@@ -51,6 +73,28 @@
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "createAndDeleteNamespacePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:CreateNamespace",
+        "redshift-serverless:DeleteNamespace"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:namespace/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "glue.amazonaws.com",
+            "lakeformation.amazonaws.com"
+          ]
         }
       }
     },

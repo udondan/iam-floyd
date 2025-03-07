@@ -10,7 +10,11 @@
         "ecr:InitiateLayerUpload",
         "ecr:UploadLayerPart",
         "ecr:CompleteLayerUpload",
-        "ecr:PutImage"
+        "ecr:PutImage",
+        "ecr:BatchGetImage",
+        "ecr:BatchImportUpstreamImage",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:GetImageCopyStatus"
       ],
       "Resource": "*"
     },
