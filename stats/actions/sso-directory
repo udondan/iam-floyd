@@ -31,6 +31,7 @@ sso-directory:GetUserId;Read
 sso-directory:GetUserPoolInfo;Read
 sso-directory:ImportExternalIdPCertificate;Write
 sso-directory:IsMemberInGroup;Read
+sso-directory:IsMemberInGroups;Read
 sso-directory:ListBearerTokens;Read
 sso-directory:ListExternalIdPCertificates;Read
 sso-directory:ListExternalIdPConfigurationsForDirectory;Read

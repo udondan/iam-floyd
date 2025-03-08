@@ -76,6 +76,7 @@ export { Frauddetector } from './policy-statements/frauddetector';
 export { Freertos } from './policy-statements/freertos';
 export { Fsx } from './policy-statements/fsx';
 export { Gamelift } from './policy-statements/gamelift';
+export { Gameliftstreams } from './policy-statements/gameliftstreams';
 export { Groundtruthlabeling } from './policy-statements/groundtruthlabeling';
 export { Guardduty } from './policy-statements/guardduty';
 export { Honeycode } from './policy-statements/honeycode';

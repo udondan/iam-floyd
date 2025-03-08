@@ -82,6 +82,17 @@ export class Rum extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a resource policy attached to an app monitor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete rum metrics destinations
    *
    * Access Level: Write
@@ -115,6 +126,17 @@ export class Rum extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a resource policy attached to an app monitor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to list appMonitors metadata
    *
    * Access Level: List
@@ -145,6 +167,17 @@ export class Rum extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to attach a resource policy to an app monitor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -230,7 +263,9 @@ export class Rum extends PolicyStatement {
       'BatchDeleteRumMetricDefinitions',
       'CreateAppMonitor',
       'DeleteAppMonitor',
+      'DeleteResourcePolicy',
       'DeleteRumMetricsDestination',
+      'PutResourcePolicy',
       'PutRumEvents',
       'PutRumMetricsDestination',
       'UpdateAppMonitor',
@@ -240,6 +275,7 @@ export class Rum extends PolicyStatement {
       'BatchGetRumMetricDefinitions',
       'GetAppMonitor',
       'GetAppMonitorData',
+      'GetResourcePolicy',
       'ListRumMetricsDestinations',
       'ListTagsForResource'
     ],

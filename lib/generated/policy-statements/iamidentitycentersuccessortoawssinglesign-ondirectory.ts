@@ -382,6 +382,17 @@ export class SsoDirectory extends PolicyStatement {
   }
 
   /**
+   * Grants permission to check if a member is a part of multiple groups in the directory that AWS IAM Identity Center provides by default
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html
+   */
+  public toIsMemberInGroups() {
+    return this.to('IsMemberInGroups');
+  }
+
+  /**
    * Grants permission to list bearer tokens for a given provisioning tenant
    *
    * Access Level: Read
@@ -682,6 +693,7 @@ export class SsoDirectory extends PolicyStatement {
       'GetUserId',
       'GetUserPoolInfo',
       'IsMemberInGroup',
+      'IsMemberInGroups',
       'ListBearerTokens',
       'ListExternalIdPCertificates',
       'ListExternalIdPConfigurationsForDirectory',

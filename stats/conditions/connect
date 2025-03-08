@@ -1,5 +1,7 @@
 connect:AssignmentType
 connect:AttributeType
+connect:Channel
+connect:ContactAssociationId
 connect:ContactInitiationMethod
 connect:FlowType
 connect:InstanceId

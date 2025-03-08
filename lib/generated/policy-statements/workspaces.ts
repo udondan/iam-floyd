@@ -779,6 +779,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure the specified directory between Standard TLS and FIPS 140-2 validated mode
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyEndpointEncryptionMode.html
+   */
+  public toModifyEndpointEncryptionMode() {
+    return this.to('ModifyEndpointEncryptionMode');
+  }
+
+  /**
    * Grants permission to modify the SAML properties of a directory
    *
    * Access Level: Write
@@ -1125,6 +1136,7 @@ export class Workspaces extends PolicyStatement {
       'ModifyAccount',
       'ModifyCertificateBasedAuthProperties',
       'ModifyClientProperties',
+      'ModifyEndpointEncryptionMode',
       'ModifySamlProperties',
       'ModifyStreamingProperties',
       'ModifyWorkspaceAccessProperties',
