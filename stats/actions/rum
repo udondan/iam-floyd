@@ -3,12 +3,15 @@ rum:BatchDeleteRumMetricDefinitions;Write
 rum:BatchGetRumMetricDefinitions;Read
 rum:CreateAppMonitor;Write
 rum:DeleteAppMonitor;Write
+rum:DeleteResourcePolicy;Write
 rum:DeleteRumMetricsDestination;Write
 rum:GetAppMonitor;Read
 rum:GetAppMonitorData;Read
+rum:GetResourcePolicy;Read
 rum:ListAppMonitors;List
 rum:ListRumMetricsDestinations;Read
 rum:ListTagsForResource;Read
+rum:PutResourcePolicy;Write
 rum:PutRumEvents;Write
 rum:PutRumMetricsDestination;Write
 rum:TagResource;Tagging

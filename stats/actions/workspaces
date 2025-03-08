@@ -60,6 +60,7 @@ workspaces:MigrateWorkspace;Write
 workspaces:ModifyAccount;Write
 workspaces:ModifyCertificateBasedAuthProperties;Write
 workspaces:ModifyClientProperties;Write
+workspaces:ModifyEndpointEncryptionMode;Write
 workspaces:ModifySamlProperties;Write
 workspaces:ModifySelfservicePermissions;Permissions management
 workspaces:ModifyStreamingProperties;Write

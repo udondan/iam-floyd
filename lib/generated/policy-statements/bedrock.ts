@@ -1316,6 +1316,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifPromptRouterArn()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifGuardrailIdentifier()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html
    */
@@ -1331,6 +1332,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifInferenceProfileArn()
    * - .ifPromptRouterArn()
+   * - .ifGuardrailIdentifier()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html
    */
@@ -2903,6 +2905,22 @@ export class Bedrock extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the GuardrailIdentifier containing the GuardrailArn or the GuardrailArn:NumericVersion
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
+   *
+   * Applies to actions:
+   * - .toInvokeModel()
+   * - .toInvokeModelWithResponseStream()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifGuardrailIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`GuardrailIdentifier`, value, operator ?? 'ArnLike');
   }
 
   /**

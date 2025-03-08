@@ -1373,6 +1373,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContact.html
    */
@@ -2010,6 +2013,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html
    */
@@ -2325,6 +2331,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactReferences.html
    */
@@ -2962,6 +2971,11 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContactRecording.html
    */
   public toResumeContactRecording() {
@@ -3369,6 +3383,11 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactRecording.html
    */
   public toStartContactRecording() {
@@ -3463,6 +3482,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartScreenSharing.html
    */
@@ -3507,6 +3529,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContact.html
    */
@@ -3518,6 +3543,11 @@ export class Connect extends PolicyStatement {
    * Grants permission to stop recording for the specified contact
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactRecording.html
    */
@@ -3569,6 +3599,11 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SuspendContactRecording.html
    */
   public toSuspendContactRecording() {
@@ -3582,6 +3617,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagContact.html
    */
@@ -3611,6 +3649,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TransferContact.html
    */
@@ -3625,6 +3666,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagContact.html
    */
@@ -3682,6 +3726,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContact.html
    */
@@ -3696,6 +3743,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactAttributes.html
    */
@@ -3802,6 +3852,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactRoutingData.html
    */
@@ -3816,6 +3869,9 @@ export class Connect extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifInstanceId()
+   * - .ifContactAssociationId()
+   * - .ifChannel()
+   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactSchedule.html
    */
@@ -5626,6 +5682,66 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Filters access by Channel
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toDescribeContact()
+   * - .toGetContactAttributes()
+   * - .toListContactReferences()
+   * - .toResumeContactRecording()
+   * - .toStartContactRecording()
+   * - .toStartScreenSharing()
+   * - .toStopContact()
+   * - .toStopContactRecording()
+   * - .toSuspendContactRecording()
+   * - .toTagContact()
+   * - .toTransferContact()
+   * - .toUntagContact()
+   * - .toUpdateContact()
+   * - .toUpdateContactAttributes()
+   * - .toUpdateContactRoutingData()
+   * - .toUpdateContactSchedule()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifChannel(value: string | string[], operator?: Operator | string) {
+    return this.if(`Channel`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by ContactAssociationId
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toDescribeContact()
+   * - .toGetContactAttributes()
+   * - .toListContactReferences()
+   * - .toResumeContactRecording()
+   * - .toStartContactRecording()
+   * - .toStartScreenSharing()
+   * - .toStopContact()
+   * - .toStopContactRecording()
+   * - .toSuspendContactRecording()
+   * - .toTagContact()
+   * - .toTransferContact()
+   * - .toUntagContact()
+   * - .toUpdateContact()
+   * - .toUpdateContactAttributes()
+   * - .toUpdateContactRoutingData()
+   * - .toUpdateContactSchedule()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifContactAssociationId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ContactAssociationId`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by restricting access to create contacts based on the initiation method of the contact
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -6028,7 +6144,23 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
+   * - .toDescribeContact()
+   * - .toGetContactAttributes()
+   * - .toListContactReferences()
+   * - .toResumeContactRecording()
    * - .toStartAttachedFileUpload()
+   * - .toStartContactRecording()
+   * - .toStartScreenSharing()
+   * - .toStopContact()
+   * - .toStopContactRecording()
+   * - .toSuspendContactRecording()
+   * - .toTagContact()
+   * - .toTransferContact()
+   * - .toUntagContact()
+   * - .toUpdateContact()
+   * - .toUpdateContactAttributes()
+   * - .toUpdateContactRoutingData()
+   * - .toUpdateContactSchedule()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
