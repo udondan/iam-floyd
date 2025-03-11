@@ -513,6 +513,21 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the ip pools for a load balancer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyIpPools.html
+   */
+  public toModifyIpPools() {
+    return this.to('ModifyIpPools');
+  }
+
+  /**
    * Grants permission to modify the specified properties of the specified listener
    *
    * Access Level: Write
@@ -767,6 +782,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'DeleteTrustStore',
       'DeregisterTargets',
       'ModifyCapacityReservation',
+      'ModifyIpPools',
       'ModifyListener',
       'ModifyListenerAttributes',
       'ModifyLoadBalancerAttributes',
@@ -1015,6 +1031,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toGetTrustStoreCaCertificatesBundle()
    * - .toGetTrustStoreRevocationContent()
    * - .toModifyCapacityReservation()
+   * - .toModifyIpPools()
    * - .toModifyListener()
    * - .toModifyListenerAttributes()
    * - .toModifyLoadBalancerAttributes()
@@ -1125,6 +1142,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toGetTrustStoreCaCertificatesBundle()
    * - .toGetTrustStoreRevocationContent()
    * - .toModifyCapacityReservation()
+   * - .toModifyIpPools()
    * - .toModifyListener()
    * - .toModifyListenerAttributes()
    * - .toModifyLoadBalancerAttributes()

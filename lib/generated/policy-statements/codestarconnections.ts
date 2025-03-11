@@ -43,6 +43,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifProviderType()
+   * - .ifVpcId()
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateHost.html
    */
@@ -464,6 +465,9 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifVpcId()
+   *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UpdateHost.html
    */
   public toUpdateHost() {
@@ -868,5 +872,21 @@ export class CodestarConnections extends PolicyStatement {
    */
   public ifRepositoryName(value: string | string[], operator?: Operator | string) {
     return this.if(`RepositoryName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the VpcId passed in the request
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-hosts
+   *
+   * Applies to actions:
+   * - .toCreateHost()
+   * - .toUpdateHost()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcId(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcId`, value, operator ?? 'StringLike');
   }
 }

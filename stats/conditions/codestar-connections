@@ -13,3 +13,4 @@ codestar-connections:RepositoryName
 codestar-connections:RequestTag/${TagKey}
 codestar-connections:ResourceTag/${TagKey}
 codestar-connections:TagKeys
+codestar-connections:VpcId
