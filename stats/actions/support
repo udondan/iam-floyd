@@ -16,6 +16,7 @@ support:DescribeTrustedAdvisorCheckRefreshStatuses;Read
 support:DescribeTrustedAdvisorCheckResult;Read
 support:DescribeTrustedAdvisorCheckSummaries;Read
 support:DescribeTrustedAdvisorChecks;Read
+support:GetInteraction;Read
 support:InitiateCallForCase;Write
 support:InitiateChatForCase;Write
 support:PutCaseAttributes;Write
@@ -23,3 +24,4 @@ support:RateCaseCommunication;Write
 support:RefreshTrustedAdvisorCheck;Write
 support:ResolveCase;Write
 support:SearchForCases;Read
+support:StartInteraction;Write

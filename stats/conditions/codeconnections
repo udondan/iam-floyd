@@ -13,3 +13,4 @@ codeconnections:RepositoryName
 codeconnections:RequestTag/${TagKey}
 codeconnections:ResourceTag/${TagKey}
 codeconnections:TagKeys
+codeconnections:VpcId

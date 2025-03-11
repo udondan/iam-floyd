@@ -217,6 +217,17 @@ export class Support extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve personalized troubleshooting assistance for account and technical issues for a specific interaction
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_GetInteraction.html
+   */
+  public toGetInteraction() {
+    return this.to('GetInteraction');
+  }
+
+  /**
    * Grants permission to initiate a call on AWS Support Center. This is an internally managed function
    *
    * Access Level: Write
@@ -293,6 +304,17 @@ export class Support extends PolicyStatement {
     return this.to('SearchForCases');
   }
 
+  /**
+   * Grants permission to start a specific interaction to receive personalized troubleshooting assistance for account and technical issues
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_StartInteraction.html
+   */
+  public toStartInteraction() {
+    return this.to('StartInteraction');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddAttachmentsToSet',
@@ -303,7 +325,8 @@ export class Support extends PolicyStatement {
       'PutCaseAttributes',
       'RateCaseCommunication',
       'RefreshTrustedAdvisorCheck',
-      'ResolveCase'
+      'ResolveCase',
+      'StartInteraction'
     ],
     Read: [
       'DescribeAttachment',
@@ -321,6 +344,7 @@ export class Support extends PolicyStatement {
       'DescribeTrustedAdvisorCheckResult',
       'DescribeTrustedAdvisorCheckSummaries',
       'DescribeTrustedAdvisorChecks',
+      'GetInteraction',
       'SearchForCases'
     ]
   };
