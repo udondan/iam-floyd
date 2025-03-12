@@ -28,6 +28,7 @@ bedrock:CreateModelEvaluationJob;Write
 bedrock:CreateModelImportJob;Write
 bedrock:CreateModelInvocationJob;Write
 bedrock:CreatePrompt;Write
+bedrock:CreatePromptRouter;Write
 bedrock:CreatePromptVersion;Write
 bedrock:CreateProvisionedModelThroughput;Write
 bedrock:CreateSession;Write
@@ -53,6 +54,7 @@ bedrock:DeleteMarketplaceModelAgreement;Write
 bedrock:DeleteMarketplaceModelEndpoint;Write
 bedrock:DeleteModelInvocationLoggingConfiguration;Write
 bedrock:DeletePrompt;Write
+bedrock:DeletePromptRouter;Write
 bedrock:DeleteProvisionedModelThroughput;Write
 bedrock:DeleteResourcePolicy;Write
 bedrock:DeleteSession;Write

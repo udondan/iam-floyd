@@ -410,6 +410,21 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a custom prompt router
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreatePromptRouter.html
+   */
+  public toCreatePromptRouter() {
+    return this.to('CreatePromptRouter');
+  }
+
+  /**
    * Grants permission to create a version of a prompt
    *
    * Access Level: Write
@@ -692,6 +707,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toDeletePrompt() {
     return this.to('DeletePrompt');
+  }
+
+  /**
+   * Grants permission to delete a custom prompt router
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeletePromptRouter.html
+   */
+  public toDeletePromptRouter() {
+    return this.to('DeletePromptRouter');
   }
 
   /**
@@ -2237,6 +2263,7 @@ export class Bedrock extends PolicyStatement {
       'CreateModelImportJob',
       'CreateModelInvocationJob',
       'CreatePrompt',
+      'CreatePromptRouter',
       'CreatePromptVersion',
       'CreateProvisionedModelThroughput',
       'CreateSession',
@@ -2262,6 +2289,7 @@ export class Bedrock extends PolicyStatement {
       'DeleteMarketplaceModelEndpoint',
       'DeleteModelInvocationLoggingConfiguration',
       'DeletePrompt',
+      'DeletePromptRouter',
       'DeleteProvisionedModelThroughput',
       'DeleteResourcePolicy',
       'DeleteSession',
@@ -2403,6 +2431,20 @@ export class Bedrock extends PolicyStatement {
    */
   public onDefaultPromptRouter(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:default-prompt-router/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type prompt-router to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPromptRouter(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:prompt-router/${ resourceId }`);
   }
 
   /**
@@ -2821,6 +2863,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateModelImportJob()
    * - .toCreateModelInvocationJob()
    * - .toCreatePrompt()
+   * - .toCreatePromptRouter()
    * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
    * - .toCreateSession()
@@ -2892,6 +2935,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateModelImportJob()
    * - .toCreateModelInvocationJob()
    * - .toCreatePrompt()
+   * - .toCreatePromptRouter()
    * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
    * - .toCreateSession()
