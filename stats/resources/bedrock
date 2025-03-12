@@ -23,6 +23,7 @@ bedrock:model-evaluation-job
 bedrock:model-import-job
 bedrock:model-invocation-job
 bedrock:prompt
+bedrock:prompt-router
 bedrock:prompt-version
 bedrock:provisioned-model
 bedrock:session
