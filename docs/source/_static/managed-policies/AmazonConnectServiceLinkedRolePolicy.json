@@ -205,7 +205,10 @@
         "wisdom:ListAIGuardrails",
         "wisdom:ListAIGuardrailVersions",
         "wisdom:CreateAssistant",
-        "wisdom:ListTagsForResource"
+        "wisdom:ListTagsForResource",
+        "wisdom:SendMessage",
+        "wisdom:GetNextMessage",
+        "wisdom:ListMessages"
       ],
       "Resource": "*",
       "Condition": {
