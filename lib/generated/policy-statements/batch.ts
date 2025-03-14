@@ -45,6 +45,21 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Batch consumable resource in your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateConsumableResource.html
+   */
+  public toCreateConsumableResource() {
+    return this.to('CreateConsumableResource');
+  }
+
+  /**
    * Grants permission to create an AWS Batch job queue in your account
    *
    * Access Level: Write
@@ -79,6 +94,17 @@ export class Batch extends PolicyStatement {
    */
   public toDeleteComputeEnvironment() {
     return this.to('DeleteComputeEnvironment');
+  }
+
+  /**
+   * Grants permission to delete an AWS Batch consumable resource in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteConsumableResource.html
+   */
+  public toDeleteConsumableResource() {
+    return this.to('DeleteConsumableResource');
   }
 
   /**
@@ -123,6 +149,17 @@ export class Batch extends PolicyStatement {
    */
   public toDescribeComputeEnvironments() {
     return this.to('DescribeComputeEnvironments');
+  }
+
+  /**
+   * Grants permission to describe one or more AWS Batch consumable resource in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeConsumableResource.html
+   */
+  public toDescribeConsumableResource() {
+    return this.to('DescribeConsumableResource');
   }
 
   /**
@@ -181,6 +218,17 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list AWS Batch consumable resources in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListConsumableResources.html
+   */
+  public toListConsumableResources() {
+    return this.to('ListConsumableResources');
+  }
+
+  /**
    * Grants permission to list jobs for a specified AWS Batch job queue in your account
    *
    * Access Level: List
@@ -189,6 +237,17 @@ export class Batch extends PolicyStatement {
    */
   public toListJobs() {
     return this.to('ListJobs');
+  }
+
+  /**
+   * Grants permission to list AWS Batch jobs that require a specific consumable resource in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobsByConsumableResource.html
+   */
+  public toListJobsByConsumableResource() {
+    return this.to('ListJobsByConsumableResource');
   }
 
   /**
@@ -305,6 +364,17 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an AWS Batch consumable resource in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateConsumableResource.html
+   */
+  public toUpdateConsumableResource() {
+    return this.to('UpdateConsumableResource');
+  }
+
+  /**
    * Grants permission to update an AWS Batch job queue in your account
    *
    * Access Level: Write
@@ -330,9 +400,11 @@ export class Batch extends PolicyStatement {
     Write: [
       'CancelJob',
       'CreateComputeEnvironment',
+      'CreateConsumableResource',
       'CreateJobQueue',
       'CreateSchedulingPolicy',
       'DeleteComputeEnvironment',
+      'DeleteConsumableResource',
       'DeleteJobQueue',
       'DeleteSchedulingPolicy',
       'DeregisterJobDefinition',
@@ -340,11 +412,13 @@ export class Batch extends PolicyStatement {
       'SubmitJob',
       'TerminateJob',
       'UpdateComputeEnvironment',
+      'UpdateConsumableResource',
       'UpdateJobQueue',
       'UpdateSchedulingPolicy'
     ],
     Read: [
       'DescribeComputeEnvironments',
+      'DescribeConsumableResource',
       'DescribeJobDefinitions',
       'DescribeJobQueues',
       'DescribeJobs',
@@ -354,7 +428,9 @@ export class Batch extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
-      'ListJobs'
+      'ListConsumableResources',
+      'ListJobs',
+      'ListJobsByConsumableResource'
     ],
     Tagging: [
       'TagResource',
@@ -463,12 +539,30 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type consumable-resource to the statement
+   *
+   * https://docs.aws.amazon.com/batch/latest/userguide/resource-aware-scheduling.html
+   *
+   * @param consumableResourceName - Identifier for the consumableResourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConsumableResource(consumableResourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:consumable-resource/${ consumableResourceName }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateComputeEnvironment()
+   * - .toCreateConsumableResource()
    * - .toCreateJobQueue()
    * - .toCreateSchedulingPolicy()
    * - .toRegisterJobDefinition()
@@ -494,6 +588,7 @@ export class Batch extends PolicyStatement {
    * - job-definition-revision
    * - job
    * - scheduling-policy
+   * - consumable-resource
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -510,6 +605,7 @@ export class Batch extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateComputeEnvironment()
+   * - .toCreateConsumableResource()
    * - .toCreateJobQueue()
    * - .toCreateSchedulingPolicy()
    * - .toRegisterJobDefinition()

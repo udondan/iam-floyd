@@ -68,6 +68,9 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - wafv2:TagResource
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html
    */
   public toCreateIPSet() {
@@ -82,6 +85,9 @@ export class Wafv2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - wafv2:TagResource
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html
    */
@@ -98,6 +104,9 @@ export class Wafv2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - wafv2:TagResource
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html
    */
   public toCreateRuleGroup() {
@@ -112,6 +121,9 @@ export class Wafv2 extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - wafv2:TagResource
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html
    */
