@@ -27,6 +27,7 @@ sagemaker:MaxRuntimeInSeconds
 sagemaker:MinimumInstanceMetadataServiceVersion
 sagemaker:ModelApprovalStatus
 sagemaker:ModelArn
+sagemaker:ModelLifeCycle
 sagemaker:NetworkIsolation
 sagemaker:OutputKmsKey
 sagemaker:OwnerUserProfileArn

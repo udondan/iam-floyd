@@ -974,6 +974,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifModelApprovalStatus()
    * - .ifCustomerMetadataProperties()
+   * - .ifModelLifeCycle()
+   * - .ifModelLifeCycle()
    *
    * Dependent actions:
    * - sagemaker:AddTags
@@ -4828,6 +4830,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifModelApprovalStatus()
    * - .ifCustomerMetadataProperties()
    * - .ifCustomerMetadataPropertiesToRemove()
+   * - .ifModelLifeCycle()
+   * - .ifModelLifeCycle()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateModelPackage.html
    */
@@ -7391,6 +7395,22 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifModelArn(value: string | string[], operator?: Operator | string) {
     return this.if(`ModelArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by stageStatus field in the model life cycle object associated with the model-package resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateModelPackage()
+   * - .toUpdateModelPackage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifModelLifeCycle(value: string | string[], operator?: Operator | string) {
+    return this.if(`ModelLifeCycle`, value, operator ?? 'StringLike');
   }
 
   /**

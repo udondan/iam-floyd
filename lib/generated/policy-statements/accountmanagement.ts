@@ -111,17 +111,6 @@ export class Account extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the challenge questions for an account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html
-   */
-  public toGetChallengeQuestions() {
-    return this.to('GetChallengeQuestions');
-  }
-
-  /**
    * Grants permission to retrieve the primary contact information for an account
    *
    * Access Level: Read
@@ -183,17 +172,6 @@ export class Account extends PolicyStatement {
   }
 
   /**
-   * Grants permission to modify the challenge questions for an account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html
-   */
-  public toPutChallengeQuestions() {
-    return this.to('PutChallengeQuestions');
-  }
-
-  /**
    * Grants permission to update the primary contact information for an account
    *
    * Access Level: Write
@@ -226,14 +204,12 @@ export class Account extends PolicyStatement {
       'DisableRegion',
       'EnableRegion',
       'PutAlternateContact',
-      'PutChallengeQuestions',
       'PutContactInformation',
       'StartPrimaryEmailUpdate'
     ],
     Read: [
       'GetAccountInformation',
       'GetAlternateContact',
-      'GetChallengeQuestions',
       'GetContactInformation',
       'GetPrimaryEmail',
       'GetRegionOptStatus'

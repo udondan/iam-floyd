@@ -1,4 +1,5 @@
 batch:compute-environment
+batch:consumable-resource
 batch:job
 batch:job-definition
 batch:job-definition-revision

@@ -29,7 +29,6 @@
                 "account:DisableRegion",
                 "account:EnableRegion",
                 "account:PutAlternateContact",
-                "account:PutChallengeQuestions",
                 "account:PutContactInformation",
                 "account:StartPrimaryEmailUpdate"
             ],
