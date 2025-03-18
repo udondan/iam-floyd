@@ -291,6 +291,17 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
+   * Grants permission to probe a file
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/probe.html
+   */
+  public toProbe() {
+    return this.to('Probe');
+  }
+
+  /**
    * Grants permission to put an AWS Elemental MediaConvert policy
    *
    * Access Level: Write
@@ -407,7 +418,8 @@ export class Mediaconvert extends PolicyStatement {
       'GetPolicy',
       'GetPreset',
       'GetQueue',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'Probe'
     ],
     Tagging: [
       'TagResource',

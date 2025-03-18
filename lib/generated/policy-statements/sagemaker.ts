@@ -276,6 +276,9 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceTypes()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
    *
    * Dependent actions:
    * - eks:AssociateAccessPolicy
@@ -4538,6 +4541,11 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInstanceTypes()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
    * Dependent actions:
    * - eks:AssociateAccessPolicy
    * - eks:CreateAccessEntry
@@ -7257,6 +7265,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateApp()
+   * - .toCreateCluster()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateEndpointConfig()
@@ -7271,6 +7280,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateTrainingJob()
    * - .toCreateTransformJob()
    * - .toCreateUserProfile()
+   * - .toUpdateCluster()
    * - .toUpdateDomain()
    * - .toUpdateMonitoringSchedule()
    * - .toUpdateNotebookInstance()
@@ -7731,6 +7741,7 @@ export class Sagemaker extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAutoMLJob()
    * - .toCreateAutoMLJobV2()
+   * - .toCreateCluster()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateEndpointConfig()
@@ -7744,6 +7755,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateProcessingJob()
    * - .toCreateTrainingJob()
    * - .toCreateUserProfile()
+   * - .toUpdateCluster()
    * - .toUpdateDomain()
    * - .toUpdateMonitoringSchedule()
    * - .toUpdateUserProfile()
@@ -7763,6 +7775,7 @@ export class Sagemaker extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAutoMLJob()
    * - .toCreateAutoMLJobV2()
+   * - .toCreateCluster()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateDomain()
    * - .toCreateEndpointConfig()
@@ -7775,6 +7788,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateNotebookInstance()
    * - .toCreateProcessingJob()
    * - .toCreateTrainingJob()
+   * - .toUpdateCluster()
    * - .toUpdateDomain()
    * - .toUpdateMonitoringSchedule()
    *

@@ -21,6 +21,7 @@ mediaconvert:ListPresets;List
 mediaconvert:ListQueues;List
 mediaconvert:ListTagsForResource;Read
 mediaconvert:ListVersions;List
+mediaconvert:Probe;Read
 mediaconvert:PutPolicy;Write
 mediaconvert:SearchJobs;List
 mediaconvert:TagResource;Tagging

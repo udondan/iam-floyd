@@ -267,7 +267,6 @@ export { Datapipeline } from './policy-statements/datapipeline';
 export { Datasync } from './policy-statements/datasync';
 export { Deadline } from './policy-statements/deadlinecloud';
 export { Deepcomposer } from './policy-statements/deepcomposer';
-export { Deeplens } from './policy-statements/deeplens';
 export { Deepracer } from './policy-statements/deepracer';
 export { Devicefarm } from './policy-statements/devicefarm';
 export { Ts } from './policy-statements/diagnostictools';
