@@ -44,7 +44,9 @@
       "Action": [
         "logs:DescribeLogStreams",
         "logs:GetLogEvents",
-        "logs:FilterLogEvents"
+        "logs:FilterLogEvents",
+        "logs:StartLiveTail",
+        "logs:StopLiveTail"
       ],
       "Resource": "arn:aws:logs:*:*:log-group:/aws/lambda/*"
     }

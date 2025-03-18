@@ -42,7 +42,9 @@
         "logs:DescribeQueries",
         "logs:GetLogGroupFields",
         "logs:GetLogRecord",
-        "logs:GetQueryResults"
+        "logs:GetQueryResults",
+        "logs:StartLiveTail",
+        "logs:StopLiveTail"
       ],
       "Resource": "arn:aws:logs:*:*:log-group:/aws/lambda/*"
     }
