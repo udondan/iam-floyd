@@ -74,6 +74,22 @@
       }
     },
     {
+      "Sid": "ApplicationSignalsPermission",
+      "Effect": "Allow",
+      "Action": [
+        "application-signals:ListServiceLevelObjectiveExclusionWindows",
+        "application-signals:GetServiceLevelObjective"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "EC2AutoScalingPermission",
       "Effect": "Allow",
       "Action": [
