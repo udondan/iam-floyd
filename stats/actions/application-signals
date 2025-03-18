@@ -1,4 +1,5 @@
 application-signals:BatchGetServiceLevelObjectiveBudgetReport;Read
+application-signals:BatchUpdateExclusionWindows;Write
 application-signals:CreateServiceLevelObjective;Write
 application-signals:DeleteServiceLevelObjective;Write
 application-signals:GetService;Read
@@ -7,6 +8,7 @@ application-signals:Link;Write
 application-signals:ListObservedEntities;List
 application-signals:ListServiceDependencies;Read
 application-signals:ListServiceDependents;Read
+application-signals:ListServiceLevelObjectiveExclusionWindows;List
 application-signals:ListServiceLevelObjectives;List
 application-signals:ListServiceOperations;Read
 application-signals:ListServices;List

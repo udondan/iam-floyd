@@ -1724,6 +1724,23 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type mailmanager-archive to the statement
+   *
+   * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_Archive.html
+   *
+   * @param archiveId - Identifier for the archiveId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMailmanagerArchive(archiveId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mailmanager-archive/${ archiveId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1799,6 +1816,7 @@ export class SesV2 extends PolicyStatement {
    * - dedicated-ip-pool
    * - deliverability-test-report
    * - identity
+   * - mailmanager-archive
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

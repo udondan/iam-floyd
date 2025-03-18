@@ -30,6 +30,15 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or remove exclusion windows from Amazon CloudWatch SLOs
+   *
+   * Access Level: Write
+   */
+  public toBatchUpdateExclusionWindows() {
+    return this.to('BatchUpdateExclusionWindows');
+  }
+
+  /**
    * Grants permission to create a service level objective
    *
    * Access Level: Write
@@ -119,6 +128,15 @@ export class ApplicationSignals extends PolicyStatement {
    */
   public toListServiceDependents() {
     return this.to('ListServiceDependents');
+  }
+
+  /**
+   * Grants permission to list exclusion windows for an Amazon CloudWatch SLO
+   *
+   * Access Level: List
+   */
+  public toListServiceLevelObjectiveExclusionWindows() {
+    return this.to('ListServiceLevelObjectiveExclusionWindows');
   }
 
   /**
@@ -227,6 +245,7 @@ export class ApplicationSignals extends PolicyStatement {
       'ListTagsForResource'
     ],
     Write: [
+      'BatchUpdateExclusionWindows',
       'CreateServiceLevelObjective',
       'DeleteServiceLevelObjective',
       'Link',
@@ -235,6 +254,7 @@ export class ApplicationSignals extends PolicyStatement {
     ],
     List: [
       'ListObservedEntities',
+      'ListServiceLevelObjectiveExclusionWindows',
       'ListServiceLevelObjectives',
       'ListServices'
     ],
