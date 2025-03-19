@@ -154,8 +154,8 @@ export class One extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/one-enterprise/latest/userguide/enrollment-entry.htmll
    */
-  public toDeleteUser() {
-    return this.to('DeleteUser');
+  public toDeleteUserV1() {
+    return this.to('DeleteUserV1');
   }
 
   /**
@@ -282,8 +282,8 @@ export class One extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/one-enterprise/latest/userguide/enrollment-entry.html
    */
-  public toListUsers() {
-    return this.to('ListUsers');
+  public toListUsersV1() {
+    return this.to('ListUsersV1');
   }
 
   /**
@@ -396,7 +396,7 @@ export class One extends PolicyStatement {
       'DeleteDeviceConfigurationTemplate',
       'DeleteDeviceInstance',
       'DeleteSite',
-      'DeleteUser',
+      'DeleteUserV1',
       'RebootDevice',
       'UpdateDeviceConfigurationTemplate',
       'UpdateDeviceInstance',
@@ -415,7 +415,7 @@ export class One extends PolicyStatement {
       'ListDeviceConfigurationTemplates',
       'ListDeviceInstances',
       'ListSites',
-      'ListUsers'
+      'ListUsersV1'
     ],
     Tagging: [
       'TagResource',
