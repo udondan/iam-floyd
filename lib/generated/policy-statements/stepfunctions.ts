@@ -635,6 +635,9 @@ export class States extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStatemachineversion(stateMachineName: string, stateMachineVersionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineVersionId }`);
@@ -650,6 +653,9 @@ export class States extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStatemachinealias(stateMachineName: string, stateMachineAliasName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineAliasName }`);
@@ -732,6 +738,8 @@ export class States extends PolicyStatement {
    * - activity
    * - execution
    * - statemachine
+   * - statemachineversion
+   * - statemachinealias
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

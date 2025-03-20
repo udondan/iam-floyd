@@ -23,7 +23,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-cancel-task.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-cancel-task
    */
   public toCancelTask() {
     return this.to('CancelTask');
@@ -38,7 +38,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-create-task.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-create-task
    */
   public toCreateTask() {
     return this.to('CreateTask');
@@ -49,7 +49,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-describe-device.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-describe-device
    */
   public toDescribeDevice() {
     return this.to('DescribeDevice');
@@ -60,7 +60,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-describe-ec2-instances.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-describe-ec2-instances
    */
   public toDescribeDeviceEc2Instances() {
     return this.to('DescribeDeviceEc2Instances');
@@ -71,7 +71,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-describe-execution.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-describe-execution
    */
   public toDescribeExecution() {
     return this.to('DescribeExecution');
@@ -82,7 +82,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-describe-task.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-describe-task
    */
   public toDescribeTask() {
     return this.to('DescribeTask');
@@ -93,7 +93,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-device-resources.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-list-device-resources
    */
   public toListDeviceResources() {
     return this.to('ListDeviceResources');
@@ -104,7 +104,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-devices.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-list-devices
    */
   public toListDevices() {
     return this.to('ListDevices');
@@ -115,7 +115,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-executions.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-list-executions
    */
   public toListExecutions() {
     return this.to('ListExecutions');
@@ -130,7 +130,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-tags-for-resource.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-list-tags-for-resource
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -141,7 +141,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-list-tasks.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-list-tasks
    */
   public toListTasks() {
     return this.to('ListTasks');
@@ -156,7 +156,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-tag-resource.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-tag-resource
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -168,10 +168,9 @@ export class SnowDeviceManagement extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/sdms-cli-untag-resources.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-untag-resources
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -204,7 +203,7 @@ export class SnowDeviceManagement extends PolicyStatement {
   /**
    * Adds a resource of type managed-device to the statement
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/aws-sdms.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -221,7 +220,7 @@ export class SnowDeviceManagement extends PolicyStatement {
   /**
    * Adds a resource of type task to the statement
    *
-   * https://docs.aws.amazon.com/snowball/latest/snowcone-guide/aws-sdms.html
+   * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -236,7 +235,7 @@ export class SnowDeviceManagement extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag key-value pairs in the request
+   * Filters access by a tag's key and value in a request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -244,7 +243,6 @@ export class SnowDeviceManagement extends PolicyStatement {
    * - .toCreateTask()
    * - .toListTagsForResource()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -255,7 +253,7 @@ export class SnowDeviceManagement extends PolicyStatement {
   }
 
   /**
-   * Filters access based on tag key-value pairs attached to the resource
+   * Filters access by the presence of tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
@@ -272,7 +270,7 @@ export class SnowDeviceManagement extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag keys in the request
+   * Filters access by the presence of tag keys in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
