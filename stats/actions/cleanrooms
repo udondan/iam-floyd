@@ -39,6 +39,7 @@ cleanrooms:GetIdMappingTable;Read
 cleanrooms:GetIdNamespaceAssociation;Read
 cleanrooms:GetMembership;Read
 cleanrooms:GetPrivacyBudgetTemplate;Read
+cleanrooms:GetProtectedJob;Read
 cleanrooms:GetProtectedQuery;Read
 cleanrooms:GetSchema;Read
 cleanrooms:GetSchemaAnalysisRule;Read
@@ -58,6 +59,7 @@ cleanrooms:ListMembers;List
 cleanrooms:ListMemberships;List
 cleanrooms:ListPrivacyBudgetTemplates;List
 cleanrooms:ListPrivacyBudgets;List
+cleanrooms:ListProtectedJobs;List
 cleanrooms:ListProtectedQueries;List
 cleanrooms:ListSchemas;List
 cleanrooms:ListTagsForResource;List
@@ -65,6 +67,7 @@ cleanrooms:PassCollaboration;Read
 cleanrooms:PassMembership;Read
 cleanrooms:PopulateIdMappingTable;Write
 cleanrooms:PreviewPrivacyImpact;Read
+cleanrooms:StartProtectedJob;Write
 cleanrooms:StartProtectedQuery;Write
 cleanrooms:TagResource;Tagging
 cleanrooms:UntagResource;Tagging
@@ -79,4 +82,5 @@ cleanrooms:UpdateIdMappingTable;Write
 cleanrooms:UpdateIdNamespaceAssociation;Write
 cleanrooms:UpdateMembership;Write
 cleanrooms:UpdatePrivacyBudgetTemplate;Write
+cleanrooms:UpdateProtectedJob;Write
 cleanrooms:UpdateProtectedQuery;Write

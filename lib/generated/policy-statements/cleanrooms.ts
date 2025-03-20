@@ -543,6 +543,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view a protected job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetProtectedJob.html
+   */
+  public toGetProtectedJob() {
+    return this.to('GetProtectedJob');
+  }
+
+  /**
    * Grants permission to view a protected query
    *
    * Access Level: Read
@@ -755,6 +766,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list protected jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListProtectedJobs.html
+   */
+  public toListProtectedJobs() {
+    return this.to('ListProtectedJobs');
+  }
+
+  /**
    * Grants permission to list protected queries
    *
    * Access Level: List
@@ -832,6 +854,21 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toPreviewPrivacyImpact() {
     return this.to('PreviewPrivacyImpact');
+  }
+
+  /**
+   * Grants permission to start protected jobs
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms:GetCollaborationAnalysisTemplate
+   * - cleanrooms:GetSchema
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_StartProtectedJob.html
+   */
+  public toStartProtectedJob() {
+    return this.to('StartProtectedJob');
   }
 
   /**
@@ -1022,6 +1059,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update protected jobs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateProtectedJob.html
+   */
+  public toUpdateProtectedJob() {
+    return this.to('UpdateProtectedJob');
+  }
+
+  /**
    * Grants permission to update protected queries
    *
    * Access Level: Write
@@ -1052,6 +1100,7 @@ export class Cleanrooms extends PolicyStatement {
       'GetIdNamespaceAssociation',
       'GetMembership',
       'GetPrivacyBudgetTemplate',
+      'GetProtectedJob',
       'GetProtectedQuery',
       'GetSchema',
       'GetSchemaAnalysisRule',
@@ -1084,6 +1133,7 @@ export class Cleanrooms extends PolicyStatement {
       'DeleteMembership',
       'DeletePrivacyBudgetTemplate',
       'PopulateIdMappingTable',
+      'StartProtectedJob',
       'StartProtectedQuery',
       'UpdateAnalysisTemplate',
       'UpdateCollaboration',
@@ -1096,6 +1146,7 @@ export class Cleanrooms extends PolicyStatement {
       'UpdateIdNamespaceAssociation',
       'UpdateMembership',
       'UpdatePrivacyBudgetTemplate',
+      'UpdateProtectedJob',
       'UpdateProtectedQuery'
     ],
     List: [
@@ -1115,6 +1166,7 @@ export class Cleanrooms extends PolicyStatement {
       'ListMemberships',
       'ListPrivacyBudgetTemplates',
       'ListPrivacyBudgets',
+      'ListProtectedJobs',
       'ListProtectedQueries',
       'ListSchemas',
       'ListTagsForResource'
