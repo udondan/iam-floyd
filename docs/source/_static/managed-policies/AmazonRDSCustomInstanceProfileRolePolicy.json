@@ -177,7 +177,8 @@
         "secretsmanager:DescribeSecret"
       ],
       "Resource": [
-        "arn:aws:secretsmanager:*:*:secret:do-not-delete-rds-custom-*"
+        "arn:aws:secretsmanager:*:*:secret:do-not-delete-rds-custom-*",
+        "arn:aws:secretsmanager:*:*:secret:rds-custom!*"
       ],
       "Condition": {
         "StringLike": {
@@ -279,7 +280,10 @@
       "Resource": "*",
       "Condition": {
         "ArnLike": {
-          "kms:EncryptionContext:SecretARN": "arn:aws:secretsmanager:*:*:secret:do-not-delete-rds-custom-*"
+          "kms:EncryptionContext:SecretARN": [
+            "arn:aws:secretsmanager:*:*:secret:do-not-delete-rds-custom-*",
+            "arn:aws:secretsmanager:*:*:secret:rds-custom!*"
+          ]
         },
         "StringLike": {
           "kms:ViaService": "secretsmanager.*.amazonaws.com"
