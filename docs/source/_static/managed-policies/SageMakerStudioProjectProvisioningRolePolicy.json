@@ -1200,7 +1200,8 @@
       "Action": [
         "cloudformation:CreateStack",
         "cloudformation:DeleteStack",
-        "cloudformation:DescribeStacks"
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents"
       ],
       "Resource": "arn:aws:cloudformation:*:*:stack/athenafederatedcatalog*",
       "Condition": {
