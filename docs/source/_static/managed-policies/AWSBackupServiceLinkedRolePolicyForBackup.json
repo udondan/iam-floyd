@@ -328,6 +328,48 @@
       ]
     },
     {
+      "Sid": "RedshiftServerlessGetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:GetNamespace",
+        "redshift-serverless:GetSnapshot",
+        "redshift-serverless:GetWorkgroup"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:namespace/*",
+        "arn:aws:redshift-serverless:*:*:workgroup/*",
+        "arn:aws:redshift-serverless:*:*:snapshot/*"
+      ]
+    },
+    {
+      "Sid": "RedshiftServerlessDeleteSnapshotPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:DeleteSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:snapshot/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/aws:backup:source-resource": "false"
+        }
+      }
+    },
+    {
+      "Sid": "RedshiftServerlessListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:ListNamespaces",
+        "redshift-serverless:ListSnapshots",
+        "redshift-serverless:ListTagsForResource",
+        "redshift-serverless:ListWorkgroups"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
       "Sid": "CloudformationStackPermissions",
       "Effect": "Allow",
       "Action": [
