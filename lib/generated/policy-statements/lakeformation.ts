@@ -530,6 +530,17 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register a new location to be managed by Lake Formation, with privileged access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RegisterResource.html
+   */
+  public toRegisterResourceWithPrivilegedAccess() {
+    return this.to('RegisterResourceWithPrivilegedAccess');
+  }
+
+  /**
    * Grants permission to remove lakeformation tags from catalog resources
    *
    * Access Level: Tagging
@@ -702,6 +713,7 @@ export class Lakeformation extends PolicyStatement {
       'ExtendTransaction',
       'GetDataAccess',
       'RegisterResource',
+      'RegisterResourceWithPrivilegedAccess',
       'StartQueryPlanning',
       'StartTransaction',
       'UpdateDataCellsFilter',

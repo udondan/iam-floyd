@@ -43,6 +43,7 @@ lakeformation:ListTableStorageOptimizers;List
 lakeformation:ListTransactions;List
 lakeformation:PutDataLakeSettings;Permissions management
 lakeformation:RegisterResource;Write
+lakeformation:RegisterResourceWithPrivilegedAccess;Write
 lakeformation:RemoveLFTagsFromResource;Tagging
 lakeformation:RevokePermissions;Permissions management
 lakeformation:SearchDatabasesByLFTags;Read

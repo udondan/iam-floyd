@@ -138,6 +138,7 @@ connect:GetTrafficDistribution;List
 connect:ImportPhoneNumber;Write
 connect:ListAgentStatuses;List
 connect:ListAnalyticsDataAssociations;List
+connect:ListAnalyticsDataLakeDataSets;List
 connect:ListApprovedOrigins;List
 connect:ListAssociatedContacts;List
 connect:ListAuthenticationProfiles;List

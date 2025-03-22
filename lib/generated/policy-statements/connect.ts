@@ -2214,6 +2214,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list data lake datasets available to associate with for a given Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   */
+  public toListAnalyticsDataLakeDataSets() {
+    return this.to('ListAnalyticsDataLakeDataSets');
+  }
+
+  /**
    * Grants permission to view approved origins of an existing Amazon Connect instance
    *
    * Access Level: List
@@ -4723,6 +4735,7 @@ export class Connect extends PolicyStatement {
       'GetTrafficDistribution',
       'ListAgentStatuses',
       'ListAnalyticsDataAssociations',
+      'ListAnalyticsDataLakeDataSets',
       'ListApprovedOrigins',
       'ListAssociatedContacts',
       'ListAuthenticationProfiles',
@@ -5915,6 +5928,7 @@ export class Connect extends PolicyStatement {
    * - .toGetPromptFile()
    * - .toGetTaskTemplate()
    * - .toListAnalyticsDataAssociations()
+   * - .toListAnalyticsDataLakeDataSets()
    * - .toListApprovedOrigins()
    * - .toListAssociatedContacts()
    * - .toListAuthenticationProfiles()

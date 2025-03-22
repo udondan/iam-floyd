@@ -124,6 +124,11 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDomainName.html
    */
   public toCreateDomainName() {
@@ -247,6 +252,9 @@ export class Appsync extends PolicyStatement {
    * Grants permission to delete a custom domain name in AppSync
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteDomainName.html
    */
@@ -488,6 +496,9 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDomainName.html
    */
   public toGetDomainName() {
@@ -661,6 +672,9 @@ export class Appsync extends PolicyStatement {
    * Grants permission to enumerate custom domain names in AppSync
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListDomainNames.html
    */
@@ -936,6 +950,9 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateDomainName.html
    */
   public toUpdateDomainName() {
@@ -1121,6 +1138,9 @@ export class Appsync extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domainnames/${ domainName }`);
@@ -1275,6 +1295,7 @@ export class Appsync extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApi()
    * - .toCreateChannelNamespace()
+   * - .toCreateDomainName()
    * - .toCreateGraphqlApi()
    * - .toTagResource()
    *
@@ -1294,22 +1315,28 @@ export class Appsync extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApi()
    * - .toCreateChannelNamespace()
+   * - .toCreateDomainName()
    * - .toDeleteApi()
    * - .toDeleteChannelNamespace()
+   * - .toDeleteDomainName()
    * - .toDeleteGraphqlApi()
    * - .toGetApi()
    * - .toGetChannelNamespace()
+   * - .toGetDomainName()
    * - .toGetGraphqlApi()
    * - .toListApis()
    * - .toListChannelNamespaces()
+   * - .toListDomainNames()
    * - .toListTagsForResource()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateApi()
    * - .toUpdateChannelNamespace()
+   * - .toUpdateDomainName()
    * - .toUpdateGraphqlApi()
    *
    * Applies to resource types:
+   * - domain
    * - graphqlapi
    * - api
    * - channelNamespace
@@ -1330,6 +1357,7 @@ export class Appsync extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApi()
    * - .toCreateChannelNamespace()
+   * - .toCreateDomainName()
    * - .toCreateGraphqlApi()
    * - .toTagResource()
    * - .toUntagResource()
