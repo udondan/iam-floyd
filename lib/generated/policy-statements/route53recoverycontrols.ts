@@ -272,12 +272,22 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/recovery-cluster/latest/api/tags-resource-arn.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html
+   */
+  public toUpdateCluster() {
+    return this.to('UpdateCluster');
   }
 
   /**
@@ -323,6 +333,7 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
       'DeleteControlPanel',
       'DeleteRoutingControl',
       'DeleteSafetyRule',
+      'UpdateCluster',
       'UpdateControlPanel',
       'UpdateRoutingControl',
       'UpdateSafetyRule'
@@ -422,7 +433,6 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
    * - .toCreateControlPanel()
    * - .toCreateSafetyRule()
    * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
