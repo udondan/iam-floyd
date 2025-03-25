@@ -270,6 +270,36 @@
           "cloudwatch:namespace": "AWS/Inspector2"
         }
       }
+    },
+    {
+      "Sid": "AllowListAccessToECSAndEKS",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:ListClusters",
+        "ecs:ListTasks",
+        "eks:ListClusters"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAccessToECSTasks",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DescribeTasks"
+      ],
+      "Resource": "arn:aws:ecs:*:*:cluster/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }
