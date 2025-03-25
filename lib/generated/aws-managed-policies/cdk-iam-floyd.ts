@@ -669,6 +669,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSFullAccess);
     }
 
+    /** Policy to enable Amazon ECS Compute to manage your EC2 instances and related resources as part of ECS managed instances */
+    public AmazonECSComputeServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSComputeServiceRolePolicy);
+    }
+
     /** Provides administrative access to Private Certificate Authority, AWS Secrets Manager and other AWS Services required to manage ECS Service Connect TLS features on your behalf. */
     public AmazonECSInfrastructureRolePolicyForServiceConnectTransportLayerSecurity(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSInfrastructureRolePolicyForServiceConnectTransportLayerSecurity);

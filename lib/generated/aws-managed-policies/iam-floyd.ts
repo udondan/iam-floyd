@@ -264,6 +264,8 @@ export class AwsManagedPolicy {
     public static AmazonEC2SpotFleetTaggingRole = 'service-role/AmazonEC2SpotFleetTaggingRole';
     /** Provides administrative access to Amazon ECS resources and enables ECS features through access to other AWS service resources, including VPCs, Auto Scaling groups, and CloudFormation stacks. */
     public static AmazonECSFullAccess = 'AmazonECS_FullAccess';
+    /** Policy to enable Amazon ECS Compute to manage your EC2 instances and related resources as part of ECS managed instances */
+    public static AmazonECSComputeServiceRolePolicy = 'aws-service-role/AmazonECSComputeServiceRolePolicy';
     /** Provides administrative access to Private Certificate Authority, AWS Secrets Manager and other AWS Services required to manage ECS Service Connect TLS features on your behalf. */
     public static AmazonECSInfrastructureRolePolicyForServiceConnectTransportLayerSecurity = 'service-role/AmazonECSInfrastructureRolePolicyForServiceConnectTransportLayerSecurity';
     /** Provides access to other AWS service resources required to manage volumes associated with ECS workloads on your behalf. */
