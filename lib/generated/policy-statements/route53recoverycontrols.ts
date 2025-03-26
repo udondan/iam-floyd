@@ -97,6 +97,17 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the RAM access control policy for a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.failover-different-accounts.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a routing control
    *
    * Access Level: Write
@@ -251,6 +262,17 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to define the RAM access control policy for a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.failover-different-accounts.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to tag a resource
    *
    * Access Level: Tagging
@@ -331,8 +353,10 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
       'CreateSafetyRule',
       'DeleteCluster',
       'DeleteControlPanel',
+      'DeleteResourcePolicy',
       'DeleteRoutingControl',
       'DeleteSafetyRule',
+      'PutResourcePolicy',
       'UpdateCluster',
       'UpdateControlPanel',
       'UpdateRoutingControl',
