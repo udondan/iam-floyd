@@ -923,6 +923,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get update eligibility status for project constructs
+   *
+   * Access Level: Read
+   */
+  public toGetUpdateEligibility() {
+    return this.to('GetUpdateEligibility');
+  }
+
+  /**
    * Grants permission to retrieve a user profile for an existing user in the DataZone Domain
    *
    * Access Level: Read
@@ -1830,6 +1839,7 @@ export class Datazone extends PolicyStatement {
       'GetSubscriptionRequestDetails',
       'GetSubscriptionTarget',
       'GetTimeSeriesDataPoint',
+      'GetUpdateEligibility',
       'GetUserProfile',
       'ListTagsForResource'
     ],

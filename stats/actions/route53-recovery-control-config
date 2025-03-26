@@ -4,6 +4,7 @@ route53-recovery-control-config:CreateRoutingControl;Write
 route53-recovery-control-config:CreateSafetyRule;Write
 route53-recovery-control-config:DeleteCluster;Write
 route53-recovery-control-config:DeleteControlPanel;Write
+route53-recovery-control-config:DeleteResourcePolicy;Write
 route53-recovery-control-config:DeleteRoutingControl;Write
 route53-recovery-control-config:DeleteSafetyRule;Write
 route53-recovery-control-config:DescribeCluster;Read
@@ -18,6 +19,7 @@ route53-recovery-control-config:ListControlPanels;Read
 route53-recovery-control-config:ListRoutingControls;Read
 route53-recovery-control-config:ListSafetyRules;Read
 route53-recovery-control-config:ListTagsForResource;Read
+route53-recovery-control-config:PutResourcePolicy;Write
 route53-recovery-control-config:TagResource;Tagging
 route53-recovery-control-config:UntagResource;Tagging
 route53-recovery-control-config:UpdateCluster;Write
