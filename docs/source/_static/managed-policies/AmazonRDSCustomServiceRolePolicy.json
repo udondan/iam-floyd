@@ -215,7 +215,8 @@
         "ec2:DeleteKeyPair"
       ],
       "Resource": [
-        "arn:aws:ec2:*:*:key-pair/do-not-delete-rds-custom-*"
+        "arn:aws:ec2:*:*:key-pair/do-not-delete-rds-custom-*",
+        "arn:aws:ec2:*:*:key-pair/rds-custom!*"
       ],
       "Condition": {
         "StringLike": {
@@ -234,7 +235,8 @@
         "ec2:CreateKeyPair"
       ],
       "Resource": [
-        "arn:aws:ec2:*:*:key-pair/do-not-delete-rds-custom-*"
+        "arn:aws:ec2:*:*:key-pair/do-not-delete-rds-custom-*",
+        "arn:aws:ec2:*:*:key-pair/rds-custom!*"
       ],
       "Condition": {
         "StringLike": {
@@ -760,7 +762,8 @@
       "Condition": {
         "StringLike": {
           "aws:RequestTag/AWSRDSCustom": [
-            "custom-sqlserver"
+            "custom-sqlserver",
+            "custom-oracle"
           ]
         }
       }
@@ -779,7 +782,8 @@
       "Condition": {
         "StringLike": {
           "aws:ResourceTag/AWSRDSCustom": [
-            "custom-sqlserver"
+            "custom-sqlserver",
+            "custom-oracle"
           ]
         }
       }
