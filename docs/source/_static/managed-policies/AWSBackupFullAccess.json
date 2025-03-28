@@ -398,6 +398,52 @@
       "Resource": "*"
     },
     {
+      "Sid": "RedshiftServerlessListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:ListNamespaces",
+        "redshift-serverless:ListSnapshots",
+        "redshift-serverless:ListWorkgroups"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "RedshiftServerlessGetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:GetNamespace",
+        "redshift-serverless:GetSnapshot",
+        "redshift-serverless:GetWorkgroup"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:namespace/*",
+        "arn:aws:redshift-serverless:*:*:workgroup/*",
+        "arn:aws:redshift-serverless:*:*:snapshot/*"
+      ]
+    },
+    {
+      "Sid": "RedshiftServerlessDeletetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:DeleteSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:snapshot/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/aws:backup:source-resource": "false"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "backup.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "CloudFormationStackPermissions",
       "Effect": "Allow",
       "Action": [

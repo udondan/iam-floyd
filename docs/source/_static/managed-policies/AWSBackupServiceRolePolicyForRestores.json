@@ -142,7 +142,8 @@
             "ec2.*.amazonaws.com",
             "elasticfilesystem.*.amazonaws.com",
             "rds.*.amazonaws.com",
-            "redshift.*.amazonaws.com"
+            "redshift.*.amazonaws.com",
+            "redshift-serverless.*.amazonaws.com"
           ]
         }
       }
@@ -234,7 +235,7 @@
         "arn:aws:ec2:*:*:volume/*"
       ],
       "Condition": {
-        "ForAnyValue:StringLike": {
+        "StringLike": {
           "ec2:CreateAction": [
             "RunInstances",
             "CreateVolume"
@@ -376,7 +377,8 @@
       ],
       "Resource": [
         "arn:aws:redshift:*:*:snapshot:*/*",
-        "arn:aws:redshift:*:*:cluster:*"
+        "arn:aws:redshift:*:*:cluster:*",
+        "arn:aws:redshift-serverless:*:*:snapshot/*"
       ]
     },
     {
@@ -396,6 +398,38 @@
         "redshift:DescribeTableRestoreStatus"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "RedshiftServerlessSnapshotPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:RestoreTableFromSnapshot"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:namespace/*",
+        "arn:aws:redshift-serverless:*:*:workgroup/*",
+        "arn:aws:redshift-serverless:*:*:snapshot/*"
+      ]
+    },
+    {
+      "Sid": "RedshiftServerlessNamespacePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:GetNamespace"
+      ],
+      "Resource": [
+        "arn:aws:redshift-serverless:*:*:namespace/*"
+      ]
+    },
+    {
+      "Sid": "RedshiftServerlessTablePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "redshift-serverless:GetTableRestoreStatus"
+      ],
+      "Resource": [
+        "*"
+      ]
     },
     {
       "Sid": "TimestreamResourcePermissions",
