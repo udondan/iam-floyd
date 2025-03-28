@@ -11,6 +11,7 @@ network-firewall:DeleteRuleGroup;Write
 network-firewall:DeleteTLSInspectionConfiguration;Write
 network-firewall:DescribeFirewall;Read
 network-firewall:DescribeFirewallPolicy;Read
+network-firewall:DescribeFlowOperation;Read
 network-firewall:DescribeLoggingConfiguration;Read
 network-firewall:DescribeResourcePolicy;Read
 network-firewall:DescribeRuleGroup;Read
@@ -21,11 +22,15 @@ network-firewall:GetAnalysisReportResults;Read
 network-firewall:ListAnalysisReports;List
 network-firewall:ListFirewallPolicies;List
 network-firewall:ListFirewalls;List
+network-firewall:ListFlowOperationResults;Read
+network-firewall:ListFlowOperations;List
 network-firewall:ListRuleGroups;List
 network-firewall:ListTLSInspectionConfigurations;List
 network-firewall:ListTagsForResource;List
 network-firewall:PutResourcePolicy;Write
 network-firewall:StartAnalysisReport;Write
+network-firewall:StartFlowCapture;Write
+network-firewall:StartFlowFlush;Write
 network-firewall:TagResource;Tagging
 network-firewall:UntagResource;Tagging
 network-firewall:UpdateFirewallAnalysisSettings;Write

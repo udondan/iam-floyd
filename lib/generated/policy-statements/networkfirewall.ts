@@ -184,6 +184,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a flow operation performed on a firewall
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFlowOperation.html
+   */
+  public toDescribeFlowOperation() {
+    return this.to('DescribeFlowOperation');
+  }
+
+  /**
    * Grants permission to describe the logging configuration of a firewall
    *
    * Access Level: Read
@@ -298,6 +309,28 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list results from a flow operation performed on a firewall
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFlowOperationResults.html
+   */
+  public toListFlowOperationResults() {
+    return this.to('ListFlowOperationResults');
+  }
+
+  /**
+   * Grants permission to list flow operations performed on a firewall
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListFlowOperations.html
+   */
+  public toListFlowOperations() {
+    return this.to('ListFlowOperations');
+  }
+
+  /**
    * Grants permission to retrieve the metadata for rule groups
    *
    * Access Level: List
@@ -350,6 +383,28 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toStartAnalysisReport() {
     return this.to('StartAnalysisReport');
+  }
+
+  /**
+   * Grants permission to start capture operation on a firewall
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_StartFlowCapture.html
+   */
+  public toStartFlowCapture() {
+    return this.to('StartFlowCapture');
+  }
+
+  /**
+   * Grants permission to start flush operation on a firewall
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_StartFlowFlush.html
+   */
+  public toStartFlowFlush() {
+    return this.to('StartFlowFlush');
   }
 
   /**
@@ -507,6 +562,8 @@ export class NetworkFirewall extends PolicyStatement {
       'DisassociateSubnets',
       'PutResourcePolicy',
       'StartAnalysisReport',
+      'StartFlowCapture',
+      'StartFlowFlush',
       'UpdateFirewallAnalysisSettings',
       'UpdateFirewallDeleteProtection',
       'UpdateFirewallDescription',
@@ -521,17 +578,20 @@ export class NetworkFirewall extends PolicyStatement {
     Read: [
       'DescribeFirewall',
       'DescribeFirewallPolicy',
+      'DescribeFlowOperation',
       'DescribeLoggingConfiguration',
       'DescribeResourcePolicy',
       'DescribeRuleGroup',
       'DescribeRuleGroupMetadata',
       'DescribeTLSInspectionConfiguration',
-      'GetAnalysisReportResults'
+      'GetAnalysisReportResults',
+      'ListFlowOperationResults'
     ],
     List: [
       'ListAnalysisReports',
       'ListFirewallPolicies',
       'ListFirewalls',
+      'ListFlowOperations',
       'ListRuleGroups',
       'ListTLSInspectionConfigurations',
       'ListTagsForResource'
