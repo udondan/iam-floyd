@@ -332,6 +332,28 @@ export class Mediapackagev2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reset a channel
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ResetChannelState.html
+   */
+  public toResetChannelState() {
+    return this.to('ResetChannelState');
+  }
+
+  /**
+   * Grants permission to reset an origin endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/APIReference/API_ResetOriginEndpointState.html
+   */
+  public toResetOriginEndpointState() {
+    return this.to('ResetOriginEndpointState');
+  }
+
+  /**
    * Grants permission to add specified tags to the specified resource
    *
    * Access Level: Tagging
@@ -408,6 +430,8 @@ export class Mediapackagev2 extends PolicyStatement {
       'PutChannelPolicy',
       'PutObject',
       'PutOriginEndpointPolicy',
+      'ResetChannelState',
+      'ResetOriginEndpointState',
       'UpdateChannel',
       'UpdateChannelGroup',
       'UpdateOriginEndpoint'

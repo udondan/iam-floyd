@@ -230,6 +230,10 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateDirectConnectGateway.html
    */
   public toCreateDirectConnectGateway() {
@@ -891,6 +895,9 @@ export class Directconnect extends PolicyStatement {
    * @param directConnectGatewayId - Identifier for the directConnectGatewayId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDxGateway(directConnectGatewayId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:directconnect::${ account ?? this.defaultAccount }:dx-gateway/${ directConnectGatewayId }`);
@@ -907,6 +914,7 @@ export class Directconnect extends PolicyStatement {
    * - .toAllocatePublicVirtualInterface()
    * - .toAllocateTransitVirtualInterface()
    * - .toCreateConnection()
+   * - .toCreateDirectConnectGateway()
    * - .toCreateInterconnect()
    * - .toCreateLag()
    * - .toCreatePrivateVirtualInterface()
@@ -931,6 +939,7 @@ export class Directconnect extends PolicyStatement {
    * - dxcon
    * - dxlag
    * - dxvif
+   * - dx-gateway
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -951,6 +960,7 @@ export class Directconnect extends PolicyStatement {
    * - .toAllocatePublicVirtualInterface()
    * - .toAllocateTransitVirtualInterface()
    * - .toCreateConnection()
+   * - .toCreateDirectConnectGateway()
    * - .toCreateInterconnect()
    * - .toCreateLag()
    * - .toCreatePrivateVirtualInterface()
