@@ -14,6 +14,7 @@ healthlake:ListFHIRDatastores;List
 healthlake:ListFHIRExportJobs;List
 healthlake:ListFHIRImportJobs;List
 healthlake:ListTagsForResource;List
+healthlake:ProcessBundle;Write
 healthlake:ReadResource;Read
 healthlake:SearchEverything;Read
 healthlake:SearchWithGet;Read

@@ -9,3 +9,4 @@ iot:ResourceTag/${TagKey}
 iot:TagKeys
 iot:ThingGroupArn
 iot:TunnelDestinationService
+iot:thingArn
