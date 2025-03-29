@@ -294,7 +294,7 @@
       "Action": [
         "ecs:DescribeTasks"
       ],
-      "Resource": "arn:aws:ecs:*:*:cluster/*",
+      "Resource": "arn:aws:ecs:*:*:task/*",
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
