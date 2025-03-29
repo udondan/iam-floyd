@@ -192,6 +192,7 @@ iot:ListPolicyPrincipals;List
 iot:ListPolicyVersions;List
 iot:ListPrincipalPolicies;List
 iot:ListPrincipalThings;List
+iot:ListPrincipalThingsV2;List
 iot:ListProvisioningTemplateVersions;List
 iot:ListProvisioningTemplates;List
 iot:ListRelatedResourcesForAuditFinding;List
@@ -208,6 +209,7 @@ iot:ListTargetsForSecurityProfile;List
 iot:ListThingGroups;List
 iot:ListThingGroupsForThing;List
 iot:ListThingPrincipals;List
+iot:ListThingPrincipalsV2;List
 iot:ListThingRegistrationTaskReports;List
 iot:ListThingRegistrationTasks;List
 iot:ListThingTypes;List

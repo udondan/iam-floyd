@@ -114,6 +114,9 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifThingArn()
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AttachThingPrincipal.html
    */
   public toAttachThingPrincipal() {
@@ -1536,6 +1539,9 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifThingArn()
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DetachThingPrincipal.html
    */
   public toDetachThingPrincipal() {
@@ -1788,6 +1794,8 @@ export class Iot extends PolicyStatement {
    * Grants permission to get the thing's connectivity data
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_GetThingConnectivityData.html
    */
   public toGetThingConnectivityData() {
     return this.to('GetThingConnectivityData');
@@ -2267,6 +2275,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the things associated with the specified principal
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListPrincipalThingsV2.html
+   */
+  public toListPrincipalThingsV2() {
+    return this.to('ListPrincipalThingsV2');
+  }
+
+  /**
    * Grants permission to get a list of fleet provisioning template versions
    *
    * Access Level: List
@@ -2440,6 +2459,17 @@ export class Iot extends PolicyStatement {
    */
   public toListThingPrincipals() {
     return this.to('ListThingPrincipals');
+  }
+
+  /**
+   * Grants permission to list the principals associated with the specified thing
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingPrincipalsV2.html
+   */
+  public toListThingPrincipalsV2() {
+    return this.to('ListThingPrincipalsV2');
   }
 
   /**
@@ -3581,6 +3611,7 @@ export class Iot extends PolicyStatement {
       'ListPolicyVersions',
       'ListPrincipalPolicies',
       'ListPrincipalThings',
+      'ListPrincipalThingsV2',
       'ListProvisioningTemplateVersions',
       'ListProvisioningTemplates',
       'ListRelatedResourcesForAuditFinding',
@@ -3596,6 +3627,7 @@ export class Iot extends PolicyStatement {
       'ListThingGroups',
       'ListThingGroupsForThing',
       'ListThingPrincipals',
+      'ListThingPrincipalsV2',
       'ListThingRegistrationTaskReports',
       'ListThingRegistrationTasks',
       'ListThingTypes',
@@ -4403,5 +4435,21 @@ export class Iot extends PolicyStatement {
    */
   public ifTunnelDestinationService(value: string | string[], operator?: Operator | string) {
     return this.if(`TunnelDestinationService`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of an IoT Thing
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
+   *
+   * Applies to actions:
+   * - .toAttachThingPrincipal()
+   * - .toDetachThingPrincipal()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifThingArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`thingArn`, value, operator ?? 'ArnLike');
   }
 }

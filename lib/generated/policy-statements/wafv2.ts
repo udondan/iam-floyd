@@ -24,12 +24,15 @@ export class Wafv2 extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - amplify:AssociateWebACL
    * - apigateway:SetWebACL
    * - apprunner:AssociateWebAcl
    * - appsync:SetWebACL
    * - cognito-idp:AssociateWebACL
    * - ec2:AssociateVerifiedAccessInstanceWebAcl
    * - elasticloadbalancing:SetWebAcl
+   * - wafv2:GetPermissionPolicy
+   * - wafv2:PutPermissionPolicy
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html
    */
@@ -272,12 +275,14 @@ export class Wafv2 extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - amplify:DisassociateWebACL
    * - apigateway:SetWebACL
    * - apprunner:DisassociateWebAcl
    * - appsync:SetWebACL
    * - cognito-idp:DisassociateWebACL
    * - ec2:DisassociateVerifiedAccessInstanceWebAcl
    * - elasticloadbalancing:SetWebAcl
+   * - wafv2:PutPermissionPolicy
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html
    */
@@ -442,6 +447,7 @@ export class Wafv2 extends PolicyStatement {
    * Access Level: Read
    *
    * Dependent actions:
+   * - amplify:GetWebACLForResource
    * - apprunner:DescribeWebAclForService
    * - cognito-idp:GetWebACLForResource
    * - ec2:GetVerifiedAccessInstanceWebAcl
@@ -550,6 +556,7 @@ export class Wafv2 extends PolicyStatement {
    * Access Level: List
    *
    * Dependent actions:
+   * - amplify:ListResourcesForWebACL
    * - apprunner:ListAssociatedServicesForWebAcl
    * - cognito-idp:ListResourcesForWebACL
    * - ec2:DescribeVerifiedAccessInstanceWebAclAssociations
@@ -990,6 +997,20 @@ export class Wafv2 extends PolicyStatement {
    */
   public onVerifiedAccessInstance(verifiedAccessInstanceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:verified-access-instance/${ verifiedAccessInstanceId }`);
+  }
+
+  /**
+   * Adds a resource of type amplify-app to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAmplifyApp(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }`);
   }
 
   /**
