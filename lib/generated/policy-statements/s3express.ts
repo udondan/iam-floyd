@@ -19,6 +19,28 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new access point
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifLocationName()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html
+   */
+  public toCreateAccessPoint() {
+    return this.to('CreateAccessPoint');
+  }
+
+  /**
    * Grants permission to create a new bucket
    *
    * Access Level: Write
@@ -52,11 +74,75 @@ export class S3express extends PolicyStatement {
    * - .ifXAmzContentSha256()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   * - .ifAllAccessRestrictedToLocalZoneGroup()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html
    */
   public toCreateSession() {
     return this.to('CreateSession');
+  }
+
+  /**
+   * Grants permission to delete the access point named in the URI
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html
+   */
+  public toDeleteAccessPoint() {
+    return this.to('DeleteAccessPoint');
+  }
+
+  /**
+   * Grants permission to delete the policy on a specified access point
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html
+   */
+  public toDeleteAccessPointPolicy() {
+    return this.to('DeleteAccessPointPolicy');
+  }
+
+  /**
+   * Grants permission to delete the scope configuration on a specified access point
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointScope.html
+   */
+  public toDeleteAccessPointScope() {
+    return this.to('DeleteAccessPointScope');
   }
 
   /**
@@ -93,6 +179,69 @@ export class S3express extends PolicyStatement {
    */
   public toDeleteBucketPolicy() {
     return this.to('DeleteBucketPolicy');
+  }
+
+  /**
+   * Grants permission to return configuration information about the specified access point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html
+   */
+  public toGetAccessPoint() {
+    return this.to('GetAccessPoint');
+  }
+
+  /**
+   * Grants permission to return the access point policy associated with the specified access point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html
+   */
+  public toGetAccessPointPolicy() {
+    return this.to('GetAccessPointPolicy');
+  }
+
+  /**
+   * Grants permission to return the scope configuration associated with the specified access point
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointScope.html
+   */
+  public toGetAccessPointScope() {
+    return this.to('GetAccessPointScope');
   }
 
   /**
@@ -150,6 +299,24 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list access points
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForDirectoryBuckets.html
+   */
+  public toListAccessPointsForDirectoryBuckets() {
+    return this.to('ListAccessPointsForDirectoryBuckets');
+  }
+
+  /**
    * Grants permission to list all directory buckets owned by the authenticated sender of the request
    *
    * Access Level: List
@@ -165,6 +332,48 @@ export class S3express extends PolicyStatement {
    */
   public toListAllMyDirectoryBuckets() {
     return this.to('ListAllMyDirectoryBuckets');
+  }
+
+  /**
+   * Grants permission to associate an access policy with a specified access point
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html
+   */
+  public toPutAccessPointPolicy() {
+    return this.to('PutAccessPointPolicy');
+  }
+
+  /**
+   * Grants permission to associate an access point with a specified access point scope configuration
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDataAccessPointAccount()
+   * - .ifDataAccessPointArn()
+   * - .ifAccessPointNetworkOrigin()
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointScope.html
+   */
+  public toPutAccessPointScope() {
+    return this.to('PutAccessPointScope');
   }
 
   /**
@@ -223,22 +432,32 @@ export class S3express extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateAccessPoint',
       'CreateBucket',
+      'DeleteAccessPoint',
       'DeleteBucket',
       'PutEncryptionConfiguration',
       'PutLifecycleConfiguration'
     ],
     Read: [
       'CreateSession',
+      'GetAccessPoint',
+      'GetAccessPointPolicy',
+      'GetAccessPointScope',
       'GetBucketPolicy',
       'GetEncryptionConfiguration',
       'GetLifecycleConfiguration'
     ],
     'Permissions management': [
+      'DeleteAccessPointPolicy',
+      'DeleteAccessPointScope',
       'DeleteBucketPolicy',
+      'PutAccessPointPolicy',
+      'PutAccessPointScope',
       'PutBucketPolicy'
     ],
     List: [
+      'ListAccessPointsForDirectoryBuckets',
       'ListAllMyDirectoryBuckets'
     ]
   };
@@ -258,7 +477,47 @@ export class S3express extends PolicyStatement {
   }
 
   /**
-   * Filters all access to the bucket unless the request originates from the AWS Local Zone network border group(s) provided in this condition key
+   * Adds a resource of type accesspoint to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
+   *
+   * @param accessPointName - Identifier for the accessPointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:s3express:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesspoint/${ accessPointName }`);
+  }
+
+  /**
+   * Filters access by the network origin (Internet or VPC)
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
+   *
+   * Applies to actions:
+   * - .toCreateAccessPoint()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointScope()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointScope()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointScope()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAccessPointNetworkOrigin(value: string | string[], operator?: Operator | string) {
+    return this.if(`AccessPointNetworkOrigin`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by AWS Local Zone network border group(s) provided in this condition key
+   *
+   * Applies to actions:
+   * - .toCreateSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -268,11 +527,58 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Filters access by the AWS Account ID that owns the access point
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
+   *
+   * Applies to actions:
+   * - .toCreateAccessPoint()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointScope()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointScope()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointScope()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataAccessPointAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`DataAccessPointAccount`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by an access point Amazon Resource Name (ARN)
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html#access-points-policies
+   *
+   * Applies to actions:
+   * - .toCreateAccessPoint()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointScope()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointScope()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointScope()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDataAccessPointArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`DataAccessPointArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by a specific Availability Zone ID
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-express-zonal-policy-keys.html#example-location-name
    *
    * Applies to actions:
+   * - .toCreateAccessPoint()
    * - .toCreateBucket()
    *
    * @param value The value(s) to check
@@ -283,19 +589,39 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Filters access by the permission requested by Access Point Scope configuration, such as GetObject, PutObject
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPermissions(value: string | string[], operator?: Operator | string) {
+    return this.if(`Permissions`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the resource owner AWS account ID
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-express-zonal-policy-keys.html#example-object-resource-account
    *
    * Applies to actions:
+   * - .toCreateAccessPoint()
    * - .toCreateBucket()
    * - .toCreateSession()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointScope()
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
@@ -326,14 +652,24 @@ export class S3express extends PolicyStatement {
    * Filters access by the TLS version used by the client
    *
    * Applies to actions:
+   * - .toCreateAccessPoint()
    * - .toCreateBucket()
    * - .toCreateSession()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointScope()
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
@@ -351,14 +687,24 @@ export class S3express extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
    * Applies to actions:
+   * - .toCreateAccessPoint()
    * - .toCreateBucket()
    * - .toCreateSession()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointScope()
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
@@ -391,14 +737,24 @@ export class S3express extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
    * Applies to actions:
+   * - .toCreateAccessPoint()
    * - .toCreateBucket()
    * - .toCreateSession()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointScope()
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
@@ -416,14 +772,24 @@ export class S3express extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
    * Applies to actions:
+   * - .toCreateAccessPoint()
    * - .toCreateBucket()
    * - .toCreateSession()
+   * - .toDeleteAccessPoint()
+   * - .toDeleteAccessPointPolicy()
+   * - .toDeleteAccessPointScope()
    * - .toDeleteBucket()
    * - .toDeleteBucketPolicy()
+   * - .toGetAccessPoint()
+   * - .toGetAccessPointPolicy()
+   * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toPutAccessPointPolicy()
+   * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()

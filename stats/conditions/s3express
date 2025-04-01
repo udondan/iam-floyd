@@ -1,5 +1,9 @@
+s3express:AccessPointNetworkOrigin
 s3express:AllAccessRestrictedToLocalZoneGroup
+s3express:DataAccessPointAccount
+s3express:DataAccessPointArn
 s3express:LocationName
+s3express:Permissions
 s3express:ResourceAccount
 s3express:SessionMode
 s3express:TlsVersion

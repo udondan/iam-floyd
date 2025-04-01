@@ -1,11 +1,21 @@
+s3express:CreateAccessPoint;Write
 s3express:CreateBucket;Write
 s3express:CreateSession;Read
+s3express:DeleteAccessPoint;Write
+s3express:DeleteAccessPointPolicy;Permissions management
+s3express:DeleteAccessPointScope;Permissions management
 s3express:DeleteBucket;Write
 s3express:DeleteBucketPolicy;Permissions management
+s3express:GetAccessPoint;Read
+s3express:GetAccessPointPolicy;Read
+s3express:GetAccessPointScope;Read
 s3express:GetBucketPolicy;Read
 s3express:GetEncryptionConfiguration;Read
 s3express:GetLifecycleConfiguration;Read
+s3express:ListAccessPointsForDirectoryBuckets;List
 s3express:ListAllMyDirectoryBuckets;List
+s3express:PutAccessPointPolicy;Permissions management
+s3express:PutAccessPointScope;Permissions management
 s3express:PutBucketPolicy;Permissions management
 s3express:PutEncryptionConfiguration;Write
 s3express:PutLifecycleConfiguration;Write
