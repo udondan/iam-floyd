@@ -11,7 +11,12 @@
         "s3:PutBucketPublicAccessBlock",
         "s3:PutBucketPolicy"
       ],
-      "Resource": "arn:aws:s3:::amazon-braket-*"
+      "Resource": "arn:aws:s3:::amazon-braket-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Effect": "Allow",
