@@ -1,10 +1,12 @@
 codebuild:BatchDeleteBuilds;Write
 codebuild:BatchGetBuildBatches;Read
 codebuild:BatchGetBuilds;Read
+codebuild:BatchGetCommandExecutions;Read
 codebuild:BatchGetFleets;Read
 codebuild:BatchGetProjects;Read
 codebuild:BatchGetReportGroups;Read
 codebuild:BatchGetReports;Read
+codebuild:BatchGetSandboxes;Read
 codebuild:BatchPutCodeCoverages;Write
 codebuild:BatchPutTestCases;Write
 codebuild:CreateFleet;Write
@@ -31,6 +33,7 @@ codebuild:ListBuildBatches;List
 codebuild:ListBuildBatchesForProject;List
 codebuild:ListBuilds;List
 codebuild:ListBuildsForProject;List
+codebuild:ListCommandExecutionsForSandbox;List
 codebuild:ListConnectedOAuthAccounts;List
 codebuild:ListCuratedEnvironmentImages;List
 codebuild:ListFleets;List
@@ -39,6 +42,8 @@ codebuild:ListReportGroups;List
 codebuild:ListReports;List
 codebuild:ListReportsForReportGroup;List
 codebuild:ListRepositories;List
+codebuild:ListSandboxes;List
+codebuild:ListSandboxesForProject;List
 codebuild:ListSharedProjects;List
 codebuild:ListSharedReportGroups;List
 codebuild:ListSourceCredentials;List
@@ -48,8 +53,12 @@ codebuild:RetryBuild;Write
 codebuild:RetryBuildBatch;Write
 codebuild:StartBuild;Write
 codebuild:StartBuildBatch;Write
+codebuild:StartCommandExecution;Write
+codebuild:StartSandbox;Write
+codebuild:StartSandboxConnection;Write
 codebuild:StopBuild;Write
 codebuild:StopBuildBatch;Write
+codebuild:StopSandbox;Write
 codebuild:UpdateFleet;Write
 codebuild:UpdateProject;Write
 codebuild:UpdateProjectVisibility;Write
