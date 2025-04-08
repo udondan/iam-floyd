@@ -52,6 +52,17 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about one or more command executions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetCommandExecutions.html
+   */
+  public toBatchGetCommandExecutions() {
+    return this.to('BatchGetCommandExecutions');
+  }
+
+  /**
    * Grants permission to return an array of the Fleet objects specified by the input parameter
    *
    * Access Level: Read
@@ -93,6 +104,17 @@ export class Codebuild extends PolicyStatement {
    */
   public toBatchGetReports() {
     return this.to('BatchGetReports');
+  }
+
+  /**
+   * Grants permission to get information about one or more sandboxes
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetSandboxes.html
+   */
+  public toBatchGetSandboxes() {
+    return this.to('BatchGetSandboxes');
   }
 
   /**
@@ -394,6 +416,17 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a list of command execution IDs for the specified sandbox, with each command execution ID representing a single command execution
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCommandExecutionsForSandbox.html
+   */
+  public toListCommandExecutionsForSandbox() {
+    return this.to('ListCommandExecutionsForSandbox');
+  }
+
+  /**
    * Grants permission to list connected third-party OAuth providers. Only used in the AWS CodeBuild console
    *
    * Access Level: List
@@ -479,6 +512,28 @@ export class Codebuild extends PolicyStatement {
    */
   public toListRepositories() {
     return this.to('ListRepositories');
+  }
+
+  /**
+   * Grants permission to get a list of sandbox IDs, with each sandbox ID representing a single sandbox
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSandboxes.html
+   */
+  public toListSandboxes() {
+    return this.to('ListSandboxes');
+  }
+
+  /**
+   * Grants permission to get a list of sandbox IDs for the specified sandbox project, with each sandbox ID representing a single sandbox
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListSandboxesForProject.html
+   */
+  public toListSandboxesForProject() {
+    return this.to('ListSandboxesForProject');
   }
 
   /**
@@ -581,6 +636,39 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start running a command execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartCommandExecution.html
+   */
+  public toStartCommandExecution() {
+    return this.to('StartCommandExecution');
+  }
+
+  /**
+   * Grants permission to start running a sandbox
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartSandbox.html
+   */
+  public toStartSandbox() {
+    return this.to('StartSandbox');
+  }
+
+  /**
+   * Grants permission to establish a connection to the sandbox
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartSandboxConnection.html
+   */
+  public toStartSandboxConnection() {
+    return this.to('StartSandboxConnection');
+  }
+
+  /**
    * Grants permission to attempt to stop running a build
    *
    * Access Level: Write
@@ -600,6 +688,17 @@ export class Codebuild extends PolicyStatement {
    */
   public toStopBuildBatch() {
     return this.to('StopBuildBatch');
+  }
+
+  /**
+   * Grants permission to attempt to stop running a sandbox
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopSandbox.html
+   */
+  public toStopSandbox() {
+    return this.to('StopSandbox');
   }
 
   /**
@@ -709,8 +808,12 @@ export class Codebuild extends PolicyStatement {
       'RetryBuildBatch',
       'StartBuild',
       'StartBuildBatch',
+      'StartCommandExecution',
+      'StartSandbox',
+      'StartSandboxConnection',
       'StopBuild',
       'StopBuildBatch',
+      'StopSandbox',
       'UpdateFleet',
       'UpdateProject',
       'UpdateProjectVisibility',
@@ -721,10 +824,12 @@ export class Codebuild extends PolicyStatement {
     Read: [
       'BatchGetBuildBatches',
       'BatchGetBuilds',
+      'BatchGetCommandExecutions',
       'BatchGetFleets',
       'BatchGetProjects',
       'BatchGetReportGroups',
       'BatchGetReports',
+      'BatchGetSandboxes',
       'DescribeCodeCoverages',
       'DescribeTestCases',
       'GetReportGroupTrend',
@@ -739,6 +844,7 @@ export class Codebuild extends PolicyStatement {
       'ListBuildBatchesForProject',
       'ListBuilds',
       'ListBuildsForProject',
+      'ListCommandExecutionsForSandbox',
       'ListConnectedOAuthAccounts',
       'ListCuratedEnvironmentImages',
       'ListFleets',
@@ -747,6 +853,8 @@ export class Codebuild extends PolicyStatement {
       'ListReports',
       'ListReportsForReportGroup',
       'ListRepositories',
+      'ListSandboxes',
+      'ListSandboxesForProject',
       'ListSharedProjects',
       'ListSharedReportGroups',
       'ListSourceCredentials'
@@ -843,6 +951,20 @@ export class Codebuild extends PolicyStatement {
    */
   public onFleet(fleetName: string, fleetId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleet/${ fleetName }:${ fleetId }`);
+  }
+
+  /**
+   * Adds a resource of type sandbox to the statement
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param sandboxId - Identifier for the sandboxId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSandbox(sandboxId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codebuild:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sandbox/${ sandboxId }`);
   }
 
   /**

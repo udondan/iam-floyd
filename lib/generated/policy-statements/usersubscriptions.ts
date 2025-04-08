@@ -23,6 +23,9 @@ export class UserSubscriptions extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCreateForSelf()
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
    */
   public toCreateClaim() {
@@ -96,4 +99,18 @@ export class UserSubscriptions extends PolicyStatement {
       'ListUserSubscriptions'
     ]
   };
+
+  /**
+   * Filters access by only allowing creation of User subscription Claims for the caller
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateClaim()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifCreateForSelf(value?: boolean) {
+    return this.if(`CreateForSelf`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
 }

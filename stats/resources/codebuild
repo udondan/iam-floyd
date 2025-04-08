@@ -4,3 +4,4 @@ codebuild:fleet
 codebuild:project
 codebuild:report
 codebuild:report-group
+codebuild:sandbox
