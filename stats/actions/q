@@ -4,8 +4,10 @@ q:CreateAuthGrant;Write
 q:CreateOAuthAppConnection;Write
 q:CreatePlugin;Write
 q:DeleteAssignment;Write
+q:DeleteOAuthAppConnection;Write
 q:DeletePlugin;Write
 q:GenerateCodeFromCommands;Read
+q:GenerateCodeRecommendations;Read
 q:GetConnector;Read
 q:GetConversation;Read
 q:GetIdentityMetadata;Read
@@ -29,3 +31,4 @@ q:UpdateAuthGrant;Write
 q:UpdateOAuthAppConnection;Write
 q:UpdateTroubleshootingCommandResult;Write
 q:UsePlugin;Write
+q:VerifyOAuthAppConnection;Write

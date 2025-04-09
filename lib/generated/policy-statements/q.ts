@@ -49,6 +49,12 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toCreateAuthGrant() {
@@ -59,6 +65,12 @@ export class Q extends PolicyStatement {
    * Grants permission to register an OAuth application in Amazon Q
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -97,6 +109,23 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an OAuth application in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toDeleteOAuthAppConnection() {
+    return this.to('DeleteOAuthAppConnection');
+  }
+
+  /**
    * Grants permission to delete a configured plugin in Amazon Q
    *
    * Access Level: Write
@@ -119,6 +148,17 @@ export class Q extends PolicyStatement {
    */
   public toGenerateCodeFromCommands() {
     return this.to('GenerateCodeFromCommands');
+  }
+
+  /**
+   * Grants permission to generate code recommendations in Amazon Q
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toGenerateCodeRecommendations() {
+    return this.to('GenerateCodeRecommendations');
   }
 
   /**
@@ -264,6 +304,12 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toSendEvent() {
@@ -350,6 +396,12 @@ export class Q extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toUpdateAuthGrant() {
@@ -360,6 +412,12 @@ export class Q extends PolicyStatement {
    * Grants permission to update an OAuth application in Amazon Q
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
@@ -389,6 +447,23 @@ export class Q extends PolicyStatement {
     return this.to('UsePlugin');
   }
 
+  /**
+   * Grants permission to verify an OAuth application in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toVerifyOAuthAppConnection() {
+    return this.to('VerifyOAuthAppConnection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateConnectorResource',
@@ -397,6 +472,7 @@ export class Q extends PolicyStatement {
       'CreateOAuthAppConnection',
       'CreatePlugin',
       'DeleteAssignment',
+      'DeleteOAuthAppConnection',
       'DeletePlugin',
       'PassRequest',
       'RejectConnector',
@@ -408,10 +484,12 @@ export class Q extends PolicyStatement {
       'UpdateAuthGrant',
       'UpdateOAuthAppConnection',
       'UpdateTroubleshootingCommandResult',
-      'UsePlugin'
+      'UsePlugin',
+      'VerifyOAuthAppConnection'
     ],
     Read: [
       'GenerateCodeFromCommands',
+      'GenerateCodeRecommendations',
       'GetConnector',
       'GetConversation',
       'GetIdentityMetadata',
