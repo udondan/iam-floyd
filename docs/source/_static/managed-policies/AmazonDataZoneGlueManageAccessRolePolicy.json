@@ -274,7 +274,8 @@
         "arn:aws:iam::*:role/AmazonDataZone*",
         "arn:aws:iam::*:role/service-role/AmazonDataZone*",
         "arn:aws:iam::*:role/AmazonSageMakerManageAccess*",
-        "arn:aws:iam::*:role/service-role/AmazonSageMakerManageAccess*"
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerManageAccess*",
+        "arn:aws:iam::*:role/datazone_usr_role*"
       ],
       "Condition": {
         "StringEquals": {
