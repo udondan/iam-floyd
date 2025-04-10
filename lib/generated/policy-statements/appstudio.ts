@@ -84,4 +84,46 @@ export class Appstudio extends PolicyStatement {
       'StartTeamDeployment'
     ]
   };
+
+  /**
+   * Adds a resource of type instance to the statement
+   *
+   * https://docs.aws.amazon.com/appstudio/latest/userguide/concepts.html#concepts-instance
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstudio:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
+  }
+
+  /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/appstudio/latest/userguide/concepts.html#concepts-application
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstudio:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }`);
+  }
+
+  /**
+   * Adds a resource of type connector to the statement
+   *
+   * https://docs.aws.amazon.com/appstudio/latest/userguide/concepts.html#concepts-connector
+   *
+   * @param connectionId - Identifier for the connectionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onConnector(connectionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appstudio:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectionId }`);
+  }
 }
