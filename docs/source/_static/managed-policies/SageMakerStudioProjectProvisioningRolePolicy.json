@@ -96,7 +96,8 @@
         "lakeformation:DeregisterResource",
         "lakeformation:GrantPermissions",
         "lakeformation:BatchGrantPermissions",
-        "lakeformation:ListResources"
+        "lakeformation:ListResources",
+        "lakeformation:DescribeResource"
       ],
       "Resource": "*"
     },
@@ -316,7 +317,8 @@
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRServiceRolePolicy",
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRInstanceRolePolicy",
             "arn:aws:iam::aws:policy/service-role/AmazonEMRServicePolicy_v2",
-            "arn:aws:iam::aws:policy/AmazonSageMakerPartnerAppsFullAccess"
+            "arn:aws:iam::aws:policy/AmazonSageMakerPartnerAppsFullAccess",
+            "arn:aws:iam::aws:policy/service-role/SageMakerStudioBedrockKnowledgeBaseServiceRolePolicy"
           ]
         }
       }
@@ -668,7 +670,8 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}",
           "iam:PassedToService": [
             "sagemaker.amazonaws.com",
-            "redshift-serverless.amazonaws.com"
+            "redshift-serverless.amazonaws.com",
+            "bedrock.amazonaws.com"
           ]
         }
       }
@@ -2006,6 +2009,8 @@
       "Effect": "Allow",
       "Action": "sagemaker:DeleteApp",
       "Resource": [
+        "arn:aws:sagemaker:*:*:app/*/*/codeeditor/*",
+        "arn:aws:sagemaker:*:*:app/*/*/CodeEditor/*",
         "arn:aws:sagemaker:*:*:app/*/*/jupyterlab/*",
         "arn:aws:sagemaker:*:*:app/*/*/JupyterLab/*"
       ],
@@ -2276,7 +2281,6 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "aws:CalledViaFirst": "cloudformation.amazonaws.com",
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
@@ -2312,6 +2316,10 @@
         "bedrock:CreateDataSource",
         "bedrock:UpdateDataSource",
         "bedrock:DeleteDataSource",
+        "bedrock:ListIngestionJobs",
+        "bedrock:GetIngestionJob",
+        "bedrock:StartIngestionJob",
+        "bedrock:StopIngestionJob",
         "bedrock:CreateGuardrail",
         "bedrock:UpdateGuardrail",
         "bedrock:DeleteGuardrail",
@@ -2338,7 +2346,6 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "aws:CalledViaFirst": "cloudformation.amazonaws.com",
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         },
         "Null": {
@@ -2356,7 +2363,6 @@
       ],
       "Condition": {
         "StringEquals": {
-          "aws:CalledViaFirst": "cloudformation.amazonaws.com",
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         },
         "Null": {
@@ -2681,6 +2687,74 @@
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeViewScheduleGroupActions",
+      "Effect": "Allow",
+      "Action": [
+        "scheduler:ListTagsForResource",
+        "scheduler:GetScheduleGroup"
+      ],
+      "Resource": "arn:aws:scheduler:*:*:schedule-group/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:CalledViaFirst": "cloudformation.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeDeleteScheduleGroupActions",
+      "Effect": "Allow",
+      "Action": "scheduler:DeleteScheduleGroup",
+      "Resource": "arn:aws:scheduler:*:*:schedule-group/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:CalledViaFirst": "cloudformation.amazonaws.com"
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeCreateScheduleGroupActions",
+      "Effect": "Allow",
+      "Action": "scheduler:CreateScheduleGroup",
+      "Resource": "arn:aws:scheduler:*:*:schedule-group/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:CalledViaFirst": "cloudformation.amazonaws.com"
+        },
+        "Null": {
+          "aws:RequestTag/AmazonDataZoneProject": "false",
+          "aws:TagKeys": "false"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": "AmazonDataZone*"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeTagScheduleGroupActions",
+      "Effect": "Allow",
+      "Action": "scheduler:TagResource",
+      "Resource": "arn:aws:scheduler:*:*:schedule-group/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:CalledViaFirst": "cloudformation.amazonaws.com"
+        },
+        "Null": {
+          "aws:TagKeys": "false",
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": "AmazonDataZone*"
         }
       }
     }
