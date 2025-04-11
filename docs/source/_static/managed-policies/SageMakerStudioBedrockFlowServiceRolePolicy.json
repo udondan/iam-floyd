@@ -85,6 +85,18 @@
       }
     },
     {
+      "Sid": "BedrockInvokeAgentPermissions",
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeAgent",
+      "Resource": "arn:aws:bedrock:*:*:agent-alias/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
       "Sid": "BedrockPromptKmsPermissions",
       "Effect": "Allow",
       "Action": [
@@ -116,6 +128,24 @@
         },
         "Null": {
           "kms:EncryptionContext:aws:bedrock:guardrail-id": "false"
+        }
+      }
+    },
+    {
+      "Sid": "BedrockAgentKmsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "bedrock.*.amazonaws.com",
+          "kms:EncryptionContext:aws:bedrock:arn": "arn:aws:bedrock:*:${aws:PrincipalAccount}:agent/*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     }
