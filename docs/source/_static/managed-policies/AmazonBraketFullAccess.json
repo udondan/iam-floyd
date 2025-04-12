@@ -23,7 +23,8 @@
       "Action": [
         "s3:ListAllMyBuckets",
         "servicequotas:GetServiceQuota",
-        "cloudwatch:GetMetricData"
+        "cloudwatch:GetMetricData",
+        "pricing:GetProducts"
       ],
       "Resource": "*"
     },
