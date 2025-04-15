@@ -1,0 +1,122 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PutMediaLiveMetricData",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/MediaLive"
+        }
+      }
+    },
+    {
+      "Sid": "RegisterAnywhereAgentTaskDefinition",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:RegisterTaskDefinition"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:task-definition/MediaLiveAnywhereAgent*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/created_by": "MediaLiveAnywhere"
+        }
+      }
+    },
+    {
+      "Sid": "ECSTagResource",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:task-definition/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ecs:CreateAction": "RegisterTaskDefinition",
+          "aws:RequestTag/created_by": "MediaLiveAnywhere"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": "created_by"
+        }
+      }
+    },
+    {
+      "Sid": "UpdateAnywhereAgentService",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:UpdateService"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "ecs:Cluster": "arn:aws:ecs:*:*:cluster/MediaLiveAnywhere*",
+          "ecs:Task-Definition": "arn:aws:ecs:*:*:task-definition/MediaLiveAnywhereAgent*"
+        }
+      }
+    },
+    {
+      "Sid": "ECSListTaskDefinitions",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:ListTaskDefinitions"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "DeregisterAnywhereAgentTaskDefinitionOnCleanup",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DeregisterTaskDefinition"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "DeleteAnywhereAgentTaskDefinitionsOnCleanup",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DeleteTaskDefinitions"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:task-definition/MediaLiveAnywhereAgent*"
+      ]
+    },
+    {
+      "Sid": "DeleteAnywhereAgentServiceOnCleanup",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DeleteService"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:service/MediaLiveAnywhere*/MediaLiveAnywhereAgent*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "ecs:Cluster": "arn:aws:ecs:*:*:cluster/MediaLiveAnywhere*"
+        }
+      }
+    },
+    {
+      "Sid": "DeregisterContainerInstanceOnCleanup",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:ListContainerInstances",
+        "ecs:DeregisterContainerInstance"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:cluster/MediaLiveAnywhere*"
+      ]
+    }
+  ]
+}
