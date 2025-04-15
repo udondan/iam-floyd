@@ -1806,6 +1806,8 @@ export class AwsManagedPolicy {
     public static AWSMarketplaceSellerProductsReadOnly = 'AWSMarketplaceSellerProductsReadOnly';
     /** The default policy that enables access to AWS Services and Resources used or managed by MediaConnect. */
     public static AWSMediaConnectServicePolicy = 'aws-service-role/AWSMediaConnectServicePolicy';
+    /** Allows MediaLive Anywhere to create and manage AWS resources on your behalf. */
+    public static AWSMediaLiveAnywhereServiceRolePolicy = 'aws-service-role/AWSMediaLiveAnywhereServiceRolePolicy';
     /** Enable access to AWS Resources used or managed by MediaTailor */
     public static AWSMediaTailorServiceRolePolicy = 'aws-service-role/AWSMediaTailorServiceRolePolicy';
     /** Policy allows AWSMigrationHubService to call AWSApplicationDiscoveryService on behalf of the customer. */

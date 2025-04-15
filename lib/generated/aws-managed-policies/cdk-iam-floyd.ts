@@ -4524,6 +4524,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMediaConnectServicePolicy);
     }
 
+    /** Allows MediaLive Anywhere to create and manage AWS resources on your behalf. */
+    public AWSMediaLiveAnywhereServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMediaLiveAnywhereServiceRolePolicy);
+    }
+
     /** Enable access to AWS Resources used or managed by MediaTailor */
     public AWSMediaTailorServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMediaTailorServiceRolePolicy);
