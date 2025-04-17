@@ -6099,6 +6099,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.GameLiftGameServerGroupPolicy);
     }
 
+    /** This managed policy grants permission to connect with Amazon Q and utilize the features in the GitLab Duo with Amazon Q integration. */
+    public GitLabDuoWithAmazonQPermissionsPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.GitLabDuoWithAmazonQPermissionsPolicy);
+    }
+
     /** Allow GlobalAccelerator Users full Access to all APIs */
     public GlobalAcceleratorFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.GlobalAcceleratorFullAccess);
