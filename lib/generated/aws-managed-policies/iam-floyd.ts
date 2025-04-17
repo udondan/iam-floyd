@@ -2436,6 +2436,8 @@ export class AwsManagedPolicy {
     public static GameLiftContainerFleetPolicy = 'GameLiftContainerFleetPolicy';
     /** Policy to allow Gamelift GameServerGroups to manage customer resources */
     public static GameLiftGameServerGroupPolicy = 'GameLiftGameServerGroupPolicy';
+    /** This managed policy grants permission to connect with Amazon Q and utilize the features in the GitLab Duo with Amazon Q integration. */
+    public static GitLabDuoWithAmazonQPermissionsPolicy = 'GitLabDuoWithAmazonQPermissionsPolicy';
     /** Allow GlobalAccelerator Users full Access to all APIs */
     public static GlobalAcceleratorFullAccess = 'GlobalAcceleratorFullAccess';
     /** Allow GlobalAccelerator Users Access to Read Only APIs */

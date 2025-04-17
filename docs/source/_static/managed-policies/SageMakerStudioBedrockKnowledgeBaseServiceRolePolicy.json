@@ -125,6 +125,25 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "SqlWorkbenchAccessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sqlworkbench:GetSqlRecommendations",
+        "sqlworkbench:PutSqlGenerationContext",
+        "sqlworkbench:GetSqlGenerationContext",
+        "sqlworkbench:DeleteSqlGenerationContext"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BedrockGenerateQueryPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:GenerateQuery"
+      ],
+      "Resource": "*"
     }
   ]
 }
