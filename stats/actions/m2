@@ -1,5 +1,6 @@
 m2:CancelBatchJobExecution;Write
 m2:CreateApplication;Write
+m2:CreateDataSetExportTask;Write
 m2:CreateDataSetImportTask;Write
 m2:CreateDeployment;Write
 m2:CreateEnvironment;Write
@@ -10,6 +11,7 @@ m2:GetApplication;Read
 m2:GetApplicationVersion;Read
 m2:GetBatchJobExecution;Read
 m2:GetDataSetDetails;Read
+m2:GetDataSetExportTask;Read
 m2:GetDataSetImportTask;Read
 m2:GetDeployment;Read
 m2:GetEnvironment;Read
@@ -19,6 +21,7 @@ m2:ListApplications;List
 m2:ListBatchJobDefinitions;Read
 m2:ListBatchJobExecutions;Read
 m2:ListBatchJobRestartPoints;Read
+m2:ListDataSetExportHistory;Read
 m2:ListDataSetImportHistory;Read
 m2:ListDataSets;Read
 m2:ListDeployments;Read

@@ -49,6 +49,20 @@ export class M2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a data set export task
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetExportTask.html
+   */
+  public toCreateDataSetExportTask() {
+    return this.to('CreateDataSetExportTask');
+  }
+
+  /**
    * Grants permission to create a data set import task
    *
    * Access Level: Write
@@ -198,6 +212,17 @@ export class M2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export a data set at the specified S3 location
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/m2/latest/APIReference/API_GetDataSetExportTask.html
+   */
+  public toGetDataSetExportTask() {
+    return this.to('GetDataSetExportTask');
+  }
+
+  /**
    * Grants permission to retrieve a data set import task
    *
    * Access Level: Read
@@ -294,6 +319,17 @@ export class M2 extends PolicyStatement {
    */
   public toListBatchJobRestartPoints() {
     return this.to('ListBatchJobRestartPoints');
+  }
+
+  /**
+   * Grants permission to list data set export history
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/m2/latest/APIReference/API_ListDataSetExportHistory.html
+   */
+  public toListDataSetExportHistory() {
+    return this.to('ListDataSetExportHistory');
   }
 
   /**
@@ -454,6 +490,7 @@ export class M2 extends PolicyStatement {
     Write: [
       'CancelBatchJobExecution',
       'CreateApplication',
+      'CreateDataSetExportTask',
       'CreateDataSetImportTask',
       'CreateDeployment',
       'CreateEnvironment',
@@ -471,6 +508,7 @@ export class M2 extends PolicyStatement {
       'GetApplicationVersion',
       'GetBatchJobExecution',
       'GetDataSetDetails',
+      'GetDataSetExportTask',
       'GetDataSetImportTask',
       'GetDeployment',
       'GetEnvironment',
@@ -479,6 +517,7 @@ export class M2 extends PolicyStatement {
       'ListBatchJobDefinitions',
       'ListBatchJobExecutions',
       'ListBatchJobRestartPoints',
+      'ListDataSetExportHistory',
       'ListDataSetImportHistory',
       'ListDataSets',
       'ListDeployments',

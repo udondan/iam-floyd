@@ -1,2 +1,4 @@
+s3tables:KMSKeyArn
+s3tables:SSEAlgorithm
 s3tables:namespace
 s3tables:tableName

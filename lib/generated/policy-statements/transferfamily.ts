@@ -656,6 +656,28 @@ export class Transfer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate a connector delete operation on remote server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_StartRemoteDelete.html
+   */
+  public toStartRemoteDelete() {
+    return this.to('StartRemoteDelete');
+  }
+
+  /**
+   * Grants permission to initiate a connector move operation on remote server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/API_StartRemoteMove.html
+   */
+  public toStartRemoteMove() {
+    return this.to('StartRemoteMove');
+  }
+
+  /**
    * Grants permission to start a server
    *
    * Access Level: Write
@@ -887,6 +909,8 @@ export class Transfer extends PolicyStatement {
       'SendWorkflowStepState',
       'StartDirectoryListing',
       'StartFileTransfer',
+      'StartRemoteDelete',
+      'StartRemoteMove',
       'StartServer',
       'StopServer',
       'TestConnection',
