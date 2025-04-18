@@ -827,6 +827,26 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type listener/gwy to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param listenerId - Identifier for the listenerId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onListenerGwy(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:listener/gwy/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }`);
+  }
+
+  /**
    * Adds a resource of type listener/app to the statement
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html
@@ -906,6 +926,25 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    */
   public onListenerRuleNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:listener-rule/net/${ loadBalancerName }/${ loadBalancerId }/${ listenerId }/${ listenerRuleId }`);
+  }
+
+  /**
+   * Adds a resource of type loadbalancer/gwy/ to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onLoadbalancerGwy(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elasticloadbalancing:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:loadbalancer/gwy/${ loadBalancerName }/${ loadBalancerId }`);
   }
 
   /**
@@ -1048,10 +1087,12 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toSetSubnets()
    *
    * Applies to resource types:
+   * - listener/gwy
    * - listener/app
    * - listener-rule/app
    * - listener/net
    * - listener-rule/net
+   * - loadbalancer/gwy/
    * - loadbalancer/app/
    * - loadbalancer/net/
    * - targetgroup
@@ -1159,10 +1200,12 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toSetSubnets()
    *
    * Applies to resource types:
+   * - listener/gwy
    * - listener/app
    * - listener-rule/app
    * - listener/net
    * - listener-rule/net
+   * - loadbalancer/gwy/
    * - loadbalancer/app/
    * - loadbalancer/net/
    * - targetgroup

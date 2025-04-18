@@ -268,6 +268,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe workspace configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeWorkspaceConfiguration
+   */
+  public toDescribeWorkspaceConfiguration() {
+    return this.to('DescribeWorkspaceConfiguration');
+  }
+
+  /**
    * Grants permission to get a silence
    *
    * Access Level: Read
@@ -628,6 +642,20 @@ export class Aps extends PolicyStatement {
     return this.to('UpdateWorkspaceAlias');
   }
 
+  /**
+   * Grants permission to update workspace configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateWorkspaceConfiguration
+   */
+  public toUpdateWorkspaceConfiguration() {
+    return this.to('UpdateWorkspaceConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAlertManagerAlerts',
@@ -648,7 +676,8 @@ export class Aps extends PolicyStatement {
       'RemoteWrite',
       'UpdateLoggingConfiguration',
       'UpdateScraper',
-      'UpdateWorkspaceAlias'
+      'UpdateWorkspaceAlias',
+      'UpdateWorkspaceConfiguration'
     ],
     Read: [
       'DescribeAlertManagerDefinition',
@@ -656,6 +685,7 @@ export class Aps extends PolicyStatement {
       'DescribeRuleGroupsNamespace',
       'DescribeScraper',
       'DescribeWorkspace',
+      'DescribeWorkspaceConfiguration',
       'GetAlertManagerSilence',
       'GetAlertManagerStatus',
       'GetDefaultScraperConfiguration',
@@ -803,6 +833,7 @@ export class Aps extends PolicyStatement {
    * - .toDescribeRuleGroupsNamespace()
    * - .toDescribeScraper()
    * - .toDescribeWorkspace()
+   * - .toDescribeWorkspaceConfiguration()
    * - .toGetAlertManagerSilence()
    * - .toGetAlertManagerStatus()
    * - .toGetLabels()
@@ -823,6 +854,7 @@ export class Aps extends PolicyStatement {
    * - .toUpdateLoggingConfiguration()
    * - .toUpdateScraper()
    * - .toUpdateWorkspaceAlias()
+   * - .toUpdateWorkspaceConfiguration()
    *
    * Applies to resource types:
    * - workspace

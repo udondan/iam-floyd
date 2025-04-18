@@ -36,6 +36,8 @@ export class S3tables extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifNamespace()
+   * - .ifSSEAlgorithm()
+   * - .ifKMSKeyArn()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_CreateTable.html
    */
@@ -47,6 +49,10 @@ export class S3tables extends PolicyStatement {
    * Grants permission to create a table bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSSEAlgorithm()
+   * - .ifKMSKeyArn()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_CreateTableBucket.html
    */
@@ -92,6 +98,17 @@ export class S3tables extends PolicyStatement {
    */
   public toDeleteTableBucket() {
     return this.to('DeleteTableBucket');
+  }
+
+  /**
+   * Grants permission to delete encryption configuration on a table bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_DeleteTableBucketEncryption.html
+   */
+  public toDeleteTableBucketEncryption() {
+    return this.to('DeleteTableBucketEncryption');
   }
 
   /**
@@ -161,6 +178,17 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve encryption configuration on a table bucket
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableBucketEncryption.html
+   */
+  public toGetTableBucketEncryption() {
+    return this.to('GetTableBucketEncryption');
+  }
+
+  /**
    * Grants permission to retrieve a maintenance configuration on a table bucket
    *
    * Access Level: Read
@@ -195,6 +223,21 @@ export class S3tables extends PolicyStatement {
    */
   public toGetTableData() {
     return this.to('GetTableData');
+  }
+
+  /**
+   * Grants permission to retrieve encryption configuration on a table
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableEncryption.html
+   */
+  public toGetTableEncryption() {
+    return this.to('GetTableEncryption');
   }
 
   /**
@@ -294,6 +337,21 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put or overwrite encryption configuration on a table bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifKMSKeyArn()
+   * - .ifSSEAlgorithm()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_PutTableBucketEncryption.html
+   */
+  public toPutTableBucketEncryption() {
+    return this.to('PutTableBucketEncryption');
+  }
+
+  /**
    * Grants permission to put a maintenance configuration on a table bucket
    *
    * Access Level: Write
@@ -328,6 +386,22 @@ export class S3tables extends PolicyStatement {
    */
   public toPutTableData() {
     return this.to('PutTableData');
+  }
+
+  /**
+   * Grants permission to put encryption configuration on a table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifSSEAlgorithm()
+   * - .ifKMSKeyArn()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.html#s3-tables-actions
+   */
+  public toPutTableEncryption() {
+    return this.to('PutTableEncryption');
   }
 
   /**
@@ -367,6 +441,7 @@ export class S3tables extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifNamespace()
+   * - .ifTableName()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_RenameTable.html
    */
@@ -397,8 +472,11 @@ export class S3tables extends PolicyStatement {
       'DeleteNamespace',
       'DeleteTable',
       'DeleteTableBucket',
+      'DeleteTableBucketEncryption',
+      'PutTableBucketEncryption',
       'PutTableBucketMaintenanceConfiguration',
       'PutTableData',
+      'PutTableEncryption',
       'PutTableMaintenanceConfiguration',
       'RenameTable',
       'UpdateTableMetadataLocation'
@@ -413,9 +491,11 @@ export class S3tables extends PolicyStatement {
       'GetNamespace',
       'GetTable',
       'GetTableBucket',
+      'GetTableBucketEncryption',
       'GetTableBucketMaintenanceConfiguration',
       'GetTableBucketPolicy',
       'GetTableData',
+      'GetTableEncryption',
       'GetTableMaintenanceConfiguration',
       'GetTableMaintenanceJobStatus',
       'GetTableMetadataLocation',
@@ -462,6 +542,42 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
+   * Filters access by the AWS KMS key ARN for the key used to encrypt a table
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html
+   *
+   * Applies to actions:
+   * - .toCreateTable()
+   * - .toCreateTableBucket()
+   * - .toPutTableBucketEncryption()
+   * - .toPutTableEncryption()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifKMSKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`KMSKeyArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the server-side encryption algorithm used to encrypt a table
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html
+   *
+   * Applies to actions:
+   * - .toCreateTable()
+   * - .toCreateTableBucket()
+   * - .toPutTableBucketEncryption()
+   * - .toPutTableEncryption()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSSEAlgorithm(value: string | string[], operator?: Operator | string) {
+    return this.if(`SSEAlgorithm`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the namespaces created in the table bucket
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html
@@ -474,12 +590,14 @@ export class S3tables extends PolicyStatement {
    * - .toGetNamespace()
    * - .toGetTable()
    * - .toGetTableData()
+   * - .toGetTableEncryption()
    * - .toGetTableMaintenanceConfiguration()
    * - .toGetTableMaintenanceJobStatus()
    * - .toGetTableMetadataLocation()
    * - .toGetTablePolicy()
    * - .toListTables()
    * - .toPutTableData()
+   * - .toPutTableEncryption()
    * - .toPutTableMaintenanceConfiguration()
    * - .toPutTablePolicy()
    * - .toRenameTable()
@@ -505,6 +623,7 @@ export class S3tables extends PolicyStatement {
    * - .toDeleteTablePolicy()
    * - .toGetTable()
    * - .toGetTableData()
+   * - .toGetTableEncryption()
    * - .toGetTableMaintenanceConfiguration()
    * - .toGetTableMaintenanceJobStatus()
    * - .toGetTableMetadataLocation()
@@ -512,6 +631,7 @@ export class S3tables extends PolicyStatement {
    * - .toPutTableData()
    * - .toPutTableMaintenanceConfiguration()
    * - .toPutTablePolicy()
+   * - .toRenameTable()
    * - .toUpdateTableMetadataLocation()
    *
    * Applies to resource types:

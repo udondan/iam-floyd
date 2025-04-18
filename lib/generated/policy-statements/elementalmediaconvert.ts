@@ -81,6 +81,7 @@ export class Mediaconvert extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html
    */
@@ -96,6 +97,7 @@ export class Mediaconvert extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html
    */
@@ -533,6 +535,10 @@ export class Mediaconvert extends PolicyStatement {
    * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
+   *
+   * Applies to actions:
+   * - .toCreatePreset()
+   * - .toCreateQueue()
    *
    * Applies to resource types:
    * - Job

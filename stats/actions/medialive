@@ -20,6 +20,7 @@ medialive:CreateNetwork;Write
 medialive:CreateNode;Write
 medialive:CreateNodeRegistrationScript;Write
 medialive:CreatePartnerInput;Write
+medialive:CreateSdiSource;Write
 medialive:CreateSignalMap;Write
 medialive:CreateTags;Tagging
 medialive:DeleteChannel;Write
@@ -37,6 +38,7 @@ medialive:DeleteNetwork;Write
 medialive:DeleteNode;Write
 medialive:DeleteReservation;Write
 medialive:DeleteSchedule;Write
+medialive:DeleteSdiSource;Write
 medialive:DeleteSignalMap;Write
 medialive:DeleteTags;Tagging
 medialive:DescribeAccountConfiguration;Read
@@ -54,6 +56,7 @@ medialive:DescribeNode;Read
 medialive:DescribeOffering;Read
 medialive:DescribeReservation;Read
 medialive:DescribeSchedule;Read
+medialive:DescribeSdiSource;Read
 medialive:DescribeThumbnails;Read
 medialive:GetCloudWatchAlarmTemplate;Read
 medialive:GetCloudWatchAlarmTemplateGroup;Read
@@ -77,6 +80,7 @@ medialive:ListNetworks;List
 medialive:ListNodes;List
 medialive:ListOfferings;List
 medialive:ListReservations;List
+medialive:ListSdiSource;List
 medialive:ListSignalMaps;List
 medialive:ListTagsForResource;List
 medialive:ListVersions;List
@@ -115,3 +119,4 @@ medialive:UpdateNetwork;Write
 medialive:UpdateNode;Write
 medialive:UpdateNodeState;Write
 medialive:UpdateReservation;Write
+medialive:UpdateSdiSource;Write

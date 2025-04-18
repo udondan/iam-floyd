@@ -13,4 +13,5 @@ medialive:network
 medialive:node
 medialive:offering
 medialive:reservation
+medialive:sdi-source
 medialive:signal-map

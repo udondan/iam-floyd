@@ -96,6 +96,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to view the entitlements associated with an agreement
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toGetAgreementEntitlements() {
+    return this.to('GetAgreementEntitlements');
+  }
+
+  /**
    * Grants permission to users to view the details of their subscription requests for data products that require subscription verification
    *
    * Access Level: Read
@@ -254,6 +265,7 @@ export class AwsMarketplace extends PolicyStatement {
     Read: [
       'DescribeAgreement',
       'GetAgreementApprovalRequest',
+      'GetAgreementEntitlements',
       'GetAgreementRequest',
       'ListEntitlementDetails'
     ],

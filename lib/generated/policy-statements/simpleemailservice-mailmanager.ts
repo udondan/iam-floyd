@@ -113,6 +113,7 @@ export class SesMailmanager extends PolicyStatement {
    * - .ifMailManagerTrafficPolicyArn()
    *
    * Dependent actions:
+   * - ec2:DescribeVpcEndpoints
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateIngressPoint.html

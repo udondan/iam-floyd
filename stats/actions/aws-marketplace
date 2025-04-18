@@ -19,6 +19,7 @@ aws-marketplace:DescribeProcurementSystemConfiguration;Read
 aws-marketplace:DescribeTask;Read
 aws-marketplace:DisassociateProductsFromPrivateMarketplace;Write
 aws-marketplace:GetAgreementApprovalRequest;Read
+aws-marketplace:GetAgreementEntitlements;Read
 aws-marketplace:GetAgreementRequest;Read
 aws-marketplace:GetAgreementTerms;List
 aws-marketplace:GetBuyerDashboard;Read

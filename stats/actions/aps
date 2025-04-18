@@ -15,6 +15,7 @@ aps:DescribeLoggingConfiguration;Read
 aps:DescribeRuleGroupsNamespace;Read
 aps:DescribeScraper;Read
 aps:DescribeWorkspace;Read
+aps:DescribeWorkspaceConfiguration;Read
 aps:GetAlertManagerSilence;Read
 aps:GetAlertManagerStatus;Read
 aps:GetDefaultScraperConfiguration;Read
@@ -41,3 +42,4 @@ aps:UntagResource;Tagging
 aps:UpdateLoggingConfiguration;Write
 aps:UpdateScraper;Write
 aps:UpdateWorkspaceAlias;Write
+aps:UpdateWorkspaceConfiguration;Write

@@ -51,6 +51,8 @@ transfer:ListWorkflows;List
 transfer:SendWorkflowStepState;Write
 transfer:StartDirectoryListing;Write
 transfer:StartFileTransfer;Write
+transfer:StartRemoteDelete;Write
+transfer:StartRemoteMove;Write
 transfer:StartServer;Write
 transfer:StopServer;Write
 transfer:TagResource;Tagging

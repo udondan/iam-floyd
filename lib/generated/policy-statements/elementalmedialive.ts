@@ -313,6 +313,21 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a SDI source
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toCreateSdiSource() {
+    return this.to('CreateSdiSource');
+  }
+
+  /**
    * Grants permission to create a signal map
    *
    * Access Level: Write
@@ -328,7 +343,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create tags for channels, inputs, input security groups, multiplexes, reservations, nodes, networks, clusters, channel placement groups, signal maps, template groups, and templates
+   * Grants permission to create tags for channels, inputs, input security groups, multiplexes, reservations, nodes, networks, clusters, channel placement groups, signal maps, SDI sources, template groups, and templates
    *
    * Access Level: Tagging
    *
@@ -508,6 +523,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a SDI source
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toDeleteSdiSource() {
+    return this.to('DeleteSdiSource');
+  }
+
+  /**
    * Grants permission to delete a signal map
    *
    * Access Level: Write
@@ -519,7 +545,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, reservations, nodes, clusters, networks, channel placement groups, signal maps, template groups, and templates
+   * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, reservations, nodes, clusters, networks, channel placement groups, SDI source, signal maps, template groups, and templates
    *
    * Access Level: Tagging
    *
@@ -695,6 +721,17 @@ export class Medialive extends PolicyStatement {
    */
   public toDescribeSchedule() {
     return this.to('DescribeSchedule');
+  }
+
+  /**
+   * Grants permission to describe a SDI source
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/emla-setup-cl-create.html
+   */
+  public toDescribeSdiSource() {
+    return this.to('DescribeSdiSource');
   }
 
   /**
@@ -951,6 +988,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list SDI sources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toListSdiSource() {
+    return this.to('ListSdiSource');
+  }
+
+  /**
    * Grants permission to list signal maps
    *
    * Access Level: List
@@ -962,7 +1010,7 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for channels, inputs, input security groups, multiplexes, reservations, nodes, clusters, networks, channel placement groups, signal maps, template groups, and templates
+   * Grants permission to list tags for channels, inputs, input security groups, multiplexes, reservations, nodes, clusters, networks, channel placement groups, SDI sources, signal maps, template groups, and templates
    *
    * Access Level: List
    *
@@ -1396,6 +1444,21 @@ export class Medialive extends PolicyStatement {
     return this.to('UpdateReservation');
   }
 
+  /**
+   * Grants permission to update the state of a sdi source
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   */
+  public toUpdateSdiSource() {
+    return this.to('UpdateSdiSource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptInputDeviceTransfer',
@@ -1420,6 +1483,7 @@ export class Medialive extends PolicyStatement {
       'CreateNode',
       'CreateNodeRegistrationScript',
       'CreatePartnerInput',
+      'CreateSdiSource',
       'CreateSignalMap',
       'DeleteChannel',
       'DeleteChannelPlacementGroup',
@@ -1436,6 +1500,7 @@ export class Medialive extends PolicyStatement {
       'DeleteNode',
       'DeleteReservation',
       'DeleteSchedule',
+      'DeleteSdiSource',
       'DeleteSignalMap',
       'PollAnywhere',
       'PurchaseOffering',
@@ -1471,7 +1536,8 @@ export class Medialive extends PolicyStatement {
       'UpdateNetwork',
       'UpdateNode',
       'UpdateNodeState',
-      'UpdateReservation'
+      'UpdateReservation',
+      'UpdateSdiSource'
     ],
     Tagging: [
       'CreateTags',
@@ -1493,6 +1559,7 @@ export class Medialive extends PolicyStatement {
       'DescribeOffering',
       'DescribeReservation',
       'DescribeSchedule',
+      'DescribeSdiSource',
       'DescribeThumbnails',
       'GetCloudWatchAlarmTemplate',
       'GetCloudWatchAlarmTemplateGroup',
@@ -1518,6 +1585,7 @@ export class Medialive extends PolicyStatement {
       'ListNodes',
       'ListOfferings',
       'ListReservations',
+      'ListSdiSource',
       'ListSignalMaps',
       'ListTagsForResource',
       'ListVersions'
@@ -1793,6 +1861,23 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type sdi-source to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
+   *
+   * @param sdiSourceId - Identifier for the sdiSourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSdiSource(sdiSourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:medialive:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sdiSource:${ sdiSourceId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/medialive/latest/ugtagging.html
@@ -1811,6 +1896,7 @@ export class Medialive extends PolicyStatement {
    * - .toCreateNetwork()
    * - .toCreateNode()
    * - .toCreatePartnerInput()
+   * - .toCreateSdiSource()
    * - .toCreateSignalMap()
    * - .toCreateTags()
    * - .toPurchaseOffering()
@@ -1820,6 +1906,7 @@ export class Medialive extends PolicyStatement {
    * - .toUpdateNetwork()
    * - .toUpdateNode()
    * - .toUpdateNodeState()
+   * - .toUpdateSdiSource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1849,6 +1936,7 @@ export class Medialive extends PolicyStatement {
    * - node
    * - network
    * - channel-placement-group
+   * - sdi-source
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1877,6 +1965,7 @@ export class Medialive extends PolicyStatement {
    * - .toCreateNetwork()
    * - .toCreateNode()
    * - .toCreatePartnerInput()
+   * - .toCreateSdiSource()
    * - .toCreateSignalMap()
    * - .toCreateTags()
    * - .toDeleteTags()
@@ -1887,6 +1976,7 @@ export class Medialive extends PolicyStatement {
    * - .toUpdateNetwork()
    * - .toUpdateNode()
    * - .toUpdateNodeState()
+   * - .toUpdateSdiSource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
