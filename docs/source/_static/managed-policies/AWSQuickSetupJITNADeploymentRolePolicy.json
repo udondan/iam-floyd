@@ -1,0 +1,145 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackDriftDetectionStatus",
+        "cloudformation:ListStacks"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:UpdateStack",
+        "cloudformation:DeleteStack",
+        "cloudformation:CreateChangeSet",
+        "cloudformation:DeleteChangeSet",
+        "cloudformation:ExecuteChangeSet",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:DescribeStackResourceDrifts",
+        "cloudformation:DetectStackDrift",
+        "cloudformation:DetectStackResourceDrift",
+        "cloudformation:DescribeStackEvents"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/StackSet-AWS-QuickSetup-JITNA-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:CreateAssociation",
+        "ssm:UpdateAssociation",
+        "ssm:DeleteAssociation",
+        "ssm:DescribeAssociation",
+        "ssm:GetDocument",
+        "ssm:DescribeDocument"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      },
+      "Resource": [
+        "arn:aws:ssm:*::document/AWSQuickSetupType-SetupJITNAResources",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-PropagateJustInTimeNodeAccessPolicies",
+        "arn:aws:ssm:*:*:association/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:TagRole"
+      ],
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:TagKeys": [
+            "QuickSetup*"
+          ]
+        },
+        "StringEquals": {
+          "aws:CalledViaLast": [
+            "cloudformation.amazonaws.com"
+          ],
+          "aws:ResourceTag/QuickSetupDocument": [
+            "AWSQuickSetupType-JITNA"
+          ],
+          "aws:RequestTag/QuickSetupDocument": [
+            "AWSQuickSetupType-JITNA"
+          ]
+        }
+      },
+      "Resource": [
+        "arn:aws:iam::*:role/AWS-QuickSetup-EnableJITNA-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole",
+        "iam:DeleteRole",
+        "iam:GetRolePolicy",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListRolePolicies",
+        "iam:ListRoleTags"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "cloudformation.amazonaws.com"
+          ]
+        }
+      },
+      "Resource": [
+        "arn:aws:iam::*:role/AWS-QuickSetup-EnableJITNA-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy"
+      ],
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": [
+            "arn:aws:iam::*:policy/AWSQuickSetupManageJITNAResourcesExecutionPolicy"
+          ]
+        }
+      },
+      "Resource": [
+        "arn:aws:iam::*:role/AWS-QuickSetup-EnableJITNA-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/AWS-QuickSetup-EnableJITNA-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ssm.amazonaws.com",
+          "iam:ResourceTag/QuickSetupDocument": "AWSQuickSetupType-JITNA"
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceARN": [
+            "arn:aws:ssm:*::document/AWSQuickSetupType-SetupJITNAResources",
+            "arn:aws:ssm:*:*:association/*"
+          ]
+        }
+      }
+    }
+  ]
+}
