@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AmazonEKSClusterPolicy",
       "Effect": "Allow",
       "Action": [
         "autoscaling:DescribeAutoScalingGroups",
@@ -69,12 +70,24 @@
       "Resource": "*"
     },
     {
+      "Sid": "AmazonEKSClusterPolicySLRCreate",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
       "Condition": {
         "StringEquals": {
           "iam:AWSServiceName": "elasticloadbalancing.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonEKSClusterPolicyENIDelete",
+      "Effect": "Allow",
+      "Action": "ec2:DeleteNetworkInterface",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/eks:eni:owner": "amazon-vpc-cni"
         }
       }
     }

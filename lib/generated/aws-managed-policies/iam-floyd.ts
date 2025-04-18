@@ -892,6 +892,8 @@ export class AwsManagedPolicy {
     public static AmazonTimestreamFullAccess = 'AmazonTimestreamFullAccess';
     /** Provides full administrative access to create, update, delete and list Amazon Timestream InfluxDB instances and create and list parameter groups. Please refer to documentation for additional permissions needed. */
     public static AmazonTimestreamInfluxDBFullAccess = 'AmazonTimestreamInfluxDBFullAccess';
+    /** Provides administrative access to manage Amazon Timestream InfluxDB instances and parameter groups except marketplace operations. */
+    public static AmazonTimestreamInfluxDBFullAccessWithoutMarketplaceAccess = 'AmazonTimestreamInfluxDBFullAccessWithoutMarketplaceAccess';
     /** Provides full administrative access to create, update, delete and list Amazon Timestream InfluxDB instances and create and list parameter groups. Please refer to documentation for additional permissions needed. */
     public static AmazonTimestreamInfluxDBServiceRolePolicy = 'aws-service-role/AmazonTimestreamInfluxDBServiceRolePolicy';
     /** Provides read only access to Amazon Timestream. Policy also provides permission to cancel any running query. If using Customer managed CMK, please refer to documentation for additional permissions needed. */
@@ -1950,8 +1952,12 @@ export class AwsManagedPolicy {
     public static AWSQuickSetupEnableAREXExecutionPolicy = 'AWSQuickSetupEnableAREXExecutionPolicy';
     /** This policy grants permissions that allow principals to run the AWSQuickSetupType-EnableDHMC Automation runbook, which enables Default Host Management Configuration. */
     public static AWSQuickSetupEnableDHMCExecutionPolicy = 'AWSQuickSetupEnableDHMCExecutionPolicy';
+    /** This policy allows Quick Setup to deploy the configuration type required to set up just-in-time node access. */
+    public static AWSQuickSetupJITNADeploymentRolePolicy = 'AWSQuickSetupJITNADeploymentRolePolicy';
     /** This policy grants administrative permissions that allow Systems Manager to create a default IAM instance profile for the Quick Setup capability and attach it to Amazon EC2 instances that don't already have an instance. profile attached. */
     public static AWSQuickSetupManagedInstanceProfileExecutionPolicy = 'AWSQuickSetupManagedInstanceProfileExecutionPolicy';
+    /** This policy provides permissions to enable just-in-time node access for Systems Manager. */
+    public static AWSQuickSetupManageJITNAResourcesExecutionPolicy = 'AWSQuickSetupManageJITNAResourcesExecutionPolicy';
     /** Provides read-only permissions to access patch baselines that have been configured by an administrator in the current AWS account or organization using Quick Setup. */
     public static AWSQuickSetupPatchPolicyBaselineAccess = 'AWSQuickSetupPatchPolicyBaselineAccess';
     /** Provides permissions that allow Quick Setup to create resources associated with a patch policy configuration. */
@@ -2172,6 +2178,12 @@ export class AwsManagedPolicy {
     public static AWSSystemsManagerForSAPFullAccess = 'AWSSystemsManagerForSAPFullAccess';
     /** Provides read only access to AWS Systems Manager for SAP service */
     public static AWSSystemsManagerForSAPReadOnlyAccess = 'AWSSystemsManagerForSAPReadOnlyAccess';
+    /** The managed policy AWSSystemsManagerJustInTimeAccessTokenPolicy allows Systems Manager to generate access tokens used for just-in-time node access. */
+    public static AWSSystemsManagerJustInTimeAccessTokenPolicy = 'AWSSystemsManagerJustInTimeAccessTokenPolicy';
+    /** The managed policy AWSSystemsManagerJustInTimeAccessTokenSessionPolicy allows Systems Manager to apply scoped down permissions to a just-in-time node access session once it is started. */
+    public static AWSSystemsManagerJustInTimeAccessTokenSessionPolicy = 'AWSSystemsManagerJustInTimeAccessTokenSessionPolicy';
+    /** Permissions required to collect information about a user for Just-In-Time-Node-Access notifications. */
+    public static AWSSystemsManagerNotificationsServicePolicy = 'aws-service-role/AWSSystemsManagerNotificationsServicePolicy';
     /** IAM role for SSM Explorer to manage OpsData related operations */
     public static AWSSystemsManagerOpsDataSyncServiceRolePolicy = 'aws-service-role/AWSSystemsManagerOpsDataSyncServiceRolePolicy';
     /** This policy grants the AWS Portal Asset Server the necessary permissions required for normal operation. */

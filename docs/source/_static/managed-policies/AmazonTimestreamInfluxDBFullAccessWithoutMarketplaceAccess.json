@@ -78,33 +78,6 @@
       "Resource": [
         "arn:aws:s3:::*"
       ]
-    },
-    {
-      "Sid": "MPViewAccessStatement",
-      "Effect": "Allow",
-      "Action": [
-        "aws-marketplace:ViewSubscriptions"
-      ],
-      "Resource": [
-        "*"
-      ]
-    },
-    {
-      "Sid": "MPSubscriptionAccessStatement",
-      "Effect": "Allow",
-      "Action": [
-        "aws-marketplace:Subscribe"
-      ],
-      "Resource": [
-        "*"
-      ],
-      "Condition": {
-        "ForAnyValue:StringEquals": {
-          "aws-marketplace:ProductId": [
-            "prod-xcc5llpq4vlbc"
-          ]
-        }
-      }
     }
   ]
 }

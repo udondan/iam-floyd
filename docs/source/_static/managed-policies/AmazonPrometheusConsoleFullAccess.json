@@ -31,7 +31,9 @@
         "aps:CreateLoggingConfiguration",
         "aps:UpdateLoggingConfiguration",
         "aps:DeleteLoggingConfiguration",
-        "aps:DescribeLoggingConfiguration"
+        "aps:DescribeLoggingConfiguration",
+        "aps:UpdateWorkspaceConfiguration",
+        "aps:DescribeWorkspaceConfiguration"
       ],
       "Resource": "*"
     }

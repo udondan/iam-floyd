@@ -2239,6 +2239,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonTimestreamInfluxDBFullAccess);
     }
 
+    /** Provides administrative access to manage Amazon Timestream InfluxDB instances and parameter groups except marketplace operations. */
+    public AmazonTimestreamInfluxDBFullAccessWithoutMarketplaceAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonTimestreamInfluxDBFullAccessWithoutMarketplaceAccess);
+    }
+
     /** Provides full administrative access to create, update, delete and list Amazon Timestream InfluxDB instances and create and list parameter groups. Please refer to documentation for additional permissions needed. */
     public AmazonTimestreamInfluxDBServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonTimestreamInfluxDBServiceRolePolicy);
@@ -4884,9 +4889,19 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupEnableDHMCExecutionPolicy);
     }
 
+    /** This policy allows Quick Setup to deploy the configuration type required to set up just-in-time node access. */
+    public AWSQuickSetupJITNADeploymentRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupJITNADeploymentRolePolicy);
+    }
+
     /** This policy grants administrative permissions that allow Systems Manager to create a default IAM instance profile for the Quick Setup capability and attach it to Amazon EC2 instances that don't already have an instance. profile attached. */
     public AWSQuickSetupManagedInstanceProfileExecutionPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupManagedInstanceProfileExecutionPolicy);
+    }
+
+    /** This policy provides permissions to enable just-in-time node access for Systems Manager. */
+    public AWSQuickSetupManageJITNAResourcesExecutionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupManageJITNAResourcesExecutionPolicy);
     }
 
     /** Provides read-only permissions to access patch baselines that have been configured by an administrator in the current AWS account or organization using Quick Setup. */
@@ -5437,6 +5452,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read only access to AWS Systems Manager for SAP service */
     public AWSSystemsManagerForSAPReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerForSAPReadOnlyAccess);
+    }
+
+    /** The managed policy AWSSystemsManagerJustInTimeAccessTokenPolicy allows Systems Manager to generate access tokens used for just-in-time node access. */
+    public AWSSystemsManagerJustInTimeAccessTokenPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerJustInTimeAccessTokenPolicy);
+    }
+
+    /** The managed policy AWSSystemsManagerJustInTimeAccessTokenSessionPolicy allows Systems Manager to apply scoped down permissions to a just-in-time node access session once it is started. */
+    public AWSSystemsManagerJustInTimeAccessTokenSessionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerJustInTimeAccessTokenSessionPolicy);
+    }
+
+    /** Permissions required to collect information about a user for Just-In-Time-Node-Access notifications. */
+    public AWSSystemsManagerNotificationsServicePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerNotificationsServicePolicy);
     }
 
     /** IAM role for SSM Explorer to manage OpsData related operations */
