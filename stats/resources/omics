@@ -3,6 +3,7 @@ omics:AnnotationStoreVersion
 omics:TaggingResource
 omics:TaskResource
 omics:VariantStore
+omics:WorkflowVersion
 omics:readSet
 omics:reference
 omics:referenceStore
