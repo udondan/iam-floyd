@@ -238,6 +238,21 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new workflow version with a workflow definition and template of workflow parameters
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateWorkflowVersion.html
+   */
+  public toCreateWorkflowVersion() {
+    return this.to('CreateWorkflowVersion');
+  }
+
+  /**
    * Grants permission to delete an Annotation Store
    *
    * Access Level: Write
@@ -367,6 +382,17 @@ export class Omics extends PolicyStatement {
    */
   public toDeleteWorkflow() {
     return this.to('DeleteWorkflow');
+  }
+
+  /**
+   * Grants permission to delete a workflow version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteWorkflowVersion.html
+   */
+  public toDeleteWorkflowVersion() {
+    return this.to('DeleteWorkflowVersion');
   }
 
   /**
@@ -612,6 +638,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve workflow version details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetWorkflowVersion.html
+   */
+  public toGetWorkflowVersion() {
+    return this.to('GetWorkflowVersion');
+  }
+
+  /**
    * Grants permission to get a list of Annotation Import Jobs
    *
    * Access Level: List
@@ -843,6 +880,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of available versions for a workflow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListWorkflowVersions.html
+   */
+  public toListWorkflowVersions() {
+    return this.to('ListWorkflowVersions');
+  }
+
+  /**
    * Grants permission to retrieve a list of available workflows
    *
    * Access Level: List
@@ -1055,6 +1103,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update workflow version details
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_UpdateWorkflowVersion.html
+   */
+  public toUpdateWorkflowVersion() {
+    return this.to('UpdateWorkflowVersion');
+  }
+
+  /**
    * Grants permission to upload read set parts
    *
    * Access Level: Write
@@ -1084,6 +1143,7 @@ export class Omics extends PolicyStatement {
       'CreateShare',
       'CreateVariantStore',
       'CreateWorkflow',
+      'CreateWorkflowVersion',
       'DeleteAnnotationStore',
       'DeleteAnnotationStoreVersions',
       'DeleteReference',
@@ -1096,6 +1156,7 @@ export class Omics extends PolicyStatement {
       'DeleteShare',
       'DeleteVariantStore',
       'DeleteWorkflow',
+      'DeleteWorkflowVersion',
       'PutS3AccessPolicy',
       'StartAnnotationImportJob',
       'StartReadSetActivationJob',
@@ -1111,6 +1172,7 @@ export class Omics extends PolicyStatement {
       'UpdateSequenceStore',
       'UpdateVariantStore',
       'UpdateWorkflow',
+      'UpdateWorkflowVersion',
       'UploadReadSetPart'
     ],
     Read: [
@@ -1135,7 +1197,8 @@ export class Omics extends PolicyStatement {
       'GetShare',
       'GetVariantImportJob',
       'GetVariantStore',
-      'GetWorkflow'
+      'GetWorkflow',
+      'GetWorkflowVersion'
     ],
     List: [
       'ListAnnotationImportJobs',
@@ -1159,6 +1222,7 @@ export class Omics extends PolicyStatement {
       'ListTagsForResource',
       'ListVariantImportJobs',
       'ListVariantStores',
+      'ListWorkflowVersions',
       'ListWorkflows'
     ],
     Tagging: [
@@ -1386,6 +1450,24 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type WorkflowVersion to the statement
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_WorkflowVersionListItem.html
+   *
+   * @param id - Identifier for the id.
+   * @param versionName - Identifier for the versionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkflowVersion(id: string, versionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workflow/${ id }/version/${ versionName }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1399,6 +1481,7 @@ export class Omics extends PolicyStatement {
    * - .toCreateSequenceStore()
    * - .toCreateVariantStore()
    * - .toCreateWorkflow()
+   * - .toCreateWorkflowVersion()
    * - .toStartRun()
    * - .toTagResource()
    *
@@ -1427,6 +1510,7 @@ export class Omics extends PolicyStatement {
    * - sequenceStore
    * - VariantStore
    * - workflow
+   * - WorkflowVersion
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1450,6 +1534,7 @@ export class Omics extends PolicyStatement {
    * - .toCreateSequenceStore()
    * - .toCreateVariantStore()
    * - .toCreateWorkflow()
+   * - .toCreateWorkflowVersion()
    * - .toStartRun()
    * - .toTagResource()
    * - .toUntagResource()

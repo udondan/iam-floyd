@@ -15,6 +15,7 @@ omics:CreateSequenceStore;Write
 omics:CreateShare;Write
 omics:CreateVariantStore;Write
 omics:CreateWorkflow;Write
+omics:CreateWorkflowVersion;Write
 omics:DeleteAnnotationStore;Write
 omics:DeleteAnnotationStoreVersions;Write
 omics:DeleteReference;Write
@@ -27,6 +28,7 @@ omics:DeleteSequenceStore;Write
 omics:DeleteShare;Write
 omics:DeleteVariantStore;Write
 omics:DeleteWorkflow;Write
+omics:DeleteWorkflowVersion;Write
 omics:GetAnnotationImportJob;Read
 omics:GetAnnotationStore;Read
 omics:GetAnnotationStoreVersion;Read
@@ -49,6 +51,7 @@ omics:GetShare;Read
 omics:GetVariantImportJob;Read
 omics:GetVariantStore;Read
 omics:GetWorkflow;Read
+omics:GetWorkflowVersion;Read
 omics:ListAnnotationImportJobs;List
 omics:ListAnnotationStoreVersions;List
 omics:ListAnnotationStores;List
@@ -70,6 +73,7 @@ omics:ListShares;List
 omics:ListTagsForResource;List
 omics:ListVariantImportJobs;List
 omics:ListVariantStores;List
+omics:ListWorkflowVersions;List
 omics:ListWorkflows;List
 omics:PutS3AccessPolicy;Write
 omics:StartAnnotationImportJob;Write
@@ -88,4 +92,5 @@ omics:UpdateRunGroup;Write
 omics:UpdateSequenceStore;Write
 omics:UpdateVariantStore;Write
 omics:UpdateWorkflow;Write
+omics:UpdateWorkflowVersion;Write
 omics:UploadReadSetPart;Write
