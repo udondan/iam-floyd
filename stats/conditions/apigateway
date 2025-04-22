@@ -5,6 +5,7 @@ apigateway:Request/ApiKeyRequired
 apigateway:Request/ApiName
 apigateway:Request/AuthorizerType
 apigateway:Request/AuthorizerUri
+apigateway:Request/CognitoUserPoolProviderArn
 apigateway:Request/DisableExecuteApiEndpoint
 apigateway:Request/DomainNameArn
 apigateway:Request/EndpointType
@@ -20,6 +21,7 @@ apigateway:Resource/ApiKeyRequired
 apigateway:Resource/ApiName
 apigateway:Resource/AuthorizerType
 apigateway:Resource/AuthorizerUri
+apigateway:Resource/CognitoUserPoolProviderArn
 apigateway:Resource/DisableExecuteApiEndpoint
 apigateway:Resource/EndpointType
 apigateway:Resource/MtlsTrustStoreUri

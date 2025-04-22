@@ -1,5 +1,6 @@
 ssm:AutoApprove
 ssm:DocumentCategories
+ssm:DocumentType
 ssm:Overwrite
 ssm:Policies
 ssm:Recursive
