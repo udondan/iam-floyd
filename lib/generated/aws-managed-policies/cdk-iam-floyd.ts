@@ -5454,6 +5454,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerForSAPReadOnlyAccess);
     }
 
+    /** Provides access to AWS resources managed or used by the AWS Systems Manager just in time access framework. */
+    public AWSSystemsManagerJustInTimeAccessServicePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerJustInTimeAccessServicePolicy);
+    }
+
     /** The managed policy AWSSystemsManagerJustInTimeAccessTokenPolicy allows Systems Manager to generate access tokens used for just-in-time node access. */
     public AWSSystemsManagerJustInTimeAccessTokenPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerJustInTimeAccessTokenPolicy);
@@ -5462,6 +5467,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** The managed policy AWSSystemsManagerJustInTimeAccessTokenSessionPolicy allows Systems Manager to apply scoped down permissions to a just-in-time node access session once it is started. */
     public AWSSystemsManagerJustInTimeAccessTokenSessionPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerJustInTimeAccessTokenSessionPolicy);
+    }
+
+    /** This policy allows Systems Manager to share a deny-access policy for just-in-time node access from the delegated administrator account to member accounts, and replicate the policy to multiple Regions. */
+    public AWSSystemsManagerJustInTimeNodeAccessRolePropagationPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSystemsManagerJustInTimeNodeAccessRolePropagationPolicy);
     }
 
     /** Permissions required to collect information about a user for Just-In-Time-Node-Access notifications. */

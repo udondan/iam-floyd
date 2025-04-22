@@ -2178,10 +2178,14 @@ export class AwsManagedPolicy {
     public static AWSSystemsManagerForSAPFullAccess = 'AWSSystemsManagerForSAPFullAccess';
     /** Provides read only access to AWS Systems Manager for SAP service */
     public static AWSSystemsManagerForSAPReadOnlyAccess = 'AWSSystemsManagerForSAPReadOnlyAccess';
+    /** Provides access to AWS resources managed or used by the AWS Systems Manager just in time access framework. */
+    public static AWSSystemsManagerJustInTimeAccessServicePolicy = 'aws-service-role/AWSSystemsManagerJustInTimeAccessServicePolicy';
     /** The managed policy AWSSystemsManagerJustInTimeAccessTokenPolicy allows Systems Manager to generate access tokens used for just-in-time node access. */
     public static AWSSystemsManagerJustInTimeAccessTokenPolicy = 'AWSSystemsManagerJustInTimeAccessTokenPolicy';
     /** The managed policy AWSSystemsManagerJustInTimeAccessTokenSessionPolicy allows Systems Manager to apply scoped down permissions to a just-in-time node access session once it is started. */
     public static AWSSystemsManagerJustInTimeAccessTokenSessionPolicy = 'AWSSystemsManagerJustInTimeAccessTokenSessionPolicy';
+    /** This policy allows Systems Manager to share a deny-access policy for just-in-time node access from the delegated administrator account to member accounts, and replicate the policy to multiple Regions. */
+    public static AWSSystemsManagerJustInTimeNodeAccessRolePropagationPolicy = 'AWSSystemsManagerJustInTimeNodeAccessRolePropagationPolicy';
     /** Permissions required to collect information about a user for Just-In-Time-Node-Access notifications. */
     public static AWSSystemsManagerNotificationsServicePolicy = 'aws-service-role/AWSSystemsManagerNotificationsServicePolicy';
     /** IAM role for SSM Explorer to manage OpsData related operations */
