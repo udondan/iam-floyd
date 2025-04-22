@@ -122,6 +122,7 @@ export class Ssm extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifDocumentType()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -235,6 +236,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to delete a specified SSM document and its instance associations
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDocumentType()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteDocument.html
    */
@@ -488,6 +492,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifDocumentType()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocument.html
    */
   public toDescribeDocument() {
@@ -509,6 +516,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view the permissions for a specified SSM document
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDocumentType()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocumentPermission.html
    */
@@ -907,6 +917,7 @@ export class Ssm extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifDocumentCategories()
+   * - .ifDocumentType()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html
    */
@@ -1234,6 +1245,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifDocumentType()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentMetadataHistory.html
    */
   public toListDocumentMetadataHistory() {
@@ -1244,6 +1258,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to list all versions of a specified document
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifDocumentType()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentVersions.html
    */
@@ -1385,6 +1402,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to share a custom SSM document publicly or privately with specified AWS accounts
    *
    * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifDocumentType()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ModifyDocumentPermission.html
    */
@@ -1746,6 +1766,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDocumentType()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocument.html
    */
   public toUpdateDocument() {
@@ -1757,6 +1780,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDocumentType()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentDefaultVersion.html
    */
   public toUpdateDocumentDefaultVersion() {
@@ -1767,6 +1793,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to update the metadata of an SSM document
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDocumentType()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentMetadata.html
    */
@@ -2152,6 +2181,7 @@ export class Ssm extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifDocumentCategories()
+   * - .ifDocumentType()
    * - .ifResourceTag()
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
@@ -2588,6 +2618,34 @@ export class Ssm extends PolicyStatement {
    */
   public ifDocumentCategories(value: string | string[], operator?: Operator | string) {
     return this.if(`DocumentCategories`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by verifying that a user has permission to access a document belonging to a specific document type. Only available in "aws", "aws-cn", and "aws-us-gov" partitions
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toCreateDocument()
+   * - .toDeleteDocument()
+   * - .toDescribeDocument()
+   * - .toDescribeDocumentPermission()
+   * - .toGetDocument()
+   * - .toListDocumentMetadataHistory()
+   * - .toListDocumentVersions()
+   * - .toModifyDocumentPermission()
+   * - .toUpdateDocument()
+   * - .toUpdateDocumentDefaultVersion()
+   * - .toUpdateDocumentMetadata()
+   *
+   * Applies to resource types:
+   * - document
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDocumentType(value: string | string[], operator?: Operator | string) {
+    return this.if(`DocumentType`, value, operator ?? 'StringLike');
   }
 
   /**
