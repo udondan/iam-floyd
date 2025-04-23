@@ -18,7 +18,9 @@
         "account:PutContactInformation",
         "account:ListRegions",
         "account:EnableRegion",
-        "account:DisableRegion"
+        "account:DisableRegion",
+        "account:PutAccountName",
+        "account:GetAccountInformation"
       ],
       "Resource": "*"
     },
