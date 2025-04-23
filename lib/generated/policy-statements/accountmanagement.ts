@@ -89,8 +89,6 @@ export class Account extends PolicyStatement {
    * Grants permission to retrieve the account information for an account
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/accounts/latest/reference/security_account-permissions-ref.html
    */
   public toGetAccountInformation() {
     return this.to('GetAccountInformation');
@@ -158,6 +156,17 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the name for an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_PutAccountName.html
+   */
+  public toPutAccountName() {
+    return this.to('PutAccountName');
+  }
+
+  /**
    * Grants permission to modify the alternate contacts for an account
    *
    * Access Level: Write
@@ -203,6 +212,7 @@ export class Account extends PolicyStatement {
       'DeleteAlternateContact',
       'DisableRegion',
       'EnableRegion',
+      'PutAccountName',
       'PutAlternateContact',
       'PutContactInformation',
       'StartPrimaryEmailUpdate'

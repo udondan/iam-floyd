@@ -9,6 +9,7 @@ account:GetContactInformation;Read
 account:GetPrimaryEmail;Read
 account:GetRegionOptStatus;Read
 account:ListRegions;List
+account:PutAccountName;Write
 account:PutAlternateContact;Write
 account:PutContactInformation;Write
 account:StartPrimaryEmailUpdate;Write

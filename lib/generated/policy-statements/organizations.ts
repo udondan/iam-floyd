@@ -76,6 +76,7 @@ export class Organizations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateAccount.html
    */
@@ -91,6 +92,7 @@ export class Organizations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateGovCloudAccount.html
    */
@@ -136,6 +138,7 @@ export class Organizations extends PolicyStatement {
    * - .ifPolicyType()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreatePolicy.html
    */
@@ -778,7 +781,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Adds a resource of type account to the statement
    *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
    * @param organizationId - Identifier for the organizationId.
    * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -795,7 +798,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Adds a resource of type handshake to the statement
    *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
    * @param organizationId - Identifier for the organizationId.
    * @param handshakeType - Identifier for the handshakeType.
@@ -810,7 +813,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Adds a resource of type organization to the statement
    *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
    * @param organizationId - Identifier for the organizationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -823,7 +826,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Adds a resource of type organizationalunit to the statement
    *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
    * @param organizationId - Identifier for the organizationId.
    * @param organizationalUnitId - Identifier for the organizationalUnitId.
@@ -840,7 +843,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Adds a resource of type policy to the statement
    *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
    * @param organizationId - Identifier for the organizationId.
    * @param policyType - Identifier for the policyType.
@@ -858,7 +861,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Adds a resource of type resourcepolicy to the statement
    *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
    * @param organizationId - Identifier for the organizationId.
    * @param resourcePolicyId - Identifier for the resourcePolicyId.
@@ -875,7 +878,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Adds a resource of type awspolicy to the statement
    *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
    * @param policyType - Identifier for the policyType.
    * @param policyId - Identifier for the policyId.
@@ -888,7 +891,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Adds a resource of type root to the statement
    *
-   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
    *
    * @param organizationId - Identifier for the organizationId.
    * @param rootId - Identifier for the rootId.
@@ -928,6 +931,11 @@ export class Organizations extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateAccount()
+   * - .toCreateGovCloudAccount()
+   * - .toCreatePolicy()
    *
    * Applies to resource types:
    * - account
@@ -983,6 +991,7 @@ export class Organizations extends PolicyStatement {
    * - .toListPolicies()
    * - .toListPoliciesForTarget()
    * - .toListTargetsForPolicy()
+   * - .toTagResource()
    * - .toUpdatePolicy()
    *
    * @param value The value(s) to check
