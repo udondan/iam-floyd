@@ -697,6 +697,17 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop an ongoing service deployment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StopServiceDeployment.html
+   */
+  public toStopServiceDeployment() {
+    return this.to('StopServiceDeployment');
+  }
+
+  /**
    * Grants permission to stop a running task
    *
    * Access Level: Write
@@ -957,6 +968,7 @@ export class Ecs extends PolicyStatement {
       'RunTask',
       'StartTask',
       'StartTelemetrySession',
+      'StopServiceDeployment',
       'StopTask',
       'SubmitAttachmentStateChanges',
       'SubmitContainerStateChange',
@@ -1235,6 +1247,7 @@ export class Ecs extends PolicyStatement {
    * - .toRegisterTaskDefinition()
    * - .toRunTask()
    * - .toStartTask()
+   * - .toStopServiceDeployment()
    * - .toStopTask()
    * - .toSubmitAttachmentStateChanges()
    * - .toSubmitContainerStateChange()
@@ -1410,6 +1423,7 @@ export class Ecs extends PolicyStatement {
    * - .toRunTask()
    * - .toStartTask()
    * - .toStartTelemetrySession()
+   * - .toStopServiceDeployment()
    * - .toStopTask()
    * - .toUpdateContainerAgent()
    * - .toUpdateContainerInstancesState()
@@ -1632,6 +1646,7 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeServiceDeployments()
    * - .toDescribeServiceRevisions()
    * - .toDescribeTaskSets()
+   * - .toStopServiceDeployment()
    * - .toUpdateTaskSet()
    *
    * Applies to resource types:

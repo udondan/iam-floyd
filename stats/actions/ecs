@@ -44,6 +44,7 @@ ecs:RegisterTaskDefinition;Write
 ecs:RunTask;Write
 ecs:StartTask;Write
 ecs:StartTelemetrySession;Write
+ecs:StopServiceDeployment;Write
 ecs:StopTask;Write
 ecs:SubmitAttachmentStateChanges;Write
 ecs:SubmitContainerStateChange;Write

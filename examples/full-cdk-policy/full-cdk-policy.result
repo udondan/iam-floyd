@@ -28,6 +28,7 @@
                 "account:DeleteAlternateContact",
                 "account:DisableRegion",
                 "account:EnableRegion",
+                "account:PutAccountName",
                 "account:PutAlternateContact",
                 "account:PutContactInformation",
                 "account:StartPrimaryEmailUpdate"

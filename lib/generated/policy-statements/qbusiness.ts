@@ -22,6 +22,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to add one or more users for licenses
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AddUserLicenses.html
    */
   public toAddUserLicenses() {
     return this.to('AddUserLicenses');
@@ -46,6 +48,8 @@ export class Qbusiness extends PolicyStatement {
    *
    * Dependent actions:
    * - qbusiness:PutResourcePolicy
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociatePermission.html
    */
   public toAssociatePermission() {
     return this.to('AssociatePermission');
@@ -55,6 +59,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to batch delete document
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchDeleteDocument.html
    */
   public toBatchDeleteDocument() {
     return this.to('BatchDeleteDocument');
@@ -64,6 +70,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to batch put document
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchPutDocument.html
    */
   public toBatchPutDocument() {
     return this.to('BatchPutDocument');
@@ -73,6 +81,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to cancel a subscription
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CancelSubscription.html
    */
   public toCancelSubscription() {
     return this.to('CancelSubscription');
@@ -82,6 +92,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to chat using an application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_Chat.html
    */
   public toChat() {
     return this.to('Chat');
@@ -91,9 +103,22 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to chat synchronously using an application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ChatSync.html
    */
   public toChatSync() {
     return this.to('ChatSync');
+  }
+
+  /**
+   * Grants permission to check if a user has access to a document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CheckDocumentAccess.html
+   */
+  public toCheckDocumentAccess() {
+    return this.to('CheckDocumentAccess');
   }
 
   /**
@@ -104,6 +129,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateApplication.html
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
@@ -113,6 +140,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to create DataAccessor to the application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html
    */
   public toCreateDataAccessor() {
     return this.to('CreateDataAccessor');
@@ -126,6 +155,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html
    */
   public toCreateDataSource() {
     return this.to('CreateDataSource');
@@ -139,6 +170,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateIndex.html
    */
   public toCreateIndex() {
     return this.to('CreateIndex');
@@ -152,6 +185,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateIntegration.html
    */
   public toCreateIntegration() {
     return this.to('CreateIntegration');
@@ -161,6 +196,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to create a license
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateLicense.html
    */
   public toCreateLicense() {
     return this.to('CreateLicense');
@@ -174,6 +211,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreatePlugin.html
    */
   public toCreatePlugin() {
     return this.to('CreatePlugin');
@@ -187,6 +226,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateRetriever.html
    */
   public toCreateRetriever() {
     return this.to('CreateRetriever');
@@ -200,6 +241,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifIdentitystoreUserId()
    * - .ifIdentitystoreGroupId()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateSubscription.html
    */
   public toCreateSubscription() {
     return this.to('CreateSubscription');
@@ -209,6 +252,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to create a user
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateUser.html
    */
   public toCreateUser() {
     return this.to('CreateUser');
@@ -222,6 +267,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateWebExperience.html
    */
   public toCreateWebExperience() {
     return this.to('CreateWebExperience');
@@ -231,6 +278,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete an application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteApplication.html
    */
   public toDeleteApplication() {
     return this.to('DeleteApplication');
@@ -240,6 +289,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete an attachment in the current chat context
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteAttachment.html
    */
   public toDeleteAttachment() {
     return this.to('DeleteAttachment');
@@ -249,6 +300,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete chat controls configuration for an application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteChatControlsConfiguration.html
    */
   public toDeleteChatControlsConfiguration() {
     return this.to('DeleteChatControlsConfiguration');
@@ -258,6 +311,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete a conversation
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteConversation.html
    */
   public toDeleteConversation() {
     return this.to('DeleteConversation');
@@ -267,6 +322,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete DataAccessor
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteDataAccessor.html
    */
   public toDeleteDataAccessor() {
     return this.to('DeleteDataAccessor');
@@ -276,6 +333,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete a DataSource
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteDataSource.html
    */
   public toDeleteDataSource() {
     return this.to('DeleteDataSource');
@@ -285,6 +344,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete a group
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteGroup.html
    */
   public toDeleteGroup() {
     return this.to('DeleteGroup');
@@ -294,6 +355,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete an index
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteIndex.html
    */
   public toDeleteIndex() {
     return this.to('DeleteIndex');
@@ -303,6 +366,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete an integration for a Q Business application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteIntegration.html
    */
   public toDeleteIntegration() {
     return this.to('DeleteIntegration');
@@ -312,6 +377,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete a plugin
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeletePlugin.html
    */
   public toDeletePlugin() {
     return this.to('DeletePlugin');
@@ -321,6 +388,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete a retriever
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteRetriever.html
    */
   public toDeleteRetriever() {
     return this.to('DeleteRetriever');
@@ -330,6 +399,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete a user
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteUser.html
    */
   public toDeleteUser() {
     return this.to('DeleteUser');
@@ -339,6 +410,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to delete a web-experience
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteWebExperience.html
    */
   public toDeleteWebExperience() {
     return this.to('DeleteWebExperience');
@@ -360,6 +433,8 @@ export class Qbusiness extends PolicyStatement {
    *
    * Dependent actions:
    * - qbusiness:PutResourcePolicy
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DisassociatePermission.html
    */
   public toDisassociatePermission() {
     return this.to('DisassociatePermission');
@@ -369,6 +444,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get an application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetApplication.html
    */
   public toGetApplication() {
     return this.to('GetApplication');
@@ -378,6 +455,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get chat controls configuration for an application
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetChatControlsConfiguration.html
    */
   public toGetChatControlsConfiguration() {
     return this.to('GetChatControlsConfiguration');
@@ -387,6 +466,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get DataAccessor
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetDataAccessor.html
    */
   public toGetDataAccessor() {
     return this.to('GetDataAccessor');
@@ -396,6 +477,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get a data source
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetDataSource.html
    */
   public toGetDataSource() {
     return this.to('GetDataSource');
@@ -405,6 +488,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get a group
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetGroup.html
    */
   public toGetGroup() {
     return this.to('GetGroup');
@@ -414,6 +499,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get an index
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetIndex.html
    */
   public toGetIndex() {
     return this.to('GetIndex');
@@ -423,6 +510,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get an integration for a Q Business application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetIntegration.html
    */
   public toGetIntegration() {
     return this.to('GetIntegration');
@@ -432,6 +521,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get a license
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetLicense.html
    */
   public toGetLicense() {
     return this.to('GetLicense');
@@ -441,6 +532,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get the media associated to a system message
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetMedia.html
    */
   public toGetMedia() {
     return this.to('GetMedia');
@@ -450,6 +543,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get a plugin
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetPlugin.html
    */
   public toGetPlugin() {
     return this.to('GetPlugin');
@@ -459,6 +554,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get resource based policy of the application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetPolicy.html
    */
   public toGetPolicy() {
     return this.to('GetPolicy');
@@ -468,6 +565,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get a retriever
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetRetriever.html
    */
   public toGetRetriever() {
     return this.to('GetRetriever');
@@ -477,6 +576,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get a user
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetUser.html
    */
   public toGetUser() {
     return this.to('GetUser');
@@ -486,6 +587,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get a web-experience
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetWebExperience.html
    */
   public toGetWebExperience() {
     return this.to('GetWebExperience');
@@ -495,6 +598,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list the applications
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListApplications.html
    */
   public toListApplications() {
     return this.to('ListApplications');
@@ -504,6 +609,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list attachments in the current chat context
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListAttachments.html
    */
   public toListAttachments() {
     return this.to('ListAttachments');
@@ -513,6 +620,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list all conversations for an application
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListConversations.html
    */
   public toListConversations() {
     return this.to('ListConversations');
@@ -522,6 +631,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list DataAccessors for the application
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListDataAccessors.html
    */
   public toListDataAccessors() {
     return this.to('ListDataAccessors');
@@ -531,6 +642,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to get Data Source sync job history
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListDataSourceSyncJobs.html
    */
   public toListDataSourceSyncJobs() {
     return this.to('ListDataSourceSyncJobs');
@@ -540,6 +653,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list the data sources of an application and an index
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListDataSources.html
    */
   public toListDataSources() {
     return this.to('ListDataSources');
@@ -549,6 +664,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list all documents
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListDocuments.html
    */
   public toListDocuments() {
     return this.to('ListDocuments');
@@ -558,6 +675,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list groups
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListGroups.html
    */
   public toListGroups() {
     return this.to('ListGroups');
@@ -567,6 +686,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list the indices of an application
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListIndices.html
    */
   public toListIndices() {
     return this.to('ListIndices');
@@ -576,6 +697,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list all integrations for a Q Business application
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListIntegrations.html
    */
   public toListIntegrations() {
     return this.to('ListIntegrations');
@@ -585,6 +708,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list all messages
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListMessages.html
    */
   public toListMessages() {
     return this.to('ListMessages');
@@ -594,6 +719,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list the plugins actions of a plugin within application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListPluginActions.html
    */
   public toListPluginActions() {
     return this.to('ListPluginActions');
@@ -603,6 +730,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list all the actions for a plugin type
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListPluginTypeActions.html
    */
   public toListPluginTypeActions() {
     return this.to('ListPluginTypeActions');
@@ -612,6 +741,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list all the plugin type metadata
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListPluginTypeMetadata.html
    */
   public toListPluginTypeMetadata() {
     return this.to('ListPluginTypeMetadata');
@@ -621,6 +752,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list the plugins of an application
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListPlugins.html
    */
   public toListPlugins() {
     return this.to('ListPlugins');
@@ -630,6 +763,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list the retrievers of an application
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListRetrievers.html
    */
   public toListRetrievers() {
     return this.to('ListRetrievers');
@@ -639,6 +774,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list subscriptions
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListSubscriptions.html
    */
   public toListSubscriptions() {
     return this.to('ListSubscriptions');
@@ -648,6 +785,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -657,6 +796,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list licenses
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListUserLicenses.html
    */
   public toListUserLicenses() {
     return this.to('ListUserLicenses');
@@ -666,6 +807,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to list the web experiences of an application
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListWebExperiences.html
    */
   public toListWebExperiences() {
     return this.to('ListWebExperiences');
@@ -675,6 +818,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to put feedback about a conversation message
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_PutFeedback.html
    */
   public toPutFeedback() {
     return this.to('PutFeedback');
@@ -684,6 +829,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to put a group of users
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_PutGroup.html
    */
   public toPutGroup() {
     return this.to('PutGroup');
@@ -693,6 +840,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to put resource based policy statement to the application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AssociatePermission.html
    */
   public toPutResourcePolicy() {
     return this.to('PutResourcePolicy');
@@ -702,6 +851,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to remove licenses for one or more users
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_RemoveUserLicenses.html
    */
   public toRemoveUserLicenses() {
     return this.to('RemoveUserLicenses');
@@ -711,6 +862,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to search relevant content from the Amazon Q Business Application
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_SearchRelevantContent.html
    */
   public toSearchRelevantContent() {
     return this.to('SearchRelevantContent');
@@ -720,6 +873,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to start Data Source sync job
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_StartDataSourceSyncJob.html
    */
   public toStartDataSourceSyncJob() {
     return this.to('StartDataSourceSyncJob');
@@ -729,6 +884,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to start deployment for an integration
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_StartDeployment.html
    */
   public toStartDeployment() {
     return this.to('StartDeployment');
@@ -738,6 +895,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to stop Data Source sync job
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_StopDataSourceSyncJob.html
    */
   public toStopDataSourceSyncJob() {
     return this.to('StopDataSourceSyncJob');
@@ -751,6 +910,8 @@ export class Qbusiness extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -763,6 +924,8 @@ export class Qbusiness extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -772,6 +935,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update an Application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateApplication.html
    */
   public toUpdateApplication() {
     return this.to('UpdateApplication');
@@ -781,6 +946,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update chat controls configuration for an application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateChatControlsConfiguration.html
    */
   public toUpdateChatControlsConfiguration() {
     return this.to('UpdateChatControlsConfiguration');
@@ -790,6 +957,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update DataAccessor
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateDataAccessor.html
    */
   public toUpdateDataAccessor() {
     return this.to('UpdateDataAccessor');
@@ -799,6 +968,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update a DataSource
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateDataSource.html
    */
   public toUpdateDataSource() {
     return this.to('UpdateDataSource');
@@ -808,6 +979,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update an index
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateIndex.html
    */
   public toUpdateIndex() {
     return this.to('UpdateIndex');
@@ -817,6 +990,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update an integration for a Q Business application
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateIntegration.html
    */
   public toUpdateIntegration() {
     return this.to('UpdateIntegration');
@@ -826,6 +1001,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update a plugin
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdatePlugin.html
    */
   public toUpdatePlugin() {
     return this.to('UpdatePlugin');
@@ -835,6 +1012,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update a Retriever
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateRetriever.html
    */
   public toUpdateRetriever() {
     return this.to('UpdateRetriever');
@@ -844,6 +1023,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update a subscription
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateSubscription.html
    */
   public toUpdateSubscription() {
     return this.to('UpdateSubscription');
@@ -853,6 +1034,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update a user
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateUser.html
    */
   public toUpdateUser() {
     return this.to('UpdateUser');
@@ -862,6 +1045,8 @@ export class Qbusiness extends PolicyStatement {
    * Grants permission to update a WebExperience
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateWebExperience.html
    */
   public toUpdateWebExperience() {
     return this.to('UpdateWebExperience');
@@ -925,6 +1110,7 @@ export class Qbusiness extends PolicyStatement {
     Read: [
       'Chat',
       'ChatSync',
+      'CheckDocumentAccess',
       'GetApplication',
       'GetDataAccessor',
       'GetDataSource',
@@ -972,6 +1158,8 @@ export class Qbusiness extends PolicyStatement {
   /**
    * Adds a resource of type application to the statement
    *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/create-application.html
+   *
    * @param applicationId - Identifier for the applicationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
@@ -986,6 +1174,8 @@ export class Qbusiness extends PolicyStatement {
 
   /**
    * Adds a resource of type integration to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/create-integration.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param integrationId - Identifier for the integrationId.
@@ -1003,6 +1193,8 @@ export class Qbusiness extends PolicyStatement {
   /**
    * Adds a resource of type retriever to the statement
    *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/select-retriever.html
+   *
    * @param applicationId - Identifier for the applicationId.
    * @param retrieverId - Identifier for the retrieverId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1019,6 +1211,8 @@ export class Qbusiness extends PolicyStatement {
   /**
    * Adds a resource of type index to the statement
    *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/select-retriever.html
+   *
    * @param applicationId - Identifier for the applicationId.
    * @param indexId - Identifier for the indexId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1034,6 +1228,8 @@ export class Qbusiness extends PolicyStatement {
 
   /**
    * Adds a resource of type data-source to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connect-data.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param indexId - Identifier for the indexId.
@@ -1052,6 +1248,8 @@ export class Qbusiness extends PolicyStatement {
   /**
    * Adds a resource of type plugin to the statement
    *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/plugins.html
+   *
    * @param applicationId - Identifier for the applicationId.
    * @param pluginId - Identifier for the pluginId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1067,6 +1265,8 @@ export class Qbusiness extends PolicyStatement {
 
   /**
    * Adds a resource of type web-experience to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param webExperienceId - Identifier for the webExperienceId.
@@ -1084,6 +1284,8 @@ export class Qbusiness extends PolicyStatement {
   /**
    * Adds a resource of type user-license to the statement
    *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/provisioning.html
+   *
    * @param applicationId - Identifier for the applicationId.
    * @param userLicenseId - Identifier for the userLicenseId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1097,6 +1299,8 @@ export class Qbusiness extends PolicyStatement {
   /**
    * Adds a resource of type subscription to the statement
    *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/subscriptions.html
+   *
    * @param applicationId - Identifier for the applicationId.
    * @param subscriptionId - Identifier for the subscriptionId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1109,6 +1313,8 @@ export class Qbusiness extends PolicyStatement {
 
   /**
    * Adds a resource of type data-accessor to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/data-accessors.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param dataAccessorId - Identifier for the dataAccessorId.
