@@ -48,7 +48,8 @@
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
-        "iam:GetRole"
+        "iam:GetRole",
+        "iam:TagRole"
       ],
       "Resource": [
         "arn:aws:iam::*:role/SSM-JustInTimeAccessTokenRole"

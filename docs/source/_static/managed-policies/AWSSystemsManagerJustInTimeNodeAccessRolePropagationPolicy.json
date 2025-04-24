@@ -133,6 +133,22 @@
       }
     },
     {
+      "Sid": "RAMTaggingPermissions",
+      "Effect": "Allow",
+      "Action": "ram:TagResource",
+      "Resource": "arn:aws:ram:*:*:resource-share/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/SystemsManagerJustInTimeNodeAccessManaged": "true"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "SystemsManagerJustInTimeNodeAccessManaged"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "RAMModificationPermissions",
       "Effect": "Allow",
       "Action": [

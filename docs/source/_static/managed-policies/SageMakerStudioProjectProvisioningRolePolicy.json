@@ -682,7 +682,8 @@
       "Action": "iam:PassRole",
       "Resource": [
         "arn:aws:iam::*:role/datazone_usr_role_*",
-        "arn:aws:iam::*:role/SageMakerStudioQueryExecutionRole"
+        "arn:aws:iam::*:role/SageMakerStudioQueryExecutionRole",
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerQueryExecution"
       ],
       "Condition": {
         "StringEquals": {
@@ -1249,7 +1250,10 @@
       "Action": [
         "iam:GetRole"
       ],
-      "Resource": "arn:aws:iam::*:role/SageMakerStudioQueryExecutionRole",
+      "Resource": [
+        "arn:aws:iam::*:role/SageMakerStudioQueryExecutionRole",
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerQueryExecution"
+      ],
       "Effect": "Allow"
     },
     {
@@ -2755,6 +2759,25 @@
         },
         "ForAllValues:StringLike": {
           "aws:TagKeys": "AmazonDataZone*"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeScheduleDeleteAction",
+      "Effect": "Allow",
+      "Action": [
+        "scheduler:DeleteSchedule"
+      ],
+      "Resource": [
+        "arn:aws:scheduler:*:*:schedule/SageMakerUnifiedStudio-*-*/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:CalledViaFirst": "cloudformation.amazonaws.com"
+        },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
         }
       }
     }
