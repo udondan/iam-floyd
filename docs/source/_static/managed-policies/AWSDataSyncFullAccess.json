@@ -31,7 +31,10 @@
         "s3:ListBucket",
         "s3:ListBucketVersions",
         "s3-outposts:ListAccessPoints",
-        "s3-outposts:ListRegionalBuckets"
+        "s3-outposts:ListRegionalBuckets",
+        "secretsmanager:ListSecrets",
+        "kms:ListAliases",
+        "kms:DescribeKey"
       ],
       "Resource": "*"
     },
