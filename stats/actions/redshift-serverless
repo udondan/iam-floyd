@@ -2,6 +2,7 @@ redshift-serverless:ConvertRecoveryPointToSnapshot;Write
 redshift-serverless:CreateCustomDomainAssociation;Write
 redshift-serverless:CreateEndpointAccess;Write
 redshift-serverless:CreateNamespace;Write
+redshift-serverless:CreateReservation;Write
 redshift-serverless:CreateScheduledAction;Write
 redshift-serverless:CreateSnapshot;Write
 redshift-serverless:CreateSnapshotCopyConfiguration;Write
@@ -23,6 +24,8 @@ redshift-serverless:GetEndpointAccess;Read
 redshift-serverless:GetManagedWorkgroup;Read
 redshift-serverless:GetNamespace;Read
 redshift-serverless:GetRecoveryPoint;Read
+redshift-serverless:GetReservation;Read
+redshift-serverless:GetReservationOffering;Read
 redshift-serverless:GetResourcePolicy;Read
 redshift-serverless:GetScheduledAction;Read
 redshift-serverless:GetSnapshot;Read
@@ -35,6 +38,8 @@ redshift-serverless:ListEndpointAccess;List
 redshift-serverless:ListManagedWorkgroups;List
 redshift-serverless:ListNamespaces;List
 redshift-serverless:ListRecoveryPoints;List
+redshift-serverless:ListReservationOfferings;List
+redshift-serverless:ListReservations;List
 redshift-serverless:ListScheduledActions;List
 redshift-serverless:ListSnapshotCopyConfigurations;List
 redshift-serverless:ListSnapshots;List

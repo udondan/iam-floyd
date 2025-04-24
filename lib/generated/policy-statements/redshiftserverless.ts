@@ -88,6 +88,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to purchase a capacity reservation according to a specific reservation offering, for a specified number of RPUs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateReservation.html
+   */
+  public toCreateReservation() {
+    return this.to('CreateReservation');
+  }
+
+  /**
    * Grants permission to create a scheduled action for a specified Amazon Redshift Serverless namespace
    *
    * Access Level: Write
@@ -333,6 +344,28 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a particular reservation object
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetReservation.html
+   */
+  public toGetReservation() {
+    return this.to('GetReservation');
+  }
+
+  /**
+   * Grants permission to get a particular reservation offering
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetReservationOffering.html
+   */
+  public toGetReservationOffering() {
+    return this.to('GetReservationOffering');
+  }
+
+  /**
    * Grants permission to get a resource policy
    *
    * Access Level: Read
@@ -462,6 +495,28 @@ export class RedshiftServerless extends PolicyStatement {
    */
   public toListRecoveryPoints() {
     return this.to('ListRecoveryPoints');
+  }
+
+  /**
+   * Grants permission to list all available capacity reservation offerings
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListReservationOfferings.html
+   */
+  public toListReservationOfferings() {
+    return this.to('ListReservationOfferings');
+  }
+
+  /**
+   * Grants permission to list all reservations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListReservations.html
+   */
+  public toListReservations() {
+    return this.to('ListReservations');
   }
 
   /**
@@ -765,6 +820,7 @@ export class RedshiftServerless extends PolicyStatement {
       'CreateCustomDomainAssociation',
       'CreateEndpointAccess',
       'CreateNamespace',
+      'CreateReservation',
       'CreateScheduledAction',
       'CreateSnapshot',
       'CreateSnapshotCopyConfiguration',
@@ -801,6 +857,8 @@ export class RedshiftServerless extends PolicyStatement {
       'GetManagedWorkgroup',
       'GetNamespace',
       'GetRecoveryPoint',
+      'GetReservation',
+      'GetReservationOffering',
       'GetResourcePolicy',
       'GetScheduledAction',
       'GetSnapshot',
@@ -815,6 +873,8 @@ export class RedshiftServerless extends PolicyStatement {
       'ListManagedWorkgroups',
       'ListNamespaces',
       'ListRecoveryPoints',
+      'ListReservationOfferings',
+      'ListReservations',
       'ListScheduledActions',
       'ListSnapshotCopyConfigurations',
       'ListSnapshots',
