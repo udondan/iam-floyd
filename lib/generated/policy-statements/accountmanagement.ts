@@ -89,6 +89,8 @@ export class Account extends PolicyStatement {
    * Grants permission to retrieve the account information for an account
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_GetAccountInformation.html
    */
   public toGetAccountInformation() {
     return this.to('GetAccountInformation');

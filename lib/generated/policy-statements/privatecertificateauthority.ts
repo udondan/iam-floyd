@@ -25,6 +25,7 @@ export class AcmPca extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html
@@ -361,6 +362,7 @@ export class AcmPca extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCertificateAuthority()
    * - .toTagCertificateAuthority()
+   * - .toUntagCertificateAuthority()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -374,6 +376,9 @@ export class AcmPca extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateCertificateAuthority()
    *
    * Applies to resource types:
    * - certificate-authority
