@@ -100,6 +100,9 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifJobType()
+   *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateJob.html
    */
   public toCreateJob() {
@@ -745,6 +748,9 @@ export class Dataexchange extends PolicyStatement {
    * Filters access by the specified job type
    *
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/access-control.html
+   *
+   * Applies to actions:
+   * - .toCreateJob()
    *
    * Applies to resource types:
    * - jobs

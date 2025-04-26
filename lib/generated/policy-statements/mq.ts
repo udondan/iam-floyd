@@ -119,6 +119,17 @@ export class Mq extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-delete
+   */
+  public toDeleteConfiguration() {
+    return this.to('DeleteConfiguration');
+  }
+
+  /**
    * Grants permission to delete tags
    *
    * Access Level: Tagging
@@ -326,6 +337,7 @@ export class Mq extends PolicyStatement {
       'CreateReplicaBroker',
       'CreateUser',
       'DeleteBroker',
+      'DeleteConfiguration',
       'DeleteUser',
       'Promote',
       'RebootBroker',
