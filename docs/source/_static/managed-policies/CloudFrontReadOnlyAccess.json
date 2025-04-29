@@ -5,6 +5,7 @@
       "Sid": "cfReadOnly",
       "Effect": "Allow",
       "Action": [
+        "acm:DescribeCertificate",
         "acm:ListCertificates",
         "cloudfront:Describe*",
         "cloudfront:Get*",

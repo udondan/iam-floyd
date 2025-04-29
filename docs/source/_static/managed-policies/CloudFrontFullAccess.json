@@ -12,6 +12,7 @@
     {
       "Sid": "cffullaccess",
       "Action": [
+        "acm:DescribeCertificate",
         "acm:ListCertificates",
         "cloudfront:*",
         "cloudfront-keyvaluestore:*",
@@ -27,6 +28,19 @@
       ],
       "Effect": "Allow",
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "acm:RequestCertificate"
+      ],
+      "Resource": "*",
+      "Sid": "cfrequestcertificate",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "cloudfront.amazonaws.com"
+        }
+      }
     },
     {
       "Sid": "cffdescribestream",
