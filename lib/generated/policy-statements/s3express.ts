@@ -62,7 +62,7 @@ export class S3express extends PolicyStatement {
   /**
    * Grants permission to Create Session token which is used for object APIs such as PutObject, GetObject, ect
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -434,19 +434,11 @@ export class S3express extends PolicyStatement {
     Write: [
       'CreateAccessPoint',
       'CreateBucket',
+      'CreateSession',
       'DeleteAccessPoint',
       'DeleteBucket',
       'PutEncryptionConfiguration',
       'PutLifecycleConfiguration'
-    ],
-    Read: [
-      'CreateSession',
-      'GetAccessPoint',
-      'GetAccessPointPolicy',
-      'GetAccessPointScope',
-      'GetBucketPolicy',
-      'GetEncryptionConfiguration',
-      'GetLifecycleConfiguration'
     ],
     'Permissions management': [
       'DeleteAccessPointPolicy',
@@ -455,6 +447,14 @@ export class S3express extends PolicyStatement {
       'PutAccessPointPolicy',
       'PutAccessPointScope',
       'PutBucketPolicy'
+    ],
+    Read: [
+      'GetAccessPoint',
+      'GetAccessPointPolicy',
+      'GetAccessPointScope',
+      'GetBucketPolicy',
+      'GetEncryptionConfiguration',
+      'GetLifecycleConfiguration'
     ],
     List: [
       'ListAccessPointsForDirectoryBuckets',

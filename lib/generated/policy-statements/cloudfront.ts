@@ -41,6 +41,28 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a distribution tenant with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateDistributionTenantWebACL.html
+   */
+  public toAssociateDistributionTenantWebACL() {
+    return this.to('AssociateDistributionTenantWebACL');
+  }
+
+  /**
+   * Grants permission to associate a distribution with an AWS WAF web ACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateDistributionWebACL.html
+   */
+  public toAssociateDistributionWebACL() {
+    return this.to('AssociateDistributionWebACL');
+  }
+
+  /**
    * Grants permission to copy an existing distribution and create a new web distribution
    *
    * Access Level: Write
@@ -94,6 +116,21 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a connection group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateConnectionGroup.html
+   */
+  public toCreateConnectionGroup() {
+    return this.to('CreateConnectionGroup');
+  }
+
+  /**
    * Grants permission to add a new continuous-deployment policy to CloudFront
    *
    * Access Level: Write
@@ -109,10 +146,28 @@ export class Cloudfront extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - cloudfront:CreateConnectionGroup
+   *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html
    */
   public toCreateDistribution() {
     return this.to('CreateDistribution');
+  }
+
+  /**
+   * Grants permission to create a distribution tenant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionTenant.html
+   */
+  public toCreateDistributionTenant() {
+    return this.to('CreateDistributionTenant');
   }
 
   /**
@@ -157,6 +212,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toCreateInvalidation() {
     return this.to('CreateInvalidation');
+  }
+
+  /**
+   * Grants permission to create an invalidation for a distribution tenant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidationForDistributionTenant.html
+   */
+  public toCreateInvalidationForDistributionTenant() {
+    return this.to('CreateInvalidationForDistributionTenant');
   }
 
   /**
@@ -333,6 +399,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a connection group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteConnectionGroup.html
+   */
+  public toDeleteConnectionGroup() {
+    return this.to('DeleteConnectionGroup');
+  }
+
+  /**
    * Grants permission to delete a continuous-deployment policy
    *
    * Access Level: Write
@@ -352,6 +429,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDeleteDistribution() {
     return this.to('DeleteDistribution');
+  }
+
+  /**
+   * Grants permission to delete a distribution tenant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistributionTenant.html
+   */
+  public toDeleteDistributionTenant() {
+    return this.to('DeleteDistributionTenant');
   }
 
   /**
@@ -520,6 +608,28 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a distribution tenant from an AWS WAF web ACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DisassociateDistributionTenantWebACL.html
+   */
+  public toDisassociateDistributionTenantWebACL() {
+    return this.to('DisassociateDistributionTenantWebACL');
+  }
+
+  /**
+   * Grants permission to disassociate a distribution from an AWS WAF web ACL
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DisassociateDistributionWebACL.html
+   */
+  public toDisassociateDistributionWebACL() {
+    return this.to('DisassociateDistributionWebACL');
+  }
+
+  /**
    * Grants permission to get an Anycast static IP list
    *
    * Access Level: Read
@@ -575,6 +685,28 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a connection group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionGroup.html
+   */
+  public toGetConnectionGroup() {
+    return this.to('GetConnectionGroup');
+  }
+
+  /**
+   * Grants permission to get information about a connection group by the specified routing endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionGroupByRoutingEndpoint.html
+   */
+  public toGetConnectionGroupByRoutingEndpoint() {
+    return this.to('GetConnectionGroupByRoutingEndpoint');
+  }
+
+  /**
    * Grants permission to get the continuous-deployment policy
    *
    * Access Level: Read
@@ -616,6 +748,28 @@ export class Cloudfront extends PolicyStatement {
    */
   public toGetDistributionConfig() {
     return this.to('GetDistributionConfig');
+  }
+
+  /**
+   * Grants permission to get information about a distribution tenant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionTenant.html
+   */
+  public toGetDistributionTenant() {
+    return this.to('GetDistributionTenant');
+  }
+
+  /**
+   * Grants permission to get information about a distribution tenant by the associated domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionTenantByDomain.html
+   */
+  public toGetDistributionTenantByDomain() {
+    return this.to('GetDistributionTenantByDomain');
   }
 
   /**
@@ -685,6 +839,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an invalidation for a distribution tenant
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidationForDistributionTenant.html
+   */
+  public toGetInvalidationForDistributionTenant() {
+    return this.to('GetInvalidationForDistributionTenant');
+  }
+
+  /**
    * Grants permission to get a key group
    *
    * Access Level: Read
@@ -704,6 +869,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toGetKeyGroupConfig() {
     return this.to('GetKeyGroupConfig');
+  }
+
+  /**
+   * Grants permission to get details about a CloudFront managed certificate
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetManagedCertificateDetails.html
+   */
+  public toGetManagedCertificateDetails() {
+    return this.to('GetManagedCertificateDetails');
   }
 
   /**
@@ -905,6 +1081,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the connection groups in your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConnectionGroups.html
+   */
+  public toListConnectionGroups() {
+    return this.to('ListConnectionGroups');
+  }
+
+  /**
    * Grants permission to list all continuous-deployment policies in the account
    *
    * Access Level: List
@@ -913,6 +1100,28 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListContinuousDeploymentPolicies() {
     return this.to('ListContinuousDeploymentPolicies');
+  }
+
+  /**
+   * Grants permission to list the distribution tenants in your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionTenants.html
+   */
+  public toListDistributionTenants() {
+    return this.to('ListDistributionTenants');
+  }
+
+  /**
+   * Grants permission to list the distribution tenants by the customization that you specify
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionTenantsByCustomization.html
+   */
+  public toListDistributionTenantsByCustomization() {
+    return this.to('ListDistributionTenantsByCustomization');
   }
 
   /**
@@ -946,6 +1155,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListDistributionsByCachePolicyId() {
     return this.to('ListDistributionsByCachePolicyId');
+  }
+
+  /**
+   * Grants permission to list the distributions by the specified connection mode
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByConnectionMode.html
+   */
+  public toListDistributionsByConnectionMode() {
+    return this.to('ListDistributionsByConnectionMode');
   }
 
   /**
@@ -1026,6 +1246,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list domain conflicts for a specified domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDomainConflicts.html
+   */
+  public toListDomainConflicts() {
+    return this.to('ListDomainConflicts');
+  }
+
+  /**
    * Grants permission to list all field-level encryption configurations that have been created in CloudFront for this account
    *
    * Access Level: List
@@ -1067,6 +1298,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListInvalidations() {
     return this.to('ListInvalidations');
+  }
+
+  /**
+   * Grants permission to list the invalidations for a distribution tenant
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListInvalidationsForDistributionTenant.html
+   */
+  public toListInvalidationsForDistributionTenant() {
+    return this.to('ListInvalidationsForDistributionTenant');
   }
 
   /**
@@ -1286,6 +1528,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a connection group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateConnectionGroup.html
+   */
+  public toUpdateConnectionGroup() {
+    return this.to('UpdateConnectionGroup');
+  }
+
+  /**
    * Grants permission to update a continuous-deployment policy
    *
    * Access Level: Write
@@ -1308,6 +1561,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a distribution tenant
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistributionTenant.html
+   */
+  public toUpdateDistributionTenant() {
+    return this.to('UpdateDistributionTenant');
+  }
+
+  /**
    * Grants permission to copy the configuration from a staging web distribution to its corresponding primary web distribution
    *
    * Access Level: Write
@@ -1316,6 +1580,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toUpdateDistributionWithStagingConfig() {
     return this.to('UpdateDistributionWithStagingConfig');
+  }
+
+  /**
+   * Grants permission to update a domain association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDomainAssociation.html
+   */
+  public toUpdateDomainAssociation() {
+    return this.to('UpdateDomainAssociation');
   }
 
   /**
@@ -1461,22 +1736,38 @@ export class Cloudfront extends PolicyStatement {
     return this.to('UpdateVpcOrigin');
   }
 
+  /**
+   * Grants permission to verify the DNS configuration for a specified domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_VerifyDnsConfiguration.html
+   */
+  public toVerifyDnsConfiguration() {
+    return this.to('VerifyDnsConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AllowVendedLogDeliveryForResource'
     ],
     Write: [
       'AssociateAlias',
+      'AssociateDistributionTenantWebACL',
+      'AssociateDistributionWebACL',
       'CopyDistribution',
       'CreateAnycastIpList',
       'CreateCachePolicy',
       'CreateCloudFrontOriginAccessIdentity',
+      'CreateConnectionGroup',
       'CreateContinuousDeploymentPolicy',
       'CreateDistribution',
+      'CreateDistributionTenant',
       'CreateFieldLevelEncryptionConfig',
       'CreateFieldLevelEncryptionProfile',
       'CreateFunction',
       'CreateInvalidation',
+      'CreateInvalidationForDistributionTenant',
       'CreateKeyGroup',
       'CreateKeyValueStore',
       'CreateMonitoringSubscription',
@@ -1492,8 +1783,10 @@ export class Cloudfront extends PolicyStatement {
       'DeleteAnycastIpList',
       'DeleteCachePolicy',
       'DeleteCloudFrontOriginAccessIdentity',
+      'DeleteConnectionGroup',
       'DeleteContinuousDeploymentPolicy',
       'DeleteDistribution',
+      'DeleteDistributionTenant',
       'DeleteFieldLevelEncryptionConfig',
       'DeleteFieldLevelEncryptionProfile',
       'DeleteFunction',
@@ -1507,13 +1800,18 @@ export class Cloudfront extends PolicyStatement {
       'DeleteResponseHeadersPolicy',
       'DeleteStreamingDistribution',
       'DeleteVpcOrigin',
+      'DisassociateDistributionTenantWebACL',
+      'DisassociateDistributionWebACL',
       'PublishFunction',
       'TestFunction',
       'UpdateCachePolicy',
       'UpdateCloudFrontOriginAccessIdentity',
+      'UpdateConnectionGroup',
       'UpdateContinuousDeploymentPolicy',
       'UpdateDistribution',
+      'UpdateDistributionTenant',
       'UpdateDistributionWithStagingConfig',
+      'UpdateDomainAssociation',
       'UpdateFieldLevelEncryptionConfig',
       'UpdateFieldLevelEncryptionProfile',
       'UpdateFunction',
@@ -1536,18 +1834,24 @@ export class Cloudfront extends PolicyStatement {
       'GetCachePolicyConfig',
       'GetCloudFrontOriginAccessIdentity',
       'GetCloudFrontOriginAccessIdentityConfig',
+      'GetConnectionGroup',
+      'GetConnectionGroupByRoutingEndpoint',
       'GetContinuousDeploymentPolicy',
       'GetContinuousDeploymentPolicyConfig',
       'GetDistribution',
       'GetDistributionConfig',
+      'GetDistributionTenant',
+      'GetDistributionTenantByDomain',
       'GetFieldLevelEncryption',
       'GetFieldLevelEncryptionConfig',
       'GetFieldLevelEncryptionProfile',
       'GetFieldLevelEncryptionProfileConfig',
       'GetFunction',
       'GetInvalidation',
+      'GetInvalidationForDistributionTenant',
       'GetKeyGroup',
       'GetKeyGroupConfig',
+      'GetManagedCertificateDetails',
       'GetMonitoringSubscription',
       'GetOriginAccessControl',
       'GetOriginAccessControlConfig',
@@ -1562,17 +1866,22 @@ export class Cloudfront extends PolicyStatement {
       'GetStreamingDistribution',
       'GetStreamingDistributionConfig',
       'GetVpcOrigin',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'VerifyDnsConfiguration'
     ],
     List: [
       'ListAnycastIpLists',
       'ListCachePolicies',
       'ListCloudFrontOriginAccessIdentities',
       'ListConflictingAliases',
+      'ListConnectionGroups',
       'ListContinuousDeploymentPolicies',
+      'ListDistributionTenants',
+      'ListDistributionTenantsByCustomization',
       'ListDistributions',
       'ListDistributionsByAnycastIpListId',
       'ListDistributionsByCachePolicyId',
+      'ListDistributionsByConnectionMode',
       'ListDistributionsByKeyGroup',
       'ListDistributionsByLambdaFunction',
       'ListDistributionsByOriginRequestPolicyId',
@@ -1580,10 +1889,12 @@ export class Cloudfront extends PolicyStatement {
       'ListDistributionsByResponseHeadersPolicyId',
       'ListDistributionsByVpcOriginId',
       'ListDistributionsByWebACLId',
+      'ListDomainConflicts',
       'ListFieldLevelEncryptionConfigs',
       'ListFieldLevelEncryptionProfiles',
       'ListFunctions',
       'ListInvalidations',
+      'ListInvalidationsForDistributionTenant',
       'ListKeyGroups',
       'ListKeyValueStores',
       'ListOriginAccessControls',
@@ -1811,12 +2122,46 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type distribution-tenant to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/API_DistributionTenant.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDistributionTenant(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:distribution-tenant/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type connection-group to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/API_ConnectionGroup.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnectionGroup(id: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:connection-group/${ id }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateAnycastIpList()
+   * - .toCreateConnectionGroup()
+   * - .toCreateDistributionTenant()
    * - .toCreateStreamingDistributionWithTags()
    * - .toCreateVpcOrigin()
    * - .toTagResource()
@@ -1839,6 +2184,8 @@ export class Cloudfront extends PolicyStatement {
    * - streaming-distribution
    * - anycast-ip-list
    * - vpcorigin
+   * - distribution-tenant
+   * - connection-group
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1855,6 +2202,8 @@ export class Cloudfront extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAnycastIpList()
+   * - .toCreateConnectionGroup()
+   * - .toCreateDistributionTenant()
    * - .toCreateStreamingDistributionWithTags()
    * - .toCreateVpcOrigin()
    * - .toTagResource()

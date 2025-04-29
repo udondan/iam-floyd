@@ -1,6 +1,6 @@
 s3express:CreateAccessPoint;Write
 s3express:CreateBucket;Write
-s3express:CreateSession;Read
+s3express:CreateSession;Write
 s3express:DeleteAccessPoint;Write
 s3express:DeleteAccessPointPolicy;Permissions management
 s3express:DeleteAccessPointScope;Permissions management

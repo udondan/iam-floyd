@@ -2984,6 +2984,18 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Filters access by the Inline Agent Names, this will be used in InvokeInlineAgent API names
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInlineAgentName(value: string | string[], operator?: Operator | string) {
+    return this.if(`InlineAgentName`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the specified prompt router
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available

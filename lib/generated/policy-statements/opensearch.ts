@@ -21,7 +21,7 @@ export class Opensearch extends PolicyStatement {
   /**
    * Grants permission to access OpenSearch Application
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/
    */
@@ -74,8 +74,10 @@ export class Opensearch extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'ApplicationAccessAll'
+    ],
     Write: [
-      'ApplicationAccessAll',
       'CancelDirectQuery',
       'StartDirectQuery'
     ],

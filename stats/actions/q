@@ -29,6 +29,7 @@ q:TagResource;Tagging
 q:UntagResource;Tagging
 q:UpdateAuthGrant;Write
 q:UpdateOAuthAppConnection;Write
+q:UpdatePlugin;Write
 q:UpdateTroubleshootingCommandResult;Write
 q:UsePlugin;Write
 q:VerifyOAuthAppConnection;Write

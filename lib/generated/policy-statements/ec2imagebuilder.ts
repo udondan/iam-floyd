@@ -73,6 +73,7 @@ export class Imagebuilder extends PolicyStatement {
    * - kms:Encrypt
    * - kms:GenerateDataKey
    * - kms:GenerateDataKeyWithoutPlaintext
+   * - ssm:GetParameter
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateContainerRecipe.html
    */
@@ -88,6 +89,7 @@ export class Imagebuilder extends PolicyStatement {
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - imagebuilder:TagResource
+   * - ssm:GetParameter
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateDistributionConfiguration.html
    */
@@ -148,6 +150,7 @@ export class Imagebuilder extends PolicyStatement {
    * - imagebuilder:GetComponent
    * - imagebuilder:GetImage
    * - imagebuilder:TagResource
+   * - ssm:GetParameter
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html
    */
@@ -904,6 +907,9 @@ export class Imagebuilder extends PolicyStatement {
    * Grants permission to update an existing distribution configuration
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ssm:GetParameter
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateDistributionConfiguration.html
    */

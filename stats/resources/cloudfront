@@ -1,7 +1,9 @@
 cloudfront:anycast-ip-list
 cloudfront:cache-policy
+cloudfront:connection-group
 cloudfront:continuous-deployment-policy
 cloudfront:distribution
+cloudfront:distribution-tenant
 cloudfront:field-level-encryption-config
 cloudfront:field-level-encryption-profile
 cloudfront:function

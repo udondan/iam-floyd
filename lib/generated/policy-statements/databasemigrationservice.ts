@@ -51,10 +51,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - dms:StartExtensionPackAssociation
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartExtensionPackAssociation.html
    */
   public toAssociateExtensionPack() {
     return this.to('AssociateExtensionPack');
@@ -69,39 +66,6 @@ export class Dms extends PolicyStatement {
    */
   public toBatchStartRecommendations() {
     return this.to('BatchStartRecommendations');
-  }
-
-  /**
-   * Grants permission to cancel a single metadata model assessment run
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
-   */
-  public toCancelMetadataModelAssessment() {
-    return this.to('CancelMetadataModelAssessment');
-  }
-
-  /**
-   * Grants permission to cancel a single metadata model conversion run
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
-   */
-  public toCancelMetadataModelConversion() {
-    return this.to('CancelMetadataModelConversion');
-  }
-
-  /**
-   * Grants permission to cancel a single metadata model export run
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
-   */
-  public toCancelMetadataModelExport() {
-    return this.to('CancelMetadataModelExport');
   }
 
   /**
@@ -549,20 +513,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a data providers. Note. This action should be added along with ListDataProviders, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:ListDataProviders
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeDataProviders.html
-   */
-  public toDescribeDataProviders() {
-    return this.to('DescribeDataProviders');
-  }
-
-  /**
    * Grants permission to return the possible endpoint settings available when you create an endpoint for a specific database engine
    *
    * Access Level: Read
@@ -640,20 +590,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for extension packs. Note. This action should be added along with ListExtensionPacks, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:ListExtensionPacks
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeExtensionPackAssociations.html
-   */
-  public toDescribeExtensionPackAssociations() {
-    return this.to('DescribeExtensionPackAssociations');
-  }
-
-  /**
    * Grants permission to return a paginated list of Fleet Advisor collectors in your account based on filter settings
    *
    * Access Level: Read
@@ -709,76 +645,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the AWS DMS attributes for a instance profiles. Note. This action should be added along with ListInstanceProfiles, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:ListInstanceProfiles
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeInstanceProfiles.html
-   */
-  public toDescribeInstanceProfiles() {
-    return this.to('DescribeInstanceProfiles');
-  }
-
-  /**
-   * Grants permission to list the AWS DMS attributes for metadata model assessments. Note. This action should be added along with ListMetadataModelAssessments, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:ListMetadataModelAssessments
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelAssessments.html
-   */
-  public toDescribeMetadataModelAssessments() {
-    return this.to('DescribeMetadataModelAssessments');
-  }
-
-  /**
-   * Grants permission to list the AWS DMS attributes for a metadata model conversions. Note. This action should be added along with ListMetadataModelConversions, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:ListMetadataModelConversions
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelConversions.html
-   */
-  public toDescribeMetadataModelConversions() {
-    return this.to('DescribeMetadataModelConversions');
-  }
-
-  /**
-   * Grants permission to list the AWS DMS attributes for a metadata model exports. Note. This action should be added along with ListMetadataModelExports, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:ListMetadataModelExports
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelExportsAsScript.html
-   */
-  public toDescribeMetadataModelExportsAsScript() {
-    return this.to('DescribeMetadataModelExportsAsScript');
-  }
-
-  /**
-   * Grants permission to list the AWS DMS attributes for a metadata model exports. Note. This action should be added along with ListMetadataModelExports, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:ListMetadataModelExports
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelExportsToTarget.html
-   */
-  public toDescribeMetadataModelExportsToTarget() {
-    return this.to('DescribeMetadataModelExportsToTarget');
-  }
-
-  /**
    * Grants permission to return information about start metadata model import operations for a migration project
    *
    * Access Level: Read
@@ -787,20 +653,6 @@ export class Dms extends PolicyStatement {
    */
   public toDescribeMetadataModelImports() {
     return this.to('DescribeMetadataModelImports');
-  }
-
-  /**
-   * Grants permission to list the AWS DMS attributes for a migration projects. Note. This action should be added along with ListMigrationProjects, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:ListMigrationProjects
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMigrationProjects.html
-   */
-  public toDescribeMigrationProjects() {
-    return this.to('DescribeMigrationProjects');
   }
 
   /**
@@ -995,17 +847,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a extension pack
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
-   */
-  public toDisassociateExtensionPack() {
-    return this.to('DisassociateExtensionPack');
-  }
-
-  /**
    * Grants permission to export the specified metadata model assessment
    *
    * Access Level: Write
@@ -1014,20 +855,6 @@ export class Dms extends PolicyStatement {
    */
   public toExportMetadataModelAssessment() {
     return this.to('ExportMetadataModelAssessment');
-  }
-
-  /**
-   * Grants permission to list all of the AWS DMS attributes for a metadata model. Note. Despite this action requires StartMetadataModelImport, the latter does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:StartMetadataModelImport
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
-   */
-  public toGetMetadataModel() {
-    return this.to('GetMetadataModel');
   }
 
   /**
@@ -1051,10 +878,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - dms:DescribeDataProviders
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeDataProviders.html
    */
   public toListDataProviders() {
     return this.to('ListDataProviders');
@@ -1065,10 +889,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - dms:DescribeExtensionPackAssociations
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeExtensionPackAssociations.html
    */
   public toListExtensionPacks() {
     return this.to('ListExtensionPacks');
@@ -1079,10 +900,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - dms:DescribeInstanceProfiles
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeInstanceProfiles.html
    */
   public toListInstanceProfiles() {
     return this.to('ListInstanceProfiles');
@@ -1107,10 +925,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - dms:DescribeMetadataModelAssessments
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ListMetadataModelExports.html
    */
   public toListMetadataModelAssessments() {
     return this.to('ListMetadataModelAssessments');
@@ -1121,10 +936,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - dms:DescribeMetadataModelConversions
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelConversions.html
    */
   public toListMetadataModelConversions() {
     return this.to('ListMetadataModelConversions');
@@ -1134,10 +946,6 @@ export class Dms extends PolicyStatement {
    * Grants permission to list the AWS DMS attributes for a metadata model exports
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - dms:DescribeMetadataModelExportsAsScript
-   * - dms:DescribeMetadataModelExportsToTarget
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -1152,7 +960,6 @@ export class Dms extends PolicyStatement {
    *
    * Dependent actions:
    * - dms:DescribeConversionConfiguration
-   * - dms:DescribeMigrationProjects
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
    */
@@ -1172,20 +979,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a conversion configuration. Note. This action should be added along with UpdateConversionConfiguration, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - dms:UpdateConversionConfiguration
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyConversionConfiguration.html
-   */
-  public toModifyConversionConfiguration() {
-    return this.to('ModifyConversionConfiguration');
-  }
-
-  /**
    * Grants permission to modify the specified database migration
    *
    * Access Level: Write
@@ -1197,21 +990,6 @@ export class Dms extends PolicyStatement {
    */
   public toModifyDataMigration() {
     return this.to('ModifyDataMigration');
-  }
-
-  /**
-   * Grants permission to modify the specified data provider. Note. This action should be added along with UpdateDataProvider, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - dms:UpdateDataProvider
-   * - iam:PassRole
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyDataProvider.html
-   */
-  public toModifyDataProvider() {
-    return this.to('ModifyDataProvider');
   }
 
   /**
@@ -1259,36 +1037,6 @@ export class Dms extends PolicyStatement {
    */
   public toModifyFleetAdvisorCollectorStatuses() {
     return this.to('ModifyFleetAdvisorCollectorStatuses');
-  }
-
-  /**
-   * Grants permission to modify the specified instance profile. Note. This action should be added along with UpdateInstanceProfile, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - dms:UpdateInstanceProfile
-   * - iam:PassRole
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyInstanceProfile.html
-   */
-  public toModifyInstanceProfile() {
-    return this.to('ModifyInstanceProfile');
-  }
-
-  /**
-   * Grants permission to modify the specified migration project. Note. This action should be added along with UpdateMigrationProject, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - dms:UpdateMigrationProject
-   * - iam:PassRole
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyMigrationProject.html
-   */
-  public toModifyMigrationProject() {
-    return this.to('ModifyMigrationProject');
   }
 
   /**
@@ -1429,20 +1177,6 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate an extension pack. Note. This action should be added along with AssociateExtensionPack, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - dms:AssociateExtensionPack
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartExtensionPackAssociation.html
-   */
-  public toStartExtensionPackAssociation() {
-    return this.to('StartExtensionPackAssociation');
-  }
-
-  /**
    * Grants permission to start a new assessment of metadata model
    *
    * Access Level: Write
@@ -1465,28 +1199,11 @@ export class Dms extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a new export of metadata model as script. Note. This action should be added along with StartMetadataModelExportAsScripts, but does not currently authorize the described Schema Conversion operation
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - dms:StartMetadataModelExportAsScripts
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html
-   */
-  public toStartMetadataModelExportAsScript() {
-    return this.to('StartMetadataModelExportAsScript');
-  }
-
-  /**
    * Grants permission to start a new export of metadata model as script
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - dms:StartMetadataModelExportAsScript
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html
    */
   public toStartMetadataModelExportAsScripts() {
     return this.to('StartMetadataModelExportAsScripts');
@@ -1621,10 +1338,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - dms:ModifyConversionConfiguration
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyConversionConfiguration.html
    */
   public toUpdateConversionConfiguration() {
     return this.to('UpdateConversionConfiguration');
@@ -1635,10 +1349,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - dms:ModifyDataProvider
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyDataProvider.html
    */
   public toUpdateDataProvider() {
     return this.to('UpdateDataProvider');
@@ -1649,10 +1360,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - dms:ModifyInstanceProfile
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyInstanceProfile.html
    */
   public toUpdateInstanceProfile() {
     return this.to('UpdateInstanceProfile');
@@ -1663,10 +1371,7 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - dms:ModifyMigrationProject
-   *
-   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyMigrationProject.html
    */
   public toUpdateMigrationProject() {
     return this.to('UpdateMigrationProject');
@@ -1703,9 +1408,6 @@ export class Dms extends PolicyStatement {
       'ApplyPendingMaintenanceAction',
       'AssociateExtensionPack',
       'BatchStartRecommendations',
-      'CancelMetadataModelAssessment',
-      'CancelMetadataModelConversion',
-      'CancelMetadataModelExport',
       'CancelReplicationTaskAssessmentRun',
       'CreateDataMigration',
       'CreateDataProvider',
@@ -1733,18 +1435,13 @@ export class Dms extends PolicyStatement {
       'DeleteReplicationSubnetGroup',
       'DeleteReplicationTask',
       'DeleteReplicationTaskAssessmentRun',
-      'DisassociateExtensionPack',
       'ExportMetadataModelAssessment',
       'ImportCertificate',
-      'ModifyConversionConfiguration',
       'ModifyDataMigration',
-      'ModifyDataProvider',
       'ModifyEndpoint',
       'ModifyEventSubscription',
       'ModifyFleetAdvisorCollector',
       'ModifyFleetAdvisorCollectorStatuses',
-      'ModifyInstanceProfile',
-      'ModifyMigrationProject',
       'ModifyReplicationConfig',
       'ModifyReplicationInstance',
       'ModifyReplicationSubnetGroup',
@@ -1756,10 +1453,8 @@ export class Dms extends PolicyStatement {
       'ReloadTables',
       'RunFleetAdvisorLsaAnalysis',
       'StartDataMigration',
-      'StartExtensionPackAssociation',
       'StartMetadataModelAssessment',
       'StartMetadataModelConversion',
-      'StartMetadataModelExportAsScript',
       'StartMetadataModelExportAsScripts',
       'StartMetadataModelExportToTarget',
       'StartMetadataModelImport',
@@ -1785,7 +1480,6 @@ export class Dms extends PolicyStatement {
       'DescribeConnections',
       'DescribeConversionConfiguration',
       'DescribeDataMigrations',
-      'DescribeDataProviders',
       'DescribeEndpointSettings',
       'DescribeEndpointTypes',
       'DescribeEndpoints',
@@ -1793,19 +1487,12 @@ export class Dms extends PolicyStatement {
       'DescribeEventCategories',
       'DescribeEventSubscriptions',
       'DescribeEvents',
-      'DescribeExtensionPackAssociations',
       'DescribeFleetAdvisorCollectors',
       'DescribeFleetAdvisorDatabases',
       'DescribeFleetAdvisorLsaAnalysis',
       'DescribeFleetAdvisorSchemaObjectSummary',
       'DescribeFleetAdvisorSchemas',
-      'DescribeInstanceProfiles',
-      'DescribeMetadataModelAssessments',
-      'DescribeMetadataModelConversions',
-      'DescribeMetadataModelExportsAsScript',
-      'DescribeMetadataModelExportsToTarget',
       'DescribeMetadataModelImports',
-      'DescribeMigrationProjects',
       'DescribeOrderableReplicationInstances',
       'DescribePendingMaintenanceActions',
       'DescribeRecommendationLimitations',
@@ -1823,7 +1510,6 @@ export class Dms extends PolicyStatement {
       'DescribeReplications',
       'DescribeSchemas',
       'DescribeTableStatistics',
-      'GetMetadataModel',
       'ListDataProviders',
       'ListExtensionPacks',
       'ListInstanceProfiles',

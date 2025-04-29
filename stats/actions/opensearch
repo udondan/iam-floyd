@@ -1,4 +1,4 @@
-opensearch:ApplicationAccessAll;Write
+opensearch:ApplicationAccessAll;Permissions management
 opensearch:CancelDirectQuery;Write
 opensearch:GetDirectQuery;Read
 opensearch:GetDirectQueryResult;Read
