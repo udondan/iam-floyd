@@ -426,6 +426,21 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a third party plugin in Amazon Q
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toUpdatePlugin() {
+    return this.to('UpdatePlugin');
+  }
+
+  /**
    * Grants permission to update a troubleshooting command result with Amazon Q
    *
    * Access Level: Write
@@ -483,6 +498,7 @@ export class Q extends PolicyStatement {
       'StartTroubleshootingResolutionExplanation',
       'UpdateAuthGrant',
       'UpdateOAuthAppConnection',
+      'UpdatePlugin',
       'UpdateTroubleshootingCommandResult',
       'UsePlugin',
       'VerifyOAuthAppConnection'
@@ -548,6 +564,7 @@ export class Q extends PolicyStatement {
    * Applies to actions:
    * - .toCreatePlugin()
    * - .toTagResource()
+   * - .toUpdatePlugin()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -589,6 +606,7 @@ export class Q extends PolicyStatement {
    * - .toCreatePlugin()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdatePlugin()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

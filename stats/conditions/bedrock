@@ -1,5 +1,6 @@
 bedrock:GuardrailIdentifier
 bedrock:InferenceProfileArn
+bedrock:InlineAgentName
 bedrock:PromptRouterArn
 bedrock:RequestTag/${TagKey}
 bedrock:ResourceTag/${TagKey}
