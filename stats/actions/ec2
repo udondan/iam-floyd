@@ -24,6 +24,7 @@ ec2:AssociateInstanceEventWindow;Write
 ec2:AssociateIpamByoasn;Write
 ec2:AssociateIpamResourceDiscovery;Write
 ec2:AssociateNatGatewayAddress;Write
+ec2:AssociateRouteServer;Write
 ec2:AssociateRouteTable;Write
 ec2:AssociateSecurityGroupVpc;Write
 ec2:AssociateSubnetCidrBlock;Write
@@ -107,6 +108,9 @@ ec2:CreateReplaceRootVolumeTask;Write
 ec2:CreateReservedInstancesListing;Write
 ec2:CreateRestoreImageTask;Write
 ec2:CreateRoute;Write
+ec2:CreateRouteServer;Write
+ec2:CreateRouteServerEndpoint;Write
+ec2:CreateRouteServerPeer;Write
 ec2:CreateRouteTable;Write
 ec2:CreateSecurityGroup;Write
 ec2:CreateSnapshot;Write
@@ -188,6 +192,9 @@ ec2:DeletePublicIpv4Pool;Write
 ec2:DeleteQueuedReservedInstances;Write
 ec2:DeleteResourcePolicy;Write
 ec2:DeleteRoute;Write
+ec2:DeleteRouteServer;Write
+ec2:DeleteRouteServerEndpoint;Write
+ec2:DeleteRouteServerPeer;Write
 ec2:DeleteRouteTable;Write
 ec2:DeleteSecurityGroup;Write
 ec2:DeleteSnapshot;Write
@@ -334,6 +341,9 @@ ec2:DescribeReservedInstances;List
 ec2:DescribeReservedInstancesListings;List
 ec2:DescribeReservedInstancesModifications;List
 ec2:DescribeReservedInstancesOfferings;List
+ec2:DescribeRouteServerEndpoints;List
+ec2:DescribeRouteServerPeers;List
+ec2:DescribeRouteServers;List
 ec2:DescribeRouteTables;List
 ec2:DescribeScheduledInstanceAvailability;List
 ec2:DescribeScheduledInstances;List
@@ -412,6 +422,7 @@ ec2:DisableImageBlockPublicAccess;Write
 ec2:DisableImageDeprecation;Write
 ec2:DisableImageDeregistrationProtection;Write
 ec2:DisableIpamOrganizationAdminAccount;Write
+ec2:DisableRouteServerPropagation;Write
 ec2:DisableSerialConsoleAccess;Write
 ec2:DisableSnapshotBlockPublicAccess;Write
 ec2:DisableTransitGatewayRouteTablePropagation;Write
@@ -427,6 +438,7 @@ ec2:DisassociateInstanceEventWindow;Write
 ec2:DisassociateIpamByoasn;Write
 ec2:DisassociateIpamResourceDiscovery;Write
 ec2:DisassociateNatGatewayAddress;Write
+ec2:DisassociateRouteServer;Write
 ec2:DisassociateRouteTable;Write
 ec2:DisassociateSecurityGroupVpc;Write
 ec2:DisassociateSubnetCidrBlock;Write
@@ -448,6 +460,7 @@ ec2:EnableImageDeprecation;Write
 ec2:EnableImageDeregistrationProtection;Write
 ec2:EnableIpamOrganizationAdminAccount;Write
 ec2:EnableReachabilityAnalyzerOrganizationSharing;Write
+ec2:EnableRouteServerPropagation;Write
 ec2:EnableSerialConsoleAccess;Write
 ec2:EnableSnapshotBlockPublicAccess;Write
 ec2:EnableTransitGatewayRouteTablePropagation;Write
@@ -495,6 +508,9 @@ ec2:GetNetworkInsightsAccessScopeContent;Read
 ec2:GetPasswordData;Read
 ec2:GetReservedInstancesExchangeQuote;Read
 ec2:GetResourcePolicy;Read
+ec2:GetRouteServerAssociations;Read
+ec2:GetRouteServerPropagations;Read
+ec2:GetRouteServerRoutingDatabase;Read
 ec2:GetSecurityGroupsForVpc;Read
 ec2:GetSerialConsoleAccessStatus;Read
 ec2:GetSnapshotBlockPublicAccessState;Read
@@ -560,6 +576,7 @@ ec2:ModifyManagedPrefixList;Write
 ec2:ModifyNetworkInterfaceAttribute;Write
 ec2:ModifyPrivateDnsNameOptions;Write
 ec2:ModifyReservedInstances;Write
+ec2:ModifyRouteServer;Write
 ec2:ModifySecurityGroupRules;Write
 ec2:ModifySnapshotAttribute;Permissions management
 ec2:ModifySnapshotTier;Write

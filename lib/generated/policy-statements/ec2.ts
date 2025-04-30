@@ -398,6 +398,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a route server with a VPC
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteServer.html
+   */
+  public toAssociateRouteServer() {
+    return this.to('AssociateRouteServer');
+  }
+
+  /**
    * Grants permission to associate a subnet or gateway with a route table
    *
    * Access Level: Write
@@ -1701,6 +1715,64 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a route server
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   * - sns:CreateTopic
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteServer.html
+   */
+  public toCreateRouteServer() {
+    return this.to('CreateRouteServer');
+  }
+
+  /**
+   * Grants permission to create a route server endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateNetworkInterfacePermission
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateTags
+   * - ec2:DescribeSecurityGroups
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteServerEndpoint.html
+   */
+  public toCreateRouteServerEndpoint() {
+    return this.to('CreateRouteServerEndpoint');
+  }
+
+  /**
+   * Grants permission to create a route server peer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteServerPeer.html
+   */
+  public toCreateRouteServerPeer() {
+    return this.to('CreateRouteServerPeer');
+  }
+
+  /**
    * Grants permission to create a route table for a VPC
    *
    * Access Level: Write
@@ -2924,6 +2996,59 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteRoute() {
     return this.to('DeleteRoute');
+  }
+
+  /**
+   * Grants permission to delete a route server
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - sns:DeleteTopic
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteServer.html
+   */
+  public toDeleteRouteServer() {
+    return this.to('DeleteRouteServer');
+  }
+
+  /**
+   * Grants permission to delete a route server endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteSecurityGroup
+   * - ec2:RevokeSecurityGroupIngress
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteServerEndpoint.html
+   */
+  public toDeleteRouteServerEndpoint() {
+    return this.to('DeleteRouteServerEndpoint');
+  }
+
+  /**
+   * Grants permission to delete a route server peer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:RevokeSecurityGroupIngress
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteServerPeer.html
+   */
+  public toDeleteRouteServerPeer() {
+    return this.to('DeleteRouteServerPeer');
   }
 
   /**
@@ -4975,6 +5100,48 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more route server endpoints
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteServerEndpoints.html
+   */
+  public toDescribeRouteServerEndpoints() {
+    return this.to('DescribeRouteServerEndpoints');
+  }
+
+  /**
+   * Grants permission to describe one or more route server peers
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteServerPeers.html
+   */
+  public toDescribeRouteServerPeers() {
+    return this.to('DescribeRouteServerPeers');
+  }
+
+  /**
+   * Grants permission to describe one or more route servers
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteServers.html
+   */
+  public toDescribeRouteServers() {
+    return this.to('DescribeRouteServers');
+  }
+
+  /**
    * Grants permission to describe one or more route tables
    *
    * Access Level: List
@@ -6070,6 +6237,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable route server propagation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableRouteServerPropagation.html
+   */
+  public toDisableRouteServerPropagation() {
+    return this.to('DisableRouteServerPropagation');
+  }
+
+  /**
    * Grants permission to disable access to the EC2 serial console of all instances for your account
    *
    * Access Level: Write
@@ -6277,6 +6458,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDisassociateNatGatewayAddress() {
     return this.to('DisassociateNatGatewayAddress');
+  }
+
+  /**
+   * Grants permission to disassociate a route server from a VPC
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateRouteServer.html
+   */
+  public toDisassociateRouteServer() {
+    return this.to('DisassociateRouteServer');
   }
 
   /**
@@ -6599,6 +6794,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toEnableReachabilityAnalyzerOrganizationSharing() {
     return this.to('EnableReachabilityAnalyzerOrganizationSharing');
+  }
+
+  /**
+   * Grants permission to enable route server propagation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableRouteServerPropagation.html
+   */
+  public toEnableRouteServerPropagation() {
+    return this.to('EnableRouteServerPropagation');
   }
 
   /**
@@ -7260,6 +7469,48 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to get associations for a route server
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetRouteServerAssociations.html
+   */
+  public toGetRouteServerAssociations() {
+    return this.to('GetRouteServerAssociations');
+  }
+
+  /**
+   * Grants permission to get propagations for a route server
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetRouteServerPropagations.html
+   */
+  public toGetRouteServerPropagations() {
+    return this.to('GetRouteServerPropagations');
+  }
+
+  /**
+   * Grants permission to get the routing database for a route server
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetRouteServerRoutingDatabase.html
+   */
+  public toGetRouteServerRoutingDatabase() {
+    return this.to('GetRouteServerRoutingDatabase');
   }
 
   /**
@@ -8185,6 +8436,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyReservedInstances() {
     return this.to('ModifyReservedInstances');
+  }
+
+  /**
+   * Grants permission to modify a route server
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyRouteServer.html
+   */
+  public toModifyRouteServer() {
+    return this.to('ModifyRouteServer');
   }
 
   /**
@@ -9813,6 +10078,7 @@ export class Ec2 extends PolicyStatement {
       'AssociateIpamByoasn',
       'AssociateIpamResourceDiscovery',
       'AssociateNatGatewayAddress',
+      'AssociateRouteServer',
       'AssociateRouteTable',
       'AssociateSecurityGroupVpc',
       'AssociateSubnetCidrBlock',
@@ -9895,6 +10161,9 @@ export class Ec2 extends PolicyStatement {
       'CreateReservedInstancesListing',
       'CreateRestoreImageTask',
       'CreateRoute',
+      'CreateRouteServer',
+      'CreateRouteServerEndpoint',
+      'CreateRouteServerPeer',
       'CreateRouteTable',
       'CreateSecurityGroup',
       'CreateSnapshot',
@@ -9974,6 +10243,9 @@ export class Ec2 extends PolicyStatement {
       'DeleteQueuedReservedInstances',
       'DeleteResourcePolicy',
       'DeleteRoute',
+      'DeleteRouteServer',
+      'DeleteRouteServerEndpoint',
+      'DeleteRouteServerPeer',
       'DeleteRouteTable',
       'DeleteSecurityGroup',
       'DeleteSnapshot',
@@ -10034,6 +10306,7 @@ export class Ec2 extends PolicyStatement {
       'DisableImageDeprecation',
       'DisableImageDeregistrationProtection',
       'DisableIpamOrganizationAdminAccount',
+      'DisableRouteServerPropagation',
       'DisableSerialConsoleAccess',
       'DisableSnapshotBlockPublicAccess',
       'DisableTransitGatewayRouteTablePropagation',
@@ -10049,6 +10322,7 @@ export class Ec2 extends PolicyStatement {
       'DisassociateIpamByoasn',
       'DisassociateIpamResourceDiscovery',
       'DisassociateNatGatewayAddress',
+      'DisassociateRouteServer',
       'DisassociateRouteTable',
       'DisassociateSecurityGroupVpc',
       'DisassociateSubnetCidrBlock',
@@ -10070,6 +10344,7 @@ export class Ec2 extends PolicyStatement {
       'EnableImageDeregistrationProtection',
       'EnableIpamOrganizationAdminAccount',
       'EnableReachabilityAnalyzerOrganizationSharing',
+      'EnableRouteServerPropagation',
       'EnableSerialConsoleAccess',
       'EnableSnapshotBlockPublicAccess',
       'EnableTransitGatewayRouteTablePropagation',
@@ -10123,6 +10398,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyNetworkInterfaceAttribute',
       'ModifyPrivateDnsNameOptions',
       'ModifyReservedInstances',
+      'ModifyRouteServer',
       'ModifySecurityGroupRules',
       'ModifySnapshotTier',
       'ModifySpotFleetRequest',
@@ -10343,6 +10619,9 @@ export class Ec2 extends PolicyStatement {
       'DescribeReservedInstancesListings',
       'DescribeReservedInstancesModifications',
       'DescribeReservedInstancesOfferings',
+      'DescribeRouteServerEndpoints',
+      'DescribeRouteServerPeers',
+      'DescribeRouteServers',
       'DescribeRouteTables',
       'DescribeScheduledInstanceAvailability',
       'DescribeScheduledInstances',
@@ -10463,6 +10742,9 @@ export class Ec2 extends PolicyStatement {
       'GetPasswordData',
       'GetReservedInstancesExchangeQuote',
       'GetResourcePolicy',
+      'GetRouteServerAssociations',
+      'GetRouteServerPropagations',
+      'GetRouteServerRoutingDatabase',
       'GetSecurityGroupsForVpc',
       'GetSerialConsoleAccessStatus',
       'GetSnapshotBlockPublicAccessState',
@@ -10538,12 +10820,14 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifAttribute()
    * - .ifAvailabilityZone()
+   * - .ifAvailabilityZoneId()
    * - .ifCapacityReservationFleet()
    * - .ifCreateDate()
    * - .ifDestinationCapacityReservationId()
    * - .ifEbsOptimized()
    * - .ifEndDate()
    * - .ifEndDateType()
+   * - .ifEphemeralStorage()
    * - .ifInstanceCount()
    * - .ifInstanceMatchCriteria()
    * - .ifInstancePlatform()
@@ -11741,6 +12025,71 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type route-server-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/route-server-terms.html
+   *
+   * @param routeServerEndpointId - Identifier for the routeServerEndpointId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAvailabilityZone()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onRouteServerEndpoint(routeServerEndpointId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:route-server-endpoint/${ routeServerEndpointId }`);
+  }
+
+  /**
+   * Adds a resource of type route-server to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/route-server-terms.html
+   *
+   * @param routeServerId - Identifier for the routeServerId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onRouteServer(routeServerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:route-server/${ routeServerId }`);
+  }
+
+  /**
+   * Adds a resource of type route-server-peer to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/route-server-terms.html
+   *
+   * @param routeServerPeerId - Identifier for the routeServerPeerId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAvailabilityZone()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onRouteServerPeer(routeServerPeerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:route-server-peer/${ routeServerPeerId }`);
+  }
+
+  /**
    * Adds a resource of type route-table to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
@@ -12674,6 +13023,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreatePublicIpv4Pool()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRestoreImageTask()
+   * - .toCreateRouteServer()
+   * - .toCreateRouteServerEndpoint()
+   * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
@@ -12770,6 +13122,9 @@ export class Ec2 extends PolicyStatement {
    * - prefix-list
    * - replace-root-volume-task
    * - reserved-instances
+   * - route-server-endpoint
+   * - route-server
+   * - route-server-peer
    * - route-table
    * - security-group
    * - security-group-rule
@@ -12841,6 +13196,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateInstanceEventWindow()
    * - .toAssociateIpamResourceDiscovery()
    * - .toAssociateNatGatewayAddress()
+   * - .toAssociateRouteServer()
    * - .toAssociateRouteTable()
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateSubnetCidrBlock()
@@ -12896,6 +13252,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRoute()
+   * - .toCreateRouteServerEndpoint()
+   * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
@@ -12967,6 +13325,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeletePublicIpv4Pool()
    * - .toDeleteResourcePolicy()
    * - .toDeleteRoute()
+   * - .toDeleteRouteServer()
+   * - .toDeleteRouteServerEndpoint()
+   * - .toDeleteRouteServerPeer()
    * - .toDeleteRouteTable()
    * - .toDeleteSecurityGroup()
    * - .toDeleteSnapshot()
@@ -13007,11 +13368,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterImage()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
-   * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
    * - .toDescribeFleetHistory()
@@ -13025,7 +13384,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeSpotFleetRequestHistory()
    * - .toDescribeVolumeAttribute()
    * - .toDescribeVpcAttribute()
-   * - .toDescribeVpcEndpointAssociations()
    * - .toDescribeVpcEndpointServicePermissions()
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
@@ -13039,6 +13397,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
    * - .toDisableImageDeregistrationProtection()
+   * - .toDisableRouteServerPropagation()
    * - .toDisableTransitGatewayRouteTablePropagation()
    * - .toDisableVgwRoutePropagation()
    * - .toDisableVpcClassicLink()
@@ -13050,6 +13409,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateInstanceEventWindow()
    * - .toDisassociateIpamResourceDiscovery()
    * - .toDisassociateNatGatewayAddress()
+   * - .toDisassociateRouteServer()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSecurityGroupVpc()
    * - .toDisassociateSubnetCidrBlock()
@@ -13064,6 +13424,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
+   * - .toEnableRouteServerPropagation()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
    * - .toEnableVolumeIO()
@@ -13096,6 +13457,9 @@ export class Ec2 extends PolicyStatement {
    * - .toGetNetworkInsightsAccessScopeContent()
    * - .toGetPasswordData()
    * - .toGetResourcePolicy()
+   * - .toGetRouteServerAssociations()
+   * - .toGetRouteServerPropagations()
+   * - .toGetRouteServerRoutingDatabase()
    * - .toGetSecurityGroupsForVpc()
    * - .toGetTransitGatewayMulticastDomainAssociations()
    * - .toGetTransitGatewayPolicyTableAssociations()
@@ -13141,6 +13505,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
+   * - .toModifyRouteServer()
    * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
@@ -13292,6 +13657,9 @@ export class Ec2 extends PolicyStatement {
    * - prefix-list
    * - replace-root-volume-task
    * - reserved-instances
+   * - route-server-endpoint
+   * - route-server
+   * - route-server-peer
    * - route-table
    * - security-group
    * - security-group-rule
@@ -13387,6 +13755,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreatePublicIpv4Pool()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRestoreImageTask()
+   * - .toCreateRouteServer()
+   * - .toCreateRouteServerEndpoint()
+   * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
@@ -13483,6 +13854,9 @@ export class Ec2 extends PolicyStatement {
    * - prefix-list
    * - replace-root-volume-task
    * - reserved-instances
+   * - route-server-endpoint
+   * - route-server
+   * - route-server-peer
    * - route-table
    * - security-group
    * - security-group-rule
@@ -13941,6 +14315,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateFleet()
    * - .toCreateFlowLogs()
@@ -13953,6 +14328,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateReplaceRootVolumeTask()
+   * - .toCreateRouteServerEndpoint()
+   * - .toCreateRouteServerPeer()
    * - .toCreateSnapshots()
    * - .toCreateTags()
    * - .toCreateTrafficMirrorSession()
@@ -13963,12 +14340,13 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnRoute()
    * - .toDeleteNetworkInterface()
    * - .toDeleteNetworkInterfacePermission()
+   * - .toDeleteRouteServerEndpoint()
+   * - .toDeleteRouteServerPeer()
    * - .toDeleteSnapshot()
    * - .toDeleteSubnet()
    * - .toDeleteVolume()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDescribeInstanceAttribute()
    * - .toDescribeVolumeAttribute()
@@ -14045,6 +14423,8 @@ export class Ec2 extends PolicyStatement {
    * - instance
    * - network-interface
    * - reserved-instances
+   * - route-server-endpoint
+   * - route-server-peer
    * - snapshot
    * - subnet
    * - volume
@@ -14054,6 +14434,24 @@ export class Ec2 extends PolicyStatement {
    */
   public ifAvailabilityZone(value: string | string[], operator?: Operator | string) {
     return this.if(`AvailabilityZone`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of an Availability Zone in an AWS Region
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateCapacityReservation()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAvailabilityZoneId(value: string | string[], operator?: Operator | string) {
+    return this.if(`AvailabilityZoneId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -14067,7 +14465,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelCapacityReservation()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toGetCapacityReservationUsage()
@@ -14103,7 +14500,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
    * - .toDescribeClientVpnConnections()
-   * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
    * - .toDisassociateClientVpnTargetNetwork()
@@ -14139,7 +14535,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
    * - .toDescribeClientVpnConnections()
-   * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
    * - .toDisassociateClientVpnTargetNetwork()
@@ -14175,7 +14570,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
    * - .toDescribeClientVpnConnections()
-   * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
    * - .toDisassociateClientVpnTargetNetwork()
@@ -14284,7 +14678,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
@@ -14340,7 +14733,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
@@ -14390,7 +14782,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
    * - .toDescribeClientVpnConnections()
-   * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
    * - .toDisassociateClientVpnTargetNetwork()
@@ -14453,6 +14844,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateFleet()
    * - .toCreateImage()
@@ -14461,7 +14853,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshots()
    * - .toCreateTags()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDescribeInstanceAttribute()
    * - .toDetachClassicLinkVpc()
@@ -14580,8 +14971,8 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
@@ -14615,8 +15006,8 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
@@ -14630,6 +15021,23 @@ export class Ec2 extends PolicyStatement {
    */
   public ifEndDateType(value: string | string[], operator?: Operator | string) {
     return this.if(`EndDateType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether the instance is enabled for ephemeral storage
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateCapacityReservation()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEphemeralStorage(value?: boolean) {
+    return this.if(`EphemeralStorage`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -14979,8 +15387,8 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
@@ -15128,8 +15536,8 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
@@ -15212,8 +15620,8 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
@@ -15306,6 +15714,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateFleet()
    * - .toCreateImage()
@@ -15314,7 +15723,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshots()
    * - .toCreateTags()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDescribeInstanceAttribute()
    * - .toDetachClassicLinkVpc()
@@ -15396,10 +15804,12 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ID of an IPAM pool provided for IPv4 CIDR block allocation
    *
    * Applies to actions:
+   * - .toAssociateRouteServer()
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateVpcCidrBlock()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toDisassociateRouteServer()
    * - .toDisassociateSecurityGroupVpc()
    *
    * Applies to resource types:
@@ -15416,10 +15826,12 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ID of an IPAM pool provided for IPv6 CIDR block allocation
    *
    * Applies to actions:
+   * - .toAssociateRouteServer()
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateVpcCidrBlock()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toDisassociateRouteServer()
    * - .toDisassociateSecurityGroupVpc()
    *
    * Applies to resource types:
@@ -15942,12 +16354,12 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCopySnapshot()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateImage()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
    * - .toDeleteSnapshot()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDescribeSnapshotAttribute()
    * - .toDisassociateCapacityReservationBillingOwner()
@@ -16310,6 +16722,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateFleet()
    * - .toCreateImage()
@@ -16317,7 +16730,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshots()
    * - .toCreateTags()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDescribeInstanceAttribute()
    * - .toDetachClassicLinkVpc()
@@ -16595,6 +17007,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateIpamByoasn()
    * - .toAssociateIpamResourceDiscovery()
    * - .toAssociateNatGatewayAddress()
+   * - .toAssociateRouteServer()
    * - .toAssociateRouteTable()
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateSubnetCidrBlock()
@@ -16678,6 +17091,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateReservedInstancesListing()
    * - .toCreateRestoreImageTask()
    * - .toCreateRoute()
+   * - .toCreateRouteServer()
+   * - .toCreateRouteServerEndpoint()
+   * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
@@ -16759,6 +17175,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteQueuedReservedInstances()
    * - .toDeleteResourcePolicy()
    * - .toDeleteRoute()
+   * - .toDeleteRouteServer()
+   * - .toDeleteRouteServerEndpoint()
+   * - .toDeleteRouteServerPeer()
    * - .toDeleteRouteTable()
    * - .toDeleteSecurityGroup()
    * - .toDeleteSnapshot()
@@ -16905,6 +17324,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeReservedInstancesListings()
    * - .toDescribeReservedInstancesModifications()
    * - .toDescribeReservedInstancesOfferings()
+   * - .toDescribeRouteServerEndpoints()
+   * - .toDescribeRouteServerPeers()
+   * - .toDescribeRouteServers()
    * - .toDescribeRouteTables()
    * - .toDescribeScheduledInstanceAvailability()
    * - .toDescribeScheduledInstances()
@@ -16983,6 +17405,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImageDeprecation()
    * - .toDisableImageDeregistrationProtection()
    * - .toDisableIpamOrganizationAdminAccount()
+   * - .toDisableRouteServerPropagation()
    * - .toDisableSerialConsoleAccess()
    * - .toDisableSnapshotBlockPublicAccess()
    * - .toDisableTransitGatewayRouteTablePropagation()
@@ -16998,6 +17421,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateIpamByoasn()
    * - .toDisassociateIpamResourceDiscovery()
    * - .toDisassociateNatGatewayAddress()
+   * - .toDisassociateRouteServer()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSecurityGroupVpc()
    * - .toDisassociateSubnetCidrBlock()
@@ -17019,6 +17443,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeregistrationProtection()
    * - .toEnableIpamOrganizationAdminAccount()
    * - .toEnableReachabilityAnalyzerOrganizationSharing()
+   * - .toEnableRouteServerPropagation()
    * - .toEnableSerialConsoleAccess()
    * - .toEnableSnapshotBlockPublicAccess()
    * - .toEnableTransitGatewayRouteTablePropagation()
@@ -17066,6 +17491,9 @@ export class Ec2 extends PolicyStatement {
    * - .toGetPasswordData()
    * - .toGetReservedInstancesExchangeQuote()
    * - .toGetResourcePolicy()
+   * - .toGetRouteServerAssociations()
+   * - .toGetRouteServerPropagations()
+   * - .toGetRouteServerRoutingDatabase()
    * - .toGetSecurityGroupsForVpc()
    * - .toGetSerialConsoleAccessStatus()
    * - .toGetSnapshotBlockPublicAccessState()
@@ -17131,6 +17559,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
+   * - .toModifyRouteServer()
    * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
@@ -17296,6 +17725,9 @@ export class Ec2 extends PolicyStatement {
    * - prefix-list
    * - replace-root-volume-task
    * - reserved-instances
+   * - route-server-endpoint
+   * - route-server
+   * - route-server-peer
    * - route-table
    * - security-group
    * - security-group-rule
@@ -17507,6 +17939,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateInstanceEventWindow()
    * - .toAssociateIpamResourceDiscovery()
    * - .toAssociateNatGatewayAddress()
+   * - .toAssociateRouteServer()
    * - .toAssociateRouteTable()
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateSubnetCidrBlock()
@@ -17561,6 +17994,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRoute()
+   * - .toCreateRouteServerEndpoint()
+   * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
@@ -17632,6 +18067,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeletePublicIpv4Pool()
    * - .toDeleteResourcePolicy()
    * - .toDeleteRoute()
+   * - .toDeleteRouteServer()
+   * - .toDeleteRouteServerEndpoint()
+   * - .toDeleteRouteServerPeer()
    * - .toDeleteRouteTable()
    * - .toDeleteSecurityGroup()
    * - .toDeleteSnapshot()
@@ -17672,11 +18110,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterImage()
    * - .toDeregisterTransitGatewayMulticastGroupMembers()
    * - .toDeregisterTransitGatewayMulticastGroupSources()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDescribeClientVpnAuthorizationRules()
    * - .toDescribeClientVpnConnections()
-   * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
    * - .toDescribeFleetHistory()
@@ -17690,7 +18126,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeSpotFleetRequestHistory()
    * - .toDescribeVolumeAttribute()
    * - .toDescribeVpcAttribute()
-   * - .toDescribeVpcEndpointAssociations()
    * - .toDescribeVpcEndpointServicePermissions()
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
@@ -17704,6 +18139,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
    * - .toDisableImageDeregistrationProtection()
+   * - .toDisableRouteServerPropagation()
    * - .toDisableTransitGatewayRouteTablePropagation()
    * - .toDisableVgwRoutePropagation()
    * - .toDisableVpcClassicLink()
@@ -17715,6 +18151,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateInstanceEventWindow()
    * - .toDisassociateIpamResourceDiscovery()
    * - .toDisassociateNatGatewayAddress()
+   * - .toDisassociateRouteServer()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSecurityGroupVpc()
    * - .toDisassociateSubnetCidrBlock()
@@ -17729,6 +18166,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
+   * - .toEnableRouteServerPropagation()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
    * - .toEnableVolumeIO()
@@ -17759,6 +18197,9 @@ export class Ec2 extends PolicyStatement {
    * - .toGetNetworkInsightsAccessScopeContent()
    * - .toGetPasswordData()
    * - .toGetResourcePolicy()
+   * - .toGetRouteServerAssociations()
+   * - .toGetRouteServerPropagations()
+   * - .toGetRouteServerRoutingDatabase()
    * - .toGetSecurityGroupsForVpc()
    * - .toGetTransitGatewayMulticastDomainAssociations()
    * - .toGetTransitGatewayPolicyTableAssociations()
@@ -17803,6 +18244,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyNetworkInterfaceAttribute()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
+   * - .toModifyRouteServer()
    * - .toModifySecurityGroupRules()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
@@ -17953,6 +18395,9 @@ export class Ec2 extends PolicyStatement {
    * - prefix-list
    * - replace-root-volume-task
    * - reserved-instances
+   * - route-server-endpoint
+   * - route-server
+   * - route-server-peer
    * - route-table
    * - security-group
    * - security-group-rule
@@ -18105,9 +18550,12 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpcEndpoint()
    * - .toDeleteRoute()
    * - .toDeleteRouteTable()
+   * - .toDisableRouteServerPropagation()
    * - .toDisableVgwRoutePropagation()
    * - .toDisassociateRouteTable()
+   * - .toEnableRouteServerPropagation()
    * - .toEnableVgwRoutePropagation()
+   * - .toGetRouteServerPropagations()
    * - .toModifyVpcEndpoint()
    * - .toReplaceRoute()
    * - .toReplaceRouteTableAssociation()
@@ -18158,7 +18606,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
    * - .toDescribeClientVpnConnections()
-   * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
    * - .toDisassociateClientVpnTargetNetwork()
@@ -18237,7 +18684,6 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
    * - .toDescribeClientVpnConnections()
-   * - .toDescribeClientVpnEndpoints()
    * - .toDescribeClientVpnRoutes()
    * - .toDescribeClientVpnTargetNetworks()
    * - .toDisassociateClientVpnTargetNetwork()
@@ -18410,7 +18856,6 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservationBySplitting()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
@@ -18520,6 +18965,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceConnectEndpoint()
    * - .toCreateNatGateway()
    * - .toCreateNetworkInterface()
+   * - .toCreateRouteServerEndpoint()
    * - .toCreateSubnet()
    * - .toCreateTags()
    * - .toCreateTransitGatewayVpcAttachment()
@@ -18569,6 +19015,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toAssociateDhcpOptions()
    * - .toAssociateIamInstanceProfile()
+   * - .toAssociateRouteServer()
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateVpcCidrBlock()
    * - .toAttachClassicLinkVpc()
@@ -18576,6 +19023,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
    * - .toAttachVpnGateway()
+   * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateCarrierGateway()
    * - .toCreateEgressOnlyInternetGateway()
@@ -18596,7 +19044,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpcBlockPublicAccessExclusion()
    * - .toCreateVpcPeeringConnection()
    * - .toDeleteVpc()
-   * - .toDescribeCapacityBlockExtensionHistory()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDescribeInstanceAttribute()
    * - .toDescribeVpcAttribute()
@@ -18609,6 +19056,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableVpcClassicLinkDnsSupport()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateIamInstanceProfile()
+   * - .toDisassociateRouteServer()
    * - .toDisassociateSecurityGroupVpc()
    * - .toDisassociateVpcCidrBlock()
    * - .toEnableVpcClassicLink()
@@ -18880,6 +19328,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
    * - .toCreateRoute()
+   * - .toCreateRouteServerEndpoint()
    * - .toCreateTags()
    * - .toCreateTrafficMirrorSession()
    * - .toCreateTransitGatewayVpcAttachment()
@@ -18898,6 +19347,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeregisterTransitGatewayMulticastGroupSources()
    * - .toDescribeSecurityGroupReferences()
    * - .toDetachNetworkInterface()
+   * - .toDisableRouteServerPropagation()
    * - .toDisableVgwRoutePropagation()
    * - .toDisassociateAddress()
    * - .toDisassociateNatGatewayAddress()
@@ -18905,7 +19355,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateSecurityGroupVpc()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
+   * - .toEnableRouteServerPropagation()
    * - .toEnableVgwRoutePropagation()
+   * - .toGetRouteServerPropagations()
    * - .toImportInstance()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyFleet()
@@ -18957,6 +19409,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptVpcPeeringConnection()
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
    * - .toAssociateDhcpOptions()
+   * - .toAssociateRouteServer()
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateVpcCidrBlock()
    * - .toAttachClassicLinkVpc()
@@ -18984,6 +19437,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachVpnGateway()
    * - .toDisableVpcClassicLink()
    * - .toDisableVpcClassicLinkDnsSupport()
+   * - .toDisassociateRouteServer()
    * - .toDisassociateSecurityGroupVpc()
    * - .toDisassociateVpcCidrBlock()
    * - .toEnableVpcClassicLink()
@@ -19034,7 +19488,6 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTrafficMirrorTarget()
    * - .toCreateVpcEndpoint()
    * - .toDeleteVpcEndpoints()
-   * - .toDescribeVpcEndpointAssociations()
    *
    * Applies to resource types:
    * - vpc-endpoint
@@ -19054,7 +19507,6 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateTrafficMirrorTarget()
    * - .toCreateVpcEndpoint()
-   * - .toDescribeVpcEndpointAssociations()
    *
    * Applies to resource types:
    * - vpc-endpoint

@@ -54,6 +54,9 @@ ec2:prefix-list
 ec2:replace-root-volume-task
 ec2:reserved-instances
 ec2:role
+ec2:route-server
+ec2:route-server-endpoint
+ec2:route-server-peer
 ec2:route-table
 ec2:security-group
 ec2:security-group-rule
