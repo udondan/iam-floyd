@@ -112,6 +112,17 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve endpoint service name specific to a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_GetVpcEndpointServiceName.html
+   */
+  public toGetVpcEndpointServiceName() {
+    return this.to('GetVpcEndpointServiceName');
+  }
+
+  /**
    * Grants permission to retrieve a list of clusters
    *
    * Access Level: List
@@ -185,6 +196,7 @@ export class Dsql extends PolicyStatement {
     ],
     Read: [
       'GetCluster',
+      'GetVpcEndpointServiceName',
       'ListTagsForResource'
     ],
     List: [

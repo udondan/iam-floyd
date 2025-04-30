@@ -10,6 +10,7 @@ ec2:AuthorizedService
 ec2:AuthorizedUser
 ec2:AutoPlacement
 ec2:AvailabilityZone
+ec2:AvailabilityZoneId
 ec2:CapacityReservationFleet
 ec2:ClientRootCertificateChainArn
 ec2:CloudwatchLogGroupArn
@@ -27,6 +28,7 @@ ec2:ElasticGpuType
 ec2:Encrypted
 ec2:EndDate
 ec2:EndDateType
+ec2:EphemeralStorage
 ec2:FisActionId
 ec2:FisTargetArns
 ec2:GatewayType
