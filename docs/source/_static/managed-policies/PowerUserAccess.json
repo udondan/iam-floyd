@@ -19,6 +19,7 @@
         "iam:CreateServiceLinkedRole",
         "iam:DeleteServiceLinkedRole",
         "iam:ListRoles",
+        "organizations:DescribeEffectivePolicy",
         "organizations:DescribeOrganization"
       ],
       "Resource": "*"
