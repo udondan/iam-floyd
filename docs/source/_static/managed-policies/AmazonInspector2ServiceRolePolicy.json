@@ -11,8 +11,10 @@
         "directconnect:DescribeDirectConnectGateways",
         "directconnect:DescribeVirtualGateways",
         "directconnect:DescribeVirtualInterfaces",
+        "ec2:DescribeAddresses",
         "ec2:DescribeAvailabilityZones",
         "ec2:DescribeCustomerGateways",
+        "ec2:DescribeEgressOnlyInternetGateways",
         "ec2:DescribeInstances",
         "ec2:DescribeInternetGateways",
         "ec2:DescribeManagedPrefixLists",
@@ -104,7 +106,6 @@
       "Action": [
         "ssm:CreateAssociation",
         "ssm:StartAssociationsOnce",
-        "ssm:DeleteAssociation",
         "ssm:UpdateAssociation"
       ],
       "Resource": [
@@ -112,6 +113,16 @@
         "arn:aws:ssm:*:*:document/AmazonInspector2-*",
         "arn:aws:ssm:*:*:document/AWS-GatherSoftwareInventory",
         "arn:aws:ssm:*:*:managed-instance/*",
+        "arn:aws:ssm:*:*:association/*"
+      ]
+    },
+    {
+      "Sid": "GatherInventoryDeleteAssociation",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DeleteAssociation"
+      ],
+      "Resource": [
         "arn:aws:ssm:*:*:association/*"
       ]
     },

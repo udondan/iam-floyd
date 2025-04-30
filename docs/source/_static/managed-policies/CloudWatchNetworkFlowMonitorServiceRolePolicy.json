@@ -17,14 +17,19 @@
       "Effect": "Allow",
       "Action": [
         "organizations:ListDelegatedAdministrators",
-        "organizations:DescribeOrganization",
         "organizations:ListAWSServiceAccessForOrganization",
-        "organizations:DescribeAccount",
-        "organizations:ListAccounts"
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount"
       ],
       "Resource": [
-        "arn:aws:organizations::*:account/*",
-        "arn:aws:organizations::*:organization/*"
+        "arn:aws:organizations::*:account/*"
       ]
     }
   ]
