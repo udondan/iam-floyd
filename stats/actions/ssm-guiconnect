@@ -1,4 +1,7 @@
 ssm-guiconnect:CancelConnection;Write
+ssm-guiconnect:DeleteConnectionRecordingPreferences;Write
 ssm-guiconnect:GetConnection;Read
+ssm-guiconnect:GetConnectionRecordingPreferences;Read
 ssm-guiconnect:ListConnections;List
 ssm-guiconnect:StartConnection;Write
+ssm-guiconnect:UpdateConnectionRecordingPreferences;Write

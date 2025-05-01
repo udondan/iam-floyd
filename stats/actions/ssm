@@ -63,6 +63,7 @@ ssm:DescribePatchProperties;List
 ssm:DescribeSessions;List
 ssm:DisassociateOpsItemRelatedItem;Write
 ssm:ExecuteAPI;Read
+ssm:GetAccessToken;Read
 ssm:GetAutomationExecution;Read
 ssm:GetCalendar;Read
 ssm:GetCalendarState;Read
@@ -128,6 +129,7 @@ ssm:ResetServiceSetting;Write
 ssm:ResumeSession;Write
 ssm:SendAutomationSignal;Write
 ssm:SendCommand;Write
+ssm:StartAccessRequest;Write
 ssm:StartAssociationsOnce;Write
 ssm:StartAutomationExecution;Write
 ssm:StartChangeRequestExecution;Write

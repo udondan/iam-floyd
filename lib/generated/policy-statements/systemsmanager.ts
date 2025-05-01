@@ -827,6 +827,17 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a credentials set to be used with just-in-time node access
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetAccessToken.html
+   */
+  public toGetAccessToken() {
+    return this.to('GetAccessToken');
+  }
+
+  /**
    * Grants permission to view details of a specified Automation execution
    *
    * Access Level: Read
@@ -1618,6 +1629,21 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start the workflow for just-in-time node access sessions
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAccessRequest.html
+   */
+  public toStartAccessRequest() {
+    return this.to('StartAccessRequest');
+  }
+
+  /**
    * Grants permission to run a specified association manually
    *
    * Access Level: Write
@@ -1681,6 +1707,7 @@ export class Ssm extends PolicyStatement {
    * Possible conditions:
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
+   * - .ifAccessRequestId()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
    */
@@ -1987,6 +2014,7 @@ export class Ssm extends PolicyStatement {
       'ResumeSession',
       'SendAutomationSignal',
       'SendCommand',
+      'StartAccessRequest',
       'StartAssociationsOnce',
       'StartAutomationExecution',
       'StartChangeRequestExecution',
@@ -2038,6 +2066,7 @@ export class Ssm extends PolicyStatement {
       'DescribeInventoryDeletions',
       'DescribeOpsItems',
       'ExecuteAPI',
+      'GetAccessToken',
       'GetAutomationExecution',
       'GetCalendar',
       'GetCalendarState',
@@ -2469,6 +2498,7 @@ export class Ssm extends PolicyStatement {
    * - .toCreatePatchBaseline()
    * - .toPutParameter()
    * - .toRegisterManagedInstance()
+   * - .toStartAccessRequest()
    * - .toStartAutomationExecution()
    * - .toStartChangeRequestExecution()
    *
@@ -2560,6 +2590,7 @@ export class Ssm extends PolicyStatement {
    * - .toPutParameter()
    * - .toRegisterManagedInstance()
    * - .toRemoveTagsFromResource()
+   * - .toStartAccessRequest()
    * - .toStartAutomationExecution()
    * - .toStartChangeRequestExecution()
    *
@@ -2586,6 +2617,21 @@ export class Ssm extends PolicyStatement {
    */
   public ifEc2SourceInstanceARN(value: string | string[], operator?: Operator | string) {
     return this.if(`ec2:SourceInstanceARN`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by verifying that a user has access to the access request ID specified in the request
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toStartSession()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAccessRequestId(value: string | string[], operator?: Operator | string) {
+    return this.if(`AccessRequestId`, value, operator ?? 'StringLike');
   }
 
   /**

@@ -1,3 +1,4 @@
+route53resolver:autodefined-rule
 route53resolver:firewall-config
 route53resolver:firewall-domain-list
 route53resolver:firewall-rule-group

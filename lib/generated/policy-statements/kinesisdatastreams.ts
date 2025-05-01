@@ -19,7 +19,7 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add or update tags for the specified Amazon Kinesis stream. Each stream can have up to 10 tags
+   * Grants permission to add or update tags for the specified Amazon Kinesis stream. Each stream can have up to 50 tags
    *
    * Access Level: Tagging
    *
@@ -228,6 +228,17 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tags for the specified Amazon Kinesis resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to list the tags for the specified Amazon Kinesis stream
    *
    * Access Level: Read
@@ -349,6 +360,28 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or update tags for the specified Amazon Kinesis resource. Each resource can have up to 50 tags
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from the specified Kinesis data resource. Removed tags are deleted and cannot be recovered after this operation successfully completes
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update the shard count of the specified stream to the specified number of shards
    *
    * Access Level: Write
@@ -373,7 +406,9 @@ export class Kinesis extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToStream',
-      'RemoveTagsFromStream'
+      'RemoveTagsFromStream',
+      'TagResource',
+      'UntagResource'
     ],
     Write: [
       'CreateStream',
@@ -403,6 +438,7 @@ export class Kinesis extends PolicyStatement {
       'GetRecords',
       'GetResourcePolicy',
       'GetShardIterator',
+      'ListTagsForResource',
       'ListTagsForStream',
       'SubscribeToShard'
     ],
@@ -469,6 +505,8 @@ export class Kinesis extends PolicyStatement {
    * Applies to actions:
    * - .toAddTagsToStream()
    * - .toCreateStream()
+   * - .toRegisterStreamConsumer()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -489,7 +527,9 @@ export class Kinesis extends PolicyStatement {
    * - .toDecreaseStreamRetentionPeriod()
    * - .toDeleteResourcePolicy()
    * - .toDeleteStream()
+   * - .toDeregisterStreamConsumer()
    * - .toDescribeStream()
+   * - .toDescribeStreamConsumer()
    * - .toDescribeStreamSummary()
    * - .toGetRecords()
    * - .toGetResourcePolicy()
@@ -497,6 +537,7 @@ export class Kinesis extends PolicyStatement {
    * - .toIncreaseStreamRetentionPeriod()
    * - .toListShards()
    * - .toListStreamConsumers()
+   * - .toListTagsForResource()
    * - .toListTagsForStream()
    * - .toMergeShards()
    * - .toPutRecord()
@@ -507,6 +548,9 @@ export class Kinesis extends PolicyStatement {
    * - .toSplitShard()
    * - .toStartStreamEncryption()
    * - .toStopStreamEncryption()
+   * - .toSubscribeToShard()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - stream
@@ -527,7 +571,10 @@ export class Kinesis extends PolicyStatement {
    * Applies to actions:
    * - .toAddTagsToStream()
    * - .toCreateStream()
+   * - .toRegisterStreamConsumer()
    * - .toRemoveTagsFromStream()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
