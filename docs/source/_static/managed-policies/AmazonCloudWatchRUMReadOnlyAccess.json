@@ -8,7 +8,8 @@
         "rum:GetAppMonitorData",
         "rum:ListAppMonitors",
         "rum:ListRumMetricsDestinations",
-        "rum:BatchGetRumMetricDefinitions"
+        "rum:BatchGetRumMetricDefinitions",
+        "rum:GetResourcePolicy"
       ],
       "Resource": "*"
     }
