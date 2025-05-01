@@ -393,6 +393,14 @@ export class Deadline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - deadline:ListTagsForResource
+   * - deadline:TagResource
+   *
    * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateWorker.html
    */
   public toCreateWorker() {
@@ -1305,6 +1313,9 @@ export class Deadline extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifCalledAction()
+   *
    * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -1428,6 +1439,7 @@ export class Deadline extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifCalledAction()
    *
    * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_TagResource.html
    */
@@ -1961,6 +1973,7 @@ export class Deadline extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifFarmMembershipLevels()
    * - .ifFleetMembershipLevels()
    */
@@ -1978,6 +1991,7 @@ export class Deadline extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateLicenseEndpoint()
    * - .toCreateQueue()
+   * - .toCreateWorker()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1998,6 +2012,7 @@ export class Deadline extends PolicyStatement {
    * - fleet
    * - license-endpoint
    * - queue
+   * - worker
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2017,6 +2032,7 @@ export class Deadline extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateLicenseEndpoint()
    * - .toCreateQueue()
+   * - .toCreateWorker()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -2047,6 +2063,22 @@ export class Deadline extends PolicyStatement {
    */
   public ifAssociatedMembershipLevel(value: string | string[], operator?: Operator | string) {
     return this.if(`AssociatedMembershipLevel`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the allowed action in the request
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam-service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCalledAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`CalledAction`, value, operator ?? 'StringLike');
   }
 
   /**

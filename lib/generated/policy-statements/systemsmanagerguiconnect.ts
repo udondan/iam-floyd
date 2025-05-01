@@ -30,6 +30,17 @@ export class SsmGuiconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove GUI Connect connection recording preferences
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteConnectionRecordingPreferences.html
+   */
+  public toDeleteConnectionRecordingPreferences() {
+    return this.to('DeleteConnectionRecordingPreferences');
+  }
+
+  /**
    * Grants permission to get the metadata for a GUI Connect connection
    *
    * Access Level: Read
@@ -38,6 +49,17 @@ export class SsmGuiconnect extends PolicyStatement {
    */
   public toGetConnection() {
     return this.to('GetConnection');
+  }
+
+  /**
+   * Grants permission to get GUI Connect connection recording preferences
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetConnectionRecordingPreferences.html
+   */
+  public toGetConnectionRecordingPreferences() {
+    return this.to('GetConnectionRecordingPreferences');
   }
 
   /**
@@ -62,13 +84,27 @@ export class SsmGuiconnect extends PolicyStatement {
     return this.to('StartConnection');
   }
 
+  /**
+   * Grants permission to update GUI Connect connection recording preferences
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateConnectionRecordingPreferences.html
+   */
+  public toUpdateConnectionRecordingPreferences() {
+    return this.to('UpdateConnectionRecordingPreferences');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelConnection',
-      'StartConnection'
+      'DeleteConnectionRecordingPreferences',
+      'StartConnection',
+      'UpdateConnectionRecordingPreferences'
     ],
     Read: [
-      'GetConnection'
+      'GetConnection',
+      'GetConnectionRecordingPreferences'
     ],
     List: [
       'ListConnections'

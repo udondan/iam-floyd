@@ -1003,6 +1003,23 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type autodefined-rule to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAutodefinedRule(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:route53resolver:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:autodefined-rule/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type resolver-endpoint to the statement
    *
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
@@ -1150,6 +1167,7 @@ export class Route53resolver extends PolicyStatement {
    * - resolver-dnssec-config
    * - resolver-query-log-config
    * - resolver-rule
+   * - autodefined-rule
    * - resolver-endpoint
    * - firewall-rule-group
    * - firewall-rule-group-association

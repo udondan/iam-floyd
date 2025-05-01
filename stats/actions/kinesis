@@ -17,6 +17,7 @@ kinesis:IncreaseStreamRetentionPeriod;Write
 kinesis:ListShards;List
 kinesis:ListStreamConsumers;List
 kinesis:ListStreams;List
+kinesis:ListTagsForResource;Read
 kinesis:ListTagsForStream;Read
 kinesis:MergeShards;Write
 kinesis:PutRecord;Write
@@ -28,5 +29,7 @@ kinesis:SplitShard;Write
 kinesis:StartStreamEncryption;Write
 kinesis:StopStreamEncryption;Write
 kinesis:SubscribeToShard;Read
+kinesis:TagResource;Tagging
+kinesis:UntagResource;Tagging
 kinesis:UpdateShardCount;Write
 kinesis:UpdateStreamMode;Write
