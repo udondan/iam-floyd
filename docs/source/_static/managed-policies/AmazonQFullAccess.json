@@ -19,6 +19,7 @@
         "q:DeleteAssignment",
         "q:GenerateCodeFromCommands",
         "q:CreatePlugin",
+        "q:UpdatePlugin",
         "q:DeletePlugin",
         "q:GetPlugin",
         "q:UsePlugin",
