@@ -118,13 +118,29 @@
       ],
       "Resource": [
         "arn:aws:ec2:*:*:instance/*",
-        "arn:aws:ec2:*:*:volume/*"
+        "arn:aws:ec2:*:*:volume/*",
+        "arn:aws:ec2:*:*:network-interface/*"
       ],
       "Condition": {
         "StringEquals": {
           "ec2:CreateAction": [
             "RunInstances"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "CreateTagsCAPAControllerReconcileNetworkInterface",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/red-hat-managed": "true"
         }
       }
     },
