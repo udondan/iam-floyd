@@ -2,30 +2,174 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "AllowUseOfAWSWAF",
+      "Sid": "AllowUseOfAWSWAFClassic",
       "Effect": "Allow",
       "Action": [
         "waf:*",
-        "waf-regional:*",
-        "wafv2:*",
-        "elasticloadbalancing:SetWebACL",
-        "apigateway:SetWebACL",
-        "appsync:SetWebACL",
-        "logs:DescribeResourcePolicies",
-        "logs:DescribeLogGroups",
+        "waf-regional:*"
+      ],
+      "Resource": [
+        "arn:aws:waf::*:bytematchset/*",
+        "arn:aws:waf::*:ipset/*",
+        "arn:aws:waf::*:ratebasedrule/*",
+        "arn:aws:waf::*:rule/*",
+        "arn:aws:waf::*:sizeconstraintset/*",
+        "arn:aws:waf::*:sqlinjectionset/*",
+        "arn:aws:waf::*:webacl/*",
+        "arn:aws:waf::*:xssmatchset/*",
+        "arn:aws:waf::*:regexmatch/*",
+        "arn:aws:waf::*:regexpatternset/*",
+        "arn:aws:waf::*:geomatchset/*",
+        "arn:aws:waf::*:rulegroup/*",
+        "arn:aws:waf::*:changetoken/*",
+        "arn:aws:waf-regional:*:*:bytematchset/*",
+        "arn:aws:waf-regional:*:*:ipset/*",
+        "arn:aws:waf-regional:*:*:ratebasedrule/*",
+        "arn:aws:waf-regional:*:*:rule/*",
+        "arn:aws:waf-regional:*:*:sizeconstraintset/*",
+        "arn:aws:waf-regional:*:*:sqlinjectionset/*",
+        "arn:aws:waf-regional:*:*:webacl/*",
+        "arn:aws:waf-regional:*:*:xssmatchset/*",
+        "arn:aws:waf-regional:*:*:regexmatch/*",
+        "arn:aws:waf-regional:*:*:regexpatternset/*",
+        "arn:aws:waf-regional:*:*:geomatchset/*",
+        "arn:aws:waf-regional:*:*:rulegroup/*",
+        "arn:aws:waf-regional:*:*:changetoken/*"
+      ]
+    },
+    {
+      "Sid": "AllowWAFClassicGetWebACLForResource",
+      "Effect": "Allow",
+      "Action": [
+        "waf-regional:GetWebACLForResource"
+      ],
+      "Resource": "arn:aws:waf-regional:*:*:*/*"
+    },
+    {
+      "Sid": "AllowUseOfAWSWAF",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:*"
+      ],
+      "Resource": [
+        "arn:aws:wafv2:*:*:*/webacl/*/*",
+        "arn:aws:wafv2:*:*:*/ipset/*/*",
+        "arn:aws:wafv2:*:*:*/managedruleset/*/*",
+        "arn:aws:wafv2:*:*:*/rulegroup/*/*",
+        "arn:aws:wafv2:*:*:*/regexpatternset/*/*"
+      ]
+    },
+    {
+      "Sid": "AllowDisassociateWebACL",
+      "Effect": "Allow",
+      "Action": [
+        "wafv2:DisassociateWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowActionsForALB",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:SetWebAcl"
+      ],
+      "Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*"
+    },
+    {
+      "Sid": "AllowActionsForAPIGateway",
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:SetWebACL"
+      ],
+      "Resource": "arn:aws:apigateway:*::/restapis/*/stages/*"
+    },
+    {
+      "Sid": "AllowActionsForAppSync",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:SetWebACL"
+      ],
+      "Resource": "arn:aws:appsync:*:*:apis/*"
+    },
+    {
+      "Sid": "AllowActionsForCognito",
+      "Effect": "Allow",
+      "Action": [
         "cognito-idp:AssociateWebACL",
         "cognito-idp:DisassociateWebACL",
-        "cognito-idp:ListResourcesForWebACL",
-        "cognito-idp:GetWebACLForResource",
+        "cognito-idp:GetWebACLForResource"
+      ],
+      "Resource": "arn:aws:cognito-idp:*:*:userpool/*"
+    },
+    {
+      "Sid": "AllowListActionsForCognito",
+      "Effect": "Allow",
+      "Action": [
+        "cognito-idp:ListResourcesForWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowActionsForAppRunner",
+      "Effect": "Allow",
+      "Action": [
         "apprunner:AssociateWebAcl",
         "apprunner:DisassociateWebAcl",
-        "apprunner:DescribeWebAclForService",
+        "apprunner:DescribeWebAclForService"
+      ],
+      "Resource": "arn:aws:apprunner:*:*:service/*/*"
+    },
+    {
+      "Sid": "AllowListActionsForAppRunner",
+      "Effect": "Allow",
+      "Action": [
         "apprunner:ListServices",
-        "apprunner:ListAssociatedServicesForWebAcl",
+        "apprunner:ListAssociatedServicesForWebAcl"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowActionsForAVA",
+      "Effect": "Allow",
+      "Action": [
         "ec2:AssociateVerifiedAccessInstanceWebAcl",
         "ec2:DisassociateVerifiedAccessInstanceWebAcl",
-        "ec2:DescribeVerifiedAccessInstanceWebAclAssociations",
         "ec2:GetVerifiedAccessInstanceWebAcl"
+      ],
+      "Resource": "arn:aws:ec2:*:*:verified-access-instance/*"
+    },
+    {
+      "Sid": "AllowListActionsForAVA",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVerifiedAccessInstanceWebAclAssociations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowActionsForAmplify",
+      "Effect": "Allow",
+      "Action": [
+        "amplify:AssociateWebACL",
+        "amplify:DisassociateWebACL",
+        "amplify:GetWebACLForResource"
+      ],
+      "Resource": "arn:aws:amplify:*:*:apps/*"
+    },
+    {
+      "Sid": "AllowListActionsForAmplify",
+      "Effect": "Allow",
+      "Action": [
+        "amplify:ListResourcesForWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowLogGroupDescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeResourcePolicies",
+        "logs:DescribeLogGroups"
       ],
       "Resource": "*"
     },
