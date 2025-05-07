@@ -17,7 +17,10 @@ verifiedpermissions:ListIdentitySources;List
 verifiedpermissions:ListPolicies;List
 verifiedpermissions:ListPolicyStores;List
 verifiedpermissions:ListPolicyTemplates;List
+verifiedpermissions:ListTagsForResource;Read
 verifiedpermissions:PutSchema;Write
+verifiedpermissions:TagResource;Tagging
+verifiedpermissions:UntagResource;Tagging
 verifiedpermissions:UpdateIdentitySource;Write
 verifiedpermissions:UpdatePolicy;Write
 verifiedpermissions:UpdatePolicyStore;Write
