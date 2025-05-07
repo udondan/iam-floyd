@@ -379,13 +379,14 @@ export class BackupGateway extends PolicyStatement {
    *
    * @param gatewayId - Identifier for the gatewayId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onGateway(gatewayId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:backup-gateway::${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
+  public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup-gateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
   }
 
   /**
@@ -395,13 +396,14 @@ export class BackupGateway extends PolicyStatement {
    *
    * @param hypervisorId - Identifier for the hypervisorId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onHypervisor(hypervisorId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:backup-gateway::${ account ?? this.defaultAccount }:hypervisor/${ hypervisorId }`);
+  public onHypervisor(hypervisorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup-gateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hypervisor/${ hypervisorId }`);
   }
 
   /**
@@ -411,13 +413,14 @@ export class BackupGateway extends PolicyStatement {
    *
    * @param virtualmachineId - Identifier for the virtualmachineId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onVirtualmachine(virtualmachineId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:backup-gateway::${ account ?? this.defaultAccount }:vm/${ virtualmachineId }`);
+  public onVirtualmachine(virtualmachineId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup-gateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vm/${ virtualmachineId }`);
   }
 
   /**

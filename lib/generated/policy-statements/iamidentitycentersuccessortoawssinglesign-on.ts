@@ -1826,7 +1826,7 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Filters access by the account which creates the application
+   * Filters access by the account which creates the application. This condition key is not supported for customer managed SAML applications
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/API_Application.html
    *

@@ -7,6 +7,7 @@ qbusiness:CancelSubscription;Write
 qbusiness:Chat;Read
 qbusiness:ChatSync;Read
 qbusiness:CheckDocumentAccess;Read
+qbusiness:CreateAnonymousWebExperienceUrl;Write
 qbusiness:CreateApplication;Write
 qbusiness:CreateDataAccessor;Write
 qbusiness:CreateDataSource;Write

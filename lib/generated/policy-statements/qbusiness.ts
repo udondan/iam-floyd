@@ -122,6 +122,17 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a unique URL for anonymous Amazon Q Business web experience
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateAnonymousWebExperienceUrl.html
+   */
+  public toCreateAnonymousWebExperienceUrl() {
+    return this.to('CreateAnonymousWebExperienceUrl');
+  }
+
+  /**
    * Grants permission to create an application
    *
    * Access Level: Write
@@ -1059,6 +1070,7 @@ export class Qbusiness extends PolicyStatement {
       'BatchDeleteDocument',
       'BatchPutDocument',
       'CancelSubscription',
+      'CreateAnonymousWebExperienceUrl',
       'CreateApplication',
       'CreateDataAccessor',
       'CreateDataSource',

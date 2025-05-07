@@ -1,3 +1,4 @@
+sts:context-provider
 sts:role
 sts:root-user
 sts:self-session
