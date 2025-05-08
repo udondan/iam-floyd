@@ -57,24 +57,6 @@
     {
       "Effect": "Allow",
       "Action": [
-        "s3:ListBucket",
-        "s3:GetObject"
-      ],
-      "Resource": [
-        "arn:aws:s3:::*image-build*"
-      ]
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "sns:Publish",
-        "sns:setTopicAttributes"
-      ],
-      "Resource": "arn:aws:sns:*:*:*image-build*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
         "iam:PassRole"
       ],
       "Resource": [
@@ -84,48 +66,6 @@
         "StringLike": {
           "iam:PassedToService": [
             "ec2.amazonaws.com"
-          ]
-        }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ssm:StartAutomationExecution"
-      ],
-      "Resource": [
-        "arn:aws:ssm:eu-central-1:906690553262:automation-definition/*",
-        "arn:aws:ssm:us-east-1:058657716661:automation-definition/*",
-        "arn:aws:ssm:ap-northeast-1:340648487307:automation-definition/*",
-        "arn:aws:ssm:eu-west-1:564714592864:automation-definition/*",
-        "arn:aws:ssm:us-west-2:243045473901:automation-definition/*",
-        "arn:aws:ssm:ap-southeast-2:362149219987:automation-definition/*",
-        "arn:aws:ssm:eu-west-2:587945719687:automation-definition/*",
-        "arn:aws:ssm:us-east-2:134937423163:automation-definition/*"
-      ]
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:PassRole"
-      ],
-      "Resource": [
-        "*"
-      ],
-      "Condition": {
-        "StringLike": {
-          "iam:PassedToService": [
-            "ssm.amazonaws.com"
-          ],
-          "iam:AssociatedResourceARN": [
-            "arn:aws:ssm:eu-central-1:906690553262:automation-definition/*",
-            "arn:aws:ssm:us-east-1:058657716661:automation-definition/*",
-            "arn:aws:ssm:ap-northeast-1:340648487307:automation-definition/*",
-            "arn:aws:ssm:eu-west-1:564714592864:automation-definition/*",
-            "arn:aws:ssm:us-west-2:243045473901:automation-definition/*",
-            "arn:aws:ssm:ap-southeast-2:362149219987:automation-definition/*",
-            "arn:aws:ssm:eu-west-2:587945719687:automation-definition/*",
-            "arn:aws:ssm:us-east-2:134937423163:automation-definition/*"
           ]
         }
       }
