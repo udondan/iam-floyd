@@ -20,8 +20,6 @@
     {
       "Effect": "Allow",
       "Action": [
-        "aws-marketplace:ListBuilds",
-        "aws-marketplace:DescribeBuilds",
         "iam:ListRoles",
         "iam:ListInstanceProfiles",
         "sns:GetTopicAttributes",
