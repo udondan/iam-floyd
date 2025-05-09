@@ -729,6 +729,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSConnectorServiceRolePolicy);
     }
 
+    /** This policy enables the Amazon EKS Dashboard to access and display organization-wide information. The policy allows the EKS Dashboard service to gather information about your AWS Organizations structure and accounts. */
+    public AmazonEKSDashboardServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSDashboardServiceRolePolicy);
+    }
+
     /** Provides access to other AWS service resources that are required to run Amazon EKS pods on AWS Fargate */
     public AmazonEKSFargatePodExecutionRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSFargatePodExecutionRolePolicy);

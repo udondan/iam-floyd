@@ -288,6 +288,8 @@ export class AwsManagedPolicy {
     public static AmazonEKSComputePolicy = 'AmazonEKSComputePolicy';
     /** This policy allows Amazon EKS to manage AWS resources for EKS connector */
     public static AmazonEKSConnectorServiceRolePolicy = 'aws-service-role/AmazonEKSConnectorServiceRolePolicy';
+    /** This policy enables the Amazon EKS Dashboard to access and display organization-wide information. The policy allows the EKS Dashboard service to gather information about your AWS Organizations structure and accounts. */
+    public static AmazonEKSDashboardServiceRolePolicy = 'aws-service-role/AmazonEKSDashboardServiceRolePolicy';
     /** Provides access to other AWS service resources that are required to run Amazon EKS pods on AWS Fargate */
     public static AmazonEKSFargatePodExecutionRolePolicy = 'AmazonEKSFargatePodExecutionRolePolicy';
     /** This policy grants necessary permissions to Amazon EKS to run fargate tasks */
