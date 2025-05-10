@@ -9,7 +9,10 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "cloudwatch:namespace": "AWS/AuroraDSQL",
+          "cloudwatch:namespace": [
+            "AWS/AuroraDSQL",
+            "AWS/Usage"
+          ],
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
