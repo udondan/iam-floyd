@@ -27,6 +27,7 @@
         "iam:ListUsers",
         "iam:ListRoleTags",
         "iam:ListUserTags",
+        "iam:GetAccountAuthorizationDetails",
         "iam:GetUser",
         "iam:GetGroup",
         "iam:GenerateServiceLastAccessedDetails",

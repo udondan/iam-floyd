@@ -9,6 +9,8 @@
         "q:SendMessage",
         "q:GetConversation",
         "q:ListConversations",
+        "q:UpdateConversation",
+        "q:DeleteConversation",
         "q:PassRequest",
         "q:StartTroubleshootingAnalysis",
         "q:StartTroubleshootingResolutionExplanation",

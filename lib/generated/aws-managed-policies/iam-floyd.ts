@@ -1998,6 +1998,8 @@ export class AwsManagedPolicy {
     public static AWSQuicksightOpenSearchPolicy = 'service-role/AWSQuicksightOpenSearchPolicy';
     /** Provides access to Amazon SageMaker resources from Amazon QuickSight */
     public static AWSQuickSightSageMakerPolicy = 'service-role/AWSQuickSightSageMakerPolicy';
+    /** Policy used by QuickSight to create secrets in AWS Secrets Manager and to attach resource policies on existing QuickSight secrets. */
+    public static AWSQuickSightSecretsManagerWritePolicy = 'AWSQuickSightSecretsManagerWritePolicy';
     /** AWS QuickSight access to AWS Timestream APIs. Customers can attach this policy to AWS QuickSight role to allow retrieval of data and metadata. */
     public static AWSQuickSightTimestreamPolicy = 'service-role/AWSQuickSightTimestreamPolicy';
     /** Allows VPC Reachability Analyzer to access AWS resources and integrate with AWS Organizations on your behalf. */
