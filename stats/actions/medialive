@@ -80,7 +80,7 @@ medialive:ListNetworks;List
 medialive:ListNodes;List
 medialive:ListOfferings;List
 medialive:ListReservations;List
-medialive:ListSdiSource;List
+medialive:ListSdiSources;List
 medialive:ListSignalMaps;List
 medialive:ListTagsForResource;List
 medialive:ListVersions;List

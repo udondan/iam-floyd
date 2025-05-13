@@ -58,6 +58,7 @@ export class Guardduty extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateDetector.html
@@ -88,6 +89,7 @@ export class Guardduty extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -107,6 +109,7 @@ export class Guardduty extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMalwareProtectionPlan.html
@@ -1104,6 +1107,11 @@ export class Guardduty extends PolicyStatement {
    * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateDetector()
+   * - .toCreateIPSet()
+   * - .toCreateMalwareProtectionPlan()
    *
    * Applies to resource types:
    * - detector

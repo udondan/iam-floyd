@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [networkmonitor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchnetworkmonitor.html).
+ * Statement provider for service [networkmonitor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchnetworksyntheticmonitor.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Networkmonitor extends PolicyStatement {
   public servicePrefix = 'networkmonitor';
 
   /**
-   * Statement provider for service [networkmonitor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchnetworkmonitor.html).
+   * Statement provider for service [networkmonitor](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchnetworksyntheticmonitor.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,7 +23,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_CreateMonitor.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_CreateMonitor.html
    */
   public toCreateMonitor() {
     return this.to('CreateMonitor');
@@ -34,7 +34,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_CreateProbe.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_CreateProbe.html
    */
   public toCreateProbe() {
     return this.to('CreateProbe');
@@ -45,7 +45,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_DeleteMonitor.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_DeleteMonitor.html
    */
   public toDeleteMonitor() {
     return this.to('DeleteMonitor');
@@ -56,7 +56,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_DeleteProbe.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_DeleteProbe.html
    */
   public toDeleteProbe() {
     return this.to('DeleteProbe');
@@ -67,7 +67,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_GetMonitor.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_GetMonitor.html
    */
   public toGetMonitor() {
     return this.to('GetMonitor');
@@ -78,7 +78,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_GetProbe.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_GetProbe.html
    */
   public toGetProbe() {
     return this.to('GetProbe');
@@ -89,7 +89,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_ListMonitors.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_ListMonitors.html
    */
   public toListMonitors() {
     return this.to('ListMonitors');
@@ -100,7 +100,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -111,7 +111,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_TagResource.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -125,7 +125,7 @@ export class Networkmonitor extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_UntagResource.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -136,7 +136,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_UpdateMonitor.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_UpdateMonitor.html
    */
   public toUpdateMonitor() {
     return this.to('UpdateMonitor');
@@ -147,7 +147,7 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/network-monitor/latest/api/API_UpdateProbe.html
+   * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_UpdateProbe.html
    */
   public toUpdateProbe() {
     return this.to('UpdateProbe');
@@ -179,7 +179,7 @@ export class Networkmonitor extends PolicyStatement {
   /**
    * Adds a resource of type monitor to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NM-components.html
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/nw-monitor-working-with.html
    *
    * @param monitorName - Identifier for the monitorName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -196,7 +196,7 @@ export class Networkmonitor extends PolicyStatement {
   /**
    * Adds a resource of type probe to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NM-components.html
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/nw-monitor-working-with.html
    *
    * @param probeId - Identifier for the probeId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

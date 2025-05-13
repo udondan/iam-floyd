@@ -994,8 +994,8 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html
    */
-  public toListSdiSource() {
-    return this.to('ListSdiSource');
+  public toListSdiSources() {
+    return this.to('ListSdiSources');
   }
 
   /**
@@ -1585,7 +1585,7 @@ export class Medialive extends PolicyStatement {
       'ListNodes',
       'ListOfferings',
       'ListReservations',
-      'ListSdiSource',
+      'ListSdiSources',
       'ListSignalMaps',
       'ListTagsForResource',
       'ListVersions'

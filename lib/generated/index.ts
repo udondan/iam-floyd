@@ -22,7 +22,7 @@ export { ApplicationSignals } from './policy-statements/cloudwatchapplicationsig
 export { Evidently } from './policy-statements/cloudwatchevidently';
 export { Internetmonitor } from './policy-statements/cloudwatchinternetmonitor';
 export { Logs } from './policy-statements/cloudwatchlogs';
-export { Networkmonitor } from './policy-statements/cloudwatchnetworkmonitor';
+export { Networkmonitor } from './policy-statements/cloudwatchnetworksyntheticmonitor';
 export { Oam } from './policy-statements/cloudwatchobservabilityaccessmanager';
 export { Observabilityadmin } from './policy-statements/cloudwatchobservabilityadminservice';
 export { Synthetics } from './policy-statements/cloudwatchsynthetics';

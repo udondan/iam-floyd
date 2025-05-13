@@ -4,6 +4,7 @@ q:CreateAuthGrant;Write
 q:CreateOAuthAppConnection;Write
 q:CreatePlugin;Write
 q:DeleteAssignment;Write
+q:DeleteConversation;Write
 q:DeleteOAuthAppConnection;Write
 q:DeletePlugin;Write
 q:GenerateCodeFromCommands;Read
@@ -28,6 +29,7 @@ q:StartTroubleshootingResolutionExplanation;Write
 q:TagResource;Tagging
 q:UntagResource;Tagging
 q:UpdateAuthGrant;Write
+q:UpdateConversation;Write
 q:UpdateOAuthAppConnection;Write
 q:UpdatePlugin;Write
 q:UpdateTroubleshootingCommandResult;Write
