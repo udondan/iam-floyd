@@ -109,6 +109,17 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a conversation with Amazon Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toDeleteConversation() {
+    return this.to('DeleteConversation');
+  }
+
+  /**
    * Grants permission to delete an OAuth application in Amazon Q
    *
    * Access Level: Write
@@ -409,6 +420,17 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a conversation with Amazon Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toUpdateConversation() {
+    return this.to('UpdateConversation');
+  }
+
+  /**
    * Grants permission to update an OAuth application in Amazon Q
    *
    * Access Level: Write
@@ -487,6 +509,7 @@ export class Q extends PolicyStatement {
       'CreateOAuthAppConnection',
       'CreatePlugin',
       'DeleteAssignment',
+      'DeleteConversation',
       'DeleteOAuthAppConnection',
       'DeletePlugin',
       'PassRequest',
@@ -497,6 +520,7 @@ export class Q extends PolicyStatement {
       'StartTroubleshootingAnalysis',
       'StartTroubleshootingResolutionExplanation',
       'UpdateAuthGrant',
+      'UpdateConversation',
       'UpdateOAuthAppConnection',
       'UpdatePlugin',
       'UpdateTroubleshootingCommandResult',
