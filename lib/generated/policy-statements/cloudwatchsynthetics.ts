@@ -260,6 +260,21 @@ export class Synthetics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a canary dry run, so that Amazon CloudWatch Synthetics can execute a test execution of a canary with provided parameters
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StartCanaryDryRun.html
+   */
+  public toStartCanaryDryRun() {
+    return this.to('StartCanaryDryRun');
+  }
+
+  /**
    * Grants permission to stop a canary
    *
    * Access Level: Write
@@ -328,6 +343,7 @@ export class Synthetics extends PolicyStatement {
       'DeleteGroup',
       'DisassociateResource',
       'StartCanary',
+      'StartCanaryDryRun',
       'StopCanary',
       'UpdateCanary'
     ],
@@ -419,6 +435,7 @@ export class Synthetics extends PolicyStatement {
    * - .toListAssociatedGroups()
    * - .toListGroupResources()
    * - .toStartCanary()
+   * - .toStartCanaryDryRun()
    * - .toStopCanary()
    * - .toUntagResource()
    * - .toUpdateCanary()
@@ -453,6 +470,7 @@ export class Synthetics extends PolicyStatement {
    * - .toListAssociatedGroups()
    * - .toListGroupResources()
    * - .toStartCanary()
+   * - .toStartCanaryDryRun()
    * - .toStopCanary()
    * - .toTagResource()
    * - .toUntagResource()

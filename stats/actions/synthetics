@@ -15,6 +15,7 @@ synthetics:ListGroupResources;List
 synthetics:ListGroups;List
 synthetics:ListTagsForResource;Read
 synthetics:StartCanary;Write
+synthetics:StartCanaryDryRun;Write
 synthetics:StopCanary;Write
 synthetics:TagResource;Tagging
 synthetics:UntagResource;Tagging

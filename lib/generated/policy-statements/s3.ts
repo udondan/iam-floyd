@@ -44,7 +44,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to associate Access Grants identity center
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -101,7 +101,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to create Access Grant
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -123,7 +123,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to Create Access Grants Instance
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -145,7 +145,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to create Access Grants location
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -333,7 +333,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to delete Access Grant
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -353,7 +353,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to Delete Access Grants Instance
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -373,7 +373,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to read Access grants instance resource policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -393,7 +393,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to delete Access Grants location
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -807,7 +807,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to disassociate Access Grants identity center
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -2436,7 +2436,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to put Access grants instance resource policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -3360,7 +3360,7 @@ export class S3 extends PolicyStatement {
   /**
    * Grants permission to update Access Grants location
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAuthType()
@@ -3443,10 +3443,6 @@ export class S3 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AbortMultipartUpload',
-      'AssociateAccessGrantsIdentityCenter',
-      'CreateAccessGrant',
-      'CreateAccessGrantsInstance',
-      'CreateAccessGrantsLocation',
       'CreateAccessPoint',
       'CreateAccessPointForObjectLambda',
       'CreateBucket',
@@ -3454,10 +3450,6 @@ export class S3 extends PolicyStatement {
       'CreateJob',
       'CreateMultiRegionAccessPoint',
       'CreateStorageLensGroup',
-      'DeleteAccessGrant',
-      'DeleteAccessGrantsInstance',
-      'DeleteAccessGrantsInstanceResourcePolicy',
-      'DeleteAccessGrantsLocation',
       'DeleteAccessPoint',
       'DeleteAccessPointForObjectLambda',
       'DeleteBucket',
@@ -3468,11 +3460,9 @@ export class S3 extends PolicyStatement {
       'DeleteObjectVersion',
       'DeleteStorageLensConfiguration',
       'DeleteStorageLensGroup',
-      'DissociateAccessGrantsIdentityCenter',
       'InitiateReplication',
       'PauseReplication',
       'PutAccelerateConfiguration',
-      'PutAccessGrantsInstanceResourcePolicy',
       'PutAccessPointConfigurationForObjectLambda',
       'PutAnalyticsConfiguration',
       'PutBucketCORS',
@@ -3496,17 +3486,26 @@ export class S3 extends PolicyStatement {
       'ReplicateObject',
       'RestoreObject',
       'SubmitMultiRegionAccessPointRoutes',
-      'UpdateAccessGrantsLocation',
       'UpdateJobPriority',
       'UpdateJobStatus',
       'UpdateStorageLensGroup'
     ],
     'Permissions management': [
+      'AssociateAccessGrantsIdentityCenter',
       'BypassGovernanceRetention',
+      'CreateAccessGrant',
+      'CreateAccessGrantsInstance',
+      'CreateAccessGrantsLocation',
+      'DeleteAccessGrant',
+      'DeleteAccessGrantsInstance',
+      'DeleteAccessGrantsInstanceResourcePolicy',
+      'DeleteAccessGrantsLocation',
       'DeleteAccessPointPolicy',
       'DeleteAccessPointPolicyForObjectLambda',
       'DeleteBucketPolicy',
+      'DissociateAccessGrantsIdentityCenter',
       'ObjectOwnerOverrideToBucketOwner',
+      'PutAccessGrantsInstanceResourcePolicy',
       'PutAccessPointPolicy',
       'PutAccessPointPolicyForObjectLambda',
       'PutAccessPointPublicAccessBlock',
@@ -3517,7 +3516,8 @@ export class S3 extends PolicyStatement {
       'PutBucketPublicAccessBlock',
       'PutMultiRegionAccessPointPolicy',
       'PutObjectAcl',
-      'PutObjectVersionAcl'
+      'PutObjectVersionAcl',
+      'UpdateAccessGrantsLocation'
     ],
     Tagging: [
       'DeleteJobTagging',

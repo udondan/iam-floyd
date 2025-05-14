@@ -886,7 +886,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to copy a point-in-time snapshot of an EBS volume and store it in Amazon S3. Resource-level permissions specified for this action apply to the new snapshot only. They do not apply to the source snapshot
+   * Grants permission to copy a point-in-time snapshot of an EBS volume and store it in Amazon S3. Resource-level permissions specified for this action apply to both the snapshot copy and the source snapshot
    *
    * Access Level: Write
    *
@@ -1486,6 +1486,40 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateLocalGatewayRouteTableVpcAssociation() {
     return this.to('CreateLocalGatewayRouteTableVpcAssociation');
+  }
+
+  /**
+   * Grants permission to create a local gateway virtual interface
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayVirtualInterface.html
+   */
+  public toCreateLocalGatewayVirtualInterface() {
+    return this.to('CreateLocalGatewayVirtualInterface');
+  }
+
+  /**
+   * Grants permission to create a local gateway virtual interface group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayVirtualInterfaceGroup.html
+   */
+  public toCreateLocalGatewayVirtualInterfaceGroup() {
+    return this.to('CreateLocalGatewayVirtualInterfaceGroup');
   }
 
   /**
@@ -2786,6 +2820,34 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteLocalGatewayRouteTableVpcAssociation() {
     return this.to('DeleteLocalGatewayRouteTableVpcAssociation');
+  }
+
+  /**
+   * Grants permission to delete a local gateway virtual interface
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayVirtualInterface.html
+   */
+  public toDeleteLocalGatewayVirtualInterface() {
+    return this.to('DeleteLocalGatewayVirtualInterface');
+  }
+
+  /**
+   * Grants permission to delete a local gateway virtual interface group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayVirtualInterfaceGroup.html
+   */
+  public toDeleteLocalGatewayVirtualInterfaceGroup() {
+    return this.to('DeleteLocalGatewayVirtualInterfaceGroup');
   }
 
   /**
@@ -4960,6 +5022,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe Outpost LAGs
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeOutpostLags.html
+   */
+  public toDescribeOutpostLags() {
+    return this.to('DescribeOutpostLags');
+  }
+
+  /**
    * Grants permission to describe one or more placement groups
    *
    * Access Level: List
@@ -5237,6 +5313,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeSecurityGroups() {
     return this.to('DescribeSecurityGroups');
+  }
+
+  /**
+   * Grants permission to describe service link virtual interfaces
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html
+   */
+  public toDescribeServiceLinkVirtualInterfaces() {
+    return this.to('DescribeServiceLinkVirtualInterfaces');
   }
 
   /**
@@ -10148,6 +10238,8 @@ export class Ec2 extends PolicyStatement {
       'CreateLocalGatewayRouteTablePermission',
       'CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation',
       'CreateLocalGatewayRouteTableVpcAssociation',
+      'CreateLocalGatewayVirtualInterface',
+      'CreateLocalGatewayVirtualInterfaceGroup',
       'CreateManagedPrefixList',
       'CreateNatGateway',
       'CreateNetworkAcl',
@@ -10229,6 +10321,8 @@ export class Ec2 extends PolicyStatement {
       'DeleteLocalGatewayRouteTablePermission',
       'DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation',
       'DeleteLocalGatewayRouteTableVpcAssociation',
+      'DeleteLocalGatewayVirtualInterface',
+      'DeleteLocalGatewayVirtualInterfaceGroup',
       'DeleteManagedPrefixList',
       'DeleteNatGateway',
       'DeleteNetworkAcl',
@@ -10609,6 +10703,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeNetworkInterfaceAttribute',
       'DescribeNetworkInterfacePermissions',
       'DescribeNetworkInterfaces',
+      'DescribeOutpostLags',
       'DescribePlacementGroups',
       'DescribePrefixLists',
       'DescribePrincipalIdFormat',
@@ -10629,6 +10724,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeSecurityGroupRules',
       'DescribeSecurityGroupVpcAssociations',
       'DescribeSecurityGroups',
+      'DescribeServiceLinkVirtualInterfaces',
       'DescribeSnapshotAttribute',
       'DescribeSnapshotTierStatus',
       'DescribeSnapshots',
@@ -11902,6 +11998,25 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type outpost-lag to the statement
+   *
+   * @param outpostLagId - Identifier for the outpostLagId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onOutpostLag(outpostLagId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:outpost-lag/${ outpostLagId }`);
+  }
+
+  /**
    * Adds a resource of type placement-group to the statement
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html
@@ -12184,6 +12299,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifLocation()
    * - .ifOutpostArn()
    * - .ifOwner()
+   * - .ifParentSnapshot()
    * - .ifParentVolume()
    * - .ifRegion()
    * - .ifRemoveGroup()
@@ -13013,6 +13129,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLocalGatewayRouteTable()
    * - .toCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
+   * - .toCreateLocalGatewayVirtualInterface()
+   * - .toCreateLocalGatewayVirtualInterfaceGroup()
    * - .toCreateManagedPrefixList()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
@@ -13118,6 +13236,7 @@ export class Ec2 extends PolicyStatement {
    * - network-insights-analysis
    * - network-insights-path
    * - network-interface
+   * - outpost-lag
    * - placement-group
    * - prefix-list
    * - replace-root-volume-task
@@ -13244,6 +13363,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLocalGatewayRouteTablePermission()
    * - .toCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
+   * - .toCreateLocalGatewayVirtualInterface()
+   * - .toCreateLocalGatewayVirtualInterfaceGroup()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
    * - .toCreateNetworkAclEntry()
@@ -13311,6 +13432,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteLocalGatewayRouteTablePermission()
    * - .toDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toDeleteLocalGatewayRouteTableVpcAssociation()
+   * - .toDeleteLocalGatewayVirtualInterface()
+   * - .toDeleteLocalGatewayVirtualInterfaceGroup()
    * - .toDeleteManagedPrefixList()
    * - .toDeleteNatGateway()
    * - .toDeleteNetworkAcl()
@@ -13653,6 +13776,7 @@ export class Ec2 extends PolicyStatement {
    * - network-insights-analysis
    * - network-insights-path
    * - network-interface
+   * - outpost-lag
    * - placement-group
    * - prefix-list
    * - replace-root-volume-task
@@ -13745,6 +13869,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLocalGatewayRouteTable()
    * - .toCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
+   * - .toCreateLocalGatewayVirtualInterface()
+   * - .toCreateLocalGatewayVirtualInterfaceGroup()
    * - .toCreateManagedPrefixList()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
@@ -13850,6 +13976,7 @@ export class Ec2 extends PolicyStatement {
    * - network-insights-analysis
    * - network-insights-path
    * - network-interface
+   * - outpost-lag
    * - placement-group
    * - prefix-list
    * - replace-root-volume-task
@@ -13928,7 +14055,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the group being added to a snapshot
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toModifySnapshotAttribute()
@@ -13946,7 +14073,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the account id being added to a snapshot
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toModifySnapshotAttribute()
@@ -13964,7 +14091,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the allocation ID of the Elastic IP address
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptAddressTransfer()
@@ -13993,7 +14120,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether the user wants to associate a public IP address with the instance
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toRunInstances()
@@ -14238,7 +14365,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the AWS service that has permission to use a resource
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
@@ -14257,7 +14384,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by an IAM principal that has permission to use a resource
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
@@ -14280,7 +14407,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the Auto Placement properties of a Dedicated Host
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAllocateHosts()
@@ -14299,7 +14426,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the name of an Availability Zone in an AWS Region
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -14439,7 +14566,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ID of an Availability Zone in an AWS Region
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateCapacityReservation()
@@ -14457,7 +14584,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the Capacity Reservation Fleet
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -14488,7 +14615,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the client root certificate chain
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
@@ -14523,7 +14650,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the CloudWatch Logs log group
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
@@ -14558,7 +14685,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the CloudWatch Logs log stream
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
@@ -14672,7 +14799,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the date and time at which the Capacity Reservation was created
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -14727,7 +14854,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ID of the Capacity Reservation that you want to move capacity into
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -14770,7 +14897,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the directory
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
@@ -14805,7 +14932,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the domain of the Elastic IP address
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptAddressTransfer()
@@ -14834,7 +14961,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether the instance is enabled for EBS optimization
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -14905,7 +15032,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the type of Elastic Graphics accelerator
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateTags()
@@ -14924,10 +15051,11 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether the EBS volume is encrypted
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAttachVolume()
+   * - .toCopySnapshot()
    * - .toCreateFleet()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -14966,7 +15094,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the date and time at which the Capacity Reservation ends
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -15001,7 +15129,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the way in which the Capacity Reservation ends
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -15026,7 +15154,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether the instance is enabled for ephemeral storage
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateCapacityReservation()
@@ -15094,7 +15222,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether host recovery is enabled for a Dedicated Host
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAllocateHosts()
@@ -15177,7 +15305,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the type of image (machine, aki, or ari)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCancelImageLaunchPermission()
@@ -15260,7 +15388,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether the instance type supports auto recovery
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -15382,7 +15510,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the number of instances
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -15470,7 +15598,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the market or purchasing option of an instance (capacity-block, on-demand, or spot)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -15531,7 +15659,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the type of instance launches that the Capacity Reservation accepts
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -15556,7 +15684,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether the instance allows access to instance tags from the instance metadata
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -15615,7 +15743,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the type of operating system for which the Capacity Reservation reserves capacity
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -15640,7 +15768,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of an instance profile
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -15703,7 +15831,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the type of instance
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -15847,7 +15975,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether users are able to override resources that are specified in the launch template
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toRunInstances()
@@ -15876,7 +16004,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the name of a key pair
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateTags()
@@ -15898,7 +16026,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the type of a key pair
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateKeyPair()
@@ -15921,7 +16049,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ID of an AWS KMS key provided in the request
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateFleet()
@@ -15940,7 +16068,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of a launch template
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toRunInstances()
@@ -15970,7 +16098,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the destination for the snapshot copy
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateSnapshot()
@@ -15989,7 +16117,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the presence of an EC2 operator provisioning a managed resource
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssignIpv6Addresses()
@@ -16077,7 +16205,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether the HTTP endpoint is enabled for the instance metadata service
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -16138,7 +16266,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the allowed number of hops when calling the instance metadata service
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -16199,7 +16327,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether tokens are required when calling the instance metadata service (optional or required)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -16326,7 +16454,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the instance profile being attached
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateIamInstanceProfile()
@@ -16348,7 +16476,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the Outpost
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -16383,12 +16511,13 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the owner of the resource (amazon, aws-marketplace, or an AWS account ID)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCancelImageLaunchPermission()
    * - .toCopyFpgaImage()
    * - .toCopyImage()
+   * - .toCopySnapshot()
    * - .toCreateFleet()
    * - .toCreateFpgaImage()
    * - .toCreateImage()
@@ -16449,10 +16578,11 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the parent snapshot
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAttachVolume()
+   * - .toCopySnapshot()
    * - .toCreateFleet()
    * - .toCreateTags()
    * - .toCreateVolume()
@@ -16469,6 +16599,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRunInstances()
    *
    * Applies to resource types:
+   * - snapshot
    * - volume
    *
    * @param value The value(s) to check
@@ -16481,9 +16612,10 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the parent volume from which the snapshot was created
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toCopySnapshot()
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshot()
@@ -16521,7 +16653,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the type of permission for a resource (INSTANCE-ATTACH or EIP-ASSOCIATE)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateNetworkInterfacePermission()
@@ -16712,7 +16844,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the placement group
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -16804,7 +16936,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the instance placement strategy used by the placement group (cluster, spread, or partition)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateFleet()
@@ -16832,7 +16964,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the product code that is associated with the AMI
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -16885,7 +17017,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by whether the image has public launch permissions
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCancelImageLaunchPermission()
@@ -16930,7 +17062,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by a public IP address
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptAddressTransfer()
@@ -16959,7 +17091,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the number of Dedicated Hosts in a request
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAllocateHosts()
@@ -16978,7 +17110,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the name of the AWS Region
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptAddressTransfer()
@@ -17077,6 +17209,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLocalGatewayRouteTablePermission()
    * - .toCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
+   * - .toCreateLocalGatewayVirtualInterface()
+   * - .toCreateLocalGatewayVirtualInterfaceGroup()
    * - .toCreateManagedPrefixList()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
@@ -17160,6 +17294,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteLocalGatewayRouteTablePermission()
    * - .toDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toDeleteLocalGatewayRouteTableVpcAssociation()
+   * - .toDeleteLocalGatewayVirtualInterface()
+   * - .toDeleteLocalGatewayVirtualInterfaceGroup()
    * - .toDeleteManagedPrefixList()
    * - .toDeleteNatGateway()
    * - .toDeleteNetworkAcl()
@@ -17314,6 +17450,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeNetworkInterfaceAttribute()
    * - .toDescribeNetworkInterfacePermissions()
    * - .toDescribeNetworkInterfaces()
+   * - .toDescribeOutpostLags()
    * - .toDescribePlacementGroups()
    * - .toDescribePrefixLists()
    * - .toDescribePrincipalIdFormat()
@@ -17334,6 +17471,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeSecurityGroupRules()
    * - .toDescribeSecurityGroupVpcAssociations()
    * - .toDescribeSecurityGroups()
+   * - .toDescribeServiceLinkVirtualInterfaces()
    * - .toDescribeSnapshotAttribute()
    * - .toDescribeSnapshotTierStatus()
    * - .toDescribeSnapshots()
@@ -17721,6 +17859,7 @@ export class Ec2 extends PolicyStatement {
    * - network-insights-analysis
    * - network-insights-path
    * - network-interface
+   * - outpost-lag
    * - placement-group
    * - prefix-list
    * - replace-root-volume-task
@@ -17818,7 +17957,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the group being removed from a snapshot
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toModifySnapshotAttribute()
@@ -17836,7 +17975,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the account id being removed from a snapshot
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toModifySnapshotAttribute()
@@ -17986,6 +18125,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateLocalGatewayRouteTablePermission()
    * - .toCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
+   * - .toCreateLocalGatewayVirtualInterface()
+   * - .toCreateLocalGatewayVirtualInterfaceGroup()
    * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
    * - .toCreateNetworkAclEntry()
@@ -18053,6 +18194,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteLocalGatewayRouteTablePermission()
    * - .toDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation()
    * - .toDeleteLocalGatewayRouteTableVpcAssociation()
+   * - .toDeleteLocalGatewayVirtualInterface()
+   * - .toDeleteLocalGatewayVirtualInterfaceGroup()
    * - .toDeleteManagedPrefixList()
    * - .toDeleteNatGateway()
    * - .toDeleteNetworkAcl()
@@ -18391,6 +18534,7 @@ export class Ec2 extends PolicyStatement {
    * - network-insights-analysis
    * - network-insights-path
    * - network-interface
+   * - outpost-lag
    * - placement-group
    * - prefix-list
    * - replace-root-volume-task
@@ -18446,7 +18590,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the version of the instance metadata service for retrieving IAM role credentials for EC2
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -18458,7 +18602,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the root device type of the instance (ebs or instance-store)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssociateAddress()
@@ -18594,7 +18738,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the IAM SAML identity provider
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
@@ -18672,7 +18816,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the server certificate
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()
@@ -18707,7 +18851,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the compliance mode cooling-off period
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toLockSnapshot()
@@ -18764,7 +18908,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the snapshot lock duration
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toLockSnapshot()
@@ -18783,9 +18927,10 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the initiation time of a snapshot
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toCopySnapshot()
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateTags()
@@ -18831,7 +18976,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the name of the Availability Zone from which the request originated
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateSnapshot()
@@ -18850,7 +18995,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ID of the Capacity Reservation from which you want to move capacity
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -18874,7 +19019,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the instance from which the request originated
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -18886,7 +19031,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the Outpost from which the request originated
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toCreateImage()
@@ -18910,7 +19055,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the subnet
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAssignIpv6Addresses()
@@ -19005,7 +19150,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the tenancy of the VPC or instance (default, dedicated, or host)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAcceptCapacityReservationBillingOwnership()
@@ -19148,7 +19293,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the the number of input/output operations per second (IOPS) provisioned for the volume
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAttachVolume()
@@ -19182,10 +19327,11 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the size of the volume, in GiB
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAttachVolume()
+   * - .toCopySnapshot()
    * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
@@ -19235,7 +19381,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the throughput of the volume, in MiBps
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAttachVolume()
@@ -19269,7 +19415,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the type of volume (gp2, gp3, io1, io2, st1, sc1, or standard)
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toAttachVolume()
@@ -19303,7 +19449,7 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the ARN of the VPC
    *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
    * - .toApplySecurityGroupsToClientVpnTargetNetwork()

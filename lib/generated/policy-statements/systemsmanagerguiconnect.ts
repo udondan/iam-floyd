@@ -34,7 +34,7 @@ export class SsmGuiconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteConnectionRecordingPreferences.html
+   * https://docs.aws.amazon.com/ssm-guiconnect/latest/APIReference/API_DeleteConnectionRecordingPreferences.html
    */
   public toDeleteConnectionRecordingPreferences() {
     return this.to('DeleteConnectionRecordingPreferences');
@@ -56,7 +56,7 @@ export class SsmGuiconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetConnectionRecordingPreferences.html
+   * https://docs.aws.amazon.com/ssm-guiconnect/latest/APIReference/API_GetConnectionRecordingPreferences.html
    */
   public toGetConnectionRecordingPreferences() {
     return this.to('GetConnectionRecordingPreferences');
@@ -89,7 +89,7 @@ export class SsmGuiconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateConnectionRecordingPreferences.html
+   * https://docs.aws.amazon.com/ssm-guiconnect/latest/APIReference/API_UpdateConnectionRecordingPreferences.html
    */
   public toUpdateConnectionRecordingPreferences() {
     return this.to('UpdateConnectionRecordingPreferences');
