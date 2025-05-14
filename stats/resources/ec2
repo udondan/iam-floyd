@@ -49,6 +49,7 @@ ec2:network-insights-access-scope-analysis
 ec2:network-insights-analysis
 ec2:network-insights-path
 ec2:network-interface
+ec2:outpost-lag
 ec2:placement-group
 ec2:prefix-list
 ec2:replace-root-volume-task

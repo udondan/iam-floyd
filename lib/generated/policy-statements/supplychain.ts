@@ -63,6 +63,17 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create the data lake namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toCreateDataLakeNamespace() {
+    return this.to('CreateDataLakeNamespace');
+  }
+
+  /**
    * Grants permission to create a new AWS Supply Chain instance
    *
    * Access Level: Write
@@ -104,6 +115,17 @@ export class Scn extends PolicyStatement {
    */
   public toDeleteDataLakeDataset() {
     return this.to('DeleteDataLakeDataset');
+  }
+
+  /**
+   * Grants permission to delete the data lake namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toDeleteDataLakeNamespace() {
+    return this.to('DeleteDataLakeNamespace');
   }
 
   /**
@@ -151,6 +173,17 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a DataIntegrationEvent
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toGetDataIntegrationEvent() {
+    return this.to('GetDataIntegrationEvent');
+  }
+
+  /**
    * Grants permission to get the DataIntegrationFlow details
    *
    * Access Level: Read
@@ -162,6 +195,17 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a particular execution of one specified DataIntegrationFlow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toGetDataIntegrationFlowExecution() {
+    return this.to('GetDataIntegrationFlowExecution');
+  }
+
+  /**
    * Grants permission to get the dataset details
    *
    * Access Level: Read
@@ -170,6 +214,17 @@ export class Scn extends PolicyStatement {
    */
   public toGetDataLakeDataset() {
     return this.to('GetDataLakeDataset');
+  }
+
+  /**
+   * Grants permission to get the namespace details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toGetDataLakeNamespace() {
+    return this.to('GetDataLakeNamespace');
   }
 
   /**
@@ -195,6 +250,28 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all DataIntegrationEvents under an instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toListDataIntegrationEvents() {
+    return this.to('ListDataIntegrationEvents');
+  }
+
+  /**
+   * Grants permission to list all executions of one specified DataIntegrationFlow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toListDataIntegrationFlowExecutions() {
+    return this.to('ListDataIntegrationFlowExecutions');
+  }
+
+  /**
    * Grants permission to list all the DataIntegrationFlows in a paginated way
    *
    * Access Level: List
@@ -214,6 +291,17 @@ export class Scn extends PolicyStatement {
    */
   public toListDataLakeDatasets() {
     return this.to('ListDataLakeDatasets');
+  }
+
+  /**
+   * Grants permission to list the data lake namespaces under specific instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toListDataLakeNamespaces() {
+    return this.to('ListDataLakeNamespaces');
   }
 
   /**
@@ -312,6 +400,17 @@ export class Scn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the data lake namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   */
+  public toUpdateDataLakeNamespace() {
+    return this.to('UpdateDataLakeNamespace');
+  }
+
+  /**
    * Grants permission to update an AWS Supply Chain instance
    *
    * Access Level: Write
@@ -328,29 +427,38 @@ export class Scn extends PolicyStatement {
       'CreateBillOfMaterialsImportJob',
       'CreateDataIntegrationFlow',
       'CreateDataLakeDataset',
+      'CreateDataLakeNamespace',
       'CreateInstance',
       'CreateSSOApplication',
       'DeleteDataIntegrationFlow',
       'DeleteDataLakeDataset',
+      'DeleteDataLakeNamespace',
       'DeleteInstance',
       'DeleteSSOApplication',
       'RemoveAdminPermissionsForUser',
       'SendDataIntegrationEvent',
       'UpdateDataIntegrationFlow',
       'UpdateDataLakeDataset',
+      'UpdateDataLakeNamespace',
       'UpdateInstance'
     ],
     Read: [
       'DescribeInstance',
       'GetBillOfMaterialsImportJob',
+      'GetDataIntegrationEvent',
       'GetDataIntegrationFlow',
+      'GetDataIntegrationFlowExecution',
       'GetDataLakeDataset',
+      'GetDataLakeNamespace',
       'GetInstance'
     ],
     List: [
       'ListAdminUsers',
+      'ListDataIntegrationEvents',
+      'ListDataIntegrationFlowExecutions',
       'ListDataIntegrationFlows',
       'ListDataLakeDatasets',
+      'ListDataLakeNamespaces',
       'ListInstances',
       'ListTagsForResource'
     ],
@@ -402,6 +510,21 @@ export class Scn extends PolicyStatement {
    */
   public onDataIntegrationFlow(instanceId: string, flowName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/data-integration-flows/${ flowName }`);
+  }
+
+  /**
+   * Adds a resource of type namespace to the statement
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param namespace - Identifier for the namespace.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onNamespace(instanceId: string, namespace: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/namespaces/${ namespace }`);
   }
 
   /**
