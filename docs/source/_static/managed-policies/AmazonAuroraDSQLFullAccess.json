@@ -16,7 +16,12 @@
         "dsql:UntagResource",
         "dsql:ListTagsForResource",
         "dsql:DbConnectAdmin",
-        "dsql:DbConnect"
+        "dsql:DbConnect",
+        "dsql:PutMultiRegionProperties",
+        "dsql:PutWitnessRegion",
+        "dsql:AddPeerCluster",
+        "dsql:RemovePeerCluster",
+        "dsql:GetVpcEndpointServiceName"
       ],
       "Resource": "*"
     },
