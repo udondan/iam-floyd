@@ -19,6 +19,20 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a peer cluster to a multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dsql:PutMultiRegionProperties
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html
+   */
+  public toAddPeerCluster() {
+    return this.to('AddPeerCluster');
+  }
+
+  /**
    * Grants permission to create new clusters
    *
    * Access Level: Write
@@ -37,7 +51,7 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create multi-Region clusters. Creating multi-Region clusters also requires CreateCluster permission in each specified Region
+   * Grants permission to create multi-Region clusters. Creating multi-Region clusters also requires CreateCluster permission in each specified Region. **This action is deprecated as of 05/09/2025 and will be removed on 05/21/2025.**
    *
    * Access Level: Write
    *
@@ -87,7 +101,7 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete multi-Region clusters. Deleting multi-Region clusters also requires DeleteCluster permission in each specified Region
+   * Grants permission to delete multi-Region clusters. Deleting multi-Region clusters also requires DeleteCluster permission in each specified Region. **This action is deprecated as of 05/09/2025 and will be removed on 05/21/2025.**
    *
    * Access Level: Write
    *
@@ -112,7 +126,7 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve endpoint service name specific to a cluster
+   * Grants permission to retrieve the VPC endpoint service name for a cluster
    *
    * Access Level: Read
    *
@@ -142,6 +156,45 @@ export class Dsql extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to update multi-Region properties of a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html
+   */
+  public toPutMultiRegionProperties() {
+    return this.to('PutMultiRegionProperties');
+  }
+
+  /**
+   * Grants permission to configure and update the witness Region of a multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dsql:PutMultiRegionProperties
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html
+   */
+  public toPutWitnessRegion() {
+    return this.to('PutWitnessRegion');
+  }
+
+  /**
+   * Grants permission to remove a peer cluster from a multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dsql:PutMultiRegionProperties
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UpdateCluster.html
+   */
+  public toRemovePeerCluster() {
+    return this.to('RemovePeerCluster');
   }
 
   /**
@@ -186,12 +239,16 @@ export class Dsql extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AddPeerCluster',
       'CreateCluster',
       'CreateMultiRegionClusters',
       'DbConnect',
       'DbConnectAdmin',
       'DeleteCluster',
       'DeleteMultiRegionClusters',
+      'PutMultiRegionProperties',
+      'PutWitnessRegion',
+      'RemovePeerCluster',
       'UpdateCluster'
     ],
     Read: [
@@ -211,7 +268,7 @@ export class Dsql extends PolicyStatement {
   /**
    * Adds a resource of type Cluster to the statement
    *
-   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/what-is-core-components.html#Cluster
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/what-is-aurora-dsql.html
    *
    * @param identifier - Identifier for the identifier.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -278,7 +335,7 @@ export class Dsql extends PolicyStatement {
   /**
    * Filters access by the witness region of linked clusters
    *
-   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/using-iam-condition-keys.html#witness-region
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/using-iam-condition-keys.html#using-iam-condition-keys-create-mr-cluster-witness
    *
    * Applies to actions:
    * - .toCreateMultiRegionClusters()
