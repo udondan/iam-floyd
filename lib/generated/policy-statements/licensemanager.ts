@@ -67,6 +67,10 @@ export class LicenseManager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateGrant.html
    */
   public toCreateGrant() {
@@ -88,6 +92,10 @@ export class LicenseManager extends PolicyStatement {
    * Grants permission to create a new license
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicense.html
    */
@@ -516,8 +524,8 @@ export class LicenseManager extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html
    */
@@ -529,6 +537,9 @@ export class LicenseManager extends PolicyStatement {
    * Grants permission to untag a selected resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UntagResource.html
    */
@@ -654,6 +665,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
@@ -668,6 +680,9 @@ export class LicenseManager extends PolicyStatement {
    * @param licenseId - Identifier for the licenseId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onLicense(licenseId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:license-manager::${ account ?? this.defaultAccount }:license:${ licenseId }`);
@@ -681,6 +696,9 @@ export class LicenseManager extends PolicyStatement {
    * @param grantId - Identifier for the grantId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onGrant(grantId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:license-manager::${ account ?? this.defaultAccount }:grant:${ grantId }`);
@@ -697,6 +715,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
   public onReportGenerator(reportGeneratorId: string, account?: string, region?: string, partition?: string) {
@@ -709,6 +728,8 @@ export class LicenseManager extends PolicyStatement {
    * https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html
    *
    * Applies to actions:
+   * - .toCreateGrant()
+   * - .toCreateLicense()
    * - .toCreateLicenseConfiguration()
    * - .toCreateLicenseManagerReportGenerator()
    * - .toTagResource()
@@ -722,14 +743,34 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Filters access by the tags associated with the resource
+   *
+   * Applies to resource types:
+   * - license-configuration
+   * - license
+   * - grant
+   * - report-generator
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by tag keys that are passed in the request
    *
    * https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html
    *
    * Applies to actions:
+   * - .toCreateGrant()
+   * - .toCreateLicense()
    * - .toCreateLicenseConfiguration()
    * - .toCreateLicenseManagerReportGenerator()
    * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
