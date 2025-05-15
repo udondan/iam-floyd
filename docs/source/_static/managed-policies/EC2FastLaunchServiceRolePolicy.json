@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "AllowRunInstances",
       "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
@@ -12,10 +13,12 @@
         "arn:aws:ec2:*::image/*",
         "arn:aws:ec2:*:*:key-pair/*",
         "arn:aws:ec2:*:*:security-group/*",
-        "arn:aws:ec2:*:*:launch-template/*"
+        "arn:aws:ec2:*:*:launch-template/*",
+        "arn:aws:license-manager:*:*:license-configuration:*"
       ]
     },
     {
+      "Sid": "AllowRunInstancesOnFastLaunchCreatedResources",
       "Effect": "Allow",
       "Action": [
         "ec2:RunInstances"
@@ -31,6 +34,7 @@
       }
     },
     {
+      "Sid": "AllowPassRole",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": "*",
@@ -44,6 +48,7 @@
       }
     },
     {
+      "Sid": "AllowStopAndTerminateInstances",
       "Effect": "Allow",
       "Action": [
         "ec2:StopInstances",
@@ -59,6 +64,7 @@
       }
     },
     {
+      "Sid": "AllowCreateSnapshot",
       "Effect": "Allow",
       "Action": "ec2:CreateSnapshot",
       "Resource": [
@@ -93,6 +99,7 @@
       }
     },
     {
+      "Sid": "AllowCreateLaunchTemplate",
       "Effect": "Allow",
       "Action": "ec2:CreateLaunchTemplate",
       "Resource": "arn:aws:ec2:*:*:launch-template/*",
@@ -103,6 +110,7 @@
       }
     },
     {
+      "Sid": "AllowCreateTags",
       "Effect": "Allow",
       "Action": "ec2:CreateTags",
       "Resource": [
@@ -122,6 +130,7 @@
       }
     },
     {
+      "Sid": "AllowDeleteSnapshots",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteSnapshot"
@@ -136,6 +145,7 @@
       }
     },
     {
+      "Sid": "AllowDescribeActions",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeImages",
@@ -146,17 +156,67 @@
         "ec2:DescribeInstances",
         "ec2:DescribeInstanceTypeOfferings",
         "ec2:DescribeLaunchTemplateVersions",
-        "ec2:DescribeLaunchTemplates"
+        "ec2:DescribeLaunchTemplates",
+        "cloudformation:DescribeStacks"
       ],
       "Resource": "*"
     },
     {
+      "Sid": "AllowPutMetricData",
       "Effect": "Allow",
       "Action": "cloudwatch:PutMetricData",
       "Resource": "*",
       "Condition": {
         "StringEquals": {
           "cloudwatch:namespace": "AWS/EC2"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEventsRuleMutations",
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule",
+        "events:RemoveTargets",
+        "events:PutRule",
+        "events:PutTargets"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "ec2fastlaunch.amazonaws.com"
+        }
+      },
+      "Resource": [
+        "arn:aws:events:*:*:rule/FastLaunch*"
+      ]
+    },
+    {
+      "Sid": "AllowEventsRuleNonMutations",
+      "Effect": "Allow",
+      "Action": [
+        "events:ListTargetsByRule",
+        "events:DescribeRule"
+      ],
+      "Resource": [
+        "arn:aws:events:*:*:rule/FastLaunch*"
+      ]
+    },
+    {
+      "Sid": "AllowKMSActions",
+      "Effect": "Allow",
+      "Action": "kms:ListRetirableGrants",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowDeleteFastLaunchLaunchTemplates",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteLaunchTemplate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "EC2 Fast Launch"
         }
       }
     }
