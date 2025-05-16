@@ -5229,6 +5229,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForAmazonQDeveloper);
     }
 
+    /** This Service-Linked Role provides AWS Transform with the ability to provide usage information. */
+    public AWSServiceRoleForAWSTransform(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForAWSTransform);
+    }
+
     /** Provides access to Systems Manager resources used by CloudWatch Alarms */
     public AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy);
@@ -5742,6 +5747,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read only access to the Amazon CloudSearch configuration service. */
     public CloudSearchReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudSearchReadOnlyAccess);
+    }
+
+    /** This service linked role allows CloudTrail to get and add resource tags to the resource owner's CloudTrail events. */
+    public CloudTrailEventContext(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudTrailEventContext);
     }
 
     /** Permission policy for CloudTrail ServiceLinkedRole */

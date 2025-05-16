@@ -11,6 +11,35 @@
         "acm-pca:DescribeCertificateAuthority"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "VpnConnectionSecretsManagement",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:PutSecretValue",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:s2svpn!*",
+      "Condition": {
+        "StringEquals": {
+          "secretsmanager:ResourceTag/aws:secretsmanager:owningService": "s2svpn",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "VpnConnectionSecretsCreation",
+      "Effect": "Allow",
+      "Action": "secretsmanager:CreateSecret",
+      "Resource": "arn:aws:secretsmanager:*:*:secret:s2svpn!*",
+      "Condition": {
+        "StringLike": {
+          "secretsmanager:Name": "s2svpn!*"
+        }
+      }
     }
   ]
 }
