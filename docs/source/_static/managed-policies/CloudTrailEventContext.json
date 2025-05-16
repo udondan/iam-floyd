@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudTrailEventContextPermissionForTag",
+      "Effect": "Allow",
+      "Action": "tag:GetResources",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEventBridgeRuleCreation",
+      "Effect": "Allow",
+      "Action": "events:PutRule",
+      "Resource": "arn:aws:events:*:*:rule/CloudTrailEventContext*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "events:source": "aws.tag"
+        },
+        "StringEquals": {
+          "events:creatorAccount": "${aws:PrincipalAccount}",
+          "events:detail-type": "Tag Change on Resource",
+          "events:ManagedBy": "context.cloudtrail.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEventBridgeRuleWrite",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutTargets",
+        "events:DeleteRule",
+        "events:RemoveTargets"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/CloudTrailEventContext*",
+      "Condition": {
+        "StringEquals": {
+          "events:creatorAccount": "${aws:PrincipalAccount}",
+          "events:ManagedBy": "context.cloudtrail.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowEventBridgeRuleRead",
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:ListTargetsByRule"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "events:creatorAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": "arn:aws:events:*:*:rule/CloudTrailEventContext*"
+    },
+    {
+      "Sid": "AllowEventBridgeRuleList",
+      "Effect": "Allow",
+      "Action": [
+        "events:ListRules"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

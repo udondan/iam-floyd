@@ -2088,6 +2088,8 @@ export class AwsManagedPolicy {
     public static AWSServiceRoleForAmazonEKSNodegroup = 'aws-service-role/AWSServiceRoleForAmazonEKSNodegroup';
     /** This Service Linked Role provides Amazon Q Developer ability to provide usage information. */
     public static AWSServiceRoleForAmazonQDeveloper = 'aws-service-role/AWSServiceRoleForAmazonQDeveloper';
+    /** This Service-Linked Role provides AWS Transform with the ability to provide usage information. */
+    public static AWSServiceRoleForAWSTransform = 'aws-service-role/AWSServiceRoleForAWSTransform';
     /** Provides access to Systems Manager resources used by CloudWatch Alarms */
     public static AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy = 'aws-service-role/AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy';
     /** Allows CloudWatch to access RDS Performance Insights metrics on your behalf */
@@ -2294,6 +2296,8 @@ export class AwsManagedPolicy {
     public static CloudSearchFullAccess = 'CloudSearchFullAccess';
     /** Provides read only access to the Amazon CloudSearch configuration service. */
     public static CloudSearchReadOnlyAccess = 'CloudSearchReadOnlyAccess';
+    /** This service linked role allows CloudTrail to get and add resource tags to the resource owner's CloudTrail events. */
+    public static CloudTrailEventContext = 'aws-service-role/CloudTrailEventContext';
     /** Permission policy for CloudTrail ServiceLinkedRole */
     public static CloudTrailServiceRolePolicy = 'aws-service-role/CloudTrailServiceRolePolicy';
     /** Allows CloudWatch to assume CloudWatch-CrossAccountSharing roles in remote accounts on behalf of the current account in order to display data cross-account, cross-region */
