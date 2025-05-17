@@ -400,6 +400,8 @@ export class AwsManagedPolicy {
     public static AmazonEventBridgeSchemasReadOnlyAccess = 'AmazonEventBridgeSchemasReadOnlyAccess';
     /** Grants permissions to Managed Rules created by Amazon EventBridge schemas. */
     public static AmazonEventBridgeSchemasServiceRolePolicy = 'aws-service-role/AmazonEventBridgeSchemasServiceRolePolicy';
+    /** Grants permissions to EVS to manage resources on your behalf */
+    public static AmazonEVSServiceRolePolicy = 'aws-service-role/AmazonEVSServiceRolePolicy';
     /** Policy to enable AWS FIS to manage monitoring and resource selection for experiments. */
     public static AmazonFISServiceRolePolicy = 'aws-service-role/AmazonFISServiceRolePolicy';
     /** Gives access to all actions for Amazon Forecast */
