@@ -1009,6 +1009,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEventBridgeSchemasServiceRolePolicy);
     }
 
+    /** Grants permissions to EVS to manage resources on your behalf */
+    public AmazonEVSServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEVSServiceRolePolicy);
+    }
+
     /** Policy to enable AWS FIS to manage monitoring and resource selection for experiments. */
     public AmazonFISServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonFISServiceRolePolicy);
