@@ -1914,6 +1914,8 @@ export class AwsManagedPolicy {
     public static AWSPriceListServiceFullAccess = 'AWSPriceListServiceFullAccess';
     /** Provides auditor access to AWS Private Certificate Authority */
     public static AWSPrivateCAAuditor = 'AWSPrivateCAAuditor';
+    /** Grants essential permissions for the AWS Private CA Connector for Kubernetes. */
+    public static AWSPrivateCAConnectorForKubernetesPolicy = 'AWSPrivateCAConnectorForKubernetesPolicy';
     /** Provides full access to AWS Private Certificate Authority */
     public static AWSPrivateCAFullAccess = 'AWSPrivateCAFullAccess';
     /** Provides privileged certificate user access to AWS Private Certificate Authority */

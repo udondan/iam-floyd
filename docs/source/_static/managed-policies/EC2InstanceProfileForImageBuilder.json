@@ -57,7 +57,11 @@
       "Action": [
         "s3:GetObject"
       ],
-      "Resource": "arn:aws:s3:::*/*.ISO",
+      "Resource": [
+        "arn:aws:s3:::*/*.ISO",
+        "arn:aws:s3:::*/*.iso",
+        "arn:aws:s3:::*/*.Iso"
+      ],
       "Condition": {
         "StringEquals": {
           "s3:ResourceAccount": "${aws:PrincipalAccount}"
