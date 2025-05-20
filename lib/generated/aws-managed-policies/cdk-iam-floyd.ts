@@ -4794,6 +4794,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPrivateCAAuditor);
     }
 
+    /** Grants essential permissions for the AWS Private CA Connector for Kubernetes. */
+    public AWSPrivateCAConnectorForKubernetesPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPrivateCAConnectorForKubernetesPolicy);
+    }
+
     /** Provides full access to AWS Private Certificate Authority */
     public AWSPrivateCAFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPrivateCAFullAccess);
