@@ -6,7 +6,8 @@
       "Effect": "Allow",
       "Action": [
         "logs:*",
-        "cloudwatch:GenerateQuery"
+        "cloudwatch:GenerateQuery",
+        "cloudwatch:GenerateQueryResultsSummary"
       ],
       "Resource": "*"
     }
