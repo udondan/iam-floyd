@@ -14,7 +14,8 @@
         "logs:FilterLogEvents",
         "logs:StartLiveTail",
         "logs:StopLiveTail",
-        "cloudwatch:GenerateQuery"
+        "cloudwatch:GenerateQuery",
+        "cloudwatch:GenerateQueryResultsSummary"
       ],
       "Resource": "*"
     }
