@@ -51,9 +51,23 @@
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcs",
         "ec2:DescribeInternetGateways",
-        "ec2:DescribeSnapshotTierStatus"
+        "ec2:DescribeSnapshotTierStatus",
+        "ec2:DescribeRouteTables"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CreateTagsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:route-table/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonFSx": "ManagedByAmazonFSx"
+        }
+      }
     },
     {
       "Sid": "StorageGatewayVolumePermissions",
@@ -124,6 +138,22 @@
       "Resource": "*"
     },
     {
+      "Sid": "DSQLResourcePermissionsForRestore",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:StartRestoreJob",
+        "dsql:GetRestoreJob",
+        "dsql:StopRestoreJob",
+        "dsql:TagResource",
+        "dsql:CreateCluster",
+        "dsql:PutMultiRegionProperties",
+        "dsql:PutWitnessRegion"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
       "Sid": "KMSPermissions",
       "Effect": "Allow",
       "Action": [
@@ -132,7 +162,8 @@
         "kms:GenerateDataKey",
         "kms:ReEncryptTo",
         "kms:ReEncryptFrom",
-        "kms:GenerateDataKeyWithoutPlaintext"
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:DescribeKey"
       ],
       "Resource": "*",
       "Condition": {
@@ -143,6 +174,7 @@
             "elasticfilesystem.*.amazonaws.com",
             "rds.*.amazonaws.com",
             "redshift.*.amazonaws.com",
+            "dsql.*.amazonaws.com",
             "redshift-serverless.*.amazonaws.com"
           ]
         }

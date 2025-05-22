@@ -5015,6 +5015,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     }
 
     /** Policy used by QuickSight to create secrets in AWS Secrets Manager and to attach resource policies on existing QuickSight secrets. */
+    public AWSQuickSightSecretsManagerWriteAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSightSecretsManagerWriteAccess);
+    }
+
+    /** Policy used by QuickSight to create secrets in AWS Secrets Manager and to attach resource policies on existing QuickSight secrets. */
     public AWSQuickSightSecretsManagerWritePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSightSecretsManagerWritePolicy);
     }

@@ -97,7 +97,9 @@
         "cloudfront:UpdateDistribution",
         "cloudfront:ListDistributionsByWebACLId",
         "cloudfront:ListDistributions",
-        "cloudfront:ListTagsForResource"
+        "cloudfront:ListTagsForResource",
+        "cloudfront:AssociateDistributionWebACL",
+        "cloudfront:DisassociateDistributionWebACL"
       ],
       "Resource": "*"
     },

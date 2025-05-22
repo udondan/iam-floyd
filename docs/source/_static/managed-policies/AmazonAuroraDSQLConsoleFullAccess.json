@@ -10,8 +10,6 @@
         "dsql:UpdateCluster",
         "dsql:DeleteCluster",
         "dsql:ListClusters",
-        "dsql:CreateMultiRegionClusters",
-        "dsql:DeleteMultiRegionClusters",
         "dsql:TagResource",
         "dsql:UntagResource",
         "dsql:ListTagsForResource",
@@ -21,7 +19,13 @@
         "dsql:PutWitnessRegion",
         "dsql:AddPeerCluster",
         "dsql:RemovePeerCluster",
-        "dsql:GetVpcEndpointServiceName"
+        "dsql:GetVpcEndpointServiceName",
+        "dsql:StartBackupJob",
+        "dsql:GetBackupJob",
+        "dsql:StopBackupJob",
+        "dsql:StartRestoreJob",
+        "dsql:GetRestoreJob",
+        "dsql:StopRestoreJob"
       ],
       "Resource": "*"
     },
@@ -31,9 +35,34 @@
       "Action": [
         "tag:GetTagKeys",
         "tag:GetTagValues",
-        "cloudwatch:GetMetricData"
+        "cloudwatch:GetMetricData",
+        "ec2:DescribeVpcEndpoints",
+        "kms:ListAliases",
+        "kms:DescribeKey"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "KMSCryptographicPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:ReEncryptTo",
+        "kms:ReEncryptFrom"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "dsql.*.amazonaws.com"
+          ]
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:dsql:ClusterId"
+        }
+      }
     },
     {
       "Sid": "CreateDsqlServiceLinkedRole",
