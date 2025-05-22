@@ -391,6 +391,15 @@
           "aws:PrincipalAccount": "${aws:ResourceAccount}"
         }
       }
+    },
+    {
+      "Sid": "DSQLListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:ListClusters",
+        "dsql:ListTagsForResource"
+      ],
+      "Resource": "*"
     }
   ]
 }

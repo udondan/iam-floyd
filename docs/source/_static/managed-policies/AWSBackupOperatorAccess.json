@@ -352,6 +352,16 @@
         "ram:GetResourceShareAssociations"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "DSQLDescribePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:GetCluster",
+        "dsql:ListClusters",
+        "dsql:ListTagsForResource"
+      ],
+      "Resource": "*"
     }
   ]
 }

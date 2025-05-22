@@ -253,10 +253,12 @@
       }
     },
     {
-      "Sid": "KMSDataKeyEC2Permissions",
+      "Sid": "KMSEC2Permissions",
       "Effect": "Allow",
       "Action": [
-        "kms:GenerateDataKeyWithoutPlaintext"
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:ReEncryptTo",
+        "kms:ReEncryptFrom"
       ],
       "Resource": "arn:aws:kms:*:*:key/*",
       "Condition": {
@@ -264,6 +266,9 @@
           "kms:ViaService": [
             "ec2.*.amazonaws.com"
           ]
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:ebs:id"
         }
       }
     },
@@ -532,6 +537,39 @@
       "Condition": {
         "StringEquals": {
           "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DSQLResourcePermissionsForBackup",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:StartBackupJob",
+        "dsql:GetBackupJob",
+        "dsql:StopBackupJob",
+        "dsql:GetCluster",
+        "dsql:ListClusters",
+        "dsql:ListTagsForResource"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "KMSDSQLPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "dsql.*.amazonaws.com"
+          ]
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:dsql:ClusterId"
         }
       }
     }
