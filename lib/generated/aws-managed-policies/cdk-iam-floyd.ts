@@ -564,6 +564,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDynamoDBFullAccess);
     }
 
+    /** Provides full access to Amazon DynamoDB */
+    public AmazonDynamoDBFullAccessV2(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDynamoDBFullAccessV2);
+    }
+
     /** This policy is on a deprecation path. See documentation for guidance: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBPipeline.html. Provides full access to Amazon DynamoDB including Export/Import using AWS Data Pipeline via the AWS Management Console. */
     public AmazonDynamoDBFullAccesswithDataPipeline(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDynamoDBFullAccesswithDataPipeline);

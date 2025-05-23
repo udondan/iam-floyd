@@ -222,6 +222,8 @@ export class AwsManagedPolicy {
     public static AmazonDRSVPCManagement = 'AmazonDRSVPCManagement';
     /** Provides full access to Amazon DynamoDB via the AWS Management Console. */
     public static AmazonDynamoDBFullAccess = 'AmazonDynamoDBFullAccess';
+    /** Provides full access to Amazon DynamoDB */
+    public static AmazonDynamoDBFullAccessV2 = 'AmazonDynamoDBFullAccess_v2';
     /** This policy is on a deprecation path. See documentation for guidance: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBPipeline.html. Provides full access to Amazon DynamoDB including Export/Import using AWS Data Pipeline via the AWS Management Console. */
     public static AmazonDynamoDBFullAccesswithDataPipeline = 'AmazonDynamoDBFullAccesswithDataPipeline';
     /** Provides read only access to Amazon DynamoDB via the AWS Management Console. */
