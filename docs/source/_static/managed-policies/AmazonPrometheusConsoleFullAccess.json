@@ -33,7 +33,11 @@
         "aps:DeleteLoggingConfiguration",
         "aps:DescribeLoggingConfiguration",
         "aps:UpdateWorkspaceConfiguration",
-        "aps:DescribeWorkspaceConfiguration"
+        "aps:DescribeWorkspaceConfiguration",
+        "aps:CreateQueryLoggingConfiguration",
+        "aps:UpdateQueryLoggingConfiguration",
+        "aps:DeleteQueryLoggingConfiguration",
+        "aps:DescribeQueryLoggingConfiguration"
       ],
       "Resource": "*"
     }
