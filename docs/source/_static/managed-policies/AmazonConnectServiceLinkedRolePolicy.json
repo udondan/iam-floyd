@@ -88,7 +88,9 @@
         "profile:GetSegmentEstimate",
         "profile:BatchGetProfile",
         "profile:BatchGetCalculatedAttributeForProfile",
-        "profile:GetSegmentMembership"
+        "profile:GetSegmentMembership",
+        "profile:ListDomainLayouts",
+        "profile:GetSimilarProfiles"
       ],
       "Resource": "arn:aws:profile:*:*:domains/amazon-connect-*"
     },
@@ -103,6 +105,19 @@
       ],
       "Resource": [
         "arn:aws:profile:*:*:domains/amazon-connect-*/event-triggers/*"
+      ]
+    },
+    {
+      "Sid": "AllowCustomerProfilesDomainLayoutsForConnectDomain",
+      "Effect": "Allow",
+      "Action": [
+        "profile:CreateDomainLayout",
+        "profile:UpdateDomainLayout",
+        "profile:DeleteDomainLayout",
+        "profile:GetDomainLayout"
+      ],
+      "Resource": [
+        "arn:aws:profile:*:*:domains/amazon-connect-*/layouts/*"
       ]
     },
     {
