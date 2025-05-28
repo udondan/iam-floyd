@@ -289,13 +289,9 @@
         "StringEquals": {
           "aws:RequestTag/SSMForSAPCreated": "True"
         },
-        "ArnLike": {
-          "aws:RequestTag/awsApplication": "arn:aws:resource-groups:*:*:group/*/*"
-        },
         "ForAllValues:StringEquals": {
           "aws:TagKeys": [
-            "SSMForSAPCreated",
-            "awsApplication"
+            "SSMForSAPCreated"
           ]
         }
       }
