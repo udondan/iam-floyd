@@ -4474,11 +4474,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceGetEntitlements);
     }
 
-    /** Provides full access to AWS Marketplace Private Image Build Feature. In addition to create private images, it also provides permissions to add tags to images, launch and terminate ec2 instances. */
-    public AWSMarketplaceImageBuildFullAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceImageBuildFullAccess);
-    }
-
     /** Enables access to AWS Services and Resources used or managed by AWS Marketplace for license management. */
     public AWSMarketplaceLicenseManagementServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceLicenseManagementServiceRolePolicy);
@@ -6197,16 +6192,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read access to the Greengrass OTA Update artifacts in all Greengrass regions */
     public GreengrassOTAUpdateArtifactAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.GreengrassOTAUpdateArtifactAccess);
-    }
-
-    /** This policy grants permissions needed to use all features of the SageMaker Ground Truth Synthetic Console. */
-    public GroundTruthSyntheticConsoleFullAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.GroundTruthSyntheticConsoleFullAccess);
-    }
-
-    /** This policy grants read-only access to SageMaker Ground Truth Synthetic via the AWS Management Console. */
-    public GroundTruthSyntheticConsoleReadOnlyAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.GroundTruthSyntheticConsoleReadOnlyAccess);
     }
 
     /** AWS Health policy to enable Organizational View feature */

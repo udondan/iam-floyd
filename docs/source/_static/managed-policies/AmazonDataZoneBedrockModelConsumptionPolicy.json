@@ -20,6 +20,14 @@
       }
     },
     {
+      "Sid": "ListFoundationModels",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:ListFoundationModels"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "BedrockCreateSessionWithTagsPermissions",
       "Effect": "Allow",
       "Action": [

@@ -46,6 +46,14 @@
       "Resource": "*"
     },
     {
+      "Sid": "DescribeInstancesForAttachingVolume",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "ManageEBSVolumeLifecycle",
       "Effect": "Allow",
       "Action": [
