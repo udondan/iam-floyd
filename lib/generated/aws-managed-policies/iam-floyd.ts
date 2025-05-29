@@ -1786,8 +1786,6 @@ export class AwsManagedPolicy {
     public static AWSMarketplaceFullAccess = 'AWSMarketplaceFullAccess';
     /** Provides read access to AWS Marketplace Entitlements */
     public static AWSMarketplaceGetEntitlements = 'AWSMarketplaceGetEntitlements';
-    /** Provides full access to AWS Marketplace Private Image Build Feature. In addition to create private images, it also provides permissions to add tags to images, launch and terminate ec2 instances. */
-    public static AWSMarketplaceImageBuildFullAccess = 'AWSMarketplaceImageBuildFullAccess';
     /** Enables access to AWS Services and Resources used or managed by AWS Marketplace for license management. */
     public static AWSMarketplaceLicenseManagementServiceRolePolicy = 'aws-service-role/AWSMarketplaceLicenseManagementServiceRolePolicy';
     /** Provides the ability to subscribe and unsubscribe to AWS Marketplace software */
@@ -2476,10 +2474,6 @@ export class AwsManagedPolicy {
     public static GlobalAcceleratorReadOnlyAccess = 'GlobalAcceleratorReadOnlyAccess';
     /** Provides read access to the Greengrass OTA Update artifacts in all Greengrass regions */
     public static GreengrassOTAUpdateArtifactAccess = 'service-role/GreengrassOTAUpdateArtifactAccess';
-    /** This policy grants permissions needed to use all features of the SageMaker Ground Truth Synthetic Console. */
-    public static GroundTruthSyntheticConsoleFullAccess = 'GroundTruthSyntheticConsoleFullAccess';
-    /** This policy grants read-only access to SageMaker Ground Truth Synthetic via the AWS Management Console. */
-    public static GroundTruthSyntheticConsoleReadOnlyAccess = 'GroundTruthSyntheticConsoleReadOnlyAccess';
     /** AWS Health policy to enable Organizational View feature */
     public static HealthOrganizationsServiceRolePolicy = 'aws-service-role/Health_OrganizationsServiceRolePolicy';
     /** This policy grants access to read all access information provided by IAM access advisor such as service last accessed information. */
