@@ -11,7 +11,12 @@
         "secretsmanager:GetSecretValue",
         "secretsmanager:PutSecretValue"
       ],
-      "Resource": "arn:aws:secretsmanager:*:*:secret:events!connection/*"
+      "Resource": "arn:aws:secretsmanager:*:*:secret:events!connection/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Effect": "Allow",
