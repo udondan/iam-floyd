@@ -1,0 +1,7 @@
+transform:AssociateConnectorResource;Write
+transform:CreateProfile;Write
+transform:DeleteProfile;Write
+transform:GetConnector;Read
+transform:ListProfiles;List
+transform:RejectConnector;Write
+transform:UpdateProfile;Write
