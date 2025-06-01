@@ -332,7 +332,6 @@ s3tables
 sagemaker
 sagemaker-data-science-assistant
 sagemaker-geospatial
-sagemaker-groundtruth-synthetic
 sagemaker-mlflow
 savingsplans
 scheduler
@@ -391,10 +390,12 @@ tiros
 tnb
 transcribe
 transfer
+transform
 translate
 trustedadvisor
 ts
 user-subscriptions
+uxc
 vendor-insights
 verified-access
 verifiedpermissions

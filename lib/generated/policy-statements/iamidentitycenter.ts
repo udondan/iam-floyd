@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycentersuccessortoawssinglesign-on.html).
+ * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycenter.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Sso extends PolicyStatement {
   public servicePrefix = 'sso';
 
   /**
-   * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycentersuccessortoawssinglesign-on.html).
+   * Statement provider for service [sso](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamidentitycenter.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
