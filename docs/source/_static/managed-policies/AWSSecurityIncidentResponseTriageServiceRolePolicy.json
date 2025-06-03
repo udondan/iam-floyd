@@ -30,10 +30,12 @@
         "guardduty:ArchiveFindings",
         "guardduty:CreateFilter",
         "guardduty:DescribeMalwareScans",
+        "guardduty:GetAdministratorAccount",
         "guardduty:GetDetector",
         "guardduty:GetFilter",
         "guardduty:GetFindings",
         "guardduty:ListDetectors",
+        "guardduty:ListFilters",
         "guardduty:StartMalwareScan",
         "guardduty:UpdateFindingsFeedback"
       ],
@@ -57,11 +59,37 @@
         "security-ir:CreateCase",
         "security-ir:TagResource"
       ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "SecurityIncidentResponseManaged"
+          ]
+        },
+        "StringEquals": {
+          "aws:RequestTag/SecurityIncidentResponseManaged": "true",
+          "aws:ResourceTag/SecurityIncidentResponseManaged": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:UpdateCase"
+      ],
+      "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "aws:RequestTag/SecurityIncidentResponseManaged": "true"
+          "aws:ResourceTag/SecurityIncidentResponseManaged": "true"
         }
-      },
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:GetMembership",
+        "security-ir:ListMemberships"
+      ],
       "Resource": "*"
     }
   ]
