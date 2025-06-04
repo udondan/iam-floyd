@@ -826,6 +826,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerPartnerServiceCatalogProductsLambdaServiceRolePolicy = 'service-role/AmazonSageMakerPartnerServiceCatalogProductsLambdaServiceRolePolicy';
     /** This Amazon Managed Policy grants permissions commonly needed for use with Callback steps and Lambda steps in SageMaker Model Building Pipelines. It is added to the AmazonSageMaker-ExecutionRole that can be created when setting up SageMaker Studio. It can also be attached to any other role that will be used for authoring or executing pipelines. */
     public static AmazonSageMakerPipelinesIntegrations = 'AmazonSageMakerPipelinesIntegrations';
+    /** This policy will be used By SageMaker Unified Studios to create VPC related resources for QuickSight */
+    public static AmazonSageMakerQuickSightVPCPolicy = 'service-role/AmazonSageMakerQuickSightVPCPolicy';
     /** Provides read only access to Amazon SageMaker via the AWS Management Console and SDK. */
     public static AmazonSageMakerReadOnly = 'AmazonSageMakerReadOnly';
     /** Service role policy used by the AWS APIGateway within the AWS ServiceCatalog provisioned products from Amazon SageMaker portfolio of products. Grants permissions to a set of related services including CloudWatch Logs and others. */
