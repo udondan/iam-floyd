@@ -2074,6 +2074,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerPipelinesIntegrations);
     }
 
+    /** This policy will be used By SageMaker Unified Studios to create VPC related resources for QuickSight */
+    public AmazonSageMakerQuickSightVPCPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerQuickSightVPCPolicy);
+    }
+
     /** Provides read only access to Amazon SageMaker via the AWS Management Console and SDK. */
     public AmazonSageMakerReadOnly(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerReadOnly);

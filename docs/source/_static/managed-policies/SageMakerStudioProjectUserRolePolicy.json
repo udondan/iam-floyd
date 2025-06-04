@@ -1375,7 +1375,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "RedshiftServerlessGetCredentialsOnlyForDbUser",
+      "Sid": "RedshiftGetCredentials",
       "Effect": "Allow",
       "Action": [
         "redshift-serverless:GetCredentials",
@@ -1385,13 +1385,6 @@
       "Condition": {
         "StringEquals": {
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
-        },
-        "StringLike": {
-          "aws:PrincipalTag/RedshiftDbUser": [
-            "user-${aws:PrincipalTag/datazone:userId}*",
-            "user-project@${aws:PrincipalTag/AmazonDataZoneProject}",
-            "user-*@*"
-          ]
         }
       }
     },
@@ -1559,7 +1552,9 @@
             "sagemaker.*.amazonaws.com",
             "bedrock.*.amazonaws.com",
             "s3.*.amazonaws.com",
-            "scheduler.*.amazonaws.com"
+            "scheduler.*.amazonaws.com",
+            "glue.*.amazonaws.com",
+            "secretsmanager.*.amazonaws.com"
           ]
         },
         "StringEquals": {
@@ -2541,6 +2536,90 @@
       "Condition": {
         "StringEquals": {
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "ManageQuickSightFolderAndDataSourceResources",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeDataSource",
+        "quicksight:DescribeFolder",
+        "quicksight:DescribeFolderPermissions",
+        "quicksight:ListFolderMembers"
+      ],
+      "Resource": [
+        "arn:aws:quicksight:*:*:folder/*",
+        "arn:aws:quicksight:*:*:datasource/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "ManageQuickSightOtherResources",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:DescribeDataSet",
+        "quicksight:DescribeAccountSubscription",
+        "quicksight:DescribeUser",
+        "quicksight:DescribeGroup"
+      ],
+      "Resource": [
+        "arn:aws:quicksight:*:*:*"
+      ]
+    },
+    {
+      "Sid": "ManagePassDataSourcePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:PassDataSource"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:datasource/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "ManageCreateDataSetPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:CreateDataSet",
+        "quicksight:TagResource"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:dataset/*",
+      "Condition": {
+        "Null": {
+          "aws:TagKeys": "false"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "AmazonDataZone*"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        },
+        "StringEqualsIfExists": {
+          "aws:RequestTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "CreateFolderMembership",
+      "Effect": "Allow",
+      "Action": [
+        "quicksight:CreateFolderMembership"
+      ],
+      "Resource": "arn:aws:quicksight:*:*:folder/sagemaker-*-assets",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceTag/AmazonDataZoneAssetsFolder": "true"
         }
       }
     }
