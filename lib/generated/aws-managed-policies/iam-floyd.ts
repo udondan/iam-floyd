@@ -438,6 +438,8 @@ export class AwsManagedPolicy {
     public static AmazonGrafanaServiceLinkedRolePolicy = 'aws-service-role/AmazonGrafanaServiceLinkedRolePolicy';
     /** Provides full access to use Amazon GuardDuty. */
     public static AmazonGuardDutyFullAccess = 'AmazonGuardDutyFullAccess';
+    /** Provides full access to use Amazon GuardDuty */
+    public static AmazonGuardDutyFullAccessV2 = 'AmazonGuardDutyFullAccess_v2';
     /** GuardDuty malware protection uses the service-linked role (SLR) named AWSServiceRoleForAmazonGuardDutyMalwareProtection. This service-linked role allows GuardDuty malware protection to perform agent-less scans to detect malware. It allows GuardDuty to create snapshots in your account, and share the snapshots with the GuardDuty service account to scan for malware. It evaluates these shared snapshots and includes the retrieved EC2 instance metadata in the GuardDuty Malware Protection findings. The AWSServiceRoleForAmazonGuardDutyMalwareProtection service-linked role trusts the malware-protection.guardduty.amazonaws.com service to assume the role. */
     public static AmazonGuardDutyMalwareProtectionServiceRolePolicy = 'aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy';
     /** Provides read only access to Amazon GuardDuty resources */

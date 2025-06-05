@@ -1,0 +1,74 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GuardDutyFullAccess",
+      "Effect": "Allow",
+      "Action": "guardduty:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateGuardDutyServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "guardduty.amazonaws.com",
+            "malware-protection.guardduty.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyOrganizationsReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GuardDutyOrganizationsAdminAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess",
+        "organizations:DisableAWSServiceAccess",
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:DeregisterDelegatedAdministrator",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "guardduty.amazonaws.com",
+            "malware-protection.guardduty.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "GuardDutyIamRoleAccess",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::*:role/*AWSServiceRoleForAmazonGuardDutyMalwareProtection"
+    },
+    {
+      "Sid": "PassRoleToMalwareProtectionPlan",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "malware-protection-plan.guardduty.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
