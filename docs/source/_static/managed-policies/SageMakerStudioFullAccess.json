@@ -34,7 +34,8 @@
         "bedrock:ListInferenceProfiles",
         "bedrock:ListFoundationModels",
         "bedrock:ListTagsForResource",
-        "aoss:ListSecurityPolicies"
+        "aoss:ListSecurityPolicies",
+        "quicksight:DescribeAccountSubscription"
       ],
       "Resource": [
         "*"
@@ -380,6 +381,17 @@
           "aws:ResourceTag/AmazonDataZoneDomain": "false"
         }
       }
+    },
+    {
+      "Sid": "ModelAccessUseCaseStatement",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:GetUseCaseForModelAccess",
+        "bedrock:PutUseCaseForModelAccess"
+      ],
+      "Resource": [
+        "*"
+      ]
     }
   ]
 }
