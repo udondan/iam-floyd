@@ -394,7 +394,6 @@ export { Sts } from './policy-statements/securitytokenservice';
 export { Serverlessrepo } from './policy-statements/serverlessapplicationrepository';
 export { Sms } from './policy-statements/servermigrationservice';
 export { Servicecatalog } from './policy-statements/servicecatalog';
-export { Uxc } from './policy-statements/serviceformanagingaccountleveldisplaysettings';
 export { PrivateNetworks } from './policy-statements/serviceprovidingmanagedprivatenetworks';
 export { Shield } from './policy-statements/shield';
 export { Signer } from './policy-statements/signer';
