@@ -4639,6 +4639,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMSKReplicatorExecutionRole);
     }
 
+    /** Grants full access to AWS Network Firewall service, including permissions to create, configure, manage, and delete firewall resources, policies, and rule groups. Additionally includes permissions to modify VPC endpoints, S3 bucket policies, CloudWatch Logs configurations, and create service-linked roles for Network Firewall and log delivery services */
+    public AWSNetworkFirewallFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkFirewallFullAccess);
+    }
+
+    /** Provides read-only access to AWS Network Firewall resources via the AWS Management Console, CLI, and SDKs. This policy allows users to view and monitor firewall configurations, policies, rule groups, and associated resources, without the ability to make changes. */
+    public AWSNetworkFirewallReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkFirewallReadOnlyAccess);
+    }
+
     /** Allow AWSNetworkFirewall to create and manage necessary resources for your Firewalls. */
     public AWSNetworkFirewallServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkFirewallServiceRolePolicy);
@@ -5172,6 +5182,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** A service-linked role required for AWS Security Hub to access your resources. */
     public AWSSecurityHubServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecurityHubServiceRolePolicy);
+    }
+
+    /** This policy allows Security Hub to manage AWS Config rules and Security Hub resources in your organization and on your behalf. */
+    public AWSSecurityHubV2ServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecurityHubV2ServiceRolePolicy);
     }
 
     /** Policy provides customers with Read and Write permissions to case resources that are created through the Security Incident Response service. */

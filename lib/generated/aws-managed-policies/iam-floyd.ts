@@ -1852,6 +1852,10 @@ export class AwsManagedPolicy {
     public static AWSMigrationHubStrategyServiceRolePolicy = 'aws-service-role/AWSMigrationHubStrategyServiceRolePolicy';
     /** Grants permissions to Amazon MSK Replicator to replicate data between MSK Clusters. */
     public static AWSMSKReplicatorExecutionRole = 'service-role/AWSMSKReplicatorExecutionRole';
+    /** Grants full access to AWS Network Firewall service, including permissions to create, configure, manage, and delete firewall resources, policies, and rule groups. Additionally includes permissions to modify VPC endpoints, S3 bucket policies, CloudWatch Logs configurations, and create service-linked roles for Network Firewall and log delivery services */
+    public static AWSNetworkFirewallFullAccess = 'AWSNetworkFirewallFullAccess';
+    /** Provides read-only access to AWS Network Firewall resources via the AWS Management Console, CLI, and SDKs. This policy allows users to view and monitor firewall configurations, policies, rule groups, and associated resources, without the ability to make changes. */
+    public static AWSNetworkFirewallReadOnlyAccess = 'AWSNetworkFirewallReadOnlyAccess';
     /** Allow AWSNetworkFirewall to create and manage necessary resources for your Firewalls. */
     public static AWSNetworkFirewallServiceRolePolicy = 'aws-service-role/AWSNetworkFirewallServiceRolePolicy';
     /** Allow NetworkManager to access resources associated with your Core Network */
@@ -2066,6 +2070,8 @@ export class AwsManagedPolicy {
     public static AWSSecurityHubReadOnlyAccess = 'AWSSecurityHubReadOnlyAccess';
     /** A service-linked role required for AWS Security Hub to access your resources. */
     public static AWSSecurityHubServiceRolePolicy = 'aws-service-role/AWSSecurityHubServiceRolePolicy';
+    /** This policy allows Security Hub to manage AWS Config rules and Security Hub resources in your organization and on your behalf. */
+    public static AWSSecurityHubV2ServiceRolePolicy = 'aws-service-role/AWSSecurityHubV2ServiceRolePolicy';
     /** Policy provides customers with Read and Write permissions to case resources that are created through the Security Incident Response service. */
     public static AWSSecurityIncidentResponseCaseFullAccess = 'AWSSecurityIncidentResponseCaseFullAccess';
     /** Policy provides customers with Read and Write permissions to all resources associated to the Security Incident Response service. */

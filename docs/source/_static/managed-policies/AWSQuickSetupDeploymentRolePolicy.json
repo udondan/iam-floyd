@@ -107,7 +107,8 @@
         "arn:aws:ssm:*::document/AWS-EnableExplorer",
         "arn:aws:ssm:*::document/AWS-GatherSoftwareInventory",
         "arn:aws:ssm:*::document/AWS-RunPatchBaselineAssociation",
-        "arn:aws:ssm:*::document/AWS-UpdateSSMAgent"
+        "arn:aws:ssm:*::document/AWS-UpdateSSMAgent",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-ManageInstanceProfile"
       ]
     },
     {
@@ -135,6 +136,7 @@
         "arn:aws:ssm:*::document/AWS-GatherSoftwareInventory",
         "arn:aws:ssm:*::document/AWS-RunPatchBaselineAssociation",
         "arn:aws:ssm:*::document/AWS-UpdateSSMAgent",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-ManageInstanceProfile",
         "arn:aws:ec2:*:*:instance/*",
         "arn:aws:ssm:*:*:managed-instance/*",
         "arn:aws:ssm:*:*:association/*"
@@ -314,7 +316,8 @@
         "ArnEquals": {
           "iam:PolicyARN": [
             "arn:aws:iam::aws:policy/AWSSystemsManagerEnableExplorerExecutionPolicy",
-            "arn:aws:iam::aws:policy/AWSSystemsManagerEnableConfigRecordingExecutionPolicy"
+            "arn:aws:iam::aws:policy/AWSSystemsManagerEnableConfigRecordingExecutionPolicy",
+            "arn:aws:iam::aws:policy/AWSQuickSetupManagedInstanceProfileExecutionPolicy"
           ]
         },
         "ForAnyValue:StringEquals": {
