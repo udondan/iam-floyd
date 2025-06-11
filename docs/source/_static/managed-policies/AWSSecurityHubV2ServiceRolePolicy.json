@@ -1,0 +1,87 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityHubV2ServiceRoleAssetsConfig",
+      "Effect": "Allow",
+      "Action": [
+        "config:DeleteServiceLinkedConfigurationRecorder",
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:PutServiceLinkedConfigurationRecorder"
+      ],
+      "Resource": "arn:aws:config:*:*:configuration-recorder/AWSConfigurationRecorderForSecurityHubAssets/*"
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleAssetsIamPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "config.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleSecurityHubPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "securityhub:DisableSecurityHubV2",
+        "securityhub:EnableSecurityHubV2",
+        "securityhub:DescribeSecurityHubV2"
+      ],
+      "Resource": "arn:aws:securityhub:*:*:hubv2/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleTagPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "tag:GetResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleOrganizationsPermissionsOnResources",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganizationalUnit"
+      ],
+      "Resource": "arn:aws:organizations::*:*"
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleOrganizationsPermissionsWithoutResources",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListChildren"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleDelegatedAdminPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "securityhub.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}
