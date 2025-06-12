@@ -2140,6 +2140,8 @@ export class AwsManagedPolicy {
     public static AWSServiceRolePolicyForBackupReports = 'aws-service-role/AWSServiceRolePolicyForBackupReports';
     /** This policy contains permissions for testing restores and for cleaning up resources created during tests. */
     public static AWSServiceRolePolicyForBackupRestoreTesting = 'aws-service-role/AWSServiceRolePolicyForBackupRestoreTesting';
+    /** This managed policy provides administrative access to Amazon WorkSpaces to manage EC2 instances in your AWS account */
+    public static AWSServiceRolePolicyForWorkspacesInstances = 'aws-service-role/AWSServiceRolePolicyForWorkspacesInstances';
     /** Provides the AWS DDoS Response Team with limited access to your AWS account to assist with DDoS attack mitigation during a high-severity event. */
     public static AWSShieldDRTAccessPolicy = 'service-role/AWSShieldDRTAccessPolicy';
     /** Allows AWS Shield to access AWS resources on your behalf to provide DDoS protection. */
