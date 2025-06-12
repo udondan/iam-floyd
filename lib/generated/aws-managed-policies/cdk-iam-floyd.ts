@@ -5359,6 +5359,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRolePolicyForBackupRestoreTesting);
     }
 
+    /** This managed policy provides administrative access to Amazon WorkSpaces to manage EC2 instances in your AWS account */
+    public AWSServiceRolePolicyForWorkspacesInstances(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRolePolicyForWorkspacesInstances);
+    }
+
     /** Provides the AWS DDoS Response Team with limited access to your AWS account to assist with DDoS attack mitigation during a high-severity event. */
     public AWSShieldDRTAccessPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSShieldDRTAccessPolicy);

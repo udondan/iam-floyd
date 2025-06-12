@@ -2,6 +2,58 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "PrivateMarketplaceGetRolePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/*AWSServiceRoleForPrivateMarketplaceAdmin"
+      ]
+    },
+    {
+      "Sid": "PrivateMarketplaceCreateSLRPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/private-marketplace.marketplace.amazonaws.com/AWSServiceRoleForPrivateMarketplaceAdmin"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "private-marketplace.marketplace.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "PrivateMarketplaceManageDelegatedAdministratorPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:DeregisterDelegatedAdministrator"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": "private-marketplace.marketplace.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "PrivateMarketplaceEnableServiceAccessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": "private-marketplace.marketplace.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "PrivateMarketplaceRequestPermissions",
       "Effect": "Allow",
       "Action": [
