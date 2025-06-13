@@ -661,22 +661,6 @@
       }
     },
     {
-      "Sid": "AirflowListDomainS3BucketPermissions",
-      "Effect": "Allow",
-      "Action": [
-        "s3:ListBucket"
-      ],
-      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}",
-      "Condition": {
-        "StringNotEquals": {
-          "aws:PrincipalTag/DomainBucketName": ""
-        },
-        "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        }
-      }
-    },
-    {
       "Sid": "ListDomainBucketFromAthenaFederatedCatalog",
       "Effect": "Allow",
       "Action": [
@@ -805,22 +789,6 @@
       "Resource": "*"
     },
     {
-      "Sid": "DataLakeEC2Permissions",
-      "Effect": "Allow",
-      "Action": [
-        "ec2:AuthorizeSecurityGroupEgress",
-        "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:RevokeSecurityGroupEgress",
-        "ec2:RevokeSecurityGroupIngress"
-      ],
-      "Resource": "*",
-      "Condition": {
-        "StringEquals": {
-          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
-        }
-      }
-    },
-    {
       "Sid": "DataLakeAthenaPermissions",
       "Effect": "Allow",
       "Action": [
@@ -870,21 +838,6 @@
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
         }
       }
-    },
-    {
-      "Sid": "DefaultAthenaDataCatalogPermissions",
-      "Effect": "Allow",
-      "Action": [
-        "athena:GetDatabase",
-        "athena:GetDataCatalog",
-        "athena:GetTableMetadata",
-        "athena:ListDatabases",
-        "athena:ListTableMetadata"
-      ],
-      "Resource": [
-        "arn:aws:athena:*:*:datacatalog/AwsDataCatalog",
-        "arn:aws:athena:*:*:datacatalog/awsdatacatalog"
-      ]
     },
     {
       "Sid": "AthenaListPermissions",
@@ -1475,7 +1428,6 @@
         "elasticmapreduce:ListInstanceFleets",
         "elasticmapreduce:ListInstanceGroups",
         "elasticmapreduce:ListBootstrapActions",
-        "elasticmapreduce:TerminateJobFlows",
         "elasticmapreduce:GetManagedScalingPolicy",
         "elasticmapreduce:GetOnClusterAppUIPresignedURL"
       ],
@@ -1947,7 +1899,8 @@
       "Effect": "Allow",
       "Action": [
         "bedrock:ListEvaluationJobs",
-        "bedrock:RetrieveAndGenerate"
+        "bedrock:RetrieveAndGenerate",
+        "bedrock:ListFoundationModels"
       ],
       "Resource": "*",
       "Condition": {
