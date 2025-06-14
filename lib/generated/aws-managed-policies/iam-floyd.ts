@@ -958,6 +958,8 @@ export class AwsManagedPolicy {
     public static AmazonWorkSpacesServiceAccess = 'AmazonWorkSpacesServiceAccess';
     /** Provides full access to Amazon WorkSpaces Thin Client as well as limited access to required related services */
     public static AmazonWorkSpacesThinClientFullAccess = 'AmazonWorkSpacesThinClientFullAccess';
+    /** Enables access to AWS Services and Resources used or managed by Amazon WorkSpaces Thin Client Monitoring */
+    public static AmazonWorkSpacesThinClientMonitoringServiceRolePolicy = 'aws-service-role/AmazonWorkSpacesThinClientMonitoringServiceRolePolicy';
     /** Provides read-only access to Amazon WorkSpaces Thin Client and its dependencies */
     public static AmazonWorkSpacesThinClientReadOnlyAccess = 'AmazonWorkSpacesThinClientReadOnlyAccess';
     /** Provides read-only access to Amazon WorkSpaces Web and its dependencies through the AWS Management Console, SDK, and CLI. */
@@ -2554,6 +2556,8 @@ export class AwsManagedPolicy {
     public static NeptuneReadOnlyAccess = 'NeptuneReadOnlyAccess';
     /** Grants full access permissions to AWS services and actions required to set up and configure AWS network resources. */
     public static NetworkAdministrator = 'job-function/NetworkAdministrator';
+    /** Provides permissions for the AWS Shield network security director service linked role to assess specified environments. */
+    public static NetworkSecurityDirectorServiceLinkedRolePolicy = 'aws-service-role/NetworkSecurityDirectorServiceLinkedRolePolicy';
     /** Provides full access to CloudWatch Observability Access Manager */
     public static OAMFullAccess = 'OAMFullAccess';
     /** Provides Read Only access to CloudWatch Observability Access Manager */

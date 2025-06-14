@@ -661,6 +661,22 @@
       }
     },
     {
+      "Sid": "AirflowListDomainS3BucketPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalTag/DomainBucketName": ""
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "ListDomainBucketFromAthenaFederatedCatalog",
       "Effect": "Allow",
       "Action": [
