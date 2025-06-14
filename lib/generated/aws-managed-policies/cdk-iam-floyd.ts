@@ -2404,6 +2404,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesThinClientFullAccess);
     }
 
+    /** Enables access to AWS Services and Resources used or managed by Amazon WorkSpaces Thin Client Monitoring */
+    public AmazonWorkSpacesThinClientMonitoringServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesThinClientMonitoringServiceRolePolicy);
+    }
+
     /** Provides read-only access to Amazon WorkSpaces Thin Client and its dependencies */
     public AmazonWorkSpacesThinClientReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonWorkSpacesThinClientReadOnlyAccess);
@@ -6392,6 +6397,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Grants full access permissions to AWS services and actions required to set up and configure AWS network resources. */
     public NetworkAdministrator(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.NetworkAdministrator);
+    }
+
+    /** Provides permissions for the AWS Shield network security director service linked role to assess specified environments. */
+    public NetworkSecurityDirectorServiceLinkedRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.NetworkSecurityDirectorServiceLinkedRolePolicy);
     }
 
     /** Provides full access to CloudWatch Observability Access Manager */
