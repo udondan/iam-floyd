@@ -1,0 +1,3 @@
+workspaces-instances:RequestTag/${TagKey}
+workspaces-instances:ResourceTag/${TagKey}
+workspaces-instances:TagKeys

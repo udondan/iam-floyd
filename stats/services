@@ -152,6 +152,7 @@ entityresolution
 es
 events
 evidently
+evs
 execute-api
 finspace
 finspace-api
@@ -374,6 +375,7 @@ states
 storagegateway
 sts
 support
+support-console
 supportapp
 supportplans
 supportrecommendations
@@ -414,5 +416,6 @@ worklink
 workmail
 workmailmessageflow
 workspaces
+workspaces-instances
 workspaces-web
 xray

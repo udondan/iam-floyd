@@ -1,0 +1,11 @@
+evs:CreateEnvironment;Write
+evs:CreateEnvironmentHost;Write
+evs:DeleteEnvironment;Write
+evs:DeleteEnvironmentHost;Write
+evs:GetEnvironment;Read
+evs:ListEnvironmentHosts;List
+evs:ListEnvironmentVlans;List
+evs:ListEnvironments;List
+evs:ListTagsForResource;Read
+evs:TagResource;Tagging
+evs:UntagResource;Tagging
