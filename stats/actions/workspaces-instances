@@ -1,0 +1,13 @@
+workspaces-instances:AssociateVolume;Write
+workspaces-instances:CreateVolume;Write
+workspaces-instances:CreateWorkspaceInstance;Write
+workspaces-instances:DeleteVolume;Write
+workspaces-instances:DeleteWorkspaceInstance;Write
+workspaces-instances:DisassociateVolume;Write
+workspaces-instances:GetWorkspaceInstance;Read
+workspaces-instances:ListInstanceTypes;List
+workspaces-instances:ListRegions;List
+workspaces-instances:ListTagsForResource;List
+workspaces-instances:ListWorkspaceInstances;List
+workspaces-instances:TagResource;Tagging
+workspaces-instances:UntagResource;Tagging

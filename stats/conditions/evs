@@ -1,0 +1,3 @@
+evs:RequestTag/${TagKey}
+evs:ResourceTag/${TagKey}
+evs:TagKeys

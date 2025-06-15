@@ -1,0 +1,11 @@
+support-console:CheckSubscription;Read
+support-console:CreateCaseDraft;Write
+support-console:CreateContact;Write
+support-console:DeleteCaseDraft;Write
+support-console:DescribeDynamicHelp;Read
+support-console:GetAccountGovCloudEnabled;Read
+support-console:GetAccountState;Read
+support-console:GetBanner;Read
+support-console:GetCaseDraft;Read
+support-console:GetQuestionnaire;Read
+support-console:SaveFeedback;Write
