@@ -22,7 +22,9 @@
       "Action": [
         "kms:CreateGrant"
       ],
-      "Resource": "*",
+      "Resource": [
+        "arn:aws:kms:*:*:key/*"
+      ],
       "Condition": {
         "ForAnyValue:StringEquals": {
           "kms:EncryptionContextKeys": "aws:timestream:database-name"
@@ -32,6 +34,9 @@
         },
         "StringLike": {
           "kms:ViaService": "timestream.*.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     },
@@ -62,6 +67,13 @@
       "Action": [
         "sns:ListTopics",
         "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "pricing:GetProducts"
       ],
       "Resource": "*"
     }

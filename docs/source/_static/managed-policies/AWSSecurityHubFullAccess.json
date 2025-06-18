@@ -13,8 +13,11 @@
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
       "Condition": {
-        "StringLike": {
-          "iam:AWSServiceName": "securityhub.amazonaws.com"
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "securityhub.amazonaws.com",
+            "securityhubv2.amazonaws.com"
+          ]
         }
       }
     },
