@@ -2546,6 +2546,10 @@ export class AwsManagedPolicy {
     public static MigrationHubSMSAccessServiceRolePolicy = 'aws-service-role/MigrationHubSMSAccessServiceRolePolicy';
     /** Policy for AWS Monitron service linked role granting access to required customer resources. */
     public static MonitronServiceRolePolicy = 'aws-service-role/MonitronServiceRolePolicy';
+    /** Provides full access to Multi-party approval. This policy also includes related permissions to AWS Organizations and AWS IAM Identity for managing approval teams and identity sources. */
+    public static MultiPartyApprovalFullAccess = 'MultiPartyApprovalFullAccess';
+    /** Provides read-only access to Multi-party approval. This policy also includes related read permission to AWS Organizations and AWS IAM Identity for approval teams and identity sources. */
+    public static MultiPartyApprovalReadOnlyAccess = 'MultiPartyApprovalReadOnlyAccess';
     /** Provides full access to manage Amazon Neptune using the AWS Console. Note this policy also grants full access to publish on all SNS topics within the account, permissions to create and edit Amazon EC2 instances and VPC configurations, permissions to view and list keys on Amazon KMS, and full access to Amazon RDS. For more information, see https://aws.amazon.com/neptune/faqs/. */
     public static NeptuneConsoleFullAccess = 'NeptuneConsoleFullAccess';
     /** Provides full access to Amazon Neptune. Note this policy also grants full access to publish on all SNS topics within the account and full access to Amazon RDS. For more information, see https://aws.amazon.com/neptune/faqs/. */

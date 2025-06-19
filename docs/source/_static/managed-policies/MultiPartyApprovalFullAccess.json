@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MpaFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "mpa:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSOCreateApplication",
+      "Effect": "Allow",
+      "Action": [
+        "sso:CreateApplication"
+      ],
+      "Resource": [
+        "arn:aws:sso:::instance/*",
+        "arn:aws:sso::aws:applicationProvider/mpa"
+      ]
+    },
+    {
+      "Sid": "SSOApplicationManagement",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeApplication",
+        "sso:PutApplicationAssignmentConfiguration",
+        "sso:PutApplicationGrant",
+        "sso:PutApplicationAuthenticationMethod",
+        "sso:PutApplicationAccessScope",
+        "sso:DeleteApplication"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIfExists": {
+          "aws:CalledViaLast": "mpa.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SSOManagementAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeInstance",
+        "sso:DescribeRegisteredRegions",
+        "sso:GetSharedSsoConfiguration",
+        "sso-directory:DescribeUsers",
+        "sso-directory:SearchUsers",
+        "sso:ListInstances"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
