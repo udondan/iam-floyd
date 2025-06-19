@@ -6374,6 +6374,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.MonitronServiceRolePolicy);
     }
 
+    /** Provides full access to Multi-party approval. This policy also includes related permissions to AWS Organizations and AWS IAM Identity for managing approval teams and identity sources. */
+    public MultiPartyApprovalFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.MultiPartyApprovalFullAccess);
+    }
+
+    /** Provides read-only access to Multi-party approval. This policy also includes related read permission to AWS Organizations and AWS IAM Identity for approval teams and identity sources. */
+    public MultiPartyApprovalReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.MultiPartyApprovalReadOnlyAccess);
+    }
+
     /** Provides full access to manage Amazon Neptune using the AWS Console. Note this policy also grants full access to publish on all SNS topics within the account, permissions to create and edit Amazon EC2 instances and VPC configurations, permissions to view and list keys on Amazon KMS, and full access to Amazon RDS. For more information, see https://aws.amazon.com/neptune/faqs/. */
     public NeptuneConsoleFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.NeptuneConsoleFullAccess);
