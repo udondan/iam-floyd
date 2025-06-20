@@ -734,6 +734,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSConnectorServiceRolePolicy);
     }
 
+    /** Provides read only access to view the dashboard in the Amazon EKS console. The dashboard aggregates information about multiple clusters and related resources using AWS Organizations. */
+    public AmazonEKSDashboardConsoleReadOnly(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSDashboardConsoleReadOnly);
+    }
+
     /** This policy enables the Amazon EKS Dashboard to access and display organization-wide information. The policy allows the EKS Dashboard service to gather information about your AWS Organizations structure and accounts. */
     public AmazonEKSDashboardServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSDashboardServiceRolePolicy);
@@ -1937,6 +1942,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides full access to all S3 table buckets. */
     public AmazonS3TablesFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3TablesFullAccess);
+    }
+
+    /** This managed policy grants AWS Lake Formation permissions to act on all table buckets, namespaces, and tables within the account. */
+    public AmazonS3TablesLakeFormationServiceRole(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3TablesLakeFormationServiceRole);
     }
 
     /** Provides read only access to all S3 table buckets. */

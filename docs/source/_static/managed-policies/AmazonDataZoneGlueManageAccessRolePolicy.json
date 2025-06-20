@@ -44,6 +44,20 @@
       }
     },
     {
+      "Sid": "GlueConnection",
+      "Effect": "Allow",
+      "Action": "glue:GetConnection",
+      "Resource": [
+        "arn:aws:glue:*:*:connection/*",
+        "arn:aws:glue:*:*:catalog"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "GlueTableDatabaseCatalog",
       "Effect": "Allow",
       "Action": [

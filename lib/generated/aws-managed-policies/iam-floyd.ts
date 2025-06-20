@@ -290,6 +290,8 @@ export class AwsManagedPolicy {
     public static AmazonEKSComputePolicy = 'AmazonEKSComputePolicy';
     /** This policy allows Amazon EKS to manage AWS resources for EKS connector */
     public static AmazonEKSConnectorServiceRolePolicy = 'aws-service-role/AmazonEKSConnectorServiceRolePolicy';
+    /** Provides read only access to view the dashboard in the Amazon EKS console. The dashboard aggregates information about multiple clusters and related resources using AWS Organizations. */
+    public static AmazonEKSDashboardConsoleReadOnly = 'AmazonEKSDashboardConsoleReadOnly';
     /** This policy enables the Amazon EKS Dashboard to access and display organization-wide information. The policy allows the EKS Dashboard service to gather information about your AWS Organizations structure and accounts. */
     public static AmazonEKSDashboardServiceRolePolicy = 'aws-service-role/AmazonEKSDashboardServiceRolePolicy';
     /** Provides access to other AWS service resources that are required to run Amazon EKS pods on AWS Fargate */
@@ -772,6 +774,8 @@ export class AwsManagedPolicy {
     public static AmazonS3ReadOnlyAccess = 'AmazonS3ReadOnlyAccess';
     /** Provides full access to all S3 table buckets. */
     public static AmazonS3TablesFullAccess = 'AmazonS3TablesFullAccess';
+    /** This managed policy grants AWS Lake Formation permissions to act on all table buckets, namespaces, and tables within the account. */
+    public static AmazonS3TablesLakeFormationServiceRole = 'service-role/AmazonS3TablesLakeFormationServiceRole';
     /** Provides read only access to all S3 table buckets. */
     public static AmazonS3TablesReadOnlyAccess = 'AmazonS3TablesReadOnlyAccess';
     /** Service role policy used by the AWS Service Catalog service to provision products from Amazon SageMaker portfolio of products. Grants permissions to a set of related services including CodePipeline, CodeBuild, CodeCommit, Glue, CloudFormation, etc,. */
