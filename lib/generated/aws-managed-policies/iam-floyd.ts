@@ -2526,6 +2526,8 @@ export class AwsManagedPolicy {
     public static KafkaConnectServiceRolePolicy = 'aws-service-role/KafkaConnectServiceRolePolicy';
     /** IAM service linked role policy for Kafka. */
     public static KafkaServiceRolePolicy = 'aws-service-role/KafkaServiceRolePolicy';
+    /** Grants the required permissions to Amazon Keyspaces for Change Data Capture */
+    public static KeyspacesCDCServiceRolePolicy = 'aws-service-role/KeyspacesCDCServiceRolePolicy';
     /** Permissions required by Keyspaces for cross-region data replication */
     public static KeyspacesReplicationServiceRolePolicy = 'aws-service-role/KeyspacesReplicationServiceRolePolicy';
     /** Policy to grant temporary data access to Lake Formation resources */

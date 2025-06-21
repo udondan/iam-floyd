@@ -6324,6 +6324,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.KafkaServiceRolePolicy);
     }
 
+    /** Grants the required permissions to Amazon Keyspaces for Change Data Capture */
+    public KeyspacesCDCServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.KeyspacesCDCServiceRolePolicy);
+    }
+
     /** Permissions required by Keyspaces for cross-region data replication */
     public KeyspacesReplicationServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.KeyspacesReplicationServiceRolePolicy);
