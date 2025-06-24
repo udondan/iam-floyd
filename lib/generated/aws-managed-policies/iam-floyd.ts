@@ -1922,6 +1922,8 @@ export class AwsManagedPolicy {
     public static AWSPartnerCentralSellingResourceSnapshotJobExecutionRolePolicy = 'AWSPartnerCentralSellingResourceSnapshotJobExecutionRolePolicy';
     /** This policy can be used to grant read-only access to APIs that can read service metadata for services in your AWS account. You can use this policy to provide your partners in the Partner-Led Support Program with access to the services specified in the permissions details section below. */
     public static AWSPartnerLedSupportReadOnlyAccess = 'AWSPartnerLedSupportReadOnlyAccess';
+    /** Grants permission to AWS PCS compute nodes to connect to AWS PCS clusters. */
+    public static AWSPCSComputeNodePolicy = 'AWSPCSComputeNodePolicy';
     /** Grants permissions to PCS to manage resources on your behalf. */
     public static AWSPCSServiceRolePolicy = 'aws-service-role/AWSPCSServiceRolePolicy';
     /** Provides full access to AWS Price List Service. */

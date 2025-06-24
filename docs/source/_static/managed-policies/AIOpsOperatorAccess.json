@@ -12,7 +12,8 @@
         "aiops:Get*",
         "aiops:List*",
         "aiops:UpdateInvestigation",
-        "aiops:UpdateInvestigationEvent"
+        "aiops:UpdateInvestigationEvent",
+        "aiops:ValidateInvestigationGroup"
       ],
       "Resource": "*"
     },

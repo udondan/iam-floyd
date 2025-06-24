@@ -6,7 +6,8 @@
       "Effect": "Allow",
       "Action": [
         "aiops:Get*",
-        "aiops:List*"
+        "aiops:List*",
+        "aiops:ValidateInvestigationGroup"
       ],
       "Resource": "*"
     },

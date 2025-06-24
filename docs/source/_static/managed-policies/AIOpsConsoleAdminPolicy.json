@@ -231,6 +231,14 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "CreateAIOpsCrossAccountAssistantPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreatePolicy"
+      ],
+      "Resource": "arn:aws:iam::*:policy/AIOpsCrossAccountAssistantPolicy*"
     }
   ]
 }
