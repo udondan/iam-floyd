@@ -4814,6 +4814,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerLedSupportReadOnlyAccess);
     }
 
+    /** Grants permission to AWS PCS compute nodes to connect to AWS PCS clusters. */
+    public AWSPCSComputeNodePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPCSComputeNodePolicy);
+    }
+
     /** Grants permissions to PCS to manage resources on your behalf. */
     public AWSPCSServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPCSServiceRolePolicy);
