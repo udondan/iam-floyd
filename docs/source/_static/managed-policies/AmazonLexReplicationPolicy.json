@@ -47,7 +47,13 @@
         "lex:UpdateCustomVocabulary",
         "lex:DeleteCustomVocabulary",
         "lex:DeleteBotChannel",
-        "lex:DeleteResourcePolicy"
+        "lex:ListTagsForResource",
+        "lex:TagResource",
+        "lex:UntagResource",
+        "lex:CreateResourcePolicy",
+        "lex:DeleteResourcePolicy",
+        "lex:DescribeResourcePolicy",
+        "lex:UpdateResourcePolicy"
       ],
       "Resource": [
         "arn:aws:lex:*:*:bot/*",

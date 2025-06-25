@@ -12,8 +12,12 @@
         "organizations:ListAWSServiceAccessForOrganization",
         "organizations:ListOrganizationalUnitsForParent",
         "organizations:ListAccountsForParent",
+        "organizations:ListParents",
         "organizations:DescribeAccount",
-        "organizations:DescribeOrganizationalUnit"
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListPolicies",
+        "organizations:ListPoliciesForTarget",
+        "organizations:ListTargetsForPolicy"
       ],
       "Resource": "*"
     },
@@ -41,6 +45,44 @@
           "organizations:ServicePrincipal": "securityhub.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "OrganizationPolicyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribePolicy",
+        "organizations:DescribeEffectivePolicy",
+        "organizations:CreatePolicy",
+        "organizations:UpdatePolicy",
+        "organizations:DeletePolicy",
+        "organizations:AttachPolicy",
+        "organizations:DetachPolicy",
+        "organizations:EnablePolicyType",
+        "organizations:DisablePolicyType"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:root/o-*/*",
+        "arn:aws:organizations::*:account/o-*/*",
+        "arn:aws:organizations::*:ou/o-*/*",
+        "arn:aws:organizations::*:policy/o-*/securityhub_policy/*"
+      ],
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:PolicyType": "SECURITYHUB_POLICY"
+        }
+      }
+    },
+    {
+      "Sid": "OrganizationPolicyTaggingPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:TagResource",
+        "organizations:UntagResource",
+        "organizations:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:organizations::*:policy/o-*/securityhub_policy/*"
+      ]
     }
   ]
 }
