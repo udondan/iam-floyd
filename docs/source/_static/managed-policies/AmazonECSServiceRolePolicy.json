@@ -198,6 +198,19 @@
         "servicediscovery:DiscoverInstancesRevision"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CloudMapResourceAttributeManagement",
+      "Effect": "Allow",
+      "Action": [
+        "servicediscovery:UpdateServiceAttributes"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonECSManaged": "false"
+        }
+      }
     }
   ]
 }
