@@ -856,6 +856,21 @@
       }
     },
     {
+      "Sid": "DefaultAthenaDataCatalogPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "athena:GetDatabase",
+        "athena:GetDataCatalog",
+        "athena:GetTableMetadata",
+        "athena:ListDatabases",
+        "athena:ListTableMetadata"
+      ],
+      "Resource": [
+        "arn:aws:athena:*:*:datacatalog/AwsDataCatalog",
+        "arn:aws:athena:*:*:datacatalog/awsdatacatalog"
+      ]
+    },
+    {
       "Sid": "AthenaListPermissions",
       "Effect": "Allow",
       "Action": [

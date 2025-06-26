@@ -17,6 +17,8 @@
         "ssm:StartAutomationExecution"
       ],
       "Resource": [
+        "arn:aws:ssm:*:*:document/*",
+        "arn:aws:ssm:*:*:automation-execution/*",
         "arn:aws:ssm:*:*:automation-definition/*:*"
       ]
     },
