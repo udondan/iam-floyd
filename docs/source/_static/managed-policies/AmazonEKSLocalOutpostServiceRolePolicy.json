@@ -224,6 +224,13 @@
     {
       "Effect": "Allow",
       "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": "arn:aws:ssm:*:*:session/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "ssm:ResumeSession",
         "ssm:TerminateSession"
       ],
