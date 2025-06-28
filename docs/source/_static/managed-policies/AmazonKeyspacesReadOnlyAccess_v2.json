@@ -4,7 +4,11 @@
     {
       "Effect": "Allow",
       "Action": [
-        "cassandra:Select"
+        "cassandra:Select",
+        "cassandra:ListStreams",
+        "cassandra:GetStream",
+        "cassandra:GetShardIterator",
+        "cassandra:GetRecords"
       ],
       "Resource": "*"
     },
