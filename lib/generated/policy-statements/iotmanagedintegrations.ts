@@ -1,8 +1,8 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [iotmanagedintegrations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html).
+ * Statement provider for service [iotmanagedintegrations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   public servicePrefix = 'iotmanagedintegrations';
 
   /**
-   * Statement provider for service [iotmanagedintegrations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrationsfeatureofiotdevicemanagement.html).
+   * Statement provider for service [iotmanagedintegrations](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,9 +19,50 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a product credential locker. This operation will trigger the creation of all the manufacturing resources including Wi-Fi setup key pair and device certificate
+   * Grants permission to create a new account association
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateAccountAssociation.html
+   */
+  public toCreateAccountAssociation() {
+    return this.to('CreateAccountAssociation');
+  }
+
+  /**
+   * Grants permission to create a new cloud connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateCloudConnector.html
+   */
+  public toCreateCloudConnector() {
+    return this.to('CreateCloudConnector');
+  }
+
+  /**
+   * Grants permission to create a new connector destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateConnectorDestination.html
+   */
+  public toCreateConnectorDestination() {
+    return this.to('CreateConnectorDestination');
+  }
+
+  /**
+   * Grants permission to create a product credential locker
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateCredentialLocker.html
    */
@@ -30,7 +71,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a destination
+   * Grants permission to create a new destination
    *
    * Access Level: Write
    *
@@ -41,7 +82,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the event log configuration for the account, a resource type, or a specific resource
+   * Grants permission to create a new event configuration
    *
    * Access Level: Write
    *
@@ -52,9 +93,13 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a Managed Thing
+   * Grants permission to create a new managed thing
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateManagedThing.html
    */
@@ -63,7 +108,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a notification configuration
+   * Grants permission to create a new notification configuration
    *
    * Access Level: Write
    *
@@ -74,9 +119,13 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to customers to create an OTA task to update their devices
+   * Grants permission to create a new ota task
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateOtaTask.html
    */
@@ -85,7 +134,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an OTA task configuration
+   * Grants permission to create a new ota task configuration
    *
    * Access Level: Write
    *
@@ -100,6 +149,10 @@ export class Iotmanagedintegrations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateProvisioningProfile.html
    */
   public toCreateProvisioningProfile() {
@@ -107,7 +160,40 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a Credential Locker. This operation cannot be undone and any existing device won't be able to use the IoT managed integrations Setup
+   * Grants permission to delete an account association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteAccountAssociation.html
+   */
+  public toDeleteAccountAssociation() {
+    return this.to('DeleteAccountAssociation');
+  }
+
+  /**
+   * Grants permission to delete a cloud connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteCloudConnector.html
+   */
+  public toDeleteCloudConnector() {
+    return this.to('DeleteCloudConnector');
+  }
+
+  /**
+   * Grants permission to delete a connector destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteConnectorDestination.html
+   */
+  public toDeleteConnectorDestination() {
+    return this.to('DeleteConnectorDestination');
+  }
+
+  /**
+   * Grants permission to delete a credential locker
    *
    * Access Level: Write
    *
@@ -118,7 +204,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a destination
+   * Grants permission to delete destination
    *
    * Access Level: Write
    *
@@ -129,7 +215,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an event log configuration by log configuration ID
+   * Grants permission to delete event log configuration
    *
    * Access Level: Write
    *
@@ -140,7 +226,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a managed thing. If a Controller is deleted, all the devices connected to it will have their status changed to pending. Note, it is not possible to remove a Cloud device
+   * Grants permission to delete managed thing
    *
    * Access Level: Write
    *
@@ -151,7 +237,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a notification configuration
+   * Grants permission to delete notification configuration
    *
    * Access Level: Write
    *
@@ -162,7 +248,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an OTA task
+   * Grants permission to delete ota task
    *
    * Access Level: Write
    *
@@ -173,7 +259,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a OTA task configuration
+   * Grants permission to delete ota task configuration
    *
    * Access Level: Write
    *
@@ -184,7 +270,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a provisioning Profile
+   * Grants permission to delete provisioning profile
    *
    * Access Level: Write
    *
@@ -195,7 +281,51 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get an existing Credential Locker information
+   * Grants permission to deregister account association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeregisterAccountAssociation.html
+   */
+  public toDeregisterAccountAssociation() {
+    return this.to('DeregisterAccountAssociation');
+  }
+
+  /**
+   * Grants permission to get information about an account association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetAccountAssociation.html
+   */
+  public toGetAccountAssociation() {
+    return this.to('GetAccountAssociation');
+  }
+
+  /**
+   * Grants permission to get information about a cloud connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetCloudConnector.html
+   */
+  public toGetCloudConnector() {
+    return this.to('GetCloudConnector');
+  }
+
+  /**
+   * Grants permission to get information about a cloud destination
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetConnectorDestination.html
+   */
+  public toGetConnectorDestination() {
+    return this.to('GetConnectorDestination');
+  }
+
+  /**
+   * Grants permission to get information about a credential locker
    *
    * Access Level: Read
    *
@@ -206,7 +336,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to customers to retrieve the custom endpoint address
+   * Grants permission to get information about a custom endpoint
    *
    * Access Level: Read
    *
@@ -217,7 +347,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a connector by AWS ARN
+   * Grants permission to get information about a default encryption configuration
    *
    * Access Level: Read
    *
@@ -228,7 +358,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a destination
+   * Grants permission to get information about a destination
    *
    * Access Level: Read
    *
@@ -239,7 +369,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the current state of a device discovery
+   * Grants permission to get information about a device discovery
    *
    * Access Level: Read
    *
@@ -250,7 +380,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get an event log configuration by log configuration ID
+   * Grants permission to get information about an event log configuration
    *
    * Access Level: Read
    *
@@ -261,7 +391,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get hub configuration
+   * Grants permission to get information about a hub configuration
    *
    * Access Level: Read
    *
@@ -272,7 +402,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a managed thing
+   * Grants permission to get information about a managed thing
    *
    * Access Level: Read
    *
@@ -283,7 +413,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get capabilities by ManagedThingId
+   * Grants permission to get the capability report for a managed thing
    *
    * Access Level: Read
    *
@@ -294,7 +424,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the connectivity status of a Managed Thing
+   * Grants permission to get the connectivity data for a managed thing
    *
    * Access Level: Read
    *
@@ -305,7 +435,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get metaData info by ManagedThingId
+   * Grants permission to get the meta data information for a managed thing
    *
    * Access Level: Read
    *
@@ -316,7 +446,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get managed thing states by managed thing id
+   * Grants permission to get the device state information for a managed thing
    *
    * Access Level: Read
    *
@@ -327,7 +457,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a notification configuration
+   * Grants permission to get information for a notification configuration
    *
    * Access Level: Read
    *
@@ -338,7 +468,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the Ota task
+   * Grants permission to get information for an ota task
    *
    * Access Level: Read
    *
@@ -349,7 +479,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get an OTA task configuration
+   * Grants permission to get information for an ota task configuration
    *
    * Access Level: Read
    *
@@ -360,7 +490,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get an existing provisioning profile information
+   * Grants permission to get information for a provisioning profile
    *
    * Access Level: Read
    *
@@ -371,7 +501,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get runtime log configuration for a specific managed thing or for all managed things as a group
+   * Grants permission to get information for a runtime log configuration
    *
    * Access Level: Read
    *
@@ -382,7 +512,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a schema version with the provided information
+   * Grants permission to get information for a version of a schema
    *
    * Access Level: Read
    *
@@ -393,7 +523,40 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the existing Credential Locker
+   * Grants permission to list information for account associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListAccountAssociations.html
+   */
+  public toListAccountAssociations() {
+    return this.to('ListAccountAssociations');
+  }
+
+  /**
+   * Grants permission to list information for cloud connectors
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListCloudConnectors.html
+   */
+  public toListCloudConnectors() {
+    return this.to('ListCloudConnectors');
+  }
+
+  /**
+   * Grants permission to list information for connector destinations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListConnectorDestinations.html
+   */
+  public toListConnectorDestinations() {
+    return this.to('ListConnectorDestinations');
+  }
+
+  /**
+   * Grants permission to list information for credential lockers
    *
    * Access Level: List
    *
@@ -404,7 +567,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the destinations
+   * Grants permission to list information for destinations
    *
    * Access Level: List
    *
@@ -415,9 +578,31 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all event log configurations for account
+   * Grants permission to list information for device discoveries
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListDeviceDiscoveries.html
+   */
+  public toListDeviceDiscoveries() {
+    return this.to('ListDeviceDiscoveries');
+  }
+
+  /**
+   * Grants permission to list information for device discovered in a device discoveries
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListDiscoveredDevices.html
+   */
+  public toListDiscoveredDevices() {
+    return this.to('ListDiscoveredDevices');
+  }
+
+  /**
+   * Grants permission to list information for event log configurations
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListEventLogConfigurations.html
    */
@@ -426,7 +611,18 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list Schemas Associated With Managed Thing
+   * Grants permission to list information for associations between managed thing and account associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListManagedThingAccountAssociations.html
+   */
+  public toListManagedThingAccountAssociations() {
+    return this.to('ListManagedThingAccountAssociations');
+  }
+
+  /**
+   * Grants permission to list schemas associated with a managed thing
    *
    * Access Level: Read
    *
@@ -437,7 +633,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the managed things
+   * Grants permission to list information for managed things
    *
    * Access Level: List
    *
@@ -448,9 +644,9 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the notification configurations
+   * Grants permission to list information for notification configurations
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListNotificationConfigurations.html
    */
@@ -459,9 +655,9 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the OTA task configurations
+   * Grants permission to list information for ota task configurations
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListOtaTaskConfigurations.html
    */
@@ -470,7 +666,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the Ota task executions
+   * Grants permission to list information for ota task executions
    *
    * Access Level: Read
    *
@@ -481,7 +677,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all the OTA tasks
+   * Grants permission to list information for ota tasks
    *
    * Access Level: List
    *
@@ -492,7 +688,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the existing provisioning profile
+   * Grants permission to list information for provisioning profiles
    *
    * Access Level: List
    *
@@ -503,7 +699,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list schema versions with the provided information
+   * Grants permission to list information for schemas
    *
    * Access Level: List
    *
@@ -514,7 +710,21 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate KMS key with IoT managed integrations
+   * Grants permission to list tags for the specified resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to update the default settings for an encryption configuration
    *
    * Access Level: Write
    *
@@ -536,7 +746,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set the runtime log configuration for a specific managed thing or for all managed things as a group
+   * Grants permission to update a runtime log configuration
    *
    * Access Level: Write
    *
@@ -547,7 +757,18 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to customers to request us to manage the server trust for them or bring their own external server trusts for the custom domain
+   * Grants permission to register an account association to a managed thing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_RegisterAccountAssociation.html
+   */
+  public toRegisterAccountAssociation() {
+    return this.to('RegisterAccountAssociation');
+  }
+
+  /**
+   * Grants permission to register a custom endpoint
    *
    * Access Level: Write
    *
@@ -558,7 +779,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reset a runtime log configuration for a specific managed thing or for all managed things as a group
+   * Grants permission to reset a runtime log configuration
    *
    * Access Level: Write
    *
@@ -569,7 +790,18 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to use the SendManagedThingCommand API to send commands to managed things
+   * Grants permission to send a connector event
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_SendConnectorEvent.html
+   */
+  public toSendConnectorEvent() {
+    return this.to('SendConnectorEvent');
+  }
+
+  /**
+   * Grants permission to send a command to a managed thing
    *
    * Access Level: Write
    *
@@ -580,7 +812,18 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to request to start device discovery
+   * Grants permission to start a refresh of access tokens associated with an account association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_StartAccountAssociationRefresh.html
+   */
+  public toStartAccountAssociationRefresh() {
+    return this.to('StartAccountAssociationRefresh');
+  }
+
+  /**
+   * Grants permission to start a device discovery
    *
    * Access Level: Write
    *
@@ -588,6 +831,70 @@ export class Iotmanagedintegrations extends PolicyStatement {
    */
   public toStartDeviceDiscovery() {
     return this.to('StartDeviceDiscovery');
+  }
+
+  /**
+   * Grants permission to add tags for the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags for the specified resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an account association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateAccountAssociation.html
+   */
+  public toUpdateAccountAssociation() {
+    return this.to('UpdateAccountAssociation');
+  }
+
+  /**
+   * Grants permission to update a cloud connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateCloudConnector.html
+   */
+  public toUpdateCloudConnector() {
+    return this.to('UpdateCloudConnector');
+  }
+
+  /**
+   * Grants permission to update a connector destination
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateConnectorDestination.html
+   */
+  public toUpdateConnectorDestination() {
+    return this.to('UpdateConnectorDestination');
   }
 
   /**
@@ -602,7 +909,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an event log configuration by log configuration ID
+   * Grants permission to update an event log configuration
    *
    * Access Level: Write
    *
@@ -635,7 +942,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an OTA Task
+   * Grants permission to update an ota task
    *
    * Access Level: Write
    *
@@ -647,6 +954,9 @@ export class Iotmanagedintegrations extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateAccountAssociation',
+      'CreateCloudConnector',
+      'CreateConnectorDestination',
       'CreateCredentialLocker',
       'CreateDestination',
       'CreateEventLogConfiguration',
@@ -655,6 +965,9 @@ export class Iotmanagedintegrations extends PolicyStatement {
       'CreateOtaTask',
       'CreateOtaTaskConfiguration',
       'CreateProvisioningProfile',
+      'DeleteAccountAssociation',
+      'DeleteCloudConnector',
+      'DeleteConnectorDestination',
       'DeleteCredentialLocker',
       'DeleteDestination',
       'DeleteEventLogConfiguration',
@@ -663,13 +976,20 @@ export class Iotmanagedintegrations extends PolicyStatement {
       'DeleteOtaTask',
       'DeleteOtaTaskConfiguration',
       'DeleteProvisioningProfile',
+      'DeregisterAccountAssociation',
       'PutDefaultEncryptionConfiguration',
       'PutHubConfiguration',
       'PutRuntimeLogConfiguration',
+      'RegisterAccountAssociation',
       'RegisterCustomEndpoint',
       'ResetRuntimeLogConfiguration',
+      'SendConnectorEvent',
       'SendManagedThingCommand',
+      'StartAccountAssociationRefresh',
       'StartDeviceDiscovery',
+      'UpdateAccountAssociation',
+      'UpdateCloudConnector',
+      'UpdateConnectorDestination',
       'UpdateDestination',
       'UpdateEventLogConfiguration',
       'UpdateManagedThing',
@@ -677,6 +997,9 @@ export class Iotmanagedintegrations extends PolicyStatement {
       'UpdateOtaTask'
     ],
     Read: [
+      'GetAccountAssociation',
+      'GetCloudConnector',
+      'GetConnectorDestination',
       'GetCredentialLocker',
       'GetCustomEndpoint',
       'GetDefaultEncryptionConfiguration',
@@ -695,24 +1018,52 @@ export class Iotmanagedintegrations extends PolicyStatement {
       'GetProvisioningProfile',
       'GetRuntimeLogConfiguration',
       'GetSchemaVersion',
-      'ListManagedThingSchemas',
-      'ListOtaTaskExecutions'
-    ],
-    List: [
-      'ListCredentialLockers',
-      'ListDestinations',
+      'ListDiscoveredDevices',
       'ListEventLogConfigurations',
-      'ListManagedThings',
+      'ListManagedThingSchemas',
       'ListNotificationConfigurations',
       'ListOtaTaskConfigurations',
+      'ListOtaTaskExecutions',
+      'ListTagsForResource'
+    ],
+    List: [
+      'ListAccountAssociations',
+      'ListCloudConnectors',
+      'ListConnectorDestinations',
+      'ListCredentialLockers',
+      'ListDestinations',
+      'ListDeviceDiscoveries',
+      'ListManagedThingAccountAssociations',
+      'ListManagedThings',
       'ListOtaTasks',
       'ListProvisioningProfiles',
       'ListSchemaVersions'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
   /**
-   * Adds a resource of type CredentialLockerResource to the statement
+   * Adds a resource of type account-association to the statement
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/
+   *
+   * @param accountAssociationId - Identifier for the accountAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAccountAssociation(accountAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotmanagedintegrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:account-association/${ accountAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type credential-locker to the statement
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/
    *
@@ -720,13 +1071,16 @@ export class Iotmanagedintegrations extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onCredentialLockerResource(identifier: string, account?: string, region?: string, partition?: string) {
+  public onCredentialLocker(identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iotmanagedintegrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:credential-locker/${ identifier }`);
   }
 
   /**
-   * Adds a resource of type ManagedThingResource to the statement
+   * Adds a resource of type managed-thing to the statement
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/
    *
@@ -734,13 +1088,16 @@ export class Iotmanagedintegrations extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onManagedThingResource(identifier: string, account?: string, region?: string, partition?: string) {
+  public onManagedThing(identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iotmanagedintegrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:managed-thing/${ identifier }`);
   }
 
   /**
-   * Adds a resource of type OtaTaskResource to the statement
+   * Adds a resource of type ota-task to the statement
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/
    *
@@ -748,13 +1105,16 @@ export class Iotmanagedintegrations extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onOtaTaskResource(identifier: string, account?: string, region?: string, partition?: string) {
+  public onOtaTask(identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iotmanagedintegrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ota-task/${ identifier }`);
   }
 
   /**
-   * Adds a resource of type ProvisioningProfileResource to the statement
+   * Adds a resource of type provisioning-profile to the statement
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/
    *
@@ -762,8 +1122,72 @@ export class Iotmanagedintegrations extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onProvisioningProfileResource(identifier: string, account?: string, region?: string, partition?: string) {
+  public onProvisioningProfile(identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iotmanagedintegrations:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:provisioning-profile/${ identifier }`);
+  }
+
+  /**
+   * Filters access by a tag key and value pair that is allowed in the request
+   *
+   * Applies to actions:
+   * - .toCreateAccountAssociation()
+   * - .toCreateCredentialLocker()
+   * - .toCreateManagedThing()
+   * - .toCreateOtaTask()
+   * - .toCreateProvisioningProfile()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - account-association
+   * - credential-locker
+   * - managed-thing
+   * - ota-task
+   * - provisioning-profile
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by tag keys that are passed in the request
+   *
+   * Applies to actions:
+   * - .toCreateAccountAssociation()
+   * - .toCreateCredentialLocker()
+   * - .toCreateManagedThing()
+   * - .toCreateOtaTask()
+   * - .toCreateProvisioningProfile()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

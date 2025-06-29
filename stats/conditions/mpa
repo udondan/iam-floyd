@@ -1,0 +1,5 @@
+mpa:ProtectedResourceAccount
+mpa:RequestTag/${TagKey}
+mpa:RequestedOperation
+mpa:ResourceTag/${TagKey}
+mpa:TagKeys
