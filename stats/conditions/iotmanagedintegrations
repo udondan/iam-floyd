@@ -1,1 +1,3 @@
-
+iotmanagedintegrations:RequestTag/${TagKey}
+iotmanagedintegrations:ResourceTag/${TagKey}
+iotmanagedintegrations:TagKeys

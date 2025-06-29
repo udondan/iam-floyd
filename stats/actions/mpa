@@ -1,0 +1,24 @@
+mpa:CancelSession;Write
+mpa:CreateApprovalTeam;Write
+mpa:CreateIdentitySource;Write
+mpa:DeleteIdentitySource;Write
+mpa:DeleteInactiveApprovalTeamVersion;Write
+mpa:DeleteResourcePolicy;Permissions management
+mpa:GetApprovalTeam;Read
+mpa:GetIdentitySource;Read
+mpa:GetPolicyVersion;Read
+mpa:GetResourcePolicy;Read
+mpa:GetSession;Read
+mpa:ListApprovalTeams;List
+mpa:ListIdentitySources;List
+mpa:ListPolicies;List
+mpa:ListPolicyVersions;List
+mpa:ListResourcePolicies;List
+mpa:ListSessions;List
+mpa:ListTagsForResource;List
+mpa:PutResourcePolicy;Permissions management
+mpa:StartActiveApprovalTeamDeletion;Write
+mpa:StartSession;Write
+mpa:TagResource;Tagging
+mpa:UntagResource;Tagging
+mpa:UpdateApprovalTeam;Write

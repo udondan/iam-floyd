@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [gamelift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html).
+ * Statement provider for service [gamelift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Gamelift extends PolicyStatement {
   public servicePrefix = 'gamelift';
 
   /**
-   * Statement provider for service [gamelift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongamelift.html).
+   * Statement provider for service [gamelift](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazongameliftservers.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,7 +23,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_AcceptMatch.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_AcceptMatch.html
    */
   public toAcceptMatch() {
     return this.to('AcceptMatch');
@@ -34,7 +34,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ClaimGameServer.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ClaimGameServer.html
    */
   public toClaimGameServer() {
     return this.to('ClaimGameServer');
@@ -52,7 +52,7 @@ export class Gamelift extends PolicyStatement {
    * Dependent actions:
    * - gamelift:TagResource
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateAlias.html
    */
   public toCreateAlias() {
     return this.to('CreateAlias');
@@ -72,7 +72,7 @@ export class Gamelift extends PolicyStatement {
    * - iam:PassRole
    * - s3:GetObject
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateBuild.html
    */
   public toCreateBuild() {
     return this.to('CreateBuild');
@@ -93,7 +93,7 @@ export class Gamelift extends PolicyStatement {
    * - gamelift:TagResource
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateContainerFleet.html
    */
   public toCreateContainerFleet() {
     return this.to('CreateContainerFleet');
@@ -115,7 +115,7 @@ export class Gamelift extends PolicyStatement {
    * - ecr:GetDownloadUrlForLayer
    * - gamelift:TagResource
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateContainerGroupDefinition.html
    */
   public toCreateContainerGroupDefinition() {
     return this.to('CreateContainerGroupDefinition');
@@ -136,7 +136,7 @@ export class Gamelift extends PolicyStatement {
    * - gamelift:TagResource
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateFleet.html
    */
   public toCreateFleet() {
     return this.to('CreateFleet');
@@ -151,7 +151,7 @@ export class Gamelift extends PolicyStatement {
    * - ec2:DescribeAvailabilityZones
    * - ec2:DescribeRegions
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleetLocations.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateFleetLocations.html
    */
   public toCreateFleetLocations() {
     return this.to('CreateFleetLocations');
@@ -178,7 +178,7 @@ export class Gamelift extends PolicyStatement {
    * - gamelift:TagResource
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameServerGroup.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameServerGroup.html
    */
   public toCreateGameServerGroup() {
     return this.to('CreateGameServerGroup');
@@ -189,7 +189,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSession.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameSession.html
    */
   public toCreateGameSession() {
     return this.to('CreateGameSession');
@@ -207,7 +207,7 @@ export class Gamelift extends PolicyStatement {
    * Dependent actions:
    * - gamelift:TagResource
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateGameSessionQueue.html
    */
   public toCreateGameSessionQueue() {
     return this.to('CreateGameSessionQueue');
@@ -225,7 +225,7 @@ export class Gamelift extends PolicyStatement {
    * Dependent actions:
    * - gamelift:TagResource
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateLocation.html
    */
   public toCreateLocation() {
     return this.to('CreateLocation');
@@ -243,7 +243,7 @@ export class Gamelift extends PolicyStatement {
    * Dependent actions:
    * - gamelift:TagResource
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingConfiguration.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateMatchmakingConfiguration.html
    */
   public toCreateMatchmakingConfiguration() {
     return this.to('CreateMatchmakingConfiguration');
@@ -261,7 +261,7 @@ export class Gamelift extends PolicyStatement {
    * Dependent actions:
    * - gamelift:TagResource
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingRuleSet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateMatchmakingRuleSet.html
    */
   public toCreateMatchmakingRuleSet() {
     return this.to('CreateMatchmakingRuleSet');
@@ -272,7 +272,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreatePlayerSession.html
    */
   public toCreatePlayerSession() {
     return this.to('CreatePlayerSession');
@@ -283,7 +283,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreatePlayerSessions.html
    */
   public toCreatePlayerSessions() {
     return this.to('CreatePlayerSessions');
@@ -303,7 +303,7 @@ export class Gamelift extends PolicyStatement {
    * - iam:PassRole
    * - s3:GetObject
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateScript.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateScript.html
    */
   public toCreateScript() {
     return this.to('CreateScript');
@@ -325,7 +325,7 @@ export class Gamelift extends PolicyStatement {
    * - ec2:RevokeSecurityGroupEgress
    * - ec2:RevokeSecurityGroupIngress
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringAuthorization.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateVpcPeeringAuthorization.html
    */
   public toCreateVpcPeeringAuthorization() {
     return this.to('CreateVpcPeeringAuthorization');
@@ -336,7 +336,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_CreateVpcPeeringConnection.html
    */
   public toCreateVpcPeeringConnection() {
     return this.to('CreateVpcPeeringConnection');
@@ -347,7 +347,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteAlias.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteAlias.html
    */
   public toDeleteAlias() {
     return this.to('DeleteAlias');
@@ -358,7 +358,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteBuild.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteBuild.html
    */
   public toDeleteBuild() {
     return this.to('DeleteBuild');
@@ -369,7 +369,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteContainerFleet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteContainerFleet.html
    */
   public toDeleteContainerFleet() {
     return this.to('DeleteContainerFleet');
@@ -380,7 +380,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteContainerGroupDefinition.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteContainerGroupDefinition.html
    */
   public toDeleteContainerGroupDefinition() {
     return this.to('DeleteContainerGroupDefinition');
@@ -391,7 +391,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteFleet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteFleet.html
    */
   public toDeleteFleet() {
     return this.to('DeleteFleet');
@@ -402,7 +402,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteFleetLocations.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteFleetLocations.html
    */
   public toDeleteFleetLocations() {
     return this.to('DeleteFleetLocations');
@@ -421,7 +421,7 @@ export class Gamelift extends PolicyStatement {
    * - autoscaling:SetInstanceProtection
    * - autoscaling:UpdateAutoScalingGroup
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameServerGroup.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteGameServerGroup.html
    */
   public toDeleteGameServerGroup() {
     return this.to('DeleteGameServerGroup');
@@ -432,7 +432,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteGameSessionQueue.html
    */
   public toDeleteGameSessionQueue() {
     return this.to('DeleteGameSessionQueue');
@@ -443,7 +443,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteLocation.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteLocation.html
    */
   public toDeleteLocation() {
     return this.to('DeleteLocation');
@@ -454,7 +454,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteMatchmakingConfiguration.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteMatchmakingConfiguration.html
    */
   public toDeleteMatchmakingConfiguration() {
     return this.to('DeleteMatchmakingConfiguration');
@@ -465,7 +465,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteMatchmakingRuleSet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteMatchmakingRuleSet.html
    */
   public toDeleteMatchmakingRuleSet() {
     return this.to('DeleteMatchmakingRuleSet');
@@ -476,7 +476,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScalingPolicy.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteScalingPolicy.html
    */
   public toDeleteScalingPolicy() {
     return this.to('DeleteScalingPolicy');
@@ -487,7 +487,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScript.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteScript.html
    */
   public toDeleteScript() {
     return this.to('DeleteScript');
@@ -498,7 +498,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringAuthorization.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteVpcPeeringAuthorization.html
    */
   public toDeleteVpcPeeringAuthorization() {
     return this.to('DeleteVpcPeeringAuthorization');
@@ -509,7 +509,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringConnection.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeleteVpcPeeringConnection.html
    */
   public toDeleteVpcPeeringConnection() {
     return this.to('DeleteVpcPeeringConnection');
@@ -520,7 +520,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeregisterCompute.html
    */
   public toDeregisterCompute() {
     return this.to('DeregisterCompute');
@@ -531,7 +531,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterGameServer.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DeregisterGameServer.html
    */
   public toDeregisterGameServer() {
     return this.to('DeregisterGameServer');
@@ -542,7 +542,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeAlias.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeAlias.html
    */
   public toDescribeAlias() {
     return this.to('DescribeAlias');
@@ -553,7 +553,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeBuild.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeBuild.html
    */
   public toDescribeBuild() {
     return this.to('DescribeBuild');
@@ -564,7 +564,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeCompute.html
    */
   public toDescribeCompute() {
     return this.to('DescribeCompute');
@@ -575,7 +575,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerFleet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeContainerFleet.html
    */
   public toDescribeContainerFleet() {
     return this.to('DescribeContainerFleet');
@@ -586,7 +586,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeContainerGroupDefinition.html
    */
   public toDescribeContainerGroupDefinition() {
     return this.to('DescribeContainerGroupDefinition');
@@ -597,7 +597,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeEC2InstanceLimits.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeEC2InstanceLimits.html
    */
   public toDescribeEC2InstanceLimits() {
     return this.to('DescribeEC2InstanceLimits');
@@ -608,7 +608,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetAttributes.html
    */
   public toDescribeFleetAttributes() {
     return this.to('DescribeFleetAttributes');
@@ -619,7 +619,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetCapacity.html
    */
   public toDescribeFleetCapacity() {
     return this.to('DescribeFleetCapacity');
@@ -630,7 +630,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetDeployment.html
    */
   public toDescribeFleetDeployment() {
     return this.to('DescribeFleetDeployment');
@@ -641,7 +641,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetEvents.html
    */
   public toDescribeFleetEvents() {
     return this.to('DescribeFleetEvents');
@@ -652,7 +652,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationAttributes.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationAttributes.html
    */
   public toDescribeFleetLocationAttributes() {
     return this.to('DescribeFleetLocationAttributes');
@@ -663,7 +663,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationCapacity.html
    */
   public toDescribeFleetLocationCapacity() {
     return this.to('DescribeFleetLocationCapacity');
@@ -674,7 +674,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationUtilization.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetLocationUtilization.html
    */
   public toDescribeFleetLocationUtilization() {
     return this.to('DescribeFleetLocationUtilization');
@@ -685,7 +685,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetPortSettings.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetPortSettings.html
    */
   public toDescribeFleetPortSettings() {
     return this.to('DescribeFleetPortSettings');
@@ -696,7 +696,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetUtilization.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeFleetUtilization.html
    */
   public toDescribeFleetUtilization() {
     return this.to('DescribeFleetUtilization');
@@ -707,7 +707,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServer.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServer.html
    */
   public toDescribeGameServer() {
     return this.to('DescribeGameServer');
@@ -718,7 +718,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerGroup.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServerGroup.html
    */
   public toDescribeGameServerGroup() {
     return this.to('DescribeGameServerGroup');
@@ -729,7 +729,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerInstances.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameServerInstances.html
    */
   public toDescribeGameServerInstances() {
     return this.to('DescribeGameServerInstances');
@@ -740,7 +740,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionDetails.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionDetails.html
    */
   public toDescribeGameSessionDetails() {
     return this.to('DescribeGameSessionDetails');
@@ -751,7 +751,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionPlacement.html
    */
   public toDescribeGameSessionPlacement() {
     return this.to('DescribeGameSessionPlacement');
@@ -762,7 +762,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessionQueues.html
    */
   public toDescribeGameSessionQueues() {
     return this.to('DescribeGameSessionQueues');
@@ -773,7 +773,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeGameSessions.html
    */
   public toDescribeGameSessions() {
     return this.to('DescribeGameSessions');
@@ -784,7 +784,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeInstances.html
    */
   public toDescribeInstances() {
     return this.to('DescribeInstances');
@@ -795,7 +795,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmaking.html
    */
   public toDescribeMatchmaking() {
     return this.to('DescribeMatchmaking');
@@ -806,7 +806,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmakingConfigurations.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmakingConfigurations.html
    */
   public toDescribeMatchmakingConfigurations() {
     return this.to('DescribeMatchmakingConfigurations');
@@ -817,7 +817,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmakingRuleSets.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeMatchmakingRuleSets.html
    */
   public toDescribeMatchmakingRuleSets() {
     return this.to('DescribeMatchmakingRuleSets');
@@ -828,7 +828,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribePlayerSessions.html
    */
   public toDescribePlayerSessions() {
     return this.to('DescribePlayerSessions');
@@ -839,7 +839,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeRuntimeConfiguration.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeRuntimeConfiguration.html
    */
   public toDescribeRuntimeConfiguration() {
     return this.to('DescribeRuntimeConfiguration');
@@ -850,7 +850,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScalingPolicies.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeScalingPolicies.html
    */
   public toDescribeScalingPolicies() {
     return this.to('DescribeScalingPolicies');
@@ -861,7 +861,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScript.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeScript.html
    */
   public toDescribeScript() {
     return this.to('DescribeScript');
@@ -872,7 +872,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringAuthorizations.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeVpcPeeringAuthorizations.html
    */
   public toDescribeVpcPeeringAuthorizations() {
     return this.to('DescribeVpcPeeringAuthorizations');
@@ -883,7 +883,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringConnections.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeVpcPeeringConnections.html
    */
   public toDescribeVpcPeeringConnections() {
     return this.to('DescribeVpcPeeringConnections');
@@ -894,7 +894,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetComputeAccess.html
    */
   public toGetComputeAccess() {
     return this.to('GetComputeAccess');
@@ -905,7 +905,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAuthToken.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetComputeAuthToken.html
    */
   public toGetComputeAuthToken() {
     return this.to('GetComputeAuthToken');
@@ -916,7 +916,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetGameSessionLogUrl.html
    */
   public toGetGameSessionLogUrl() {
     return this.to('GetGameSessionLogUrl');
@@ -927,7 +927,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetInstanceAccess.html
    */
   public toGetInstanceAccess() {
     return this.to('GetInstanceAccess');
@@ -938,7 +938,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListAliases.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListAliases.html
    */
   public toListAliases() {
     return this.to('ListAliases');
@@ -949,7 +949,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListBuilds.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListBuilds.html
    */
   public toListBuilds() {
     return this.to('ListBuilds');
@@ -960,7 +960,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListCompute.html
    */
   public toListCompute() {
     return this.to('ListCompute');
@@ -971,7 +971,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerFleets.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerFleets.html
    */
   public toListContainerFleets() {
     return this.to('ListContainerFleets');
@@ -982,7 +982,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerGroupDefinitionVersions.html
    */
   public toListContainerGroupDefinitionVersions() {
     return this.to('ListContainerGroupDefinitionVersions');
@@ -993,7 +993,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListContainerGroupDefinitions.html
    */
   public toListContainerGroupDefinitions() {
     return this.to('ListContainerGroupDefinitions');
@@ -1004,7 +1004,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListFleetDeployments.html
    */
   public toListFleetDeployments() {
     return this.to('ListFleetDeployments');
@@ -1015,7 +1015,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleets.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListFleets.html
    */
   public toListFleets() {
     return this.to('ListFleets');
@@ -1026,7 +1026,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListGameServerGroups.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListGameServerGroups.html
    */
   public toListGameServerGroups() {
     return this.to('ListGameServerGroups');
@@ -1037,7 +1037,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListGameServers.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListGameServers.html
    */
   public toListGameServers() {
     return this.to('ListGameServers');
@@ -1048,7 +1048,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListLocations.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListLocations.html
    */
   public toListLocations() {
     return this.to('ListLocations');
@@ -1059,7 +1059,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListScripts.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListScripts.html
    */
   public toListScripts() {
     return this.to('ListScripts');
@@ -1070,7 +1070,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -1081,7 +1081,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_PutScalingPolicy.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_PutScalingPolicy.html
    */
   public toPutScalingPolicy() {
     return this.to('PutScalingPolicy');
@@ -1092,7 +1092,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_RegisterCompute.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RegisterCompute.html
    */
   public toRegisterCompute() {
     return this.to('RegisterCompute');
@@ -1103,7 +1103,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_RegisterGameServer.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RegisterGameServer.html
    */
   public toRegisterGameServer() {
     return this.to('RegisterGameServer');
@@ -1114,7 +1114,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_RequestUploadCredentials.html
    */
   public toRequestUploadCredentials() {
     return this.to('RequestUploadCredentials');
@@ -1125,7 +1125,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResolveAlias.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ResolveAlias.html
    */
   public toResolveAlias() {
     return this.to('ResolveAlias');
@@ -1136,7 +1136,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResumeGameServerGroup.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ResumeGameServerGroup.html
    */
   public toResumeGameServerGroup() {
     return this.to('ResumeGameServerGroup');
@@ -1147,7 +1147,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_SearchGameSessions.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_SearchGameSessions.html
    */
   public toSearchGameSessions() {
     return this.to('SearchGameSessions');
@@ -1158,7 +1158,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartFleetActions.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartFleetActions.html
    */
   public toStartFleetActions() {
     return this.to('StartFleetActions');
@@ -1169,7 +1169,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartGameSessionPlacement.html
    */
   public toStartGameSessionPlacement() {
     return this.to('StartGameSessionPlacement');
@@ -1180,7 +1180,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartMatchBackfill.html
    */
   public toStartMatchBackfill() {
     return this.to('StartMatchBackfill');
@@ -1191,7 +1191,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StartMatchmaking.html
    */
   public toStartMatchmaking() {
     return this.to('StartMatchmaking');
@@ -1202,7 +1202,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopFleetActions.html
    */
   public toStopFleetActions() {
     return this.to('StopFleetActions');
@@ -1213,7 +1213,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopGameSessionPlacement.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopGameSessionPlacement.html
    */
   public toStopGameSessionPlacement() {
     return this.to('StopGameSessionPlacement');
@@ -1224,7 +1224,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopMatchmaking.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_StopMatchmaking.html
    */
   public toStopMatchmaking() {
     return this.to('StopMatchmaking');
@@ -1235,7 +1235,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_SuspendGameServerGroup.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_SuspendGameServerGroup.html
    */
   public toSuspendGameServerGroup() {
     return this.to('SuspendGameServerGroup');
@@ -1250,7 +1250,7 @@ export class Gamelift extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -1261,7 +1261,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_TerminateGameSession.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_TerminateGameSession.html
    */
   public toTerminateGameSession() {
     return this.to('TerminateGameSession');
@@ -1275,7 +1275,7 @@ export class Gamelift extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -1286,7 +1286,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateAlias.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateAlias.html
    */
   public toUpdateAlias() {
     return this.to('UpdateAlias');
@@ -1297,7 +1297,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateBuild.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateBuild.html
    */
   public toUpdateBuild() {
     return this.to('UpdateBuild');
@@ -1308,7 +1308,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerFleet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateContainerFleet.html
    */
   public toUpdateContainerFleet() {
     return this.to('UpdateContainerFleet');
@@ -1325,7 +1325,7 @@ export class Gamelift extends PolicyStatement {
    * - ecr:GetAuthorizationToken
    * - ecr:GetDownloadUrlForLayer
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateContainerGroupDefinition.html
    */
   public toUpdateContainerGroupDefinition() {
     return this.to('UpdateContainerGroupDefinition');
@@ -1336,7 +1336,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetAttributes.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetAttributes.html
    */
   public toUpdateFleetAttributes() {
     return this.to('UpdateFleetAttributes');
@@ -1347,7 +1347,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetCapacity.html
    */
   public toUpdateFleetCapacity() {
     return this.to('UpdateFleetCapacity');
@@ -1358,7 +1358,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateFleetPortSettings.html
    */
   public toUpdateFleetPortSettings() {
     return this.to('UpdateFleetPortSettings');
@@ -1369,7 +1369,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServer.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameServer.html
    */
   public toUpdateGameServer() {
     return this.to('UpdateGameServer');
@@ -1383,7 +1383,7 @@ export class Gamelift extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServerGroup.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameServerGroup.html
    */
   public toUpdateGameServerGroup() {
     return this.to('UpdateGameServerGroup');
@@ -1394,7 +1394,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameSession.html
    */
   public toUpdateGameSession() {
     return this.to('UpdateGameSession');
@@ -1405,7 +1405,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateGameSessionQueue.html
    */
   public toUpdateGameSessionQueue() {
     return this.to('UpdateGameSessionQueue');
@@ -1416,7 +1416,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateMatchmakingConfiguration.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateMatchmakingConfiguration.html
    */
   public toUpdateMatchmakingConfiguration() {
     return this.to('UpdateMatchmakingConfiguration');
@@ -1427,7 +1427,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateRuntimeConfiguration.html
    */
   public toUpdateRuntimeConfiguration() {
     return this.to('UpdateRuntimeConfiguration');
@@ -1442,7 +1442,7 @@ export class Gamelift extends PolicyStatement {
    * - iam:PassRole
    * - s3:GetObject
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_UpdateScript.html
    */
   public toUpdateScript() {
     return this.to('UpdateScript');
@@ -1453,7 +1453,7 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ValidateMatchmakingRuleSet.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_ValidateMatchmakingRuleSet.html
    */
   public toValidateMatchmakingRuleSet() {
     return this.to('ValidateMatchmakingRuleSet');
@@ -1591,7 +1591,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type alias to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-aliases.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-console-aliases.html
    *
    * @param aliasId - Identifier for the aliasId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
@@ -1607,7 +1607,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type build to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-builds.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-console-builds.html
    *
    * @param buildId - Identifier for the buildId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1624,7 +1624,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type containerGroupDefinition to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-intro.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-intro.html
    *
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1641,7 +1641,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type containerFleet to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-intro.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-intro.html
    *
    * @param fleetId - Identifier for the fleetId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1658,7 +1658,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type fleet to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-fleets.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-console-fleets.html
    *
    * @param fleetId - Identifier for the fleetId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1675,7 +1675,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type gameServerGroup to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-integrate-gameservergroup.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/fleetiqguide/gsg-integrate-gameservergroup.html
    *
    * @param gameServerGroupName - Identifier for the gameServerGroupName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1692,7 +1692,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type gameSessionQueue to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/queues-console.html
    *
    * @param gameSessionQueueName - Identifier for the gameSessionQueueName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1709,7 +1709,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type location to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html#fleet-anywhere-location
+   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/fleets-creating-anywhere.html#fleet-anywhere-location
    *
    * @param locationId - Identifier for the locationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1726,7 +1726,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type matchmakingConfiguration to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-create-configuration.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/flexmatchguide/match-create-configuration.html
    *
    * @param matchmakingConfigurationName - Identifier for the matchmakingConfigurationName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1743,7 +1743,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type matchmakingRuleSet to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/flexmatchguide/match-rulesets.html
    *
    * @param matchmakingRuleSetName - Identifier for the matchmakingRuleSetName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1760,7 +1760,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type script to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-console-scripts.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-console-scripts.html
    *
    * @param scriptId - Identifier for the scriptId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
