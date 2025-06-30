@@ -64,6 +64,10 @@ export class AwsManagedPolicy {
     public static AmazonAuroraDSQLReadOnlyAccess = 'AmazonAuroraDSQLReadOnlyAccess';
     /** Provides full access to Amazon Bedrock as well as limited access to related services that are required by it */
     public static AmazonBedrockFullAccess = 'AmazonBedrockFullAccess';
+    /** Provides limited access to Amazon Bedrock as well as to related services that are required by it */
+    public static AmazonBedrockLimitedAccess = 'AmazonBedrockLimitedAccess';
+    /** Provides limited access to Amazon Bedrock Marketplace as well as to related services that are required by it */
+    public static AmazonBedrockMarketplaceAccess = 'AmazonBedrockMarketplaceAccess';
     /** Provides read only access to Amazon Bedrock */
     public static AmazonBedrockReadOnly = 'AmazonBedrockReadOnly';
     /** Defines the maximum permissions of IAM roles that Amazon Bedrock Studio creates for operating Amazon Bedrock Studio resources. */
