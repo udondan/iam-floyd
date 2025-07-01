@@ -90,6 +90,9 @@
         "profile:BatchGetCalculatedAttributeForProfile",
         "profile:GetSegmentMembership",
         "profile:ListDomainLayouts",
+        "profile:CreateUploadJob",
+        "profile:ListUploadJobs",
+        "profile:DetectProfileObjectType",
         "profile:GetSimilarProfiles"
       ],
       "Resource": "arn:aws:profile:*:*:domains/amazon-connect-*"
@@ -118,6 +121,19 @@
       ],
       "Resource": [
         "arn:aws:profile:*:*:domains/amazon-connect-*/layouts/*"
+      ]
+    },
+    {
+      "Sid": "AllowCustomerProfilesSegmentationImportForConnectDomain",
+      "Effect": "Allow",
+      "Action": [
+        "profile:GetUploadJob",
+        "profile:GetUploadJobPath",
+        "profile:StartUploadJob",
+        "profile:StopUploadJob"
+      ],
+      "Resource": [
+        "arn:aws:profile:*:*:domains/amazon-connect-*/upload-jobs/*"
       ]
     },
     {

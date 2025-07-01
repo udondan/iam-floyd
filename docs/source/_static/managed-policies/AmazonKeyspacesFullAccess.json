@@ -62,6 +62,17 @@
       }
     },
     {
+      "Sid": "KeyspacesCDCServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/cassandra-streams.amazonaws.com/AWSServiceRoleForAmazonKeyspacesCDC",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "cassandra-streams.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "Ec2VpcReadAccess",
       "Effect": "Allow",
       "Action": [
