@@ -11,6 +11,17 @@
       "Resource": "*"
     },
     {
+      "Sid": "AutoshiftPracticeCheckPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:DescribeAutoScalingGroups",
+        "ec2:DescribeInstances",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "elasticloadbalancing:DescribeTargetGroups"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "ZonalShiftManagementPermissions",
       "Effect": "Allow",
       "Action": [
