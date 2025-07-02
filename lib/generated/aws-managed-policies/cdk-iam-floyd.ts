@@ -5764,6 +5764,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSZonalAutoshiftPracticeRunSLRPolicy);
     }
 
+    /** Provides read-only access to the APIs needed to support zone-group access-management for organizations. */
+    public AWSZoneGroupAccessManagementServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSZoneGroupAccessManagementServiceRolePolicy);
+    }
+
     /** Provides access for the AWS Batch service to manage the required resources, including Amazon EC2 and Amazon ECS resources. */
     public BatchServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BatchServiceRolePolicy);
