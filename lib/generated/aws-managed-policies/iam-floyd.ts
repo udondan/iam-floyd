@@ -2302,6 +2302,8 @@ export class AwsManagedPolicy {
     public static AWSXrayWriteOnlyAccess = 'AWSXrayWriteOnlyAccess';
     /** Provides administrative access for ARC zonal shift practice runs, and access to CloudWatch alarm statuses to monitor practice runs. */
     public static AWSZonalAutoshiftPracticeRunSLRPolicy = 'aws-service-role/AWSZonalAutoshiftPracticeRunSLRPolicy';
+    /** Provides read-only access to the APIs needed to support zone-group access-management for organizations. */
+    public static AWSZoneGroupAccessManagementServiceRolePolicy = 'aws-service-role/AWSZoneGroupAccessManagementServiceRolePolicy';
     /** Provides access for the AWS Batch service to manage the required resources, including Amazon EC2 and Amazon ECS resources. */
     public static BatchServiceRolePolicy = 'aws-service-role/BatchServiceRolePolicy';
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */
