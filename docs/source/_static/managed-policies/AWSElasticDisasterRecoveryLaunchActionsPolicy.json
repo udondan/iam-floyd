@@ -28,7 +28,8 @@
       ],
       "Resource": [
         "arn:aws:ssm:*:*:document/*",
-        "arn:aws:ssm:*:*:automation-definition/*:*"
+        "arn:aws:ssm:*:*:automation-definition/*:*",
+        "arn:aws:ssm:*:*:automation-execution/*"
       ],
       "Condition": {
         "ForAnyValue:StringEquals": {
@@ -124,7 +125,8 @@
         "arn:aws:ssm:*::automation-definition/AmazonInspector2-*:*",
         "arn:aws:ssm:*::automation-definition/AmazonInternal-*:*",
         "arn:aws:ssm:*::automation-definition/AwsEnaNetworkDriver-*:*",
-        "arn:aws:ssm:*::automation-definition/AwsVssComponents-*:*"
+        "arn:aws:ssm:*::automation-definition/AwsVssComponents-*:*",
+        "arn:aws:ssm:*:*:automation-execution/*"
       ],
       "Condition": {
         "ForAnyValue:StringEquals": {

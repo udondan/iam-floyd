@@ -216,7 +216,11 @@
       "Action": [
         "ssm:StartAutomationExecution"
       ],
-      "Resource": "arn:aws:ssm:*:*:automation-definition/AWSMigration-*:$DEFAULT",
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWSMigration-*",
+        "arn:aws:ssm:*:*:automation-execution/*",
+        "arn:aws:ssm:*:*:automation-definition/AWSMigration-*:$DEFAULT"
+      ],
       "Condition": {
         "ForAnyValue:StringEquals": {
           "aws:CalledVia": "mgn.amazonaws.com"
