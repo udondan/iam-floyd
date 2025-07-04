@@ -20,7 +20,9 @@
       "Sid": "EC2",
       "Effect": "Allow",
       "Action": [
-        "ec2:DescribeAvailabilityZones"
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeTransitGatewayVpcAttachments",
+        "ec2:DescribeSubnets"
       ],
       "Resource": "*"
     },
@@ -28,6 +30,7 @@
       "Sid": "EB1",
       "Effect": "Allow",
       "Action": [
+        "events:ActivateEventSource",
         "events:DescribeEventSource"
       ],
       "Resource": "arn:aws:events:*:*:event-source/aws.partner/odb*"

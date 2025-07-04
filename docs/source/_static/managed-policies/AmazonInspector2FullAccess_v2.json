@@ -1,0 +1,77 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowFullAccessToInspectorApis",
+      "Effect": "Allow",
+      "Action": "inspector2:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToCodeGuruApis",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-security:BatchGetFindings",
+        "codeguru-security:GetAccountConfiguration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAccessToCreateSlr",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "agentless.inspector2.amazonaws.com",
+            "inspector2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowServicePrincipalBasedAccessToOrganizationApis",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess",
+        "organizations:RegisterDelegatedAdministrator",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "inspector2.amazonaws.com",
+            "agentless.inspector2.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowOrganizationalBasedAccessToOrganizationApis",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganizationalUnit"
+      ],
+      "Resource": "arn:*:organizations::*:ou/o-*/ou-*"
+    },
+    {
+      "Sid": "AllowAccountsBasedAccessToOrganizationApis",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount"
+      ],
+      "Resource": "arn:*:organizations::*:account/o-*/*"
+    },
+    {
+      "Sid": "AllowAccessToOrganizationApis",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

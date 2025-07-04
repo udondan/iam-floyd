@@ -474,6 +474,8 @@ export class AwsManagedPolicy {
     public static AmazonInspector2AgentlessServiceRolePolicy = 'aws-service-role/AmazonInspector2AgentlessServiceRolePolicy';
     /** Provides full access to Amazon Inspector and access to other related services such as organizations. */
     public static AmazonInspector2FullAccess = 'AmazonInspector2FullAccess';
+    /** Provides full access to Amazon Inspector and access to other related services such as organizations with restrictive organizational access. */
+    public static AmazonInspector2FullAccessV2 = 'AmazonInspector2FullAccess_v2';
     /** This is a managed policy that customer should attach to their roles to communicate with inspector service for CIS scans */
     public static AmazonInspector2ManagedCisPolicy = 'AmazonInspector2ManagedCisPolicy';
     /** Provides read only access to the Amazon inspector2 service and relevant support services */

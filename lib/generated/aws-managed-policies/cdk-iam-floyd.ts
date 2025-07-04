@@ -1194,6 +1194,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspector2FullAccess);
     }
 
+    /** Provides full access to Amazon Inspector and access to other related services such as organizations with restrictive organizational access. */
+    public AmazonInspector2FullAccessV2(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspector2FullAccessV2);
+    }
+
     /** This is a managed policy that customer should attach to their roles to communicate with inspector service for CIS scans */
     public AmazonInspector2ManagedCisPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspector2ManagedCisPolicy);
