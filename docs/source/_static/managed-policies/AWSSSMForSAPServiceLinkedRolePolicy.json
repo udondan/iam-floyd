@@ -349,6 +349,17 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "ManageCostAllocationTags",
+      "Effect": "Allow",
+      "Action": [
+        "ce:ListCostAllocationTags",
+        "ce:UpdateCostAllocationTagsStatus",
+        "ce:ListCostAllocationTagBackfillHistory",
+        "ce:StartCostAllocationTagBackfill"
+      ],
+      "Resource": "*"
     }
   ]
 }
