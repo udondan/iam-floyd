@@ -2640,6 +2640,8 @@ export class AwsManagedPolicy {
     public static S3StorageLensServiceRolePolicy = 'aws-service-role/S3StorageLensServiceRolePolicy';
     /** Provides access required to unlock a S3 bucket policy using the Security Token Service (STS) AssumeRoot API. Use this managed policy only with the STS AssumeRoot action. */
     public static S3UnlockBucketPolicy = 'root-task/S3UnlockBucketPolicy';
+    /** This IAM policy grants an IAM role full access to AWS Glue Data Catalog (metadata) and Amazon S3 (actual data) for data lake operations, with access scoped by account, and role tags. */
+    public static SageMakerStudioAdminProjectUserRolePolicy = 'SageMakerStudioAdminProjectUserRolePolicy';
     /** Allows Amazon Bedrock Agents to access Amazon Bedrock models and other resources attached to an agent in SageMaker Studio. */
     public static SageMakerStudioBedrockAgentServiceRolePolicy = 'service-role/SageMakerStudioBedrockAgentServiceRolePolicy';
     /** Provides access to an Amazon Bedrock chat agent app's configuration and Amazon Bedrock agent in SageMaker Studio. */
