@@ -35,7 +35,8 @@
         "s3tables:UpdateTableMetadataLocation",
         "s3tables:GetTableMetadataLocation",
         "s3tables:GetTableData",
-        "s3tables:PutTableData"
+        "s3tables:PutTableData",
+        "s3tables:PutTableBucketEncryption"
       ],
       "Resource": [
         "*"
