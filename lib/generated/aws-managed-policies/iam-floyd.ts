@@ -818,6 +818,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerGeospatialFullAccess = 'service-role/AmazonSageMakerGeospatialFullAccess';
     /** Provides access to AWS services that are required to run SageMaker GroundTruth Labeling job */
     public static AmazonSageMakerGroundTruthExecution = 'AmazonSageMakerGroundTruthExecution';
+    /** This policy provides administrative privileges required for setting up SageMaker HyperPod observability. It enables access to Amazon Managed Prometheus, Amazon Managed Grafana and EKS Addons. The policy also includes broad access to Grafana HTTP APIs through ServiceAccountTokens across all Amazon Managed Grafana workspaces in your account. */
+    public static AmazonSageMakerHyperPodObservabilityAdminAccess = 'AmazonSageMakerHyperPodObservabilityAdminAccess';
     /** This policy grants permissions to Amazon SageMaker HyperPod to related AWS services such as Amazon EKS, Amazon CloudWatch etc. */
     public static AmazonSageMakerHyperPodServiceRolePolicy = 'aws-service-role/AmazonSageMakerHyperPodServiceRolePolicy';
     /** Provides access to create Amazon Augmented AI FlowDefinition resources against any Workteam. */
@@ -1430,6 +1432,8 @@ export class AwsManagedPolicy {
     public static AWSDirectoryServiceFullAccess = 'AWSDirectoryServiceFullAccess';
     /** Provides read only access to AWS Directory Service. */
     public static AWSDirectoryServiceReadOnlyAccess = 'AWSDirectoryServiceReadOnlyAccess';
+    /** Policy for the Directory Service Service Linked Role */
+    public static AWSDirectoryServiceServiceRolePolicy = 'aws-service-role/AWSDirectoryServiceServiceRolePolicy';
     /** Provides write access to AWS resources required for AWS Discovery Continuous Export */
     public static AWSDiscoveryContinuousExportFirehosePolicy = 'AWSDiscoveryContinuousExportFirehosePolicy';
     /** Allows DMS Fleet Advisor to manage CloudWatch metrics on your behalf. */
