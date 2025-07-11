@@ -22,6 +22,7 @@
         "glue:GetColumnStatisticsTaskRun",
         "glue:GetColumnStatisticsTaskRuns",
         "glue:GetDatabase",
+        "glue:GetDatabases",
         "glue:GetPartition",
         "glue:GetPartitionIndexes",
         "glue:GetPartitions",

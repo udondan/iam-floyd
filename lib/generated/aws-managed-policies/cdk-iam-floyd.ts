@@ -2054,6 +2054,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerGroundTruthExecution);
     }
 
+    /** This policy provides administrative privileges required for setting up SageMaker HyperPod observability. It enables access to Amazon Managed Prometheus, Amazon Managed Grafana and EKS Addons. The policy also includes broad access to Grafana HTTP APIs through ServiceAccountTokens across all Amazon Managed Grafana workspaces in your account. */
+    public AmazonSageMakerHyperPodObservabilityAdminAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodObservabilityAdminAccess);
+    }
+
     /** This policy grants permissions to Amazon SageMaker HyperPod to related AWS services such as Amazon EKS, Amazon CloudWatch etc. */
     public AmazonSageMakerHyperPodServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodServiceRolePolicy);
@@ -3582,6 +3587,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read only access to AWS Directory Service. */
     public AWSDirectoryServiceReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDirectoryServiceReadOnlyAccess);
+    }
+
+    /** Policy for the Directory Service Service Linked Role */
+    public AWSDirectoryServiceServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDirectoryServiceServiceRolePolicy);
     }
 
     /** Provides write access to AWS resources required for AWS Discovery Continuous Export */
