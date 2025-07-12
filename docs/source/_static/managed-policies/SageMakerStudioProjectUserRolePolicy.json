@@ -340,7 +340,11 @@
         "glue:PutDataQualityStatisticAnnotation",
         "glue:StartDataQualityRuleRecommendationRun",
         "glue:StartDataQualityRulesetEvaluationRun",
-        "glue:UpdateDataQualityRuleset"
+        "glue:UpdateDataQualityRuleset",
+        "glue:GetJobRun",
+        "glue:GetJobRuns",
+        "glue:BatchGetJobs",
+        "glue:GetJob"
       ],
       "Resource": [
         "arn:aws:glue:*:*:session/*",
@@ -352,6 +356,20 @@
       "Condition": {
         "StringEquals": {
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:PrincipalTag/EnableGlueWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GlueListJobsPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:ListJobs"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}",
           "aws:PrincipalTag/EnableGlueWorkloadsPermissions": "true"
         }
@@ -372,7 +390,10 @@
         "glue:StartCompletion",
         "glue:GetCompletion"
       ],
-      "Resource": "arn:aws:glue:*:*:completion/*"
+      "Resource": [
+        "arn:aws:glue:*:*:completion/*",
+        "arn:aws:glue:*:*:job/*"
+      ]
     },
     {
       "Sid": "GlueJobRunnerSessionLogPermissions",
@@ -522,6 +543,22 @@
       "Condition": {
         "StringLike": {
           "cloudwatch:namespace": "AmazonMWAA"
+        }
+      }
+    },
+    {
+      "Sid": "GlueJobCloudwatchPutMetricActions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "cloudwatch:namespace": [
+            "Glue",
+            "AWS/Glue"
+          ]
         }
       }
     },
@@ -721,6 +758,17 @@
       }
     },
     {
+      "Sid": "AccessLevelControlS3BucketPermissions",
+      "Effect": "Allow",
+      "Action": "s3:GetBucketAcl",
+      "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "TagS3ObjectPermissionsForBedrockEvaluation",
       "Effect": "Allow",
       "Action": "s3:PutObjectTagging",
@@ -770,12 +818,49 @@
       }
     },
     {
+      "Sid": "DZDomainKMSKeyXAcctPerm",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/DomainKmsKeyId}",
+      "Condition": {
+        "StringEquals": {
+          "kms:EncryptionContext:aws:datazone:domainId": "${aws:PrincipalTag/AmazonDataZoneDomain}",
+          "kms:ViaService": [
+            "datazone.*.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "ListLogGroupsPermissions",
       "Effect": "Allow",
       "Action": [
         "logs:DescribeLogGroups"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "GlueJobLogGroupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogStreams",
+        "logs:StartQuery",
+        "logs:GetLogEvents",
+        "logs:GetLogRecord",
+        "logs:GetLogGroupFields",
+        "logs:GetQueryResults",
+        "logs:PutLogEvents",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:FilterLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/*",
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/*:log-stream:*"
+      ]
     },
     {
       "Sid": "ProjectLogGroupPermissions",
@@ -1222,7 +1307,8 @@
             "glue.amazonaws.com",
             "airflow.amazonaws.com",
             "emr-serverless.amazonaws.com",
-            "scheduler.amazonaws.com"
+            "scheduler.amazonaws.com",
+            "access-grants.s3.amazonaws.com"
           ],
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
@@ -1400,7 +1486,10 @@
       "Resource": "arn:aws:redshift-serverless:*:*:workgroup/*",
       "Condition": {
         "ForAnyValue:StringEquals": {
-          "aws:CalledVia": "redshift-data.amazonaws.com"
+          "aws:CalledVia": [
+            "redshift-data.amazonaws.com",
+            "sqlworkbench.amazonaws.com"
+          ]
         },
         "Bool": {
           "aws:ViaAWSService": "true"
@@ -2367,6 +2456,7 @@
         "lakeformation:BatchGrantPermissions",
         "lakeformation:BatchRevokePermissions",
         "lakeformation:ListPermissions",
+        "lakeformation:DescribeResource",
         "ram:GetResourceShareInvitations",
         "lakeformation:CreateDataCellsFilter",
         "lakeformation:ListDataCellsFilter",
@@ -2469,7 +2559,8 @@
       "Condition": {
         "StringLike": {
           "ram:ResourceShareName": [
-            "LakeFormation*"
+            "LakeFormation*",
+            "DataZoneS3AG*"
           ]
         }
       }
