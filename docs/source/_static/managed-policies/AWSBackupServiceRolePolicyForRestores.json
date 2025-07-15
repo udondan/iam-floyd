@@ -147,7 +147,11 @@
         "dsql:TagResource",
         "dsql:CreateCluster",
         "dsql:PutMultiRegionProperties",
-        "dsql:PutWitnessRegion"
+        "dsql:PutWitnessRegion",
+        "dsql:UpdateCluster",
+        "dsql:AddPeerCluster",
+        "dsql:RemovePeerCluster",
+        "dsql:GetCluster"
       ],
       "Resource": [
         "*"
