@@ -90,6 +90,87 @@
       }
     },
     {
+      "Sid": "VectorStoresKms",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "neptune-graph.*.amazonaws.com",
+            "s3vectors.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "kms:EncryptionContextKeys": "false"
+        }
+      }
+    },
+    {
+      "Sid": "VectorStoresKmsDescribeKey",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": [
+            "neptune-graph.*.amazonaws.com",
+            "s3vectors.*.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "NeptuneGraphDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "neptune-graph:GetGraph",
+        "neptune-graph:DeleteDataViaQuery",
+        "neptune-graph:WriteDataViaQuery",
+        "neptune-graph:ReadDataViaQuery"
+      ],
+      "Resource": "arn:aws:neptune-graph:*:*:graph/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "S3VectorsDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3vectors:GetVectorBucket",
+        "s3vectors:GetIndex",
+        "s3vectors:PutVectors",
+        "s3vectors:GetVectors",
+        "s3vectors:ListVectors",
+        "s3vectors:QueryVectors",
+        "s3vectors:DeleteVectors"
+      ],
+      "Resource": "arn:aws:s3vectors:*:*:bucket/amazon-bedrock-ide-${aws:PrincipalTag/AmazonDataZoneProject}*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalTag/AmazonDataZoneProject": ""
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "BedrockKnowledgeBaseKmsPermissions",
       "Effect": "Allow",
       "Action": [

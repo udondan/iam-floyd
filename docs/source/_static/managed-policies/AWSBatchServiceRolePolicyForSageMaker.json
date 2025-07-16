@@ -1,0 +1,57 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateTrainingJob",
+        "sagemaker:DescribeTrainingJob",
+        "sagemaker:StopTrainingJob",
+        "sagemaker:ListTags"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:training-job/AWSBatch*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateTrainingJob"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:training-plan/*",
+        "arn:aws:sagemaker:*:*:reserved-capacity/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:AddTags"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:training-job/AWSBatch*",
+      "Condition": {
+        "StringEquals": {
+          "sagemaker:TaggingAction": "CreateTrainingJob"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListTrainingJobs",
+        "sagemaker:Search"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "sagemaker.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

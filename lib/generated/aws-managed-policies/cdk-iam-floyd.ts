@@ -2979,6 +2979,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBatchServiceRole);
     }
 
+    /** Provides access for AWS Batch to queue and manage Amazon SageMaker workloads */
+    public AWSBatchServiceRolePolicyForSageMaker(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBatchServiceRolePolicyForSageMaker);
+    }
+
     /** A service linked role to provide Billing and Cost Management Data Exports access to AWS service data for exporting the data to a target location, such as Amazon S3, on behalf of a customer. */
     public AWSBCMDataExportsServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBCMDataExportsServiceRolePolicy);

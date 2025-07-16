@@ -396,12 +396,36 @@
             "EnableSageMakerMLWorkloadsPermissions",
             "DomainBucketName",
             "KmsKeyId",
+            "DomainKmsKeyId",
             "LogGroupName",
             "RoleName",
             "vpcArn",
             "VpcId",
             "CreatedForUseWithSageMakerStudio",
             "SageMakerStudioQueryExecutionRole"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AdminProjectTagRoleManagement",
+      "Effect": "Allow",
+      "Action": [
+        "iam:TagRole",
+        "iam:UntagRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/datazone_usr_role_*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "AmazonDataZoneScopeName",
+            "BootstrappedServices",
+            "AmazonDataZoneAdminProject"
           ]
         }
       }
@@ -824,7 +848,6 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "aws:CalledViaFirst": "cloudformation.amazonaws.com",
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
@@ -1242,7 +1265,8 @@
       ],
       "Resource": [
         "arn:aws:iam::*:role/SageMakerStudioQueryExecutionRole",
-        "arn:aws:iam::*:role/service-role/AmazonSageMakerQueryExecution"
+        "arn:aws:iam::*:role/service-role/AmazonSageMakerQueryExecution",
+        "arn:aws:iam::*:role/datazone_s3tables_*"
       ],
       "Effect": "Allow"
     },
@@ -1769,6 +1793,7 @@
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/neptune-graph.amazonaws.com/AWSServiceRoleForNeptuneGraph",
         "arn:aws:iam::*:role/aws-service-role/redshift.amazonaws.com/AWSServiceRoleForRedshift",
         "arn:aws:iam::*:role/aws-service-role/sagemaker.amazonaws.com/AWSServiceRoleForAmazonSageMakerNotebooks",
         "arn:aws:iam::*:role/aws-service-role/ops.emr-serverless.amazonaws.com/AWSServiceRoleForAmazonEMRServerless",
@@ -2249,7 +2274,63 @@
       }
     },
     {
-      "Sid": "GetBedrockCfnResourceDefinitionS3",
+      "Sid": "ManageNeptune",
+      "Effect": "Allow",
+      "Action": [
+        "neptune-graph:CreateGraph",
+        "neptune-graph:UpdateGraph",
+        "neptune-graph:DeleteGraph",
+        "neptune-graph:ListGraphs",
+        "neptune-graph:GetGraph"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "S3VectorsManage",
+      "Effect": "Allow",
+      "Action": [
+        "s3vectors:CreateVectorBucket",
+        "s3vectors:DeleteVectorBucket",
+        "s3vectors:ListVectorBuckets",
+        "s3vectors:GetVectorBucket",
+        "s3vectors:CreateIndex",
+        "s3vectors:DeleteIndex",
+        "s3vectors:ListIndexes",
+        "s3vectors:GetIndex"
+      ],
+      "Resource": "arn:aws:s3vectors:*:*:bucket/amazon-bedrock-ide-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TagNeptune",
+      "Effect": "Allow",
+      "Action": [
+        "neptune-graph:TagResource"
+      ],
+      "Resource": "arn:aws:neptune-graph:*:*:graph/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        },
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "AmazonDataZone*",
+            "AmazonBedrock*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "GetS3GenAI",
       "Effect": "Allow",
       "Action": [
         "s3:GetObject",
@@ -2532,7 +2613,7 @@
       ]
     },
     {
-      "Sid": "AirflowKmsCreateGrant",
+      "Sid": "KmsCreate",
       "Effect": "Allow",
       "Action": [
         "kms:CreateGrant"
@@ -2541,7 +2622,9 @@
       "Condition": {
         "StringLike": {
           "kms:ViaService": [
-            "airflow.*.amazonaws.com"
+            "airflow.*.amazonaws.com",
+            "neptune-graph.*.amazonaws.com",
+            "s3vectors.*.amazonaws.com"
           ]
         },
         "StringEquals": {

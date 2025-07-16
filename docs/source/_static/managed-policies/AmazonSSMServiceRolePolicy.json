@@ -23,6 +23,23 @@
     {
       "Effect": "Allow",
       "Action": [
+        "ssm:PutInventory"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "ssm:InventoryTypeName": [
+            "AWS:ComplianceItem",
+            "AWS:PatchSummary"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "ssm:UpdateServiceSetting",
         "ssm:GetServiceSetting"
       ],
