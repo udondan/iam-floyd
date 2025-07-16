@@ -1188,6 +1188,8 @@ export class AwsManagedPolicy {
     public static AWSBatchServiceEventTargetRole = 'service-role/AWSBatchServiceEventTargetRole';
     /** Policy for AWS Batch service role which allows access to related services including EC2, Autoscaling, EC2 Container service and Cloudwatch Logs. */
     public static AWSBatchServiceRole = 'service-role/AWSBatchServiceRole';
+    /** Provides access for AWS Batch to queue and manage Amazon SageMaker workloads */
+    public static AWSBatchServiceRolePolicyForSageMaker = 'aws-service-role/AWSBatchServiceRolePolicyForSageMaker';
     /** A service linked role to provide Billing and Cost Management Data Exports access to AWS service data for exporting the data to a target location, such as Amazon S3, on behalf of a customer. */
     public static AWSBCMDataExportsServiceRolePolicy = 'aws-service-role/AWSBCMDataExportsServiceRolePolicy';
     /** Use the AWSBillingConductorFullAccess managed policy to allow complete access to AWS Billing Conductor (ABC) console and APIs. This policy allows users to list, create and delete ABC resources. */
