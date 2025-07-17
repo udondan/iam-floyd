@@ -164,6 +164,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonAuroraDSQLReadOnlyAccess);
     }
 
+    /** Provides Bedrock Model inference permission to Bedrock agent core memory */
+    public AmazonBedrockAgentCoreMemoryBedrockModelInferenceExecutionRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockAgentCoreMemoryBedrockModelInferenceExecutionRolePolicy);
+    }
+
     /** Provides full access to Amazon Bedrock as well as limited access to related services that are required by it */
     public AmazonBedrockFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockFullAccess);
@@ -5194,6 +5199,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSRoboMakerServiceRolePolicy);
     }
 
+    /** Provides all permissions to IAM Roles Anywhere resources, including but not limited to: CreateProfile, DeleteTrustAnchor, DisableCRL, ResetNotificationSettings. */
+    public AWSRolesAnywhereFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSRolesAnywhereFullAccess);
+    }
+
+    /** Provides read-only permissions to IAM Roles Anywhere resources, including but not limited to: GetTrustAnchor, ListProfiles, GetCRL. There will be no other permissions for other services included in this policy. */
+    public AWSRolesAnywhereReadOnly(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSRolesAnywhereReadOnly);
+    }
+
     /** Allows IAM Roles Anywhere to publish service/usage metrics to CloudWatch and check the status of Private Certificate Authorities on your behalf. */
     public AWSRolesAnywhereServicePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSRolesAnywhereServicePolicy);
@@ -5792,6 +5807,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides access for the AWS Batch service to manage the required resources, including Amazon EC2 and Amazon ECS resources. */
     public BatchServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BatchServiceRolePolicy);
+    }
+
+    /** Provides full access to Bedrock AgentCore as well as limited access to related services */
+    public BedrockAgentCoreFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BedrockAgentCoreFullAccess);
     }
 
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */

@@ -33,6 +33,8 @@
         "ssm:StartAutomationExecution"
       ],
       "Resource": [
+        "arn:aws:ssm:*:*:document/AWS-*UnmanagedEC2*",
+        "arn:aws:ssm:*:*:automation-execution/*",
         "arn:aws:ssm:*:*:automation-definition/AWS-*UnmanagedEC2*:*"
       ]
     },

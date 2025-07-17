@@ -18,6 +18,9 @@
         "ssm:StartAutomationExecution"
       ],
       "Resource": [
+        "arn:aws:ssm:*:*:document/AWS-OrchestrateUnmanagedEC2Actions",
+        "arn:aws:ssm:*:*:document/AWS-RemediateSSMAgent*",
+        "arn:aws:ssm:*:*:automation-execution/*",
         "arn:aws:ssm:*:*:automation-definition/AWS-OrchestrateUnmanagedEC2Actions:*",
         "arn:aws:ssm:*:*:automation-definition/AWS-RemediateSSMAgent*:*"
       ]
