@@ -443,6 +443,18 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "AllowPollyActions",
+      "Effect": "Allow",
+      "Action": [
+        "polly:ListLexicons",
+        "polly:DescribeVoices",
+        "polly:SynthesizeSpeech"
+      ],
+      "Resource": [
+        "*"
+      ]
     }
   ]
 }

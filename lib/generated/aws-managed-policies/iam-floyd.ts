@@ -62,6 +62,8 @@ export class AwsManagedPolicy {
     public static AmazonAuroraDSQLFullAccess = 'AmazonAuroraDSQLFullAccess';
     /** Provides read only access to Aurora DSQL */
     public static AmazonAuroraDSQLReadOnlyAccess = 'AmazonAuroraDSQLReadOnlyAccess';
+    /** Provides Bedrock Model inference permission to Bedrock agent core memory */
+    public static AmazonBedrockAgentCoreMemoryBedrockModelInferenceExecutionRolePolicy = 'AmazonBedrockAgentCoreMemoryBedrockModelInferenceExecutionRolePolicy';
     /** Provides full access to Amazon Bedrock as well as limited access to related services that are required by it */
     public static AmazonBedrockFullAccess = 'AmazonBedrockFullAccess';
     /** Provides limited access to Amazon Bedrock as well as to related services that are required by it */
@@ -2074,6 +2076,10 @@ export class AwsManagedPolicy {
     public static AWSRoboMakerServicePolicy = 'aws-service-role/AWSRoboMakerServicePolicy';
     /** RoboMaker service policy */
     public static AWSRoboMakerServiceRolePolicy = 'AWSRoboMakerServiceRolePolicy';
+    /** Provides all permissions to IAM Roles Anywhere resources, including but not limited to: CreateProfile, DeleteTrustAnchor, DisableCRL, ResetNotificationSettings. */
+    public static AWSRolesAnywhereFullAccess = 'AWSRolesAnywhereFullAccess';
+    /** Provides read-only permissions to IAM Roles Anywhere resources, including but not limited to: GetTrustAnchor, ListProfiles, GetCRL. There will be no other permissions for other services included in this policy. */
+    public static AWSRolesAnywhereReadOnly = 'AWSRolesAnywhereReadOnly';
     /** Allows IAM Roles Anywhere to publish service/usage metrics to CloudWatch and check the status of Private Certificate Authorities on your behalf. */
     public static AWSRolesAnywhereServicePolicy = 'aws-service-role/AWSRolesAnywhereServicePolicy';
     /** Allow Amazon S3 on Outposts service to manage EC2 network resources on your behalf. */
@@ -2314,6 +2320,8 @@ export class AwsManagedPolicy {
     public static AWSZoneGroupAccessManagementServiceRolePolicy = 'aws-service-role/AWSZoneGroupAccessManagementServiceRolePolicy';
     /** Provides access for the AWS Batch service to manage the required resources, including Amazon EC2 and Amazon ECS resources. */
     public static BatchServiceRolePolicy = 'aws-service-role/BatchServiceRolePolicy';
+    /** Provides full access to Bedrock AgentCore as well as limited access to related services */
+    public static BedrockAgentCoreFullAccess = 'BedrockAgentCoreFullAccess';
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */
     public static Billing = 'job-function/Billing';
     /** Amazon Certificate Manager Service Role Policy */
