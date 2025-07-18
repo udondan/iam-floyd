@@ -694,6 +694,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSComputeServiceRolePolicy);
     }
 
+    /** Provides access to other AWS service resources required to manage load balancers associated with ECS workloads on your behalf. */
+    public AmazonECSInfrastructureRolePolicyForLoadBalancers(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSInfrastructureRolePolicyForLoadBalancers);
+    }
+
     /** Provides administrative access to Private Certificate Authority, AWS Secrets Manager and other AWS Services required to manage ECS Service Connect TLS features on your behalf. */
     public AmazonECSInfrastructureRolePolicyForServiceConnectTransportLayerSecurity(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSInfrastructureRolePolicyForServiceConnectTransportLayerSecurity);

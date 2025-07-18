@@ -35,7 +35,8 @@
       "Effect": "Allow",
       "Action": [
         "ce:ListCostAllocationTags",
-        "ce:GetCostAndUsage"
+        "ce:GetCostAndUsage",
+        "ce:GetDimensionValues"
       ],
       "Resource": [
         "*"

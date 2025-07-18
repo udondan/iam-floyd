@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ELBReadOperations",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeRules"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ALBModifyListeners",
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:ModifyListener",
+      "Resource": [
+        "arn:aws:elasticloadbalancing:*:*:listener/app/*/*/*"
+      ]
+    },
+    {
+      "Sid": "NLBModifyListeners",
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:ModifyListener",
+      "Resource": [
+        "arn:aws:elasticloadbalancing:*:*:listener/net/*/*/*"
+      ]
+    },
+    {
+      "Sid": "ALBModifyRules",
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:ModifyRule",
+      "Resource": [
+        "arn:aws:elasticloadbalancing:*:*:listener-rule/app/*/*/*/*"
+      ]
+    }
+  ]
+}

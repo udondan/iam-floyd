@@ -145,6 +145,36 @@
       }
     },
     {
+      "Sid": "AllowDeleteVolumes",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVolume"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:volume/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "EC2 Fast Launch"
+        }
+      }
+    },
+    {
+      "Sid": "AllowDeleteNetworkInterfaces",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkInterface"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "EC2 Fast Launch"
+        }
+      }
+    },
+    {
       "Sid": "AllowDescribeActions",
       "Effect": "Allow",
       "Action": [
@@ -157,6 +187,8 @@
         "ec2:DescribeInstanceTypeOfferings",
         "ec2:DescribeLaunchTemplateVersions",
         "ec2:DescribeLaunchTemplates",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeNetworkInterfaces",
         "cloudformation:DescribeStacks"
       ],
       "Resource": "*"
