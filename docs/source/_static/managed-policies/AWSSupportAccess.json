@@ -4,7 +4,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "support:*"
+        "support:*",
+        "support-console:*"
       ],
       "Resource": "*"
     }
