@@ -1,0 +1,11 @@
+bedrock-agentcore:apikeycredentialprovider
+bedrock-agentcore:browser
+bedrock-agentcore:browser-custom
+bedrock-agentcore:code-interpreter
+bedrock-agentcore:code-interpreter-custom
+bedrock-agentcore:gateway
+bedrock-agentcore:memory
+bedrock-agentcore:oauth2credentialprovider
+bedrock-agentcore:runtime
+bedrock-agentcore:runtime-endpoint
+bedrock-agentcore:workload-identity

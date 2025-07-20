@@ -1,0 +1,9 @@
+network-security-director:GetFinding;Read
+network-security-director:GetNetworkSecurityScan;Read
+network-security-director:GetResource;Read
+network-security-director:ListFindings;List
+network-security-director:ListInsights;List
+network-security-director:ListRemediations;List
+network-security-director:ListResources;List
+network-security-director:StartNetworkSecurityScan;Write
+network-security-director:UpdateFinding;Write

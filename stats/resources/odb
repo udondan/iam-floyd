@@ -1,0 +1,6 @@
+odb:cloud-autonomous-vm-cluster
+odb:cloud-exadata-infrastructure
+odb:cloud-vm-cluster
+odb:db-node
+odb:odb-network
+odb:odb-peering-connection

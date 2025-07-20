@@ -1,0 +1,16 @@
+s3vectors:CreateIndex;Write
+s3vectors:CreateVectorBucket;Write
+s3vectors:DeleteIndex;Write
+s3vectors:DeleteVectorBucket;Write
+s3vectors:DeleteVectorBucketPolicy;Write
+s3vectors:DeleteVectors;Write
+s3vectors:GetIndex;Read
+s3vectors:GetVectorBucket;Read
+s3vectors:GetVectorBucketPolicy;Read
+s3vectors:GetVectors;Read
+s3vectors:ListIndexes;List
+s3vectors:ListVectorBuckets;List
+s3vectors:ListVectors;List
+s3vectors:PutVectorBucketPolicy;Write
+s3vectors:PutVectors;Write
+s3vectors:QueryVectors;Read
