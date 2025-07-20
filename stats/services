@@ -49,6 +49,7 @@ batch
 bcm-data-exports
 bcm-pricing-calculator
 bedrock
+bedrock-agentcore
 billing
 billingconductor
 braket
@@ -260,6 +261,7 @@ mq
 neptune-db
 neptune-graph
 network-firewall
+network-security-director
 networkflowmonitor
 networkmanager
 networkmanager-chat
@@ -269,6 +271,7 @@ notifications
 notifications-contacts
 oam
 observabilityadmin
+odb
 omics
 one
 opensearch
@@ -331,6 +334,7 @@ s3-object-lambda
 s3-outposts
 s3express
 s3tables
+s3vectors
 sagemaker
 sagemaker-data-science-assistant
 sagemaker-geospatial
@@ -379,7 +383,6 @@ support
 support-console
 supportapp
 supportplans
-supportrecommendations
 sustainability
 swf
 synthetics
