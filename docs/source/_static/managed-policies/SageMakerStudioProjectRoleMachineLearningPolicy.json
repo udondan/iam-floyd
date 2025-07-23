@@ -1071,16 +1071,26 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringEquals": {
+        "StringEqualsIfExists": {
           "ram:RequestedResourceType": [
             "s3:AccessGrants"
-          ],
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        },
-        "ArnEquals": {
-          "ram:ResourceArn": [
-            "arn:aws:s3:*:*:access-grants/default"
           ]
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "CrossAccountS3AGResourceSharingPolicyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutAccessGrantsInstanceResourcePolicy"
+      ],
+      "Resource": "arn:aws:s3:*:*:access-grants/default",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     },
