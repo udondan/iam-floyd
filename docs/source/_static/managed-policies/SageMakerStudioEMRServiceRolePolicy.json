@@ -44,8 +44,6 @@
       "Effect": "Allow",
       "Action": [
         "kms:CreateGrant",
-        "kms:ReEncryptFrom",
-        "kms:ReEncryptTo",
         "kms:Decrypt",
         "kms:Encrypt",
         "kms:GenerateDataKeyWithoutPlaintext"
@@ -77,29 +75,11 @@
       }
     },
     {
-      "Sid": "AllowEMRForKMSManagement",
+      "Sid": "AllowDescribeKeyForLogPusherCMK",
       "Effect": "Allow",
       "Action": [
-        "kms:ListGrants",
-        "kms:RevokeGrant",
         "kms:DescribeKey"
       ],
-      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
-      "Condition": {
-        "StringLike": {
-          "kms:ViaService": [
-            "ec2.*.amazonaws.com"
-          ]
-        },
-        "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        }
-      }
-    },
-    {
-      "Sid": "AllowEMRToListKmsAliases",
-      "Effect": "Allow",
-      "Action": "kms:ListAliases",
       "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
       "Condition": {
         "StringEquals": {
