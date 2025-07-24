@@ -2,6 +2,18 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ResourceExplorerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:UpdateIndexType",
+        "resource-explorer-2:CreateIndex",
+        "resource-explorer-2:CreateView",
+        "resource-explorer-2:AssociateDefaultView",
+        "resource-explorer-2:DeleteIndex"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "CloudTrailEventsAccess",
       "Effect": "Allow",
       "Action": [
