@@ -18,6 +18,7 @@
         "kms:DescribeKey",
         "kms:ListAliases",
         "iam:ListRoles",
+        "iam:ListPolicies",
         "sso:DescribeRegisteredRegions",
         "s3:ListAllMyBuckets",
         "redshift:DescribeClusters",
@@ -35,7 +36,8 @@
         "bedrock:ListFoundationModels",
         "bedrock:ListTagsForResource",
         "aoss:ListSecurityPolicies",
-        "quicksight:DescribeAccountSubscription"
+        "quicksight:DescribeAccountSubscription",
+        "cloudformation:ValidateTemplate"
       ],
       "Resource": [
         "*"
@@ -46,9 +48,27 @@
       "Effect": "Allow",
       "Action": [
         "s3:ListBucket",
-        "s3:GetBucketLocation"
+        "s3:GetBucketLocation",
+        "s3:ListBucketVersions"
       ],
       "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Sid": "ReadManagedBlueprintTemplatesStatement",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::default-env-blueprint-*/*",
+        "arn:aws:s3:*:*:accesspoint/env-blueprint-accesspoint*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "s3:DataAccessPointArn": "arn:aws:s3:*:*:accesspoint/env-blueprint-accesspoint"
+        },
+        "StringNotEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Sid": "CreateBucketStatement",
@@ -71,6 +91,22 @@
       ],
       "Resource": [
         "arn:aws:s3:::amazon-sagemaker*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "PutObjectStatement",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::amazon-sagemaker*/*"
       ],
       "Condition": {
         "StringEquals": {
@@ -174,8 +210,8 @@
           ]
         },
         "StringLike": {
-          "aws:RequestTag/AmazonDataZoneDomain": "dzd_*",
-          "aws:ResourceTag/AmazonDataZoneDomain": "dzd_*"
+          "aws:RequestTag/AmazonDataZoneDomain": "dzd*",
+          "aws:ResourceTag/AmazonDataZoneDomain": "dzd*"
         }
       }
     },
@@ -193,8 +229,8 @@
           ]
         },
         "StringLike": {
-          "aws:RequestTag/AmazonDataZoneDomain": "dzd_*",
-          "aws:ResourceTag/AmazonDataZoneDomain": "dzd_*"
+          "aws:RequestTag/AmazonDataZoneDomain": "dzd*",
+          "aws:ResourceTag/AmazonDataZoneDomain": "dzd*"
         }
       }
     },
@@ -207,7 +243,7 @@
       "Resource": "arn:aws:secretsmanager:*:*:secret:AmazonDataZone-*",
       "Condition": {
         "StringLike": {
-          "aws:RequestTag/AmazonDataZoneDomain": "dzd_*"
+          "aws:RequestTag/AmazonDataZoneDomain": "dzd*"
         }
       }
     },

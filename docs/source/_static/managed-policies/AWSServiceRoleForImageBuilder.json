@@ -434,6 +434,21 @@
       "Resource": [
         "arn:aws:events:*:*:rule/ImageBuilder-*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:PutParameter"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/imagebuilder/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter"
+      ],
+      "Resource": "arn:aws:ssm:*::parameter/aws/service/*"
     }
   ]
 }
