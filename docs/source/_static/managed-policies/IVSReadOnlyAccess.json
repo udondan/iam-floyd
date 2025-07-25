@@ -25,6 +25,7 @@
         "ivs:ListEncoderConfigurations",
         "ivs:ListIngestConfigurations",
         "ivs:ListParticipants",
+        "ivs:ListParticipantReplicas",
         "ivs:ListParticipantEvents",
         "ivs:ListPlaybackKeyPairs",
         "ivs:ListPlaybackRestrictionPolicies",
