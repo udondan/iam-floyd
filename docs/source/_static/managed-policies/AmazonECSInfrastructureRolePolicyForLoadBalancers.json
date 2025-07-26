@@ -6,9 +6,20 @@
       "Effect": "Allow",
       "Action": [
         "elasticloadbalancing:DescribeListeners",
-        "elasticloadbalancing:DescribeRules"
+        "elasticloadbalancing:DescribeRules",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetHealth"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "TargetGroupOperations",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:RegisterTargets",
+        "elasticloadbalancing:DeregisterTargets"
+      ],
+      "Resource": "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*"
     },
     {
       "Sid": "ALBModifyListeners",
