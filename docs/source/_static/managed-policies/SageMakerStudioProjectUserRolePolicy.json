@@ -438,7 +438,10 @@
         "kms:Encrypt",
         "kms:GenerateDataKey"
       ],
-      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Resource": [
+        "arn:aws:kms:*:*:key/${aws:PrincipalTag/DefaultGlueCatalogKmsKeyId}",
+        "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}"
+      ],
       "Condition": {
         "StringLike": {
           "kms:ViaService": [
@@ -858,8 +861,10 @@
         "logs:FilterLogEvents"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/*",
-        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/*:log-stream:*"
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/output",
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/error",
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/output:log-stream:*",
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/error:log-stream:*"
       ]
     },
     {
@@ -1256,6 +1261,22 @@
           "aws:CalledVia": [
             "sqlworkbench.amazonaws.com"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "StsContext",
+      "Effect": "Allow",
+      "Action": "sts:SetContext",
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:ArnEquals": {
+          "sts:RequestContextProviders": [
+            "arn:aws:iam::aws:contextProvider/IdentityCenter"
+          ]
+        },
+        "Null": {
+          "sts:RequestContextProviders": "false"
         }
       }
     },
