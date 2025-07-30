@@ -93,7 +93,11 @@
         "profile:CreateUploadJob",
         "profile:ListUploadJobs",
         "profile:DetectProfileObjectType",
-        "profile:GetSimilarProfiles"
+        "profile:GetSimilarProfiles",
+        "profile:GetUploadJob",
+        "profile:GetUploadJobPath",
+        "profile:StartUploadJob",
+        "profile:StopUploadJob"
       ],
       "Resource": "arn:aws:profile:*:*:domains/amazon-connect-*"
     },
