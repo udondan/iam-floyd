@@ -2326,6 +2326,8 @@ export class AwsManagedPolicy {
     public static BedrockAgentCoreFullAccess = 'BedrockAgentCoreFullAccess';
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */
     public static Billing = 'job-function/Billing';
+    /** Allows Budgets to verify access to Billing Views shared across account boundaries. */
+    public static BudgetsServiceRolePolicy = 'aws-service-role/BudgetsServiceRolePolicy';
     /** Amazon Certificate Manager Service Role Policy */
     public static CertificateManagerServiceRolePolicy = 'aws-service-role/CertificateManagerServiceRolePolicy';
     /** Policy to enable AWS Client VPN to manage your Client VPN endpoint connections. */

@@ -5824,6 +5824,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.Billing);
     }
 
+    /** Allows Budgets to verify access to Billing Views shared across account boundaries. */
+    public BudgetsServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BudgetsServiceRolePolicy);
+    }
+
     /** Amazon Certificate Manager Service Role Policy */
     public CertificateManagerServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CertificateManagerServiceRolePolicy);
