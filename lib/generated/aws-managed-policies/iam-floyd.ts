@@ -1890,6 +1890,8 @@ export class AwsManagedPolicy {
     public static AWSNetworkManagerServiceRolePolicy = 'aws-service-role/AWSNetworkManagerServiceRolePolicy';
     /** Provides access to manage AWS Config Configuration Recorder, manage AWS Config Configuration Aggregator, create AWS Config Service Linked Role for Configuration Recorder functionality, consume recorder configuration data, and read AWS Organizations data for organizational features. */
     public static AWSObservabilityAdminServiceRolePolicy = 'aws-service-role/AWSObservabilityAdminServiceRolePolicy';
+    /** Provides access to manage AWS Config recorder resource and telemetry settings on AWS resources including logs, metrics. */
+    public static AWSObservabilityAdminTelemetryEnablementServiceRolePolicy = 'aws-service-role/AWSObservabilityAdminTelemetryEnablementServiceRolePolicy';
     /** Provides full access to AWS OpsWorks. */
     public static AWSOpsWorksFullAccess = 'AWSOpsWorks_FullAccess';
     /** Enables OpsWorks instances with the CWLogs integration enabled to ship logs and create required log groups */

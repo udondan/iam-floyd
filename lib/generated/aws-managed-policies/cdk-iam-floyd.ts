@@ -4734,6 +4734,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSObservabilityAdminServiceRolePolicy);
     }
 
+    /** Provides access to manage AWS Config recorder resource and telemetry settings on AWS resources including logs, metrics. */
+    public AWSObservabilityAdminTelemetryEnablementServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSObservabilityAdminTelemetryEnablementServiceRolePolicy);
+    }
+
     /** Provides full access to AWS OpsWorks. */
     public AWSOpsWorksFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSOpsWorksFullAccess);
