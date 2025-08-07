@@ -6,9 +6,16 @@
       "Effect": "Allow",
       "Action": [
         "organizations:ListAccounts",
-        "organizations:ListChildren"
+        "organizations:ListChildren",
+        "organizations:DescribeAccount",
+        "organizations:ListDelegatedAdministrators"
       ],
-      "Resource": "*"
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Sid": "SecurityIncidentResponseCreateCasePolicyTagOnCreate",
