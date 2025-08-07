@@ -246,6 +246,16 @@
         "datazone:ListProjectProfiles"
       ],
       "Resource": "arn:aws:datazone:*:*:domain/*"
+    },
+    {
+      "Sid": "AccountPoolPermissionsStatement",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:GetAccountPool",
+        "datazone:ListAccountPools",
+        "datazone:ListAccountsInAccountPool"
+      ],
+      "Resource": "arn:aws:datazone:*:*:domain/*"
     }
   ]
 }
