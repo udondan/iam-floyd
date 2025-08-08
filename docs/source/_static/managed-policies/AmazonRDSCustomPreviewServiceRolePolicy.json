@@ -376,7 +376,6 @@
       "Sid": "eccSnapshot2",
       "Effect": "Allow",
       "Action": [
-        "ec2:CopySnapshot",
         "ec2:CreateSnapshots"
       ],
       "Resource": "arn:aws:ec2:*::snapshot/*",
@@ -401,6 +400,33 @@
       "Condition": {
         "StringLike": {
           "aws:ResourceTag/AWSRDSCustom": [
+            "custom-oracle",
+            "custom-sqlserver",
+            "custom-oracle-rac"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "eccSnapshotCopySource",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CopySnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*::snapshot/snap-*"
+    },
+    {
+      "Sid": "eccSnapshotCopyDestination",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CopySnapshot"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*::snapshot/${*}"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/AWSRDSCustom": [
             "custom-oracle",
             "custom-sqlserver",
             "custom-oracle-rac"
