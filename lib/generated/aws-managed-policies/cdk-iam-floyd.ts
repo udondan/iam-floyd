@@ -5049,6 +5049,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupSSMManageResourcesExecutionPolicy);
     }
 
+    /** This policy grants permissions that allow principals to run the AWSQuickSetupType-StartSSMAssociations Automation runbook, which starts State Manager Associations. */
+    public AWSQuickSetupStartSSMAssociationsExecutionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupStartSSMAssociationsExecutionPolicy);
+    }
+
+    /** The managed policy AWSQuickSetupStartStopInstancesExecutionPolicy provides permissions for Quick Setup to start and stop Amazon EC2 instances on a schedule. This policy is used with the Quick Setup scheduler configuration type. */
+    public AWSQuickSetupStartStopInstancesExecutionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupStartStopInstancesExecutionPolicy);
+    }
+
     /** Provides the set of permissions required to perform QuickSight Asset Bundle Export Operations */
     public AWSQuickSightAssetBundleExportPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSightAssetBundleExportPolicy);

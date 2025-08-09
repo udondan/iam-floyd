@@ -10,12 +10,7 @@
         "organizations:DescribeAccount",
         "organizations:ListDelegatedAdministrators"
       ],
-      "Resource": "*",
-      "Condition": {
-        "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        }
-      }
+      "Resource": "*"
     },
     {
       "Sid": "SecurityIncidentResponseCreateCasePolicyTagOnCreate",
