@@ -2016,6 +2016,10 @@ export class AwsManagedPolicy {
     public static AWSQuickSetupSSMLifecycleManagementExecutionPolicy = 'AWSQuickSetupSSMLifecycleManagementExecutionPolicy';
     /** This policy grants permissions that allow Systems Manager to create prerequisites such as IAM roles required for Systems Manager onboarding. */
     public static AWSQuickSetupSSMManageResourcesExecutionPolicy = 'AWSQuickSetupSSMManageResourcesExecutionPolicy';
+    /** This policy grants permissions that allow principals to run the AWSQuickSetupType-StartSSMAssociations Automation runbook, which starts State Manager Associations. */
+    public static AWSQuickSetupStartSSMAssociationsExecutionPolicy = 'AWSQuickSetupStartSSMAssociationsExecutionPolicy';
+    /** The managed policy AWSQuickSetupStartStopInstancesExecutionPolicy provides permissions for Quick Setup to start and stop Amazon EC2 instances on a schedule. This policy is used with the Quick Setup scheduler configuration type. */
+    public static AWSQuickSetupStartStopInstancesExecutionPolicy = 'AWSQuickSetupStartStopInstancesExecutionPolicy';
     /** Provides the set of permissions required to perform QuickSight Asset Bundle Export Operations */
     public static AWSQuickSightAssetBundleExportPolicy = 'AWSQuickSightAssetBundleExportPolicy';
     /** Provides the set of permissions required to perform QuickSight Asset Bundle Import Operations */

@@ -6,7 +6,8 @@
       "Effect": "Allow",
       "Action": [
         "sagemaker:CreateTrainingPlan",
-        "sagemaker:CreateReservedCapacity"
+        "sagemaker:CreateReservedCapacity",
+        "sagemaker:DescribeReservedCapacity"
       ],
       "Resource": [
         "arn:aws:sagemaker:*:*:training-plan/*",
@@ -14,7 +15,7 @@
       ]
     },
     {
-      "Sid": "AggTagsToTrainingPlanPermissions",
+      "Sid": "AddTagsToTrainingPlanPermissions",
       "Effect": "Allow",
       "Action": [
         "sagemaker:AddTags"
@@ -48,6 +49,14 @@
         "sagemaker:ListTrainingPlans"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ListUltraServersByReservedCapacityPermissions",
+      "Effect": "Allow",
+      "Action": "sagemaker:ListUltraServersByReservedCapacity",
+      "Resource": [
+        "arn:aws:sagemaker:*:*:reserved-capacity/*"
+      ]
     }
   ]
 }

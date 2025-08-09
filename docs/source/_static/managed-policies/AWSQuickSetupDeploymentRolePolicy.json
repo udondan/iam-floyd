@@ -108,7 +108,10 @@
         "arn:aws:ssm:*::document/AWS-GatherSoftwareInventory",
         "arn:aws:ssm:*::document/AWS-RunPatchBaselineAssociation",
         "arn:aws:ssm:*::document/AWS-UpdateSSMAgent",
-        "arn:aws:ssm:*::document/AWSQuickSetupType-ManageInstanceProfile"
+        "arn:aws:ssm:*::document/AWSQuickSetupType-ManageInstanceProfile",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-EnableConfigRecording",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ChangeCalendarState",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ApplyInstanceState"
       ]
     },
     {
@@ -137,6 +140,9 @@
         "arn:aws:ssm:*::document/AWS-RunPatchBaselineAssociation",
         "arn:aws:ssm:*::document/AWS-UpdateSSMAgent",
         "arn:aws:ssm:*::document/AWSQuickSetupType-ManageInstanceProfile",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-EnableConfigRecording",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ChangeCalendarState",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ApplyInstanceState",
         "arn:aws:ec2:*:*:instance/*",
         "arn:aws:ssm:*:*:managed-instance/*",
         "arn:aws:ssm:*:*:association/*"
@@ -317,7 +323,9 @@
           "iam:PolicyARN": [
             "arn:aws:iam::aws:policy/AWSSystemsManagerEnableExplorerExecutionPolicy",
             "arn:aws:iam::aws:policy/AWSSystemsManagerEnableConfigRecordingExecutionPolicy",
-            "arn:aws:iam::aws:policy/AWSQuickSetupManagedInstanceProfileExecutionPolicy"
+            "arn:aws:iam::aws:policy/AWSQuickSetupManagedInstanceProfileExecutionPolicy",
+            "arn:aws:iam::aws:policy/AWSQuickSetupStartStopInstancesExecutionPolicy",
+            "arn:aws:iam::aws:policy/AWSQuickSetupStartSSMAssociationsExecutionPolicy"
           ]
         },
         "ForAnyValue:StringEquals": {
