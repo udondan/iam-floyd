@@ -2652,6 +2652,10 @@ export class AwsManagedPolicy {
     public static ROSAManageSubscription = 'ROSAManageSubscription';
     /** Allows Red Hat OpenShift Service on AWS (ROSA) to manage cluster EC2 instances as worker nodes, including permission to configure security groups and tag instances and volumes. This policy also allows for the use of EC2 instances with disk encryption provided by AWS Key Management Service (KMS) keys. */
     public static ROSANodePoolManagementPolicy = 'service-role/ROSANodePoolManagementPolicy';
+    /** Allows the Red Hat OpenShift Service on AWS (ROSA) installer to configure VPC Endpoints and Security Groups. Intended to be used on a shared VPC. */
+    public static ROSASharedVPCEndpointPolicy = 'ROSASharedVPCEndpointPolicy';
+    /** Allows the Red Hat OpenShift Service on AWS (ROSA) installer to configure Route53 records. Intended to be used on a shared VPC. */
+    public static ROSASharedVPCRoute53Policy = 'ROSASharedVPCRoute53Policy';
     /** Provides ROSA site reliability engineering (SRE) the permissions needed to initially observe, diagnose, and support AWS resources associated with Red Hat OpenShift Service on AWS (ROSA) clusters, including the ability to change ROSA cluster node state. */
     public static ROSASRESupportPolicy = 'service-role/ROSASRESupportPolicy';
     /** Allows Red Hat OpenShift Service on AWS (ROSA) worker nodes in your account read-only access to Amazon EC2 instances and AWS Regions for compute node lifecycle management. */
