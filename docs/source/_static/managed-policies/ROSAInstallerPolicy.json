@@ -18,6 +18,7 @@
         "ec2:DescribeVpcAttribute",
         "ec2:DescribeVpcs",
         "ec2:DescribeInstanceTypeOfferings",
+        "ec2:DescribeCapacityReservations",
         "elasticloadbalancing:DescribeAccountLimits",
         "elasticloadbalancing:DescribeLoadBalancers",
         "iam:GetOpenIDConnectProvider",
@@ -33,13 +34,13 @@
     },
     {
       "Sid": "PassRoleToEC2",
-      "Effect": "Allow",
       "Action": [
         "iam:PassRole"
       ],
       "Resource": [
         "arn:*:iam::*:role/*-ROSA-Worker-Role"
       ],
+      "Effect": "Allow",
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": [
@@ -315,6 +316,26 @@
         "arn:aws:ec2:*:*:subnet/*"
       ],
       "Condition": {
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": [
+            "kubernetes.io/cluster/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DeleteTagsK8sSubnet",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:TagKeys": "false"
+        },
         "ForAllValues:StringLike": {
           "aws:TagKeys": [
             "kubernetes.io/cluster/*"
