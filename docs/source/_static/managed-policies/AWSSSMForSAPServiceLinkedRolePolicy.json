@@ -11,6 +11,7 @@
         "ec2:DescribeVolumes",
         "ec2:DescribeInstanceAttribute",
         "ec2:DescribeSnapshots",
+        "ec2:DescribeVpcs",
         "ssm:GetCommandInvocation",
         "ssm:DescribeInstanceInformation"
       ],
