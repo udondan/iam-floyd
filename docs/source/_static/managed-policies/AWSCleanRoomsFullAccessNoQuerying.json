@@ -43,6 +43,8 @@
         "cleanrooms:UpdateAnalysisTemplate",
         "cleanrooms:UpdateCollaboration",
         "cleanrooms:UpdateConfiguredTable",
+        "cleanrooms:UpdateConfiguredTableReference",
+        "cleanrooms:UpdateConfiguredTableAllowedColumns",
         "cleanrooms:UpdateConfiguredTableAnalysisRule",
         "cleanrooms:UpdateConfiguredTableAssociation",
         "cleanrooms:UpdateMembership",
