@@ -135,6 +135,7 @@
       "Effect": "Allow",
       "Action": [
         "codecommit:DeleteRepository",
+        "codecommit:UntagResource",
         "codecommit:UpdateRepositoryEncryptionKey",
         "codecommit:PutRepositoryTriggers"
       ],
@@ -535,6 +536,7 @@
       "Effect": "Allow",
       "Action": [
         "iam:DeleteRole",
+        "iam:DeleteRolePolicy",
         "iam:ListRolePolicies",
         "iam:GetRolePolicy",
         "iam:ListAttachedRolePolicies"
@@ -1594,6 +1596,7 @@
       "Effect": "Allow",
       "Action": [
         "logs:DeleteLogGroup",
+        "logs:UntagResource",
         "logs:DeleteRetentionPolicy",
         "logs:GetDataProtectionPolicy",
         "logs:PutDataProtectionPolicy",
@@ -1645,6 +1648,8 @@
       "Effect": "Allow",
       "Action": [
         "athena:DeleteWorkGroup",
+        "athena:UpdateWorkGroup",
+        "athena:UntagResource",
         "athena:GetWorkGroup"
       ],
       "Resource": "arn:aws:athena:*:*:workgroup/*",
@@ -2714,7 +2719,10 @@
     {
       "Sid": "EMRCleanup",
       "Effect": "Allow",
-      "Action": "ec2:DeleteSecurityGroup",
+      "Action": [
+        "ec2:DeleteSecurityGroup",
+        "ec2:DeleteTags"
+      ],
       "Resource": "arn:aws:ec2:*:*:security-group/*",
       "Condition": {
         "Null": {
@@ -2766,7 +2774,10 @@
     {
       "Sid": "ScheduleGroup",
       "Effect": "Allow",
-      "Action": "scheduler:DeleteScheduleGroup",
+      "Action": [
+        "scheduler:DeleteScheduleGroup",
+        "scheduler:UntagResource"
+      ],
       "Resource": "arn:aws:scheduler:*:*:schedule-group/*",
       "Condition": {
         "StringEquals": {
