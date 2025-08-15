@@ -4519,6 +4519,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedServicesDeploymentToolkitPolicy);
     }
 
+    /** Provides full access to configure and customize the AWS Management Console */
+    public AWSManagementConsoleAdministratorAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagementConsoleAdministratorAccess);
+    }
+
+    /** Grants access to essential AWS Management Console features and user experience (UX) capabilities for non-administrative users. */
+    public AWSManagementConsoleBasicUserAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagementConsoleBasicUserAccess);
+    }
+
     /** Allows AWS Marketplace to copy your Amazon Machine Images (AMIs) in order to list them on AWS Marketplace */
     public AWSMarketplaceAmiIngestion(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceAmiIngestion);
@@ -4737,41 +4747,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides access to manage AWS Config recorder resource and telemetry settings on AWS resources including logs, metrics. */
     public AWSObservabilityAdminTelemetryEnablementServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSObservabilityAdminTelemetryEnablementServiceRolePolicy);
-    }
-
-    /** Provides full access to AWS OpsWorks. */
-    public AWSOpsWorksFullAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSOpsWorksFullAccess);
-    }
-
-    /** Enables OpsWorks instances with the CWLogs integration enabled to ship logs and create required log groups */
-    public AWSOpsWorksCloudWatchLogs(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSOpsWorksCloudWatchLogs);
-    }
-
-    /** Provides S3 access for instances launched by OpsWorks CM. */
-    public AWSOpsWorksCMInstanceProfileRole(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSOpsWorksCMInstanceProfileRole);
-    }
-
-    /** Service Role Policy to be used for Creating OpsWorks CM servers. */
-    public AWSOpsWorksCMServiceRole(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSOpsWorksCMServiceRole);
-    }
-
-    /** Provides access for an Amazon EC2 instance to register with an AWS OpsWorks stack. */
-    public AWSOpsWorksInstanceRegistration(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSOpsWorksInstanceRegistration);
-    }
-
-    /** Policy to enable registration of EC2 instances via the OpsWorks CLI */
-    public AWSOpsWorksRegisterCLIEC2(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSOpsWorksRegisterCLIEC2);
-    }
-
-    /** Policy to enable registration of On-Premises instances via the OpsWorks CLI */
-    public AWSOpsWorksRegisterCLIOnPremises(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSOpsWorksRegisterCLIOnPremises);
     }
 
     /** Provides full access to AWS Organizations. */

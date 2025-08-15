@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "uxc:GetAccountColor",
+        "ec2:DescribeRegions",
+        "notifications:GetFeatureOptInStatus",
+        "notifications:ListManagedNotificationEvents",
+        "notifications:ListNotificationConfigurations",
+        "notifications:ListNotificationEvents",
+        "notifications:ListNotificationHubs",
+        "notifications:GetManagedNotificationChildEvent",
+        "notifications:GetManagedNotificationEvent",
+        "notifications:GetNotificationEvent",
+        "notifications:ListManagedNotificationChildEvents",
+        "cloudshell:CreateEnvironment",
+        "cloudshell:CreateSession",
+        "cloudshell:GetEnvironmentStatus",
+        "cloudshell:StartEnvironment",
+        "cloudshell:DeleteEnvironment",
+        "cloudshell:PutCredentials",
+        "cloudshell:StopEnvironment",
+        "cloudshell:ApproveCommand",
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:ListConversations",
+        "q:GetConversation",
+        "q:PassRequest",
+        "resource-explorer-2:ListIndexes",
+        "resource-explorer-2:Search"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1804,6 +1804,10 @@ export class AwsManagedPolicy {
     public static AWSManagedServicesSelfServiceReportingServiceRolePolicy = 'aws-service-role/AWSManagedServices_SelfServiceReporting_ServiceRolePolicy';
     /** Allows AWS Managed Services to manage deployment toolkit on your behalf. */
     public static AWSManagedServicesDeploymentToolkitPolicy = 'aws-service-role/AWSManagedServicesDeploymentToolkitPolicy';
+    /** Provides full access to configure and customize the AWS Management Console */
+    public static AWSManagementConsoleAdministratorAccess = 'job-function/AWSManagementConsoleAdministratorAccess';
+    /** Grants access to essential AWS Management Console features and user experience (UX) capabilities for non-administrative users. */
+    public static AWSManagementConsoleBasicUserAccess = 'AWSManagementConsoleBasicUserAccess';
     /** Allows AWS Marketplace to copy your Amazon Machine Images (AMIs) in order to list them on AWS Marketplace */
     public static AWSMarketplaceAmiIngestion = 'AWSMarketplaceAmiIngestion';
     /** Allows AWS Marketplace to create and manage seller deployment parameters for the products that you subscribe to on AWS Marketplace. */
@@ -1892,20 +1896,6 @@ export class AwsManagedPolicy {
     public static AWSObservabilityAdminServiceRolePolicy = 'aws-service-role/AWSObservabilityAdminServiceRolePolicy';
     /** Provides access to manage AWS Config recorder resource and telemetry settings on AWS resources including logs, metrics. */
     public static AWSObservabilityAdminTelemetryEnablementServiceRolePolicy = 'aws-service-role/AWSObservabilityAdminTelemetryEnablementServiceRolePolicy';
-    /** Provides full access to AWS OpsWorks. */
-    public static AWSOpsWorksFullAccess = 'AWSOpsWorks_FullAccess';
-    /** Enables OpsWorks instances with the CWLogs integration enabled to ship logs and create required log groups */
-    public static AWSOpsWorksCloudWatchLogs = 'AWSOpsWorksCloudWatchLogs';
-    /** Provides S3 access for instances launched by OpsWorks CM. */
-    public static AWSOpsWorksCMInstanceProfileRole = 'AWSOpsWorksCMInstanceProfileRole';
-    /** Service Role Policy to be used for Creating OpsWorks CM servers. */
-    public static AWSOpsWorksCMServiceRole = 'service-role/AWSOpsWorksCMServiceRole';
-    /** Provides access for an Amazon EC2 instance to register with an AWS OpsWorks stack. */
-    public static AWSOpsWorksInstanceRegistration = 'AWSOpsWorksInstanceRegistration';
-    /** Policy to enable registration of EC2 instances via the OpsWorks CLI */
-    public static AWSOpsWorksRegisterCLIEC2 = 'AWSOpsWorksRegisterCLI_EC2';
-    /** Policy to enable registration of On-Premises instances via the OpsWorks CLI */
-    public static AWSOpsWorksRegisterCLIOnPremises = 'AWSOpsWorksRegisterCLI_OnPremises';
     /** Provides full access to AWS Organizations. */
     public static AWSOrganizationsFullAccess = 'AWSOrganizationsFullAccess';
     /** Provides read-only access to AWS Organizations. */
