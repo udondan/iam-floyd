@@ -1,0 +1,3 @@
+arc-region-switch:RequestTag/${TagKey}
+arc-region-switch:ResourceTag/${TagKey}
+arc-region-switch:TagKeys

@@ -29,6 +29,7 @@ appstudio
 appsync
 apptest
 aps
+arc-region-switch
 arc-zonal-shift
 arsenal
 artifact
@@ -48,6 +49,7 @@ backup-storage
 batch
 bcm-data-exports
 bcm-pricing-calculator
+bcm-recommended-actions
 bedrock
 bedrock-agentcore
 billing
@@ -401,6 +403,7 @@ translate
 trustedadvisor
 ts
 user-subscriptions
+uxc
 vendor-insights
 verified-access
 verifiedpermissions
