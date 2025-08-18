@@ -1,0 +1,23 @@
+arc-region-switch:ApprovePlanExecutionStep;Write
+arc-region-switch:CancelPlanExecution;Write
+arc-region-switch:CreatePlan;Write
+arc-region-switch:DeletePlan;Write
+arc-region-switch:DeleteResourcePolicy;Permissions management
+arc-region-switch:GetPlan;Read
+arc-region-switch:GetPlanEvaluationStatus;Read
+arc-region-switch:GetPlanExecution;Read
+arc-region-switch:GetPlanInRegion;Read
+arc-region-switch:GetResourcePolicy;Permissions management
+arc-region-switch:ListPlanExecutionEvents;List
+arc-region-switch:ListPlanExecutions;List
+arc-region-switch:ListPlans;List
+arc-region-switch:ListPlansInRegion;List
+arc-region-switch:ListRoute53HealthChecks;List
+arc-region-switch:ListTagsForResource;Read
+arc-region-switch:PutResourcePolicy;Permissions management
+arc-region-switch:StartPlanExecution;Write
+arc-region-switch:TagResource;Tagging
+arc-region-switch:UntagResource;Tagging
+arc-region-switch:UpdatePlan;Write
+arc-region-switch:UpdatePlanExecution;Write
+arc-region-switch:UpdatePlanExecutionStep;Write
