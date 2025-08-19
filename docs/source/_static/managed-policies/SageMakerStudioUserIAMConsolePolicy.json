@@ -1,0 +1,48 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonDataZoneStatement",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:ListDomains",
+        "datazone:GetDomain",
+        "datazone:GetUserProfile",
+        "datazone:ListProjects",
+        "datazone:ListProjectProfiles",
+        "datazone:CreateProject",
+        "datazone:GetProject",
+        "datazone:DeleteProject",
+        "datazone:GetIamPortalLoginUrl"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "ReadOnlyStatement",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles",
+        "iam:GetRole",
+        "iam:GetUser"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "IAMPassRoleStatement",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::*:role/service-role/AmazonSageMaker*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:passedToService": "datazone.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
