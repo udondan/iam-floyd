@@ -2658,6 +2658,12 @@ export class AwsManagedPolicy {
     public static S3StorageLensServiceRolePolicy = 'aws-service-role/S3StorageLensServiceRolePolicy';
     /** Provides access required to unlock a S3 bucket policy using the Security Token Service (STS) AssumeRoot API. Use this managed policy only with the STS AssumeRoot action. */
     public static S3UnlockBucketPolicy = 'root-task/S3UnlockBucketPolicy';
+    /** Provides initial administrative and individual setup privileges for Amazon SageMaker Unified Studio via the AWS Management Console and SDK. Allows launching of SageMaker Unified Studio Portal. */
+    public static SageMakerStudioAdminIAMConsolePolicy = 'SageMakerStudioAdminIAMConsolePolicy';
+    /** Administrative execution policy for using IAM roles with SageMaker Unified Studio. Allows admins to provision, manage and access resources in your account (excluding access to data resources) for IAM-based usage of SageMaker Unified Studio. */
+    public static SageMakerStudioAdminIAMDefaultExecutionPolicy = 'SageMakerStudioAdminIAMDefaultExecutionPolicy';
+    /** Administrative execution policy for using IAM roles with SageMaker Unified Studio. Allows admins to provision, manage and access resources in the local account (including broad access to all APIs in data services like S3, Glue, CloudWatch Logs, and others) for IAM-based usage of SageMaker Unified Studio. */
+    public static SageMakerStudioAdminIAMPermissiveExecutionPolicy = 'SageMakerStudioAdminIAMPermissiveExecutionPolicy';
     /** This IAM policy grants an IAM role full access to AWS Glue Data Catalog (metadata) and Amazon S3 (actual data) for data lake operations, with access scoped by account, and role tags. */
     public static SageMakerStudioAdminProjectUserRolePolicy = 'SageMakerStudioAdminProjectUserRolePolicy';
     /** Allows Amazon Bedrock Agents to access Amazon Bedrock models and other resources attached to an agent in SageMaker Studio. */
@@ -2696,6 +2702,12 @@ export class AwsManagedPolicy {
     public static SageMakerStudioProjectUserRolePolicy = 'SageMakerStudioProjectUserRolePolicy';
     /** Amazon SageMaker Studio uses this policy when running query executions on federated connections. */
     public static SageMakerStudioQueryExecutionRolePolicy = 'service-role/SageMakerStudioQueryExecutionRolePolicy';
+    /** Provides individual setup privileges for Amazon SageMaker Unified Studio via the AWS Management Console and SDK. Allows launching of SageMaker Unified Studio Portal. */
+    public static SageMakerStudioUserIAMConsolePolicy = 'SageMakerStudioUserIAMConsolePolicy';
+    /** Execution policy for using IAM roles with SageMaker Unified Studio. Allows users to access resources in the local account (excluding access to data resources) for IAM-based usage of SageMaker Unified Studio. */
+    public static SageMakerStudioUserIAMDefaultExecutionPolicy = 'SageMakerStudioUserIAMDefaultExecutionPolicy';
+    /** Execution policy for using IAM roles with SageMaker Unified Studio. Allows users to access resources in your account (including broad access to all APIs in data services like S3, Glue, CloudWatch Logs, and others) for IAM-based usage of SageMaker Unified Studio. */
+    public static SageMakerStudioUserIAMPermissiveExecutionPolicy = 'SageMakerStudioUserIAMPermissiveExecutionPolicy';
     /** Provides read/write access to AWS Secrets Manager via the AWS Management Console. Note: this exludes IAM actions, so combine with IAMFullAccess if rotation configuration is required. */
     public static SecretsManagerReadWrite = 'SecretsManagerReadWrite';
     /** The security audit template grants access to read security configuration metadata. It is useful for software that audits the configuration of an AWS account. */
