@@ -2074,6 +2074,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodServiceRolePolicy);
     }
 
+    /** This policy provides administrative permissions required to set up the SageMaker HyperPod training operator. It enables access to Amazon SageMaker HyperPod and EKS add-ons. The policy includes permissions to describe the SageMaker HyperPod resources in your account. */
+    public AmazonSageMakerHyperPodTrainingOperatorAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodTrainingOperatorAccess);
+    }
+
     /** Provides access to create Amazon Augmented AI FlowDefinition resources against any Workteam. */
     public AmazonSageMakerMechanicalTurkAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerMechanicalTurkAccess);

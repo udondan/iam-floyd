@@ -826,6 +826,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerHyperPodObservabilityAdminAccess = 'AmazonSageMakerHyperPodObservabilityAdminAccess';
     /** This policy grants permissions to Amazon SageMaker HyperPod to related AWS services such as Amazon EKS, Amazon CloudWatch etc. */
     public static AmazonSageMakerHyperPodServiceRolePolicy = 'aws-service-role/AmazonSageMakerHyperPodServiceRolePolicy';
+    /** This policy provides administrative permissions required to set up the SageMaker HyperPod training operator. It enables access to Amazon SageMaker HyperPod and EKS add-ons. The policy includes permissions to describe the SageMaker HyperPod resources in your account. */
+    public static AmazonSageMakerHyperPodTrainingOperatorAccess = 'AmazonSageMakerHyperPodTrainingOperatorAccess';
     /** Provides access to create Amazon Augmented AI FlowDefinition resources against any Workteam. */
     public static AmazonSageMakerMechanicalTurkAccess = 'AmazonSageMakerMechanicalTurkAccess';
     /** This AWS managed policy grants permissions needed to use all Amazon SageMaker Governance features. The policy also provides select access to related services (e.g., S3, KMS). */
