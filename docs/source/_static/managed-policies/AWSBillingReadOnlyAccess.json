@@ -29,6 +29,8 @@
         "ce:ListCostAllocationTagBackfillHistory",
         "ce:GetTags",
         "ce:GetDimensionValues",
+        "ce:GetCostAndUsageComparisons",
+        "ce:GetCostComparisonDrivers",
         "consolidatedbilling:ListLinkedAccounts",
         "consolidatedbilling:GetAccountBillingRole",
         "cur:GetClassicReport",
