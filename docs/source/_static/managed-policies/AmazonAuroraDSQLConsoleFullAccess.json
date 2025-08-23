@@ -25,7 +25,8 @@
         "dsql:StopBackupJob",
         "dsql:StartRestoreJob",
         "dsql:GetRestoreJob",
-        "dsql:StopRestoreJob"
+        "dsql:StopRestoreJob",
+        "dsql:InjectError"
       ],
       "Resource": "*"
     },
