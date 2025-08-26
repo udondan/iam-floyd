@@ -43,6 +43,26 @@
       }
     },
     {
+      "Sid": "AllowAutomationExecutionTagging",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:AddTagsToResource"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:automation-execution/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/SystemsManagerJustInTimeNodeAccessManaged": "true"
+        },
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "SystemsManagerJustInTimeNodeAccessManaged"
+          ]
+        }
+      }
+    },
+    {
       "Sid": "AllowOpsItemManagement",
       "Effect": "Allow",
       "Action": [
