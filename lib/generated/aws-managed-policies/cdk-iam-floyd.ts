@@ -644,6 +644,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEC2FullAccess);
     }
 
+    /** Provides read-only access to scan all supported resource types for relevant data when using DescribeImageReferences. */
+    public AmazonEC2ImageReferencesAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEC2ImageReferencesAccessPolicy);
+    }
+
     /** Provides read only access to Amazon EC2 via the AWS Management Console. */
     public AmazonEC2ReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEC2ReadOnlyAccess);

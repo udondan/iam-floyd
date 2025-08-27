@@ -254,6 +254,8 @@ export class AwsManagedPolicy {
     public static AmazonEC2ContainerServiceRole = 'service-role/AmazonEC2ContainerServiceRole';
     /** Provides full access to Amazon EC2 via the AWS Management Console. */
     public static AmazonEC2FullAccess = 'AmazonEC2FullAccess';
+    /** Provides read-only access to scan all supported resource types for relevant data when using DescribeImageReferences. */
+    public static AmazonEC2ImageReferencesAccessPolicy = 'AmazonEC2ImageReferencesAccessPolicy';
     /** Provides read only access to Amazon EC2 via the AWS Management Console. */
     public static AmazonEC2ReadOnlyAccess = 'AmazonEC2ReadOnlyAccess';
     /** Provides EC2 access to S3 bucket to download revision. This role is needed by the CodeDeploy agent on EC2 instances. */

@@ -35,6 +35,17 @@
         "appstream:DescribeStacks"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/monitoring.thinclient.amazonaws.com/AWSServiceRoleForAmazonWorkSpacesThinClientMonitoring",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "monitoring.thinclient.amazonaws.com"
+        }
+      }
     }
   ]
 }
