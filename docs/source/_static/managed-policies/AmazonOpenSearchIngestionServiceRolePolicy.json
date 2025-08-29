@@ -37,6 +37,7 @@
     {
       "Effect": "Allow",
       "Action": [
+        "ec2:ModifyVpcEndpoint",
         "ec2:DeleteVpcEndpoints"
       ],
       "Resource": [
