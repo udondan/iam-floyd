@@ -2266,6 +2266,8 @@ export class AwsManagedPolicy {
     public static AWSTransferLoggingAccess = 'service-role/AWSTransferLoggingAccess';
     /** Provide readonly access to AWS Transfer services. */
     public static AWSTransferReadOnlyAccess = 'AWSTransferReadOnlyAccess';
+    /** Enables the AWS Transform service to deploy transformed .NET applications by creating and managing AWS resources. This policy grants permissions to provision infrastructure, manage compute resources, and configure deployment settings across various AWS services. */
+    public static AWSTransformApplicationDeploymentPolicy = 'service-role/AWSTransformApplicationDeploymentPolicy';
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */
     public static AWSTrustedAdvisorPriorityFullAccess = 'AWSTrustedAdvisorPriorityFullAccess';
     /** Provides read-only access to AWS Trusted Advisor Priority. This includes permission to view the delegated administrator accounts. */
