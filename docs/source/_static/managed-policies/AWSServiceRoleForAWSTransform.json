@@ -15,6 +15,18 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "UserManagementPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeApplication",
+        "sso:GetApplicationAssignmentConfiguration",
+        "sso:ListApplicationAssignmentsForPrincipal"
+      ],
+      "Resource": [
+        "*"
+      ]
     }
   ]
 }
