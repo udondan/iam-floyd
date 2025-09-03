@@ -50,7 +50,7 @@
     "@types/request-promise-native": "^1.0.21",
     "@typescript-eslint/eslint-plugin": "8.41.0",
     "@typescript-eslint/parser": "8.41.0",
-    "aws-cdk-lib": "2.213.0",
+    "aws-cdk-lib": "2.214.0",
     "cheerio": "^1.0.0",
     "colors": "1.4.0",
     "eslint": "9.34.0",
