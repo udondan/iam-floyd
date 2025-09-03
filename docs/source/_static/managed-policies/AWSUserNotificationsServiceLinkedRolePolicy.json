@@ -38,6 +38,33 @@
         "organizations:ListParents"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsAdminDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "notifications.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OrganizationNotificationConfigurationDistribution",
+      "Effect": "Allow",
+      "Action": [
+        "notifications:CreateNotificationConfiguration",
+        "notifications:DeleteNotificationConfiguration",
+        "notifications:CreateEventRule",
+        "notifications:UpdateEventRule",
+        "notifications:DeleteEventRule"
+      ],
+      "Resource": "*"
     }
   ]
 }
