@@ -76,6 +76,37 @@
         "pricing:GetProducts"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceViewSubscriptions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AWSMarketplaceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:AcceptAgreementRequest",
+        "aws-marketplace:CreateAgreementRequest",
+        "aws-marketplace:ListEntitlementDetails",
+        "aws-marketplace:DescribeAgreement",
+        "aws-marketplace:Subscribe"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws-marketplace:ProductId": [
+            "prod-xcc5llpq4vlbc",
+            "prod-5jijo74ujy36m"
+          ]
+        }
+      }
     }
   ]
 }
