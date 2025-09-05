@@ -33,7 +33,7 @@
         "s3:GetObject"
       ],
       "Resource": [
-        "arn:aws:s3:::*/dzd_*/*/dev/sys/athena/*"
+        "arn:aws:s3:::*/dzd*/*/dev/sys/athena/*"
       ],
       "Condition": {
         "StringEquals": {
