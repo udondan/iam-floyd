@@ -782,6 +782,20 @@
       }
     },
     {
+      "Sid": "AllowStartSessionForSpaceRemoteConnection",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:StartSession"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:space/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceTag/AmazonDataZoneUser": "${aws:PrincipalTag/datazone:userId}"
+        }
+      }
+    },
+    {
       "Sid": "PublishSagemakerMetric",
       "Effect": "Allow",
       "Action": [
