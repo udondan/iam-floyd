@@ -59,6 +59,38 @@
         "sso:ListInstances"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityCenter",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:sso:instance-arn": "arn:*:sso:::instance/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKmsAccessViaIdentityStore",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "arn:*:identitystore::*:identitystore/*"
+        },
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com"
+        }
+      }
     }
   ]
 }
