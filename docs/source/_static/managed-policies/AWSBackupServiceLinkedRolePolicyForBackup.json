@@ -400,6 +400,21 @@
         "dsql:ListTagsForResource"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "OrgsListDelegatedAdmins",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "backup.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }
