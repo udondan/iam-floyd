@@ -1077,6 +1077,7 @@
         "glue:GetColumnStatisticsTaskRun",
         "glue:GetColumnStatisticsTaskRuns",
         "glue:GetDatabase",
+        "glue:DeleteDatabase",
         "glue:GetPartition",
         "glue:GetPartitionIndexes",
         "glue:GetPartitions",

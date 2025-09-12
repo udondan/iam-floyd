@@ -53,6 +53,15 @@
       "Resource": [
         "arn:aws:sns:*:*:Automation*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": [
+        "arn:*:ssm:*:*:session/*"
+      ]
     }
   ]
 }
