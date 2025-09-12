@@ -3024,6 +3024,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingReadOnlyAccess);
     }
 
+    /** Allows billing service to validate access to billing view data for derived billing views */
+    public AWSBillingServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingServiceRolePolicy);
+    }
+
     /** This policy gives permissions to control AWS resources. For example, to start and stop EC2 or RDS instances by executing AWS Systems Manager (SSM) scripts. */
     public AWSBudgetsActionsRolePolicyForResourceAdministrationWithSSM(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBudgetsActionsRolePolicyForResourceAdministrationWithSSM);

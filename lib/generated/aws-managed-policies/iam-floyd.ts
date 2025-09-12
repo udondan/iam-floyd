@@ -1206,6 +1206,8 @@ export class AwsManagedPolicy {
     public static AWSBillingConductorReadOnlyAccess = 'AWSBillingConductorReadOnlyAccess';
     /** Allows users to view bills on the Billing Console. */
     public static AWSBillingReadOnlyAccess = 'AWSBillingReadOnlyAccess';
+    /** Allows billing service to validate access to billing view data for derived billing views */
+    public static AWSBillingServiceRolePolicy = 'aws-service-role/AWSBillingServiceRolePolicy';
     /** This policy gives permissions to control AWS resources. For example, to start and stop EC2 or RDS instances by executing AWS Systems Manager (SSM) scripts. */
     public static AWSBudgetsActionsRolePolicyForResourceAdministrationWithSSM = 'AWSBudgetsActions_RolePolicyForResourceAdministrationWithSSM';
     /** Provides full access to AWS Budgets Actions including using Budgets Actions to control states of running AWS resources via AWS Management Console */
