@@ -309,7 +309,13 @@
         "arn:aws:ssm:*:*:automation-definition/AWS-RunPatchBaseline*",
         "arn:aws:ssm:*:*:automation-definition/AWS-AttachIAMToInstance*",
         "arn:aws:ssm:*:*:automation-definition/QuickSetup-*",
-        "arn:aws:ssm:*:*:automation-definition/AWSQuickSetup-*"
+        "arn:aws:ssm:*:*:automation-definition/AWSQuickSetup-*",
+        "arn:aws:ssm:*:*:document/AWS-EnableExplorer*",
+        "arn:aws:ssm:*:*:document/AWS-RunPatchBaseline*",
+        "arn:aws:ssm:*:*:document/AWS-AttachIAMToInstance*",
+        "arn:aws:ssm:*:*:document/QuickSetup-*",
+        "arn:aws:ssm:*:*:document/AWSQuickSetup-*",
+        "arn:aws:ssm:*:*:automation-execution/*"
       ]
     },
     {

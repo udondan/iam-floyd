@@ -34,9 +34,9 @@
       ],
       "Resource": [
         "arn:aws:ssm:*:*:association/*",
-        "arn:aws:ssm:*:*:document/AWSQuickSetupType-StartAndStopEC2Instances",
+        "arn:aws:ssm:*:*:document/AWSQuickSetupType-Scheduler-ApplyInstanceState",
         "arn:aws:ssm:*:*:automation-execution/*",
-        "arn:aws:ssm:*:*:automation-definition/AWSQuickSetupType-StartAndStopEC2Instances*"
+        "arn:aws:ssm:*:*:automation-definition/AWSQuickSetupType-Scheduler-ApplyInstanceState*"
       ]
     },
     {
@@ -53,7 +53,7 @@
         },
         "ArnLike": {
           "iam:AssociatedResourceARN": [
-            "arn:aws:ssm:*::document/AWSQuickSetupType-StartAndStopEC2Instances",
+            "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ApplyInstanceState",
             "arn:aws:ssm:*:*:association/*"
           ]
         }

@@ -7,9 +7,9 @@
         "ssm:StartAutomationExecution"
       ],
       "Resource": [
-        "arn:aws:ssm:*:*:document/AWSQuickSetupType-StartSSMAssociations",
+        "arn:aws:ssm:*:*:document/AWSQuickSetupType-Scheduler-ChangeCalendarState",
         "arn:aws:ssm:*:*:automation-execution/*",
-        "arn:aws:ssm:*:*:automation-definition/AWSQuickSetupType-StartSSMAssociations*"
+        "arn:aws:ssm:*:*:automation-definition/AWSQuickSetupType-Scheduler-ChangeCalendarState*"
       ]
     },
     {
@@ -26,8 +26,8 @@
         },
         "ArnLike": {
           "iam:AssociatedResourceARN": [
-            "arn:aws:ssm:*:*:document/AWSQuickSetupType-StartSSMAssociations",
-            "arn:aws:ssm:*:*:automation-definition/AWSQuickSetupType-StartSSMAssociations*"
+            "arn:aws:ssm:*:*:document/AWSQuickSetupType-Scheduler-ChangeCalendarState",
+            "arn:aws:ssm:*:*:automation-definition/AWSQuickSetupType-Scheduler-ChangeCalendarState*"
           ]
         }
       }
