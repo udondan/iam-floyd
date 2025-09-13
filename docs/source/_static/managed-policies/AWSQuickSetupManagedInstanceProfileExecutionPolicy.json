@@ -100,6 +100,7 @@
       ],
       "Resource": [
         "arn:aws:ssm:*:*:automation-execution/*",
+        "arn:aws:ssm:*:*:document/AWS-AttachIAMToInstance*",
         "arn:aws:ssm:*:*:automation-definition/AWS-AttachIAMToInstance*"
       ],
       "Condition": {
