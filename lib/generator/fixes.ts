@@ -24,6 +24,13 @@ export const fixes: Fixes = {
   cloudcontrolapi: {
     name: 'aws-cloud-control-api',
   },
+  codebuild: {
+    conditions: {
+      environmentType: {
+        methodName: 'ifFleetEnvironmentType',
+      },
+    },
+  },
   ec2: {
     conditions: {
       SnapshotTime: {
