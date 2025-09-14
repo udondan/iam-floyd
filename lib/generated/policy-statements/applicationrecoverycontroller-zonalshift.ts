@@ -19,6 +19,22 @@ export class ArcZonalShift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an active practice run
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceIdentifier()
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_CancelPracticeRun.html
+   */
+  public toCancelPracticeRun() {
+    return this.to('CancelPracticeRun');
+  }
+
+  /**
    * Grants permission to cancel an active zonal shift
    *
    * Access Level: Write
@@ -131,6 +147,22 @@ export class ArcZonalShift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a practice run
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceIdentifier()
+   * - .ifAwsResourceTag()
+   * - .ifElasticloadbalancingResourceTag()
+   *
+   * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_StartPracticeRun.html
+   */
+  public toStartPracticeRun() {
+    return this.to('StartPracticeRun');
+  }
+
+  /**
    * Grants permission to start a zonal shift
    *
    * Access Level: Write
@@ -187,6 +219,9 @@ export class ArcZonalShift extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifElasticloadbalancingResourceTag()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_UpdateZonalAutoshiftConfiguration.html
    */
   public toUpdateZonalAutoshiftConfiguration() {
@@ -211,9 +246,11 @@ export class ArcZonalShift extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CancelPracticeRun',
       'CancelZonalShift',
       'CreatePracticeRunConfiguration',
       'DeletePracticeRunConfiguration',
+      'StartPracticeRun',
       'StartZonalShift',
       'UpdateAutoshiftObserverNotificationStatus',
       'UpdatePracticeRunConfiguration',
@@ -277,10 +314,12 @@ export class ArcZonalShift extends PolicyStatement {
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53applicationrecoverycontroller-zonalshift.html#amazonroute53applicationrecoverycontroller-zonalshift-policy-keys
    *
    * Applies to actions:
+   * - .toCancelPracticeRun()
    * - .toCancelZonalShift()
    * - .toCreatePracticeRunConfiguration()
    * - .toDeletePracticeRunConfiguration()
    * - .toGetManagedResource()
+   * - .toStartPracticeRun()
    * - .toStartZonalShift()
    * - .toUpdatePracticeRunConfiguration()
    * - .toUpdateZonalAutoshiftConfiguration()
@@ -303,10 +342,12 @@ export class ArcZonalShift extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html#elb-condition-keys
    *
    * Applies to actions:
+   * - .toCancelPracticeRun()
    * - .toCancelZonalShift()
    * - .toCreatePracticeRunConfiguration()
    * - .toDeletePracticeRunConfiguration()
    * - .toGetManagedResource()
+   * - .toStartPracticeRun()
    * - .toStartZonalShift()
    * - .toUpdatePracticeRunConfiguration()
    * - .toUpdateZonalAutoshiftConfiguration()
@@ -330,10 +371,12 @@ export class ArcZonalShift extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html#elb-condition-keys
    *
    * Applies to actions:
+   * - .toCancelPracticeRun()
    * - .toCancelZonalShift()
    * - .toCreatePracticeRunConfiguration()
    * - .toDeletePracticeRunConfiguration()
    * - .toGetManagedResource()
+   * - .toStartPracticeRun()
    * - .toStartZonalShift()
    * - .toUpdatePracticeRunConfiguration()
    * - .toUpdateZonalAutoshiftConfiguration()

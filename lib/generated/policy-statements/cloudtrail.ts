@@ -327,6 +327,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list event configurations that are configured for an event data store
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventConfiguration.html
+   */
+  public toGetEventConfiguration() {
+    return this.to('GetEventConfiguration');
+  }
+
+  /**
    * Grants permission to list settings for the event data store
    *
    * Access Level: Read
@@ -563,6 +574,21 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toLookupEvents() {
     return this.to('LookupEvents');
+  }
+
+  /**
+   * Grants permission to create and update event configurations for an event data store
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:GetRole
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_PutEventConfiguration.html
+   */
+  public toPutEventConfiguration() {
+    return this.to('PutEventConfiguration');
   }
 
   /**
@@ -839,6 +865,7 @@ export class Cloudtrail extends PolicyStatement {
       'DisableFederation',
       'EnableFederation',
       'GenerateQuery',
+      'PutEventConfiguration',
       'PutEventSelectors',
       'PutInsightSelectors',
       'PutResourcePolicy',
@@ -864,6 +891,7 @@ export class Cloudtrail extends PolicyStatement {
       'GenerateQueryResultsSummary',
       'GetChannel',
       'GetDashboard',
+      'GetEventConfiguration',
       'GetEventDataStore',
       'GetEventDataStoreData',
       'GetEventSelectors',

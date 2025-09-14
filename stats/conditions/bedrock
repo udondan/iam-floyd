@@ -1,3 +1,4 @@
+bedrock:BearerTokenType
 bedrock:GuardrailIdentifier
 bedrock:InferenceProfileArn
 bedrock:InlineAgentName

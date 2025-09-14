@@ -23,7 +23,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_AcceptMarketplaceRegistration.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AcceptMarketplaceRegistration.html
    */
   public toAcceptMarketplaceRegistration() {
     return this.to('AcceptMarketplaceRegistration');
@@ -38,7 +38,7 @@ export class Odb extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudAutonomousVmCluster.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudAutonomousVmCluster.html
    */
   public toCreateCloudAutonomousVmCluster() {
     return this.to('CreateCloudAutonomousVmCluster');
@@ -53,7 +53,7 @@ export class Odb extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudExadataInfrastructure.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudExadataInfrastructure.html
    */
   public toCreateCloudExadataInfrastructure() {
     return this.to('CreateCloudExadataInfrastructure');
@@ -68,7 +68,7 @@ export class Odb extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateCloudVmCluster.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudVmCluster.html
    */
   public toCreateCloudVmCluster() {
     return this.to('CreateCloudVmCluster');
@@ -78,8 +78,6 @@ export class Odb extends PolicyStatement {
    * Grants permission to create a DB Node
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateDbNode.html
    */
   public toCreateDbNode() {
     return this.to('CreateDbNode');
@@ -94,7 +92,7 @@ export class Odb extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateOdbNetwork.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbNetwork.html
    */
   public toCreateOdbNetwork() {
     return this.to('CreateOdbNetwork');
@@ -109,7 +107,7 @@ export class Odb extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_CreateOdbPeeringConnection.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbPeeringConnection.html
    */
   public toCreateOdbPeeringConnection() {
     return this.to('CreateOdbPeeringConnection');
@@ -129,7 +127,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudAutonomousVmCluster.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudAutonomousVmCluster.html
    */
   public toDeleteCloudAutonomousVmCluster() {
     return this.to('DeleteCloudAutonomousVmCluster');
@@ -140,7 +138,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudExadataInfrastructure.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudExadataInfrastructure.html
    */
   public toDeleteCloudExadataInfrastructure() {
     return this.to('DeleteCloudExadataInfrastructure');
@@ -151,7 +149,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteCloudVmCluster.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudVmCluster.html
    */
   public toDeleteCloudVmCluster() {
     return this.to('DeleteCloudVmCluster');
@@ -171,7 +169,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteOdbNetwork.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbNetwork.html
    */
   public toDeleteOdbNetwork() {
     return this.to('DeleteOdbNetwork');
@@ -182,7 +180,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_DeleteOdbPeeringConnection.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbPeeringConnection.html
    */
   public toDeleteOdbPeeringConnection() {
     return this.to('DeleteOdbPeeringConnection');
@@ -202,7 +200,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudAutonomousVmCluster.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudAutonomousVmCluster.html
    */
   public toGetCloudAutonomousVmCluster() {
     return this.to('GetCloudAutonomousVmCluster');
@@ -213,7 +211,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudExadataInfrastructure.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructure.html
    */
   public toGetCloudExadataInfrastructure() {
     return this.to('GetCloudExadataInfrastructure');
@@ -224,7 +222,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudExadataInfrastructureUnallocatedResources.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructureUnallocatedResources.html
    */
   public toGetCloudExadataInfrastructureUnallocatedResources() {
     return this.to('GetCloudExadataInfrastructureUnallocatedResources');
@@ -235,7 +233,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetCloudVmCluster.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudVmCluster.html
    */
   public toGetCloudVmCluster() {
     return this.to('GetCloudVmCluster');
@@ -246,7 +244,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetDbNode.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbNode.html
    */
   public toGetDbNode() {
     return this.to('GetDbNode');
@@ -257,7 +255,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetDbServer.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbServer.html
    */
   public toGetDbServer() {
     return this.to('GetDbServer');
@@ -268,7 +266,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOciOnboardingStatus.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOciOnboardingStatus.html
    */
   public toGetOciOnboardingStatus() {
     return this.to('GetOciOnboardingStatus');
@@ -279,7 +277,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOdbNetwork.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbNetwork.html
    */
   public toGetOdbNetwork() {
     return this.to('GetOdbNetwork');
@@ -290,7 +288,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_GetOdbPeeringConnection.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbPeeringConnection.html
    */
   public toGetOdbPeeringConnection() {
     return this.to('GetOdbPeeringConnection');
@@ -299,7 +297,7 @@ export class Odb extends PolicyStatement {
   /**
    * Grants permission to get a resource policy
    *
-   * Access Level: Write
+   * Access Level: Read
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
@@ -310,7 +308,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_InitializeService.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_InitializeService.html
    */
   public toInitializeService() {
     return this.to('InitializeService');
@@ -321,7 +319,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListAutonomousVirtualMachines.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousVirtualMachines.html
    */
   public toListAutonomousVirtualMachines() {
     return this.to('ListAutonomousVirtualMachines');
@@ -332,7 +330,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudAutonomousVmClusters.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudAutonomousVmClusters.html
    */
   public toListCloudAutonomousVmClusters() {
     return this.to('ListCloudAutonomousVmClusters');
@@ -343,7 +341,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudExadataInfrastructures.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudExadataInfrastructures.html
    */
   public toListCloudExadataInfrastructures() {
     return this.to('ListCloudExadataInfrastructures');
@@ -354,7 +352,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListCloudVmClusters.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudVmClusters.html
    */
   public toListCloudVmClusters() {
     return this.to('ListCloudVmClusters');
@@ -365,7 +363,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbNodes.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbNodes.html
    */
   public toListDbNodes() {
     return this.to('ListDbNodes');
@@ -376,7 +374,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbServers.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbServers.html
    */
   public toListDbServers() {
     return this.to('ListDbServers');
@@ -387,7 +385,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListDbSystemShapes.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbSystemShapes.html
    */
   public toListDbSystemShapes() {
     return this.to('ListDbSystemShapes');
@@ -398,7 +396,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListGiVersions.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListGiVersions.html
    */
   public toListGiVersions() {
     return this.to('ListGiVersions');
@@ -409,7 +407,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListOdbNetworks.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbNetworks.html
    */
   public toListOdbNetworks() {
     return this.to('ListOdbNetworks');
@@ -420,7 +418,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListOdbPeeringConnections.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbPeeringConnections.html
    */
   public toListOdbPeeringConnections() {
     return this.to('ListOdbPeeringConnections');
@@ -431,7 +429,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListSystemVersions.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListSystemVersions.html
    */
   public toListSystemVersions() {
     return this.to('ListSystemVersions');
@@ -445,7 +443,7 @@ export class Odb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -463,9 +461,9 @@ export class Odb extends PolicyStatement {
   /**
    * Grants permission to reboot the specified DB node in a VM cluster
    *
-   * Access Level: Read
+   * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_RebootDbNode.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_RebootDbNode.html
    */
   public toRebootDbNode() {
     return this.to('RebootDbNode');
@@ -474,9 +472,9 @@ export class Odb extends PolicyStatement {
   /**
    * Grants permission to start the specified DB node in a VM cluster
    *
-   * Access Level: Read
+   * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_StartDbNode.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_StartDbNode.html
    */
   public toStartDbNode() {
     return this.to('StartDbNode');
@@ -485,9 +483,9 @@ export class Odb extends PolicyStatement {
   /**
    * Grants permission to stop the specified DB node in a VM cluster
    *
-   * Access Level: Read
+   * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_StopDbNode.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_StopDbNode.html
    */
   public toStopDbNode() {
     return this.to('StopDbNode');
@@ -503,7 +501,7 @@ export class Odb extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_TagResource.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -518,7 +516,7 @@ export class Odb extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_UntagResource.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -529,7 +527,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_UpdateCloudExadataInfrastructure.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudExadataInfrastructure.html
    */
   public toUpdateCloudExadataInfrastructure() {
     return this.to('UpdateCloudExadataInfrastructure');
@@ -540,7 +538,7 @@ export class Odb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/odb/latest/developerguide/API_UpdateOdbNetwork.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbNetwork.html
    */
   public toUpdateOdbNetwork() {
     return this.to('UpdateOdbNetwork');
@@ -563,9 +561,11 @@ export class Odb extends PolicyStatement {
       'DeleteOdbNetwork',
       'DeleteOdbPeeringConnection',
       'DeleteResourcePolicy',
-      'GetResourcePolicy',
       'InitializeService',
       'PutResourcePolicy',
+      'RebootDbNode',
+      'StartDbNode',
+      'StopDbNode',
       'UpdateCloudExadataInfrastructure',
       'UpdateOdbNetwork'
     ],
@@ -579,15 +579,13 @@ export class Odb extends PolicyStatement {
       'GetOciOnboardingStatus',
       'GetOdbNetwork',
       'GetOdbPeeringConnection',
+      'GetResourcePolicy',
       'ListAutonomousVirtualMachines',
       'ListDbServers',
       'ListDbSystemShapes',
       'ListGiVersions',
       'ListSystemVersions',
-      'ListTagsForResource',
-      'RebootDbNode',
-      'StartDbNode',
-      'StopDbNode'
+      'ListTagsForResource'
     ],
     List: [
       'ListCloudAutonomousVmClusters',
@@ -606,7 +604,7 @@ export class Odb extends PolicyStatement {
   /**
    * Adds a resource of type cloud-autonomous-vm-cluster to the statement
    *
-   * https://docs.aws.amazon.com/odb/latest/APIReference/CloudAutonomousVmCluster.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudAutonomousVmCluster.html
    *
    * @param cloudAutonomousVmClusterId - Identifier for the cloudAutonomousVmClusterId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -623,7 +621,7 @@ export class Odb extends PolicyStatement {
   /**
    * Adds a resource of type cloud-exadata-infrastructure to the statement
    *
-   * https://docs.aws.amazon.com/odb/latest/APIReference/CloudExadataInfrastructure.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudExadataInfrastructure.html
    *
    * @param cloudExadataInfrastructureId - Identifier for the cloudExadataInfrastructureId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -640,7 +638,7 @@ export class Odb extends PolicyStatement {
   /**
    * Adds a resource of type cloud-vm-cluster to the statement
    *
-   * https://docs.aws.amazon.com/odb/latest/APIReference/CloudVmCluster.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudVmCluster.html
    *
    * @param cloudVmClusterId - Identifier for the cloudVmClusterId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -657,7 +655,7 @@ export class Odb extends PolicyStatement {
   /**
    * Adds a resource of type db-node to the statement
    *
-   * https://docs.aws.amazon.com/odb/latest/APIReference/DbNode.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DbNode.html
    *
    * @param dbNodeId - Identifier for the dbNodeId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -674,7 +672,7 @@ export class Odb extends PolicyStatement {
   /**
    * Adds a resource of type odb-network to the statement
    *
-   * https://docs.aws.amazon.com/odb/latest/APIReference/OdbNetwork.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_OdbNetwork.html
    *
    * @param odbNetworkId - Identifier for the odbNetworkId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -691,7 +689,7 @@ export class Odb extends PolicyStatement {
   /**
    * Adds a resource of type odb-peering-connection to the statement
    *
-   * https://docs.aws.amazon.com/odb/latest/APIReference/OdbPeeringConnection.html
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_OdbPeeringConnection.html
    *
    * @param odbPeeringConnectionId - Identifier for the odbPeeringConnectionId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

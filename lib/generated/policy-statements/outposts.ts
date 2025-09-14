@@ -58,6 +58,7 @@ export class Outposts extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html
@@ -84,6 +85,7 @@ export class Outposts extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateSite.html
@@ -167,6 +169,17 @@ export class Outposts extends PolicyStatement {
    */
   public toGetOutpost() {
     return this.to('GetOutpost');
+  }
+
+  /**
+   * Grants permission to get Outpost billing information for the specified Outpost
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostBillingInformation.html
+   */
+  public toGetOutpostBillingInformation() {
+    return this.to('GetOutpostBillingInformation');
   }
 
   /**
@@ -441,6 +454,7 @@ export class Outposts extends PolicyStatement {
       'GetConnection',
       'GetOrder',
       'GetOutpost',
+      'GetOutpostBillingInformation',
       'GetOutpostInstanceTypes',
       'GetOutpostSupportedInstanceTypes',
       'GetPrivateConnectivityConfig',
@@ -520,6 +534,10 @@ export class Outposts extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html
+   *
+   * Applies to actions:
+   * - .toCreateOutpost()
+   * - .toCreateSite()
    *
    * Applies to resource types:
    * - outpost

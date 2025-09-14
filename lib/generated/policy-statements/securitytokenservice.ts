@@ -351,6 +351,19 @@ export class Sts extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type federated-user to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns
+   *
+   * @param federatedUserName - Identifier for the federatedUserName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onFederatedUser(federatedUserName: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sts::${ account ?? this.defaultAccount }:federated-user/${ federatedUserName }`);
+  }
+
+  /**
    * Filters access by the Google application ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud

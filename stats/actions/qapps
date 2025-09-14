@@ -6,7 +6,6 @@ qapps:BatchUpdateCategory;Write
 qapps:CopyQApp;Write
 qapps:CreateLibraryItem;Write
 qapps:CreateLibraryItemReview;Write
-qapps:CreatePresignedUrl;Write
 qapps:CreateQApp;Write
 qapps:CreateSubscriptionToken;Write
 qapps:DeleteLibraryItem;Write
@@ -20,8 +19,6 @@ qapps:GetQApp;Read
 qapps:GetQAppSession;Read
 qapps:GetQAppSessionMetadata;Read
 qapps:ImportDocument;Write
-qapps:ImportDocumentToQApp;Write
-qapps:ImportDocumentToQAppSession;Write
 qapps:ListCategories;List
 qapps:ListLibraryItems;List
 qapps:ListQAppSessionData;Read

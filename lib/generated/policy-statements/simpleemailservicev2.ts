@@ -250,6 +250,38 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new tenant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateTenant.html
+   */
+  public toCreateTenant() {
+    return this.to('CreateTenant');
+  }
+
+  /**
+   * Grants permission to associate a SES resource to a tenant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateTenantResourceAssociation.html
+   */
+  public toCreateTenantResourceAssociation() {
+    return this.to('CreateTenantResourceAssociation');
+  }
+
+  /**
    * Grants permission to delete an existing configuration set
    *
    * Access Level: Write
@@ -409,6 +441,36 @@ export class SesV2 extends PolicyStatement {
    */
   public toDeleteSuppressedDestination() {
     return this.to('DeleteSuppressedDestination');
+  }
+
+  /**
+   * Grants permission to delete a tenant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteTenant.html
+   */
+  public toDeleteTenant() {
+    return this.to('DeleteTenant');
+  }
+
+  /**
+   * Grants permission to remove an associated SES resource from a tenant
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteTenantResourceAssociation.html
+   */
+  public toDeleteTenantResourceAssociation() {
+    return this.to('DeleteTenantResourceAssociation');
   }
 
   /**
@@ -717,6 +779,21 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about a reputation entity's status
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetReputationEntity.html
+   */
+  public toGetReputationEntity() {
+    return this.to('GetReputationEntity');
+  }
+
+  /**
    * Grants permission to retrieve information about a specific email address that's on the suppression list for your account
    *
    * Access Level: Read
@@ -728,6 +805,21 @@ export class SesV2 extends PolicyStatement {
    */
   public toGetSuppressedDestination() {
     return this.to('GetSuppressedDestination');
+  }
+
+  /**
+   * Grants permission to get information about a tenant
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetTenant.html
+   */
+  public toGetTenant() {
+    return this.to('GetTenant');
   }
 
   /**
@@ -915,6 +1007,36 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of reputation entities
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListReputationEntities.html
+   */
+  public toListReputationEntities() {
+    return this.to('ListReputationEntities');
+  }
+
+  /**
+   * Grants permission to list all the tenants associated to a SES resource
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListResourceTenants
+   */
+  public toListResourceTenants() {
+    return this.to('ListResourceTenants');
+  }
+
+  /**
    * Grants permission to list email addresses that are on the suppression list for your account
    *
    * Access Level: Read
@@ -940,6 +1062,35 @@ export class SesV2 extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list all the resources associated to a tenant
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTenantResources
+   */
+  public toListTenantResources() {
+    return this.to('ListTenantResources');
+  }
+
+  /**
+   * Grants permission to list all the tenants for your account
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTenants
+   */
+  public toListTenants() {
+    return this.to('ListTenants');
   }
 
   /**
@@ -1284,6 +1435,7 @@ export class SesV2 extends PolicyStatement {
    * Possible conditions:
    * - .ifApiVersion()
    * - .ifMultiRegionEndpointId()
+   * - .ifTenantName()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html
    */
@@ -1317,6 +1469,7 @@ export class SesV2 extends PolicyStatement {
    * - .ifFromDisplayName()
    * - .ifRecipients()
    * - .ifMultiRegionEndpointId()
+   * - .ifTenantName()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html
    */
@@ -1457,6 +1610,36 @@ export class SesV2 extends PolicyStatement {
     return this.to('UpdateEmailTemplate');
   }
 
+  /**
+   * Grants permission to update the customer-managed sending status
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateReputationEntityCustomerManagedStatus.html
+   */
+  public toUpdateReputationEntityCustomerManagedStatus() {
+    return this.to('UpdateReputationEntityCustomerManagedStatus');
+  }
+
+  /**
+   * Grants permission to assign a reputation policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateReputationEntityPolicy.html
+   */
+  public toUpdateReputationEntityPolicy() {
+    return this.to('UpdateReputationEntityPolicy');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetMetricData',
@@ -1481,7 +1664,9 @@ export class SesV2 extends PolicyStatement {
       'GetImportJob',
       'GetMessageInsights',
       'GetMultiRegionEndpoint',
+      'GetReputationEntity',
       'GetSuppressedDestination',
+      'GetTenant',
       'ListDomainDeliverabilityCampaigns',
       'ListRecommendations',
       'ListSuppressedDestinations',
@@ -1501,6 +1686,8 @@ export class SesV2 extends PolicyStatement {
       'CreateExportJob',
       'CreateImportJob',
       'CreateMultiRegionEndpoint',
+      'CreateTenant',
+      'CreateTenantResourceAssociation',
       'DeleteConfigurationSet',
       'DeleteConfigurationSetEventDestination',
       'DeleteContact',
@@ -1511,6 +1698,8 @@ export class SesV2 extends PolicyStatement {
       'DeleteEmailTemplate',
       'DeleteMultiRegionEndpoint',
       'DeleteSuppressedDestination',
+      'DeleteTenant',
+      'DeleteTenantResourceAssociation',
       'PutAccountDedicatedIpWarmupAttributes',
       'PutAccountDetails',
       'PutAccountSendingAttributes',
@@ -1541,7 +1730,9 @@ export class SesV2 extends PolicyStatement {
       'UpdateContact',
       'UpdateContactList',
       'UpdateCustomVerificationEmailTemplate',
-      'UpdateEmailTemplate'
+      'UpdateEmailTemplate',
+      'UpdateReputationEntityCustomerManagedStatus',
+      'UpdateReputationEntityPolicy'
     ],
     'Permissions management': [
       'CreateEmailIdentityPolicy',
@@ -1560,13 +1751,30 @@ export class SesV2 extends PolicyStatement {
       'ListEmailTemplates',
       'ListExportJobs',
       'ListImportJobs',
-      'ListMultiRegionEndpoints'
+      'ListMultiRegionEndpoints',
+      'ListReputationEntities',
+      'ListResourceTenants',
+      'ListTenantResources',
+      'ListTenants'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type reputation-policy to the statement
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference/API_ReputationPolicy.html
+   *
+   * @param reputationPolicyName - Identifier for the reputationPolicyName.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onReputationPolicy(reputationPolicyName: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:aws:reputation-policy/${ reputationPolicyName }`);
+  }
 
   /**
    * Adds a resource of type configuration-set to the statement
@@ -1741,6 +1949,24 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type tenant to the statement
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference/API_Tenant.html
+   *
+   * @param tenantName - Identifier for the tenantName.
+   * @param tenantId - Identifier for the tenantId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTenant(tenantName: string, tenantId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tenant/${ tenantName }/${ tenantId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1752,6 +1978,8 @@ export class SesV2 extends PolicyStatement {
    * - .toCreateDeliverabilityTestReport()
    * - .toCreateEmailIdentity()
    * - .toCreateMultiRegionEndpoint()
+   * - .toCreateTenant()
+   * - .toCreateTenantResourceAssociation()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1780,6 +2008,8 @@ export class SesV2 extends PolicyStatement {
    * - .toDeleteEmailIdentity()
    * - .toDeleteEmailIdentityPolicy()
    * - .toDeleteMultiRegionEndpoint()
+   * - .toDeleteTenant()
+   * - .toDeleteTenantResourceAssociation()
    * - .toGetConfigurationSet()
    * - .toGetConfigurationSetEventDestinations()
    * - .toGetContact()
@@ -1790,7 +2020,12 @@ export class SesV2 extends PolicyStatement {
    * - .toGetEmailIdentity()
    * - .toGetEmailIdentityPolicies()
    * - .toGetMultiRegionEndpoint()
+   * - .toGetReputationEntity()
+   * - .toGetTenant()
    * - .toListRecommendations()
+   * - .toListReputationEntities()
+   * - .toListResourceTenants()
+   * - .toListTenantResources()
    * - .toPutConfigurationSetArchivingOptions()
    * - .toPutConfigurationSetDeliveryOptions()
    * - .toPutConfigurationSetReputationOptions()
@@ -1809,6 +2044,8 @@ export class SesV2 extends PolicyStatement {
    * - .toUpdateContact()
    * - .toUpdateContactList()
    * - .toUpdateEmailIdentityPolicy()
+   * - .toUpdateReputationEntityCustomerManagedStatus()
+   * - .toUpdateReputationEntityPolicy()
    *
    * Applies to resource types:
    * - configuration-set
@@ -1817,6 +2054,7 @@ export class SesV2 extends PolicyStatement {
    * - deliverability-test-report
    * - identity
    * - mailmanager-archive
+   * - tenant
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1838,6 +2076,8 @@ export class SesV2 extends PolicyStatement {
    * - .toCreateDeliverabilityTestReport()
    * - .toCreateEmailIdentity()
    * - .toCreateMultiRegionEndpoint()
+   * - .toCreateTenant()
+   * - .toCreateTenantResourceAssociation()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -1869,6 +2109,8 @@ export class SesV2 extends PolicyStatement {
    * - .toCreateExportJob()
    * - .toCreateImportJob()
    * - .toCreateMultiRegionEndpoint()
+   * - .toCreateTenant()
+   * - .toCreateTenantResourceAssociation()
    * - .toDeleteConfigurationSet()
    * - .toDeleteConfigurationSetEventDestination()
    * - .toDeleteContact()
@@ -1880,6 +2122,8 @@ export class SesV2 extends PolicyStatement {
    * - .toDeleteEmailTemplate()
    * - .toDeleteMultiRegionEndpoint()
    * - .toDeleteSuppressedDestination()
+   * - .toDeleteTenant()
+   * - .toDeleteTenantResourceAssociation()
    * - .toGetAccount()
    * - .toGetBlacklistReports()
    * - .toGetConfigurationSet()
@@ -1901,7 +2145,9 @@ export class SesV2 extends PolicyStatement {
    * - .toGetImportJob()
    * - .toGetMessageInsights()
    * - .toGetMultiRegionEndpoint()
+   * - .toGetReputationEntity()
    * - .toGetSuppressedDestination()
+   * - .toGetTenant()
    * - .toListConfigurationSets()
    * - .toListContactLists()
    * - .toListContacts()
@@ -1915,8 +2161,12 @@ export class SesV2 extends PolicyStatement {
    * - .toListImportJobs()
    * - .toListMultiRegionEndpoints()
    * - .toListRecommendations()
+   * - .toListReputationEntities()
+   * - .toListResourceTenants()
    * - .toListSuppressedDestinations()
    * - .toListTagsForResource()
+   * - .toListTenantResources()
+   * - .toListTenants()
    * - .toPutAccountDedicatedIpWarmupAttributes()
    * - .toPutAccountDetails()
    * - .toPutAccountSendingAttributes()
@@ -1951,6 +2201,8 @@ export class SesV2 extends PolicyStatement {
    * - .toUpdateCustomVerificationEmailTemplate()
    * - .toUpdateEmailIdentityPolicy()
    * - .toUpdateEmailTemplate()
+   * - .toUpdateReputationEntityCustomerManagedStatus()
+   * - .toUpdateReputationEntityPolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2066,5 +2318,21 @@ export class SesV2 extends PolicyStatement {
    */
   public ifReplicaRegion(value: string | string[], operator?: Operator | string) {
     return this.if(`ReplicaRegion`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tenant name that is used to send email
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html#amazonses-policy-keys
+   *
+   * Applies to actions:
+   * - .toSendBulkEmail()
+   * - .toSendEmail()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTenantName(value: string | string[], operator?: Operator | string) {
+    return this.if(`TenantName`, value, operator ?? 'StringLike');
   }
 }

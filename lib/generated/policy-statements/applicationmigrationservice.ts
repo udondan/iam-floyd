@@ -145,6 +145,10 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/mgn/latest/APIReference/API_CreateNetworkMigrationDefinition.html
    */
   public toCreateNetworkMigrationDefinition() {
@@ -1143,6 +1147,10 @@ export class Mgn extends PolicyStatement {
    * Grants permission to start an export task
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - ec2:DescribeLaunchTemplateVersions
@@ -2162,11 +2170,13 @@ export class Mgn extends PolicyStatement {
    * - .toCreateApplication()
    * - .toCreateConnector()
    * - .toCreateLaunchConfigurationTemplate()
+   * - .toCreateNetworkMigrationDefinition()
    * - .toCreateReplicationConfigurationTemplate()
    * - .toCreateVcenterClientForMgn()
    * - .toCreateWave()
    * - .toRegisterAgentForMgn()
    * - .toStartCutover()
+   * - .toStartExport()
    * - .toStartTest()
    * - .toTagResource()
    * - .toTerminateTargetInstances()
@@ -2214,11 +2224,13 @@ export class Mgn extends PolicyStatement {
    * - .toCreateApplication()
    * - .toCreateConnector()
    * - .toCreateLaunchConfigurationTemplate()
+   * - .toCreateNetworkMigrationDefinition()
    * - .toCreateReplicationConfigurationTemplate()
    * - .toCreateVcenterClientForMgn()
    * - .toCreateWave()
    * - .toRegisterAgentForMgn()
    * - .toStartCutover()
+   * - .toStartExport()
    * - .toStartTest()
    * - .toTagResource()
    * - .toTerminateTargetInstances()

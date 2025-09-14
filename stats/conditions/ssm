@@ -2,11 +2,13 @@ ssm:AccessRequestId
 ssm:AutoApprove
 ssm:DocumentCategories
 ssm:DocumentType
+ssm:InventoryTypeName
 ssm:Overwrite
 ssm:Policies
 ssm:Recursive
 ssm:RequestTag/${TagKey}
 ssm:ResourceTag/${TagKey}
+ssm:SessionDocumentAccessCheck
 ssm:SourceInstanceARN
 ssm:SyncType
 ssm:TagKeys

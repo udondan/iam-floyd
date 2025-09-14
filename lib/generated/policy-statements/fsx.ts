@@ -92,6 +92,22 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create and attach a S3 Access Point to a FSx File System
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:CreateAccessPoint
+   * - s3:GetAccessPoint
+   * - s3:PutAccessPointPolicy
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateAndAttachS3AccessPoint.html
+   */
+  public toCreateAndAttachS3AccessPoint() {
+    return this.to('CreateAndAttachS3AccessPoint');
+  }
+
+  /**
    * Grants permission to create a new backup of an Amazon FSx file system or an Amazon FSx volume
    *
    * Access Level: Write
@@ -475,6 +491,17 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the descriptions of S3 Access Point Attachments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeS3AccessPointAttachments.html
+   */
+  public toDescribeS3AccessPointAttachments() {
+    return this.to('DescribeS3AccessPointAttachments');
+  }
+
+  /**
    * Grants permission to return the descriptions of whether FSx route table updates from participant accounts are allowed in your account
    *
    * Access Level: Read
@@ -516,6 +543,20 @@ export class Fsx extends PolicyStatement {
    */
   public toDescribeVolumes() {
     return this.to('DescribeVolumes');
+  }
+
+  /**
+   * Grants permission to detach an S3 Access Point from an Amazon FSx File System and delete the S3 Access Point
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:DeleteAccessPoint
+   *
+   * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DetachAndDeleteS3AccessPoint.html
+   */
+  public toDetachAndDeleteS3AccessPoint() {
+    return this.to('DetachAndDeleteS3AccessPoint');
   }
 
   /**
@@ -734,6 +775,7 @@ export class Fsx extends PolicyStatement {
       'CancelDataRepositoryTask',
       'CopyBackup',
       'CopySnapshotAndUpdateVolume',
+      'CreateAndAttachS3AccessPoint',
       'CreateBackup',
       'CreateDataRepositoryAssociation',
       'CreateDataRepositoryTask',
@@ -751,6 +793,7 @@ export class Fsx extends PolicyStatement {
       'DeleteSnapshot',
       'DeleteStorageVirtualMachine',
       'DeleteVolume',
+      'DetachAndDeleteS3AccessPoint',
       'DisassociateFileGateway',
       'DisassociateFileSystemAliases',
       'ReleaseFileSystemNfsV3Locks',
@@ -779,6 +822,7 @@ export class Fsx extends PolicyStatement {
       'DescribeFileCaches',
       'DescribeFileSystemAliases',
       'DescribeFileSystems',
+      'DescribeS3AccessPointAttachments',
       'DescribeSharedVpcConfiguration',
       'DescribeSnapshots',
       'DescribeStorageVirtualMachines',

@@ -19,6 +19,17 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view all event logs in a persistent application history server
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-debug.html
+   */
+  public toAccessAllEventLogs() {
+    return this.to('AccessAllEventLogs');
+  }
+
+  /**
    * Grants permission to add an instance fleet to a running cluster
    *
    * Access Level: Write
@@ -962,6 +973,7 @@ export class Elasticmapreduce extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AccessAllEventLogs',
       'AddInstanceFleet',
       'AddInstanceGroups',
       'AddJobFlowSteps',

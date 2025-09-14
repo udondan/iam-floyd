@@ -37,6 +37,7 @@ export class Databrew extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateDataset.html
    */
@@ -52,6 +53,7 @@ export class Databrew extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateProfileJob.html
    */
@@ -67,6 +69,7 @@ export class Databrew extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateProject.html
    */
@@ -82,6 +85,7 @@ export class Databrew extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRecipe.html
    */
@@ -97,6 +101,7 @@ export class Databrew extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRecipeJob.html
    */
@@ -112,6 +117,7 @@ export class Databrew extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateRuleset.html
    */
@@ -127,6 +133,7 @@ export class Databrew extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/databrew/latest/dg/API_CreateSchedule.html
    */
@@ -719,6 +726,15 @@ export class Databrew extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateDataset()
+   * - .toCreateProfileJob()
+   * - .toCreateProject()
+   * - .toCreateRecipe()
+   * - .toCreateRecipeJob()
+   * - .toCreateRuleset()
+   * - .toCreateSchedule()
    *
    * Applies to resource types:
    * - Project

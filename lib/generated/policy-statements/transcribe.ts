@@ -25,6 +25,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateCallAnalyticsCategory.html
@@ -40,6 +41,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -59,6 +61,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -77,6 +80,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -95,6 +99,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -476,6 +481,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifOutputBucketName()
    * - .ifOutputEncryptionKMSKeyId()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -530,6 +536,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifOutputEncryptionKMSKeyId()
    * - .ifOutputKey()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -573,6 +580,7 @@ export class Transcribe extends PolicyStatement {
    * - .ifOutputEncryptionKMSKeyId()
    * - .ifOutputKey()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -591,6 +599,10 @@ export class Transcribe extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifOutputBucketName()
+   * - .ifOutputEncryptionKMSKeyId()
+   * - .ifOutputKey()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_TagResource.html
@@ -911,6 +923,17 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
+   * Applies to actions:
+   * - .toCreateCallAnalyticsCategory()
+   * - .toCreateLanguageModel()
+   * - .toCreateMedicalVocabulary()
+   * - .toCreateVocabulary()
+   * - .toCreateVocabularyFilter()
+   * - .toStartMedicalScribeJob()
+   * - .toStartMedicalTranscriptionJob()
+   * - .toStartTranscriptionJob()
+   * - .toTagResource()
+   *
    * Applies to resource types:
    * - transcriptionjob
    * - vocabulary
@@ -964,6 +987,7 @@ export class Transcribe extends PolicyStatement {
    * - .toStartMedicalScribeJob()
    * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
+   * - .toTagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -973,7 +997,7 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the KMS key id included in the request
+   * Filters access based on the KMS key id included in the request, provided in the form of a KMS key ARN
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html#amazontranscribe-policy-keys
    *
@@ -982,6 +1006,7 @@ export class Transcribe extends PolicyStatement {
    * - .toStartMedicalScribeJob()
    * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
+   * - .toTagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -998,6 +1023,7 @@ export class Transcribe extends PolicyStatement {
    * Applies to actions:
    * - .toStartMedicalTranscriptionJob()
    * - .toStartTranscriptionJob()
+   * - .toTagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

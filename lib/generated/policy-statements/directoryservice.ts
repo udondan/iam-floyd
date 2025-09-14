@@ -212,6 +212,40 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Hybrid Managed AD directory
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateNetworkInterfacePermission
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateTags
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - iam:CreateServiceLinkedRole
+   * - iam:GetRole
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetSecretValue
+   * - ssm:GetCommandInvocation
+   * - ssm:GetConnectionStatus
+   * - ssm:ListCommands
+   * - ssm:SendCommand
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateHybridAD.html
+   */
+  public toCreateHybridAD() {
+    return this.to('CreateHybridAD');
+  }
+
+  /**
    * Grants permission to create an IdentityPool Directory in the AWS cloud
    *
    * Access Level: Write
@@ -282,6 +316,17 @@ export class Ds extends PolicyStatement {
    */
   public toCreateTrust() {
     return this.to('CreateTrust');
+  }
+
+  /**
+   * Grants permission to delete a directory assessment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteADAssessment.html
+   */
+  public toDeleteADAssessment() {
+    return this.to('DeleteADAssessment');
   }
 
   /**
@@ -369,6 +414,28 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a directory assessment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeADAssessment.html
+   */
+  public toDescribeADAssessment() {
+    return this.to('DescribeADAssessment');
+  }
+
+  /**
+   * Grants permission to describe the ca enrollment status of a specified directory
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeCAEnrollmentPolicy.html
+   */
+  public toDescribeCAEnrollmentPolicy() {
+    return this.to('DescribeCAEnrollmentPolicy');
+  }
+
+  /**
    * Grants permission to display information about the certificate registered for a secured LDAP connection
    *
    * Access Level: Read
@@ -443,6 +510,17 @@ export class Ds extends PolicyStatement {
    */
   public toDescribeEventTopics() {
     return this.to('DescribeEventTopics');
+  }
+
+  /**
+   * Grants permission to describe the updates of a specified hybrid directory
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeHybridADUpdate.html
+   */
+  public toDescribeHybridADUpdate() {
+    return this.to('DescribeHybridADUpdate');
   }
 
   /**
@@ -523,6 +601,17 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable the ca enrollment of a specified directory
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableCAEnrollmentPolicy.html
+   */
+  public toDisableCAEnrollmentPolicy() {
+    return this.to('DisableCAEnrollmentPolicy');
+  }
+
+  /**
    * Grants permission to disable alternative client authentication methods for the specified directory
    *
    * Access Level: Write
@@ -586,6 +675,21 @@ export class Ds extends PolicyStatement {
    */
   public toDisableSso() {
     return this.to('DisableSso');
+  }
+
+  /**
+   * Grants permission to enable the ca enrollment of a specified directory
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - acm-pca:DescribeCertificateAuthority
+   * - pca-connector-ad:GetConnector
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableCAEnrollmentPolicy.html
+   */
+  public toEnableCAEnrollmentPolicy() {
+    return this.to('EnableCAEnrollmentPolicy');
   }
 
   /**
@@ -688,6 +792,17 @@ export class Ds extends PolicyStatement {
    */
   public toGetSnapshotLimits() {
     return this.to('GetSnapshotLimits');
+  }
+
+  /**
+   * Grants permission to list directory assessments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListADAssessments.html
+   */
+  public toListADAssessments() {
+    return this.to('ListADAssessments');
   }
 
   /**
@@ -866,6 +981,33 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a directory assessment
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateNetworkInterfacePermission
+   * - ec2:CreateSecurityGroup
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteSecurityGroup
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - ssm:GetCommandInvocation
+   * - ssm:GetConnectionStatus
+   * - ssm:ListCommands
+   * - ssm:SendCommand
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartADAssessment.html
+   */
+  public toStartADAssessment() {
+    return this.to('StartADAssessment');
+  }
+
+  /**
    * Grants permission to apply a schema extension to a Microsoft AD directory
    *
    * Access Level: Write
@@ -943,6 +1085,34 @@ export class Ds extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update configurations for a specified hybrid directory
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateNetworkInterfacePermission
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateTags
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - secretsmanager:DescribeSecret
+   * - secretsmanager:GetSecretValue
+   * - ssm:GetCommandInvocation
+   * - ssm:GetConnectionStatus
+   * - ssm:ListCommands
+   * - ssm:SendCommand
+   *
+   * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateHybridAD.html
+   */
+  public toUpdateHybridAD() {
+    return this.to('UpdateHybridAD');
+  }
+
+  /**
    * Grants permission to add or remove domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request
    *
    * Access Level: Write
@@ -1009,11 +1179,13 @@ export class Ds extends PolicyStatement {
       'CreateComputer',
       'CreateConditionalForwarder',
       'CreateDirectory',
+      'CreateHybridAD',
       'CreateIdentityPoolDirectory',
       'CreateLogSubscription',
       'CreateMicrosoftAD',
       'CreateSnapshot',
       'CreateTrust',
+      'DeleteADAssessment',
       'DeleteConditionalForwarder',
       'DeleteDirectory',
       'DeleteLogSubscription',
@@ -1021,12 +1193,14 @@ export class Ds extends PolicyStatement {
       'DeleteTrust',
       'DeregisterCertificate',
       'DeregisterEventTopic',
+      'DisableCAEnrollmentPolicy',
       'DisableClientAuthentication',
       'DisableDirectoryDataAccess',
       'DisableLDAPS',
       'DisableRadius',
       'DisableRoleAccess',
       'DisableSso',
+      'EnableCAEnrollmentPolicy',
       'EnableClientAuthentication',
       'EnableDirectoryDataAccess',
       'EnableLDAPS',
@@ -1041,6 +1215,7 @@ export class Ds extends PolicyStatement {
       'ResetUserPassword',
       'RestoreFromSnapshot',
       'ShareDirectory',
+      'StartADAssessment',
       'StartSchemaExtension',
       'UnauthorizeApplication',
       'UnshareDirectory',
@@ -1048,6 +1223,7 @@ export class Ds extends PolicyStatement {
       'UpdateConditionalForwarder',
       'UpdateDirectory',
       'UpdateDirectorySetup',
+      'UpdateHybridAD',
       'UpdateNumberOfDomainControllers',
       'UpdateRadius',
       'UpdateSettings',
@@ -1062,12 +1238,15 @@ export class Ds extends PolicyStatement {
     ],
     Read: [
       'CheckAlias',
+      'DescribeADAssessment',
+      'DescribeCAEnrollmentPolicy',
       'DescribeCertificate',
       'DescribeClientAuthenticationSettings',
       'DescribeConditionalForwarders',
       'DescribeDirectoryDataAccess',
       'DescribeDomainControllers',
       'DescribeEventTopics',
+      'DescribeHybridADUpdate',
       'DescribeLDAPSSettings',
       'DescribeRegions',
       'DescribeSettings',
@@ -1086,6 +1265,7 @@ export class Ds extends PolicyStatement {
     ],
     List: [
       'DescribeDirectories',
+      'ListADAssessments',
       'ListCertificates',
       'ListSchemaExtensions'
     ]
@@ -1117,6 +1297,7 @@ export class Ds extends PolicyStatement {
    * - .toAddTagsToResource()
    * - .toConnectDirectory()
    * - .toCreateDirectory()
+   * - .toCreateHybridAD()
    * - .toCreateIdentityPoolDirectory()
    * - .toCreateMicrosoftAD()
    * - .toRemoveTagsFromResource()
@@ -1154,6 +1335,7 @@ export class Ds extends PolicyStatement {
    * - .toAddTagsToResource()
    * - .toConnectDirectory()
    * - .toCreateDirectory()
+   * - .toCreateHybridAD()
    * - .toCreateIdentityPoolDirectory()
    * - .toCreateMicrosoftAD()
    * - .toRemoveTagsFromResource()

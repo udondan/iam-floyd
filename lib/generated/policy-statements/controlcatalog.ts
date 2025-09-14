@@ -41,6 +41,17 @@ export class Controlcatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a paginated list of control mappings from the AWS Control Catalog
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListControlMappings.html
+   */
+  public toListControlMappings() {
+    return this.to('ListControlMappings');
+  }
+
+  /**
    * Grants permission to return a paginated list of all available controls in the AWS Control Catalog library
    *
    * Access Level: List
@@ -79,6 +90,7 @@ export class Controlcatalog extends PolicyStatement {
     ],
     List: [
       'ListCommonControls',
+      'ListControlMappings',
       'ListControls',
       'ListDomains',
       'ListObjectives'

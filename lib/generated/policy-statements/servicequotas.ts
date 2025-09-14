@@ -34,6 +34,17 @@ export class Servicequotas extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit a request to create a support case for an existing quota increase request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_CreateSupportCase.html
+   */
+  public toCreateSupportCase() {
+    return this.to('CreateSupportCase');
+  }
+
+  /**
    * Grants permission to remove the specified service quota from the service quota template
    *
    * Access Level: Write
@@ -285,6 +296,7 @@ export class Servicequotas extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateServiceQuotaTemplate',
+      'CreateSupportCase',
       'DeleteServiceQuotaIncreaseRequestFromTemplate',
       'DisassociateServiceQuotaTemplate',
       'PutServiceQuotaIncreaseRequestIntoTemplate',

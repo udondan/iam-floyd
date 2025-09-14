@@ -41,28 +41,6 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
-   * Grants permission to download an AWS agreement that has not yet been accepted or a customer agreement that has been accepted by the customer account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html
-   */
-  public toDownloadAgreement() {
-    return this.to('DownloadAgreement');
-  }
-
-  /**
-   * Grants permission to download an AWS compliance report package
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html
-   */
-  public toGet() {
-    return this.to('Get');
-  }
-
-  /**
    * Grants permission to get the account settings for Artifact
    *
    * Access Level: Read
@@ -202,8 +180,6 @@ export class Artifact extends PolicyStatement {
       'TerminateAgreement'
     ],
     Read: [
-      'DownloadAgreement',
-      'Get',
       'GetAccountSettings',
       'GetAgreement',
       'GetCustomerAgreement',
@@ -218,18 +194,6 @@ export class Artifact extends PolicyStatement {
       'ListReports'
     ]
   };
-
-  /**
-   * Adds a resource of type report-package to the statement
-   *
-   * https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onReportPackage(resourceName: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:::report-package/${ resourceName }`);
-  }
 
   /**
    * Adds a resource of type customer-agreement to the statement
@@ -265,6 +229,10 @@ export class Artifact extends PolicyStatement {
    * @param version - Identifier for the version.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifReportCategory()
+   * - .ifReportSeries()
    */
   public onReport(reportId: string, version: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:${ region ?? this.defaultRegion }::report/${ reportId }:${ version }`);
@@ -274,6 +242,9 @@ export class Artifact extends PolicyStatement {
    * Filters access by which category reports are associated with
    *
    * https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html
+   *
+   * Applies to resource types:
+   * - report
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -286,6 +257,9 @@ export class Artifact extends PolicyStatement {
    * Filters access by which series reports are associated with
    *
    * https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html
+   *
+   * Applies to resource types:
+   * - report
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

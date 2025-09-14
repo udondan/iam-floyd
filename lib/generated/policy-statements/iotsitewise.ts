@@ -174,6 +174,21 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a computation model
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html
+   */
+  public toCreateComputationModel() {
+    return this.to('CreateComputationModel');
+  }
+
+  /**
    * Grants permission to create a dashboard in a project
    *
    * Access Level: Write
@@ -294,6 +309,28 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDeleteAssetModelCompositeModel() {
     return this.to('DeleteAssetModelCompositeModel');
+  }
+
+  /**
+   * Grants permission to delete a relationship between asset model and interface
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModelInterfaceRelationship.html
+   */
+  public toDeleteAssetModelInterfaceRelationship() {
+    return this.to('DeleteAssetModelInterfaceRelationship');
+  }
+
+  /**
+   * Grants permission to delete a computation model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteComputationModel.html
+   */
+  public toDeleteComputationModel() {
+    return this.to('DeleteComputationModel');
   }
 
   /**
@@ -432,6 +469,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a relationship between asset model and interface
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelInterfaceRelationship.html
+   */
+  public toDescribeAssetModelInterfaceRelationship() {
+    return this.to('DescribeAssetModelInterfaceRelationship');
+  }
+
+  /**
    * Grants permission to describe an asset property
    *
    * Access Level: Read
@@ -451,6 +499,28 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDescribeBulkImportJob() {
     return this.to('DescribeBulkImportJob');
+  }
+
+  /**
+   * Grants permission to describe a computation model
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeComputationModel.html
+   */
+  public toDescribeComputationModel() {
+    return this.to('DescribeComputationModel');
+  }
+
+  /**
+   * Grants permission to describe computation model execution summary
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeComputationModelExecutionSummary.html
+   */
+  public toDescribeComputationModelExecutionSummary() {
+    return this.to('DescribeComputationModelExecutionSummary');
   }
 
   /**
@@ -484,6 +554,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDescribeDefaultEncryptionConfiguration() {
     return this.to('DescribeDefaultEncryptionConfiguration');
+  }
+
+  /**
+   * Grants permission to describe an execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeExecution.html
+   */
+  public toDescribeExecution() {
+    return this.to('DescribeExecution');
   }
 
   /**
@@ -797,6 +878,39 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list computation model data binding usages
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModelDataBindingUsages.html
+   */
+  public toListComputationModelDataBindingUsages() {
+    return this.to('ListComputationModelDataBindingUsages');
+  }
+
+  /**
+   * Grants permission to list computation model resolve to resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModelResolveToResources.html
+   */
+  public toListComputationModelResolveToResources() {
+    return this.to('ListComputationModelResolveToResources');
+  }
+
+  /**
+   * Grants permission to list all computation models
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModels.html
+   */
+  public toListComputationModels() {
+    return this.to('ListComputationModels');
+  }
+
+  /**
    * Grants permission to list all dashboards in a project
    *
    * Access Level: List
@@ -819,6 +933,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list executions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListExecutions.html
+   */
+  public toListExecutions() {
+    return this.to('ListExecutions');
+  }
+
+  /**
    * Grants permission to list all gateways
    *
    * Access Level: List
@@ -827,6 +952,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListGateways() {
     return this.to('ListGateways');
+  }
+
+  /**
+   * Grants permission to list all asset models that are enforced by an interface
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListInterfaceRelationships.html
+   */
+  public toListInterfaceRelationships() {
+    return this.to('ListInterfaceRelationships');
   }
 
   /**
@@ -885,6 +1021,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListTimeSeries() {
     return this.to('ListTimeSeries');
+  }
+
+  /**
+   * Grants permission to create a relationship between asset model and interface
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutAssetModelInterfaceRelationship.html
+   */
+  public toPutAssetModelInterfaceRelationship() {
+    return this.to('PutAssetModelInterfaceRelationship');
   }
 
   /**
@@ -1014,6 +1161,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a computation model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateComputationModel.html
+   */
+  public toUpdateComputationModel() {
+    return this.to('UpdateComputationModel');
+  }
+
+  /**
    * Grants permission to update a dashboard
    *
    * Access Level: Write
@@ -1091,6 +1249,7 @@ export class Iotsitewise extends PolicyStatement {
       'CreateAssetModel',
       'CreateAssetModelCompositeModel',
       'CreateBulkImportJob',
+      'CreateComputationModel',
       'CreateDashboard',
       'CreateDataset',
       'CreateGateway',
@@ -1100,6 +1259,8 @@ export class Iotsitewise extends PolicyStatement {
       'DeleteAsset',
       'DeleteAssetModel',
       'DeleteAssetModelCompositeModel',
+      'DeleteAssetModelInterfaceRelationship',
+      'DeleteComputationModel',
       'DeleteDashboard',
       'DeleteDataset',
       'DeleteGateway',
@@ -1110,6 +1271,7 @@ export class Iotsitewise extends PolicyStatement {
       'DisassociateTimeSeriesFromAssetProperty',
       'EnableSiteWiseIntegration',
       'ExecuteAction',
+      'PutAssetModelInterfaceRelationship',
       'PutDefaultEncryptionConfiguration',
       'PutLoggingOptions',
       'PutStorageConfiguration',
@@ -1119,6 +1281,7 @@ export class Iotsitewise extends PolicyStatement {
       'UpdateAssetModelCompositeModel',
       'UpdateAssetModelPropertyRouting',
       'UpdateAssetProperty',
+      'UpdateComputationModel',
       'UpdateDashboard',
       'UpdateDataset',
       'UpdateGateway',
@@ -1136,11 +1299,15 @@ export class Iotsitewise extends PolicyStatement {
       'DescribeAssetCompositeModel',
       'DescribeAssetModel',
       'DescribeAssetModelCompositeModel',
+      'DescribeAssetModelInterfaceRelationship',
       'DescribeAssetProperty',
       'DescribeBulkImportJob',
+      'DescribeComputationModel',
+      'DescribeComputationModelExecutionSummary',
       'DescribeDashboard',
       'DescribeDataset',
       'DescribeDefaultEncryptionConfiguration',
+      'DescribeExecution',
       'DescribeGateway',
       'DescribeGatewayCapabilityConfiguration',
       'DescribeLoggingOptions',
@@ -1168,9 +1335,14 @@ export class Iotsitewise extends PolicyStatement {
       'ListAssociatedAssets',
       'ListBulkImportJobs',
       'ListCompositionRelationships',
+      'ListComputationModelDataBindingUsages',
+      'ListComputationModelResolveToResources',
+      'ListComputationModels',
       'ListDashboards',
       'ListDatasets',
+      'ListExecutions',
       'ListGateways',
+      'ListInterfaceRelationships',
       'ListPortals',
       'ListProjectAssets',
       'ListProjects',
@@ -1336,6 +1508,23 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type computation-model to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html
+   *
+   * @param computationModelId - Identifier for the computationModelId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onComputationModel(computationModelId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:computation-model/${ computationModelId }`);
+  }
+
+  /**
    * Filters access by the tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1344,6 +1533,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .toCreateAccessPolicy()
    * - .toCreateAsset()
    * - .toCreateAssetModel()
+   * - .toCreateComputationModel()
    * - .toCreateDashboard()
    * - .toCreateDataset()
    * - .toCreateGateway()
@@ -1378,6 +1568,7 @@ export class Iotsitewise extends PolicyStatement {
    * - dashboard
    * - access-policy
    * - dataset
+   * - computation-model
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1396,6 +1587,7 @@ export class Iotsitewise extends PolicyStatement {
    * - .toCreateAccessPolicy()
    * - .toCreateAsset()
    * - .toCreateAssetModel()
+   * - .toCreateComputationModel()
    * - .toCreateDashboard()
    * - .toCreateDataset()
    * - .toCreateGateway()

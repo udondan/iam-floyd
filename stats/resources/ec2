@@ -1,3 +1,4 @@
+ec2:capacity-block
 ec2:capacity-reservation
 ec2:capacity-reservation-fleet
 ec2:carrier-gateway
@@ -19,6 +20,7 @@ ec2:fpga-image
 ec2:group
 ec2:host-reservation
 ec2:image
+ec2:image-usage-report
 ec2:import-image-task
 ec2:import-snapshot-task
 ec2:instance
@@ -42,6 +44,7 @@ ec2:local-gateway-route-table-virtual-interface-group-association
 ec2:local-gateway-route-table-vpc-association
 ec2:local-gateway-virtual-interface
 ec2:local-gateway-virtual-interface-group
+ec2:mac-modification-task
 ec2:natgateway
 ec2:network-acl
 ec2:network-insights-access-scope

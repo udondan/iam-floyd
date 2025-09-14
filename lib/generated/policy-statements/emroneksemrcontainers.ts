@@ -30,7 +30,7 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a certificate
+   * Grants permission to call the CreateCertificate method to accept the CertificateSigningRequest, and return the signed certificate
    *
    * Access Level: Write
    *
@@ -420,7 +420,7 @@ export class EmrContainers extends PolicyStatement {
   /**
    * Adds a resource of type securityConfiguration to the statement
    *
-   * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/security-configurations.html
+   * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/security_iam_fgac-lf-enable.html#security_iam_fgac-lf-security-config
    *
    * @param securityConfigurationId - Identifier for the securityConfigurationId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -432,20 +432,6 @@ export class EmrContainers extends PolicyStatement {
    */
   public onSecurityConfiguration(securityConfigurationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/securityconfigurations/${ securityConfigurationId }`);
-  }
-
-  /**
-   * Adds a resource of type certificate to the statement
-   *
-   * https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/certificate.html
-   *
-   * @param certificateId - Identifier for the certificateId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-containers:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/certificates/${ certificateId }`);
   }
 
   /**

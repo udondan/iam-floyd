@@ -98,7 +98,7 @@ export class ResourceExplorer2 extends PolicyStatement {
   /**
    * Grants permission to delete the specified view's resource policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html
    */
@@ -263,7 +263,7 @@ export class ResourceExplorer2 extends PolicyStatement {
   /**
    * Grants permission to update the specified view's resource policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html
    */
@@ -343,10 +343,8 @@ export class ResourceExplorer2 extends PolicyStatement {
       'CreateManagedView',
       'CreateView',
       'DeleteIndex',
-      'DeleteResourcePolicy',
       'DeleteView',
       'DisassociateDefaultView',
-      'PutResourcePolicy',
       'UpdateIndexType',
       'UpdateView'
     ],
@@ -360,6 +358,10 @@ export class ResourceExplorer2 extends PolicyStatement {
       'GetView',
       'ListTagsForResource',
       'Search'
+    ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
     ],
     List: [
       'ListIndexes',

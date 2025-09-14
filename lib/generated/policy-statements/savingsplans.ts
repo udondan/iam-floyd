@@ -206,7 +206,7 @@ export class Savingsplans extends PolicyStatement {
   }
 
   /**
-   * Filters access by tag-value assoicated with the resource
+   * Filters access by tag-value associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *

@@ -1,22 +1,28 @@
 ssm-sap:BackupDatabase;Write
-ssm-sap:DeleteResourcePermission;Write
+ssm-sap:DeleteResourcePermission;Permissions management
 ssm-sap:DeregisterApplication;Write
 ssm-sap:GetApplication;Read
 ssm-sap:GetComponent;Read
+ssm-sap:GetConfigurationCheckOperation;Read
 ssm-sap:GetDatabase;Read
 ssm-sap:GetOperation;Read
-ssm-sap:GetResourcePermission;Read
+ssm-sap:GetResourcePermission;Permissions management
 ssm-sap:ListApplications;List
 ssm-sap:ListComponents;List
+ssm-sap:ListConfigurationCheckDefinitions;List
+ssm-sap:ListConfigurationCheckOperations;List
 ssm-sap:ListDatabases;List
 ssm-sap:ListOperationEvents;List
 ssm-sap:ListOperations;List
+ssm-sap:ListSubCheckResults;List
+ssm-sap:ListSubCheckRuleResults;List
 ssm-sap:ListTagsForResource;Read
-ssm-sap:PutResourcePermission;Write
+ssm-sap:PutResourcePermission;Permissions management
 ssm-sap:RegisterApplication;Write
 ssm-sap:RestoreDatabase;Write
 ssm-sap:StartApplication;Write
 ssm-sap:StartApplicationRefresh;Write
+ssm-sap:StartConfigurationChecks;Write
 ssm-sap:StopApplication;Write
 ssm-sap:TagResource;Tagging
 ssm-sap:UntagResource;Tagging

@@ -23,7 +23,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_BatchMeterUsage.html
    */
   public toBatchMeterUsage() {
     return this.to('BatchMeterUsage');
@@ -34,7 +34,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_MeterUsage.html
    */
   public toMeterUsage() {
     return this.to('MeterUsage');
@@ -45,7 +45,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_RegisterUsage.html
    */
   public toRegisterUsage() {
     return this.to('RegisterUsage');
@@ -56,7 +56,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_ResolveCustomer.html
    */
   public toResolveCustomer() {
     return this.to('ResolveCustomer');

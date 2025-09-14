@@ -3,6 +3,7 @@ support:AddCommunicationToCase;Write
 support:CreateCase;Write
 support:DescribeAttachment;Read
 support:DescribeCaseAttributes;Read
+support:DescribeCaseOptions;Read
 support:DescribeCases;Read
 support:DescribeCommunication;Read
 support:DescribeCommunications;Read
@@ -25,3 +26,5 @@ support:RefreshTrustedAdvisorCheck;Write
 support:ResolveCase;Write
 support:SearchForCases;Read
 support:StartInteraction;Write
+support:UpdateCaseSeverity;Write
+support:UpdateInteraction;Write

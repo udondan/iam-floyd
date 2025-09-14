@@ -1,4 +1,3 @@
-emr-containers:certificate
 emr-containers:jobRun
 emr-containers:jobTemplate
 emr-containers:managedEndpoint

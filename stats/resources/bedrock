@@ -2,9 +2,12 @@ bedrock:agent
 bedrock:agent-alias
 bedrock:application-inference-profile
 bedrock:async-invoke
+bedrock:automated-reasoning-policy
+bedrock:automated-reasoning-policy-version
 bedrock:bedrock-marketplace-model-endpoint
 bedrock:blueprint
 bedrock:custom-model
+bedrock:custom-model-deployment
 bedrock:data-automation-invocation-job
 bedrock:data-automation-profile
 bedrock:data-automation-project
@@ -12,8 +15,10 @@ bedrock:default-prompt-router
 bedrock:evaluation-job
 bedrock:flow
 bedrock:flow-alias
+bedrock:flow-execution
 bedrock:foundation-model
 bedrock:guardrail
+bedrock:guardrail-profile
 bedrock:imported-model
 bedrock:inference-profile
 bedrock:knowledge-base

@@ -73,6 +73,24 @@ export class SagemakerMlflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a logged model in MLflow
+   *
+   * Access Level: Write
+   */
+  public toDeleteLoggedModel() {
+    return this.to('DeleteLoggedModel');
+  }
+
+  /**
+   * Grants permission to delete a tag for a logged model in MLflow
+   *
+   * Access Level: Write
+   */
+  public toDeleteLoggedModelTag() {
+    return this.to('DeleteLoggedModelTag');
+  }
+
+  /**
    * Grants permission to delete a model version
    *
    * Access Level: Write
@@ -163,6 +181,15 @@ export class SagemakerMlflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set status for a logged model in MLflow
+   *
+   * Access Level: Write
+   */
+  public toFinalizeLoggedModel() {
+    return this.to('FinalizeLoggedModel');
+  }
+
+  /**
    * Grants permission to get a URI to download model artifacts for a specific model version
    *
    * Access Level: Read
@@ -196,6 +223,15 @@ export class SagemakerMlflow extends PolicyStatement {
    */
   public toGetLatestModelVersions() {
     return this.to('GetLatestModelVersions');
+  }
+
+  /**
+   * Grants permission to get a logged model in MLflow
+   *
+   * Access Level: Read
+   */
+  public toGetLoggedModel() {
+    return this.to('GetLoggedModel');
   }
 
   /**
@@ -262,6 +298,15 @@ export class SagemakerMlflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list artifacts for a logged model in MLflow
+   *
+   * Access Level: List
+   */
+  public toListLoggedModelArtifacts() {
+    return this.to('ListLoggedModelArtifacts');
+  }
+
+  /**
    * Grants permission to log a batch of metrics, parameters, and tags for a run
    *
    * Access Level: Write
@@ -280,6 +325,15 @@ export class SagemakerMlflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to log params for a logged model in MLflow
+   *
+   * Access Level: Write
+   */
+  public toLogLoggedModelParams() {
+    return this.to('LogLoggedModelParams');
+  }
+
+  /**
    * Grants permission to log a metric for a run
    *
    * Access Level: Write
@@ -295,6 +349,15 @@ export class SagemakerMlflow extends PolicyStatement {
    */
   public toLogModel() {
     return this.to('LogModel');
+  }
+
+  /**
+   * Grants permission to log outputs, such as models, for a run in MLflow
+   *
+   * Access Level: Write
+   */
+  public toLogOutputs() {
+    return this.to('LogOutputs');
   }
 
   /**
@@ -343,6 +406,15 @@ export class SagemakerMlflow extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search for logged models in MLflow
+   *
+   * Access Level: Read
+   */
+  public toSearchLoggedModels() {
+    return this.to('SearchLoggedModels');
+  }
+
+  /**
    * Grants permission to search for a model version
    *
    * Access Level: Read
@@ -385,6 +457,15 @@ export class SagemakerMlflow extends PolicyStatement {
    */
   public toSetExperimentTag() {
     return this.to('SetExperimentTag');
+  }
+
+  /**
+   * Grants permission to set tags for a logged model in MLflow
+   *
+   * Access Level: Write
+   */
+  public toSetLoggedModelTags() {
+    return this.to('SetLoggedModelTags');
   }
 
   /**
@@ -492,6 +573,7 @@ export class SagemakerMlflow extends PolicyStatement {
       'GetDownloadURIForModelVersionArtifacts',
       'GetExperiment',
       'GetExperimentByName',
+      'GetLoggedModel',
       'GetMetricHistory',
       'GetModelVersion',
       'GetModelVersionByAlias',
@@ -499,6 +581,7 @@ export class SagemakerMlflow extends PolicyStatement {
       'GetRun',
       'GetTraceInfo',
       'SearchExperiments',
+      'SearchLoggedModels',
       'SearchModelVersions',
       'SearchRegisteredModels',
       'SearchRuns',
@@ -510,6 +593,8 @@ export class SagemakerMlflow extends PolicyStatement {
       'CreateRegisteredModel',
       'CreateRun',
       'DeleteExperiment',
+      'DeleteLoggedModel',
+      'DeleteLoggedModelTag',
       'DeleteModelVersion',
       'DeleteModelVersionTag',
       'DeleteRegisteredModel',
@@ -520,15 +605,19 @@ export class SagemakerMlflow extends PolicyStatement {
       'DeleteTraceTag',
       'DeleteTraces',
       'EndTrace',
+      'FinalizeLoggedModel',
       'LogBatch',
       'LogInputs',
+      'LogLoggedModelParams',
       'LogMetric',
       'LogModel',
+      'LogOutputs',
       'LogParam',
       'RenameRegisteredModel',
       'RestoreExperiment',
       'RestoreRun',
       'SetExperimentTag',
+      'SetLoggedModelTags',
       'SetModelVersionTag',
       'SetRegisteredModelAlias',
       'SetRegisteredModelTag',
@@ -543,7 +632,8 @@ export class SagemakerMlflow extends PolicyStatement {
     ],
     List: [
       'GetLatestModelVersions',
-      'ListArtifacts'
+      'ListArtifacts',
+      'ListLoggedModelArtifacts'
     ]
   };
 

@@ -488,7 +488,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve the associations that are associated with the specified app block builder or app block
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilderAppBlockAssociations.html
    */
@@ -499,7 +499,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more specified app block builders, if the app block builder names are provided. Otherwise, all app block builders in the account are described
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilders.html
    */
@@ -510,7 +510,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more specified app blocks, if the app block arns are provided. Otherwise, all app blocks in the account are described
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlocks.html
    */
@@ -521,7 +521,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve the associations that are associated with the specified application or fleet
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplicationFleetAssociations.html
    */
@@ -532,7 +532,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more specified applications, if the application arns are provided. Otherwise, all applications in the account are described
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplications.html
    */
@@ -543,7 +543,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeDirectoryConfigs.html
    */
@@ -554,7 +554,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve one or all entitlements for the specified stack
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeEntitlements.html
    */
@@ -565,7 +565,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html
    */
@@ -576,7 +576,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImageBuilders.html
    */
@@ -598,7 +598,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImages.html
    */
@@ -609,7 +609,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes the streaming sessions for the specified stack and fleet. If a user ID is provided for the stack and fleet, only the streaming sessions for that user are described
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeSessions.html
    */
@@ -620,7 +620,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeStacks.html
    */
@@ -642,7 +642,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes one or more usage report subscriptions
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsageReportSubscriptions.html
    */
@@ -653,7 +653,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes the UserStackAssociation objects
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUserStackAssociations.html
    */
@@ -664,7 +664,7 @@ export class Appstream extends PolicyStatement {
   /**
    * Grants permission to retrieve a list that describes users in the user pool
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsers.html
    */
@@ -1093,7 +1093,7 @@ export class Appstream extends PolicyStatement {
       'UpdateStack',
       'UpdateThemeForStack'
     ],
-    Read: [
+    List: [
       'DescribeAppBlockBuilderAppBlockAssociations',
       'DescribeAppBlockBuilders',
       'DescribeAppBlocks',
@@ -1103,20 +1103,20 @@ export class Appstream extends PolicyStatement {
       'DescribeEntitlements',
       'DescribeFleets',
       'DescribeImageBuilders',
-      'DescribeImagePermissions',
       'DescribeImages',
       'DescribeSessions',
       'DescribeStacks',
-      'DescribeThemeForStack',
       'DescribeUsageReportSubscriptions',
       'DescribeUserStackAssociations',
       'DescribeUsers',
+      'ListEntitledApplications'
+    ],
+    Read: [
+      'DescribeImagePermissions',
+      'DescribeThemeForStack',
       'ListAssociatedFleets',
       'ListAssociatedStacks',
       'ListTagsForResource'
-    ],
-    List: [
-      'ListEntitledApplications'
     ],
     Tagging: [
       'TagResource',

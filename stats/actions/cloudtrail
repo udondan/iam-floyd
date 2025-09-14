@@ -20,6 +20,7 @@ cloudtrail:GenerateQuery;Write
 cloudtrail:GenerateQueryResultsSummary;Read
 cloudtrail:GetChannel;Read
 cloudtrail:GetDashboard;Read
+cloudtrail:GetEventConfiguration;Read
 cloudtrail:GetEventDataStore;Read
 cloudtrail:GetEventDataStoreData;Read
 cloudtrail:GetEventSelectors;Read
@@ -41,6 +42,7 @@ cloudtrail:ListServiceLinkedChannels;List
 cloudtrail:ListTags;Read
 cloudtrail:ListTrails;List
 cloudtrail:LookupEvents;Read
+cloudtrail:PutEventConfiguration;Write
 cloudtrail:PutEventSelectors;Write
 cloudtrail:PutInsightSelectors;Write
 cloudtrail:PutResourcePolicy;Write

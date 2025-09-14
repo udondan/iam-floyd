@@ -2,6 +2,7 @@ workspaces-web:AssociateBrowserSettings;Write
 workspaces-web:AssociateDataProtectionSettings;Write
 workspaces-web:AssociateIpAccessSettings;Write
 workspaces-web:AssociateNetworkSettings;Write
+workspaces-web:AssociateSessionLogger;Write
 workspaces-web:AssociateTrustStore;Write
 workspaces-web:AssociateUserAccessLoggingSettings;Write
 workspaces-web:AssociateUserSettings;Write
@@ -11,6 +12,7 @@ workspaces-web:CreateIdentityProvider;Write
 workspaces-web:CreateIpAccessSettings;Write
 workspaces-web:CreateNetworkSettings;Write
 workspaces-web:CreatePortal;Write
+workspaces-web:CreateSessionLogger;Write
 workspaces-web:CreateTrustStore;Write
 workspaces-web:CreateUserAccessLoggingSettings;Write
 workspaces-web:CreateUserSettings;Write
@@ -20,6 +22,7 @@ workspaces-web:DeleteIdentityProvider;Write
 workspaces-web:DeleteIpAccessSettings;Write
 workspaces-web:DeleteNetworkSettings;Write
 workspaces-web:DeletePortal;Write
+workspaces-web:DeleteSessionLogger;Write
 workspaces-web:DeleteTrustStore;Write
 workspaces-web:DeleteUserAccessLoggingSettings;Write
 workspaces-web:DeleteUserSettings;Write
@@ -27,6 +30,7 @@ workspaces-web:DisassociateBrowserSettings;Write
 workspaces-web:DisassociateDataProtectionSettings;Write
 workspaces-web:DisassociateIpAccessSettings;Write
 workspaces-web:DisassociateNetworkSettings;Write
+workspaces-web:DisassociateSessionLogger;Write
 workspaces-web:DisassociateTrustStore;Write
 workspaces-web:DisassociateUserAccessLoggingSettings;Write
 workspaces-web:DisassociateUserSettings;Write
@@ -39,6 +43,7 @@ workspaces-web:GetNetworkSettings;Read
 workspaces-web:GetPortal;Read
 workspaces-web:GetPortalServiceProviderMetadata;Read
 workspaces-web:GetSession;Read
+workspaces-web:GetSessionLogger;Read
 workspaces-web:GetTrustStore;Read
 workspaces-web:GetTrustStoreCertificate;Read
 workspaces-web:GetUserAccessLoggingSettings;Read
@@ -49,6 +54,7 @@ workspaces-web:ListIdentityProviders;Read
 workspaces-web:ListIpAccessSettings;Read
 workspaces-web:ListNetworkSettings;Read
 workspaces-web:ListPortals;Read
+workspaces-web:ListSessionLoggers;Read
 workspaces-web:ListSessions;Read
 workspaces-web:ListTagsForResource;Read
 workspaces-web:ListTrustStoreCertificates;Read
@@ -63,6 +69,7 @@ workspaces-web:UpdateIdentityProvider;Write
 workspaces-web:UpdateIpAccessSettings;Write
 workspaces-web:UpdateNetworkSettings;Write
 workspaces-web:UpdatePortal;Write
+workspaces-web:UpdateSessionLogger;Write
 workspaces-web:UpdateTrustStore;Write
 workspaces-web:UpdateUserAccessLoggingSettings;Write
 workspaces-web:UpdateUserSettings;Write

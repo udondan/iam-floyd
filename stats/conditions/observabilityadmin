@@ -1,1 +1,3 @@
-
+observabilityadmin:RequestTag/${TagKey}
+observabilityadmin:ResourceTag/${TagKey}
+observabilityadmin:TagKeys

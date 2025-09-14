@@ -71,6 +71,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate session logger with web portals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateSessionLogger.html
+   */
+  public toAssociateSessionLogger() {
+    return this.to('AssociateSessionLogger');
+  }
+
+  /**
    * Grants permission to associate trust stores with web portals
    *
    * Access Level: Write
@@ -214,6 +225,21 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create session logger
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateSessionLogger.html
+   */
+  public toCreateSessionLogger() {
+    return this.to('CreateSessionLogger');
+  }
+
+  /**
    * Grants permission to create trust stores
    *
    * Access Level: Write
@@ -325,6 +351,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete session logger
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteSessionLogger.html
+   */
+  public toDeleteSessionLogger() {
+    return this.to('DeleteSessionLogger');
+  }
+
+  /**
    * Grants permission to delete trust stores
    *
    * Access Level: Write
@@ -399,6 +436,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toDisassociateNetworkSettings() {
     return this.to('DisassociateNetworkSettings');
+  }
+
+  /**
+   * Grants permission to disassociate session logger from web portals
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateSessionLogger.html
+   */
+  public toDisassociateSessionLogger() {
+    return this.to('DisassociateSessionLogger');
   }
 
   /**
@@ -534,6 +582,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details on session logger
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetSessionLogger.html
+   */
+  public toGetSessionLogger() {
+    return this.to('GetSessionLogger');
+  }
+
+  /**
    * Grants permission to get details on trust stores
    *
    * Access Level: Read
@@ -641,6 +700,17 @@ export class WorkspacesWeb extends PolicyStatement {
    */
   public toListPortals() {
     return this.to('ListPortals');
+  }
+
+  /**
+   * Grants permission to list session loggers
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListSessionLoggers.html
+   */
+  public toListSessionLoggers() {
+    return this.to('ListSessionLoggers');
   }
 
   /**
@@ -813,6 +883,17 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update session logger
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateSessionLogger.html
+   */
+  public toUpdateSessionLogger() {
+    return this.to('UpdateSessionLogger');
+  }
+
+  /**
    * Grants permission to update trust stores
    *
    * Access Level: Write
@@ -855,6 +936,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'AssociateDataProtectionSettings',
       'AssociateIpAccessSettings',
       'AssociateNetworkSettings',
+      'AssociateSessionLogger',
       'AssociateTrustStore',
       'AssociateUserAccessLoggingSettings',
       'AssociateUserSettings',
@@ -864,6 +946,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'CreateIpAccessSettings',
       'CreateNetworkSettings',
       'CreatePortal',
+      'CreateSessionLogger',
       'CreateTrustStore',
       'CreateUserAccessLoggingSettings',
       'CreateUserSettings',
@@ -873,6 +956,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'DeleteIpAccessSettings',
       'DeleteNetworkSettings',
       'DeletePortal',
+      'DeleteSessionLogger',
       'DeleteTrustStore',
       'DeleteUserAccessLoggingSettings',
       'DeleteUserSettings',
@@ -880,6 +964,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'DisassociateDataProtectionSettings',
       'DisassociateIpAccessSettings',
       'DisassociateNetworkSettings',
+      'DisassociateSessionLogger',
       'DisassociateTrustStore',
       'DisassociateUserAccessLoggingSettings',
       'DisassociateUserSettings',
@@ -890,6 +975,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'UpdateIpAccessSettings',
       'UpdateNetworkSettings',
       'UpdatePortal',
+      'UpdateSessionLogger',
       'UpdateTrustStore',
       'UpdateUserAccessLoggingSettings',
       'UpdateUserSettings'
@@ -903,6 +989,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'GetPortal',
       'GetPortalServiceProviderMetadata',
       'GetSession',
+      'GetSessionLogger',
       'GetTrustStore',
       'GetTrustStoreCertificate',
       'GetUserAccessLoggingSettings',
@@ -913,6 +1000,7 @@ export class WorkspacesWeb extends PolicyStatement {
       'ListIpAccessSettings',
       'ListNetworkSettings',
       'ListPortals',
+      'ListSessionLoggers',
       'ListSessions',
       'ListTagsForResource',
       'ListTrustStoreCertificates',
@@ -1081,6 +1169,23 @@ export class WorkspacesWeb extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type sessionLogger to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateSessionLogger.html
+   *
+   * @param sessionLoggerId - Identifier for the sessionLoggerId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSessionLogger(sessionLoggerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces-web:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sessionLogger/${ sessionLoggerId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1092,6 +1197,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .toCreateIpAccessSettings()
    * - .toCreateNetworkSettings()
    * - .toCreatePortal()
+   * - .toCreateSessionLogger()
    * - .toCreateTrustStore()
    * - .toCreateUserAccessLoggingSettings()
    * - .toCreateUserSettings()
@@ -1120,6 +1226,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - userAccessLoggingSettings
    * - ipAccessSettings
    * - dataProtectionSettings
+   * - sessionLogger
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1141,6 +1248,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .toCreateIpAccessSettings()
    * - .toCreateNetworkSettings()
    * - .toCreatePortal()
+   * - .toCreateSessionLogger()
    * - .toCreateTrustStore()
    * - .toCreateUserAccessLoggingSettings()
    * - .toCreateUserSettings()

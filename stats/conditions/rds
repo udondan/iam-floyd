@@ -7,6 +7,7 @@ rds:EndpointType
 rds:ManageMasterUserPassword
 rds:MultiAz
 rds:Piops
+rds:PubliclyAccessible
 rds:RequestTag/${TagKey}
 rds:ResourceTag/${TagKey}
 rds:StorageEncrypted

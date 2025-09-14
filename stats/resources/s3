@@ -2,6 +2,7 @@ s3:accessgrant
 s3:accessgrantsinstance
 s3:accessgrantslocation
 s3:accesspoint
+s3:accesspointobject
 s3:bucket
 s3:job
 s3:multiregionaccesspoint

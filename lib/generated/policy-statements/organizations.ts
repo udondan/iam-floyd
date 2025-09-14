@@ -266,7 +266,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieves details about the organization that the calling credentials belong to
+   * Grants permission to retrieve details about the organization that the calling credentials belong to
    *
    * Access Level: Read
    *
@@ -288,7 +288,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieves details about a policy
+   * Grants permission to retrieve details about a policy
    *
    * Access Level: Read
    *
@@ -431,7 +431,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all of the the accounts in the organization
+   * Grants permission to list all of the accounts in the organization
    *
    * Access Level: List
    *
@@ -450,6 +450,20 @@ export class Organizations extends PolicyStatement {
    */
   public toListAccountsForParent() {
     return this.to('ListAccountsForParent');
+  }
+
+  /**
+   * Grants permission to list accounts that have invalid effective policies for a specified policy type
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccountsWithInvalidEffectivePolicy.html
+   */
+  public toListAccountsWithInvalidEffectivePolicy() {
+    return this.to('ListAccountsWithInvalidEffectivePolicy');
   }
 
   /**
@@ -500,6 +514,20 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list validation errors found in the effective policy for a specific account and policy type
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListEffectivePolicyValidationErrors.html
+   */
+  public toListEffectivePolicyValidationErrors() {
+    return this.to('ListEffectivePolicyValidationErrors');
+  }
+
+  /**
    * Grants permission to list all of the handshakes that are associated with an account
    *
    * Access Level: List
@@ -522,7 +550,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists all of the organizational units (OUs) in a parent organizational unit or root
+   * Grants permission to list all of the organizational units (OUs) in a parent organizational unit or root
    *
    * Access Level: List
    *
@@ -648,7 +676,7 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
-   * Grants permission to removes the specified account from the organization
+   * Grants permission to remove the specified account from the organization
    *
    * Access Level: Write
    *
@@ -758,10 +786,12 @@ export class Organizations extends PolicyStatement {
       'ListAWSServiceAccessForOrganization',
       'ListAccounts',
       'ListAccountsForParent',
+      'ListAccountsWithInvalidEffectivePolicy',
       'ListChildren',
       'ListCreateAccountStatus',
       'ListDelegatedAdministrators',
       'ListDelegatedServicesForAccount',
+      'ListEffectivePolicyValidationErrors',
       'ListHandshakesForAccount',
       'ListHandshakesForOrganization',
       'ListOrganizationalUnitsForParent',
@@ -988,6 +1018,8 @@ export class Organizations extends PolicyStatement {
    * - .toDetachPolicy()
    * - .toDisablePolicyType()
    * - .toEnablePolicyType()
+   * - .toListAccountsWithInvalidEffectivePolicy()
+   * - .toListEffectivePolicyValidationErrors()
    * - .toListPolicies()
    * - .toListPoliciesForTarget()
    * - .toListTargetsForPolicy()

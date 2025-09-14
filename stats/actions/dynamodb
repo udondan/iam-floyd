@@ -3,9 +3,11 @@ dynamodb:BatchWriteItem;Write
 dynamodb:ConditionCheckItem;Read
 dynamodb:CreateBackup;Write
 dynamodb:CreateGlobalTable;Write
+dynamodb:CreateGlobalTableWitness;Write
 dynamodb:CreateTable;Write
 dynamodb:CreateTableReplica;Write
 dynamodb:DeleteBackup;Write
+dynamodb:DeleteGlobalTableWitness;Write
 dynamodb:DeleteItem;Write
 dynamodb:DeleteResourcePolicy;Permissions management
 dynamodb:DeleteTable;Write

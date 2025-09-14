@@ -38,6 +38,9 @@ export class Aoss extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifCollection()
+   *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollection.html
    */
   public toBatchGetCollection() {
@@ -99,6 +102,7 @@ export class Aoss extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollection.html
@@ -108,12 +112,22 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an opensearch index
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateIndex.html
+   */
+  public toCreateIndex() {
+    return this.to('CreateIndex');
+  }
+
+  /**
    * Grants permission to create a lifecycle policy
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifCollection()
    * - .ifIndex()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateLifecyclePolicy.html
@@ -200,12 +214,22 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an opensearch index
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteIndex.html
+   */
+  public toDeleteIndex() {
+    return this.to('DeleteIndex');
+  }
+
+  /**
    * Grants permission to delete a lifecycle policy
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifCollection()
    * - .ifIndex()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteLifecyclePolicy.html
@@ -274,6 +298,17 @@ export class Aoss extends PolicyStatement {
    */
   public toGetAccountSettings() {
     return this.to('GetAccountSettings');
+  }
+
+  /**
+   * Grants permission to get an opensearch index
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetIndex.html
+   */
+  public toGetIndex() {
+    return this.to('GetIndex');
   }
 
   /**
@@ -457,12 +492,22 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an opensearch index
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateIndex.html
+   */
+  public toUpdateIndex() {
+    return this.to('UpdateIndex');
+  }
+
+  /**
    * Grants permission to update a lifecycle policy
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifCollection()
    * - .ifIndex()
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateLifecyclePolicy.html
@@ -512,6 +557,7 @@ export class Aoss extends PolicyStatement {
       'APIAccessAll',
       'CreateAccessPolicy',
       'CreateCollection',
+      'CreateIndex',
       'CreateLifecyclePolicy',
       'CreateSecurityConfig',
       'CreateSecurityPolicy',
@@ -519,6 +565,7 @@ export class Aoss extends PolicyStatement {
       'DashboardsAccessAll',
       'DeleteAccessPolicy',
       'DeleteCollection',
+      'DeleteIndex',
       'DeleteLifecyclePolicy',
       'DeleteSecurityConfig',
       'DeleteSecurityPolicy',
@@ -528,6 +575,7 @@ export class Aoss extends PolicyStatement {
       'UpdateAccessPolicy',
       'UpdateAccountSettings',
       'UpdateCollection',
+      'UpdateIndex',
       'UpdateLifecyclePolicy',
       'UpdateSecurityConfig',
       'UpdateSecurityPolicy',
@@ -540,6 +588,7 @@ export class Aoss extends PolicyStatement {
       'BatchGetVpcEndpoint',
       'GetAccessPolicy',
       'GetAccountSettings',
+      'GetIndex',
       'GetPoliciesStats',
       'GetSecurityConfig',
       'GetSecurityPolicy'
@@ -608,17 +657,15 @@ export class Aoss extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAPIAccessAll()
+   * - .toBatchGetCollection()
    * - .toCreateAccessPolicy()
-   * - .toCreateLifecyclePolicy()
    * - .toCreateSecurityPolicy()
    * - .toDashboardsAccessAll()
    * - .toDeleteAccessPolicy()
-   * - .toDeleteLifecyclePolicy()
    * - .toDeleteSecurityPolicy()
    * - .toGetAccessPolicy()
    * - .toGetSecurityPolicy()
    * - .toUpdateAccessPolicy()
-   * - .toUpdateLifecyclePolicy()
    * - .toUpdateSecurityPolicy()
    *
    * @param value The value(s) to check
@@ -668,6 +715,7 @@ export class Aoss extends PolicyStatement {
    * Filters access based on the tags associated with the resource
    *
    * Applies to actions:
+   * - .toCreateCollection()
    * - .toTagResource()
    *
    * Applies to resource types:

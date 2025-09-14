@@ -66,6 +66,7 @@ cognito-idp:GetGroup;Read
 cognito-idp:GetIdentityProviderByIdentifier;Read
 cognito-idp:GetLogDeliveryConfiguration;Read
 cognito-idp:GetSigningCertificate;Read
+cognito-idp:GetTokensFromRefreshToken;Write
 cognito-idp:GetUICustomization;Read
 cognito-idp:GetUser;Read
 cognito-idp:GetUserAttributeVerificationCode;Read

@@ -28,15 +28,6 @@ export class Braket extends PolicyStatement {
   }
 
   /**
-   * Grants permission to check if an Amazon Braket feature is enabled for an account. Customers need this permission to use all features available in the console
-   *
-   * Access Level: Read
-   */
-  public toAccessBraketFeature() {
-    return this.to('AccessBraketFeature');
-  }
-
-  /**
    * Grants permission to cancel a job
    *
    * Access Level: Write
@@ -65,6 +56,7 @@ export class Braket extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateJob.html
@@ -80,6 +72,7 @@ export class Braket extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html
@@ -221,7 +214,6 @@ export class Braket extends PolicyStatement {
       'CreateQuantumTask'
     ],
     Read: [
-      'AccessBraketFeature',
       'GetDevice',
       'GetJob',
       'GetQuantumTask',
@@ -294,6 +286,10 @@ export class Braket extends PolicyStatement {
    * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateJob()
+   * - .toCreateQuantumTask()
    *
    * Applies to resource types:
    * - quantum-task

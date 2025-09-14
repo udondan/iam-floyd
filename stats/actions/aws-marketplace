@@ -5,7 +5,6 @@ aws-marketplace:BatchMeterUsage;Write
 aws-marketplace:CancelAgreement;Write
 aws-marketplace:CancelAgreementRequest;Write
 aws-marketplace:CancelChangeSet;Write
-aws-marketplace:CompleteTask;Write
 aws-marketplace:CreateAgreementRequest;Write
 aws-marketplace:CreatePrivateMarketplaceRequests;Write
 aws-marketplace:DeleteResourcePolicy;Permissions management
@@ -16,7 +15,6 @@ aws-marketplace:DescribeChangeSet;Read
 aws-marketplace:DescribeEntity;Read
 aws-marketplace:DescribePrivateMarketplaceRequests;List
 aws-marketplace:DescribeProcurementSystemConfiguration;Read
-aws-marketplace:DescribeTask;Read
 aws-marketplace:DisassociateProductsFromPrivateMarketplace;Write
 aws-marketplace:GetAgreementApprovalRequest;Read
 aws-marketplace:GetAgreementEntitlements;Read
@@ -37,7 +35,6 @@ aws-marketplace:ListEntitlementDetails;Read
 aws-marketplace:ListPrivateListings;List
 aws-marketplace:ListPrivateMarketplaceRequests;List
 aws-marketplace:ListTagsForResource;Read
-aws-marketplace:ListTasks;List
 aws-marketplace:MeterUsage;Write
 aws-marketplace:PutDeploymentParameter;Write
 aws-marketplace:PutProcurementSystemConfiguration;Write
@@ -54,5 +51,4 @@ aws-marketplace:Unsubscribe;Write
 aws-marketplace:UntagResource;Tagging
 aws-marketplace:UpdateAgreementApprovalRequest;Write
 aws-marketplace:UpdatePurchaseOrders;Write
-aws-marketplace:UpdateTask;Write
 aws-marketplace:ViewSubscriptions;List

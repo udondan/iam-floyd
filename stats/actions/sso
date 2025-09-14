@@ -28,7 +28,6 @@ sso:DeleteInstanceAccessControlAttributeConfiguration;Write
 sso:DeleteManagedApplicationInstance;Write
 sso:DeletePermissionSet;Write
 sso:DeletePermissionsBoundaryFromPermissionSet;Permissions management
-sso:DeletePermissionsPolicy;Permissions management
 sso:DeleteProfile;Write
 sso:DeleteTrustedTokenIssuer;Write
 sso:DescribeAccountAssignmentCreationStatus;Read
@@ -36,15 +35,12 @@ sso:DescribeAccountAssignmentDeletionStatus;Read
 sso:DescribeApplication;Read
 sso:DescribeApplicationAssignment;Read
 sso:DescribeApplicationProvider;Read
-sso:DescribeDirectories;Read
 sso:DescribeInstance;Read
 sso:DescribeInstanceAccessControlAttributeConfiguration;Read
 sso:DescribePermissionSet;Read
 sso:DescribePermissionSetProvisioningStatus;Read
-sso:DescribePermissionsPolicies;Read
 sso:DescribeRegisteredRegions;Read
 sso:DescribeTrustedTokenIssuer;Read
-sso:DescribeTrusts;Read
 sso:DetachCustomerManagedPolicyReferenceFromPermissionSet;Permissions management
 sso:DetachManagedPolicyFromPermissionSet;Permissions management
 sso:DisassociateDirectory;Write
@@ -54,13 +50,13 @@ sso:GetApplicationAssignmentConfiguration;Read
 sso:GetApplicationAuthenticationMethod;Read
 sso:GetApplicationGrant;Read
 sso:GetApplicationInstance;Read
+sso:GetApplicationSessionConfiguration;Read
 sso:GetApplicationTemplate;Read
 sso:GetInlinePolicyForPermissionSet;Read
 sso:GetManagedApplicationInstance;Read
 sso:GetMfaDeviceManagementForDirectory;Read
 sso:GetPermissionSet;Read
 sso:GetPermissionsBoundaryForPermissionSet;Read
-sso:GetPermissionsPolicy;Read
 sso:GetProfile;Read
 sso:GetSSOStatus;Read
 sso:GetSharedSsoConfiguration;Read
@@ -98,6 +94,7 @@ sso:PutApplicationAccessScope;Write
 sso:PutApplicationAssignmentConfiguration;Write
 sso:PutApplicationAuthenticationMethod;Write
 sso:PutApplicationGrant;Write
+sso:PutApplicationSessionConfiguration;Write
 sso:PutInlinePolicyToPermissionSet;Write
 sso:PutMfaDeviceManagementForDirectory;Write
 sso:PutPermissionsBoundaryToPermissionSet;Permissions management
@@ -115,7 +112,6 @@ sso:UpdateApplicationInstanceResponseSchemaConfiguration;Write
 sso:UpdateApplicationInstanceSecurityConfiguration;Write
 sso:UpdateApplicationInstanceServiceProviderConfiguration;Write
 sso:UpdateApplicationInstanceStatus;Write
-sso:UpdateDirectoryAssociation;Write
 sso:UpdateInstance;Write
 sso:UpdateInstanceAccessControlAttributeConfiguration;Write
 sso:UpdateManagedApplicationInstanceStatus;Write

@@ -1465,6 +1465,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInventoryTypeName()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutInventory.html
    */
   public toPutInventory() {
@@ -1705,6 +1708,7 @@ export class Ssm extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifSessionDocumentAccessCheck()
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifAccessRequestId()
@@ -2695,6 +2699,21 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Filters access by verifying that a user also has access to the InventoryType specified in the request
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toPutInventory()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInventoryTypeName(value: string | string[], operator?: Operator | string) {
+    return this.if(`InventoryTypeName`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by controling whether Systems Manager parameters can be overwritten
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policy-conditions.html#overwrite-condition
@@ -2737,6 +2756,20 @@ export class Ssm extends PolicyStatement {
    */
   public ifRecursive(value: string | string[], operator?: Operator | string) {
     return this.if(`Recursive`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by verifying that a user has permission to access either the default Session Manager configuration document or the custom configuration document specified in a request
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-sessiondocumentaccesscheck.html
+   *
+   * Applies to actions:
+   * - .toStartSession()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSessionDocumentAccessCheck(value?: boolean) {
+    return this.if(`SessionDocumentAccessCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

@@ -19,6 +19,28 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept pending Network Firewall attachments on a transit gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AcceptNetworkFirewallTransitGatewayAttachment.html
+   */
+  public toAcceptNetworkFirewallTransitGatewayAttachment() {
+    return this.to('AcceptNetworkFirewallTransitGatewayAttachment');
+  }
+
+  /**
+   * Grants permission to associate availability zones to a firewall
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AssociateAvailabilityZones.html
+   */
+  public toAssociateAvailabilityZones() {
+    return this.to('AssociateAvailabilityZones');
+  }
+
+  /**
    * Grants permission to create an association between a firewall policy and a firewall
    *
    * Access Level: Write
@@ -107,6 +129,24 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Network Firewall vpc endpoint association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateVpcEndpointAssociation.html
+   */
+  public toCreateVpcEndpointAssociation() {
+    return this.to('CreateVpcEndpointAssociation');
+  }
+
+  /**
    * Grants permission to delete a firewall
    *
    * Access Level: Write
@@ -129,7 +169,18 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a resource policy for a firewall policy or rule group
+   * Grants permission to delete Network Firewall attachments on a transit gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteNetworkFirewallTransitGatewayAttachment.html
+   */
+  public toDeleteNetworkFirewallTransitGatewayAttachment() {
+    return this.to('DeleteNetworkFirewallTransitGatewayAttachment');
+  }
+
+  /**
+   * Grants permission to delete a resource policy for a firewall policy or rule group or firewall
    *
    * Access Level: Write
    *
@@ -162,6 +213,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a vpc endpoint association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteVpcEndpointAssociation.html
+   */
+  public toDeleteVpcEndpointAssociation() {
+    return this.to('DeleteVpcEndpointAssociation');
+  }
+
+  /**
    * Grants permission to retrieve the data objects that define a firewall
    *
    * Access Level: Read
@@ -170,6 +232,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toDescribeFirewall() {
     return this.to('DescribeFirewall');
+  }
+
+  /**
+   * Grants permission to retrieve the high-level information about a firewall
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeFirewallMetadata.html
+   */
+  public toDescribeFirewallMetadata() {
+    return this.to('DescribeFirewallMetadata');
   }
 
   /**
@@ -210,7 +283,7 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a resource policy for a firewall policy or rule group
+   * Grants permission to describe a resource policy for a firewall policy or rule group or firewall
    *
    * Access Level: Read
    *
@@ -243,6 +316,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the summary information about a rule group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroupSummary.html
+   */
+  public toDescribeRuleGroupSummary() {
+    return this.to('DescribeRuleGroupSummary');
+  }
+
+  /**
    * Grants permission to retrieve the data objects that define a tls inspection configuration
    *
    * Access Level: Read
@@ -251,6 +335,28 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toDescribeTLSInspectionConfiguration() {
     return this.to('DescribeTLSInspectionConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve the data objects that define a vpc endpoint association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeVpcEndpointAssociation.html
+   */
+  public toDescribeVpcEndpointAssociation() {
+    return this.to('DescribeVpcEndpointAssociation');
+  }
+
+  /**
+   * Grants permission to disassociate availability zones to a firewall
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DisassociateAvailabilityZones.html
+   */
+  public toDisassociateAvailabilityZones() {
+    return this.to('DisassociateAvailabilityZones');
   }
 
   /**
@@ -364,7 +470,18 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
-   * Grants permission to put a resource policy for a firewall policy or rule group
+   * Grants permission to retrieve the metadata for vpc endpoint associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListVpcEndpointAssociations.html
+   */
+  public toListVpcEndpointAssociations() {
+    return this.to('ListVpcEndpointAssociations');
+  }
+
+  /**
+   * Grants permission to put a resource policy for a firewall policy or rule group or firewall
    *
    * Access Level: Write
    *
@@ -372,6 +489,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toPutResourcePolicy() {
     return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to reject pending Network Firewall attachments on a transit gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_RejectNetworkFirewallTransitGatewayAttachment.html
+   */
+  public toRejectNetworkFirewallTransitGatewayAttachment() {
+    return this.to('RejectNetworkFirewallTransitGatewayAttachment');
   }
 
   /**
@@ -434,6 +562,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to add or remove availability zone change protection for a firewall
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateAvailabilityZoneChangeProtection.html
+   */
+  public toUpdateAvailabilityZoneChangeProtection() {
+    return this.to('UpdateAvailabilityZoneChangeProtection');
   }
 
   /**
@@ -548,22 +687,30 @@ export class NetworkFirewall extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptNetworkFirewallTransitGatewayAttachment',
+      'AssociateAvailabilityZones',
       'AssociateFirewallPolicy',
       'AssociateSubnets',
       'CreateFirewall',
       'CreateFirewallPolicy',
       'CreateRuleGroup',
       'CreateTLSInspectionConfiguration',
+      'CreateVpcEndpointAssociation',
       'DeleteFirewall',
       'DeleteFirewallPolicy',
+      'DeleteNetworkFirewallTransitGatewayAttachment',
       'DeleteResourcePolicy',
       'DeleteRuleGroup',
       'DeleteTLSInspectionConfiguration',
+      'DeleteVpcEndpointAssociation',
+      'DisassociateAvailabilityZones',
       'DisassociateSubnets',
       'PutResourcePolicy',
+      'RejectNetworkFirewallTransitGatewayAttachment',
       'StartAnalysisReport',
       'StartFlowCapture',
       'StartFlowFlush',
+      'UpdateAvailabilityZoneChangeProtection',
       'UpdateFirewallAnalysisSettings',
       'UpdateFirewallDeleteProtection',
       'UpdateFirewallDescription',
@@ -577,13 +724,16 @@ export class NetworkFirewall extends PolicyStatement {
     ],
     Read: [
       'DescribeFirewall',
+      'DescribeFirewallMetadata',
       'DescribeFirewallPolicy',
       'DescribeFlowOperation',
       'DescribeLoggingConfiguration',
       'DescribeResourcePolicy',
       'DescribeRuleGroup',
       'DescribeRuleGroupMetadata',
+      'DescribeRuleGroupSummary',
       'DescribeTLSInspectionConfiguration',
+      'DescribeVpcEndpointAssociation',
       'GetAnalysisReportResults',
       'ListFlowOperationResults'
     ],
@@ -594,7 +744,8 @@ export class NetworkFirewall extends PolicyStatement {
       'ListFlowOperations',
       'ListRuleGroups',
       'ListTLSInspectionConfigurations',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'ListVpcEndpointAssociations'
     ],
     Tagging: [
       'TagResource',
@@ -688,6 +839,23 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type VpcEndpointAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_VpcEndpointAssociation.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcEndpointAssociation(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:network-firewall:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpc-endpoint-association/${ name }`);
+  }
+
+  /**
    * Filters access by on the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -697,6 +865,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - .toCreateFirewallPolicy()
    * - .toCreateRuleGroup()
    * - .toCreateTLSInspectionConfiguration()
+   * - .toCreateVpcEndpointAssociation()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -718,6 +887,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - StatefulRuleGroup
    * - StatelessRuleGroup
    * - TLSInspectionConfiguration
+   * - VpcEndpointAssociation
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -737,6 +907,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - .toCreateFirewallPolicy()
    * - .toCreateRuleGroup()
    * - .toCreateTLSInspectionConfiguration()
+   * - .toCreateVpcEndpointAssociation()
    * - .toTagResource()
    * - .toUntagResource()
    *

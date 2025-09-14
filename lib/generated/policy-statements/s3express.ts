@@ -33,6 +33,8 @@ export class S3express extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html
    */
@@ -52,6 +54,8 @@ export class S3express extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
    */
@@ -60,7 +64,7 @@ export class S3express extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Create Session token which is used for object APIs such as PutObject, GetObject, ect
+   * Grants permission to Create Session token which is used for object APIs such as PutObject, GetObject, etc
    *
    * Access Level: Write
    *
@@ -75,6 +79,7 @@ export class S3express extends PolicyStatement {
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
    * - .ifAllAccessRestrictedToLocalZoneGroup()
+   * - .ifPermissions()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html
    */
@@ -335,6 +340,24 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Grants permission to lists all of the tags for a specified resource
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to associate an access policy with a specified access point
    *
    * Access Level: Permissions management
@@ -430,6 +453,45 @@ export class S3express extends PolicyStatement {
     return this.to('PutLifecycleConfiguration');
   }
 
+  /**
+   * Grants permission to create a new user-defined tag or update an existing tag
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove the specified user-defined tags from an S3 resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateAccessPoint',
@@ -458,7 +520,12 @@ export class S3express extends PolicyStatement {
     ],
     List: [
       'ListAccessPointsForDirectoryBuckets',
-      'ListAllMyDirectoryBuckets'
+      'ListAllMyDirectoryBuckets',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -471,6 +538,10 @@ export class S3express extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifBucketTag()
    */
   public onBucket(bucketName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3express:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bucket/${ bucketName }`);
@@ -485,9 +556,66 @@ export class S3express extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAccessPointTag()
    */
   public onAccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3express:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesspoint/${ accessPointName }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-user-policy-request-tag
+   *
+   * Applies to actions:
+   * - .toCreateAccessPoint()
+   * - .toCreateBucket()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-user-policy-resource-tag
+   *
+   * Applies to resource types:
+   * - bucket
+   * - accesspoint
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-user-policy-tag-keys
+   *
+   * Applies to actions:
+   * - .toCreateAccessPoint()
+   * - .toCreateBucket()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -514,6 +642,22 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Filters access by tag key-value pairs attached to the access point
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html#example-access-points-db-policy-bucket-tag
+   *
+   * Applies to resource types:
+   * - accesspoint
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAccessPointTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`AccessPointTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by AWS Local Zone network border group(s) provided in this condition key
    *
    * Applies to actions:
@@ -524,6 +668,22 @@ export class S3express extends PolicyStatement {
    */
   public ifAllAccessRestrictedToLocalZoneGroup(value: string | string[], operator?: Operator | string) {
     return this.if(`AllAccessRestrictedToLocalZoneGroup`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by tag key-value pairs attached to the bucket
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html#example-policy-bucket-tag
+   *
+   * Applies to resource types:
+   * - bucket
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBucketTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`BucketTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -573,7 +733,7 @@ export class S3express extends PolicyStatement {
   }
 
   /**
-   * Filters access by a specific Availability Zone ID
+   * Filters access by a specific Availability Zone or Local Zone ID
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-express-zonal-policy-keys.html#example-location-name
    *
@@ -590,6 +750,9 @@ export class S3express extends PolicyStatement {
 
   /**
    * Filters access by the permission requested by Access Point Scope configuration, such as GetObject, PutObject
+   *
+   * Applies to actions:
+   * - .toCreateSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -620,11 +783,14 @@ export class S3express extends PolicyStatement {
    * - .toGetLifecycleConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toListTagsForResource()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -668,11 +834,14 @@ export class S3express extends PolicyStatement {
    * - .toGetLifecycleConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toListTagsForResource()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -703,11 +872,14 @@ export class S3express extends PolicyStatement {
    * - .toGetLifecycleConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toListTagsForResource()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -753,11 +925,14 @@ export class S3express extends PolicyStatement {
    * - .toGetLifecycleConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toListTagsForResource()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -788,11 +963,14 @@ export class S3express extends PolicyStatement {
    * - .toGetLifecycleConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
+   * - .toListTagsForResource()
    * - .toPutAccessPointPolicy()
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

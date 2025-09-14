@@ -83,6 +83,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a change request in a collaboration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaborationChangeRequest.html
+   */
+  public toCreateCollaborationChangeRequest() {
+    return this.to('CreateCollaborationChangeRequest');
+  }
+
+  /**
    * Grants permission to link a Cleanrooms ML configured audience model with a collaboration by creating a new association
    *
    * Access Level: Write
@@ -408,6 +419,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a change request in a collaboration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationChangeRequest.html
+   */
+  public toGetCollaborationChangeRequest() {
+    return this.to('GetCollaborationChangeRequest');
+  }
+
+  /**
    * Grants permission to view details for a configured audience model association within a collaboration
    *
    * Access Level: Read
@@ -609,6 +631,17 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toListCollaborationAnalysisTemplates() {
     return this.to('ListCollaborationAnalysisTemplates');
+  }
+
+  /**
+   * Grants permission to list change requests in a collaboration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationChangeRequests.html
+   */
+  public toListCollaborationChangeRequests() {
+    return this.to('ListCollaborationChangeRequests');
   }
 
   /**
@@ -956,10 +989,34 @@ export class Cleanrooms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - athena:GetTableMetadata
+   * - cleanrooms:UpdateConfiguredTableAllowedColumns
+   * - cleanrooms:UpdateConfiguredTableReference
+   * - glue:BatchGetPartition
+   * - glue:GetDatabase
+   * - glue:GetDatabases
+   * - glue:GetPartition
+   * - glue:GetPartitions
+   * - glue:GetSchemaVersion
+   * - glue:GetTable
+   * - glue:GetTables
+   *
    * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
    */
   public toUpdateConfiguredTable() {
     return this.to('UpdateConfiguredTable');
+  }
+
+  /**
+   * Grants permission to update the allowed columns of an existing configured table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
+   */
+  public toUpdateConfiguredTableAllowedColumns() {
+    return this.to('UpdateConfiguredTableAllowedColumns');
   }
 
   /**
@@ -996,6 +1053,17 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toUpdateConfiguredTableAssociationAnalysisRule() {
     return this.to('UpdateConfiguredTableAssociationAnalysisRule');
+  }
+
+  /**
+   * Grants permission to update the table reference of an existing configured table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html
+   */
+  public toUpdateConfiguredTableReference() {
+    return this.to('UpdateConfiguredTableReference');
   }
 
   /**
@@ -1088,6 +1156,7 @@ export class Cleanrooms extends PolicyStatement {
       'GetAnalysisTemplate',
       'GetCollaboration',
       'GetCollaborationAnalysisTemplate',
+      'GetCollaborationChangeRequest',
       'GetCollaborationConfiguredAudienceModelAssociation',
       'GetCollaborationIdNamespaceAssociation',
       'GetCollaborationPrivacyBudgetTemplate',
@@ -1111,6 +1180,7 @@ export class Cleanrooms extends PolicyStatement {
     Write: [
       'CreateAnalysisTemplate',
       'CreateCollaboration',
+      'CreateCollaborationChangeRequest',
       'CreateConfiguredAudienceModelAssociation',
       'CreateConfiguredTable',
       'CreateConfiguredTableAnalysisRule',
@@ -1139,9 +1209,11 @@ export class Cleanrooms extends PolicyStatement {
       'UpdateCollaboration',
       'UpdateConfiguredAudienceModelAssociation',
       'UpdateConfiguredTable',
+      'UpdateConfiguredTableAllowedColumns',
       'UpdateConfiguredTableAnalysisRule',
       'UpdateConfiguredTableAssociation',
       'UpdateConfiguredTableAssociationAnalysisRule',
+      'UpdateConfiguredTableReference',
       'UpdateIdMappingTable',
       'UpdateIdNamespaceAssociation',
       'UpdateMembership',
@@ -1152,6 +1224,7 @@ export class Cleanrooms extends PolicyStatement {
     List: [
       'ListAnalysisTemplates',
       'ListCollaborationAnalysisTemplates',
+      'ListCollaborationChangeRequests',
       'ListCollaborationConfiguredAudienceModelAssociations',
       'ListCollaborationIdNamespaceAssociations',
       'ListCollaborationPrivacyBudgetTemplates',
@@ -1344,6 +1417,7 @@ export class Cleanrooms extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAnalysisTemplate()
    * - .toCreateCollaboration()
+   * - .toCreateCollaborationChangeRequest()
    * - .toCreateConfiguredAudienceModelAssociation()
    * - .toCreateConfiguredTable()
    * - .toCreateConfiguredTableAssociation()
@@ -1370,6 +1444,7 @@ export class Cleanrooms extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAnalysisTemplate()
    * - .toCreateCollaboration()
+   * - .toCreateCollaborationChangeRequest()
    * - .toCreateConfiguredAudienceModelAssociation()
    * - .toCreateConfiguredTable()
    * - .toCreateConfiguredTableAssociation()
@@ -1406,6 +1481,7 @@ export class Cleanrooms extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAnalysisTemplate()
    * - .toCreateCollaboration()
+   * - .toCreateCollaborationChangeRequest()
    * - .toCreateConfiguredAudienceModelAssociation()
    * - .toCreateConfiguredTable()
    * - .toCreateConfiguredTableAssociation()

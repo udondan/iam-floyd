@@ -101,6 +101,50 @@ export class Cassandra extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the CDC stream records from a given shard
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
+   */
+  public toGetRecords() {
+    return this.to('GetRecords');
+  }
+
+  /**
+   * Grants permission to return a shard iterator
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
+   */
+  public toGetShardIterator() {
+    return this.to('GetShardIterator');
+  }
+
+  /**
+   * Grants permission to return information about a CDC stream, including the composition of its shards
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
+   */
+  public toGetStream() {
+    return this.to('GetStream');
+  }
+
+  /**
+   * Grants permission to return an array of CDC stream ARNs associated with the current account and endpoint
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/
+   */
+  public toListStreams() {
+    return this.to('ListStreams');
+  }
+
+  /**
    * Grants permission to INSERT, UPDATE or DELETE data in a table
    *
    * Access Level: Write
@@ -182,7 +226,7 @@ export class Cassandra extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag a keyspace or table
+   * Grants permission to tag a keyspace, table, or stream
    *
    * Access Level: Tagging
    *
@@ -211,7 +255,7 @@ export class Cassandra extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag a keyspace or table
+   * Grants permission to untag a keyspace, table or stream
    *
    * Access Level: Tagging
    *
@@ -250,8 +294,14 @@ export class Cassandra extends PolicyStatement {
       'UpdatePartitioner'
     ],
     Read: [
+      'GetRecords',
+      'GetShardIterator',
+      'GetStream',
       'Select',
       'SelectMultiRegionResource'
+    ],
+    List: [
+      'ListStreams'
     ],
     Tagging: [
       'TagMultiRegionResource',
@@ -297,6 +347,25 @@ export class Cassandra extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type stream to the statement
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html
+   *
+   * @param keyspaceName - Identifier for the keyspaceName.
+   * @param tableName - Identifier for the tableName.
+   * @param streamLabel - Identifier for the streamLabel.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStream(keyspaceName: string, tableName: string, streamLabel: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cassandra:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/keyspace/${ keyspaceName }/table/${ tableName }/stream/${ streamLabel }`);
+  }
+
+  /**
    * Filters actions based on the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/keyspaces/latest/devguide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -325,6 +394,7 @@ export class Cassandra extends PolicyStatement {
    * Applies to resource types:
    * - keyspace
    * - table
+   * - stream
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

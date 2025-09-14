@@ -26,7 +26,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateAlertManagerAlerts
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-CreateAlertManagerAlerts.html
    */
   public toCreateAlertManagerAlerts() {
     return this.to('CreateAlertManagerAlerts');
@@ -40,7 +40,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateAlertManagerDefinition
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateAlertManagerDefinition.html
    */
   public toCreateAlertManagerDefinition() {
     return this.to('CreateAlertManagerDefinition');
@@ -54,10 +54,24 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateLoggingConfiguration
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateLoggingConfiguration.html
    */
   public toCreateLoggingConfiguration() {
     return this.to('CreateLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to create a query logging configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateQueryLoggingConfiguration.html
+   */
+  public toCreateQueryLoggingConfiguration() {
+    return this.to('CreateQueryLoggingConfiguration');
   }
 
   /**
@@ -69,7 +83,7 @@ export class Aps extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateRuleGroupsNamespace
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateRuleGroupsNamespace.html
    */
   public toCreateRuleGroupsNamespace() {
     return this.to('CreateRuleGroupsNamespace');
@@ -92,7 +106,7 @@ export class Aps extends PolicyStatement {
    * - eks:DescribeCluster
    * - iam:CreateServiceLinkedRole
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateScraper
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateScraper.html
    */
   public toCreateScraper() {
     return this.to('CreateScraper');
@@ -107,7 +121,7 @@ export class Aps extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateWorkspace
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateWorkspace.html
    */
   public toCreateWorkspace() {
     return this.to('CreateWorkspace');
@@ -121,7 +135,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteAlertManagerDefinition
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteAlertManagerDefinition.html
    */
   public toDeleteAlertManagerDefinition() {
     return this.to('DeleteAlertManagerDefinition');
@@ -135,7 +149,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteAlertManagerSilence
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-DeleteAlertManagerSilence.html
    */
   public toDeleteAlertManagerSilence() {
     return this.to('DeleteAlertManagerSilence');
@@ -149,10 +163,38 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteLoggingConfiguration
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteLoggingConfiguration.html
    */
   public toDeleteLoggingConfiguration() {
     return this.to('DeleteLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a query logging configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteQueryLoggingConfiguration.html
+   */
+  public toDeleteQueryLoggingConfiguration() {
+    return this.to('DeleteQueryLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to delete workspace resource policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -163,7 +205,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteRuleGroupsNamespace
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteRuleGroupsNamespace.html
    */
   public toDeleteRuleGroupsNamespace() {
     return this.to('DeleteRuleGroupsNamespace');
@@ -177,7 +219,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteScraper
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteScraper.html
    */
   public toDeleteScraper() {
     return this.to('DeleteScraper');
@@ -191,7 +233,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteWorkspace
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteWorkspace.html
    */
   public toDeleteWorkspace() {
     return this.to('DeleteWorkspace');
@@ -205,7 +247,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeAlertManagerDefinition
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeAlertManagerDefinition.html
    */
   public toDescribeAlertManagerDefinition() {
     return this.to('DescribeAlertManagerDefinition');
@@ -219,10 +261,38 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeLoggingConfiguration
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeLoggingConfiguration.html
    */
   public toDescribeLoggingConfiguration() {
     return this.to('DescribeLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to describe a query logging configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeQueryLoggingConfiguration.html
+   */
+  public toDescribeQueryLoggingConfiguration() {
+    return this.to('DescribeQueryLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to describe workspace resource policy
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeResourcePolicy.html
+   */
+  public toDescribeResourcePolicy() {
+    return this.to('DescribeResourcePolicy');
   }
 
   /**
@@ -233,7 +303,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeRuleGroupsNamespace
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeRuleGroupsNamespace.html
    */
   public toDescribeRuleGroupsNamespace() {
     return this.to('DescribeRuleGroupsNamespace');
@@ -247,7 +317,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeScraper
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeScraper.html
    */
   public toDescribeScraper() {
     return this.to('DescribeScraper');
@@ -261,7 +331,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeWorkspace
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeWorkspace.html
    */
   public toDescribeWorkspace() {
     return this.to('DescribeWorkspace');
@@ -275,7 +345,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeWorkspaceConfiguration
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeWorkspaceConfiguration.html
    */
   public toDescribeWorkspaceConfiguration() {
     return this.to('DescribeWorkspaceConfiguration');
@@ -289,7 +359,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetAlertManagerSilence
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetAlertManagerSilence.html
    */
   public toGetAlertManagerSilence() {
     return this.to('GetAlertManagerSilence');
@@ -303,7 +373,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetAlertManagerStatus
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetAlertManagerStatus.html
    */
   public toGetAlertManagerStatus() {
     return this.to('GetAlertManagerStatus');
@@ -314,7 +384,7 @@ export class Aps extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetDefaultScraperConfiguration
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_GetDefaultScraperConfiguration.html
    */
   public toGetDefaultScraperConfiguration() {
     return this.to('GetDefaultScraperConfiguration');
@@ -328,7 +398,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetLabels
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetLabels.html
    */
   public toGetLabels() {
     return this.to('GetLabels');
@@ -342,7 +412,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetMetricMetadata
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetMetricMetadata.html
    */
   public toGetMetricMetadata() {
     return this.to('GetMetricMetadata');
@@ -356,7 +426,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetSeries
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetSeries.html
    */
   public toGetSeries() {
     return this.to('GetSeries');
@@ -370,7 +440,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerAlertGroups
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerAlertGroups.html
    */
   public toListAlertManagerAlertGroups() {
     return this.to('ListAlertManagerAlertGroups');
@@ -384,7 +454,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerAlerts
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerAlerts.html
    */
   public toListAlertManagerAlerts() {
     return this.to('ListAlertManagerAlerts');
@@ -398,7 +468,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerReceivers
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerReceivers.html
    */
   public toListAlertManagerReceivers() {
     return this.to('ListAlertManagerReceivers');
@@ -412,7 +482,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerSilences
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerSilences.html
    */
   public toListAlertManagerSilences() {
     return this.to('ListAlertManagerSilences');
@@ -426,7 +496,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlerts
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlerts.html
    */
   public toListAlerts() {
     return this.to('ListAlerts');
@@ -440,7 +510,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListRuleGroupsNamespaces
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListRuleGroupsNamespaces.html
    */
   public toListRuleGroupsNamespaces() {
     return this.to('ListRuleGroupsNamespaces');
@@ -454,7 +524,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListRules
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListRules.html
    */
   public toListRules() {
     return this.to('ListRules');
@@ -465,7 +535,7 @@ export class Aps extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListScrapers
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListScrapers.html
    */
   public toListScrapers() {
     return this.to('ListScrapers');
@@ -480,7 +550,7 @@ export class Aps extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListTagsForResource
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -491,7 +561,7 @@ export class Aps extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListWorkspaces
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListWorkspaces.html
    */
   public toListWorkspaces() {
     return this.to('ListWorkspaces');
@@ -505,7 +575,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutAlertManagerDefinition
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutAlertManagerDefinition.html
    */
   public toPutAlertManagerDefinition() {
     return this.to('PutAlertManagerDefinition');
@@ -519,10 +589,24 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutAlertManagerSilences
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-PutAlertManagerSilences.html
    */
   public toPutAlertManagerSilences() {
     return this.to('PutAlertManagerSilences');
+  }
+
+  /**
+   * Grants permission to create and update workspace resource policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -533,7 +617,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutRuleGroupsNamespace
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutRuleGroupsNamespace.html
    */
   public toPutRuleGroupsNamespace() {
     return this.to('PutRuleGroupsNamespace');
@@ -547,7 +631,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-QueryMetrics
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-QueryMetrics.html
    */
   public toQueryMetrics() {
     return this.to('QueryMetrics');
@@ -561,7 +645,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-RemoteWrite
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-RemoteWrite.html
    */
   public toRemoteWrite() {
     return this.to('RemoteWrite');
@@ -576,7 +660,7 @@ export class Aps extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-TagResource
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -590,7 +674,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UntagResource
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -604,10 +688,24 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateLoggingConfiguration
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateLoggingConfiguration.html
    */
   public toUpdateLoggingConfiguration() {
     return this.to('UpdateLoggingConfiguration');
+  }
+
+  /**
+   * Grants permission to update a query logging configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateQueryLoggingConfiguration.html
+   */
+  public toUpdateQueryLoggingConfiguration() {
+    return this.to('UpdateQueryLoggingConfiguration');
   }
 
   /**
@@ -622,7 +720,7 @@ export class Aps extends PolicyStatement {
    * - aps:CreateScraper
    * - aps:TagResource
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateScraper
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateScraper.html
    */
   public toUpdateScraper() {
     return this.to('UpdateScraper');
@@ -636,7 +734,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateWorkspaceAlias
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateWorkspaceAlias.html
    */
   public toUpdateWorkspaceAlias() {
     return this.to('UpdateWorkspaceAlias');
@@ -650,7 +748,7 @@ export class Aps extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateWorkspaceConfiguration
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateWorkspaceConfiguration.html
    */
   public toUpdateWorkspaceConfiguration() {
     return this.to('UpdateWorkspaceConfiguration');
@@ -661,20 +759,25 @@ export class Aps extends PolicyStatement {
       'CreateAlertManagerAlerts',
       'CreateAlertManagerDefinition',
       'CreateLoggingConfiguration',
+      'CreateQueryLoggingConfiguration',
       'CreateRuleGroupsNamespace',
       'CreateScraper',
       'CreateWorkspace',
       'DeleteAlertManagerDefinition',
       'DeleteAlertManagerSilence',
       'DeleteLoggingConfiguration',
+      'DeleteQueryLoggingConfiguration',
+      'DeleteResourcePolicy',
       'DeleteRuleGroupsNamespace',
       'DeleteScraper',
       'DeleteWorkspace',
       'PutAlertManagerDefinition',
       'PutAlertManagerSilences',
+      'PutResourcePolicy',
       'PutRuleGroupsNamespace',
       'RemoteWrite',
       'UpdateLoggingConfiguration',
+      'UpdateQueryLoggingConfiguration',
       'UpdateScraper',
       'UpdateWorkspaceAlias',
       'UpdateWorkspaceConfiguration'
@@ -682,6 +785,8 @@ export class Aps extends PolicyStatement {
     Read: [
       'DescribeAlertManagerDefinition',
       'DescribeLoggingConfiguration',
+      'DescribeQueryLoggingConfiguration',
+      'DescribeResourcePolicy',
       'DescribeRuleGroupsNamespace',
       'DescribeScraper',
       'DescribeWorkspace',
@@ -821,15 +926,20 @@ export class Aps extends PolicyStatement {
    * - .toCreateAlertManagerAlerts()
    * - .toCreateAlertManagerDefinition()
    * - .toCreateLoggingConfiguration()
+   * - .toCreateQueryLoggingConfiguration()
    * - .toCreateScraper()
    * - .toDeleteAlertManagerDefinition()
    * - .toDeleteAlertManagerSilence()
    * - .toDeleteLoggingConfiguration()
+   * - .toDeleteQueryLoggingConfiguration()
+   * - .toDeleteResourcePolicy()
    * - .toDeleteRuleGroupsNamespace()
    * - .toDeleteScraper()
    * - .toDeleteWorkspace()
    * - .toDescribeAlertManagerDefinition()
    * - .toDescribeLoggingConfiguration()
+   * - .toDescribeQueryLoggingConfiguration()
+   * - .toDescribeResourcePolicy()
    * - .toDescribeRuleGroupsNamespace()
    * - .toDescribeScraper()
    * - .toDescribeWorkspace()
@@ -848,10 +958,12 @@ export class Aps extends PolicyStatement {
    * - .toListRules()
    * - .toPutAlertManagerDefinition()
    * - .toPutAlertManagerSilences()
+   * - .toPutResourcePolicy()
    * - .toPutRuleGroupsNamespace()
    * - .toQueryMetrics()
    * - .toRemoteWrite()
    * - .toUpdateLoggingConfiguration()
+   * - .toUpdateQueryLoggingConfiguration()
    * - .toUpdateScraper()
    * - .toUpdateWorkspaceAlias()
    * - .toUpdateWorkspaceConfiguration()

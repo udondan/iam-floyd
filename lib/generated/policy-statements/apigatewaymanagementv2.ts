@@ -19,6 +19,22 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a routing rule
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifRequestPriority()
+   * - .ifRequestConditionBasePaths()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules.html#domainnames-domainname-routingrulespost
+   */
+  public toCreateRoutingRule() {
+    return this.to('CreateRoutingRule');
+  }
+
+  /**
    * Grants permission to delete a particular resource
    *
    * Access Level: Write
@@ -27,10 +43,26 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_DELETE.html
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html
    */
   public toDELETE() {
     return this.to('DELETE');
+  }
+
+  /**
+   * Grants permission to delete a routing rule
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourcePriority()
+   * - .ifResourceConditionBasePaths()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleiddelete
+   */
+  public toDeleteRoutingRule() {
+    return this.to('DeleteRoutingRule');
   }
 
   /**
@@ -38,10 +70,38 @@ export class ApigatewayV2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_GET.html
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html
    */
   public toGET() {
     return this.to('GET');
+  }
+
+  /**
+   * Grants permission to read a routing rule
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleidget
+   */
+  public toGetRoutingRule() {
+    return this.to('GetRoutingRule');
+  }
+
+  /**
+   * Grants permission to list routing rules under a domain name
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules.html#domainnames-domainname-routingrulesget
+   */
+  public toListRoutingRules() {
+    return this.to('ListRoutingRules');
   }
 
   /**
@@ -53,7 +113,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_PATCH.html
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html
    */
   public toPATCH() {
     return this.to('PATCH');
@@ -68,7 +128,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_POST.html
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html
    */
   public toPOST() {
     return this.to('POST');
@@ -83,21 +143,46 @@ export class ApigatewayV2 extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/API_PUT.html
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/api-reference.html
    */
   public toPUT() {
     return this.to('PUT');
   }
 
+  /**
+   * Grants permission to update a routing rule using the PutRoutingRule API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifRequestPriority()
+   * - .ifRequestConditionBasePaths()
+   * - .ifResourcePriority()
+   * - .ifResourceConditionBasePaths()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-routingrules-routingruleid.html#domainnames-domainname-routingrules-routingruleidput
+   */
+  public toUpdateRoutingRule() {
+    return this.to('UpdateRoutingRule');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreateRoutingRule',
       'DELETE',
+      'DeleteRoutingRule',
       'PATCH',
       'POST',
-      'PUT'
+      'PUT',
+      'UpdateRoutingRule'
     ],
     Read: [
-      'GET'
+      'GET',
+      'GetRoutingRule'
+    ],
+    List: [
+      'ListRoutingRules'
     ]
   };
 
@@ -555,6 +640,26 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type RoutingRule to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param routingRuleId - Identifier for the routingRuleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifResourceConditionBasePaths()
+   * - .ifResourcePriority()
+   * - .ifAwsResourceTag()
+   */
+  public onRoutingRule(domainName: string, routingRuleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/domainnames/${ domainName }/routingrules/${ routingRuleId }`);
+  }
+
+  /**
    * Adds a resource of type Stage to the statement
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -726,6 +831,22 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by base paths defined on the condition of a routing rule. Available during the CreateRoutingRule and UpdateRoutingRule operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
+   *
+   * Applies to actions:
+   * - .toCreateRoutingRule()
+   * - .toUpdateRoutingRule()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestConditionBasePaths(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/ConditionBasePaths`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by status of the default execute-api endpoint. Available during the CreateApi and UpdateApi operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -781,6 +902,22 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by priority of the routing rule. Available during the CreateRoutingRule and UpdateRoutingRule operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
+   *
+   * Applies to actions:
+   * - .toCreateRoutingRule()
+   * - .toUpdateRoutingRule()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifRequestPriority(value: number | number[], operator?: Operator | string) {
+    return this.if(`Request/Priority`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
    * Filters access by authorization type, for example NONE, AWS_IAM, CUSTOM, JWT. Available during the CreateRoute and UpdateRoute operations. Also available as a collection during import
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -796,6 +933,18 @@ export class ApigatewayV2 extends PolicyStatement {
    */
   public ifRequestRouteAuthorizationType(value: string | string[], operator?: Operator | string) {
     return this.if(`Request/RouteAuthorizationType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by routing mode of the domain name. Available during the CreateDomainName and UpdateDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestRoutingMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/RoutingMode`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -918,6 +1067,25 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by base paths defined on the condition of the existing routing rule. Available during the UpdateRoutingRule and DeleteRoutingRule operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
+   *
+   * Applies to actions:
+   * - .toDeleteRoutingRule()
+   * - .toUpdateRoutingRule()
+   *
+   * Applies to resource types:
+   * - RoutingRule
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceConditionBasePaths(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/ConditionBasePaths`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by status of the default execute-api endpoint. Available during the UpdateApi and DeleteApi operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -971,6 +1139,25 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by priority of the existing routing rule. Available during the UpdateRoutingRule and DeleteRoutingRule operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
+   *
+   * Applies to actions:
+   * - .toDeleteRoutingRule()
+   * - .toUpdateRoutingRule()
+   *
+   * Applies to resource types:
+   * - RoutingRule
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifResourcePriority(value: number | number[], operator?: Operator | string) {
+    return this.if(`Resource/Priority`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
    * Filters access by authorization type of the existing Route resource, for example NONE, AWS_IAM, CUSTOM. Available during the UpdateRoute and DeleteRoute operations. Also available as a collection during reimport
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -984,6 +1171,18 @@ export class ApigatewayV2 extends PolicyStatement {
    */
   public ifResourceRouteAuthorizationType(value: string | string[], operator?: Operator | string) {
     return this.if(`Resource/RouteAuthorizationType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by routing mode of the existing domain name. Available during the UpdateDomainName and DeleteDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceRoutingMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/RoutingMode`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1022,6 +1221,13 @@ export class ApigatewayV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
    *
+   * Applies to actions:
+   * - .toCreateRoutingRule()
+   * - .toDeleteRoutingRule()
+   * - .toGetRoutingRule()
+   * - .toListRoutingRules()
+   * - .toUpdateRoutingRule()
+   *
    * Applies to resource types:
    * - AccessLogSettings
    * - Api
@@ -1048,6 +1254,7 @@ export class ApigatewayV2 extends PolicyStatement {
    * - RouteResponses
    * - RouteRequestParameter
    * - RouteSettings
+   * - RoutingRule
    * - Stage
    * - Stages
    * - VpcLink

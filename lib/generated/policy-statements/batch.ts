@@ -86,6 +86,24 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Batch service environment in your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateServiceEnvironment.html
+   */
+  public toCreateServiceEnvironment() {
+    return this.to('CreateServiceEnvironment');
+  }
+
+  /**
    * Grants permission to delete an AWS Batch compute environment in your account
    *
    * Access Level: Write
@@ -127,6 +145,17 @@ export class Batch extends PolicyStatement {
    */
   public toDeleteSchedulingPolicy() {
     return this.to('DeleteSchedulingPolicy');
+  }
+
+  /**
+   * Grants permission to delete an AWS Batch service environment in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteServiceEnvironment.html
+   */
+  public toDeleteServiceEnvironment() {
+    return this.to('DeleteServiceEnvironment');
   }
 
   /**
@@ -207,6 +236,28 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more AWS Batch service environments in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeServiceEnvironments.html
+   */
+  public toDescribeServiceEnvironments() {
+    return this.to('DescribeServiceEnvironments');
+  }
+
+  /**
+   * Grants permission to describe a AWS Batch service job in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeServiceJob.html
+   */
+  public toDescribeServiceJob() {
+    return this.to('DescribeServiceJob');
+  }
+
+  /**
    * Grants permission to get a snapshot of an AWS Batch job queue in your account
    *
    * Access Level: Read
@@ -262,6 +313,17 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list service jobs for a specified AWS Batch job queue in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListServiceJobs.html
+   */
+  public toListServiceJobs() {
+    return this.to('ListServiceJobs');
+  }
+
+  /**
    * Grants permission to list tags for an AWS Batch resource in your account
    *
    * Access Level: Read
@@ -313,6 +375,17 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit an AWS Batch service job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitServiceJob.html
+   */
+  public toSubmitServiceJob() {
+    return this.to('SubmitServiceJob');
+  }
+
+  /**
    * Grants permission to tag an AWS Batch resource in your account
    *
    * Access Level: Tagging
@@ -336,6 +409,17 @@ export class Batch extends PolicyStatement {
    */
   public toTerminateJob() {
     return this.to('TerminateJob');
+  }
+
+  /**
+   * Grants permission to terminate a service job in an AWS Batch job queue in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateServiceJob.html
+   */
+  public toTerminateServiceJob() {
+    return this.to('TerminateServiceJob');
   }
 
   /**
@@ -396,6 +480,17 @@ export class Batch extends PolicyStatement {
     return this.to('UpdateSchedulingPolicy');
   }
 
+  /**
+   * Grants permission to update an AWS Batch service environment in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateServiceEnvironment.html
+   */
+  public toUpdateServiceEnvironment() {
+    return this.to('UpdateServiceEnvironment');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJob',
@@ -403,18 +498,23 @@ export class Batch extends PolicyStatement {
       'CreateConsumableResource',
       'CreateJobQueue',
       'CreateSchedulingPolicy',
+      'CreateServiceEnvironment',
       'DeleteComputeEnvironment',
       'DeleteConsumableResource',
       'DeleteJobQueue',
       'DeleteSchedulingPolicy',
+      'DeleteServiceEnvironment',
       'DeregisterJobDefinition',
       'RegisterJobDefinition',
       'SubmitJob',
+      'SubmitServiceJob',
       'TerminateJob',
+      'TerminateServiceJob',
       'UpdateComputeEnvironment',
       'UpdateConsumableResource',
       'UpdateJobQueue',
-      'UpdateSchedulingPolicy'
+      'UpdateSchedulingPolicy',
+      'UpdateServiceEnvironment'
     ],
     Read: [
       'DescribeComputeEnvironments',
@@ -423,6 +523,8 @@ export class Batch extends PolicyStatement {
       'DescribeJobQueues',
       'DescribeJobs',
       'DescribeSchedulingPolicies',
+      'DescribeServiceEnvironments',
+      'DescribeServiceJob',
       'GetJobQueueSnapshot',
       'ListSchedulingPolicies',
       'ListTagsForResource'
@@ -430,7 +532,8 @@ export class Batch extends PolicyStatement {
     List: [
       'ListConsumableResources',
       'ListJobs',
-      'ListJobsByConsumableResource'
+      'ListJobsByConsumableResource',
+      'ListServiceJobs'
     ],
     Tagging: [
       'TagResource',
@@ -539,6 +642,40 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type service-environment to the statement
+   *
+   * https://docs.aws.amazon.com/batch/latest/userguide/service-environments.html
+   *
+   * @param serviceEnvironmentName - Identifier for the serviceEnvironmentName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onServiceEnvironment(serviceEnvironmentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-environment/${ serviceEnvironmentName }`);
+  }
+
+  /**
+   * Adds a resource of type service-job to the statement
+   *
+   * https://docs.aws.amazon.com/batch/latest/userguide/service-jobs.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onServiceJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-job/${ jobId }`);
+  }
+
+  /**
    * Adds a resource of type consumable-resource to the statement
    *
    * https://docs.aws.amazon.com/batch/latest/userguide/resource-aware-scheduling.html
@@ -565,8 +702,10 @@ export class Batch extends PolicyStatement {
    * - .toCreateConsumableResource()
    * - .toCreateJobQueue()
    * - .toCreateSchedulingPolicy()
+   * - .toCreateServiceEnvironment()
    * - .toRegisterJobDefinition()
    * - .toSubmitJob()
+   * - .toSubmitServiceJob()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -588,6 +727,8 @@ export class Batch extends PolicyStatement {
    * - job-definition-revision
    * - job
    * - scheduling-policy
+   * - service-environment
+   * - service-job
    * - consumable-resource
    *
    * @param tagKey The tag key to check
@@ -608,8 +749,10 @@ export class Batch extends PolicyStatement {
    * - .toCreateConsumableResource()
    * - .toCreateJobQueue()
    * - .toCreateSchedulingPolicy()
+   * - .toCreateServiceEnvironment()
    * - .toRegisterJobDefinition()
    * - .toSubmitJob()
+   * - .toSubmitServiceJob()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -821,6 +964,7 @@ export class Batch extends PolicyStatement {
    *
    * Applies to actions:
    * - .toSubmitJob()
+   * - .toSubmitServiceJob()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

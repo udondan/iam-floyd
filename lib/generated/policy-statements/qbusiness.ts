@@ -19,17 +19,6 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add one or more users for licenses
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_AddUserLicenses.html
-   */
-  public toAddUserLicenses() {
-    return this.to('AddUserLicenses');
-  }
-
-  /**
    * Grants permission to configure vended log delivery for Amazon Q Business application resource
    *
    * Access Level: Permissions management
@@ -148,14 +137,47 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a chat response configuration to the application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateChatResponseConfiguration.html
+   */
+  public toCreateChatResponseConfiguration() {
+    return this.to('CreateChatResponseConfiguration');
+  }
+
+  /**
    * Grants permission to create DataAccessor to the application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - qbusiness:CreateDataAccessorWithTti
    *
    * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html
    */
   public toCreateDataAccessor() {
     return this.to('CreateDataAccessor');
+  }
+
+  /**
+   * Grants permission to create AWS IAM Identity center Trusted Token Issuer based DataAccessor to the application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataAccessor.html
+   */
+  public toCreateDataAccessorWithTti() {
+    return this.to('CreateDataAccessorWithTti');
   }
 
   /**
@@ -201,17 +223,6 @@ export class Qbusiness extends PolicyStatement {
    */
   public toCreateIntegration() {
     return this.to('CreateIntegration');
-  }
-
-  /**
-   * Grants permission to create a license
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateLicense.html
-   */
-  public toCreateLicense() {
-    return this.to('CreateLicense');
   }
 
   /**
@@ -316,6 +327,17 @@ export class Qbusiness extends PolicyStatement {
    */
   public toDeleteChatControlsConfiguration() {
     return this.to('DeleteChatControlsConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a chat response configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DeleteChatResponseConfiguration.html
+   */
+  public toDeleteChatResponseConfiguration() {
+    return this.to('DeleteChatResponseConfiguration');
   }
 
   /**
@@ -474,6 +496,17 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a chat response configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetChatResponseConfiguration.html
+   */
+  public toGetChatResponseConfiguration() {
+    return this.to('GetChatResponseConfiguration');
+  }
+
+  /**
    * Grants permission to get DataAccessor
    *
    * Access Level: Read
@@ -493,6 +526,17 @@ export class Qbusiness extends PolicyStatement {
    */
   public toGetDataSource() {
     return this.to('GetDataSource');
+  }
+
+  /**
+   * Grants permission to get a document content
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetDocumentContent.html
+   */
+  public toGetDocumentContent() {
+    return this.to('GetDocumentContent');
   }
 
   /**
@@ -526,17 +570,6 @@ export class Qbusiness extends PolicyStatement {
    */
   public toGetIntegration() {
     return this.to('GetIntegration');
-  }
-
-  /**
-   * Grants permission to get a license
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_GetLicense.html
-   */
-  public toGetLicense() {
-    return this.to('GetLicense');
   }
 
   /**
@@ -625,6 +658,17 @@ export class Qbusiness extends PolicyStatement {
    */
   public toListAttachments() {
     return this.to('ListAttachments');
+  }
+
+  /**
+   * Grants permission to list chat response configurations for an application
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListChatResponseConfigurations.html
+   */
+  public toListChatResponseConfigurations() {
+    return this.to('ListChatResponseConfigurations');
   }
 
   /**
@@ -804,17 +848,6 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list licenses
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_ListUserLicenses.html
-   */
-  public toListUserLicenses() {
-    return this.to('ListUserLicenses');
-  }
-
-  /**
    * Grants permission to list the web experiences of an application
    *
    * Access Level: List
@@ -856,17 +889,6 @@ export class Qbusiness extends PolicyStatement {
    */
   public toPutResourcePolicy() {
     return this.to('PutResourcePolicy');
-  }
-
-  /**
-   * Grants permission to remove licenses for one or more users
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_RemoveUserLicenses.html
-   */
-  public toRemoveUserLicenses() {
-    return this.to('RemoveUserLicenses');
   }
 
   /**
@@ -962,6 +984,17 @@ export class Qbusiness extends PolicyStatement {
    */
   public toUpdateChatControlsConfiguration() {
     return this.to('UpdateChatControlsConfiguration');
+  }
+
+  /**
+   * Grants permission to update a chat response configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateChatResponseConfiguration.html
+   */
+  public toUpdateChatResponseConfiguration() {
+    return this.to('UpdateChatResponseConfiguration');
   }
 
   /**
@@ -1064,19 +1097,22 @@ export class Qbusiness extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Write: [
-      'AddUserLicenses',
       'AssociatePermission',
       'BatchDeleteDocument',
       'BatchPutDocument',
       'CancelSubscription',
       'CreateAnonymousWebExperienceUrl',
       'CreateApplication',
+      'CreateChatResponseConfiguration',
       'CreateDataAccessor',
+      'CreateDataAccessorWithTti',
       'CreateDataSource',
       'CreateIndex',
       'CreateIntegration',
-      'CreateLicense',
       'CreatePlugin',
       'CreateRetriever',
       'CreateSubscription',
@@ -1085,6 +1121,7 @@ export class Qbusiness extends PolicyStatement {
       'DeleteApplication',
       'DeleteAttachment',
       'DeleteChatControlsConfiguration',
+      'DeleteChatResponseConfiguration',
       'DeleteConversation',
       'DeleteDataAccessor',
       'DeleteDataSource',
@@ -1100,12 +1137,12 @@ export class Qbusiness extends PolicyStatement {
       'PutFeedback',
       'PutGroup',
       'PutResourcePolicy',
-      'RemoveUserLicenses',
       'StartDataSourceSyncJob',
       'StartDeployment',
       'StopDataSourceSyncJob',
       'UpdateApplication',
       'UpdateChatControlsConfiguration',
+      'UpdateChatResponseConfiguration',
       'UpdateDataAccessor',
       'UpdateDataSource',
       'UpdateIndex',
@@ -1116,20 +1153,18 @@ export class Qbusiness extends PolicyStatement {
       'UpdateUser',
       'UpdateWebExperience'
     ],
-    'Permissions management': [
-      'AllowVendedLogDeliveryForResource'
-    ],
     Read: [
       'Chat',
       'ChatSync',
       'CheckDocumentAccess',
       'GetApplication',
+      'GetChatResponseConfiguration',
       'GetDataAccessor',
       'GetDataSource',
+      'GetDocumentContent',
       'GetGroup',
       'GetIndex',
       'GetIntegration',
-      'GetLicense',
       'GetMedia',
       'GetPlugin',
       'GetPolicy',
@@ -1146,6 +1181,7 @@ export class Qbusiness extends PolicyStatement {
       'GetChatControlsConfiguration',
       'ListApplications',
       'ListAttachments',
+      'ListChatResponseConfigurations',
       'ListConversations',
       'ListDataAccessors',
       'ListDataSourceSyncJobs',
@@ -1158,7 +1194,6 @@ export class Qbusiness extends PolicyStatement {
       'ListPlugins',
       'ListRetrievers',
       'ListSubscriptions',
-      'ListUserLicenses',
       'ListWebExperiences'
     ],
     Tagging: [
@@ -1294,21 +1329,6 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type user-license to the statement
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/provisioning.html
-   *
-   * @param applicationId - Identifier for the applicationId.
-   * @param userLicenseId - Identifier for the userLicenseId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onUserLicense(applicationId: string, userLicenseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/user-license/${ userLicenseId }`);
-  }
-
-  /**
    * Adds a resource of type subscription to the statement
    *
    * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/subscriptions.html
@@ -1342,12 +1362,32 @@ export class Qbusiness extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type chat-response-configuration to the statement
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/business-use-dg/response-customization.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param chatResponseConfigurationId - Identifier for the chatResponseConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onChatResponseConfiguration(applicationId: string, chatResponseConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:qbusiness:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/chat-response-configuration/${ chatResponseConfigurationId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateApplication()
+   * - .toCreateChatResponseConfiguration()
+   * - .toCreateDataAccessor()
    * - .toCreateDataSource()
    * - .toCreateIndex()
    * - .toCreateIntegration()
@@ -1381,6 +1421,7 @@ export class Qbusiness extends PolicyStatement {
    * - plugin
    * - web-experience
    * - data-accessor
+   * - chat-response-configuration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1397,6 +1438,8 @@ export class Qbusiness extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateApplication()
+   * - .toCreateChatResponseConfiguration()
+   * - .toCreateDataAccessor()
    * - .toCreateDataSource()
    * - .toCreateIndex()
    * - .toCreateIntegration()

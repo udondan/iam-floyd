@@ -586,6 +586,20 @@ export class Memorydb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to pause replication for a Multi-Region cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#memorydb-actions-reference
+   */
+  public toPauseMultiRegionClusterReplication() {
+    return this.to('PauseMultiRegionClusterReplication');
+  }
+
+  /**
    * Grants permissions to purchase a new reserved node
    *
    * Access Level: Write
@@ -768,6 +782,7 @@ export class Memorydb extends PolicyStatement {
       'DeleteSubnetGroup',
       'DeleteUser',
       'FailoverShard',
+      'PauseMultiRegionClusterReplication',
       'PurchaseReservedNodesOffering',
       'ResetParameterGroup',
       'UpdateAcl',
@@ -1010,6 +1025,7 @@ export class Memorydb extends PolicyStatement {
    * - .toListAllowedMultiRegionClusterUpdates()
    * - .toListAllowedNodeTypeUpdates()
    * - .toListTags()
+   * - .toPauseMultiRegionClusterReplication()
    * - .toPurchaseReservedNodesOffering()
    * - .toResetParameterGroup()
    * - .toTagResource()

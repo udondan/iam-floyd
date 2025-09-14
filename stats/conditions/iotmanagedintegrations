@@ -1,3 +1,5 @@
 iotmanagedintegrations:RequestTag/${TagKey}
 iotmanagedintegrations:ResourceTag/${TagKey}
 iotmanagedintegrations:TagKeys
+iotmanagedintegrations:cloudConnectorId
+iotmanagedintegrations:connectorDestinationId

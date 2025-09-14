@@ -30,6 +30,7 @@ quicksight:CreateTopic;Write
 quicksight:CreateTopicRefreshSchedule;Write
 quicksight:CreateUser;Write
 quicksight:CreateVPCConnection;Write
+quicksight:DeleteAccountCustomPermission;Write
 quicksight:DeleteAccountCustomization;Write
 quicksight:DeleteAccountSubscription;Write
 quicksight:DeleteAnalysis;Write
@@ -62,6 +63,7 @@ quicksight:DeleteUser;Write
 quicksight:DeleteUserByPrincipalId;Write
 quicksight:DeleteUserCustomPermission;Write
 quicksight:DeleteVPCConnection;Write
+quicksight:DescribeAccountCustomPermission;Read
 quicksight:DescribeAccountCustomization;Read
 quicksight:DescribeAccountSettings;Read
 quicksight:DescribeAccountSubscription;Read
@@ -182,6 +184,7 @@ quicksight:Subscribe;Write
 quicksight:TagResource;Tagging
 quicksight:Unsubscribe;Write
 quicksight:UntagResource;Tagging
+quicksight:UpdateAccountCustomPermission;Write
 quicksight:UpdateAccountCustomization;Write
 quicksight:UpdateAccountSettings;Write
 quicksight:UpdateAnalysis;Write

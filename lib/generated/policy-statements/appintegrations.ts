@@ -107,6 +107,17 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a data integration schedule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegrationSchedule.html
+   */
+  public toCreateDataIntegrationSchedule() {
+    return this.to('CreateDataIntegrationSchedule');
+  }
+
+  /**
    * Grants permission to create a new EventIntegration
    *
    * Access Level: Write
@@ -263,6 +274,28 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details about a data integration execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegrationExecution.html
+   */
+  public toGetDataIntegrationExecution() {
+    return this.to('GetDataIntegrationExecution');
+  }
+
+  /**
+   * Grants permission to get details about a data integration schedule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegrationSchedule.html
+   */
+  public toGetDataIntegrationSchedule() {
+    return this.to('GetDataIntegrationSchedule');
+  }
+
+  /**
    * Grants permission to view details about EventIntegrations
    *
    * Access Level: Read
@@ -310,6 +343,28 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list data integration executions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationExecutions.html
+   */
+  public toListDataIntegrationExecutions() {
+    return this.to('ListDataIntegrationExecutions');
+  }
+
+  /**
+   * Grants permission to list data integration schedules
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationSchedules.html
+   */
+  public toListDataIntegrationSchedules() {
+    return this.to('ListDataIntegrationSchedules');
+  }
+
+  /**
    * Grants permission to list DataIntegrations
    *
    * Access Level: List
@@ -354,6 +409,21 @@ export class AppIntegrations extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to start a data integration execution
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - profile:CreateSegmentSnapshot
+   * - profile:CreateSnapshot
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_StartDataIntegrationExecution.html
+   */
+  public toStartDataIntegrationExecution() {
+    return this.to('StartDataIntegrationExecution');
   }
 
   /**
@@ -434,6 +504,17 @@ export class AppIntegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a data integration schedule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegrationSchedule.html
+   */
+  public toUpdateDataIntegrationSchedule() {
+    return this.to('UpdateDataIntegrationSchedule');
+  }
+
+  /**
    * Grants permission to modify an EventIntegration
    *
    * Access Level: Write
@@ -453,6 +534,7 @@ export class AppIntegrations extends PolicyStatement {
       'CreateApplicationAssociation',
       'CreateDataIntegration',
       'CreateDataIntegrationAssociation',
+      'CreateDataIntegrationSchedule',
       'CreateEventIntegration',
       'CreateEventIntegrationAssociation',
       'DeleteApplication',
@@ -461,14 +543,18 @@ export class AppIntegrations extends PolicyStatement {
       'DeleteDataIntegrationAssociation',
       'DeleteEventIntegration',
       'DeleteEventIntegrationAssociation',
+      'StartDataIntegrationExecution',
       'UpdateApplication',
       'UpdateDataIntegration',
       'UpdateDataIntegrationAssociation',
+      'UpdateDataIntegrationSchedule',
       'UpdateEventIntegration'
     ],
     Read: [
       'GetApplication',
       'GetDataIntegration',
+      'GetDataIntegrationExecution',
+      'GetDataIntegrationSchedule',
       'GetEventIntegration',
       'ListEventIntegrationAssociations',
       'ListTagsForResource'
@@ -477,6 +563,8 @@ export class AppIntegrations extends PolicyStatement {
       'ListApplicationAssociations',
       'ListApplications',
       'ListDataIntegrationAssociations',
+      'ListDataIntegrationExecutions',
+      'ListDataIntegrationSchedules',
       'ListDataIntegrations',
       'ListEventIntegrations'
     ],

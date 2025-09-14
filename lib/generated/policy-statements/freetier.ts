@@ -19,6 +19,28 @@ export class Freetier extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a specific activity record
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_GetAccountActivity.html
+   */
+  public toGetAccountActivity() {
+    return this.to('GetAccountActivity');
+  }
+
+  /**
+   * Grants permission to get all of the information related to the state of the account plan related to Free Tier
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_GetAccountPlanState.html
+   */
+  public toGetAccountPlanState() {
+    return this.to('GetAccountPlanState');
+  }
+
+  /**
    * Grants permission to get free tier alert preference (email address)
    *
    * Access Level: Read
@@ -41,6 +63,17 @@ export class Freetier extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list available activities
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_ListAccountActivities.html
+   */
+  public toListAccountActivities() {
+    return this.to('ListAccountActivities');
+  }
+
+  /**
    * Grants permission to set free tier alert preference (email address)
    *
    * Access Level: Write
@@ -51,13 +84,30 @@ export class Freetier extends PolicyStatement {
     return this.to('PutFreeTierAlertPreference');
   }
 
+  /**
+   * Grants permission to trigger an upgrade of account plan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_UpgradeAccountPlan.html
+   */
+  public toUpgradeAccountPlan() {
+    return this.to('UpgradeAccountPlan');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
+      'GetAccountActivity',
+      'GetAccountPlanState',
       'GetFreeTierAlertPreference',
       'GetFreeTierUsage'
     ],
+    List: [
+      'ListAccountActivities'
+    ],
     Write: [
-      'PutFreeTierAlertPreference'
+      'PutFreeTierAlertPreference',
+      'UpgradeAccountPlan'
     ]
   };
 }

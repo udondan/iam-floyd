@@ -11,6 +11,7 @@ outposts:GetCatalogItem;Read
 outposts:GetConnection;Read
 outposts:GetOrder;Read
 outposts:GetOutpost;Read
+outposts:GetOutpostBillingInformation;Read
 outposts:GetOutpostInstanceTypes;Read
 outposts:GetOutpostSupportedInstanceTypes;Read
 outposts:GetPrivateConnectivityConfig;Read

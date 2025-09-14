@@ -30,6 +30,28 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate multiple code repositories with an Amazon Inspector code security scan configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchAssociateCodeSecurityScanConfiguration.html
+   */
+  public toBatchAssociateCodeSecurityScanConfiguration() {
+    return this.to('BatchAssociateCodeSecurityScanConfiguration');
+  }
+
+  /**
+   * Grants permission to disassociate multiple code repositories from an Amazon Inspector code security scan configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchDisassociateCodeSecurityScanConfiguration.html
+   */
+  public toBatchDisassociateCodeSecurityScanConfiguration() {
+    return this.to('BatchDisassociateCodeSecurityScanConfiguration');
+  }
+
+  /**
    * Grants permission to retrieve information about Amazon Inspector accounts for an account
    *
    * Access Level: Read
@@ -134,6 +156,36 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a code security integration with a source code repository provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityIntegration.html
+   */
+  public toCreateCodeSecurityIntegration() {
+    return this.to('CreateCodeSecurityIntegration');
+  }
+
+  /**
+   * Grants permission to create a scan configuration for code security scanning
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityScanConfiguration.html
+   */
+  public toCreateCodeSecurityScanConfiguration() {
+    return this.to('CreateCodeSecurityScanConfiguration');
+  }
+
+  /**
    * Grants permission to create and define the settings for a findings filter
    *
    * Access Level: Write
@@ -182,6 +234,28 @@ export class Inspector2 extends PolicyStatement {
    */
   public toDeleteCisScanConfiguration() {
     return this.to('DeleteCisScanConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a code security integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityIntegration.html
+   */
+  public toDeleteCodeSecurityIntegration() {
+    return this.to('DeleteCodeSecurityIntegration');
+  }
+
+  /**
+   * Grants permission to delete a code security scan configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityScanConfiguration.html
+   */
+  public toDeleteCodeSecurityScanConfiguration() {
+    return this.to('DeleteCodeSecurityScanConfiguration');
   }
 
   /**
@@ -281,6 +355,50 @@ export class Inspector2 extends PolicyStatement {
    */
   public toGetCisScanResultDetails() {
     return this.to('GetCisScanResultDetails');
+  }
+
+  /**
+   * Grants permission to get cluster information for a given a continuously scanned amazon Ecr image
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetClustersForImage.html
+   */
+  public toGetClustersForImage() {
+    return this.to('GetClustersForImage');
+  }
+
+  /**
+   * Grants permission to retrieve information about a code security integration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityIntegration.html
+   */
+  public toGetCodeSecurityIntegration() {
+    return this.to('GetCodeSecurityIntegration');
+  }
+
+  /**
+   * Grants permission to retrieve information about a specific code security scan
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityScan.html
+   */
+  public toGetCodeSecurityScan() {
+    return this.to('GetCodeSecurityScan');
+  }
+
+  /**
+   * Grants permission to retrieve information about a code security scan configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityScanConfiguration.html
+   */
+  public toGetCodeSecurityScanConfiguration() {
+    return this.to('GetCodeSecurityScanConfiguration');
   }
 
   /**
@@ -413,6 +531,39 @@ export class Inspector2 extends PolicyStatement {
    */
   public toListCisScans() {
     return this.to('ListCisScans');
+  }
+
+  /**
+   * Grants permission to list all code security integrations in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityIntegrations.html
+   */
+  public toListCodeSecurityIntegrations() {
+    return this.to('ListCodeSecurityIntegrations');
+  }
+
+  /**
+   * Grants permission to list the associations between code repositories and Amazon Inspector code security scan configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurationAssociations.html
+   */
+  public toListCodeSecurityScanConfigurationAssociations() {
+    return this.to('ListCodeSecurityScanConfigurationAssociations');
+  }
+
+  /**
+   * Grants permission to list all code security scan configurations in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurations.html
+   */
+  public toListCodeSecurityScanConfigurations() {
+    return this.to('ListCodeSecurityScanConfigurations');
   }
 
   /**
@@ -570,6 +721,17 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate a code security scan on a specified repository
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartCodeSecurityScan.html
+   */
+  public toStartCodeSecurityScan() {
+    return this.to('StartCodeSecurityScan');
+  }
+
+  /**
    * Grants permission to stop a CIS scan session
    *
    * Access Level: Write
@@ -623,6 +785,34 @@ export class Inspector2 extends PolicyStatement {
    */
   public toUpdateCisScanConfiguration() {
     return this.to('UpdateCisScanConfiguration');
+  }
+
+  /**
+   * Grants permission to update an existing code security integration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityIntegration.html
+   */
+  public toUpdateCodeSecurityIntegration() {
+    return this.to('UpdateCodeSecurityIntegration');
+  }
+
+  /**
+   * Grants permission to update an existing code security scan configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityScanConfiguration.html
+   */
+  public toUpdateCodeSecurityScanConfiguration() {
+    return this.to('UpdateCodeSecurityScanConfiguration');
   }
 
   /**
@@ -698,14 +888,20 @@ export class Inspector2 extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateMember',
+      'BatchAssociateCodeSecurityScanConfiguration',
+      'BatchDisassociateCodeSecurityScanConfiguration',
       'BatchUpdateMemberEc2DeepInspectionStatus',
       'CancelFindingsReport',
       'CancelSbomExport',
       'CreateCisScanConfiguration',
+      'CreateCodeSecurityIntegration',
+      'CreateCodeSecurityScanConfiguration',
       'CreateFilter',
       'CreateFindingsReport',
       'CreateSbomExport',
       'DeleteCisScanConfiguration',
+      'DeleteCodeSecurityIntegration',
+      'DeleteCodeSecurityScanConfiguration',
       'DeleteFilter',
       'Disable',
       'DisableDelegatedAdminAccount',
@@ -716,8 +912,11 @@ export class Inspector2 extends PolicyStatement {
       'SendCisSessionHealth',
       'SendCisSessionTelemetry',
       'StartCisSession',
+      'StartCodeSecurityScan',
       'StopCisSession',
       'UpdateCisScanConfiguration',
+      'UpdateCodeSecurityIntegration',
+      'UpdateCodeSecurityScanConfiguration',
       'UpdateConfiguration',
       'UpdateEc2DeepInspectionConfiguration',
       'UpdateEncryptionKey',
@@ -733,6 +932,10 @@ export class Inspector2 extends PolicyStatement {
       'BatchGetMemberEc2DeepInspectionStatus',
       'DescribeOrganizationConfiguration',
       'GetCisScanReport',
+      'GetClustersForImage',
+      'GetCodeSecurityIntegration',
+      'GetCodeSecurityScan',
+      'GetCodeSecurityScanConfiguration',
       'GetConfiguration',
       'GetDelegatedAdminAccount',
       'GetEc2DeepInspectionConfiguration',
@@ -750,6 +953,9 @@ export class Inspector2 extends PolicyStatement {
       'ListCisScanResultsAggregatedByChecks',
       'ListCisScanResultsAggregatedByTargetResource',
       'ListCisScans',
+      'ListCodeSecurityIntegrations',
+      'ListCodeSecurityScanConfigurationAssociations',
+      'ListCodeSecurityScanConfigurations',
       'ListCoverage',
       'ListCoverageStatistics',
       'ListDelegatedAdminAccounts',
@@ -816,12 +1022,49 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Code Security Scan Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+   *
+   * @param ownerId - Identifier for the ownerId.
+   * @param codeSecurityScanConfigurationId - Identifier for the codeSecurityScanConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCodeSecurityScanConfiguration(ownerId: string, codeSecurityScanConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:owner/${ ownerId }/codesecurity-configuration/${ codeSecurityScanConfigurationId }`);
+  }
+
+  /**
+   * Adds a resource of type Code Security Integration to the statement
+   *
+   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+   *
+   * @param codeSecurityIntegrationId - Identifier for the codeSecurityIntegrationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCodeSecurityIntegration(codeSecurityIntegrationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:codesecurity-integration/${ codeSecurityIntegrationId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateCisScanConfiguration()
+   * - .toCreateCodeSecurityIntegration()
+   * - .toCreateCodeSecurityScanConfiguration()
    * - .toCreateFilter()
    * - .toTagResource()
    * - .toUpdateFilter()
@@ -845,10 +1088,14 @@ export class Inspector2 extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateCisScanConfiguration()
+   * - .toUpdateCodeSecurityIntegration()
+   * - .toUpdateCodeSecurityScanConfiguration()
    *
    * Applies to resource types:
    * - Filter
    * - CIS Scan Configuration
+   * - Code Security Scan Configuration
+   * - Code Security Integration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -865,6 +1112,8 @@ export class Inspector2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCisScanConfiguration()
+   * - .toCreateCodeSecurityIntegration()
+   * - .toCreateCodeSecurityScanConfiguration()
    * - .toCreateFilter()
    * - .toTagResource()
    * - .toUntagResource()

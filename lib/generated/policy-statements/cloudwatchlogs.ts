@@ -735,6 +735,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return all the log groups that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogGroups.html
+   */
+  public toListLogGroups() {
+    return this.to('ListLogGroups');
+  }
+
+  /**
    * Grants permission to retrieve all the log groups that are associated with entity
    *
    * Access Level: List
@@ -1233,6 +1244,7 @@ export class Logs extends PolicyStatement {
       'ListIntegrations',
       'ListLogAnomalyDetectors',
       'ListLogDeliveries',
+      'ListLogGroups',
       'ListLogGroupsForEntity',
       'ListLogGroupsForQuery',
       'ListTagsForResource',

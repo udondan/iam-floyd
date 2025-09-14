@@ -40,8 +40,13 @@ export class Aiops extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - cloudwatch:DescribeAlarmHistory
+   * - cloudwatch:DescribeAlarms
+   * - cloudwatch:GetInsightRuleReport
+   * - cloudwatch:GetMetricData
    * - kms:Decrypt
    * - kms:GenerateDataKey
+   * - logs:GetQueryResults
    * - sts:SetContext
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateInvestigationEvent.html
@@ -58,6 +63,7 @@ export class Aiops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - aiops:TagResource
@@ -136,6 +142,17 @@ export class Aiops extends PolicyStatement {
    */
   public toDeleteInvestigationGroupPolicy() {
     return this.to('DeleteInvestigationGroupPolicy');
+  }
+
+  /**
+   * Grants permission to run and retrieve ephemeral investigation results
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetEphemeralInvestigationResults.html
+   */
+  public toGetEphemeralInvestigationResults() {
+    return this.to('GetEphemeralInvestigationResults');
   }
 
   /**
@@ -340,6 +357,17 @@ export class Aiops extends PolicyStatement {
     return this.to('UpdateInvestigationGroup');
   }
 
+  /**
+   * Grants permission to validate the specified investigation group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ValidateInvestigationGroup.html
+   */
+  public toValidateInvestigationGroup() {
+    return this.to('ValidateInvestigationGroup');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateInvestigation',
@@ -354,18 +382,20 @@ export class Aiops extends PolicyStatement {
       'UpdateInvestigationEvent',
       'UpdateInvestigationGroup'
     ],
+    List: [
+      'GetEphemeralInvestigationResults',
+      'ListInvestigationEvents',
+      'ListInvestigationGroups',
+      'ListInvestigations',
+      'ListTagsForResource'
+    ],
     Read: [
       'GetInvestigation',
       'GetInvestigationEvent',
       'GetInvestigationGroup',
       'GetInvestigationGroupPolicy',
-      'GetInvestigationResource'
-    ],
-    List: [
-      'ListInvestigationEvents',
-      'ListInvestigationGroups',
-      'ListInvestigations',
-      'ListTagsForResource'
+      'GetInvestigationResource',
+      'ValidateInvestigationGroup'
     ],
     Tagging: [
       'TagResource',
@@ -411,6 +441,9 @@ export class Aiops extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateInvestigationGroup()
    *
    * Applies to resource types:
    * - investigation-group

@@ -66,7 +66,7 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new agent endpoint
+   * Grants permission to create a new agent runtime endpoint
    *
    * Access Level: Write
    *
@@ -197,7 +197,7 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an agent endpoint
+   * Grants permission to delete an agent runtime endpoint
    *
    * Access Level: Write
    *
@@ -333,7 +333,7 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get details of an agent endpoint
+   * Grants permission to get details of an agent runtime endpoint
    *
    * Access Level: Read
    *
@@ -546,14 +546,14 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to invoke an agent endpoint
+   * Grants permission to invoke an agent runtime endpoint
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
    */
-  public toInvokeAgentRuntimeEndpoint() {
-    return this.to('InvokeAgentRuntimeEndpoint');
+  public toInvokeAgentRuntime() {
+    return this.to('InvokeAgentRuntime');
   }
 
   /**
@@ -579,7 +579,7 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list agent endpoints
+   * Grants permission to list agent runtime endpoints
    *
    * Access Level: List
    *
@@ -861,7 +861,7 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an agent endpoint
+   * Grants permission to update an agent runtime endpoint
    *
    * Access Level: Write
    *
@@ -1011,7 +1011,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetWorkloadAccessToken',
       'GetWorkloadAccessTokenForJWT',
       'GetWorkloadAccessTokenForUserId',
-      'InvokeAgentRuntimeEndpoint',
+      'InvokeAgentRuntime',
       'InvokeCodeInterpreter',
       'StartBrowserSession',
       'StartCodeInterpreterSession',
@@ -1200,6 +1200,34 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public onBrowser(browserId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:aws:browser/${ browserId }`);
+  }
+
+  /**
+   * Adds a resource of type workload-identity-directory to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/workloadIdentityDirectory.html
+   *
+   * @param directoryId - Identifier for the directoryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWorkloadIdentityDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workload-identity-directory/${ directoryId }`);
+  }
+
+  /**
+   * Adds a resource of type token-vault to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/tokenVault.html
+   *
+   * @param tokenVaultId - Identifier for the tokenVaultId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTokenVault(tokenVaultId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }`);
   }
 
   /**

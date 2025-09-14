@@ -26,6 +26,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifConnectorDestinationId()
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateAccountAssociation.html
    */
@@ -48,6 +49,9 @@ export class Iotmanagedintegrations extends PolicyStatement {
    * Grants permission to create a new connector destination
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCloudConnectorId()
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_CreateConnectorDestination.html
    */
@@ -174,6 +178,9 @@ export class Iotmanagedintegrations extends PolicyStatement {
    * Grants permission to delete a cloud connector
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCloudConnectorId()
    *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_DeleteCloudConnector.html
    */
@@ -880,6 +887,9 @@ export class Iotmanagedintegrations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCloudConnectorId()
+   *
    * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_UpdateCloudConnector.html
    */
   public toUpdateCloudConnector() {
@@ -1133,6 +1143,8 @@ export class Iotmanagedintegrations extends PolicyStatement {
   /**
    * Filters access by a tag key and value pair that is allowed in the request
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
    * Applies to actions:
    * - .toCreateAccountAssociation()
    * - .toCreateCredentialLocker()
@@ -1151,6 +1163,8 @@ export class Iotmanagedintegrations extends PolicyStatement {
 
   /**
    * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
    * - .toListTagsForResource()
@@ -1175,6 +1189,8 @@ export class Iotmanagedintegrations extends PolicyStatement {
   /**
    * Filters access by tag keys that are passed in the request
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
    * Applies to actions:
    * - .toCreateAccountAssociation()
    * - .toCreateCredentialLocker()
@@ -1189,5 +1205,37 @@ export class Iotmanagedintegrations extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the CloudConnectorId
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateConnectorDestination()
+   * - .toDeleteCloudConnector()
+   * - .toUpdateCloudConnector()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCloudConnectorId(value: string | string[], operator?: Operator | string) {
+    return this.if(`cloudConnectorId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ConnectorDestinationId
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotmanagedintegrations.html#awsiotmanagedintegrations-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateAccountAssociation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifConnectorDestinationId(value: string | string[], operator?: Operator | string) {
+    return this.if(`connectorDestinationId`, value, operator ?? 'StringLike');
   }
 }

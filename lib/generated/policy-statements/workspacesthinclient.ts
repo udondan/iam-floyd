@@ -30,6 +30,7 @@ export class Thinclient extends PolicyStatement {
    *
    * Dependent actions:
    * - appstream:DescribeStacks
+   * - iam:CreateServiceLinkedRole
    * - workspaces-web:GetPortal
    * - workspaces-web:GetUserSettings
    * - workspaces:DescribeWorkspaceDirectories

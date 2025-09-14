@@ -731,7 +731,7 @@ export class Kms extends PolicyStatement {
   }
 
   /**
-   * Controls permission to view the list of completed key rotations for an AWS KMS key
+   * Controls permission to view the list of key materials for an AWS KMS key
    *
    * Access Level: List
    *

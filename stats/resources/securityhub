@@ -1,5 +1,9 @@
+securityhub:aggregatorv2
 securityhub:automation-rule
+securityhub:automation-rulev2
 securityhub:configuration-policy
+securityhub:connectorv2
 securityhub:finding-aggregator
 securityhub:hub
+securityhub:hubv2
 securityhub:product

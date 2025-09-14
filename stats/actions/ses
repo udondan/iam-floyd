@@ -28,6 +28,8 @@ ses:CreateReceiptRuleSet;Write
 ses:CreateRelay;Write
 ses:CreateRuleSet;Write
 ses:CreateTemplate;Write
+ses:CreateTenant;Write
+ses:CreateTenantResourceAssociation;Write
 ses:CreateTrafficPolicy;Write
 ses:DeleteAddonInstance;Write
 ses:DeleteAddonSubscription;Write
@@ -54,6 +56,8 @@ ses:DeleteRelay;Write
 ses:DeleteRuleSet;Write
 ses:DeleteSuppressedDestination;Write
 ses:DeleteTemplate;Write
+ses:DeleteTenant;Write
+ses:DeleteTenantResourceAssociation;Write
 ses:DeleteTrafficPolicy;Write
 ses:DeleteVerifiedEmailAddress;Write
 ses:DeregisterMemberFromAddressList;Write
@@ -101,11 +105,13 @@ ses:GetMemberOfAddressList;Read
 ses:GetMessageInsights;Read
 ses:GetMultiRegionEndpoint;Read
 ses:GetRelay;Read
+ses:GetReputationEntity;Read
 ses:GetRuleSet;Read
 ses:GetSendQuota;Read
 ses:GetSendStatistics;Read
 ses:GetSuppressedDestination;Read
 ses:GetTemplate;Read
+ses:GetTenant;Read
 ses:GetTrafficPolicy;Read
 ses:ListAddonInstances;List
 ses:ListAddonSubscriptions;List
@@ -134,10 +140,14 @@ ses:ListReceiptFilters;Read
 ses:ListReceiptRuleSets;Read
 ses:ListRecommendations;Read
 ses:ListRelays;List
+ses:ListReputationEntities;List
+ses:ListResourceTenants;List
 ses:ListRuleSets;List
 ses:ListSuppressedDestinations;Read
 ses:ListTagsForResource;Read
 ses:ListTemplates;List
+ses:ListTenantResources;List
+ses:ListTenants;List
 ses:ListTrafficPolicies;List
 ses:ListVerifiedEmailAddresses;Read
 ses:PutAccountDedicatedIpWarmupAttributes;Write
@@ -204,6 +214,8 @@ ses:UpdateEmailTemplate;Write
 ses:UpdateIngressPoint;Write
 ses:UpdateReceiptRule;Write
 ses:UpdateRelay;Write
+ses:UpdateReputationEntityCustomerManagedStatus;Write
+ses:UpdateReputationEntityPolicy;Write
 ses:UpdateRuleSet;Write
 ses:UpdateTemplate;Write
 ses:UpdateTrafficPolicy;Write

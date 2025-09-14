@@ -95,6 +95,8 @@ export class Partnercentral extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateOpportunity.html
@@ -139,8 +141,6 @@ export class Partnercentral extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteResourceSnapshotJob.html
@@ -240,8 +240,6 @@ export class Partnercentral extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetResourceSnapshotJob.html
@@ -452,6 +450,7 @@ export class Partnercentral extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
@@ -476,6 +475,7 @@ export class Partnercentral extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
@@ -499,8 +499,6 @@ export class Partnercentral extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartResourceSnapshotJob.html
@@ -515,8 +513,6 @@ export class Partnercentral extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StopResourceSnapshotJob.html
@@ -701,6 +697,9 @@ export class Partnercentral extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOpportunity(catalog: string, identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/opportunity/${ identifier }`);
@@ -716,6 +715,9 @@ export class Partnercentral extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onResourceSnapshotJob(catalog: string, identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/resource-snapshot-job/${ identifier }`);
@@ -761,6 +763,7 @@ export class Partnercentral extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateOpportunity()
    * - .toCreateResourceSnapshotJob()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
@@ -780,13 +783,15 @@ export class Partnercentral extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .toDeleteResourceSnapshotJob()
-   * - .toGetResourceSnapshotJob()
    * - .toListTagsForResource()
-   * - .toStartResourceSnapshotJob()
-   * - .toStopResourceSnapshotJob()
+   * - .toStartEngagementByAcceptingInvitationTask()
+   * - .toStartEngagementFromOpportunityTask()
    * - .toTagResource()
    * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - Opportunity
+   * - resource-snapshot-job
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -802,14 +807,11 @@ export class Partnercentral extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateOpportunity()
    * - .toCreateResourceSnapshotJob()
-   * - .toDeleteResourceSnapshotJob()
-   * - .toGetResourceSnapshotJob()
    * - .toListTagsForResource()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
-   * - .toStartResourceSnapshotJob()
-   * - .toStopResourceSnapshotJob()
    * - .toTagResource()
    * - .toUntagResource()
    *

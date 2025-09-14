@@ -271,6 +271,7 @@ export class SecurityIr extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
+   * - organizations:DescribeOrganizationalUnit
    *
    * https://docs.aws.amazon.com/security-ir/latest/APIReference/API_UpdateMembership.html
    */
@@ -325,7 +326,7 @@ export class SecurityIr extends PolicyStatement {
   /**
    * Adds a resource of type case to the statement
    *
-   * https://docs.aws.amazon.com/security-ir/latest/userguide/case.html
+   * https://docs.aws.amazon.com/security-ir/latest/userguide/cases.html
    *
    * @param caseId - Identifier for the caseId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

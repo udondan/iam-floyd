@@ -8,4 +8,6 @@ bedrock-agentcore:memory
 bedrock-agentcore:oauth2credentialprovider
 bedrock-agentcore:runtime
 bedrock-agentcore:runtime-endpoint
+bedrock-agentcore:token-vault
 bedrock-agentcore:workload-identity
+bedrock-agentcore:workload-identity-directory

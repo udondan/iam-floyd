@@ -147,6 +147,20 @@ export class Codebuild extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifImageId()
+   * - .ifComputeType()
+   * - .ifVpcConfig()
+   * - .ifVpcConfigVpcId()
+   * - .ifVpcConfigSecurityGroupIds()
+   * - .ifVpcConfigSubnets()
+   * - .ifComputeConfiguration()
+   * - .ifComputeConfigurationDisk()
+   * - .ifComputeConfigurationInstanceType()
+   * - .ifComputeConfigurationMachineType()
+   * - .ifComputeConfigurationMemory()
+   * - .ifComputeConfigurationVCpu()
+   * - .ifEnvironmentType()
+   * - .ifFleetServiceRole()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateFleet.html
    */
@@ -162,6 +176,90 @@ export class Codebuild extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAutoRetryLimit()
+   * - .ifConcurrentBuildLimit()
+   * - .ifArtifacts()
+   * - .ifArtifactsBucketOwnerAccess()
+   * - .ifArtifactsEncryptionDisabled()
+   * - .ifArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifactsArtifactIdentifier()
+   * - .ifSecondaryArtifactsBucketOwnerAccess()
+   * - .ifSecondaryArtifactsEncryptionDisabled()
+   * - .ifSecondaryArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSource()
+   * - .ifSourceBuildStatusConfigTargetUrl()
+   * - .ifSourceBuildStatusConfigContext()
+   * - .ifSourceLocation()
+   * - .ifSourceInsecureSsl()
+   * - .ifSourceBuildspec()
+   * - .ifSourceAuthResource()
+   * - .ifSourceAuthType()
+   * - .ifSecondarySources()
+   * - .ifSecondarySourcesSourceIdentifier()
+   * - .ifSecondarySourcesBuildStatusConfigTargetUrl()
+   * - .ifSecondarySourcesBuildStatusConfigContext()
+   * - .ifSecondarySourcesLocation()
+   * - .ifSecondarySourcesAuthResource()
+   * - .ifSecondarySourcesAuthType()
+   * - .ifSecondarySourcesBuildspec()
+   * - .ifSecondarySourcesInsecureSsl()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifLogsConfig()
+   * - .ifLogsConfigS3Logs()
+   * - .ifLogsConfigS3LogsBucketOwnerAccess()
+   * - .ifLogsConfigS3LogsEncryptionDisabled()
+   * - .ifLogsConfigS3LogsLocation()
+   * - .ifLogsConfigS3LogsStatus()
+   * - .ifFileSystemLocationsIdentifier()
+   * - .ifFileSystemLocationsType()
+   * - .ifFileSystemLocationsLocation()
+   * - .ifFileSystemLocations()
+   * - .ifFileSystemLocations()
+   * - .ifBuildBatchConfig()
+   * - .ifBuildBatchConfigServiceRole()
+   * - .ifBuildBatchConfigRestrictionsComputeTypesAllowed()
+   * - .ifBuildBatchConfigRestrictionsFleetsAllowed()
+   * - .ifVpcConfig()
+   * - .ifVpcConfigSubnets()
+   * - .ifVpcConfigVpcId()
+   * - .ifVpcConfigSecurityGroupIds()
+   * - .ifEnvironment()
+   * - .ifEnvironmentType()
+   * - .ifEnvironmentFleetFleetArn()
+   * - .ifEnvironmentComputeType()
+   * - .ifEnvironmentImage()
+   * - .ifEnvironmentImagePullCredentialsType()
+   * - .ifEnvironmentPrivilegedMode()
+   * - .ifEnvironmentCertificate()
+   * - .ifEnvironmentComputeConfiguration()
+   * - .ifEnvironmentComputeConfigurationDisk()
+   * - .ifEnvironmentComputeConfigurationInstanceType()
+   * - .ifEnvironmentComputeConfigurationMachineType()
+   * - .ifEnvironmentComputeConfigurationMemory()
+   * - .ifEnvironmentComputeConfigurationVCpu()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentEnvironmentVariablesName()
+   * - .ifEnvironmentEnvironmentVariablesValue()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentRegistryCredential()
+   * - .ifEnvironmentRegistryCredentialCredential()
+   * - .ifEnvironmentRegistryCredentialCredentialProvider()
+   * - .ifEncryptionKey()
+   * - .ifCache()
+   * - .ifCacheType()
+   * - .ifCacheLocation()
+   * - .ifCacheModes()
+   * - .ifServiceRole()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html
    */
@@ -188,6 +286,11 @@ export class Codebuild extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifExportConfigS3DestinationBucket()
+   * - .ifExportConfigS3DestinationBucketOwner()
+   * - .ifExportConfigS3DestinationEncryptionKey()
+   * - .ifExportConfigS3DestinationEncryptionDisabled()
+   * - .ifExportConfigS3DestinationPath()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateReportGroup.html
    */
@@ -199,6 +302,13 @@ export class Codebuild extends PolicyStatement {
    * Grants permission to create webhook. For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifBuildType()
+   * - .ifManualCreation()
+   * - .ifScopeConfigurationDomain()
+   * - .ifScopeConfigurationName()
+   * - .ifScopeConfigurationScope()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateWebhook.html
    */
@@ -353,6 +463,13 @@ export class Codebuild extends PolicyStatement {
    * Grants permission to import the source repository credentials for an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifServerType()
+   * - .ifShouldOverwrite()
+   * - .ifToken()
+   * - .ifUsername()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ImportSourceCredentials.html
    */
@@ -618,6 +735,72 @@ export class Codebuild extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAutoRetryLimit()
+   * - .ifArtifacts()
+   * - .ifArtifactsBucketOwnerAccess()
+   * - .ifArtifactsEncryptionDisabled()
+   * - .ifArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifactsArtifactIdentifier()
+   * - .ifSecondaryArtifactsBucketOwnerAccess()
+   * - .ifSecondaryArtifactsEncryptionDisabled()
+   * - .ifSecondaryArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSource()
+   * - .ifSourceBuildStatusConfigTargetUrl()
+   * - .ifSourceBuildStatusConfigContext()
+   * - .ifSourceLocation()
+   * - .ifSourceInsecureSsl()
+   * - .ifSourceBuildspec()
+   * - .ifSourceAuthResource()
+   * - .ifSourceAuthType()
+   * - .ifSecondarySources()
+   * - .ifSecondarySourcesSourceIdentifier()
+   * - .ifSecondarySourcesBuildStatusConfigTargetUrl()
+   * - .ifSecondarySourcesBuildStatusConfigContext()
+   * - .ifSecondarySourcesLocation()
+   * - .ifSecondarySourcesAuthResource()
+   * - .ifSecondarySourcesAuthType()
+   * - .ifSecondarySourcesBuildspec()
+   * - .ifSecondarySourcesInsecureSsl()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifLogsConfig()
+   * - .ifLogsConfigS3Logs()
+   * - .ifLogsConfigS3LogsBucketOwnerAccess()
+   * - .ifLogsConfigS3LogsEncryptionDisabled()
+   * - .ifLogsConfigS3LogsLocation()
+   * - .ifLogsConfigS3LogsStatus()
+   * - .ifEnvironment()
+   * - .ifEnvironmentType()
+   * - .ifEnvironmentFleetFleetArn()
+   * - .ifEnvironmentComputeType()
+   * - .ifEnvironmentImage()
+   * - .ifEnvironmentImagePullCredentialsType()
+   * - .ifEnvironmentPrivilegedMode()
+   * - .ifEnvironmentCertificate()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentEnvironmentVariablesName()
+   * - .ifEnvironmentEnvironmentVariablesValue()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentRegistryCredential()
+   * - .ifEnvironmentRegistryCredentialCredential()
+   * - .ifEnvironmentRegistryCredentialCredentialProvider()
+   * - .ifEncryptionKey()
+   * - .ifCache()
+   * - .ifCacheType()
+   * - .ifCacheLocation()
+   * - .ifCacheModes()
+   * - .ifServiceRole()
+   *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html
    */
   public toStartBuild() {
@@ -628,6 +811,72 @@ export class Codebuild extends PolicyStatement {
    * Grants permission to start running a build batch
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifArtifacts()
+   * - .ifArtifactsBucketOwnerAccess()
+   * - .ifArtifactsEncryptionDisabled()
+   * - .ifArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifactsArtifactIdentifier()
+   * - .ifSecondaryArtifactsBucketOwnerAccess()
+   * - .ifSecondaryArtifactsEncryptionDisabled()
+   * - .ifSecondaryArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSource()
+   * - .ifSourceLocation()
+   * - .ifSourceInsecureSsl()
+   * - .ifSourceBuildspec()
+   * - .ifSourceAuthResource()
+   * - .ifSourceAuthType()
+   * - .ifSecondarySources()
+   * - .ifSecondarySourcesSourceIdentifier()
+   * - .ifSecondarySourcesBuildStatusConfigTargetUrl()
+   * - .ifSecondarySourcesBuildStatusConfigContext()
+   * - .ifSecondarySourcesLocation()
+   * - .ifSecondarySourcesAuthResource()
+   * - .ifSecondarySourcesAuthType()
+   * - .ifSecondarySourcesBuildspec()
+   * - .ifSecondarySourcesInsecureSsl()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifLogsConfig()
+   * - .ifLogsConfigS3Logs()
+   * - .ifLogsConfigS3LogsBucketOwnerAccess()
+   * - .ifLogsConfigS3LogsEncryptionDisabled()
+   * - .ifLogsConfigS3LogsLocation()
+   * - .ifLogsConfigS3LogsStatus()
+   * - .ifBuildBatchConfig()
+   * - .ifBuildBatchConfigServiceRole()
+   * - .ifBuildBatchConfigRestrictionsComputeTypesAllowed()
+   * - .ifBuildBatchConfigRestrictionsFleetsAllowed()
+   * - .ifEnvironment()
+   * - .ifEnvironmentType()
+   * - .ifEnvironmentComputeType()
+   * - .ifEnvironmentImage()
+   * - .ifEnvironmentImagePullCredentialsType()
+   * - .ifEnvironmentPrivilegedMode()
+   * - .ifEnvironmentCertificate()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentEnvironmentVariablesName()
+   * - .ifEnvironmentEnvironmentVariablesValue()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentRegistryCredential()
+   * - .ifEnvironmentRegistryCredentialCredential()
+   * - .ifEnvironmentRegistryCredentialCredentialProvider()
+   * - .ifEncryptionKey()
+   * - .ifCache()
+   * - .ifCacheType()
+   * - .ifCacheLocation()
+   * - .ifCacheModes()
+   * - .ifServiceRole()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuildBatch.html
    */
@@ -709,6 +958,20 @@ export class Codebuild extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifImageId()
+   * - .ifComputeType()
+   * - .ifVpcConfig()
+   * - .ifVpcConfigVpcId()
+   * - .ifVpcConfigSecurityGroupIds()
+   * - .ifVpcConfigSubnets()
+   * - .ifComputeConfiguration()
+   * - .ifComputeConfigurationDisk()
+   * - .ifComputeConfigurationInstanceType()
+   * - .ifComputeConfigurationMachineType()
+   * - .ifComputeConfigurationMemory()
+   * - .ifComputeConfigurationVCpu()
+   * - .ifEnvironmentType()
+   * - .ifFleetServiceRole()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateFleet.html
    */
@@ -724,6 +987,90 @@ export class Codebuild extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAutoRetryLimit()
+   * - .ifConcurrentBuildLimit()
+   * - .ifArtifacts()
+   * - .ifArtifactsBucketOwnerAccess()
+   * - .ifArtifactsEncryptionDisabled()
+   * - .ifArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifactsArtifactIdentifier()
+   * - .ifSecondaryArtifactsBucketOwnerAccess()
+   * - .ifSecondaryArtifactsEncryptionDisabled()
+   * - .ifSecondaryArtifactsLocation()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSecondaryArtifacts()
+   * - .ifSource()
+   * - .ifSourceBuildStatusConfigTargetUrl()
+   * - .ifSourceBuildStatusConfigContext()
+   * - .ifSourceLocation()
+   * - .ifSourceInsecureSsl()
+   * - .ifSourceBuildspec()
+   * - .ifSourceAuthResource()
+   * - .ifSourceAuthType()
+   * - .ifSecondarySources()
+   * - .ifSecondarySourcesSourceIdentifier()
+   * - .ifSecondarySourcesBuildStatusConfigTargetUrl()
+   * - .ifSecondarySourcesBuildStatusConfigContext()
+   * - .ifSecondarySourcesLocation()
+   * - .ifSecondarySourcesAuthResource()
+   * - .ifSecondarySourcesAuthType()
+   * - .ifSecondarySourcesBuildspec()
+   * - .ifSecondarySourcesInsecureSsl()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifSecondarySources()
+   * - .ifLogsConfig()
+   * - .ifLogsConfigS3Logs()
+   * - .ifLogsConfigS3LogsBucketOwnerAccess()
+   * - .ifLogsConfigS3LogsEncryptionDisabled()
+   * - .ifLogsConfigS3LogsLocation()
+   * - .ifLogsConfigS3LogsStatus()
+   * - .ifFileSystemLocationsIdentifier()
+   * - .ifFileSystemLocationsType()
+   * - .ifFileSystemLocationsLocation()
+   * - .ifFileSystemLocations()
+   * - .ifFileSystemLocations()
+   * - .ifBuildBatchConfig()
+   * - .ifBuildBatchConfigServiceRole()
+   * - .ifBuildBatchConfigRestrictionsComputeTypesAllowed()
+   * - .ifBuildBatchConfigRestrictionsFleetsAllowed()
+   * - .ifVpcConfig()
+   * - .ifVpcConfigSubnets()
+   * - .ifVpcConfigVpcId()
+   * - .ifVpcConfigSecurityGroupIds()
+   * - .ifEnvironment()
+   * - .ifEnvironmentType()
+   * - .ifEnvironmentFleetFleetArn()
+   * - .ifEnvironmentComputeType()
+   * - .ifEnvironmentImage()
+   * - .ifEnvironmentImagePullCredentialsType()
+   * - .ifEnvironmentPrivilegedMode()
+   * - .ifEnvironmentCertificate()
+   * - .ifEnvironmentComputeConfiguration()
+   * - .ifEnvironmentComputeConfigurationDisk()
+   * - .ifEnvironmentComputeConfigurationInstanceType()
+   * - .ifEnvironmentComputeConfigurationMachineType()
+   * - .ifEnvironmentComputeConfigurationMemory()
+   * - .ifEnvironmentComputeConfigurationVCpu()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentEnvironmentVariablesName()
+   * - .ifEnvironmentEnvironmentVariablesValue()
+   * - .ifEnvironmentEnvironmentVariables()
+   * - .ifEnvironmentRegistryCredential()
+   * - .ifEnvironmentRegistryCredentialCredential()
+   * - .ifEnvironmentRegistryCredentialCredentialProvider()
+   * - .ifEncryptionKey()
+   * - .ifCache()
+   * - .ifCacheType()
+   * - .ifCacheLocation()
+   * - .ifCacheModes()
+   * - .ifServiceRole()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html
    */
@@ -739,6 +1086,7 @@ export class Codebuild extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifProjectVisibility()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProjectVisibility.html
    */
@@ -765,6 +1113,11 @@ export class Codebuild extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifExportConfigS3DestinationBucket()
+   * - .ifExportConfigS3DestinationBucketOwner()
+   * - .ifExportConfigS3DestinationEncryptionKey()
+   * - .ifExportConfigS3DestinationEncryptionDisabled()
+   * - .ifExportConfigS3DestinationPath()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateReportGroup.html
    */
@@ -776,6 +1129,13 @@ export class Codebuild extends PolicyStatement {
    * Grants permission to update the webhook associated with an AWS CodeBuild build project
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifBuildType()
+   * - .ifManualCreation()
+   * - .ifScopeConfigurationDomain()
+   * - .ifScopeConfigurationName()
+   * - .ifScopeConfigurationScope()
    *
    * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateWebhook.html
    */
@@ -1028,6 +1388,108 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifArtifacts(value?: boolean) {
+    return this.if(`artifacts`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifArtifactsBucketOwnerAccess(value: string | string[], operator?: Operator | string) {
+    return this.if(`artifacts.bucketOwnerAccess`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifArtifactsEncryptionDisabled(value?: boolean) {
+    return this.if(`artifacts.encryptionDisabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifArtifactsLocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`artifacts.location`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toImportSourceCredentials()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAuthType(value: string | string[], operator?: Operator | string) {
+    return this.if(`authType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifAutoRetryLimit(value: number | number[], operator?: Operator | string) {
+    return this.if(`autoRetryLimit`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
    * Filters access by the ARN of the AWS CodeBuild build from which the request originated
    *
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-permissions-reference.html
@@ -1040,6 +1502,995 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifBuildBatchConfig(value?: boolean) {
+    return this.if(`buildBatchConfig`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBuildBatchConfigRestrictionsComputeTypesAllowed(value: string | string[], operator?: Operator | string) {
+    return this.if(`buildBatchConfig.restrictions.computeTypesAllowed`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBuildBatchConfigRestrictionsFleetsAllowed(value: string | string[], operator?: Operator | string) {
+    return this.if(`buildBatchConfig.restrictions.fleetsAllowed`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBuildBatchConfigServiceRole(value: string | string[], operator?: Operator | string) {
+    return this.if(`buildBatchConfig.serviceRole`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateWebhook()
+   * - .toUpdateWebhook()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBuildType(value: string | string[], operator?: Operator | string) {
+    return this.if(`buildType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifCache(value?: boolean) {
+    return this.if(`cache`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCacheLocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`cache.location`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCacheModes(value: string | string[], operator?: Operator | string) {
+    return this.if(`cache.modes`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCacheType(value: string | string[], operator?: Operator | string) {
+    return this.if(`cache.type`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifComputeConfiguration(value?: boolean) {
+    return this.if(`computeConfiguration`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifComputeConfigurationDisk(value: number | number[], operator?: Operator | string) {
+    return this.if(`computeConfiguration.disk`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifComputeConfigurationInstanceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`computeConfiguration.instanceType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifComputeConfigurationMachineType(value: string | string[], operator?: Operator | string) {
+    return this.if(`computeConfiguration.machineType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifComputeConfigurationMemory(value: number | number[], operator?: Operator | string) {
+    return this.if(`computeConfiguration.memory`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifComputeConfigurationVCpu(value: number | number[], operator?: Operator | string) {
+    return this.if(`computeConfiguration.vCpu`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifComputeType(value: string | string[], operator?: Operator | string) {
+    return this.if(`computeType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifConcurrentBuildLimit(value: number | number[], operator?: Operator | string) {
+    return this.if(`concurrentBuildLimit`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEncryptionKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`encryptionKey`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnvironment(value?: boolean) {
+    return this.if(`environment`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentCertificate(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.certificate`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnvironmentComputeConfiguration(value?: boolean) {
+    return this.if(`environment.computeConfiguration`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifEnvironmentComputeConfigurationDisk(value: number | number[], operator?: Operator | string) {
+    return this.if(`environment.computeConfiguration.disk`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentComputeConfigurationInstanceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.computeConfiguration.instanceType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentComputeConfigurationMachineType(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.computeConfiguration.machineType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifEnvironmentComputeConfigurationMemory(value: number | number[], operator?: Operator | string) {
+    return this.if(`environment.computeConfiguration.memory`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifEnvironmentComputeConfigurationVCpu(value: number | number[], operator?: Operator | string) {
+    return this.if(`environment.computeConfiguration.vCpu`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentComputeType(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.computeType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnvironmentEnvironmentVariables(value?: boolean) {
+    return this.if(`environment.environmentVariables`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentEnvironmentVariablesName(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.environmentVariables.name`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentEnvironmentVariablesValue(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.environmentVariables.value`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param namevalue The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentEnvironmentVariablesNamevalue(namevalue: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.environmentVariables/${ namevalue }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifEnvironmentFleetFleetArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.fleet.fleetArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentImage(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.image`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentImagePullCredentialsType(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.imagePullCredentialsType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnvironmentPrivilegedMode(value?: boolean) {
+    return this.if(`environment.privilegedMode`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEnvironmentRegistryCredential(value?: boolean) {
+    return this.if(`environment.registryCredential`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentRegistryCredentialCredential(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.registryCredential.credential`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentRegistryCredentialCredentialProvider(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.registryCredential.credentialProvider`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentType(value: string | string[], operator?: Operator | string) {
+    return this.if(`environment.type`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFleetEnvironmentType(value: string | string[], operator?: Operator | string) {
+    return this.if(`environmentType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateReportGroup()
+   * - .toUpdateReportGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExportConfigS3DestinationBucket(value: string | string[], operator?: Operator | string) {
+    return this.if(`exportConfig.s3Destination.bucket`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateReportGroup()
+   * - .toUpdateReportGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExportConfigS3DestinationBucketOwner(value: string | string[], operator?: Operator | string) {
+    return this.if(`exportConfig.s3Destination.bucketOwner`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateReportGroup()
+   * - .toUpdateReportGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifExportConfigS3DestinationEncryptionDisabled(value?: boolean) {
+    return this.if(`exportConfig.s3Destination.encryptionDisabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateReportGroup()
+   * - .toUpdateReportGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExportConfigS3DestinationEncryptionKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`exportConfig.s3Destination.encryptionKey`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateReportGroup()
+   * - .toUpdateReportGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExportConfigS3DestinationPath(value: string | string[], operator?: Operator | string) {
+    return this.if(`exportConfig.s3Destination.path`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFileSystemLocationsIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`fileSystemLocations.identifier`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFileSystemLocationsLocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`fileSystemLocations.location`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFileSystemLocationsType(value: string | string[], operator?: Operator | string) {
+    return this.if(`fileSystemLocations.type`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param identifierlocation The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFileSystemLocationsIdentifierlocation(identifierlocation: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`fileSystemLocations/${ identifierlocation }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toUpdateProject()
+   *
+   * @param identifiertype The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFileSystemLocationsIdentifiertype(identifiertype: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`fileSystemLocations/${ identifiertype }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFleetServiceRole(value: string | string[], operator?: Operator | string) {
+    return this.if(`fleetServiceRole`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toUpdateFleet()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifImageId(value: string | string[], operator?: Operator | string) {
+    return this.if(`imageId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifLogsConfig(value?: boolean) {
+    return this.if(`logsConfig`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifLogsConfigS3Logs(value?: boolean) {
+    return this.if(`logsConfig.s3Logs`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLogsConfigS3LogsBucketOwnerAccess(value: string | string[], operator?: Operator | string) {
+    return this.if(`logsConfig.s3Logs.bucketOwnerAccess`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifLogsConfigS3LogsEncryptionDisabled(value?: boolean) {
+    return this.if(`logsConfig.s3Logs.encryptionDisabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLogsConfigS3LogsLocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`logsConfig.s3Logs.location`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLogsConfigS3LogsStatus(value: string | string[], operator?: Operator | string) {
+    return this.if(`logsConfig.s3Logs.status`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateWebhook()
+   * - .toUpdateWebhook()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifManualCreation(value?: boolean) {
+    return this.if(`manualCreation`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the ARN of the AWS CodeBuild project from which the request originated
    *
    * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-permissions-reference.html
@@ -1049,5 +2500,789 @@ export class Codebuild extends PolicyStatement {
    */
   public ifProjectArn(value: string | string[], operator?: Operator | string) {
     return this.if(`projectArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toUpdateProjectVisibility()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProjectVisibility(value: string | string[], operator?: Operator | string) {
+    return this.if(`projectVisibility`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateWebhook()
+   * - .toUpdateWebhook()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifScopeConfigurationDomain(value: string | string[], operator?: Operator | string) {
+    return this.if(`scopeConfiguration.domain`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateWebhook()
+   * - .toUpdateWebhook()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifScopeConfigurationName(value: string | string[], operator?: Operator | string) {
+    return this.if(`scopeConfiguration.name`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateWebhook()
+   * - .toUpdateWebhook()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifScopeConfigurationScope(value: string | string[], operator?: Operator | string) {
+    return this.if(`scopeConfiguration.scope`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSecondaryArtifacts(value?: boolean) {
+    return this.if(`secondaryArtifacts`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondaryArtifactsArtifactIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondaryArtifacts.artifactIdentifier`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondaryArtifactsBucketOwnerAccess(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondaryArtifacts.bucketOwnerAccess`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSecondaryArtifactsEncryptionDisabled(value?: boolean) {
+    return this.if(`secondaryArtifacts.encryptionDisabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondaryArtifactsLocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondaryArtifacts.location`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param artifactIdentifierbucketOwnerAccess The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondaryArtifactsArtifactIdentifierbucketOwnerAccess(artifactIdentifierbucketOwnerAccess: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`secondaryArtifacts/${ artifactIdentifierbucketOwnerAccess }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param artifactIdentifierencryptionDisabled The tag key to check
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSecondaryArtifactsArtifactIdentifierencryptionDisabled(artifactIdentifierencryptionDisabled: string, value?: boolean) {
+    return this.if(`secondaryArtifacts/${ artifactIdentifierencryptionDisabled }`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param artifactIdentifierlocation The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondaryArtifactsArtifactIdentifierlocation(artifactIdentifierlocation: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`secondaryArtifacts/${ artifactIdentifierlocation }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSecondarySources(value?: boolean) {
+    return this.if(`secondarySources`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesAuthResource(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources.auth.resource`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesAuthType(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources.auth.type`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesBuildStatusConfigContext(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources.buildStatusConfig.context`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesBuildStatusConfigTargetUrl(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources.buildStatusConfig.targetUrl`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSecondarySourcesBuildspec(value?: boolean) {
+    return this.if(`secondarySources.buildspec`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSecondarySourcesInsecureSsl(value?: boolean) {
+    return this.if(`secondarySources.insecureSsl`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesLocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources.location`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesSourceIdentifier(value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources.sourceIdentifier`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param sourceIdentifierauthresource The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesSourceIdentifierauthresource(sourceIdentifierauthresource: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources/${ sourceIdentifierauthresource }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param sourceIdentifierauthtype The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesSourceIdentifierauthtype(sourceIdentifierauthtype: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources/${ sourceIdentifierauthtype }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param sourceIdentifierbuildStatusConfigcontext The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesSourceIdentifierbuildStatusConfigcontext(sourceIdentifierbuildStatusConfigcontext: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources/${ sourceIdentifierbuildStatusConfigcontext }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param sourceIdentifierbuildStatusConfigtargetUrl The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesSourceIdentifierbuildStatusConfigtargetUrl(sourceIdentifierbuildStatusConfigtargetUrl: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources/${ sourceIdentifierbuildStatusConfigtargetUrl }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param sourceIdentifierbuildspec The tag key to check
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSecondarySourcesSourceIdentifierbuildspec(sourceIdentifierbuildspec: string, value?: boolean) {
+    return this.if(`secondarySources/${ sourceIdentifierbuildspec }`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param sourceIdentifierinsecureSsl The tag key to check
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSecondarySourcesSourceIdentifierinsecureSsl(sourceIdentifierinsecureSsl: string, value?: boolean) {
+    return this.if(`secondarySources/${ sourceIdentifierinsecureSsl }`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param sourceIdentifierlocation The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondarySourcesSourceIdentifierlocation(sourceIdentifierlocation: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`secondarySources/${ sourceIdentifierlocation }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toImportSourceCredentials()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServerType(value: string | string[], operator?: Operator | string) {
+    return this.if(`serverType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServiceRole(value: string | string[], operator?: Operator | string) {
+    return this.if(`serviceRole`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toImportSourceCredentials()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifShouldOverwrite(value?: boolean) {
+    return this.if(`shouldOverwrite`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSource(value?: boolean) {
+    return this.if(`source`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceAuthResource(value: string | string[], operator?: Operator | string) {
+    return this.if(`source.auth.resource`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceAuthType(value: string | string[], operator?: Operator | string) {
+    return this.if(`source.auth.type`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceBuildStatusConfigContext(value: string | string[], operator?: Operator | string) {
+    return this.if(`source.buildStatusConfig.context`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceBuildStatusConfigTargetUrl(value: string | string[], operator?: Operator | string) {
+    return this.if(`source.buildStatusConfig.targetUrl`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSourceBuildspec(value?: boolean) {
+    return this.if(`source.buildspec`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSourceInsecureSsl(value?: boolean) {
+    return this.if(`source.insecureSsl`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toStartBuild()
+   * - .toStartBuildBatch()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSourceLocation(value: string | string[], operator?: Operator | string) {
+    return this.if(`source.location`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toImportSourceCredentials()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifToken(value: string | string[], operator?: Operator | string) {
+    return this.if(`token`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toImportSourceCredentials()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUsername(value: string | string[], operator?: Operator | string) {
+    return this.if(`username`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toCreateProject()
+   * - .toUpdateFleet()
+   * - .toUpdateProject()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifVpcConfig(value?: boolean) {
+    return this.if(`vpcConfig`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toCreateProject()
+   * - .toUpdateFleet()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcConfigSecurityGroupIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`vpcConfig.securityGroupIds`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toCreateProject()
+   * - .toUpdateFleet()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcConfigSubnets(value: string | string[], operator?: Operator | string) {
+    return this.if(`vpcConfig.subnets`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the API corresponding argument value
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateFleet()
+   * - .toCreateProject()
+   * - .toUpdateFleet()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcConfigVpcId(value: string | string[], operator?: Operator | string) {
+    return this.if(`vpcConfig.vpcId`, value, operator ?? 'StringLike');
   }
 }

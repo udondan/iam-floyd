@@ -3,5 +3,6 @@ profile:domains
 profile:event-streams
 profile:event-triggers
 profile:integrations
+profile:layouts
 profile:object-types
 profile:segment-definitions

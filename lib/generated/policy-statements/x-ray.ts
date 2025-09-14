@@ -98,6 +98,9 @@ export class Xray extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifResourcePolicyName()
+   *
    * https://docs.aws.amazon.com/xray/latest/api/API_DeleteResourcePolicy.html
    */
   public toDeleteResourcePolicy() {
@@ -375,6 +378,9 @@ export class Xray extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifResourcePolicyName()
+   *
    * https://docs.aws.amazon.com/xray/latest/api/API_PutResourcePolicy.html
    */
   public toPutResourcePolicy() {
@@ -386,7 +392,7 @@ export class Xray extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/xray/latest/api/API_PutSpans.html
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OTLPEndpoint.html
    */
   public toPutSpans() {
     return this.to('PutSpans');
@@ -506,6 +512,9 @@ export class Xray extends PolicyStatement {
    * Grants permission to modify the destination of data sent to PutTraceSegments and OpenTelemetry API
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTraceSegmentDestination()
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_UpdateTraceSegmentDestination.html
    */
@@ -662,5 +671,36 @@ export class Xray extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by PolicyName in the request
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsx-ray.html#awsx-ray-actions-as-permissions
+   *
+   * Applies to actions:
+   * - .toDeleteResourcePolicy()
+   * - .toPutResourcePolicy()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourcePolicyName(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourcePolicyName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by TraceSegmentDestination type in the request
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsx-ray.html#awsx-ray-actions-as-permissions
+   *
+   * Applies to actions:
+   * - .toUpdateTraceSegmentDestination()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTraceSegmentDestination(value: string | string[], operator?: Operator | string) {
+    return this.if(`TraceSegmentDestination`, value, operator ?? 'StringLike');
   }
 }

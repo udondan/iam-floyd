@@ -243,6 +243,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a summary of CloudWatch LogInsights query results in natural language using generative AI
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Insights-Query-Results-Summary.html
+   */
+  public toGenerateQueryResultsSummary() {
+    return this.to('GenerateQueryResultsSummary');
+  }
+
+  /**
    * Grants permission to display the details of the CloudWatch dashboard you specify
    *
    * Access Level: Read
@@ -665,6 +676,7 @@ export class Cloudwatch extends PolicyStatement {
       'DescribeAnomalyDetectors',
       'DescribeInsightRules',
       'GenerateQuery',
+      'GenerateQueryResultsSummary',
       'GetDashboard',
       'GetInsightRuleReport',
       'GetMetricData',

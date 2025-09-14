@@ -505,7 +505,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to create an AWS IoT policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -520,7 +520,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to create a new version of the specified AWS IoT policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicyVersion.html
    */
@@ -798,6 +798,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disconnect the specified connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
+   */
+  public toDeleteConnection() {
+    return this.to('DeleteConnection');
+  }
+
+  /**
    * Grants permission to deletes the specified custom metric from your AWS account
    *
    * Access Level: Write
@@ -932,7 +943,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to delete the specified policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html
    */
@@ -943,7 +954,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to Delete the specified version of the specified policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicyVersion.html
    */
@@ -1279,6 +1290,17 @@ export class Iot extends PolicyStatement {
    */
   public toDescribeDomainConfiguration() {
     return this.to('DescribeDomainConfiguration');
+  }
+
+  /**
+   * Grants permission to describe the encryption configuration for the account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeEncryptionConfiguration.html
+   */
+  public toDescribeEncryptionConfiguration() {
+    return this.to('DescribeEncryptionConfiguration');
   }
 
   /**
@@ -2651,6 +2673,7 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -3111,6 +3134,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the encryption configuration for the account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateEncryptionConfiguration.html
+   */
+  public toUpdateEncryptionConfiguration() {
+    return this.to('UpdateEncryptionConfiguration');
+  }
+
+  /**
    * Grants permission to update event configurations
    *
    * Access Level: Write
@@ -3383,8 +3417,6 @@ export class Iot extends PolicyStatement {
       'CreateOTAUpdate',
       'CreatePackage',
       'CreatePackageVersion',
-      'CreatePolicy',
-      'CreatePolicyVersion',
       'CreateProvisioningClaim',
       'CreateProvisioningTemplate',
       'CreateProvisioningTemplateVersion',
@@ -3406,6 +3438,7 @@ export class Iot extends PolicyStatement {
       'DeleteCertificateProvider',
       'DeleteCommand',
       'DeleteCommandExecution',
+      'DeleteConnection',
       'DeleteCustomMetric',
       'DeleteDimension',
       'DeleteDomainConfiguration',
@@ -3418,8 +3451,6 @@ export class Iot extends PolicyStatement {
       'DeleteOTAUpdate',
       'DeletePackage',
       'DeletePackageVersion',
-      'DeletePolicy',
-      'DeletePolicyVersion',
       'DeleteProvisioningTemplate',
       'DeleteProvisioningTemplateVersion',
       'DeleteRegistrationCode',
@@ -3477,6 +3508,7 @@ export class Iot extends PolicyStatement {
       'UpdateDimension',
       'UpdateDomainConfiguration',
       'UpdateDynamicThingGroup',
+      'UpdateEncryptionConfiguration',
       'UpdateEventConfigurations',
       'UpdateFleetMetric',
       'UpdateIndexingConfiguration',
@@ -3500,6 +3532,10 @@ export class Iot extends PolicyStatement {
     'Permissions management': [
       'AttachPolicy',
       'AttachPrincipalPolicy',
+      'CreatePolicy',
+      'CreatePolicyVersion',
+      'DeletePolicy',
+      'DeletePolicyVersion',
       'DetachPolicy',
       'DetachPrincipalPolicy',
       'SetDefaultAuthorizer',
@@ -3521,6 +3557,7 @@ export class Iot extends PolicyStatement {
       'DescribeDetectMitigationActionsTask',
       'DescribeDimension',
       'DescribeDomainConfiguration',
+      'DescribeEncryptionConfiguration',
       'DescribeEndpoint',
       'DescribeEventConfigurations',
       'DescribeFleetMetric',
@@ -4235,6 +4272,9 @@ export class Iot extends PolicyStatement {
    * Filters access by a tag key component of a tag associated to the IoT resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to actions:
+   * - .toRegisterCACertificate()
    *
    * Applies to resource types:
    * - fleetmetric

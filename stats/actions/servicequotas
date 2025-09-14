@@ -1,4 +1,5 @@
 servicequotas:AssociateServiceQuotaTemplate;Write
+servicequotas:CreateSupportCase;Write
 servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate;Write
 servicequotas:DisassociateServiceQuotaTemplate;Write
 servicequotas:GetAWSDefaultServiceQuota;Read

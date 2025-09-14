@@ -91,9 +91,23 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the RAM access control policy for a namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a specified service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceCreatedByAccount()
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteService.html
    */
@@ -105,6 +119,9 @@ export class Servicediscovery extends PolicyStatement {
    * Grants permission to delete specified attributes from a service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceCreatedByAccount()
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteServiceAttributes.html
    */
@@ -119,6 +136,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifServiceArn()
+   * - .ifServiceCreatedByAccount()
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html
    */
@@ -207,6 +225,17 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read the RAM access control policy for a namespace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to get the settings for a specified service
    *
    * Access Level: Read
@@ -287,12 +316,24 @@ export class Servicediscovery extends PolicyStatement {
   }
 
   /**
+   * Grants permission to define the RAM access control policy for a namespace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to register an instance based on the settings in a specified service
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifServiceArn()
+   * - .ifServiceCreatedByAccount()
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html
    */
@@ -347,6 +388,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifServiceArn()
+   * - .ifServiceCreatedByAccount()
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html
    */
@@ -381,6 +423,9 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceCreatedByAccount()
+   *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateService.html
    */
   public toUpdateService() {
@@ -391,6 +436,9 @@ export class Servicediscovery extends PolicyStatement {
    * Grants permission to update the attributes in a specified service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceCreatedByAccount()
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateServiceAttributes.html
    */
@@ -405,9 +453,11 @@ export class Servicediscovery extends PolicyStatement {
       'CreatePublicDnsNamespace',
       'CreateService',
       'DeleteNamespace',
+      'DeleteResourcePolicy',
       'DeleteService',
       'DeleteServiceAttributes',
       'DeregisterInstance',
+      'PutResourcePolicy',
       'RegisterInstance',
       'UpdateHttpNamespace',
       'UpdateInstanceCustomHealthStatus',
@@ -423,6 +473,7 @@ export class Servicediscovery extends PolicyStatement {
       'GetInstancesHealthStatus',
       'GetNamespace',
       'GetOperation',
+      'GetResourcePolicy',
       'GetService',
       'GetServiceAttributes',
       'ListInstances',
@@ -579,6 +630,27 @@ export class Servicediscovery extends PolicyStatement {
    */
   public ifServiceArn(value: string | string[], operator?: Operator | string) {
     return this.if(`ServiceArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by specifying the account id of the related service creator
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
+   *
+   * Applies to actions:
+   * - .toDeleteService()
+   * - .toDeleteServiceAttributes()
+   * - .toDeregisterInstance()
+   * - .toRegisterInstance()
+   * - .toUpdateInstanceCustomHealthStatus()
+   * - .toUpdateService()
+   * - .toUpdateServiceAttributes()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServiceCreatedByAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`ServiceCreatedByAccount`, value, operator ?? 'StringLike');
   }
 
   /**

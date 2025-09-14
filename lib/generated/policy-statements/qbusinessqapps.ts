@@ -127,23 +127,6 @@ export class Qapps extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a presigned URL for uploading a file to a Q App or Q App Session in the Q Business application environment
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifUserIsAppOwner()
-   * - .ifAppIsPublished()
-   * - .ifUserIsSessionModerator()
-   * - .ifSessionIsShared()
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/api-reference/API_qapps_CreatePresignedUrl.html
-   */
-  public toCreatePresignedUrl() {
-    return this.to('CreatePresignedUrl');
-  }
-
-  /**
    * Grants permission to create Q App in the Q Business application environment
    *
    * Access Level: Write
@@ -328,38 +311,6 @@ export class Qapps extends PolicyStatement {
    */
   public toImportDocument() {
     return this.to('ImportDocument');
-  }
-
-  /**
-   * Grants permission to import a document to Q App in the Q Business application environment
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifUserIsAppOwner()
-   * - .ifAppIsPublished()
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
-   */
-  public toImportDocumentToQApp() {
-    return this.to('ImportDocumentToQApp');
-  }
-
-  /**
-   * Grants permission to import a document to Q App session in the Q Business application environment
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifUserIsAppOwner()
-   * - .ifAppIsPublished()
-   * - .ifUserIsSessionModerator()
-   * - .ifSessionIsShared()
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/purpose-built-qapps.html
-   */
-  public toImportDocumentToQAppSession() {
-    return this.to('ImportDocumentToQAppSession');
   }
 
   /**
@@ -610,7 +561,6 @@ export class Qapps extends PolicyStatement {
       'CopyQApp',
       'CreateLibraryItem',
       'CreateLibraryItemReview',
-      'CreatePresignedUrl',
       'CreateQApp',
       'CreateSubscriptionToken',
       'DeleteLibraryItem',
@@ -619,8 +569,6 @@ export class Qapps extends PolicyStatement {
       'DisassociateQAppFromUser',
       'ExportQAppSessionData',
       'ImportDocument',
-      'ImportDocumentToQApp',
-      'ImportDocumentToQAppSession',
       'PredictProblemStatementFromConversation',
       'PredictQApp',
       'PredictQAppFromProblemStatement',
@@ -768,7 +716,6 @@ export class Qapps extends PolicyStatement {
    * - .toCopyQApp()
    * - .toCreateLibraryItem()
    * - .toCreateLibraryItemReview()
-   * - .toCreatePresignedUrl()
    * - .toDeleteLibraryItem()
    * - .toDeleteQApp()
    * - .toDescribeQAppPermissions()
@@ -778,8 +725,6 @@ export class Qapps extends PolicyStatement {
    * - .toGetQApp()
    * - .toGetQAppSession()
    * - .toImportDocument()
-   * - .toImportDocumentToQApp()
-   * - .toImportDocumentToQAppSession()
    * - .toStartQAppSession()
    * - .toStopQAppSession()
    * - .toUpdateLibraryItem()
@@ -801,10 +746,8 @@ export class Qapps extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html
    *
    * Applies to actions:
-   * - .toCreatePresignedUrl()
    * - .toGetQAppSession()
    * - .toImportDocument()
-   * - .toImportDocumentToQAppSession()
    * - .toStopQAppSession()
    * - .toUpdateQAppSession()
    *
@@ -826,7 +769,6 @@ export class Qapps extends PolicyStatement {
    * - .toCopyQApp()
    * - .toCreateLibraryItem()
    * - .toCreateLibraryItemReview()
-   * - .toCreatePresignedUrl()
    * - .toDeleteLibraryItem()
    * - .toDeleteQApp()
    * - .toDescribeQAppPermissions()
@@ -836,8 +778,6 @@ export class Qapps extends PolicyStatement {
    * - .toGetQApp()
    * - .toGetQAppSession()
    * - .toImportDocument()
-   * - .toImportDocumentToQApp()
-   * - .toImportDocumentToQAppSession()
    * - .toStartQAppSession()
    * - .toStopQAppSession()
    * - .toUpdateLibraryItem()
@@ -858,10 +798,8 @@ export class Qapps extends PolicyStatement {
    * https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/security-iam.html
    *
    * Applies to actions:
-   * - .toCreatePresignedUrl()
    * - .toGetQAppSession()
    * - .toImportDocument()
-   * - .toImportDocumentToQAppSession()
    * - .toStopQAppSession()
    * - .toUpdateQAppSession()
    *

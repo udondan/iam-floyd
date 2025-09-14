@@ -225,6 +225,17 @@ export class Codepipeline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the deployment details for deploy action executions that have occurred in a pipeline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListDeployActionExecutionTargets.html
+   */
+  public toListDeployActionExecutionTargets() {
+    return this.to('ListDeployActionExecutionTargets');
+  }
+
+  /**
    * Grants permission to list a summary of the most recent executions for a pipeline
    *
    * Access Level: List
@@ -549,6 +560,7 @@ export class Codepipeline extends PolicyStatement {
       'GetThirdPartyJobDetails',
       'ListActionExecutions',
       'ListActionTypes',
+      'ListDeployActionExecutionTargets',
       'ListRuleExecutions',
       'ListRuleTypes',
       'ListTagsForResource'

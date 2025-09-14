@@ -1,3 +1,4 @@
+arc-zonal-shift:CancelPracticeRun;Write
 arc-zonal-shift:CancelZonalShift;Write
 arc-zonal-shift:CreatePracticeRunConfiguration;Write
 arc-zonal-shift:DeletePracticeRunConfiguration;Write
@@ -6,6 +7,7 @@ arc-zonal-shift:GetManagedResource;Read
 arc-zonal-shift:ListAutoshifts;List
 arc-zonal-shift:ListManagedResources;List
 arc-zonal-shift:ListZonalShifts;List
+arc-zonal-shift:StartPracticeRun;Write
 arc-zonal-shift:StartZonalShift;Write
 arc-zonal-shift:UpdateAutoshiftObserverNotificationStatus;Write
 arc-zonal-shift:UpdatePracticeRunConfiguration;Write

@@ -11,11 +11,13 @@ ds:CreateAlias;Write
 ds:CreateComputer;Write
 ds:CreateConditionalForwarder;Write
 ds:CreateDirectory;Write
+ds:CreateHybridAD;Write
 ds:CreateIdentityPoolDirectory;Write
 ds:CreateLogSubscription;Write
 ds:CreateMicrosoftAD;Write
 ds:CreateSnapshot;Write
 ds:CreateTrust;Write
+ds:DeleteADAssessment;Write
 ds:DeleteConditionalForwarder;Write
 ds:DeleteDirectory;Write
 ds:DeleteLogSubscription;Write
@@ -23,6 +25,8 @@ ds:DeleteSnapshot;Write
 ds:DeleteTrust;Write
 ds:DeregisterCertificate;Write
 ds:DeregisterEventTopic;Write
+ds:DescribeADAssessment;Read
+ds:DescribeCAEnrollmentPolicy;Read
 ds:DescribeCertificate;Read
 ds:DescribeClientAuthenticationSettings;Read
 ds:DescribeConditionalForwarders;Read
@@ -30,6 +34,7 @@ ds:DescribeDirectories;List
 ds:DescribeDirectoryDataAccess;Read
 ds:DescribeDomainControllers;Read
 ds:DescribeEventTopics;Read
+ds:DescribeHybridADUpdate;Read
 ds:DescribeLDAPSSettings;Read
 ds:DescribeRegions;Read
 ds:DescribeSettings;Read
@@ -37,12 +42,14 @@ ds:DescribeSharedDirectories;Read
 ds:DescribeSnapshots;Read
 ds:DescribeTrusts;Read
 ds:DescribeUpdateDirectory;Read
+ds:DisableCAEnrollmentPolicy;Write
 ds:DisableClientAuthentication;Write
 ds:DisableDirectoryDataAccess;Write
 ds:DisableLDAPS;Write
 ds:DisableRadius;Write
 ds:DisableRoleAccess;Write
 ds:DisableSso;Write
+ds:EnableCAEnrollmentPolicy;Write
 ds:EnableClientAuthentication;Write
 ds:EnableDirectoryDataAccess;Write
 ds:EnableLDAPS;Write
@@ -52,6 +59,7 @@ ds:EnableSso;Write
 ds:GetAuthorizedApplicationDetails;Read
 ds:GetDirectoryLimits;Read
 ds:GetSnapshotLimits;Read
+ds:ListADAssessments;List
 ds:ListAuthorizedApplications;Read
 ds:ListCertificates;List
 ds:ListIpRoutes;Read
@@ -67,6 +75,7 @@ ds:RemoveTagsFromResource;Tagging
 ds:ResetUserPassword;Write
 ds:RestoreFromSnapshot;Write
 ds:ShareDirectory;Write
+ds:StartADAssessment;Write
 ds:StartSchemaExtension;Write
 ds:UnauthorizeApplication;Write
 ds:UnshareDirectory;Write
@@ -74,6 +83,7 @@ ds:UpdateAuthorizedApplication;Write
 ds:UpdateConditionalForwarder;Write
 ds:UpdateDirectory;Write
 ds:UpdateDirectorySetup;Write
+ds:UpdateHybridAD;Write
 ds:UpdateNumberOfDomainControllers;Write
 ds:UpdateRadius;Write
 ds:UpdateSettings;Write

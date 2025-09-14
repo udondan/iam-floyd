@@ -1,3 +1,4 @@
+events:alias
 events:api-destination
 events:archive
 events:connection
@@ -5,6 +6,7 @@ events:create-snapshot
 events:endpoint
 events:event-bus
 events:event-source
+events:key
 events:reboot-instance
 events:replay
 events:rule-on-custom-event-bus

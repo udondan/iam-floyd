@@ -224,6 +224,7 @@ export { BackupSearch } from './policy-statements/backupsearch';
 export { BackupStorage } from './policy-statements/backupstorage';
 export { Batch } from './policy-statements/batch';
 export { Billing } from './policy-statements/billing';
+export { BcmDashboards } from './policy-statements/billingandcostmanagementdashboards';
 export { BcmDataExports } from './policy-statements/billingandcostmanagementdataexports';
 export { BcmPricingCalculator } from './policy-statements/billingandcostmanagementpricingcalculator';
 export { BcmRecommendedActions } from './policy-statements/billingandcostmanagementrecommendedactions';

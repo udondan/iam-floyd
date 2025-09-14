@@ -145,9 +145,6 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCluster.html
    */
   public toDeleteCluster() {
@@ -204,9 +201,6 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html
    */
   public toDeregisterContainerInstance() {
@@ -242,9 +236,6 @@ export class Ecs extends PolicyStatement {
    * Grants permission to describes one or more of your clusters
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeClusters.html
    */
@@ -405,9 +396,6 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html
    */
   public toListAttributes() {
@@ -429,9 +417,6 @@ export class Ecs extends PolicyStatement {
    * Grants permission to get a list of container instances in a specified cluster
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html
    */
@@ -592,7 +577,6 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
    * - .ifCapacityProvider()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html
@@ -608,7 +592,6 @@ export class Ecs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterContainerInstance.html
@@ -727,9 +710,6 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitAttachmentStateChanges.html
    */
   public toSubmitAttachmentStateChanges() {
@@ -741,9 +721,6 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitContainerStateChange.html
    */
   public toSubmitContainerStateChange() {
@@ -754,9 +731,6 @@ export class Ecs extends PolicyStatement {
    * Grants permission to send an acknowledgement that a task changed states
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitTaskStateChange.html
    */
@@ -816,7 +790,6 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
    * - .ifFargateEphemeralStorageKmsKey()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCluster.html
@@ -829,9 +802,6 @@ export class Ecs extends PolicyStatement {
    * Grants permission to modify the settings to use for a cluster
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateClusterSettings.html
    */
@@ -1218,6 +1188,7 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCreateCluster()
    * - .toCreateService()
    * - .toDeleteAttributes()
    * - .toDeleteCapacityProvider()

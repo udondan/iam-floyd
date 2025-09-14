@@ -275,6 +275,20 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the cost and usage comparisons for your account
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageComparisons.html
+   */
+  public toGetCostAndUsageComparisons() {
+    return this.to('GetCostAndUsageComparisons');
+  }
+
+  /**
    * Grants permission to retrieve the cost and usage metrics with resources for your account
    *
    * Access Level: Read
@@ -300,6 +314,20 @@ export class Ce extends PolicyStatement {
    */
   public toGetCostCategories() {
     return this.to('GetCostCategories');
+  }
+
+  /**
+   * Grants permission to retrieve the cost drivers for your account
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostComparisonDrivers.html
+   */
+  public toGetCostComparisonDrivers() {
+    return this.to('GetCostComparisonDrivers');
   }
 
   /**
@@ -745,8 +773,10 @@ export class Ce extends PolicyStatement {
       'GetCommitmentPurchaseAnalysis',
       'GetConsoleActionSetEnforced',
       'GetCostAndUsage',
+      'GetCostAndUsageComparisons',
       'GetCostAndUsageWithResources',
       'GetCostCategories',
+      'GetCostComparisonDrivers',
       'GetCostForecast',
       'GetDimensionValues',
       'GetPreferences',
@@ -873,8 +903,10 @@ export class Ce extends PolicyStatement {
    * - .toGetAnomalyMonitors()
    * - .toGetAnomalySubscriptions()
    * - .toGetCostAndUsage()
+   * - .toGetCostAndUsageComparisons()
    * - .toGetCostAndUsageWithResources()
    * - .toGetCostCategories()
+   * - .toGetCostComparisonDrivers()
    * - .toGetCostForecast()
    * - .toGetDimensionValues()
    * - .toGetTags()

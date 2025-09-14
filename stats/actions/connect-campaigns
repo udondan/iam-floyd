@@ -10,6 +10,7 @@ connect-campaigns:DescribeCampaign;Read
 connect-campaigns:GetCampaignState;Read
 connect-campaigns:GetCampaignStateBatch;Read
 connect-campaigns:GetConnectInstanceConfig;Read
+connect-campaigns:GetInstanceCommunicationLimits;Read
 connect-campaigns:GetInstanceOnboardingJobStatus;Read
 connect-campaigns:ListCampaigns;List
 connect-campaigns:ListConnectInstanceIntegrations;List
@@ -17,6 +18,7 @@ connect-campaigns:ListTagsForResource;Read
 connect-campaigns:PauseCampaign;Write
 connect-campaigns:PutConnectInstanceIntegration;Write
 connect-campaigns:PutDialRequestBatch;Write
+connect-campaigns:PutInstanceCommunicationLimits;Write
 connect-campaigns:PutOutboundRequestBatch;Write
 connect-campaigns:PutProfileOutboundRequestBatch;Write
 connect-campaigns:ResumeCampaign;Write

@@ -27,4 +27,3 @@ cloud9:UpdateEnvironmentSettings;Write
 cloud9:UpdateMembershipSettings;Write
 cloud9:UpdateSSHRemote;Write
 cloud9:UpdateUserSettings;Write
-cloud9:ValidateEnvironmentName;Read

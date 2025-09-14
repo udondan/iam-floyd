@@ -472,7 +472,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Adds a resource of type Secret to the statement
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-resources-for-iam-policies
    *
    * @param secretId - Identifier for the secretId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -493,7 +493,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by a key that is present in the request the user makes to the Secrets Manager service
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateSecret()
@@ -551,7 +551,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the list of all the tag key names present in the request the user makes to the Secrets Manager service
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
    * - .toCreateSecret()
@@ -571,7 +571,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the list of Regions in which to replicate the secret
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCreateSecret()
@@ -587,7 +587,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by whether the resource policy blocks broad AWS account access
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toPutResourcePolicy()
@@ -601,7 +601,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the description text in the request
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCreateSecret()
@@ -617,7 +617,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by whether the secret is to be deleted immediately without any recovery window
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toDeleteSecret()
@@ -631,7 +631,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by whether to overwrite a secret with the same name in the destination Region
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCreateSecret()
@@ -646,7 +646,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the key ARN of the KMS key in the request
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCreateSecret()
@@ -662,7 +662,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the key identifier of the KMS key in the request. Deprecated: Use secretsmanager:KmsKeyArn
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCreateSecret()
@@ -678,7 +678,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by whether the rotation rules of the secret are to be modified
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toRotateSecret()
@@ -692,7 +692,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the friendly name of the secret in the request
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCreateSecret()
@@ -707,7 +707,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the number of days that Secrets Manager waits before it can delete the secret
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toDeleteSecret()
@@ -722,7 +722,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by a tag key and value pair
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCancelRotateSecret()
@@ -760,7 +760,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by whether the secret is to be rotated immediately
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toRotateSecret()
@@ -774,7 +774,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the ARN of the rotation Lambda function in the request
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toRotateSecret()
@@ -789,7 +789,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the SecretID value in the request
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCancelRotateSecret()
@@ -820,9 +820,9 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
-   * Filters access by primary region in which the secret is created
+   * Filters access by primary region in which the secret is created if the secret is a multi-Region secret
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCancelRotateSecret()
@@ -855,7 +855,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the unique identifier of the version of the secret in the request
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toGetSecretValue()
@@ -870,7 +870,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the list of version stages in the request
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toGetSecretValue()
@@ -886,7 +886,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Filters access by the ARN of the rotation Lambda function associated with the secret
    *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
    * - .toCancelRotateSecret()

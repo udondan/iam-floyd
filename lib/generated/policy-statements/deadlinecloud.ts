@@ -231,9 +231,12 @@ export class Deadline extends PolicyStatement {
    *
    * Dependent actions:
    * - deadline:TagResource
+   * - ec2:CreateVpcEndpoint
    * - iam:PassRole
    * - identitystore:ListGroupMembershipsForMember
    * - logs:CreateLogGroup
+   * - vpc-lattice:GetResourceConfiguration
+   * - vpc-lattice:GetResourceGateway
    *
    * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateFleet.html
    */
@@ -296,7 +299,12 @@ export class Deadline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
+   * - deadline:TagResource
    * - iam:PassRole
    * - sso:CreateApplication
    * - sso:DeleteApplication
@@ -1495,8 +1503,11 @@ export class Deadline extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - ec2:CreateVpcEndpoint
    * - iam:PassRole
    * - identitystore:ListGroupMembershipsForMember
+   * - vpc-lattice:GetResourceConfiguration
+   * - vpc-lattice:GetResourceGateway
    *
    * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateFleet.html
    */
@@ -1935,6 +1946,9 @@ export class Deadline extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMonitor(monitorId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:deadline:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitor/${ monitorId }`);
@@ -1990,6 +2004,7 @@ export class Deadline extends PolicyStatement {
    * - .toCreateFarm()
    * - .toCreateFleet()
    * - .toCreateLicenseEndpoint()
+   * - .toCreateMonitor()
    * - .toCreateQueue()
    * - .toCreateWorker()
    * - .toTagResource()
@@ -2011,6 +2026,7 @@ export class Deadline extends PolicyStatement {
    * - farm
    * - fleet
    * - license-endpoint
+   * - monitor
    * - queue
    * - worker
    *
@@ -2031,6 +2047,7 @@ export class Deadline extends PolicyStatement {
    * - .toCreateFarm()
    * - .toCreateFleet()
    * - .toCreateLicenseEndpoint()
+   * - .toCreateMonitor()
    * - .toCreateQueue()
    * - .toCreateWorker()
    * - .toTagResource()

@@ -465,6 +465,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifResourceEndpointType()
    * - .ifResourceMtlsTrustStoreUri()
    * - .ifResourceMtlsTrustStoreVersion()
+   * - .ifResourceRoutingMode()
    * - .ifResourceSecurityPolicy()
    * - .ifAwsResourceTag()
    */
@@ -485,6 +486,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestMtlsTrustStoreUri()
    * - .ifRequestMtlsTrustStoreVersion()
    * - .ifRequestSecurityPolicy()
+   * - .ifResourceRoutingMode()
    * - .ifAwsResourceTag()
    */
   public onDomainNames(region?: string, partition?: string) {
@@ -718,6 +720,7 @@ export class Apigateway extends PolicyStatement {
    * Possible conditions:
    * - .ifRequestEndpointType()
    * - .ifResourceEndpointType()
+   * - .ifResourceRoutingMode()
    * - .ifAwsResourceTag()
    */
   public onPrivateDomainName(domainName: string, domainIdentifier: string, account?: string, region?: string, partition?: string) {
@@ -1253,6 +1256,18 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
+   * Filters access by routing mode of the domain name. Available during the CreateDomainName and UpdateDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestRoutingMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/RoutingMode`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by TLS version. Available during the CreateDomain and UpdateDomain operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -1465,6 +1480,23 @@ export class Apigateway extends PolicyStatement {
    */
   public ifResourceRouteAuthorizationType(value: string | string[], operator?: Operator | string) {
     return this.if(`Resource/RouteAuthorizationType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by routing mode of the domain name. Available during the UpdateDomainName and DeleteDomainName operations
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
+   *
+   * Applies to resource types:
+   * - DomainName
+   * - DomainNames
+   * - PrivateDomainName
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceRoutingMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/RoutingMode`, value, operator ?? 'StringLike');
   }
 
   /**

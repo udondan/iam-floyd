@@ -14,8 +14,11 @@ s3express:GetEncryptionConfiguration;Read
 s3express:GetLifecycleConfiguration;Read
 s3express:ListAccessPointsForDirectoryBuckets;List
 s3express:ListAllMyDirectoryBuckets;List
+s3express:ListTagsForResource;List
 s3express:PutAccessPointPolicy;Permissions management
 s3express:PutAccessPointScope;Permissions management
 s3express:PutBucketPolicy;Permissions management
 s3express:PutEncryptionConfiguration;Write
 s3express:PutLifecycleConfiguration;Write
+s3express:TagResource;Tagging
+s3express:UntagResource;Tagging

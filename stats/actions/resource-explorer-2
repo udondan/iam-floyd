@@ -4,7 +4,7 @@ resource-explorer-2:CreateIndex;Write
 resource-explorer-2:CreateManagedView;Write
 resource-explorer-2:CreateView;Write
 resource-explorer-2:DeleteIndex;Write
-resource-explorer-2:DeleteResourcePolicy;Write
+resource-explorer-2:DeleteResourcePolicy;Permissions management
 resource-explorer-2:DeleteView;Write
 resource-explorer-2:DisassociateDefaultView;Write
 resource-explorer-2:GetAccountLevelServiceConfiguration;Read
@@ -19,7 +19,7 @@ resource-explorer-2:ListManagedViews;List
 resource-explorer-2:ListSupportedResourceTypes;List
 resource-explorer-2:ListTagsForResource;Read
 resource-explorer-2:ListViews;List
-resource-explorer-2:PutResourcePolicy;Write
+resource-explorer-2:PutResourcePolicy;Permissions management
 resource-explorer-2:Search;Read
 resource-explorer-2:TagResource;Tagging
 resource-explorer-2:UntagResource;Tagging

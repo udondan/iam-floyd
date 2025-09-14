@@ -1,7 +1,12 @@
 transform:AssociateConnectorResource;Write
 transform:CreateProfile;Write
+transform:DeleteConnector;Write
 transform:DeleteProfile;Write
 transform:GetConnector;Read
+transform:ListConnectors;List
 transform:ListProfiles;List
+transform:ListTagsForResource;Read
 transform:RejectConnector;Write
+transform:TagResource;Tagging
+transform:UntagResource;Tagging
 transform:UpdateProfile;Write

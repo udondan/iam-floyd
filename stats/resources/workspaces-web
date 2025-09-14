@@ -4,6 +4,7 @@ workspaces-web:identityProvider
 workspaces-web:ipAccessSettings
 workspaces-web:networkSettings
 workspaces-web:portal
+workspaces-web:sessionLogger
 workspaces-web:trustStore
 workspaces-web:userAccessLoggingSettings
 workspaces-web:userSettings

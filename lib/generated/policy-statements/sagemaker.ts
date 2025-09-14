@@ -57,6 +57,36 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach an Amazon EBS volume to a SageMaker HyperPod cluster node
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:AttachVolume
+   * - ec2:DescribeVolumes
+   * - eks:DescribeCluster
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AttachClusterNodeVolume.html
+   */
+  public toAttachClusterNodeVolume() {
+    return this.to('AttachClusterNodeVolume');
+  }
+
+  /**
+   * Grants permission to add multiple nodes at a time to a SageMaker HyperPod cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - eks:DescribeCluster
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_BatchAddClusterNodes.html
+   */
+  public toBatchAddClusterNodes() {
+    return this.to('BatchAddClusterNodes');
+  }
+
+  /**
    * Grants permission to batch delete SageMaker HyperPod cluster nodes
    *
    * Access Level: Write
@@ -281,6 +311,10 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSubnets()
    *
    * Dependent actions:
+   * - ec2:DescribeImages
+   * - ec2:DescribeSnapshots
+   * - ec2:ModifyImageAttribute
+   * - ec2:ModifySnapshotAttribute
    * - eks:AssociateAccessPolicy
    * - eks:CreateAccessEntry
    * - eks:DeleteAccessEntry
@@ -652,6 +686,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateHub() {
     return this.to('CreateHub');
+  }
+
+  /**
+   * Grants permission to generate S3 presigned URLs with GetObject permission for accessing model artifacts
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHubContentPresignedUrls.html
+   */
+  public toCreateHubContentPresignedUrls() {
+    return this.to('CreateHubContentPresignedUrls');
   }
 
   /**
@@ -1093,6 +1138,13 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - sagemaker:AddTags
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html
    */
   public toCreateNotebookInstanceLifecycleConfig() {
@@ -1285,6 +1337,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifImageArns()
    * - .ifImageVersionArns()
    * - .ifOwnerUserProfileArn()
+   * - .ifRemoteAccess()
    * - .ifSpaceSharingType()
    *
    * Dependent actions:
@@ -2262,6 +2315,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about an Event within a SageMaker HyperPod cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterEvent.html
+   */
+  public toDescribeClusterEvent() {
+    return this.to('DescribeClusterEvent');
+  }
+
+  /**
+   * Grants permission to get information about the inference operator for a SageMaker HyperPod cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference.html
+   */
+  public toDescribeClusterInference() {
+    return this.to('DescribeClusterInference');
+  }
+
+  /**
    * Grants permission to return information about a SageMaker HyperPod cluster node
    *
    * Access Level: Read
@@ -2750,6 +2825,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPipelineVersionId()
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribePipeline.html
    */
   public toDescribePipeline() {
@@ -2798,6 +2876,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeProject() {
     return this.to('DescribeProject');
+  }
+
+  /**
+   * Grants permission to return information about a specified Reserved Capacity
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeReservedCapacity.html
+   */
+  public toDescribeReservedCapacity() {
+    return this.to('DescribeReservedCapacity');
   }
 
   /**
@@ -2930,6 +3019,22 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeWorkteam() {
     return this.to('DescribeWorkteam');
+  }
+
+  /**
+   * Grants permission to detach an Amazon EBS volume from a SageMaker HyperPod cluster node
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeVolumes
+   * - ec2:DetachVolume
+   * - eks:DescribeCluster
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DetachClusterNodeVolume.html
+   */
+  public toDetachClusterNodeVolume() {
+    return this.to('DetachClusterNodeVolume');
   }
 
   /**
@@ -3226,6 +3331,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListCandidatesForAutoMLJob() {
     return this.to('ListCandidatesForAutoMLJob');
+  }
+
+  /**
+   * Grants permission to list events within a SageMaker HyperPod cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListClusterEvents.html
+   */
+  public toListClusterEvents() {
+    return this.to('ListClusterEvents');
   }
 
   /**
@@ -3834,6 +3950,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list versions of a pipeline
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListPipelineVersions.html
+   */
+  public toListPipelineVersions() {
+    return this.to('ListPipelineVersions');
+  }
+
+  /**
    * Grants permission to list pipelines
    *
    * Access Level: List
@@ -4029,6 +4156,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListTrials() {
     return this.to('ListTrials');
+  }
+
+  /**
+   * Grants permission to list all UltraServers in a specified Reserved Capacity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListUltraServersByReservedCapacity.html
+   */
+  public toListUltraServersByReservedCapacity() {
+    return this.to('ListUltraServersByReservedCapacity');
   }
 
   /**
@@ -4299,10 +4437,24 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPipelineVersionId()
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html
    */
   public toStartPipelineExecution() {
     return this.to('StartPipelineExecution');
+  }
+
+  /**
+   * Grants permission to start a remote session for a SageMaker space
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartSession.html
+   */
+  public toStartSession() {
+    return this.to('StartSession');
   }
 
   /**
@@ -4547,18 +4699,41 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVpcSubnets()
    *
    * Dependent actions:
+   * - ec2:DescribeImages
+   * - ec2:DescribeSnapshots
+   * - ec2:ModifyImageAttribute
+   * - ec2:ModifySnapshotAttribute
    * - eks:AssociateAccessPolicy
    * - eks:CreateAccessEntry
    * - eks:DeleteAccessEntry
    * - eks:DescribeAccessEntry
    * - eks:DescribeCluster
    * - iam:PassRole
+   * - sagemaker:BatchAddClusterNodes
    * - sagemaker:BatchDeleteClusterNodes
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateCluster.html
    */
   public toUpdateCluster() {
     return this.to('UpdateCluster');
+  }
+
+  /**
+   * Grants permission to update the inference operator for a SageMaker HyperPod cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - eks:AssociateAccessPolicy
+   * - eks:DescribeCluster
+   * - eks:ListAssociatedAccessPolicies
+   * - iam:PassRole
+   * - sagemaker:DescribeCluster
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference.html
+   */
+  public toUpdateClusterInference() {
+    return this.to('UpdateClusterInference');
   }
 
   /**
@@ -4578,6 +4753,10 @@ export class Sagemaker extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - ec2:DescribeImages
+   * - ec2:DescribeSnapshots
+   * - ec2:ModifyImageAttribute
+   * - ec2:ModifySnapshotAttribute
    * - eks:DescribeCluster
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html
@@ -4949,6 +5128,20 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a pipeline version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPipelineVersionId()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdatePipelineVersion.html
+   */
+  public toUpdatePipelineVersion() {
+    return this.to('UpdatePipelineVersion');
+  }
+
+  /**
    * Grants permission to update a Project
    *
    * Access Level: Write
@@ -4984,6 +5177,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifImageArns()
    * - .ifImageVersionArns()
    * - .ifOwnerUserProfileArn()
+   * - .ifRemoteAccess()
    * - .ifSpaceSharingType()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html
@@ -5075,6 +5269,8 @@ export class Sagemaker extends PolicyStatement {
     Write: [
       'AddAssociation',
       'AssociateTrialComponent',
+      'AttachClusterNodeVolume',
+      'BatchAddClusterNodes',
       'BatchDeleteClusterNodes',
       'BatchPutMetrics',
       'CallPartnerAppApi',
@@ -5206,6 +5402,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteWorkteam',
       'DeployHubModel',
       'DeregisterDevices',
+      'DetachClusterNodeVolume',
       'DisableSagemakerServicecatalogPortfolio',
       'DisassociateTrialComponent',
       'EnableSagemakerServicecatalogPortfolio',
@@ -5227,6 +5424,7 @@ export class Sagemaker extends PolicyStatement {
       'StartMonitoringSchedule',
       'StartNotebookInstance',
       'StartPipelineExecution',
+      'StartSession',
       'StopAutoMLJob',
       'StopCompilationJob',
       'StopEdgeDeploymentStage',
@@ -5249,6 +5447,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdateAppImageConfig',
       'UpdateArtifact',
       'UpdateCluster',
+      'UpdateClusterInference',
       'UpdateClusterSchedulerConfig',
       'UpdateClusterSoftware',
       'UpdateCodeRepository',
@@ -5280,6 +5479,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdatePartnerApp',
       'UpdatePipeline',
       'UpdatePipelineExecution',
+      'UpdatePipelineVersion',
       'UpdateProject',
       'UpdateSharedModel',
       'UpdateSpace',
@@ -5298,6 +5498,7 @@ export class Sagemaker extends PolicyStatement {
       'BatchDescribeModelPackage',
       'BatchGetMetrics',
       'BatchGetRecord',
+      'CreateHubContentPresignedUrls',
       'DescribeAction',
       'DescribeAlgorithm',
       'DescribeApp',
@@ -5306,6 +5507,8 @@ export class Sagemaker extends PolicyStatement {
       'DescribeAutoMLJob',
       'DescribeAutoMLJobV2',
       'DescribeCluster',
+      'DescribeClusterEvent',
+      'DescribeClusterInference',
       'DescribeClusterNode',
       'DescribeClusterSchedulerConfig',
       'DescribeCodeRepository',
@@ -5355,6 +5558,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribePipelineExecution',
       'DescribeProcessingJob',
       'DescribeProject',
+      'DescribeReservedCapacity',
       'DescribeSharedModel',
       'DescribeSpace',
       'DescribeStudioLifecycleConfig',
@@ -5394,6 +5598,7 @@ export class Sagemaker extends PolicyStatement {
       'ListAssociations',
       'ListAutoMLJobs',
       'ListCandidatesForAutoMLJob',
+      'ListClusterEvents',
       'ListClusterNodes',
       'ListClusterSchedulerConfigs',
       'ListClusters',
@@ -5449,6 +5654,7 @@ export class Sagemaker extends PolicyStatement {
       'ListPipelineExecutionSteps',
       'ListPipelineExecutions',
       'ListPipelineParametersForExecution',
+      'ListPipelineVersions',
       'ListPipelines',
       'ListProcessingJobs',
       'ListProjects',
@@ -5467,6 +5673,7 @@ export class Sagemaker extends PolicyStatement {
       'ListTransformJobs',
       'ListTrialComponents',
       'ListTrials',
+      'ListUltraServersByReservedCapacity',
       'ListUserProfiles',
       'ListWorkforces',
       'ListWorkteams',
@@ -5865,6 +6072,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onNotebookInstanceLifecycleConfig(notebookInstanceLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
@@ -6450,6 +6661,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onPipelineExecution(pipelineName: string, randomString: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineName }/execution/${ randomString }`);
@@ -6728,6 +6943,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
+   * - .toCreateNotebookInstanceLifecycleConfig()
    * - .toCreateOptimizationJob()
    * - .toCreatePartnerApp()
    * - .toCreatePipeline()
@@ -6784,6 +7000,7 @@ export class Sagemaker extends PolicyStatement {
    * - app-image-config
    * - studio-lifecycle-config
    * - notebook-instance
+   * - notebook-instance-lifecycle-config
    * - code-repository
    * - image
    * - algorithm
@@ -6814,6 +7031,7 @@ export class Sagemaker extends PolicyStatement {
    * - experiment-trial-component
    * - feature-group
    * - pipeline
+   * - pipeline-execution
    * - artifact
    * - context
    * - action
@@ -6883,6 +7101,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateModelQualityJobDefinition()
    * - .toCreateMonitoringSchedule()
    * - .toCreateNotebookInstance()
+   * - .toCreateNotebookInstanceLifecycleConfig()
    * - .toCreateOptimizationJob()
    * - .toCreatePartnerApp()
    * - .toCreatePipeline()
@@ -7494,6 +7713,39 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Filters access to specific version IDs of a Sagemaker pipeline
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toDescribePipeline()
+   * - .toStartPipelineExecution()
+   * - .toUpdatePipelineVersion()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPipelineVersionId(value: string | string[], operator?: Operator | string) {
+    return this.if(`PipelineVersionId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the remote access flag associated with the space in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateSpace()
+   * - .toUpdateSpace()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRemoteAccess(value: string | string[], operator?: Operator | string) {
+    return this.if(`RemoteAccess`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the preface string for a tag key and value pair attached to a resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -7531,6 +7783,7 @@ export class Sagemaker extends PolicyStatement {
    * - app-image-config
    * - studio-lifecycle-config
    * - notebook-instance
+   * - notebook-instance-lifecycle-config
    * - code-repository
    * - image
    * - algorithm
@@ -7561,6 +7814,7 @@ export class Sagemaker extends PolicyStatement {
    * - experiment-trial-component
    * - feature-group
    * - pipeline
+   * - pipeline-execution
    * - artifact
    * - context
    * - action
@@ -7576,7 +7830,7 @@ export class Sagemaker extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+  public ifResourceTagTagKey(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 

@@ -19,6 +19,17 @@ export class Repostspace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a role to users and groups in a private re:Post channel in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_BatchAddChannelRoleToAccessors.html
+   */
+  public toBatchAddChannelRoleToAccessors() {
+    return this.to('BatchAddChannelRoleToAccessors');
+  }
+
+  /**
    * Grants permission to add a role to users and groups in a private re:Post in your account
    *
    * Access Level: Write
@@ -30,6 +41,17 @@ export class Repostspace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove a role from users and groups in a private re:Post channel in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_BatchRemoveChannelRoleFromAccessors.html
+   */
+  public toBatchRemoveChannelRoleFromAccessors() {
+    return this.to('BatchRemoveChannelRoleFromAccessors');
+  }
+
+  /**
    * Grants permission to remove a role from users and groups in a private re:Post in your account
    *
    * Access Level: Write
@@ -38,6 +60,17 @@ export class Repostspace extends PolicyStatement {
    */
   public toBatchRemoveRole() {
     return this.to('BatchRemoveRole');
+  }
+
+  /**
+   * Grants permission to create a new channel in private re:Post in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_CreateChannel.html
+   */
+  public toCreateChannel() {
+    return this.to('CreateChannel');
   }
 
   /**
@@ -78,6 +111,17 @@ export class Repostspace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the description for a channel in private re:Post in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_GetChannel.html
+   */
+  public toGetChannel() {
+    return this.to('GetChannel');
+  }
+
+  /**
    * Grants permission to get the description for a private re:Post in your account
    *
    * Access Level: Read
@@ -86,6 +130,17 @@ export class Repostspace extends PolicyStatement {
    */
   public toGetSpace() {
     return this.to('GetSpace');
+  }
+
+  /**
+   * Grants permission to list all channels in a private re:Post in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_ListChannels.html
+   */
+  public toListChannels() {
+    return this.to('ListChannels');
   }
 
   /**
@@ -164,6 +219,17 @@ export class Repostspace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a channel in private re:Post in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/repostprivate/latest/APIReference/API_UpdateChannel.html
+   */
+  public toUpdateChannel() {
+    return this.to('UpdateChannel');
+  }
+
+  /**
    * Grants permission to update a private re:Post in your account
    *
    * Access Level: Write
@@ -176,17 +242,23 @@ export class Repostspace extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'BatchAddChannelRoleToAccessors',
       'BatchAddRole',
+      'BatchRemoveChannelRoleFromAccessors',
       'BatchRemoveRole',
+      'CreateChannel',
       'CreateSpace',
       'DeleteSpace',
       'DeregisterAdmin',
       'RegisterAdmin',
       'SendInvites',
+      'UpdateChannel',
       'UpdateSpace'
     ],
     Read: [
+      'GetChannel',
       'GetSpace',
+      'ListChannels',
       'ListSpaces',
       'ListTagsForResource'
     ],

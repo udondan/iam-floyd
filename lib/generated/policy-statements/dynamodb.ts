@@ -91,6 +91,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a Witness to a Global Table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
+   */
+  public toCreateGlobalTableWitness() {
+    return this.to('CreateGlobalTableWitness');
+  }
+
+  /**
    * Grants permission to the CreateTable operation adds a new table to your account
    *
    * Access Level: Write
@@ -125,6 +136,17 @@ export class Dynamodb extends PolicyStatement {
    */
   public toDeleteBackup() {
     return this.to('DeleteBackup');
+  }
+
+  /**
+   * Grants permission to remove a Witness from a Global Table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
+   */
+  public toDeleteGlobalTableWitness() {
+    return this.to('DeleteGlobalTableWitness');
   }
 
   /**
@@ -945,9 +967,11 @@ export class Dynamodb extends PolicyStatement {
       'BatchWriteItem',
       'CreateBackup',
       'CreateGlobalTable',
+      'CreateGlobalTableWitness',
       'CreateTable',
       'CreateTableReplica',
       'DeleteBackup',
+      'DeleteGlobalTableWitness',
       'DeleteItem',
       'DeleteTable',
       'DeleteTableReplica',

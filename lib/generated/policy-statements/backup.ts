@@ -19,6 +19,20 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an MPA approval team with a backup vault
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifMpaApprovalTeamArn()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_AssociateBackupVaultMpaApprovalTeam.html
+   */
+  public toAssociateBackupVaultMpaApprovalTeam() {
+    return this.to('AssociateBackupVaultMpaApprovalTeam');
+  }
+
+  /**
    * Grants permission to cancel a legal hold
    *
    * Access Level: Write
@@ -163,6 +177,21 @@ export class Backup extends PolicyStatement {
    */
   public toCreateReportPlan() {
     return this.to('CreateReportPlan');
+  }
+
+  /**
+   * Grants permission to create a restore access backup vault
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateRestoreAccessBackupVault.html
+   */
+  public toCreateRestoreAccessBackupVault() {
+    return this.to('CreateRestoreAccessBackupVault');
   }
 
   /**
@@ -445,6 +474,17 @@ export class Backup extends PolicyStatement {
    */
   public toDescribeRestoreJob() {
     return this.to('DescribeRestoreJob');
+  }
+
+  /**
+   * Grants permission to disassociate an MPA approval team from a backup vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DisassociateBackupVaultMpaApprovalTeam.html
+   */
+  public toDisassociateBackupVaultMpaApprovalTeam() {
+    return this.to('DisassociateBackupVaultMpaApprovalTeam');
   }
 
   /**
@@ -866,6 +906,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list a restore access backup vaults associated with a backup vault
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreAccessBackupVaults.html
+   */
+  public toListRestoreAccessBackupVaults() {
+    return this.to('ListRestoreAccessBackupVaults');
+  }
+
+  /**
    * Grants permission to list restore job summaries
    *
    * Access Level: List
@@ -989,6 +1040,17 @@ export class Backup extends PolicyStatement {
    */
   public toPutRestoreValidationResult() {
     return this.to('PutRestoreValidationResult');
+  }
+
+  /**
+   * Grants permission to revoke a restore access backup vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_RevokeRestoreAccessBackupVault.html
+   */
+  public toRevokeRestoreAccessBackupVault() {
+    return this.to('RevokeRestoreAccessBackupVault');
   }
 
   /**
@@ -1205,6 +1267,7 @@ export class Backup extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateBackupVaultMpaApprovalTeam',
       'CancelLegalHold',
       'CopyFromBackupVault',
       'CopyIntoBackupVault',
@@ -1215,6 +1278,7 @@ export class Backup extends PolicyStatement {
       'CreateLegalHold',
       'CreateLogicallyAirGappedBackupVault',
       'CreateReportPlan',
+      'CreateRestoreAccessBackupVault',
       'CreateRestoreTestingPlan',
       'CreateRestoreTestingSelection',
       'DeleteBackupPlan',
@@ -1227,11 +1291,13 @@ export class Backup extends PolicyStatement {
       'DeleteReportPlan',
       'DeleteRestoreTestingPlan',
       'DeleteRestoreTestingSelection',
+      'DisassociateBackupVaultMpaApprovalTeam',
       'DisassociateRecoveryPoint',
       'DisassociateRecoveryPointFromParent',
       'PutBackupVaultLockConfiguration',
       'PutBackupVaultNotifications',
       'PutRestoreValidationResult',
+      'RevokeRestoreAccessBackupVault',
       'StartBackupJob',
       'StartCopyJob',
       'StartReportJob',
@@ -1305,6 +1371,7 @@ export class Backup extends PolicyStatement {
       'ListRecoveryPointsByResource',
       'ListReportJobs',
       'ListReportPlans',
+      'ListRestoreAccessBackupVaults',
       'ListRestoreJobSummaries',
       'ListRestoreJobs',
       'ListRestoreJobsByProtectedResource',
@@ -1452,6 +1519,7 @@ export class Backup extends PolicyStatement {
    * - .toCreateLegalHold()
    * - .toCreateLogicallyAirGappedBackupVault()
    * - .toCreateReportPlan()
+   * - .toCreateRestoreAccessBackupVault()
    * - .toCreateRestoreTestingPlan()
    * - .toTagResource()
    *
@@ -1497,6 +1565,7 @@ export class Backup extends PolicyStatement {
    * - .toCreateLegalHold()
    * - .toCreateLogicallyAirGappedBackupVault()
    * - .toCreateReportPlan()
+   * - .toCreateRestoreAccessBackupVault()
    * - .toCreateRestoreTestingPlan()
    * - .toTagResource()
    * - .toUntagResource()
@@ -1539,7 +1608,7 @@ export class Backup extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ARN of an backup vault
+   * Filters access by the ARN of a backup vault
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
    *
@@ -1614,5 +1683,20 @@ export class Backup extends PolicyStatement {
    */
   public ifMinRetentionDays(value: number | number[], operator?: Operator | string) {
     return this.if(`MinRetentionDays`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the MPA Approval Team ARN of a backup vault
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#amazon-backup-keys
+   *
+   * Applies to actions:
+   * - .toAssociateBackupVaultMpaApprovalTeam()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifMpaApprovalTeamArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`MpaApprovalTeamArn`, value, operator ?? 'ArnLike');
   }
 }

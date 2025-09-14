@@ -1,12 +1,14 @@
 datazone:AcceptPredictions;Write
 datazone:AcceptSubscriptionRequest;Write
 datazone:AddEntityOwner;Write
-datazone:AddPolicyGrant;Write
+datazone:AddPolicyGrant;Permissions management
 datazone:AssociateEnvironmentRole;Write
+datazone:AssociateGovernedTerms;Write
 datazone:BatchDeleteLinkedTypes;Write
 datazone:BatchPutLinkedTypes;Write
 datazone:CancelMetadataGenerationRun;Write
 datazone:CancelSubscription;Write
+datazone:CreateAccountPool;Write
 datazone:CreateAsset;Write
 datazone:CreateAssetFilter;Write
 datazone:CreateAssetRevision;Write
@@ -34,6 +36,7 @@ datazone:CreateSubscriptionGrant;Write
 datazone:CreateSubscriptionRequest;Write
 datazone:CreateSubscriptionTarget;Write
 datazone:CreateUserProfile;Write
+datazone:DeleteAccountPool;Write
 datazone:DeleteAsset;Write
 datazone:DeleteAssetFilter;Write
 datazone:DeleteAssetType;Write
@@ -61,6 +64,8 @@ datazone:DeleteSubscriptionRequest;Write
 datazone:DeleteSubscriptionTarget;Write
 datazone:DeleteTimeSeriesDataPoints;Write
 datazone:DisassociateEnvironmentRole;Write
+datazone:DisassociateGovernedTerms;Write
+datazone:GetAccountPool;Read
 datazone:GetAsset;Read
 datazone:GetAssetFilter;Read
 datazone:GetAssetType;Read
@@ -101,6 +106,8 @@ datazone:GetTimeSeriesDataPoint;Read
 datazone:GetUpdateEligibility;Read
 datazone:GetUserProfile;Read
 datazone:ListAccountEnvironments;List
+datazone:ListAccountPools;List
+datazone:ListAccountsInAccountPool;List
 datazone:ListAssetFilters;List
 datazone:ListAssetRevisions;List
 datazone:ListConnections;List
@@ -145,8 +152,8 @@ datazone:RefreshToken;Write
 datazone:RejectPredictions;Write
 datazone:RejectSubscriptionRequest;Write
 datazone:RemoveEntityOwner;Write
-datazone:RemovePolicyGrant;Write
-datazone:RevokeSubscription;Write
+datazone:RemovePolicyGrant;Permissions management
+datazone:RevokeSubscription;Permissions management
 datazone:Search;List
 datazone:SearchGroupProfiles;List
 datazone:SearchListings;List
@@ -155,11 +162,13 @@ datazone:SearchTypes;List
 datazone:SearchUserProfiles;List
 datazone:SsoLogin;Write
 datazone:SsoLogout;Write
+datazone:StartAccountBootstrapAction;Write
 datazone:StartDataSourceRun;Write
 datazone:StartMetadataGenerationRun;Write
 datazone:StopMetadataGenerationRun;Write
 datazone:TagResource;Tagging
 datazone:UntagResource;Tagging
+datazone:UpdateAccountPool;Write
 datazone:UpdateAssetFilter;Write
 datazone:UpdateConnection;Write
 datazone:UpdateDataSource;Write

@@ -44,7 +44,7 @@ bedrock-agentcore:GetWorkloadAccessToken;Write
 bedrock-agentcore:GetWorkloadAccessTokenForJWT;Write
 bedrock-agentcore:GetWorkloadAccessTokenForUserId;Write
 bedrock-agentcore:GetWorkloadIdentity;Read
-bedrock-agentcore:InvokeAgentRuntimeEndpoint;Write
+bedrock-agentcore:InvokeAgentRuntime;Write
 bedrock-agentcore:InvokeCodeInterpreter;Write
 bedrock-agentcore:ListActors;List
 bedrock-agentcore:ListAgentRuntimeEndpoints;List

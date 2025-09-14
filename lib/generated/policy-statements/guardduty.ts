@@ -156,6 +156,24 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create GuardDuty ThreatEntitySets, where a ThreatEntitySet consists of known malicious IP addresses and/or domains used by GuardDuty to generate findings
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateThreatEntitySet.html
+   */
+  public toCreateThreatEntitySet() {
+    return this.to('CreateThreatEntitySet');
+  }
+
+  /**
    * Grants permission to create GuardDuty ThreatIntelSets, where a ThreatIntelSet consists of known malicious IP addresses used by GuardDuty to generate findings
    *
    * Access Level: Write
@@ -168,6 +186,25 @@ export class Guardduty extends PolicyStatement {
    */
   public toCreateThreatIntelSet() {
     return this.to('CreateThreatIntelSet');
+  }
+
+  /**
+   * Grants permission to create a TrustedEntitySet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateTrustedEntitySet.html
+   */
+  public toCreateTrustedEntitySet() {
+    return this.to('CreateTrustedEntitySet');
   }
 
   /**
@@ -259,6 +296,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete GuardDuty ThreatEntitySets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteThreatEntitySet.html
+   */
+  public toDeleteThreatEntitySet() {
+    return this.to('DeleteThreatEntitySet');
+  }
+
+  /**
    * Grants permission to delete GuardDuty ThreatIntelSets
    *
    * Access Level: Write
@@ -267,6 +315,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toDeleteThreatIntelSet() {
     return this.to('DeleteThreatIntelSet');
+  }
+
+  /**
+   * Grants permission to delete GuardDuty TrustedEntitySets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteTrustedEntitySet.html
+   */
+  public toDeleteTrustedEntitySet() {
+    return this.to('DeleteTrustedEntitySet');
   }
 
   /**
@@ -523,6 +582,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve GuardDuty ThreatEntitySets
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetThreatEntitySet.html
+   */
+  public toGetThreatEntitySet() {
+    return this.to('GetThreatEntitySet');
+  }
+
+  /**
    * Grants permission to retrieve GuardDuty ThreatIntelSets
    *
    * Access Level: Read
@@ -531,6 +601,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toGetThreatIntelSet() {
     return this.to('GetThreatIntelSet');
+  }
+
+  /**
+   * Grants permission to retrieve GuardDuty TrustedEntitySets
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetTrustedEntitySet.html
+   */
+  public toGetTrustedEntitySet() {
+    return this.to('GetTrustedEntitySet');
   }
 
   /**
@@ -677,6 +758,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of GuardDuty ThreatEntitySets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListThreatEntitySets.html
+   */
+  public toListThreatEntitySets() {
+    return this.to('ListThreatEntitySets');
+  }
+
+  /**
    * Grants permission to retrieve a list of GuardDuty ThreatIntelSets
    *
    * Access Level: List
@@ -685,6 +777,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toListThreatIntelSets() {
     return this.to('ListThreatIntelSets');
+  }
+
+  /**
+   * Grants permission to retrieve a list of GuardDuty TrustedEntitySets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListTrustedEntitySets.html
+   */
+  public toListTrustedEntitySets() {
+    return this.to('ListTrustedEntitySets');
   }
 
   /**
@@ -879,6 +982,20 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update GuardDuty ThreatEntitySets
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateThreatEntitySet.html
+   */
+  public toUpdateThreatEntitySet() {
+    return this.to('UpdateThreatEntitySet');
+  }
+
+  /**
    * Grants permission to updates the GuardDuty ThreatIntelSets
    *
    * Access Level: Write
@@ -893,6 +1010,20 @@ export class Guardduty extends PolicyStatement {
     return this.to('UpdateThreatIntelSet');
   }
 
+  /**
+   * Grants permission to update GuardDuty TrustedEntitySets
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateTrustedEntitySet.html
+   */
+  public toUpdateTrustedEntitySet() {
+    return this.to('UpdateTrustedEntitySet');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAdministratorInvitation',
@@ -905,7 +1036,9 @@ export class Guardduty extends PolicyStatement {
       'CreateMembers',
       'CreatePublishingDestination',
       'CreateSampleFindings',
+      'CreateThreatEntitySet',
       'CreateThreatIntelSet',
+      'CreateTrustedEntitySet',
       'DeclineInvitations',
       'DeleteDetector',
       'DeleteFilter',
@@ -914,7 +1047,9 @@ export class Guardduty extends PolicyStatement {
       'DeleteMalwareProtectionPlan',
       'DeleteMembers',
       'DeletePublishingDestination',
+      'DeleteThreatEntitySet',
       'DeleteThreatIntelSet',
+      'DeleteTrustedEntitySet',
       'DisableOrganizationAdminAccount',
       'DisassociateFromAdministratorAccount',
       'DisassociateFromMasterAccount',
@@ -935,7 +1070,9 @@ export class Guardduty extends PolicyStatement {
       'UpdateMemberDetectors',
       'UpdateOrganizationConfiguration',
       'UpdatePublishingDestination',
-      'UpdateThreatIntelSet'
+      'UpdateThreatEntitySet',
+      'UpdateThreatIntelSet',
+      'UpdateTrustedEntitySet'
     ],
     Read: [
       'DescribeMalwareScans',
@@ -956,7 +1093,9 @@ export class Guardduty extends PolicyStatement {
       'GetMembers',
       'GetOrganizationStatistics',
       'GetRemainingFreeTrialDays',
+      'GetThreatEntitySet',
       'GetThreatIntelSet',
+      'GetTrustedEntitySet',
       'GetUsageStatistics',
       'ListTagsForResource'
     ],
@@ -971,7 +1110,9 @@ export class Guardduty extends PolicyStatement {
       'ListMembers',
       'ListOrganizationAdminAccounts',
       'ListPublishingDestinations',
-      'ListThreatIntelSets'
+      'ListThreatEntitySets',
+      'ListThreatIntelSets',
+      'ListTrustedEntitySets'
     ],
     Tagging: [
       'TagResource',
@@ -1051,6 +1192,42 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type trustedentityset to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param trustedEntitySetId - Identifier for the trustedEntitySetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTrustedentityset(detectorId: string, trustedEntitySetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/trustedentityset/${ trustedEntitySetId }`);
+  }
+
+  /**
+   * Adds a resource of type threatentityset to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param threatEntitySetId - Identifier for the threatEntitySetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onThreatentityset(detectorId: string, threatEntitySetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/threatentityset/${ threatEntitySetId }`);
+  }
+
+  /**
    * Adds a resource of type publishingDestination to the statement
    *
    * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
@@ -1092,7 +1269,9 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateFilter()
    * - .toCreateIPSet()
    * - .toCreateMalwareProtectionPlan()
+   * - .toCreateThreatEntitySet()
    * - .toCreateThreatIntelSet()
+   * - .toCreateTrustedEntitySet()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1112,12 +1291,15 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateDetector()
    * - .toCreateIPSet()
    * - .toCreateMalwareProtectionPlan()
+   * - .toCreateTrustedEntitySet()
    *
    * Applies to resource types:
    * - detector
    * - filter
    * - ipset
    * - threatintelset
+   * - trustedentityset
+   * - threatentityset
    * - malwareprotectionplan
    *
    * @param tagKey The tag key to check
@@ -1138,7 +1320,9 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateFilter()
    * - .toCreateIPSet()
    * - .toCreateMalwareProtectionPlan()
+   * - .toCreateThreatEntitySet()
    * - .toCreateThreatIntelSet()
+   * - .toCreateTrustedEntitySet()
    * - .toTagResource()
    * - .toUntagResource()
    *

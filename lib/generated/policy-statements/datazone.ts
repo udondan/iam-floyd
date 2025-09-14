@@ -48,7 +48,7 @@ export class Datazone extends PolicyStatement {
   /**
    * Grants permission to add a policy grant
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    */
   public toAddPolicyGrant() {
     return this.to('AddPolicyGrant');
@@ -61,6 +61,15 @@ export class Datazone extends PolicyStatement {
    */
   public toAssociateEnvironmentRole() {
     return this.to('AssociateEnvironmentRole');
+  }
+
+  /**
+   * Grants permission to associate governed terms to an asset
+   *
+   * Access Level: Write
+   */
+  public toAssociateGovernedTerms() {
+    return this.to('AssociateGovernedTerms');
   }
 
   /**
@@ -97,6 +106,15 @@ export class Datazone extends PolicyStatement {
    */
   public toCancelSubscription() {
     return this.to('CancelSubscription');
+  }
+
+  /**
+   * Grants permission to create an account pool
+   *
+   * Access Level: Write
+   */
+  public toCreateAccountPool() {
+    return this.to('CreateAccountPool');
   }
 
   /**
@@ -347,6 +365,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an account pool
+   *
+   * Access Level: Write
+   */
+  public toDeleteAccountPool() {
+    return this.to('DeleteAccountPool');
+  }
+
+  /**
    * Grants permission to delete an asset
    *
    * Access Level: Write
@@ -587,6 +614,24 @@ export class Datazone extends PolicyStatement {
    */
   public toDisassociateEnvironmentRole() {
     return this.to('DisassociateEnvironmentRole');
+  }
+
+  /**
+   * Grants permission to disassociate governed terms to an asset
+   *
+   * Access Level: Write
+   */
+  public toDisassociateGovernedTerms() {
+    return this.to('DisassociateGovernedTerms');
+  }
+
+  /**
+   * Grants permission to get account pool details
+   *
+   * Access Level: Read
+   */
+  public toGetAccountPool() {
+    return this.to('GetAccountPool');
   }
 
   /**
@@ -947,6 +992,24 @@ export class Datazone extends PolicyStatement {
    */
   public toListAccountEnvironments() {
     return this.to('ListAccountEnvironments');
+  }
+
+  /**
+   * Grants permission to list account pools
+   *
+   * Access Level: List
+   */
+  public toListAccountPools() {
+    return this.to('ListAccountPools');
+  }
+
+  /**
+   * Grants permission to list accounts in an account pool
+   *
+   * Access Level: List
+   */
+  public toListAccountsInAccountPool() {
+    return this.to('ListAccountsInAccountPool');
   }
 
   /**
@@ -1348,7 +1411,7 @@ export class Datazone extends PolicyStatement {
   /**
    * Grants permission to remove a policy grant
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    */
   public toRemovePolicyGrant() {
     return this.to('RemovePolicyGrant');
@@ -1357,7 +1420,7 @@ export class Datazone extends PolicyStatement {
   /**
    * Grants permission to revoke a subscription
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    */
   public toRevokeSubscription() {
     return this.to('RevokeSubscription');
@@ -1436,6 +1499,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start account bootstrap action for a domain
+   *
+   * Access Level: Write
+   */
+  public toStartAccountBootstrapAction() {
+    return this.to('StartAccountBootstrapAction');
+  }
+
+  /**
    * Grants permission to start a DataSource run job
    *
    * Access Level: Write
@@ -1485,6 +1557,15 @@ export class Datazone extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an account pool
+   *
+   * Access Level: Write
+   */
+  public toUpdateAccountPool() {
+    return this.to('UpdateAccountPool');
   }
 
   /**
@@ -1699,12 +1780,13 @@ export class Datazone extends PolicyStatement {
       'AcceptPredictions',
       'AcceptSubscriptionRequest',
       'AddEntityOwner',
-      'AddPolicyGrant',
       'AssociateEnvironmentRole',
+      'AssociateGovernedTerms',
       'BatchDeleteLinkedTypes',
       'BatchPutLinkedTypes',
       'CancelMetadataGenerationRun',
       'CancelSubscription',
+      'CreateAccountPool',
       'CreateAsset',
       'CreateAssetFilter',
       'CreateAssetRevision',
@@ -1732,6 +1814,7 @@ export class Datazone extends PolicyStatement {
       'CreateSubscriptionRequest',
       'CreateSubscriptionTarget',
       'CreateUserProfile',
+      'DeleteAccountPool',
       'DeleteAsset',
       'DeleteAssetFilter',
       'DeleteAssetType',
@@ -1758,6 +1841,7 @@ export class Datazone extends PolicyStatement {
       'DeleteSubscriptionTarget',
       'DeleteTimeSeriesDataPoints',
       'DisassociateEnvironmentRole',
+      'DisassociateGovernedTerms',
       'PostLineageEvent',
       'PostTimeSeriesDataPoints',
       'ProvisionDomain',
@@ -1766,13 +1850,13 @@ export class Datazone extends PolicyStatement {
       'RejectPredictions',
       'RejectSubscriptionRequest',
       'RemoveEntityOwner',
-      'RemovePolicyGrant',
-      'RevokeSubscription',
       'SsoLogin',
       'SsoLogout',
+      'StartAccountBootstrapAction',
       'StartDataSourceRun',
       'StartMetadataGenerationRun',
       'StopMetadataGenerationRun',
+      'UpdateAccountPool',
       'UpdateAssetFilter',
       'UpdateConnection',
       'UpdateDataSource',
@@ -1798,11 +1882,15 @@ export class Datazone extends PolicyStatement {
       'ValidatePassRole'
     ],
     'Permissions management': [
+      'AddPolicyGrant',
       'DeleteDomainSharingPolicy',
       'GetIamPortalLoginUrl',
-      'PutDomainSharingPolicy'
+      'PutDomainSharingPolicy',
+      'RemovePolicyGrant',
+      'RevokeSubscription'
     ],
     Read: [
+      'GetAccountPool',
       'GetAsset',
       'GetAssetFilter',
       'GetAssetType',
@@ -1845,6 +1933,8 @@ export class Datazone extends PolicyStatement {
     ],
     List: [
       'ListAccountEnvironments',
+      'ListAccountPools',
+      'ListAccountsInAccountPool',
       'ListAssetFilters',
       'ListAssetRevisions',
       'ListConnections',

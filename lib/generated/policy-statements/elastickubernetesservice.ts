@@ -388,6 +388,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the status of the latest on-demand cluster insights refresh operation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeInsightsRefresh.html
+   */
+  public toDescribeInsightsRefresh() {
+    return this.to('DescribeInsightsRefresh');
+  }
+
+  /**
    * Grants permission to retrieve descriptive information about an Amazon EKS nodegroup
    *
    * Access Level: Read
@@ -503,6 +514,28 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list dashboard data. The Amazon EKS Dashboard aggregates information about cluster resources across multiple accounts and regions. The dashboard includes information about EC2 Instances and EKS Cluster versions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListDashboardData.html
+   */
+  public toListDashboardData() {
+    return this.to('ListDashboardData');
+  }
+
+  /**
+   * Grants permission to list dashboard resources. The Amazon EKS Dashboard aggregates information about cluster resources across multiple accounts and regions. The dashboard includes information about EC2 Instances and EKS Cluster versions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListDashboardResources.html
+   */
+  public toListDashboardResources() {
+    return this.to('ListDashboardResources');
+  }
+
+  /**
    * Grants permission to list EKS Anywhere subscriptions
    *
    * Access Level: List
@@ -603,6 +636,17 @@ export class Eks extends PolicyStatement {
    */
   public toRegisterCluster() {
     return this.to('RegisterCluster');
+  }
+
+  /**
+   * Grants permission to initiate an on-demand refresh operation for cluster insights, getting the latest analysis outside of the standard refresh schedule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_StartInsightsRefresh.html
+   */
+  public toStartInsightsRefresh() {
+    return this.to('StartInsightsRefresh');
   }
 
   /**
@@ -742,9 +786,12 @@ export class Eks extends PolicyStatement {
       'DescribeFargateProfile',
       'DescribeIdentityProviderConfig',
       'DescribeInsight',
+      'DescribeInsightsRefresh',
       'DescribeNodegroup',
       'DescribePodIdentityAssociation',
       'DescribeUpdate',
+      'ListDashboardData',
+      'ListDashboardResources',
       'ListTagsForResource'
     ],
     Write: [
@@ -769,6 +816,7 @@ export class Eks extends PolicyStatement {
       'DisassociateAccessPolicy',
       'DisassociateIdentityProviderConfig',
       'RegisterCluster',
+      'StartInsightsRefresh',
       'UpdateAccessEntry',
       'UpdateAddon',
       'UpdateClusterConfig',
@@ -966,6 +1014,23 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type dashboard to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/cluster-dashboard.html
+   *
+   * @param dashboardName - Identifier for the dashboardName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDashboard(dashboardName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ dashboardName }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the EKS service
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
@@ -1004,6 +1069,7 @@ export class Eks extends PolicyStatement {
    * - eks-anywhere-subscription
    * - podidentityassociation
    * - access-entry
+   * - dashboard
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

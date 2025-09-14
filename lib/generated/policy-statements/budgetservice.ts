@@ -119,6 +119,9 @@ export class Budgets extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Operations_AWS_Budgets.html
    */
   public toModifyBudget() {
@@ -172,6 +175,9 @@ export class Budgets extends PolicyStatement {
    * Grants permission to view budgets and budget details
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - billing:GetBillingViewData
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Operations_AWS_Budgets.html
    */

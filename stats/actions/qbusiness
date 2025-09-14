@@ -1,4 +1,3 @@
-qbusiness:AddUserLicenses;Write
 qbusiness:AllowVendedLogDeliveryForResource;Permissions management
 qbusiness:AssociatePermission;Write
 qbusiness:BatchDeleteDocument;Write
@@ -9,11 +8,12 @@ qbusiness:ChatSync;Read
 qbusiness:CheckDocumentAccess;Read
 qbusiness:CreateAnonymousWebExperienceUrl;Write
 qbusiness:CreateApplication;Write
+qbusiness:CreateChatResponseConfiguration;Write
 qbusiness:CreateDataAccessor;Write
+qbusiness:CreateDataAccessorWithTti;Write
 qbusiness:CreateDataSource;Write
 qbusiness:CreateIndex;Write
 qbusiness:CreateIntegration;Write
-qbusiness:CreateLicense;Write
 qbusiness:CreatePlugin;Write
 qbusiness:CreateRetriever;Write
 qbusiness:CreateSubscription;Write
@@ -22,6 +22,7 @@ qbusiness:CreateWebExperience;Write
 qbusiness:DeleteApplication;Write
 qbusiness:DeleteAttachment;Write
 qbusiness:DeleteChatControlsConfiguration;Write
+qbusiness:DeleteChatResponseConfiguration;Write
 qbusiness:DeleteConversation;Write
 qbusiness:DeleteDataAccessor;Write
 qbusiness:DeleteDataSource;Write
@@ -36,12 +37,13 @@ qbusiness:DisableAclOnDataSource;Write
 qbusiness:DisassociatePermission;Write
 qbusiness:GetApplication;Read
 qbusiness:GetChatControlsConfiguration;List
+qbusiness:GetChatResponseConfiguration;Read
 qbusiness:GetDataAccessor;Read
 qbusiness:GetDataSource;Read
+qbusiness:GetDocumentContent;Read
 qbusiness:GetGroup;Read
 qbusiness:GetIndex;Read
 qbusiness:GetIntegration;Read
-qbusiness:GetLicense;Read
 qbusiness:GetMedia;Read
 qbusiness:GetPlugin;Read
 qbusiness:GetPolicy;Read
@@ -50,6 +52,7 @@ qbusiness:GetUser;Read
 qbusiness:GetWebExperience;Read
 qbusiness:ListApplications;List
 qbusiness:ListAttachments;List
+qbusiness:ListChatResponseConfigurations;List
 qbusiness:ListConversations;List
 qbusiness:ListDataAccessors;List
 qbusiness:ListDataSourceSyncJobs;List
@@ -66,12 +69,10 @@ qbusiness:ListPlugins;List
 qbusiness:ListRetrievers;List
 qbusiness:ListSubscriptions;List
 qbusiness:ListTagsForResource;Read
-qbusiness:ListUserLicenses;List
 qbusiness:ListWebExperiences;List
 qbusiness:PutFeedback;Write
 qbusiness:PutGroup;Write
 qbusiness:PutResourcePolicy;Write
-qbusiness:RemoveUserLicenses;Write
 qbusiness:SearchRelevantContent;Read
 qbusiness:StartDataSourceSyncJob;Write
 qbusiness:StartDeployment;Write
@@ -80,6 +81,7 @@ qbusiness:TagResource;Tagging
 qbusiness:UntagResource;Tagging
 qbusiness:UpdateApplication;Write
 qbusiness:UpdateChatControlsConfiguration;Write
+qbusiness:UpdateChatResponseConfiguration;Write
 qbusiness:UpdateDataAccessor;Write
 qbusiness:UpdateDataSource;Write
 qbusiness:UpdateIndex;Write
