@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(make build)",
+      "Bash(make generate)",
+      "Bash(SERVICE=* make generate)",
+      "Bash(make generate-force)",
+      "Bash(SERVICE=* make generate-force)",
+      "Bash(make index-managed-policies)",
+      "Bash(make package)",
+      "Bash(make cdk)",
+      "Bash(make uncdk)",
+      "Bash(make test)",
+      "Bash(make cdk-test)",
+      "Bash(make cdk-all)",
+      "Bash(make changelog)",
+      "Bash(make stats)",
+      "Bash(make clean)",
+      "Bash(make install)",
+      "Bash(make docs)",
+      "Bash(make test-typescript)",
+      "Bash(make test-typescript-cdk)",
+      "Bash(make regenerate-code-example-results)",
+      "Bash(make eslint)",
+      "Bash(npx tsc:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
