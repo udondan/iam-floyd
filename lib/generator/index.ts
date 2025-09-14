@@ -1,5 +1,6 @@
 import 'colors';
 
+import { get } from 'lodash';
 import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import * as glob from 'glob';
@@ -489,11 +490,22 @@ export function createModule(module: Module): Promise<void> {
 
   let hasConditions = false;
 
+  // Build a map of base condition names to detect conflicts
+  const conditionBaseNames = new Map<string, string[]>();
+  for (let [key, condition] of Object.entries(module.conditions!)) {
+    const conditionKey = condition.key;
+    const baseName = createConditionName(conditionKey, module.servicePrefix!);
+    if (!conditionBaseNames.has(baseName)) {
+      conditionBaseNames.set(baseName, []);
+    }
+    conditionBaseNames.get(baseName)!.push(conditionKey);
+  }
+
   for (let [key, condition] of Object.entries(module.conditions!)) {
     key = condition.key;
 
     const parts = key.split(':');
-    const name = parts[1].split(/\/(?=[$<]|$)/);
+    const name = parts[1].split(/\/(?=\$\{|<|\$|$)/);
 
     stats.conditions.push(`${module.servicePrefix}:${parts[1]}`);
 
@@ -541,12 +553,31 @@ export function createModule(module: Module): Promise<void> {
     const methodBody: string[] = [];
 
     let methodName = createConditionName(key, module.servicePrefix!);
-    if (name.length > 1 && !name[1].length) {
-      // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
-      methodName += 'Exists';
-    } else if (name.length == 1 && name[0] == 'Attribute') {
-      // special case for ec2:Attribute
-      methodName += 'Exists';
+
+    // Check for custom method name in fixes
+    const keySplit = key.split(':');
+    const keyWithoutPrefix = keySplit[keySplit.length - 1];
+    const customMethodName = get(fixes, `${module.filename}.conditions.${keyWithoutPrefix}.methodName`);
+    if (typeof customMethodName !== 'undefined') {
+      methodName = customMethodName;
+    } else {
+      if (name.length > 1 && !name[1].length) {
+        // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
+        methodName += 'Exists';
+      } else if (name.length == 1 && name[0] == 'Attribute') {
+        // special case for ec2:Attribute
+        methodName += 'Exists';
+      }
+    }
+
+    // Handle parameterized conditions that conflict with non-parameterized ones
+    const conflictingKeys = conditionBaseNames.get(methodName) || [];
+    if (conflictingKeys.length > 1 && name.length > 1 && name[1].length) {
+      // This is a parameterized condition that conflicts with others
+      const paramPart = name[1].replace(/^\$\{([^}]+)\}(.*)/, '$1$2').replace(/[^a-zA-Z0-9]/g, '');
+      if (paramPart.length) {
+        methodName += upperFirst(camelCase(paramPart));
+      }
     }
     const method = classDeclaration.addMethod({
       name: methodName,
@@ -973,7 +1004,7 @@ function addConditions($: cheerio.Root, module: Module): Module {
 
 function createConditionName(key: string, servicePrefix: string): string {
   let methodName = 'if';
-  const split = key.split(/:|\/(?=[$<]|$)/);
+  const split = key.split(/:|\/(?=\$\{|<|\$|$)/);
 
   // these are exceptions for the Security Token Service to:
   // - make it clear to which provider the condition is for
