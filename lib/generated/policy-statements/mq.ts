@@ -309,6 +309,15 @@ export class Mq extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update RabbitMQ broker authentication and authorization configuration
+   *
+   * Access Level: Write
+   */
+  public toUpdateBrokerAccessConfiguration() {
+    return this.to('UpdateBrokerAccessConfiguration');
+  }
+
+  /**
    * Grants permission to update the specified configuration
    *
    * Access Level: Write
@@ -342,6 +351,7 @@ export class Mq extends PolicyStatement {
       'Promote',
       'RebootBroker',
       'UpdateBroker',
+      'UpdateBrokerAccessConfiguration',
       'UpdateConfiguration',
       'UpdateUser'
     ],

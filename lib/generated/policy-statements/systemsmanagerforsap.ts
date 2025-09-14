@@ -32,7 +32,7 @@ export class SsmSap extends PolicyStatement {
   /**
    * Grants permission to delete the SSM for SAP level resource permissions associated with a SSM for SAP database resource
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/systems-manager/index.html
    */
@@ -74,6 +74,17 @@ export class SsmSap extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the details of a configuration check operation by specifying the operation ID
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toGetConfigurationCheckOperation() {
+    return this.to('GetConfigurationCheckOperation');
+  }
+
+  /**
    * Grants permission to access information about a database registered with SSM for SAP by providing the application ID, component ID, and database ID
    *
    * Access Level: Read
@@ -98,7 +109,7 @@ export class SsmSap extends PolicyStatement {
   /**
    * Grants permission to get the SSM for SAP level resource permissions associated with a SSM for SAP database resource
    *
-   * Access Level: Read
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/systems-manager/index.html
    */
@@ -126,6 +137,28 @@ export class SsmSap extends PolicyStatement {
    */
   public toListComponents() {
     return this.to('ListComponents');
+  }
+
+  /**
+   * Grants permission to list all configuration check types supported by AWS Systems Manager for SAP
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toListConfigurationCheckDefinitions() {
+    return this.to('ListConfigurationCheckDefinitions');
+  }
+
+  /**
+   * Grants permission to list past configuration check operations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toListConfigurationCheckOperations() {
+    return this.to('ListConfigurationCheckOperations');
   }
 
   /**
@@ -162,6 +195,28 @@ export class SsmSap extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the sub-check results of a specified configuration check operation
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toListSubCheckResults() {
+    return this.to('ListSubCheckResults');
+  }
+
+  /**
+   * Grants permission to list the rules of a specified sub-check belonging to a configuration check operation
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toListSubCheckRuleResults() {
+    return this.to('ListSubCheckRuleResults');
+  }
+
+  /**
    * Grants permission to list the tags on a specified resource ARN
    *
    * Access Level: Read
@@ -175,7 +230,7 @@ export class SsmSap extends PolicyStatement {
   /**
    * Grants permission to add the SSM for SAP level resource permissions associated with a SSM for SAP database resource
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/systems-manager/index.html
    */
@@ -229,6 +284,17 @@ export class SsmSap extends PolicyStatement {
    */
   public toStartApplicationRefresh() {
     return this.to('StartApplicationRefresh');
+  }
+
+  /**
+   * Grants permission to iniitiate configuration check operations against a specified application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/index.html
+   */
+  public toStartConfigurationChecks() {
+    return this.to('StartConfigurationChecks');
   }
 
   /**
@@ -296,31 +362,39 @@ export class SsmSap extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BackupDatabase',
-      'DeleteResourcePermission',
       'DeregisterApplication',
-      'PutResourcePermission',
       'RegisterApplication',
       'RestoreDatabase',
       'StartApplication',
       'StartApplicationRefresh',
+      'StartConfigurationChecks',
       'StopApplication',
       'UpdateApplicationSettings',
       'UpdateHANABackupSettings'
     ],
+    'Permissions management': [
+      'DeleteResourcePermission',
+      'GetResourcePermission',
+      'PutResourcePermission'
+    ],
     Read: [
       'GetApplication',
       'GetComponent',
+      'GetConfigurationCheckOperation',
       'GetDatabase',
       'GetOperation',
-      'GetResourcePermission',
       'ListTagsForResource'
     ],
     List: [
       'ListApplications',
       'ListComponents',
+      'ListConfigurationCheckDefinitions',
+      'ListConfigurationCheckOperations',
       'ListDatabases',
       'ListOperationEvents',
-      'ListOperations'
+      'ListOperations',
+      'ListSubCheckResults',
+      'ListSubCheckRuleResults'
     ],
     Tagging: [
       'TagResource',

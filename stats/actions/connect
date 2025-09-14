@@ -125,6 +125,7 @@ connect:DisassociateUserProficiencies;Write
 connect:DismissUserContact;Write
 connect:GetAttachedFile;Read
 connect:GetContactAttributes;Read
+connect:GetContactMetrics;Read
 connect:GetCurrentMetricData;Read
 connect:GetCurrentUserData;Read
 connect:GetEffectiveHoursOfOperations;Read

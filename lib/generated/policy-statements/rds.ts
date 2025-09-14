@@ -378,6 +378,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    * - .ifManageMasterUserPassword()
+   * - .ifPubliclyAccessible()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -405,6 +406,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   * - .ifPubliclyAccessible()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -446,6 +448,7 @@ export class Rds extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxy.html
    */
@@ -461,6 +464,9 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxyEndpoint.html
    */
@@ -495,6 +501,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifPubliclyAccessible()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -568,6 +575,13 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateGlobalCluster.html
    */
   public toCreateGlobalCluster() {
@@ -623,6 +637,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifTenantDatabaseName()
+   * - .ifManageMasterUserPassword()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -1073,6 +1088,17 @@ export class Rds extends PolicyStatement {
    */
   public toDescribeDBLogFiles() {
     return this.to('DescribeDBLogFiles');
+  }
+
+  /**
+   * Grants permission to return information specific for each DB major engine versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBMajorEngineVersions.html
+   */
+  public toDescribeDBMajorEngineVersions() {
+    return this.to('DescribeDBMajorEngineVersions');
   }
 
   /**
@@ -1805,6 +1831,7 @@ export class Rds extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifTenantDatabaseName()
+   * - .ifManageMasterUserPassword()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyTenantDatabase.html
    */
@@ -1842,6 +1869,9 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PurchaseReservedDBInstancesOffering.html
    */
@@ -2072,6 +2102,8 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   * - .ifManageMasterUserPassword()
+   * - .ifPubliclyAccessible()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -2094,6 +2126,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifReqTag()
    * - .ifManageMasterUserPassword()
+   * - .ifPubliclyAccessible()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -2121,6 +2154,8 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   * - .ifManageMasterUserPassword()
+   * - .ifPubliclyAccessible()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -2433,6 +2468,7 @@ export class Rds extends PolicyStatement {
       'DescribeDBInstanceAutomatedBackups',
       'DescribeDBInstances',
       'DescribeDBLogFiles',
+      'DescribeDBMajorEngineVersions',
       'DescribeDBParameterGroups',
       'DescribeDBParameters',
       'DescribeDBProxies',
@@ -2494,7 +2530,7 @@ export class Rds extends PolicyStatement {
   /**
    * Adds a resource of type shardgrp to the statement
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Overview.DBShardGroup.html
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/limitless-architecture.html
    *
    * @param dbShardGroupResourceId - Identifier for the dbShardGroupResourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2641,6 +2677,9 @@ export class Rds extends PolicyStatement {
    * @param globalCluster - Identifier for the globalCluster.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:rds::${ account ?? this.defaultAccount }:global-cluster:${ globalCluster }`);
@@ -2921,6 +2960,7 @@ export class Rds extends PolicyStatement {
    * - .toCreateDBSnapshot()
    * - .toCreateDBSubnetGroup()
    * - .toCreateEventSubscription()
+   * - .toCreateGlobalCluster()
    * - .toCreateIntegration()
    * - .toCreateOptionGroup()
    * - .toCreateTenantDatabase()
@@ -2960,6 +3000,7 @@ export class Rds extends PolicyStatement {
    * - cluster-snapshot
    * - db
    * - es
+   * - global-cluster
    * - og
    * - pg
    * - proxy
@@ -3011,6 +3052,7 @@ export class Rds extends PolicyStatement {
    * - .toCreateDBSnapshot()
    * - .toCreateDBSubnetGroup()
    * - .toCreateEventSubscription()
+   * - .toCreateGlobalCluster()
    * - .toCreateIntegration()
    * - .toCreateOptionGroup()
    * - .toCreateTenantDatabase()
@@ -3147,10 +3189,14 @@ export class Rds extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDBCluster()
    * - .toCreateDBInstance()
+   * - .toCreateTenantDatabase()
    * - .toModifyDBCluster()
    * - .toModifyDBInstance()
+   * - .toModifyTenantDatabase()
    * - .toRestoreDBClusterFromS3()
+   * - .toRestoreDBInstanceFromDBSnapshot()
    * - .toRestoreDBInstanceFromS3()
+   * - .toRestoreDBInstanceToPointInTime()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -3195,6 +3241,25 @@ export class Rds extends PolicyStatement {
    */
   public ifPiops(value: number | number[], operator?: Operator | string) {
     return this.if(`Piops`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the value that specifies whether the DB Instance or DB ShardGroup is publicly accessible
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBInstance()
+   * - .toCreateDBInstanceReadReplica()
+   * - .toCreateDBShardGroup()
+   * - .toRestoreDBInstanceFromDBSnapshot()
+   * - .toRestoreDBInstanceFromS3()
+   * - .toRestoreDBInstanceToPointInTime()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifPubliclyAccessible(value?: boolean) {
+    return this.if(`PubliclyAccessible`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

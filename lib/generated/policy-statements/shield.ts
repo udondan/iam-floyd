@@ -169,6 +169,17 @@ export class Shield extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get detailed information about the contributors to a specific DDoS attack
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toDescribeAttackContributors() {
+    return this.to('DescribeAttackContributors');
+  }
+
+  /**
    * Grants permission to describe information about the number and type of attacks AWS Shield has detected in the last year
    *
    * Access Level: Read
@@ -336,6 +347,17 @@ export class Shield extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve global threat intelligence data and trends from AWS Shield's threat monitoring systems
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toGetGlobalThreatData() {
+    return this.to('GetGlobalThreatData');
+  }
+
+  /**
    * Grants permission to get subscription state
    *
    * Access Level: Read
@@ -355,6 +377,17 @@ export class Shield extends PolicyStatement {
    */
   public toListAttacks() {
     return this.to('ListAttacks');
+  }
+
+  /**
+   * Grants permission to retrieve a list of mitigation actions that have been applied during DDoS attacks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html
+   */
+  public toListMitigations() {
+    return this.to('ListMitigations');
   }
 
   /**
@@ -510,17 +543,20 @@ export class Shield extends PolicyStatement {
     ],
     Read: [
       'DescribeAttack',
+      'DescribeAttackContributors',
       'DescribeAttackStatistics',
       'DescribeDRTAccess',
       'DescribeEmergencyContactSettings',
       'DescribeProtection',
       'DescribeProtectionGroup',
       'DescribeSubscription',
+      'GetGlobalThreatData',
       'GetSubscriptionState',
       'ListTagsForResource'
     ],
     List: [
       'ListAttacks',
+      'ListMitigations',
       'ListProtectionGroups',
       'ListProtections',
       'ListResourcesInProtectionGroup'

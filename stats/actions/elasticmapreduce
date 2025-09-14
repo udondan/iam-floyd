@@ -1,3 +1,4 @@
+elasticmapreduce:AccessAllEventLogs;Write
 elasticmapreduce:AddInstanceFleet;Write
 elasticmapreduce:AddInstanceGroups;Write
 elasticmapreduce:AddJobFlowSteps;Write

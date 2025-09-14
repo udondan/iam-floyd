@@ -9,6 +9,7 @@ entityresolution:DeleteIdNamespace;Write
 entityresolution:DeleteMatchingWorkflow;Write
 entityresolution:DeletePolicyStatement;Permissions management
 entityresolution:DeleteSchemaMapping;Write
+entityresolution:GenerateMatchId;Write
 entityresolution:GetIdMappingJob;Read
 entityresolution:GetIdMappingWorkflow;Read
 entityresolution:GetIdNamespace;Read

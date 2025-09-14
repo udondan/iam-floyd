@@ -724,6 +724,21 @@ export class CleanroomsMl extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a list of trained model versions
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainedModelVersions.html
+   */
+  public toListTrainedModelVersions() {
+    return this.to('ListTrainedModelVersions');
+  }
+
+  /**
    * Grants permission to return a list of trained models
    *
    * Access Level: List
@@ -941,6 +956,7 @@ export class CleanroomsMl extends PolicyStatement {
       'ListMLInputChannels',
       'ListTagsForResource',
       'ListTrainedModelInferenceJobs',
+      'ListTrainedModelVersions',
       'ListTrainedModels',
       'ListTrainingDatasets'
     ],
@@ -1142,6 +1158,7 @@ export class CleanroomsMl extends PolicyStatement {
    * - .toListConfiguredModelAlgorithms()
    * - .toListMLInputChannels()
    * - .toListTrainedModelInferenceJobs()
+   * - .toListTrainedModelVersions()
    * - .toListTrainedModels()
    * - .toPutMLConfiguration()
    * - .toStartAudienceExportJob()
@@ -1239,6 +1256,7 @@ export class CleanroomsMl extends PolicyStatement {
    * - .toListMLInputChannels()
    * - .toListTagsForResource()
    * - .toListTrainedModelInferenceJobs()
+   * - .toListTrainedModelVersions()
    * - .toListTrainedModels()
    * - .toPutMLConfiguration()
    * - .toStartAudienceExportJob()

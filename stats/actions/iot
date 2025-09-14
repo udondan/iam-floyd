@@ -35,8 +35,8 @@ iot:CreateMitigationAction;Write
 iot:CreateOTAUpdate;Write
 iot:CreatePackage;Write
 iot:CreatePackageVersion;Write
-iot:CreatePolicy;Write
-iot:CreatePolicyVersion;Write
+iot:CreatePolicy;Permissions management
+iot:CreatePolicyVersion;Permissions management
 iot:CreateProvisioningClaim;Write
 iot:CreateProvisioningTemplate;Write
 iot:CreateProvisioningTemplateVersion;Write
@@ -58,6 +58,7 @@ iot:DeleteCertificate;Write
 iot:DeleteCertificateProvider;Write
 iot:DeleteCommand;Write
 iot:DeleteCommandExecution;Write
+iot:DeleteConnection;Write
 iot:DeleteCustomMetric;Write
 iot:DeleteDimension;Write
 iot:DeleteDomainConfiguration;Write
@@ -70,8 +71,8 @@ iot:DeleteMitigationAction;Write
 iot:DeleteOTAUpdate;Write
 iot:DeletePackage;Write
 iot:DeletePackageVersion;Write
-iot:DeletePolicy;Write
-iot:DeletePolicyVersion;Write
+iot:DeletePolicy;Permissions management
+iot:DeletePolicyVersion;Permissions management
 iot:DeleteProvisioningTemplate;Write
 iot:DeleteProvisioningTemplateVersion;Write
 iot:DeleteRegistrationCode;Write
@@ -102,6 +103,7 @@ iot:DescribeDefaultAuthorizer;Read
 iot:DescribeDetectMitigationActionsTask;Read
 iot:DescribeDimension;Read
 iot:DescribeDomainConfiguration;Read
+iot:DescribeEncryptionConfiguration;Read
 iot:DescribeEndpoint;Read
 iot:DescribeEventConfigurations;Read
 iot:DescribeFleetMetric;Read
@@ -265,6 +267,7 @@ iot:UpdateCustomMetric;Write
 iot:UpdateDimension;Write
 iot:UpdateDomainConfiguration;Write
 iot:UpdateDynamicThingGroup;Write
+iot:UpdateEncryptionConfiguration;Write
 iot:UpdateEventConfigurations;Write
 iot:UpdateFleetMetric;Write
 iot:UpdateIndexingConfiguration;Write

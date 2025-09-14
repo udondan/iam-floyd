@@ -150,6 +150,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a root client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   */
+  public toCreateRootClientCertificate() {
+    return this.to('CreateRootClientCertificate');
+  }
+
+  /**
    * Grants permission to create one or more Standby WorkSpaces
    *
    * Access Level: Write
@@ -310,6 +321,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toDeleteIpGroup() {
     return this.to('DeleteIpGroup');
+  }
+
+  /**
+   * Grants permission to delete root client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   */
+  public toDeleteRootClientCertificate() {
+    return this.to('DeleteRootClientCertificate');
   }
 
   /**
@@ -491,6 +513,28 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about consent agreement to BYOL minimum requirements
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   */
+  public toDescribeConsent() {
+    return this.to('DescribeConsent');
+  }
+
+  /**
+   * Grants permission to retrieve information about WorkSpace BYOL image import task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeCustomWorkspaceImageImport.html
+   */
+  public toDescribeCustomWorkspaceImageImport() {
+    return this.to('DescribeCustomWorkspaceImageImport');
+  }
+
+  /**
    * Grants permission to retrieve information about resources associated with a WorkSpace image
    *
    * Access Level: List
@@ -513,6 +557,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toDescribeIpGroups() {
     return this.to('DescribeIpGroups');
+  }
+
+  /**
+   * Grants permission to retrieve information for root client certificates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   */
+  public toDescribeRootClientCertificates() {
+    return this.to('DescribeRootClientCertificates');
   }
 
   /**
@@ -640,6 +695,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to directory management actions while managing and provisioning workspaces
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   */
+  public toDirectoryAccessManagement() {
+    return this.to('DirectoryAccessManagement');
+  }
+
+  /**
    * Grants permission to disassociate connection aliases from directories
    *
    * Access Level: Write
@@ -695,6 +761,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toImportClientBranding() {
     return this.to('ImportClientBranding');
+  }
+
+  /**
+   * Grants permission to import Bring Your Own License (BYOL) images into Amazon WorkSpaces
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_ImportCustomWorkspaceImage.html
+   */
+  public toImportCustomWorkspaceImage() {
+    return this.to('ImportCustomWorkspaceImage');
   }
 
   /**
@@ -1053,6 +1130,28 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the consent agreement to BYOL minimum requirements
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   */
+  public toUpdateConsent() {
+    return this.to('UpdateConsent');
+  }
+
+  /**
+   * Grants permission to update a root client certificate
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   */
+  public toUpdateRootClientCertificate() {
+    return this.to('UpdateRootClientCertificate');
+  }
+
+  /**
    * Grants permission to replace rules for IP access control groups
    *
    * Access Level: Write
@@ -1112,6 +1211,7 @@ export class Workspaces extends PolicyStatement {
       'CreateConnectClientAddIn',
       'CreateConnectionAlias',
       'CreateIpGroup',
+      'CreateRootClientCertificate',
       'CreateStandbyWorkspaces',
       'CreateUpdatedWorkspaceImage',
       'CreateWorkspaceBundle',
@@ -1123,6 +1223,7 @@ export class Workspaces extends PolicyStatement {
       'DeleteConnectClientAddIn',
       'DeleteConnectionAlias',
       'DeleteIpGroup',
+      'DeleteRootClientCertificate',
       'DeleteWorkspaceBundle',
       'DeleteWorkspaceImage',
       'DeployWorkspaceApplications',
@@ -1131,6 +1232,7 @@ export class Workspaces extends PolicyStatement {
       'DisassociateIpGroups',
       'DisassociateWorkspaceApplication',
       'ImportClientBranding',
+      'ImportCustomWorkspaceImage',
       'ImportWorkspaceImage',
       'MigrateWorkspace',
       'ModifyAccount',
@@ -1158,6 +1260,8 @@ export class Workspaces extends PolicyStatement {
       'TerminateWorkspacesPool',
       'TerminateWorkspacesPoolSession',
       'UpdateConnectClientAddIn',
+      'UpdateConsent',
+      'UpdateRootClientCertificate',
       'UpdateRulesOfIpGroup',
       'UpdateWorkspaceBundle',
       'UpdateWorkspacesPool'
@@ -1172,6 +1276,8 @@ export class Workspaces extends PolicyStatement {
       'DescribeClientBranding',
       'DescribeConnectionAliasPermissions',
       'DescribeConnectionAliases',
+      'DescribeConsent',
+      'DescribeCustomWorkspaceImageImport',
       'DescribeIpGroups',
       'DescribeTags',
       'DescribeWorkspaceDirectories',
@@ -1186,6 +1292,7 @@ export class Workspaces extends PolicyStatement {
       'DescribeClientProperties',
       'DescribeConnectClientAddIns',
       'DescribeImageAssociations',
+      'DescribeRootClientCertificates',
       'DescribeWorkspaceAssociations',
       'DescribeWorkspaceBundles',
       'DescribeWorkspaceImages',
@@ -1193,6 +1300,7 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspaces',
       'DescribeWorkspacesPoolSessions',
       'DescribeWorkspacesPools',
+      'DirectoryAccessManagement',
       'ListAccountLinks',
       'ListAvailableManagementCidrRanges'
     ],
@@ -1202,6 +1310,20 @@ export class Workspaces extends PolicyStatement {
       'UpdateWorkspaceImagePermission'
     ]
   };
+
+  /**
+   * Adds a resource of type certificateid to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html
+   *
+   * @param certificateId - Identifier for the certificateId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCertificateid(certificateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:workspaces:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspacecertificate/${ certificateId }`);
+  }
 
   /**
    * Adds a resource of type directoryid to the statement

@@ -156,6 +156,17 @@ export class Entityresolution extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate match Id
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/entityresolution/latest/apireference/API_GenerateMatchId.html
+   */
+  public toGenerateMatchId() {
+    return this.to('GenerateMatchId');
+  }
+
+  /**
    * Grants permission to get a idmapping job
    *
    * Access Level: Read
@@ -488,6 +499,7 @@ export class Entityresolution extends PolicyStatement {
       'DeleteIdNamespace',
       'DeleteMatchingWorkflow',
       'DeleteSchemaMapping',
+      'GenerateMatchId',
       'StartIdMappingJob',
       'StartMatchingJob',
       'UpdateIdMappingWorkflow',

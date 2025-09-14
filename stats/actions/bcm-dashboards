@@ -1,0 +1,9 @@
+bcm-dashboards:CreateDashboard;Write
+bcm-dashboards:DeleteDashboard;Write
+bcm-dashboards:GetDashboard;Read
+bcm-dashboards:GetResourcePolicy;Read
+bcm-dashboards:ListDashboards;Read
+bcm-dashboards:ListTagsForResource;Read
+bcm-dashboards:TagResource;Tagging
+bcm-dashboards:UntagResource;Tagging
+bcm-dashboards:UpdateDashboard;Write

@@ -1,3 +1,4 @@
+vpc-lattice:AssociateViaAWSService;Permissions management
 vpc-lattice:AssociateViaAWSServiceEventsAndStates;Permissions management
 vpc-lattice:CreateAccessLogSubscription;Write
 vpc-lattice:CreateListener;Write

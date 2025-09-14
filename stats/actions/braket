@@ -1,5 +1,4 @@
 braket:AcceptUserAgreement;Write
-braket:AccessBraketFeature;Read
 braket:CancelJob;Write
 braket:CancelQuantumTask;Write
 braket:CreateJob;Write

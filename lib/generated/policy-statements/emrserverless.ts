@@ -47,6 +47,17 @@ export class EmrServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to access system profile logs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging-monitoring.html
+   */
+  public toAccessSystemProfileLogs() {
+    return this.to('AccessSystemProfileLogs');
+  }
+
+  /**
    * Grants permission to cancel a job run
    *
    * Access Level: Write
@@ -244,6 +255,7 @@ export class EmrServerless extends PolicyStatement {
     Write: [
       'AccessInteractiveEndpoints',
       'AccessLivyEndpoints',
+      'AccessSystemProfileLogs',
       'CancelJobRun',
       'CreateApplication',
       'DeleteApplication',

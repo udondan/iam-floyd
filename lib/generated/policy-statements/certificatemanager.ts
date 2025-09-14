@@ -56,9 +56,12 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to export a private certificate issued by a private certificate authority (CA) for use anywhere
+   * Grants permission to export an exportable certificate for use anywhere
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifDomainNames()
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ExportCertificate.html
    */
@@ -175,6 +178,7 @@ export class Acm extends PolicyStatement {
    * - .ifValidationMethod()
    * - .ifKeyAlgorithm()
    * - .ifCertificateAuthority()
+   * - .ifExport()
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html
    */
@@ -191,6 +195,20 @@ export class Acm extends PolicyStatement {
    */
   public toResendValidationEmail() {
     return this.to('ResendValidationEmail');
+  }
+
+  /**
+   * Grants permission to revoke an exportable certificate
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDomainNames()
+   *
+   * https://docs.aws.amazon.com/acm/latest/APIReference/API_RevokeCertificate.html
+   */
+  public toRevokeCertificate() {
+    return this.to('RevokeCertificate');
   }
 
   /**
@@ -216,6 +234,7 @@ export class Acm extends PolicyStatement {
       'RenewCertificate',
       'RequestCertificate',
       'ResendValidationEmail',
+      'RevokeCertificate',
       'UpdateCertificateOptions'
     ],
     Read: [
@@ -283,13 +302,30 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html
    *
    * Applies to actions:
+   * - .toExportCertificate()
    * - .toRequestCertificate()
+   * - .toRevokeCertificate()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDomainNames(value: string | string[], operator?: Operator | string) {
     return this.if(`DomainNames`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the export option in the request. Can be used to restrict creation of certificates that can be exported
+   *
+   * https://docs.aws.amazon.com/acm/latest/userguide/security-iam.html
+   *
+   * Applies to actions:
+   * - .toRequestCertificate()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExport(value: string | string[], operator?: Operator | string) {
+    return this.if(`Export`, value, operator ?? 'StringLike');
   }
 
   /**

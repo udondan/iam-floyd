@@ -31,6 +31,7 @@ glue:CreateCustomEntityType;Write
 glue:CreateDataQualityRuleset;Write
 glue:CreateDatabase;Write
 glue:CreateDevEndpoint;Write
+glue:CreateGlueIdentityCenterConfiguration;Write
 glue:CreateInboundIntegration;Write
 glue:CreateIntegration;Write
 glue:CreateIntegrationResourceProperty;Write
@@ -62,6 +63,7 @@ glue:DeleteCustomEntityType;Write
 glue:DeleteDataQualityRuleset;Write
 glue:DeleteDatabase;Write
 glue:DeleteDevEndpoint;Write
+glue:DeleteGlueIdentityCenterConfiguration;Write
 glue:DeleteIntegration;Write
 glue:DeleteIntegrationTableProperties;Write
 glue:DeleteJob;Write
@@ -125,6 +127,7 @@ glue:GetEnvironment;Permissions management
 glue:GetExecutors;Permissions management
 glue:GetExecutorsThreads;Permissions management
 glue:GetGeneratedCode;Read
+glue:GetGlueIdentityCenterConfiguration;Read
 glue:GetIntegrationResourceProperty;Read
 glue:GetIntegrationTableProperties;Read
 glue:GetJob;Read
@@ -271,6 +274,7 @@ glue:UpdateCrawlerSchedule;Write
 glue:UpdateDataQualityRuleset;Write
 glue:UpdateDatabase;Write
 glue:UpdateDevEndpoint;Write
+glue:UpdateGlueIdentityCenterConfiguration;Write
 glue:UpdateIntegrationResourceProperty;Write
 glue:UpdateIntegrationTableProperties;Write
 glue:UpdateJob;Write

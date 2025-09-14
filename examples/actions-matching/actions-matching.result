@@ -25,6 +25,7 @@
         "ec2:DisassociateClientVpnTargetNetwork",
         "ec2:ExportClientVpnClientCertificateRevocationList",
         "ec2:ExportClientVpnClientConfiguration",
+        "ec2:GetActiveVpnTunnelStatus",
         "ec2:GetVpnConnectionDeviceSampleConfiguration",
         "ec2:GetVpnConnectionDeviceTypes",
         "ec2:GetVpnTunnelReplacementStatus",

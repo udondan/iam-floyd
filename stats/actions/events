@@ -1,4 +1,5 @@
 events:ActivateEventSource;Write
+events:AllowVendedLogDeliveryForResource;Write
 events:CancelReplay;Write
 events:CreateApiDestination;Write
 events:CreateArchive;Write

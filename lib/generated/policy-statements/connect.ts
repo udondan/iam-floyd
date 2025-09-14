@@ -596,6 +596,9 @@ export class Connect extends PolicyStatement {
    * - app-integrations:CreateApplicationAssociation
    * - app-integrations:CreateEventIntegrationAssociation
    * - app-integrations:GetApplication
+   * - app-integrations:GetDataIntegration
+   * - app-integrations:ListDataIntegrationAssociations
+   * - app-integrations:TagResource
    * - cases:GetDomain
    * - chime:AssociateVoiceConnectorConnect
    * - chime:DisassociateVoiceConnectorConnect
@@ -1086,6 +1089,7 @@ export class Connect extends PolicyStatement {
    * Dependent actions:
    * - app-integrations:DeleteApplicationAssociation
    * - app-integrations:DeleteEventIntegrationAssociation
+   * - app-integrations:UntagResource
    * - connect:DescribeInstance
    * - ds:DescribeDirectories
    * - events:DeleteRule
@@ -2024,6 +2028,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get contact metrics in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactMetrics.html
+   */
+  public toGetContactMetrics() {
+    return this.to('GetContactMetrics');
+  }
+
+  /**
    * Grants permission to retrieve current metric data for queues and routing profiles in an Amazon Connect instance
    *
    * Access Level: Read
@@ -2627,6 +2645,10 @@ export class Connect extends PolicyStatement {
    * Grants permission to list the analysis segments for a real-time chat analytics session
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifListRealtimeContactAnalysisSegmentsByOutputType()
+   * - .ifListRealtimeContactAnalysisSegmentsBySegmentType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRealtimeContactAnalysisSegmentsV2.html
    */
@@ -4703,6 +4725,7 @@ export class Connect extends PolicyStatement {
       'DescribeVocabulary',
       'GetAttachedFile',
       'GetContactAttributes',
+      'GetContactMetrics',
       'GetCurrentMetricData',
       'GetCurrentUserData',
       'GetEffectiveHoursOfOperations',
@@ -5918,6 +5941,7 @@ export class Connect extends PolicyStatement {
    * - .toDismissUserContact()
    * - .toGetAttachedFile()
    * - .toGetContactAttributes()
+   * - .toGetContactMetrics()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
    * - .toGetEffectiveHoursOfOperations()
@@ -6058,6 +6082,36 @@ export class Connect extends PolicyStatement {
    */
   public ifInstanceId(value: string | string[], operator?: Operator | string) {
     return this.if(`InstanceId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by restricting the listed segments using the output type of the Amazon Connect Contact Lens real-time segment
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toListRealtimeContactAnalysisSegmentsV2()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifListRealtimeContactAnalysisSegmentsByOutputType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ListRealtimeContactAnalysisSegmentsByOutputType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by restricting the listed segments using the segment types of the Amazon Connect Contact Lens real-time segment
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toListRealtimeContactAnalysisSegmentsV2()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifListRealtimeContactAnalysisSegmentsBySegmentType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ListRealtimeContactAnalysisSegmentsBySegmentType`, value, operator ?? 'StringLike');
   }
 
   /**

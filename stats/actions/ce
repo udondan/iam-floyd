@@ -18,8 +18,10 @@ ce:GetApproximateUsageRecords;Read
 ce:GetCommitmentPurchaseAnalysis;Read
 ce:GetConsoleActionSetEnforced;Read
 ce:GetCostAndUsage;Read
+ce:GetCostAndUsageComparisons;Read
 ce:GetCostAndUsageWithResources;Read
 ce:GetCostCategories;Read
+ce:GetCostComparisonDrivers;Read
 ce:GetCostForecast;Read
 ce:GetDimensionValues;Read
 ce:GetPreferences;Read

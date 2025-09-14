@@ -6,6 +6,7 @@ billing:GetBillingDetails;Read
 billing:GetBillingNotifications;Read
 billing:GetBillingPreferences;Read
 billing:GetBillingView;Read
+billing:GetBillingViewData;Read
 billing:GetContractInformation;Read
 billing:GetCredits;Read
 billing:GetIAMAccessPreference;Read

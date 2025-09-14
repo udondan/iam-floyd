@@ -92,6 +92,7 @@ export class Auditmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html
    */
@@ -107,6 +108,7 @@ export class Auditmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessmentFramework.html
    */
@@ -133,6 +135,7 @@ export class Auditmanager extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateControl.html
    */
@@ -212,7 +215,7 @@ export class Auditmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_ DeregisterAccount.html
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html
    */
   public toDeregisterAccount() {
     return this.to('DeregisterAccount');
@@ -807,12 +810,15 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Adds a resource of type assessment to the statement
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/userguide/API_Assessment.html
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Assessment.html
    *
    * @param assessmentId - Identifier for the assessmentId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAssessment(assessmentId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessment/${ assessmentId }`);
@@ -821,12 +827,15 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Adds a resource of type assessmentFramework to the statement
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/userguide/API_AssessmentFramework.html
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentFramework.html
    *
    * @param assessmentFrameworkId - Identifier for the assessmentFrameworkId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAssessmentFramework(assessmentFrameworkId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:auditmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:assessmentFramework/${ assessmentFrameworkId }`);
@@ -835,7 +844,7 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Adds a resource of type assessmentControlSet to the statement
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/userguide/API_AssessmentControlSet.html
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_AssessmentControlSet.html
    *
    * @param assessmentId - Identifier for the assessmentId.
    * @param controlSetId - Identifier for the controlSetId.
@@ -850,7 +859,7 @@ export class Auditmanager extends PolicyStatement {
   /**
    * Adds a resource of type control to the statement
    *
-   * https://docs.aws.amazon.com/audit-manager/latest/userguide/API_Control.html
+   * https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Control.html
    *
    * @param controlId - Identifier for the controlId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -891,7 +900,15 @@ export class Auditmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateAssessment()
+   * - .toCreateAssessmentFramework()
+   * - .toCreateControl()
+   * - .toUntagResource()
+   *
    * Applies to resource types:
+   * - assessment
+   * - assessmentFramework
    * - control
    *
    * @param tagKey The tag key to check

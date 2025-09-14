@@ -3,6 +3,7 @@ cleanrooms:BatchGetSchema;Read
 cleanrooms:BatchGetSchemaAnalysisRule;Read
 cleanrooms:CreateAnalysisTemplate;Write
 cleanrooms:CreateCollaboration;Write
+cleanrooms:CreateCollaborationChangeRequest;Write
 cleanrooms:CreateConfiguredAudienceModelAssociation;Write
 cleanrooms:CreateConfiguredTable;Write
 cleanrooms:CreateConfiguredTableAnalysisRule;Write
@@ -27,6 +28,7 @@ cleanrooms:DeletePrivacyBudgetTemplate;Write
 cleanrooms:GetAnalysisTemplate;Read
 cleanrooms:GetCollaboration;Read
 cleanrooms:GetCollaborationAnalysisTemplate;Read
+cleanrooms:GetCollaborationChangeRequest;Read
 cleanrooms:GetCollaborationConfiguredAudienceModelAssociation;Read
 cleanrooms:GetCollaborationIdNamespaceAssociation;Read
 cleanrooms:GetCollaborationPrivacyBudgetTemplate;Read
@@ -45,6 +47,7 @@ cleanrooms:GetSchema;Read
 cleanrooms:GetSchemaAnalysisRule;Read
 cleanrooms:ListAnalysisTemplates;List
 cleanrooms:ListCollaborationAnalysisTemplates;List
+cleanrooms:ListCollaborationChangeRequests;List
 cleanrooms:ListCollaborationConfiguredAudienceModelAssociations;List
 cleanrooms:ListCollaborationIdNamespaceAssociations;List
 cleanrooms:ListCollaborationPrivacyBudgetTemplates;List
@@ -75,9 +78,11 @@ cleanrooms:UpdateAnalysisTemplate;Write
 cleanrooms:UpdateCollaboration;Write
 cleanrooms:UpdateConfiguredAudienceModelAssociation;Write
 cleanrooms:UpdateConfiguredTable;Write
+cleanrooms:UpdateConfiguredTableAllowedColumns;Write
 cleanrooms:UpdateConfiguredTableAnalysisRule;Write
 cleanrooms:UpdateConfiguredTableAssociation;Write
 cleanrooms:UpdateConfiguredTableAssociationAnalysisRule;Write
+cleanrooms:UpdateConfiguredTableReference;Write
 cleanrooms:UpdateIdMappingTable;Write
 cleanrooms:UpdateIdNamespaceAssociation;Write
 cleanrooms:UpdateMembership;Write

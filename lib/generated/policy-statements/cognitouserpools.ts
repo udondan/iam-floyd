@@ -768,6 +768,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update user tokens with refresh tokens
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetTokensFromRefreshToken.html
+   */
+  public toGetTokensFromRefreshToken() {
+    return this.to('GetTokensFromRefreshToken');
+  }
+
+  /**
    * Grants permission to get UI customization information for the hosted UI of any app client
    *
    * Access Level: Read
@@ -1308,6 +1319,7 @@ export class CognitoIdp extends PolicyStatement {
       'DisassociateWebACL',
       'ForgetDevice',
       'ForgotPassword',
+      'GetTokensFromRefreshToken',
       'GlobalSignOut',
       'InitiateAuth',
       'ResendConfirmationCode',

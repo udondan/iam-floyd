@@ -259,6 +259,10 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceSpecificCredentialAgeDays()
+   * - .ifServiceSpecificCredentialServiceName()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceSpecificCredential.html
    */
   public toCreateServiceSpecificCredential() {
@@ -515,6 +519,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to delete the specified service-specific credential for an IAM user
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceSpecificCredentialServiceName()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceSpecificCredential.html
    */
@@ -1578,6 +1585,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifServiceSpecificCredentialServiceName()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResetServiceSpecificCredential.html
    */
   public toResetServiceSpecificCredential() {
@@ -2040,6 +2050,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to update the status of a service-specific credential to active or inactive for an IAM user
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifServiceSpecificCredentialServiceName()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServiceSpecificCredential.html
    */
@@ -2777,5 +2790,38 @@ export class Iam extends PolicyStatement {
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the duration until the credential's expiration
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ServiceSpecificCredentialAgeDays
+   *
+   * Applies to actions:
+   * - .toCreateServiceSpecificCredential()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifServiceSpecificCredentialAgeDays(value: number | number[], operator?: Operator | string) {
+    return this.if(`ServiceSpecificCredentialAgeDays`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the service associated with the credential
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ServiceSpecificCredentialServiceName
+   *
+   * Applies to actions:
+   * - .toCreateServiceSpecificCredential()
+   * - .toDeleteServiceSpecificCredential()
+   * - .toResetServiceSpecificCredential()
+   * - .toUpdateServiceSpecificCredential()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServiceSpecificCredentialServiceName(value: string | string[], operator?: Operator | string) {
+    return this.if(`ServiceSpecificCredentialServiceName`, value, operator ?? 'StringLike');
   }
 }

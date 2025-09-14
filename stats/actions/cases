@@ -8,6 +8,7 @@ cases:CreateField;Write
 cases:CreateLayout;Write
 cases:CreateRelatedItem;Write
 cases:CreateTemplate;Write
+cases:DeleteCase;Write
 cases:DeleteCaseRule;Write
 cases:DeleteDomain;Write
 cases:DeleteField;Write

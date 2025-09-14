@@ -27,6 +27,7 @@ eks:DescribeEksAnywhereSubscription;Read
 eks:DescribeFargateProfile;Read
 eks:DescribeIdentityProviderConfig;Read
 eks:DescribeInsight;Read
+eks:DescribeInsightsRefresh;Read
 eks:DescribeNodegroup;Read
 eks:DescribePodIdentityAssociation;Read
 eks:DescribeUpdate;Read
@@ -37,6 +38,8 @@ eks:ListAccessPolicies;List
 eks:ListAddons;List
 eks:ListAssociatedAccessPolicies;List
 eks:ListClusters;List
+eks:ListDashboardData;Read
+eks:ListDashboardResources;Read
 eks:ListEksAnywhereSubscriptions;List
 eks:ListFargateProfiles;List
 eks:ListIdentityProviderConfigs;List
@@ -46,6 +49,7 @@ eks:ListPodIdentityAssociations;List
 eks:ListTagsForResource;Read
 eks:ListUpdates;List
 eks:RegisterCluster;Write
+eks:StartInsightsRefresh;Write
 eks:TagResource;Tagging
 eks:UntagResource;Tagging
 eks:UpdateAccessEntry;Write

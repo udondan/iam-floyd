@@ -36,6 +36,7 @@ export class SnowDeviceManagement extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/snowball/latest/developer-guide/aws-sdm.html#sdm-cli-create-task
@@ -256,6 +257,9 @@ export class SnowDeviceManagement extends PolicyStatement {
    * Filters access by the presence of tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateTask()
    *
    * Applies to resource types:
    * - managed-device

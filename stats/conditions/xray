@@ -1,3 +1,5 @@
 xray:RequestTag/${TagKey}
+xray:ResourcePolicyName
 xray:ResourceTag/${TagKey}
 xray:TagKeys
+xray:TraceSegmentDestination

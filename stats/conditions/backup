@@ -5,6 +5,7 @@ backup:FrameworkArns
 backup:Index
 backup:MaxRetentionDays
 backup:MinRetentionDays
+backup:MpaApprovalTeamArn
 backup:RequestTag/${TagKey}
 backup:ResourceTag/${TagKey}
 backup:TagKeys

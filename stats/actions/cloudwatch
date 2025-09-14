@@ -18,6 +18,7 @@ cloudwatch:EnableAlarmActions;Write
 cloudwatch:EnableInsightRules;Write
 cloudwatch:EnableTopologyDiscovery;Write
 cloudwatch:GenerateQuery;Read
+cloudwatch:GenerateQueryResultsSummary;Read
 cloudwatch:GetDashboard;Read
 cloudwatch:GetInsightRuleReport;Read
 cloudwatch:GetMetricData;Read

@@ -1,6 +1,7 @@
 acm:CertificateAuthority
 acm:CertificateTransparencyLogging
 acm:DomainNames
+acm:Export
 acm:KeyAlgorithm
 acm:RequestTag/${TagKey}
 acm:ResourceTag/${TagKey}

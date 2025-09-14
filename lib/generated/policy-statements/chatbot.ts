@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [chatbot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html).
@@ -23,6 +23,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_AssociateToConfiguration.html
    */
   public toAssociateToConfiguration() {
@@ -33,6 +36,10 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to create an AWS Chatbot Chime Webhook Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateChimeWebhookConfiguration.html
    */
@@ -45,6 +52,10 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateCustomAction.html
    */
   public toCreateCustomAction() {
@@ -55,6 +66,10 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to create an AWS Chatbot Microsoft Teams Channel Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateMicrosoftTeamsChannelConfiguration.html
    */
@@ -67,6 +82,10 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_CreateSlackChannelConfiguration.html
    */
   public toCreateSlackChannelConfiguration() {
@@ -77,6 +96,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to delete an AWS Chatbot Chime Webhook Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteChimeWebhookConfiguration.html
    */
@@ -89,6 +111,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteCustomAction.html
    */
   public toDeleteCustomAction() {
@@ -99,6 +124,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to delete an AWS Chatbot Microsoft Teams Channel Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteMicrosoftTeamsChannelConfiguration.html
    */
@@ -132,6 +160,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to delete an AWS Chatbot Slack Channel Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DeleteSlackChannelConfiguration.html
    */
@@ -221,6 +252,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_DisassociateFromConfiguration.html
    */
   public toDisassociateFromConfiguration() {
@@ -243,6 +277,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetCustomAction.html
    */
   public toGetCustomAction() {
@@ -253,6 +290,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to get a single AWS Chatbot Microsoft Teams Channel Configurations in an AWS account
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_GetMicrosoftTeamsChannelConfiguration.html
    */
@@ -375,6 +415,10 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -385,6 +429,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to remove tags on AWS Chatbot Channel Configuration
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UntagResource.html
    */
@@ -408,6 +455,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateChimeWebhookConfiguration.html
    */
   public toUpdateChimeWebhookConfiguration() {
@@ -418,6 +468,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to update a custom action
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateCustomAction.html
    */
@@ -430,6 +483,9 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateMicrosoftTeamsChannelConfiguration.html
    */
   public toUpdateMicrosoftTeamsChannelConfiguration() {
@@ -440,6 +496,9 @@ export class Chatbot extends PolicyStatement {
    * Grants permission to update an AWS Chatbot Slack Channel Configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UpdateSlackChannelConfiguration.html
    */
@@ -506,6 +565,9 @@ export class Chatbot extends PolicyStatement {
    * @param chatbotConfigurationName - Identifier for the chatbotConfigurationName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onChatbotConfiguration(configurationType: string, chatbotConfigurationName: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:chatbot::${ account ?? this.defaultAccount }:chat-configuration/${ configurationType }/${ chatbotConfigurationName }`);
@@ -519,8 +581,82 @@ export class Chatbot extends PolicyStatement {
    * @param actionName - Identifier for the actionName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCustomAction(actionName: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:chatbot::${ account ?? this.defaultAccount }:custom-action/${ actionName }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateChimeWebhookConfiguration()
+   * - .toCreateCustomAction()
+   * - .toCreateMicrosoftTeamsChannelConfiguration()
+   * - .toCreateSlackChannelConfiguration()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateToConfiguration()
+   * - .toDeleteChimeWebhookConfiguration()
+   * - .toDeleteCustomAction()
+   * - .toDeleteMicrosoftTeamsChannelConfiguration()
+   * - .toDeleteSlackChannelConfiguration()
+   * - .toDisassociateFromConfiguration()
+   * - .toGetCustomAction()
+   * - .toGetMicrosoftTeamsChannelConfiguration()
+   * - .toUpdateChimeWebhookConfiguration()
+   * - .toUpdateCustomAction()
+   * - .toUpdateMicrosoftTeamsChannelConfiguration()
+   * - .toUpdateSlackChannelConfiguration()
+   *
+   * Applies to resource types:
+   * - ChatbotConfiguration
+   * - custom-action
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateChimeWebhookConfiguration()
+   * - .toCreateCustomAction()
+   * - .toCreateMicrosoftTeamsChannelConfiguration()
+   * - .toCreateSlackChannelConfiguration()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }

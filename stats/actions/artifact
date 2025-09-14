@@ -1,7 +1,5 @@
 artifact:AcceptAgreement;Write
 artifact:AcceptNdaForAgreement;Write
-artifact:DownloadAgreement;Read
-artifact:Get;Read
 artifact:GetAccountSettings;Read
 artifact:GetAgreement;Read
 artifact:GetCustomerAgreement;Read

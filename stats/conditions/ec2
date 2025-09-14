@@ -114,6 +114,7 @@ ec2:SubnetID
 ec2:TagKeys
 ec2:Tenancy
 ec2:VolumeID
+ec2:VolumeInitializationRate
 ec2:VolumeIops
 ec2:VolumeSize
 ec2:VolumeThroughput

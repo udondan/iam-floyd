@@ -181,6 +181,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new resource policy statement for a Lex resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateResourcePolicyStatement.html
+   */
+  public toCreateResourcePolicyStatement() {
+    return this.to('CreateResourcePolicyStatement');
+  }
+
+  /**
    * Grants permission to create a new slot in an intent
    *
    * Access Level: Write
@@ -368,6 +379,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete an existing resource policy statement for a Lex resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteResourcePolicyStatement.html
+   */
+  public toDeleteResourcePolicyStatement() {
+    return this.to('DeleteResourcePolicyStatement');
   }
 
   /**
@@ -1334,6 +1356,7 @@ export class LexV2 extends PolicyStatement {
       'CreateExport',
       'CreateIntent',
       'CreateResourcePolicy',
+      'CreateResourcePolicyStatement',
       'CreateSlot',
       'CreateSlotType',
       'CreateTestSet',
@@ -1350,6 +1373,7 @@ export class LexV2 extends PolicyStatement {
       'DeleteImport',
       'DeleteIntent',
       'DeleteResourcePolicy',
+      'DeleteResourcePolicyStatement',
       'DeleteSession',
       'DeleteSlot',
       'DeleteSlotType',

@@ -19,6 +19,15 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a resource configuration through any AWS service managed networks
+   *
+   * Access Level: Permissions management
+   */
+  public toAssociateViaAWSService() {
+    return this.to('AssociateViaAWSService');
+  }
+
+  /**
    * Grants permission to associate a resource configuration through Amazon EventBridge and AWS Step Functions service networks
    *
    * Access Level: Permissions management
@@ -1013,6 +1022,7 @@ export class VpcLattice extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
+      'AssociateViaAWSService',
       'AssociateViaAWSServiceEventsAndStates',
       'CreateServiceNetworkVpcEndpointAssociation',
       'DeleteAuthPolicy',

@@ -2,10 +2,12 @@ medical-imaging:CopyImageSet;Write
 medical-imaging:CreateDatastore;Write
 medical-imaging:DeleteDatastore;Write
 medical-imaging:DeleteImageSet;Write
+medical-imaging:GetDICOMBulkdata;Read
 medical-imaging:GetDICOMImportJob;Read
 medical-imaging:GetDICOMInstance;Read
 medical-imaging:GetDICOMInstanceFrames;Read
 medical-imaging:GetDICOMInstanceMetadata;Read
+medical-imaging:GetDICOMSeriesMetadata;Read
 medical-imaging:GetDatastore;Read
 medical-imaging:GetImageFrame;Read
 medical-imaging:GetImageSet;Read
@@ -14,8 +16,13 @@ medical-imaging:ListDICOMImportJobs;List
 medical-imaging:ListDatastores;List
 medical-imaging:ListImageSetVersions;List
 medical-imaging:ListTagsForResource;List
+medical-imaging:SearchDICOMInstances;Read
+medical-imaging:SearchDICOMSeries;Read
+medical-imaging:SearchDICOMStudies;Read
 medical-imaging:SearchImageSets;Read
 medical-imaging:StartDICOMImportJob;Write
+medical-imaging:StoreDICOM;Write
+medical-imaging:StoreDICOMStudy;Write
 medical-imaging:TagResource;Tagging
 medical-imaging:UntagResource;Tagging
 medical-imaging:UpdateImageSetMetadata;Write

@@ -1,2 +1,3 @@
 cassandra:keyspace
+cassandra:stream
 cassandra:table

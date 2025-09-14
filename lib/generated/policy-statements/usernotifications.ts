@@ -52,6 +52,17 @@ export class Notifications extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an Organizational Unit to a particular Notification Configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_AssociateOrganizationalUnit.html
+   */
+  public toAssociateOrganizationalUnit() {
+    return this.to('AssociateOrganizationalUnit');
+  }
+
+  /**
    * Grants permission to create a new EventRule, associating it with a NotificationConfiguration
    *
    * Access Level: Write
@@ -113,7 +124,7 @@ export class Notifications extends PolicyStatement {
   /**
    * Grants permission to disable Service Trust for AWS User Notifications
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * Dependent actions:
    * - organizations:DisableAWSServiceAccess
@@ -158,9 +169,20 @@ export class Notifications extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable Service Trust for AWS User Notifications
+   * Grants permission to disassociate an Organizational Unit to a particular Notification Configuration
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisassociateOrganizationalUnit.html
+   */
+  public toDisassociateOrganizationalUnit() {
+    return this.to('DisassociateOrganizationalUnit');
+  }
+
+  /**
+   * Grants permission to enable Service Trust for AWS User Notifications
+   *
+   * Access Level: Permissions management
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -327,6 +349,17 @@ export class Notifications extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Member Accounts for a Notification Configuration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListMemberAccounts.html
+   */
+  public toListMemberAccounts() {
+    return this.to('ListMemberAccounts');
+  }
+
+  /**
    * Grants permission to list NotificationConfigurations
    *
    * Access Level: List
@@ -357,6 +390,17 @@ export class Notifications extends PolicyStatement {
    */
   public toListNotificationHubs() {
     return this.to('ListNotificationHubs');
+  }
+
+  /**
+   * Grants permission to list Organizational Units for a Notification Configuration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListOrganizationalUnits.html
+   */
+  public toListOrganizationalUnits() {
+    return this.to('ListOrganizationalUnits');
   }
 
   /**
@@ -448,20 +492,24 @@ export class Notifications extends PolicyStatement {
       'AssociateChannel',
       'AssociateManagedNotificationAccountContact',
       'AssociateManagedNotificationAdditionalChannel',
+      'AssociateOrganizationalUnit',
       'CreateEventRule',
       'CreateNotificationConfiguration',
       'DeleteEventRule',
       'DeleteNotificationConfiguration',
       'DeregisterNotificationHub',
-      'DisableNotificationsAccessForOrganization',
       'DisassociateChannel',
       'DisassociateManagedNotificationAccountContact',
       'DisassociateManagedNotificationAdditionalChannel',
-      'EnableNotificationsAccessForOrganization',
+      'DisassociateOrganizationalUnit',
       'PutFeatureOptInStatus',
       'RegisterNotificationHub',
       'UpdateEventRule',
       'UpdateNotificationConfiguration'
+    ],
+    'Permissions management': [
+      'DisableNotificationsAccessForOrganization',
+      'EnableNotificationsAccessForOrganization'
     ],
     Read: [
       'GetEventRule',
@@ -480,9 +528,11 @@ export class Notifications extends PolicyStatement {
       'ListManagedNotificationChildEvents',
       'ListManagedNotificationConfigurations',
       'ListManagedNotificationEvents',
+      'ListMemberAccounts',
       'ListNotificationConfigurations',
       'ListNotificationEvents',
       'ListNotificationHubs',
+      'ListOrganizationalUnits',
       'ListTagsForResource'
     ],
     Tagging: [

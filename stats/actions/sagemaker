@@ -1,6 +1,8 @@
 sagemaker:AddAssociation;Write
 sagemaker:AddTags;Tagging
 sagemaker:AssociateTrialComponent;Write
+sagemaker:AttachClusterNodeVolume;Write
+sagemaker:BatchAddClusterNodes;Write
 sagemaker:BatchDeleteClusterNodes;Write
 sagemaker:BatchDescribeModelPackage;Read
 sagemaker:BatchGetMetrics;Read
@@ -32,6 +34,7 @@ sagemaker:CreateExperiment;Write
 sagemaker:CreateFeatureGroup;Write
 sagemaker:CreateFlowDefinition;Write
 sagemaker:CreateHub;Write
+sagemaker:CreateHubContentPresignedUrls;Read
 sagemaker:CreateHubContentReference;Write
 sagemaker:CreateHumanTaskUi;Write
 sagemaker:CreateHyperParameterTuningJob;Write
@@ -144,6 +147,8 @@ sagemaker:DescribeArtifact;Read
 sagemaker:DescribeAutoMLJob;Read
 sagemaker:DescribeAutoMLJobV2;Read
 sagemaker:DescribeCluster;Read
+sagemaker:DescribeClusterEvent;Read
+sagemaker:DescribeClusterInference;Read
 sagemaker:DescribeClusterNode;Read
 sagemaker:DescribeClusterSchedulerConfig;Read
 sagemaker:DescribeCodeRepository;Read
@@ -193,6 +198,7 @@ sagemaker:DescribePipelineDefinitionForExecution;Read
 sagemaker:DescribePipelineExecution;Read
 sagemaker:DescribeProcessingJob;Read
 sagemaker:DescribeProject;Read
+sagemaker:DescribeReservedCapacity;Read
 sagemaker:DescribeSharedModel;Read
 sagemaker:DescribeSpace;Read
 sagemaker:DescribeStudioLifecycleConfig;Read
@@ -205,6 +211,7 @@ sagemaker:DescribeTrialComponent;Read
 sagemaker:DescribeUserProfile;Read
 sagemaker:DescribeWorkforce;Read
 sagemaker:DescribeWorkteam;Read
+sagemaker:DetachClusterNodeVolume;Write
 sagemaker:DisableSagemakerServicecatalogPortfolio;Write
 sagemaker:DisassociateTrialComponent;Write
 sagemaker:EnableSagemakerServicecatalogPortfolio;Write
@@ -231,6 +238,7 @@ sagemaker:ListArtifacts;List
 sagemaker:ListAssociations;List
 sagemaker:ListAutoMLJobs;List
 sagemaker:ListCandidatesForAutoMLJob;List
+sagemaker:ListClusterEvents;List
 sagemaker:ListClusterNodes;List
 sagemaker:ListClusterSchedulerConfigs;List
 sagemaker:ListClusters;List
@@ -286,6 +294,7 @@ sagemaker:ListPartnerApps;List
 sagemaker:ListPipelineExecutionSteps;List
 sagemaker:ListPipelineExecutions;List
 sagemaker:ListPipelineParametersForExecution;List
+sagemaker:ListPipelineVersions;List
 sagemaker:ListPipelines;List
 sagemaker:ListProcessingJobs;List
 sagemaker:ListProjects;List
@@ -304,6 +313,7 @@ sagemaker:ListTrainingPlans;List
 sagemaker:ListTransformJobs;List
 sagemaker:ListTrialComponents;List
 sagemaker:ListTrials;List
+sagemaker:ListUltraServersByReservedCapacity;List
 sagemaker:ListUserProfiles;List
 sagemaker:ListWorkforces;List
 sagemaker:ListWorkteams;List
@@ -328,6 +338,7 @@ sagemaker:StartMlflowTrackingServer;Write
 sagemaker:StartMonitoringSchedule;Write
 sagemaker:StartNotebookInstance;Write
 sagemaker:StartPipelineExecution;Write
+sagemaker:StartSession;Write
 sagemaker:StopAutoMLJob;Write
 sagemaker:StopCompilationJob;Write
 sagemaker:StopEdgeDeploymentStage;Write
@@ -350,6 +361,7 @@ sagemaker:UpdateAction;Write
 sagemaker:UpdateAppImageConfig;Write
 sagemaker:UpdateArtifact;Write
 sagemaker:UpdateCluster;Write
+sagemaker:UpdateClusterInference;Write
 sagemaker:UpdateClusterSchedulerConfig;Write
 sagemaker:UpdateClusterSoftware;Write
 sagemaker:UpdateCodeRepository;Write
@@ -381,6 +393,7 @@ sagemaker:UpdateNotebookInstanceLifecycleConfig;Write
 sagemaker:UpdatePartnerApp;Write
 sagemaker:UpdatePipeline;Write
 sagemaker:UpdatePipelineExecution;Write
+sagemaker:UpdatePipelineVersion;Write
 sagemaker:UpdateProject;Write
 sagemaker:UpdateSharedModel;Write
 sagemaker:UpdateSpace;Write

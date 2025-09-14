@@ -117,6 +117,10 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifUserArn()
+   * - .ifEnvironmentId()
+   *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironmentMembership.html
    */
   public toDeleteEnvironmentMembership() {
@@ -384,17 +388,6 @@ export class Cloud9 extends PolicyStatement {
     return this.to('UpdateUserSettings');
   }
 
-  /**
-   * Grants permission to validate the environment name during the process of creating an AWS Cloud9 development environment
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix
-   */
-  public toValidateEnvironmentName() {
-    return this.to('ValidateEnvironmentName');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateEC2Remote',
@@ -425,8 +418,7 @@ export class Cloud9 extends PolicyStatement {
       'GetUserPublicKey',
       'GetUserSettings',
       'ListEnvironments',
-      'ListTagsForResource',
-      'ValidateEnvironmentName'
+      'ListTagsForResource'
     ],
     Tagging: [
       'TagResource',
@@ -510,6 +502,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateEnvironmentMembership()
+   * - .toDeleteEnvironmentMembership()
    * - .toDescribeEnvironmentMemberships()
    * - .toUpdateEnvironmentMembership()
    *
@@ -606,6 +599,7 @@ export class Cloud9 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateEnvironmentEC2()
    * - .toCreateEnvironmentMembership()
+   * - .toDeleteEnvironmentMembership()
    * - .toDescribeEnvironmentMemberships()
    * - .toGetUserPublicKey()
    * - .toUpdateEnvironmentMembership()

@@ -8,6 +8,7 @@ workspaces:CreateAccountLinkInvitation;Write
 workspaces:CreateConnectClientAddIn;Write
 workspaces:CreateConnectionAlias;Write
 workspaces:CreateIpGroup;Write
+workspaces:CreateRootClientCertificate;Write
 workspaces:CreateStandbyWorkspaces;Write
 workspaces:CreateTags;Tagging
 workspaces:CreateUpdatedWorkspaceImage;Write
@@ -20,6 +21,7 @@ workspaces:DeleteClientBranding;Write
 workspaces:DeleteConnectClientAddIn;Write
 workspaces:DeleteConnectionAlias;Write
 workspaces:DeleteIpGroup;Write
+workspaces:DeleteRootClientCertificate;Write
 workspaces:DeleteTags;Tagging
 workspaces:DeleteWorkspaceBundle;Write
 workspaces:DeleteWorkspaceImage;Write
@@ -35,8 +37,11 @@ workspaces:DescribeClientProperties;List
 workspaces:DescribeConnectClientAddIns;List
 workspaces:DescribeConnectionAliasPermissions;Read
 workspaces:DescribeConnectionAliases;Read
+workspaces:DescribeConsent;Read
+workspaces:DescribeCustomWorkspaceImageImport;Read
 workspaces:DescribeImageAssociations;List
 workspaces:DescribeIpGroups;Read
+workspaces:DescribeRootClientCertificates;List
 workspaces:DescribeTags;Read
 workspaces:DescribeWorkspaceAssociations;List
 workspaces:DescribeWorkspaceBundles;List
@@ -48,11 +53,13 @@ workspaces:DescribeWorkspaces;List
 workspaces:DescribeWorkspacesConnectionStatus;Read
 workspaces:DescribeWorkspacesPoolSessions;List
 workspaces:DescribeWorkspacesPools;List
+workspaces:DirectoryAccessManagement;List
 workspaces:DisassociateConnectionAlias;Write
 workspaces:DisassociateIpGroups;Write
 workspaces:DisassociateWorkspaceApplication;Write
 workspaces:GetAccountLink;Read
 workspaces:ImportClientBranding;Write
+workspaces:ImportCustomWorkspaceImage;Write
 workspaces:ImportWorkspaceImage;Write
 workspaces:ListAccountLinks;List
 workspaces:ListAvailableManagementCidrRanges;List
@@ -84,6 +91,8 @@ workspaces:TerminateWorkspacesPool;Write
 workspaces:TerminateWorkspacesPoolSession;Write
 workspaces:UpdateConnectClientAddIn;Write
 workspaces:UpdateConnectionAliasPermission;Permissions management
+workspaces:UpdateConsent;Write
+workspaces:UpdateRootClientCertificate;Write
 workspaces:UpdateRulesOfIpGroup;Write
 workspaces:UpdateWorkspaceBundle;Write
 workspaces:UpdateWorkspaceImagePermission;Permissions management

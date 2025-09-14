@@ -558,6 +558,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get summary information about participant replicas
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_ListParticipantReplicas.html
+   */
+  public toListParticipantReplicas() {
+    return this.to('ListParticipantReplicas');
+  }
+
+  /**
    * Grants permission to list participants for a specified stage ARN and session
    *
    * Access Level: List
@@ -720,6 +731,21 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a new participant replication
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StartParticipantReplication.html
+   */
+  public toStartParticipantReplication() {
+    return this.to('StartParticipantReplication');
+  }
+
+  /**
    * Grants permission to start the process of revoking the viewer session associated with a specified channel ARN and viewer ID
    *
    * Access Level: Write
@@ -739,6 +765,17 @@ export class Ivs extends PolicyStatement {
    */
   public toStopComposition() {
     return this.to('StopComposition');
+  }
+
+  /**
+   * Grants permission to stop the participant replication for the specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_StopParticipantReplication.html
+   */
+  public toStopParticipantReplication() {
+    return this.to('StopParticipantReplication');
   }
 
   /**
@@ -872,8 +909,10 @@ export class Ivs extends PolicyStatement {
       'ImportPublicKey',
       'PutMetadata',
       'StartComposition',
+      'StartParticipantReplication',
       'StartViewerSessionRevocation',
       'StopComposition',
+      'StopParticipantReplication',
       'StopStream',
       'UpdateChannel',
       'UpdateIngestConfiguration',
@@ -886,6 +925,7 @@ export class Ivs extends PolicyStatement {
       'ListEncoderConfigurations',
       'ListIngestConfigurations',
       'ListParticipantEvents',
+      'ListParticipantReplicas',
       'ListParticipants',
       'ListPlaybackKeyPairs',
       'ListPlaybackRestrictionPolicies',
@@ -1110,6 +1150,7 @@ export class Ivs extends PolicyStatement {
    * - .toImportPublicKey()
    * - .toListTagsForResource()
    * - .toStartComposition()
+   * - .toStartParticipantReplication()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1165,6 +1206,7 @@ export class Ivs extends PolicyStatement {
    * - .toImportPublicKey()
    * - .toListTagsForResource()
    * - .toStartComposition()
+   * - .toStartParticipantReplication()
    * - .toTagResource()
    * - .toUntagResource()
    *

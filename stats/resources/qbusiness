@@ -1,4 +1,5 @@
 qbusiness:application
+qbusiness:chat-response-configuration
 qbusiness:data-accessor
 qbusiness:data-source
 qbusiness:index
@@ -6,5 +7,4 @@ qbusiness:integration
 qbusiness:plugin
 qbusiness:retriever
 qbusiness:subscription
-qbusiness:user-license
 qbusiness:web-experience

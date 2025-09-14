@@ -343,7 +343,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifGroup()
-   * - .ifIdentitystoreGroupId()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateRoleMembership.html
    */
@@ -467,6 +466,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateVPCConnection() {
     return this.to('CreateVPCConnection');
+  }
+
+  /**
+   * Grants permission to remove the custom permission associated with an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccountCustomPermission.html
+   */
+  public toDeleteAccountCustomPermission() {
+    return this.to('DeleteAccountCustomPermission');
   }
 
   /**
@@ -718,7 +728,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifGroup()
-   * - .ifIdentitystoreGroupId()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteRoleMembership.html
    */
@@ -808,7 +817,7 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to deletes a user identified by its principal ID
+   * Grants permission to delete a user identified by its principal ID
    *
    * Access Level: Write
    *
@@ -842,6 +851,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteVPCConnection() {
     return this.to('DeleteVPCConnection');
+  }
+
+  /**
+   * Grants permission to describe the custom permission associated with an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountCustomPermission.html
+   */
+  public toDescribeAccountCustomPermission() {
+    return this.to('DescribeAccountCustomPermission');
   }
 
   /**
@@ -1425,8 +1445,6 @@ export class Quicksight extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    * - .ifAllowedEmbeddingDomains()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html
@@ -2255,6 +2273,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the custom permission associated with an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccountCustomPermission.html
+   */
+  public toUpdateAccountCustomPermission() {
+    return this.to('UpdateAccountCustomPermission');
+  }
+
+  /**
    * Grants permission to update an account customization for QuickSight account or namespace
    *
    * Access Level: Write
@@ -2834,6 +2863,7 @@ export class Quicksight extends PolicyStatement {
       'CreateTopicRefreshSchedule',
       'CreateUser',
       'CreateVPCConnection',
+      'DeleteAccountCustomPermission',
       'DeleteAccountCustomization',
       'DeleteAccountSubscription',
       'DeleteAnalysis',
@@ -2882,6 +2912,7 @@ export class Quicksight extends PolicyStatement {
       'StartDashboardSnapshotJobSchedule',
       'Subscribe',
       'Unsubscribe',
+      'UpdateAccountCustomPermission',
       'UpdateAccountCustomization',
       'UpdateAccountSettings',
       'UpdateAnalysis',
@@ -2922,6 +2953,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateVPCConnection'
     ],
     Read: [
+      'DescribeAccountCustomPermission',
       'DescribeAccountCustomization',
       'DescribeAccountSettings',
       'DescribeAccountSubscription',
@@ -3447,7 +3479,6 @@ export class Quicksight extends PolicyStatement {
    * - .toDescribeTopicPermissions()
    * - .toDescribeTopicRefresh()
    * - .toDescribeVPCConnection()
-   * - .toGenerateEmbedUrlForAnonymousUser()
    * - .toListDataSets()
    * - .toListDataSources()
    * - .toListIngestions()
@@ -3540,7 +3571,6 @@ export class Quicksight extends PolicyStatement {
    * - .toDescribeTopicPermissions()
    * - .toDescribeTopicRefresh()
    * - .toDescribeVPCConnection()
-   * - .toGenerateEmbedUrlForAnonymousUser()
    * - .toListDataSets()
    * - .toListDataSources()
    * - .toListIngestions()
@@ -3564,22 +3594,6 @@ export class Quicksight extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by IdentityStore group ARN
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   *
-   * Applies to actions:
-   * - .toCreateRoleMembership()
-   * - .toDeleteRoleMembership()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
-   */
-  public ifIdentitystoreGroupId(value: string | string[], operator?: Operator | string) {
-    return this.if(`identitystore:GroupId`, value, operator ?? 'ArnLike');
   }
 
   /**

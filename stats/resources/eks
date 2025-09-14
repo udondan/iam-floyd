@@ -2,6 +2,7 @@ eks:access-entry
 eks:access-policy
 eks:addon
 eks:cluster
+eks:dashboard
 eks:eks-anywhere-subscription
 eks:fargateprofile
 eks:identityproviderconfig

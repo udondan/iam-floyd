@@ -88,6 +88,28 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to use bearer token
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
+  /**
+   * Grants permission to cancel a build workflow for an automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toCancelAutomatedReasoningPolicyBuildWorkflow() {
+    return this.to('CancelAutomatedReasoningPolicyBuildWorkflow');
+  }
+
+  /**
    * Grants permission to create a new agent and a test agent alias pointing to the DRAFT agent version
    *
    * Access Level: Write
@@ -133,9 +155,56 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toCreateAutomatedReasoningPolicy() {
+    return this.to('CreateAutomatedReasoningPolicy');
+  }
+
+  /**
+   * Grants permission to create a test case for an automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toCreateAutomatedReasoningPolicyTestCase() {
+    return this.to('CreateAutomatedReasoningPolicyTestCase');
+  }
+
+  /**
+   * Grants permission to create a new automated reasoning policy version
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toCreateAutomatedReasoningPolicyVersion() {
+    return this.to('CreateAutomatedReasoningPolicyVersion');
+  }
+
+  /**
    * Grants permission to create a blueprint for custom output from data automation
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateBlueprint.html
    */
@@ -155,9 +224,45 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a custom model into Bedrock
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html
+   */
+  public toCreateCustomModel() {
+    return this.to('CreateCustomModel');
+  }
+
+  /**
+   * Grants permission to create a custom model deployment for custom model
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html
+   */
+  public toCreateCustomModelDeployment() {
+    return this.to('CreateCustomModelDeployment');
+  }
+
+  /**
    * Grants permission to create a data automation project
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationProject.html
    */
@@ -184,6 +289,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateEvaluationJob.html
    */
@@ -251,6 +357,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
@@ -327,6 +434,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCopyJob.html
    */
@@ -342,6 +450,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCustomizationJob.html
    */
@@ -357,6 +466,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelEvaluationJob.html
    */
@@ -372,6 +482,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html
    */
@@ -387,6 +498,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelInvocationJob.html
    */
@@ -417,6 +529,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreatePromptRouter.html
    */
@@ -447,6 +560,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateProvisionedModelThroughput.html
    */
@@ -525,6 +639,39 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an automated reasoning policy or its version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toDeleteAutomatedReasoningPolicy() {
+    return this.to('DeleteAutomatedReasoningPolicy');
+  }
+
+  /**
+   * Grants permission to delete a build workflow for an automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toDeleteAutomatedReasoningPolicyBuildWorkflow() {
+    return this.to('DeleteAutomatedReasoningPolicyBuildWorkflow');
+  }
+
+  /**
+   * Grants permission to delete a test case for an automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toDeleteAutomatedReasoningPolicyTestCase() {
+    return this.to('DeleteAutomatedReasoningPolicyTestCase');
+  }
+
+  /**
    * Grants permission to delete a blueprint for data automation
    *
    * Access Level: Write
@@ -544,6 +691,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toDeleteCustomModel() {
     return this.to('DeleteCustomModel');
+  }
+
+  /**
+   * Grants permission to delete a custom model deployment that you created earlier
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html
+   */
+  public toDeleteCustomModelDeployment() {
+    return this.to('DeleteCustomModelDeployment');
   }
 
   /**
@@ -807,6 +965,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an automated reasoning policy version artifact
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toExportAutomatedReasoningPolicyVersion() {
+    return this.to('ExportAutomatedReasoningPolicyVersion');
+  }
+
+  /**
    * Grants permission to generate queries associated with user input
    *
    * Access Level: Read
@@ -906,6 +1075,83 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an automated reasoning policy or its version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetAutomatedReasoningPolicy() {
+    return this.to('GetAutomatedReasoningPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve annotations for a build workflow for an automated reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetAutomatedReasoningPolicyAnnotations() {
+    return this.to('GetAutomatedReasoningPolicyAnnotations');
+  }
+
+  /**
+   * Grants permission to retrieve a build workflow for an automated reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetAutomatedReasoningPolicyBuildWorkflow() {
+    return this.to('GetAutomatedReasoningPolicyBuildWorkflow');
+  }
+
+  /**
+   * Grants permission to retrieve assets for a build workflow for an automated reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetAutomatedReasoningPolicyBuildWorkflowResultAssets() {
+    return this.to('GetAutomatedReasoningPolicyBuildWorkflowResultAssets');
+  }
+
+  /**
+   * Grants permission to retrieve the next unreviewed generated scenario for a build workflow for an automated reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetAutomatedReasoningPolicyNextScenario() {
+    return this.to('GetAutomatedReasoningPolicyNextScenario');
+  }
+
+  /**
+   * Grants permission to retrieve a test case for an automated reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetAutomatedReasoningPolicyTestCase() {
+    return this.to('GetAutomatedReasoningPolicyTestCase');
+  }
+
+  /**
+   * Grants permission to retrieve result for a test case for an automated reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetAutomatedReasoningPolicyTestResult() {
+    return this.to('GetAutomatedReasoningPolicyTestResult');
+  }
+
+  /**
    * Grants permission to retrieve an existing blueprint for data automation
    *
    * Access Level: Read
@@ -936,6 +1182,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toGetCustomModel() {
     return this.to('GetCustomModel');
+  }
+
+  /**
+   * Grants permission to get the properties associated with a custom model deployment. Use this operation to get the status of a custom model deployment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html
+   */
+  public toGetCustomModelDeployment() {
+    return this.to('GetCustomModelDeployment');
   }
 
   /**
@@ -983,6 +1240,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the flow definition for a flow execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetExecutionFlowSnapshot.html
+   */
+  public toGetExecutionFlowSnapshot() {
+    return this.to('GetExecutionFlowSnapshot');
+  }
+
+  /**
    * Grants permission to retrieve an existing prompt flow
    *
    * Access Level: Read
@@ -1002,6 +1270,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toGetFlowAlias() {
     return this.to('GetFlowAlias');
+  }
+
+  /**
+   * Grants permission to retrieve an existing execution of a flow alias
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetFlowExecution.html
+   */
+  public toGetFlowExecution() {
+    return this.to('GetFlowExecution');
   }
 
   /**
@@ -1278,6 +1557,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke an Automated Reasoning policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toInvokeAutomatedReasoningPolicy() {
+    return this.to('InvokeAutomatedReasoningPolicy');
+  }
+
+  /**
    * Grants permission to invoke blueprint recommendations asynchronously
    *
    * Access Level: Write
@@ -1304,6 +1594,10 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomationAsync.html
    */
   public toInvokeDataAutomationAsync() {
@@ -1326,6 +1620,9 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifInlineAgentName()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html
    */
   public toInvokeInlineAgent() {
@@ -1343,6 +1640,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifGuardrailIdentifier()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html
    */
@@ -1359,6 +1657,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifInferenceProfileArn()
    * - .ifPromptRouterArn()
    * - .ifGuardrailIdentifier()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html
    */
@@ -1444,6 +1743,50 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list automated reasoning policies or its versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toListAutomatedReasoningPolicies() {
+    return this.to('ListAutomatedReasoningPolicies');
+  }
+
+  /**
+   * Grants permission to list build workflows for an automated reasoning policy
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toListAutomatedReasoningPolicyBuildWorkflows() {
+    return this.to('ListAutomatedReasoningPolicyBuildWorkflows');
+  }
+
+  /**
+   * Grants permission to list test cases for an automated reasoning policy
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toListAutomatedReasoningPolicyTestCases() {
+    return this.to('ListAutomatedReasoningPolicyTestCases');
+  }
+
+  /**
+   * Grants permission to list test result for an automated reasoning policy
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toListAutomatedReasoningPolicyTestResults() {
+    return this.to('ListAutomatedReasoningPolicyTestResults');
+  }
+
+  /**
    * Grants permission to list existing blueprints for data automation
    *
    * Access Level: List
@@ -1452,6 +1795,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toListBlueprints() {
     return this.to('ListBlueprints');
+  }
+
+  /**
+   * Grants permission to get the list of custom model deployments that you have submitted
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html
+   */
+  public toListCustomModelDeployments() {
+    return this.to('ListCustomModelDeployments');
   }
 
   /**
@@ -1507,6 +1861,28 @@ export class Bedrock extends PolicyStatement {
    */
   public toListFlowAliases() {
     return this.to('ListFlowAliases');
+  }
+
+  /**
+   * Grants permission to retrieve events for a flow execution
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListFlowExecutionEvents.html
+   */
+  public toListFlowExecutionEvents() {
+    return this.to('ListFlowExecutionEvents');
+  }
+
+  /**
+   * Grants permission to list executions of a flow or a flow alias
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListFlowExecutions.html
+   */
+  public toListFlowExecutions() {
+    return this.to('ListFlowExecutions');
   }
 
   /**
@@ -1906,6 +2282,39 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a build workflow for an automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toStartAutomatedReasoningPolicyBuildWorkflow() {
+    return this.to('StartAutomatedReasoningPolicyBuildWorkflow');
+  }
+
+  /**
+   * Grants permission to start a test workflow for an automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toStartAutomatedReasoningPolicyTestWorkflow() {
+    return this.to('StartAutomatedReasoningPolicyTestWorkflow');
+  }
+
+  /**
+   * Grants permission to start an execution of a flow alias
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_StartFlowExecution.html
+   */
+  public toStartFlowExecution() {
+    return this.to('StartFlowExecution');
+  }
+
+  /**
    * Grants permission to start an ingestion job
    *
    * Access Level: Write
@@ -1925,6 +2334,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toStopEvaluationJob() {
     return this.to('StopEvaluationJob');
+  }
+
+  /**
+   * Grants permission to stop an execution of a flow alias
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_StopFlowExecution.html
+   */
+  public toStopFlowExecution() {
+    return this.to('StopFlowExecution');
   }
 
   /**
@@ -1968,6 +2388,7 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_TagResource.html
    */
@@ -1982,6 +2403,7 @@ export class Bedrock extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UntagResource.html
    */
@@ -2042,6 +2464,39 @@ export class Bedrock extends PolicyStatement {
    */
   public toUpdateAgentKnowledgeBase() {
     return this.to('UpdateAgentKnowledgeBase');
+  }
+
+  /**
+   * Grants permission to update an automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toUpdateAutomatedReasoningPolicy() {
+    return this.to('UpdateAutomatedReasoningPolicy');
+  }
+
+  /**
+   * Grants permission to update annotations for a build workflow for an automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toUpdateAutomatedReasoningPolicyAnnotations() {
+    return this.to('UpdateAutomatedReasoningPolicyAnnotations');
+  }
+
+  /**
+   * Grants permission to update a test case for automated reasoning policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toUpdateAutomatedReasoningPolicyTestCase() {
+    return this.to('UpdateAutomatedReasoningPolicyTestCase');
   }
 
   /**
@@ -2180,7 +2635,9 @@ export class Bedrock extends PolicyStatement {
     ],
     Read: [
       'ApplyGuardrail',
+      'CallWithBearerToken',
       'DetectGeneratedContent',
+      'ExportAutomatedReasoningPolicyVersion',
       'GenerateQuery',
       'GetAgent',
       'GetAgentActionGroup',
@@ -2190,15 +2647,25 @@ export class Bedrock extends PolicyStatement {
       'GetAgentMemory',
       'GetAgentVersion',
       'GetAsyncInvoke',
+      'GetAutomatedReasoningPolicy',
+      'GetAutomatedReasoningPolicyAnnotations',
+      'GetAutomatedReasoningPolicyBuildWorkflow',
+      'GetAutomatedReasoningPolicyBuildWorkflowResultAssets',
+      'GetAutomatedReasoningPolicyNextScenario',
+      'GetAutomatedReasoningPolicyTestCase',
+      'GetAutomatedReasoningPolicyTestResult',
       'GetBlueprint',
       'GetBlueprintRecommendation',
       'GetCustomModel',
+      'GetCustomModelDeployment',
       'GetDataAutomationProject',
       'GetDataAutomationStatus',
       'GetDataSource',
       'GetEvaluationJob',
+      'GetExecutionFlowSnapshot',
       'GetFlow',
       'GetFlowAlias',
+      'GetFlowExecution',
       'GetFlowVersion',
       'GetFoundationModel',
       'GetFoundationModelAvailability',
@@ -2223,6 +2690,7 @@ export class Bedrock extends PolicyStatement {
       'GetSession',
       'GetUseCaseForModelAccess',
       'InvokeAgent',
+      'InvokeAutomatedReasoningPolicy',
       'InvokeFlow',
       'InvokeInlineAgent',
       'InvokeModel',
@@ -2239,11 +2707,17 @@ export class Bedrock extends PolicyStatement {
       'AssociateAgentKnowledgeBase',
       'AssociateThirdPartyKnowledgeBase',
       'BatchDeleteEvaluationJob',
+      'CancelAutomatedReasoningPolicyBuildWorkflow',
       'CreateAgent',
       'CreateAgentActionGroup',
       'CreateAgentAlias',
+      'CreateAutomatedReasoningPolicy',
+      'CreateAutomatedReasoningPolicyTestCase',
+      'CreateAutomatedReasoningPolicyVersion',
       'CreateBlueprint',
       'CreateBlueprintVersion',
+      'CreateCustomModel',
+      'CreateCustomModelDeployment',
       'CreateDataAutomationProject',
       'CreateDataSource',
       'CreateEvaluationJob',
@@ -2272,8 +2746,12 @@ export class Bedrock extends PolicyStatement {
       'DeleteAgentAlias',
       'DeleteAgentMemory',
       'DeleteAgentVersion',
+      'DeleteAutomatedReasoningPolicy',
+      'DeleteAutomatedReasoningPolicyBuildWorkflow',
+      'DeleteAutomatedReasoningPolicyTestCase',
       'DeleteBlueprint',
       'DeleteCustomModel',
+      'DeleteCustomModelDeployment',
       'DeleteDataAutomationProject',
       'DeleteDataSource',
       'DeleteFlow',
@@ -2311,8 +2789,12 @@ export class Bedrock extends PolicyStatement {
       'RegisterMarketplaceModelEndpoint',
       'Rerank',
       'RetrieveAndGenerate',
+      'StartAutomatedReasoningPolicyBuildWorkflow',
+      'StartAutomatedReasoningPolicyTestWorkflow',
+      'StartFlowExecution',
       'StartIngestionJob',
       'StopEvaluationJob',
+      'StopFlowExecution',
       'StopIngestionJob',
       'StopModelCustomizationJob',
       'StopModelInvocationJob',
@@ -2321,6 +2803,9 @@ export class Bedrock extends PolicyStatement {
       'UpdateAgentAlias',
       'UpdateAgentCollaborator',
       'UpdateAgentKnowledgeBase',
+      'UpdateAutomatedReasoningPolicy',
+      'UpdateAutomatedReasoningPolicyAnnotations',
+      'UpdateAutomatedReasoningPolicyTestCase',
       'UpdateBlueprint',
       'UpdateDataAutomationProject',
       'UpdateDataSource',
@@ -2341,12 +2826,19 @@ export class Bedrock extends PolicyStatement {
       'ListAgentVersions',
       'ListAgents',
       'ListAsyncInvokes',
+      'ListAutomatedReasoningPolicies',
+      'ListAutomatedReasoningPolicyBuildWorkflows',
+      'ListAutomatedReasoningPolicyTestCases',
+      'ListAutomatedReasoningPolicyTestResults',
       'ListBlueprints',
+      'ListCustomModelDeployments',
       'ListCustomModels',
       'ListDataAutomationProjects',
       'ListDataSources',
       'ListEvaluationJobs',
       'ListFlowAliases',
+      'ListFlowExecutionEvents',
+      'ListFlowExecutions',
       'ListFlowVersions',
       'ListFlows',
       'ListFoundationModelAgreementOffers',
@@ -2636,6 +3128,55 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type guardrail-profile to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/guardrail-profiles-permissions.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGuardrailProfile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:guardrail-profile/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type automated-reasoning-policy to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param automatedReasoningPolicyId - Identifier for the automatedReasoningPolicyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAutomatedReasoningPolicy(automatedReasoningPolicyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automated-reasoning-policy/${ automatedReasoningPolicyId }`);
+  }
+
+  /**
+   * Adds a resource of type automated-reasoning-policy-version to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param automatedReasoningPolicyId - Identifier for the automatedReasoningPolicyId.
+   * @param automatedReasoningPolicyVersion - Identifier for the automatedReasoningPolicyVersion.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAutomatedReasoningPolicyVersion(automatedReasoningPolicyId: string, automatedReasoningPolicyVersion: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automated-reasoning-policy/${ automatedReasoningPolicyId }:${ automatedReasoningPolicyVersion }`);
+  }
+
+  /**
    * Adds a resource of type flow to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowSummary.html
@@ -2668,6 +3209,22 @@ export class Bedrock extends PolicyStatement {
    */
   public onFlowAlias(flowId: string, flowAliasId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow/${ flowId }/alias/${ flowAliasId }`);
+  }
+
+  /**
+   * Adds a resource of type flow-execution to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_FlowExecutionSummary.html
+   *
+   * @param flowId - Identifier for the flowId.
+   * @param flowAliasId - Identifier for the flowAliasId.
+   * @param flowExecutionId - Identifier for the flowExecutionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onFlowExecution(flowId: string, flowAliasId: string, flowExecutionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow/${ flowId }/alias/${ flowAliasId }/execution/${ flowExecutionId }`);
   }
 
   /**
@@ -2778,6 +3335,9 @@ export class Bedrock extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDataAutomationProject(projectId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-project/${ projectId }`);
@@ -2792,6 +3352,9 @@ export class Bedrock extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onBlueprint(blueprintId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint/${ blueprintId }`);
@@ -2806,6 +3369,9 @@ export class Bedrock extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDataAutomationInvocationJob(jobId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-invocation/${ jobId }`);
@@ -2843,6 +3409,23 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type custom-model-deployment to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomModelDeployment(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-model/${ resourceId }`);
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -2851,6 +3434,12 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateAgent()
    * - .toCreateAgentActionGroup()
    * - .toCreateAgentAlias()
+   * - .toCreateAutomatedReasoningPolicy()
+   * - .toCreateAutomatedReasoningPolicyVersion()
+   * - .toCreateBlueprint()
+   * - .toCreateCustomModel()
+   * - .toCreateCustomModelDeployment()
+   * - .toCreateDataAutomationProject()
    * - .toCreateEvaluationJob()
    * - .toCreateFlow()
    * - .toCreateFlowAlias()
@@ -2867,6 +3456,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
    * - .toCreateSession()
+   * - .toInvokeDataAutomationAsync()
    * - .toInvokeModel()
    * - .toPutResourcePolicy()
    * - .toTagResource()
@@ -2897,6 +3487,8 @@ export class Bedrock extends PolicyStatement {
    * - evaluation-job
    * - model-invocation-job
    * - guardrail
+   * - automated-reasoning-policy
+   * - automated-reasoning-policy-version
    * - flow
    * - flow-alias
    * - model-copy-job
@@ -2904,7 +3496,11 @@ export class Bedrock extends PolicyStatement {
    * - prompt-version
    * - model-import-job
    * - imported-model
+   * - data-automation-project
+   * - blueprint
+   * - data-automation-invocation-job
    * - session
+   * - custom-model-deployment
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2923,6 +3519,12 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateAgent()
    * - .toCreateAgentActionGroup()
    * - .toCreateAgentAlias()
+   * - .toCreateAutomatedReasoningPolicy()
+   * - .toCreateAutomatedReasoningPolicyVersion()
+   * - .toCreateBlueprint()
+   * - .toCreateCustomModel()
+   * - .toCreateCustomModelDeployment()
+   * - .toCreateDataAutomationProject()
    * - .toCreateEvaluationJob()
    * - .toCreateFlow()
    * - .toCreateFlowAlias()
@@ -2939,6 +3541,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
    * - .toCreateSession()
+   * - .toInvokeDataAutomationAsync()
    * - .toInvokeModel()
    * - .toPutResourcePolicy()
    * - .toTagResource()
@@ -2949,6 +3552,37 @@ export class Bedrock extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the Short-term or Long-term bearer tokens
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutomatedReasoningPolicy()
+   * - .toCreateAutomatedReasoningPolicyVersion()
+   * - .toCreateCustomModel()
+   * - .toCreateCustomModelDeployment()
+   * - .toCreateEvaluationJob()
+   * - .toCreateGuardrail()
+   * - .toCreateModelCopyJob()
+   * - .toCreateModelCustomizationJob()
+   * - .toCreateModelEvaluationJob()
+   * - .toCreateModelImportJob()
+   * - .toCreateModelInvocationJob()
+   * - .toCreatePromptRouter()
+   * - .toCreateProvisionedModelThroughput()
+   * - .toInvokeModel()
+   * - .toInvokeModelWithResponseStream()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBearerTokenType(value: string | string[], operator?: Operator | string) {
+    return this.if(`BearerTokenType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -2987,6 +3621,9 @@ export class Bedrock extends PolicyStatement {
    * Filters access by the Inline Agent Names, this will be used in InvokeInlineAgent API names
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
+   *
+   * Applies to actions:
+   * - .toInvokeInlineAgent()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

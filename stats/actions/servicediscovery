@@ -3,6 +3,7 @@ servicediscovery:CreatePrivateDnsNamespace;Write
 servicediscovery:CreatePublicDnsNamespace;Write
 servicediscovery:CreateService;Write
 servicediscovery:DeleteNamespace;Write
+servicediscovery:DeleteResourcePolicy;Write
 servicediscovery:DeleteService;Write
 servicediscovery:DeleteServiceAttributes;Write
 servicediscovery:DeregisterInstance;Write
@@ -12,6 +13,7 @@ servicediscovery:GetInstance;Read
 servicediscovery:GetInstancesHealthStatus;Read
 servicediscovery:GetNamespace;Read
 servicediscovery:GetOperation;Read
+servicediscovery:GetResourcePolicy;Read
 servicediscovery:GetService;Read
 servicediscovery:GetServiceAttributes;Read
 servicediscovery:ListInstances;Read
@@ -19,6 +21,7 @@ servicediscovery:ListNamespaces;Read
 servicediscovery:ListOperations;List
 servicediscovery:ListServices;Read
 servicediscovery:ListTagsForResource;Read
+servicediscovery:PutResourcePolicy;Write
 servicediscovery:RegisterInstance;Write
 servicediscovery:TagResource;Tagging
 servicediscovery:UntagResource;Tagging

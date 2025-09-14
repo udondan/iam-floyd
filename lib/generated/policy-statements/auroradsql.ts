@@ -40,6 +40,7 @@ export class Dsql extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifWitnessRegion()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -48,23 +49,6 @@ export class Dsql extends PolicyStatement {
    */
   public toCreateCluster() {
     return this.to('CreateCluster');
-  }
-
-  /**
-   * Grants permission to create multi-Region clusters. Creating multi-Region clusters also requires CreateCluster permission in each specified Region. **This action is deprecated as of 05/09/2025 and will be removed on 05/21/2025.**
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifWitnessRegion()
-   *
-   * Dependent actions:
-   * - dsql:CreateCluster
-   *
-   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateMultiRegionClusters.html
-   */
-  public toCreateMultiRegionClusters() {
-    return this.to('CreateMultiRegionClusters');
   }
 
   /**
@@ -101,17 +85,14 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete multi-Region clusters. Deleting multi-Region clusters also requires DeleteCluster permission in each specified Region. **This action is deprecated as of 05/09/2025 and will be removed on 05/21/2025.**
+   * Grants permission to get the status of an Aurora DSQL cluster backup job
    *
-   * Access Level: Write
+   * Access Level: Read
    *
-   * Dependent actions:
-   * - dsql:DeleteCluster
-   *
-   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_DeleteMultiRegionClusters.html
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html
    */
-  public toDeleteMultiRegionClusters() {
-    return this.to('DeleteMultiRegionClusters');
+  public toGetBackupJob() {
+    return this.to('GetBackupJob');
   }
 
   /**
@@ -126,6 +107,17 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the status of an Aurora DSQL cluster restore job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html
+   */
+  public toGetRestoreJob() {
+    return this.to('GetRestoreJob');
+  }
+
+  /**
    * Grants permission to retrieve the VPC endpoint service name for a cluster
    *
    * Access Level: Read
@@ -134,6 +126,21 @@ export class Dsql extends PolicyStatement {
    */
   public toGetVpcEndpointServiceName() {
     return this.to('GetVpcEndpointServiceName');
+  }
+
+  /**
+   * Grants permission to inject errors in targeted clusters
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFisActionId()
+   * - .ifFisTargetArns()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   */
+  public toInjectError() {
+    return this.to('InjectError');
   }
 
   /**
@@ -174,6 +181,9 @@ export class Dsql extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifWitnessRegion()
+   *
    * Dependent actions:
    * - dsql:PutMultiRegionProperties
    *
@@ -195,6 +205,54 @@ export class Dsql extends PolicyStatement {
    */
   public toRemovePeerCluster() {
     return this.to('RemovePeerCluster');
+  }
+
+  /**
+   * Grants permission to start a backup job for an Aurora DSQL cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html
+   */
+  public toStartBackupJob() {
+    return this.to('StartBackupJob');
+  }
+
+  /**
+   * Grants permission to start a restore job for an Aurora DSQL cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - dsql:CreateCluster
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html
+   */
+  public toStartRestoreJob() {
+    return this.to('StartRestoreJob');
+  }
+
+  /**
+   * Grants permission to stop a backup job for an Aurora DSQL cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html
+   */
+  public toStopBackupJob() {
+    return this.to('StopBackupJob');
+  }
+
+  /**
+   * Grants permission to stop a restore job for an Aurora DSQL Cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html
+   */
+  public toStopRestoreJob() {
+    return this.to('StopRestoreJob');
   }
 
   /**
@@ -231,6 +289,9 @@ export class Dsql extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifWitnessRegion()
+   *
    * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UpdateCluster.html
    */
   public toUpdateCluster() {
@@ -241,18 +302,23 @@ export class Dsql extends PolicyStatement {
     Write: [
       'AddPeerCluster',
       'CreateCluster',
-      'CreateMultiRegionClusters',
       'DbConnect',
       'DbConnectAdmin',
       'DeleteCluster',
-      'DeleteMultiRegionClusters',
+      'InjectError',
       'PutMultiRegionProperties',
       'PutWitnessRegion',
       'RemovePeerCluster',
+      'StartBackupJob',
+      'StartRestoreJob',
+      'StopBackupJob',
+      'StopRestoreJob',
       'UpdateCluster'
     ],
     Read: [
+      'GetBackupJob',
       'GetCluster',
+      'GetRestoreJob',
       'GetVpcEndpointServiceName',
       'ListTagsForResource'
     ],
@@ -333,12 +399,44 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
-   * Filters access by the witness region of linked clusters
+   * Filters access by the ID of an AWS FIS action
    *
-   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/using-iam-condition-keys.html#using-iam-condition-keys-create-mr-cluster-witness
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
    *
    * Applies to actions:
-   * - .toCreateMultiRegionClusters()
+   * - .toInjectError()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFisActionId(value: string | string[], operator?: Operator | string) {
+    return this.if(`FisActionId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of an AWS FIS target
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   *
+   * Applies to actions:
+   * - .toInjectError()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifFisTargetArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`FisTargetArns`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the witness region of multi-Region clusters
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/using-iam-condition-keys.html#using-iam-condition-keys-create-mr-cluster-witness
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toPutWitnessRegion()
+   * - .toUpdateCluster()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -5,6 +5,8 @@ connect:ContactAssociationId
 connect:ContactInitiationMethod
 connect:FlowType
 connect:InstanceId
+connect:ListRealtimeContactAnalysisSegmentsByOutputType
+connect:ListRealtimeContactAnalysisSegmentsBySegmentType
 connect:MonitorCapabilities
 connect:RequestTag/${TagKey}
 connect:ResourceTag/${TagKey}

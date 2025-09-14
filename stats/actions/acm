@@ -12,4 +12,5 @@ acm:RemoveTagsFromCertificate;Tagging
 acm:RenewCertificate;Write
 acm:RequestCertificate;Write
 acm:ResendValidationEmail;Write
+acm:RevokeCertificate;Write
 acm:UpdateCertificateOptions;Write

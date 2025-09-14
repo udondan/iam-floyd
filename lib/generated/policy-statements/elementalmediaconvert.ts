@@ -106,6 +106,17 @@ export class Mediaconvert extends PolicyStatement {
   }
 
   /**
+   * Grants permission to share an AWS Elemental MediaConvert job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/resourceshares.html
+   */
+  public toCreateResourceShare() {
+    return this.to('CreateResourceShare');
+  }
+
+  /**
    * Grants permission to delete an AWS Elemental MediaConvert custom job template
    *
    * Access Level: Write
@@ -395,6 +406,7 @@ export class Mediaconvert extends PolicyStatement {
       'CreateJobTemplate',
       'CreatePreset',
       'CreateQueue',
+      'CreateResourceShare',
       'DeleteJobTemplate',
       'DeletePolicy',
       'DeletePreset',

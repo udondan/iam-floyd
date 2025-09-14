@@ -23,7 +23,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddBridgeOutputs.html
    */
   public toAddBridgeOutputs() {
     return this.to('AddBridgeOutputs');
@@ -34,7 +34,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddBridgeSources.html
    */
   public toAddBridgeSources() {
     return this.to('AddBridgeSources');
@@ -45,7 +45,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowMediaStreams.html
    */
   public toAddFlowMediaStreams() {
     return this.to('AddFlowMediaStreams');
@@ -56,7 +56,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowOutputs.html
    */
   public toAddFlowOutputs() {
     return this.to('AddFlowOutputs');
@@ -67,7 +67,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowSources.html
    */
   public toAddFlowSources() {
     return this.to('AddFlowSources');
@@ -78,7 +78,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-vpcinterfaces.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowVpcInterfaces.html
    */
   public toAddFlowVpcInterfaces() {
     return this.to('AddFlowVpcInterfaces');
@@ -89,7 +89,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateBridge.html
    */
   public toCreateBridge() {
     return this.to('CreateBridge');
@@ -100,7 +100,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateFlow.html
    */
   public toCreateFlow() {
     return this.to('CreateFlow');
@@ -111,7 +111,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateGateway.html
    */
   public toCreateGateway() {
     return this.to('CreateGateway');
@@ -122,7 +122,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteBridge.html
    */
   public toDeleteBridge() {
     return this.to('DeleteBridge');
@@ -133,7 +133,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteFlow.html
    */
   public toDeleteFlow() {
     return this.to('DeleteFlow');
@@ -144,7 +144,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteGateway.html
    */
   public toDeleteGateway() {
     return this.to('DeleteGateway');
@@ -155,7 +155,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeregisterGatewayInstance.html
    */
   public toDeregisterGatewayInstance() {
     return this.to('DeregisterGatewayInstance');
@@ -166,7 +166,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeBridge.html
    */
   public toDescribeBridge() {
     return this.to('DescribeBridge');
@@ -177,7 +177,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlow.html
    */
   public toDescribeFlow() {
     return this.to('DescribeFlow');
@@ -188,7 +188,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-metadata.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlowSourceMetadata.html
    */
   public toDescribeFlowSourceMetadata() {
     return this.to('DescribeFlowSourceMetadata');
@@ -199,7 +199,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-thumbnail.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlowSourceThumbnail.html
    */
   public toDescribeFlowSourceThumbnail() {
     return this.to('DescribeFlowSourceThumbnail');
@@ -210,7 +210,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeGateway.html
    */
   public toDescribeGateway() {
     return this.to('DescribeGateway');
@@ -221,7 +221,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeGatewayInstance.html
    */
   public toDescribeGatewayInstance() {
     return this.to('DescribeGatewayInstance');
@@ -232,7 +232,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeOffering.html
    */
   public toDescribeOffering() {
     return this.to('DescribeOffering');
@@ -243,7 +243,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-reservations-reservationarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeReservation.html
    */
   public toDescribeReservation() {
     return this.to('DescribeReservation');
@@ -254,7 +254,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DiscoverGatewayPollEndpoint.html
    */
   public toDiscoverGatewayPollEndpoint() {
     return this.to('DiscoverGatewayPollEndpoint');
@@ -265,7 +265,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_GrantFlowEntitlements.html
    */
   public toGrantFlowEntitlements() {
     return this.to('GrantFlowEntitlements');
@@ -276,7 +276,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListBridges.html
    */
   public toListBridges() {
     return this.to('ListBridges');
@@ -287,7 +287,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-entitlements.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListEntitlements.html
    */
   public toListEntitlements() {
     return this.to('ListEntitlements');
@@ -298,7 +298,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListFlows.html
    */
   public toListFlows() {
     return this.to('ListFlows');
@@ -309,7 +309,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListGatewayInstances.html
    */
   public toListGatewayInstances() {
     return this.to('ListGatewayInstances');
@@ -320,7 +320,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListGateways.html
    */
   public toListGateways() {
     return this.to('ListGateways');
@@ -331,7 +331,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListOfferings.html
    */
   public toListOfferings() {
     return this.to('ListOfferings');
@@ -342,7 +342,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-reservations.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListReservations.html
    */
   public toListReservations() {
     return this.to('ListReservations');
@@ -353,7 +353,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -364,7 +364,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_PollGateway.html
    */
   public toPollGateway() {
     return this.to('PollGateway');
@@ -375,7 +375,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_PurchaseOffering.html
    */
   public toPurchaseOffering() {
     return this.to('PurchaseOffering');
@@ -386,7 +386,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs-outputname.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveBridgeOutput.html
    */
   public toRemoveBridgeOutput() {
     return this.to('RemoveBridgeOutput');
@@ -397,7 +397,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources-sourcename.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveBridgeSource.html
    */
   public toRemoveBridgeSource() {
     return this.to('RemoveBridgeSource');
@@ -408,7 +408,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams-mediastreamname.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowMediaStream.html
    */
   public toRemoveFlowMediaStream() {
     return this.to('RemoveFlowMediaStream');
@@ -419,7 +419,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowOutput.html
    */
   public toRemoveFlowOutput() {
     return this.to('RemoveFlowOutput');
@@ -430,7 +430,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowSource.html
    */
   public toRemoveFlowSource() {
     return this.to('RemoveFlowSource');
@@ -441,7 +441,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-vpcinterfaces-vpcinterfacename.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowVpcInterface.html
    */
   public toRemoveFlowVpcInterface() {
     return this.to('RemoveFlowVpcInterface');
@@ -452,7 +452,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RevokeFlowEntitlement.html
    */
   public toRevokeFlowEntitlement() {
     return this.to('RevokeFlowEntitlement');
@@ -463,7 +463,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-start-flowarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_StartFlow.html
    */
   public toStartFlow() {
     return this.to('StartFlow');
@@ -474,7 +474,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-stop-flowarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_StopFlow.html
    */
   public toStopFlow() {
     return this.to('StopFlow');
@@ -485,7 +485,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_SubmitGatewayStateChange.html
    */
   public toSubmitGatewayStateChange() {
     return this.to('SubmitGatewayStateChange');
@@ -496,7 +496,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -507,7 +507,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -518,7 +518,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridge.html
    */
   public toUpdateBridge() {
     return this.to('UpdateBridge');
@@ -529,7 +529,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs-outputname.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeOutput.html
    */
   public toUpdateBridgeOutput() {
     return this.to('UpdateBridgeOutput');
@@ -540,7 +540,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources-sourcename.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeSource.html
    */
   public toUpdateBridgeSource() {
     return this.to('UpdateBridgeSource');
@@ -551,7 +551,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-state.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeState.html
    */
   public toUpdateBridgeState() {
     return this.to('UpdateBridgeState');
@@ -562,7 +562,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlow.html
    */
   public toUpdateFlow() {
     return this.to('UpdateFlow');
@@ -573,7 +573,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowEntitlement.html
    */
   public toUpdateFlowEntitlement() {
     return this.to('UpdateFlowEntitlement');
@@ -584,7 +584,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams-mediastreamname.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowMediaStream.html
    */
   public toUpdateFlowMediaStream() {
     return this.to('UpdateFlowMediaStream');
@@ -595,7 +595,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowOutput.html
    */
   public toUpdateFlowOutput() {
     return this.to('UpdateFlowOutput');
@@ -606,7 +606,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowSource.html
    */
   public toUpdateFlowSource() {
     return this.to('UpdateFlowSource');
@@ -617,7 +617,7 @@ export class Mediaconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateGatewayInstance.html
    */
   public toUpdateGatewayInstance() {
     return this.to('UpdateGatewayInstance');

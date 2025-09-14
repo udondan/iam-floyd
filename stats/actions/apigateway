@@ -1,7 +1,11 @@
 apigateway:AddCertificateToDomain;Permissions management
 apigateway:CreateAccessAssociation;Permissions management
+apigateway:CreateRoutingRule;Write
 apigateway:DELETE;Write
+apigateway:DeleteRoutingRule;Write
 apigateway:GET;Read
+apigateway:GetRoutingRule;Read
+apigateway:ListRoutingRules;List
 apigateway:PATCH;Write
 apigateway:POST;Write
 apigateway:PUT;Write
@@ -11,3 +15,4 @@ apigateway:SetWebACL;Permissions management
 apigateway:UpdateDomainNameManagementPolicy;Permissions management
 apigateway:UpdateDomainNamePolicy;Permissions management
 apigateway:UpdateRestApiPolicy;Permissions management
+apigateway:UpdateRoutingRule;Write

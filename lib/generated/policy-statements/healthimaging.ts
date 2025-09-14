@@ -67,6 +67,17 @@ export class MedicalImaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get dicom bulkdata in binary format
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMBulkdata.html
+   */
+  public toGetDICOMBulkdata() {
+    return this.to('GetDICOMBulkdata');
+  }
+
+  /**
    * Grants permission to get an import job's properties
    *
    * Access Level: Read
@@ -108,6 +119,17 @@ export class MedicalImaging extends PolicyStatement {
    */
   public toGetDICOMInstanceMetadata() {
     return this.to('GetDICOMInstanceMetadata');
+  }
+
+  /**
+   * Grants permission to retrieve metadata for all DICOM instances belonging to a given DICOM series in DICOM JSON format
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMSeriesMetadata.html
+   */
+  public toGetDICOMSeriesMetadata() {
+    return this.to('GetDICOMSeriesMetadata');
   }
 
   /**
@@ -199,6 +221,39 @@ export class MedicalImaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search dicom instances that returns data in DICOM JSON format
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMInstances.html
+   */
+  public toSearchDICOMInstances() {
+    return this.to('SearchDICOMInstances');
+  }
+
+  /**
+   * Grants permission to search dicom series that returns data in DICOM JSON format
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMSeries.html
+   */
+  public toSearchDICOMSeries() {
+    return this.to('SearchDICOMSeries');
+  }
+
+  /**
+   * Grants permission to search dicom studies that returns data in DICOM JSON format
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMStudies.html
+   */
+  public toSearchDICOMStudies() {
+    return this.to('SearchDICOMStudies');
+  }
+
+  /**
    * Grants permission to search image sets
    *
    * Access Level: Read
@@ -218,6 +273,28 @@ export class MedicalImaging extends PolicyStatement {
    */
   public toStartDICOMImportJob() {
     return this.to('StartDICOMImportJob');
+  }
+
+  /**
+   * Grants permission to store dicom instances that returns result in DICOM JSON format
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOM.html
+   */
+  public toStoreDICOM() {
+    return this.to('StoreDICOM');
+  }
+
+  /**
+   * Grants permission to store a dicom study that returns result in DICOM JSON format
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOMStudy.html
+   */
+  public toStoreDICOMStudy() {
+    return this.to('StoreDICOMStudy');
   }
 
   /**
@@ -268,17 +345,24 @@ export class MedicalImaging extends PolicyStatement {
       'DeleteDatastore',
       'DeleteImageSet',
       'StartDICOMImportJob',
+      'StoreDICOM',
+      'StoreDICOMStudy',
       'UpdateImageSetMetadata'
     ],
     Read: [
+      'GetDICOMBulkdata',
       'GetDICOMImportJob',
       'GetDICOMInstance',
       'GetDICOMInstanceFrames',
       'GetDICOMInstanceMetadata',
+      'GetDICOMSeriesMetadata',
       'GetDatastore',
       'GetImageFrame',
       'GetImageSet',
       'GetImageSetMetadata',
+      'SearchDICOMInstances',
+      'SearchDICOMSeries',
+      'SearchDICOMStudies',
       'SearchImageSets'
     ],
     List: [

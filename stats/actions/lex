@@ -13,6 +13,7 @@ lex:CreateExport;Write
 lex:CreateIntent;Write
 lex:CreateIntentVersion;Write
 lex:CreateResourcePolicy;Write
+lex:CreateResourcePolicyStatement;Write
 lex:CreateSlot;Write
 lex:CreateSlotType;Write
 lex:CreateSlotTypeVersion;Write
@@ -32,6 +33,7 @@ lex:DeleteImport;Write
 lex:DeleteIntent;Write
 lex:DeleteIntentVersion;Write
 lex:DeleteResourcePolicy;Write
+lex:DeleteResourcePolicyStatement;Write
 lex:DeleteSession;Write
 lex:DeleteSlot;Write
 lex:DeleteSlotType;Write

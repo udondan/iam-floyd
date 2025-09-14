@@ -22,7 +22,7 @@ odb:GetDbServer;Read
 odb:GetOciOnboardingStatus;Read
 odb:GetOdbNetwork;Read
 odb:GetOdbPeeringConnection;Read
-odb:GetResourcePolicy;Write
+odb:GetResourcePolicy;Read
 odb:InitializeService;Write
 odb:ListAutonomousVirtualMachines;Read
 odb:ListCloudAutonomousVmClusters;List
@@ -37,9 +37,9 @@ odb:ListOdbPeeringConnections;List
 odb:ListSystemVersions;Read
 odb:ListTagsForResource;Read
 odb:PutResourcePolicy;Write
-odb:RebootDbNode;Read
-odb:StartDbNode;Read
-odb:StopDbNode;Read
+odb:RebootDbNode;Write
+odb:StartDbNode;Write
+odb:StopDbNode;Write
 odb:TagResource;Tagging
 odb:UntagResource;Tagging
 odb:UpdateCloudExadataInfrastructure;Write

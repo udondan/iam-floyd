@@ -402,17 +402,6 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the permission policy associated with a permission set
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
-   */
-  public toDeletePermissionsPolicy() {
-    return this.to('DeletePermissionsPolicy');
-  }
-
-  /**
    * Grants permission to delete the profile for an application instance
    *
    * Access Level: Write
@@ -496,17 +485,6 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to obtain information about the directories for this account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
-   */
-  public toDescribeDirectories() {
-    return this.to('DescribeDirectories');
-  }
-
-  /**
    * Grants permission to obtain information about an identity center instance
    *
    * Access Level: Read
@@ -551,17 +529,6 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve all the permissions policies associated with a permission set
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
-   */
-  public toDescribePermissionsPolicies() {
-    return this.to('DescribePermissionsPolicies');
-  }
-
-  /**
    * Grants permission to obtain the regions where your organization has enabled AWS IAM Identity Center
    *
    * Access Level: Read
@@ -581,17 +548,6 @@ export class Sso extends PolicyStatement {
    */
   public toDescribeTrustedTokenIssuer() {
     return this.to('DescribeTrustedTokenIssuer');
-  }
-
-  /**
-   * Grants permission to obtain information about the trust relationships for this account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
-   */
-  public toDescribeTrusts() {
-    return this.to('DescribeTrusts');
   }
 
   /**
@@ -709,6 +665,20 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get session configuration for an application
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationSessionConfiguration.html
+   */
+  public toGetApplicationSessionConfiguration() {
+    return this.to('GetApplicationSessionConfiguration');
+  }
+
+  /**
    * Grants permission to retrieve application template details
    *
    * Access Level: Read
@@ -772,20 +742,6 @@ export class Sso extends PolicyStatement {
    */
   public toGetPermissionsBoundaryForPermissionSet() {
     return this.to('GetPermissionsBoundaryForPermissionSet');
-  }
-
-  /**
-   * Grants permission to retrieve all permission policies associated with a permission set
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - sso:DescribePermissionsPolicies
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
-   */
-  public toGetPermissionsPolicy() {
-    return this.to('GetPermissionsPolicy');
   }
 
   /**
@@ -1232,6 +1188,20 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put session configuration for an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApplicationAccount()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationSessionConfiguration.html
+   */
+  public toPutApplicationSessionConfiguration() {
+    return this.to('PutApplicationSessionConfiguration');
+  }
+
+  /**
    * Grants permission to attach an IAM inline policy to a permission set
    *
    * Access Level: Write
@@ -1439,17 +1409,6 @@ export class Sso extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the user attribute mappings for your connected directory
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
-   */
-  public toUpdateDirectoryAssociation() {
-    return this.to('UpdateDirectoryAssociation');
-  }
-
-  /**
    * Grants permission to update an identity center instance
    *
    * Access Level: Write
@@ -1576,6 +1535,7 @@ export class Sso extends PolicyStatement {
       'PutApplicationAssignmentConfiguration',
       'PutApplicationAuthenticationMethod',
       'PutApplicationGrant',
+      'PutApplicationSessionConfiguration',
       'PutInlinePolicyToPermissionSet',
       'PutMfaDeviceManagementForDirectory',
       'StartSSO',
@@ -1587,7 +1547,6 @@ export class Sso extends PolicyStatement {
       'UpdateApplicationInstanceSecurityConfiguration',
       'UpdateApplicationInstanceServiceProviderConfiguration',
       'UpdateApplicationInstanceStatus',
-      'UpdateDirectoryAssociation',
       'UpdateInstance',
       'UpdateInstanceAccessControlAttributeConfiguration',
       'UpdateManagedApplicationInstanceStatus',
@@ -1600,7 +1559,6 @@ export class Sso extends PolicyStatement {
       'AttachCustomerManagedPolicyReferenceToPermissionSet',
       'AttachManagedPolicyToPermissionSet',
       'DeletePermissionsBoundaryFromPermissionSet',
-      'DeletePermissionsPolicy',
       'DetachCustomerManagedPolicyReferenceFromPermissionSet',
       'DetachManagedPolicyFromPermissionSet',
       'PutPermissionsBoundaryToPermissionSet',
@@ -1613,27 +1571,24 @@ export class Sso extends PolicyStatement {
       'DescribeApplication',
       'DescribeApplicationAssignment',
       'DescribeApplicationProvider',
-      'DescribeDirectories',
       'DescribeInstance',
       'DescribeInstanceAccessControlAttributeConfiguration',
       'DescribePermissionSet',
       'DescribePermissionSetProvisioningStatus',
-      'DescribePermissionsPolicies',
       'DescribeRegisteredRegions',
       'DescribeTrustedTokenIssuer',
-      'DescribeTrusts',
       'GetApplicationAccessScope',
       'GetApplicationAssignmentConfiguration',
       'GetApplicationAuthenticationMethod',
       'GetApplicationGrant',
       'GetApplicationInstance',
+      'GetApplicationSessionConfiguration',
       'GetApplicationTemplate',
       'GetInlinePolicyForPermissionSet',
       'GetManagedApplicationInstance',
       'GetMfaDeviceManagementForDirectory',
       'GetPermissionSet',
       'GetPermissionsBoundaryForPermissionSet',
-      'GetPermissionsPolicy',
       'GetProfile',
       'GetSSOStatus',
       'GetSharedSsoConfiguration',
@@ -1843,6 +1798,7 @@ export class Sso extends PolicyStatement {
    * - .toGetApplicationAssignmentConfiguration()
    * - .toGetApplicationAuthenticationMethod()
    * - .toGetApplicationGrant()
+   * - .toGetApplicationSessionConfiguration()
    * - .toListApplicationAccessScopes()
    * - .toListApplicationAssignments()
    * - .toListApplicationAssignmentsForPrincipal()
@@ -1852,6 +1808,7 @@ export class Sso extends PolicyStatement {
    * - .toPutApplicationAssignmentConfiguration()
    * - .toPutApplicationAuthenticationMethod()
    * - .toPutApplicationGrant()
+   * - .toPutApplicationSessionConfiguration()
    * - .toUpdateApplication()
    *
    * Applies to resource types:

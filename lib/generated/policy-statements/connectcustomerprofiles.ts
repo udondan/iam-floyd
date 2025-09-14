@@ -77,6 +77,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a layout in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomainLayout.html
+   */
+  public toCreateDomainLayout() {
+    return this.to('CreateDomainLayout');
+  }
+
+  /**
    * Grants permission to put an event stream in a domain
    *
    * Access Level: Write
@@ -167,6 +178,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an upload job in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateUploadJob.html
+   */
+  public toCreateUploadJob() {
+    return this.to('CreateUploadJob');
+  }
+
+  /**
    * Grants permission to delete a calculated attribute definition in the domain
    *
    * Access Level: Write
@@ -186,6 +208,17 @@ export class Profile extends PolicyStatement {
    */
   public toDeleteDomain() {
     return this.to('DeleteDomain');
+  }
+
+  /**
+   * Grants permission to delete a layout in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteDomainLayout.html
+   */
+  public toDeleteDomainLayout() {
+    return this.to('DeleteDomainLayout');
   }
 
   /**
@@ -346,6 +379,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a layout in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetDomainLayout.html
+   */
+  public toGetDomainLayout() {
+    return this.to('GetDomainLayout');
+  }
+
+  /**
    * Grants permission to get a specific event stream in a domain
    *
    * Access Level: Read
@@ -490,6 +534,28 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of an upload job in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetUploadJob.html
+   */
+  public toGetUploadJob() {
+    return this.to('GetUploadJob');
+  }
+
+  /**
+   * Grants permission to get a pre-signed URL to upload file for an upload job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetUploadJobPath.html
+   */
+  public toGetUploadJobPath() {
+    return this.to('GetUploadJobPath');
+  }
+
+  /**
    * Grants permission to get workflow details in a domain
    *
    * Access Level: Read
@@ -542,6 +608,17 @@ export class Profile extends PolicyStatement {
    */
   public toListCalculatedAttributesForProfile() {
     return this.to('ListCalculatedAttributesForProfile');
+  }
+
+  /**
+   * Grants permission to list all the layouts in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainLayouts.html
+   */
+  public toListDomainLayouts() {
+    return this.to('ListDomainLayouts');
   }
 
   /**
@@ -688,6 +765,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all upload jobs in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListUploadJobs.html
+   */
+  public toListUploadJobs() {
+    return this.to('ListUploadJobs');
+  }
+
+  /**
    * Grants permission to list all the workflows in a specific domain
    *
    * Access Level: List
@@ -754,6 +842,28 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an upload job in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StartUploadJob.html
+   */
+  public toStartUploadJob() {
+    return this.to('StartUploadJob');
+  }
+
+  /**
+   * Grants permission to stop an upload job in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StopUploadJob.html
+   */
+  public toStopUploadJob() {
+    return this.to('StopUploadJob');
+  }
+
+  /**
    * Grants permission to adds tags to a resource
    *
    * Access Level: Tagging
@@ -808,6 +918,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a layout in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomainLayout.html
+   */
+  public toUpdateDomainLayout() {
+    return this.to('UpdateDomainLayout');
+  }
+
+  /**
    * Grants permission to update an event trigger in the domain
    *
    * Access Level: Write
@@ -834,6 +955,7 @@ export class Profile extends PolicyStatement {
       'AddProfileKey',
       'CreateCalculatedAttributeDefinition',
       'CreateDomain',
+      'CreateDomainLayout',
       'CreateEventStream',
       'CreateEventTrigger',
       'CreateIntegrationWorkflow',
@@ -842,8 +964,10 @@ export class Profile extends PolicyStatement {
       'CreateSegmentEstimate',
       'CreateSegmentSnapshot',
       'CreateSnapshot',
+      'CreateUploadJob',
       'DeleteCalculatedAttributeDefinition',
       'DeleteDomain',
+      'DeleteDomainLayout',
       'DeleteEventStream',
       'DeleteEventTrigger',
       'DeleteIntegration',
@@ -857,8 +981,11 @@ export class Profile extends PolicyStatement {
       'PutIntegration',
       'PutProfileObject',
       'PutProfileObjectType',
+      'StartUploadJob',
+      'StopUploadJob',
       'UpdateCalculatedAttributeDefinition',
       'UpdateDomain',
+      'UpdateDomainLayout',
       'UpdateEventTrigger',
       'UpdateProfile'
     ],
@@ -870,6 +997,7 @@ export class Profile extends PolicyStatement {
       'GetCalculatedAttributeDefinition',
       'GetCalculatedAttributeForProfile',
       'GetDomain',
+      'GetDomainLayout',
       'GetEventStream',
       'GetEventTrigger',
       'GetIdentityResolutionJob',
@@ -881,6 +1009,8 @@ export class Profile extends PolicyStatement {
       'GetSegmentMembership',
       'GetSegmentSnapshot',
       'GetSnapshot',
+      'GetUploadJob',
+      'GetUploadJobPath',
       'GetWorkflow',
       'GetWorkflowSteps',
       'ListTagsForResource',
@@ -892,6 +1022,7 @@ export class Profile extends PolicyStatement {
       'ListAccountIntegrations',
       'ListCalculatedAttributeDefinitions',
       'ListCalculatedAttributesForProfile',
+      'ListDomainLayouts',
       'ListDomains',
       'ListEventStreams',
       'ListEventTriggers',
@@ -904,6 +1035,7 @@ export class Profile extends PolicyStatement {
       'ListProfileObjects',
       'ListRuleBasedMatches',
       'ListSegmentDefinitions',
+      'ListUploadJobs',
       'ListWorkflows'
     ],
     Tagging: [
@@ -1038,6 +1170,24 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type layouts to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param layoutDefinitionName - Identifier for the layoutDefinitionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLayouts(domainName: string, layoutDefinitionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/layouts/${ layoutDefinitionName }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the customer profile service
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
@@ -1045,6 +1195,7 @@ export class Profile extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCalculatedAttributeDefinition()
    * - .toCreateDomain()
+   * - .toCreateDomainLayout()
    * - .toCreateEventStream()
    * - .toCreateEventTrigger()
    * - .toCreateIntegrationWorkflow()
@@ -1074,6 +1225,7 @@ export class Profile extends PolicyStatement {
    * - calculated-attributes
    * - segment-definitions
    * - event-triggers
+   * - layouts
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1091,6 +1243,7 @@ export class Profile extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCalculatedAttributeDefinition()
    * - .toCreateDomain()
+   * - .toCreateDomainLayout()
    * - .toCreateEventStream()
    * - .toCreateEventTrigger()
    * - .toCreateIntegrationWorkflow()

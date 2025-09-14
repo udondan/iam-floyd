@@ -13,3 +13,4 @@ ses:ReplicaRegion
 ses:RequestTag/${TagKey}
 ses:ResourceTag/${TagKey}
 ses:TagKeys
+ses:TenantName

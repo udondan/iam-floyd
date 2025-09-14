@@ -798,7 +798,7 @@ export class Appsync extends PolicyStatement {
   /**
    * Grants permission to set a web ACL
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
    */
@@ -1056,7 +1056,6 @@ export class Appsync extends PolicyStatement {
       'GraphQL',
       'PutGraphqlApiEnvironmentVariables',
       'PutResourcePolicy',
-      'SetWebACL',
       'SourceGraphQL',
       'StartDataSourceIntrospection',
       'StartSchemaCreation',
@@ -1107,6 +1106,9 @@ export class Appsync extends PolicyStatement {
       'ListSourceApiAssociations',
       'ListTypes',
       'ListTypesByAssociation'
+    ],
+    'Permissions management': [
+      'SetWebACL'
     ],
     Tagging: [
       'TagResource',

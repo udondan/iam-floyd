@@ -376,7 +376,7 @@ export class Mpa extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mpa/latest/userguide/mpa-concepts.html
    *
-   * @param arn - Identifier for the arn.
+   * @param approvalTeamId - Identifier for the approvalTeamId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -384,8 +384,8 @@ export class Mpa extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onApprovalTeam(arn: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mpa:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:approval-team/${ arn }`);
+  public onApprovalTeam(approvalTeamId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mpa:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:approval-team/${ approvalTeamId }`);
   }
 
   /**
@@ -393,7 +393,7 @@ export class Mpa extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mpa/latest/userguide/mpa-concepts.html
    *
-   * @param identitySourceArn - Identifier for the identitySourceArn.
+   * @param identitySourceId - Identifier for the identitySourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -401,8 +401,8 @@ export class Mpa extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onIdentitySource(identitySourceArn: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mpa:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identity-source/${ identitySourceArn }`);
+  public onIdentitySource(identitySourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mpa:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:identity-source/${ identitySourceId }`);
   }
 
   /**
@@ -410,7 +410,7 @@ export class Mpa extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mpa/latest/userguide/mpa-concepts.html
    *
-   * @param sessionArn - Identifier for the sessionArn.
+   * @param sessionId - Identifier for the sessionId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -418,8 +418,8 @@ export class Mpa extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onSession(sessionArn: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mpa:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session/${ sessionArn }`);
+  public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mpa:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:session/${ sessionId }`);
   }
 
   /**

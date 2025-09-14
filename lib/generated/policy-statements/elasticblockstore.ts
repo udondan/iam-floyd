@@ -221,7 +221,7 @@ export class Ebs extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ID of the parent snapshot
+   * Filters access by the ARN of the parent snapshot
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html#amazonelasticblockstore-policy-keys
    *
@@ -232,10 +232,10 @@ export class Ebs extends PolicyStatement {
    * - snapshot
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifParentSnapshot(value: string | string[], operator?: Operator | string) {
-    return this.if(`ParentSnapshot`, value, operator ?? 'StringLike');
+    return this.if(`ParentSnapshot`, value, operator ?? 'ArnLike');
   }
 
   /**

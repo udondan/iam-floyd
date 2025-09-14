@@ -1,11 +1,16 @@
 s3express:AccessPointNetworkOrigin
+s3express:AccessPointTag/${TagKey}
 s3express:AllAccessRestrictedToLocalZoneGroup
+s3express:BucketTag/${TagKey}
 s3express:DataAccessPointAccount
 s3express:DataAccessPointArn
 s3express:LocationName
 s3express:Permissions
+s3express:RequestTag/${TagKey}
 s3express:ResourceAccount
+s3express:ResourceTag/${TagKey}
 s3express:SessionMode
+s3express:TagKeys
 s3express:TlsVersion
 s3express:authType
 s3express:signatureAge

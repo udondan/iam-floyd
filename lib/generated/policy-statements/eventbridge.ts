@@ -30,6 +30,17 @@ export class Events extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure vended log delivery for EventBridge
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to cancel a replay
    *
    * Access Level: Write
@@ -735,6 +746,7 @@ export class Events extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateEventSource',
+      'AllowVendedLogDeliveryForResource',
       'CancelReplay',
       'CreateApiDestination',
       'CreateArchive',
@@ -989,6 +1001,34 @@ export class Events extends PolicyStatement {
    */
   public onTerminateInstance(account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:events:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target/terminate-instance`);
+  }
+
+  /**
+   * Adds a resource of type alias to the statement
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html
+   *
+   * @param alias - Identifier for the alias.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAlias(alias: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:alias/${ alias }`);
+  }
+
+  /**
+   * Adds a resource of type key to the statement
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html
+   *
+   * @param keyId - Identifier for the keyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onKey(keyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:kms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key/${ keyId }`);
   }
 
   /**

@@ -16,6 +16,7 @@ codepipeline:GetPipelineState;Read
 codepipeline:GetThirdPartyJobDetails;Read
 codepipeline:ListActionExecutions;Read
 codepipeline:ListActionTypes;Read
+codepipeline:ListDeployActionExecutionTargets;Read
 codepipeline:ListPipelineExecutions;List
 codepipeline:ListPipelines;List
 codepipeline:ListRuleExecutions;Read

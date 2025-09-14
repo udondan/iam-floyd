@@ -4,6 +4,7 @@ mediaconvert:CreateJob;Write
 mediaconvert:CreateJobTemplate;Write
 mediaconvert:CreatePreset;Write
 mediaconvert:CreateQueue;Write
+mediaconvert:CreateResourceShare;Write
 mediaconvert:DeleteJobTemplate;Write
 mediaconvert:DeletePolicy;Write
 mediaconvert:DeletePreset;Write

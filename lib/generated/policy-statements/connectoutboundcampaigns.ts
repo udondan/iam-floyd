@@ -164,6 +164,17 @@ export class ConnectCampaigns extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the communication limits configuration of an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html
+   */
+  public toGetInstanceCommunicationLimits() {
+    return this.to('GetInstanceCommunicationLimits');
+  }
+
+  /**
    * Grants permission to get onboarding job status for an Amazon Connect instance
    *
    * Access Level: Read
@@ -244,6 +255,17 @@ export class ConnectCampaigns extends PolicyStatement {
    */
   public toPutDialRequestBatch() {
     return this.to('PutDialRequestBatch');
+  }
+
+  /**
+   * Grants permission to put the communication limits configuration of an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html
+   */
+  public toPutInstanceCommunicationLimits() {
+    return this.to('PutInstanceCommunicationLimits');
   }
 
   /**
@@ -453,6 +475,7 @@ export class ConnectCampaigns extends PolicyStatement {
       'PauseCampaign',
       'PutConnectInstanceIntegration',
       'PutDialRequestBatch',
+      'PutInstanceCommunicationLimits',
       'PutOutboundRequestBatch',
       'PutProfileOutboundRequestBatch',
       'ResumeCampaign',
@@ -474,6 +497,7 @@ export class ConnectCampaigns extends PolicyStatement {
       'GetCampaignState',
       'GetCampaignStateBatch',
       'GetConnectInstanceConfig',
+      'GetInstanceCommunicationLimits',
       'GetInstanceOnboardingJobStatus',
       'ListTagsForResource'
     ],

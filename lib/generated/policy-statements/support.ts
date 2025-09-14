@@ -74,6 +74,17 @@ export class Support extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the available options for a single AWS Support case. This is an internally managed function
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCaseOptions.html
+   */
+  public toDescribeCaseOptions() {
+    return this.to('DescribeCaseOptions');
+  }
+
+  /**
    * Grants permission to list AWS Support cases that matches the given inputs
    *
    * Access Level: Read
@@ -315,6 +326,28 @@ export class Support extends PolicyStatement {
     return this.to('StartInteraction');
   }
 
+  /**
+   * Grants permission to update the severity for a single AWS Support case. This is an internally managed function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_UpdateCaseSeverity.html
+   */
+  public toUpdateCaseSeverity() {
+    return this.to('UpdateCaseSeverity');
+  }
+
+  /**
+   * Grants permission to update a specific interaction to receive personalized troubleshooting assistance for account and technical issues
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_UpdateInteraction.html
+   */
+  public toUpdateInteraction() {
+    return this.to('UpdateInteraction');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddAttachmentsToSet',
@@ -326,11 +359,14 @@ export class Support extends PolicyStatement {
       'RateCaseCommunication',
       'RefreshTrustedAdvisorCheck',
       'ResolveCase',
-      'StartInteraction'
+      'StartInteraction',
+      'UpdateCaseSeverity',
+      'UpdateInteraction'
     ],
     Read: [
       'DescribeAttachment',
       'DescribeCaseAttributes',
+      'DescribeCaseOptions',
       'DescribeCases',
       'DescribeCommunication',
       'DescribeCommunications',

@@ -89,6 +89,10 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateEventAction.html
    */
   public toCreateEventAction() {
@@ -359,6 +363,10 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to publish a data set to a data grant
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
    */
@@ -666,6 +674,9 @@ export class Dataexchange extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEventActions(eventActionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:event-actions/${ eventActionId }`);
@@ -696,7 +707,9 @@ export class Dataexchange extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDataGrant()
    * - .toCreateDataSet()
+   * - .toCreateEventAction()
    * - .toCreateRevision()
+   * - .toPublishToDataGrant()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -715,6 +728,7 @@ export class Dataexchange extends PolicyStatement {
    * Applies to resource types:
    * - data-sets
    * - revisions
+   * - event-actions
    * - data-grants
    *
    * @param tagKey The tag key to check
@@ -733,7 +747,9 @@ export class Dataexchange extends PolicyStatement {
    * Applies to actions:
    * - .toCreateDataGrant()
    * - .toCreateDataSet()
+   * - .toCreateEventAction()
    * - .toCreateRevision()
+   * - .toPublishToDataGrant()
    * - .toTagResource()
    * - .toUntagResource()
    *

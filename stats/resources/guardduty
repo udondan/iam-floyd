@@ -3,4 +3,6 @@ guardduty:filter
 guardduty:ipset
 guardduty:malwareprotectionplan
 guardduty:publishingDestination
+guardduty:threatentityset
 guardduty:threatintelset
+guardduty:trustedentityset

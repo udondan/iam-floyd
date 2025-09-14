@@ -1,6 +1,7 @@
 iotsitewise:access-policy
 iotsitewise:asset
 iotsitewise:asset-model
+iotsitewise:computation-model
 iotsitewise:dashboard
 iotsitewise:dataset
 iotsitewise:gateway

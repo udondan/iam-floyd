@@ -63,7 +63,7 @@ appsync:ListTypes;List
 appsync:ListTypesByAssociation;List
 appsync:PutGraphqlApiEnvironmentVariables;Write
 appsync:PutResourcePolicy;Write
-appsync:SetWebACL;Write
+appsync:SetWebACL;Permissions management
 appsync:SourceGraphQL;Write
 appsync:StartDataSourceIntrospection;Write
 appsync:StartSchemaCreation;Write

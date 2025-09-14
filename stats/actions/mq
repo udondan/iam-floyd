@@ -21,5 +21,6 @@ mq:ListUsers;List
 mq:Promote;Write
 mq:RebootBroker;Write
 mq:UpdateBroker;Write
+mq:UpdateBrokerAccessConfiguration;Write
 mq:UpdateConfiguration;Write
 mq:UpdateUser;Write

@@ -51,6 +51,7 @@ apigateway:RouteResponse
 apigateway:RouteResponses
 apigateway:RouteSettings
 apigateway:Routes
+apigateway:RoutingRule
 apigateway:Sdk
 apigateway:Stage
 apigateway:Stages

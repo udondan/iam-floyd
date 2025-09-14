@@ -1,5 +1,6 @@
 glue:CredentialIssuingService
 glue:EnabledForRedshiftAutoDiscovery
+glue:LakeFormationPermissions
 glue:RequestTag/${TagKey}
 glue:ResourceTag/${TagKey}
 glue:RoleAssumedBy

@@ -120,6 +120,15 @@ export class Billing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get cost and usage data for a specified billng view
+   *
+   * Access Level: Read
+   */
+  public toGetBillingViewData() {
+    return this.to('GetBillingViewData');
+  }
+
+  /**
    * Grants permission to view the account's contract information including the contract number, end-user organization names, PO numbers and if the account is used to service public-sector customers
    *
    * Access Level: Read
@@ -340,6 +349,7 @@ export class Billing extends PolicyStatement {
       'GetBillingNotifications',
       'GetBillingPreferences',
       'GetBillingView',
+      'GetBillingViewData',
       'GetContractInformation',
       'GetCredits',
       'GetIAMAccessPreference',

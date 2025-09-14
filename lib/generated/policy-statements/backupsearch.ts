@@ -102,6 +102,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartSearchJob.html
@@ -247,6 +248,9 @@ export class BackupSearch extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toStartSearchJob()
    *
    * Applies to resource types:
    * - searchJob

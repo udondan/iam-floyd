@@ -70,6 +70,7 @@ rds:DescribeDBEngineVersions;List
 rds:DescribeDBInstanceAutomatedBackups;List
 rds:DescribeDBInstances;List
 rds:DescribeDBLogFiles;List
+rds:DescribeDBMajorEngineVersions;List
 rds:DescribeDBParameterGroups;List
 rds:DescribeDBParameters;List
 rds:DescribeDBProxies;List

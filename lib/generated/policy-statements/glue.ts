@@ -32,6 +32,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchCreatePartition
    */
   public toBatchCreatePartition() {
@@ -42,6 +45,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete one or more connections
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-BatchDeleteConnection
    */
@@ -54,6 +60,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchDeletePartition
    */
   public toBatchDeletePartition() {
@@ -65,6 +74,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-BatchDeleteTable
    */
   public toBatchDeleteTable() {
@@ -75,6 +87,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete one or more versions of a table
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion
    */
@@ -141,6 +156,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve one or more partitions
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchGetPartition
    */
@@ -210,6 +228,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to update one or more partitions
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchUpdatePartition
    */
@@ -292,6 +313,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
   public toCreateCatalog() {
@@ -328,6 +352,7 @@ export class Glue extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection
    */
@@ -385,6 +410,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-CreateDatabase
    */
   public toCreateDatabase() {
@@ -404,6 +432,17 @@ export class Glue extends PolicyStatement {
    */
   public toCreateDevEndpoint() {
     return this.to('CreateDevEndpoint');
+  }
+
+  /**
+   * Grants permission to connect Glue with Identity Center
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/security-trusted-identity-propagation-getting-started.html#security-trusted-identity-propagation-connecting
+   */
+  public toCreateGlueIdentityCenterConfiguration() {
+    return this.to('CreateGlueIdentityCenterConfiguration');
   }
 
   /**
@@ -494,6 +533,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition
    */
   public toCreatePartition() {
@@ -504,6 +546,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a specified partition index in an existing table
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreatePartitionIndex
    */
@@ -586,6 +631,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreateTable
    */
   public toCreateTable() {
@@ -641,6 +689,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-CreateUserDefinedFunction
    */
   public toCreateUserDefinedFunction() {
@@ -678,6 +729,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
   public toDeleteCatalog() {
@@ -700,6 +754,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeleteColumnStatisticsForPartition
    */
   public toDeleteColumnStatisticsForPartition() {
@@ -710,6 +767,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete the table statistics of columns
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteColumnStatisticsForTable
    */
@@ -732,6 +792,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete a connection
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-DeleteConnection
    */
@@ -777,6 +840,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-DeleteDatabase
    */
   public toDeleteDatabase() {
@@ -792,6 +858,17 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteDevEndpoint() {
     return this.to('DeleteDevEndpoint');
+  }
+
+  /**
+   * Grants permission to disconnect Glue with Identity Center
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/security-trusted-identity-propagation-getting-started.html#security-trusted-identity-propagation-connecting
+   */
+  public toDeleteGlueIdentityCenterConfiguration() {
+    return this.to('DeleteGlueIdentityCenterConfiguration');
   }
 
   /**
@@ -846,6 +923,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeletePartition
    */
   public toDeletePartition() {
@@ -856,6 +936,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete a specified partition index from an existing table
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeletePartitionIndex
    */
@@ -934,6 +1017,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTable
    */
   public toDeleteTable() {
@@ -958,6 +1044,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete a version of a table
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion
    */
@@ -991,6 +1080,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to delete a function definition
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-DeleteUserDefinedFunction
    */
@@ -1107,6 +1199,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifEnabledForRedshiftAutoDiscovery()
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -1118,6 +1211,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve the catalog import status
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-GetCatalogImportStatus
    */
@@ -1132,6 +1228,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifEnabledForRedshiftAutoDiscovery()
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -1166,6 +1263,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetColumnStatisticsForPartition
    */
   public toGetColumnStatisticsForPartition() {
@@ -1176,6 +1276,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve table statistics of columns
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetColumnStatisticsForTable
    */
@@ -1232,6 +1335,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnection
    */
   public toGetConnection() {
@@ -1242,6 +1348,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve a list of connections
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnections
    */
@@ -1397,6 +1506,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabase
    */
   public toGetDatabase() {
@@ -1407,6 +1519,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve all databases
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabases
    */
@@ -1500,6 +1615,17 @@ export class Glue extends PolicyStatement {
    */
   public toGetGeneratedCode() {
     return this.to('GetGeneratedCode');
+  }
+
+  /**
+   * Grants permission to retrieve the managed Idc application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/security-trusted-identity-propagation-getting-started.html#security-trusted-identity-propagation-connecting
+   */
+  public toGetGlueIdentityCenterConfiguration() {
+    return this.to('GetGlueIdentityCenterConfiguration');
   }
 
   /**
@@ -1672,6 +1798,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartition
    */
   public toGetPartition() {
@@ -1683,6 +1812,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetPartitionIndexes
    */
   public toGetPartitionIndexes() {
@@ -1693,6 +1825,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve the partitions of a table
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartitions
    */
@@ -1958,6 +2093,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTable
    */
   public toGetTable() {
@@ -1983,6 +2121,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersion
    */
   public toGetTableVersion() {
@@ -1994,6 +2135,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersions
    */
   public toGetTableVersions() {
@@ -2004,6 +2148,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve the tables in a database
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTables
    */
@@ -2060,6 +2207,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunction
    */
   public toGetUserDefinedFunction() {
@@ -2070,6 +2220,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to retrieve multiple function definitions
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunctions
    */
@@ -2147,6 +2300,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to import an Athena data catalog into AWS Glue
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-ImportCatalogToGlue
    */
@@ -2638,6 +2794,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-SearchTables
    */
   public toSearchTables() {
@@ -2953,6 +3112,7 @@ export class Glue extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-TagResource
    */
@@ -2989,6 +3149,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource
    */
@@ -3012,6 +3173,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
   public toUpdateCatalog() {
@@ -3034,6 +3198,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdateColumnStatisticsForPartition
    */
   public toUpdateColumnStatisticsForPartition() {
@@ -3044,6 +3211,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to update table statistics of columns
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateColumnStatisticsForTable
    */
@@ -3066,6 +3236,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to update a connection
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-UpdateConnection
    */
@@ -3111,6 +3284,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-UpdateDatabase
    */
   public toUpdateDatabase() {
@@ -3126,6 +3302,17 @@ export class Glue extends PolicyStatement {
    */
   public toUpdateDevEndpoint() {
     return this.to('UpdateDevEndpoint');
+  }
+
+  /**
+   * Grants permission to update the managed Idc application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/security-trusted-identity-propagation-getting-started.html#security-trusted-identity-propagation-connecting
+   */
+  public toUpdateGlueIdentityCenterConfiguration() {
+    return this.to('UpdateGlueIdentityCenterConfiguration');
   }
 
   /**
@@ -3193,6 +3380,9 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdatePartition
    */
   public toUpdatePartition() {
@@ -3236,6 +3426,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to update a table
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateTable
    */
@@ -3283,6 +3476,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to update a function definition
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-UpdateUserDefinedFunction
    */
@@ -3358,6 +3554,7 @@ export class Glue extends PolicyStatement {
       'CreateDataQualityRuleset',
       'CreateDatabase',
       'CreateDevEndpoint',
+      'CreateGlueIdentityCenterConfiguration',
       'CreateInboundIntegration',
       'CreateIntegration',
       'CreateIntegrationResourceProperty',
@@ -3389,6 +3586,7 @@ export class Glue extends PolicyStatement {
       'DeleteDataQualityRuleset',
       'DeleteDatabase',
       'DeleteDevEndpoint',
+      'DeleteGlueIdentityCenterConfiguration',
       'DeleteIntegration',
       'DeleteIntegrationTableProperties',
       'DeleteJob',
@@ -3459,6 +3657,7 @@ export class Glue extends PolicyStatement {
       'UpdateDataQualityRuleset',
       'UpdateDatabase',
       'UpdateDevEndpoint',
+      'UpdateGlueIdentityCenterConfiguration',
       'UpdateIntegrationResourceProperty',
       'UpdateIntegrationTableProperties',
       'UpdateJob',
@@ -3523,6 +3722,7 @@ export class Glue extends PolicyStatement {
       'GetDevEndpoints',
       'GetEntityRecords',
       'GetGeneratedCode',
+      'GetGlueIdentityCenterConfiguration',
       'GetIntegrationResourceProperty',
       'GetIntegrationTableProperties',
       'GetJob',
@@ -4116,6 +4316,74 @@ export class Glue extends PolicyStatement {
    */
   public ifEnabledForRedshiftAutoDiscovery(value?: boolean) {
     return this.if(`EnabledForRedshiftAutoDiscovery`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by whether Lake Formation permission checks will be performed for a given caller and the Glue resource
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
+   *
+   * Applies to actions:
+   * - .toBatchCreatePartition()
+   * - .toBatchDeleteConnection()
+   * - .toBatchDeletePartition()
+   * - .toBatchDeleteTable()
+   * - .toBatchDeleteTableVersion()
+   * - .toBatchGetPartition()
+   * - .toBatchUpdatePartition()
+   * - .toCreateCatalog()
+   * - .toCreateConnection()
+   * - .toCreateDatabase()
+   * - .toCreatePartition()
+   * - .toCreatePartitionIndex()
+   * - .toCreateTable()
+   * - .toCreateUserDefinedFunction()
+   * - .toDeleteCatalog()
+   * - .toDeleteColumnStatisticsForPartition()
+   * - .toDeleteColumnStatisticsForTable()
+   * - .toDeleteConnection()
+   * - .toDeleteDatabase()
+   * - .toDeletePartition()
+   * - .toDeletePartitionIndex()
+   * - .toDeleteTable()
+   * - .toDeleteTableVersion()
+   * - .toDeleteUserDefinedFunction()
+   * - .toGetCatalog()
+   * - .toGetCatalogImportStatus()
+   * - .toGetCatalogs()
+   * - .toGetColumnStatisticsForPartition()
+   * - .toGetColumnStatisticsForTable()
+   * - .toGetConnection()
+   * - .toGetConnections()
+   * - .toGetDatabase()
+   * - .toGetDatabases()
+   * - .toGetPartition()
+   * - .toGetPartitionIndexes()
+   * - .toGetPartitions()
+   * - .toGetTable()
+   * - .toGetTableVersion()
+   * - .toGetTableVersions()
+   * - .toGetTables()
+   * - .toGetUserDefinedFunction()
+   * - .toGetUserDefinedFunctions()
+   * - .toImportCatalogToGlue()
+   * - .toSearchTables()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateCatalog()
+   * - .toUpdateColumnStatisticsForPartition()
+   * - .toUpdateColumnStatisticsForTable()
+   * - .toUpdateConnection()
+   * - .toUpdateDatabase()
+   * - .toUpdatePartition()
+   * - .toUpdateTable()
+   * - .toUpdateUserDefinedFunction()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLakeFormationPermissions(value: string | string[], operator?: Operator | string) {
+    return this.if(`LakeFormationPermissions`, value, operator ?? 'StringLike');
   }
 
   /**

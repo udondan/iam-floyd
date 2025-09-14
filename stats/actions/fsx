@@ -4,6 +4,7 @@ fsx:BypassSnaplockEnterpriseRetention;Permissions management
 fsx:CancelDataRepositoryTask;Write
 fsx:CopyBackup;Write
 fsx:CopySnapshotAndUpdateVolume;Write
+fsx:CreateAndAttachS3AccessPoint;Write
 fsx:CreateBackup;Write
 fsx:CreateDataRepositoryAssociation;Write
 fsx:CreateDataRepositoryTask;Write
@@ -29,10 +30,12 @@ fsx:DescribeDataRepositoryTasks;Read
 fsx:DescribeFileCaches;Read
 fsx:DescribeFileSystemAliases;Read
 fsx:DescribeFileSystems;Read
+fsx:DescribeS3AccessPointAttachments;Read
 fsx:DescribeSharedVpcConfiguration;Read
 fsx:DescribeSnapshots;Read
 fsx:DescribeStorageVirtualMachines;Read
 fsx:DescribeVolumes;Read
+fsx:DetachAndDeleteS3AccessPoint;Write
 fsx:DisassociateFileGateway;Write
 fsx:DisassociateFileSystemAliases;Write
 fsx:GetResourcePolicy;Permissions management

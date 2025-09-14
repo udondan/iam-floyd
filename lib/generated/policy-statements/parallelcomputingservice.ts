@@ -19,11 +19,11 @@ export class Pcs extends PolicyStatement {
   }
 
   /**
-   * Grants permission to configure vended log delivery for Skybridge cluster logs
+   * Grants permission to configure vended log delivery for AWS PCS cluster logs
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/pcs/latest/userguide/adminguide/audit-logging.html
+   * https://docs.aws.amazon.com/pcs/latest/userguide/monitoring_scheduler-logs.html
    */
   public toAllowVendedLogDeliveryForResource() {
     return this.to('AllowVendedLogDeliveryForResource');
@@ -341,7 +341,7 @@ export class Pcs extends PolicyStatement {
   /**
    * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/pcs/latest/APIReference/working-with_clusters.html
+   * https://docs.aws.amazon.com/pcs/latest/APIReference/API_Cluster.html
    *
    * @param clusterIdentifier - Identifier for the clusterIdentifier.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -358,7 +358,7 @@ export class Pcs extends PolicyStatement {
   /**
    * Adds a resource of type computenodegroup to the statement
    *
-   * https://docs.aws.amazon.com/pcs/latest/APIReference/working-with_compute-node-groups.html
+   * https://docs.aws.amazon.com/pcs/latest/APIReference/API_ComputeNodeGroup.html
    *
    * @param clusterIdentifier - Identifier for the clusterIdentifier.
    * @param computeNodeGroupIdentifier - Identifier for the computeNodeGroupIdentifier.
@@ -376,7 +376,7 @@ export class Pcs extends PolicyStatement {
   /**
    * Adds a resource of type queue to the statement
    *
-   * https://docs.aws.amazon.com/pcs/latest/APIReference/working-with_queues.html
+   * https://docs.aws.amazon.com/pcs/latest/APIReference/API_Queue.html
    *
    * @param clusterIdentifier - Identifier for the clusterIdentifier.
    * @param queueIdentifier - Identifier for the queueIdentifier.

@@ -86,10 +86,6 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public toCreateDomainAssociation() {
@@ -634,7 +630,6 @@ export class Amplify extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApp()
    * - .toCreateBranch()
-   * - .toCreateDomainAssociation()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -672,7 +667,6 @@ export class Amplify extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApp()
    * - .toCreateBranch()
-   * - .toCreateDomainAssociation()
    * - .toTagResource()
    * - .toUntagResource()
    *

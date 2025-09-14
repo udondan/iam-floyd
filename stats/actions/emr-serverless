@@ -1,5 +1,6 @@
 emr-serverless:AccessInteractiveEndpoints;Write
 emr-serverless:AccessLivyEndpoints;Write
+emr-serverless:AccessSystemProfileLogs;Write
 emr-serverless:CancelJobRun;Write
 emr-serverless:CreateApplication;Write
 emr-serverless:DeleteApplication;Write

@@ -4,6 +4,10 @@ cassandra:Create;Write
 cassandra:CreateMultiRegionResource;Write
 cassandra:Drop;Write
 cassandra:DropMultiRegionResource;Write
+cassandra:GetRecords;Read
+cassandra:GetShardIterator;Read
+cassandra:GetStream;Read
+cassandra:ListStreams;List
 cassandra:Modify;Write
 cassandra:ModifyMultiRegionResource;Write
 cassandra:Restore;Write

@@ -1,4 +1,4 @@
-imagebuilder:CreatedResourceTag/<key>
+imagebuilder:CreatedResourceTag/${TagKey}
 imagebuilder:CreatedResourceTagKeys
 imagebuilder:Ec2MetadataHttpTokens
 imagebuilder:LifecyclePolicyResourceType

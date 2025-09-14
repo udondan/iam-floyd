@@ -158,6 +158,8 @@ s3:SubmitMultiRegionAccessPointRoutes;Write
 s3:TagResource;Tagging
 s3:UntagResource;Tagging
 s3:UpdateAccessGrantsLocation;Permissions management
+s3:UpdateBucketMetadataInventoryTableConfiguration;Write
+s3:UpdateBucketMetadataJournalTableConfiguration;Write
 s3:UpdateJobPriority;Write
 s3:UpdateJobStatus;Write
 s3:UpdateStorageLensGroup;Write

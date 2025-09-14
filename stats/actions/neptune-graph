@@ -29,7 +29,9 @@ neptune-graph:ReadDataViaQuery;Read
 neptune-graph:ResetGraph;Write
 neptune-graph:RestoreGraphFromSnapshot;Write
 neptune-graph:StartExportTask;Write
+neptune-graph:StartGraph;Write
 neptune-graph:StartImportTask;Write
+neptune-graph:StopGraph;Write
 neptune-graph:TagResource;Tagging
 neptune-graph:UntagResource;Tagging
 neptune-graph:UpdateGraph;Write

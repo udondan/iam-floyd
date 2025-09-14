@@ -35,6 +35,39 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a WhatsApp message template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplate.html
+   */
+  public toCreateWhatsAppMessageTemplate() {
+    return this.to('CreateWhatsAppMessageTemplate');
+  }
+
+  /**
+   * Grants permission to create a WhatsApp message template from Meta's template library
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplateFromLibrary.html
+   */
+  public toCreateWhatsAppMessageTemplateFromLibrary() {
+    return this.to('CreateWhatsAppMessageTemplateFromLibrary');
+  }
+
+  /**
+   * Grants permission to create media for WhatsApp message templates
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplateMedia.html
+   */
+  public toCreateWhatsAppMessageTemplateMedia() {
+    return this.to('CreateWhatsAppMessageTemplateMedia');
+  }
+
+  /**
    * Grants permission to delete a media object from WhatsApp
    *
    * Access Level: Write
@@ -43,6 +76,17 @@ export class SocialMessaging extends PolicyStatement {
    */
   public toDeleteWhatsAppMessageMedia() {
     return this.to('DeleteWhatsAppMessageMedia');
+  }
+
+  /**
+   * Grants permission to delete a WhatsApp message template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeleteWhatsAppMessageTemplate.html
+   */
+  public toDeleteWhatsAppMessageTemplate() {
+    return this.to('DeleteWhatsAppMessageTemplate');
   }
 
   /**
@@ -90,6 +134,17 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of a WhatsApp message template
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppMessageTemplate.html
+   */
+  public toGetWhatsAppMessageTemplate() {
+    return this.to('GetWhatsAppMessageTemplate');
+  }
+
+  /**
    * Grants permission to view all of your WhatsApp Business Accounts
    *
    * Access Level: List
@@ -109,6 +164,28 @@ export class SocialMessaging extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list WhatsApp message templates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppMessageTemplates.html
+   */
+  public toListWhatsAppMessageTemplates() {
+    return this.to('ListWhatsAppMessageTemplates');
+  }
+
+  /**
+   * Grants permission to list available templates from Meta's template library
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppTemplateLibrary.html
+   */
+  public toListWhatsAppTemplateLibrary() {
+    return this.to('ListWhatsAppTemplateLibrary');
   }
 
   /**
@@ -175,23 +252,42 @@ export class SocialMessaging extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update a WhatsApp message template
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppMessageTemplate.html
+   */
+  public toUpdateWhatsAppMessageTemplate() {
+    return this.to('UpdateWhatsAppMessageTemplate');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateWhatsAppBusinessAccount',
+      'CreateWhatsAppMessageTemplate',
+      'CreateWhatsAppMessageTemplateFromLibrary',
+      'CreateWhatsAppMessageTemplateMedia',
       'DeleteWhatsAppMessageMedia',
+      'DeleteWhatsAppMessageTemplate',
       'DisassociateWhatsAppBusinessAccount',
       'GetWhatsAppMessageMedia',
       'PostWhatsAppMessageMedia',
       'PutWhatsAppBusinessAccountEventDestinations',
-      'SendWhatsAppMessage'
+      'SendWhatsAppMessage',
+      'UpdateWhatsAppMessageTemplate'
     ],
     Read: [
       'GetLinkedWhatsAppBusinessAccount',
       'GetLinkedWhatsAppBusinessAccountPhoneNumber',
+      'GetWhatsAppMessageTemplate',
       'ListTagsForResource'
     ],
     List: [
-      'ListLinkedWhatsAppBusinessAccounts'
+      'ListLinkedWhatsAppBusinessAccounts',
+      'ListWhatsAppMessageTemplates',
+      'ListWhatsAppTemplateLibrary'
     ],
     Tagging: [
       'TagResource',

@@ -1,4 +1,5 @@
 securityhub:ASFFSyntaxPath/${ASFFSyntaxPath}
+securityhub:OCSFSyntaxPath/${OCSFSyntaxPath}
 securityhub:RequestTag/${TagKey}
 securityhub:ResourceTag/${TagKey}
 securityhub:TagKeys

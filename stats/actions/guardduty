@@ -8,7 +8,9 @@ guardduty:CreateMalwareProtectionPlan;Write
 guardduty:CreateMembers;Write
 guardduty:CreatePublishingDestination;Write
 guardduty:CreateSampleFindings;Write
+guardduty:CreateThreatEntitySet;Write
 guardduty:CreateThreatIntelSet;Write
+guardduty:CreateTrustedEntitySet;Write
 guardduty:DeclineInvitations;Write
 guardduty:DeleteDetector;Write
 guardduty:DeleteFilter;Write
@@ -17,7 +19,9 @@ guardduty:DeleteInvitations;Write
 guardduty:DeleteMalwareProtectionPlan;Write
 guardduty:DeleteMembers;Write
 guardduty:DeletePublishingDestination;Write
+guardduty:DeleteThreatEntitySet;Write
 guardduty:DeleteThreatIntelSet;Write
+guardduty:DeleteTrustedEntitySet;Write
 guardduty:DescribeMalwareScans;Read
 guardduty:DescribeOrganizationConfiguration;Read
 guardduty:DescribePublishingDestination;Read
@@ -41,7 +45,9 @@ guardduty:GetMemberDetectors;Read
 guardduty:GetMembers;Read
 guardduty:GetOrganizationStatistics;Read
 guardduty:GetRemainingFreeTrialDays;Read
+guardduty:GetThreatEntitySet;Read
 guardduty:GetThreatIntelSet;Read
+guardduty:GetTrustedEntitySet;Read
 guardduty:GetUsageStatistics;Read
 guardduty:InviteMembers;Write
 guardduty:ListCoverage;List
@@ -55,7 +61,9 @@ guardduty:ListMembers;List
 guardduty:ListOrganizationAdminAccounts;List
 guardduty:ListPublishingDestinations;List
 guardduty:ListTagsForResource;Read
+guardduty:ListThreatEntitySets;List
 guardduty:ListThreatIntelSets;List
+guardduty:ListTrustedEntitySets;List
 guardduty:SendSecurityTelemetry;Write
 guardduty:StartMalwareScan;Write
 guardduty:StartMonitoringMembers;Write
@@ -72,4 +80,6 @@ guardduty:UpdateMalwareScanSettings;Write
 guardduty:UpdateMemberDetectors;Write
 guardduty:UpdateOrganizationConfiguration;Write
 guardduty:UpdatePublishingDestination;Write
+guardduty:UpdateThreatEntitySet;Write
 guardduty:UpdateThreatIntelSet;Write
+guardduty:UpdateTrustedEntitySet;Write

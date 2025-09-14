@@ -491,6 +491,24 @@ export class NeptuneGraph extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a graph
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartGraph.html
+   */
+  public toStartGraph() {
+    return this.to('StartGraph');
+  }
+
+  /**
    * Grants permission to import data into an existing graph
    *
    * Access Level: Write
@@ -502,6 +520,20 @@ export class NeptuneGraph extends PolicyStatement {
    */
   public toStartImportTask() {
     return this.to('StartImportTask');
+  }
+
+  /**
+   * Grants permission to stop a graph
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StopGraph.html
+   */
+  public toStopGraph() {
+    return this.to('StopGraph');
   }
 
   /**
@@ -578,7 +610,9 @@ export class NeptuneGraph extends PolicyStatement {
       'ResetGraph',
       'RestoreGraphFromSnapshot',
       'StartExportTask',
+      'StartGraph',
       'StartImportTask',
+      'StopGraph',
       'UpdateGraph',
       'WriteDataViaQuery'
     ],
@@ -720,6 +754,8 @@ export class NeptuneGraph extends PolicyStatement {
    * - .toResetGraph()
    * - .toRestoreGraphFromSnapshot()
    * - .toStartExportTask()
+   * - .toStartGraph()
+   * - .toStopGraph()
    * - .toUpdateGraph()
    * - .toWriteDataViaQuery()
    *

@@ -62,6 +62,7 @@ logs:ListEntitiesForLogGroup;List
 logs:ListIntegrations;List
 logs:ListLogAnomalyDetectors;List
 logs:ListLogDeliveries;List
+logs:ListLogGroups;List
 logs:ListLogGroupsForEntity;List
 logs:ListLogGroupsForQuery;List
 logs:ListTagsForResource;List

@@ -1,3 +1,5 @@
+dsql:FisActionId
+dsql:FisTargetArns
 dsql:RequestTag/${TagKey}
 dsql:ResourceTag/${TagKey}
 dsql:TagKeys

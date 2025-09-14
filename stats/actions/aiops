@@ -5,6 +5,7 @@ aiops:CreateInvestigationResource;Write
 aiops:DeleteInvestigation;Write
 aiops:DeleteInvestigationGroup;Write
 aiops:DeleteInvestigationGroupPolicy;Write
+aiops:GetEphemeralInvestigationResults;List
 aiops:GetInvestigation;Read
 aiops:GetInvestigationEvent;Read
 aiops:GetInvestigationGroup;Read
@@ -20,3 +21,4 @@ aiops:UntagResource;Tagging
 aiops:UpdateInvestigation;Write
 aiops:UpdateInvestigationEvent;Write
 aiops:UpdateInvestigationGroup;Write
+aiops:ValidateInvestigationGroup;Read

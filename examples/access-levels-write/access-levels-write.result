@@ -44,6 +44,8 @@
         "s3:ReplicateObject",
         "s3:RestoreObject",
         "s3:SubmitMultiRegionAccessPointRoutes",
+        "s3:UpdateBucketMetadataInventoryTableConfiguration",
+        "s3:UpdateBucketMetadataJournalTableConfiguration",
         "s3:UpdateJobPriority",
         "s3:UpdateJobStatus",
         "s3:UpdateStorageLensGroup"

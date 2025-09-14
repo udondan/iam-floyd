@@ -10,4 +10,6 @@ iam:PolicyARN
 iam:RegisterSecurityKey
 iam:RequestTag/${TagKey}
 iam:ResourceTag/${TagKey}
+iam:ServiceSpecificCredentialAgeDays
+iam:ServiceSpecificCredentialServiceName
 iam:TagKeys

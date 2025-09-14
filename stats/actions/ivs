@@ -43,6 +43,7 @@ ivs:ListCompositions;List
 ivs:ListEncoderConfigurations;List
 ivs:ListIngestConfigurations;List
 ivs:ListParticipantEvents;List
+ivs:ListParticipantReplicas;List
 ivs:ListParticipants;List
 ivs:ListPlaybackKeyPairs;List
 ivs:ListPlaybackRestrictionPolicies;List
@@ -57,8 +58,10 @@ ivs:ListStreams;List
 ivs:ListTagsForResource;Read
 ivs:PutMetadata;Write
 ivs:StartComposition;Write
+ivs:StartParticipantReplication;Write
 ivs:StartViewerSessionRevocation;Write
 ivs:StopComposition;Write
+ivs:StopParticipantReplication;Write
 ivs:StopStream;Write
 ivs:TagResource;Tagging
 ivs:UntagResource;Tagging

@@ -31,6 +31,8 @@ sagemaker:ModelLifeCycle
 sagemaker:NetworkIsolation
 sagemaker:OutputKmsKey
 sagemaker:OwnerUserProfileArn
+sagemaker:PipelineVersionId
+sagemaker:RemoteAccess
 sagemaker:RequestTag/${TagKey}
 sagemaker:ResourceTag/
 sagemaker:ResourceTag/${TagKey}

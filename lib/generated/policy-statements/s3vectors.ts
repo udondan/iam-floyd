@@ -23,7 +23,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateIndex.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateIndex.html
    */
   public toCreateIndex() {
     return this.to('CreateIndex');
@@ -38,7 +38,7 @@ export class S3vectors extends PolicyStatement {
    * - .ifSseType()
    * - .ifKmsKeyArn()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateVectorBucket.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateVectorBucket.html
    */
   public toCreateVectorBucket() {
     return this.to('CreateVectorBucket');
@@ -49,7 +49,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteIndex.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteIndex.html
    */
   public toDeleteIndex() {
     return this.to('DeleteIndex');
@@ -60,7 +60,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectorBucket.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucket.html
    */
   public toDeleteVectorBucket() {
     return this.to('DeleteVectorBucket');
@@ -69,9 +69,9 @@ export class S3vectors extends PolicyStatement {
   /**
    * Grants permission to delete the IAM resource policy from a specified vector bucket
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectorBucketPolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucketPolicy.html
    */
   public toDeleteVectorBucketPolicy() {
     return this.to('DeleteVectorBucketPolicy');
@@ -82,7 +82,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteVectors.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectors.html
    */
   public toDeleteVectors() {
     return this.to('DeleteVectors');
@@ -93,7 +93,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetIndex.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetIndex.html
    */
   public toGetIndex() {
     return this.to('GetIndex');
@@ -104,7 +104,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectorBucket.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucket.html
    */
   public toGetVectorBucket() {
     return this.to('GetVectorBucket');
@@ -115,7 +115,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectorBucketPolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucketPolicy.html
    */
   public toGetVectorBucketPolicy() {
     return this.to('GetVectorBucketPolicy');
@@ -126,7 +126,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetVectors.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectors.html
    */
   public toGetVectors() {
     return this.to('GetVectors');
@@ -137,7 +137,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListIndexes.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListIndexes.html
    */
   public toListIndexes() {
     return this.to('ListIndexes');
@@ -148,7 +148,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListVectorBuckets.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListVectorBuckets.html
    */
   public toListVectorBuckets() {
     return this.to('ListVectorBuckets');
@@ -162,7 +162,7 @@ export class S3vectors extends PolicyStatement {
    * Dependent actions:
    * - s3vectors:GetVectors
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListVectors.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListVectors.html
    */
   public toListVectors() {
     return this.to('ListVectors');
@@ -171,9 +171,9 @@ export class S3vectors extends PolicyStatement {
   /**
    * Grants permission to add an IAM resource policy to a specified vector bucket
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutVectorBucketPolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectorBucketPolicy.html
    */
   public toPutVectorBucketPolicy() {
     return this.to('PutVectorBucketPolicy');
@@ -184,7 +184,7 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutVectors.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectors.html
    */
   public toPutVectors() {
     return this.to('PutVectors');
@@ -198,7 +198,7 @@ export class S3vectors extends PolicyStatement {
    * Dependent actions:
    * - s3vectors:GetVectors
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_QueryVectors.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_QueryVectors.html
    */
   public toQueryVectors() {
     return this.to('QueryVectors');
@@ -210,10 +210,12 @@ export class S3vectors extends PolicyStatement {
       'CreateVectorBucket',
       'DeleteIndex',
       'DeleteVectorBucket',
-      'DeleteVectorBucketPolicy',
       'DeleteVectors',
-      'PutVectorBucketPolicy',
       'PutVectors'
+    ],
+    'Permissions management': [
+      'DeleteVectorBucketPolicy',
+      'PutVectorBucketPolicy'
     ],
     Read: [
       'GetIndex',
@@ -232,7 +234,7 @@ export class S3vectors extends PolicyStatement {
   /**
    * Adds a resource of type Index to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-setting-up.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html
    *
    * @param bucketName - Identifier for the bucketName.
    * @param indexName - Identifier for the indexName.
@@ -247,7 +249,7 @@ export class S3vectors extends PolicyStatement {
   /**
    * Adds a resource of type VectorBucket to the statement
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-setting-up.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html
    *
    * @param bucketName - Identifier for the bucketName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -261,7 +263,7 @@ export class S3vectors extends PolicyStatement {
   /**
    * Filters access by the AWS KMS key ARN for the key used to encrypt a vector bucket
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-setting-up.html#s3-vectors-conditionkeyss3-vectors-setting-up.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html#s3-vectors-condition-keyss3-vectors-access-management.html
    *
    * Applies to actions:
    * - .toCreateVectorBucket()
@@ -276,7 +278,7 @@ export class S3vectors extends PolicyStatement {
   /**
    * Filters access by server-side encryption type
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-setting-up.html#s3-vectors-conditionkeyss3-vectors-setting-up.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html#s3-vectors-condition-keyss3-vectors-access-management.html
    *
    * Applies to actions:
    * - .toCreateVectorBucket()

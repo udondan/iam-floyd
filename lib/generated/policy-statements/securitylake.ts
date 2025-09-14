@@ -140,6 +140,7 @@ export class Securitylake extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * Dependent actions:
@@ -690,6 +691,9 @@ export class Securitylake extends PolicyStatement {
    * Filters access by a tag key and value pair of a resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateSubscriber()
    *
    * Applies to resource types:
    * - data-lake

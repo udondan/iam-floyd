@@ -30,17 +30,6 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to complete an existing task and submit the content to the associated change
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/
-   */
-  public toCompleteTask() {
-    return this.to('CompleteTask');
-  }
-
-  /**
    * Grants permission to delete the resource policy of an existing entity
    *
    * Access Level: Permissions management
@@ -82,17 +71,6 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    */
   public toDescribeEntity() {
     return this.to('DescribeEntity');
-  }
-
-  /**
-   * Grants permission to return the details of an existing task
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/
-   */
-  public toDescribeTask() {
-    return this.to('DescribeTask');
   }
 
   /**
@@ -148,17 +126,6 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
-  }
-
-  /**
-   * Grants permission to list existing tasks
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/
-   */
-  public toListTasks() {
-    return this.to('ListTasks');
   }
 
   /**
@@ -218,23 +185,10 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
     return this.to('UntagResource');
   }
 
-  /**
-   * Grants permission to update the contents of an existing task
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/
-   */
-  public toUpdateTask() {
-    return this.to('UpdateTask');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelChangeSet',
-      'CompleteTask',
-      'StartChangeSet',
-      'UpdateTask'
+      'StartChangeSet'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
@@ -244,15 +198,13 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'DescribeAssessment',
       'DescribeChangeSet',
       'DescribeEntity',
-      'DescribeTask',
       'GetResourcePolicy',
       'ListTagsForResource'
     ],
     List: [
       'ListAssessments',
       'ListChangeSets',
-      'ListEntities',
-      'ListTasks'
+      'ListEntities'
     ],
     Tagging: [
       'TagResource',

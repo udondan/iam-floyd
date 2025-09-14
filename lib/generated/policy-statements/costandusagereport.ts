@@ -203,6 +203,7 @@ export class Cur extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toPutReportDefinition()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -220,6 +221,7 @@ export class Cur extends PolicyStatement {
    *
    * Applies to actions:
    * - .toListTagsForResource()
+   * - .toPutReportDefinition()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -237,6 +239,7 @@ export class Cur extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toPutReportDefinition()
    * - .toTagResource()
    * - .toUntagResource()
    *
