@@ -23,6 +23,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
@@ -34,6 +37,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroupMembership.html
    */
   public toCreateGroupMembership() {
@@ -41,9 +47,29 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new IdentityStore in an AWS account
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:Encrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toCreateIdentityStore() {
+    return this.to('CreateIdentityStore');
+  }
+
+  /**
    * Grants permission to create a user in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateUser.html
    */
@@ -56,6 +82,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroup.html
    */
   public toDeleteGroup() {
@@ -67,6 +96,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroupMembership.html
    */
   public toDeleteGroupMembership() {
@@ -74,9 +106,23 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an IdentityStore
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDeleteIdentityStore() {
+    return this.to('DeleteIdentityStore');
+  }
+
+  /**
    * Grants permission to delete a user in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteUser.html
    */
@@ -89,6 +135,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html
    */
   public toDescribeGroup() {
@@ -99,6 +148,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve information about a member that is part of a group in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroupMembership.html
    */
@@ -111,6 +163,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html
    */
   public toDescribeUser() {
@@ -121,6 +176,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve ID information about group in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupId.html
    */
@@ -133,6 +191,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupMembershipId.html
    */
   public toGetGroupMembershipId() {
@@ -143,6 +204,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieves ID information about user in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetUserId.html
    */
@@ -155,6 +219,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html
    */
   public toIsMemberInGroups() {
@@ -165,6 +232,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve all members that are part of a group in the specified IdentityStore
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMemberships.html
    */
@@ -177,6 +247,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html
    */
   public toListGroupMembershipsForMember() {
@@ -187,6 +260,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to search for groups within the specified IdentityStore
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html
    */
@@ -199,6 +275,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html
    */
   public toListUsers() {
@@ -210,6 +289,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateGroup.html
    */
   public toUpdateGroup() {
@@ -217,9 +299,29 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the configuration of an IdentityStore
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:Encrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toUpdateIdentityStore() {
+    return this.to('UpdateIdentityStore');
+  }
+
+  /**
    * Grants permission to update user information in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateUser.html
    */
@@ -231,11 +333,14 @@ export class Identitystore extends PolicyStatement {
     Write: [
       'CreateGroup',
       'CreateGroupMembership',
+      'CreateIdentityStore',
       'CreateUser',
       'DeleteGroup',
       'DeleteGroupMembership',
+      'DeleteIdentityStore',
       'DeleteUser',
       'UpdateGroup',
+      'UpdateIdentityStore',
       'UpdateUser'
     ],
     Read: [

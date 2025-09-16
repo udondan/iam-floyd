@@ -627,6 +627,20 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return Hook invocations result information for a specified Hook, a combination of Hook and status, or all Hooks
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifTypeArn()
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListHookResults.html
+   */
+  public toListAllHookResults() {
+    return this.to('ListAllHookResults');
+  }
+
+  /**
    * Grants permission to return the ID and status of each active change set for a stack. For example, AWS CloudFormation lists change sets that are in the CREATE_IN_PROGRESS or CREATE_PENDING state
    *
    * Access Level: List
@@ -1189,6 +1203,7 @@ export class Cloudformation extends PolicyStatement {
     ],
     List: [
       'DescribeStacks',
+      'ListAllHookResults',
       'ListChangeSets',
       'ListExports',
       'ListGeneratedTemplates',
@@ -1537,5 +1552,20 @@ export class Cloudformation extends PolicyStatement {
    */
   public ifTemplateUrl(value: string | string[], operator?: Operator | string) {
     return this.if(`TemplateUrl`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of a CloudFormation extension
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
+   *
+   * Applies to actions:
+   * - .toListAllHookResults()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifTypeArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`TypeArn`, value, operator ?? 'ArnLike');
   }
 }

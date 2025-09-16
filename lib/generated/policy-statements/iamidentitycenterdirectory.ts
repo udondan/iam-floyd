@@ -23,6 +23,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroupMembership.html
    */
   public toAddMemberToGroup() {
@@ -67,6 +70,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateBearerToken() {
@@ -89,6 +95,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroup.html
    */
   public toCreateGroup() {
@@ -99,6 +108,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to create a provisioning tenant for a given directory
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -111,6 +123,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateUser.html
    */
   public toCreateUser() {
@@ -121,6 +136,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to delete a bearer token
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -155,6 +173,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroup.html
    */
   public toDeleteGroup() {
@@ -177,6 +198,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteProvisioningTenant() {
@@ -187,6 +211,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to delete a user from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteUser.html
    */
@@ -210,6 +237,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html
    */
   public toDescribeGroup() {
@@ -220,6 +250,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to retrieve information about groups from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html
    */
@@ -232,6 +265,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeProvisioningTenant() {
@@ -242,6 +278,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to retrieve information about a user from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html
    */
@@ -254,6 +293,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDescribeUserByUniqueAttribute() {
@@ -264,6 +306,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to retrieve information about user from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html
    */
@@ -287,6 +332,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDisableUser() {
@@ -308,6 +356,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to activate user in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -331,6 +382,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetGroupId.html
    */
   public toGetGroupId() {
@@ -341,6 +395,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to retrieve ID information about user from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_GetUserId.html
    */
@@ -375,6 +432,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html
    */
   public toIsMemberInGroup() {
@@ -386,6 +446,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_IsMemberInGroups.html
    */
   public toIsMemberInGroups() {
@@ -396,6 +459,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to list bearer tokens for a given provisioning tenant
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -430,6 +496,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html
    */
   public toListGroups() {
@@ -440,6 +509,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to list groups of the target member
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html
    */
@@ -452,6 +524,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMembershipsForMember.html
    */
   public toListGroupsForUser() {
@@ -462,6 +537,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to retrieve all members that are part of a group in the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroupMemberships.html
    */
@@ -485,6 +563,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toListProvisioningTenants() {
@@ -495,6 +576,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to list users from the directory that AWS IAM Identity Center provides by default
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html
    */
@@ -507,6 +591,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DeleteGroupMembership.html
    */
   public toRemoveMemberFromGroup() {
@@ -518,6 +605,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toSearchGroups() {
@@ -528,6 +618,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to search for users within the associated directory
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -573,6 +666,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateGroup.html
    */
   public toUpdateGroup() {
@@ -583,6 +679,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to update group display name update group display name response
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -606,6 +705,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdatePassword() {
@@ -617,6 +719,9 @@ export class SsoDirectory extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_UpdateUser.html
    */
   public toUpdateUser() {
@@ -627,6 +732,9 @@ export class SsoDirectory extends PolicyStatement {
    * Grants permission to update user name update user name response
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */

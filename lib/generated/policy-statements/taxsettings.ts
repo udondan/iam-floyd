@@ -41,6 +41,28 @@ export class Tax extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel documents such as withholding slips
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toCancelDocument() {
+    return this.to('CancelDocument');
+  }
+
+  /**
+   * Grants permission to upload new documents such as withholding slips
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toCreateDocument() {
+    return this.to('CreateDocument');
+  }
+
+  /**
    * Grants permission to delete supplemental tax registration data
    *
    * Access Level: Write
@@ -60,6 +82,28 @@ export class Tax extends PolicyStatement {
    */
   public toDeleteTaxRegistration() {
     return this.to('DeleteTaxRegistration');
+  }
+
+  /**
+   * Grants permission to retrieve documents such as withholding slips
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetDocument() {
+    return this.to('GetDocument');
+  }
+
+  /**
+   * Grants permission to retrieve a generated URL to upload documents
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toGetDocumentUploadUrl() {
+    return this.to('GetDocumentUploadUrl');
   }
 
   /**
@@ -129,6 +173,17 @@ export class Tax extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view documents such as withholding slips
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toListDocuments() {
+    return this.to('ListDocuments');
+  }
+
+  /**
    * Grants permission to view supplemental tax registrations
    *
    * Access Level: Read
@@ -148,6 +203,17 @@ export class Tax extends PolicyStatement {
    */
   public toListTaxRegistrations() {
     return this.to('ListTaxRegistrations');
+  }
+
+  /**
+   * Grants permission to view eligible withholding invoices
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+   */
+  public toListWithholdingEligibleInvoices() {
+    return this.to('ListWithholdingEligibleInvoices');
   }
 
   /**
@@ -209,6 +275,8 @@ export class Tax extends PolicyStatement {
     Write: [
       'BatchDeleteTaxRegistration',
       'BatchPutTaxRegistration',
+      'CancelDocument',
+      'CreateDocument',
       'DeleteSupplementalTaxRegistration',
       'DeleteTaxRegistration',
       'PutSupplementalTaxRegistration',
@@ -218,14 +286,18 @@ export class Tax extends PolicyStatement {
       'UpdateExemptions'
     ],
     Read: [
+      'GetDocument',
+      'GetDocumentUploadUrl',
       'GetExemptions',
       'GetTaxInfoReportingDocument',
       'GetTaxInheritance',
       'GetTaxInterview',
       'GetTaxRegistration',
       'GetTaxRegistrationDocument',
+      'ListDocuments',
       'ListSupplementalTaxRegistrations',
-      'ListTaxRegistrations'
+      'ListTaxRegistrations',
+      'ListWithholdingEligibleInvoices'
     ]
   };
 }

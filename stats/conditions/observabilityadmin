@@ -1,3 +1,6 @@
+observabilityadmin:CentralizationBackupRegion
+observabilityadmin:CentralizationDestinationRegion
+observabilityadmin:CentralizationSourceRegions
 observabilityadmin:RequestTag/${TagKey}
 observabilityadmin:ResourceTag/${TagKey}
 observabilityadmin:TagKeys

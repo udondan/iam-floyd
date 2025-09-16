@@ -59,6 +59,17 @@ export class Invoicing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get Invoice Correction
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetInvoiceCorrection.html
+   */
+  public toGetInvoiceCorrection() {
+    return this.to('GetInvoiceCorrection');
+  }
+
+  /**
    * Grants permission to get Invoice Email Delivery Preferences
    *
    * Access Level: Read
@@ -89,6 +100,17 @@ export class Invoicing extends PolicyStatement {
    */
   public toGetInvoiceUnit() {
     return this.to('GetInvoiceUnit');
+  }
+
+  /**
+   * Grants permission to list Invoice Corrections
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListInvoiceCorrections.html
+   */
+  public toListInvoiceCorrections() {
+    return this.to('ListInvoiceCorrections');
   }
 
   /**
@@ -139,6 +161,17 @@ export class Invoicing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start Invoice Correction
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_StartInvoiceCorrection.html
+   */
+  public toStartInvoiceCorrection() {
+    return this.to('StartInvoiceCorrection');
+  }
+
+  /**
    * Grants permission to tag a resource
    *
    * Access Level: Tagging
@@ -186,6 +219,7 @@ export class Invoicing extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetInvoiceProfile',
+      'GetInvoiceCorrection',
       'GetInvoiceEmailDeliveryPreferences',
       'GetInvoicePDF',
       'GetInvoiceUnit',
@@ -196,9 +230,11 @@ export class Invoicing extends PolicyStatement {
       'CreateInvoiceUnit',
       'DeleteInvoiceUnit',
       'PutInvoiceEmailDeliveryPreferences',
+      'StartInvoiceCorrection',
       'UpdateInvoiceUnit'
     ],
     List: [
+      'ListInvoiceCorrections',
       'ListInvoiceUnits'
     ],
     Tagging: [

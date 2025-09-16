@@ -9,3 +9,4 @@ cloudformation:StackPolicyUrl
 cloudformation:TagKeys
 cloudformation:TargetRegion
 cloudformation:TemplateUrl
+cloudformation:TypeArn
