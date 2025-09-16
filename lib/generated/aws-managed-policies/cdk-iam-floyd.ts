@@ -4754,6 +4754,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkManagerServiceRolePolicy);
     }
 
+    /** Service-linked role permissions for CloudWatch Logs centralization */
+    public AWSObservabilityAdminLogsCentralizationServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSObservabilityAdminLogsCentralizationServiceRolePolicy);
+    }
+
     /** Provides access to manage AWS Config Configuration Recorder, manage AWS Config Configuration Aggregator, create AWS Config Service Linked Role for Configuration Recorder functionality, consume recorder configuration data, and read AWS Organizations data for organizational features. */
     public AWSObservabilityAdminServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSObservabilityAdminServiceRolePolicy);
