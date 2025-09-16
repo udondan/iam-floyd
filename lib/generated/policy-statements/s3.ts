@@ -638,6 +638,7 @@ export class S3 extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
+   * - .ifIfMatch()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
    */
@@ -4908,6 +4909,7 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes-enforce.html
    *
    * Applies to actions:
+   * - .toDeleteObject()
    * - .toGetObject()
    * - .toPutObject()
    *

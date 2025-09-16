@@ -1,13 +1,16 @@
 invoicing:BatchGetInvoiceProfile;Read
 invoicing:CreateInvoiceUnit;Write
 invoicing:DeleteInvoiceUnit;Write
+invoicing:GetInvoiceCorrection;Read
 invoicing:GetInvoiceEmailDeliveryPreferences;Read
 invoicing:GetInvoicePDF;Read
 invoicing:GetInvoiceUnit;Read
+invoicing:ListInvoiceCorrections;List
 invoicing:ListInvoiceSummaries;Read
 invoicing:ListInvoiceUnits;List
 invoicing:ListTagsForResource;Read
 invoicing:PutInvoiceEmailDeliveryPreferences;Write
+invoicing:StartInvoiceCorrection;Write
 invoicing:TagResource;Tagging
 invoicing:UntagResource;Tagging
 invoicing:UpdateInvoiceUnit;Write

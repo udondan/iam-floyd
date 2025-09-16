@@ -1,8 +1,10 @@
 identitystore:CreateGroup;Write
 identitystore:CreateGroupMembership;Write
+identitystore:CreateIdentityStore;Write
 identitystore:CreateUser;Write
 identitystore:DeleteGroup;Write
 identitystore:DeleteGroupMembership;Write
+identitystore:DeleteIdentityStore;Write
 identitystore:DeleteUser;Write
 identitystore:DescribeGroup;Read
 identitystore:DescribeGroupMembership;Read
@@ -16,4 +18,5 @@ identitystore:ListGroupMembershipsForMember;List
 identitystore:ListGroups;List
 identitystore:ListUsers;List
 identitystore:UpdateGroup;Write
+identitystore:UpdateIdentityStore;Write
 identitystore:UpdateUser;Write
