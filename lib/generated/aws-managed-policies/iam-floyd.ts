@@ -1898,6 +1898,8 @@ export class AwsManagedPolicy {
     public static AWSNetworkManagerReadOnlyAccess = 'AWSNetworkManagerReadOnlyAccess';
     /** Allow NetworkManager to access resources associated with your Global Networks */
     public static AWSNetworkManagerServiceRolePolicy = 'aws-service-role/AWSNetworkManagerServiceRolePolicy';
+    /** Service-linked role permissions for CloudWatch Logs centralization */
+    public static AWSObservabilityAdminLogsCentralizationServiceRolePolicy = 'aws-service-role/AWSObservabilityAdminLogsCentralizationServiceRolePolicy';
     /** Provides access to manage AWS Config Configuration Recorder, manage AWS Config Configuration Aggregator, create AWS Config Service Linked Role for Configuration Recorder functionality, consume recorder configuration data, and read AWS Organizations data for organizational features. */
     public static AWSObservabilityAdminServiceRolePolicy = 'aws-service-role/AWSObservabilityAdminServiceRolePolicy';
     /** Provides access to manage AWS Config recorder resource and telemetry settings on AWS resources including logs, metrics. */

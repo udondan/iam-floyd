@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "logs.amazonaws.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:ResourceTag/LogsManaged": "true"
+        },
+        "ArnLike": {
+          "kms:EncryptionContext:aws:logs:arn": "arn:aws:logs:*:*:log-group:*"
+        }
+      },
+      "Resource": "*"
+    }
+  ]
+}
