@@ -26,6 +26,29 @@
         "signin:ListTrustedIdentityPropagationApplicationsForConsole"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowKMSKeyUseViaAWSIAMIdentityCenterService",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com",
+          "kms:EncryptionContext:aws:sso:instance-arn": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKMSKeyDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
     }
   ]
 }
