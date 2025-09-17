@@ -44,6 +44,47 @@
           "organizations:ServicePrincipal": "sso.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "AllowKMSKeyUseViaAWSIAMIdentityCenterService",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:Encrypt",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com",
+          "kms:EncryptionContext:aws:sso:instance-arn": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKMSKeyUseViaAWSIdentityStoreService",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:Encrypt",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com",
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "*"
+        }
+      }
+    },
+    {
+      "Sid": "AllowKMSKeyDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
     }
   ]
 }

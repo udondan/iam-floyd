@@ -15,6 +15,20 @@
         "identitystore-auth:BatchGetSession"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowKMSKeyUseViaAWSIdentityStoreService",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "identitystore.*.amazonaws.com",
+          "kms:EncryptionContext:aws:identitystore:identitystore-arn": "*"
+        }
+      }
     }
   ]
 }
