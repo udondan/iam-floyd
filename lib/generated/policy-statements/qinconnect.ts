@@ -874,6 +874,17 @@ export class Wisdom extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve knowledge content from specified assistant associations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_Retrieve.html
+   */
+  public toRetrieve() {
+    return this.to('Retrieve');
+  }
+
+  /**
    * Grants permission to search for content referencing a specified knowledge base. Can be used to get a specific content resource by its name
    *
    * Access Level: Read
@@ -1192,6 +1203,7 @@ export class Wisdom extends PolicyStatement {
       'ListTagsForResource',
       'QueryAssistant',
       'RenderMessageTemplate',
+      'Retrieve',
       'SearchContent',
       'SearchMessageTemplates',
       'SearchQuickResponses',

@@ -19,9 +19,12 @@ export class SsoOauth extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create OAuth/OIDC tokens to access IAM Identity Center integrated applications
+   * Grants permission to create and return OAuth 2.0 access tokens and refresh tokens for authorized client applications. These tokens might contain defined scopes that specify permissions such as `read:profile` or `write:data`
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateTokenWithIAM.html
    */

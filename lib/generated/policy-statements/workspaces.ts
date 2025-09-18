@@ -154,7 +154,7 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
    */
   public toCreateRootClientCertificate() {
     return this.to('CreateRootClientCertificate');
@@ -328,7 +328,7 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
    */
   public toDeleteRootClientCertificate() {
     return this.to('DeleteRootClientCertificate');
@@ -517,7 +517,7 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
    */
   public toDescribeConsent() {
     return this.to('DescribeConsent');
@@ -557,17 +557,6 @@ export class Workspaces extends PolicyStatement {
    */
   public toDescribeIpGroups() {
     return this.to('DescribeIpGroups');
-  }
-
-  /**
-   * Grants permission to retrieve information for root client certificates
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
-   */
-  public toDescribeRootClientCertificates() {
-    return this.to('DescribeRootClientCertificates');
   }
 
   /**
@@ -699,7 +688,7 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
    */
   public toDirectoryAccessManagement() {
     return this.to('DirectoryAccessManagement');
@@ -1134,7 +1123,7 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
    */
   public toUpdateConsent() {
     return this.to('UpdateConsent');
@@ -1145,7 +1134,7 @@ export class Workspaces extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/workspaces/latest/api/API_Operations.html
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html
    */
   public toUpdateRootClientCertificate() {
     return this.to('UpdateRootClientCertificate');
@@ -1292,7 +1281,6 @@ export class Workspaces extends PolicyStatement {
       'DescribeClientProperties',
       'DescribeConnectClientAddIns',
       'DescribeImageAssociations',
-      'DescribeRootClientCertificates',
       'DescribeWorkspaceAssociations',
       'DescribeWorkspaceBundles',
       'DescribeWorkspaceImages',

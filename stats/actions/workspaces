@@ -41,7 +41,6 @@ workspaces:DescribeConsent;Read
 workspaces:DescribeCustomWorkspaceImageImport;Read
 workspaces:DescribeImageAssociations;List
 workspaces:DescribeIpGroups;Read
-workspaces:DescribeRootClientCertificates;List
 workspaces:DescribeTags;Read
 workspaces:DescribeWorkspaceAssociations;List
 workspaces:DescribeWorkspaceBundles;List
