@@ -19,6 +19,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an Elastic IP address (EIP) with a public VLAN in an Amazon EVS environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_AssociateEipToVlan.html
+   */
+  public toAssociateEipToVlan() {
+    return this.to('AssociateEipToVlan');
+  }
+
+  /**
    * Grants permission to create an Amazon EVS environment
    *
    * Access Level: Write
@@ -64,6 +75,17 @@ export class Evs extends PolicyStatement {
    */
   public toDeleteEnvironmentHost() {
     return this.to('DeleteEnvironmentHost');
+  }
+
+  /**
+   * Grants permission to disassociate an Elastic IP address (EIP) from a public VLAN in an Amazon EVS environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_DisassociateEipFromVlan.html
+   */
+  public toDisassociateEipFromVlan() {
+    return this.to('DisassociateEipFromVlan');
   }
 
   /**
@@ -154,10 +176,12 @@ export class Evs extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateEipToVlan',
       'CreateEnvironment',
       'CreateEnvironmentHost',
       'DeleteEnvironment',
-      'DeleteEnvironmentHost'
+      'DeleteEnvironmentHost',
+      'DisassociateEipFromVlan'
     ],
     Read: [
       'GetEnvironment',

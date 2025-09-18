@@ -70,6 +70,7 @@ wisdom:QueryAssistant;Read
 wisdom:RemoveAssistantAIAgent;Write
 wisdom:RemoveKnowledgeBaseTemplateUri;Write
 wisdom:RenderMessageTemplate;Read
+wisdom:Retrieve;Read
 wisdom:SearchContent;Read
 wisdom:SearchMessageTemplates;Read
 wisdom:SearchQuickResponses;Read

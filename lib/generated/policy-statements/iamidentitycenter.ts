@@ -25,6 +25,8 @@ export class Sso extends PolicyStatement {
    *
    * Dependent actions:
    * - ds:AuthorizeApplication
+   * - identitystore:CreateIdentityStore
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -37,6 +39,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toAssociateProfile() {
@@ -47,6 +52,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to attach a customer managed policy reference to a permission set
    *
    * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AttachCustomerManagedPolicyReferenceToPermissionSet.html
    */
@@ -59,6 +67,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AttachManagedPolicyToPermissionSet.html
    */
   public toAttachManagedPolicyToPermissionSet() {
@@ -69,6 +80,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to assign access to a Principal for a specified AWS account using a specified permission set
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateAccountAssignment.html
    */
@@ -85,6 +99,9 @@ export class Sso extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplication.html
    */
   public toCreateApplication() {
@@ -99,6 +116,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html
    */
   public toCreateApplicationAssignment() {
@@ -110,6 +130,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateApplicationInstance() {
@@ -120,6 +143,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to add a new certificate for an application instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -138,6 +164,7 @@ export class Sso extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
+   * - identitystore:CreateIdentityStore
    * - organizations:DescribeOrganization
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateInstance.html
@@ -162,6 +189,7 @@ export class Sso extends PolicyStatement {
    * - iam:ListRolePolicies
    * - iam:PutRolePolicy
    * - iam:UpdateAssumeRolePolicy
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateInstanceAccessControlAttributeConfiguration.html
    */
@@ -173,6 +201,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to add a managed application instance to AWS IAM Identity Center
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -189,6 +220,9 @@ export class Sso extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreatePermissionSet.html
    */
   public toCreatePermissionSet() {
@@ -200,6 +234,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toCreateProfile() {
@@ -210,6 +247,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to create a federation trust in a target account
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -226,6 +266,9 @@ export class Sso extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateTrustedTokenIssuer.html
    */
   public toCreateTrustedTokenIssuer() {
@@ -236,6 +279,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete a Principal's access from a specified AWS account using a specified permission set
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteAccountAssignment.html
    */
@@ -251,6 +297,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplication.html
    */
   public toDeleteApplication() {
@@ -264,6 +313,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAccessScope.html
    */
@@ -279,6 +331,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAssignment.html
    */
   public toDeleteApplicationAssignment() {
@@ -292,6 +347,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationAuthenticationMethod.html
    */
@@ -307,6 +365,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteApplicationGrant.html
    */
   public toDeleteApplicationGrant() {
@@ -317,6 +378,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete the application instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -329,6 +393,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteApplicationInstanceCertificate() {
@@ -339,6 +406,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete the inline policy from a specified permission set
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInlinePolicyFromPermissionSet.html
    */
@@ -351,6 +421,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - identitystore:DeleteIdentityStore
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInstance.html
    */
   public toDeleteInstance() {
@@ -361,6 +434,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to disable ABAC and remove the attributes list for the instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteInstanceAccessControlAttributeConfiguration.html
    */
@@ -373,6 +449,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toDeleteManagedApplicationInstance() {
@@ -383,6 +462,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete a permission set
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeletePermissionSet.html
    */
@@ -395,6 +477,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeletePermissionsBoundaryFromPermissionSet.html
    */
   public toDeletePermissionsBoundaryFromPermissionSet() {
@@ -405,6 +490,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to delete the profile for an application instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -417,6 +505,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DeleteTrustedTokenIssuer.html
    */
   public toDeleteTrustedTokenIssuer() {
@@ -428,6 +519,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeAccountAssignmentCreationStatus.html
    */
   public toDescribeAccountAssignmentCreationStatus() {
@@ -438,6 +532,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to describe the status of an assignment deletion request
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeAccountAssignmentDeletionStatus.html
    */
@@ -453,6 +550,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeApplication.html
    */
   public toDescribeApplication() {
@@ -466,6 +566,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeApplicationAssignment.html
    */
@@ -500,6 +603,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeInstanceAccessControlAttributeConfiguration.html
    */
   public toDescribeInstanceAccessControlAttributeConfiguration() {
@@ -511,6 +617,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribePermissionSet.html
    */
   public toDescribePermissionSet() {
@@ -521,6 +630,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to describe the status for the given Permission Set Provisioning request
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribePermissionSetProvisioningStatus.html
    */
@@ -544,6 +656,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeTrustedTokenIssuer.html
    */
   public toDescribeTrustedTokenIssuer() {
@@ -555,6 +670,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DetachCustomerManagedPolicyReferenceFromPermissionSet.html
    */
   public toDetachCustomerManagedPolicyReferenceFromPermissionSet() {
@@ -565,6 +683,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to detach the attached AWS managed policy from the specified permission set
    *
    * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DetachManagedPolicyFromPermissionSet.html
    */
@@ -579,6 +700,8 @@ export class Sso extends PolicyStatement {
    *
    * Dependent actions:
    * - ds:UnauthorizeApplication
+   * - identitystore:DeleteIdentityStore
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -590,6 +713,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to disassociate a directory user or group from a profile
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -605,6 +731,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAccessScope.html
    */
   public toGetApplicationAccessScope() {
@@ -618,6 +747,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAssignmentConfiguration.html
    */
@@ -633,6 +765,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationAuthenticationMethod.html
    */
   public toGetApplicationAuthenticationMethod() {
@@ -647,6 +782,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationGrant.html
    */
   public toGetApplicationGrant() {
@@ -657,6 +795,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve details for an application instance
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -671,6 +812,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetApplicationSessionConfiguration.html
    */
@@ -694,6 +838,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetInlinePolicyForPermissionSet.html
    */
   public toGetInlinePolicyForPermissionSet() {
@@ -704,6 +851,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve details for an application instance
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -716,6 +866,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetMfaDeviceManagementForDirectory() {
@@ -726,6 +879,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve details of a permission set
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -738,6 +894,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_GetPermissionsBoundaryForPermissionSet.html
    */
   public toGetPermissionsBoundaryForPermissionSet() {
@@ -748,6 +907,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve a profile for an application instance
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -771,6 +933,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetSharedSsoConfiguration() {
@@ -781,6 +946,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve configuration for the current SSO instance
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -793,6 +961,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toGetTrust() {
@@ -803,6 +974,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to update the application instance by uploading an application SAML metadata file provided by the service provider
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -815,6 +989,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentCreationStatus.html
    */
   public toListAccountAssignmentCreationStatus() {
@@ -825,6 +1002,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the status of the AWS account assignment deletion requests for a specified SSO instance
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentDeletionStatus.html
    */
@@ -837,6 +1017,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignments.html
    */
   public toListAccountAssignments() {
@@ -848,6 +1031,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountAssignmentsForPrincipal.html
    */
   public toListAccountAssignmentsForPrincipal() {
@@ -858,6 +1044,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to list all the AWS accounts where the specified permission set is provisioned
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListAccountsForProvisionedPermissionSet.html
    */
@@ -873,6 +1062,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAccessScopes.html
    */
   public toListApplicationAccessScopes() {
@@ -886,6 +1078,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAssignments.html
    */
@@ -901,6 +1096,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAssignmentsForPrincipal.html
    */
   public toListApplicationAssignmentsForPrincipal() {
@@ -914,6 +1112,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationAuthenticationMethods.html
    */
@@ -929,6 +1130,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplicationGrants.html
    */
   public toListApplicationGrants() {
@@ -939,6 +1143,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve all of the certificates for a given application instance
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -952,6 +1159,7 @@ export class Sso extends PolicyStatement {
    * Access Level: List
    *
    * Dependent actions:
+   * - kms:Decrypt
    * - sso:GetApplicationInstance
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
@@ -990,6 +1198,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListApplications.html
    */
   public toListApplications() {
@@ -1001,6 +1212,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListCustomerManagedPolicyReferencesInPermissionSet.html
    */
   public toListCustomerManagedPolicyReferencesInPermissionSet() {
@@ -1011,6 +1225,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve details about the directory connected to AWS IAM Identity Center
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1034,6 +1251,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListManagedPoliciesInPermissionSet.html
    */
   public toListManagedPoliciesInPermissionSet() {
@@ -1044,6 +1264,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to list the status of the Permission Set Provisioning requests for a specified SSO instance
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSetProvisioningStatus.html
    */
@@ -1056,6 +1279,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSets.html
    */
   public toListPermissionSets() {
@@ -1067,6 +1293,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListPermissionSetsProvisionedToAccount.html
    */
   public toListPermissionSetsProvisionedToAccount() {
@@ -1077,6 +1306,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to retrieve the directory user or group associated with the profile
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1090,6 +1322,7 @@ export class Sso extends PolicyStatement {
    * Access Level: List
    *
    * Dependent actions:
+   * - kms:Decrypt
    * - sso:GetProfile
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
@@ -1103,6 +1336,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -1114,6 +1350,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListTrustedTokenIssuers.html
    */
   public toListTrustedTokenIssuers() {
@@ -1124,6 +1363,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to provision a specified permission set to the specified target
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ProvisionPermissionSet.html
    */
@@ -1139,6 +1381,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAccessScope.html
    */
   public toPutApplicationAccessScope() {
@@ -1152,6 +1397,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAssignmentConfiguration.html
    */
@@ -1167,6 +1415,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationAuthenticationMethod.html
    */
   public toPutApplicationAuthenticationMethod() {
@@ -1180,6 +1431,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApplicationAccount()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationGrant.html
    */
@@ -1195,6 +1449,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutApplicationSessionConfiguration.html
    */
   public toPutApplicationSessionConfiguration() {
@@ -1205,6 +1462,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to attach an IAM inline policy to a permission set
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutInlinePolicyToPermissionSet.html
    */
@@ -1217,6 +1477,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toPutMfaDeviceManagementForDirectory() {
@@ -1228,6 +1491,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_PutPermissionsBoundaryToPermissionSet.html
    */
   public toPutPermissionsBoundaryToPermissionSet() {
@@ -1238,6 +1504,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to add a policy to a permission set
    *
    * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1252,6 +1521,7 @@ export class Sso extends PolicyStatement {
    *
    * Dependent actions:
    * - ds:DescribeDirectories
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1266,6 +1536,7 @@ export class Sso extends PolicyStatement {
    *
    * Dependent actions:
    * - ds:DescribeDirectories
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1279,6 +1550,10 @@ export class Sso extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:Encrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
    * - organizations:DescribeOrganization
    * - organizations:EnableAWSServiceAccess
    *
@@ -1297,6 +1572,9 @@ export class Sso extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -1310,6 +1588,9 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UntagResource.html
    */
@@ -1325,6 +1606,9 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationAccount()
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateApplication.html
    */
   public toUpdateApplication() {
@@ -1335,6 +1619,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to set a certificate as the active one for this application instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1347,6 +1634,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceDisplayData() {
@@ -1357,6 +1647,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to update federation response configuration for the application instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1369,6 +1662,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceResponseSchemaConfiguration() {
@@ -1379,6 +1675,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to update security details for the application instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1391,6 +1690,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateApplicationInstanceServiceProviderConfiguration() {
@@ -1401,6 +1703,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to update the status of an application instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1413,6 +1718,13 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - identitystore:UpdateIdentityStore
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:Encrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateInstance.html
    */
   public toUpdateInstance() {
@@ -1423,6 +1735,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to update the attributes to use with the instance for ABAC
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateInstanceAccessControlAttributeConfiguration.html
    */
@@ -1435,6 +1750,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateManagedApplicationInstanceStatus() {
@@ -1445,6 +1763,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to update the permission set
    *
    * Access Level: Permissions management
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdatePermissionSet.html
    */
@@ -1457,6 +1778,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateProfile() {
@@ -1467,6 +1791,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to update the configuration for the current SSO instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -1479,6 +1806,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public toUpdateTrust() {
@@ -1489,6 +1819,9 @@ export class Sso extends PolicyStatement {
    * Grants permission to update a trusted token issuer for an instance
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_UpdateTrustedTokenIssuer.html
    */

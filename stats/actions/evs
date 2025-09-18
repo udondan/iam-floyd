@@ -1,7 +1,9 @@
+evs:AssociateEipToVlan;Write
 evs:CreateEnvironment;Write
 evs:CreateEnvironmentHost;Write
 evs:DeleteEnvironment;Write
 evs:DeleteEnvironmentHost;Write
+evs:DisassociateEipFromVlan;Write
 evs:GetEnvironment;Read
 evs:ListEnvironmentHosts;List
 evs:ListEnvironmentVlans;List
