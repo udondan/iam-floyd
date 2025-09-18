@@ -6,7 +6,13 @@
       "Action": [
         "billingconductor:*",
         "organizations:ListAccounts",
-        "pricing:DescribeServices"
+        "pricing:DescribeServices",
+        "pricing:GetAttributeValues",
+        "pricing:GetProducts",
+        "organizations:ListRoots",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListChildren",
+        "organizations:DescribeAccount"
       ],
       "Resource": "*"
     }

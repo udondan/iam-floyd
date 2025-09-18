@@ -1181,7 +1181,8 @@
       "Sid": "LakeFormationPermissionForDataLakeAccess",
       "Effect": "Allow",
       "Action": [
-        "lakeformation:GetDataAccess"
+        "lakeformation:GetDataAccess",
+        "lakeformation:GetResourceLFTags"
       ],
       "Resource": "*"
     },
