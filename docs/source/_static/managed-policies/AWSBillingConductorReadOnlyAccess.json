@@ -5,8 +5,15 @@
       "Effect": "Allow",
       "Action": [
         "billingconductor:List*",
+        "billingconductor:GetBillingGroupCostReport",
         "organizations:ListAccounts",
-        "pricing:DescribeServices"
+        "pricing:DescribeServices",
+        "pricing:GetAttributeValues",
+        "pricing:GetProducts",
+        "organizations:ListRoots",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListChildren",
+        "organizations:DescribeAccount"
       ],
       "Resource": "*"
     }

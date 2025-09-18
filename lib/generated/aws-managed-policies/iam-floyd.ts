@@ -1664,10 +1664,6 @@ export class AwsManagedPolicy {
     public static AWSIncidentManagerResolverAccess = 'AWSIncidentManagerResolverAccess';
     /** This policy grants Incident Manager permission to manage incident records and related resources on your behalf. */
     public static AWSIncidentManagerServiceRolePolicy = 'aws-service-role/AWSIncidentManagerServiceRolePolicy';
-    /** Provides full access to AWS IoT 1-Click. */
-    public static AWSIoT1ClickFullAccess = 'AWSIoT1ClickFullAccess';
-    /** Provides read only access to AWS IoT 1-Click. */
-    public static AWSIoT1ClickReadOnlyAccess = 'AWSIoT1ClickReadOnlyAccess';
     /** Provides full access to IoT Analytics. */
     public static AWSIoTAnalyticsFullAccess = 'AWSIoTAnalyticsFullAccess';
     /** Provides read only access to IoT Analytics. */

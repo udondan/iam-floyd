@@ -4169,16 +4169,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIncidentManagerServiceRolePolicy);
     }
 
-    /** Provides full access to AWS IoT 1-Click. */
-    public AWSIoT1ClickFullAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoT1ClickFullAccess);
-    }
-
-    /** Provides read only access to AWS IoT 1-Click. */
-    public AWSIoT1ClickReadOnlyAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoT1ClickReadOnlyAccess);
-    }
-
     /** Provides full access to IoT Analytics. */
     public AWSIoTAnalyticsFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIoTAnalyticsFullAccess);
