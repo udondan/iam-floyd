@@ -5824,6 +5824,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BedrockAgentCoreFullAccess);
     }
 
+    /** Allows access to other AWS service resources that are required to run Amazon Bedrock AgentCore in VPC mode */
+    public BedrockAgentCoreNetworkServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BedrockAgentCoreNetworkServiceRolePolicy);
+    }
+
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */
     public Billing(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.Billing);
