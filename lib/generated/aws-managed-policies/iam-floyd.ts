@@ -2326,6 +2326,8 @@ export class AwsManagedPolicy {
     public static BatchServiceRolePolicy = 'aws-service-role/BatchServiceRolePolicy';
     /** Provides full access to Bedrock AgentCore as well as limited access to related services */
     public static BedrockAgentCoreFullAccess = 'BedrockAgentCoreFullAccess';
+    /** Allows access to other AWS service resources that are required to run Amazon Bedrock AgentCore in VPC mode */
+    public static BedrockAgentCoreNetworkServiceRolePolicy = 'aws-service-role/BedrockAgentCoreNetworkServiceRolePolicy';
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */
     public static Billing = 'job-function/Billing';
     /** Allows Budgets to verify access to Billing Views shared across account boundaries. */
