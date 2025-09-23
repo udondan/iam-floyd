@@ -1,3 +1,6 @@
+bedrock-agentcore:RequestTag/${TagKey}
+bedrock-agentcore:ResourceTag/${TagKey}
+bedrock-agentcore:TagKeys
 bedrock-agentcore:actorId
 bedrock-agentcore:namespace
 bedrock-agentcore:sessionId

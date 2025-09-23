@@ -1,5 +1,6 @@
 autoscaling:CapacityReservationIds
 autoscaling:CapacityReservationResourceGroupArns
+autoscaling:ForceDelete
 autoscaling:ImageId
 autoscaling:InstanceType
 autoscaling:InstanceTypes

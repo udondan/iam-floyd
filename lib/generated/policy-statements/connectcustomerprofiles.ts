@@ -802,6 +802,13 @@ export class Profile extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - app-integrations:CreateDataIntegrationAssociation
+   * - app-integrations:DeleteDataIntegrationAssociation
+   * - app-integrations:GetDataIntegration
+   * - app-integrations:ListDataIntegrationAssociations
+   * - kms:CreateGrant
+   *
    * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutIntegration.html
    */
   public toPutIntegration() {

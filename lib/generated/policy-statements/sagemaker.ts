@@ -6127,6 +6127,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onImageVersion(imageName: string, version: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image-version/${ imageName }/${ version }`);
@@ -6288,6 +6292,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifCurrentCustomerMetadataProperties()
+   * - .ifCurrentModelLifeCycleStage()
+   * - .ifCurrentModelLifeCycleStageStatus()
    * - .ifResourceTag()
    */
   public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
@@ -7003,6 +7010,7 @@ export class Sagemaker extends PolicyStatement {
    * - notebook-instance-lifecycle-config
    * - code-repository
    * - image
+   * - image-version
    * - algorithm
    * - cluster
    * - training-job
@@ -7162,6 +7170,82 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifAppNetworkAccessType(value: string | string[], operator?: Operator | string) {
     return this.if(`AppNetworkAccessType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a current metadata key and value pair associated with the model-package resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toBatchDescribeModelPackage()
+   * - .toCreateModelPackage()
+   * - .toDeleteModelPackage()
+   * - .toDeleteTags()
+   * - .toDescribeModelPackage()
+   * - .toListTags()
+   * - .toUpdateModelPackage()
+   *
+   * Applies to resource types:
+   * - model-package
+   *
+   * @param metadataKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCurrentCustomerMetadataProperties(metadataKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`CurrentCustomerMetadataProperties/${ metadataKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the current value of the Stage field in the model life cycle object associated with the model-package resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toBatchDescribeModelPackage()
+   * - .toCreateModelPackage()
+   * - .toDeleteModelPackage()
+   * - .toDeleteTags()
+   * - .toDescribeModelPackage()
+   * - .toListTags()
+   * - .toUpdateModelPackage()
+   *
+   * Applies to resource types:
+   * - model-package
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCurrentModelLifeCycleStage(value: string | string[], operator?: Operator | string) {
+    return this.if(`CurrentModelLifeCycleStage`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the current value of the StageStatus field in the model life cycle object associated with the model-package resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toBatchDescribeModelPackage()
+   * - .toCreateModelPackage()
+   * - .toDeleteModelPackage()
+   * - .toDeleteTags()
+   * - .toDescribeModelPackage()
+   * - .toListTags()
+   * - .toUpdateModelPackage()
+   *
+   * Applies to resource types:
+   * - model-package
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCurrentModelLifeCycleStageStatus(value: string | string[], operator?: Operator | string) {
+    return this.if(`CurrentModelLifeCycleStageStatus`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -7786,6 +7870,7 @@ export class Sagemaker extends PolicyStatement {
    * - notebook-instance-lifecycle-config
    * - code-repository
    * - image
+   * - image-version
    * - algorithm
    * - cluster
    * - training-job

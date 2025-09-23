@@ -1,5 +1,8 @@
 sagemaker:AcceleratorTypes
 sagemaker:AppNetworkAccessType
+sagemaker:CurrentCustomerMetadataProperties/${MetadataKey}
+sagemaker:CurrentModelLifeCycleStage
+sagemaker:CurrentModelLifeCycleStageStatus
 sagemaker:CustomerMetadataProperties/${MetadataKey}
 sagemaker:CustomerMetadataPropertiesToRemove
 sagemaker:DirectGatedModelAccess

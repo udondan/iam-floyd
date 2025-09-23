@@ -1658,8 +1658,6 @@ export class S3 extends PolicyStatement {
    * - .ifSignatureversion()
    * - .ifTlsVersion()
    * - .ifXAmzContentSha256()
-   * - .ifIfMatch()
-   * - .ifIfNoneMatch()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
@@ -4910,7 +4908,6 @@ export class S3 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toDeleteObject()
-   * - .toGetObject()
    * - .toPutObject()
    *
    * @param value The value(s) to check
@@ -4926,7 +4923,6 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes-enforce.html
    *
    * Applies to actions:
-   * - .toGetObject()
    * - .toPutObject()
    *
    * @param value The value(s) to check
