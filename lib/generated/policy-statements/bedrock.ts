@@ -110,6 +110,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to count the number of tokens in an input prompt
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_CountTokens.html
+   */
+  public toCountTokens() {
+    return this.to('CountTokens');
+  }
+
+  /**
    * Grants permission to create a new agent and a test agent alias pointing to the DRAFT agent version
    *
    * Access Level: Write
@@ -2636,6 +2647,7 @@ export class Bedrock extends PolicyStatement {
     Read: [
       'ApplyGuardrail',
       'CallWithBearerToken',
+      'CountTokens',
       'DetectGeneratedContent',
       'ExportAutomatedReasoningPolicyVersion',
       'GenerateQuery',

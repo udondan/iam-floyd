@@ -6,6 +6,7 @@ bedrock:AssociateThirdPartyKnowledgeBase;Write
 bedrock:BatchDeleteEvaluationJob;Write
 bedrock:CallWithBearerToken;Read
 bedrock:CancelAutomatedReasoningPolicyBuildWorkflow;Write
+bedrock:CountTokens;Read
 bedrock:CreateAgent;Write
 bedrock:CreateAgentActionGroup;Write
 bedrock:CreateAgentAlias;Write

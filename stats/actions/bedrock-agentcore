@@ -62,6 +62,7 @@ bedrock-agentcore:ListMemories;List
 bedrock-agentcore:ListMemoryRecords;List
 bedrock-agentcore:ListOauth2CredentialProviders;Read
 bedrock-agentcore:ListSessions;List
+bedrock-agentcore:ListTagsForResource;List
 bedrock-agentcore:ListWorkloadIdentities;Read
 bedrock-agentcore:RetrieveMemoryRecords;List
 bedrock-agentcore:SetTokenVaultCMK;Read
@@ -70,6 +71,8 @@ bedrock-agentcore:StartCodeInterpreterSession;Write
 bedrock-agentcore:StopBrowserSession;Write
 bedrock-agentcore:StopCodeInterpreterSession;Write
 bedrock-agentcore:SynchronizeGatewayTargets;Permissions management
+bedrock-agentcore:TagResource;Tagging
+bedrock-agentcore:UntagResource;Tagging
 bedrock-agentcore:UpdateAgentRuntime;Write
 bedrock-agentcore:UpdateAgentRuntimeEndpoint;Write
 bedrock-agentcore:UpdateApiKeyCredentialProvider;Write

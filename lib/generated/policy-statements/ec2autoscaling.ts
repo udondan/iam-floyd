@@ -946,6 +946,20 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Filters access based on whether the force delete option is specified when deleting an Auto Scaling group
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toDeleteAutoScalingGroup()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifForceDelete(value?: boolean) {
+    return this.if(`ForceDelete`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access based on the AMI ID for the launch configuration
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
