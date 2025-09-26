@@ -14,11 +14,12 @@
       ]
     },
     {
-      "Sid": "TerminateAndResumeSession",
+      "Sid": "TerminateAndResumeSessionAndOpenDataChannel",
       "Effect": "Allow",
       "Action": [
         "ssm:TerminateSession",
-        "ssm:ResumeSession"
+        "ssm:ResumeSession",
+        "ssmmessages:OpenDataChannel"
       ],
       "Resource": "arn:aws:ssm:*:*:session/*"
     },

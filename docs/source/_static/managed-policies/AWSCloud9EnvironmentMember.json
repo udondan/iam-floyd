@@ -51,6 +51,15 @@
       "Resource": [
         "arn:aws:ssm:*:*:document/*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:session/*"
+      ]
     }
   ]
 }

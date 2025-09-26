@@ -80,7 +80,7 @@
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         },
-        "StringLike": {
+        "ArnLike": {
           "lambda:FunctionArn": "arn:aws:lambda:*:*:function:AmazonSecurityLakeMetastoreManager-*-*"
         }
       }
