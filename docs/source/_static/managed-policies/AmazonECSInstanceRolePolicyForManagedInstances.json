@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ECSAgentDiscoverPollEndpointPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DiscoverPollEndpoint"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ECSAgentRegisterPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:RegisterContainerInstance"
+      ],
+      "Resource": "arn:aws:ecs:*:*:cluster/*"
+    },
+    {
+      "Sid": "ECSAgentPollPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:Poll"
+      ],
+      "Resource": "arn:aws:ecs:*:*:container-instance/*"
+    },
+    {
+      "Sid": "ECSAgentTelemetryPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:StartTelemetrySession",
+        "ecs:PutSystemLogEvents"
+      ],
+      "Resource": "arn:aws:ecs:*:*:container-instance/*"
+    },
+    {
+      "Sid": "ECSAgentStateChangePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:SubmitAttachmentStateChanges",
+        "ecs:SubmitTaskStateChange"
+      ],
+      "Resource": "arn:aws:ecs:*:*:cluster/*"
+    }
+  ]
+}
