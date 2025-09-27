@@ -278,12 +278,16 @@ export class AwsManagedPolicy {
     public static AmazonECSComputeServiceRolePolicy = 'aws-service-role/AmazonECSComputeServiceRolePolicy';
     /** Provides access to other AWS service resources required to manage load balancers associated with ECS workloads on your behalf. */
     public static AmazonECSInfrastructureRolePolicyForLoadBalancers = 'AmazonECSInfrastructureRolePolicyForLoadBalancers';
+    /** Provides ECS access to create and manage EC2 managed resources */
+    public static AmazonECSInfrastructureRolePolicyForManagedInstances = 'AmazonECSInfrastructureRolePolicyForManagedInstances';
     /** Provides administrative access to Private Certificate Authority, AWS Secrets Manager and other AWS Services required to manage ECS Service Connect TLS features on your behalf. */
     public static AmazonECSInfrastructureRolePolicyForServiceConnectTransportLayerSecurity = 'service-role/AmazonECSInfrastructureRolePolicyForServiceConnectTransportLayerSecurity';
     /** Provides access to other AWS service resources required to manage volumes associated with ECS workloads on your behalf. */
     public static AmazonECSInfrastructureRolePolicyForVolumes = 'service-role/AmazonECSInfrastructureRolePolicyForVolumes';
     /** Provides access to other AWS service resources required to manage VPC Lattice feature in ECS workloads on your behalf. */
     public static AmazonECSInfrastructureRolePolicyForVpcLattice = 'AmazonECSInfrastructureRolePolicyForVpcLattice';
+    /** Default policy for the Amazon ECS Instance Role for Amazon ECS Managed Instances. */
+    public static AmazonECSInstanceRolePolicyForManagedInstances = 'AmazonECSInstanceRolePolicyForManagedInstances';
     /** Policy to enable Amazon ECS to manage your cluster. */
     public static AmazonECSServiceRolePolicy = 'aws-service-role/AmazonECSServiceRolePolicy';
     /** Provides access to other AWS service resources that are required to run Amazon ECS tasks */
