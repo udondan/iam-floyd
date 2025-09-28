@@ -405,7 +405,8 @@
         "codestar-connections:UseConnection"
       ],
       "Resource": [
-        "arn:aws:codestar-connections:*:*:connection/*"
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
       ],
       "Condition": {
         "StringEqualsIgnoreCase": {
@@ -420,7 +421,8 @@
         "codeconnections:UseConnection"
       ],
       "Resource": [
-        "arn:aws:codeconnections:*:*:connection/*"
+        "arn:aws:codeconnections:*:*:connection/*",
+        "arn:aws:codestar-connections:*:*:connection/*"
       ],
       "Condition": {
         "StringEqualsIgnoreCase": {
