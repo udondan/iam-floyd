@@ -468,7 +468,10 @@
       "Sid": "AmazonSageMakerServiceCatalogCodeStarPermission",
       "Effect": "Allow",
       "Action": "codestar-connections:PassConnection",
-      "Resource": "arn:aws:codestar-connections:*:*:connection/*",
+      "Resource": [
+        "arn:aws:codestar-connections:*:*:connection/*",
+        "arn:aws:codeconnections:*:*:connection/*"
+      ],
       "Condition": {
         "StringEquals": {
           "codestar-connections:PassedToService": "codepipeline.amazonaws.com"
@@ -479,7 +482,10 @@
       "Sid": "AmazonSageMakerServiceCatalogCodeConnectionPermission",
       "Effect": "Allow",
       "Action": "codeconnections:PassConnection",
-      "Resource": "arn:aws:codeconnections:*:*:connection/*",
+      "Resource": [
+        "arn:aws:codeconnections:*:*:connection/*",
+        "arn:aws:codestar-connections:*:*:connection/*"
+      ],
       "Condition": {
         "StringEquals": {
           "codeconnections:PassedToService": "codepipeline.amazonaws.com"
