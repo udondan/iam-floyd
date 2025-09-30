@@ -27,6 +27,15 @@
       "Resource": "*"
     },
     {
+      "Sid": "NM",
+      "Effect": "Allow",
+      "Action": [
+        "networkmanager:GetVpcAttachment",
+        "networkmanager:ListAttachments"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "EB1",
       "Effect": "Allow",
       "Action": [

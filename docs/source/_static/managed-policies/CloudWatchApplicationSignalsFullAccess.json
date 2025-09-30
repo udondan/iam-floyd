@@ -23,19 +23,13 @@
       "Resource": "*"
     },
     {
-      "Sid": "CloudWatchApplicationSignalsLogGroupPermissions",
-      "Effect": "Allow",
-      "Action": [
-        "logs:StartQuery"
-      ],
-      "Resource": "arn:aws:logs:*:*:log-group:/aws/application-signals/data:*"
-    },
-    {
       "Sid": "CloudWatchApplicationSignalsLogsPermissions",
       "Effect": "Allow",
       "Action": [
+        "logs:StartQuery",
         "logs:StopQuery",
-        "logs:GetQueryResults"
+        "logs:GetQueryResults",
+        "logs:DescribeLogGroups"
       ],
       "Resource": "*"
     },
@@ -65,10 +59,30 @@
       "Resource": "*"
     },
     {
+      "Sid": "CloudWatchApplicationSignalsXrayTracePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "xray:GetTraceSummaries"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "CloudWatchApplicationSignalsXrayPermissions",
       "Effect": "Allow",
-      "Action": "xray:GetTraceSummaries",
-      "Resource": "*"
+      "Action": [
+        "xray:StartTraceRetrieval",
+        "xray:ListRetrievedTraces",
+        "xray:BatchGetTraces",
+        "xray:GetTraceSegmentDestination"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "application-signals.cloudwatch.amazonaws.com"
+          ]
+        }
+      }
     },
     {
       "Sid": "CloudWatchApplicationSignalsPutMetricAlarmPermissions",
@@ -111,6 +125,41 @@
       "Effect": "Allow",
       "Action": "sns:ListTopics",
       "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCloudTrailPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel",
+        "cloudtrail:GetChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCloudTrailListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:ListChannels"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsServiceQuotaPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": [
+        "arn:aws:servicequotas:*:*:s3/*",
+        "arn:aws:servicequotas:*:*:dynamodb/*",
+        "arn:aws:servicequotas:*:*:kinesis/*",
+        "arn:aws:servicequotas:*:*:sns/*",
+        "arn:aws:servicequotas:*:*:bedrock/*",
+        "arn:aws:servicequotas:*:*:lambda/*",
+        "arn:aws:servicequotas:*:*:fargate/*",
+        "arn:aws:servicequotas:*:*:elasticloadbalancing/*",
+        "arn:aws:servicequotas:*:*:ec2/*"
+      ]
     }
   ]
 }

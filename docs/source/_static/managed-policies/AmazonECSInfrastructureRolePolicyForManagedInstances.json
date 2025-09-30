@@ -128,7 +128,7 @@
         "iam:PassRole"
       ],
       "Resource": [
-        "arn:aws:iam::*:role/ecsInstanceProfile*"
+        "arn:aws:iam::*:role/ecsInstanceRole*"
       ],
       "Condition": {
         "StringEquals": {
