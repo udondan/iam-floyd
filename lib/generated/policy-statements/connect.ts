@@ -98,6 +98,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a contact with a user using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPreferredUserArn()
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateContactWithUser.html
+   */
+  public toAssociateContactWithUser() {
+    return this.to('AssociateContactWithUser');
+  }
+
+  /**
    * Grants permission to associate a Customer Profiles domain for an existing Amazon Connect instance
    *
    * Access Level: Write
@@ -2657,6 +2673,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list manual assignment queue resources in a routing profile in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfileManualAssignmentQueues.html
+   */
+  public toListRoutingProfileManualAssignmentQueues() {
+    return this.to('ListRoutingProfileManualAssignmentQueues');
+  }
+
+  /**
    * Grants permission to list queue resources in a routing profile in an Amazon Connect instance
    *
    * Access Level: List
@@ -3090,6 +3121,8 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifInstanceId()
    * - .ifSearchContactsByContactAnalysis()
+   * - .ifChannel()
+   * - .ifPreferredUserArn()
    *
    * Dependent actions:
    * - connect:DescribeContact
@@ -4518,6 +4551,7 @@ export class Connect extends PolicyStatement {
       'AssociateAnalyticsDataSet',
       'AssociateApprovedOrigin',
       'AssociateBot',
+      'AssociateContactWithUser',
       'AssociateCustomerProfilesDomain',
       'AssociateDefaultVocabulary',
       'AssociateFlow',
@@ -4788,6 +4822,7 @@ export class Connect extends PolicyStatement {
       'ListQueues',
       'ListQuickConnects',
       'ListRealtimeContactAnalysisSegmentsV2',
+      'ListRoutingProfileManualAssignmentQueues',
       'ListRoutingProfileQueues',
       'ListRoutingProfiles',
       'ListRules',
@@ -5493,6 +5528,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociateContactWithUser()
    * - .toAssociateFlow()
    * - .toAssociatePhoneNumberContactFlow()
    * - .toAssociateQueueQuickConnects()
@@ -5557,6 +5593,7 @@ export class Connect extends PolicyStatement {
    * - .toGetTrafficDistribution()
    * - .toListContactFlowVersions()
    * - .toListQueueQuickConnects()
+   * - .toListRoutingProfileManualAssignmentQueues()
    * - .toListRoutingProfileQueues()
    * - .toListSecurityProfileApplications()
    * - .toListSecurityProfilePermissions()
@@ -5727,6 +5764,7 @@ export class Connect extends PolicyStatement {
    * - .toGetContactAttributes()
    * - .toListContactReferences()
    * - .toResumeContactRecording()
+   * - .toSearchContacts()
    * - .toStartContactRecording()
    * - .toStartScreenSharing()
    * - .toStopContact()
@@ -5826,6 +5864,7 @@ export class Connect extends PolicyStatement {
    * - .toAssociateAnalyticsDataSet()
    * - .toAssociateApprovedOrigin()
    * - .toAssociateBot()
+   * - .toAssociateContactWithUser()
    * - .toAssociateDefaultVocabulary()
    * - .toAssociateFlow()
    * - .toAssociateInstanceStorageConfig()
@@ -5975,6 +6014,7 @@ export class Connect extends PolicyStatement {
    * - .toListPredefinedAttributes()
    * - .toListPrompts()
    * - .toListQueueQuickConnects()
+   * - .toListRoutingProfileManualAssignmentQueues()
    * - .toListRoutingProfileQueues()
    * - .toListRoutingProfiles()
    * - .toListRules()
@@ -6127,6 +6167,22 @@ export class Connect extends PolicyStatement {
    */
   public ifMonitorCapabilities(value: string | string[], operator?: Operator | string) {
     return this.if(`MonitorCapabilities`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by PreferredUserArn
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toAssociateContactWithUser()
+   * - .toSearchContacts()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifPreferredUserArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`PreferredUserArn`, value, operator ?? 'ArnLike');
   }
 
   /**

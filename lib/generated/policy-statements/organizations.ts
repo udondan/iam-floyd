@@ -615,6 +615,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPolicyType()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -694,6 +697,7 @@ export class Organizations extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_TagResource.html
    */
@@ -708,6 +712,7 @@ export class Organizations extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UntagResource.html
    */
@@ -1022,8 +1027,10 @@ export class Organizations extends PolicyStatement {
    * - .toListEffectivePolicyValidationErrors()
    * - .toListPolicies()
    * - .toListPoliciesForTarget()
+   * - .toListTagsForResource()
    * - .toListTargetsForPolicy()
    * - .toTagResource()
+   * - .toUntagResource()
    * - .toUpdatePolicy()
    *
    * @param value The value(s) to check

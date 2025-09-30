@@ -19,6 +19,24 @@ export class Billing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate source views to a billing view
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - billing:UseSourceView
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_AssociateSourceViews.html
+   */
+  public toAssociateSourceViews() {
+    return this.to('AssociateSourceViews');
+  }
+
+  /**
    * Grants permission to create a billing view
    *
    * Access Level: Write
@@ -26,6 +44,10 @@ export class Billing extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - billing:UseSourceView
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_CreateBillingView.html
    */
@@ -59,6 +81,20 @@ export class Billing extends PolicyStatement {
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to disassociate source views from a billing view
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DisassociateSourceViews.html
+   */
+  public toDisassociateSourceViews() {
+    return this.to('DisassociateSourceViews');
   }
 
   /**
@@ -328,10 +364,23 @@ export class Billing extends PolicyStatement {
     return this.to('UpdateIAMAccessPreference');
   }
 
+  /**
+   * Grants permission to use a billing view as a data source for other billing views
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toUseSourceView() {
+    return this.to('UseSourceView');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AssociateSourceViews',
       'CreateBillingView',
       'DeleteBillingView',
+      'DisassociateSourceViews',
       'PutContractInformation',
       'RedeemCredits',
       'UpdateBillingPreferences',
@@ -355,7 +404,8 @@ export class Billing extends PolicyStatement {
       'GetIAMAccessPreference',
       'GetSellerOfRecord',
       'ListBillingViews',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'UseSourceView'
     ],
     List: [
       'ListSourceViewsForBillingView'
@@ -405,8 +455,10 @@ export class Billing extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociateSourceViews()
    * - .toDeleteBillingView()
    * - .toDeleteResourcePolicy()
+   * - .toDisassociateSourceViews()
    * - .toGetBillingView()
    * - .toGetResourcePolicy()
    * - .toListSourceViewsForBillingView()

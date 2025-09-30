@@ -586,6 +586,17 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to collect system logs from the container instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutSystemLogEvents.html
+   */
+  public toPutSystemLogEvents() {
+    return this.to('PutSystemLogEvents');
+  }
+
+  /**
    * Grants permission to register an EC2 instance into the specified cluster
    *
    * Access Level: Write
@@ -933,6 +944,7 @@ export class Ecs extends PolicyStatement {
       'PutAccountSettingDefault',
       'PutAttributes',
       'PutClusterCapacityProviders',
+      'PutSystemLogEvents',
       'RegisterContainerInstance',
       'RegisterTaskDefinition',
       'RunTask',
@@ -1214,6 +1226,7 @@ export class Ecs extends PolicyStatement {
    * - .toListTasks()
    * - .toPutAttributes()
    * - .toPutClusterCapacityProviders()
+   * - .toPutSystemLogEvents()
    * - .toRegisterContainerInstance()
    * - .toRegisterTaskDefinition()
    * - .toRunTask()
@@ -1357,6 +1370,7 @@ export class Ecs extends PolicyStatement {
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toPutClusterCapacityProviders()
+   * - .toPutSystemLogEvents()
    * - .toRunTask()
    * - .toUpdateService()
    *
@@ -1391,6 +1405,7 @@ export class Ecs extends PolicyStatement {
    * - .toListTasks()
    * - .toPoll()
    * - .toPutAttributes()
+   * - .toPutSystemLogEvents()
    * - .toRunTask()
    * - .toStartTask()
    * - .toStartTelemetrySession()

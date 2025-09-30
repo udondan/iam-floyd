@@ -41,6 +41,24 @@ export class Osis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an OpenSearch Ingestion pipeline endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_CreatePipelineEndpoint.html
+   */
+  public toCreatePipelineEndpoint() {
+    return this.to('CreatePipelineEndpoint');
+  }
+
+  /**
    * Grants permission to delete an OpenSearch Ingestion pipeline
    *
    * Access Level: Write
@@ -54,6 +72,28 @@ export class Osis extends PolicyStatement {
    */
   public toDeletePipeline() {
     return this.to('DeletePipeline');
+  }
+
+  /**
+   * Grants permission to delete an OpenSearch Ingestion pipeline endpoint in the current account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_DeletePipelineEndpoint.html
+   */
+  public toDeletePipelineEndpoint() {
+    return this.to('DeletePipelineEndpoint');
+  }
+
+  /**
+   * Grants permission to delete a resource policy for an OpenSearch Ingestion resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -90,6 +130,17 @@ export class Osis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a resource policy for an OpenSearch Ingestion resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to ingest data through an OpenSearch Ingestion pipeline
    *
    * Access Level: Write
@@ -112,6 +163,28 @@ export class Osis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list OpenSearch Ingestion pipeline endpoint connections to pipelines in the current account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelineEndpointConnections.html
+   */
+  public toListPipelineEndpointConnections() {
+    return this.to('ListPipelineEndpointConnections');
+  }
+
+  /**
+   * Grants permission to list OpenSearch Ingestion pipeline endpoints in the current account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelineEndpoints.html
+   */
+  public toListPipelineEndpoints() {
+    return this.to('ListPipelineEndpoints');
+  }
+
+  /**
    * Grants permission to list basic configuration for each OpenSearch Ingestion pipeline in the current account and Region
    *
    * Access Level: List
@@ -131,6 +204,28 @@ export class Osis extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to put a resource policy for an OpenSearch Ingestion resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
+   * Grants permission to revoke an OpenSearch Ingestion pipeline endpoint connection from a pipeline in the current account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_RevokePipelineEndpointConnections.html
+   */
+  public toRevokePipelineEndpointConnections() {
+    return this.to('RevokePipelineEndpointConnections');
   }
 
   /**
@@ -217,8 +312,13 @@ export class Osis extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreatePipeline',
+      'CreatePipelineEndpoint',
       'DeletePipeline',
+      'DeletePipelineEndpoint',
+      'DeleteResourcePolicy',
       'Ingest',
+      'PutResourcePolicy',
+      'RevokePipelineEndpointConnections',
       'StartPipeline',
       'StopPipeline',
       'UpdatePipeline'
@@ -227,11 +327,14 @@ export class Osis extends PolicyStatement {
       'GetPipeline',
       'GetPipelineBlueprint',
       'GetPipelineChangeProgress',
+      'GetResourcePolicy',
       'ListTagsForResource',
       'ValidatePipeline'
     ],
     List: [
       'ListPipelineBlueprints',
+      'ListPipelineEndpointConnections',
+      'ListPipelineEndpoints',
       'ListPipelines'
     ],
     Tagging: [
@@ -258,6 +361,23 @@ export class Osis extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type pipeline-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PipelineEndpoint.html
+   *
+   * @param endpointId - Identifier for the endpointId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPipelineEndpoint(endpointId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:osis:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint/${ endpointId }`);
+  }
+
+  /**
    * Adds a resource of type pipeline-blueprint to the statement
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PipelineBlueprint.html
@@ -278,6 +398,7 @@ export class Osis extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreatePipeline()
+   * - .toCreatePipelineEndpoint()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -295,6 +416,7 @@ export class Osis extends PolicyStatement {
    *
    * Applies to resource types:
    * - pipeline
+   * - pipeline-endpoint
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -311,6 +433,7 @@ export class Osis extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreatePipeline()
+   * - .toCreatePipelineEndpoint()
    * - .toTagResource()
    * - .toUntagResource()
    *
