@@ -13,7 +13,7 @@
         }
       },
       "Resource": [
-        "arn:aws:cloudformation:*:*:stack/AWSTransform-Deploy-Infra-stack*"
+        "arn:aws:cloudformation:*:*:stack/AWSTransform*"
       ]
     },
     {
@@ -27,7 +27,20 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       },
-      "Resource": "arn:aws:cloudformation:*:*:stack/AWSTransform-Deploy-Infra-stack*"
+      "Resource": "arn:aws:cloudformation:*:*:stack/AWSTransform*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DeleteStack"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "AWSTransform",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": "arn:aws:cloudformation:*:*:stack/AWSTransform*"
     },
     {
       "Effect": "Allow",
@@ -41,7 +54,7 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       },
-      "Resource": "arn:aws:cloudformation:*:*:stack/AWSTransform-Deploy-Infra-stack*"
+      "Resource": "arn:aws:cloudformation:*:*:stack/AWSTransform*"
     },
     {
       "Effect": "Allow",
@@ -64,6 +77,7 @@
       "Condition": {
         "ForAnyValue:StringNotEquals": {
           "aws:TagKeys": [
+            "Name",
             "CreatedBy",
             "ApplicationName",
             "TransformationType",
@@ -118,28 +132,11 @@
         }
       },
       "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*",
         "arn:aws:ec2:*:*:network-interface/*",
         "arn:aws:ec2:*:*:instance/*",
         "arn:aws:ec2:*:*:volume/*"
-      ]
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:RunInstances"
-      ],
-      "Condition": {
-        "ForAnyValue:StringEquals": {
-          "aws:CalledVia": "cloudformation.amazonaws.com"
-        },
-        "StringEquals": {
-          "aws:ResourceTag/CreatedFor": "AWSTransform",
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        }
-      },
-      "Resource": [
-        "arn:aws:ec2:*:*:subnet/*",
-        "arn:aws:ec2:*:*:security-group/*"
       ]
     },
     {
@@ -150,13 +147,14 @@
       ],
       "Condition": {
         "StringEquals": {
-          "aws:ResourceTag/CreatedFor": "AWSTransform",
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       },
       "Resource": [
-        "arn:aws:iam::*:role/AWSTransform-Deploy-EC2-Instance-Role",
-        "arn:aws:iam::*:instance-profile/AWSTransform-Deploy-EC2-Instance-Profile"
+        "arn:aws:iam::*:role/AWSTransform-Deploy-Builder-Instance-Role",
+        "arn:aws:iam::*:instance-profile/AWSTransform-Deploy-Builder-Instance-Role",
+        "arn:aws:iam::*:role/AWSTransform-Deploy-App-Instance-Role",
+        "arn:aws:iam::*:instance-profile/AWSTransform-Deploy-App-Instance-Role"
       ]
     },
     {
@@ -171,7 +169,8 @@
         }
       },
       "Resource": [
-        "arn:aws:iam::*:role/AWSTransform-Deploy-EC2-Instance-Role"
+        "arn:aws:iam::*:role/AWSTransform-Deploy-Builder-Instance-Role",
+        "arn:aws:iam::*:role/AWSTransform-Deploy-App-Instance-Role"
       ]
     },
     {
@@ -180,21 +179,6 @@
         "ssm:GetParameters"
       ],
       "Resource": "arn:aws:ssm:*::parameter/aws/service/ami-amazon-linux-latest*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "cloudformation:DeleteStack"
-      ],
-      "Condition": {
-        "StringEquals": {
-          "aws:ResourceTag/CreatedBy": "AWSTransform",
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
-        }
-      },
-      "Resource": [
-        "arn:aws:cloudformation:*:*:stack/AWSTransform-Deploy-Infra-stack*"
-      ]
     },
     {
       "Effect": "Allow",
@@ -214,6 +198,57 @@
         }
       },
       "Resource": "arn:aws:ec2:*:*:instance/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWS-RunRemoteScript"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "AWSTransform"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeInstanceInformation",
+        "ssm:GetCommandInvocation"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:*",
+        "arn:aws:ec2:*:*:instance/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:ListMultipartUploadParts",
+        "s3:ListBucketMultipartUploads",
+        "s3:AbortMultipartUpload",
+        "s3:PutBucketTagging"
+      ],
+      "Resource": [
+        "arn:aws:s3:::aws-transform-deployment-bucket-*",
+        "arn:aws:s3:::aws-transform-deployment-bucket-*/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }
