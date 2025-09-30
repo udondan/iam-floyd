@@ -40,6 +40,7 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -58,6 +59,8 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifRequestConnectorProtocol()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -76,6 +79,7 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateProfile.html
    */
@@ -91,6 +95,10 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifRequestServerEndpointType()
+   * - .ifRequestServerDomain()
+   * - .ifRequestServerProtocols()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -109,6 +117,7 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -127,6 +136,7 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -145,6 +155,7 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateWorkflow.html
    */
@@ -435,6 +446,7 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportCertificate.html
    */
@@ -450,6 +462,7 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportHostKey.html
    */
@@ -830,6 +843,10 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestServerEndpointType()
+   * - .ifRequestServerProtocols()
+   *
    * Dependent actions:
    * - iam:PassRole
    *
@@ -1149,6 +1166,17 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateAgreement()
+   * - .toCreateConnector()
+   * - .toCreateProfile()
+   * - .toCreateServer()
+   * - .toCreateUser()
+   * - .toCreateWebApp()
+   * - .toCreateWorkflow()
+   * - .toImportCertificate()
+   * - .toImportHostKey()
+   *
    * Applies to resource types:
    * - user
    * - server
@@ -1191,5 +1219,67 @@ export class Transfer extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the connector protocol that is passed in the request
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/setting-up.html#transfer-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateConnector()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestConnectorProtocol(value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestConnectorProtocol`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the storage domain that is passed in the request
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/setting-up.html#transfer-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateServer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestServerDomain(value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestServerDomain`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the endpoint type that is passed in the request
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/setting-up.html#transfer-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateServer()
+   * - .toUpdateServer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestServerEndpointType(value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestServerEndpointType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the server protocols that are passed in the request
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/setting-up.html#transfer-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateServer()
+   * - .toUpdateServer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestServerProtocols(value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestServerProtocols`, value, operator ?? 'StringLike');
   }
 }

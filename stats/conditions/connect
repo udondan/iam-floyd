@@ -8,6 +8,7 @@ connect:InstanceId
 connect:ListRealtimeContactAnalysisSegmentsByOutputType
 connect:ListRealtimeContactAnalysisSegmentsBySegmentType
 connect:MonitorCapabilities
+connect:PreferredUserArn
 connect:RequestTag/${TagKey}
 connect:ResourceTag/${TagKey}
 connect:SearchContactsByContactAnalysis

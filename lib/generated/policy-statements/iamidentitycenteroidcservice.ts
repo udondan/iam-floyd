@@ -32,9 +32,39 @@ export class SsoOauth extends PolicyStatement {
     return this.to('CreateTokenWithIAM');
   }
 
+  /**
+   * Grants permission to validate and retrieve information about active OAuth 2.0 access tokens and refresh tokens, including their associated scopes and permissions. This permission is used only by AWS managed applications and is not documented in the IAM Identity Center OIDC API Reference
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-resource-based-policies.html
+   */
+  public toIntrospectTokenWithIAM() {
+    return this.to('IntrospectTokenWithIAM');
+  }
+
+  /**
+   * Grants permission to revoke OAuth 2.0 access tokens and refresh tokens, invalidating them before their normal expiration. This permission is used only by AWS managed applications and is not documented in the IAM Identity Center OIDC API Reference
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-resource-based-policies.html
+   */
+  public toRevokeTokenWithIAM() {
+    return this.to('RevokeTokenWithIAM');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'CreateTokenWithIAM'
+      'CreateTokenWithIAM',
+      'IntrospectTokenWithIAM',
+      'RevokeTokenWithIAM'
     ]
   };
 

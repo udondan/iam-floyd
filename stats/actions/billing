@@ -1,6 +1,8 @@
+billing:AssociateSourceViews;Write
 billing:CreateBillingView;Write
 billing:DeleteBillingView;Write
 billing:DeleteResourcePolicy;Permissions management
+billing:DisassociateSourceViews;Write
 billing:GetBillingData;Read
 billing:GetBillingDetails;Read
 billing:GetBillingNotifications;Read
@@ -23,3 +25,4 @@ billing:UntagResource;Tagging
 billing:UpdateBillingPreferences;Write
 billing:UpdateBillingView;Write
 billing:UpdateIAMAccessPreference;Write
+billing:UseSourceView;Read

@@ -54,6 +54,17 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a grouping configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteGroupingConfiguration.html
+   */
+  public toDeleteGroupingConfiguration() {
+    return this.to('DeleteGroupingConfiguration');
+  }
+
+  /**
    * Grants permission to delete a service level objective
    *
    * Access Level: Write
@@ -95,6 +106,28 @@ export class ApplicationSignals extends PolicyStatement {
    */
   public toLink() {
     return this.to('Link');
+  }
+
+  /**
+   * Grants permission to list service auditing results
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListAuditFindings.html
+   */
+  public toListAuditFindings() {
+    return this.to('ListAuditFindings');
+  }
+
+  /**
+   * Grants permission to list grouping attribute configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListGroupingAttributeDefinitions.html
+   */
+  public toListGroupingAttributeDefinitions() {
+    return this.to('ListGroupingAttributeDefinitions');
   }
 
   /**
@@ -162,6 +195,17 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list service states
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceStates.html
+   */
+  public toListServiceStates() {
+    return this.to('ListServiceStates');
+  }
+
+  /**
    * Grants permission to list services
    *
    * Access Level: List
@@ -181,6 +225,17 @@ export class ApplicationSignals extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to create or update a grouping configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_PutGroupingConfiguration.html
+   */
+  public toPutGroupingConfiguration() {
+    return this.to('PutGroupingConfiguration');
   }
 
   /**
@@ -247,15 +302,20 @@ export class ApplicationSignals extends PolicyStatement {
     Write: [
       'BatchUpdateExclusionWindows',
       'CreateServiceLevelObjective',
+      'DeleteGroupingConfiguration',
       'DeleteServiceLevelObjective',
       'Link',
+      'PutGroupingConfiguration',
       'StartDiscovery',
       'UpdateServiceLevelObjective'
     ],
     List: [
+      'ListAuditFindings',
+      'ListGroupingAttributeDefinitions',
       'ListObservedEntities',
       'ListServiceLevelObjectiveExclusionWindows',
       'ListServiceLevelObjectives',
+      'ListServiceStates',
       'ListServices'
     ],
     Tagging: [

@@ -118,6 +118,10 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html
    */
   public toDeleteAnalyzer() {
@@ -509,6 +513,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAnalyzer()
+   * - .toDeleteAnalyzer()
    * - .toGetAnalyzer()
    * - .toTagResource()
    *
@@ -543,6 +548,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAnalyzer()
+   * - .toDeleteAnalyzer()
    * - .toGetAnalyzer()
    * - .toTagResource()
    * - .toUntagResource()

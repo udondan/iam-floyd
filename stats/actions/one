@@ -17,6 +17,7 @@ one:ListDeviceConfigurationTemplates;List
 one:ListDeviceInstances;List
 one:ListSites;List
 one:ListTagsForResource;Read
+one:ListUsers;List
 one:ListUsersV1;List
 one:RebootDevice;Write
 one:TagResource;Tagging

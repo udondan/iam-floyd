@@ -39,6 +39,7 @@ ecs:PutAccountSetting;Write
 ecs:PutAccountSettingDefault;Write
 ecs:PutAttributes;Write
 ecs:PutClusterCapacityProviders;Write
+ecs:PutSystemLogEvents;Write
 ecs:RegisterContainerInstance;Write
 ecs:RegisterTaskDefinition;Write
 ecs:RunTask;Write

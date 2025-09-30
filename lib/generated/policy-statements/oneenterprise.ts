@@ -282,6 +282,17 @@ export class One extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/one-enterprise/latest/userguide/enrollment-entry.html
    */
+  public toListUsers() {
+    return this.to('ListUsers');
+  }
+
+  /**
+   * Grants permission to view list of Users
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/one-enterprise/latest/userguide/enrollment-entry.html
+   */
   public toListUsersV1() {
     return this.to('ListUsersV1');
   }
@@ -415,6 +426,7 @@ export class One extends PolicyStatement {
       'ListDeviceConfigurationTemplates',
       'ListDeviceInstances',
       'ListSites',
+      'ListUsers',
       'ListUsersV1'
     ],
     Tagging: [

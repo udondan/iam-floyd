@@ -3,6 +3,7 @@ connect:AdminGetEmergencyAccessToken;Write
 connect:AssociateAnalyticsDataSet;Write
 connect:AssociateApprovedOrigin;Write
 connect:AssociateBot;Write
+connect:AssociateContactWithUser;Write
 connect:AssociateCustomerProfilesDomain;Write
 connect:AssociateDefaultVocabulary;Write
 connect:AssociateFlow;Write
@@ -170,6 +171,7 @@ connect:ListQueues;List
 connect:ListQuickConnects;List
 connect:ListRealtimeContactAnalysisSegments;Read
 connect:ListRealtimeContactAnalysisSegmentsV2;List
+connect:ListRoutingProfileManualAssignmentQueues;List
 connect:ListRoutingProfileQueues;List
 connect:ListRoutingProfiles;List
 connect:ListRules;List
