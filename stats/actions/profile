@@ -36,6 +36,7 @@ profile:GetEventTrigger;Read
 profile:GetIdentityResolutionJob;Read
 profile:GetIntegration;Read
 profile:GetMatches;List
+profile:GetProfileHistoryRecord;Read
 profile:GetProfileObjectType;Read
 profile:GetProfileObjectTypeTemplate;Read
 profile:GetSegmentDefinition;Read
@@ -59,6 +60,7 @@ profile:ListIdentityResolutionJobs;List
 profile:ListIntegrations;List
 profile:ListObjectTypeAttributes;List
 profile:ListProfileAttributeValues;List
+profile:ListProfileHistoryRecords;List
 profile:ListProfileObjectTypeTemplates;List
 profile:ListProfileObjectTypes;List
 profile:ListProfileObjects;List

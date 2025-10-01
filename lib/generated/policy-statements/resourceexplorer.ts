@@ -70,6 +70,28 @@ export class ResourceExplorer2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create resource explorer setup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_CreateResourceExplorerSetup.html
+   */
+  public toCreateResourceExplorerSetup() {
+    return this.to('CreateResourceExplorerSetup');
+  }
+
+  /**
+   * Grants permission to create resource explorer streaming access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_CreateStreamingAccessForService.html
+   */
+  public toCreateStreamingAccessForService() {
+    return this.to('CreateStreamingAccessForService');
+  }
+
+  /**
    * Grants permission to create a view that users can query
    *
    * Access Level: Write
@@ -96,6 +118,15 @@ export class ResourceExplorer2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete resource explorer setup
+   *
+   * Access Level: Write
+   */
+  public toDeleteResourceExplorerSetup() {
+    return this.to('DeleteResourceExplorerSetup');
+  }
+
+  /**
    * Grants permission to delete the specified view's resource policy
    *
    * Access Level: Permissions management
@@ -104,6 +135,15 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to delete resource explorer streaming access
+   *
+   * Access Level: Write
+   */
+  public toDeleteStreamingAccessForService() {
+    return this.to('DeleteStreamingAccessForService');
   }
 
   /**
@@ -173,6 +213,15 @@ export class ResourceExplorer2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get resource explorer setup
+   *
+   * Access Level: Read
+   */
+  public toGetResourceExplorerSetup() {
+    return this.to('GetResourceExplorerSetup');
+  }
+
+  /**
    * Grants permission to retrieve information about the specified view's resource policy
    *
    * Access Level: Read
@@ -181,6 +230,24 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to get service index
+   *
+   * Access Level: Read
+   */
+  public toGetServiceIndex() {
+    return this.to('GetServiceIndex');
+  }
+
+  /**
+   * Grants permission to get service view
+   *
+   * Access Level: Read
+   */
+  public toGetServiceView() {
+    return this.to('GetServiceView');
   }
 
   /**
@@ -225,6 +292,33 @@ export class ResourceExplorer2 extends PolicyStatement {
    */
   public toListManagedViews() {
     return this.to('ListManagedViews');
+  }
+
+  /**
+   * Grants permission to list service indexes in all AWS Regions
+   *
+   * Access Level: List
+   */
+  public toListServiceIndexes() {
+    return this.to('ListServiceIndexes');
+  }
+
+  /**
+   * Grants permission to list service views in all AWS Regions
+   *
+   * Access Level: List
+   */
+  public toListServiceViews() {
+    return this.to('ListServiceViews');
+  }
+
+  /**
+   * Grants permission to list streaming access for services
+   *
+   * Access Level: List
+   */
+  public toListStreamingAccessForServices() {
+    return this.to('ListStreamingAccessForServices');
   }
 
   /**
@@ -341,8 +435,12 @@ export class ResourceExplorer2 extends PolicyStatement {
       'AssociateDefaultView',
       'CreateIndex',
       'CreateManagedView',
+      'CreateResourceExplorerSetup',
+      'CreateStreamingAccessForService',
       'CreateView',
       'DeleteIndex',
+      'DeleteResourceExplorerSetup',
+      'DeleteStreamingAccessForService',
       'DeleteView',
       'DisassociateDefaultView',
       'UpdateIndexType',
@@ -354,7 +452,10 @@ export class ResourceExplorer2 extends PolicyStatement {
       'GetDefaultView',
       'GetIndex',
       'GetManagedView',
+      'GetResourceExplorerSetup',
       'GetResourcePolicy',
+      'GetServiceIndex',
+      'GetServiceView',
       'GetView',
       'ListTagsForResource',
       'Search'
@@ -367,6 +468,9 @@ export class ResourceExplorer2 extends PolicyStatement {
       'ListIndexes',
       'ListIndexesForMembers',
       'ListManagedViews',
+      'ListServiceIndexes',
+      'ListServiceViews',
+      'ListStreamingAccessForServices',
       'ListSupportedResourceTypes',
       'ListViews'
     ],

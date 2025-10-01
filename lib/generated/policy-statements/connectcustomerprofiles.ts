@@ -448,6 +448,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a profile history record for a profile in a domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileHistoryRecord.html
+   */
+  public toGetProfileHistoryRecord() {
+    return this.to('GetProfileHistoryRecord');
+  }
+
+  /**
    * Grants permission to get a specific profile object type in the domain
    *
    * Access Level: Read
@@ -696,6 +707,17 @@ export class Profile extends PolicyStatement {
    */
   public toListProfileAttributeValues() {
     return this.to('ListProfileAttributeValues');
+  }
+
+  /**
+   * Grants permission to list all the profile history records for a profile in a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileHistoryRecords.html
+   */
+  public toListProfileHistoryRecords() {
+    return this.to('ListProfileHistoryRecords');
   }
 
   /**
@@ -1009,6 +1031,7 @@ export class Profile extends PolicyStatement {
       'GetEventTrigger',
       'GetIdentityResolutionJob',
       'GetIntegration',
+      'GetProfileHistoryRecord',
       'GetProfileObjectType',
       'GetProfileObjectTypeTemplate',
       'GetSegmentDefinition',
@@ -1037,6 +1060,7 @@ export class Profile extends PolicyStatement {
       'ListIntegrations',
       'ListObjectTypeAttributes',
       'ListProfileAttributeValues',
+      'ListProfileHistoryRecords',
       'ListProfileObjectTypeTemplates',
       'ListProfileObjectTypes',
       'ListProfileObjects',
