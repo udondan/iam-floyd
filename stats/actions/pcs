@@ -15,5 +15,6 @@ pcs:ListTagsForResource;Read
 pcs:RegisterComputeNodeGroupInstance;Write
 pcs:TagResource;Tagging
 pcs:UntagResource;Tagging
+pcs:UpdateCluster;Write
 pcs:UpdateComputeNodeGroup;Write
 pcs:UpdateQueue;Write

@@ -1224,7 +1224,7 @@ export class Transfer extends PolicyStatement {
   /**
    * Filters access by the connector protocol that is passed in the request
    *
-   * https://docs.aws.amazon.com/transfer/latest/userguide/setting-up.html#transfer-condition-keys
+   * https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html
    *
    * Applies to actions:
    * - .toCreateConnector()
@@ -1239,7 +1239,7 @@ export class Transfer extends PolicyStatement {
   /**
    * Filters access by the storage domain that is passed in the request
    *
-   * https://docs.aws.amazon.com/transfer/latest/userguide/setting-up.html#transfer-condition-keys
+   * https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html
    *
    * Applies to actions:
    * - .toCreateServer()
@@ -1254,7 +1254,7 @@ export class Transfer extends PolicyStatement {
   /**
    * Filters access by the endpoint type that is passed in the request
    *
-   * https://docs.aws.amazon.com/transfer/latest/userguide/setting-up.html#transfer-condition-keys
+   * https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html
    *
    * Applies to actions:
    * - .toCreateServer()
@@ -1270,7 +1270,7 @@ export class Transfer extends PolicyStatement {
   /**
    * Filters access by the server protocols that are passed in the request
    *
-   * https://docs.aws.amazon.com/transfer/latest/userguide/setting-up.html#transfer-condition-keys
+   * https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html
    *
    * Applies to actions:
    * - .toCreateServer()
