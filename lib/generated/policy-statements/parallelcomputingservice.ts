@@ -269,6 +269,29 @@ export class Pcs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update cluster properties
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateNetworkInterfacePermission
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - ec2:GetSecurityGroupsForVpc
+   * - iam:CreateServiceLinkedRole
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:TagResource
+   *
+   * https://docs.aws.amazon.com/pcs/latest/APIReference/API_UpdateCluster.html
+   */
+  public toUpdateCluster() {
+    return this.to('UpdateCluster');
+  }
+
+  /**
    * Grants permission to update compute node group properties
    *
    * Access Level: Write
@@ -318,6 +341,7 @@ export class Pcs extends PolicyStatement {
       'DeleteComputeNodeGroup',
       'DeleteQueue',
       'RegisterComputeNodeGroupInstance',
+      'UpdateCluster',
       'UpdateComputeNodeGroup',
       'UpdateQueue'
     ],

@@ -145,6 +145,10 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - iam:PassRole
    *
@@ -1130,6 +1134,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
@@ -1313,6 +1320,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateAgentRuntimeEndpoint()
    * - .toCreateBrowser()
    * - .toCreateCodeInterpreter()
+   * - .toCreateGateway()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1329,6 +1337,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to resource types:
+   * - gateway
    * - runtime
    * - runtime-endpoint
    * - code-interpreter-custom
@@ -1352,6 +1361,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateAgentRuntimeEndpoint()
    * - .toCreateBrowser()
    * - .toCreateCodeInterpreter()
+   * - .toCreateGateway()
    * - .toTagResource()
    * - .toUntagResource()
    *

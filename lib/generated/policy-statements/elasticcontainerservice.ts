@@ -24,6 +24,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifPropagateTags()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -787,6 +788,7 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifPropagateTags()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCapacityProvider.html
@@ -1200,6 +1202,7 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCreateCapacityProvider()
    * - .toCreateCluster()
    * - .toCreateService()
    * - .toDeleteAttributes()
@@ -1611,7 +1614,9 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateCapacityProvider()
    * - .toCreateService()
+   * - .toUpdateCapacityProvider()
    * - .toUpdateService()
    *
    * @param value The value(s) to check

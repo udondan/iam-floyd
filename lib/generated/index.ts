@@ -205,7 +205,6 @@ export { A2c } from './policy-statements/app2container';
 export { Appconfig } from './policy-statements/appconfig';
 export { Appfabric } from './policy-statements/appfabric';
 export { ApplicationAutoscaling } from './policy-statements/applicationautoscaling';
-export { ApplicationCostProfiler } from './policy-statements/applicationcostprofilerservice';
 export { Discovery } from './policy-statements/applicationdiscoveryservice';
 export { Mgn } from './policy-statements/applicationmigrationservice';
 export { ApplicationTransformation } from './policy-statements/applicationtransformationservice';

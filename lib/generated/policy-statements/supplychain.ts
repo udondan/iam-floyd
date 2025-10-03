@@ -45,6 +45,10 @@ export class Scn extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
   public toCreateDataIntegrationFlow() {
@@ -55,6 +59,10 @@ export class Scn extends PolicyStatement {
    * Grants permission to create the data lake dataset
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
@@ -67,6 +75,10 @@ export class Scn extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
   public toCreateDataLakeNamespace() {
@@ -77,6 +89,10 @@ export class Scn extends PolicyStatement {
    * Grants permission to create a new AWS Supply Chain instance
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupplychain.html
    */
@@ -283,7 +299,7 @@ export class Scn extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the data lake datasets under specific instance and namespace
+   * Grants permission to list the data lake datasets under specific instance or namespace
    *
    * Access Level: List
    *
@@ -477,6 +493,9 @@ export class Scn extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
@@ -507,6 +526,9 @@ export class Scn extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDataIntegrationFlow(instanceId: string, flowName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/data-integration-flows/${ flowName }`);
@@ -522,6 +544,9 @@ export class Scn extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onNamespace(instanceId: string, namespace: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/namespaces/${ namespace }`);
@@ -538,6 +563,9 @@ export class Scn extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDataset(instanceId: string, namespace: string, datasetName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:scn:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/namespaces/${ namespace }/datasets/${ datasetName }`);
@@ -549,6 +577,10 @@ export class Scn extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateDataIntegrationFlow()
+   * - .toCreateDataLakeDataset()
+   * - .toCreateDataLakeNamespace()
+   * - .toCreateInstance()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -564,6 +596,12 @@ export class Scn extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to resource types:
+   * - instance
+   * - data-integration-flow
+   * - namespace
+   * - dataset
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -578,6 +616,10 @@ export class Scn extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateDataIntegrationFlow()
+   * - .toCreateDataLakeDataset()
+   * - .toCreateDataLakeNamespace()
+   * - .toCreateInstance()
    * - .toTagResource()
    * - .toUntagResource()
    *
