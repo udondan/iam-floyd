@@ -3409,6 +3409,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSControlTowerAccountServiceRolePolicy);
     }
 
+    /** Provides permissions to manage the IAM Identity Center (IdC) resources in the member accounts enrolled with AWS Control Tower. The policy is attached to the AWSControlTowerAdmin role only if the customer has opted-into IAM IdC integration in their AWS Control Tower Landing Zone. */
+    public AWSControlTowerIdentityCenterManagementPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSControlTowerIdentityCenterManagementPolicy);
+    }
+
     /** Provides access to AWS Resources managed or used by AWS Control Tower */
     public AWSControlTowerServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSControlTowerServiceRolePolicy);

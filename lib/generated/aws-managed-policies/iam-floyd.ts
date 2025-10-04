@@ -1360,6 +1360,8 @@ export class AwsManagedPolicy {
     public static AWSConnector = 'AWSConnector';
     /** Allows AWS Control Tower to call AWS services that provide automated account configuration and centralized governance on your behalf. */
     public static AWSControlTowerAccountServiceRolePolicy = 'aws-service-role/AWSControlTowerAccountServiceRolePolicy';
+    /** Provides permissions to manage the IAM Identity Center (IdC) resources in the member accounts enrolled with AWS Control Tower. The policy is attached to the AWSControlTowerAdmin role only if the customer has opted-into IAM IdC integration in their AWS Control Tower Landing Zone. */
+    public static AWSControlTowerIdentityCenterManagementPolicy = 'service-role/AWSControlTowerIdentityCenterManagementPolicy';
     /** Provides access to AWS Resources managed or used by AWS Control Tower */
     public static AWSControlTowerServiceRolePolicy = 'service-role/AWSControlTowerServiceRolePolicy';
     /** Grants permissions to to describe the organization of the account, create S3 buckets for the MAP program and apply tags to it, create a Cost and Usage Report, and describe Cost and Usage Report definitions. */
