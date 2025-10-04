@@ -136,6 +136,19 @@
       }
     },
     {
+      "Sid": "AllowStartSessionForSpaceRemoteConnection",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:StartSession"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:space/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneUser": "${aws:PrincipalTag/datazone:userId}"
+        }
+      }
+    },
+    {
       "Sid": "ResourceGroupsPermissions",
       "Effect": "Allow",
       "Action": [
@@ -215,6 +228,7 @@
         "glue:StopSession",
         "glue:UseGlueStudio",
         "glue:TagResource",
+        "glue:UntagResource",
         "glue:*Job*"
       ],
       "Resource": "*"
