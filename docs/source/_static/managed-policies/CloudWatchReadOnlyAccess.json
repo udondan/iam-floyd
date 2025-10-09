@@ -10,6 +10,7 @@
         "application-signals:Get*",
         "application-signals:List*",
         "autoscaling:Describe*",
+        "cloudtrail:ListChannels",
         "cloudwatch:BatchGet*",
         "cloudwatch:Describe*",
         "cloudwatch:GenerateQuery",
@@ -66,6 +67,32 @@
       "Effect": "Allow",
       "Action": "iam:GetRole",
       "Resource": "arn:aws:iam::*:role/aws-service-role/application-signals.cloudwatch.amazonaws.com/AWSServiceRoleForCloudWatchApplicationSignals"
+    },
+    {
+      "Sid": "CloudWatchCloudTrailPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:GetChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
+    },
+    {
+      "Sid": "CloudWatchServiceQuotaPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "servicequotas:GetServiceQuota"
+      ],
+      "Resource": [
+        "arn:aws:servicequotas:*:*:s3/*",
+        "arn:aws:servicequotas:*:*:dynamodb/*",
+        "arn:aws:servicequotas:*:*:kinesis/*",
+        "arn:aws:servicequotas:*:*:sns/*",
+        "arn:aws:servicequotas:*:*:bedrock/*",
+        "arn:aws:servicequotas:*:*:lambda/*",
+        "arn:aws:servicequotas:*:*:fargate/*",
+        "arn:aws:servicequotas:*:*:elasticloadbalancing/*",
+        "arn:aws:servicequotas:*:*:ec2/*"
+      ]
     }
   ]
 }
