@@ -1458,6 +1458,8 @@ export class AwsManagedPolicy {
     public static AWSDMSFleetAdvisorServiceRolePolicy = 'aws-service-role/AWSDMSFleetAdvisorServiceRolePolicy';
     /** Grants AWS DMS Serverless permissions to create and manage DMS resources in your account on your behalf */
     public static AWSDMSServerlessServiceRolePolicy = 'aws-service-role/AWSDMSServerlessServiceRolePolicy';
+    /** Allows EC2 Capacity Manager to manage capacity resources and integrate with AWS Organizations on your behalf. */
+    public static AWSEC2CapacityManagerServiceRolePolicy = 'aws-service-role/AWSEC2CapacityManagerServiceRolePolicy';
     /** Allows EC2 CapacityReservation Fleet service to manage Capacity Reservations */
     public static AWSEC2CapacityReservationFleetRolePolicy = 'aws-service-role/AWSEC2CapacityReservationFleetRolePolicy';
     /** Allows EC2 Fleet to launch and manage instances. */

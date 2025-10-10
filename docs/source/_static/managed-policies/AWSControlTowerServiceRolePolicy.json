@@ -194,6 +194,15 @@
         "cloudformation:ActivateType"
       ],
       "Resource": "arn:aws:cloudformation:*:*:type/hook/AWS-ControlTower*"
+    },
+    {
+      "Sid": "AllowActionsForCloudFormationStackSetOrganizationsTrustedAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:ActivateOrganizationsAccess",
+        "cloudformation:DescribeOrganizationsAccess"
+      ],
+      "Resource": "*"
     }
   ]
 }

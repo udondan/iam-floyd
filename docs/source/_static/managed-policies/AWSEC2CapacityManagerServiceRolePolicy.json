@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowOrganizationsDefaultReadActions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListAccounts",
+        "organizations:ListChildren",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:DescribeOrganization"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowOrganizationsListDelegatedAdministratorsAction",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:ServicePrincipal": [
+            "ec2.capacitymanager.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -3654,6 +3654,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSDMSServerlessServiceRolePolicy);
     }
 
+    /** Allows EC2 Capacity Manager to manage capacity resources and integrate with AWS Organizations on your behalf. */
+    public AWSEC2CapacityManagerServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2CapacityManagerServiceRolePolicy);
+    }
+
     /** Allows EC2 CapacityReservation Fleet service to manage Capacity Reservations */
     public AWSEC2CapacityReservationFleetRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2CapacityReservationFleetRolePolicy);
