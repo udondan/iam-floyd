@@ -230,6 +230,17 @@
           "iam:AWSServiceName": "network.bedrock-agentcore.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "CreateBedrockAgentCoreRuntimeIdentityServiceLinkedRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/runtime-identity.bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreRuntimeIdentity",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "runtime-identity.bedrock-agentcore.amazonaws.com"
+        }
+      }
     }
   ]
 }
