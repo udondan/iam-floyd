@@ -1,4 +1,6 @@
 quicksight:account
+quicksight:actionconnector
+quicksight:agent
 quicksight:analysis
 quicksight:assetBundleExportJob
 quicksight:assetBundleImportJob
@@ -11,6 +13,8 @@ quicksight:dashboardSnapshotJob
 quicksight:dataset
 quicksight:datasource
 quicksight:emailCustomizationTemplate
+quicksight:extensionaccess
+quicksight:flow
 quicksight:folder
 quicksight:group
 quicksight:ingestion

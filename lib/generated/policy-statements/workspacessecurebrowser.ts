@@ -132,6 +132,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - kms:Decrypt
    * - kms:DescribeKey
    * - kms:GenerateDataKey
+   * - workspaces-web:TagResource
    *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateBrowserSettings.html
    */
@@ -147,6 +148,9 @@ export class WorkspacesWeb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - workspaces-web:TagResource
    *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateDataProtectionSettings.html
    */
@@ -178,6 +182,9 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
+   * Dependent actions:
+   * - workspaces-web:TagResource
+   *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateIpAccessSettings.html
    */
   public toCreateIpAccessSettings() {
@@ -195,6 +202,7 @@ export class WorkspacesWeb extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
+   * - workspaces-web:TagResource
    *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateNetworkSettings.html
    */
@@ -217,6 +225,7 @@ export class WorkspacesWeb extends PolicyStatement {
    * - kms:Decrypt
    * - kms:DescribeKey
    * - kms:GenerateDataKey
+   * - workspaces-web:TagResource
    *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreatePortal.html
    */
@@ -233,6 +242,10 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
+   * Dependent actions:
+   * - s3:PutObject
+   * - workspaces-web:TagResource
+   *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateSessionLogger.html
    */
   public toCreateSessionLogger() {
@@ -247,6 +260,9 @@ export class WorkspacesWeb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - workspaces-web:TagResource
    *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateTrustStore.html
    */
@@ -263,6 +279,9 @@ export class WorkspacesWeb extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
+   * Dependent actions:
+   * - workspaces-web:TagResource
+   *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserAccessLoggingSettings.html
    */
   public toCreateUserAccessLoggingSettings() {
@@ -277,6 +296,9 @@ export class WorkspacesWeb extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - workspaces-web:TagResource
    *
    * https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateUserSettings.html
    */
