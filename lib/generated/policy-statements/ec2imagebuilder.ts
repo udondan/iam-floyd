@@ -934,9 +934,14 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - imagebuilder:GetImagePipeline
+   * - imagebuilder:TagResource
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html
    */
@@ -1440,6 +1445,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .toImportComponent()
    * - .toImportDiskImage()
    * - .toImportVmImage()
+   * - .toStartImagePipelineExecution()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1493,6 +1499,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .toImportComponent()
    * - .toImportDiskImage()
    * - .toImportVmImage()
+   * - .toStartImagePipelineExecution()
    * - .toTagResource()
    * - .toUntagResource()
    *

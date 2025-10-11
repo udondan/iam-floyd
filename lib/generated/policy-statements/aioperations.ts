@@ -106,6 +106,22 @@ export class Aiops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new report in the specified investigation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   * - sts:SetContext
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateReport.html
+   */
+  public toCreateReport() {
+    return this.to('CreateReport');
+  }
+
+  /**
    * Grants permission to delete an investigation in the specified investigation group
    *
    * Access Level: Write
@@ -145,6 +161,22 @@ export class Aiops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a report in the specified investigation report
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   * - sts:SetContext
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GenerateReport.html
+   */
+  public toGenerateReport() {
+    return this.to('GenerateReport');
+  }
+
+  /**
    * Grants permission to run and retrieve ephemeral investigation results
    *
    * Access Level: List
@@ -153,6 +185,34 @@ export class Aiops extends PolicyStatement {
    */
   public toGetEphemeralInvestigationResults() {
     return this.to('GetEphemeralInvestigationResults');
+  }
+
+  /**
+   * Grants permission to retrieve a fact in the specified investigation report
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetFact.html
+   */
+  public toGetFact() {
+    return this.to('GetFact');
+  }
+
+  /**
+   * Grants permission to retrieve all versions of a fact token in the specified investigation report
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetFactVersions.html
+   */
+  public toGetFactVersions() {
+    return this.to('GetFactVersions');
   }
 
   /**
@@ -217,6 +277,34 @@ export class Aiops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a report in the specified investigation
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetReport.html
+   */
+  public toGetReport() {
+    return this.to('GetReport');
+  }
+
+  /**
+   * Grants permission to list all facts in the specified investigation report
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListFacts.html
+   */
+  public toListFacts() {
+    return this.to('ListFacts');
+  }
+
+  /**
    * Grants permission to list all investigation events in the specified investigation group
    *
    * Access Level: List
@@ -250,6 +338,17 @@ export class Aiops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all reports in the specified investigation
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListReports.html
+   */
+  public toListReports() {
+    return this.to('ListReports');
+  }
+
+  /**
    * Grants permission to list the tags for the specified resource
    *
    * Access Level: List
@@ -258,6 +357,22 @@ export class Aiops extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to create or update a new fact in the specified investigation report
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   * - sts:SetContext
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_PutFact.html
+   */
+  public toPutFact() {
+    return this.to('PutFact');
   }
 
   /**
@@ -358,6 +473,22 @@ export class Aiops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a report in the specified investigation
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   * - sts:SetContext
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_UpdateReport.html
+   */
+  public toUpdateReport() {
+    return this.to('UpdateReport');
+  }
+
+  /**
    * Grants permission to validate the specified investigation group
    *
    * Access Level: Read
@@ -374,27 +505,36 @@ export class Aiops extends PolicyStatement {
       'CreateInvestigationEvent',
       'CreateInvestigationGroup',
       'CreateInvestigationResource',
+      'CreateReport',
       'DeleteInvestigation',
       'DeleteInvestigationGroup',
       'DeleteInvestigationGroupPolicy',
+      'GenerateReport',
+      'PutFact',
       'PutInvestigationGroupPolicy',
       'UpdateInvestigation',
       'UpdateInvestigationEvent',
-      'UpdateInvestigationGroup'
+      'UpdateInvestigationGroup',
+      'UpdateReport'
     ],
     List: [
       'GetEphemeralInvestigationResults',
+      'ListFacts',
       'ListInvestigationEvents',
       'ListInvestigationGroups',
       'ListInvestigations',
+      'ListReports',
       'ListTagsForResource'
     ],
     Read: [
+      'GetFact',
+      'GetFactVersions',
       'GetInvestigation',
       'GetInvestigationEvent',
       'GetInvestigationGroup',
       'GetInvestigationGroupPolicy',
       'GetInvestigationResource',
+      'GetReport',
       'ValidateInvestigationGroup'
     ],
     Tagging: [

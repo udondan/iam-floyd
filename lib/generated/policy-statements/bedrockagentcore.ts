@@ -30,11 +30,50 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create one or more memory records
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchCreateMemoryRecords.html
+   */
+  public toBatchCreateMemoryRecords() {
+    return this.to('BatchCreateMemoryRecords');
+  }
+
+  /**
+   * Grants permission to delete one or more memory records
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchDeleteMemoryRecords.html
+   */
+  public toBatchDeleteMemoryRecords() {
+    return this.to('BatchDeleteMemoryRecords');
+  }
+
+  /**
+   * Grants permission to update one or more memory records
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_BatchUpdateMemoryRecords.html
+   */
+  public toBatchUpdateMemoryRecords() {
+    return this.to('BatchUpdateMemoryRecords');
+  }
+
+  /**
    * Grants permission to connect to a browser automation stream
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ConnectBrowserAutomationStream.html
    */
   public toConnectBrowserAutomationStream() {
     return this.to('ConnectBrowserAutomationStream');
@@ -45,7 +84,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ConnectBrowserLiveViewStream.html
    */
   public toConnectBrowserLiveViewStream() {
     return this.to('ConnectBrowserLiveViewStream');
@@ -63,7 +102,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateAgentRuntime.html
    */
   public toCreateAgentRuntime() {
     return this.to('CreateAgentRuntime');
@@ -78,7 +117,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateAgentRuntimeEndpoint.html
    */
   public toCreateAgentRuntimeEndpoint() {
     return this.to('CreateAgentRuntimeEndpoint');
@@ -89,7 +128,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateApiKeyCredentialProvider.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateApiKeyCredentialProvider.html
    */
   public toCreateApiKeyCredentialProvider() {
     return this.to('CreateApiKeyCredentialProvider');
@@ -104,7 +143,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateBrowser.html
    */
   public toCreateBrowser() {
     return this.to('CreateBrowser');
@@ -119,7 +158,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateCodeInterpreter.html
    */
   public toCreateCodeInterpreter() {
     return this.to('CreateCodeInterpreter');
@@ -152,7 +191,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateGateway.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGateway.html
    */
   public toCreateGateway() {
     return this.to('CreateGateway');
@@ -163,7 +202,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateGatewayTarget.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayTarget.html
    */
   public toCreateGatewayTarget() {
     return this.to('CreateGatewayTarget');
@@ -174,10 +213,14 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateMemory.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateMemory.html
    */
   public toCreateMemory() {
     return this.to('CreateMemory');
@@ -188,7 +231,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateOauth2CredentialProvider.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateOauth2CredentialProvider.html
    */
   public toCreateOauth2CredentialProvider() {
     return this.to('CreateOauth2CredentialProvider');
@@ -199,7 +242,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateWorkloadIdentity.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateWorkloadIdentity.html
    */
   public toCreateWorkloadIdentity() {
     return this.to('CreateWorkloadIdentity');
@@ -210,7 +253,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteAgentRuntime.html
    */
   public toDeleteAgentRuntime() {
     return this.to('DeleteAgentRuntime');
@@ -221,7 +264,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteAgentRuntimeEndpoint.html
    */
   public toDeleteAgentRuntimeEndpoint() {
     return this.to('DeleteAgentRuntimeEndpoint');
@@ -232,7 +275,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteApiKeyCredentialProvider.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteApiKeyCredentialProvider.html
    */
   public toDeleteApiKeyCredentialProvider() {
     return this.to('DeleteApiKeyCredentialProvider');
@@ -243,7 +286,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteBrowser.html
    */
   public toDeleteBrowser() {
     return this.to('DeleteBrowser');
@@ -254,7 +297,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteCodeInterpreter.html
    */
   public toDeleteCodeInterpreter() {
     return this.to('DeleteCodeInterpreter');
@@ -280,7 +323,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteGateway.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGateway.html
    */
   public toDeleteGateway() {
     return this.to('DeleteGateway');
@@ -291,7 +334,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteGatewayTarget.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayTarget.html
    */
   public toDeleteGatewayTarget() {
     return this.to('DeleteGatewayTarget');
@@ -302,7 +345,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteMemory.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteMemory.html
    */
   public toDeleteMemory() {
     return this.to('DeleteMemory');
@@ -324,7 +367,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteOauth2CredentialProvider.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteOauth2CredentialProvider.html
    */
   public toDeleteOauth2CredentialProvider() {
     return this.to('DeleteOauth2CredentialProvider');
@@ -335,10 +378,21 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteWorkloadIdentity.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteWorkloadIdentity.html
    */
   public toDeleteWorkloadIdentity() {
     return this.to('DeleteWorkloadIdentity');
+  }
+
+  /**
+   * Grants permission to retrieve an agent card for A2A
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetAgentCard.html
+   */
+  public toGetAgentCard() {
+    return this.to('GetAgentCard');
   }
 
   /**
@@ -346,7 +400,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetAgentRuntime.html
    */
   public toGetAgentRuntime() {
     return this.to('GetAgentRuntime');
@@ -357,7 +411,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetAgentRuntimeEndpoint.html
    */
   public toGetAgentRuntimeEndpoint() {
     return this.to('GetAgentRuntimeEndpoint');
@@ -368,7 +422,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetApiKeyCredentialProvider.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetApiKeyCredentialProvider.html
    */
   public toGetApiKeyCredentialProvider() {
     return this.to('GetApiKeyCredentialProvider');
@@ -379,7 +433,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetBrowser.html
    */
   public toGetBrowser() {
     return this.to('GetBrowser');
@@ -390,7 +444,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html
    */
   public toGetBrowserSession() {
     return this.to('GetBrowserSession');
@@ -401,7 +455,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetCodeInterpreter.html
    */
   public toGetCodeInterpreter() {
     return this.to('GetCodeInterpreter');
@@ -412,7 +466,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html
    */
   public toGetCodeInterpreterSession() {
     return this.to('GetCodeInterpreterSession');
@@ -438,7 +492,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetGateway.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGateway.html
    */
   public toGetGateway() {
     return this.to('GetGateway');
@@ -449,7 +503,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetGatewayTarget.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayTarget.html
    */
   public toGetGatewayTarget() {
     return this.to('GetGatewayTarget');
@@ -460,7 +514,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetMemory.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetMemory.html
    */
   public toGetMemory() {
     return this.to('GetMemory');
@@ -482,7 +536,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetOauth2CredentialProvider.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetOauth2CredentialProvider.html
    */
   public toGetOauth2CredentialProvider() {
     return this.to('GetOauth2CredentialProvider');
@@ -515,7 +569,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetTokenVault.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetTokenVault.html
    */
   public toGetTokenVault() {
     return this.to('GetTokenVault');
@@ -559,7 +613,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadIdentity.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetWorkloadIdentity.html
    */
   public toGetWorkloadIdentity() {
     return this.to('GetWorkloadIdentity');
@@ -570,10 +624,21 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntime.html
    */
   public toInvokeAgentRuntime() {
     return this.to('InvokeAgentRuntime');
+  }
+
+  /**
+   * Grants permission to invoke an agent runtime endpoint with X-Amzn-Bedrock-AgentCore-Runtime-User-Id header
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntime.html
+   */
+  public toInvokeAgentRuntimeForUser() {
+    return this.to('InvokeAgentRuntimeForUser');
   }
 
   /**
@@ -581,10 +646,21 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeCodeInterpreter.html
    */
   public toInvokeCodeInterpreter() {
     return this.to('InvokeCodeInterpreter');
+  }
+
+  /**
+   * Grants permission to invoke a gateway
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toInvokeGateway() {
+    return this.to('InvokeGateway');
   }
 
   /**
@@ -603,7 +679,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimeEndpoints.html
    */
   public toListAgentRuntimeEndpoints() {
     return this.to('ListAgentRuntimeEndpoints');
@@ -614,7 +690,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimeVersions.html
    */
   public toListAgentRuntimeVersions() {
     return this.to('ListAgentRuntimeVersions');
@@ -625,7 +701,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListAgentRuntimes.html
    */
   public toListAgentRuntimes() {
     return this.to('ListAgentRuntimes');
@@ -636,7 +712,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListApiKeyCredentialProviders.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListApiKeyCredentialProviders.html
    */
   public toListApiKeyCredentialProviders() {
     return this.to('ListApiKeyCredentialProviders');
@@ -647,7 +723,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListBrowserSessions.html
    */
   public toListBrowserSessions() {
     return this.to('ListBrowserSessions');
@@ -658,7 +734,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListBrowsers.html
    */
   public toListBrowsers() {
     return this.to('ListBrowsers');
@@ -669,7 +745,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListCodeInterpreterSessions.html
    */
   public toListCodeInterpreterSessions() {
     return this.to('ListCodeInterpreterSessions');
@@ -680,7 +756,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListCodeInterpreters.html
    */
   public toListCodeInterpreters() {
     return this.to('ListCodeInterpreters');
@@ -706,7 +782,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListGatewayTargets.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGatewayTargets.html
    */
   public toListGatewayTargets() {
     return this.to('ListGatewayTargets');
@@ -717,7 +793,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListGateways.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGateways.html
    */
   public toListGateways() {
     return this.to('ListGateways');
@@ -728,7 +804,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemories.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListMemories.html
    */
   public toListMemories() {
     return this.to('ListMemories');
@@ -754,7 +830,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListOauth2CredentialProviders.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListOauth2CredentialProviders.html
    */
   public toListOauth2CredentialProviders() {
     return this.to('ListOauth2CredentialProviders');
@@ -779,7 +855,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -790,7 +866,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListWorkloadIdentities.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListWorkloadIdentities.html
    */
   public toListWorkloadIdentities() {
     return this.to('ListWorkloadIdentities');
@@ -816,7 +892,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SetTokenVaultCMK.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_SetTokenVaultCMK.html
    */
   public toSetTokenVaultCMK() {
     return this.to('SetTokenVaultCMK');
@@ -827,7 +903,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html
    */
   public toStartBrowserSession() {
     return this.to('StartBrowserSession');
@@ -838,7 +914,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html
    */
   public toStartCodeInterpreterSession() {
     return this.to('StartCodeInterpreterSession');
@@ -849,7 +925,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html
    */
   public toStopBrowserSession() {
     return this.to('StopBrowserSession');
@@ -860,10 +936,21 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html
    */
   public toStopCodeInterpreterSession() {
     return this.to('StopCodeInterpreterSession');
+  }
+
+  /**
+   * Grants permission to stop a runtime session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopRuntimeSession.html
+   */
+  public toStopRuntimeSession() {
+    return this.to('StopRuntimeSession');
   }
 
   /**
@@ -886,7 +973,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -900,7 +987,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -914,7 +1001,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateAgentRuntime.html
    */
   public toUpdateAgentRuntime() {
     return this.to('UpdateAgentRuntime');
@@ -925,7 +1012,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateAgentRuntimeEndpoint.html
    */
   public toUpdateAgentRuntimeEndpoint() {
     return this.to('UpdateAgentRuntimeEndpoint');
@@ -936,7 +1023,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateApiKeyCredentialProvider.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateApiKeyCredentialProvider.html
    */
   public toUpdateApiKeyCredentialProvider() {
     return this.to('UpdateApiKeyCredentialProvider');
@@ -947,7 +1034,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html
    */
   public toUpdateBrowserStream() {
     return this.to('UpdateBrowserStream');
@@ -961,7 +1048,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateGateway.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html
    */
   public toUpdateGateway() {
     return this.to('UpdateGateway');
@@ -972,7 +1059,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateGatewayTarget.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayTarget.html
    */
   public toUpdateGatewayTarget() {
     return this.to('UpdateGatewayTarget');
@@ -986,7 +1073,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateMemory.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateMemory.html
    */
   public toUpdateMemory() {
     return this.to('UpdateMemory');
@@ -997,7 +1084,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateOauth2CredentialProvider.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateOauth2CredentialProvider.html
    */
   public toUpdateOauth2CredentialProvider() {
     return this.to('UpdateOauth2CredentialProvider');
@@ -1008,7 +1095,7 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateWorkloadIdentity.html
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateWorkloadIdentity.html
    */
   public toUpdateWorkloadIdentity() {
     return this.to('UpdateWorkloadIdentity');
@@ -1017,34 +1104,13 @@ export class BedrockAgentcore extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AllowVendedLogDeliveryForResource',
+      'InvokeGateway',
       'SynchronizeGatewayTargets'
     ],
-    Read: [
-      'ConnectBrowserAutomationStream',
-      'ConnectBrowserLiveViewStream',
-      'GetAgentRuntime',
-      'GetAgentRuntimeEndpoint',
-      'GetApiKeyCredentialProvider',
-      'GetBrowser',
-      'GetBrowserSession',
-      'GetCodeInterpreter',
-      'GetCodeInterpreterSession',
-      'GetEvent',
-      'GetGateway',
-      'GetGatewayTarget',
-      'GetMemory',
-      'GetMemoryRecord',
-      'GetOauth2CredentialProvider',
-      'GetResourceApiKey',
-      'GetResourceOauth2Token',
-      'GetTokenVault',
-      'GetWorkloadIdentity',
-      'ListApiKeyCredentialProviders',
-      'ListOauth2CredentialProviders',
-      'ListWorkloadIdentities',
-      'SetTokenVaultCMK'
-    ],
     Write: [
+      'BatchCreateMemoryRecords',
+      'BatchDeleteMemoryRecords',
+      'BatchUpdateMemoryRecords',
       'CreateAgentRuntime',
       'CreateAgentRuntimeEndpoint',
       'CreateApiKeyCredentialProvider',
@@ -1072,11 +1138,13 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetWorkloadAccessTokenForJWT',
       'GetWorkloadAccessTokenForUserId',
       'InvokeAgentRuntime',
+      'InvokeAgentRuntimeForUser',
       'InvokeCodeInterpreter',
       'StartBrowserSession',
       'StartCodeInterpreterSession',
       'StopBrowserSession',
       'StopCodeInterpreterSession',
+      'StopRuntimeSession',
       'UpdateAgentRuntime',
       'UpdateAgentRuntimeEndpoint',
       'UpdateApiKeyCredentialProvider',
@@ -1086,6 +1154,32 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateMemory',
       'UpdateOauth2CredentialProvider',
       'UpdateWorkloadIdentity'
+    ],
+    Read: [
+      'ConnectBrowserAutomationStream',
+      'ConnectBrowserLiveViewStream',
+      'GetAgentCard',
+      'GetAgentRuntime',
+      'GetAgentRuntimeEndpoint',
+      'GetApiKeyCredentialProvider',
+      'GetBrowser',
+      'GetBrowserSession',
+      'GetCodeInterpreter',
+      'GetCodeInterpreterSession',
+      'GetEvent',
+      'GetGateway',
+      'GetGatewayTarget',
+      'GetMemory',
+      'GetMemoryRecord',
+      'GetOauth2CredentialProvider',
+      'GetResourceApiKey',
+      'GetResourceOauth2Token',
+      'GetTokenVault',
+      'GetWorkloadIdentity',
+      'ListApiKeyCredentialProviders',
+      'ListOauth2CredentialProviders',
+      'ListWorkloadIdentities',
+      'SetTokenVaultCMK'
     ],
     List: [
       'ListActors',
@@ -1120,6 +1214,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMemory(memoryId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:memory/${ memoryId }`);
@@ -1321,6 +1418,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateBrowser()
    * - .toCreateCodeInterpreter()
    * - .toCreateGateway()
+   * - .toCreateMemory()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1337,6 +1435,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to resource types:
+   * - memory
    * - gateway
    * - runtime
    * - runtime-endpoint
@@ -1362,6 +1461,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateBrowser()
    * - .toCreateCodeInterpreter()
    * - .toCreateGateway()
+   * - .toCreateMemory()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -1370,6 +1470,18 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the authorizerType attribute on a Gateway
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-gatewayAuthorizerType
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifGatewayAuthorizerType(value: string | string[], operator?: Operator | string) {
+    return this.if(`GatewayAuthorizerType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1397,6 +1509,8 @@ export class BedrockAgentcore extends PolicyStatement {
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-namespace
    *
    * Applies to actions:
+   * - .toBatchCreateMemoryRecords()
+   * - .toBatchUpdateMemoryRecords()
    * - .toListMemoryRecords()
    * - .toRetrieveMemoryRecords()
    *

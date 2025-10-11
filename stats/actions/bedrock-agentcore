@@ -1,4 +1,7 @@
 bedrock-agentcore:AllowVendedLogDeliveryForResource;Permissions management
+bedrock-agentcore:BatchCreateMemoryRecords;Write
+bedrock-agentcore:BatchDeleteMemoryRecords;Write
+bedrock-agentcore:BatchUpdateMemoryRecords;Write
 bedrock-agentcore:ConnectBrowserAutomationStream;Read
 bedrock-agentcore:ConnectBrowserLiveViewStream;Read
 bedrock-agentcore:CreateAgentRuntime;Write
@@ -24,6 +27,7 @@ bedrock-agentcore:DeleteMemory;Write
 bedrock-agentcore:DeleteMemoryRecord;Write
 bedrock-agentcore:DeleteOauth2CredentialProvider;Write
 bedrock-agentcore:DeleteWorkloadIdentity;Write
+bedrock-agentcore:GetAgentCard;Read
 bedrock-agentcore:GetAgentRuntime;Read
 bedrock-agentcore:GetAgentRuntimeEndpoint;Read
 bedrock-agentcore:GetApiKeyCredentialProvider;Read
@@ -45,7 +49,9 @@ bedrock-agentcore:GetWorkloadAccessTokenForJWT;Write
 bedrock-agentcore:GetWorkloadAccessTokenForUserId;Write
 bedrock-agentcore:GetWorkloadIdentity;Read
 bedrock-agentcore:InvokeAgentRuntime;Write
+bedrock-agentcore:InvokeAgentRuntimeForUser;Write
 bedrock-agentcore:InvokeCodeInterpreter;Write
+bedrock-agentcore:InvokeGateway;Permissions management
 bedrock-agentcore:ListActors;List
 bedrock-agentcore:ListAgentRuntimeEndpoints;List
 bedrock-agentcore:ListAgentRuntimeVersions;List
@@ -70,6 +76,7 @@ bedrock-agentcore:StartBrowserSession;Write
 bedrock-agentcore:StartCodeInterpreterSession;Write
 bedrock-agentcore:StopBrowserSession;Write
 bedrock-agentcore:StopCodeInterpreterSession;Write
+bedrock-agentcore:StopRuntimeSession;Write
 bedrock-agentcore:SynchronizeGatewayTargets;Permissions management
 bedrock-agentcore:TagResource;Tagging
 bedrock-agentcore:UntagResource;Tagging
