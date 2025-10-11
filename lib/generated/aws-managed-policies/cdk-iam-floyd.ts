@@ -29,6 +29,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AdministratorAccessAWSElasticBeanstalk);
     }
 
+    /** Provides permissions required by the Amazon AI Operations Assistant to generate incident report of the investigation. */
+    public AIOpsAssistantIncidentReportPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIOpsAssistantIncidentReportPolicy);
+    }
+
     /** Provides ReadOnly permissions required by the Amazon AI Operations Assistant to do analysis on customer AWS resources during investigations. */
     public AIOpsAssistantPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIOpsAssistantPolicy);
@@ -5852,6 +5857,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows access to other AWS service resources that are required to run Amazon Bedrock AgentCore in VPC mode */
     public BedrockAgentCoreNetworkServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BedrockAgentCoreNetworkServiceRolePolicy);
+    }
+
+    /** Allows access to identity and token management resources that are required for Amazon Bedrock AgentCore Runtime authentication and authorization. */
+    public BedrockAgentCoreRuntimeIdentityServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BedrockAgentCoreRuntimeIdentityServiceRolePolicy);
     }
 
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */

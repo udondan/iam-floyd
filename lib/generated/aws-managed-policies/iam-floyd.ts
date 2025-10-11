@@ -8,6 +8,8 @@ export class AwsManagedPolicy {
     public static AdministratorAccessAmplify = 'AdministratorAccess-Amplify';
     /** Grants account administrative permissions. Explicitly allows developers and administrators to gain direct access to resources they need to manage AWS Elastic Beanstalk applications */
     public static AdministratorAccessAWSElasticBeanstalk = 'AdministratorAccess-AWSElasticBeanstalk';
+    /** Provides permissions required by the Amazon AI Operations Assistant to generate incident report of the investigation. */
+    public static AIOpsAssistantIncidentReportPolicy = 'AIOpsAssistantIncidentReportPolicy';
     /** Provides ReadOnly permissions required by the Amazon AI Operations Assistant to do analysis on customer AWS resources during investigations. */
     public static AIOpsAssistantPolicy = 'AIOpsAssistantPolicy';
     /** Grants full access to Amazon AI Operations service and its required permissions via AWS console. It also includes permissions to use identity-aware console sessions. */
@@ -2338,6 +2340,8 @@ export class AwsManagedPolicy {
     public static BedrockAgentCoreFullAccess = 'BedrockAgentCoreFullAccess';
     /** Allows access to other AWS service resources that are required to run Amazon Bedrock AgentCore in VPC mode */
     public static BedrockAgentCoreNetworkServiceRolePolicy = 'aws-service-role/BedrockAgentCoreNetworkServiceRolePolicy';
+    /** Allows access to identity and token management resources that are required for Amazon Bedrock AgentCore Runtime authentication and authorization. */
+    public static BedrockAgentCoreRuntimeIdentityServiceRolePolicy = 'aws-service-role/BedrockAgentCoreRuntimeIdentityServiceRolePolicy';
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */
     public static Billing = 'job-function/Billing';
     /** Allows Budgets to verify access to Billing Views shared across account boundaries. */
