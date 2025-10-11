@@ -13,7 +13,11 @@
         "aiops:List*",
         "aiops:UpdateInvestigation",
         "aiops:UpdateInvestigationEvent",
-        "aiops:ValidateInvestigationGroup"
+        "aiops:ValidateInvestigationGroup",
+        "aiops:PutFact",
+        "aiops:UpdateReport",
+        "aiops:GenerateReport",
+        "aiops:CreateReport"
       ],
       "Resource": "*"
     },
