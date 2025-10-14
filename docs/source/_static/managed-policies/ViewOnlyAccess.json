@@ -319,6 +319,8 @@
         "ssm:ListAssociations",
         "ssm:ListDocuments",
         "states:ListActivities",
+        "states:ListExecutions",
+        "states:ListMapRuns",
         "states:ListStateMachineAliases",
         "states:ListStateMachines",
         "states:ListStateMachineVersions",

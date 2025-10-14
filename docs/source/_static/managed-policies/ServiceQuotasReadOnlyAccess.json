@@ -32,7 +32,21 @@
         "servicequotas:ListServices",
         "servicequotas:ListServiceQuotas",
         "servicequotas:ListServiceQuotaIncreaseRequestsInTemplate",
-        "servicequotas:ListTagsForResource"
+        "servicequotas:ListTagsForResource",
+        "servicequotas:GetAutoManagementConfiguration",
+        "notifications:ListChannels",
+        "notifications:ListEventRules",
+        "notifications:ListNotificationConfigurations",
+        "notifications:GetNotificationConfiguration",
+        "notifications:GetEventRule",
+        "notifications:ListNotificationHubs",
+        "notifications-contacts:ListEmailContacts",
+        "notifications-contacts:GetEmailContact",
+        "chatbot:ListMicrosoftTeamsChannelConfigurations",
+        "chatbot:DescribeChimeWebhookConfigurations",
+        "chatbot:DescribeSlackChannelConfigurations",
+        "consoleapp:ListDeviceIdentities",
+        "consoleapp:GetDeviceIdentity"
       ],
       "Resource": "*"
     }
