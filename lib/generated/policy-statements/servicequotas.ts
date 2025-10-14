@@ -98,6 +98,17 @@ export class Servicequotas extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the automatic management of Service Quotas configuration, including notification settings, opt-in type, and excluded quotas
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAutoManagementConfiguration.html
+   */
+  public toGetAutoManagementConfiguration() {
+    return this.to('GetAutoManagementConfiguration');
+  }
+
+  /**
    * Grants permission to retrieve the details for a particular service quota increase request
    *
    * Access Level: Read
@@ -265,6 +276,28 @@ export class Servicequotas extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable automatic management of Service Quotas for an AWS account, including notification preferences and excluded quotas configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StartAutoManagement.html
+   */
+  public toStartAutoManagement() {
+    return this.to('StartAutoManagement');
+  }
+
+  /**
+   * Grants permission to stop automatic management of Service Quotas for an AWS account and remove all associated configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StopAutoManagement.html
+   */
+  public toStopAutoManagement() {
+    return this.to('StopAutoManagement');
+  }
+
+  /**
    * Grants permission to associate a set of tags with an existing SQ resource
    *
    * Access Level: Tagging
@@ -293,6 +326,17 @@ export class Servicequotas extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update the automatic management of Service Quotas configuration, including notification preferences and excluded quotas
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UpdateAutoManagement.html
+   */
+  public toUpdateAutoManagement() {
+    return this.to('UpdateAutoManagement');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateServiceQuotaTemplate',
@@ -300,11 +344,15 @@ export class Servicequotas extends PolicyStatement {
       'DeleteServiceQuotaIncreaseRequestFromTemplate',
       'DisassociateServiceQuotaTemplate',
       'PutServiceQuotaIncreaseRequestIntoTemplate',
-      'RequestServiceQuotaIncrease'
+      'RequestServiceQuotaIncrease',
+      'StartAutoManagement',
+      'StopAutoManagement',
+      'UpdateAutoManagement'
     ],
     Read: [
       'GetAWSDefaultServiceQuota',
       'GetAssociationForServiceQuotaTemplate',
+      'GetAutoManagementConfiguration',
       'GetRequestedServiceQuotaChange',
       'GetServiceQuota',
       'GetServiceQuotaIncreaseRequestFromTemplate',
