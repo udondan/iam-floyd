@@ -4,6 +4,7 @@ servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate;Write
 servicequotas:DisassociateServiceQuotaTemplate;Write
 servicequotas:GetAWSDefaultServiceQuota;Read
 servicequotas:GetAssociationForServiceQuotaTemplate;Read
+servicequotas:GetAutoManagementConfiguration;Read
 servicequotas:GetRequestedServiceQuotaChange;Read
 servicequotas:GetServiceQuota;Read
 servicequotas:GetServiceQuotaIncreaseRequestFromTemplate;Read
@@ -16,5 +17,8 @@ servicequotas:ListServices;Read
 servicequotas:ListTagsForResource;Read
 servicequotas:PutServiceQuotaIncreaseRequestIntoTemplate;Write
 servicequotas:RequestServiceQuotaIncrease;Write
+servicequotas:StartAutoManagement;Write
+servicequotas:StopAutoManagement;Write
 servicequotas:TagResource;Tagging
 servicequotas:UntagResource;Tagging
+servicequotas:UpdateAutoManagement;Write
