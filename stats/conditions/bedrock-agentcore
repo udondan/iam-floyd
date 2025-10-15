@@ -1,4 +1,9 @@
 bedrock-agentcore:GatewayAuthorizerType
+bedrock-agentcore:InboundJwtClaim/aud
+bedrock-agentcore:InboundJwtClaim/client_id
+bedrock-agentcore:InboundJwtClaim/iss
+bedrock-agentcore:InboundJwtClaim/scope
+bedrock-agentcore:InboundJwtClaim/sub
 bedrock-agentcore:RequestTag/${TagKey}
 bedrock-agentcore:ResourceTag/${TagKey}
 bedrock-agentcore:TagKeys
@@ -6,3 +11,4 @@ bedrock-agentcore:actorId
 bedrock-agentcore:namespace
 bedrock-agentcore:sessionId
 bedrock-agentcore:strategyId
+bedrock-agentcore:userid

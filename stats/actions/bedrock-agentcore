@@ -2,6 +2,7 @@ bedrock-agentcore:AllowVendedLogDeliveryForResource;Permissions management
 bedrock-agentcore:BatchCreateMemoryRecords;Write
 bedrock-agentcore:BatchDeleteMemoryRecords;Write
 bedrock-agentcore:BatchUpdateMemoryRecords;Write
+bedrock-agentcore:CompleteResourceTokenAuth;Read
 bedrock-agentcore:ConnectBrowserAutomationStream;Read
 bedrock-agentcore:ConnectBrowserLiveViewStream;Read
 bedrock-agentcore:CreateAgentRuntime;Write

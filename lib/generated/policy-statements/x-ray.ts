@@ -392,6 +392,9 @@ export class Xray extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifLogsLogGeneratingResourceArns()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OTLPEndpoint.html
    */
   public toPutSpans() {
@@ -424,6 +427,9 @@ export class Xray extends PolicyStatement {
    * Grants permission to upload segment documents to AWS X-Ray. The X-Ray SDK generates segment documents and sends them to the X-Ray daemon, which uploads them in batches
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLogsLogGeneratingResourceArns()
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html
    */
@@ -671,6 +677,22 @@ export class Xray extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by LogGeneratingResourceArn in the request
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsx-ray.html#awsx-ray-actions-as-permissions
+   *
+   * Applies to actions:
+   * - .toPutSpans()
+   * - .toPutTraceSegments()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifLogsLogGeneratingResourceArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`logs:LogGeneratingResourceArns`, value, operator ?? 'ArnLike');
   }
 
   /**
