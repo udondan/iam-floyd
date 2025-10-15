@@ -69,6 +69,25 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve access token with OAuth2 for 3LO flow to access external resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInboundJwtClaimIss()
+   * - .ifInboundJwtClaimSub()
+   * - .ifInboundJwtClaimAud()
+   * - .ifInboundJwtClaimScope()
+   * - .ifInboundJwtClaimClientId()
+   * - .ifUserid()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CompleteResourceTokenAuth.html
+   */
+  public toCompleteResourceTokenAuth() {
+    return this.to('CompleteResourceTokenAuth');
+  }
+
+  /**
    * Grants permission to connect to a browser automation stream
    *
    * Access Level: Read
@@ -127,6 +146,10 @@ export class BedrockAgentcore extends PolicyStatement {
    * Grants permission to create a new API Key Credential Provider
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateApiKeyCredentialProvider.html
    */
@@ -231,6 +254,10 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateOauth2CredentialProvider.html
    */
   public toCreateOauth2CredentialProvider() {
@@ -241,6 +268,10 @@ export class BedrockAgentcore extends PolicyStatement {
    * Grants permission to create a new Workload Identity
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateWorkloadIdentity.html
    */
@@ -591,6 +622,13 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifInboundJwtClaimIss()
+   * - .ifInboundJwtClaimSub()
+   * - .ifInboundJwtClaimAud()
+   * - .ifInboundJwtClaimScope()
+   * - .ifInboundJwtClaimClientId()
+   *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessTokenForJWT.html
    */
   public toGetWorkloadAccessTokenForJWT() {
@@ -601,6 +639,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * Grants permission to retrieve an Workload access token for agentic workloads acting on behalf of user with User Id
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifUserid()
    *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetWorkloadAccessTokenForUserId.html
    */
@@ -1156,6 +1197,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateWorkloadIdentity'
     ],
     Read: [
+      'CompleteResourceTokenAuth',
       'ConnectBrowserAutomationStream',
       'ConnectBrowserLiveViewStream',
       'GetAgentCard',
@@ -1249,6 +1291,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onWorkloadIdentity(directoryId: string, workloadIdentityName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workload-identity-directory/${ directoryId }/workload-identity/${ workloadIdentityName }`);
@@ -1264,6 +1309,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOauth2credentialprovider(tokenVaultId: string, name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }/oauth2credentialprovider/${ name }`);
@@ -1279,6 +1327,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApikeycredentialprovider(tokenVaultId: string, name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }/apikeycredentialprovider/${ name }`);
@@ -1388,6 +1439,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onWorkloadIdentityDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workload-identity-directory/${ directoryId }`);
@@ -1402,6 +1456,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTokenVault(tokenVaultId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }`);
@@ -1415,10 +1472,13 @@ export class BedrockAgentcore extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAgentRuntime()
    * - .toCreateAgentRuntimeEndpoint()
+   * - .toCreateApiKeyCredentialProvider()
    * - .toCreateBrowser()
    * - .toCreateCodeInterpreter()
    * - .toCreateGateway()
    * - .toCreateMemory()
+   * - .toCreateOauth2CredentialProvider()
+   * - .toCreateWorkloadIdentity()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1437,10 +1497,15 @@ export class BedrockAgentcore extends PolicyStatement {
    * Applies to resource types:
    * - memory
    * - gateway
+   * - workload-identity
+   * - oauth2credentialprovider
+   * - apikeycredentialprovider
    * - runtime
    * - runtime-endpoint
    * - code-interpreter-custom
    * - browser-custom
+   * - workload-identity-directory
+   * - token-vault
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1458,10 +1523,13 @@ export class BedrockAgentcore extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAgentRuntime()
    * - .toCreateAgentRuntimeEndpoint()
+   * - .toCreateApiKeyCredentialProvider()
    * - .toCreateBrowser()
    * - .toCreateCodeInterpreter()
    * - .toCreateGateway()
    * - .toCreateMemory()
+   * - .toCreateOauth2CredentialProvider()
+   * - .toCreateWorkloadIdentity()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -1482,6 +1550,86 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public ifGatewayAuthorizerType(value: string | string[], operator?: Operator | string) {
     return this.if(`GatewayAuthorizerType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the audience claim (aud) in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-aud
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimAud(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/aud`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the client_id claim in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-client_id
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimClientId(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/client_id`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the issuer (iss) claim present in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-iss
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimIss(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/iss`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the scope claim in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-scope
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimScope(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/scope`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the subject claim (sub) in the JWT passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sub
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForJWT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInboundJwtClaimSub(value: string | string[], operator?: Operator | string) {
+    return this.if(`InboundJwtClaim/sub`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1553,5 +1701,21 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public ifStrategyId(value: string | string[], operator?: Operator | string) {
     return this.if(`strategyId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the static user ID value passed in the request
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-userid
+   *
+   * Applies to actions:
+   * - .toCompleteResourceTokenAuth()
+   * - .toGetWorkloadAccessTokenForUserId()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifUserid(value: string | string[], operator?: Operator | string) {
+    return this.if(`userid`, value, operator ?? 'StringLike');
   }
 }

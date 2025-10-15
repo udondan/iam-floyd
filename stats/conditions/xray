@@ -1,3 +1,4 @@
+xray:LogGeneratingResourceArns
 xray:RequestTag/${TagKey}
 xray:ResourcePolicyName
 xray:ResourceTag/${TagKey}

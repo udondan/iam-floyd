@@ -136,6 +136,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -154,6 +155,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -172,6 +174,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -190,6 +193,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    * - .ifCopyOptionGroup()
    *
    * Dependent actions:
@@ -210,6 +214,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -264,6 +269,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -319,6 +325,7 @@ export class Rds extends PolicyStatement {
    * - .ifEndpointType()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -501,6 +508,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    * - .ifPubliclyAccessible()
    *
    * Dependent actions:
@@ -578,6 +586,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -636,6 +645,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    * - .ifTenantDatabaseName()
    * - .ifManageMasterUserPassword()
    *
@@ -1869,6 +1879,7 @@ export class Rds extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - rds:AddTagsToResource
@@ -3467,19 +3478,30 @@ export class Rds extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTagsToResource()
+   * - .toCopyDBClusterParameterGroup()
+   * - .toCopyDBClusterSnapshot()
+   * - .toCopyDBParameterGroup()
+   * - .toCopyDBSnapshot()
+   * - .toCopyOptionGroup()
    * - .toCreateBlueGreenDeployment()
+   * - .toCreateCustomDBEngineVersion()
    * - .toCreateDBCluster()
+   * - .toCreateDBClusterEndpoint()
    * - .toCreateDBClusterParameterGroup()
    * - .toCreateDBClusterSnapshot()
    * - .toCreateDBInstance()
    * - .toCreateDBInstanceReadReplica()
    * - .toCreateDBParameterGroup()
    * - .toCreateDBSecurityGroup()
+   * - .toCreateDBShardGroup()
    * - .toCreateDBSnapshot()
    * - .toCreateDBSubnetGroup()
    * - .toCreateEventSubscription()
+   * - .toCreateGlobalCluster()
    * - .toCreateIntegration()
    * - .toCreateOptionGroup()
+   * - .toCreateTenantDatabase()
+   * - .toPurchaseReservedDBInstancesOffering()
    * - .toRemoveTagsFromResource()
    * - .toRestoreDBClusterFromS3()
    * - .toRestoreDBClusterFromSnapshot()
