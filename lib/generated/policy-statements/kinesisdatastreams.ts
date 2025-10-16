@@ -195,6 +195,22 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to temporarily inject errors for target API requests
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifFisActionId()
+   * - .ifFisTargetArns()
+   * - .ifFisInjectPercentage()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   */
+  public toInjectApiError() {
+    return this.to('InjectApiError');
+  }
+
+  /**
    * Grants permission to list the shards in a stream and provides information about each shard
    *
    * Access Level: List
@@ -419,6 +435,7 @@ export class Kinesis extends PolicyStatement {
       'DisableEnhancedMonitoring',
       'EnableEnhancedMonitoring',
       'IncreaseStreamRetentionPeriod',
+      'InjectApiError',
       'MergeShards',
       'PutRecord',
       'PutRecords',
@@ -585,5 +602,50 @@ export class Kinesis extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of an AWS FIS action
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   *
+   * Applies to actions:
+   * - .toInjectApiError()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFisActionId(value: string | string[], operator?: Operator | string) {
+    return this.if(`FisActionId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the percentage of calls being affected by an AWS FIS action
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   *
+   * Applies to actions:
+   * - .toInjectApiError()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifFisInjectPercentage(value: number | number[], operator?: Operator | string) {
+    return this.if(`FisInjectPercentage`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the ARN of an AWS FIS target
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html
+   *
+   * Applies to actions:
+   * - .toInjectApiError()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifFisTargetArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`FisTargetArns`, value, operator ?? 'ArnLike');
   }
 }

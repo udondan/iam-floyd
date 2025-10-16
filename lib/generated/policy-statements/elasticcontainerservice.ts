@@ -591,7 +591,7 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutSystemLogEvents.html
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#cloudtrail-data-events
    */
   public toPutSystemLogEvents() {
     return this.to('PutSystemLogEvents');

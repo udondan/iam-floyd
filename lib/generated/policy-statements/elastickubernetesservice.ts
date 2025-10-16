@@ -624,6 +624,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify Kubernetes objects via AWS console
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/mutate-workloads.html
+   */
+  public toMutateViaKubernetesApi() {
+    return this.to('MutateViaKubernetesApi');
+  }
+
+  /**
    * Grants permission to register an External cluster
    *
    * Access Level: Write
@@ -815,6 +826,7 @@ export class Eks extends PolicyStatement {
       'DeregisterCluster',
       'DisassociateAccessPolicy',
       'DisassociateIdentityProviderConfig',
+      'MutateViaKubernetesApi',
       'RegisterCluster',
       'StartInsightsRefresh',
       'UpdateAccessEntry',
