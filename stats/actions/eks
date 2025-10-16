@@ -48,6 +48,7 @@ eks:ListNodegroups;List
 eks:ListPodIdentityAssociations;List
 eks:ListTagsForResource;Read
 eks:ListUpdates;List
+eks:MutateViaKubernetesApi;Write
 eks:RegisterCluster;Write
 eks:StartInsightsRefresh;Write
 eks:TagResource;Tagging

@@ -1,3 +1,6 @@
+kinesis:FisActionId
+kinesis:FisInjectPercentage
+kinesis:FisTargetArns
 kinesis:RequestTag/${TagKey}
 kinesis:ResourceTag/${TagKey}
 kinesis:TagKeys

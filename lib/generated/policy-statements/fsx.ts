@@ -361,7 +361,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and GetResourcePolicy are also required
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and GetResourcePolicy are also required
    *
    * Access Level: Permissions management
    *
@@ -582,7 +582,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and DeleteResourcePolicy are also required
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and DeleteResourcePolicy are also required
    *
    * Access Level: Permissions management
    *
@@ -615,7 +615,7 @@ export class Fsx extends PolicyStatement {
   }
 
   /**
-   * Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). DeleteResourcePolicy and GetResourcePolicy are also required
+   * Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). DeleteResourcePolicy and GetResourcePolicy are also required
    *
    * Access Level: Permissions management
    *
@@ -1086,7 +1086,9 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/FileCacheGuide/encryption-in-transit.html
    *
    * Applies to actions:
+   * - .toCreateDataRepositoryAssociation()
    * - .toCreateFileCache()
+   * - .toTagResource()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -1100,7 +1102,9 @@ export class Fsx extends PolicyStatement {
    * https://docs.aws.amazon.com/fsx/latest/FileCacheGuide/encryption-in-transit.html
    *
    * Applies to actions:
+   * - .toCreateDataRepositoryAssociation()
    * - .toCreateFileCache()
+   * - .toTagResource()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -1116,6 +1120,7 @@ export class Fsx extends PolicyStatement {
    * Applies to actions:
    * - .toCreateVolume()
    * - .toDeleteVolume()
+   * - .toTagResource()
    * - .toUpdateVolume()
    *
    * @param value The value(s) to check
@@ -1134,6 +1139,7 @@ export class Fsx extends PolicyStatement {
    * - .toCreateVolume()
    * - .toCreateVolumeFromBackup()
    * - .toDeleteVolume()
+   * - .toTagResource()
    * - .toUpdateVolume()
    *
    * @param value The value(s) to check
