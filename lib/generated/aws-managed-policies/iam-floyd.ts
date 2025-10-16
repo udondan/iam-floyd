@@ -2474,6 +2474,8 @@ export class AwsManagedPolicy {
     public static DeclarativePoliciesEC2Report = 'aws-service-role/DeclarativePoliciesEC2Report';
     /** Permissions required to support Amazon CloudWatch Contributor Insights for Amazon DynamoDB. */
     public static DynamoDBCloudWatchContributorInsightsServiceRolePolicy = 'aws-service-role/DynamoDBCloudWatchContributorInsightsServiceRolePolicy';
+    /** Permissions required by DynamoDB to manage global table replica settings */
+    public static DynamoDBGlobalTableSettingsManagementServiceRolePolicy = 'aws-service-role/DynamoDBGlobalTableSettingsManagementServiceRolePolicy';
     /** Provide AWS DynamoDB access to KinesisDataStreams */
     public static DynamoDBKinesisReplicationServiceRolePolicy = 'aws-service-role/DynamoDBKinesisReplicationServiceRolePolicy';
     /** Permissions required by DynamoDB for cross-region data replication */

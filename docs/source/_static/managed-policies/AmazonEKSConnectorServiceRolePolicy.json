@@ -54,7 +54,9 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "events:ManagedBy": "eks-connector.amazonaws.com",
+          "events:ManagedBy": "eks-connector.amazonaws.com"
+        },
+        "ForAllValues:StringEquals": {
           "events:source": "aws.ssm"
         }
       }
@@ -69,6 +71,14 @@
           "events:ManagedBy": "eks-connector.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "OpenDataChannel",
+      "Effect": "Allow",
+      "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": "arn:aws:ssm:*:*:session/*"
     }
   ]
 }
