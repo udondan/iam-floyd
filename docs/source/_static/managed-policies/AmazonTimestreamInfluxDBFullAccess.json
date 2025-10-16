@@ -23,9 +23,7 @@
         "timestream-influxdb:ListDbClusters",
         "timestream-influxdb:ListDbInstancesForCluster"
       ],
-      "Resource": [
-        "arn:aws:timestream-influxdb:*:*:*"
-      ]
+      "Resource": "arn:aws:timestream-influxdb:*:*:*"
     },
     {
       "Sid": "ServiceLinkedRoleStatement",
@@ -47,9 +45,7 @@
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeRouteTables"
       ],
-      "Resource": [
-        "*"
-      ]
+      "Resource": "*"
     },
     {
       "Sid": "CreateEniInSubnetStatement",
@@ -85,23 +81,20 @@
       "Action": [
         "aws-marketplace:ViewSubscriptions"
       ],
-      "Resource": [
-        "*"
-      ]
+      "Resource": "*"
     },
     {
       "Sid": "MPSubscriptionAccessStatement",
       "Effect": "Allow",
-      "Action": [
-        "aws-marketplace:Subscribe"
-      ],
+      "Action": "aws-marketplace:Subscribe",
       "Resource": [
         "*"
       ],
       "Condition": {
         "ForAnyValue:StringEquals": {
           "aws-marketplace:ProductId": [
-            "prod-xcc5llpq4vlbc"
+            "prod-xcc5llpq4vlbc",
+            "prod-rjppt7huo35fm"
           ]
         }
       }

@@ -6194,6 +6194,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DynamoDBCloudWatchContributorInsightsServiceRolePolicy);
     }
 
+    /** Permissions required by DynamoDB to manage global table replica settings */
+    public DynamoDBGlobalTableSettingsManagementServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DynamoDBGlobalTableSettingsManagementServiceRolePolicy);
+    }
+
     /** Provide AWS DynamoDB access to KinesisDataStreams */
     public DynamoDBKinesisReplicationServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DynamoDBKinesisReplicationServiceRolePolicy);
