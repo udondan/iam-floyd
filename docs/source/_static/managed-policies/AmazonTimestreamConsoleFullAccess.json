@@ -103,7 +103,8 @@
         "ForAnyValue:StringEquals": {
           "aws-marketplace:ProductId": [
             "prod-xcc5llpq4vlbc",
-            "prod-5jijo74ujy36m"
+            "prod-5jijo74ujy36m",
+            "prod-rjppt7huo35fm"
           ]
         }
       }
