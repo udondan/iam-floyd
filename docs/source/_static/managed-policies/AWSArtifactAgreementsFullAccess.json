@@ -57,11 +57,25 @@
       "Sid": "EnableServiceTrust",
       "Effect": "Allow",
       "Action": [
-        "organizations:EnableAWSServiceAccess",
         "organizations:ListAWSServiceAccessForOrganization",
         "organizations:DescribeOrganization"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "EnableServiceTrustForArtifact",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:EnableAWSServiceAccess"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:ServicePrincipal": [
+            "aws-artifact-account-sync.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }

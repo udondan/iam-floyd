@@ -10,7 +10,8 @@
       "Condition": {
         "StringEquals": {
           "cloudwatch:namespace": [
-            "AWS/IoTFleetWise"
+            "AWS/IoTFleetWise",
+            "AWS/Usage"
           ]
         }
       }

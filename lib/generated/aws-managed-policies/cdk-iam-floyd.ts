@@ -6704,6 +6704,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.Route53ResolverServiceRolePolicy);
     }
 
+    /** A service-linked role required for AWS RTBFabric to create and manage your network interface resources and deliver metrics. */
+    public RTBFabricServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.RTBFabricServiceRolePolicy);
+    }
+
     /** Enables access to AWS Services and Resources used or managed by S3 Storage Lens */
     public S3StorageLensServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.S3StorageLensServiceRolePolicy);

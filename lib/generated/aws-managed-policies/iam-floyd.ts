@@ -2678,6 +2678,8 @@ export class AwsManagedPolicy {
     public static Route53RecoveryReadinessServiceRolePolicy = 'aws-service-role/Route53RecoveryReadinessServiceRolePolicy';
     /** Enables access to AWS Services and Resources used or managed by Route53 Resolver */
     public static Route53ResolverServiceRolePolicy = 'aws-service-role/Route53ResolverServiceRolePolicy';
+    /** A service-linked role required for AWS RTBFabric to create and manage your network interface resources and deliver metrics. */
+    public static RTBFabricServiceRolePolicy = 'aws-service-role/RTBFabricServiceRolePolicy';
     /** Enables access to AWS Services and Resources used or managed by S3 Storage Lens */
     public static S3StorageLensServiceRolePolicy = 'aws-service-role/S3StorageLensServiceRolePolicy';
     /** Provides access required to unlock a S3 bucket policy using the Security Token Service (STS) AssumeRoot API. Use this managed policy only with the STS AssumeRoot action. */
