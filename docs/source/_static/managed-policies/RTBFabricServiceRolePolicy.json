@@ -82,7 +82,7 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "cloudwatch:namespace": "rtbfabric"
+          "cloudwatch:namespace": "AWS/RTBFabric"
         }
       }
     }
