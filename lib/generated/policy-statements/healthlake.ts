@@ -122,6 +122,50 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search and expand ValueSet resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-expand.html
+   */
+  public toExpandValueSetWithGet() {
+    return this.to('ExpandValueSetWithGet');
+  }
+
+  /**
+   * Grants permission to search and expand ValueSet resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-expand.html
+   */
+  public toExpandValueSetWithPost() {
+    return this.to('ExpandValueSetWithPost');
+  }
+
+  /**
+   * Grants permission to generate a clinical document resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-document.html
+   */
+  public toGenerateDocumentWithGet() {
+    return this.to('GenerateDocumentWithGet');
+  }
+
+  /**
+   * Grants permission to generate a clinical document resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-document.html
+   */
+  public toGenerateDocumentWithPost() {
+    return this.to('GenerateDocumentWithPost');
+  }
+
+  /**
    * Grants permission to get the capabilities of a FHIR datastore
    *
    * Access Level: Read
@@ -196,6 +240,39 @@ export class Healthlake extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to retrieve Codes for a CodeSystem resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-lookup.html
+   */
+  public toLookupCodeSystemWithGet() {
+    return this.to('LookupCodeSystemWithGet');
+  }
+
+  /**
+   * Grants permission to retrieve Codes for a CodeSystem resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-lookup.html
+   */
+  public toLookupCodeSystemWithPost() {
+    return this.to('LookupCodeSystemWithPost');
+  }
+
+  /**
+   * Grants permission to patch a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/managing-fhir-resources-patch.html
+   */
+  public toPatchResource() {
+    return this.to('PatchResource');
   }
 
   /**
@@ -339,6 +416,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to validate a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-validate.html
+   */
+  public toValidateResource() {
+    return this.to('ValidateResource');
+  }
+
+  /**
    * Grants permission to read version of a resource
    *
    * Access Level: Read
@@ -356,6 +444,9 @@ export class Healthlake extends PolicyStatement {
       'CreateResource',
       'DeleteFHIRDatastore',
       'DeleteResource',
+      'GenerateDocumentWithGet',
+      'GenerateDocumentWithPost',
+      'PatchResource',
       'ProcessBundle',
       'StartFHIRExportJob',
       'StartFHIRExportJobWithGet',
@@ -368,13 +459,18 @@ export class Healthlake extends PolicyStatement {
       'DescribeFHIRExportJob',
       'DescribeFHIRExportJobWithGet',
       'DescribeFHIRImportJob',
+      'ExpandValueSetWithGet',
+      'ExpandValueSetWithPost',
       'GetCapabilities',
       'GetExportedFile',
       'GetHistoryByResourceId',
+      'LookupCodeSystemWithGet',
+      'LookupCodeSystemWithPost',
       'ReadResource',
       'SearchEverything',
       'SearchWithGet',
       'SearchWithPost',
+      'ValidateResource',
       'VersionReadResource'
     ],
     List: [

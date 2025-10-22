@@ -215,6 +215,9 @@ export class Pi extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMetricResource(serviceType: string, identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:pi:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:metrics/${ serviceType }/${ identifier }`);
@@ -258,6 +261,7 @@ export class Pi extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * Applies to resource types:
+   * - metric-resource
    * - perf-reports-resource
    *
    * @param tagKey The tag key to check

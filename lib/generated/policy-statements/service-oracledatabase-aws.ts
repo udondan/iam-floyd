@@ -544,6 +544,17 @@ export class Odb extends PolicyStatement {
     return this.to('UpdateOdbNetwork');
   }
 
+  /**
+   * Grants permission to update properties of a specified ODB Peering Connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbPeeringConnection.html
+   */
+  public toUpdateOdbPeeringConnection() {
+    return this.to('UpdateOdbPeeringConnection');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptMarketplaceRegistration',
@@ -567,7 +578,8 @@ export class Odb extends PolicyStatement {
       'StartDbNode',
       'StopDbNode',
       'UpdateCloudExadataInfrastructure',
-      'UpdateOdbNetwork'
+      'UpdateOdbNetwork',
+      'UpdateOdbPeeringConnection'
     ],
     Read: [
       'GetCloudAutonomousVmCluster',

@@ -197,6 +197,7 @@ export { Thinclient } from './policy-statements/workspacesthinclient';
 export { KafkaCluster } from './policy-statements/apachekafkaapisforamazonmskclusters';
 export { Arsenal } from './policy-statements/applicationdiscoveryarsenal';
 export { Account } from './policy-statements/accountmanagement';
+export { ActionRecommendations } from './policy-statements/actionrecommendations';
 export { Activate } from './policy-statements/activate';
 export { Amplify } from './policy-statements/amplify';
 export { Amplifybackend } from './policy-statements/amplifyadmin';
