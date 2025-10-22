@@ -7,6 +7,10 @@ healthlake:DescribeFHIRDatastore;Read
 healthlake:DescribeFHIRExportJob;Read
 healthlake:DescribeFHIRExportJobWithGet;Read
 healthlake:DescribeFHIRImportJob;Read
+healthlake:ExpandValueSetWithGet;Read
+healthlake:ExpandValueSetWithPost;Read
+healthlake:GenerateDocumentWithGet;Write
+healthlake:GenerateDocumentWithPost;Write
 healthlake:GetCapabilities;Read
 healthlake:GetExportedFile;Read
 healthlake:GetHistoryByResourceId;Read
@@ -14,6 +18,9 @@ healthlake:ListFHIRDatastores;List
 healthlake:ListFHIRExportJobs;List
 healthlake:ListFHIRImportJobs;List
 healthlake:ListTagsForResource;List
+healthlake:LookupCodeSystemWithGet;Read
+healthlake:LookupCodeSystemWithPost;Read
+healthlake:PatchResource;Write
 healthlake:ProcessBundle;Write
 healthlake:ReadResource;Read
 healthlake:SearchEverything;Read
@@ -26,4 +33,5 @@ healthlake:StartFHIRImportJob;Write
 healthlake:TagResource;Tagging
 healthlake:UntagResource;Tagging
 healthlake:UpdateResource;Write
+healthlake:ValidateResource;Read
 healthlake:VersionReadResource;Read
