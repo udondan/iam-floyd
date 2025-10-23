@@ -801,6 +801,17 @@ export class Medialive extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list channel alerts
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-channels.html
+   */
+  public toListAlerts() {
+    return this.to('ListAlerts');
+  }
+
+  /**
    * Grants permission to list channel placement groups
    *
    * Access Level: List
@@ -842,6 +853,17 @@ export class Medialive extends PolicyStatement {
    */
   public toListCloudWatchAlarmTemplates() {
     return this.to('ListCloudWatchAlarmTemplates');
+  }
+
+  /**
+   * Grants permission to list cluster alerts
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-cluster.html
+   */
+  public toListClusterAlerts() {
+    return this.to('ListClusterAlerts');
   }
 
   /**
@@ -919,6 +941,17 @@ export class Medialive extends PolicyStatement {
    */
   public toListInputs() {
     return this.to('ListInputs');
+  }
+
+  /**
+   * Grants permission to list multiplex alerts
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-channels.html
+   */
+  public toListMultiplexAlerts() {
+    return this.to('ListMultiplexAlerts');
   }
 
   /**
@@ -1568,10 +1601,12 @@ export class Medialive extends PolicyStatement {
       'GetSignalMap'
     ],
     List: [
+      'ListAlerts',
       'ListChannelPlacementGroups',
       'ListChannels',
       'ListCloudWatchAlarmTemplateGroups',
       'ListCloudWatchAlarmTemplates',
+      'ListClusterAlerts',
       'ListClusters',
       'ListEventBridgeRuleTemplateGroups',
       'ListEventBridgeRuleTemplates',
@@ -1579,6 +1614,7 @@ export class Medialive extends PolicyStatement {
       'ListInputDevices',
       'ListInputSecurityGroups',
       'ListInputs',
+      'ListMultiplexAlerts',
       'ListMultiplexPrograms',
       'ListMultiplexes',
       'ListNetworks',

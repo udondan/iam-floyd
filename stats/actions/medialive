@@ -63,10 +63,12 @@ medialive:GetCloudWatchAlarmTemplateGroup;Read
 medialive:GetEventBridgeRuleTemplate;Read
 medialive:GetEventBridgeRuleTemplateGroup;Read
 medialive:GetSignalMap;Read
+medialive:ListAlerts;List
 medialive:ListChannelPlacementGroups;List
 medialive:ListChannels;List
 medialive:ListCloudWatchAlarmTemplateGroups;List
 medialive:ListCloudWatchAlarmTemplates;List
+medialive:ListClusterAlerts;List
 medialive:ListClusters;List
 medialive:ListEventBridgeRuleTemplateGroups;List
 medialive:ListEventBridgeRuleTemplates;List
@@ -74,6 +76,7 @@ medialive:ListInputDeviceTransfers;List
 medialive:ListInputDevices;List
 medialive:ListInputSecurityGroups;List
 medialive:ListInputs;List
+medialive:ListMultiplexAlerts;List
 medialive:ListMultiplexPrograms;List
 medialive:ListMultiplexes;List
 medialive:ListNetworks;List
