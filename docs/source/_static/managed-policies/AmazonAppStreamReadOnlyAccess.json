@@ -2,12 +2,11 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
-        "appstream:Get*",
         "appstream:List*",
         "appstream:Describe*"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     }
   ]
