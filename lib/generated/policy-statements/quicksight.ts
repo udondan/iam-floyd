@@ -231,6 +231,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
    */
   public toCreateEmailCustomizationTemplate() {
@@ -3731,6 +3735,9 @@ export class Quicksight extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:email-customization-template/${ resourceId }`);
@@ -3884,6 +3891,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateDashboard()
    * - .toCreateDataSet()
    * - .toCreateDataSource()
+   * - .toCreateEmailCustomizationTemplate()
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
@@ -3947,6 +3955,7 @@ export class Quicksight extends PolicyStatement {
    * - theme
    * - customization
    * - folder
+   * - emailCustomizationTemplate
    * - topic
    * - dashboardSnapshotJob
    * - brand
@@ -3979,6 +3988,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateDashboard()
    * - .toCreateDataSet()
    * - .toCreateDataSource()
+   * - .toCreateEmailCustomizationTemplate()
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
