@@ -5,6 +5,9 @@
       "Sid": "DsqlAllPermissions",
       "Effect": "Allow",
       "Action": [
+        "dsql:PutClusterPolicy",
+        "dsql:GetClusterPolicy",
+        "dsql:DeleteClusterPolicy",
         "dsql:CreateCluster",
         "dsql:GetCluster",
         "dsql:UpdateCluster",
@@ -34,6 +37,7 @@
       "Sid": "DsqlConsolePermissions",
       "Effect": "Allow",
       "Action": [
+        "access-analyzer:ValidatePolicy",
         "tag:GetTagKeys",
         "tag:GetTagValues",
         "cloudwatch:GetMetricData",

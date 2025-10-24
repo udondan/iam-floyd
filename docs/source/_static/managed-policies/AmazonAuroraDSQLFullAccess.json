@@ -5,6 +5,9 @@
       "Sid": "DsqlAllPermissions",
       "Effect": "Allow",
       "Action": [
+        "dsql:PutClusterPolicy",
+        "dsql:GetClusterPolicy",
+        "dsql:DeleteClusterPolicy",
         "dsql:CreateCluster",
         "dsql:GetCluster",
         "dsql:UpdateCluster",
