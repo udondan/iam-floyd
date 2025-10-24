@@ -1,0 +1,9 @@
+rtbfabric:InboundExternalLinkGatewayId
+rtbfabric:InboundExternalLinkLinkId
+rtbfabric:LinkLinkId
+rtbfabric:OutboundExternalLinkLinkId
+rtbfabric:RequestTag/${TagKey}
+rtbfabric:RequesterGatewayGatewayId
+rtbfabric:ResourceTag/${TagKey}
+rtbfabric:ResponderGatewayGatewayId
+rtbfabric:TagKeys

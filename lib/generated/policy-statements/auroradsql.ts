@@ -85,6 +85,17 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove the inline resource-based policy attached to a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html
+   */
+  public toDeleteClusterPolicy() {
+    return this.to('DeleteClusterPolicy');
+  }
+
+  /**
    * Grants permission to get the status of an Aurora DSQL cluster backup job
    *
    * Access Level: Read
@@ -104,6 +115,17 @@ export class Dsql extends PolicyStatement {
    */
   public toGetCluster() {
     return this.to('GetCluster');
+  }
+
+  /**
+   * Grants permission to retrieve the inline resource-based policy attached to a cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html
+   */
+  public toGetClusterPolicy() {
+    return this.to('GetClusterPolicy');
   }
 
   /**
@@ -163,6 +185,17 @@ export class Dsql extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to attach or update the inline resource-based policy attached to a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html
+   */
+  public toPutClusterPolicy() {
+    return this.to('PutClusterPolicy');
   }
 
   /**
@@ -305,7 +338,9 @@ export class Dsql extends PolicyStatement {
       'DbConnect',
       'DbConnectAdmin',
       'DeleteCluster',
+      'DeleteClusterPolicy',
       'InjectError',
+      'PutClusterPolicy',
       'PutMultiRegionProperties',
       'PutWitnessRegion',
       'RemovePeerCluster',
@@ -318,6 +353,7 @@ export class Dsql extends PolicyStatement {
     Read: [
       'GetBackupJob',
       'GetCluster',
+      'GetClusterPolicy',
       'GetRestoreJob',
       'GetVpcEndpointServiceName',
       'ListTagsForResource'

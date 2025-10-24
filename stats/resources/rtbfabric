@@ -1,0 +1,5 @@
+rtbfabric:InboundExternalLink
+rtbfabric:Link
+rtbfabric:OutboundExternalLink
+rtbfabric:RequesterGateway
+rtbfabric:ResponderGateway

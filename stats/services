@@ -331,6 +331,7 @@ route53-recovery-readiness
 route53domains
 route53profiles
 route53resolver
+rtbfabric
 rum
 s3
 s3-object-lambda
