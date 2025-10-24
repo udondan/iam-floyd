@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AssumeProjectRoles",
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole",
+        "sts:TagSession"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/datazone_emr_containers_query_engine_role_*",
+        "arn:aws:iam::*:role/datazone_usr_role_*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "emr-containers.amazonaws.com",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        },
+        "StringEqualsIfExists": {
+          "aws:RequestTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "SetContextProjectRoles",
+      "Effect": "Allow",
+      "Action": [
+        "sts:SetContext"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/datazone_emr_containers_query_engine_role_*",
+        "arn:aws:iam::*:role/datazone_usr_role_*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "emr-containers.amazonaws.com",
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    }
+  ]
+}

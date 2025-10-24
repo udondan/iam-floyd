@@ -5,6 +5,7 @@
       "Sid": "DsqlReadOnlyPermissions",
       "Effect": "Allow",
       "Action": [
+        "dsql:GetClusterPolicy",
         "dsql:GetCluster",
         "dsql:GetVpcEndpointServiceName",
         "dsql:ListClusters",
