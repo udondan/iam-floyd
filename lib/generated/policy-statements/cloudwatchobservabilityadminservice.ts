@@ -418,13 +418,13 @@ export class Observabilityadmin extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onTelemetryRule(telemetryRuleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:observabilityadmin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:telemetry-rule:${ telemetryRuleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:observabilityadmin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:telemetry-rule/${ telemetryRuleName }`);
   }
 
   /**
    * Adds a resource of type organization-telemetry-rule to the statement
    *
-   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_OrganizationTelemetryRule.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TelemetryRule.html
    *
    * @param telemetryRuleName - Identifier for the telemetryRuleName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -435,13 +435,13 @@ export class Observabilityadmin extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationTelemetryRule(telemetryRuleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:observabilityadmin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:organization-telemetry-rule:${ telemetryRuleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:observabilityadmin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:organization-telemetry-rule/${ telemetryRuleName }`);
   }
 
   /**
    * Adds a resource of type organization-centralization-rule to the statement
    *
-   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_OrganizationCentralizationRule.html
+   * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CentralizationRule.html
    *
    * @param centralizationRuleName - Identifier for the centralizationRuleName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -452,7 +452,7 @@ export class Observabilityadmin extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onOrganizationCentralizationRule(centralizationRuleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:observabilityadmin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:organization-centralization-rule:${ centralizationRuleName }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:observabilityadmin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:organization-centralization-rule/${ centralizationRuleName }`);
   }
 
   /**
