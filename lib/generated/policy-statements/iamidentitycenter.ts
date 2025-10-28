@@ -2114,6 +2114,30 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of the IAM Identity Center application
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/API_Application.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifIdentitycenterApplicationArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`identitycenter:ApplicationArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of the IAM Identity Center instance
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/API_InstanceMetadata.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifIdentitycenterInstanceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`identitycenter:InstanceArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by the account which creates the application. This condition key is not supported for customer managed SAML applications
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/API_Application.html

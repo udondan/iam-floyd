@@ -1,4 +1,6 @@
 sso:ApplicationAccount
+sso:ApplicationArn
+sso:InstanceArn
 sso:RequestTag/${TagKey}
 sso:ResourceTag/${TagKey}
 sso:TagKeys
