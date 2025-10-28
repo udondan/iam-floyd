@@ -47,6 +47,8 @@ export class VpcLatticeSvcs extends PolicyStatement {
    * - .ifServiceArn()
    * - .ifSourceVpc()
    * - .ifSourceVpcOwnerAccount()
+   * - .ifRequestMethod()
+   * - .ifRequestPath()
    * - .ifRequestHeader()
    * - .ifRequestQueryString()
    *
@@ -129,11 +131,29 @@ export class VpcLatticeSvcs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
    *
+   * Applies to actions:
+   * - .toInvoke()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRequestMethod(value: string | string[], operator?: Operator | string) {
     return this.if(`RequestMethod`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the path portion of the request URL
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html#auth-policies-condition-keys
+   *
+   * Applies to actions:
+   * - .toInvoke()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestPath(value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestPath`, value, operator ?? 'StringLike');
   }
 
   /**
