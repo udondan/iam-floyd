@@ -438,6 +438,34 @@
       }
     },
     {
+      "Sid": "AllowRetrievalOfWabas",
+      "Effect": "Allow",
+      "Action": [
+        "social-messaging:ListLinkedWhatsAppBusinessAccounts"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowRetrievalOfWhatsAppTemplates",
+      "Effect": "Allow",
+      "Action": [
+        "social-messaging:GetWhatsAppMessageTemplate",
+        "social-messaging:ListWhatsAppMessageTemplates"
+      ],
+      "Resource": "arn:aws:social-messaging:*:*:waba/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectEnabled": "True",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "AllowMobileTargetingOperationsForConnect",
       "Effect": "Allow",
       "Action": "mobiletargeting:SendMessages",
