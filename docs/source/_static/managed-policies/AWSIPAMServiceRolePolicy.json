@@ -58,7 +58,7 @@
         "ec2:ModifyManagedPrefixList"
       ],
       "Resource": [
-        "arn:aws:ec2:*:*:prefix-list/pl-*"
+        "*"
       ],
       "Condition": {
         "Null": {
@@ -74,7 +74,7 @@
         "ec2:GetManagedPrefixListEntries"
       ],
       "Resource": [
-        "arn:aws:ec2:*:*:prefix-list/pl-*"
+        "*"
       ]
     }
   ]
