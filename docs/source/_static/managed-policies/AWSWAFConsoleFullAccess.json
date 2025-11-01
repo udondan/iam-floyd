@@ -162,7 +162,7 @@
       "Action": [
         "apigateway:GET"
       ],
-      "Resource": "*"
+      "Resource": "arn:aws:apigateway:*::/*"
     },
     {
       "Sid": "AllowActionsForAppSync",
@@ -176,7 +176,8 @@
       "Sid": "AllowListActionsForAppSync",
       "Effect": "Allow",
       "Action": [
-        "appsync:ListGraphqlApis"
+        "appsync:ListGraphqlApis",
+        "appsync:ListApis"
       ],
       "Resource": "*"
     },
@@ -257,6 +258,16 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowLogQueryActions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:StartQuery",
+        "logs:DescribeQueryDefinitions",
+        "logs:GetQueryResults"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:aws-waf-logs-*"
+    },
+    {
       "Sid": "AllowLogGroupDescribeActions",
       "Effect": "Allow",
       "Action": [
@@ -299,6 +310,31 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "AllowListActionForFirehoseStream",
+      "Effect": "Allow",
+      "Action": [
+        "firehose:ListDeliveryStreams"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowActionsForPricing",
+      "Effect": "Allow",
+      "Action": [
+        "pricing:ListPriceLists",
+        "pricing:GetPriceListFileUrl"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowMarketplaceViewSubscriptions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": "*"
     }
   ]
 }
