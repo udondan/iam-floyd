@@ -130,13 +130,14 @@
       "Action": [
         "apigateway:GET"
       ],
-      "Resource": "*"
+      "Resource": "arn:aws:apigateway:*::/*"
     },
     {
       "Sid": "AllowListActionsForAppSync",
       "Effect": "Allow",
       "Action": [
-        "appsync:ListGraphqlApis"
+        "appsync:ListGraphqlApis",
+        "appsync:ListApis"
       ],
       "Resource": "*"
     },
@@ -207,6 +208,58 @@
         "amplify:ListResourcesForWebACL"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowS3ListAllMyBuckets",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowLogGroupDescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeResourcePolicies",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowListActionForFirehoseStream",
+      "Effect": "Allow",
+      "Action": [
+        "firehose:ListDeliveryStreams"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowActionsForPricing",
+      "Effect": "Allow",
+      "Action": [
+        "pricing:ListPriceLists",
+        "pricing:GetPriceListFileUrl"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowMarketplaceViewSubscriptions",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowLogQueryActions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:StartQuery",
+        "logs:DescribeQueryDefinitions",
+        "logs:GetQueryResults"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:aws-waf-logs-*"
     }
   ]
 }
