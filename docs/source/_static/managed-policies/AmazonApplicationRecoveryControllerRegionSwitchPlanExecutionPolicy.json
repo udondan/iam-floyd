@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "arc-region-switch:GetPlan",
+        "arc-region-switch:GetPlanExecution",
+        "arc-region-switch:ListPlanExecutions"
+      ],
+      "Resource": "*",
+      "Sid": "GetPlanAndExecutions"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:SimulatePrincipalPolicy",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Sid": "PlanEvaluation"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:DescribeAlarmHistory",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*",
+      "Sid": "CloudWatch"
+    }
+  ]
+}

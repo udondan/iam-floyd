@@ -114,6 +114,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonAppFlowReadOnlyAccess);
     }
 
+    /** Grants permissions to ARC Region switch for plan execution and plan evaluation. */
+    public AmazonApplicationRecoveryControllerRegionSwitchPlanExecutionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonApplicationRecoveryControllerRegionSwitchPlanExecutionPolicy);
+    }
+
     /** Provides full access to Amazon AppStream via the AWS Management Console. */
     public AmazonAppStreamFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonAppStreamFullAccess);
