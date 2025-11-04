@@ -42,6 +42,8 @@ export class AwsManagedPolicy {
     public static AmazonAppFlowFullAccess = 'AmazonAppFlowFullAccess';
     /** Provides read only access to Amazon Appflow flows */
     public static AmazonAppFlowReadOnlyAccess = 'AmazonAppFlowReadOnlyAccess';
+    /** Grants permissions to ARC Region switch for plan execution and plan evaluation. */
+    public static AmazonApplicationRecoveryControllerRegionSwitchPlanExecutionPolicy = 'AmazonApplicationRecoveryControllerRegionSwitchPlanExecutionPolicy';
     /** Provides full access to Amazon AppStream via the AWS Management Console. */
     public static AmazonAppStreamFullAccess = 'AmazonAppStreamFullAccess';
     /** Amazon AppStream 2.0 access to AWS Certificate Manager Private CA in customer accounts for certificate-based authentication */

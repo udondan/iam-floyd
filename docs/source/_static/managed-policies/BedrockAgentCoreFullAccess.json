@@ -64,7 +64,8 @@
       "Effect": "Allow",
       "Action": [
         "kms:Decrypt",
-        "kms:GenerateDataKey"
+        "kms:GenerateDataKey",
+        "kms:ListGrants"
       ],
       "Resource": [
         "arn:aws:kms:*:*:key/*"
@@ -76,6 +77,33 @@
         "ForAnyValue:StringEquals": {
           "aws:CalledVia": [
             "bedrock-agentcore.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "BedrockAgentCoreKMSGrantsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": [
+        "arn:aws:kms:*:*:key/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "kms:GrantConstraintType": "EncryptionContextSubset"
+        },
+        "StringLike": {
+          "kms:ViaService": [
+            "bedrock-agentcore.*.amazonaws.com"
+          ],
+          "kms:EncryptionContext:aws:bedrock-agentcore-gateway:arn": "arn:aws:bedrock-agentcore:*:*:gateway/*"
+        },
+        "ForAllValues:StringEquals": {
+          "kms:GrantOperations": [
+            "Decrypt",
+            "GenerateDataKey"
           ]
         }
       }
@@ -184,7 +212,8 @@
       "Sid": "TransactionSearchLogsPermissions",
       "Effect": "Allow",
       "Action": [
-        "logs:DescribeResourcePolicies"
+        "logs:DescribeResourcePolicies",
+        "logs:PutResourcePolicy"
       ],
       "Resource": [
         "*"
@@ -241,6 +270,73 @@
           "iam:AWSServiceName": "runtime-identity.bedrock-agentcore.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsCloudTrailPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
+    },
+    {
+      "Sid": "BedrockAgentCoreRuntimeS3WriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:PutBucketPolicy",
+        "s3:PutBucketVersioning",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bedrock-agentcore-runtime-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "BedrockAgentCoreRuntimeS3ReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:ListBucket",
+        "s3:ListBucketVersions"
+      ],
+      "Resource": "arn:aws:s3:::*",
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "BedrockAgentCoreRuntimeS3ListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "s3:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "BedrockAgentCoreRuntimeECRAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:DescribeRepositories",
+        "ecr:DescribeImages",
+        "ecr:ListImages"
+      ],
+      "Resource": [
+        "arn:aws:ecr:*:*:repository/*"
+      ]
     }
   ]
 }
