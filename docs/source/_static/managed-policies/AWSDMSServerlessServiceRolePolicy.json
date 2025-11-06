@@ -67,7 +67,8 @@
         "s3:PutObjectTagging"
       ],
       "Resource": [
-        "arn:aws:s3:::dms-serverless-premigration-results-*"
+        "arn:aws:s3:::dms-serverless-premigration-results-*",
+        "arn:aws:s3:::dms-premigration-results-*"
       ],
       "Condition": {
         "StringEquals": {
@@ -85,7 +86,8 @@
         "s3:CreateBucket"
       ],
       "Resource": [
-        "arn:aws:s3:::dms-serverless-premigration-results-*"
+        "arn:aws:s3:::dms-serverless-premigration-results-*",
+        "arn:aws:s3:::dms-premigration-results-*"
       ],
       "Condition": {
         "StringEquals": {
@@ -100,11 +102,11 @@
         "dms:StartReplicationTaskAssessmentRun"
       ],
       "Resource": [
-        "*"
+        "arn:aws:dms:*:*:task:*"
       ],
       "Condition": {
-        "StringEqualsIgnoreCase": {
-          "aws:ResourceTag/ResourceCreatedBy": "DMSServerless"
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     }

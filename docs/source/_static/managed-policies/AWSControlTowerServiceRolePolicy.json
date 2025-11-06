@@ -64,7 +64,7 @@
         "logs:PutRetentionPolicy"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:aws-controltower/CloudTrailLogs:*",
+        "arn:aws:logs:*:*:log-group:aws-controltower/CloudTrailLogs*:*",
         "arn:aws:cloudtrail:*:*:trail/aws-controltower*"
       ]
     },

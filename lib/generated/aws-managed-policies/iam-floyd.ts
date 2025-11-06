@@ -1110,6 +1110,8 @@ export class AwsManagedPolicy {
     public static AWSApplicationMigrationFullAccess = 'AWSApplicationMigrationFullAccess';
     /** This policy allows AWS Application Migration Service (MGN) to send meta-data about the progress of servers being migrated using MGN to AWS Migration Hub (MGH). MGN automatically creates an IAM role with this policy attached, and assumes this role. We do not recommend that you attach this policy to your IAM users or roles. */
     public static AWSApplicationMigrationMGHAccess = 'service-role/AWSApplicationMigrationMGHAccess';
+    /** Provides permissions for Network Migration custom resource */
+    public static AWSApplicationMigrationNetworkMigrationCustomResource = 'AWSApplicationMigrationNetworkMigrationCustomResource';
     /** This policy provides permissions to all read-only public APIs of Application Migration Service (MGN), as well as some read-only APIs of other AWS services that are required in order to make full read-only use of the MGN console. Attach this policy to your IAM users or roles. */
     public static AWSApplicationMigrationReadOnlyAccess = 'AWSApplicationMigrationReadOnlyAccess';
     /** This policy allows the Application Migration Service (MGN) Replication Servers, which are EC2 instances launched by Application Migration Service - to communicate with the MGN service, and to create EBS snapshots in your AWS account. An IAM role with this policy is attached (as an EC2 Instance Profile) by Application Migration Service to the MGN Replication Servers which are automatically launched and terminated by MGN, as needed. MGN Replication Servers are used to facilitate data replication from your external servers to AWS, as part of the migration process managed using MGN. We do not recommend that you attach this policy to your IAM users or roles. */
@@ -1364,6 +1366,8 @@ export class AwsManagedPolicy {
     public static AWSConnector = 'AWSConnector';
     /** Allows AWS Control Tower to call AWS services that provide automated account configuration and centralized governance on your behalf. */
     public static AWSControlTowerAccountServiceRolePolicy = 'aws-service-role/AWSControlTowerAccountServiceRolePolicy';
+    /** AWS Control Tower enables AWS CloudTrail as a best practice and provides this role to AWS CloudTrail. AWS CloudTrail assumes this role to create and publish CloudTrail logs */
+    public static AWSControlTowerCloudTrailRolePolicy = 'service-role/AWSControlTowerCloudTrailRolePolicy';
     /** Provides permissions to manage the IAM Identity Center (IdC) resources in the member accounts enrolled with AWS Control Tower. The policy is attached to the AWSControlTowerAdmin role only if the customer has opted-into IAM IdC integration in their AWS Control Tower Landing Zone. */
     public static AWSControlTowerIdentityCenterManagementPolicy = 'service-role/AWSControlTowerIdentityCenterManagementPolicy';
     /** Provides access to AWS Resources managed or used by AWS Control Tower */
@@ -2102,6 +2106,8 @@ export class AwsManagedPolicy {
     public static AWSSavingsPlansFullAccess = 'AWSSavingsPlansFullAccess';
     /** Provides read only access to Savings Plans service */
     public static AWSSavingsPlansReadOnlyAccess = 'AWSSavingsPlansReadOnlyAccess';
+    /** Provides access to retrieve and describe secrets from Secrets Manager. This policy also allows decrypting KMS keys for Secrets Manager secrets. */
+    public static AWSSecretsManagerClientReadOnlyAccess = 'AWSSecretsManagerClientReadOnlyAccess';
     /** Provides full access to use AWS Security Hub. */
     public static AWSSecurityHubFullAccess = 'AWSSecurityHubFullAccess';
     /** Grants permission to enable and manage AWS Security Hub within an organization. Includes enabling the service across the organization, and determining the delegated administrator account for the service. */

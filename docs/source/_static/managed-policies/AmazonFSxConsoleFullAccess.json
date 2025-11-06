@@ -18,7 +18,8 @@
         "firehose:ListDeliveryStreams",
         "kms:ListAliases",
         "logs:DescribeLogGroups",
-        "s3:ListBucket"
+        "s3:ListBucket",
+        "secretsmanager:ListSecrets"
       ],
       "Resource": "*"
     },
