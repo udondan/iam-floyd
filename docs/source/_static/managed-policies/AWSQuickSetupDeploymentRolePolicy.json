@@ -111,6 +111,8 @@
         "arn:aws:ssm:*::document/AWSQuickSetupType-ManageInstanceProfile",
         "arn:aws:ssm:*::document/AWSQuickSetupType-EnableConfigRecording",
         "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ChangeCalendarState",
+        "arn:aws:ssm:*::document/AmazonCloudWatch-ManageAgent",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-InstallAndManageCloudWatchAgent",
         "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ApplyInstanceState"
       ]
     },
@@ -143,6 +145,8 @@
         "arn:aws:ssm:*::document/AWSQuickSetupType-EnableConfigRecording",
         "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ChangeCalendarState",
         "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ApplyInstanceState",
+        "arn:aws:ssm:*::document/AmazonCloudWatch-ManageAgent",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-InstallAndManageCloudWatchAgent",
         "arn:aws:ec2:*:*:instance/*",
         "arn:aws:ssm:*:*:managed-instance/*",
         "arn:aws:ssm:*:*:association/*"

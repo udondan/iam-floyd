@@ -2784,6 +2784,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationMGHAccess);
     }
 
+    /** Provides permissions for Network Migration custom resource */
+    public AWSApplicationMigrationNetworkMigrationCustomResource(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationNetworkMigrationCustomResource);
+    }
+
     /** This policy provides permissions to all read-only public APIs of Application Migration Service (MGN), as well as some read-only APIs of other AWS services that are required in order to make full read-only use of the MGN console. Attach this policy to your IAM users or roles. */
     public AWSApplicationMigrationReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationReadOnlyAccess);
@@ -3417,6 +3422,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AWS Control Tower to call AWS services that provide automated account configuration and centralized governance on your behalf. */
     public AWSControlTowerAccountServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSControlTowerAccountServiceRolePolicy);
+    }
+
+    /** AWS Control Tower enables AWS CloudTrail as a best practice and provides this role to AWS CloudTrail. AWS CloudTrail assumes this role to create and publish CloudTrail logs */
+    public AWSControlTowerCloudTrailRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSControlTowerCloudTrailRolePolicy);
     }
 
     /** Provides permissions to manage the IAM Identity Center (IdC) resources in the member accounts enrolled with AWS Control Tower. The policy is attached to the AWSControlTowerAdmin role only if the customer has opted-into IAM IdC integration in their AWS Control Tower Landing Zone. */
@@ -5262,6 +5272,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read only access to Savings Plans service */
     public AWSSavingsPlansReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSavingsPlansReadOnlyAccess);
+    }
+
+    /** Provides access to retrieve and describe secrets from Secrets Manager. This policy also allows decrypting KMS keys for Secrets Manager secrets. */
+    public AWSSecretsManagerClientReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecretsManagerClientReadOnlyAccess);
     }
 
     /** Provides full access to use AWS Security Hub. */

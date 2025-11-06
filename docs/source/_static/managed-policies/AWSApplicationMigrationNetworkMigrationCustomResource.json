@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ModifyTGW",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyTransitGateway"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:transit-gateway/*",
+        "arn:aws:ec2:*:*:transit-gateway-route-table/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "AWSApplicationMigrationService"
+        }
+      }
+    }
+  ]
+}
