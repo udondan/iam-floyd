@@ -17,6 +17,15 @@
         "ec2:SearchTransitGatewayRoutes"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "PrefixListStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeManagedPrefixLists",
+        "ec2:GetManagedPrefixListEntries"
+      ],
+      "Resource": "*"
     }
   ]
 }
