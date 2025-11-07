@@ -903,6 +903,40 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a copy of an EBS volume. Resource-level permissions specified for this action apply to the source and copied volume. Condition keys for the copied volume correspond to parameters specified in the CopyVolumes API request
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyVolumes.html
+   */
+  public toCopyVolumes() {
+    return this.to('CopyVolumes');
+  }
+
+  /**
+   * Grants permission to create a new S3 Data Export for Capacity Manager
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityManagerDataExport.html
+   */
+  public toCreateCapacityManagerDataExport() {
+    return this.to('CreateCapacityManagerDataExport');
+  }
+
+  /**
    * Grants permission to create a Capacity Reservation
    *
    * Access Level: Write
@@ -2488,6 +2522,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an existing Capacity Manager data export configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCapacityManagerDataExport.html
+   */
+  public toDeleteCapacityManagerDataExport() {
+    return this.to('DeleteCapacityManagerDataExport');
+  }
+
+  /**
    * Grants permission to delete a carrier gateway
    *
    * Access Level: Write
@@ -3995,6 +4043,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeCapacityBlocks() {
     return this.to('DescribeCapacityBlocks');
+  }
+
+  /**
+   * Grants permission to describe one or more Capacity Manager data export configurations
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityManagerDataExports.html
+   */
+  public toDescribeCapacityManagerDataExports() {
+    return this.to('DescribeCapacityManagerDataExports');
   }
 
   /**
@@ -6367,6 +6429,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable EC2 Capacity Manager for your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableCapacityManager.html
+   */
+  public toDisableCapacityManager() {
+    return this.to('DisableCapacityManager');
+  }
+
+  /**
    * Grants permission to disable EBS encryption by default for your account
    *
    * Access Level: Write
@@ -6888,6 +6964,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable EC2 Capacity Manager for your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableCapacityManager.html
+   */
+  public toEnableCapacityManager() {
+    return this.to('EnableCapacityManager');
+  }
+
+  /**
    * Grants permission to enable EBS encryption by default for your account
    *
    * Access Level: Write
@@ -7294,6 +7384,48 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetAwsNetworkPerformanceData() {
     return this.to('GetAwsNetworkPerformanceData');
+  }
+
+  /**
+   * Grants permission to retrieve the current configuration and status of EC2 Capacity Manager
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityManagerAttributes.html
+   */
+  public toGetCapacityManagerAttributes() {
+    return this.to('GetCapacityManagerAttributes');
+  }
+
+  /**
+   * Grants permission to retrieve capacity usage metrics for your EC2 resources
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityManagerMetricData.html
+   */
+  public toGetCapacityManagerMetricData() {
+    return this.to('GetCapacityManagerMetricData');
+  }
+
+  /**
+   * Grants permission to retrieve the available dimension values for capacity metrics within a specified time range
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityManagerMetricDimensions.html
+   */
+  public toGetCapacityManagerMetricDimensions() {
+    return this.to('GetCapacityManagerMetricDimensions');
   }
 
   /**
@@ -10296,6 +10428,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the Organizations access setting for EC2 Capacity Manager
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateCapacityManagerOrganizationsAccess.html
+   */
+  public toUpdateCapacityManagerOrganizationsAccess() {
+    return this.to('UpdateCapacityManagerOrganizationsAccess');
+  }
+
+  /**
    * Grants permission to update descriptions for one or more outbound rules in a VPC security group
    *
    * Access Level: Write
@@ -10399,6 +10545,8 @@ export class Ec2 extends PolicyStatement {
       'CopyFpgaImage',
       'CopyImage',
       'CopySnapshot',
+      'CopyVolumes',
+      'CreateCapacityManagerDataExport',
       'CreateCapacityReservation',
       'CreateCapacityReservationBySplitting',
       'CreateCapacityReservationFleet',
@@ -10490,6 +10638,7 @@ export class Ec2 extends PolicyStatement {
       'CreateVpnConnection',
       'CreateVpnConnectionRoute',
       'CreateVpnGateway',
+      'DeleteCapacityManagerDataExport',
       'DeleteCarrierGateway',
       'DeleteClientVpnEndpoint',
       'DeleteClientVpnRoute',
@@ -10587,6 +10736,7 @@ export class Ec2 extends PolicyStatement {
       'DisableAddressTransfer',
       'DisableAllowedImagesSettings',
       'DisableAwsNetworkPerformanceMetricSubscription',
+      'DisableCapacityManager',
       'DisableEbsEncryptionByDefault',
       'DisableFastLaunch',
       'DisableFastSnapshotRestores',
@@ -10622,6 +10772,7 @@ export class Ec2 extends PolicyStatement {
       'EnableAddressTransfer',
       'EnableAllowedImagesSettings',
       'EnableAwsNetworkPerformanceMetricSubscription',
+      'EnableCapacityManager',
       'EnableEbsEncryptionByDefault',
       'EnableFastLaunch',
       'EnableFastSnapshotRestores',
@@ -10787,6 +10938,7 @@ export class Ec2 extends PolicyStatement {
       'UnassignPrivateNatGatewayAddress',
       'UnlockSnapshot',
       'UnmonitorInstances',
+      'UpdateCapacityManagerOrganizationsAccess',
       'UpdateSecurityGroupRuleDescriptionsEgress',
       'UpdateSecurityGroupRuleDescriptionsIngress',
       'WithdrawByoipCidr'
@@ -10828,6 +10980,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeCapacityBlockOfferings',
       'DescribeCapacityBlockStatus',
       'DescribeCapacityBlocks',
+      'DescribeCapacityManagerDataExports',
       'DescribeCapacityReservationBillingRequests',
       'DescribeCapacityReservationFleets',
       'DescribeCapacityReservations',
@@ -11021,6 +11174,9 @@ export class Ec2 extends PolicyStatement {
       'GetAssociatedEnclaveCertificateIamRoles',
       'GetAssociatedIpv6PoolCidrs',
       'GetAwsNetworkPerformanceData',
+      'GetCapacityManagerAttributes',
+      'GetCapacityManagerMetricData',
+      'GetCapacityManagerMetricDimensions',
       'GetCapacityReservationUsage',
       'GetCoipPoolUsage',
       'GetConsoleOutput',
@@ -11107,6 +11263,29 @@ export class Ec2 extends PolicyStatement {
    */
   public onCapacityBlock(capacityBlockId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capacity-block/${ capacityBlockId }`);
+  }
+
+  /**
+   * Adds a resource of type capacity-manager-data-export to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param capacityManagerDataExportId - Identifier for the capacityManagerDataExportId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onCapacityManagerDataExport(capacityManagerDataExportId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capacity-manager-data-export/${ capacityManagerDataExportId }`);
   }
 
   /**
@@ -13100,6 +13279,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifLaunchTemplate()
    * - .ifManagedResourceOperator()
    * - .ifParentSnapshot()
+   * - .ifParentVolume()
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifVolumeID()
@@ -13175,9 +13355,9 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifVpceMultiRegion()
    * - .ifVpceServiceName()
    * - .ifVpceServiceOwner()
-   * - .ifVpceMultiRegion()
    * - .ifVpceServiceRegion()
    */
   public onVpcEndpoint(vpcEndpointId: string, account?: string, region?: string, partition?: string) {
@@ -13202,8 +13382,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifAttribute()
    * - .ifRegion()
    * - .ifResourceTag()
-   * - .ifVpceServicePrivateDnsName()
    * - .ifVpceMultiRegion()
+   * - .ifVpceServicePrivateDnsName()
    * - .ifVpceServiceRegion()
    * - .ifVpceSupportedRegion()
    */
@@ -13399,6 +13579,8 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeSecurityGroupIngress()
    * - .toCopyImage()
    * - .toCopySnapshot()
+   * - .toCopyVolumes()
+   * - .toCreateCapacityManagerDataExport()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationFleet()
    * - .toCreateCarrierGateway()
@@ -13490,6 +13672,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to resource types:
    * - elastic-ip
    * - capacity-block
+   * - capacity-manager-data-export
    * - capacity-reservation-fleet
    * - capacity-reservation
    * - carrier-gateway
@@ -13711,6 +13894,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpcPeeringConnection()
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
+   * - .toDeleteCapacityManagerDataExport()
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
@@ -14044,6 +14228,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to resource types:
    * - elastic-ip
    * - capacity-block
+   * - capacity-manager-data-export
    * - capacity-reservation-fleet
    * - capacity-reservation
    * - carrier-gateway
@@ -14159,6 +14344,8 @@ export class Ec2 extends PolicyStatement {
    * - .toAuthorizeSecurityGroupIngress()
    * - .toCopyImage()
    * - .toCopySnapshot()
+   * - .toCopyVolumes()
+   * - .toCreateCapacityManagerDataExport()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationFleet()
    * - .toCreateCarrierGateway()
@@ -14250,6 +14437,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to resource types:
    * - elastic-ip
    * - capacity-block
+   * - capacity-manager-data-export
    * - capacity-reservation-fleet
    * - capacity-reservation
    * - carrier-gateway
@@ -14526,6 +14714,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to resource types:
    * - elastic-ip
    * - capacity-block
+   * - capacity-manager-data-export
    * - capacity-reservation-fleet
    * - capacity-reservation
    * - client-vpn-endpoint
@@ -14649,6 +14838,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to resource types:
    * - elastic-ip
    * - capacity-block
+   * - capacity-manager-data-export
    * - capacity-reservation-fleet
    * - capacity-reservation
    * - client-vpn-endpoint
@@ -14800,6 +14990,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
+   * - .toCopyVolumes()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateDelegateMacVolumeOwnershipTask()
@@ -14941,6 +15132,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
+   * - .toCopyVolumes()
    * - .toCreateCapacityReservation()
    * - .toCreateClientVpnRoute()
    * - .toCreateDelegateMacVolumeOwnershipTask()
@@ -15506,6 +15698,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAttachVolume()
    * - .toCopySnapshot()
+   * - .toCopyVolumes()
    * - .toCreateFleet()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -16599,6 +16792,15 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
+   * - .toCopyVolumes()
+   * - .toCreateImage()
+   * - .toCreateInstanceExportTask()
+   * - .toCreateLaunchTemplateVersion()
+   * - .toCreateNetworkInterfacePermission()
+   * - .toCreateReplaceRootVolumeTask()
+   * - .toCreateSnapshot()
+   * - .toCreateTags()
+   * - .toCreateTrafficMirrorSession()
    * - .toDeleteLaunchTemplate()
    * - .toDeleteLaunchTemplateVersions()
    * - .toDeleteNetworkInterface()
@@ -17062,6 +17264,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAttachVolume()
    * - .toCopySnapshot()
+   * - .toCopyVolumes()
    * - .toCreateFleet()
    * - .toCreateTags()
    * - .toCreateVolume()
@@ -17094,7 +17297,9 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAttachVolume()
    * - .toCopySnapshot()
+   * - .toCopyVolumes()
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshot()
@@ -17102,7 +17307,10 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateVolume()
    * - .toDeleteSnapshot()
+   * - .toDeleteVolume()
    * - .toDescribeSnapshotAttribute()
+   * - .toDescribeVolumeAttribute()
+   * - .toDetachVolume()
    * - .toDisableFastSnapshotRestores()
    * - .toEnableFastSnapshotRestores()
    * - .toImportImage()
@@ -17110,6 +17318,8 @@ export class Ec2 extends PolicyStatement {
    * - .toLockSnapshot()
    * - .toModifySnapshotAttribute()
    * - .toModifySnapshotTier()
+   * - .toModifyVolume()
+   * - .toModifyVolumeAttribute()
    * - .toRegisterImage()
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
@@ -17121,6 +17331,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - snapshot
+   * - volume
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -17656,6 +17867,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCopyFpgaImage()
    * - .toCopyImage()
    * - .toCopySnapshot()
+   * - .toCopyVolumes()
+   * - .toCreateCapacityManagerDataExport()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
    * - .toCreateCapacityReservationFleet()
@@ -17751,6 +17964,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
    * - .toCreateVpnGateway()
+   * - .toDeleteCapacityManagerDataExport()
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
@@ -17858,6 +18072,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeCapacityBlockOfferings()
    * - .toDescribeCapacityBlockStatus()
    * - .toDescribeCapacityBlocks()
+   * - .toDescribeCapacityManagerDataExports()
    * - .toDescribeCapacityReservationBillingRequests()
    * - .toDescribeCapacityReservationFleets()
    * - .toDescribeCapacityReservations()
@@ -18027,6 +18242,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableAddressTransfer()
    * - .toDisableAllowedImagesSettings()
    * - .toDisableAwsNetworkPerformanceMetricSubscription()
+   * - .toDisableCapacityManager()
    * - .toDisableEbsEncryptionByDefault()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
@@ -18064,6 +18280,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableAddressTransfer()
    * - .toEnableAllowedImagesSettings()
    * - .toEnableAwsNetworkPerformanceMetricSubscription()
+   * - .toEnableCapacityManager()
    * - .toEnableEbsEncryptionByDefault()
    * - .toEnableFastLaunch()
    * - .toEnableFastSnapshotRestores()
@@ -18091,6 +18308,9 @@ export class Ec2 extends PolicyStatement {
    * - .toGetAssociatedEnclaveCertificateIamRoles()
    * - .toGetAssociatedIpv6PoolCidrs()
    * - .toGetAwsNetworkPerformanceData()
+   * - .toGetCapacityManagerAttributes()
+   * - .toGetCapacityManagerMetricData()
+   * - .toGetCapacityManagerMetricDimensions()
    * - .toGetCapacityReservationUsage()
    * - .toGetCoipPoolUsage()
    * - .toGetConsoleOutput()
@@ -18302,6 +18522,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUnassignPrivateNatGatewayAddress()
    * - .toUnlockSnapshot()
    * - .toUnmonitorInstances()
+   * - .toUpdateCapacityManagerOrganizationsAccess()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
    * - .toWithdrawByoipCidr()
@@ -18309,6 +18530,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to resource types:
    * - elastic-ip
    * - capacity-block
+   * - capacity-manager-data-export
    * - capacity-reservation-fleet
    * - capacity-reservation
    * - carrier-gateway
@@ -18672,6 +18894,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVpcPeeringConnection()
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
+   * - .toDeleteCapacityManagerDataExport()
    * - .toDeleteCarrierGateway()
    * - .toDeleteClientVpnEndpoint()
    * - .toDeleteClientVpnRoute()
@@ -19002,6 +19225,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to resource types:
    * - elastic-ip
    * - capacity-block
+   * - capacity-manager-data-export
    * - capacity-reservation-fleet
    * - capacity-reservation
    * - carrier-gateway
@@ -19824,6 +20048,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAttachVolume()
+   * - .toCopyVolumes()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -19854,6 +20079,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAttachVolume()
+   * - .toCopyVolumes()
    * - .toCreateFleet()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -19889,6 +20115,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .toAttachVolume()
    * - .toCopySnapshot()
+   * - .toCopyVolumes()
    * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateReplaceRootVolumeTask()
@@ -19942,6 +20169,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAttachVolume()
+   * - .toCopyVolumes()
    * - .toCreateFleet()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -19976,6 +20204,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAttachVolume()
+   * - .toCopyVolumes()
    * - .toCreateFleet()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -20186,6 +20415,40 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by multi region of the VPC endpoint service
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
+   *
+   * Applies to actions:
+   * - .toAcceptVpcEndpointConnections()
+   * - .toCreateTags()
+   * - .toCreateVpcEndpoint()
+   * - .toCreateVpcEndpointConnectionNotification()
+   * - .toCreateVpcEndpointServiceConfiguration()
+   * - .toDeleteVpcEndpointConnectionNotifications()
+   * - .toDeleteVpcEndpointServiceConfigurations()
+   * - .toDeleteVpcEndpoints()
+   * - .toDescribeVpcEndpointServicePermissions()
+   * - .toModifyVpcEndpoint()
+   * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointServiceConfiguration()
+   * - .toModifyVpcEndpointServicePayerResponsibility()
+   * - .toModifyVpcEndpointServicePermissions()
+   * - .toRejectVpcEndpointConnections()
+   * - .toStartVpcEndpointServicePrivateDnsVerification()
+   *
+   * Applies to resource types:
+   * - vpc-endpoint
+   * - vpc-endpoint-service
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpceMultiRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpceMultiRegion`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the name of the VPC endpoint service
    *
    * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
@@ -20241,6 +20504,58 @@ export class Ec2 extends PolicyStatement {
    */
   public ifVpceServicePrivateDnsName(value: string | string[], operator?: Operator | string) {
     return this.if(`VpceServicePrivateDnsName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the region of the VPC endpoint service
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateVpcEndpoint()
+   * - .toCreateVpcEndpointConnectionNotification()
+   * - .toCreateVpcEndpointServiceConfiguration()
+   * - .toDeleteVpcEndpoints()
+   * - .toModifyVpcEndpoint()
+   *
+   * Applies to resource types:
+   * - vpc-endpoint
+   * - vpc-endpoint-service
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpceServiceRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpceServiceRegion`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the supported region of the VPC endpoint service
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
+   *
+   * Applies to actions:
+   * - .toAcceptVpcEndpointConnections()
+   * - .toCreateTags()
+   * - .toDeleteVpcEndpointConnectionNotifications()
+   * - .toDeleteVpcEndpointServiceConfigurations()
+   * - .toDescribeVpcEndpointServicePermissions()
+   * - .toModifyVpcEndpointConnectionNotification()
+   * - .toModifyVpcEndpointServiceConfiguration()
+   * - .toModifyVpcEndpointServicePayerResponsibility()
+   * - .toModifyVpcEndpointServicePermissions()
+   * - .toRejectVpcEndpointConnections()
+   * - .toStartVpcEndpointServicePrivateDnsVerification()
+   *
+   * Applies to resource types:
+   * - vpc-endpoint-service
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpceSupportedRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpceSupportedRegion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -20432,91 +20747,5 @@ export class Ec2 extends PolicyStatement {
    */
   public ifTransitGatewayRouteTableId(value: string | string[], operator?: Operator | string) {
     return this.if(`transitGatewayRouteTableId`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by multi region of the VPC endpoint service
-   *
-   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
-   *
-   * Applies to actions:
-   * - .toAcceptVpcEndpointConnections()
-   * - .toCreateTags()
-   * - .toCreateVpcEndpoint()
-   * - .toCreateVpcEndpointConnectionNotification()
-   * - .toCreateVpcEndpointServiceConfiguration()
-   * - .toDeleteVpcEndpointConnectionNotifications()
-   * - .toDeleteVpcEndpointServiceConfigurations()
-   * - .toDeleteVpcEndpoints()
-   * - .toDescribeVpcEndpointServicePermissions()
-   * - .toModifyVpcEndpoint()
-   * - .toModifyVpcEndpointConnectionNotification()
-   * - .toModifyVpcEndpointServiceConfiguration()
-   * - .toModifyVpcEndpointServicePayerResponsibility()
-   * - .toModifyVpcEndpointServicePermissions()
-   * - .toRejectVpcEndpointConnections()
-   * - .toStartVpcEndpointServicePrivateDnsVerification()
-   *
-   * Applies to resource types:
-   * - vpc-endpoint
-   * - vpc-endpoint-service
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifVpceMultiRegion(value: string | string[], operator?: Operator | string) {
-    return this.if(`vpceMultiRegion`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the region of the VPC endpoint service
-   *
-   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
-   *
-   * Applies to actions:
-   * - .toCreateTags()
-   * - .toCreateVpcEndpoint()
-   * - .toCreateVpcEndpointConnectionNotification()
-   * - .toCreateVpcEndpointServiceConfiguration()
-   * - .toDeleteVpcEndpoints()
-   * - .toModifyVpcEndpoint()
-   *
-   * Applies to resource types:
-   * - vpc-endpoint
-   * - vpc-endpoint-service
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifVpceServiceRegion(value: string | string[], operator?: Operator | string) {
-    return this.if(`vpceServiceRegion`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the supported region of the VPC endpoint service
-   *
-   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
-   *
-   * Applies to actions:
-   * - .toAcceptVpcEndpointConnections()
-   * - .toCreateTags()
-   * - .toDeleteVpcEndpointConnectionNotifications()
-   * - .toDeleteVpcEndpointServiceConfigurations()
-   * - .toDescribeVpcEndpointServicePermissions()
-   * - .toModifyVpcEndpointConnectionNotification()
-   * - .toModifyVpcEndpointServiceConfiguration()
-   * - .toModifyVpcEndpointServicePayerResponsibility()
-   * - .toModifyVpcEndpointServicePermissions()
-   * - .toRejectVpcEndpointConnections()
-   * - .toStartVpcEndpointServicePrivateDnsVerification()
-   *
-   * Applies to resource types:
-   * - vpc-endpoint-service
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifVpceSupportedRegion(value: string | string[], operator?: Operator | string) {
-    return this.if(`vpceSupportedRegion`, value, operator ?? 'StringLike');
   }
 }

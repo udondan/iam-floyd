@@ -431,6 +431,17 @@ export class Iotmanagedintegrations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the certificate pem for a managed thing
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iotmanagedintegrations/latest/APIReference/API_GetManagedThingCertificate.html
+   */
+  public toGetManagedThingCertificate() {
+    return this.to('GetManagedThingCertificate');
+  }
+
+  /**
    * Grants permission to get the connectivity data for a managed thing
    *
    * Access Level: Read
@@ -1019,6 +1030,7 @@ export class Iotmanagedintegrations extends PolicyStatement {
       'GetHubConfiguration',
       'GetManagedThing',
       'GetManagedThingCapabilities',
+      'GetManagedThingCertificate',
       'GetManagedThingConnectivityData',
       'GetManagedThingMetaData',
       'GetManagedThingState',

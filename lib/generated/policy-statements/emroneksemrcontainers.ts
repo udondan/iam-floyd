@@ -124,6 +124,17 @@ export class EmrContainers extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a security configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DeleteSecurityConfiguration.html
+   */
+  public toDeleteSecurityConfiguration() {
+    return this.to('DeleteSecurityConfiguration');
+  }
+
+  /**
    * Grants permission to delete a virtual cluster
    *
    * Access Level: Write
@@ -322,6 +333,7 @@ export class EmrContainers extends PolicyStatement {
       'CreateVirtualCluster',
       'DeleteJobTemplate',
       'DeleteManagedEndpoint',
+      'DeleteSecurityConfiguration',
       'DeleteVirtualCluster',
       'GetManagedEndpointSessionCredentials',
       'StartJobRun'

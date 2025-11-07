@@ -117,8 +117,6 @@ export class BedrockAgentcore extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifSubnets()
-   * - .ifSecurityGroups()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -167,8 +165,6 @@ export class BedrockAgentcore extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifSubnets()
-   * - .ifSecurityGroups()
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateBrowser.html
    */
@@ -184,8 +180,6 @@ export class BedrockAgentcore extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifSubnets()
-   * - .ifSecurityGroups()
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateCodeInterpreter.html
    */
@@ -1045,10 +1039,6 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSubnets()
-   * - .ifSecurityGroups()
-   *
    * Dependent actions:
    * - iam:PassRole
    *
@@ -1680,24 +1670,6 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ID of security groups configured for the AgentCore runtime
-   *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-vpc-condition.html
-   *
-   * Applies to actions:
-   * - .toCreateAgentRuntime()
-   * - .toCreateBrowser()
-   * - .toCreateCodeInterpreter()
-   * - .toUpdateAgentRuntime()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifSecurityGroups(value: string | string[], operator?: Operator | string) {
-    return this.if(`securityGroups`, value, operator ?? 'StringLike');
-  }
-
-  /**
    * Filters access by Session Id
    *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-sessionId
@@ -1729,24 +1701,6 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public ifStrategyId(value: string | string[], operator?: Operator | string) {
     return this.if(`strategyId`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by the ID of subnets configured for the AgentCore runtime
-   *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/security-vpc-condition.html
-   *
-   * Applies to actions:
-   * - .toCreateAgentRuntime()
-   * - .toCreateBrowser()
-   * - .toCreateCodeInterpreter()
-   * - .toUpdateAgentRuntime()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifSubnets(value: string | string[], operator?: Operator | string) {
-    return this.if(`subnets`, value, operator ?? 'StringLike');
   }
 
   /**

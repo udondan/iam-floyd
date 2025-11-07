@@ -424,6 +424,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create terms and associate it with an app client
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateTerms.html
+   */
+  public toCreateTerms() {
+    return this.to('CreateTerms');
+  }
+
+  /**
    * Grants permission to create user CSV import jobs
    *
    * Access Level: Write
@@ -514,6 +525,17 @@ export class CognitoIdp extends PolicyStatement {
    */
   public toDeleteResourceServer() {
     return this.to('DeleteResourceServer');
+  }
+
+  /**
+   * Grants permission to delete terms for an app client
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteTerms.html
+   */
+  public toDeleteTerms() {
+    return this.to('DeleteTerms');
   }
 
   /**
@@ -624,6 +646,17 @@ export class CognitoIdp extends PolicyStatement {
    */
   public toDescribeRiskConfiguration() {
     return this.to('DescribeRiskConfiguration');
+  }
+
+  /**
+   * Grants permission to get the detailed information about terms for an app client
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeTerms.html
+   */
+  public toDescribeTerms() {
+    return this.to('DescribeTerms');
   }
 
   /**
@@ -918,6 +951,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all terms for a user pool
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListTerms.html
+   */
+  public toListTerms() {
+    return this.to('ListTerms');
+  }
+
+  /**
    * Grants permission to list all user import jobs
    *
    * Access Level: List
@@ -1200,6 +1244,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update terms for an app client
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateTerms.html
+   */
+  public toUpdateTerms() {
+    return this.to('UpdateTerms');
+  }
+
+  /**
    * Grants permission to allow a user to update a specific attribute (one at a time)
    *
    * Access Level: Write
@@ -1303,6 +1358,7 @@ export class CognitoIdp extends PolicyStatement {
       'CreateIdentityProvider',
       'CreateManagedLoginBranding',
       'CreateResourceServer',
+      'CreateTerms',
       'CreateUserImportJob',
       'CreateUserPool',
       'CreateUserPoolClient',
@@ -1311,6 +1367,7 @@ export class CognitoIdp extends PolicyStatement {
       'DeleteIdentityProvider',
       'DeleteManagedLoginBranding',
       'DeleteResourceServer',
+      'DeleteTerms',
       'DeleteUser',
       'DeleteUserAttributes',
       'DeleteUserPool',
@@ -1340,6 +1397,7 @@ export class CognitoIdp extends PolicyStatement {
       'UpdateIdentityProvider',
       'UpdateManagedLoginBranding',
       'UpdateResourceServer',
+      'UpdateTerms',
       'UpdateUserAttributes',
       'UpdateUserPool',
       'UpdateUserPoolClient',
@@ -1356,6 +1414,7 @@ export class CognitoIdp extends PolicyStatement {
       'DescribeManagedLoginBrandingByClient',
       'DescribeResourceServer',
       'DescribeRiskConfiguration',
+      'DescribeTerms',
       'DescribeUserImportJob',
       'DescribeUserPool',
       'DescribeUserPoolClient',
@@ -1381,6 +1440,7 @@ export class CognitoIdp extends PolicyStatement {
       'ListResourceServers',
       'ListResourcesForWebACL',
       'ListTagsForResource',
+      'ListTerms',
       'ListUserImportJobs',
       'ListUserPoolClients',
       'ListUserPools',

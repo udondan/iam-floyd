@@ -37,6 +37,7 @@ export class Lambda extends PolicyStatement {
    * Possible conditions:
    * - .ifPrincipal()
    * - .ifFunctionUrlAuthType()
+   * - .ifInvokedViaFunctionUrl()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html
    */
@@ -1201,6 +1202,20 @@ export class Lambda extends PolicyStatement {
    */
   public ifFunctionUrlAuthType(value: string | string[], operator?: Operator | string) {
     return this.if(`FunctionUrlAuthType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Limits the scope of lambda:InvokeFunction action to Function URLs only. Available during AddPermission operation
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * Applies to actions:
+   * - .toAddPermission()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifInvokedViaFunctionUrl(value?: boolean) {
+    return this.if(`InvokedViaFunctionUrl`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

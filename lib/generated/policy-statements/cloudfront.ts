@@ -553,6 +553,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a resource's policy document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a response headers policy
    *
    * Access Level: Write
@@ -968,6 +979,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toGetRealtimeLogConfig() {
     return this.to('GetRealtimeLogConfig');
+  }
+
+  /**
+   * Grants permission to get the information about a resource's policy document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -1466,6 +1488,17 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update or create a resource's policy document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
+  }
+
+  /**
    * Grants permission to add tags to a CloudFront resource
    *
    * Access Level: Tagging
@@ -1503,6 +1536,17 @@ export class Cloudfront extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update an Anycast static IP list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateAnycastIpList.html
+   */
+  public toUpdateAnycastIpList() {
+    return this.to('UpdateAnycastIpList');
   }
 
   /**
@@ -1797,13 +1841,16 @@ export class Cloudfront extends PolicyStatement {
       'DeleteOriginRequestPolicy',
       'DeletePublicKey',
       'DeleteRealtimeLogConfig',
+      'DeleteResourcePolicy',
       'DeleteResponseHeadersPolicy',
       'DeleteStreamingDistribution',
       'DeleteVpcOrigin',
       'DisassociateDistributionTenantWebACL',
       'DisassociateDistributionWebACL',
       'PublishFunction',
+      'PutResourcePolicy',
       'TestFunction',
+      'UpdateAnycastIpList',
       'UpdateCachePolicy',
       'UpdateCloudFrontOriginAccessIdentity',
       'UpdateConnectionGroup',
@@ -1860,6 +1907,7 @@ export class Cloudfront extends PolicyStatement {
       'GetPublicKey',
       'GetPublicKeyConfig',
       'GetRealtimeLogConfig',
+      'GetResourcePolicy',
       'GetResponseHeadersPolicy',
       'GetResponseHeadersPolicyConfig',
       'GetSavingsPlan',
@@ -1988,7 +2036,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type cache-policy to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-key-create-cache-policy.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2001,7 +2049,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type origin-request-policy to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2053,7 +2101,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type response-headers-policy to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2066,7 +2114,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type origin-access-control to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2079,7 +2127,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type continuous-deployment-policy to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-staging-distribution-continuous-deployment-policy.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2124,7 +2172,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type distribution-tenant to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/API_DistributionTenant.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2140,7 +2188,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type connection-group to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/API_ConnectionGroup.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-connection-group.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

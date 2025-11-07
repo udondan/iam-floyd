@@ -59,6 +59,8 @@ ec2:ConfirmProductInstance;Write
 ec2:CopyFpgaImage;Write
 ec2:CopyImage;Write
 ec2:CopySnapshot;Write
+ec2:CopyVolumes;Write
+ec2:CreateCapacityManagerDataExport;Write
 ec2:CreateCapacityReservation;Write
 ec2:CreateCapacityReservationBySplitting;Write
 ec2:CreateCapacityReservationFleet;Write
@@ -154,6 +156,7 @@ ec2:CreateVpcPeeringConnection;Write
 ec2:CreateVpnConnection;Write
 ec2:CreateVpnConnectionRoute;Write
 ec2:CreateVpnGateway;Write
+ec2:DeleteCapacityManagerDataExport;Write
 ec2:DeleteCarrierGateway;Write
 ec2:DeleteClientVpnEndpoint;Write
 ec2:DeleteClientVpnRoute;Write
@@ -261,6 +264,7 @@ ec2:DescribeCapacityBlockExtensionOfferings;List
 ec2:DescribeCapacityBlockOfferings;List
 ec2:DescribeCapacityBlockStatus;List
 ec2:DescribeCapacityBlocks;List
+ec2:DescribeCapacityManagerDataExports;List
 ec2:DescribeCapacityReservationBillingRequests;List
 ec2:DescribeCapacityReservationFleets;List
 ec2:DescribeCapacityReservations;List
@@ -430,6 +434,7 @@ ec2:DetachVpnGateway;Write
 ec2:DisableAddressTransfer;Write
 ec2:DisableAllowedImagesSettings;Write
 ec2:DisableAwsNetworkPerformanceMetricSubscription;Write
+ec2:DisableCapacityManager;Write
 ec2:DisableEbsEncryptionByDefault;Write
 ec2:DisableFastLaunch;Write
 ec2:DisableFastSnapshotRestores;Write
@@ -467,6 +472,7 @@ ec2:DisassociateVpcCidrBlock;Write
 ec2:EnableAddressTransfer;Write
 ec2:EnableAllowedImagesSettings;Write
 ec2:EnableAwsNetworkPerformanceMetricSubscription;Write
+ec2:EnableCapacityManager;Write
 ec2:EnableEbsEncryptionByDefault;Write
 ec2:EnableFastLaunch;Write
 ec2:EnableFastSnapshotRestores;Write
@@ -494,6 +500,9 @@ ec2:GetAllowedImagesSettings;Read
 ec2:GetAssociatedEnclaveCertificateIamRoles;Read
 ec2:GetAssociatedIpv6PoolCidrs;Read
 ec2:GetAwsNetworkPerformanceData;Read
+ec2:GetCapacityManagerAttributes;Read
+ec2:GetCapacityManagerMetricData;Read
+ec2:GetCapacityManagerMetricDimensions;Read
 ec2:GetCapacityReservationUsage;Read
 ec2:GetCoipPoolUsage;Read
 ec2:GetConsoleOutput;Read
@@ -705,6 +714,7 @@ ec2:UnassignPrivateIpAddresses;Write
 ec2:UnassignPrivateNatGatewayAddress;Write
 ec2:UnlockSnapshot;Write
 ec2:UnmonitorInstances;Write
+ec2:UpdateCapacityManagerOrganizationsAccess;Write
 ec2:UpdateSecurityGroupRuleDescriptionsEgress;Write
 ec2:UpdateSecurityGroupRuleDescriptionsIngress;Write
 ec2:WithdrawByoipCidr;Write

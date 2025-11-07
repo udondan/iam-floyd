@@ -32,3 +32,4 @@ bedrock:prompt-router
 bedrock:prompt-version
 bedrock:provisioned-model
 bedrock:session
+bedrock:system-tool

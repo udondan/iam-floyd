@@ -44,6 +44,7 @@ cloudfront:DeleteOriginAccessControl;Write
 cloudfront:DeleteOriginRequestPolicy;Write
 cloudfront:DeletePublicKey;Write
 cloudfront:DeleteRealtimeLogConfig;Write
+cloudfront:DeleteResourcePolicy;Write
 cloudfront:DeleteResponseHeadersPolicy;Write
 cloudfront:DeleteStreamingDistribution;Write
 cloudfront:DeleteVpcOrigin;Write
@@ -82,6 +83,7 @@ cloudfront:GetOriginRequestPolicyConfig;Read
 cloudfront:GetPublicKey;Read
 cloudfront:GetPublicKeyConfig;Read
 cloudfront:GetRealtimeLogConfig;Read
+cloudfront:GetResourcePolicy;Read
 cloudfront:GetResponseHeadersPolicy;Read
 cloudfront:GetResponseHeadersPolicyConfig;Read
 cloudfront:GetSavingsPlan;Read
@@ -127,9 +129,11 @@ cloudfront:ListTagsForResource;Read
 cloudfront:ListUsages;List
 cloudfront:ListVpcOrigins;List
 cloudfront:PublishFunction;Write
+cloudfront:PutResourcePolicy;Write
 cloudfront:TagResource;Tagging
 cloudfront:TestFunction;Write
 cloudfront:UntagResource;Tagging
+cloudfront:UpdateAnycastIpList;Write
 cloudfront:UpdateCachePolicy;Write
 cloudfront:UpdateCloudFrontOriginAccessIdentity;Write
 cloudfront:UpdateConnectionGroup;Write

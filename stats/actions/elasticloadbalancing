@@ -1,6 +1,7 @@
 elasticloadbalancing:AddListenerCertificates;Write
 elasticloadbalancing:AddTags;Tagging
 elasticloadbalancing:AddTrustStoreRevocations;Write
+elasticloadbalancing:AllowVendedLogDeliveryForResource;Permissions management
 elasticloadbalancing:ApplySecurityGroupsToLoadBalancer;Write
 elasticloadbalancing:AttachLoadBalancerToSubnets;Write
 elasticloadbalancing:ConfigureHealthCheck;Write
@@ -33,7 +34,6 @@ elasticloadbalancing:DescribeLoadBalancerAttributes;Read
 elasticloadbalancing:DescribeLoadBalancerPolicies;Read
 elasticloadbalancing:DescribeLoadBalancerPolicyTypes;Read
 elasticloadbalancing:DescribeLoadBalancers;List
-elasticloadbalancing:DescribeLoadBalancers;Read
 elasticloadbalancing:DescribeRules;Read
 elasticloadbalancing:DescribeSSLPolicies;Read
 elasticloadbalancing:DescribeTags;Read

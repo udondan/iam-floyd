@@ -34,6 +34,10 @@ export class Rtbfabric extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateInboundExternalLink.html
    */
   public toCreateInboundExternalLink() {
@@ -44,6 +48,10 @@ export class Rtbfabric extends PolicyStatement {
    * Grants permission to create a new link between RTB applications
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLink.html
    */
@@ -56,6 +64,10 @@ export class Rtbfabric extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateOutboundExternalLink.html
    */
   public toCreateOutboundExternalLink() {
@@ -67,6 +79,10 @@ export class Rtbfabric extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateRequesterGateway.html
    */
   public toCreateRequesterGateway() {
@@ -77,6 +93,10 @@ export class Rtbfabric extends PolicyStatement {
    * Grants permission to create a responder gateway
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateResponderGateway.html
    */
@@ -232,9 +252,6 @@ export class Rtbfabric extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -259,7 +276,6 @@ export class Rtbfabric extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_TagResource.html
@@ -274,7 +290,6 @@ export class Rtbfabric extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UntagResource.html
@@ -377,6 +392,7 @@ export class Rtbfabric extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInboundExternalLinkLinkId()
    * - .ifResponderGatewayGatewayId()
    */
@@ -396,6 +412,7 @@ export class Rtbfabric extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifLinkLinkId()
    * - .ifRequesterGatewayGatewayId()
    * - .ifResponderGatewayGatewayId()
@@ -416,6 +433,7 @@ export class Rtbfabric extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifOutboundExternalLinkLinkId()
    * - .ifRequesterGatewayGatewayId()
    */
@@ -434,6 +452,7 @@ export class Rtbfabric extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifRequesterGatewayGatewayId()
    */
   public onRequesterGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
@@ -451,6 +470,7 @@ export class Rtbfabric extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifResponderGatewayGatewayId()
    */
   public onResponderGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
@@ -463,6 +483,11 @@ export class Rtbfabric extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateInboundExternalLink()
+   * - .toCreateLink()
+   * - .toCreateOutboundExternalLink()
+   * - .toCreateRequesterGateway()
+   * - .toCreateResponderGateway()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -478,10 +503,12 @@ export class Rtbfabric extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
+   * Applies to resource types:
+   * - InboundExternalLink
+   * - Link
+   * - OutboundExternalLink
+   * - RequesterGateway
+   * - ResponderGateway
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -497,6 +524,11 @@ export class Rtbfabric extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateInboundExternalLink()
+   * - .toCreateLink()
+   * - .toCreateOutboundExternalLink()
+   * - .toCreateRequesterGateway()
+   * - .toCreateResponderGateway()
    * - .toTagResource()
    * - .toUntagResource()
    *
