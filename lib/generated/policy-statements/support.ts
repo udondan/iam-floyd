@@ -261,6 +261,17 @@ export class Support extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate a live contact on AWS Support Center. This is an internally managed function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
+   */
+  public toInitiateLiveContactForCase() {
+    return this.to('InitiateLiveContactForCase');
+  }
+
+  /**
    * Grants permission to allow secondary services to attach attributes to AWS Support cases. This is an internally managed function
    *
    * Access Level: Write
@@ -355,6 +366,7 @@ export class Support extends PolicyStatement {
       'CreateCase',
       'InitiateCallForCase',
       'InitiateChatForCase',
+      'InitiateLiveContactForCase',
       'PutCaseAttributes',
       'RateCaseCommunication',
       'RefreshTrustedAdvisorCheck',

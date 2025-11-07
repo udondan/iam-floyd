@@ -67,6 +67,17 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure vended log delivery for load balancers
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AllowVendedLogDeliveryForResource.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to create a listener for the specified Application Load Balancer
    *
    * Access Level: Write
@@ -345,7 +356,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   /**
    * Grants permission to describe the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html
    */
@@ -803,6 +814,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'AddTags',
       'RemoveTags'
     ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Read: [
       'DescribeAccountLimits',
       'DescribeCapacityReservation',
@@ -810,7 +824,6 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'DescribeListenerCertificates',
       'DescribeListeners',
       'DescribeLoadBalancerAttributes',
-      'DescribeLoadBalancers',
       'DescribeRules',
       'DescribeSSLPolicies',
       'DescribeTags',
@@ -823,6 +836,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'GetResourcePolicy',
       'GetTrustStoreCaCertificatesBundle',
       'GetTrustStoreRevocationContent'
+    ],
+    List: [
+      'DescribeLoadBalancers'
     ]
   };
 

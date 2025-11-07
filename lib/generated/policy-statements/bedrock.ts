@@ -1677,6 +1677,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke the specified Bedrock tool to run inference
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeTool.html
+   */
+  public toInvokeTool() {
+    return this.to('InvokeTool');
+  }
+
+  /**
    * Grants permission to list action groups in an agent
    *
    * Access Level: List
@@ -2707,6 +2718,7 @@ export class Bedrock extends PolicyStatement {
       'InvokeInlineAgent',
       'InvokeModel',
       'InvokeModelWithResponseStream',
+      'InvokeTool',
       'ListMarketplaceModelEndpoints',
       'ListTagsForResource',
       'OptimizePrompt',
@@ -2890,6 +2902,19 @@ export class Bedrock extends PolicyStatement {
    */
   public onFoundationModel(resourceId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }::foundation-model/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type system-tool to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSystemTool(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock::${ account ?? this.defaultAccount }:system-tool/${ resourceId }`);
   }
 
   /**

@@ -47,6 +47,21 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an anomaly detector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateAnomalyDetector.html
+   */
+  public toCreateAnomalyDetector() {
+    return this.to('CreateAnomalyDetector');
+  }
+
+  /**
    * Grants permission to create a logging configuration
    *
    * Access Level: Write
@@ -156,6 +171,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an anomaly detector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteAnomalyDetector.html
+   */
+  public toDeleteAnomalyDetector() {
+    return this.to('DeleteAnomalyDetector');
+  }
+
+  /**
    * Grants permission to delete a logging configuration
    *
    * Access Level: Write
@@ -226,6 +255,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a scraper logging configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteScraperLoggingConfiguration.html
+   */
+  public toDeleteScraperLoggingConfiguration() {
+    return this.to('DeleteScraperLoggingConfiguration');
+  }
+
+  /**
    * Grants permission to delete a workspace
    *
    * Access Level: Write
@@ -251,6 +294,20 @@ export class Aps extends PolicyStatement {
    */
   public toDescribeAlertManagerDefinition() {
     return this.to('DescribeAlertManagerDefinition');
+  }
+
+  /**
+   * Grants permission to describe an anomaly detector
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeAnomalyDetector.html
+   */
+  public toDescribeAnomalyDetector() {
+    return this.to('DescribeAnomalyDetector');
   }
 
   /**
@@ -321,6 +378,20 @@ export class Aps extends PolicyStatement {
    */
   public toDescribeScraper() {
     return this.to('DescribeScraper');
+  }
+
+  /**
+   * Grants permission to describe a scraper logging configuration
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeScraperLoggingConfiguration.html
+   */
+  public toDescribeScraperLoggingConfiguration() {
+    return this.to('DescribeScraperLoggingConfiguration');
   }
 
   /**
@@ -503,6 +574,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list anomaly detectors
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListAnomalyDetectors.html
+   */
+  public toListAnomalyDetectors() {
+    return this.to('ListAnomalyDetectors');
+  }
+
+  /**
    * Grants permission to list rule groups namespaces
    *
    * Access Level: List
@@ -568,6 +653,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to preview anomaly detection on AMP workspace metrics
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-PreviewAnomalyDetector.html
+   */
+  public toPreviewAnomalyDetector() {
+    return this.to('PreviewAnomalyDetector');
+  }
+
+  /**
    * Grants permission to update an alert manager definition
    *
    * Access Level: Write
@@ -593,6 +692,20 @@ export class Aps extends PolicyStatement {
    */
   public toPutAlertManagerSilences() {
     return this.to('PutAlertManagerSilences');
+  }
+
+  /**
+   * Grants permission to update an anomaly detector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutAnomalyDetector.html
+   */
+  public toPutAnomalyDetector() {
+    return this.to('PutAnomalyDetector');
   }
 
   /**
@@ -727,6 +840,20 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put a scraper logging configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateScraperLoggingConfiguration.html
+   */
+  public toUpdateScraperLoggingConfiguration() {
+    return this.to('UpdateScraperLoggingConfiguration');
+  }
+
+  /**
    * Grants permission to modify the alias of existing AMP workspace
    *
    * Access Level: Write
@@ -758,6 +885,7 @@ export class Aps extends PolicyStatement {
     Write: [
       'CreateAlertManagerAlerts',
       'CreateAlertManagerDefinition',
+      'CreateAnomalyDetector',
       'CreateLoggingConfiguration',
       'CreateQueryLoggingConfiguration',
       'CreateRuleGroupsNamespace',
@@ -765,30 +893,36 @@ export class Aps extends PolicyStatement {
       'CreateWorkspace',
       'DeleteAlertManagerDefinition',
       'DeleteAlertManagerSilence',
+      'DeleteAnomalyDetector',
       'DeleteLoggingConfiguration',
       'DeleteQueryLoggingConfiguration',
       'DeleteResourcePolicy',
       'DeleteRuleGroupsNamespace',
       'DeleteScraper',
+      'DeleteScraperLoggingConfiguration',
       'DeleteWorkspace',
       'PutAlertManagerDefinition',
       'PutAlertManagerSilences',
+      'PutAnomalyDetector',
       'PutResourcePolicy',
       'PutRuleGroupsNamespace',
       'RemoteWrite',
       'UpdateLoggingConfiguration',
       'UpdateQueryLoggingConfiguration',
       'UpdateScraper',
+      'UpdateScraperLoggingConfiguration',
       'UpdateWorkspaceAlias',
       'UpdateWorkspaceConfiguration'
     ],
     Read: [
       'DescribeAlertManagerDefinition',
+      'DescribeAnomalyDetector',
       'DescribeLoggingConfiguration',
       'DescribeQueryLoggingConfiguration',
       'DescribeResourcePolicy',
       'DescribeRuleGroupsNamespace',
       'DescribeScraper',
+      'DescribeScraperLoggingConfiguration',
       'DescribeWorkspace',
       'DescribeWorkspaceConfiguration',
       'GetAlertManagerSilence',
@@ -804,9 +938,11 @@ export class Aps extends PolicyStatement {
       'ListAlerts',
       'ListRules',
       'ListTagsForResource',
+      'PreviewAnomalyDetector',
       'QueryMetrics'
     ],
     List: [
+      'ListAnomalyDetectors',
       'ListRuleGroupsNamespaces',
       'ListScrapers',
       'ListWorkspaces'
@@ -857,6 +993,26 @@ export class Aps extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type anomalydetector to the statement
+   *
+   * https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html
+   *
+   * @param workspaceId - Identifier for the workspaceId.
+   * @param anomalyDetectorId - Identifier for the anomalyDetectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   */
+  public onAnomalydetector(workspaceId: string, anomalyDetectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aps:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:anomalydetector/${ workspaceId }/${ anomalyDetectorId }`);
+  }
+
+  /**
    * Adds a resource of type scraper to the statement
    *
    * https://docs.aws.amazon.com/prometheus/latest/userguide/security-iam.html
@@ -898,6 +1054,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateAnomalyDetector()
    * - .toCreateRuleGroupsNamespace()
    * - .toCreateScraper()
    * - .toCreateWorkspace()
@@ -907,6 +1064,7 @@ export class Aps extends PolicyStatement {
    * Applies to resource types:
    * - workspace
    * - rulegroupsnamespace
+   * - anomalydetector
    * - scraper
    *
    * @param tagKey The tag key to check
@@ -930,18 +1088,22 @@ export class Aps extends PolicyStatement {
    * - .toCreateScraper()
    * - .toDeleteAlertManagerDefinition()
    * - .toDeleteAlertManagerSilence()
+   * - .toDeleteAnomalyDetector()
    * - .toDeleteLoggingConfiguration()
    * - .toDeleteQueryLoggingConfiguration()
    * - .toDeleteResourcePolicy()
    * - .toDeleteRuleGroupsNamespace()
    * - .toDeleteScraper()
+   * - .toDeleteScraperLoggingConfiguration()
    * - .toDeleteWorkspace()
    * - .toDescribeAlertManagerDefinition()
+   * - .toDescribeAnomalyDetector()
    * - .toDescribeLoggingConfiguration()
    * - .toDescribeQueryLoggingConfiguration()
    * - .toDescribeResourcePolicy()
    * - .toDescribeRuleGroupsNamespace()
    * - .toDescribeScraper()
+   * - .toDescribeScraperLoggingConfiguration()
    * - .toDescribeWorkspace()
    * - .toDescribeWorkspaceConfiguration()
    * - .toGetAlertManagerSilence()
@@ -954,10 +1116,13 @@ export class Aps extends PolicyStatement {
    * - .toListAlertManagerReceivers()
    * - .toListAlertManagerSilences()
    * - .toListAlerts()
+   * - .toListAnomalyDetectors()
    * - .toListRuleGroupsNamespaces()
    * - .toListRules()
+   * - .toPreviewAnomalyDetector()
    * - .toPutAlertManagerDefinition()
    * - .toPutAlertManagerSilences()
+   * - .toPutAnomalyDetector()
    * - .toPutResourcePolicy()
    * - .toPutRuleGroupsNamespace()
    * - .toQueryMetrics()
@@ -965,12 +1130,14 @@ export class Aps extends PolicyStatement {
    * - .toUpdateLoggingConfiguration()
    * - .toUpdateQueryLoggingConfiguration()
    * - .toUpdateScraper()
+   * - .toUpdateScraperLoggingConfiguration()
    * - .toUpdateWorkspaceAlias()
    * - .toUpdateWorkspaceConfiguration()
    *
    * Applies to resource types:
    * - workspace
    * - rulegroupsnamespace
+   * - anomalydetector
    * - scraper
    * - cluster
    *
@@ -988,6 +1155,7 @@ export class Aps extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateAnomalyDetector()
    * - .toCreateRuleGroupsNamespace()
    * - .toCreateScraper()
    * - .toCreateWorkspace()
@@ -998,6 +1166,7 @@ export class Aps extends PolicyStatement {
    * Applies to resource types:
    * - workspace
    * - rulegroupsnamespace
+   * - anomalydetector
    * - scraper
    *
    * @param value The value(s) to check

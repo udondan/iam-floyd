@@ -48,6 +48,7 @@ autoscaling:EnterStandby;Write
 autoscaling:ExecutePolicy;Write
 autoscaling:ExitStandby;Write
 autoscaling:GetPredictiveScalingForecast;List
+autoscaling:LaunchInstances;Write
 autoscaling:PutLifecycleHook;Write
 autoscaling:PutNotificationConfiguration;Write
 autoscaling:PutScalingPolicy;Write

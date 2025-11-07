@@ -35,6 +35,7 @@ cognito-idp:CreateGroup;Write
 cognito-idp:CreateIdentityProvider;Write
 cognito-idp:CreateManagedLoginBranding;Write
 cognito-idp:CreateResourceServer;Write
+cognito-idp:CreateTerms;Write
 cognito-idp:CreateUserImportJob;Write
 cognito-idp:CreateUserPool;Write
 cognito-idp:CreateUserPoolClient;Write
@@ -43,6 +44,7 @@ cognito-idp:DeleteGroup;Write
 cognito-idp:DeleteIdentityProvider;Write
 cognito-idp:DeleteManagedLoginBranding;Write
 cognito-idp:DeleteResourceServer;Write
+cognito-idp:DeleteTerms;Write
 cognito-idp:DeleteUser;Write
 cognito-idp:DeleteUserAttributes;Write
 cognito-idp:DeleteUserPool;Write
@@ -53,6 +55,7 @@ cognito-idp:DescribeManagedLoginBranding;Read
 cognito-idp:DescribeManagedLoginBrandingByClient;Read
 cognito-idp:DescribeResourceServer;Read
 cognito-idp:DescribeRiskConfiguration;Read
+cognito-idp:DescribeTerms;Read
 cognito-idp:DescribeUserImportJob;Read
 cognito-idp:DescribeUserPool;Read
 cognito-idp:DescribeUserPoolClient;Read
@@ -80,6 +83,7 @@ cognito-idp:ListIdentityProviders;List
 cognito-idp:ListResourceServers;List
 cognito-idp:ListResourcesForWebACL;List
 cognito-idp:ListTagsForResource;List
+cognito-idp:ListTerms;List
 cognito-idp:ListUserImportJobs;List
 cognito-idp:ListUserPoolClients;List
 cognito-idp:ListUserPools;List
@@ -105,6 +109,7 @@ cognito-idp:UpdateGroup;Write
 cognito-idp:UpdateIdentityProvider;Write
 cognito-idp:UpdateManagedLoginBranding;Write
 cognito-idp:UpdateResourceServer;Write
+cognito-idp:UpdateTerms;Write
 cognito-idp:UpdateUserAttributes;Write
 cognito-idp:UpdateUserPool;Write
 cognito-idp:UpdateUserPoolClient;Write

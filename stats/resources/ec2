@@ -1,4 +1,5 @@
 ec2:capacity-block
+ec2:capacity-manager-data-export
 ec2:capacity-reservation
 ec2:capacity-reservation-fleet
 ec2:carrier-gateway

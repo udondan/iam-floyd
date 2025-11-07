@@ -122,9 +122,12 @@ ec2:VolumeType
 ec2:Vpc
 ec2:VpcID
 ec2:VpcPeeringConnectionID
+ec2:VpceMultiRegion
 ec2:VpceServiceName
 ec2:VpceServiceOwner
 ec2:VpceServicePrivateDnsName
+ec2:VpceServiceRegion
+ec2:VpceSupportedRegion
 ec2:transitGatewayAttachmentId
 ec2:transitGatewayConnectPeerId
 ec2:transitGatewayId
@@ -132,6 +135,3 @@ ec2:transitGatewayMulticastDomainId
 ec2:transitGatewayPolicyTableId
 ec2:transitGatewayRouteTableAnnouncementId
 ec2:transitGatewayRouteTableId
-ec2:vpceMultiRegion
-ec2:vpceServiceRegion
-ec2:vpceSupportedRegion

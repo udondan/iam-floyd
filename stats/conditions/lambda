@@ -2,6 +2,7 @@ lambda:CodeSigningConfigArn
 lambda:EventSourceToken
 lambda:FunctionArn
 lambda:FunctionUrlAuthType
+lambda:InvokedViaFunctionUrl
 lambda:Layer
 lambda:Principal
 lambda:RequestTag/${TagKey}

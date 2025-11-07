@@ -85,6 +85,17 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the account-level settings for Amazon Kinesis Data Streams
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeAccountSettings.html
+   */
+  public toDescribeAccountSettings() {
+    return this.to('DescribeAccountSettings');
+  }
+
+  /**
    * Grants permission to describe the shard limits and usage for the account
    *
    * Access Level: Read
@@ -398,6 +409,28 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the account-level settings for Amazon Kinesis Data Streams
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateAccountSettings.html
+   */
+  public toUpdateAccountSettings() {
+    return this.to('UpdateAccountSettings');
+  }
+
+  /**
+   * Grants permission to update the maximum record size for a Kinesis data stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateMaxRecordSize.html
+   */
+  public toUpdateMaxRecordSize() {
+    return this.to('UpdateMaxRecordSize');
+  }
+
+  /**
    * Grants permission to update the shard count of the specified stream to the specified number of shards
    *
    * Access Level: Write
@@ -417,6 +450,17 @@ export class Kinesis extends PolicyStatement {
    */
   public toUpdateStreamMode() {
     return this.to('UpdateStreamMode');
+  }
+
+  /**
+   * Grants permission to update the warm throughput for a Kinesis on-demand data stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateStreamWarmThroughput.html
+   */
+  public toUpdateStreamWarmThroughput() {
+    return this.to('UpdateStreamWarmThroughput');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -444,10 +488,14 @@ export class Kinesis extends PolicyStatement {
       'SplitShard',
       'StartStreamEncryption',
       'StopStreamEncryption',
+      'UpdateAccountSettings',
+      'UpdateMaxRecordSize',
       'UpdateShardCount',
-      'UpdateStreamMode'
+      'UpdateStreamMode',
+      'UpdateStreamWarmThroughput'
     ],
     Read: [
+      'DescribeAccountSettings',
       'DescribeLimits',
       'DescribeStream',
       'DescribeStreamConsumer',
@@ -571,6 +619,8 @@ export class Kinesis extends PolicyStatement {
    * - .toSubscribeToShard()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateMaxRecordSize()
+   * - .toUpdateStreamWarmThroughput()
    *
    * Applies to resource types:
    * - stream

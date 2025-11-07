@@ -143,6 +143,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an alias with an email address resource in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html
+   */
+  public toAssociateEmailAddressAlias() {
+    return this.to('AssociateEmailAddressAlias');
+  }
+
+  /**
    * Grants permission to associate a resource with a flow in an Amazon Connect instance
    *
    * Access Level: Write
@@ -1839,6 +1854,21 @@ export class Connect extends PolicyStatement {
    */
   public toDisassociateCustomerProfilesDomain() {
     return this.to('DisassociateCustomerProfilesDomain');
+  }
+
+  /**
+   * Grants permission to disassociate an alias from an email address resource in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html
+   */
+  public toDisassociateEmailAddressAlias() {
+    return this.to('DisassociateEmailAddressAlias');
   }
 
   /**
@@ -4554,6 +4584,7 @@ export class Connect extends PolicyStatement {
       'AssociateContactWithUser',
       'AssociateCustomerProfilesDomain',
       'AssociateDefaultVocabulary',
+      'AssociateEmailAddressAlias',
       'AssociateFlow',
       'AssociateInstanceStorageConfig',
       'AssociateLambdaFunction',
@@ -4631,6 +4662,7 @@ export class Connect extends PolicyStatement {
       'DisassociateApprovedOrigin',
       'DisassociateBot',
       'DisassociateCustomerProfilesDomain',
+      'DisassociateEmailAddressAlias',
       'DisassociateFlow',
       'DisassociateInstanceStorageConfig',
       'DisassociateLambdaFunction',
@@ -5465,7 +5497,7 @@ export class Connect extends PolicyStatement {
   /**
    * Adds a resource of type email-address to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/email-address.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html
    *
    * @param instanceId - Identifier for the instanceId.
    * @param emailAddressId - Identifier for the emailAddressId.
@@ -5529,6 +5561,7 @@ export class Connect extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateContactWithUser()
+   * - .toAssociateEmailAddressAlias()
    * - .toAssociateFlow()
    * - .toAssociatePhoneNumberContactFlow()
    * - .toAssociateQueueQuickConnects()
@@ -5577,6 +5610,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeUser()
    * - .toDescribeView()
    * - .toDescribeVocabulary()
+   * - .toDisassociateEmailAddressAlias()
    * - .toDisassociateFlow()
    * - .toDisassociatePhoneNumberContactFlow()
    * - .toDisassociateQueueQuickConnects()
@@ -5866,6 +5900,7 @@ export class Connect extends PolicyStatement {
    * - .toAssociateBot()
    * - .toAssociateContactWithUser()
    * - .toAssociateDefaultVocabulary()
+   * - .toAssociateEmailAddressAlias()
    * - .toAssociateFlow()
    * - .toAssociateInstanceStorageConfig()
    * - .toAssociateLambdaFunction()
@@ -5967,6 +6002,7 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateAnalyticsDataSet()
    * - .toDisassociateApprovedOrigin()
    * - .toDisassociateBot()
+   * - .toDisassociateEmailAddressAlias()
    * - .toDisassociateFlow()
    * - .toDisassociateInstanceStorageConfig()
    * - .toDisassociateLambdaFunction()

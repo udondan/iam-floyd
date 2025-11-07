@@ -137,6 +137,7 @@ bedrock:InvokeFlow;Read
 bedrock:InvokeInlineAgent;Read
 bedrock:InvokeModel;Read
 bedrock:InvokeModelWithResponseStream;Read
+bedrock:InvokeTool;Read
 bedrock:ListAgentActionGroups;List
 bedrock:ListAgentAliases;List
 bedrock:ListAgentCollaborators;List

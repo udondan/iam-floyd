@@ -6,6 +6,7 @@ connect:AssociateBot;Write
 connect:AssociateContactWithUser;Write
 connect:AssociateCustomerProfilesDomain;Write
 connect:AssociateDefaultVocabulary;Write
+connect:AssociateEmailAddressAlias;Write
 connect:AssociateFlow;Write
 connect:AssociateInstanceStorageConfig;Write
 connect:AssociateLambdaFunction;Write
@@ -113,6 +114,7 @@ connect:DisassociateAnalyticsDataSet;Write
 connect:DisassociateApprovedOrigin;Write
 connect:DisassociateBot;Write
 connect:DisassociateCustomerProfilesDomain;Write
+connect:DisassociateEmailAddressAlias;Write
 connect:DisassociateFlow;Write
 connect:DisassociateInstanceStorageConfig;Write
 connect:DisassociateLambdaFunction;Write

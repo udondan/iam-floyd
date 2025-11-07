@@ -20,6 +20,7 @@ support:DescribeTrustedAdvisorChecks;Read
 support:GetInteraction;Read
 support:InitiateCallForCase;Write
 support:InitiateChatForCase;Write
+support:InitiateLiveContactForCase;Write
 support:PutCaseAttributes;Write
 support:RateCaseCommunication;Write
 support:RefreshTrustedAdvisorCheck;Write

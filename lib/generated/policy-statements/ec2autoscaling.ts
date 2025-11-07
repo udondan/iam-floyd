@@ -622,6 +622,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to launch one or more EC2 instances in the specified Auto Scaling group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_LaunchInstances.html
+   */
+  public toLaunchInstances() {
+    return this.to('LaunchInstances');
+  }
+
+  /**
    * Grants permission to create or update a lifecycle hook for the specified Auto Scaling Group
    *
    * Access Level: Write
@@ -831,6 +842,7 @@ export class Autoscaling extends PolicyStatement {
       'EnterStandby',
       'ExecutePolicy',
       'ExitStandby',
+      'LaunchInstances',
       'PutLifecycleHook',
       'PutNotificationConfiguration',
       'PutScalingPolicy',
@@ -1164,6 +1176,7 @@ export class Autoscaling extends PolicyStatement {
    * - .toEnterStandby()
    * - .toExecutePolicy()
    * - .toExitStandby()
+   * - .toLaunchInstances()
    * - .toPutLifecycleHook()
    * - .toPutNotificationConfiguration()
    * - .toPutScalingPolicy()
@@ -1306,6 +1319,7 @@ export class Autoscaling extends PolicyStatement {
    * - .toEnterStandby()
    * - .toExecutePolicy()
    * - .toExitStandby()
+   * - .toLaunchInstances()
    * - .toPutLifecycleHook()
    * - .toPutNotificationConfiguration()
    * - .toPutScalingPolicy()

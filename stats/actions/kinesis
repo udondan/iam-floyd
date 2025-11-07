@@ -4,6 +4,7 @@ kinesis:DecreaseStreamRetentionPeriod;Write
 kinesis:DeleteResourcePolicy;Write
 kinesis:DeleteStream;Write
 kinesis:DeregisterStreamConsumer;Write
+kinesis:DescribeAccountSettings;Read
 kinesis:DescribeLimits;Read
 kinesis:DescribeStream;Read
 kinesis:DescribeStreamConsumer;Read
@@ -32,5 +33,8 @@ kinesis:StopStreamEncryption;Write
 kinesis:SubscribeToShard;Read
 kinesis:TagResource;Tagging
 kinesis:UntagResource;Tagging
+kinesis:UpdateAccountSettings;Write
+kinesis:UpdateMaxRecordSize;Write
 kinesis:UpdateShardCount;Write
 kinesis:UpdateStreamMode;Write
+kinesis:UpdateStreamWarmThroughput;Write

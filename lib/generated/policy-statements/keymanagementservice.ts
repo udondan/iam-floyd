@@ -72,6 +72,7 @@ export class Kms extends PolicyStatement {
    *
    * Dependent actions:
    * - cloudhsm:DescribeClusters
+   * - ec2:DescribeVpcEndpointServices
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html
@@ -1129,6 +1130,9 @@ export class Kms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCallerAccount()
+   *
+   * Dependent actions:
+   * - ec2:DescribeVpcEndpointServices
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateCustomKeyStore.html
    */
