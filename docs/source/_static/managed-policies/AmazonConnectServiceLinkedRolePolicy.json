@@ -97,7 +97,10 @@
         "profile:GetUploadJob",
         "profile:GetUploadJobPath",
         "profile:StartUploadJob",
-        "profile:StopUploadJob"
+        "profile:StopUploadJob",
+        "profile:GetProfileRecommendations",
+        "profile:GetProfileInsights",
+        "profile:ListRecommenders"
       ],
       "Resource": "arn:aws:profile:*:*:domains/amazon-connect-*"
     },
@@ -146,10 +149,36 @@
       "Action": [
         "profile:ListProfileObjects",
         "profile:GetProfileObjectType",
-        "profile:ListObjectTypeAttributes"
+        "profile:ListObjectTypeAttributes",
+        "profile:ListObjectTypeAttributeValues"
       ],
       "Resource": [
         "arn:aws:profile:*:*:domains/amazon-connect-*/object-types/*"
+      ]
+    },
+    {
+      "Sid": "AllowReadPermissionForCustomerProfilePredictiveInsights",
+      "Effect": "Allow",
+      "Action": [
+        "profile:GetRecommender",
+        "profile:CreateRecommender",
+        "profile:UpdateRecommender",
+        "profile:DeleteRecommender",
+        "profile:StopRecommender",
+        "profile:StartRecommender"
+      ],
+      "Resource": [
+        "arn:aws:profile:*:*:domains/amazon-connect-*/recommenders/*"
+      ]
+    },
+    {
+      "Sid": "AllowReadPermissionForCustomerProfilesPersonalizeForRecommenderRecipes",
+      "Effect": "Allow",
+      "Action": [
+        "profile:ListRecommenderRecipes"
+      ],
+      "Resource": [
+        "arn:aws:profile:*:*:*"
       ]
     },
     {
@@ -168,6 +197,27 @@
         "profile:GetProfileObjectTypeTemplate"
       ],
       "Resource": "arn:aws:profile:*:*:/templates*"
+    },
+    {
+      "Sid": "AllowAppIntegrationsForConnectEnabledTaggedResources",
+      "Effect": "Allow",
+      "Action": [
+        "app-integrations:GetDataIntegration",
+        "app-integrations:ListDataIntegrationAssociations",
+        "app-integrations:CreateDataIntegrationSchedule",
+        "app-integrations:StartDataIntegrationExecution",
+        "app-integrations:ListDataIntegrationExecutions",
+        "app-integrations:GetDataIntegrationExecution",
+        "app-integrations:ListDataIntegrationSchedules",
+        "app-integrations:UpdateDataIntegrationSchedule",
+        "app-integrations:GetDataIntegrationSchedule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectEnabled": "True"
+        }
+      }
     },
     {
       "Sid": "AllowWisdomForConnectEnabledTaggedResources",
