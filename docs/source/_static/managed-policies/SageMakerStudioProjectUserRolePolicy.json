@@ -449,7 +449,6 @@
           ]
         },
         "StringEquals": {
-          "aws:ResourceAccount": "${aws:PrincipalAccount}",
           "kms:EncryptionContext:glue_catalog_id": "${aws:PrincipalAccount}"
         }
       }
@@ -1346,20 +1345,42 @@
         "sqlworkbench:DriverExecute",
         "sqlworkbench:GetUserInfo",
         "sqlworkbench:ListTabs",
-        "sqlworkbench:GetAutocompletionMetadata",
-        "sqlworkbench:GetAutocompletionResource",
+        "sqlworkbench:GetAutocompletion*",
         "sqlworkbench:PassAccountSettings",
         "sqlworkbench:ListQueryExecutionHistory",
         "sqlworkbench:GetQueryExecutionHistory",
         "sqlworkbench:CreateConnection",
-        "sqlworkbench:PutQCustomContext",
-        "sqlworkbench:GetQCustomContext",
-        "sqlworkbench:DeleteQCustomContext",
-        "sqlworkbench:GetQSqlRecommendations",
-        "sqlworkbench:GetQSqlPromptQuotas",
+        "sqlworkbench:*QCustomContext",
+        "sqlworkbench:GetQSql*",
         "sqlworkbench:GetSchemaInference"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "SQLWorkBenchActions",
+      "Effect": "Allow",
+      "Action": "sqlworkbench:AssociateNotebookWithTab",
+      "Resource": "arn:*:sqlworkbench:*:*:notebook/*"
+    },
+    {
+      "Sid": "SQLWorkBenchNotebookActions",
+      "Effect": "Allow",
+      "Action": [
+        "sqlworkbench:CreateNotebook*",
+        "sqlworkbench:GetNotebook",
+        "sqlworkbench:UpdateNotebook*",
+        "sqlworkbench:DeleteNotebook*",
+        "sqlworkbench:ExportNotebook",
+        "sqlworkbench:BatchGetNotebookCell",
+        "sqlworkbench:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceTag/sqlworkbench-resource-owner": "${aws:userid}"
+        }
+      }
     },
     {
       "Sid": "RedshiftDataActionsIAMSessionRestriction",
@@ -1468,9 +1489,13 @@
       "Resource": "*"
     },
     {
-      "Sid": "RedshiftGetCredentials",
+      "Sid": "ComputeCredentials",
       "Effect": "Allow",
       "Action": [
+        "emr-containers:DescribeManagedEndpoint",
+        "emr-containers:DescribeSecurityConfiguration",
+        "emr-containers:DescribeVirtualCluster",
+        "emr-containers:GetManagedEndpointSessionCredentials",
         "redshift-serverless:GetCredentials",
         "redshift:GetClusterCredentialsWithIAM"
       ],
@@ -1611,6 +1636,21 @@
         },
         "ArnLike": {
           "elasticmapreduce:ExecutionRoleArn": "arn:aws:iam::*:role/${aws:PrincipalTag/RoleName}"
+        }
+      }
+    },
+    {
+      "Sid": "EmrContainersSSO",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeApplication"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "aws:CalledVia": [
+            "emr-containers.amazonaws.com"
+          ]
         }
       }
     },
