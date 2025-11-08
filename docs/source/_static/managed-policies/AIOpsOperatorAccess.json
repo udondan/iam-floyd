@@ -17,7 +17,14 @@
         "aiops:PutFact",
         "aiops:UpdateReport",
         "aiops:GenerateReport",
-        "aiops:CreateReport"
+        "aiops:CreateReport",
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:UpdateConversation",
+        "q:DeleteConversation",
+        "q:PassRequest"
       ],
       "Resource": "*"
     },
