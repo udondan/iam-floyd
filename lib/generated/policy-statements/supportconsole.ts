@@ -100,6 +100,24 @@ export class SupportConsole extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get classification predictions of an issue
+   *
+   * Access Level: Read
+   */
+  public toGetIssueClassificationPredictions() {
+    return this.to('GetIssueClassificationPredictions');
+  }
+
+  /**
+   * Grants permission to get a generated text summary of an issue
+   *
+   * Access Level: Read
+   */
+  public toGetIssueTextSummary() {
+    return this.to('GetIssueTextSummary');
+  }
+
+  /**
    * Grants permission to get a feedback questionnaire
    *
    * Access Level: Read
@@ -125,6 +143,8 @@ export class SupportConsole extends PolicyStatement {
       'GetAccountState',
       'GetBanner',
       'GetCaseDraft',
+      'GetIssueClassificationPredictions',
+      'GetIssueTextSummary',
       'GetQuestionnaire'
     ],
     Write: [

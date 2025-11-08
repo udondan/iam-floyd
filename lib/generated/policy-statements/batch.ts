@@ -64,6 +64,10 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html
    */
   public toCreateJobQueue() {
@@ -368,6 +372,10 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
   public toSubmitJob() {
@@ -378,6 +386,10 @@ export class Batch extends PolicyStatement {
    * Grants permission to submit an AWS Batch service job
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitServiceJob.html
    */
@@ -720,6 +732,9 @@ export class Batch extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
    *
    * Applies to resource types:
    * - compute-environment

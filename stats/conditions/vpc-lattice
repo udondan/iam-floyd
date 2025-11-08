@@ -1,4 +1,7 @@
 vpc-lattice:AuthType
+vpc-lattice:DomainName
+vpc-lattice:PrivateDnsPreference
+vpc-lattice:PrivateDnsSpecifiedDomains
 vpc-lattice:Protocol
 vpc-lattice:RequestTag/${TagKey}
 vpc-lattice:ResourceConfigurationArn

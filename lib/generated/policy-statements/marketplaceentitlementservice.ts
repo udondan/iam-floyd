@@ -23,7 +23,7 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplaceentitlement/latest/APIReference/API_GetEntitlements.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-entitlements_GetEntitlements.html
    */
   public toGetEntitlements() {
     return this.to('GetEntitlements');

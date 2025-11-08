@@ -1,11 +1,13 @@
 sts:AWSServiceName
 sts:DurationSeconds
 sts:ExternalId
+sts:IdentityTokenAudience
 sts:RequestContext/${ContextKey}
 sts:RequestContextProviders
 sts:RequestTag/${TagKey}
 sts:ResourceTag/${TagKey}
 sts:RoleSessionName
+sts:SigningAlgorithm
 sts:SourceIdentity
 sts:TagKeys
 sts:TaskPolicyArn

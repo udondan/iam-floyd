@@ -7,5 +7,7 @@ support-console:GetAccountGovCloudEnabled;Read
 support-console:GetAccountState;Read
 support-console:GetBanner;Read
 support-console:GetCaseDraft;Read
+support-console:GetIssueClassificationPredictions;Read
+support-console:GetIssueTextSummary;Read
 support-console:GetQuestionnaire;Read
 support-console:SaveFeedback;Write
