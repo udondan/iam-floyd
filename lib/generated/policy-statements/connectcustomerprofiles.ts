@@ -136,6 +136,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Recommender in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommender.html
+   */
+  public toCreateRecommender() {
+    return this.to('CreateRecommender');
+  }
+
+  /**
    * Grants permission to create a segment definition in the domain
    *
    * Access Level: Write
@@ -222,6 +233,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a specific domain object type in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteDomainObjectType.html
+   */
+  public toDeleteDomainObjectType() {
+    return this.to('DeleteDomainObjectType');
+  }
+
+  /**
    * Grants permission to delete an event stream in a domain
    *
    * Access Level: Write
@@ -299,6 +321,17 @@ export class Profile extends PolicyStatement {
    */
   public toDeleteProfileObjectType() {
     return this.to('DeleteProfileObjectType');
+  }
+
+  /**
+   * Grants permission to delete a recommender in a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommender.html
+   */
+  public toDeleteRecommender() {
+    return this.to('DeleteRecommender');
   }
 
   /**
@@ -390,6 +423,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a specific domain object type in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetDomainObjectType.html
+   */
+  public toGetDomainObjectType() {
+    return this.to('GetDomainObjectType');
+  }
+
+  /**
    * Grants permission to get a specific event stream in a domain
    *
    * Access Level: Read
@@ -448,6 +492,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get statistics of a specific attribute for object type in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetObjectTypeAttributeStatistics.html
+   */
+  public toGetObjectTypeAttributeStatistics() {
+    return this.to('GetObjectTypeAttributeStatistics');
+  }
+
+  /**
    * Grants permission to get a profile history record for a profile in a domain
    *
    * Access Level: Read
@@ -456,6 +511,17 @@ export class Profile extends PolicyStatement {
    */
   public toGetProfileHistoryRecord() {
     return this.to('GetProfileHistoryRecord');
+  }
+
+  /**
+   * Grants permission to list insights for a profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileInsights.html
+   */
+  public toGetProfileInsights() {
+    return this.to('GetProfileInsights');
   }
 
   /**
@@ -478,6 +544,28 @@ export class Profile extends PolicyStatement {
    */
   public toGetProfileObjectTypeTemplate() {
     return this.to('GetProfileObjectTypeTemplate');
+  }
+
+  /**
+   * Grants permission to list recommendations for a profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileRecommendations.html
+   */
+  public toGetProfileRecommendations() {
+    return this.to('GetProfileRecommendations');
+  }
+
+  /**
+   * Grants permission to get Recommender details in a domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommender.html
+   */
+  public toGetRecommender() {
+    return this.to('GetRecommender');
   }
 
   /**
@@ -633,6 +721,28 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the domain object types in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainObjectTypes.html
+   */
+  public toListDomainObjectTypes() {
+    return this.to('ListDomainObjectTypes');
+  }
+
+  /**
+   * Grants permission to list domain objects in a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainObjects.html
+   */
+  public toListDomainObjects() {
+    return this.to('ListDomainObjects');
+  }
+
+  /**
    * Grants permission to list all the domains in an account
    *
    * Access Level: List
@@ -685,6 +795,17 @@ export class Profile extends PolicyStatement {
    */
   public toListIntegrations() {
     return this.to('ListIntegrations');
+  }
+
+  /**
+   * Grants permission to list values of a specific attribute for object type in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListObjectTypeAttributeValues.html
+   */
+  public toListObjectTypeAttributeValues() {
+    return this.to('ListObjectTypeAttributeValues');
   }
 
   /**
@@ -754,6 +875,28 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all the Recommenders Recipes in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderRecipes.html
+   */
+  public toListRecommenderRecipes() {
+    return this.to('ListRecommenderRecipes');
+  }
+
+  /**
+   * Grants permission to list all the Recommenders in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenders.html
+   */
+  public toListRecommenders() {
+    return this.to('ListRecommenders');
+  }
+
+  /**
    * Grants permission to list all the rule-based matching result in the domain
    *
    * Access Level: List
@@ -820,6 +963,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put a specific domain object type in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutDomainObjectType.html
+   */
+  public toPutDomainObjectType() {
+    return this.to('PutDomainObjectType');
+  }
+
+  /**
    * Grants permission to put a integration in a domain
    *
    * Access Level: Write
@@ -871,6 +1025,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a recommender in a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StartRecommender.html
+   */
+  public toStartRecommender() {
+    return this.to('StartRecommender');
+  }
+
+  /**
    * Grants permission to start an upload job in the domain
    *
    * Access Level: Write
@@ -879,6 +1044,17 @@ export class Profile extends PolicyStatement {
    */
   public toStartUploadJob() {
     return this.to('StartUploadJob');
+  }
+
+  /**
+   * Grants permission to stop a recommender in a domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StopRecommender.html
+   */
+  public toStopRecommender() {
+    return this.to('StopRecommender');
   }
 
   /**
@@ -979,6 +1155,17 @@ export class Profile extends PolicyStatement {
     return this.to('UpdateProfile');
   }
 
+  /**
+   * Grants permission to update a Recommender in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateRecommender.html
+   */
+  public toUpdateRecommender() {
+    return this.to('UpdateRecommender');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddProfileKey',
@@ -989,6 +1176,7 @@ export class Profile extends PolicyStatement {
       'CreateEventTrigger',
       'CreateIntegrationWorkflow',
       'CreateProfile',
+      'CreateRecommender',
       'CreateSegmentDefinition',
       'CreateSegmentEstimate',
       'CreateSegmentSnapshot',
@@ -997,6 +1185,7 @@ export class Profile extends PolicyStatement {
       'DeleteCalculatedAttributeDefinition',
       'DeleteDomain',
       'DeleteDomainLayout',
+      'DeleteDomainObjectType',
       'DeleteEventStream',
       'DeleteEventTrigger',
       'DeleteIntegration',
@@ -1004,19 +1193,24 @@ export class Profile extends PolicyStatement {
       'DeleteProfileKey',
       'DeleteProfileObject',
       'DeleteProfileObjectType',
+      'DeleteRecommender',
       'DeleteSegmentDefinition',
       'DeleteWorkflow',
       'MergeProfiles',
+      'PutDomainObjectType',
       'PutIntegration',
       'PutProfileObject',
       'PutProfileObjectType',
+      'StartRecommender',
       'StartUploadJob',
+      'StopRecommender',
       'StopUploadJob',
       'UpdateCalculatedAttributeDefinition',
       'UpdateDomain',
       'UpdateDomainLayout',
       'UpdateEventTrigger',
-      'UpdateProfile'
+      'UpdateProfile',
+      'UpdateRecommender'
     ],
     Read: [
       'BatchGetCalculatedAttributeForProfile',
@@ -1027,13 +1221,18 @@ export class Profile extends PolicyStatement {
       'GetCalculatedAttributeForProfile',
       'GetDomain',
       'GetDomainLayout',
+      'GetDomainObjectType',
       'GetEventStream',
       'GetEventTrigger',
       'GetIdentityResolutionJob',
       'GetIntegration',
+      'GetObjectTypeAttributeStatistics',
       'GetProfileHistoryRecord',
+      'GetProfileInsights',
       'GetProfileObjectType',
       'GetProfileObjectTypeTemplate',
+      'GetProfileRecommendations',
+      'GetRecommender',
       'GetSegmentDefinition',
       'GetSegmentEstimate',
       'GetSegmentMembership',
@@ -1053,17 +1252,22 @@ export class Profile extends PolicyStatement {
       'ListCalculatedAttributeDefinitions',
       'ListCalculatedAttributesForProfile',
       'ListDomainLayouts',
+      'ListDomainObjectTypes',
+      'ListDomainObjects',
       'ListDomains',
       'ListEventStreams',
       'ListEventTriggers',
       'ListIdentityResolutionJobs',
       'ListIntegrations',
+      'ListObjectTypeAttributeValues',
       'ListObjectTypeAttributes',
       'ListProfileAttributeValues',
       'ListProfileHistoryRecords',
       'ListProfileObjectTypeTemplates',
       'ListProfileObjectTypes',
       'ListProfileObjects',
+      'ListRecommenderRecipes',
+      'ListRecommenders',
       'ListRuleBasedMatches',
       'ListSegmentDefinitions',
       'ListUploadJobs',
@@ -1219,6 +1423,42 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type recommenders to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param recommenderTypeName - Identifier for the recommenderTypeName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRecommenders(domainName: string, recommenderTypeName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/recommenders/${ recommenderTypeName }`);
+  }
+
+  /**
+   * Adds a resource of type domain-object-types to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param objectTypeName - Identifier for the objectTypeName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDomainObjectTypes(domainName: string, objectTypeName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/domain-object-types/${ objectTypeName }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the customer profile service
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
@@ -1230,7 +1470,9 @@ export class Profile extends PolicyStatement {
    * - .toCreateEventStream()
    * - .toCreateEventTrigger()
    * - .toCreateIntegrationWorkflow()
+   * - .toCreateRecommender()
    * - .toCreateSegmentDefinition()
+   * - .toPutDomainObjectType()
    * - .toPutIntegration()
    * - .toPutProfileObjectType()
    * - .toTagResource()
@@ -1257,6 +1499,8 @@ export class Profile extends PolicyStatement {
    * - segment-definitions
    * - event-triggers
    * - layouts
+   * - recommenders
+   * - domain-object-types
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1278,7 +1522,9 @@ export class Profile extends PolicyStatement {
    * - .toCreateEventStream()
    * - .toCreateEventTrigger()
    * - .toCreateIntegrationWorkflow()
+   * - .toCreateRecommender()
    * - .toCreateSegmentDefinition()
+   * - .toPutDomainObjectType()
    * - .toPutIntegration()
    * - .toPutProfileObjectType()
    * - .toTagResource()

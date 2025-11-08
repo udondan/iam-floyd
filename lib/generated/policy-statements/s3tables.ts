@@ -38,6 +38,10 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifSSEAlgorithm()
    * - .ifKMSKeyArn()
+   * - .ifTableBucketTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_CreateTable.html
    */
@@ -53,6 +57,10 @@ export class S3tables extends PolicyStatement {
    * Possible conditions:
    * - .ifSSEAlgorithm()
    * - .ifKMSKeyArn()
+   * - .ifTableBucketTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_CreateTableBucket.html
    */
@@ -337,6 +345,21 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the tag for a S3Table's resource
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTableBucketTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables-tagging.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to put or overwrite encryption configuration on a table bucket
    *
    * Access Level: Write
@@ -450,6 +473,39 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
+   * Grants permission to tag a S3Table's resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifTableBucketTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables-tagging.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a S3Table's resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifTableBucketTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables-tagging.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
    * Grants permission to update the metadata location of a table
    *
    * Access Level: Write
@@ -504,7 +560,12 @@ export class S3tables extends PolicyStatement {
     List: [
       'ListNamespaces',
       'ListTableBuckets',
-      'ListTables'
+      'ListTables',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -517,6 +578,10 @@ export class S3tables extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTableBucketTag()
    */
   public onTableBucket(tableBucketName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3tables:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bucket/${ tableBucketName }`);
@@ -534,11 +599,73 @@ export class S3tables extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifTableBucketTag()
    * - .ifNamespace()
    * - .ifTableName()
    */
   public onTable(tableBucketName: string, tableID: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3tables:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bucket/${ tableBucketName }/table/${ tableID }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateTable()
+   * - .toCreateTableBucket()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateTable()
+   * - .toCreateTableBucket()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - TableBucket
+   * - Table
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateTable()
+   * - .toCreateTableBucket()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -575,6 +702,30 @@ export class S3tables extends PolicyStatement {
    */
   public ifSSEAlgorithm(value: string | string[], operator?: Operator | string) {
     return this.if(`SSEAlgorithm`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the table bucket
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html
+   *
+   * Applies to actions:
+   * - .toCreateTable()
+   * - .toCreateTableBucket()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - TableBucket
+   * - Table
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTableBucketTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`TableBucketTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**

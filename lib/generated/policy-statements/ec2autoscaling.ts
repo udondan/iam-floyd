@@ -121,6 +121,7 @@ export class Autoscaling extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifImageId()
    * - .ifCapacityReservationIds()
    * - .ifCapacityReservationResourceGroupArns()
    * - .ifInstanceTypes()
@@ -762,6 +763,9 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifImageId()
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_StartInstanceRefresh.html
    */
   public toStartInstanceRefresh() {
@@ -796,6 +800,7 @@ export class Autoscaling extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifImageId()
    * - .ifCapacityReservationIds()
    * - .ifCapacityReservationResourceGroupArns()
    * - .ifInstanceTypes()
@@ -977,7 +982,10 @@ export class Autoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
    * Applies to actions:
+   * - .toCreateAutoScalingGroup()
    * - .toCreateLaunchConfiguration()
+   * - .toStartInstanceRefresh()
+   * - .toUpdateAutoScalingGroup()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

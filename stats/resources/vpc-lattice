@@ -1,4 +1,5 @@
 vpc-lattice:AccessLogSubscription
+vpc-lattice:DomainVerification
 vpc-lattice:Listener
 vpc-lattice:ResourceConfiguration
 vpc-lattice:ResourceEndpointAssociation

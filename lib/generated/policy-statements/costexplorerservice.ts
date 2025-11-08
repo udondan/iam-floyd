@@ -857,7 +857,7 @@ export class Ce extends PolicyStatement {
   /**
    * Adds a resource of type billingview to the statement
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/
+   * https://docs.aws.amazon.com/cost-management/latest/userguide/
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

@@ -3,4 +3,5 @@ user-subscriptions:DeleteClaim;Write
 user-subscriptions:ListApplicationClaims;List
 user-subscriptions:ListClaims;List
 user-subscriptions:ListUserSubscriptions;List
+user-subscriptions:SetOverageConfig;Write
 user-subscriptions:UpdateClaim;Write

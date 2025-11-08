@@ -134,6 +134,11 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - s3:GetObject
    * - s3:ListBucket
@@ -1237,9 +1242,12 @@ export class Guardduty extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPublishingDestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/publishingDestination/${ publishingDestinationId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:guardduty:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:detector/${ detectorId }/publishingdestination/${ publishingDestinationId }`);
   }
 
   /**
@@ -1269,6 +1277,7 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateFilter()
    * - .toCreateIPSet()
    * - .toCreateMalwareProtectionPlan()
+   * - .toCreatePublishingDestination()
    * - .toCreateThreatEntitySet()
    * - .toCreateThreatIntelSet()
    * - .toCreateTrustedEntitySet()
@@ -1291,6 +1300,7 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateDetector()
    * - .toCreateIPSet()
    * - .toCreateMalwareProtectionPlan()
+   * - .toCreatePublishingDestination()
    * - .toCreateTrustedEntitySet()
    *
    * Applies to resource types:
@@ -1300,6 +1310,7 @@ export class Guardduty extends PolicyStatement {
    * - threatintelset
    * - trustedentityset
    * - threatentityset
+   * - publishingDestination
    * - malwareprotectionplan
    *
    * @param tagKey The tag key to check
@@ -1320,6 +1331,7 @@ export class Guardduty extends PolicyStatement {
    * - .toCreateFilter()
    * - .toCreateIPSet()
    * - .toCreateMalwareProtectionPlan()
+   * - .toCreatePublishingDestination()
    * - .toCreateThreatEntitySet()
    * - .toCreateThreatIntelSet()
    * - .toCreateTrustedEntitySet()

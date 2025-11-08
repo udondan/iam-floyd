@@ -5,9 +5,12 @@ sts:AssumeRoot;Write
 sts:DecodeAuthorizationMessage;Write
 sts:GetAccessKeyInfo;Read
 sts:GetCallerIdentity;Read
+sts:GetDelegatedAccessToken;Write
 sts:GetFederationToken;Read
 sts:GetServiceBearerToken;Read
 sts:GetSessionToken;Read
+sts:GetWebIdentityToken;Write
 sts:SetContext;Write
 sts:SetSourceIdentity;Write
+sts:TagGetWebIdentityToken;Tagging
 sts:TagSession;Tagging

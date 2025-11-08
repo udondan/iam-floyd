@@ -14,6 +14,7 @@ vpc-lattice:CreateServiceNetworkVpcEndpointAssociation;Permissions management
 vpc-lattice:CreateTargetGroup;Write
 vpc-lattice:DeleteAccessLogSubscription;Write
 vpc-lattice:DeleteAuthPolicy;Permissions management
+vpc-lattice:DeleteDomainVerification;Write
 vpc-lattice:DeleteListener;Write
 vpc-lattice:DeleteResourceConfiguration;Write
 vpc-lattice:DeleteResourceEndpointAssociation;Write
@@ -29,6 +30,7 @@ vpc-lattice:DeleteTargetGroup;Write
 vpc-lattice:DeregisterTargets;Write
 vpc-lattice:GetAccessLogSubscription;Read
 vpc-lattice:GetAuthPolicy;Read
+vpc-lattice:GetDomainVerification;Read
 vpc-lattice:GetListener;Read
 vpc-lattice:GetResourceConfiguration;Read
 vpc-lattice:GetResourceGateway;Read
@@ -41,6 +43,7 @@ vpc-lattice:GetServiceNetworkServiceAssociation;Read
 vpc-lattice:GetServiceNetworkVpcAssociation;Read
 vpc-lattice:GetTargetGroup;Read
 vpc-lattice:ListAccessLogSubscriptions;List
+vpc-lattice:ListDomainVerifications;List
 vpc-lattice:ListListeners;List
 vpc-lattice:ListResourceConfigurations;List
 vpc-lattice:ListResourceEndpointAssociations;List
@@ -58,6 +61,7 @@ vpc-lattice:ListTargets;List
 vpc-lattice:PutAuthPolicy;Permissions management
 vpc-lattice:PutResourcePolicy;Write
 vpc-lattice:RegisterTargets;Write
+vpc-lattice:StartDomainVerification;Write
 vpc-lattice:TagResource;Tagging
 vpc-lattice:UntagResource;Tagging
 vpc-lattice:UpdateAccessLogSubscription;Write

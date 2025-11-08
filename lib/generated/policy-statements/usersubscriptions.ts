@@ -77,6 +77,17 @@ export class UserSubscriptions extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set a User subscription overage configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toSetOverageConfig() {
+    return this.to('SetOverageConfig');
+  }
+
+  /**
    * Grants permission to update a User subscription Claim
    *
    * Access Level: Write
@@ -91,6 +102,7 @@ export class UserSubscriptions extends PolicyStatement {
     Write: [
       'CreateClaim',
       'DeleteClaim',
+      'SetOverageConfig',
       'UpdateClaim'
     ],
     List: [

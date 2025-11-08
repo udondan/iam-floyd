@@ -204,6 +204,8 @@ export class VpcLattice extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifPrivateDnsPreference()
+   * - .ifPrivateDnsSpecifiedDomains()
    * - .ifSecurityGroupIds()
    * - .ifServiceNetworkArn()
    * - .ifVpcId()
@@ -272,6 +274,20 @@ export class VpcLattice extends PolicyStatement {
    */
   public toDeleteAuthPolicy() {
     return this.to('DeleteAuthPolicy');
+  }
+
+  /**
+   * Grants permission to delete a domain verification
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteDomainVerification.html
+   */
+  public toDeleteDomainVerification() {
+    return this.to('DeleteDomainVerification');
   }
 
   /**
@@ -483,6 +499,20 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a domain verification
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetDomainVerification.html
+   */
+  public toGetDomainVerification() {
+    return this.to('GetDomainVerification');
+  }
+
+  /**
    * Grants permission to get information about a listener
    *
    * Access Level: Read
@@ -646,6 +676,17 @@ export class VpcLattice extends PolicyStatement {
    */
   public toListAccessLogSubscriptions() {
     return this.to('ListAccessLogSubscriptions');
+  }
+
+  /**
+   * Grants permission to list some or all domain verifications
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListDomainVerifications.html
+   */
+  public toListDomainVerifications() {
+    return this.to('ListDomainVerifications');
   }
 
   /**
@@ -848,6 +889,22 @@ export class VpcLattice extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a domain verification
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifDomainName()
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_StartDomainVerification.html
+   */
+  public toStartDomainVerification() {
+    return this.to('StartDomainVerification');
+  }
+
+  /**
    * Grants permission to tag a vpc-lattice resource
    *
    * Access Level: Tagging
@@ -1041,6 +1098,7 @@ export class VpcLattice extends PolicyStatement {
       'CreateServiceNetworkVpcAssociation',
       'CreateTargetGroup',
       'DeleteAccessLogSubscription',
+      'DeleteDomainVerification',
       'DeleteListener',
       'DeleteResourceConfiguration',
       'DeleteResourceEndpointAssociation',
@@ -1056,6 +1114,7 @@ export class VpcLattice extends PolicyStatement {
       'DeregisterTargets',
       'PutResourcePolicy',
       'RegisterTargets',
+      'StartDomainVerification',
       'UpdateAccessLogSubscription',
       'UpdateListener',
       'UpdateResourceConfiguration',
@@ -1069,6 +1128,7 @@ export class VpcLattice extends PolicyStatement {
     Read: [
       'GetAccessLogSubscription',
       'GetAuthPolicy',
+      'GetDomainVerification',
       'GetListener',
       'GetResourceConfiguration',
       'GetResourceGateway',
@@ -1084,6 +1144,7 @@ export class VpcLattice extends PolicyStatement {
     ],
     List: [
       'ListAccessLogSubscriptions',
+      'ListDomainVerifications',
       'ListListeners',
       'ListResourceConfigurations',
       'ListResourceEndpointAssociations',
@@ -1121,6 +1182,26 @@ export class VpcLattice extends PolicyStatement {
    */
   public onAccessLogSubscription(accessLogSubscriptionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accesslogsubscription/${ accessLogSubscriptionId }`);
+  }
+
+  /**
+   * Adds a resource of type DomainVerification to the statement
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/domain-verification.html
+   *
+   * @param domainVerificationId - Identifier for the domainVerificationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifDomainName()
+   */
+  public onDomainVerification(domainVerificationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:vpc-lattice:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domainverification/${ domainVerificationId }`);
   }
 
   /**
@@ -1323,6 +1404,8 @@ export class VpcLattice extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifPrivateDnsPreference()
+   * - .ifPrivateDnsSpecifiedDomains()
    * - .ifSecurityGroupIds()
    * - .ifServiceNetworkArn()
    * - .ifVpcId()
@@ -1368,10 +1451,12 @@ export class VpcLattice extends PolicyStatement {
    * - .toCreateServiceNetworkServiceAssociation()
    * - .toCreateServiceNetworkVpcAssociation()
    * - .toCreateTargetGroup()
+   * - .toStartDomainVerification()
    * - .toTagResource()
    *
    * Applies to resource types:
    * - AccessLogSubscription
+   * - DomainVerification
    * - Listener
    * - ResourceConfiguration
    * - ResourceEndpointAssociation
@@ -1399,6 +1484,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Applies to actions:
    * - .toDeleteAccessLogSubscription()
+   * - .toDeleteDomainVerification()
    * - .toDeleteListener()
    * - .toDeleteResourceConfiguration()
    * - .toDeleteResourceEndpointAssociation()
@@ -1411,6 +1497,7 @@ export class VpcLattice extends PolicyStatement {
    * - .toDeleteServiceNetworkVpcAssociation()
    * - .toDeleteTargetGroup()
    * - .toGetAccessLogSubscription()
+   * - .toGetDomainVerification()
    * - .toGetListener()
    * - .toGetResourceConfiguration()
    * - .toGetResourceGateway()
@@ -1434,6 +1521,7 @@ export class VpcLattice extends PolicyStatement {
    *
    * Applies to resource types:
    * - AccessLogSubscription
+   * - DomainVerification
    * - Listener
    * - ResourceConfiguration
    * - ResourceEndpointAssociation
@@ -1471,12 +1559,14 @@ export class VpcLattice extends PolicyStatement {
    * - .toCreateServiceNetworkServiceAssociation()
    * - .toCreateServiceNetworkVpcAssociation()
    * - .toCreateTargetGroup()
+   * - .toStartDomainVerification()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateServiceNetworkVpcAssociation()
    *
    * Applies to resource types:
    * - AccessLogSubscription
+   * - DomainVerification
    * - Listener
    * - ResourceConfiguration
    * - ResourceEndpointAssociation
@@ -1516,6 +1606,60 @@ export class VpcLattice extends PolicyStatement {
    */
   public ifAuthType(value: string | string[], operator?: Operator | string) {
     return this.if(`AuthType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the domain name
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
+   *
+   * Applies to actions:
+   * - .toStartDomainVerification()
+   *
+   * Applies to resource types:
+   * - DomainVerification
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDomainName(value: string | string[], operator?: Operator | string) {
+    return this.if(`DomainName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the private dns preference
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
+   *
+   * Applies to actions:
+   * - .toCreateServiceNetworkVpcAssociation()
+   *
+   * Applies to resource types:
+   * - ServiceNetworkVpcAssociation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrivateDnsPreference(value: string | string[], operator?: Operator | string) {
+    return this.if(`PrivateDnsPreference`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the private dns domains
+   *
+   * https://docs.aws.amazon.com/vpc-lattice/latest/ug/
+   *
+   * Applies to actions:
+   * - .toCreateServiceNetworkVpcAssociation()
+   *
+   * Applies to resource types:
+   * - ServiceNetworkVpcAssociation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrivateDnsSpecifiedDomains(value: string | string[], operator?: Operator | string) {
+    return this.if(`PrivateDnsSpecifiedDomains`, value, operator ?? 'StringLike');
   }
 
   /**

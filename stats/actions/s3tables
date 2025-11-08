@@ -22,6 +22,7 @@ s3tables:GetTablePolicy;Read
 s3tables:ListNamespaces;List
 s3tables:ListTableBuckets;List
 s3tables:ListTables;List
+s3tables:ListTagsForResource;List
 s3tables:PutTableBucketEncryption;Write
 s3tables:PutTableBucketMaintenanceConfiguration;Write
 s3tables:PutTableBucketPolicy;Permissions management
@@ -30,4 +31,6 @@ s3tables:PutTableEncryption;Write
 s3tables:PutTableMaintenanceConfiguration;Write
 s3tables:PutTablePolicy;Permissions management
 s3tables:RenameTable;Write
+s3tables:TagResource;Tagging
+s3tables:UntagResource;Tagging
 s3tables:UpdateTableMetadataLocation;Write
