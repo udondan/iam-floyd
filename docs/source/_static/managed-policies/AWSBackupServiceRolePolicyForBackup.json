@@ -214,10 +214,7 @@
         "ec2:DescribeVolumes",
         "ec2:DescribeSnapshots"
       ],
-      "Resource": [
-        "arn:aws:ec2:*::snapshot/*",
-        "arn:aws:ec2:*:*:volume/*"
-      ]
+      "Resource": "*"
     },
     {
       "Sid": "KMSDynamoDBPermissions",
@@ -570,6 +567,51 @@
         },
         "ForAnyValue:StringEquals": {
           "kms:EncryptionContextKeys": "aws:dsql:ClusterId"
+        }
+      }
+    },
+    {
+      "Sid": "EKSClusterConfigurationBackup",
+      "Effect": "Allow",
+      "Action": [
+        "eks:ListClusters",
+        "eks:ListTagsForResource",
+        "eks:DescribeCluster",
+        "eks:ListAddons",
+        "eks:DescribeAddon",
+        "eks:ListNodegroups",
+        "eks:DescribeNodegroup",
+        "eks:ListPodIdentityAssociations",
+        "eks:DescribePodIdentityAssociation",
+        "eks:ListAccessEntries",
+        "eks:DescribeAccessEntry",
+        "eks:ListAssociatedAccessPolicies",
+        "eks:ListFargateProfiles",
+        "eks:DescribeFargateProfile",
+        "ec2:DescribeLaunchTemplateVersions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateBackupAccessEntry",
+      "Effect": "Allow",
+      "Action": [
+        "eks:CreateAccessEntry"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*"
+    },
+    {
+      "Sid": "AssociateBackupAccessPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "eks:AssociateAccessPolicy",
+        "eks:DisassociateAccessPolicy"
+      ],
+      "Resource": "arn:aws:eks:*:*:access-entry/*",
+      "Condition": {
+        "StringEquals": {
+          "eks:policyArn": "arn:aws:eks::aws:cluster-access-policy/AWSBackupFullAccessPolicyForBackup",
+          "eks:accessScope": "cluster"
         }
       }
     }

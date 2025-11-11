@@ -1112,6 +1112,8 @@ export class AwsManagedPolicy {
     public static AWSApplicationMigrationMGHAccess = 'service-role/AWSApplicationMigrationMGHAccess';
     /** Provides permissions for Network Migration custom resource */
     public static AWSApplicationMigrationNetworkMigrationCustomResource = 'AWSApplicationMigrationNetworkMigrationCustomResource';
+    /** Provides permissions to automate VMware to AWS network infrastructure migration through CloudFormation */
+    public static AWSApplicationMigrationNetworkMigrationMultiAccount = 'AWSApplicationMigrationNetworkMigrationMultiAccount';
     /** This policy provides permissions to all read-only public APIs of Application Migration Service (MGN), as well as some read-only APIs of other AWS services that are required in order to make full read-only use of the MGN console. Attach this policy to your IAM users or roles. */
     public static AWSApplicationMigrationReadOnlyAccess = 'AWSApplicationMigrationReadOnlyAccess';
     /** This policy allows the Application Migration Service (MGN) Replication Servers, which are EC2 instances launched by Application Migration Service - to communicate with the MGN service, and to create EBS snapshots in your AWS account. An IAM role with this policy is attached (as an EC2 Instance Profile) by Application Migration Service to the MGN Replication Servers which are automatically launched and terminated by MGN, as needed. MGN Replication Servers are used to facilitate data replication from your external servers to AWS, as part of the migration process managed using MGN. We do not recommend that you attach this policy to your IAM users or roles. */

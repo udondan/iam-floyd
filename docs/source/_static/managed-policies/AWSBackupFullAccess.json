@@ -481,6 +481,16 @@
         "dsql:ListTagsForResource"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "EKSClusterPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "eks:ListClusters",
+        "eks:ListTagsForResource",
+        "eks:DescribeCluster"
+      ],
+      "Resource": "arn:aws:eks:*:*:cluster/*"
     }
   ]
 }

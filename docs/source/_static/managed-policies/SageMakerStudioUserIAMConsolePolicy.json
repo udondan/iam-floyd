@@ -13,7 +13,15 @@
         "datazone:CreateProject",
         "datazone:GetProject",
         "datazone:DeleteProject",
-        "datazone:GetIamPortalLoginUrl"
+        "datazone:GetIamPortalLoginUrl",
+        "datazone:ListEnvironmentBlueprints",
+        "datazone:ListEnvironments",
+        "datazone:GetEnvironment",
+        "datazone:GetEnvironmentCredentials",
+        "datazone:GetGroupProfile",
+        "datazone:SearchGroupProfiles",
+        "datazone:SearchUserProfiles",
+        "datazone:ListProjectMemberships"
       ],
       "Resource": [
         "*"
@@ -41,6 +49,23 @@
       "Condition": {
         "StringEquals": {
           "iam:passedToService": "datazone.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DataZoneKMSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "datazone.*.amazonaws.com"
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:datazone:domainId"
         }
       }
     }
