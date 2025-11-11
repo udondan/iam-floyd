@@ -53,6 +53,23 @@
           "secretsmanager:SecretId": "arn:*:secretsmanager:*:*:secret:AmazonMSK_*"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AssignIpv6Addresses",
+        "ec2:UnassignIpv6Addresses",
+        "ec2:ModifyNetworkInterfaceAttribute"
+      ],
+      "Resource": "arn:*:ec2:*:*:network-interface/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/AWSMSKManaged": "true"
+        },
+        "StringLike": {
+          "ec2:ResourceTag/ClusterArn": "*"
+        }
+      }
     }
   ]
 }

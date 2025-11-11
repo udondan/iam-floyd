@@ -148,6 +148,75 @@
         "arn:aws:apigateway:*::/vpclinks",
         "arn:aws:apigateway:*::/vpclinks/*"
       ]
+    },
+    {
+      "Sid": "AllowOrganizationsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListChildren",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListParents",
+        "organizations:ListRoots",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListTargetsForPolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowOrganizationsAdmins",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:ServicePrincipal": [
+            "network-security-director.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowAccountInformationRead",
+      "Effect": "Allow",
+      "Action": [
+        "account:GetAccountInformation",
+        "account:GetRegionOptStatus"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowConfigRecorderList",
+      "Effect": "Allow",
+      "Action": [
+        "config:ListConfigurationRecorders"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowConfigRecorderScopedAccess",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:PutServiceLinkedConfigurationRecorder",
+        "config:DeleteServiceLinkedConfigurationRecorder"
+      ],
+      "Condition": {
+        "StringLikeIfExists": {
+          "config:ConfigurationRecorderServicePrincipal": [
+            "network-security-director.amazonaws.com"
+          ]
+        }
+      },
+      "Resource": "*"
     }
   ]
 }

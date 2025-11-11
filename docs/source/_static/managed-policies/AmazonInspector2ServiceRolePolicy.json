@@ -311,6 +311,33 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "AllowInspectorEnablementForAwsOrgPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "inspector2:Enable",
+        "inspector2:Disable",
+        "inspector2:EnableDelegatedAdminAccount",
+        "inspector2:AssociateMember"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowInspectorServiceDelegatedAdminFromAwsOrg",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLikeIfExists": {
+          "organizations:ServicePrincipal": [
+            "agentless.inspector2.amazonaws.com",
+            "inspector2.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }

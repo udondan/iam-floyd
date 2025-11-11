@@ -492,6 +492,110 @@
       "Resource": [
         "*"
       ]
+    },
+    {
+      "Sid": "EKSClusterRestore",
+      "Effect": "Allow",
+      "Action": [
+        "eks:CreateCluster",
+        "eks:DescribeCluster",
+        "eks:CreateAccessEntry",
+        "eks:DescribeAccessEntry",
+        "eks:AssociateAccessPolicy",
+        "eks:ListAssociatedAccessPolicies",
+        "eks:CreateAddon",
+        "eks:DescribeAddon",
+        "eks:CreateNodegroup",
+        "eks:DescribeNodegroup",
+        "eks:CreateFargateProfile",
+        "eks:DescribeFargateProfile",
+        "eks:CreatePodIdentityAssociation",
+        "eks:DescribePodIdentityAssociation",
+        "eks:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:eks:*:*:access-entry/*",
+        "arn:aws:eks:*:*:addon/*",
+        "arn:aws:eks:*:*:cluster/*",
+        "arn:aws:eks:*:*:fargateprofile/*",
+        "arn:aws:eks:*:*:nodegroup/*",
+        "arn:aws:eks:*:*:podidentityassociation/*"
+      ]
+    },
+    {
+      "Sid": "AssociateRestoreAccessPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "eks:AssociateAccessPolicy",
+        "eks:DisassociateAccessPolicy"
+      ],
+      "Resource": "arn:aws:eks:*:*:access-entry/*",
+      "Condition": {
+        "StringEquals": {
+          "eks:policyArn": "arn:aws:eks::aws:cluster-access-policy/AWSBackupFullAccessPolicyForRestore",
+          "eks:accessScope": "cluster"
+        }
+      }
+    },
+    {
+      "Sid": "CreateClusterIAMPerms",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "eks.amazonaws.com",
+            "ec2.amazonaws.com",
+            "pods.eks.amazonaws.com",
+            "backup.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CreateEKSNodeGroupPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeLaunchTemplateVersions",
+        "ec2:DescribeSubnets",
+        "ec2:RunInstances",
+        "iam:GetRole",
+        "iam:ListAttachedRolePolicies"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EKSNodeGroupTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ec2:*:*:volume/*",
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "RunInstances"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "BackupRestoreJobManagementPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:StartRestoreJob",
+        "backup:ListRestoreJobs",
+        "backup:ListRecoveryPointsByBackupVault",
+        "backup:DescribeRestoreJob"
+      ],
+      "Resource": "*"
     }
   ]
 }

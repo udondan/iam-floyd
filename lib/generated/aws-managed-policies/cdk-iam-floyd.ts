@@ -2789,6 +2789,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationNetworkMigrationCustomResource);
     }
 
+    /** Provides permissions to automate VMware to AWS network infrastructure migration through CloudFormation */
+    public AWSApplicationMigrationNetworkMigrationMultiAccount(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationNetworkMigrationMultiAccount);
+    }
+
     /** This policy provides permissions to all read-only public APIs of Application Migration Service (MGN), as well as some read-only APIs of other AWS services that are required in order to make full read-only use of the MGN console. Attach this policy to your IAM users or roles. */
     public AWSApplicationMigrationReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationReadOnlyAccess);

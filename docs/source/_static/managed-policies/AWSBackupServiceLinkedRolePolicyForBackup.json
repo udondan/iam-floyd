@@ -415,6 +415,28 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "EKSClusterConfigurationBackup",
+      "Effect": "Allow",
+      "Action": [
+        "eks:ListClusters",
+        "eks:ListTagsForResource",
+        "eks:DescribeCluster",
+        "eks:ListAddons",
+        "eks:DescribeAddon",
+        "eks:ListNodegroups",
+        "eks:DescribeNodegroup",
+        "eks:ListPodIdentityAssociations",
+        "eks:DescribePodIdentityAssociation",
+        "eks:ListAccessEntries",
+        "eks:DescribeAccessEntry",
+        "eks:ListAssociatedAccessPolicies",
+        "eks:ListFargateProfiles",
+        "eks:DescribeFargateProfile",
+        "ec2:DescribeLaunchTemplateVersions"
+      ],
+      "Resource": "*"
     }
   ]
 }
