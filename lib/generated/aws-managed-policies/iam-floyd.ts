@@ -280,6 +280,8 @@ export class AwsManagedPolicy {
     public static AmazonECSFullAccess = 'AmazonECS_FullAccess';
     /** Policy to enable Amazon ECS Compute to manage your EC2 instances and related resources as part of ECS managed instances */
     public static AmazonECSComputeServiceRolePolicy = 'aws-service-role/AmazonECSComputeServiceRolePolicy';
+    /** These permissions enable Amazon ECS to automatically provision and manage the infrastructure components required for Express Gateway Services, including load balancing, security groups, SSL certificates, and auto scaling configurations. */
+    public static AmazonECSInfrastructureRoleforExpressGatewayServices = 'service-role/AmazonECSInfrastructureRoleforExpressGatewayServices';
     /** Provides access to other AWS service resources required to manage load balancers associated with ECS workloads on your behalf. */
     public static AmazonECSInfrastructureRolePolicyForLoadBalancers = 'AmazonECSInfrastructureRolePolicyForLoadBalancers';
     /** Provides ECS access to create and manage EC2 managed resources */

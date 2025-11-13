@@ -709,6 +709,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSComputeServiceRolePolicy);
     }
 
+    /** These permissions enable Amazon ECS to automatically provision and manage the infrastructure components required for Express Gateway Services, including load balancing, security groups, SSL certificates, and auto scaling configurations. */
+    public AmazonECSInfrastructureRoleforExpressGatewayServices(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSInfrastructureRoleforExpressGatewayServices);
+    }
+
     /** Provides access to other AWS service resources required to manage load balancers associated with ECS workloads on your behalf. */
     public AmazonECSInfrastructureRolePolicyForLoadBalancers(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonECSInfrastructureRolePolicyForLoadBalancers);

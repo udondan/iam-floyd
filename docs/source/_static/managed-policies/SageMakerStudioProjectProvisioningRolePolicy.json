@@ -288,7 +288,6 @@
           "iam:PolicyARN": [
             "arn:aws:iam::aws:policy/SageMakerStudioProjectUserRolePolicy",
             "arn:aws:iam::aws:policy/SageMakerStudioProjectRoleMachineLearningPolicy",
-            "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRContainersQueryEngineRolePolicy",
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRContainersSystemNamespaceRolePolicy",
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRServiceRolePolicy",
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRInstanceRolePolicy",
@@ -474,7 +473,8 @@
       ],
       "Resource": [
         "arn:aws:iam::*:role/datazone_emr_service_role_*",
-        "arn:aws:iam::*:role/datazone_emr_ec2_instance_role_*"
+        "arn:aws:iam::*:role/datazone_emr_ec2_instance_role_*",
+        "arn:aws:iam::*:role/datazone_emr_containers_system_namespace_role_*"
       ],
       "Condition": {
         "Null": {
@@ -1765,7 +1765,8 @@
         "arn:aws:iam::*:role/aws-service-role/sagemaker.amazonaws.com/AWSServiceRoleForAmazonSageMakerNotebooks",
         "arn:aws:iam::*:role/aws-service-role/ops.emr-serverless.amazonaws.com/AWSServiceRoleForAmazonEMRServerless",
         "arn:aws:iam::*:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
-        "arn:aws:iam::*:role/aws-service-role/elasticmapreduce.amazonaws.com/AWSServiceRoleForEMRCleanup"
+        "arn:aws:iam::*:role/aws-service-role/elasticmapreduce.amazonaws.com/AWSServiceRoleForEMRCleanup",
+        "arn:aws:iam::*:role/aws-service-role/emr-containers.amazonaws.com/AWSServiceRoleForAmazonEMRContainers"
       ]
     },
     {
@@ -1929,7 +1930,6 @@
       "Sid": "TagSMD",
       "Effect": "Allow",
       "Action": [
-        "sagemaker:CreateDomain",
         "sagemaker:AddTags"
       ],
       "Resource": [
@@ -3025,6 +3025,8 @@
         "emr-containers:DeleteSecurityConfiguration",
         "emr-containers:DeleteVirtualCluster",
         "emr-containers:DescribeSecurityConfiguration",
+        "emr-containers:DescribeVirtualCluster",
+        "emr-containers:DescribeManagedEndpoint",
         "emr-containers:TagResource"
       ],
       "Resource": "*",
