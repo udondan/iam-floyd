@@ -299,7 +299,9 @@
         "s3:CreateBucket",
         "s3:GetBucket*",
         "s3:ListBucket",
-        "s3:PutBucketPolicy"
+        "s3:PutBucketPolicy",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutBucketOwnershipControls"
       ],
       "Resource": "arn:aws:s3:::elasticbeanstalk-*"
     },

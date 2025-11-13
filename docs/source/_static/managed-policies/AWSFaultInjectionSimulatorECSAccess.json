@@ -66,6 +66,24 @@
         "tag:GetResources"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "DescribeContainerInstances",
+      "Effect": "Allow",
+      "Action": "ecs:DescribeContainerInstances",
+      "Resource": "arn:aws:ecs:*:*:container-instance/*/*"
+    },
+    {
+      "Sid": "DescribeInstances",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeInstances",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeSubnets",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeSubnets",
+      "Resource": "*"
     }
   ]
 }

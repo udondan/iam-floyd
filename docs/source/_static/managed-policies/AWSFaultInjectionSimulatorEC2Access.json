@@ -56,6 +56,12 @@
       "Effect": "Allow",
       "Action": "ec2:DescribeInstances",
       "Resource": "*"
+    },
+    {
+      "Sid": "DescribeSubnets",
+      "Effect": "Allow",
+      "Action": "ec2:DescribeSubnets",
+      "Resource": "*"
     }
   ]
 }
