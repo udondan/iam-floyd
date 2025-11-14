@@ -82,6 +82,42 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve attributes metadata
+   *
+   * Access Level: Read
+   */
+  public toBatchGetAttributesMetadata() {
+    return this.to('BatchGetAttributesMetadata');
+  }
+
+  /**
+   * Grants permission to batch get cells
+   *
+   * Access Level: Read
+   */
+  public toBatchGetCell() {
+    return this.to('BatchGetCell');
+  }
+
+  /**
+   * Grants permission to batch get cell runs
+   *
+   * Access Level: Read
+   */
+  public toBatchGetCellRun() {
+    return this.to('BatchGetCellRun');
+  }
+
+  /**
+   * Grants permission to create and update attributes metadata
+   *
+   * Access Level: Write
+   */
+  public toBatchPutAttributesMetadata() {
+    return this.to('BatchPutAttributesMetadata');
+  }
+
+  /**
    * Grants permission to put linked type items to an Amazon DataZone Domain
    *
    * Access Level: Write
@@ -151,6 +187,24 @@ export class Datazone extends PolicyStatement {
    */
   public toCreateAssetType() {
     return this.to('CreateAssetType');
+  }
+
+  /**
+   * Grants permission to create cells
+   *
+   * Access Level: Write
+   */
+  public toCreateCell() {
+    return this.to('CreateCell');
+  }
+
+  /**
+   * Grants permission to create cell runs
+   *
+   * Access Level: Write
+   */
+  public toCreateCellRun() {
+    return this.to('CreateCellRun');
   }
 
   /**
@@ -293,6 +347,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create notebooks
+   *
+   * Access Level: Write
+   */
+  public toCreateNotebook() {
+    return this.to('CreateNotebook');
+  }
+
+  /**
    * Grants permission to create a Project to enable your team to publish and subscribe to data
    *
    * Access Level: Write
@@ -398,6 +461,24 @@ export class Datazone extends PolicyStatement {
    */
   public toDeleteAssetType() {
     return this.to('DeleteAssetType');
+  }
+
+  /**
+   * Grants permission to delete cells
+   *
+   * Access Level: Write
+   */
+  public toDeleteCell() {
+    return this.to('DeleteCell');
+  }
+
+  /**
+   * Grants permission to delete cell runs
+   *
+   * Access Level: Write
+   */
+  public toDeleteCellRun() {
+    return this.to('DeleteCellRun');
   }
 
   /**
@@ -536,6 +617,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete notebooks
+   *
+   * Access Level: Write
+   */
+  public toDeleteNotebook() {
+    return this.to('DeleteNotebook');
+  }
+
+  /**
    * Grants permission to delete a Project that enables your team to publish and subscribe to data
    *
    * Access Level: Write
@@ -626,6 +716,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate code
+   *
+   * Access Level: Write
+   */
+  public toGenerateCode() {
+    return this.to('GenerateCode');
+  }
+
+  /**
    * Grants permission to get account pool details
    *
    * Access Level: Read
@@ -662,12 +761,48 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get cells
+   *
+   * Access Level: Read
+   */
+  public toGetCell() {
+    return this.to('GetCell');
+  }
+
+  /**
+   * Grants permission to get cell runs
+   *
+   * Access Level: Read
+   */
+  public toGetCellRun() {
+    return this.to('GetCellRun');
+  }
+
+  /**
+   * Grants permission to get cell run result
+   *
+   * Access Level: Read
+   */
+  public toGetCellRunResult() {
+    return this.to('GetCellRunResult');
+  }
+
+  /**
    * Grants permission to get connections
    *
    * Access Level: Read
    */
   public toGetConnection() {
     return this.to('GetConnection');
+  }
+
+  /**
+   * Grants permission to get conversations
+   *
+   * Access Level: Read
+   */
+  public toGetConversation() {
+    return this.to('GetConversation');
   }
 
   /**
@@ -887,6 +1022,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get notebooks
+   *
+   * Access Level: Read
+   */
+  public toGetNotebook() {
+    return this.to('GetNotebook');
+  }
+
+  /**
+   * Grants permission to get notebook compute
+   *
+   * Access Level: Read
+   */
+  public toGetNotebookCompute() {
+    return this.to('GetNotebookCompute');
+  }
+
+  /**
    * Grants permission to get Project details
    *
    * Access Level: Read
@@ -1031,12 +1184,30 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list cell runs
+   *
+   * Access Level: List
+   */
+  public toListCellRuns() {
+    return this.to('ListCellRuns');
+  }
+
+  /**
    * Grants permission to list connections
    *
    * Access Level: List
    */
   public toListConnections() {
     return this.to('ListConnections');
+  }
+
+  /**
+   * Grants permission to list conversations
+   *
+   * Access Level: List
+   */
+  public toListConversations() {
+    return this.to('ListConversations');
   }
 
   /**
@@ -1211,6 +1382,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list notebooks
+   *
+   * Access Level: List
+   */
+  public toListNotebooks() {
+    return this.to('ListNotebooks');
+  }
+
+  /**
    * Grants permission to list notifications and events for a datazone user
    *
    * Access Level: List
@@ -1355,6 +1535,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put cell run results
+   *
+   * Access Level: Write
+   */
+  public toPutCellRunResult() {
+    return this.to('PutCellRunResult');
+  }
+
+  /**
    * Grants permission to add a resource policy for a DataZone Domain
    *
    * Access Level: Permissions management
@@ -1481,6 +1670,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send messages
+   *
+   * Access Level: Write
+   */
+  public toSendMessage() {
+    return this.to('SendMessage');
+  }
+
+  /**
    * Grants permission to login using SSO
    *
    * Access Level: Write
@@ -1508,6 +1706,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start conversations
+   *
+   * Access Level: Write
+   */
+  public toStartConversation() {
+    return this.to('StartConversation');
+  }
+
+  /**
    * Grants permission to start a DataSource run job
    *
    * Access Level: Write
@@ -1526,12 +1733,30 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start notebook compute
+   *
+   * Access Level: Write
+   */
+  public toStartNotebookCompute() {
+    return this.to('StartNotebookCompute');
+  }
+
+  /**
    * Grants permission to stop metadata generation run
    *
    * Access Level: Write
    */
   public toStopMetadataGenerationRun() {
     return this.to('StopMetadataGenerationRun');
+  }
+
+  /**
+   * Grants permission to stop notebook compute
+   *
+   * Access Level: Write
+   */
+  public toStopNotebookCompute() {
+    return this.to('StopNotebookCompute');
   }
 
   /**
@@ -1575,6 +1800,24 @@ export class Datazone extends PolicyStatement {
    */
   public toUpdateAssetFilter() {
     return this.to('UpdateAssetFilter');
+  }
+
+  /**
+   * Grants permission to update cells
+   *
+   * Access Level: Write
+   */
+  public toUpdateCell() {
+    return this.to('UpdateCell');
+  }
+
+  /**
+   * Grants permission to update cell runs
+   *
+   * Access Level: Write
+   */
+  public toUpdateCellRun() {
+    return this.to('UpdateCellRun');
   }
 
   /**
@@ -1704,6 +1947,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update notebooks
+   *
+   * Access Level: Write
+   */
+  public toUpdateNotebook() {
+    return this.to('UpdateNotebook');
+  }
+
+  /**
    * Grants permission to update a Project that enables your team to publish and subscribe to data
    *
    * Access Level: Write
@@ -1783,6 +2035,7 @@ export class Datazone extends PolicyStatement {
       'AssociateEnvironmentRole',
       'AssociateGovernedTerms',
       'BatchDeleteLinkedTypes',
+      'BatchPutAttributesMetadata',
       'BatchPutLinkedTypes',
       'CancelMetadataGenerationRun',
       'CancelSubscription',
@@ -1791,6 +2044,8 @@ export class Datazone extends PolicyStatement {
       'CreateAssetFilter',
       'CreateAssetRevision',
       'CreateAssetType',
+      'CreateCell',
+      'CreateCellRun',
       'CreateConnection',
       'CreateDataProduct',
       'CreateDataProductRevision',
@@ -1806,6 +2061,7 @@ export class Datazone extends PolicyStatement {
       'CreateGlossaryTerm',
       'CreateGroupProfile',
       'CreateListingChangeSet',
+      'CreateNotebook',
       'CreateProject',
       'CreateProjectMembership',
       'CreateProjectProfile',
@@ -1818,6 +2074,8 @@ export class Datazone extends PolicyStatement {
       'DeleteAsset',
       'DeleteAssetFilter',
       'DeleteAssetType',
+      'DeleteCell',
+      'DeleteCellRun',
       'DeleteConnection',
       'DeleteDataProduct',
       'DeleteDataSource',
@@ -1832,6 +2090,7 @@ export class Datazone extends PolicyStatement {
       'DeleteGlossary',
       'DeleteGlossaryTerm',
       'DeleteListing',
+      'DeleteNotebook',
       'DeleteProject',
       'DeleteProjectMembership',
       'DeleteProjectProfile',
@@ -1842,22 +2101,30 @@ export class Datazone extends PolicyStatement {
       'DeleteTimeSeriesDataPoints',
       'DisassociateEnvironmentRole',
       'DisassociateGovernedTerms',
+      'GenerateCode',
       'PostLineageEvent',
       'PostTimeSeriesDataPoints',
       'ProvisionDomain',
+      'PutCellRunResult',
       'PutEnvironmentBlueprintConfiguration',
       'RefreshToken',
       'RejectPredictions',
       'RejectSubscriptionRequest',
       'RemoveEntityOwner',
+      'SendMessage',
       'SsoLogin',
       'SsoLogout',
       'StartAccountBootstrapAction',
+      'StartConversation',
       'StartDataSourceRun',
       'StartMetadataGenerationRun',
+      'StartNotebookCompute',
       'StopMetadataGenerationRun',
+      'StopNotebookCompute',
       'UpdateAccountPool',
       'UpdateAssetFilter',
+      'UpdateCell',
+      'UpdateCellRun',
       'UpdateConnection',
       'UpdateDataSource',
       'UpdateDataSourceRunActivities',
@@ -1872,6 +2139,7 @@ export class Datazone extends PolicyStatement {
       'UpdateGlossary',
       'UpdateGlossaryTerm',
       'UpdateGroupProfile',
+      'UpdateNotebook',
       'UpdateProject',
       'UpdateProjectProfile',
       'UpdateRule',
@@ -1890,11 +2158,18 @@ export class Datazone extends PolicyStatement {
       'RevokeSubscription'
     ],
     Read: [
+      'BatchGetAttributesMetadata',
+      'BatchGetCell',
+      'BatchGetCellRun',
       'GetAccountPool',
       'GetAsset',
       'GetAssetFilter',
       'GetAssetType',
+      'GetCell',
+      'GetCellRun',
+      'GetCellRunResult',
       'GetConnection',
+      'GetConversation',
       'GetDataProduct',
       'GetDataSource',
       'GetDataSourceRun',
@@ -1918,6 +2193,8 @@ export class Datazone extends PolicyStatement {
       'GetLineageNode',
       'GetListing',
       'GetMetadataGenerationRun',
+      'GetNotebook',
+      'GetNotebookCompute',
       'GetProject',
       'GetProjectProfile',
       'GetRule',
@@ -1937,7 +2214,9 @@ export class Datazone extends PolicyStatement {
       'ListAccountsInAccountPool',
       'ListAssetFilters',
       'ListAssetRevisions',
+      'ListCellRuns',
       'ListConnections',
+      'ListConversations',
       'ListDataProductRevisions',
       'ListDataSourceRunActivities',
       'ListDataSourceRuns',
@@ -1957,6 +2236,7 @@ export class Datazone extends PolicyStatement {
       'ListLineageNodeHistory',
       'ListLinkedTypes',
       'ListMetadataGenerationRuns',
+      'ListNotebooks',
       'ListNotifications',
       'ListPolicyGrants',
       'ListProjectMemberships',

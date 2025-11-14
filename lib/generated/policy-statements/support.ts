@@ -272,6 +272,28 @@ export class Support extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of entries within a specific interaction, including messages, status updates, or other relevant data points
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
+   */
+  public toListInteractionEntries() {
+    return this.to('ListInteractionEntries');
+  }
+
+  /**
+   * Grants permission to retrieve a list of interactions, potentially with filters or pagination
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
+   */
+  public toListInteractions() {
+    return this.to('ListInteractions');
+  }
+
+  /**
    * Grants permission to allow secondary services to attach attributes to AWS Support cases. This is an internally managed function
    *
    * Access Level: Write
@@ -316,6 +338,17 @@ export class Support extends PolicyStatement {
   }
 
   /**
+   * Grants permission to mark a specific interaction as resolved by its unique identifier, indicating that the issue has been addressed and no further action is needed
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/user/accessing-support.html
+   */
+  public toResolveInteraction() {
+    return this.to('ResolveInteraction');
+  }
+
+  /**
    * Grants permission to return a list of AWS Support cases that matches the given inputs
    *
    * Access Level: Read
@@ -330,6 +363,9 @@ export class Support extends PolicyStatement {
    * Grants permission to start a specific interaction to receive personalized troubleshooting assistance for account and technical issues
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - support:DescribeSupportLevel
    *
    * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_StartInteraction.html
    */
@@ -371,6 +407,7 @@ export class Support extends PolicyStatement {
       'RateCaseCommunication',
       'RefreshTrustedAdvisorCheck',
       'ResolveCase',
+      'ResolveInteraction',
       'StartInteraction',
       'UpdateCaseSeverity',
       'UpdateInteraction'
@@ -393,6 +430,8 @@ export class Support extends PolicyStatement {
       'DescribeTrustedAdvisorCheckSummaries',
       'DescribeTrustedAdvisorChecks',
       'GetInteraction',
+      'ListInteractionEntries',
+      'ListInteractions',
       'SearchForCases'
     ]
   };

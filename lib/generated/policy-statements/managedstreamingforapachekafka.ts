@@ -652,6 +652,17 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the rebalancing status of the MSK cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#UpdateRebalancing
+   */
+  public toUpdateRebalancing() {
+    return this.to('UpdateRebalancing');
+  }
+
+  /**
    * Grants permission to update the replication info of the MSK replicator
    *
    * Access Level: Write
@@ -712,6 +723,7 @@ export class Kafka extends PolicyStatement {
       'UpdateConfiguration',
       'UpdateConnectivity',
       'UpdateMonitoring',
+      'UpdateRebalancing',
       'UpdateReplicationInfo',
       'UpdateSecurity',
       'UpdateStorage'

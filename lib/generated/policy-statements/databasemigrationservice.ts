@@ -69,6 +69,28 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a single metadata model conversion operation that was started with StartMetadataModelConversion
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelConversion.html
+   */
+  public toCancelMetadataModelConversion() {
+    return this.to('CancelMetadataModelConversion');
+  }
+
+  /**
+   * Grants permission to cancel a single metadata model creation operation that was started with StartMetadataModelCreation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelCreation.html
+   */
+  public toCancelMetadataModelCreation() {
+    return this.to('CancelMetadataModelCreation');
+  }
+
+  /**
    * Grants permission to cancel a single premigration assessment run
    *
    * Access Level: Write
@@ -645,6 +667,39 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get detailed information about the specified metadata model, including its definition and corresponding converted objects in the target database if applicable
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModel.html
+   */
+  public toDescribeMetadataModel() {
+    return this.to('DescribeMetadataModel');
+  }
+
+  /**
+   * Grants permission to get a list of child metadata models for the specified metadata model in the database hierarchy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelChildren.html
+   */
+  public toDescribeMetadataModelChildren() {
+    return this.to('DescribeMetadataModelChildren');
+  }
+
+  /**
+   * Grants permission to return a paginated list of metadata model creation requests for a migration project
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelCreations.html
+   */
+  public toDescribeMetadataModelCreations() {
+    return this.to('DescribeMetadataModelCreations');
+  }
+
+  /**
    * Grants permission to return information about start metadata model import operations for a migration project
    *
    * Access Level: Read
@@ -855,6 +910,17 @@ export class Dms extends PolicyStatement {
    */
   public toExportMetadataModelAssessment() {
     return this.to('ExportMetadataModelAssessment');
+  }
+
+  /**
+   * Grants permission to convert source selection rules into their target counterparts for schema conversion operations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_GetTargetSelectionRules.html
+   */
+  public toGetTargetSelectionRules() {
+    return this.to('GetTargetSelectionRules');
   }
 
   /**
@@ -1199,6 +1265,17 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create source metadata model of the given type with the specified properties for schema conversion operations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelCreation.html
+   */
+  public toStartMetadataModelCreation() {
+    return this.to('StartMetadataModelCreation');
+  }
+
+  /**
    * Grants permission to start a new export of metadata model as script
    *
    * Access Level: Write
@@ -1408,6 +1485,8 @@ export class Dms extends PolicyStatement {
       'ApplyPendingMaintenanceAction',
       'AssociateExtensionPack',
       'BatchStartRecommendations',
+      'CancelMetadataModelConversion',
+      'CancelMetadataModelCreation',
       'CancelReplicationTaskAssessmentRun',
       'CreateDataMigration',
       'CreateDataProvider',
@@ -1455,6 +1534,7 @@ export class Dms extends PolicyStatement {
       'StartDataMigration',
       'StartMetadataModelAssessment',
       'StartMetadataModelConversion',
+      'StartMetadataModelCreation',
       'StartMetadataModelExportAsScripts',
       'StartMetadataModelExportToTarget',
       'StartMetadataModelImport',
@@ -1492,6 +1572,9 @@ export class Dms extends PolicyStatement {
       'DescribeFleetAdvisorLsaAnalysis',
       'DescribeFleetAdvisorSchemaObjectSummary',
       'DescribeFleetAdvisorSchemas',
+      'DescribeMetadataModel',
+      'DescribeMetadataModelChildren',
+      'DescribeMetadataModelCreations',
       'DescribeMetadataModelImports',
       'DescribeOrderableReplicationInstances',
       'DescribePendingMaintenanceActions',
@@ -1510,6 +1593,7 @@ export class Dms extends PolicyStatement {
       'DescribeReplications',
       'DescribeSchemas',
       'DescribeTableStatistics',
+      'GetTargetSelectionRules',
       'ListDataProviders',
       'ListExtensionPacks',
       'ListInstanceProfiles',

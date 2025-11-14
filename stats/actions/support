@@ -21,10 +21,13 @@ support:GetInteraction;Read
 support:InitiateCallForCase;Write
 support:InitiateChatForCase;Write
 support:InitiateLiveContactForCase;Write
+support:ListInteractionEntries;Read
+support:ListInteractions;Read
 support:PutCaseAttributes;Write
 support:RateCaseCommunication;Write
 support:RefreshTrustedAdvisorCheck;Write
 support:ResolveCase;Write
+support:ResolveInteraction;Write
 support:SearchForCases;Read
 support:StartInteraction;Write
 support:UpdateCaseSeverity;Write

@@ -167,6 +167,17 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve presigned S3 logging URLs
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetAgentTaskResponseUrl.html
+   */
+  public toGetAgentTaskResponseUrl() {
+    return this.to('GetAgentTaskResponseUrl');
+  }
+
+  /**
    * Grants permission to return a configuration
    *
    * Access Level: Read
@@ -430,6 +441,7 @@ export class Groundstation extends PolicyStatement {
       'DescribeContact',
       'DescribeEphemeris',
       'GetAgentConfiguration',
+      'GetAgentTaskResponseUrl',
       'GetConfig',
       'GetDataflowEndpointGroup',
       'GetMinuteUsage',
