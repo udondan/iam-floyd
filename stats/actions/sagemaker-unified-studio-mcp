@@ -1,0 +1,3 @@
+sagemaker-unified-studio-mcp:CallPrivilegedTool;Write
+sagemaker-unified-studio-mcp:CallReadOnlyTool;Read
+sagemaker-unified-studio-mcp:InvokeMcp;Read

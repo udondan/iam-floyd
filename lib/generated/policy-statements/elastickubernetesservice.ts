@@ -122,6 +122,7 @@ export class Eks extends PolicyStatement {
    * - .ifComputeConfigEnabled()
    * - .ifElasticLoadBalancingEnabled()
    * - .ifBlockStorageEnabled()
+   * - .ifLoggingType()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
@@ -628,6 +629,9 @@ export class Eks extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - eks:AccessKubernetesApi
+   *
    * https://docs.aws.amazon.com/eks/latest/userguide/mutate-workloads.html
    */
   public toMutateViaKubernetesApi() {
@@ -722,6 +726,7 @@ export class Eks extends PolicyStatement {
    * - .ifComputeConfigEnabled()
    * - .ifElasticLoadBalancingEnabled()
    * - .ifBlockStorageEnabled()
+   * - .ifLoggingType()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html
    */
@@ -1300,6 +1305,22 @@ export class Eks extends PolicyStatement {
    */
   public ifKubernetesGroups(value: string | string[], operator?: Operator | string) {
     return this.if(`kubernetesGroups`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the cluster logging enabled and type parameter in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param type The tag key to check
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifLoggingType(type: string, value?: boolean) {
+    return this.if(`loggingType/${ type }`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

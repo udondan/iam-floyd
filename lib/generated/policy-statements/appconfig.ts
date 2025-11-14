@@ -788,7 +788,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type configuration to the statement
    *
-   * https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html
+   * https://docs.aws.amazon.com/appconfig/latest/userguide/retrieving-feature-flags.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param environmentId - Identifier for the environmentId.

@@ -81,11 +81,11 @@ export class Invoicing extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get Invoice PDF
+   * Grants permission to get downloadable Invoice document pre-signed URL with supplemental documents
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetInvoicePDF.html
    */
   public toGetInvoicePDF() {
     return this.to('GetInvoicePDF');
@@ -118,7 +118,7 @@ export class Invoicing extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/security_iam_id-based-policy-examples.html#billing-permissions-ref
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListInvoiceSummaries.html
    */
   public toListInvoiceSummaries() {
     return this.to('ListInvoiceSummaries');

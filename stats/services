@@ -343,6 +343,7 @@ sagemaker
 sagemaker-data-science-assistant
 sagemaker-geospatial
 sagemaker-mlflow
+sagemaker-unified-studio-mcp
 savingsplans
 scheduler
 schemas

@@ -66,5 +66,6 @@ route53:ListVPCAssociationAuthorizations;List
 route53:TestDNSAnswer;Read
 route53:UpdateHealthCheck;Write
 route53:UpdateHostedZoneComment;Write
+route53:UpdateHostedZoneFeatures;Write
 route53:UpdateTrafficPolicyComment;Write
 route53:UpdateTrafficPolicyInstance;Write

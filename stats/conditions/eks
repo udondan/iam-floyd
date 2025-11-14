@@ -13,6 +13,7 @@ eks:computeConfigEnabled
 eks:elasticLoadBalancingEnabled
 eks:issuerUrl
 eks:kubernetesGroups
+eks:loggingType/${type}
 eks:namespaces
 eks:policyArn
 eks:principalArn

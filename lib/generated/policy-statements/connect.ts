@@ -3414,6 +3414,26 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send outbound chat messages using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSubtype()
+   *
+   * Dependent actions:
+   * - social-messaging:SendWhatsAppMessage
+   * - wisdom:GetMessageTemplate
+   * - wisdom:RenderMessageTemplate
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html
+   */
+  public toSendOutboundChatMessage() {
+    return this.to('SendOutboundChatMessage');
+  }
+
+  /**
    * Grants permission to send outbound email using the Amazon Connect API
    *
    * Access Level: Write
@@ -4684,6 +4704,7 @@ export class Connect extends PolicyStatement {
       'ResumeContactRecording',
       'SendChatIntegrationEvent',
       'SendIntegrationEvent',
+      'SendOutboundChatMessage',
       'SendOutboundEmail',
       'StartAttachedFileUpload',
       'StartChatContact',
@@ -6086,6 +6107,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchUserHierarchyGroups()
    * - .toSearchUsers()
    * - .toSearchVocabularies()
+   * - .toSendOutboundChatMessage()
    * - .toSendOutboundEmail()
    * - .toStartAttachedFileUpload()
    * - .toStartChatContact()
@@ -6289,6 +6311,7 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
+   * - .toSendOutboundChatMessage()
    * - .toStartOutboundChatContact()
    *
    * @param value The value(s) to check

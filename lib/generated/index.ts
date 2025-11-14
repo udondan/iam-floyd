@@ -393,6 +393,7 @@ export { ResourceExplorer2 } from './policy-statements/resourceexplorer';
 export { ResourceGroups } from './policy-statements/resourcegroups';
 export { Robomaker } from './policy-statements/robomaker';
 export { Rtbfabric } from './policy-statements/rtbfabric';
+export { SagemakerUnifiedStudioMcp } from './policy-statements/sagemakerunifiedstudiomcpisamanagedmcpsolutionforawsdataprocessingserviceslikeemr-glue-athena';
 export { Savingsplans } from './policy-statements/savingsplans';
 export { Secretsmanager } from './policy-statements/secretsmanager';
 export { Securityhub } from './policy-statements/securityhub';

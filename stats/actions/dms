@@ -2,6 +2,8 @@ dms:AddTagsToResource;Tagging
 dms:ApplyPendingMaintenanceAction;Write
 dms:AssociateExtensionPack;Write
 dms:BatchStartRecommendations;Write
+dms:CancelMetadataModelConversion;Write
+dms:CancelMetadataModelCreation;Write
 dms:CancelReplicationTaskAssessmentRun;Write
 dms:CreateDataMigration;Write
 dms:CreateDataProvider;Write
@@ -47,6 +49,9 @@ dms:DescribeFleetAdvisorDatabases;Read
 dms:DescribeFleetAdvisorLsaAnalysis;Read
 dms:DescribeFleetAdvisorSchemaObjectSummary;Read
 dms:DescribeFleetAdvisorSchemas;Read
+dms:DescribeMetadataModel;Read
+dms:DescribeMetadataModelChildren;Read
+dms:DescribeMetadataModelCreations;Read
 dms:DescribeMetadataModelImports;Read
 dms:DescribeOrderableReplicationInstances;Read
 dms:DescribePendingMaintenanceActions;Read
@@ -66,6 +71,7 @@ dms:DescribeReplications;Read
 dms:DescribeSchemas;Read
 dms:DescribeTableStatistics;Read
 dms:ExportMetadataModelAssessment;Write
+dms:GetTargetSelectionRules;Read
 dms:ImportCertificate;Write
 dms:ListDataProviders;Read
 dms:ListExtensionPacks;Read
@@ -95,6 +101,7 @@ dms:RunFleetAdvisorLsaAnalysis;Write
 dms:StartDataMigration;Write
 dms:StartMetadataModelAssessment;Write
 dms:StartMetadataModelConversion;Write
+dms:StartMetadataModelCreation;Write
 dms:StartMetadataModelExportAsScripts;Write
 dms:StartMetadataModelExportToTarget;Write
 dms:StartMetadataModelImport;Write

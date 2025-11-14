@@ -218,6 +218,7 @@ connect:SearchUsers;Read
 connect:SearchVocabularies;List
 connect:SendChatIntegrationEvent;Write
 connect:SendIntegrationEvent;Write
+connect:SendOutboundChatMessage;Write
 connect:SendOutboundEmail;Write
 connect:StartAttachedFileUpload;Write
 connect:StartChatContact;Write

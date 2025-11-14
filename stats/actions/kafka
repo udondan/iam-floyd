@@ -47,6 +47,7 @@ kafka:UpdateClusterKafkaVersion;Write
 kafka:UpdateConfiguration;Write
 kafka:UpdateConnectivity;Write
 kafka:UpdateMonitoring;Write
+kafka:UpdateRebalancing;Write
 kafka:UpdateReplicationInfo;Write
 kafka:UpdateSecurity;Write
 kafka:UpdateStorage;Write
