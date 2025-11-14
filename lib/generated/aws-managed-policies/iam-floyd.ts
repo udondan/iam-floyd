@@ -1480,6 +1480,10 @@ export class AwsManagedPolicy {
     public static AWSEC2SpotFleetServiceRolePolicy = 'aws-service-role/AWSEC2SpotFleetServiceRolePolicy';
     /** Allows EC2 Spot to launch and manage spot instances */
     public static AWSEC2SpotServiceRolePolicy = 'aws-service-role/AWSEC2SpotServiceRolePolicy';
+    /** Amazon EC2 instance permissions to allow EC2 SQL High Availability service to detect instance high availability state through EC2 instance profile. */
+    public static AWSEC2SqlHaInstancePolicy = 'AWSEC2SqlHaInstancePolicy';
+    /** EC2 SQL High Availability service permissions to detect standby/passive instances */
+    public static AWSEC2SqlHaServiceRolePolicy = 'aws-service-role/AWSEC2SqlHaServiceRolePolicy';
     /** This policy is attached to the IAM role that's attached to your Amazon EC2 Windows Instances to enable the Amazon EC2 VSS solution to create and add tags to Amazon Machine Images (AMI) and EBS Snapshots. */
     public static AWSEC2VssSnapshotPolicy = 'AWSEC2VssSnapshotPolicy';
     /** Enables access to AWS services and resources used or managed by AWS ECR pull through cache */
