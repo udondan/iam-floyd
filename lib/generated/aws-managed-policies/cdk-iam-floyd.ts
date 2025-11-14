@@ -3709,6 +3709,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2SpotServiceRolePolicy);
     }
 
+    /** Amazon EC2 instance permissions to allow EC2 SQL High Availability service to detect instance high availability state through EC2 instance profile. */
+    public AWSEC2SqlHaInstancePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2SqlHaInstancePolicy);
+    }
+
+    /** EC2 SQL High Availability service permissions to detect standby/passive instances */
+    public AWSEC2SqlHaServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2SqlHaServiceRolePolicy);
+    }
+
     /** This policy is attached to the IAM role that's attached to your Amazon EC2 Windows Instances to enable the Amazon EC2 VSS solution to create and add tags to Amazon Machine Images (AMI) and EBS Snapshots. */
     public AWSEC2VssSnapshotPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2VssSnapshotPolicy);
