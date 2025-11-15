@@ -144,6 +144,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonAthenaFullAccess);
     }
 
+    /** Allows access to other AWS service resources that are required to run Amazon Athena */
+    public AmazonAthenaServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonAthenaServiceRolePolicy);
+    }
+
     /** Provides access to perform all operations Amazon Augmented AI resources, including FlowDefinitions, HumanTaskUis and HumanLoops. Does not allow access for creating FlowDefinitions against the public-crowd Workteam. */
     public AmazonAugmentedAIFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonAugmentedAIFullAccess);
@@ -4769,6 +4774,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMSKReplicatorExecutionRole);
     }
 
+    /** Provides permissions to manage VPC resources for the configuration and management of NAT Gateways. */
+    public AWSNATGatewayServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNATGatewayServiceRolePolicy);
+    }
+
     /** Grants full access to AWS Network Firewall service, including permissions to create, configure, manage, and delete firewall resources, policies, and rule groups. Additionally includes permissions to modify VPC endpoints, S3 bucket policies, CloudWatch Logs configurations, and create service-linked roles for Network Firewall and log delivery services */
     public AWSNetworkFirewallFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSNetworkFirewallFullAccess);
@@ -6172,6 +6182,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read-only access to Amazon Comprehend. */
     public ComprehendReadOnly(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ComprehendReadOnly);
+    }
+
+    /** The ComputeOptimizerAutomationServiceRolePolicy managed policy is attached to a service-linked role that allows Compute Optimizer to perform actions on your behalf */
+    public ComputeOptimizerAutomationServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ComputeOptimizerAutomationServiceRolePolicy);
     }
 
     /** Provides read only access to ComputeOptimizer. */

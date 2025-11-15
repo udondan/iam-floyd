@@ -103,6 +103,26 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "ResourceExplorerReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:Search"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "CloudTrailServiceLinkedChannelCreationPermission",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:CreateServiceLinkedChannel"
+      ],
+      "Resource": [
+        "arn:aws:cloudtrail:*:*:channel/aws-service-channel/application-signals/*"
+      ]
     }
   ]
 }

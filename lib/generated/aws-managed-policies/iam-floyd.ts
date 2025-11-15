@@ -54,6 +54,8 @@ export class AwsManagedPolicy {
     public static AmazonAppStreamServiceAccess = 'service-role/AmazonAppStreamServiceAccess';
     /** Provide full access to Amazon Athena and scoped access to the dependencies needed to enable querying, writing results, and data management. */
     public static AmazonAthenaFullAccess = 'AmazonAthenaFullAccess';
+    /** Allows access to other AWS service resources that are required to run Amazon Athena */
+    public static AmazonAthenaServiceRolePolicy = 'aws-service-role/AmazonAthenaServiceRolePolicy';
     /** Provides access to perform all operations Amazon Augmented AI resources, including FlowDefinitions, HumanTaskUis and HumanLoops. Does not allow access for creating FlowDefinitions against the public-crowd Workteam. */
     public static AmazonAugmentedAIFullAccess = 'AmazonAugmentedAIFullAccess';
     /** Provides access to perform all operations on HumanLoops. */
@@ -1904,6 +1906,8 @@ export class AwsManagedPolicy {
     public static AWSMigrationHubStrategyServiceRolePolicy = 'aws-service-role/AWSMigrationHubStrategyServiceRolePolicy';
     /** Grants permissions to Amazon MSK Replicator to replicate data between MSK Clusters. */
     public static AWSMSKReplicatorExecutionRole = 'service-role/AWSMSKReplicatorExecutionRole';
+    /** Provides permissions to manage VPC resources for the configuration and management of NAT Gateways. */
+    public static AWSNATGatewayServiceRolePolicy = 'aws-service-role/AWSNATGatewayServiceRolePolicy';
     /** Grants full access to AWS Network Firewall service, including permissions to create, configure, manage, and delete firewall resources, policies, and rule groups. Additionally includes permissions to modify VPC endpoints, S3 bucket policies, CloudWatch Logs configurations, and create service-linked roles for Network Firewall and log delivery services */
     public static AWSNetworkFirewallFullAccess = 'AWSNetworkFirewallFullAccess';
     /** Provides read-only access to AWS Network Firewall resources via the AWS Management Console, CLI, and SDKs. This policy allows users to view and monitor firewall configurations, policies, rule groups, and associated resources, without the ability to make changes. */
@@ -2466,6 +2470,8 @@ export class AwsManagedPolicy {
     public static ComprehendMedicalFullAccess = 'ComprehendMedicalFullAccess';
     /** Provides read-only access to Amazon Comprehend. */
     public static ComprehendReadOnly = 'ComprehendReadOnly';
+    /** The ComputeOptimizerAutomationServiceRolePolicy managed policy is attached to a service-linked role that allows Compute Optimizer to perform actions on your behalf */
+    public static ComputeOptimizerAutomationServiceRolePolicy = 'aws-service-role/ComputeOptimizerAutomationServiceRolePolicy';
     /** Provides read only access to ComputeOptimizer. */
     public static ComputeOptimizerReadOnlyAccess = 'ComputeOptimizerReadOnlyAccess';
     /** Allows ComputeOptimizer to call AWS services and collect workload details on your behalf. */
