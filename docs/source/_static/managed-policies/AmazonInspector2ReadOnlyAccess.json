@@ -18,6 +18,38 @@
         "codeguru-security:GetAccountConfiguration"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowListPoliciesForInspectorPolicyType",
+      "Effect": "Allow",
+      "Action": "organizations:ListPolicies",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": [
+            "INSPECTOR_POLICY"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowDescribeResourcePolicyForDelegation",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeResourcePolicy",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowDescribeEffectivePolicyForInspector",
+      "Effect": "Allow",
+      "Action": "organizations:DescribeEffectivePolicy",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": [
+            "INSPECTOR_POLICY"
+          ]
+        }
+      }
     }
   ]
 }

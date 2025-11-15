@@ -40,19 +40,6 @@
       ]
     },
     {
-      "Sid": "IAMPassRoleStatement",
-      "Effect": "Allow",
-      "Action": "iam:PassRole",
-      "Resource": [
-        "arn:aws:iam::*:role/service-role/AmazonSageMaker*"
-      ],
-      "Condition": {
-        "StringEquals": {
-          "iam:passedToService": "datazone.amazonaws.com"
-        }
-      }
-    },
-    {
       "Sid": "DataZoneKMSPermissions",
       "Effect": "Allow",
       "Action": [

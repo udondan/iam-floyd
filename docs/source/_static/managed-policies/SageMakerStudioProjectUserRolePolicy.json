@@ -2760,6 +2760,16 @@
           "aws:ResourceTag/AmazonDataZoneAssetsFolder": "true"
         }
       }
+    },
+    {
+      "Sid": "SageMakerUnifiedStudioMcp",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker-unified-studio-mcp:InvokeMcp",
+        "sagemaker-unified-studio-mcp:CallReadOnlyTool",
+        "sagemaker-unified-studio-mcp:CallPrivilegedTool"
+      ],
+      "Resource": "*"
     }
   ]
 }
