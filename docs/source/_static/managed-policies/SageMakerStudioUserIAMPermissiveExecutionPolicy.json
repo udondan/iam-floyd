@@ -22,14 +22,53 @@
         "athena:*",
         "bedrock:*",
         "codewhisperer:*",
+        "sagemaker-unified-studio-mcp:*",
         "q:*",
         "sagemaker:*",
         "sagemaker-mlflow:*",
         "scheduler:*",
         "sqlworkbench:*",
-        "emr-serverless:*"
+        "emr-serverless:*",
+        "airflow-serverless:*"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "GlueSessionIsolation",
+      "Effect": "Deny",
+      "Action": [
+        "glue:CancelStatement",
+        "glue:CreateSession",
+        "glue:DeleteSession",
+        "glue:GetSession",
+        "glue:GetStatement",
+        "glue:RunStatement",
+        "glue:StopSession",
+        "glue:GetDashboardUrl"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:session/*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:RequestTag/AmazonDataZoneSessionOwner": "${aws:SourceIdentity}",
+          "aws:ResourceTag/AmazonDataZoneSessionOwner": "${aws:SourceIdentity}"
+        }
+      }
+    },
+    {
+      "Sid": "DenyTaggingUntaggingForeignSessions",
+      "Effect": "Deny",
+      "Action": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ],
+      "Resource": "arn:aws:glue:*:*:session/*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceTag/AmazonDataZoneSessionOwner": "${aws:SourceIdentity}"
+        }
+      }
     },
     {
       "Sid": "DataZone",
@@ -41,12 +80,14 @@
         "datazone:CancelSubscription",
         "datazone:CreateAsset*",
         "datazone:CreateConnection",
+        "datazone:CreateEnvironment",
         "datazone:CreateListingChangeSet",
         "datazone:CreateProject",
         "datazone:CreateSubscriptionGrant",
         "datazone:CreateSubscriptionRequest",
         "datazone:DeleteAsset*",
         "datazone:DeleteConnection",
+        "datazone:DeleteEnvironment",
         "datazone:DeleteListing",
         "datazone:DeleteProject",
         "datazone:DeleteSubscriptionGrant",
@@ -62,12 +103,47 @@
         "datazone:SearchRules",
         "datazone:SearchTypes",
         "datazone:SearchUserProfiles",
+        "datazone:SearchGroupProfiles",
         "datazone:StartMetadataGenerationRun",
         "datazone:UpdateAssetFilter",
         "datazone:UpdateConnection",
+        "datazone:UpdateEnvironment",
         "datazone:UpdateProject",
-        "datazone:UpdateSubscriptionRequest"
+        "datazone:UpdateSubscriptionRequest",
+        "datazone:CreateNotebook",
+        "datazone:UpdateNotebook",
+        "datazone:DeleteNotebook",
+        "datazone:CreateCell",
+        "datazone:UpdateCell",
+        "datazone:DeleteCell",
+        "datazone:BatchGetCell",
+        "datazone:CreateCellRun",
+        "datazone:UpdateCellRun",
+        "datazone:DeleteCellRun",
+        "datazone:BatchGetCellRun",
+        "datazone:PutCellRunResult",
+        "datazone:StartNotebookCompute",
+        "datazone:StopNotebookCompute",
+        "datazone:StartConversation",
+        "datazone:GenerateCode",
+        "datazone:SendMessage"
       ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CfnManage",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:*"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/DataZone*"
+      ]
+    },
+    {
+      "Sid": "ValidateCfn",
+      "Effect": "Allow",
+      "Action": "cloudformation:ValidateTemplate",
       "Resource": "*"
     },
     {
@@ -90,6 +166,7 @@
         "arn:aws:iam::*:role/aws-service-role/sagemaker.amazonaws.com/AWSServiceRoleForAmazonSageMakerNotebooks",
         "arn:aws:iam::*:role/aws-service-role/ops.emr-serverless.amazonaws.com/AWSServiceRoleForAmazonEMRServerless",
         "arn:aws:iam::*:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
+        "arn:aws:iam::*:role/aws-service-role/airflow-serverless.amazonaws.com/AWSServiceRoleForAmazonMWAAServerless",
         "arn:aws:iam::*:role/aws-service-role/elasticmapreduce.amazonaws.com/AWSServiceRoleForEMRCleanup",
         "arn:aws:iam::*:role/aws-service-role/sagemaker.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_SageMakerEndpoint",
         "arn:aws:iam::*:role/aws-service-role/observability.aoss.amazonaws.com/AWSServiceRoleForAmazonOpenSearchServerless"
@@ -124,7 +201,9 @@
             "bedrock.amazonaws.com",
             "redshift-serverless.amazonaws.com",
             "redshift.amazonaws.com",
-            "scheduler.amazonaws.com"
+            "scheduler.amazonaws.com",
+            "emr-serverless.amazonaws.com",
+            "airflow-serverless.amazonaws.com"
           ]
         }
       }
@@ -331,7 +410,9 @@
         "kms:Decrypt",
         "kms:Encrypt",
         "kms:GenerateDataKey",
-        "kms:GenerateDataKeyWithoutPlaintext"
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:ReEncryptTo",
+        "kms:ReEncryptFrom"
       ],
       "Resource": "*",
       "Condition": {
@@ -394,6 +475,49 @@
       }
     },
     {
+      "Sid": "WorkflowsCreateGrant",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "arn:*:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "airflow-serverless.*.amazonaws.com"
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:airflow-serverless:workflow-arn"
+        },
+        "ForAllValues:StringEquals": {
+          "kms:GrantOperations": [
+            "kms:Decrypt",
+            "kms:Encrypt",
+            "kms:GenerateDataKey",
+            "kms:GenerateDataKeyWithoutPlaintext"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "WorkflowsKms",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "Resource": "arn:*:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "airflow-serverless.*.amazonaws.com"
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:airflow-serverless:workflow-arn"
+        }
+      }
+    },
+    {
       "Sid": "Ec2DescribeOnly",
       "Effect": "Allow",
       "Action": "ec2:Describe*",
@@ -404,7 +528,9 @@
       "Effect": "Allow",
       "Action": [
         "ec2:CreateNetworkInterface",
-        "ec2:DeleteNetworkInterface"
+        "ec2:DeleteNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterfacePermission"
       ],
       "Resource": "*"
     },
@@ -418,6 +544,41 @@
       "Resource": [
         "arn:aws:ec2:*:*:network-interface/*"
       ]
+    },
+    {
+      "Sid": "AthenaSessionIsolation",
+      "Effect": "Deny",
+      "Action": [
+        "athena:StartSession",
+        "athena:GetSession",
+        "athena:TerminateSession",
+        "athena:GetSessionStatus",
+        "athena:GetSessionEndpoint",
+        "athena:GetResourceDashboard"
+      ],
+      "Resource": [
+        "arn:aws:athena:*:*:workgroup/*/session/*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:RequestTag/AmazonDataZoneSessionOwner": "${aws:SourceIdentity}",
+          "aws:ResourceTag/AmazonDataZoneSessionOwner": "${aws:SourceIdentity}"
+        }
+      }
+    },
+    {
+      "Sid": "DenyTaggingUntaggingForeignAthenaSessions",
+      "Effect": "Deny",
+      "Action": [
+        "athena:TagResource",
+        "athena:UntagResource"
+      ],
+      "Resource": "arn:aws:athena:*:*:workgroup/*/session/*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceTag/AmazonDataZoneSessionOwner": "${aws:SourceIdentity}"
+        }
+      }
     }
   ]
 }
