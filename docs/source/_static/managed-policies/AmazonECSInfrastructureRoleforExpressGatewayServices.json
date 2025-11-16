@@ -2,7 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "CreateSLRForAutoscaling",
+      "Sid": "ServiceLinkedRoleCreateOperations",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
       "Resource": "*",
@@ -231,6 +231,7 @@
       "Action": [
         "elasticloadbalancing:DescribeLoadBalancers",
         "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetHealth",
         "elasticloadbalancing:DescribeListeners",
         "elasticloadbalancing:DescribeRules"
       ],

@@ -632,6 +632,8 @@ export class AwsManagedPolicy {
     public static AmazonMSKFullAccess = 'AmazonMSKFullAccess';
     /** Provide readonly access to Amazon MSK */
     public static AmazonMSKReadOnlyAccess = 'AmazonMSKReadOnlyAccess';
+    /** Provides access to Amazon Airflow Serverless Service to manage networking for your workflows and access other AWS services on your behalf */
+    public static AmazonMWAAServerlessServiceRolePolicy = 'aws-service-role/AmazonMWAAServerlessServiceRolePolicy';
     /** The Service Linked Role used by Amazon Managed Workflows for Apache Airflow. */
     public static AmazonMWAAServiceRolePolicy = 'aws-service-role/AmazonMWAAServiceRolePolicy';
     /** This policy grants access to resources needed by Nimble Studio Launch Profile workers. Attach this policy to EC2 instances created by Nimble Studio Builder. */

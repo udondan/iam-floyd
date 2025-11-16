@@ -1589,6 +1589,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonMSKReadOnlyAccess);
     }
 
+    /** Provides access to Amazon Airflow Serverless Service to manage networking for your workflows and access other AWS services on your behalf */
+    public AmazonMWAAServerlessServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonMWAAServerlessServiceRolePolicy);
+    }
+
     /** The Service Linked Role used by Amazon Managed Workflows for Apache Airflow. */
     public AmazonMWAAServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonMWAAServiceRolePolicy);
