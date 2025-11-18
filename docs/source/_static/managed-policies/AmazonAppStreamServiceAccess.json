@@ -5,7 +5,7 @@
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeVpcs",
-        "ec2:DescribeSubnets",
+        "ec2:DescribeImages",
         "ec2:DescribeAvailabilityZones",
         "ec2:CreateNetworkInterface",
         "ec2:DescribeNetworkInterfaces",

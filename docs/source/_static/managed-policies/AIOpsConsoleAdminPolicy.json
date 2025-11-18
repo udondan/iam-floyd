@@ -239,6 +239,20 @@
         "iam:CreatePolicy"
       ],
       "Resource": "arn:aws:iam::*:policy/AIOpsCrossAccountAssistantPolicy*"
+    },
+    {
+      "Sid": "AmazonQAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:UpdateConversation",
+        "q:DeleteConversation",
+        "q:PassRequest"
+      ],
+      "Resource": "*"
     }
   ]
 }
