@@ -204,6 +204,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create index for the OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreateIndex.html
+   */
+  public toCreateIndex() {
+    return this.to('CreateIndex');
+  }
+
+  /**
    * Grants permission to create a new cross-cluster search connection from a source domain to a destination domain
    *
    * Access Level: Write
@@ -344,6 +355,17 @@ export class Es extends PolicyStatement {
    */
   public toDeleteInboundCrossClusterSearchConnection() {
     return this.to('DeleteInboundCrossClusterSearchConnection');
+  }
+
+  /**
+   * Grants permission to delete Index for the OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeleteIndex.html
+   */
+  public toDeleteIndex() {
+    return this.to('DeleteIndex');
   }
 
   /**
@@ -809,6 +831,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get index for the OpenSearch Service domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetIndex.html
+   */
+  public toGetIndex() {
+    return this.to('GetIndex');
+  }
+
+  /**
    * Grants permission to fetch the version history for a package
    *
    * Access Level: Read
@@ -1186,6 +1219,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update index for the OpenSearch Service domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_UpdateIndex.html
+   */
+  public toUpdateIndex() {
+    return this.to('UpdateIndex');
+  }
+
+  /**
    * Grants permission to update a package for use with OpenSearch Service domains
    *
    * Access Level: Write
@@ -1267,6 +1311,7 @@ export class Es extends PolicyStatement {
       'CreateDomain',
       'CreateElasticsearchDomain',
       'CreateElasticsearchServiceRole',
+      'CreateIndex',
       'CreateOutboundConnection',
       'CreateOutboundCrossClusterSearchConnection',
       'CreatePackage',
@@ -1280,6 +1325,7 @@ export class Es extends PolicyStatement {
       'DeleteElasticsearchServiceRole',
       'DeleteInboundConnection',
       'DeleteInboundCrossClusterSearchConnection',
+      'DeleteIndex',
       'DeleteOutboundConnection',
       'DeleteOutboundCrossClusterSearchConnection',
       'DeletePackage',
@@ -1303,6 +1349,7 @@ export class Es extends PolicyStatement {
       'UpdateDirectQueryDataSource',
       'UpdateDomainConfig',
       'UpdateElasticsearchDomainConfig',
+      'UpdateIndex',
       'UpdatePackage',
       'UpdatePackageScope',
       'UpdateScheduledAction',
@@ -1332,6 +1379,7 @@ export class Es extends PolicyStatement {
       'GetDataSource',
       'GetDirectQueryDataSource',
       'GetDomainMaintenanceStatus',
+      'GetIndex',
       'GetPackageVersionHistory',
       'GetUpgradeHistory',
       'GetUpgradeStatus',

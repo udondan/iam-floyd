@@ -8,6 +8,7 @@ action-recommendations
 activate
 aiops
 airflow
+airflow-serverless
 amplify
 amplifybackend
 amplifyuibuilder
@@ -140,6 +141,7 @@ ecr-public
 ecs
 eks
 eks-auth
+eks-mcp
 elasticache
 elasticbeanstalk
 elasticfilesystem

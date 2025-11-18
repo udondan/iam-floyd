@@ -13,6 +13,7 @@ es:CreateApplication;Write
 es:CreateDomain;Write
 es:CreateElasticsearchDomain;Write
 es:CreateElasticsearchServiceRole;Write
+es:CreateIndex;Write
 es:CreateOutboundConnection;Write
 es:CreateOutboundCrossClusterSearchConnection;Write
 es:CreatePackage;Write
@@ -26,6 +27,7 @@ es:DeleteElasticsearchDomain;Write
 es:DeleteElasticsearchServiceRole;Write
 es:DeleteInboundConnection;Write
 es:DeleteInboundCrossClusterSearchConnection;Write
+es:DeleteIndex;Write
 es:DeleteOutboundConnection;Write
 es:DeleteOutboundCrossClusterSearchConnection;Write
 es:DeletePackage;Write
@@ -68,6 +70,7 @@ es:GetCompatibleVersions;List
 es:GetDataSource;Read
 es:GetDirectQueryDataSource;Read
 es:GetDomainMaintenanceStatus;Read
+es:GetIndex;Read
 es:GetPackageVersionHistory;Read
 es:GetUpgradeHistory;Read
 es:GetUpgradeStatus;Read
@@ -102,6 +105,7 @@ es:UpdateDataSource;Write
 es:UpdateDirectQueryDataSource;Write
 es:UpdateDomainConfig;Write
 es:UpdateElasticsearchDomainConfig;Write
+es:UpdateIndex;Write
 es:UpdatePackage;Write
 es:UpdatePackageScope;Write
 es:UpdateScheduledAction;Write

@@ -47,6 +47,7 @@ cloudformation:EstimateTemplateCost;Read
 cloudformation:ExecuteChangeSet;Write
 cloudformation:ExecuteStackRefactor;Write
 cloudformation:GetGeneratedTemplate;Read
+cloudformation:GetHookResult;Read
 cloudformation:GetResource;Read
 cloudformation:GetResourceRequestStatus;Read
 cloudformation:GetStackPolicy;Read

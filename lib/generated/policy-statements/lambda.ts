@@ -465,6 +465,7 @@ export class Lambda extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifEventSourceToken()
+   * - .ifInvokedViaFunctionUrl()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html
    */
@@ -1211,6 +1212,7 @@ export class Lambda extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddPermission()
+   * - .toInvokeFunction()
    *
    * @param value `true` or `false`. **Default:** `true`
    */

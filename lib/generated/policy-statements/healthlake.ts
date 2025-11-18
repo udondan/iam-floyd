@@ -30,6 +30,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to allow customers to indicate to a Producer that the Consumer does not have any more changes to be made to the Attribution List
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-confirm-attribution-list.html
+   */
+  public toConfirmAttributionList() {
+    return this.to('ConfirmAttributionList');
+  }
+
+  /**
    * Grants permission to create a datastore that can ingest and export FHIR data
    *
    * Access Level: Write
@@ -75,6 +86,17 @@ export class Healthlake extends PolicyStatement {
    */
   public toDeleteResource() {
     return this.to('DeleteResource');
+  }
+
+  /**
+   * Grants permission to describe a FHIR Bulk Delete Job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-delete.html
+   */
+  public toDescribeFHIRBulkDeleteJob() {
+    return this.to('DescribeFHIRBulkDeleteJob');
   }
 
   /**
@@ -265,6 +287,39 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attribute a member with a specific provider group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-add.html
+   */
+  public toMemberAdd() {
+    return this.to('MemberAdd');
+  }
+
+  /**
+   * Grants permission to enable cross-system patient matching
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-match.html
+   */
+  public toMemberMatch() {
+    return this.to('MemberMatch');
+  }
+
+  /**
+   * Grants permission to remove a member from a group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-remove.html
+   */
+  public toMemberRemove() {
+    return this.to('MemberRemove');
+  }
+
+  /**
    * Grants permission to patch a resource
    *
    * Access Level: Write
@@ -298,6 +353,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve member attribution status
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-attribution-status.html
+   */
+  public toRetrieveAttributionStatus() {
+    return this.to('RetrieveAttributionStatus');
+  }
+
+  /**
    * Grants permission to search all resources related to a patient
    *
    * Access Level: Read
@@ -328,6 +394,17 @@ export class Healthlake extends PolicyStatement {
    */
   public toSearchWithPost() {
     return this.to('SearchWithPost');
+  }
+
+  /**
+   * Grants permission to begin a FHIR Bulk Delete Job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-delete.html
+   */
+  public toStartFHIRBulkDeleteJob() {
+    return this.to('StartFHIRBulkDeleteJob');
   }
 
   /**
@@ -440,14 +517,20 @@ export class Healthlake extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelFHIRExportJobWithDelete',
+      'ConfirmAttributionList',
       'CreateFHIRDatastore',
       'CreateResource',
       'DeleteFHIRDatastore',
       'DeleteResource',
       'GenerateDocumentWithGet',
       'GenerateDocumentWithPost',
+      'MemberAdd',
+      'MemberMatch',
+      'MemberRemove',
       'PatchResource',
       'ProcessBundle',
+      'RetrieveAttributionStatus',
+      'StartFHIRBulkDeleteJob',
       'StartFHIRExportJob',
       'StartFHIRExportJobWithGet',
       'StartFHIRExportJobWithPost',
@@ -455,6 +538,7 @@ export class Healthlake extends PolicyStatement {
       'UpdateResource'
     ],
     Read: [
+      'DescribeFHIRBulkDeleteJob',
       'DescribeFHIRDatastore',
       'DescribeFHIRExportJob',
       'DescribeFHIRExportJobWithGet',

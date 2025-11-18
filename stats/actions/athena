@@ -37,7 +37,9 @@ athena:GetQueryExecutions;Read
 athena:GetQueryResults;Read
 athena:GetQueryResultsStream;Read
 athena:GetQueryRuntimeStatistics;Read
+athena:GetResourceDashboard;Read
 athena:GetSession;Read
+athena:GetSessionEndpoint;Write
 athena:GetSessionStatus;Read
 athena:GetTable;Read
 athena:GetTableMetadata;Read
