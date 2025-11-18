@@ -72,6 +72,20 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate license included application(s) with an existing image builder instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateSoftwareToImageBuilder.html
+   */
+  public toAssociateSoftwareToImageBuilder() {
+    return this.to('AssociateSoftwareToImageBuilder');
+  }
+
+  /**
    * Grants permission to associate the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain
    *
    * Access Level: Write
@@ -197,6 +211,20 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an export task for an AppStream 2.0 image
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateExportImageTask.html
+   */
+  public toCreateExportImageTask() {
+    return this.to('CreateExportImageTask');
+  }
+
+  /**
    * Grants permission to create a fleet. A fleet is a group of streaming instances from which applications are launched and streamed to users
    *
    * Access Level: Write
@@ -238,6 +266,21 @@ export class Appstream extends PolicyStatement {
    */
   public toCreateImageBuilderStreamingURL() {
     return this.to('CreateImageBuilderStreamingURL');
+  }
+
+  /**
+   * Grants permission to create an AppStream 2.0 image from an imported AMI
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImportedImage.html
+   */
+  public toCreateImportedImage() {
+    return this.to('CreateImportedImage');
   }
 
   /**
@@ -519,6 +562,17 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve license included application usage information
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppLicenseUsage.html
+   */
+  public toDescribeAppLicenseUsage() {
+    return this.to('DescribeAppLicenseUsage');
+  }
+
+  /**
    * Grants permission to retrieve the associations that are associated with the specified application or fleet
    *
    * Access Level: List
@@ -615,6 +669,17 @@ export class Appstream extends PolicyStatement {
    */
   public toDescribeSessions() {
     return this.to('DescribeSessions');
+  }
+
+  /**
+   * Grants permission to retrieve license included application associations for a specified resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeSoftwareAssociations.html
+   */
+  public toDescribeSoftwareAssociations() {
+    return this.to('DescribeSoftwareAssociations');
   }
 
   /**
@@ -737,6 +802,20 @@ export class Appstream extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove license included application(s) association(s) from an image builder instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateSoftwareFromImageBuilder.html
+   */
+  public toDisassociateSoftwareFromImageBuilder() {
+    return this.to('DisassociateSoftwareFromImageBuilder');
+  }
+
+  /**
    * Grants permission to enable a user in the user pool
    *
    * Access Level: Write
@@ -756,6 +835,17 @@ export class Appstream extends PolicyStatement {
    */
   public toExpireSession() {
     return this.to('ExpireSession');
+  }
+
+  /**
+   * Grants permission to retrieve details of a specific export image task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_GetExportImageTask.html
+   */
+  public toGetExportImageTask() {
+    return this.to('GetExportImageTask');
   }
 
   /**
@@ -789,6 +879,17 @@ export class Appstream extends PolicyStatement {
    */
   public toListEntitledApplications() {
     return this.to('ListEntitledApplications');
+  }
+
+  /**
+   * Grants permission to list export image tasks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListExportImageTasks.html
+   */
+  public toListExportImageTasks() {
+    return this.to('ListExportImageTasks');
   }
 
   /**
@@ -842,6 +943,20 @@ export class Appstream extends PolicyStatement {
    */
   public toStartImageBuilder() {
     return this.to('StartImageBuilder');
+  }
+
+  /**
+   * Grants permission to initiate license included applications deployment to an image builder instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartSoftwareDeploymentToImageBuilder.html
+   */
+  public toStartSoftwareDeploymentToImageBuilder() {
+    return this.to('StartSoftwareDeploymentToImageBuilder');
   }
 
   /**
@@ -1039,6 +1154,7 @@ export class Appstream extends PolicyStatement {
       'AssociateApplicationFleet',
       'AssociateApplicationToEntitlement',
       'AssociateFleet',
+      'AssociateSoftwareToImageBuilder',
       'BatchAssociateUserStack',
       'BatchDisassociateUserStack',
       'CopyImage',
@@ -1048,9 +1164,11 @@ export class Appstream extends PolicyStatement {
       'CreateApplication',
       'CreateDirectoryConfig',
       'CreateEntitlement',
+      'CreateExportImageTask',
       'CreateFleet',
       'CreateImageBuilder',
       'CreateImageBuilderStreamingURL',
+      'CreateImportedImage',
       'CreateStack',
       'CreateStreamingURL',
       'CreateThemeForStack',
@@ -1075,11 +1193,13 @@ export class Appstream extends PolicyStatement {
       'DisassociateApplicationFleet',
       'DisassociateApplicationFromEntitlement',
       'DisassociateFleet',
+      'DisassociateSoftwareFromImageBuilder',
       'EnableUser',
       'ExpireSession',
       'StartAppBlockBuilder',
       'StartFleet',
       'StartImageBuilder',
+      'StartSoftwareDeploymentToImageBuilder',
       'StopAppBlockBuilder',
       'StopFleet',
       'StopImageBuilder',
@@ -1097,6 +1217,7 @@ export class Appstream extends PolicyStatement {
       'DescribeAppBlockBuilderAppBlockAssociations',
       'DescribeAppBlockBuilders',
       'DescribeAppBlocks',
+      'DescribeAppLicenseUsage',
       'DescribeApplicationFleetAssociations',
       'DescribeApplications',
       'DescribeDirectoryConfigs',
@@ -1105,15 +1226,18 @@ export class Appstream extends PolicyStatement {
       'DescribeImageBuilders',
       'DescribeImages',
       'DescribeSessions',
+      'DescribeSoftwareAssociations',
       'DescribeStacks',
       'DescribeUsageReportSubscriptions',
       'DescribeUserStackAssociations',
       'DescribeUsers',
-      'ListEntitledApplications'
+      'ListEntitledApplications',
+      'ListExportImageTasks'
     ],
     Read: [
       'DescribeImagePermissions',
       'DescribeThemeForStack',
+      'GetExportImageTask',
       'ListAssociatedFleets',
       'ListAssociatedStacks',
       'ListTagsForResource'
@@ -1269,6 +1393,7 @@ export class Appstream extends PolicyStatement {
    * - .toCreateApplication()
    * - .toCreateFleet()
    * - .toCreateImageBuilder()
+   * - .toCreateImportedImage()
    * - .toCreateStack()
    * - .toCreateUpdatedImage()
    * - .toTagResource()
@@ -1290,12 +1415,14 @@ export class Appstream extends PolicyStatement {
    * - .toAssociateAppBlockBuilderAppBlock()
    * - .toAssociateApplicationFleet()
    * - .toAssociateFleet()
+   * - .toAssociateSoftwareToImageBuilder()
    * - .toBatchAssociateUserStack()
    * - .toBatchDisassociateUserStack()
    * - .toCopyImage()
    * - .toCreateAppBlock()
    * - .toCreateAppBlockBuilderStreamingURL()
    * - .toCreateApplication()
+   * - .toCreateExportImageTask()
    * - .toCreateImageBuilderStreamingURL()
    * - .toCreateStreamingURL()
    * - .toCreateUpdatedImage()
@@ -1310,9 +1437,11 @@ export class Appstream extends PolicyStatement {
    * - .toDisassociateAppBlockBuilderAppBlock()
    * - .toDisassociateApplicationFleet()
    * - .toDisassociateFleet()
+   * - .toDisassociateSoftwareFromImageBuilder()
    * - .toStartAppBlockBuilder()
    * - .toStartFleet()
    * - .toStartImageBuilder()
+   * - .toStartSoftwareDeploymentToImageBuilder()
    * - .toStopAppBlockBuilder()
    * - .toStopFleet()
    * - .toStopImageBuilder()
@@ -1351,6 +1480,7 @@ export class Appstream extends PolicyStatement {
    * - .toCreateApplication()
    * - .toCreateFleet()
    * - .toCreateImageBuilder()
+   * - .toCreateImportedImage()
    * - .toCreateStack()
    * - .toCreateUpdatedImage()
    * - .toTagResource()

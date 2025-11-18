@@ -1,0 +1,15 @@
+airflow-serverless:CreateWorkflow;Write
+airflow-serverless:DeleteWorkflow;Write
+airflow-serverless:GetTaskInstance;Read
+airflow-serverless:GetWorkflow;Read
+airflow-serverless:GetWorkflowRun;Read
+airflow-serverless:ListTagsForResource;Read
+airflow-serverless:ListTaskInstances;List
+airflow-serverless:ListWorkflowRuns;List
+airflow-serverless:ListWorkflowVersions;List
+airflow-serverless:ListWorkflows;List
+airflow-serverless:StartWorkflowRun;Write
+airflow-serverless:StopWorkflowRun;Write
+airflow-serverless:TagResource;Tagging
+airflow-serverless:UntagResource;Tagging
+airflow-serverless:UpdateWorkflow;Write

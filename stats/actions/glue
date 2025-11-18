@@ -88,6 +88,7 @@ glue:DescribeConnectionType;Permissions management
 glue:DescribeEntity;Permissions management
 glue:DescribeInboundIntegrations;List
 glue:DescribeIntegrations;List
+glue:FederateAuthorization;Write
 glue:GetBlueprint;Read
 glue:GetBlueprintRun;Read
 glue:GetBlueprintRuns;Read

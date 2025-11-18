@@ -1,3 +1,4 @@
 athena:capacity-reservation
 athena:datacatalog
+athena:session
 athena:workgroup

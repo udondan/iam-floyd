@@ -102,6 +102,9 @@ export class Billing extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
   public toGetBillingData() {
@@ -112,6 +115,9 @@ export class Billing extends PolicyStatement {
    * Grants permission to view detailed line item billing information
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
@@ -459,6 +465,8 @@ export class Billing extends PolicyStatement {
    * - .toDeleteBillingView()
    * - .toDeleteResourcePolicy()
    * - .toDisassociateSourceViews()
+   * - .toGetBillingData()
+   * - .toGetBillingDetails()
    * - .toGetBillingView()
    * - .toGetResourcePolicy()
    * - .toListSourceViewsForBillingView()

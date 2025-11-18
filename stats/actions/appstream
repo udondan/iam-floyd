@@ -2,6 +2,7 @@ appstream:AssociateAppBlockBuilderAppBlock;Write
 appstream:AssociateApplicationFleet;Write
 appstream:AssociateApplicationToEntitlement;Write
 appstream:AssociateFleet;Write
+appstream:AssociateSoftwareToImageBuilder;Write
 appstream:BatchAssociateUserStack;Write
 appstream:BatchDisassociateUserStack;Write
 appstream:CopyImage;Write
@@ -11,9 +12,11 @@ appstream:CreateAppBlockBuilderStreamingURL;Write
 appstream:CreateApplication;Write
 appstream:CreateDirectoryConfig;Write
 appstream:CreateEntitlement;Write
+appstream:CreateExportImageTask;Write
 appstream:CreateFleet;Write
 appstream:CreateImageBuilder;Write
 appstream:CreateImageBuilderStreamingURL;Write
+appstream:CreateImportedImage;Write
 appstream:CreateStack;Write
 appstream:CreateStreamingURL;Write
 appstream:CreateThemeForStack;Write
@@ -36,6 +39,7 @@ appstream:DeleteUser;Write
 appstream:DescribeAppBlockBuilderAppBlockAssociations;List
 appstream:DescribeAppBlockBuilders;List
 appstream:DescribeAppBlocks;List
+appstream:DescribeAppLicenseUsage;List
 appstream:DescribeApplicationFleetAssociations;List
 appstream:DescribeApplications;List
 appstream:DescribeDirectoryConfigs;List
@@ -45,6 +49,7 @@ appstream:DescribeImageBuilders;List
 appstream:DescribeImagePermissions;Read
 appstream:DescribeImages;List
 appstream:DescribeSessions;List
+appstream:DescribeSoftwareAssociations;List
 appstream:DescribeStacks;List
 appstream:DescribeThemeForStack;Read
 appstream:DescribeUsageReportSubscriptions;List
@@ -55,15 +60,19 @@ appstream:DisassociateAppBlockBuilderAppBlock;Write
 appstream:DisassociateApplicationFleet;Write
 appstream:DisassociateApplicationFromEntitlement;Write
 appstream:DisassociateFleet;Write
+appstream:DisassociateSoftwareFromImageBuilder;Write
 appstream:EnableUser;Write
 appstream:ExpireSession;Write
+appstream:GetExportImageTask;Read
 appstream:ListAssociatedFleets;Read
 appstream:ListAssociatedStacks;Read
 appstream:ListEntitledApplications;List
+appstream:ListExportImageTasks;List
 appstream:ListTagsForResource;Read
 appstream:StartAppBlockBuilder;Write
 appstream:StartFleet;Write
 appstream:StartImageBuilder;Write
+appstream:StartSoftwareDeploymentToImageBuilder;Write
 appstream:StopAppBlockBuilder;Write
 appstream:StopFleet;Write
 appstream:StopImageBuilder;Write

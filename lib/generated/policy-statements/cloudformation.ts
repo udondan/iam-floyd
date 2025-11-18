@@ -580,6 +580,23 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return detailed information about a specific hook invocation result
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifTypeArn()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetHookResult.html
+   */
+  public toGetHookResult() {
+    return this.to('GetHookResult');
+  }
+
+  /**
    * Grants permission to return the stack policy for a specified stack
    *
    * Access Level: Read
@@ -1196,6 +1213,7 @@ export class Cloudformation extends PolicyStatement {
       'DetectStackSetDrift',
       'EstimateTemplateCost',
       'GetGeneratedTemplate',
+      'GetHookResult',
       'GetStackPolicy',
       'GetTemplate',
       'GetTemplateSummary',
@@ -1315,6 +1333,20 @@ export class Cloudformation extends PolicyStatement {
    */
   public onType(type: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:type/resource/${ type }`);
+  }
+
+  /**
+   * Adds a resource of type typeHook to the statement
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html
+   *
+   * @param type - Identifier for the type.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTypeHook(type: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:type/hook/${ type }`);
   }
 
   /**
@@ -1560,6 +1592,7 @@ export class Cloudformation extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
    *
    * Applies to actions:
+   * - .toGetHookResult()
    * - .toListAllHookResults()
    *
    * @param value The value(s) to check

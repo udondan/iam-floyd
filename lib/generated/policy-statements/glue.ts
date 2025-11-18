@@ -315,6 +315,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -412,6 +413,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-CreateDatabase
    */
@@ -633,6 +635,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreateTable
    */
@@ -731,6 +734,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -842,6 +846,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-DeleteDatabase
    */
@@ -1019,6 +1024,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTable
    */
@@ -1160,6 +1166,21 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read and write redshift federated resources
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifEnabledForRedshiftAutoDiscovery()
+   * - .ifFederatedAuthorizationSource()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
+   */
+  public toFederateAuthorization() {
+    return this.to('FederateAuthorization');
+  }
+
+  /**
    * Grants permission to retrieve a blueprint
    *
    * Access Level: Read
@@ -1200,6 +1221,7 @@ export class Glue extends PolicyStatement {
    * Possible conditions:
    * - .ifEnabledForRedshiftAutoDiscovery()
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -1229,6 +1251,7 @@ export class Glue extends PolicyStatement {
    * Possible conditions:
    * - .ifEnabledForRedshiftAutoDiscovery()
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -1508,6 +1531,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabase
    */
@@ -1522,6 +1546,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabases
    */
@@ -2095,6 +2120,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTable
    */
@@ -2151,6 +2177,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTables
    */
@@ -2223,6 +2250,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunctions
    */
@@ -3175,6 +3203,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html
    */
@@ -3429,6 +3458,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateTable
    */
@@ -3605,6 +3635,7 @@ export class Glue extends PolicyStatement {
       'DeleteUsageProfile',
       'DeleteUserDefinedFunction',
       'DeleteWorkflow',
+      'FederateAuthorization',
       'ImportCatalogToGlue',
       'ModifyIntegration',
       'NotifyEvent',
@@ -4309,6 +4340,7 @@ export class Glue extends PolicyStatement {
    * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
    *
    * Applies to actions:
+   * - .toFederateAuthorization()
    * - .toGetCatalog()
    * - .toGetCatalogs()
    *
@@ -4316,6 +4348,36 @@ export class Glue extends PolicyStatement {
    */
   public ifEnabledForRedshiftAutoDiscovery(value?: boolean) {
     return this.if(`EnabledForRedshiftAutoDiscovery`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by whether the resource belongs to federarted authorization
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateCatalog()
+   * - .toCreateDatabase()
+   * - .toCreateTable()
+   * - .toDeleteCatalog()
+   * - .toDeleteDatabase()
+   * - .toDeleteTable()
+   * - .toFederateAuthorization()
+   * - .toGetCatalog()
+   * - .toGetCatalogs()
+   * - .toGetDatabase()
+   * - .toGetDatabases()
+   * - .toGetTable()
+   * - .toGetTables()
+   * - .toGetUserDefinedFunctions()
+   * - .toUpdateCatalog()
+   * - .toUpdateTable()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFederatedAuthorizationSource(value: string | string[], operator?: Operator | string) {
+    return this.if(`FederatedAuthorizationSource`, value, operator ?? 'StringLike');
   }
 
   /**

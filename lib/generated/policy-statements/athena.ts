@@ -460,6 +460,17 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a Live UI/Persistence UI for a session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetResourceDashboard.html
+   */
+  public toGetResourceDashboard() {
+    return this.to('GetResourceDashboard');
+  }
+
+  /**
    * Grants permission to get a session
    *
    * Access Level: Read
@@ -468,6 +479,17 @@ export class Athena extends PolicyStatement {
    */
   public toGetSession() {
     return this.to('GetSession');
+  }
+
+  /**
+   * Grants permission to get a connection endpoint and authentication token for a given session Id
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSessionEndpoint.html
+   */
+  public toGetSessionEndpoint() {
+    return this.to('GetSessionEndpoint');
   }
 
   /**
@@ -761,6 +783,10 @@ export class Athena extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_StartSession.html
    */
   public toStartSession() {
@@ -931,6 +957,7 @@ export class Athena extends PolicyStatement {
       'GetQueryResults',
       'GetQueryResultsStream',
       'GetQueryRuntimeStatistics',
+      'GetResourceDashboard',
       'GetSession',
       'GetSessionStatus',
       'GetTable',
@@ -959,6 +986,7 @@ export class Athena extends PolicyStatement {
       'DeletePreparedStatement',
       'DeleteWorkGroup',
       'ExportNotebook',
+      'GetSessionEndpoint',
       'ImportNotebook',
       'PutCapacityAssignmentConfiguration',
       'RunQuery',
@@ -1048,6 +1076,24 @@ export class Athena extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type session to the statement
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html
+   *
+   * @param workGroupName - Identifier for the workGroupName.
+   * @param sessionId - Identifier for the sessionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSession(workGroupName: string, sessionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:athena:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workgroup/${ workGroupName }/session/${ sessionId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1056,6 +1102,7 @@ export class Athena extends PolicyStatement {
    * - .toCreateCapacityReservation()
    * - .toCreateDataCatalog()
    * - .toCreateWorkGroup()
+   * - .toStartSession()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1075,6 +1122,7 @@ export class Athena extends PolicyStatement {
    * - datacatalog
    * - workgroup
    * - capacity-reservation
+   * - session
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1093,6 +1141,7 @@ export class Athena extends PolicyStatement {
    * - .toCreateCapacityReservation()
    * - .toCreateDataCatalog()
    * - .toCreateWorkGroup()
+   * - .toStartSession()
    * - .toTagResource()
    * - .toUntagResource()
    *
