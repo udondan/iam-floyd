@@ -18,7 +18,11 @@
         "waf:ListWebACLs",
         "waf:GetWebACL",
         "wafv2:ListWebACLs",
-        "wafv2:GetWebACL"
+        "wafv2:GetWebACL",
+        "ec2:DescribeIpamPools",
+        "ec2:GetIpamPoolCidrs",
+        "pricingplanmanager:ListSubscriptions",
+        "pricingplanmanager:GetSubscription"
       ],
       "Resource": "*"
     }

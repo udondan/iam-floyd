@@ -49,6 +49,8 @@
         "invoicing:GetInvoiceCorrection",
         "invoicing:ListInvoiceSummaries",
         "invoicing:ListInvoiceUnits",
+        "invoicing:GetProcurementPortalPreference",
+        "invoicing:ListProcurementPortalPreferences",
         "invoicing:ListTagsForResource",
         "invoicing:ListInvoiceCorrections",
         "mapcredits:ListQuarterSpend",

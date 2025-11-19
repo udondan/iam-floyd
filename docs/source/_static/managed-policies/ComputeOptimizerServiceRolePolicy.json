@@ -47,7 +47,9 @@
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeInstances",
-        "ec2:DescribeVolumes"
+        "ec2:DescribeVolumes",
+        "ec2:DescribeNatGateways",
+        "ec2:DescribeRouteTables"
       ],
       "Resource": "*"
     }

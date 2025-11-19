@@ -293,7 +293,9 @@
         "wisdom:ListTagsForResource",
         "wisdom:SendMessage",
         "wisdom:GetNextMessage",
-        "wisdom:ListMessages"
+        "wisdom:ListMessages",
+        "wisdom:Retrieve",
+        "wisdom:ListAssistantAssociations"
       ],
       "Resource": "*",
       "Condition": {
