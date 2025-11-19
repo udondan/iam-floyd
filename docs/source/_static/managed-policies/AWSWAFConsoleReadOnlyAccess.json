@@ -86,7 +86,8 @@
       "Sid": "AllowGetActionForCloudFront",
       "Effect": "Allow",
       "Action": [
-        "cloudfront:GetDistributionConfig"
+        "cloudfront:GetDistributionConfig",
+        "cloudfront:GetDistribution"
       ],
       "Resource": "arn:aws:cloudfront::*:distribution/*"
     },
@@ -260,6 +261,24 @@
         "logs:GetQueryResults"
       ],
       "Resource": "arn:aws:logs:*:*:log-group:aws-waf-logs-*"
+    },
+    {
+      "Sid": "AllowListActionsForPricingPlanManager",
+      "Effect": "Allow",
+      "Action": [
+        "pricingplanmanager:GetSubscription",
+        "pricingplanmanager:ListSubscriptions"
+      ],
+      "Resource": "arn:aws:pricingplanmanager::*:subscription:*"
+    },
+    {
+      "Sid": "AllowListActionsForRoute53",
+      "Effect": "Allow",
+      "Action": [
+        "route53:ListHostedZones",
+        "route53:GetHostedZone"
+      ],
+      "Resource": "*"
     }
   ]
 }

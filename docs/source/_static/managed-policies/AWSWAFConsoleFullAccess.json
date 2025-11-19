@@ -98,6 +98,7 @@
       "Effect": "Allow",
       "Action": [
         "cloudfront:GetDistributionConfig",
+        "cloudfront:GetDistribution",
         "cloudfront:UpdateDistribution",
         "cloudfront:AssociateDistributionWebACL",
         "cloudfront:DisassociateDistributionWebACL"
@@ -333,6 +334,27 @@
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowActionsForPricingPlanManager",
+      "Effect": "Allow",
+      "Action": [
+        "pricingplanmanager:GetSubscription",
+        "pricingplanmanager:ListSubscriptions",
+        "pricingplanmanager:UpdateSubscription",
+        "pricingplanmanager:CancelSubscription",
+        "pricingplanmanager:CancelSubscriptionChange"
+      ],
+      "Resource": "arn:aws:pricingplanmanager::*:subscription:*"
+    },
+    {
+      "Sid": "AllowListActionsForRoute53",
+      "Effect": "Allow",
+      "Action": [
+        "route53:ListHostedZones",
+        "route53:GetHostedZone"
       ],
       "Resource": "*"
     }

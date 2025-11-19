@@ -10,6 +10,8 @@
         "datazone:AddEntityOwner",
         "datazone:AddPolicyGrant",
         "datazone:AssociateGovernedTerms",
+        "datazone:BatchGetAttributesMetadata",
+        "datazone:BatchPutAttributesMetadata",
         "datazone:CancelMetadataGenerationRun",
         "datazone:CancelSubscription",
         "datazone:CreateAsset",
