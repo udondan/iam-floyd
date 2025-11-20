@@ -882,6 +882,10 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerServiceCatalogProductsGlueServiceRolePolicy = 'service-role/AmazonSageMakerServiceCatalogProductsGlueServiceRolePolicy';
     /** Service role policy used by the AWS Lambda within the AWS ServiceCatalog provisioned products from Amazon SageMaker portfolio of products. Grants permissions to a set of related services including ECR, S3 and others. */
     public static AmazonSageMakerServiceCatalogProductsLambdaServiceRolePolicy = 'service-role/AmazonSageMakerServiceCatalogProductsLambdaServiceRolePolicy';
+    /** Grants Systems Manager activation, session management, and KMS key operations permissions required for the SageMaker Spaces Addon to enable secure remote access to EKS SageMaker Spaces. */
+    public static AmazonSageMakerSpacesControllerPolicy = 'AmazonSageMakerSpacesControllerPolicy';
+    /** Grants Systems KMS key operations permissions required for the SageMaker Spaces Router to enable secure remote access to EKS SageMaker Spaces. */
+    public static AmazonSageMakerSpacesRouterPolicy = 'AmazonSageMakerSpacesRouterPolicy';
     /** This Amazon Managed Policy provides the necessary permissions to create and manage SageMaker Training Plans. It allows users to create Training Plans and Reserved Capacities, describe existing Training Plans, and perform search and listing operations. */
     public static AmazonSageMakerTrainingPlanCreateAccess = 'AmazonSageMakerTrainingPlanCreateAccess';
     /** Provides full access to Amazon Security Lake and related services needed to administer Security Lake. */
@@ -1954,6 +1958,10 @@ export class AwsManagedPolicy {
     public static AWSPanoramaServiceLinkedRolePolicy = 'aws-service-role/AWSPanoramaServiceLinkedRolePolicy';
     /** Allows AWS Panorama to manage resources in Amazon S3, AWS IoT, AWS IoT GreenGrass, AWS Lambda, Amazon SageMaker, and Amazon CloudWatch Logs, and to pass service roles to AWS IoT, AWS IoT GreenGrass, and Amazon SageMaker. */
     public static AWSPanoramaServiceRolePolicy = 'service-role/AWSPanoramaServiceRolePolicy';
+    /** Provides necessary access for channel handshake approval management activities. */
+    public static AWSPartnerCentralChannelHandshakeApprovalManagement = 'AWSPartnerCentralChannelHandshakeApprovalManagement';
+    /** Provides necessary access for channel management activities. */
+    public static AWSPartnerCentralChannelManagement = 'AWSPartnerCentralChannelManagement';
     /** Provides full access to AWS Partner Central and related AWS Services. */
     public static AWSPartnerCentralFullAccess = 'AWSPartnerCentralFullAccess';
     /** Provides necessary access for opportunity management activities. */
@@ -2782,6 +2790,8 @@ export class AwsManagedPolicy {
     public static ServiceQuotasReadOnlyAccess = 'ServiceQuotasReadOnlyAccess';
     /** Allows Service Quotas to create support cases on your behalf */
     public static ServiceQuotasServiceRolePolicy = 'aws-service-role/ServiceQuotasServiceRolePolicy';
+    /** Provides permissions for programmatic access to AWS through the AWS Sign-in service, including OAuth2 token creation for developer tools and applications. */
+    public static SignInLocalDevelopmentAccess = 'SignInLocalDevelopmentAccess';
     /** Provides full access to the Simple Workflow configuration service. */
     public static SimpleWorkflowFullAccess = 'SimpleWorkflowFullAccess';
     /** Allows SMSVoice to publish metrics to CloudWatch on your behalf */

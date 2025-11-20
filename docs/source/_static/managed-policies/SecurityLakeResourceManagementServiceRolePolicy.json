@@ -57,6 +57,17 @@
       }
     },
     {
+      "Sid": "DeletePartitionUpdaterLambda",
+      "Effect": "Allow",
+      "Action": "lambda:DeleteFunction",
+      "Resource": "arn:aws:lambda:*:*:function:SecurityLake_Glue_Partition_Updater_Lambda*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "AllowListLambdaEventSourceMappings",
       "Effect": "Allow",
       "Action": [

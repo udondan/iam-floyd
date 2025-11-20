@@ -11,7 +11,8 @@
         "cost-optimization-hub:UpdatePreferences",
         "cost-optimization-hub:GetRecommendation",
         "cost-optimization-hub:ListRecommendations",
-        "cost-optimization-hub:ListRecommendationSummaries"
+        "cost-optimization-hub:ListRecommendationSummaries",
+        "cost-optimization-hub:ListEfficiencyMetrics"
       ],
       "Resource": "*"
     },
