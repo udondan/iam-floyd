@@ -2214,6 +2214,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerServiceCatalogProductsLambdaServiceRolePolicy);
     }
 
+    /** Grants Systems Manager activation, session management, and KMS key operations permissions required for the SageMaker Spaces Addon to enable secure remote access to EKS SageMaker Spaces. */
+    public AmazonSageMakerSpacesControllerPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerSpacesControllerPolicy);
+    }
+
+    /** Grants Systems KMS key operations permissions required for the SageMaker Spaces Router to enable secure remote access to EKS SageMaker Spaces. */
+    public AmazonSageMakerSpacesRouterPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerSpacesRouterPolicy);
+    }
+
     /** This Amazon Managed Policy provides the necessary permissions to create and manage SageMaker Training Plans. It allows users to create Training Plans and Reserved Capacities, describe existing Training Plans, and perform search and listing operations. */
     public AmazonSageMakerTrainingPlanCreateAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerTrainingPlanCreateAccess);
@@ -4894,6 +4904,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPanoramaServiceRolePolicy);
     }
 
+    /** Provides necessary access for channel handshake approval management activities. */
+    public AWSPartnerCentralChannelHandshakeApprovalManagement(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralChannelHandshakeApprovalManagement);
+    }
+
+    /** Provides necessary access for channel management activities. */
+    public AWSPartnerCentralChannelManagement(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralChannelManagement);
+    }
+
     /** Provides full access to AWS Partner Central and related AWS Services. */
     public AWSPartnerCentralFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralFullAccess);
@@ -6962,6 +6982,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows Service Quotas to create support cases on your behalf */
     public ServiceQuotasServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ServiceQuotasServiceRolePolicy);
+    }
+
+    /** Provides permissions for programmatic access to AWS through the AWS Sign-in service, including OAuth2 token creation for developer tools and applications. */
+    public SignInLocalDevelopmentAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SignInLocalDevelopmentAccess);
     }
 
     /** Provides full access to the Simple Workflow configuration service. */

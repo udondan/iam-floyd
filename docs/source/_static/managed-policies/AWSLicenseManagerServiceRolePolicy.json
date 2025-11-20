@@ -100,10 +100,23 @@
       "Action": [
         "ssm:ListInventoryEntries",
         "ssm:GetInventory",
-        "ssm:CreateAssociation"
+        "ssm:CreateAssociation",
+        "ssm:GetCommandInvocation"
       ],
       "Resource": [
         "*"
+      ]
+    },
+    {
+      "Sid": "SSMSendCommandPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:managed-instance/*",
+        "arn:aws:ssm:*::document/AWSLicenseManager-*"
       ]
     },
     {

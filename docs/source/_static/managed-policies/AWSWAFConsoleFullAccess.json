@@ -342,7 +342,6 @@
       "Effect": "Allow",
       "Action": [
         "pricingplanmanager:GetSubscription",
-        "pricingplanmanager:ListSubscriptions",
         "pricingplanmanager:UpdateSubscription",
         "pricingplanmanager:CancelSubscription",
         "pricingplanmanager:CancelSubscriptionChange"
@@ -356,6 +355,12 @@
         "route53:ListHostedZones",
         "route53:GetHostedZone"
       ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowListActionsForPricingPlanManager",
+      "Effect": "Allow",
+      "Action": "pricingplanmanager:ListSubscriptions",
       "Resource": "*"
     }
   ]

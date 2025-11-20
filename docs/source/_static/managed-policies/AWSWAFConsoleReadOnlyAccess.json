@@ -266,8 +266,7 @@
       "Sid": "AllowListActionsForPricingPlanManager",
       "Effect": "Allow",
       "Action": [
-        "pricingplanmanager:GetSubscription",
-        "pricingplanmanager:ListSubscriptions"
+        "pricingplanmanager:GetSubscription"
       ],
       "Resource": "arn:aws:pricingplanmanager::*:subscription:*"
     },
@@ -277,6 +276,14 @@
       "Action": [
         "route53:ListHostedZones",
         "route53:GetHostedZone"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowListSubscriptionsForPricingPlanManager",
+      "Effect": "Allow",
+      "Action": [
+        "pricingplanmanager:ListSubscriptions"
       ],
       "Resource": "*"
     }
