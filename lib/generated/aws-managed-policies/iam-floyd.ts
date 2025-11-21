@@ -326,6 +326,8 @@ export class AwsManagedPolicy {
     public static AmazonEKSLocalOutpostClusterPolicy = 'AmazonEKSLocalOutpostClusterPolicy';
     /** Allows Amazon EKS Local to call AWS services on your behalf. */
     public static AmazonEKSLocalOutpostServiceRolePolicy = 'aws-service-role/AmazonEKSLocalOutpostServiceRolePolicy';
+    /** Provides read-only access to the Amazon EKS MCP service. This policy grants permissions to use only read-only tools in the EKS MCP service meant for observability, troubleshooting, retrieving EKS resource information, and getting EKS-optimized suggestions. */
+    public static AmazonEKSMCPReadOnlyAccess = 'AmazonEKSMCPReadOnlyAccess';
     /** Policy attached to the EKS Cluster Role that grants permissions to manage the cluster's networking resources. */
     public static AmazonEKSNetworkingPolicy = 'AmazonEKSNetworkingPolicy';
     /** This policy allows Amazon Elastic Container Service for Kubernetes to create and manage the necessary resources to operate EKS Clusters. */
@@ -1188,6 +1190,8 @@ export class AwsManagedPolicy {
     public static AWSBackupFullAccess = 'AWSBackupFullAccess';
     /** Provides AWS BackupGateway permission to sync the metadata of Virtual Machines on your behalf */
     public static AWSBackupGatewayServiceRolePolicyForVirtualMachineMetadataSync = 'service-role/AWSBackupGatewayServiceRolePolicyForVirtualMachineMetadataSync';
+    /** Provides GuardDuty permission to read your AWS Backup Recovery Points for malware scans */
+    public static AWSBackupGuardDutyRolePolicyForScans = 'AWSBackupGuardDutyRolePolicyForScans';
     /** This policy grants users permissions to assign AWS resources to backup plans, create on-demand backups, and restore backups. This policy does not allow the user to create or edit backup plans or to delete scheduled backups after they are created. */
     public static AWSBackupOperatorAccess = 'AWSBackupOperatorAccess';
     /** This policy is for backup administators who use cross-account backup management to manage backups for the organization. */
@@ -1212,6 +1216,8 @@ export class AwsManagedPolicy {
     public static AWSBackupServiceRolePolicyForS3Backup = 'AWSBackupServiceRolePolicyForS3Backup';
     /** Policy containing permissions necessary for AWS Backup to restore a S3 backup to a bucket. This includes read/write permissions to all S3 buckets, and permissions to GenerateDataKey and DescribeKey for all KMS keys. */
     public static AWSBackupServiceRolePolicyForS3Restore = 'AWSBackupServiceRolePolicyForS3Restore';
+    /** Provides AWS Backup permission to perform malware scans on your AWS Backup Recovery Points */
+    public static AWSBackupServiceRolePolicyForScans = 'AWSBackupServiceRolePolicyForScans';
     /** Provides full access for AWS Batch resources. */
     public static AWSBatchFullAccess = 'AWSBatchFullAccess';
     /** Policy to enable CloudWatch Event Target for AWS Batch Job Submission */

@@ -12,7 +12,8 @@
         "backup:DeleteBackupSelection",
         "backup:StartBackupJob",
         "backup:StartRestoreJob",
-        "backup:StartCopyJob"
+        "backup:StartCopyJob",
+        "backup:StartScanJob"
       ],
       "Resource": "*"
     },
@@ -372,6 +373,20 @@
         "eks:DescribeCluster"
       ],
       "Resource": "arn:aws:eks:*:*:cluster/*"
+    },
+    {
+      "Sid": "IamPassRolePermissionsForGuardDuty",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::*:role/*AwsBackupGuardDuty*",
+        "arn:aws:iam::*:role/*AWSBackupGuardDuty*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "malware-protection.guardduty.amazonaws.com"
+        }
+      }
     }
   ]
 }

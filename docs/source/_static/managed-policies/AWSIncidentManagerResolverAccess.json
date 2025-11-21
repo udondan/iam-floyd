@@ -5,7 +5,8 @@
       "Sid": "StartIncidentPermissions",
       "Effect": "Allow",
       "Action": [
-        "ssm-incidents:StartIncident"
+        "ssm-incidents:StartIncident",
+        "ssm-contacts:StartEngagement"
       ],
       "Resource": "*"
     },

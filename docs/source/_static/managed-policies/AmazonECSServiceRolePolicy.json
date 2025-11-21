@@ -213,6 +213,14 @@
           "aws:ResourceTag/AmazonECSManaged": "false"
         }
       }
+    },
+    {
+      "Sid": "ReadOnlyPermissionsForInstanceEventWindows",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstanceEventWindows"
+      ],
+      "Resource": "*"
     }
   ]
 }

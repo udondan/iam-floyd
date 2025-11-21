@@ -5,13 +5,29 @@
       "Sid": "AmazonRDSDescribeDBInstances",
       "Effect": "Allow",
       "Action": "rds:DescribeDBInstances",
-      "Resource": "*"
+      "Resource": "arn:aws:rds:*:*:db:*"
     },
     {
       "Sid": "AmazonRDSDescribeDBClusters",
       "Effect": "Allow",
       "Action": "rds:DescribeDBClusters",
-      "Resource": "*"
+      "Resource": "arn:aws:rds:*:*:cluster:*"
+    },
+    {
+      "Sid": "AmazonRDSDescribeDBShardGroups",
+      "Effect": "Allow",
+      "Action": "rds:DescribeDBShardGroups",
+      "Resource": "arn:aws:rds:*:*:shard-group:*"
+    },
+    {
+      "Sid": "AmazonRDSListTagsForResource",
+      "Effect": "Allow",
+      "Action": "rds:ListTagsForResource",
+      "Resource": [
+        "arn:aws:rds:*:*:db:*",
+        "arn:aws:rds:*:*:shard-group:*",
+        "arn:aws:rds:*:*:cluster:*"
+      ]
     },
     {
       "Sid": "AmazonRDSPerformanceInsightsDescribeDimensionKeys",

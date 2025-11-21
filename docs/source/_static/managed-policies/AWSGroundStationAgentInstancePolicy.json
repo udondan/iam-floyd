@@ -6,7 +6,8 @@
       "Action": [
         "groundstation:RegisterAgent",
         "groundstation:UpdateAgentStatus",
-        "groundstation:GetAgentConfiguration"
+        "groundstation:GetAgentConfiguration",
+        "groundstation:GetAgentTaskResponseUrl"
       ],
       "Resource": "*"
     }
