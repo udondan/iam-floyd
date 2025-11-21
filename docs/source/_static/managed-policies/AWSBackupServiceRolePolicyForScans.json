@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GuardDutyMalwareScanPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:StartMalwareScan",
+        "guardduty:GetMalwareScan"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMPassPermissions",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "malware-protection.guardduty.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "EC2ReadAPIPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeImages",
+        "ec2:DescribeSnapshots"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

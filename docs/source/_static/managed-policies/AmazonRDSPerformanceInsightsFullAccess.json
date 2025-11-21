@@ -40,9 +40,15 @@
       "Effect": "Allow",
       "Action": [
         "rds:DescribeDBInstances",
-        "rds:DescribeDBClusters"
+        "rds:DescribeDBClusters",
+        "rds:ListTagsForResource",
+        "rds:DescribeDBShardGroups"
       ],
-      "Resource": "*"
+      "Resource": [
+        "arn:aws:rds:*:*:db:*",
+        "arn:aws:rds:*:*:cluster:*",
+        "arn:aws:rds:*:*:shard-group:*"
+      ]
     },
     {
       "Sid": "AmazonCloudWatchReadAccess",

@@ -1668,7 +1668,7 @@
       }
     },
     {
-      "Sid": "KmsWithEncryptPermissions",
+      "Sid": "KmsWithEncrypt",
       "Effect": "Allow",
       "Action": [
         "kms:CreateGrant",
@@ -1701,6 +1701,19 @@
       }
     },
     {
+      "Sid": "EBDecrypt",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "Null": {
+          "kms:EncryptionContext:aws:scheduler:schedule:arn": "false"
+        }
+      }
+    },
+    {
       "Sid": "KmsPermissions",
       "Effect": "Allow",
       "Action": [
@@ -1728,7 +1741,7 @@
       }
     },
     {
-      "Sid": "KmsManagementPermissions",
+      "Sid": "KmsManagement",
       "Effect": "Allow",
       "Action": [
         "kms:ListGrants",
@@ -1783,7 +1796,7 @@
       }
     },
     {
-      "Sid": "AwsOwnedKmsManagementPermissions",
+      "Sid": "AwsOwnedKmsManagement",
       "Action": [
         "kms:DescribeKey"
       ],
@@ -1804,7 +1817,7 @@
       }
     },
     {
-      "Sid": "ListKMSPermissions",
+      "Sid": "ListKMS",
       "Effect": "Allow",
       "Action": [
         "kms:ListAliases"
@@ -1825,7 +1838,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "InvokeBedrockModelPermissions",
+      "Sid": "InvokeBedrockModel",
       "Effect": "Allow",
       "Action": [
         "bedrock:InvokeModel",

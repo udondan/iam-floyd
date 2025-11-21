@@ -824,6 +824,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSLocalOutpostServiceRolePolicy);
     }
 
+    /** Provides read-only access to the Amazon EKS MCP service. This policy grants permissions to use only read-only tools in the EKS MCP service meant for observability, troubleshooting, retrieving EKS resource information, and getting EKS-optimized suggestions. */
+    public AmazonEKSMCPReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSMCPReadOnlyAccess);
+    }
+
     /** Policy attached to the EKS Cluster Role that grants permissions to manage the cluster's networking resources. */
     public AmazonEKSNetworkingPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSNetworkingPolicy);
@@ -2979,6 +2984,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupGatewayServiceRolePolicyForVirtualMachineMetadataSync);
     }
 
+    /** Provides GuardDuty permission to read your AWS Backup Recovery Points for malware scans */
+    public AWSBackupGuardDutyRolePolicyForScans(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupGuardDutyRolePolicyForScans);
+    }
+
     /** This policy grants users permissions to assign AWS resources to backup plans, create on-demand backups, and restore backups. This policy does not allow the user to create or edit backup plans or to delete scheduled backups after they are created. */
     public AWSBackupOperatorAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupOperatorAccess);
@@ -3037,6 +3047,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Policy containing permissions necessary for AWS Backup to restore a S3 backup to a bucket. This includes read/write permissions to all S3 buckets, and permissions to GenerateDataKey and DescribeKey for all KMS keys. */
     public AWSBackupServiceRolePolicyForS3Restore(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupServiceRolePolicyForS3Restore);
+    }
+
+    /** Provides AWS Backup permission to perform malware scans on your AWS Backup Recovery Points */
+    public AWSBackupServiceRolePolicyForScans(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupServiceRolePolicyForScans);
     }
 
     /** Provides full access for AWS Batch resources. */

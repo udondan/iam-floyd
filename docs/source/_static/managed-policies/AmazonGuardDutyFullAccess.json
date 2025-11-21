@@ -43,7 +43,7 @@
       "Resource": "arn:aws:iam::*:role/*AWSServiceRoleForAmazonGuardDutyMalwareProtection"
     },
     {
-      "Sid": "AllowPassRoleToMalwareProtectionPlan",
+      "Sid": "AllowPassRoleToMalwareProtection",
       "Effect": "Allow",
       "Action": [
         "iam:PassRole"
@@ -51,7 +51,10 @@
       "Resource": "arn:aws:iam::*:role/*",
       "Condition": {
         "StringEquals": {
-          "iam:PassedToService": "malware-protection-plan.guardduty.amazonaws.com"
+          "iam:PassedToService": [
+            "malware-protection-plan.guardduty.amazonaws.com",
+            "malware-protection.guardduty.amazonaws.com"
+          ]
         }
       }
     }

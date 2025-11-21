@@ -3047,7 +3047,12 @@
         "ec2:DescribeNetworkInterfaces",
         "ec2:RevokeSecurityGroupEgress",
         "ec2:RevokeSecurityGroupIngress",
-        "eks:DescribeAccessEntry"
+        "eks:AssociateAccessPolicy",
+        "eks:CreateAccessEntry",
+        "eks:DisassociateAccessPolicy",
+        "eks:DeleteAccessEntry",
+        "eks:DescribeAccessEntry",
+        "eks:ListAssociatedAccessPolicies"
       ],
       "Resource": "*",
       "Condition": {

@@ -16,7 +16,9 @@
         "application-signals:ListTagsForResource",
         "application-signals:ListServiceStates",
         "application-signals:ListAuditFindings",
-        "application-signals:ListGroupingAttributeDefinitions"
+        "application-signals:ListGroupingAttributeDefinitions",
+        "application-signals:ListServiceLevelObjectiveExclusionWindows",
+        "application-signals:ListEntityEvents"
       ],
       "Resource": "*"
     },
@@ -134,6 +136,34 @@
         "arn:aws:servicequotas:*:*:elasticloadbalancing/*",
         "arn:aws:servicequotas:*:*:ec2/*"
       ]
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsResourceExplorerPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "resource-explorer-2:ListIndexes",
+        "resource-explorer-2:Search"
+      ],
+      "Resource": [
+        "arn:aws:resource-explorer-2:*::view/AWSServiceViewForApplicationSignals/service-view",
+        "arn:aws:resource-explorer-2:*::view/AWSServiceViewForApplicationSignalsOrgScopeProd/service-view"
+      ]
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsOAMAttachedLinksPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "oam:ListAttachedLinks"
+      ],
+      "Resource": "arn:aws:oam:*:*:sink/*"
+    },
+    {
+      "Sid": "CloudWatchApplicationSignalsOAMListSinksPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "oam:ListSinks"
+      ],
+      "Resource": "*"
     }
   ]
 }

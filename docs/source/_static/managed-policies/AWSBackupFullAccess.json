@@ -491,6 +491,20 @@
         "eks:DescribeCluster"
       ],
       "Resource": "arn:aws:eks:*:*:cluster/*"
+    },
+    {
+      "Sid": "IamPassRolePermissionsForGuardDuty",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::*:role/*AwsBackupGuardDuty*",
+        "arn:aws:iam::*:role/*AWSBackupGuardDuty*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "malware-protection.guardduty.amazonaws.com"
+        }
+      }
     }
   ]
 }
