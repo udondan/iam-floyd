@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonRedshiftFederatedAuthorization",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetCatalog",
+        "glue:GetCatalogs",
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:GetTable",
+        "glue:GetTables",
+        "glue:GetUserDefinedFunctions",
+        "glue:CreateDatabase",
+        "glue:CreateTable",
+        "glue:DeleteDatabase",
+        "glue:DeleteTable",
+        "glue:UpdateCatalog",
+        "glue:UpdateDatabase",
+        "glue:UpdateTable",
+        "glue:RenameTable",
+        "glue:FederateAuthorization"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "glue:FederatedAuthorizationSource": "Redshift"
+        }
+      }
+    },
+    {
+      "Sid": "AmazonRedshiftIdentityCenterSetContext",
+      "Effect": "Allow",
+      "Action": [
+        "sts:SetContext"
+      ],
+      "Resource": "arn:aws:sts::*:self"
+    }
+  ]
+}

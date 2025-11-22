@@ -8,7 +8,9 @@
         "application-autoscaling:RegisterScalableTarget",
         "application-autoscaling:DescribeScalableTargets",
         "application-autoscaling:PutScalingPolicy",
-        "application-autoscaling:DescribeScalingPolicies"
+        "application-autoscaling:DescribeScalingPolicies",
+        "application-autoscaling:DeleteScalingPolicy",
+        "application-autoscaling:DeregisterScalableTarget"
       ],
       "Resource": [
         "arn:aws:application-autoscaling:*:*:scalable-target/*",

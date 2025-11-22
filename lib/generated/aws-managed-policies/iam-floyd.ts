@@ -732,6 +732,8 @@ export class AwsManagedPolicy {
     public static AmazonRedshiftAllCommandsFullAccess = 'AmazonRedshiftAllCommandsFullAccess';
     /** This policy provides full access to Amazon Redshift Data APIs. This policy also grants scoped access to other required services. */
     public static AmazonRedshiftDataFullAccess = 'AmazonRedshiftDataFullAccess';
+    /** This is an ease-of-use policy for running queries with Amazon Redshift Federated Authorization */
+    public static AmazonRedshiftFederatedAuthorization = 'AmazonRedshiftFederatedAuthorization';
     /** Provides full access to Amazon Redshift via the AWS Management Console. */
     public static AmazonRedshiftFullAccess = 'AmazonRedshiftFullAccess';
     /** Provides full access to the Amazon Redshift Query Editor and to saved queries via the AWS Management Console. */
@@ -1684,6 +1686,8 @@ export class AwsManagedPolicy {
     public static AWSHealthImagingReadOnlyAccess = 'AWSHealthImagingReadOnlyAccess';
     /** Provides the list of actions that are allowed for roles assumed with the IAM Identity Center identity context. AWS Security Token Service (AWS STS) automatically attaches this policy to assumed roles. The identity context is passed as ProvidedContext. */
     public static AWSIAMIdentityCenterAllowListForIdentityContext = 'AWSIAMIdentityCenterAllowListForIdentityContext';
+    /** Provides access to manage IAM Identity Center users from an external provider. */
+    public static AWSIdentityCenterExternalManagementPolicy = 'service-role/AWSIdentityCenterExternalManagementPolicy';
     /** Grants full access to the Identity Sync service */
     public static AWSIdentitySyncFullAccess = 'AWSIdentitySyncFullAccess';
     /** Read only access to the Identity Sync service */
@@ -1880,6 +1884,8 @@ export class AwsManagedPolicy {
     public static AWSMarketplaceSellerProductsFullAccess = 'AWSMarketplaceSellerProductsFullAccess';
     /** Provide sellers read-only access to AWS Marketplace Management Products page. */
     public static AWSMarketplaceSellerProductsReadOnly = 'AWSMarketplaceSellerProductsReadOnly';
+    /** Provides full access to all MCP service actions. This policy does not grant access to the actions taken by the MCP, only the MCP actions themselves. */
+    public static AWSMcpServiceActionsFullAccess = 'AWSMcpServiceActionsFullAccess';
     /** The default policy that enables access to AWS Services and Resources used or managed by MediaConnect. */
     public static AWSMediaConnectServicePolicy = 'aws-service-role/AWSMediaConnectServicePolicy';
     /** Allows MediaLive Anywhere to create and manage AWS resources on your behalf. */

@@ -134,7 +134,12 @@
     },
     {
       "Effect": "Allow",
-      "Action": "iam:GetRole",
+      "Action": [
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:ListRolePolicies",
+        "iam:ListAttachedRolePolicies"
+      ],
       "Resource": [
         "arn:aws:iam::*:role/AWSTransform-Deploy-ECS-Task-Role",
         "arn:aws:iam::*:role/AWSTransform-Deploy-ECS-Execution-Role"
@@ -289,6 +294,46 @@
         "logs:ListTagsForResource"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "ecs.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "Bool": {
+          "kms:GrantIsForAWSResource": "true"
+        },
+        "StringLike": {
+          "kms:ViaService": [
+            "ecr.*.amazonaws.com"
+          ],
+          "kms:EncryptionContext:aws:ecr:arn": "*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "kms:GrantConstraintType": "EncryptionContextSubset"
+        },
+        "ForAllValues:StringEquals": {
+          "kms:GrantOperations": [
+            "Decrypt",
+            "GenerateDataKey"
+          ]
+        }
+      }
     }
   ]
 }

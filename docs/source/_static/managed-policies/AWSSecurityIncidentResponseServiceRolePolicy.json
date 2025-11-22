@@ -31,6 +31,23 @@
         }
       },
       "Resource": "arn:aws:security-ir:*:*:case/*"
+    },
+    {
+      "Sid": "SecurityIncidentResponseOperationsPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "security-ir:GetCase",
+        "security-ir:UpdateCase",
+        "security-ir:ListCases",
+        "security-ir:CreateCaseComment",
+        "security-ir:ListComments"
+      ],
+      "Resource": "arn:aws:security-ir:*:*:case/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }

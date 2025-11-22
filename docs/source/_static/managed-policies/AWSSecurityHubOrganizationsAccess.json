@@ -17,7 +17,8 @@
         "organizations:DescribeOrganizationalUnit",
         "organizations:ListPolicies",
         "organizations:ListPoliciesForTarget",
-        "organizations:ListTargetsForPolicy"
+        "organizations:ListTargetsForPolicy",
+        "organizations:DescribeResourcePolicy"
       ],
       "Resource": "*"
     },
@@ -28,7 +29,12 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "organizations:ServicePrincipal": "securityhub.amazonaws.com"
+          "organizations:ServicePrincipal": [
+            "securityhub.amazonaws.com",
+            "inspector2.amazonaws.com",
+            "guardduty.amazonaws.com",
+            "malware-protection.guardduty.amazonaws.com"
+          ]
         }
       }
     },
@@ -42,7 +48,12 @@
       "Resource": "arn:aws:organizations::*:account/o-*/*",
       "Condition": {
         "StringEquals": {
-          "organizations:ServicePrincipal": "securityhub.amazonaws.com"
+          "organizations:ServicePrincipal": [
+            "securityhub.amazonaws.com",
+            "inspector2.amazonaws.com",
+            "guardduty.amazonaws.com",
+            "malware-protection.guardduty.amazonaws.com"
+          ]
         }
       }
     },
@@ -64,11 +75,15 @@
         "arn:aws:organizations::*:root/o-*/*",
         "arn:aws:organizations::*:account/o-*/*",
         "arn:aws:organizations::*:ou/o-*/*",
-        "arn:aws:organizations::*:policy/o-*/securityhub_policy/*"
+        "arn:aws:organizations::*:policy/o-*/securityhub_policy/*",
+        "arn:aws:organizations::*:policy/o-*/inspector_policy/*"
       ],
       "Condition": {
         "StringLikeIfExists": {
-          "organizations:PolicyType": "SECURITYHUB_POLICY"
+          "organizations:PolicyType": [
+            "SECURITYHUB_POLICY",
+            "INSPECTOR_POLICY"
+          ]
         }
       }
     },
@@ -81,7 +96,8 @@
         "organizations:ListTagsForResource"
       ],
       "Resource": [
-        "arn:aws:organizations::*:policy/o-*/securityhub_policy/*"
+        "arn:aws:organizations::*:policy/o-*/securityhub_policy/*",
+        "arn:aws:organizations::*:policy/o-*/inspector_policy/*"
       ]
     }
   ]
