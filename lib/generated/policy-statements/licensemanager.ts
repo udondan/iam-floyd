@@ -104,6 +104,36 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a license asset group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseAssetGroup.html
+   */
+  public toCreateLicenseAssetGroup() {
+    return this.to('CreateLicenseAssetGroup');
+  }
+
+  /**
+   * Grants permission to create a license asset ruleset
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseAssetRuleset.html
+   */
+  public toCreateLicenseAssetRuleset() {
+    return this.to('CreateLicenseAssetRuleset');
+  }
+
+  /**
    * Grants permission to create a new license configuration
    *
    * Access Level: Write
@@ -130,7 +160,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a report generator for a license configuration
+   * Grants permission to create a report generator for supported license manager resources
    *
    * Access Level: Write
    *
@@ -186,6 +216,28 @@ export class LicenseManager extends PolicyStatement {
    */
   public toDeleteLicense() {
     return this.to('DeleteLicense');
+  }
+
+  /**
+   * Grants permission to delete a license asset group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseAssetGroup.html
+   */
+  public toDeleteLicenseAssetGroup() {
+    return this.to('DeleteLicenseAssetGroup');
+  }
+
+  /**
+   * Grants permission to delete a license asset ruleset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseAssetRuleset.html
+   */
+  public toDeleteLicenseAssetRuleset() {
+    return this.to('DeleteLicenseAssetRuleset');
   }
 
   /**
@@ -266,6 +318,28 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a license asset group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseAssetGroup.html
+   */
+  public toGetLicenseAssetGroup() {
+    return this.to('GetLicenseAssetGroup');
+  }
+
+  /**
+   * Grants permission to get a license asset ruleset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseAssetRuleset.html
+   */
+  public toGetLicenseAssetRuleset() {
+    return this.to('GetLicenseAssetRuleset');
+  }
+
+  /**
    * Grants permission to get a license configuration
    *
    * Access Level: Read
@@ -321,6 +395,17 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list assets for a license asset group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssetsForLicenseAssetGroup.html
+   */
+  public toListAssetsForLicenseAssetGroup() {
+    return this.to('ListAssetsForLicenseAssetGroup');
+  }
+
+  /**
    * Grants permission to list associations for a selected license configuration
    *
    * Access Level: List
@@ -354,14 +439,47 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list license asset groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseAssetGroups.html
+   */
+  public toListLicenseAssetGroups() {
+    return this.to('ListLicenseAssetGroups');
+  }
+
+  /**
+   * Grants permission to list license asset rulesets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseAssetRulesets.html
+   */
+  public toListLicenseAssetRulesets() {
+    return this.to('ListLicenseAssetRulesets');
+  }
+
+  /**
    * Grants permission to list license configurations
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html
    */
   public toListLicenseConfigurations() {
     return this.to('ListLicenseConfigurations');
+  }
+
+  /**
+   * Grants permission to list license configurations for organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurationsForOrganization.html
+   */
+  public toListLicenseConfigurationsForOrganization() {
+    return this.to('ListLicenseConfigurationsForOrganization');
   }
 
   /**
@@ -548,6 +666,28 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a license asset group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseAssetGroup.html
+   */
+  public toUpdateLicenseAssetGroup() {
+    return this.to('UpdateLicenseAssetGroup');
+  }
+
+  /**
+   * Grants permission to update a license asset ruleset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseAssetRuleset.html
+   */
+  public toUpdateLicenseAssetRuleset() {
+    return this.to('UpdateLicenseAssetRuleset');
+  }
+
+  /**
    * Grants permission to update an existing license configuration
    *
    * Access Level: Write
@@ -559,7 +699,7 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a report generator for a license configuration
+   * Grants permission to update a report generator for supported license manager resources
    *
    * Access Level: Write
    *
@@ -600,6 +740,8 @@ export class LicenseManager extends PolicyStatement {
       'CreateGrant',
       'CreateGrantVersion',
       'CreateLicense',
+      'CreateLicenseAssetGroup',
+      'CreateLicenseAssetRuleset',
       'CreateLicenseConfiguration',
       'CreateLicenseConversionTaskForResource',
       'CreateLicenseManagerReportGenerator',
@@ -607,11 +749,15 @@ export class LicenseManager extends PolicyStatement {
       'CreateToken',
       'DeleteGrant',
       'DeleteLicense',
+      'DeleteLicenseAssetGroup',
+      'DeleteLicenseAssetRuleset',
       'DeleteLicenseConfiguration',
       'DeleteLicenseManagerReportGenerator',
       'DeleteToken',
       'ExtendLicenseConsumption',
       'RejectGrant',
+      'UpdateLicenseAssetGroup',
+      'UpdateLicenseAssetRuleset',
       'UpdateLicenseConfiguration',
       'UpdateLicenseManagerReportGenerator',
       'UpdateLicenseSpecificationsForResource'
@@ -620,19 +766,25 @@ export class LicenseManager extends PolicyStatement {
       'GetAccessToken',
       'GetGrant',
       'GetLicense',
+      'GetLicenseAssetGroup',
+      'GetLicenseAssetRuleset',
       'GetLicenseConfiguration',
       'GetLicenseConversionTask',
       'GetLicenseManagerReportGenerator',
       'GetLicenseUsage',
-      'ListLicenseConfigurations',
       'ListLicenses',
       'ListTagsForResource'
     ],
     List: [
       'GetServiceSettings',
+      'ListAssetsForLicenseAssetGroup',
       'ListAssociationsForLicenseConfiguration',
       'ListDistributedGrants',
       'ListFailuresForLicenseConfigurationOperations',
+      'ListLicenseAssetGroups',
+      'ListLicenseAssetRulesets',
+      'ListLicenseConfigurations',
+      'ListLicenseConfigurationsForOrganization',
       'ListLicenseConversionTasks',
       'ListLicenseManagerReportGenerators',
       'ListLicenseSpecificationsForResource',
@@ -723,6 +875,40 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type license-asset-ruleset to the statement
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/license-asset-ruleset.html
+   *
+   * @param licenseAssetRulesetId - Identifier for the licenseAssetRulesetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLicenseAssetRuleset(licenseAssetRulesetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:license-manager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:license-asset-ruleset:${ licenseAssetRulesetId }`);
+  }
+
+  /**
+   * Adds a resource of type license-asset-group to the statement
+   *
+   * https://docs.aws.amazon.com/license-manager/latest/userguide/license-asset-group.html
+   *
+   * @param licenseAssetGroupId - Identifier for the licenseAssetGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLicenseAssetGroup(licenseAssetGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:license-manager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:license-asset-group:${ licenseAssetGroupId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/license-manager/latest/userguide/identity-access-management.html
@@ -730,6 +916,8 @@ export class LicenseManager extends PolicyStatement {
    * Applies to actions:
    * - .toCreateGrant()
    * - .toCreateLicense()
+   * - .toCreateLicenseAssetGroup()
+   * - .toCreateLicenseAssetRuleset()
    * - .toCreateLicenseConfiguration()
    * - .toCreateLicenseManagerReportGenerator()
    * - .toTagResource()
@@ -750,6 +938,8 @@ export class LicenseManager extends PolicyStatement {
    * - license
    * - grant
    * - report-generator
+   * - license-asset-ruleset
+   * - license-asset-group
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -767,6 +957,8 @@ export class LicenseManager extends PolicyStatement {
    * Applies to actions:
    * - .toCreateGrant()
    * - .toCreateLicense()
+   * - .toCreateLicenseAssetGroup()
+   * - .toCreateLicenseAssetRuleset()
    * - .toCreateLicenseConfiguration()
    * - .toCreateLicenseManagerReportGenerator()
    * - .toTagResource()

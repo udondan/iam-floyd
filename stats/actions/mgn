@@ -52,6 +52,7 @@ mgn:ListConnectors;Read
 mgn:ListExportErrors;List
 mgn:ListExports;List
 mgn:ListImportErrors;List
+mgn:ListImportFileEnrichments;List
 mgn:ListImports;List
 mgn:ListManagedAccounts;List
 mgn:ListNetworkMigrationAnalyses;List
@@ -65,6 +66,7 @@ mgn:ListNetworkMigrationDeployments;List
 mgn:ListNetworkMigrationExecutions;List
 mgn:ListNetworkMigrationMapperSegmentConstructs;List
 mgn:ListNetworkMigrationMapperSegments;List
+mgn:ListNetworkMigrationMappingUpdates;List
 mgn:ListNetworkMigrationMappings;List
 mgn:ListSourceServerActions;List
 mgn:ListTagsForResource;Read
@@ -95,11 +97,13 @@ mgn:SendVcenterClientMetricsForMgn;Write
 mgn:StartCutover;Write
 mgn:StartExport;Write
 mgn:StartImport;Write
+mgn:StartImportFileEnrichment;Write
 mgn:StartNetworkMigrationAnalysis;Write
 mgn:StartNetworkMigrationCodeGeneration;Write
 mgn:StartNetworkMigrationDeployedStacksDeletion;Write
 mgn:StartNetworkMigrationDeployment;Write
 mgn:StartNetworkMigrationMapping;Write
+mgn:StartNetworkMigrationMappingUpdate;Write
 mgn:StartReplication;Write
 mgn:StartTest;Write
 mgn:StopReplication;Write

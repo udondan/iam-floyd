@@ -226,6 +226,7 @@ glue:QuerySchemaVersionMetadata;List
 glue:RefreshOAuth2Tokens;Permissions management
 glue:RegisterSchemaVersion;Write
 glue:RemoveSchemaVersionMetadata;Write
+glue:RenameTable;Write
 glue:RequestLogParsing;Permissions management
 glue:ResetJobBookmark;Write
 glue:ResumeWorkflowRun;Write

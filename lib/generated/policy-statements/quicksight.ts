@@ -30,6 +30,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure log delivery for QuickSuite instance
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to create reviewed answers for a topic
    *
    * Access Level: Write
@@ -3299,6 +3310,23 @@ export class Quicksight extends PolicyStatement {
       'UpdateUserCustomPermission',
       'UpdateVPCConnection'
     ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource',
+      'DescribeDataSetPermissions',
+      'DescribeDataSourcePermissions',
+      'DescribeTopicPermissions',
+      'UpdateActionConnectorPermissions',
+      'UpdateAgentPermissions',
+      'UpdateAnalysisPermissions',
+      'UpdateDashboardPermissions',
+      'UpdateDataSetPermissions',
+      'UpdateDataSourcePermissions',
+      'UpdateFlowPermissions',
+      'UpdateFolderPermissions',
+      'UpdateTemplatePermissions',
+      'UpdateThemePermissions',
+      'UpdateTopicPermissions'
+    ],
     Read: [
       'DescribeAccountCustomPermission',
       'DescribeAccountCustomization',
@@ -3369,22 +3397,6 @@ export class Quicksight extends PolicyStatement {
       'PredictQAResults',
       'QuickSuiteUsageMetrics',
       'SearchFolders'
-    ],
-    'Permissions management': [
-      'DescribeDataSetPermissions',
-      'DescribeDataSourcePermissions',
-      'DescribeTopicPermissions',
-      'UpdateActionConnectorPermissions',
-      'UpdateAgentPermissions',
-      'UpdateAnalysisPermissions',
-      'UpdateDashboardPermissions',
-      'UpdateDataSetPermissions',
-      'UpdateDataSourcePermissions',
-      'UpdateFlowPermissions',
-      'UpdateFolderPermissions',
-      'UpdateTemplatePermissions',
-      'UpdateThemePermissions',
-      'UpdateTopicPermissions'
     ],
     List: [
       'ListActionConnectors',

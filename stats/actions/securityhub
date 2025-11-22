@@ -64,6 +64,7 @@ securityhub:GetEnabledStandards;List
 securityhub:GetFindingAggregator;Read
 securityhub:GetFindingHistory;Read
 securityhub:GetFindings;Read
+securityhub:GetFindingsTrendsV2;Read
 securityhub:GetFreeTrialEndDate;Read
 securityhub:GetFreeTrialUsage;Read
 securityhub:GetInsightFindingTrend;Read
@@ -73,6 +74,7 @@ securityhub:GetInvitationsCount;Read
 securityhub:GetMasterAccount;Read
 securityhub:GetMembers;Read
 securityhub:GetResourcesStatisticsV2;Read
+securityhub:GetResourcesTrendsV2;Read
 securityhub:GetResourcesV2;Read
 securityhub:GetSecurityControlDefinition;Read
 securityhub:GetUsage;Read

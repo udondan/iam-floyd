@@ -555,6 +555,15 @@ export class Odb extends PolicyStatement {
     return this.to('UpdateOdbPeeringConnection');
   }
 
+  /**
+   * Grants permission to update an Outbound Integration
+   *
+   * Access Level: Write
+   */
+  public toUpdateOutboundIntegration() {
+    return this.to('UpdateOutboundIntegration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptMarketplaceRegistration',
@@ -579,7 +588,8 @@ export class Odb extends PolicyStatement {
       'StopDbNode',
       'UpdateCloudExadataInfrastructure',
       'UpdateOdbNetwork',
-      'UpdateOdbPeeringConnection'
+      'UpdateOdbPeeringConnection',
+      'UpdateOutboundIntegration'
     ],
     Read: [
       'GetCloudAutonomousVmCluster',

@@ -17,6 +17,8 @@ kafka:DescribeClusterV2;Read
 kafka:DescribeConfiguration;Read
 kafka:DescribeConfigurationRevision;Read
 kafka:DescribeReplicator;Read
+kafka:DescribeTopic;Read
+kafka:DescribeTopicPartitions;Read
 kafka:DescribeVpcConnection;Read
 kafka:GetBootstrapBrokers;Read
 kafka:GetClusterPolicy;Read
@@ -33,6 +35,7 @@ kafka:ListNodes;List
 kafka:ListReplicators;List
 kafka:ListScramSecrets;List
 kafka:ListTagsForResource;Read
+kafka:ListTopics;List
 kafka:ListVpcConnections;List
 kafka:PutClusterPolicy;Write
 kafka:RebootBroker;Write

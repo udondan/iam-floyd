@@ -50,6 +50,7 @@ s3:GetAccessPointPolicyStatus;Read
 s3:GetAccessPointPolicyStatusForObjectLambda;Read
 s3:GetAccountPublicAccessBlock;Read
 s3:GetAnalyticsConfiguration;Read
+s3:GetBucketAbac;Read
 s3:GetBucketAcl;Read
 s3:GetBucketCORS;Read
 s3:GetBucketLocation;Read
@@ -121,6 +122,7 @@ s3:PutAccessPointPolicyForObjectLambda;Permissions management
 s3:PutAccessPointPublicAccessBlock;Permissions management
 s3:PutAccountPublicAccessBlock;Permissions management
 s3:PutAnalyticsConfiguration;Write
+s3:PutBucketAbac;Write
 s3:PutBucketAcl;Permissions management
 s3:PutBucketCORS;Write
 s3:PutBucketLogging;Write

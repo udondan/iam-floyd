@@ -284,6 +284,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the current Amazon EC2 Auto Scaling account settings for your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAccountSettings.html
+   */
+  public toDescribeAccountSettings() {
+    return this.to('DescribeAccountSettings');
+  }
+
+  /**
    * Grants permission to describe the policy adjustment types for use with PutScalingPolicy
    *
    * Access Level: List
@@ -634,6 +645,17 @@ export class Autoscaling extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify an account setting for your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutAccountSetting.html
+   */
+  public toPutAccountSetting() {
+    return this.to('PutAccountSetting');
+  }
+
+  /**
    * Grants permission to create or update a lifecycle hook for the specified Auto Scaling Group
    *
    * Access Level: Write
@@ -848,6 +870,7 @@ export class Autoscaling extends PolicyStatement {
       'ExecutePolicy',
       'ExitStandby',
       'LaunchInstances',
+      'PutAccountSetting',
       'PutLifecycleHook',
       'PutNotificationConfiguration',
       'PutScalingPolicy',
@@ -870,6 +893,7 @@ export class Autoscaling extends PolicyStatement {
     ],
     List: [
       'DescribeAccountLimits',
+      'DescribeAccountSettings',
       'DescribeAdjustmentTypes',
       'DescribeAutoScalingGroups',
       'DescribeAutoScalingInstances',

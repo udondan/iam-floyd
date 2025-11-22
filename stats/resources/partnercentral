@@ -1,5 +1,8 @@
+partnercentral:ChannelHandshake
 partnercentral:Engagement
 partnercentral:Opportunity
+partnercentral:ProgramManagementAccount
+partnercentral:Relationship
 partnercentral:ResourceSnapshot
 partnercentral:Solution
 partnercentral:engagement-by-accepting-invitation-task

@@ -30,6 +30,8 @@ lakeformation:GetQueryState;Read
 lakeformation:GetQueryStatistics;Read
 lakeformation:GetResourceLFTags;Read
 lakeformation:GetTableObjects;Read
+lakeformation:GetTemporaryGluePartitionCredentials;Read
+lakeformation:GetTemporaryGlueTableCredentials;Read
 lakeformation:GetWorkUnitResults;Read
 lakeformation:GetWorkUnits;Read
 lakeformation:GrantPermissions;Permissions management

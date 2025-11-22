@@ -24,6 +24,7 @@ cloudformation:DeregisterType;Write
 cloudformation:DescribeAccountLimits;Read
 cloudformation:DescribeChangeSet;Read
 cloudformation:DescribeChangeSetHooks;Read
+cloudformation:DescribeEvents;Read
 cloudformation:DescribeGeneratedTemplate;Read
 cloudformation:DescribeOrganizationsAccess;Read
 cloudformation:DescribePublisher;Read

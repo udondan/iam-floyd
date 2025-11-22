@@ -18,6 +18,7 @@ autoscaling:DeleteScheduledAction;Write
 autoscaling:DeleteTags;Tagging
 autoscaling:DeleteWarmPool;Write
 autoscaling:DescribeAccountLimits;List
+autoscaling:DescribeAccountSettings;List
 autoscaling:DescribeAdjustmentTypes;List
 autoscaling:DescribeAutoScalingGroups;List
 autoscaling:DescribeAutoScalingInstances;List
@@ -49,6 +50,7 @@ autoscaling:ExecutePolicy;Write
 autoscaling:ExitStandby;Write
 autoscaling:GetPredictiveScalingForecast;List
 autoscaling:LaunchInstances;Write
+autoscaling:PutAccountSetting;Write
 autoscaling:PutLifecycleHook;Write
 autoscaling:PutNotificationConfiguration;Write
 autoscaling:PutScalingPolicy;Write

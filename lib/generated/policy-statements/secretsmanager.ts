@@ -40,6 +40,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CancelRotateSecret.html
    */
@@ -63,6 +64,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAddReplicaRegions()
    * - .ifForceOverwriteReplicaSecret()
+   * - .ifType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html
    */
@@ -81,6 +83,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteResourcePolicy.html
    */
@@ -101,6 +104,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html
    */
@@ -119,6 +123,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DescribeSecret.html
    */
@@ -148,6 +153,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetResourcePolicy.html
    */
@@ -168,6 +174,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
    */
@@ -186,6 +193,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ListSecretVersionIds.html
    */
@@ -216,6 +224,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifBlockPublicPolicy()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_PutResourcePolicy.html
    */
@@ -234,6 +243,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_PutSecretValue.html
    */
@@ -252,6 +262,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RemoveRegionsFromReplication.html
    */
@@ -272,6 +283,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretPrimaryRegion()
    * - .ifAddReplicaRegions()
    * - .ifForceOverwriteReplicaSecret()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ReplicateSecretToRegions.html
    */
@@ -290,6 +302,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RestoreSecret.html
    */
@@ -311,6 +324,8 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretPrimaryRegion()
    * - .ifModifyRotationRules()
    * - .ifRotateImmediately()
+   * - .ifResourceType()
+   * - .ifExternalSecretRotationRoleArn()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html
    */
@@ -329,6 +344,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_StopReplicationToReplica.html
    */
@@ -349,6 +365,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html
    */
@@ -368,6 +385,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html
    */
@@ -389,6 +407,8 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifType()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UpdateSecret.html
    */
@@ -408,6 +428,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UpdateSecretVersionStage.html
    */
@@ -426,6 +447,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifAwsResourceTag()
    * - .ifSecretPrimaryRegion()
+   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ValidateResourcePolicy.html
    */
@@ -485,6 +507,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifResourceTag()
    * - .ifResource()
+   * - .ifResourceType()
    */
   public onSecret(secretId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:secretsmanager:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:secret:${ secretId }`);
@@ -612,6 +635,21 @@ export class Secretsmanager extends PolicyStatement {
    */
   public ifDescription(value: string | string[], operator?: Operator | string) {
     return this.if(`Description`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the managed external secret rotation role ARN in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to actions:
+   * - .toRotateSecret()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifExternalSecretRotationRoleArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ExternalSecretRotationRoleArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -853,6 +891,22 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
+   * Filters access by the managed external secret type in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateSecret()
+   * - .toUpdateSecret()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifType(value: string | string[], operator?: Operator | string) {
+    return this.if(`Type`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the unique identifier of the version of the secret in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
@@ -918,5 +972,41 @@ export class Secretsmanager extends PolicyStatement {
    */
   public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: Operator | string) {
     return this.if(`resource/${ allowRotationLambdaArn }`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the managed external secret type associated with the secret
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCancelRotateSecret()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSecret()
+   * - .toDescribeSecret()
+   * - .toGetResourcePolicy()
+   * - .toGetSecretValue()
+   * - .toListSecretVersionIds()
+   * - .toPutResourcePolicy()
+   * - .toPutSecretValue()
+   * - .toRemoveRegionsFromReplication()
+   * - .toReplicateSecretToRegions()
+   * - .toRestoreSecret()
+   * - .toRotateSecret()
+   * - .toStopReplicationToReplica()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateSecret()
+   * - .toUpdateSecretVersionStage()
+   * - .toValidateResourcePolicy()
+   *
+   * Applies to resource types:
+   * - Secret
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`resource/Type`, value, operator ?? 'StringLike');
   }
 }

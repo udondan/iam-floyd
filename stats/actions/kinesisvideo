@@ -12,6 +12,7 @@ kinesisvideo:DescribeMediaStorageConfiguration;Read
 kinesisvideo:DescribeNotificationConfiguration;Read
 kinesisvideo:DescribeSignalingChannel;List
 kinesisvideo:DescribeStream;List
+kinesisvideo:DescribeStreamStorageConfiguration;Read
 kinesisvideo:GetClip;Read
 kinesisvideo:GetDASHStreamingSessionURL;Read
 kinesisvideo:GetDataEndpoint;Read
@@ -42,3 +43,4 @@ kinesisvideo:UpdateMediaStorageConfiguration;Write
 kinesisvideo:UpdateNotificationConfiguration;Write
 kinesisvideo:UpdateSignalingChannel;Write
 kinesisvideo:UpdateStream;Write
+kinesisvideo:UpdateStreamStorageConfiguration;Write

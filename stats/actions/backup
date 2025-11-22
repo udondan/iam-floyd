@@ -2,6 +2,7 @@ backup:AssociateBackupVaultMpaApprovalTeam;Write
 backup:CancelLegalHold;Write
 backup:CopyFromBackupVault;Write
 backup:CopyIntoBackupVault;Write
+backup:CreateBackupAccessPoint;Write
 backup:CreateBackupPlan;Write
 backup:CreateBackupSelection;Write
 backup:CreateBackupVault;Write
@@ -12,6 +13,8 @@ backup:CreateReportPlan;Write
 backup:CreateRestoreAccessBackupVault;Write
 backup:CreateRestoreTestingPlan;Write
 backup:CreateRestoreTestingSelection;Write
+backup:CreateTieringConfiguration;Write
+backup:DeleteBackupAccessPoint;Write
 backup:DeleteBackupPlan;Write
 backup:DeleteBackupSelection;Write
 backup:DeleteBackupVault;Write
@@ -24,6 +27,8 @@ backup:DeleteRecoveryPoint;Write
 backup:DeleteReportPlan;Write
 backup:DeleteRestoreTestingPlan;Write
 backup:DeleteRestoreTestingSelection;Write
+backup:DeleteTieringConfiguration;Write
+backup:DescribeBackupAccessPoint;Read
 backup:DescribeBackupJob;Read
 backup:DescribeBackupVault;Read
 backup:DescribeCopyJob;Read
@@ -35,6 +40,7 @@ backup:DescribeRegionSettings;Read
 backup:DescribeReportJob;Read
 backup:DescribeReportPlan;Read
 backup:DescribeRestoreJob;Read
+backup:DescribeScanJob;Read
 backup:DisassociateBackupVaultMpaApprovalTeam;Write
 backup:DisassociateRecoveryPoint;Write
 backup:DisassociateRecoveryPointFromParent;Write
@@ -54,6 +60,7 @@ backup:GetRestoreTestingInferredMetadata;Read
 backup:GetRestoreTestingPlan;Read
 backup:GetRestoreTestingSelection;Read
 backup:GetSupportedResourceTypes;Read
+backup:GetTieringConfiguration;Read
 backup:ListBackupJobSummaries;List
 backup:ListBackupJobs;List
 backup:ListBackupPlanTemplates;List
@@ -80,7 +87,10 @@ backup:ListRestoreJobs;List
 backup:ListRestoreJobsByProtectedResource;List
 backup:ListRestoreTestingPlans;List
 backup:ListRestoreTestingSelections;List
+backup:ListScanJobSummaries;List
+backup:ListScanJobs;List
 backup:ListTags;Read
+backup:ListTieringConfigurations;List
 backup:PutBackupVaultAccessPolicy;Permissions management
 backup:PutBackupVaultLockConfiguration;Write
 backup:PutBackupVaultNotifications;Write
@@ -92,6 +102,7 @@ backup:StartBackupJob;Write
 backup:StartCopyJob;Write
 backup:StartReportJob;Write
 backup:StartRestoreJob;Write
+backup:StartScanJob;Write
 backup:StopBackupJob;Write
 backup:TagResource;Tagging
 backup:UntagResource;Tagging
@@ -104,3 +115,4 @@ backup:UpdateRegionSettings;Write
 backup:UpdateReportPlan;Write
 backup:UpdateRestoreTestingPlan;Write
 backup:UpdateRestoreTestingSelection;Write
+backup:UpdateTieringConfiguration;Write

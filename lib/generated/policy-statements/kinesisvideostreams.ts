@@ -181,6 +181,17 @@ export class Kinesisvideo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the stream storage configuration of your Kinesis Video Stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStreamStorageConfiguration.html
+   */
+  public toDescribeStreamStorageConfiguration() {
+    return this.to('DescribeStreamStorageConfiguration');
+  }
+
+  /**
    * Grants permission to get a media clip from a video stream
    *
    * Access Level: Read
@@ -524,6 +535,17 @@ export class Kinesisvideo extends PolicyStatement {
     return this.to('UpdateStream');
   }
 
+  /**
+   * Grants permission to update the stream storage configuration of your Kinesis Video Stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStreamStorageConfiguration.html
+   */
+  public toUpdateStreamStorageConfiguration() {
+    return this.to('UpdateStreamStorageConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ConnectAsMaster',
@@ -543,13 +565,15 @@ export class Kinesisvideo extends PolicyStatement {
       'UpdateMediaStorageConfiguration',
       'UpdateNotificationConfiguration',
       'UpdateSignalingChannel',
-      'UpdateStream'
+      'UpdateStream',
+      'UpdateStreamStorageConfiguration'
     ],
     Read: [
       'DescribeEdgeConfiguration',
       'DescribeImageGenerationConfiguration',
       'DescribeMediaStorageConfiguration',
       'DescribeNotificationConfiguration',
+      'DescribeStreamStorageConfiguration',
       'GetClip',
       'GetDASHStreamingSessionURL',
       'GetDataEndpoint',

@@ -132,6 +132,7 @@ bedrock:InvokeAgent;Read
 bedrock:InvokeAutomatedReasoningPolicy;Read
 bedrock:InvokeBlueprintRecommendationAsync;Write
 bedrock:InvokeBuilder;Write
+bedrock:InvokeDataAutomation;Write
 bedrock:InvokeDataAutomationAsync;Write
 bedrock:InvokeFlow;Read
 bedrock:InvokeInlineAgent;Read

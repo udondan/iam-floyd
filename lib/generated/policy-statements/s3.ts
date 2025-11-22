@@ -230,6 +230,8 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzGrantWrite()
    * - .ifXAmzGrantWriteAcp()
    * - .ifXAmzObjectOwnership()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
    */
@@ -1139,6 +1141,25 @@ export class S3 extends PolicyStatement {
    */
   public toGetAnalyticsConfiguration() {
     return this.to('GetAnalyticsConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve ABAC configuration for a general purpose bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAbac.html
+   */
+  public toGetBucketAbac() {
+    return this.to('GetBucketAbac');
   }
 
   /**
@@ -2533,6 +2554,25 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set ABAC configuration for a general purpose bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAbac.html
+   */
+  public toPutBucketAbac() {
+    return this.to('PutBucketAbac');
+  }
+
+  /**
    * Grants permission to set the permissions on an existing bucket using access control lists (ACLs)
    *
    * Access Level: Permissions management
@@ -3453,6 +3493,7 @@ export class S3 extends PolicyStatement {
       'PutAccelerateConfiguration',
       'PutAccessPointConfigurationForObjectLambda',
       'PutAnalyticsConfiguration',
+      'PutBucketAbac',
       'PutBucketCORS',
       'PutBucketLogging',
       'PutBucketNotification',
@@ -3541,6 +3582,7 @@ export class S3 extends PolicyStatement {
       'GetAccessPointPolicyStatusForObjectLambda',
       'GetAccountPublicAccessBlock',
       'GetAnalyticsConfiguration',
+      'GetBucketAbac',
       'GetBucketAcl',
       'GetBucketCORS',
       'GetBucketLocation',
@@ -3642,6 +3684,7 @@ export class S3 extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAccessPointNetworkOrigin()
    * - .ifAccessPointTag()
+   * - .ifBucketTag()
    * - .ifDataAccessPointAccount()
    * - .ifDataAccessPointArn()
    */
@@ -3656,6 +3699,10 @@ export class S3 extends PolicyStatement {
    *
    * @param bucketName - Identifier for the bucketName.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifBucketTag()
    */
   public onBucket(bucketName: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:::${ bucketName }`);
@@ -3669,6 +3716,10 @@ export class S3 extends PolicyStatement {
    * @param bucketName - Identifier for the bucketName.
    * @param objectName - Identifier for the objectName.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifBucketTag()
    */
   public onObject(bucketName: string, objectName: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:::${ bucketName }/${ objectName }`);
@@ -3838,6 +3889,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessGrantsInstance()
    * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
+   * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateStorageLensGroup()
    * - .toPutJobTagging()
@@ -3898,6 +3950,8 @@ export class S3 extends PolicyStatement {
    * Applies to resource types:
    * - accesspoint
    * - accesspointobject
+   * - bucket
+   * - object
    * - job
    * - storagelensconfiguration
    * - storagelensgroup
@@ -3923,6 +3977,7 @@ export class S3 extends PolicyStatement {
    * - .toCreateAccessGrantsInstance()
    * - .toCreateAccessGrantsLocation()
    * - .toCreateAccessPoint()
+   * - .toCreateBucket()
    * - .toCreateJob()
    * - .toCreateStorageLensGroup()
    * - .toPutJobTagging()
@@ -4054,7 +4109,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by existing access point tag key and value
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-point-tagging.html#tagging-and-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/AmazonS3/latest/userguide/access-points.html#tagging-and-policies
    *
    * Applies to actions:
    * - .toCreateAccessPoint()
@@ -4075,6 +4130,24 @@ export class S3 extends PolicyStatement {
    */
   public ifAccessPointTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`AccessPointTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the bucket
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/AmazonS3/latest/userguide/buckets-tagging.html
+   *
+   * Applies to resource types:
+   * - accesspointobject
+   * - bucket
+   * - object
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBucketTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`BucketTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4396,6 +4469,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
+   * - .toGetBucketAbac()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
@@ -4466,6 +4540,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
+   * - .toPutBucketAbac()
    * - .toPutBucketAcl()
    * - .toPutBucketCORS()
    * - .toPutBucketLogging()
@@ -4574,6 +4649,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
+   * - .toGetBucketAbac()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
@@ -4643,6 +4719,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
+   * - .toPutBucketAbac()
    * - .toPutBucketAcl()
    * - .toPutBucketCORS()
    * - .toPutBucketLogging()
@@ -4751,6 +4828,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
+   * - .toGetBucketAbac()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
@@ -4820,6 +4898,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
+   * - .toPutBucketAbac()
    * - .toPutBucketAcl()
    * - .toPutBucketCORS()
    * - .toPutBucketLogging()
@@ -5126,6 +5205,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
+   * - .toGetBucketAbac()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
@@ -5195,6 +5275,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
+   * - .toPutBucketAbac()
    * - .toPutBucketAcl()
    * - .toPutBucketCORS()
    * - .toPutBucketLogging()
@@ -5303,6 +5384,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
+   * - .toGetBucketAbac()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
@@ -5372,6 +5454,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
+   * - .toPutBucketAbac()
    * - .toPutBucketAcl()
    * - .toPutBucketCORS()
    * - .toPutBucketLogging()
@@ -5521,6 +5604,7 @@ export class S3 extends PolicyStatement {
    * - .toGetAccessPointPolicyStatusForObjectLambda()
    * - .toGetAccountPublicAccessBlock()
    * - .toGetAnalyticsConfiguration()
+   * - .toGetBucketAbac()
    * - .toGetBucketAcl()
    * - .toGetBucketCORS()
    * - .toGetBucketLocation()
@@ -5584,6 +5668,7 @@ export class S3 extends PolicyStatement {
    * - .toPutAccessPointPolicyForObjectLambda()
    * - .toPutAccountPublicAccessBlock()
    * - .toPutAnalyticsConfiguration()
+   * - .toPutBucketAbac()
    * - .toPutBucketAcl()
    * - .toPutBucketCORS()
    * - .toPutBucketLogging()

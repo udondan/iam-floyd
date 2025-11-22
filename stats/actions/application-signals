@@ -7,6 +7,7 @@ application-signals:GetService;Read
 application-signals:GetServiceLevelObjective;Read
 application-signals:Link;Write
 application-signals:ListAuditFindings;List
+application-signals:ListEntityEvents;List
 application-signals:ListGroupingAttributeDefinitions;List
 application-signals:ListObservedEntities;List
 application-signals:ListServiceDependencies;Read

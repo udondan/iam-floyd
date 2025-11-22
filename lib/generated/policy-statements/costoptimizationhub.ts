@@ -41,6 +41,17 @@ export class CostOptimizationHub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list efficiency metric scores by group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_ListEfficiencyMetrics.html
+   */
+  public toListEfficiencyMetrics() {
+    return this.to('ListEfficiencyMetrics');
+  }
+
+  /**
    * Grants permission to list enrollment statuses for the specified account or all members under a management account
    *
    * Access Level: List
@@ -107,6 +118,7 @@ export class CostOptimizationHub extends PolicyStatement {
       'GetRecommendation'
     ],
     List: [
+      'ListEfficiencyMetrics',
       'ListEnrollmentStatuses',
       'ListRecommendationSummaries',
       'ListRecommendations'

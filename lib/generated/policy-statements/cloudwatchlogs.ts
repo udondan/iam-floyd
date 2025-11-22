@@ -119,6 +119,21 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a scheduled query
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateScheduledQuery.html
+   */
+  public toCreateScheduledQuery() {
+    return this.to('CreateScheduledQuery');
+  }
+
+  /**
    * Grants permission to delete an account policy
    *
    * Access Level: Write
@@ -303,6 +318,17 @@ export class Logs extends PolicyStatement {
    */
   public toDeleteRetentionPolicy() {
     return this.to('DeleteRetentionPolicy');
+  }
+
+  /**
+   * Grants permission to delete a scheduled query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteScheduledQuery.html
+   */
+  public toDeleteScheduledQuery() {
+    return this.to('DeleteScheduledQuery');
   }
 
   /**
@@ -658,6 +684,28 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about a specified scheduled query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetScheduledQuery.html
+   */
+  public toGetScheduledQuery() {
+    return this.to('GetScheduledQuery');
+  }
+
+  /**
+   * Grants permission to return the execution history for a specified scheduled query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetScheduledQueryHistory.html
+   */
+  public toGetScheduledQueryHistory() {
+    return this.to('GetScheduledQueryHistory');
+  }
+
+  /**
    * Grants permission to return transformer associated with the specified log group
    *
    * Access Level: Read
@@ -765,6 +813,17 @@ export class Logs extends PolicyStatement {
    */
   public toListLogGroupsForQuery() {
     return this.to('ListLogGroupsForQuery');
+  }
+
+  /**
+   * Grants permission to return all scheduled queries that are associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListScheduledQueries.html
+   */
+  public toListScheduledQueries() {
+    return this.to('ListScheduledQueries');
   }
 
   /**
@@ -1168,6 +1227,17 @@ export class Logs extends PolicyStatement {
     return this.to('UpdateLogDelivery');
   }
 
+  /**
+   * Grants permission to update a scheduled query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateScheduledQuery.html
+   */
+  public toUpdateScheduledQuery() {
+    return this.to('UpdateScheduledQuery');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateKmsKey',
@@ -1178,6 +1248,7 @@ export class Logs extends PolicyStatement {
       'CreateLogDelivery',
       'CreateLogGroup',
       'CreateLogStream',
+      'CreateScheduledQuery',
       'DeleteAccountPolicy',
       'DeleteDataProtectionPolicy',
       'DeleteDelivery',
@@ -1194,6 +1265,7 @@ export class Logs extends PolicyStatement {
       'DeleteMetricFilter',
       'DeleteQueryDefinition',
       'DeleteRetentionPolicy',
+      'DeleteScheduledQuery',
       'DeleteSubscriptionFilter',
       'DeleteTransformer',
       'DisassociateKmsKey',
@@ -1216,7 +1288,8 @@ export class Logs extends PolicyStatement {
       'UpdateAnomaly',
       'UpdateDeliveryConfiguration',
       'UpdateLogAnomalyDetector',
-      'UpdateLogDelivery'
+      'UpdateLogDelivery',
+      'UpdateScheduledQuery'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
@@ -1247,6 +1320,7 @@ export class Logs extends PolicyStatement {
       'ListLogGroups',
       'ListLogGroupsForEntity',
       'ListLogGroupsForQuery',
+      'ListScheduledQueries',
       'ListTagsForResource',
       'ListTagsLogGroup'
     ],
@@ -1264,6 +1338,8 @@ export class Logs extends PolicyStatement {
       'GetLogGroupFields',
       'GetLogRecord',
       'GetQueryResults',
+      'GetScheduledQuery',
+      'GetScheduledQueryHistory',
       'GetTransformer',
       'StartLiveTail',
       'StartQuery',
@@ -1402,6 +1478,23 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type scheduled-query to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ScheduledQuery.html
+   *
+   * @param scheduledQueryId - Identifier for the scheduledQueryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onScheduledQuery(scheduledQueryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scheduled-query:${ scheduledQueryId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1410,6 +1503,7 @@ export class Logs extends PolicyStatement {
    * - .toCreateDelivery()
    * - .toCreateLogAnomalyDetector()
    * - .toCreateLogGroup()
+   * - .toCreateScheduledQuery()
    * - .toPutDeliveryDestination()
    * - .toPutDeliverySource()
    * - .toPutDestination()
@@ -1438,6 +1532,7 @@ export class Logs extends PolicyStatement {
    * - delivery
    * - delivery-destination
    * - anomaly-detector
+   * - scheduled-query
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1456,6 +1551,7 @@ export class Logs extends PolicyStatement {
    * - .toCreateDelivery()
    * - .toCreateLogAnomalyDetector()
    * - .toCreateLogGroup()
+   * - .toCreateScheduledQuery()
    * - .toPutDeliveryDestination()
    * - .toPutDeliverySource()
    * - .toPutDestination()

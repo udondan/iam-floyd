@@ -17,6 +17,7 @@
         "s3:GetAccessPointPolicyStatusForObjectLambda",
         "s3:GetAccountPublicAccessBlock",
         "s3:GetAnalyticsConfiguration",
+        "s3:GetBucketAbac",
         "s3:GetBucketAcl",
         "s3:GetBucketCORS",
         "s3:GetBucketLocation",

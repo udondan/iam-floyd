@@ -36,6 +36,7 @@ cloudtrail:ListDashboards;List
 cloudtrail:ListEventDataStores;List
 cloudtrail:ListImportFailures;Read
 cloudtrail:ListImports;List
+cloudtrail:ListInsightsData;List
 cloudtrail:ListPublicKeys;Read
 cloudtrail:ListQueries;List
 cloudtrail:ListServiceLinkedChannels;List

@@ -1,4 +1,5 @@
 partnercentral:Catalog
+partnercentral:ChannelHandshakeType
 partnercentral:RelatedEntityType
 partnercentral:RequestTag/${TagKey}
 partnercentral:ResourceTag/${TagKey}

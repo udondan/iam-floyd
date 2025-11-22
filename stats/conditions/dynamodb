@@ -1,10 +1,14 @@
 dynamodb:Attributes
 dynamodb:EnclosingOperation
+dynamodb:FirstPartitionKeyValues
+dynamodb:FourthPartitionKeyValues
 dynamodb:FullTableScan
 dynamodb:LeadingKeys
 dynamodb:RequestTag/${TagKey}
 dynamodb:ResourceTag/${TagKey}
 dynamodb:ReturnConsumedCapacity
 dynamodb:ReturnValues
+dynamodb:SecondPartitionKeyValues
 dynamodb:Select
 dynamodb:TagKeys
+dynamodb:ThirdPartitionKeyValues

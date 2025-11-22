@@ -5,4 +5,5 @@ organizations:organization
 organizations:organizationalunit
 organizations:policy
 organizations:resourcepolicy
+organizations:responsibilitytransfer
 organizations:root

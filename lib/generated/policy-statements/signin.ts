@@ -19,6 +19,28 @@ export class Signin extends PolicyStatement {
   }
 
   /**
+   * Grants permission to authenticate through a browser and obtain an OAuth 2.0 authorization code for credential exchange
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/signin/latest/APIReference/API_AuthorizeOAuth2Access.html
+   */
+  public toAuthorizeOAuth2Access() {
+    return this.to('AuthorizeOAuth2Access');
+  }
+
+  /**
+   * Grants permission to exchange an authorization code for OAuth 2.0 access token and refresh token that can be used to access AWS services from developer tools and applications
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateOAuth2Token.html
+   */
+  public toCreateOAuth2Token() {
+    return this.to('CreateOAuth2Token');
+  }
+
+  /**
    * Grants permission to create an Identity Center application that represents the AWS Management Console on an Identity Center organization instance
    *
    * Access Level: Write
@@ -32,7 +54,7 @@ export class Signin extends PolicyStatement {
    * - sso:PutApplicationAuthenticationMethod
    * - sso:PutApplicationGrant
    *
-   * https://docs.aws.amazon.com/signin/latest/APIReference/create-trusted-identity-propagation-application-for-console.html
+   * https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateTrustedIdentityPropagationApplicationForConsole.html
    */
   public toCreateTrustedIdentityPropagationApplicationForConsole() {
     return this.to('CreateTrustedIdentityPropagationApplicationForConsole');
@@ -47,13 +69,17 @@ export class Signin extends PolicyStatement {
    * - sso:GetSharedSsoConfiguration
    * - sso:ListApplications
    *
-   * https://docs.aws.amazon.com/signin/latest/APIReference/list-trusted-identity-propagation-application-for-console.html
+   * https://docs.aws.amazon.com/signin/latest/APIReference/API_ListTrustedIdentityPropagationApplicationsForConsole.html
    */
   public toListTrustedIdentityPropagationApplicationsForConsole() {
     return this.to('ListTrustedIdentityPropagationApplicationsForConsole');
   }
 
   protected accessLevelList: AccessLevelList = {
+    Read: [
+      'AuthorizeOAuth2Access',
+      'CreateOAuth2Token'
+    ],
     Write: [
       'CreateTrustedIdentityPropagationApplicationForConsole'
     ],

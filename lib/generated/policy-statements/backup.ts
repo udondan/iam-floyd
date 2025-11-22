@@ -73,6 +73,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new access point for backup instant access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
+   */
+  public toCreateBackupAccessPoint() {
+    return this.to('CreateBackupAccessPoint');
+  }
+
+  /**
    * Grants permission to create a new backup plan
    *
    * Access Level: Write
@@ -80,6 +91,9 @@ export class Backup extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupPlan.html
    */
@@ -224,6 +238,32 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new tiering configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateTieringConfiguration.html
+   */
+  public toCreateTieringConfiguration() {
+    return this.to('CreateTieringConfiguration');
+  }
+
+  /**
+   * Grants permission to delete the access point
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
+   */
+  public toDeleteBackupAccessPoint() {
+    return this.to('DeleteBackupAccessPoint');
+  }
+
+  /**
    * Grants permission to delete a backup plan
    *
    * Access Level: Write
@@ -356,6 +396,28 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a tiering configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteTieringConfiguration.html
+   */
+  public toDeleteTieringConfiguration() {
+    return this.to('DeleteTieringConfiguration');
+  }
+
+  /**
+   * Grants permission to return information about the specified access point
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html
+   */
+  public toDescribeBackupAccessPoint() {
+    return this.to('DescribeBackupAccessPoint');
+  }
+
+  /**
    * Grants permission to describe a backup job
    *
    * Access Level: Read
@@ -474,6 +536,17 @@ export class Backup extends PolicyStatement {
    */
   public toDescribeRestoreJob() {
     return this.to('DescribeRestoreJob');
+  }
+
+  /**
+   * Grants permission to describe a scan job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeScanJob.html
+   */
+  public toDescribeScanJob() {
+    return this.to('DescribeScanJob');
   }
 
   /**
@@ -683,6 +756,17 @@ export class Backup extends PolicyStatement {
    */
   public toGetSupportedResourceTypes() {
     return this.to('GetSupportedResourceTypes');
+  }
+
+  /**
+   * Grants permission to describe a tiering configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetTieringConfiguration.html
+   */
+  public toGetTieringConfiguration() {
+    return this.to('GetTieringConfiguration');
   }
 
   /**
@@ -972,6 +1056,28 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list scan job summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListScanJobSummaries.html
+   */
+  public toListScanJobSummaries() {
+    return this.to('ListScanJobSummaries');
+  }
+
+  /**
+   * Grants permission to list scan jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListScanJobs.html
+   */
+  public toListScanJobs() {
+    return this.to('ListScanJobs');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -980,6 +1086,17 @@ export class Backup extends PolicyStatement {
    */
   public toListTags() {
     return this.to('ListTags');
+  }
+
+  /**
+   * Grants permission to list tiering configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTieringConfigurations.html
+   */
+  public toListTieringConfigurations() {
+    return this.to('ListTieringConfigurations');
   }
 
   /**
@@ -1118,6 +1235,20 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a new scan job
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartScanJob.html
+   */
+  public toStartScanJob() {
+    return this.to('StartScanJob');
+  }
+
+  /**
    * Grants permission to stop a backup job
    *
    * Access Level: Write
@@ -1161,6 +1292,9 @@ export class Backup extends PolicyStatement {
    * Grants permission to update a backup plan
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html
    */
@@ -1265,12 +1399,24 @@ export class Backup extends PolicyStatement {
     return this.to('UpdateRestoreTestingSelection');
   }
 
+  /**
+   * Grants permission to update a tiering configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateTieringConfiguration.html
+   */
+  public toUpdateTieringConfiguration() {
+    return this.to('UpdateTieringConfiguration');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateBackupVaultMpaApprovalTeam',
       'CancelLegalHold',
       'CopyFromBackupVault',
       'CopyIntoBackupVault',
+      'CreateBackupAccessPoint',
       'CreateBackupPlan',
       'CreateBackupSelection',
       'CreateBackupVault',
@@ -1281,6 +1427,8 @@ export class Backup extends PolicyStatement {
       'CreateRestoreAccessBackupVault',
       'CreateRestoreTestingPlan',
       'CreateRestoreTestingSelection',
+      'CreateTieringConfiguration',
+      'DeleteBackupAccessPoint',
       'DeleteBackupPlan',
       'DeleteBackupSelection',
       'DeleteBackupVault',
@@ -1291,6 +1439,7 @@ export class Backup extends PolicyStatement {
       'DeleteReportPlan',
       'DeleteRestoreTestingPlan',
       'DeleteRestoreTestingSelection',
+      'DeleteTieringConfiguration',
       'DisassociateBackupVaultMpaApprovalTeam',
       'DisassociateRecoveryPoint',
       'DisassociateRecoveryPointFromParent',
@@ -1302,6 +1451,7 @@ export class Backup extends PolicyStatement {
       'StartCopyJob',
       'StartReportJob',
       'StartRestoreJob',
+      'StartScanJob',
       'StopBackupJob',
       'UpdateBackupPlan',
       'UpdateFramework',
@@ -1311,7 +1461,8 @@ export class Backup extends PolicyStatement {
       'UpdateRegionSettings',
       'UpdateReportPlan',
       'UpdateRestoreTestingPlan',
-      'UpdateRestoreTestingSelection'
+      'UpdateRestoreTestingSelection',
+      'UpdateTieringConfiguration'
     ],
     'Permissions management': [
       'DeleteBackupVaultAccessPolicy',
@@ -1322,6 +1473,7 @@ export class Backup extends PolicyStatement {
       'SearchRecoveryPoint'
     ],
     Read: [
+      'DescribeBackupAccessPoint',
       'DescribeBackupJob',
       'DescribeBackupVault',
       'DescribeCopyJob',
@@ -1333,6 +1485,7 @@ export class Backup extends PolicyStatement {
       'DescribeReportJob',
       'DescribeReportPlan',
       'DescribeRestoreJob',
+      'DescribeScanJob',
       'ExportBackupPlanTemplate',
       'GetBackupPlan',
       'GetBackupPlanFromJSON',
@@ -1349,6 +1502,7 @@ export class Backup extends PolicyStatement {
       'GetRestoreTestingPlan',
       'GetRestoreTestingSelection',
       'GetSupportedResourceTypes',
+      'GetTieringConfiguration',
       'ListTags'
     ],
     List: [
@@ -1376,7 +1530,10 @@ export class Backup extends PolicyStatement {
       'ListRestoreJobs',
       'ListRestoreJobsByProtectedResource',
       'ListRestoreTestingPlans',
-      'ListRestoreTestingSelections'
+      'ListRestoreTestingSelections',
+      'ListScanJobSummaries',
+      'ListScanJobs',
+      'ListTieringConfigurations'
     ],
     Tagging: [
       'TagResource',
@@ -1507,6 +1664,24 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type tieringConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/tiering-configuration.html
+   *
+   * @param tieringConfigurationName - Identifier for the tieringConfigurationName.
+   * @param tieringConfigurationId - Identifier for the tieringConfigurationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTieringConfiguration(tieringConfigurationName: string, tieringConfigurationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:backup:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tiering-configuration:${ tieringConfigurationName }-${ tieringConfigurationId }`);
+  }
+
+  /**
    * Filters access by the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1521,6 +1696,7 @@ export class Backup extends PolicyStatement {
    * - .toCreateReportPlan()
    * - .toCreateRestoreAccessBackupVault()
    * - .toCreateRestoreTestingPlan()
+   * - .toCreateTieringConfiguration()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1544,6 +1720,7 @@ export class Backup extends PolicyStatement {
    * - reportPlan
    * - legalHold
    * - restoreTestingPlan
+   * - tieringConfiguration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1567,6 +1744,7 @@ export class Backup extends PolicyStatement {
    * - .toCreateReportPlan()
    * - .toCreateRestoreAccessBackupVault()
    * - .toCreateRestoreTestingPlan()
+   * - .toCreateTieringConfiguration()
    * - .toTagResource()
    * - .toUntagResource()
    *

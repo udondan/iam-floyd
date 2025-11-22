@@ -1,12 +1,15 @@
+iam:AcceptDelegationRequest;Write
 iam:AddClientIDToOpenIDConnectProvider;Write
 iam:AddRoleToInstanceProfile;Write
 iam:AddUserToGroup;Write
+iam:AssociateDelegationRequest;Write
 iam:AttachGroupPolicy;Permissions management
 iam:AttachRolePolicy;Permissions management
 iam:AttachUserPolicy;Permissions management
 iam:ChangePassword;Write
 iam:CreateAccessKey;Write
 iam:CreateAccountAlias;Write
+iam:CreateDelegationRequest;Write
 iam:CreateGroup;Write
 iam:CreateInstanceProfile;Write
 iam:CreateLoginProfile;Write
@@ -49,9 +52,11 @@ iam:DetachRolePolicy;Permissions management
 iam:DetachUserPolicy;Permissions management
 iam:DisableOrganizationsRootCredentialsManagement;Write
 iam:DisableOrganizationsRootSessions;Write
+iam:DisableOutboundWebIdentityFederation;Write
 iam:EnableMFADevice;Write
 iam:EnableOrganizationsRootCredentialsManagement;Write
 iam:EnableOrganizationsRootSessions;Write
+iam:EnableOutboundWebIdentityFederation;Write
 iam:GenerateCredentialReport;Read
 iam:GenerateOrganizationsAccessReport;Read
 iam:GenerateServiceLastAccessedDetails;Read
@@ -65,13 +70,16 @@ iam:GetCloudFrontPublicKey;Read
 iam:GetContextKeysForCustomPolicy;Read
 iam:GetContextKeysForPrincipalPolicy;Read
 iam:GetCredentialReport;Read
+iam:GetDelegationRequest;Read
 iam:GetGroup;Read
 iam:GetGroupPolicy;Read
+iam:GetHumanReadableSummary;Read
 iam:GetInstanceProfile;Read
 iam:GetLoginProfile;List
 iam:GetMFADevice;Read
 iam:GetOpenIDConnectProvider;Read
 iam:GetOrganizationsAccessReport;Read
+iam:GetOutboundWebIdentityFederationInfo;Read
 iam:GetPolicy;Read
 iam:GetPolicyVersion;Read
 iam:GetRole;Read
@@ -90,6 +98,7 @@ iam:ListAttachedGroupPolicies;List
 iam:ListAttachedRolePolicies;List
 iam:ListAttachedUserPolicies;List
 iam:ListCloudFrontPublicKeys;List
+iam:ListDelegationRequests;List
 iam:ListEntitiesForPolicy;List
 iam:ListGroupPolicies;List
 iam:ListGroups;List
@@ -127,11 +136,13 @@ iam:PutRolePermissionsBoundary;Permissions management
 iam:PutRolePolicy;Permissions management
 iam:PutUserPermissionsBoundary;Permissions management
 iam:PutUserPolicy;Permissions management
+iam:RejectDelegationRequest;Write
 iam:RemoveClientIDFromOpenIDConnectProvider;Write
 iam:RemoveRoleFromInstanceProfile;Write
 iam:RemoveUserFromGroup;Write
 iam:ResetServiceSpecificCredential;Write
 iam:ResyncMFADevice;Write
+iam:SendDelegationToken;Write
 iam:SetDefaultPolicyVersion;Permissions management
 iam:SetSTSRegionalEndpointStatus;Write
 iam:SetSecurityTokenServicePreferences;Write

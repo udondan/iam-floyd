@@ -318,6 +318,17 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return all related events for a specified operation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeEvents.html
+   */
+  public toDescribeEvents() {
+    return this.to('DescribeEvents');
+  }
+
+  /**
    * Grants permission to describe a generated template. The output includes details about the progress of the creation of a generated template
    *
    * Access Level: Read
@@ -1193,6 +1204,7 @@ export class Cloudformation extends PolicyStatement {
       'DescribeAccountLimits',
       'DescribeChangeSet',
       'DescribeChangeSetHooks',
+      'DescribeEvents',
       'DescribeGeneratedTemplate',
       'DescribeOrganizationsAccess',
       'DescribePublisher',

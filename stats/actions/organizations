@@ -21,6 +21,7 @@ organizations:DescribeOrganization;Read
 organizations:DescribeOrganizationalUnit;Read
 organizations:DescribePolicy;Read
 organizations:DescribeResourcePolicy;Read
+organizations:DescribeResponsibilityTransfer;Read
 organizations:DetachPolicy;Write
 organizations:DisableAWSServiceAccess;Write
 organizations:DisablePolicyType;Write
@@ -28,6 +29,7 @@ organizations:EnableAWSServiceAccess;Write
 organizations:EnableAllFeatures;Write
 organizations:EnablePolicyType;Write
 organizations:InviteAccountToOrganization;Write
+organizations:InviteOrganizationToTransferResponsibility;Write
 organizations:LeaveOrganization;Write
 organizations:ListAWSServiceAccessForOrganization;List
 organizations:ListAccounts;List
@@ -40,7 +42,9 @@ organizations:ListDelegatedServicesForAccount;List
 organizations:ListEffectivePolicyValidationErrors;List
 organizations:ListHandshakesForAccount;List
 organizations:ListHandshakesForOrganization;List
+organizations:ListInboundResponsibilityTransfers;List
 organizations:ListOrganizationalUnitsForParent;List
+organizations:ListOutboundResponsibilityTransfers;List
 organizations:ListParents;List
 organizations:ListPolicies;List
 organizations:ListPoliciesForTarget;List
@@ -52,6 +56,8 @@ organizations:PutResourcePolicy;Write
 organizations:RegisterDelegatedAdministrator;Write
 organizations:RemoveAccountFromOrganization;Write
 organizations:TagResource;Tagging
+organizations:TerminateResponsibilityTransfer;Write
 organizations:UntagResource;Tagging
 organizations:UpdateOrganizationalUnit;Write
 organizations:UpdatePolicy;Write
+organizations:UpdateResponsibilityTransfer;Write
