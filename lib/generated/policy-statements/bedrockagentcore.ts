@@ -239,6 +239,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifKmsKeyArn()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -1630,6 +1631,21 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public ifInboundJwtClaimSub(value: string | string[], operator?: Operator | string) {
     return this.if(`InboundJwtClaim/sub`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by KMS Key arn provided
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-kmsKeyArn
+   *
+   * Applies to actions:
+   * - .toCreateMemory()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`KmsKeyArn`, value, operator ?? 'StringLike');
   }
 
   /**

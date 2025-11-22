@@ -1,4 +1,5 @@
 quicksight:AccountConfigurations;Write
+quicksight:AllowVendedLogDeliveryForResource;Permissions management
 quicksight:BatchCreateTopicReviewedAnswer;Write
 quicksight:BatchDeleteTopicReviewedAnswer;Write
 quicksight:CancelIngestion;Write

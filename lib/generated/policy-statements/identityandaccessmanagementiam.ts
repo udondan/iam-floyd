@@ -19,6 +19,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Accepts a delegation request resource, granting the requested temporary access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcceptDelegationRequest.html
+   */
+  public toAcceptDelegationRequest() {
+    return this.to('AcceptDelegationRequest');
+  }
+
+  /**
    * Grants permission to add a new client ID (audience) to the list of registered IDs for the specified IAM OpenID Connect (OIDC) provider resource
    *
    * Access Level: Write
@@ -52,6 +63,17 @@ export class Iam extends PolicyStatement {
    */
   public toAddUserToGroup() {
     return this.to('AddUserToGroup');
+  }
+
+  /**
+   * Associates a delegation request resource with the calling identity
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssociateDelegationRequest.html
+   */
+  public toAssociateDelegationRequest() {
+    return this.to('AssociateDelegationRequest');
   }
 
   /**
@@ -129,6 +151,22 @@ export class Iam extends PolicyStatement {
    */
   public toCreateAccountAlias() {
     return this.to('CreateAccountAlias');
+  }
+
+  /**
+   * Creates an IAM delegation request resource for temporary access delegation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDelegationDuration()
+   * - .ifNotificationChannel()
+   * - .ifTemplateArn()
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateDelegationRequest.html
+   */
+  public toCreateDelegationRequest() {
+    return this.to('CreateDelegationRequest');
   }
 
   /**
@@ -437,6 +475,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRole.html
    */
   public toDeleteRole() {
@@ -657,6 +698,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Disables the outbound identity federation feature for the callers account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html
+   */
+  public toDisableOutboundWebIdentityFederation() {
+    return this.to('DisableOutboundWebIdentityFederation');
+  }
+
+  /**
    * Grants permission to enable an MFA device and associate it with the specified IAM user
    *
    * Access Level: Write
@@ -693,6 +745,17 @@ export class Iam extends PolicyStatement {
    */
   public toEnableOrganizationsRootSessions() {
     return this.to('EnableOrganizationsRootSessions');
+  }
+
+  /**
+   * Enables the outbound identity federation feature for the callers account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableOutboundWebIdentityFederation.html
+   */
+  public toEnableOutboundWebIdentityFederation() {
+    return this.to('EnableOutboundWebIdentityFederation');
   }
 
   /**
@@ -850,6 +913,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Retrieves information about a specific delegation request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html
+   */
+  public toGetDelegationRequest() {
+    return this.to('GetDelegationRequest');
+  }
+
+  /**
    * Grants permission to retrieve a list of IAM users in the specified IAM group
    *
    * Access Level: Read
@@ -869,6 +943,17 @@ export class Iam extends PolicyStatement {
    */
   public toGetGroupPolicy() {
     return this.to('GetGroupPolicy');
+  }
+
+  /**
+   * Retrieves a human readable summary for a given entity. At this time, only delegation request are supported
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetHumanReadableSummary.html
+   */
+  public toGetHumanReadableSummary() {
+    return this.to('GetHumanReadableSummary');
   }
 
   /**
@@ -927,6 +1012,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Retrieves the configuration information for the outbound identity federation feature for the callers account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOutboundWebIdentityFederationInfo.html
+   */
+  public toGetOutboundWebIdentityFederationInfo() {
+    return this.to('GetOutboundWebIdentityFederationInfo');
+  }
+
+  /**
    * Grants permission to retrieve information about the specified managed policy, including the policy's default version and the total number of identities to which the policy is attached
    *
    * Access Level: Read
@@ -952,6 +1048,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to retrieve information about the specified role, including the role's path, GUID, ARN, and the role's trust policy
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html
    */
@@ -1122,6 +1221,20 @@ export class Iam extends PolicyStatement {
    */
   public toListCloudFrontPublicKeys() {
     return this.to('ListCloudFrontPublicKeys');
+  }
+
+  /**
+   * Lists delegation requests based on the specified criteria
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifDelegationRequestOwner()
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListDelegationRequests.html
+   */
+  public toListDelegationRequests() {
+    return this.to('ListDelegationRequests');
   }
 
   /**
@@ -1548,6 +1661,17 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Rejects a delegation request, denying the requested temporary access
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_RejectDelegationRequest.html
+   */
+  public toRejectDelegationRequest() {
+    return this.to('RejectDelegationRequest');
+  }
+
+  /**
    * Grants permission to remove the client ID (audience) from the list of client IDs in the specified IAM OpenID Connect (OIDC) provider resource
    *
    * Access Level: Write
@@ -1603,6 +1727,17 @@ export class Iam extends PolicyStatement {
    */
   public toResyncMFADevice() {
     return this.to('ResyncMFADevice');
+  }
+
+  /**
+   * Sends the exchange token for an accepted delegation request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/IAM/latest/APIReference/API_SendDelegationToken.html
+   */
+  public toSendDelegationToken() {
+    return this.to('SendDelegationToken');
   }
 
   /**
@@ -1941,6 +2076,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html
    */
   public toUpdateAssumeRolePolicy() {
@@ -1996,6 +2134,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
+   *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html
    */
   public toUpdateRole() {
@@ -2006,6 +2147,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to update only the description of a role
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html
    */
@@ -2132,12 +2276,15 @@ export class Iam extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptDelegationRequest',
       'AddClientIDToOpenIDConnectProvider',
       'AddRoleToInstanceProfile',
       'AddUserToGroup',
+      'AssociateDelegationRequest',
       'ChangePassword',
       'CreateAccessKey',
       'CreateAccountAlias',
+      'CreateDelegationRequest',
       'CreateGroup',
       'CreateInstanceProfile',
       'CreateLoginProfile',
@@ -2167,15 +2314,19 @@ export class Iam extends PolicyStatement {
       'DeleteVirtualMFADevice',
       'DisableOrganizationsRootCredentialsManagement',
       'DisableOrganizationsRootSessions',
+      'DisableOutboundWebIdentityFederation',
       'EnableMFADevice',
       'EnableOrganizationsRootCredentialsManagement',
       'EnableOrganizationsRootSessions',
+      'EnableOutboundWebIdentityFederation',
       'PassRole',
+      'RejectDelegationRequest',
       'RemoveClientIDFromOpenIDConnectProvider',
       'RemoveRoleFromInstanceProfile',
       'RemoveUserFromGroup',
       'ResetServiceSpecificCredential',
       'ResyncMFADevice',
+      'SendDelegationToken',
       'SetSTSRegionalEndpointStatus',
       'SetSecurityTokenServicePreferences',
       'UpdateAccessKey',
@@ -2237,12 +2388,15 @@ export class Iam extends PolicyStatement {
       'GetContextKeysForCustomPolicy',
       'GetContextKeysForPrincipalPolicy',
       'GetCredentialReport',
+      'GetDelegationRequest',
       'GetGroup',
       'GetGroupPolicy',
+      'GetHumanReadableSummary',
       'GetInstanceProfile',
       'GetMFADevice',
       'GetOpenIDConnectProvider',
       'GetOrganizationsAccessReport',
+      'GetOutboundWebIdentityFederationInfo',
       'GetPolicy',
       'GetPolicyVersion',
       'GetRole',
@@ -2267,6 +2421,7 @@ export class Iam extends PolicyStatement {
       'ListAttachedRolePolicies',
       'ListAttachedUserPolicies',
       'ListCloudFrontPublicKeys',
+      'ListDelegationRequests',
       'ListEntitiesForPolicy',
       'ListGroupPolicies',
       'ListGroups',
@@ -2516,6 +2671,22 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type delegation-request to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html
+   *
+   * @param delegationRequestId - Identifier for the delegationRequestId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifDelegationRequestOwner()
+   */
+  public onDelegationRequest(delegationRequestId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:delegation-request/${ delegationRequestId }`);
+  }
+
+  /**
    * Filters access based on the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -2638,6 +2809,39 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Filters access based on the requested delegation duration
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_DelegationDuration
+   *
+   * Applies to actions:
+   * - .toCreateDelegationRequest()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDelegationDuration(value: string | string[], operator?: Operator | string) {
+    return this.if(`DelegationDuration`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access based on the delegation request owner
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_DelegationRequestOwner
+   *
+   * Applies to actions:
+   * - .toListDelegationRequests()
+   *
+   * Applies to resource types:
+   * - delegation-request
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDelegationRequestOwner(value: string | string[], operator?: Operator | string) {
+    return this.if(`DelegationRequestOwner`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by the MFA device FIPS-140-2 validation certification level at the time of registration of a FIDO security key
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_FIDO-FIPS-140-2-certification
@@ -2683,6 +2887,21 @@ export class Iam extends PolicyStatement {
   }
 
   /**
+   * Filters access based on the requested notification channel
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_NotificationChannel
+   *
+   * Applies to actions:
+   * - .toCreateDelegationRequest()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifNotificationChannel(value: string | string[], operator?: Operator | string) {
+    return this.if(`NotificationChannel`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the ID of an AWS Organizations policy
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_OrganizationsPolicyId
@@ -2722,16 +2941,21 @@ export class Iam extends PolicyStatement {
    * - .toAttachUserPolicy()
    * - .toCreateRole()
    * - .toCreateUser()
+   * - .toDeleteRole()
    * - .toDeleteRolePermissionsBoundary()
    * - .toDeleteRolePolicy()
    * - .toDeleteUserPermissionsBoundary()
    * - .toDeleteUserPolicy()
    * - .toDetachRolePolicy()
    * - .toDetachUserPolicy()
+   * - .toGetRole()
    * - .toPutRolePermissionsBoundary()
    * - .toPutRolePolicy()
    * - .toPutUserPermissionsBoundary()
    * - .toPutUserPolicy()
+   * - .toUpdateAssumeRolePolicy()
+   * - .toUpdateRole()
+   * - .toUpdateRoleDescription()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -2823,5 +3047,20 @@ export class Iam extends PolicyStatement {
    */
   public ifServiceSpecificCredentialServiceName(value: string | string[], operator?: Operator | string) {
     return this.if(`ServiceSpecificCredentialServiceName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access based on the requested template ARN
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_TemplateArn
+   *
+   * Applies to actions:
+   * - .toCreateDelegationRequest()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifTemplateArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`TemplateArn`, value, operator ?? 'ArnLike');
   }
 }

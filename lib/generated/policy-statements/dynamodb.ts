@@ -1227,6 +1227,30 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Filters access by the first partition key of the table
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFirstPartitionKeyValues(value: string | string[], operator?: Operator | string) {
+    return this.if(`FirstPartitionKeyValues`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the forth partition key of the table
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFourthPartitionKeyValues(value: string | string[], operator?: Operator | string) {
+    return this.if(`FourthPartitionKeyValues`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by blocking full table scan
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-iam.html
@@ -1241,7 +1265,7 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Filters access by the partition key of the table
+   * Filters access by the first partition key of the table
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
@@ -1312,6 +1336,18 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Filters access by the second partition key of the table
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecondPartitionKeyValues(value: string | string[], operator?: Operator | string) {
+    return this.if(`SecondPartitionKeyValues`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the Select parameter of a Query or Scan request
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
@@ -1328,5 +1364,17 @@ export class Dynamodb extends PolicyStatement {
    */
   public ifSelect(value: string | string[], operator?: Operator | string) {
     return this.if(`Select`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the third partition key of the table
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifThirdPartitionKeyValues(value: string | string[], operator?: Operator | string) {
+    return this.if(`ThirdPartitionKeyValues`, value, operator ?? 'StringLike');
   }
 }

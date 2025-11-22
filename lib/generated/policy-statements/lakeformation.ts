@@ -380,6 +380,28 @@ export class Lakeformation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get temporary credentials to access Glue partition data through Lake Formation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetTemporaryGluePartitionCredentials.html
+   */
+  public toGetTemporaryGluePartitionCredentials() {
+    return this.to('GetTemporaryGluePartitionCredentials');
+  }
+
+  /**
+   * Grants permission to get temporary credentials to access Glue table data through Lake Formation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetTemporaryGlueTableCredentials.html
+   */
+  public toGetTemporaryGlueTableCredentials() {
+    return this.to('GetTemporaryGlueTableCredentials');
+  }
+
+  /**
    * Grants permission to retrieve the results for the given work units
    *
    * Access Level: Read
@@ -738,6 +760,8 @@ export class Lakeformation extends PolicyStatement {
       'GetQueryStatistics',
       'GetResourceLFTags',
       'GetTableObjects',
+      'GetTemporaryGluePartitionCredentials',
+      'GetTemporaryGlueTableCredentials',
       'GetWorkUnitResults',
       'GetWorkUnits',
       'ListLFTagExpressions',

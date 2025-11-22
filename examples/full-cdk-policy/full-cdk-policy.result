@@ -60,13 +60,16 @@
                 "organizations:EnableAllFeatures",
                 "organizations:EnablePolicyType",
                 "organizations:InviteAccountToOrganization",
+                "organizations:InviteOrganizationToTransferResponsibility",
                 "organizations:LeaveOrganization",
                 "organizations:MoveAccount",
                 "organizations:PutResourcePolicy",
                 "organizations:RegisterDelegatedAdministrator",
                 "organizations:RemoveAccountFromOrganization",
+                "organizations:TerminateResponsibilityTransfer",
                 "organizations:UpdateOrganizationalUnit",
-                "organizations:UpdatePolicy"
+                "organizations:UpdatePolicy",
+                "organizations:UpdateResponsibilityTransfer"
             ],
             "Resource": "*",
             "Effect": "Deny"

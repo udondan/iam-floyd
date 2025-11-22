@@ -3,6 +3,7 @@ s3:AccessGrantsInstanceArn
 s3:AccessGrantsLocationScope
 s3:AccessPointNetworkOrigin
 s3:AccessPointTag/${TagKey}
+s3:BucketTag/${TagKey}
 s3:DataAccessPointAccount
 s3:DataAccessPointArn
 s3:ExistingJobOperation

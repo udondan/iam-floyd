@@ -1,4 +1,6 @@
 license-manager:grant
 license-manager:license
+license-manager:license-asset-group
+license-manager:license-asset-ruleset
 license-manager:license-configuration
 license-manager:report-generator

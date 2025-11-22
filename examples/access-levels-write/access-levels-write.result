@@ -23,6 +23,7 @@
         "s3:PutAccelerateConfiguration",
         "s3:PutAccessPointConfigurationForObjectLambda",
         "s3:PutAnalyticsConfiguration",
+        "s3:PutBucketAbac",
         "s3:PutBucketCORS",
         "s3:PutBucketLogging",
         "s3:PutBucketNotification",

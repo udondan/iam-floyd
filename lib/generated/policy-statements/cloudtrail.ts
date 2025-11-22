@@ -327,7 +327,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list event configurations that are configured for an event data store
+   * Grants permission to list event configurations that are configured for a trail or an event data store
    *
    * Access Level: Read
    *
@@ -511,6 +511,17 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve data captured by CloudTrail Insights
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListInsightsData.html
+   */
+  public toListInsightsData() {
+    return this.to('ListInsightsData');
+  }
+
+  /**
    * Grants permission to list the public keys whose private keys were used to sign trail digest files within a specified time range
    *
    * Access Level: Read
@@ -577,7 +588,7 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create and update event configurations for an event data store
+   * Grants permission to create and update event configurations for a trail or an event data store
    *
    * Access Level: Write
    *
@@ -913,6 +924,7 @@ export class Cloudtrail extends PolicyStatement {
       'ListDashboards',
       'ListEventDataStores',
       'ListImports',
+      'ListInsightsData',
       'ListQueries',
       'ListServiceLinkedChannels',
       'ListTrails'

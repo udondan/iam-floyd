@@ -23,6 +23,10 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -36,6 +40,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to create a member to a group in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -68,6 +75,11 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
+   * - .ifReservedUserId()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -82,6 +94,10 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -95,6 +111,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to remove a member that is part of a group in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -121,6 +140,10 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -134,6 +157,10 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve information about a group in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -149,6 +176,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -162,6 +192,10 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve information about user in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -177,6 +211,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -190,6 +227,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to retrieve ID information of a member which is part of a group in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -205,6 +245,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -218,6 +261,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to check if a member is a part of groups in the specified IdentityStore
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -233,6 +279,9 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -246,6 +295,9 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to list groups of the target member in the specified IdentityStore
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -261,6 +313,10 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -275,6 +331,10 @@ export class Identitystore extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
+   *
    * Dependent actions:
    * - kms:Decrypt
    *
@@ -288,6 +348,10 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to update information about a group in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifGroupExternalIdIssuers()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -319,6 +383,10 @@ export class Identitystore extends PolicyStatement {
    * Grants permission to update user information in the specified IdentityStore
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   * - .ifUserExternalIdIssuers()
    *
    * Dependent actions:
    * - kms:Decrypt
@@ -446,7 +514,97 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
-   * Filters access by IAM Identity Center User ID
+   * Filters access by Issuer present in ExternalIds for Group resources
+   *
+   * Applies to actions:
+   * - .toCreateGroup()
+   * - .toDeleteGroup()
+   * - .toDescribeGroup()
+   * - .toListGroups()
+   * - .toUpdateGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifGroupExternalIdIssuers(value: string | string[], operator?: Operator | string) {
+    return this.if(`GroupExternalIdIssuers`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by Identity Store ARN
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/condition-context-keys-sts-idc.html#condition-keys-identity-store-arn
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifIdentityStoreArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`IdentityStoreArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by Primary Region of Identity Store
+   *
+   * Applies to actions:
+   * - .toCreateGroup()
+   * - .toCreateGroupMembership()
+   * - .toCreateUser()
+   * - .toDeleteGroup()
+   * - .toDeleteGroupMembership()
+   * - .toDeleteUser()
+   * - .toDescribeGroup()
+   * - .toDescribeGroupMembership()
+   * - .toDescribeUser()
+   * - .toGetGroupId()
+   * - .toGetGroupMembershipId()
+   * - .toGetUserId()
+   * - .toIsMemberInGroups()
+   * - .toListGroupMemberships()
+   * - .toListGroupMembershipsForMember()
+   * - .toListGroups()
+   * - .toListUsers()
+   * - .toUpdateGroup()
+   * - .toUpdateUser()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrimaryRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`PrimaryRegion`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a previously reserved User ID for CreateUser operation
+   *
+   * Applies to actions:
+   * - .toCreateUser()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifReservedUserId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ReservedUserId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by Issuer present in ExternalIds for User resources
+   *
+   * Applies to actions:
+   * - .toCreateUser()
+   * - .toDeleteUser()
+   * - .toDescribeUser()
+   * - .toListUsers()
+   * - .toUpdateUser()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifUserExternalIdIssuers(value: string | string[], operator?: Operator | string) {
+    return this.if(`UserExternalIdIssuers`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by Identity Store User ID
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/condition-context-keys-sts-idc.html#condition-keys-identity-store-user-id
    *

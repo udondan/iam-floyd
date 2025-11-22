@@ -797,6 +797,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve findings trends
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingsTrendsV2.html
+   */
+  public toGetFindingsTrendsV2() {
+    return this.to('GetFindingsTrendsV2');
+  }
+
+  /**
    * Grants permission to retrieve the end date for an account's free trial of Security Hub
    *
    * Access Level: Read
@@ -893,6 +904,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toGetResourcesStatisticsV2() {
     return this.to('GetResourcesStatisticsV2');
+  }
+
+  /**
+   * Grants permission to retrieve resources trends
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetResourcesTrendsV2.html
+   */
+  public toGetResourcesTrendsV2() {
+    return this.to('GetResourcesTrendsV2');
   }
 
   /**
@@ -1399,6 +1421,7 @@ export class Securityhub extends PolicyStatement {
       'GetFindingAggregator',
       'GetFindingHistory',
       'GetFindings',
+      'GetFindingsTrendsV2',
       'GetFreeTrialEndDate',
       'GetFreeTrialUsage',
       'GetInsightFindingTrend',
@@ -1407,6 +1430,7 @@ export class Securityhub extends PolicyStatement {
       'GetMasterAccount',
       'GetMembers',
       'GetResourcesStatisticsV2',
+      'GetResourcesTrendsV2',
       'GetResourcesV2',
       'GetSecurityControlDefinition',
       'GetUsage',

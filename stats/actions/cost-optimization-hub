@@ -1,5 +1,6 @@
 cost-optimization-hub:GetPreferences;Read
 cost-optimization-hub:GetRecommendation;Read
+cost-optimization-hub:ListEfficiencyMetrics;List
 cost-optimization-hub:ListEnrollmentStatuses;List
 cost-optimization-hub:ListRecommendationSummaries;List
 cost-optimization-hub:ListRecommendations;List

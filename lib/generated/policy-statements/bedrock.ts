@@ -1601,6 +1601,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke a call to Sync API of Bedrock data automation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomation.html
+   */
+  public toInvokeDataAutomation() {
+    return this.to('InvokeDataAutomation');
+  }
+
+  /**
    * Grants permission to invoke a Bedrock data automation job
    *
    * Access Level: Write
@@ -1652,6 +1663,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifGuardrailIdentifier()
    * - .ifBearerTokenType()
+   * - .ifServiceTier()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html
    */
@@ -1669,6 +1681,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifPromptRouterArn()
    * - .ifGuardrailIdentifier()
    * - .ifBearerTokenType()
+   * - .ifServiceTier()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html
    */
@@ -2802,6 +2815,7 @@ export class Bedrock extends PolicyStatement {
       'IngestKnowledgeBaseDocuments',
       'InvokeBlueprintRecommendationAsync',
       'InvokeBuilder',
+      'InvokeDataAutomation',
       'InvokeDataAutomationAsync',
       'PrepareAgent',
       'PrepareFlow',
@@ -3683,6 +3697,22 @@ export class Bedrock extends PolicyStatement {
    */
   public ifPromptRouterArn(value: string | string[], operator?: Operator | string) {
     return this.if(`PromptRouterArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the specified ServiceTier
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
+   *
+   * Applies to actions:
+   * - .toInvokeModel()
+   * - .toInvokeModelWithResponseStream()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServiceTier(value: string | string[], operator?: Operator | string) {
+    return this.if(`ServiceTier`, value, operator ?? 'StringLike');
   }
 
   /**

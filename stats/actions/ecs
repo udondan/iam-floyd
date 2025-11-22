@@ -1,11 +1,13 @@
 ecs:CreateCapacityProvider;Write
 ecs:CreateCluster;Write
+ecs:CreateExpressGatewayService;Write
 ecs:CreateService;Write
 ecs:CreateTaskSet;Write
 ecs:DeleteAccountSetting;Write
 ecs:DeleteAttributes;Write
 ecs:DeleteCapacityProvider;Write
 ecs:DeleteCluster;Write
+ecs:DeleteExpressGatewayService;Write
 ecs:DeleteService;Write
 ecs:DeleteTaskDefinitions;Write
 ecs:DeleteTaskSet;Write
@@ -14,6 +16,7 @@ ecs:DeregisterTaskDefinition;Write
 ecs:DescribeCapacityProviders;Read
 ecs:DescribeClusters;Read
 ecs:DescribeContainerInstances;Read
+ecs:DescribeExpressGatewayService;Read
 ecs:DescribeServiceDeployments;Read
 ecs:DescribeServiceRevisions;Read
 ecs:DescribeServices;Read
@@ -57,6 +60,7 @@ ecs:UpdateCluster;Write
 ecs:UpdateClusterSettings;Write
 ecs:UpdateContainerAgent;Write
 ecs:UpdateContainerInstancesState;Write
+ecs:UpdateExpressGatewayService;Write
 ecs:UpdateService;Write
 ecs:UpdateServicePrimaryTaskSet;Write
 ecs:UpdateTaskProtection;Write

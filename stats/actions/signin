@@ -1,2 +1,4 @@
+signin:AuthorizeOAuth2Access;Read
+signin:CreateOAuth2Token;Read
 signin:CreateTrustedIdentityPropagationApplicationForConsole;Write
 signin:ListTrustedIdentityPropagationApplicationsForConsole;List

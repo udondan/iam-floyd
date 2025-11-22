@@ -308,6 +308,38 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return metadata details about a specific Kafka topic
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kafka-cluster:Connect
+   * - kafka-cluster:DescribeTopic
+   * - kafka-cluster:DescribeTopicDynamicConfiguration
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html
+   */
+  public toDescribeTopic() {
+    return this.to('DescribeTopic');
+  }
+
+  /**
+   * Grants permission to list all partitions of a specific topic
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kafka-cluster:Connect
+   * - kafka-cluster:DescribeTopic
+   * - kafka-cluster:DescribeTopicDynamicConfiguration
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname-partitions.html
+   */
+  public toDescribeTopicPartitions() {
+    return this.to('DescribeTopicPartitions');
+  }
+
+  /**
    * Grants permission to describe a MSK VPC connection
    *
    * Access Level: Read
@@ -484,6 +516,21 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all Kafka topics for a specified MSK cluster
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kafka-cluster:Connect
+   * - kafka-cluster:DescribeTopic
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics.html
+   */
+  public toListTopics() {
+    return this.to('ListTopics');
+  }
+
+  /**
    * Grants permission to list all MSK VPC connections that this account uses
    *
    * Access Level: List
@@ -652,11 +699,11 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the rebalancing status of the MSK cluster
+   * Grants permission to update the intelligent rebalancing status of the MSK cluster
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#UpdateRebalancing
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-rebalancing.html
    */
   public toUpdateRebalancing() {
     return this.to('UpdateRebalancing');
@@ -736,6 +783,8 @@ export class Kafka extends PolicyStatement {
       'DescribeConfiguration',
       'DescribeConfigurationRevision',
       'DescribeReplicator',
+      'DescribeTopic',
+      'DescribeTopicPartitions',
       'DescribeVpcConnection',
       'GetBootstrapBrokers',
       'GetClusterPolicy',
@@ -754,6 +803,7 @@ export class Kafka extends PolicyStatement {
       'ListNodes',
       'ListReplicators',
       'ListScramSecrets',
+      'ListTopics',
       'ListVpcConnections'
     ],
     Tagging: [

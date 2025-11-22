@@ -6,6 +6,7 @@ logs:CreateLogAnomalyDetector;Write
 logs:CreateLogDelivery;Write
 logs:CreateLogGroup;Write
 logs:CreateLogStream;Write
+logs:CreateScheduledQuery;Write
 logs:DeleteAccountPolicy;Write
 logs:DeleteDataProtectionPolicy;Write
 logs:DeleteDelivery;Write
@@ -23,6 +24,7 @@ logs:DeleteMetricFilter;Write
 logs:DeleteQueryDefinition;Write
 logs:DeleteResourcePolicy;Permissions management
 logs:DeleteRetentionPolicy;Write
+logs:DeleteScheduledQuery;Write
 logs:DeleteSubscriptionFilter;Write
 logs:DeleteTransformer;Write
 logs:DescribeAccountPolicies;List
@@ -55,6 +57,8 @@ logs:GetLogEvents;Read
 logs:GetLogGroupFields;Read
 logs:GetLogRecord;Read
 logs:GetQueryResults;Read
+logs:GetScheduledQuery;Read
+logs:GetScheduledQueryHistory;Read
 logs:GetTransformer;Read
 logs:Link;Write
 logs:ListAnomalies;List
@@ -65,6 +69,7 @@ logs:ListLogDeliveries;List
 logs:ListLogGroups;List
 logs:ListLogGroupsForEntity;List
 logs:ListLogGroupsForQuery;List
+logs:ListScheduledQueries;List
 logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
 logs:PutAccountPolicy;Write
@@ -98,3 +103,4 @@ logs:UpdateAnomaly;Write
 logs:UpdateDeliveryConfiguration;Write
 logs:UpdateLogAnomalyDetector;Write
 logs:UpdateLogDelivery;Write
+logs:UpdateScheduledQuery;Write

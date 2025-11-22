@@ -313,6 +313,21 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details about a previously responsibility transfer
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeResponsibilityTransfer.html
+   */
+  public toDescribeResponsibilityTransfer() {
+    return this.to('DescribeResponsibilityTransfer');
+  }
+
+  /**
    * Grants permission to detach a policy from a target root, organizational unit, or account
    *
    * Access Level: Write
@@ -406,6 +421,20 @@ export class Organizations extends PolicyStatement {
    */
   public toInviteAccountToOrganization() {
     return this.to('InviteAccountToOrganization');
+  }
+
+  /**
+   * Grants permission to send an invitation to another AWS account, asking it to transfer a particular responsibility to your organization
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTransferType()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteOrganizationToTransferResponsibility.html
+   */
+  public toInviteOrganizationToTransferResponsibility() {
+    return this.to('InviteOrganizationToTransferResponsibility');
   }
 
   /**
@@ -550,6 +579,21 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all responsibilities of a particular type transfered to your organization
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListInboundResponsibilityTransfers.html
+   */
+  public toListInboundResponsibilityTransfers() {
+    return this.to('ListInboundResponsibilityTransfers');
+  }
+
+  /**
    * Grants permission to list all of the organizational units (OUs) in a parent organizational unit or root
    *
    * Access Level: List
@@ -558,6 +602,21 @@ export class Organizations extends PolicyStatement {
    */
   public toListOrganizationalUnitsForParent() {
     return this.to('ListOrganizationalUnitsForParent');
+  }
+
+  /**
+   * Grants permission to list all responsibilities of a particular type transfered to another organization
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListOutboundResponsibilityTransfers.html
+   */
+  public toListOutboundResponsibilityTransfers() {
+    return this.to('ListOutboundResponsibilityTransfers');
   }
 
   /**
@@ -706,6 +765,21 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
+   * Grants permission to end the transfer for a responsibility to or from your organization
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_TerminateResponsibilityTransfer.html
+   */
+  public toTerminateResponsibilityTransfer() {
+    return this.to('TerminateResponsibilityTransfer');
+  }
+
+  /**
    * Grants permission to remove one or more tags from the specified resource
    *
    * Access Level: Tagging
@@ -745,6 +819,21 @@ export class Organizations extends PolicyStatement {
     return this.to('UpdatePolicy');
   }
 
+  /**
+   * Grants permission to rename a responsibility transfer to or from your organization
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTransferType()
+   * - .ifTransferDirection()
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdateResponsibilityTransfer.html
+   */
+  public toUpdateResponsibilityTransfer() {
+    return this.to('UpdateResponsibilityTransfer');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptHandshake',
@@ -769,13 +858,16 @@ export class Organizations extends PolicyStatement {
       'EnableAllFeatures',
       'EnablePolicyType',
       'InviteAccountToOrganization',
+      'InviteOrganizationToTransferResponsibility',
       'LeaveOrganization',
       'MoveAccount',
       'PutResourcePolicy',
       'RegisterDelegatedAdministrator',
       'RemoveAccountFromOrganization',
+      'TerminateResponsibilityTransfer',
       'UpdateOrganizationalUnit',
-      'UpdatePolicy'
+      'UpdatePolicy',
+      'UpdateResponsibilityTransfer'
     ],
     Read: [
       'DescribeAccount',
@@ -785,7 +877,8 @@ export class Organizations extends PolicyStatement {
       'DescribeOrganization',
       'DescribeOrganizationalUnit',
       'DescribePolicy',
-      'DescribeResourcePolicy'
+      'DescribeResourcePolicy',
+      'DescribeResponsibilityTransfer'
     ],
     List: [
       'ListAWSServiceAccessForOrganization',
@@ -799,7 +892,9 @@ export class Organizations extends PolicyStatement {
       'ListEffectivePolicyValidationErrors',
       'ListHandshakesForAccount',
       'ListHandshakesForOrganization',
+      'ListInboundResponsibilityTransfers',
       'ListOrganizationalUnitsForParent',
+      'ListOutboundResponsibilityTransfers',
       'ListParents',
       'ListPolicies',
       'ListPoliciesForTarget',
@@ -941,6 +1036,25 @@ export class Organizations extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type responsibilitytransfer to the statement
+   *
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html
+   *
+   * @param organizationId - Identifier for the organizationId.
+   * @param transferType - Identifier for the transferType.
+   * @param transferDirection - Identifier for the transferDirection.
+   * @param responsibilityTransferId - Identifier for the responsibilityTransferId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onResponsibilitytransfer(organizationId: string, transferType: string, transferDirection: string, responsibilityTransferId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:organizations::${ account ?? this.defaultAccount }:transfer/o-${ organizationId }/${ transferType }/${ transferDirection }/rt-${ responsibilityTransferId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -978,6 +1092,7 @@ export class Organizations extends PolicyStatement {
    * - policy
    * - resourcepolicy
    * - root
+   * - responsibilitytransfer
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1057,5 +1172,48 @@ export class Organizations extends PolicyStatement {
    */
   public ifServicePrincipal(value: string | string[], operator?: Operator | string) {
     return this.if(`ServicePrincipal`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the specified responsibility transfer by the direction
+   *
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys
+   *
+   * Applies to actions:
+   * - .toDescribeResponsibilityTransfer()
+   * - .toListInboundResponsibilityTransfers()
+   * - .toListOutboundResponsibilityTransfers()
+   * - .toTagResource()
+   * - .toTerminateResponsibilityTransfer()
+   * - .toUntagResource()
+   * - .toUpdateResponsibilityTransfer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransferDirection(value: string | string[], operator?: Operator | string) {
+    return this.if(`TransferDirection`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the specified responsibility transfer type names
+   *
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys
+   *
+   * Applies to actions:
+   * - .toDescribeResponsibilityTransfer()
+   * - .toInviteOrganizationToTransferResponsibility()
+   * - .toListInboundResponsibilityTransfers()
+   * - .toListOutboundResponsibilityTransfers()
+   * - .toTagResource()
+   * - .toTerminateResponsibilityTransfer()
+   * - .toUntagResource()
+   * - .toUpdateResponsibilityTransfer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransferType(value: string | string[], operator?: Operator | string) {
+    return this.if(`TransferType`, value, operator ?? 'StringLike');
   }
 }

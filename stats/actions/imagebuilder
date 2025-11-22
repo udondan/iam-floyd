@@ -18,6 +18,7 @@ imagebuilder:DeleteImageRecipe;Write
 imagebuilder:DeleteInfrastructureConfiguration;Write
 imagebuilder:DeleteLifecyclePolicy;Write
 imagebuilder:DeleteWorkflow;Write
+imagebuilder:DistributeImage;Write
 imagebuilder:GetComponent;Read
 imagebuilder:GetComponentPolicy;Read
 imagebuilder:GetContainerRecipe;Read
@@ -64,6 +65,7 @@ imagebuilder:PutComponentPolicy;Permissions management
 imagebuilder:PutContainerRecipePolicy;Permissions management
 imagebuilder:PutImagePolicy;Permissions management
 imagebuilder:PutImageRecipePolicy;Permissions management
+imagebuilder:RetryImage;Write
 imagebuilder:SendWorkflowStepAction;Write
 imagebuilder:StartImagePipelineExecution;Write
 imagebuilder:StartResourceStateUpdate;Write

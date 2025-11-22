@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [partnercentral](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentralselling.html).
+ * Statement provider for service [partnercentral](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,12 +10,27 @@ export class Partnercentral extends PolicyStatement {
   public servicePrefix = 'partnercentral';
 
   /**
-   * Statement provider for service [partnercentral](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentralselling.html).
+   * Statement provider for service [partnercentral](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentral.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to accept channel handshakes in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   * - .ifChannelHandshakeType()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AcceptChannelHandshake.html
+   */
+  public toAcceptChannelHandshake() {
+    return this.to('AcceptChannelHandshake');
   }
 
   /**
@@ -59,6 +74,40 @@ export class Partnercentral extends PolicyStatement {
    */
   public toAssociateOpportunity() {
     return this.to('AssociateOpportunity');
+  }
+
+  /**
+   * Grants permission to cancel channel handshakes in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   * - .ifChannelHandshakeType()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelChannelHandshake.html
+   */
+  public toCancelChannelHandshake() {
+    return this.to('CancelChannelHandshake');
+  }
+
+  /**
+   * Grants permission to create channel handshakes in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   * - .ifChannelHandshakeType()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateChannelHandshake.html
+   */
+  public toCreateChannelHandshake() {
+    return this.to('CreateChannelHandshake');
   }
 
   /**
@@ -106,6 +155,40 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create program management accounts in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateProgramManagementAccount.html
+   */
+  public toCreateProgramManagementAccount() {
+    return this.to('CreateProgramManagementAccount');
+  }
+
+  /**
+   * Grants permission to create relationships in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateRelationship.html
+   */
+  public toCreateRelationship() {
+    return this.to('CreateRelationship');
+  }
+
+  /**
    * Grants permission to creating resource snapshots in AWS Partner Central
    *
    * Access Level: Write
@@ -133,6 +216,36 @@ export class Partnercentral extends PolicyStatement {
    */
   public toCreateResourceSnapshotJob() {
     return this.to('CreateResourceSnapshotJob');
+  }
+
+  /**
+   * Grants permission to delete program management accounts in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteProgramManagementAccount.html
+   */
+  public toDeleteProgramManagementAccount() {
+    return this.to('DeleteProgramManagementAccount');
+  }
+
+  /**
+   * Grants permission to delete relationships in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteRelationship.html
+   */
+  public toDeleteRelationship() {
+    return this.to('DeleteRelationship');
   }
 
   /**
@@ -221,6 +334,33 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve program management account details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   */
+  public toGetProgramManagementAccount() {
+    return this.to('GetProgramManagementAccount');
+  }
+
+  /**
+   * Grants permission to retrieve relationship details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetRelationship.html
+   */
+  public toGetRelationship() {
+    return this.to('GetRelationship');
+  }
+
+  /**
    * Grants permission to retrieving resource snapshot details in AWS Partner Central
    *
    * Access Level: Read
@@ -249,7 +389,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieving system settings settings in AWS Partner Central
+   * Grants permission to retrieving selling system settings in AWS Partner Central
    *
    * Access Level: Read
    *
@@ -260,6 +400,21 @@ export class Partnercentral extends PolicyStatement {
    */
   public toGetSellingSystemSettings() {
     return this.to('GetSellingSystemSettings');
+  }
+
+  /**
+   * Grants permission to list channel handshakes in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   * - .ifChannelHandshakeType()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListChannelHandshakes.html
+   */
+  public toListChannelHandshakes() {
+    return this.to('ListChannelHandshakes');
   }
 
   /**
@@ -361,6 +516,34 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list program management accounts in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListProgramManagementAccounts.html
+   */
+  public toListProgramManagementAccounts() {
+    return this.to('ListProgramManagementAccounts');
+  }
+
+  /**
+   * Grants permission to list relationships in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListRelationships.html
+   */
+  public toListRelationships() {
+    return this.to('ListRelationships');
+  }
+
+  /**
    * Grants permission to listing resource snapshot jobs in AWS Partner Central
    *
    * Access Level: List
@@ -377,7 +560,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Grants permission to listing resource snapshots in AWS Partner Central
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * Possible conditions:
    * - .ifCatalog()
@@ -419,7 +602,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to put system settings settings in AWS Partner Central
+   * Grants permission to put selling system settings in AWS Partner Central
    *
    * Access Level: Write
    *
@@ -427,6 +610,21 @@ export class Partnercentral extends PolicyStatement {
    */
   public toPutSellingSystemSettings() {
     return this.to('PutSellingSystemSettings');
+  }
+
+  /**
+   * Grants permission to reject channel handshakes in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   * - .ifChannelHandshakeType()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectChannelHandshake.html
+   */
+  public toRejectChannelHandshake() {
+    return this.to('RejectChannelHandshake');
   }
 
   /**
@@ -582,47 +780,92 @@ export class Partnercentral extends PolicyStatement {
     return this.to('UpdateOpportunity');
   }
 
+  /**
+   * Grants permission to update program management accounts in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateProgramManagementAccount.html
+   */
+  public toUpdateProgramManagementAccount() {
+    return this.to('UpdateProgramManagementAccount');
+  }
+
+  /**
+   * Grants permission to update relationships in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateRelationship.html
+   */
+  public toUpdateRelationship() {
+    return this.to('UpdateRelationship');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AcceptChannelHandshake',
       'AcceptEngagementInvitation',
       'AssignOpportunity',
       'AssociateOpportunity',
+      'CancelChannelHandshake',
+      'CreateChannelHandshake',
       'CreateEngagement',
       'CreateEngagementInvitation',
       'CreateOpportunity',
+      'CreateProgramManagementAccount',
+      'CreateRelationship',
       'CreateResourceSnapshot',
       'CreateResourceSnapshotJob',
+      'DeleteProgramManagementAccount',
+      'DeleteRelationship',
       'DeleteResourceSnapshotJob',
       'DisassociateOpportunity',
       'PutSellingSystemSettings',
+      'RejectChannelHandshake',
       'RejectEngagementInvitation',
       'StartEngagementByAcceptingInvitationTask',
       'StartEngagementFromOpportunityTask',
       'StartResourceSnapshotJob',
       'StopResourceSnapshotJob',
       'SubmitOpportunity',
-      'UpdateOpportunity'
+      'UpdateOpportunity',
+      'UpdateProgramManagementAccount',
+      'UpdateRelationship'
     ],
     Read: [
       'GetAwsOpportunitySummary',
       'GetEngagement',
       'GetEngagementInvitation',
       'GetOpportunity',
+      'GetProgramManagementAccount',
+      'GetRelationship',
       'GetResourceSnapshot',
       'GetResourceSnapshotJob',
       'GetSellingSystemSettings',
       'ListEngagementMembers',
       'ListEngagementResourceAssociations',
-      'ListResourceSnapshots',
       'ListTagsForResource'
     ],
     List: [
+      'ListChannelHandshakes',
       'ListEngagementByAcceptingInvitationTasks',
       'ListEngagementFromOpportunityTasks',
       'ListEngagementInvitations',
       'ListEngagements',
       'ListOpportunities',
+      'ListProgramManagementAccounts',
+      'ListRelationships',
       'ListResourceSnapshotJobs',
+      'ListResourceSnapshots',
       'ListSolutions'
     ],
     Tagging: [
@@ -758,12 +1001,70 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ProgramManagementAccount to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProgramManagementAccount(catalog: string, identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/program-management-account/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type Relationship to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param programManagementAccountId - Identifier for the programManagementAccountId.
+   * @param relationshipId - Identifier for the relationshipId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRelationship(catalog: string, programManagementAccountId: string, relationshipId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/program-management-account/${ programManagementAccountId }/relationship/${ relationshipId }`);
+  }
+
+  /**
+   * Adds a resource of type ChannelHandshake to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onChannelHandshake(catalog: string, identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/channel-handshake/${ identifier }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateChannelHandshake()
    * - .toCreateOpportunity()
+   * - .toCreateProgramManagementAccount()
+   * - .toCreateRelationship()
    * - .toCreateResourceSnapshotJob()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
@@ -783,15 +1084,27 @@ export class Partnercentral extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCancelChannelHandshake()
+   * - .toCreateChannelHandshake()
+   * - .toCreateProgramManagementAccount()
+   * - .toCreateRelationship()
+   * - .toDeleteProgramManagementAccount()
+   * - .toDeleteRelationship()
+   * - .toGetRelationship()
    * - .toListTagsForResource()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateProgramManagementAccount()
+   * - .toUpdateRelationship()
    *
    * Applies to resource types:
    * - Opportunity
    * - resource-snapshot-job
+   * - ProgramManagementAccount
+   * - Relationship
+   * - ChannelHandshake
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -807,7 +1120,10 @@ export class Partnercentral extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateChannelHandshake()
    * - .toCreateOpportunity()
+   * - .toCreateProgramManagementAccount()
+   * - .toCreateRelationship()
    * - .toCreateResourceSnapshotJob()
    * - .toListTagsForResource()
    * - .toStartEngagementByAcceptingInvitationTask()
@@ -823,28 +1139,38 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Filters access by a specific Catalog. Accepted values: [AWS, Sandbox]
+   * Filters access by a specific Catalog
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keyspage.html#Catalog
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
    *
    * Applies to actions:
+   * - .toAcceptChannelHandshake()
    * - .toAcceptEngagementInvitation()
    * - .toAssignOpportunity()
    * - .toAssociateOpportunity()
+   * - .toCancelChannelHandshake()
+   * - .toCreateChannelHandshake()
    * - .toCreateEngagement()
    * - .toCreateEngagementInvitation()
    * - .toCreateOpportunity()
+   * - .toCreateProgramManagementAccount()
+   * - .toCreateRelationship()
    * - .toCreateResourceSnapshot()
    * - .toCreateResourceSnapshotJob()
+   * - .toDeleteProgramManagementAccount()
+   * - .toDeleteRelationship()
    * - .toDeleteResourceSnapshotJob()
    * - .toDisassociateOpportunity()
    * - .toGetAwsOpportunitySummary()
    * - .toGetEngagement()
    * - .toGetEngagementInvitation()
    * - .toGetOpportunity()
+   * - .toGetProgramManagementAccount()
+   * - .toGetRelationship()
    * - .toGetResourceSnapshot()
    * - .toGetResourceSnapshotJob()
    * - .toGetSellingSystemSettings()
+   * - .toListChannelHandshakes()
    * - .toListEngagementByAcceptingInvitationTasks()
    * - .toListEngagementFromOpportunityTasks()
    * - .toListEngagementInvitations()
@@ -852,10 +1178,13 @@ export class Partnercentral extends PolicyStatement {
    * - .toListEngagementResourceAssociations()
    * - .toListEngagements()
    * - .toListOpportunities()
+   * - .toListProgramManagementAccounts()
+   * - .toListRelationships()
    * - .toListResourceSnapshotJobs()
    * - .toListResourceSnapshots()
    * - .toListSolutions()
    * - .toListTagsForResource()
+   * - .toRejectChannelHandshake()
    * - .toRejectEngagementInvitation()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
@@ -865,6 +1194,8 @@ export class Partnercentral extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateOpportunity()
+   * - .toUpdateProgramManagementAccount()
+   * - .toUpdateRelationship()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -874,9 +1205,28 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Filters access by entity types for Opportunity association. Accepted values: [Solutions, AwsProducts, AwsMarketplaceOffers]
+   * Filters access by channel handshake types
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keyspage.html#RelatedEntityType
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   *
+   * Applies to actions:
+   * - .toAcceptChannelHandshake()
+   * - .toCancelChannelHandshake()
+   * - .toCreateChannelHandshake()
+   * - .toListChannelHandshakes()
+   * - .toRejectChannelHandshake()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifChannelHandshakeType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ChannelHandshakeType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by entity types for Opportunity association
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
    *
    * Applies to actions:
    * - .toAssociateOpportunity()

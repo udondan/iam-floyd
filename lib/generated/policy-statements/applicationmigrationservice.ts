@@ -647,6 +647,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the import file enrichment tasks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListImportFileEnrichments.html
+   */
+  public toListImportFileEnrichments() {
+    return this.to('ListImportFileEnrichments');
+  }
+
+  /**
    * Grants permission to list the import tasks
    *
    * Access Level: List
@@ -787,6 +798,17 @@ export class Mgn extends PolicyStatement {
    */
   public toListNetworkMigrationMapperSegments() {
     return this.to('ListNetworkMigrationMapperSegments');
+  }
+
+  /**
+   * Grants permission to list network migration mapping updates
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMappingUpdates.html
+   */
+  public toListNetworkMigrationMappingUpdates() {
+    return this.to('ListNetworkMigrationMappingUpdates');
   }
 
   /**
@@ -1171,6 +1193,10 @@ export class Mgn extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - ec2:CreateLaunchTemplateVersion
    * - ec2:DescribeLaunchTemplateVersions
@@ -1187,6 +1213,22 @@ export class Mgn extends PolicyStatement {
    */
   public toStartImport() {
     return this.to('StartImport');
+  }
+
+  /**
+   * Grants permission to start import file enrichment
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartImportFileEnrichment.html
+   */
+  public toStartImportFileEnrichment() {
+    return this.to('StartImportFileEnrichment');
   }
 
   /**
@@ -1487,6 +1529,17 @@ export class Mgn extends PolicyStatement {
    */
   public toStartNetworkMigrationMapping() {
     return this.to('StartNetworkMigrationMapping');
+  }
+
+  /**
+   * Grants permission to start a network migration mapping update
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationMappingUpdate.html
+   */
+  public toStartNetworkMigrationMappingUpdate() {
+    return this.to('StartNetworkMigrationMappingUpdate');
   }
 
   /**
@@ -1891,11 +1944,13 @@ export class Mgn extends PolicyStatement {
       'StartCutover',
       'StartExport',
       'StartImport',
+      'StartImportFileEnrichment',
       'StartNetworkMigrationAnalysis',
       'StartNetworkMigrationCodeGeneration',
       'StartNetworkMigrationDeployedStacksDeletion',
       'StartNetworkMigrationDeployment',
       'StartNetworkMigrationMapping',
+      'StartNetworkMigrationMappingUpdate',
       'StartReplication',
       'StartTest',
       'StopReplication',
@@ -1950,6 +2005,7 @@ export class Mgn extends PolicyStatement {
       'ListExportErrors',
       'ListExports',
       'ListImportErrors',
+      'ListImportFileEnrichments',
       'ListImports',
       'ListManagedAccounts',
       'ListNetworkMigrationAnalyses',
@@ -1963,6 +2019,7 @@ export class Mgn extends PolicyStatement {
       'ListNetworkMigrationExecutions',
       'ListNetworkMigrationMapperSegmentConstructs',
       'ListNetworkMigrationMapperSegments',
+      'ListNetworkMigrationMappingUpdates',
       'ListNetworkMigrationMappings',
       'ListSourceServerActions',
       'ListTemplateActions',
@@ -2177,6 +2234,7 @@ export class Mgn extends PolicyStatement {
    * - .toRegisterAgentForMgn()
    * - .toStartCutover()
    * - .toStartExport()
+   * - .toStartImport()
    * - .toStartTest()
    * - .toTagResource()
    * - .toTerminateTargetInstances()
@@ -2231,6 +2289,7 @@ export class Mgn extends PolicyStatement {
    * - .toRegisterAgentForMgn()
    * - .toStartCutover()
    * - .toStartExport()
+   * - .toStartImport()
    * - .toStartTest()
    * - .toTagResource()
    * - .toTerminateTargetInstances()

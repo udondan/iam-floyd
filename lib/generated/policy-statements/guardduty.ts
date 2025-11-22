@@ -521,6 +521,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a malware scan's details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMalwareScan.html
+   */
+  public toGetMalwareScan() {
+    return this.to('GetMalwareScan');
+  }
+
+  /**
    * Grants permission to retrieve the malware scan settings
    *
    * Access Level: Read
@@ -719,6 +730,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of malware scans
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListMalwareScans.html
+   */
+  public toListMalwareScans() {
+    return this.to('ListMalwareScans');
+  }
+
+  /**
    * Grants permission to retrieve a list of GuardDuty member accounts associated with an administrator account
    *
    * Access Level: List
@@ -793,6 +815,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toListTrustedEntitySets() {
     return this.to('ListTrustedEntitySets');
+  }
+
+  /**
+   * Grants permission to initiate a new object malware scan
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_SendObjectMalwareScan.html
+   */
+  public toSendObjectMalwareScan() {
+    return this.to('SendObjectMalwareScan');
   }
 
   /**
@@ -1061,6 +1094,7 @@ export class Guardduty extends PolicyStatement {
       'DisassociateMembers',
       'EnableOrganizationAdminAccount',
       'InviteMembers',
+      'SendObjectMalwareScan',
       'SendSecurityTelemetry',
       'StartMalwareScan',
       'StartMonitoringMembers',
@@ -1092,6 +1126,7 @@ export class Guardduty extends PolicyStatement {
       'GetIPSet',
       'GetInvitationsCount',
       'GetMalwareProtectionPlan',
+      'GetMalwareScan',
       'GetMalwareScanSettings',
       'GetMasterAccount',
       'GetMemberDetectors',
@@ -1112,6 +1147,7 @@ export class Guardduty extends PolicyStatement {
       'ListIPSets',
       'ListInvitations',
       'ListMalwareProtectionPlans',
+      'ListMalwareScans',
       'ListMembers',
       'ListOrganizationAdminAccounts',
       'ListPublishingDestinations',

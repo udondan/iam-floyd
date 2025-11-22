@@ -2763,6 +2763,21 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to rename a table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-RenameTable
+   */
+  public toRenameTable() {
+    return this.to('RenameTable');
+  }
+
+  /**
    * Grants permission to request log parsing for SparkUI
    *
    * Access Level: Permissions management
@@ -3315,6 +3330,7 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLakeFormationPermissions()
+   * - .ifFederatedAuthorizationSource()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-UpdateDatabase
    */
@@ -3648,6 +3664,7 @@ export class Glue extends PolicyStatement {
       'PutWorkflowRunProperties',
       'RegisterSchemaVersion',
       'RemoveSchemaVersionMetadata',
+      'RenameTable',
       'ResetJobBookmark',
       'ResumeWorkflowRun',
       'RunStatement',
@@ -4351,7 +4368,7 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Filters access by whether the resource belongs to federarted authorization
+   * Filters access by whether the resource belongs to federated authorization
    *
    * https://docs.aws.amazon.com/glue/latest/dg/using-identity-based-policies.html#glue-identity-based-policy-condition-keys
    *
@@ -4370,7 +4387,9 @@ export class Glue extends PolicyStatement {
    * - .toGetTable()
    * - .toGetTables()
    * - .toGetUserDefinedFunctions()
+   * - .toRenameTable()
    * - .toUpdateCatalog()
+   * - .toUpdateDatabase()
    * - .toUpdateTable()
    *
    * @param value The value(s) to check
@@ -4429,6 +4448,7 @@ export class Glue extends PolicyStatement {
    * - .toGetUserDefinedFunction()
    * - .toGetUserDefinedFunctions()
    * - .toImportCatalogToGlue()
+   * - .toRenameTable()
    * - .toSearchTables()
    * - .toTagResource()
    * - .toUntagResource()

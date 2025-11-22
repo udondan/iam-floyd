@@ -4,6 +4,7 @@ bedrock-agentcore:InboundJwtClaim/client_id
 bedrock-agentcore:InboundJwtClaim/iss
 bedrock-agentcore:InboundJwtClaim/scope
 bedrock-agentcore:InboundJwtClaim/sub
+bedrock-agentcore:KmsKeyArn
 bedrock-agentcore:RequestTag/${TagKey}
 bedrock-agentcore:ResourceTag/${TagKey}
 bedrock-agentcore:TagKeys

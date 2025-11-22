@@ -120,6 +120,17 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list events for an entity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListEntityEvents.html
+   */
+  public toListEntityEvents() {
+    return this.to('ListEntityEvents');
+  }
+
+  /**
    * Grants permission to list grouping attribute configurations
    *
    * Access Level: List
@@ -311,6 +322,7 @@ export class ApplicationSignals extends PolicyStatement {
     ],
     List: [
       'ListAuditFindings',
+      'ListEntityEvents',
       'ListGroupingAttributeDefinitions',
       'ListObservedEntities',
       'ListServiceLevelObjectiveExclusionWindows',

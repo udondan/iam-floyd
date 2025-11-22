@@ -45,6 +45,20 @@ export class Invoicing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a procurement portal preference
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_CreateProcurementPortalPreference.html
+   */
+  public toCreateProcurementPortalPreference() {
+    return this.to('CreateProcurementPortalPreference');
+  }
+
+  /**
    * Grants permission to update an invoice unit for your organization
    *
    * Access Level: Write
@@ -56,6 +70,20 @@ export class Invoicing extends PolicyStatement {
    */
   public toDeleteInvoiceUnit() {
     return this.to('DeleteInvoiceUnit');
+  }
+
+  /**
+   * Grants permission to delete a procurement portal preference
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_DeleteProcurementPortalPreference.html
+   */
+  public toDeleteProcurementPortalPreference() {
+    return this.to('DeleteProcurementPortalPreference');
   }
 
   /**
@@ -103,6 +131,17 @@ export class Invoicing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a procurement portal preference
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_GetProcurementPortalPreference.html
+   */
+  public toGetProcurementPortalPreference() {
+    return this.to('GetProcurementPortalPreference');
+  }
+
+  /**
    * Grants permission to list Invoice Corrections
    *
    * Access Level: List
@@ -136,6 +175,17 @@ export class Invoicing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list procurement portal preferences for an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ListProcurementPortalPreferences.html
+   */
+  public toListProcurementPortalPreferences() {
+    return this.to('ListProcurementPortalPreferences');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -158,6 +208,20 @@ export class Invoicing extends PolicyStatement {
    */
   public toPutInvoiceEmailDeliveryPreferences() {
     return this.to('PutInvoiceEmailDeliveryPreferences');
+  }
+
+  /**
+   * Grants permission to update a procurement portal preference
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_PutProcurementPortalPreference.html
+   */
+  public toPutProcurementPortalPreference() {
+    return this.to('PutProcurementPortalPreference');
   }
 
   /**
@@ -216,6 +280,20 @@ export class Invoicing extends PolicyStatement {
     return this.to('UpdateInvoiceUnit');
   }
 
+  /**
+   * Grants permission to update the status for a procurement portal preference
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_UpdateProcurementPortalPreferenceStatus.html
+   */
+  public toUpdateProcurementPortalPreferenceStatus() {
+    return this.to('UpdateProcurementPortalPreferenceStatus');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'BatchGetInvoiceProfile',
@@ -223,19 +301,25 @@ export class Invoicing extends PolicyStatement {
       'GetInvoiceEmailDeliveryPreferences',
       'GetInvoicePDF',
       'GetInvoiceUnit',
+      'GetProcurementPortalPreference',
       'ListInvoiceSummaries',
       'ListTagsForResource'
     ],
     Write: [
       'CreateInvoiceUnit',
+      'CreateProcurementPortalPreference',
       'DeleteInvoiceUnit',
+      'DeleteProcurementPortalPreference',
       'PutInvoiceEmailDeliveryPreferences',
+      'PutProcurementPortalPreference',
       'StartInvoiceCorrection',
-      'UpdateInvoiceUnit'
+      'UpdateInvoiceUnit',
+      'UpdateProcurementPortalPreferenceStatus'
     ],
     List: [
       'ListInvoiceCorrections',
-      'ListInvoiceUnits'
+      'ListInvoiceUnits',
+      'ListProcurementPortalPreferences'
     ],
     Tagging: [
       'TagResource',
@@ -257,6 +341,22 @@ export class Invoicing extends PolicyStatement {
    */
   public onInvoiceUnit(identifier: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:invoicing::${ account ?? this.defaultAccount }:invoice-unit/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type procurement-portal-preference to the statement
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_invoicing_ProcurementPortalPreference.html
+   *
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProcurementPortalPreference(identifier: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:invoicing::${ account ?? this.defaultAccount }:procurement-portal-preference/${ identifier }`);
   }
 
   /**
@@ -282,14 +382,19 @@ export class Invoicing extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCreateProcurementPortalPreference()
    * - .toDeleteInvoiceUnit()
+   * - .toDeleteProcurementPortalPreference()
    * - .toListTagsForResource()
+   * - .toPutProcurementPortalPreference()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateInvoiceUnit()
+   * - .toUpdateProcurementPortalPreferenceStatus()
    *
    * Applies to resource types:
    * - invoice-unit
+   * - procurement-portal-preference
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

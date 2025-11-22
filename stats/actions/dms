@@ -12,6 +12,7 @@ dms:CreateEventSubscription;Write
 dms:CreateFleetAdvisorCollector;Write
 dms:CreateInstanceProfile;Write
 dms:CreateMigrationProject;Write
+dms:CreateOutboundIntegration;Write
 dms:CreateReplicationConfig;Write
 dms:CreateReplicationInstance;Write
 dms:CreateReplicationSubnetGroup;Write
@@ -87,6 +88,7 @@ dms:ModifyEndpoint;Write
 dms:ModifyEventSubscription;Write
 dms:ModifyFleetAdvisorCollector;Write
 dms:ModifyFleetAdvisorCollectorStatuses;Write
+dms:ModifyOutboundIntegration;Write
 dms:ModifyReplicationConfig;Write
 dms:ModifyReplicationInstance;Write
 dms:ModifyReplicationSubnetGroup;Write

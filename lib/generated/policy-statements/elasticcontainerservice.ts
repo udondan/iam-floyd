@@ -52,6 +52,31 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new Amazon ECS Express Gateway service with cluster and task definition
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTaskDefinition()
+   * - .ifSubnet()
+   * - .ifEnableEcsManagedTags()
+   * - .ifPropagateTags()
+   * - .ifTaskCpu()
+   * - .ifTaskMemory()
+   *
+   * Dependent actions:
+   * - ecs:RegisterTaskDefinition
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateExpressGatewayService.html
+   */
+  public toCreateExpressGatewayService() {
+    return this.to('CreateExpressGatewayService');
+  }
+
+  /**
    * Grants permission to run and maintain a desired number of tasks from a specified task definition via service creation
    *
    * Access Level: Write
@@ -150,6 +175,17 @@ export class Ecs extends PolicyStatement {
    */
   public toDeleteCluster() {
     return this.to('DeleteCluster');
+  }
+
+  /**
+   * Grants permission to delete a specified Express Gateway service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteExpressGatewayService.html
+   */
+  public toDeleteExpressGatewayService() {
+    return this.to('DeleteExpressGatewayService');
   }
 
   /**
@@ -257,6 +293,17 @@ export class Ecs extends PolicyStatement {
    */
   public toDescribeContainerInstances() {
     return this.to('DescribeContainerInstances');
+  }
+
+  /**
+   * Grants permission to describe the specified Express Gateway service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeExpressGatewayService.html
+   */
+  public toDescribeExpressGatewayService() {
+    return this.to('DescribeExpressGatewayService');
   }
 
   /**
@@ -853,6 +900,24 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the parameters of an Express Gateway service
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSubnet()
+   * - .ifEnableEcsManagedTags()
+   * - .ifPropagateTags()
+   * - .ifTaskCpu()
+   * - .ifTaskMemory()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateExpressGatewayService.html
+   */
+  public toUpdateExpressGatewayService() {
+    return this.to('UpdateExpressGatewayService');
+  }
+
+  /**
    * Grants permission to modify the parameters of a service
    *
    * Access Level: Write
@@ -928,12 +993,14 @@ export class Ecs extends PolicyStatement {
     Write: [
       'CreateCapacityProvider',
       'CreateCluster',
+      'CreateExpressGatewayService',
       'CreateService',
       'CreateTaskSet',
       'DeleteAccountSetting',
       'DeleteAttributes',
       'DeleteCapacityProvider',
       'DeleteCluster',
+      'DeleteExpressGatewayService',
       'DeleteService',
       'DeleteTaskDefinitions',
       'DeleteTaskSet',
@@ -962,6 +1029,7 @@ export class Ecs extends PolicyStatement {
       'UpdateClusterSettings',
       'UpdateContainerAgent',
       'UpdateContainerInstancesState',
+      'UpdateExpressGatewayService',
       'UpdateService',
       'UpdateServicePrimaryTaskSet',
       'UpdateTaskProtection',
@@ -971,6 +1039,7 @@ export class Ecs extends PolicyStatement {
       'DescribeCapacityProviders',
       'DescribeClusters',
       'DescribeContainerInstances',
+      'DescribeExpressGatewayService',
       'DescribeServiceDeployments',
       'DescribeServiceRevisions',
       'DescribeServices',
@@ -1180,6 +1249,7 @@ export class Ecs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCapacityProvider()
    * - .toCreateCluster()
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toRegisterContainerInstance()
@@ -1204,10 +1274,12 @@ export class Ecs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCapacityProvider()
    * - .toCreateCluster()
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toDeleteAttributes()
    * - .toDeleteCapacityProvider()
    * - .toDeleteCluster()
+   * - .toDeleteExpressGatewayService()
    * - .toDeleteService()
    * - .toDeleteTaskDefinitions()
    * - .toDeleteTaskSet()
@@ -1215,6 +1287,7 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeCapacityProviders()
    * - .toDescribeClusters()
    * - .toDescribeContainerInstances()
+   * - .toDescribeExpressGatewayService()
    * - .toDescribeServiceDeployments()
    * - .toDescribeServiceRevisions()
    * - .toDescribeServices()
@@ -1246,6 +1319,7 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateClusterSettings()
    * - .toUpdateContainerAgent()
    * - .toUpdateContainerInstancesState()
+   * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    * - .toUpdateServicePrimaryTaskSet()
    * - .toUpdateTaskProtection()
@@ -1278,6 +1352,7 @@ export class Ecs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCapacityProvider()
    * - .toCreateCluster()
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toRegisterContainerInstance()
@@ -1390,12 +1465,15 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toDeleteAttributes()
+   * - .toDeleteExpressGatewayService()
    * - .toDeleteService()
    * - .toDeleteTaskSet()
    * - .toDescribeContainerInstances()
+   * - .toDescribeExpressGatewayService()
    * - .toDescribeServiceDeployments()
    * - .toDescribeServiceRevisions()
    * - .toDescribeServices()
@@ -1416,6 +1494,7 @@ export class Ecs extends PolicyStatement {
    * - .toStopTask()
    * - .toUpdateContainerAgent()
    * - .toUpdateContainerInstancesState()
+   * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    * - .toUpdateServicePrimaryTaskSet()
    * - .toUpdateTaskProtection()
@@ -1501,7 +1580,9 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
+   * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
    * @param value `true` or `false`. **Default:** `true`
@@ -1615,8 +1696,10 @@ export class Ecs extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCapacityProvider()
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toUpdateCapacityProvider()
+   * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
    * @param value The value(s) to check
@@ -1657,7 +1740,9 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
+   * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
    * @param value The value(s) to check
@@ -1688,8 +1773,10 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toRegisterTaskDefinition()
+   * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
    * @param value The value(s) to check
@@ -1705,6 +1792,7 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toUpdateService()
@@ -1722,8 +1810,10 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toRegisterTaskDefinition()
+   * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
    * @param value The value(s) to check

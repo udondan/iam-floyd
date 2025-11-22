@@ -233,6 +233,26 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to DMS to create resources for zero-ETL integrations with self managed databases
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toCreateOutboundIntegration() {
+    return this.to('CreateOutboundIntegration');
+  }
+
+  /**
    * Grants permission to create a replication config using the provided settings
    *
    * Access Level: Write
@@ -1106,6 +1126,20 @@ export class Dms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to DMS to modify resources for zero-ETL integrations with self managed databases
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/Welcome.html
+   */
+  public toModifyOutboundIntegration() {
+    return this.to('ModifyOutboundIntegration');
+  }
+
+  /**
    * Grants permission to modify the specified replication config
    *
    * Access Level: Write
@@ -1495,6 +1529,7 @@ export class Dms extends PolicyStatement {
       'CreateFleetAdvisorCollector',
       'CreateInstanceProfile',
       'CreateMigrationProject',
+      'CreateOutboundIntegration',
       'CreateReplicationConfig',
       'CreateReplicationInstance',
       'CreateReplicationSubnetGroup',
@@ -1521,6 +1556,7 @@ export class Dms extends PolicyStatement {
       'ModifyEventSubscription',
       'ModifyFleetAdvisorCollector',
       'ModifyFleetAdvisorCollectorStatuses',
+      'ModifyOutboundIntegration',
       'ModifyReplicationConfig',
       'ModifyReplicationInstance',
       'ModifyReplicationSubnetGroup',
@@ -1854,6 +1890,7 @@ export class Dms extends PolicyStatement {
    * - .toCreateEventSubscription()
    * - .toCreateInstanceProfile()
    * - .toCreateMigrationProject()
+   * - .toCreateOutboundIntegration()
    * - .toCreateReplicationConfig()
    * - .toCreateReplicationInstance()
    * - .toCreateReplicationSubnetGroup()
@@ -1882,6 +1919,7 @@ export class Dms extends PolicyStatement {
    * - .toCreateEventSubscription()
    * - .toCreateInstanceProfile()
    * - .toCreateMigrationProject()
+   * - .toCreateOutboundIntegration()
    * - .toCreateReplicationConfig()
    * - .toCreateReplicationInstance()
    * - .toCreateReplicationSubnetGroup()
@@ -1926,6 +1964,7 @@ export class Dms extends PolicyStatement {
    * - .toCreateEventSubscription()
    * - .toCreateInstanceProfile()
    * - .toCreateMigrationProject()
+   * - .toCreateOutboundIntegration()
    * - .toCreateReplicationConfig()
    * - .toCreateReplicationInstance()
    * - .toCreateReplicationSubnetGroup()
@@ -2130,6 +2169,7 @@ export class Dms extends PolicyStatement {
    * - .toCreateEventSubscription()
    * - .toCreateInstanceProfile()
    * - .toCreateMigrationProject()
+   * - .toCreateOutboundIntegration()
    * - .toCreateReplicationConfig()
    * - .toCreateReplicationInstance()
    * - .toCreateReplicationSubnetGroup()

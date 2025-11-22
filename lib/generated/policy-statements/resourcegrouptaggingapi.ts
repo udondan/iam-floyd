@@ -74,6 +74,17 @@ export class Tag extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list required tags for supported resource types in the calling account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_ListRequiredTags.html
+   */
+  public toListRequiredTags() {
+    return this.to('ListRequiredTags');
+  }
+
+  /**
    * Grants permission to start generating a report listing all tagged resources in accounts across your organization, and whether each resource is compliant with the effective tag policy
    *
    * Access Level: Write
@@ -113,6 +124,9 @@ export class Tag extends PolicyStatement {
       'GetResources',
       'GetTagKeys',
       'GetTagValues'
+    ],
+    List: [
+      'ListRequiredTags'
     ],
     Write: [
       'StartReportCreation'

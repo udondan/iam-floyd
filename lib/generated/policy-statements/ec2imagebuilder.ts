@@ -363,6 +363,29 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to distribute an image
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeImages
+   * - iam:PassRole
+   * - imagebuilder:GetDistributionConfiguration
+   * - imagebuilder:GetImage
+   * - imagebuilder:TagResource
+   * - ssm:GetParameter
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DistributeImage.html
+   */
+  public toDistributeImage() {
+    return this.to('DistributeImage');
+  }
+
+  /**
    * Grants permission to view details about a component
    *
    * Access Level: Read
@@ -919,6 +942,17 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retry an image creation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_RetryImage.html
+   */
+  public toRetryImage() {
+    return this.to('RetryImage');
+  }
+
+  /**
    * Grants permission to send an action to a workflow step
    *
    * Access Level: Write
@@ -1093,9 +1127,11 @@ export class Imagebuilder extends PolicyStatement {
       'DeleteInfrastructureConfiguration',
       'DeleteLifecyclePolicy',
       'DeleteWorkflow',
+      'DistributeImage',
       'ImportComponent',
       'ImportDiskImage',
       'ImportVmImage',
+      'RetryImage',
       'SendWorkflowStepAction',
       'StartImagePipelineExecution',
       'StartResourceStateUpdate',
@@ -1442,6 +1478,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .toCreateInfrastructureConfiguration()
    * - .toCreateLifecyclePolicy()
    * - .toCreateWorkflow()
+   * - .toDistributeImage()
    * - .toImportComponent()
    * - .toImportDiskImage()
    * - .toImportVmImage()
@@ -1496,6 +1533,7 @@ export class Imagebuilder extends PolicyStatement {
    * - .toCreateInfrastructureConfiguration()
    * - .toCreateLifecyclePolicy()
    * - .toCreateWorkflow()
+   * - .toDistributeImage()
    * - .toImportComponent()
    * - .toImportDiskImage()
    * - .toImportVmImage()

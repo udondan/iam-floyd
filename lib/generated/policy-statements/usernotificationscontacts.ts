@@ -37,6 +37,7 @@ export class NotificationsContacts extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html
    */
@@ -185,6 +186,9 @@ export class NotificationsContacts extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateEmailContact()
    *
    * Applies to resource types:
    * - EmailContactResource

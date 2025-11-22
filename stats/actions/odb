@@ -45,3 +45,4 @@ odb:UntagResource;Tagging
 odb:UpdateCloudExadataInfrastructure;Write
 odb:UpdateOdbNetwork;Write
 odb:UpdateOdbPeeringConnection;Write
+odb:UpdateOutboundIntegration;Write

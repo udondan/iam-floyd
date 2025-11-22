@@ -1,5 +1,6 @@
 iam:access-report
 iam:assumed-role
+iam:delegation-request
 iam:federated-user
 iam:group
 iam:instance-profile
