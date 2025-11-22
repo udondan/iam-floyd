@@ -1839,6 +1839,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRedshiftDataFullAccess);
     }
 
+    /** This is an ease-of-use policy for running queries with Amazon Redshift Federated Authorization */
+    public AmazonRedshiftFederatedAuthorization(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRedshiftFederatedAuthorization);
+    }
+
     /** Provides full access to Amazon Redshift via the AWS Management Console. */
     public AmazonRedshiftFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRedshiftFullAccess);
@@ -4219,6 +4224,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIAMIdentityCenterAllowListForIdentityContext);
     }
 
+    /** Provides access to manage IAM Identity Center users from an external provider. */
+    public AWSIdentityCenterExternalManagementPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIdentityCenterExternalManagementPolicy);
+    }
+
     /** Grants full access to the Identity Sync service */
     public AWSIdentitySyncFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIdentitySyncFullAccess);
@@ -4707,6 +4717,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provide sellers read-only access to AWS Marketplace Management Products page. */
     public AWSMarketplaceSellerProductsReadOnly(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceSellerProductsReadOnly);
+    }
+
+    /** Provides full access to all MCP service actions. This policy does not grant access to the actions taken by the MCP, only the MCP actions themselves. */
+    public AWSMcpServiceActionsFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMcpServiceActionsFullAccess);
     }
 
     /** The default policy that enables access to AWS Services and Resources used or managed by MediaConnect. */
