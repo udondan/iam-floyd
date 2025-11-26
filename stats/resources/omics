@@ -1,6 +1,5 @@
 omics:AnnotationStore
 omics:AnnotationStoreVersion
-omics:TaggingResource
 omics:TaskResource
 omics:VariantStore
 omics:WorkflowVersion

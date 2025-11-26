@@ -976,6 +976,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable deletion protection for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogGroupDeletionProtection.html
+   */
+  public toPutLogGroupDeletionProtection() {
+    return this.to('PutLogGroupDeletionProtection');
+  }
+
+  /**
    * Grants permission to create or update a metric filter and associates it with the specified log group
    *
    * Access Level: Write
@@ -1280,6 +1291,7 @@ export class Logs extends PolicyStatement {
       'PutIndexPolicy',
       'PutIntegration',
       'PutLogEvents',
+      'PutLogGroupDeletionProtection',
       'PutMetricFilter',
       'PutQueryDefinition',
       'PutRetentionPolicy',

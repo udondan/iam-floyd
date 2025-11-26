@@ -810,6 +810,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestDisableExecuteApiEndpoint()
    * - .ifRequestEndpointType()
    * - .ifRequestRouteAuthorizationType()
+   * - .ifRequestSecurityPolicy()
    * - .ifResourceApiKeyRequired()
    * - .ifResourceApiName()
    * - .ifResourceAuthorizerType()
@@ -817,6 +818,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifResourceDisableExecuteApiEndpoint()
    * - .ifResourceEndpointType()
    * - .ifResourceRouteAuthorizationType()
+   * - .ifResourceSecurityPolicy()
    * - .ifAwsResourceTag()
    */
   public onRestApi(restApiId: string, region?: string, partition?: string) {
@@ -839,6 +841,7 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestDisableExecuteApiEndpoint()
    * - .ifRequestEndpointType()
    * - .ifRequestRouteAuthorizationType()
+   * - .ifRequestSecurityPolicy()
    * - .ifAwsResourceTag()
    */
   public onRestApis(region?: string, partition?: string) {
@@ -1275,6 +1278,8 @@ export class Apigateway extends PolicyStatement {
    * Applies to resource types:
    * - DomainName
    * - DomainNames
+   * - RestApi
+   * - RestApis
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1506,6 +1511,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Applies to resource types:
    * - DomainName
+   * - RestApi
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
