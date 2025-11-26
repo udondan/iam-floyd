@@ -11,8 +11,10 @@ security-ir:GetMembership;Read
 security-ir:ListCaseEdits;Read
 security-ir:ListCases;List
 security-ir:ListComments;Read
+security-ir:ListInvestigations;Read
 security-ir:ListMemberships;List
 security-ir:ListTagsForResource;Read
+security-ir:SendFeedback;Write
 security-ir:TagResource;Tagging
 security-ir:UntagResource;Tagging
 security-ir:UpdateCase;Write
