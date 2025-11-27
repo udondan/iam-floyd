@@ -201,28 +201,6 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete the signing configuration for the registry
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteSigningConfiguration
-   */
-  public toDeleteSigningConfiguration() {
-    return this.to('DeleteSigningConfiguration');
-  }
-
-  /**
-   * Grants permission to deregister a pull time update exclusion
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeregisterPullTimeUpdateExclusion
-   */
-  public toDeregisterPullTimeUpdateExclusion() {
-    return this.to('DeregisterPullTimeUpdateExclusion');
-  }
-
-  /**
    * Grants permission to retrieve replication status about an image in a registry, including failure reason if replication fails
    *
    * Access Level: Read
@@ -242,17 +220,6 @@ export class Ecr extends PolicyStatement {
    */
   public toDescribeImageScanFindings() {
     return this.to('DescribeImageScanFindings');
-  }
-
-  /**
-   * Grants permission to retrieve signing status about an image in a specified registry
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageSigningStatus
-   */
-  public toDescribeImageSigningStatus() {
-    return this.to('DescribeImageSigningStatus');
   }
 
   /**
@@ -413,17 +380,6 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve the signing configuration for the registry
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetSigningConfiguration
-   */
-  public toGetSigningConfiguration() {
-    return this.to('GetSigningConfiguration');
-  }
-
-  /**
    * Grants permission to notify Amazon ECR that you intend to upload an image layer
    *
    * Access Level: Write
@@ -443,17 +399,6 @@ export class Ecr extends PolicyStatement {
    */
   public toListImages() {
     return this.to('ListImages');
-  }
-
-  /**
-   * Grants permission to list pull time update exclusions for the registry
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListPullTimeUpdateExclusions
-   */
-  public toListPullTimeUpdateExclusions() {
-    return this.to('ListPullTimeUpdateExclusions');
   }
 
   /**
@@ -566,28 +511,6 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the signing configuration for the registry
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutSigningConfiguration
-   */
-  public toPutSigningConfiguration() {
-    return this.to('PutSigningConfiguration');
-  }
-
-  /**
-   * Grants permission to register a pull time update exclusion
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_RegisterPullTimeUpdateExclusion
-   */
-  public toRegisterPullTimeUpdateExclusion() {
-    return this.to('RegisterPullTimeUpdateExclusion');
-  }
-
-  /**
    * Grants permission to replicate images to the destination registry
    *
    * Access Level: Write
@@ -661,17 +584,6 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get update the storage class of a specified image within a specified repository
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UpdateImageStorageClass
-   */
-  public toUpdateImageStorageClass() {
-    return this.to('UpdateImageStorageClass');
-  }
-
-  /**
    * Grants permission to update the pull-through cache rule
    *
    * Access Level: Write
@@ -729,7 +641,6 @@ export class Ecr extends PolicyStatement {
       'BatchGetRepositoryScanningConfiguration',
       'DescribeImageReplicationStatus',
       'DescribeImageScanFindings',
-      'DescribeImageSigningStatus',
       'DescribeRegistry',
       'DescribeRepositories',
       'DescribeRepositoryCreationTemplates',
@@ -742,7 +653,6 @@ export class Ecr extends PolicyStatement {
       'GetRegistryPolicy',
       'GetRegistryScanningConfiguration',
       'GetRepositoryPolicy',
-      'GetSigningConfiguration',
       'ListTagsForResource',
       'ValidatePullThroughCacheRule'
     ],
@@ -757,8 +667,6 @@ export class Ecr extends PolicyStatement {
       'DeletePullThroughCacheRule',
       'DeleteRepository',
       'DeleteRepositoryCreationTemplate',
-      'DeleteSigningConfiguration',
-      'DeregisterPullTimeUpdateExclusion',
       'InitiateLayerUpload',
       'PutAccountSetting',
       'PutImage',
@@ -767,12 +675,9 @@ export class Ecr extends PolicyStatement {
       'PutLifecyclePolicy',
       'PutRegistryScanningConfiguration',
       'PutReplicationConfiguration',
-      'PutSigningConfiguration',
-      'RegisterPullTimeUpdateExclusion',
       'ReplicateImage',
       'StartImageScan',
       'StartLifecyclePolicyPreview',
-      'UpdateImageStorageClass',
       'UpdatePullThroughCacheRule',
       'UpdateRepositoryCreationTemplate',
       'UploadLayerPart'
@@ -786,8 +691,7 @@ export class Ecr extends PolicyStatement {
     List: [
       'DescribeImages',
       'DescribePullThroughCacheRules',
-      'ListImages',
-      'ListPullTimeUpdateExclusions'
+      'ListImages'
     ],
     Tagging: [
       'TagResource',

@@ -1,6 +1,5 @@
 cloudfront:anycast-ip-list
 cloudfront:cache-policy
-cloudfront:connection-function
 cloudfront:connection-group
 cloudfront:continuous-deployment-policy
 cloudfront:distribution
@@ -15,5 +14,4 @@ cloudfront:origin-request-policy
 cloudfront:realtime-log-config
 cloudfront:response-headers-policy
 cloudfront:streaming-distribution
-cloudfront:trust-store
 cloudfront:vpcorigin

@@ -13,11 +13,8 @@ ecr:DeleteRegistryPolicy;Permissions management
 ecr:DeleteRepository;Write
 ecr:DeleteRepositoryCreationTemplate;Write
 ecr:DeleteRepositoryPolicy;Permissions management
-ecr:DeleteSigningConfiguration;Write
-ecr:DeregisterPullTimeUpdateExclusion;Write
 ecr:DescribeImageReplicationStatus;Read
 ecr:DescribeImageScanFindings;Read
-ecr:DescribeImageSigningStatus;Read
 ecr:DescribeImages;List
 ecr:DescribePullThroughCacheRules;List
 ecr:DescribeRegistry;Read
@@ -32,10 +29,8 @@ ecr:GetLifecyclePolicyPreview;Read
 ecr:GetRegistryPolicy;Read
 ecr:GetRegistryScanningConfiguration;Read
 ecr:GetRepositoryPolicy;Read
-ecr:GetSigningConfiguration;Read
 ecr:InitiateLayerUpload;Write
 ecr:ListImages;List
-ecr:ListPullTimeUpdateExclusions;List
 ecr:ListTagsForResource;Read
 ecr:PutAccountSetting;Write
 ecr:PutImage;Write
@@ -45,15 +40,12 @@ ecr:PutLifecyclePolicy;Write
 ecr:PutRegistryPolicy;Permissions management
 ecr:PutRegistryScanningConfiguration;Write
 ecr:PutReplicationConfiguration;Write
-ecr:PutSigningConfiguration;Write
-ecr:RegisterPullTimeUpdateExclusion;Write
 ecr:ReplicateImage;Write
 ecr:SetRepositoryPolicy;Permissions management
 ecr:StartImageScan;Write
 ecr:StartLifecyclePolicyPreview;Write
 ecr:TagResource;Tagging
 ecr:UntagResource;Tagging
-ecr:UpdateImageStorageClass;Write
 ecr:UpdatePullThroughCacheRule;Write
 ecr:UpdateRepositoryCreationTemplate;Write
 ecr:UploadLayerPart;Write

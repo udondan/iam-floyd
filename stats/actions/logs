@@ -82,7 +82,6 @@ logs:PutDestinationPolicy;Write
 logs:PutIndexPolicy;Write
 logs:PutIntegration;Write
 logs:PutLogEvents;Write
-logs:PutLogGroupDeletionProtection;Write
 logs:PutMetricFilter;Write
 logs:PutQueryDefinition;Write
 logs:PutResourcePolicy;Permissions management

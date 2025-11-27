@@ -116,21 +116,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a connection function
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateConnectionFunction.html
-   */
-  public toCreateConnectionFunction() {
-    return this.to('CreateConnectionFunction');
-  }
-
-  /**
    * Grants permission to create a connection group
    *
    * Access Level: Write
@@ -366,21 +351,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a trust store
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateTrustStore.html
-   */
-  public toCreateTrustStore() {
-    return this.to('CreateTrustStore');
-  }
-
-  /**
    * Grants permission to create a VPC origin
    *
    * Access Level: Write
@@ -426,17 +396,6 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDeleteCloudFrontOriginAccessIdentity() {
     return this.to('DeleteCloudFrontOriginAccessIdentity');
-  }
-
-  /**
-   * Grants permission to delete a connection function
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteConnectionFunction.html
-   */
-  public toDeleteConnectionFunction() {
-    return this.to('DeleteConnectionFunction');
   }
 
   /**
@@ -627,17 +586,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a trust store
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteTrustStore.html
-   */
-  public toDeleteTrustStore() {
-    return this.to('DeleteTrustStore');
-  }
-
-  /**
    * Grants permission to delete a VPC origin
    *
    * Access Level: Write
@@ -646,17 +594,6 @@ export class Cloudfront extends PolicyStatement {
    */
   public toDeleteVpcOrigin() {
     return this.to('DeleteVpcOrigin');
-  }
-
-  /**
-   * Grants permission to get a connection function summary
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DescribeConnectionFunction.html
-   */
-  public toDescribeConnectionFunction() {
-    return this.to('DescribeConnectionFunction');
   }
 
   /**
@@ -756,17 +693,6 @@ export class Cloudfront extends PolicyStatement {
    */
   public toGetCloudFrontOriginAccessIdentityConfig() {
     return this.to('GetCloudFrontOriginAccessIdentityConfig');
-  }
-
-  /**
-   * Grants permission to get a connection function's code
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionFunction.html
-   */
-  public toGetConnectionFunction() {
-    return this.to('GetConnectionFunction');
   }
 
   /**
@@ -1122,17 +1048,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get information about a trust store
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetTrustStore.html
-   */
-  public toGetTrustStore() {
-    return this.to('GetTrustStore');
-  }
-
-  /**
    * Grants permission to get the information about a VPC origin
    *
    * Access Level: Read
@@ -1185,17 +1100,6 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListConflictingAliases() {
     return this.to('ListConflictingAliases');
-  }
-
-  /**
-   * Grants permission to list the connection functions in your AWS account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConnectionFunctions.html
-   */
-  public toListConnectionFunctions() {
-    return this.to('ListConnectionFunctions');
   }
 
   /**
@@ -1276,17 +1180,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list summaries for distributions associated with the specified connection function
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByConnectionFunction.html
-   */
-  public toListDistributionsByConnectionFunction() {
-    return this.to('ListDistributionsByConnectionFunction');
-  }
-
-  /**
    * Grants permission to list the distributions by the specified connection mode
    *
    * Access Level: List
@@ -1350,17 +1243,6 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListDistributionsByResponseHeadersPolicyId() {
     return this.to('ListDistributionsByResponseHeadersPolicyId');
-  }
-
-  /**
-   * Grants permission to list summaries for distributions associated with the specified trust store
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByTrustStore.html
-   */
-  public toListDistributionsByTrustStore() {
-    return this.to('ListDistributionsByTrustStore');
   }
 
   /**
@@ -1573,17 +1455,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list the trust stores in your AWS account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListTrustStores.html
-   */
-  public toListTrustStores() {
-    return this.to('ListTrustStores');
-  }
-
-  /**
    * Grants permission to list CloudFront usage
    *
    * Access Level: List
@@ -1603,17 +1474,6 @@ export class Cloudfront extends PolicyStatement {
    */
   public toListVpcOrigins() {
     return this.to('ListVpcOrigins');
-  }
-
-  /**
-   * Grants permission to publish a connection function
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublishConnectionFunction.html
-   */
-  public toPublishConnectionFunction() {
-    return this.to('PublishConnectionFunction');
   }
 
   /**
@@ -1651,17 +1511,6 @@ export class Cloudfront extends PolicyStatement {
    */
   public toTagResource() {
     return this.to('TagResource');
-  }
-
-  /**
-   * Grants permission to test a connection function
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TestConnectionFunction.html
-   */
-  public toTestConnectionFunction() {
-    return this.to('TestConnectionFunction');
   }
 
   /**
@@ -1720,17 +1569,6 @@ export class Cloudfront extends PolicyStatement {
    */
   public toUpdateCloudFrontOriginAccessIdentity() {
     return this.to('UpdateCloudFrontOriginAccessIdentity');
-  }
-
-  /**
-   * Grants permission to update a connection function
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateConnectionFunction.html
-   */
-  public toUpdateConnectionFunction() {
-    return this.to('UpdateConnectionFunction');
   }
 
   /**
@@ -1932,17 +1770,6 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a trust store
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateTrustStore.html
-   */
-  public toUpdateTrustStore() {
-    return this.to('UpdateTrustStore');
-  }
-
-  /**
    * Grants permission to update a VPC origin
    *
    * Access Level: Write
@@ -1976,7 +1803,6 @@ export class Cloudfront extends PolicyStatement {
       'CreateAnycastIpList',
       'CreateCachePolicy',
       'CreateCloudFrontOriginAccessIdentity',
-      'CreateConnectionFunction',
       'CreateConnectionGroup',
       'CreateContinuousDeploymentPolicy',
       'CreateDistribution',
@@ -1997,12 +1823,10 @@ export class Cloudfront extends PolicyStatement {
       'CreateSavingsPlan',
       'CreateStreamingDistribution',
       'CreateStreamingDistributionWithTags',
-      'CreateTrustStore',
       'CreateVpcOrigin',
       'DeleteAnycastIpList',
       'DeleteCachePolicy',
       'DeleteCloudFrontOriginAccessIdentity',
-      'DeleteConnectionFunction',
       'DeleteConnectionGroup',
       'DeleteContinuousDeploymentPolicy',
       'DeleteDistribution',
@@ -2020,19 +1844,15 @@ export class Cloudfront extends PolicyStatement {
       'DeleteResourcePolicy',
       'DeleteResponseHeadersPolicy',
       'DeleteStreamingDistribution',
-      'DeleteTrustStore',
       'DeleteVpcOrigin',
       'DisassociateDistributionTenantWebACL',
       'DisassociateDistributionWebACL',
-      'PublishConnectionFunction',
       'PublishFunction',
       'PutResourcePolicy',
-      'TestConnectionFunction',
       'TestFunction',
       'UpdateAnycastIpList',
       'UpdateCachePolicy',
       'UpdateCloudFrontOriginAccessIdentity',
-      'UpdateConnectionFunction',
       'UpdateConnectionGroup',
       'UpdateContinuousDeploymentPolicy',
       'UpdateDistribution',
@@ -2051,11 +1871,9 @@ export class Cloudfront extends PolicyStatement {
       'UpdateResponseHeadersPolicy',
       'UpdateSavingsPlan',
       'UpdateStreamingDistribution',
-      'UpdateTrustStore',
       'UpdateVpcOrigin'
     ],
     Read: [
-      'DescribeConnectionFunction',
       'DescribeFunction',
       'DescribeKeyValueStore',
       'GetAnycastIpList',
@@ -2063,7 +1881,6 @@ export class Cloudfront extends PolicyStatement {
       'GetCachePolicyConfig',
       'GetCloudFrontOriginAccessIdentity',
       'GetCloudFrontOriginAccessIdentityConfig',
-      'GetConnectionFunction',
       'GetConnectionGroup',
       'GetConnectionGroupByRoutingEndpoint',
       'GetContinuousDeploymentPolicy',
@@ -2096,7 +1913,6 @@ export class Cloudfront extends PolicyStatement {
       'GetSavingsPlan',
       'GetStreamingDistribution',
       'GetStreamingDistributionConfig',
-      'GetTrustStore',
       'GetVpcOrigin',
       'ListTagsForResource',
       'VerifyDnsConfiguration'
@@ -2106,7 +1922,6 @@ export class Cloudfront extends PolicyStatement {
       'ListCachePolicies',
       'ListCloudFrontOriginAccessIdentities',
       'ListConflictingAliases',
-      'ListConnectionFunctions',
       'ListConnectionGroups',
       'ListContinuousDeploymentPolicies',
       'ListDistributionTenants',
@@ -2114,14 +1929,12 @@ export class Cloudfront extends PolicyStatement {
       'ListDistributions',
       'ListDistributionsByAnycastIpListId',
       'ListDistributionsByCachePolicyId',
-      'ListDistributionsByConnectionFunction',
       'ListDistributionsByConnectionMode',
       'ListDistributionsByKeyGroup',
       'ListDistributionsByLambdaFunction',
       'ListDistributionsByOriginRequestPolicyId',
       'ListDistributionsByRealtimeLogConfig',
       'ListDistributionsByResponseHeadersPolicyId',
-      'ListDistributionsByTrustStore',
       'ListDistributionsByVpcOriginId',
       'ListDistributionsByWebACLId',
       'ListDomainConflicts',
@@ -2140,7 +1953,6 @@ export class Cloudfront extends PolicyStatement {
       'ListResponseHeadersPolicies',
       'ListSavingsPlans',
       'ListStreamingDistributions',
-      'ListTrustStores',
       'ListUsages',
       'ListVpcOrigins'
     ],
@@ -2390,49 +2202,15 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type trust-store to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewer-mtls-trust-stores.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTrustStore(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:trust-store/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type connection-function to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-connection-functions.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnectionFunction(id: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:connection-function/${ id }`);
-  }
-
-  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateAnycastIpList()
-   * - .toCreateConnectionFunction()
    * - .toCreateConnectionGroup()
    * - .toCreateDistributionTenant()
    * - .toCreateStreamingDistributionWithTags()
-   * - .toCreateTrustStore()
    * - .toCreateVpcOrigin()
    * - .toTagResource()
    *
@@ -2456,8 +2234,6 @@ export class Cloudfront extends PolicyStatement {
    * - vpcorigin
    * - distribution-tenant
    * - connection-group
-   * - trust-store
-   * - connection-function
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2474,11 +2250,9 @@ export class Cloudfront extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAnycastIpList()
-   * - .toCreateConnectionFunction()
    * - .toCreateConnectionGroup()
    * - .toCreateDistributionTenant()
    * - .toCreateStreamingDistributionWithTags()
-   * - .toCreateTrustStore()
    * - .toCreateVpcOrigin()
    * - .toTagResource()
    * - .toUntagResource()
