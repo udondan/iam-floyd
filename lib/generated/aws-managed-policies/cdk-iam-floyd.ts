@@ -6659,6 +6659,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.NetworkSecurityDirectorServiceLinkedRolePolicy);
     }
 
+    /** This policy allows NovaAct to create and manage the necessary resources to operate the Nova Act agents. */
+    public NovaActServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.NovaActServiceRolePolicy);
+    }
+
     /** Provides full access to CloudWatch Observability Access Manager */
     public OAMFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.OAMFullAccess);
