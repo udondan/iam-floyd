@@ -2660,6 +2660,8 @@ export class AwsManagedPolicy {
     public static NetworkAdministrator = 'job-function/NetworkAdministrator';
     /** Provides permissions for the AWS Shield network security director service linked role to assess specified environments. */
     public static NetworkSecurityDirectorServiceLinkedRolePolicy = 'aws-service-role/NetworkSecurityDirectorServiceLinkedRolePolicy';
+    /** This policy allows NovaAct to create and manage the necessary resources to operate the Nova Act agents. */
+    public static NovaActServiceRolePolicy = 'aws-service-role/NovaActServiceRolePolicy';
     /** Provides full access to CloudWatch Observability Access Manager */
     public static OAMFullAccess = 'OAMFullAccess';
     /** Provides Read Only access to CloudWatch Observability Access Manager */
