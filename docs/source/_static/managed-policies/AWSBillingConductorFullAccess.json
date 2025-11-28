@@ -12,7 +12,9 @@
         "organizations:ListRoots",
         "organizations:ListOrganizationalUnitsForParent",
         "organizations:ListChildren",
-        "organizations:DescribeAccount"
+        "organizations:DescribeAccount",
+        "organizations:DescribeResponsibilityTransfer",
+        "organizations:ListInboundResponsibilityTransfers"
       ],
       "Resource": "*"
     }
