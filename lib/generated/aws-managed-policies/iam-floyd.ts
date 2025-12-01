@@ -1814,12 +1814,16 @@ export class AwsManagedPolicy {
     public static AWSLambdaInvocationDynamoDB = 'AWSLambdaInvocation-DynamoDB';
     /** Provides list and read access to Kinesis streams and write permissions to CloudWatch logs. */
     public static AWSLambdaKinesisExecutionRole = 'service-role/AWSLambdaKinesisExecutionRole';
+    /** This policy grants permissions to to create and administer EC2 resources managed by the Lambda Managed Instances, and descriptive permissions. */
+    public static AWSLambdaManagedEC2ResourceOperator = 'AWSLambdaManagedEC2ResourceOperator';
     /** Provides permissions required to access MSK Cluster within a VPC, manage ENIs (create, describe, delete) in the VPC and write permissions to CloudWatch Logs. */
     public static AWSLambdaMSKExecutionRole = 'service-role/AWSLambdaMSKExecutionRole';
     /** Grants Lambda Replicator necessary permissions to replicate functions across regions */
     public static AWSLambdaReplicator = 'aws-service-role/AWSLambdaReplicator';
     /** Default policy for AWS Lambda service role. */
     public static AWSLambdaRole = 'service-role/AWSLambdaRole';
+    /** Allows Lambda to describe and terminate managed instances from EC2 on your behalf. */
+    public static AWSLambdaServiceRolePolicy = 'aws-service-role/AWSLambdaServiceRolePolicy';
     /** Provides receive message, delete message, and read attribute access to SQS queues, and write permissions to CloudWatch logs. */
     public static AWSLambdaSQSQueueExecutionRole = 'service-role/AWSLambdaSQSQueueExecutionRole';
     /** Provides minimum permissions for a Lambda function to execute while accessing a resource within a VPC - create, describe, delete network interfaces and write permissions to CloudWatch Logs. */
@@ -1976,6 +1980,8 @@ export class AwsManagedPolicy {
     public static AWSPartnerCentralChannelManagement = 'AWSPartnerCentralChannelManagement';
     /** Provides full access to AWS Partner Central and related AWS Services. */
     public static AWSPartnerCentralFullAccess = 'AWSPartnerCentralFullAccess';
+    /** Provides necessary access for marketing activities. */
+    public static AWSPartnerCentralMarketingManagement = 'AWSPartnerCentralMarketingManagement';
     /** Provides necessary access for opportunity management activities. */
     public static AWSPartnerCentralOpportunityManagement = 'AWSPartnerCentralOpportunityManagement';
     /** Provides necessary access for developer testing in the Sandbox catalog. */
