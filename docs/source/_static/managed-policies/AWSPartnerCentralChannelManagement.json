@@ -62,6 +62,46 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "LegacyPartnerCentralAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral-account-management:AccessLegacyPartnerCentral"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "partnercentral-account-management:LegacyPartnerCentralRole": "ChannelUser"
+        }
+      }
+    },
+    {
+      "Sid": "PartnerDashboardAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetPartnerDashboard"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/Resell_V1/Dashboard/*"
+      ]
+    },
+    {
+      "Sid": "PartnerResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListPartners",
+        "partnercentral:GetPartner"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
     }
   ]
 }

@@ -4544,6 +4544,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaKinesisExecutionRole);
     }
 
+    /** This policy grants permissions to to create and administer EC2 resources managed by the Lambda Managed Instances, and descriptive permissions. */
+    public AWSLambdaManagedEC2ResourceOperator(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaManagedEC2ResourceOperator);
+    }
+
     /** Provides permissions required to access MSK Cluster within a VPC, manage ENIs (create, describe, delete) in the VPC and write permissions to CloudWatch Logs. */
     public AWSLambdaMSKExecutionRole(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaMSKExecutionRole);
@@ -4557,6 +4562,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Default policy for AWS Lambda service role. */
     public AWSLambdaRole(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaRole);
+    }
+
+    /** Allows Lambda to describe and terminate managed instances from EC2 on your behalf. */
+    public AWSLambdaServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaServiceRolePolicy);
     }
 
     /** Provides receive message, delete message, and read attribute access to SQS queues, and write permissions to CloudWatch logs. */
@@ -4947,6 +4957,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides full access to AWS Partner Central and related AWS Services. */
     public AWSPartnerCentralFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralFullAccess);
+    }
+
+    /** Provides necessary access for marketing activities. */
+    public AWSPartnerCentralMarketingManagement(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralMarketingManagement);
     }
 
     /** Provides necessary access for opportunity management activities. */

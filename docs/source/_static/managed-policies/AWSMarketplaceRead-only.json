@@ -31,7 +31,9 @@
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:ListPrivateMarketplaceRequests",
-        "aws-marketplace:DescribePrivateMarketplaceRequests"
+        "aws-marketplace:DescribePrivateMarketplaceRequests",
+        "aws-marketplace:GetAgreementPaymentRequest",
+        "aws-marketplace:ListAgreementPaymentRequests"
       ],
       "Resource": "*"
     },

@@ -9,6 +9,7 @@
         "partnercentral:AssignOpportunity",
         "partnercentral:AssociateOpportunity",
         "partnercentral:CreateEngagement",
+        "partnercentral:CreateEngagementContext",
         "partnercentral:CreateEngagementInvitation",
         "partnercentral:CreateOpportunity",
         "partnercentral:CreateResourceSnapshot",
@@ -28,18 +29,29 @@
         "partnercentral:ListEngagementResourceAssociations",
         "partnercentral:ListEngagements",
         "partnercentral:ListOpportunities",
+        "partnercentral:ListOpportunityFromEngagementTasks",
         "partnercentral:ListResourceSnapshotJobs",
         "partnercentral:ListResourceSnapshots",
         "partnercentral:ListSolutions",
         "partnercentral:RejectEngagementInvitation",
         "partnercentral:StartEngagementByAcceptingInvitationTask",
         "partnercentral:StartEngagementFromOpportunityTask",
+        "partnercentral:StartOpportunityFromEngagementTask",
         "partnercentral:StartResourceSnapshotJob",
         "partnercentral:StopResourceSnapshotJob",
         "partnercentral:SubmitOpportunity",
+        "partnercentral:UpdateEngagementContext",
         "partnercentral:UpdateOpportunity"
       ],
-      "Resource": "*"
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
     },
     {
       "Sid": "ListingAWSMarketplaceEntities",
@@ -50,14 +62,89 @@
       "Resource": "*"
     },
     {
-      "Sid": "AWSMarketplaceOffersAccess",
+      "Sid": "AWSMarketplaceEntityAccess",
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:DescribeEntity"
       ],
       "Resource": [
-        "arn:aws:aws-marketplace:*:*:AWSMarketplace/Offer/*"
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Solution/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/OfferSet/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Offer/*"
       ]
+    },
+    {
+      "Sid": "LegacyPartnerCentralAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral-account-management:AccessLegacyPartnerCentral"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "partnercentral-account-management:LegacyPartnerCentralRole": "AceManager"
+        }
+      }
+    },
+    {
+      "Sid": "PartnerDashboardAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetPartnerDashboard"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/Opportunity_V1/Dashboard/*",
+        "arn:aws:partnercentral::*:catalog/AWS/ReportingData/Engagement_V1/Dashboard/*"
+      ]
+    },
+    {
+      "Sid": "CollaborationChannelAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateCollaborationChannelRequest",
+        "partnercentral:ListCollaborationChannels",
+        "partnercentral:GetCollaborationChannel",
+        "partnercentral:CreateCollaborationChannelMembers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PartnerResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListPartners",
+        "partnercentral:GetPartner"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "TaggingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:TagResource",
+        "partnercentral:UntagResource",
+        "partnercentral:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral:*:*:catalog/*/opportunity/*",
+        "arn:aws:partnercentral:*:*:catalog/*/resource-snapshot-job/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
     }
   ]
 }

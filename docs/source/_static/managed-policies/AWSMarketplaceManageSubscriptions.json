@@ -30,7 +30,11 @@
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:UpdatePurchaseOrders",
-        "aws-marketplace:ListAgreementCharges"
+        "aws-marketplace:ListAgreementCharges",
+        "aws-marketplace:GetAgreementPaymentRequest",
+        "aws-marketplace:ListAgreementPaymentRequests",
+        "aws-marketplace:AcceptAgreementPaymentRequest",
+        "aws-marketplace:RejectAgreementPaymentRequest"
       ],
       "Resource": "*",
       "Condition": {
@@ -43,6 +47,44 @@
           "aws-marketplace:AgreementType": "false"
         }
       }
+    },
+    {
+      "Sid": "AWSMarketplaceChangeSetReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeChangeSet",
+        "aws-marketplace:ListChangeSets"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/ChangeSet/*"
+    },
+    {
+      "Sid": "AWSMarketplaceTokenManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartChangeSet"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/AgentTokenContainer/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace/ChangeSet/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "catalog:ChangeType": [
+            "CreateAgentTokenContainer",
+            "RequestExpressPrivateOffer",
+            "ExpireToken"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AWSMarketplaceEntityReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities",
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": "*"
     }
   ]
 }

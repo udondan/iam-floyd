@@ -41,6 +41,15 @@
       }
     },
     {
+      "Sid": "VerificationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:StartVerification",
+        "partnercentral:GetVerification"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "PassAWSPartnerCentralSnapshotJobRole",
       "Effect": "Allow",
       "Action": [
@@ -56,6 +65,22 @@
       }
     },
     {
+      "Sid": "LegacyPartnerCentralAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral-account-management:AccessLegacyPartnerCentral"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PartnerCentralMarketingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral-account-management:AccessMarketingCentral"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "ChannelBillingTransferRoleAccess",
       "Effect": "Allow",
       "Action": [
@@ -64,6 +89,47 @@
       "Resource": [
         "arn:aws:iam::*:role/PartnerCentralChannelBillingTransferManagement",
         "arn:aws:iam::*:role/PartnerCentralChannelBillingTransferReadOnly"
+      ]
+    },
+    {
+      "Sid": "PartnerCentralEphemeralWriteS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::aws-partner-central-marketplace-ephemeral-writeonly-files/${aws:PrincipalAccount}/*"
+    },
+    {
+      "Sid": "SupportAccess",
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase",
+        "support:DescribeCases",
+        "support:AddCommunicationToCase",
+        "support:ResolveCase",
+        "support:AddAttachmentsToSet",
+        "support:DescribeCommunications"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListEntitiesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeEntityAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Solution/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/OfferSet/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Offer/*"
       ]
     }
   ]
