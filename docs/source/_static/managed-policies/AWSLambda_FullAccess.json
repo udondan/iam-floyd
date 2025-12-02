@@ -11,6 +11,7 @@
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSubnets",
         "ec2:DescribeVpcs",
+        "kms:DescribeKey",
         "kms:ListAliases",
         "iam:GetPolicy",
         "iam:GetPolicyVersion",
@@ -49,6 +50,16 @@
         "logs:StopLiveTail"
       ],
       "Resource": "arn:aws:logs:*:*:log-group:/aws/lambda/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/lambda.amazonaws.com/AWSServiceRoleForLambda",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "lambda.amazonaws.com"
+        }
+      }
     }
   ]
 }
