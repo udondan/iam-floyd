@@ -15,7 +15,10 @@
         "logs:StartLiveTail",
         "logs:StopLiveTail",
         "cloudwatch:GenerateQuery",
-        "cloudwatch:GenerateQueryResultsSummary"
+        "cloudwatch:GenerateQueryResultsSummary",
+        "observabilityadmin:ListS3TableIntegrations",
+        "observabilityadmin:GetS3TableIntegration",
+        "observabilityadmin:ListTelemetryPipelines"
       ],
       "Resource": "*"
     }
