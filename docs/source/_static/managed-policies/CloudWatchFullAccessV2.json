@@ -49,6 +49,17 @@
         "observabilityadmin:TagResource",
         "observabilityadmin:UntagResource",
         "observabilityadmin:ListTagsForResource",
+        "observabilityadmin:CreateTelemetryPipeline",
+        "observabilityadmin:GetTelemetryPipeline",
+        "observabilityadmin:UpdateTelemetryPipeline",
+        "observabilityadmin:DeleteTelemetryPipeline",
+        "observabilityadmin:ListTelemetryPipelines",
+        "observabilityadmin:TestTelemetryPipeline",
+        "observabilityadmin:ValidateTelemetryPipelineConfiguration",
+        "observabilityadmin:CreateS3TableIntegration",
+        "observabilityadmin:GetS3TableIntegration",
+        "observabilityadmin:ListS3TableIntegrations",
+        "observabilityadmin:DeleteS3TableIntegration",
         "rum:*",
         "synthetics:*",
         "xray:*"
@@ -154,6 +165,55 @@
         "resource-explorer-2:CreateIndex"
       ],
       "Resource": "arn:aws:resource-explorer-2:*:*:index/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "logs.amazonaws.com"
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceArn": "arn:aws:observabilityadmin:*:*:s3tableintegration/*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "logs.amazonaws.com",
+            "telemetry-pipelines.observabilityadmin.amazonaws.com"
+          ]
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceArn": "arn:aws:observabilityadmin:*:*:telemetry-pipeline/*"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3tables:CreateTableBucket",
+        "s3tables:PutTableBucketEncryption"
+      ],
+      "Resource": "arn:aws:s3tables:*:*:bucket/aws-cloudwatch",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "observabilityadmin.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3tables:PutTableBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3tables:*:*:bucket/aws-cloudwatch"
     }
   ]
 }

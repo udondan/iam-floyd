@@ -4514,6 +4514,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaReadOnlyAccess);
     }
 
+    /** Provides write permissions to CloudWatch Logs and read/write permissions to durable execution APIs used by Lambda durable functions */
+    public AWSLambdaBasicDurableExecutionRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaBasicDurableExecutionRolePolicy);
+    }
+
     /** Provides write permissions to CloudWatch Logs. */
     public AWSLambdaBasicExecutionRole(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaBasicExecutionRole);
@@ -6982,6 +6987,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read/write access to AWS Secrets Manager via the AWS Management Console. Note: this exludes IAM actions, so combine with IAMFullAccess if rotation configuration is required. */
     public SecretsManagerReadWrite(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SecretsManagerReadWrite);
+    }
+
+    /** Provides permissions for authenticated users to access the Security Agent Web Application for configuring and executing automated security penetration tests. This policy enables users to manage pentests, view findings, monitor test execution, and interact with AWS resources required for security testing operations. */
+    public SecurityAgentWebAppAPIPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SecurityAgentWebAppAPIPolicy);
     }
 
     /** The security audit template grants access to read security configuration metadata. It is useful for software that audits the configuration of an AWS account. */
