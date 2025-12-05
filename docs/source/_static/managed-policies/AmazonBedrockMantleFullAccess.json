@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BedrockMantleAll",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

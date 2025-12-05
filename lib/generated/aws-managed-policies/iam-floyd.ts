@@ -74,6 +74,12 @@ export class AwsManagedPolicy {
     public static AmazonBedrockFullAccess = 'AmazonBedrockFullAccess';
     /** Provides limited access to Amazon Bedrock as well as to related services that are required by it */
     public static AmazonBedrockLimitedAccess = 'AmazonBedrockLimitedAccess';
+    /** Provides full access to Amazon Bedrock Mantle as well as limited access to related services that are required by it */
+    public static AmazonBedrockMantleFullAccess = 'AmazonBedrockMantleFullAccess';
+    /** Provides read and inference creation access to Amazon Bedrock Mantle */
+    public static AmazonBedrockMantleInferenceAccess = 'AmazonBedrockMantleInferenceAccess';
+    /** Provides read only access to Amazon Bedrock Mantle */
+    public static AmazonBedrockMantleReadOnly = 'AmazonBedrockMantleReadOnly';
     /** Provides limited access to Amazon Bedrock Marketplace as well as to related services that are required by it */
     public static AmazonBedrockMarketplaceAccess = 'AmazonBedrockMarketplaceAccess';
     /** Provides read only access to Amazon Bedrock */

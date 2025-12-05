@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BedrockMantleInference",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:Get*",
+        "bedrock-mantle:List*",
+        "bedrock-mantle:CreateInference"
+      ],
+      "Resource": "arn:aws:bedrock-mantle:*:*:project/*"
+    },
+    {
+      "Sid": "BedrockMantleCallWithBearerToken",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:CallWithBearerToken"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
