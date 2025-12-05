@@ -194,6 +194,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockLimitedAccess);
     }
 
+    /** Provides full access to Amazon Bedrock Mantle as well as limited access to related services that are required by it */
+    public AmazonBedrockMantleFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockMantleFullAccess);
+    }
+
+    /** Provides read and inference creation access to Amazon Bedrock Mantle */
+    public AmazonBedrockMantleInferenceAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockMantleInferenceAccess);
+    }
+
+    /** Provides read only access to Amazon Bedrock Mantle */
+    public AmazonBedrockMantleReadOnly(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockMantleReadOnly);
+    }
+
     /** Provides limited access to Amazon Bedrock Marketplace as well as to related services that are required by it */
     public AmazonBedrockMarketplaceAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockMarketplaceAccess);
