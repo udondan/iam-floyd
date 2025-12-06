@@ -5849,6 +5849,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformApplicationECSDeploymentPolicy);
     }
 
+    /** Provides access to execute transformations in AWS Transform custom. */
+    public AWSTransformCustomExecuteTransformations(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformCustomExecuteTransformations);
+    }
+
+    /** Provides full access to AWS Transform custom. */
+    public AWSTransformCustomFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformCustomFullAccess);
+    }
+
+    /** Enables the management of transformation resources and execution of transformations in AWS Transform custom. */
+    public AWSTransformCustomManageTransformations(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformCustomManageTransformations);
+    }
+
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */
     public AWSTrustedAdvisorPriorityFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTrustedAdvisorPriorityFullAccess);

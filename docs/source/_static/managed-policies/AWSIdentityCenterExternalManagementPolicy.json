@@ -14,7 +14,7 @@
       "Condition": {
         "ForAllValues:ArnEquals": {
           "identitystore:UserExternalIdIssuers": [
-            "arn:aws:identitystore::*:provisioningtenant/${aws:PrincipalTag/IdentityStoreId}/${aws:PrincipalTag/IdentityStoreExternalIdIssuer}"
+            "arn:aws:identitystore::*:identitystore/${aws:PrincipalTag/IdentityStoreId}/provisioningtenant/${aws:PrincipalTag/IdentityStoreExternalIdIssuer}"
           ]
         },
         "Null": {
@@ -38,7 +38,7 @@
       "Condition": {
         "ForAllValues:ArnEquals": {
           "identitystore:UserExternalIdIssuers": [
-            "arn:aws:identitystore::*:provisioningtenant/${aws:PrincipalTag/IdentityStoreId}/${aws:PrincipalTag/IdentityStoreExternalIdIssuer}"
+            "arn:aws:identitystore::*:identitystore/${aws:PrincipalTag/IdentityStoreId}/provisioningtenant/${aws:PrincipalTag/IdentityStoreExternalIdIssuer}"
           ]
         },
         "Null": {
