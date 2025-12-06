@@ -2336,6 +2336,12 @@ export class AwsManagedPolicy {
     public static AWSTransformApplicationDeploymentPolicy = 'service-role/AWSTransformApplicationDeploymentPolicy';
     /** Enables the AWS Transform to deploy applications to Amazon Elastic Container Service (ECS) with Fargate. It grants permissions to provision, configure, and manage the underlying infrastructure required to run applications on ECS. */
     public static AWSTransformApplicationECSDeploymentPolicy = 'service-role/AWSTransformApplicationECSDeploymentPolicy';
+    /** Provides access to execute transformations in AWS Transform custom. */
+    public static AWSTransformCustomExecuteTransformations = 'AWSTransformCustomExecuteTransformations';
+    /** Provides full access to AWS Transform custom. */
+    public static AWSTransformCustomFullAccess = 'AWSTransformCustomFullAccess';
+    /** Enables the management of transformation resources and execution of transformations in AWS Transform custom. */
+    public static AWSTransformCustomManageTransformations = 'AWSTransformCustomManageTransformations';
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */
     public static AWSTrustedAdvisorPriorityFullAccess = 'AWSTrustedAdvisorPriorityFullAccess';
     /** Provides read-only access to AWS Trusted Advisor Priority. This includes permission to view the delegated administrator accounts. */

@@ -10,6 +10,14 @@
       "Resource": "*"
     },
     {
+      "Sid": "BedrockMantleAll",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:*"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "DescribeKey",
       "Effect": "Allow",
       "Action": [

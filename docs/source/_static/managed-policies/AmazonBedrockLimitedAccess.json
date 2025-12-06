@@ -58,6 +58,17 @@
       "Resource": "*"
     },
     {
+      "Sid": "BedrockMantleAPIs",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:CallWithBearerToken",
+        "bedrock-mantle:Get*",
+        "bedrock-mantle:List*",
+        "bedrock-mantle:CreateInference"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "MarketplaceOperationsFromBedrockFor3pModels",
       "Effect": "Allow",
       "Action": [
