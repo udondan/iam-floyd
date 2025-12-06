@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [partnercentral-account-management](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspartnercentralaccountmanagement.html).
@@ -16,6 +16,34 @@ export class PartnercentralAccountManagement extends PolicyStatement {
    */
   constructor(sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permission to Single Sign-On from AWS Partner Central into Legacy Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifLegacyPartnerCentralRole()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   */
+  public toAccessLegacyPartnerCentral() {
+    return this.to('AccessLegacyPartnerCentral');
+  }
+
+  /**
+   * Grants permission to Single Sign-On from AWS Partner Central into Marketing Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifMarketingCentralRole()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   */
+  public toAccessMarketingCentral() {
+    return this.to('AccessMarketingCentral');
   }
 
   /**
@@ -53,9 +81,41 @@ export class PartnercentralAccountManagement extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AccessLegacyPartnerCentral',
+      'AccessMarketingCentral',
       'AssociatePartnerAccount',
       'AssociatePartnerUser',
       'DisassociatePartnerUser'
     ]
   };
+
+  /**
+   * Filters access by the Legacy Partner Central role
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   *
+   * Applies to actions:
+   * - .toAccessLegacyPartnerCentral()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLegacyPartnerCentralRole(value: string | string[], operator?: Operator | string) {
+    return this.if(`LegacyPartnerCentralRole`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by Marketing Central role
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   *
+   * Applies to actions:
+   * - .toAccessMarketingCentral()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMarketingCentralRole(value: string | string[], operator?: Operator | string) {
+    return this.if(`MarketingCentralRole`, value, operator ?? 'StringLike');
+  }
 }

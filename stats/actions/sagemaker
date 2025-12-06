@@ -8,6 +8,7 @@ sagemaker:BatchDescribeModelPackage;Read
 sagemaker:BatchGetMetrics;Read
 sagemaker:BatchGetRecord;Read
 sagemaker:BatchPutMetrics;Write
+sagemaker:CallMlflowAppApi;Write
 sagemaker:CallPartnerAppApi;Write
 sagemaker:CreateAction;Write
 sagemaker:CreateAlgorithm;Write
@@ -45,6 +46,7 @@ sagemaker:CreateInferenceExperiment;Write
 sagemaker:CreateInferenceRecommendationsJob;Write
 sagemaker:CreateLabelingJob;Write
 sagemaker:CreateLineageGroupPolicy;Write
+sagemaker:CreateMlflowApp;Write
 sagemaker:CreateMlflowTrackingServer;Write
 sagemaker:CreateModel;Write
 sagemaker:CreateModelBiasJobDefinition;Write
@@ -62,6 +64,7 @@ sagemaker:CreatePartnerApp;Write
 sagemaker:CreatePartnerAppPresignedUrl;Write
 sagemaker:CreatePipeline;Write
 sagemaker:CreatePresignedDomainUrl;Write
+sagemaker:CreatePresignedMlflowAppUrl;Write
 sagemaker:CreatePresignedMlflowTrackingServerUrl;Write
 sagemaker:CreatePresignedNotebookInstanceUrl;Write
 sagemaker:CreateProcessingJob;Write
@@ -111,6 +114,7 @@ sagemaker:DeleteImageVersion;Write
 sagemaker:DeleteInferenceComponent;Write
 sagemaker:DeleteInferenceExperiment;Write
 sagemaker:DeleteLineageGroupPolicy;Write
+sagemaker:DeleteMlflowApp;Write
 sagemaker:DeleteMlflowTrackingServer;Write
 sagemaker:DeleteModel;Write
 sagemaker:DeleteModelBiasJobDefinition;Write
@@ -179,6 +183,7 @@ sagemaker:DescribeInferenceExperiment;Read
 sagemaker:DescribeInferenceRecommendationsJob;Read
 sagemaker:DescribeLabelingJob;Read
 sagemaker:DescribeLineageGroup;Read
+sagemaker:DescribeMlflowApp;Read
 sagemaker:DescribeMlflowTrackingServer;Read
 sagemaker:DescribeModel;Read
 sagemaker:DescribeModelBiasJobDefinition;Read
@@ -272,6 +277,7 @@ sagemaker:ListInferenceRecommendationsJobs;List
 sagemaker:ListLabelingJobs;List
 sagemaker:ListLabelingJobsForWorkteam;List
 sagemaker:ListLineageGroups;List
+sagemaker:ListMlflowApps;List
 sagemaker:ListMlflowTrackingServers;List
 sagemaker:ListModelBiasJobDefinitions;List
 sagemaker:ListModelCardExportJobs;List
@@ -383,6 +389,7 @@ sagemaker:UpdateImageVersion;Write
 sagemaker:UpdateInferenceComponent;Write
 sagemaker:UpdateInferenceComponentRuntimeConfig;Write
 sagemaker:UpdateInferenceExperiment;Write
+sagemaker:UpdateMlflowApp;Write
 sagemaker:UpdateMlflowTrackingServer;Write
 sagemaker:UpdateModelCard;Write
 sagemaker:UpdateModelPackage;Write

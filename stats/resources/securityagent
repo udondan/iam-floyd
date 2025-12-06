@@ -1,0 +1,9 @@
+securityagent:AgentInstance
+securityagent:Application
+securityagent:Artifact
+securityagent:Control
+securityagent:Finding
+securityagent:Integration
+securityagent:Pentest
+securityagent:PentestJob
+securityagent:PentestTask

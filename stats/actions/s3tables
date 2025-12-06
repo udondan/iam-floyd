@@ -6,19 +6,28 @@ s3tables:DeleteTable;Write
 s3tables:DeleteTableBucket;Write
 s3tables:DeleteTableBucketEncryption;Write
 s3tables:DeleteTableBucketPolicy;Permissions management
+s3tables:DeleteTableBucketReplication;Write
 s3tables:DeleteTablePolicy;Permissions management
+s3tables:DeleteTableReplication;Write
 s3tables:GetNamespace;Read
 s3tables:GetTable;Read
 s3tables:GetTableBucket;Read
 s3tables:GetTableBucketEncryption;Read
 s3tables:GetTableBucketMaintenanceConfiguration;Read
 s3tables:GetTableBucketPolicy;Read
+s3tables:GetTableBucketReplication;Read
+s3tables:GetTableBucketStorageClass;Read
 s3tables:GetTableData;Read
 s3tables:GetTableEncryption;Read
 s3tables:GetTableMaintenanceConfiguration;Read
 s3tables:GetTableMaintenanceJobStatus;Read
 s3tables:GetTableMetadataLocation;Read
 s3tables:GetTablePolicy;Read
+s3tables:GetTableRecordExpirationConfiguration;Read
+s3tables:GetTableRecordExpirationJobStatus;Read
+s3tables:GetTableReplication;Read
+s3tables:GetTableReplicationStatus;Read
+s3tables:GetTableStorageClass;Read
 s3tables:ListNamespaces;List
 s3tables:ListTableBuckets;List
 s3tables:ListTables;List
@@ -26,10 +35,15 @@ s3tables:ListTagsForResource;List
 s3tables:PutTableBucketEncryption;Write
 s3tables:PutTableBucketMaintenanceConfiguration;Write
 s3tables:PutTableBucketPolicy;Permissions management
+s3tables:PutTableBucketReplication;Write
+s3tables:PutTableBucketStorageClass;Write
 s3tables:PutTableData;Write
 s3tables:PutTableEncryption;Write
 s3tables:PutTableMaintenanceConfiguration;Write
 s3tables:PutTablePolicy;Permissions management
+s3tables:PutTableRecordExpirationConfiguration;Write
+s3tables:PutTableReplication;Write
+s3tables:PutTableStorageClass;Write
 s3tables:RenameTable;Write
 s3tables:TagResource;Tagging
 s3tables:UntagResource;Tagging

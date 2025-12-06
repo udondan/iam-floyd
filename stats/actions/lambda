@@ -1,11 +1,14 @@
 lambda:AddLayerVersionPermission;Permissions management
 lambda:AddPermission;Permissions management
+lambda:CheckpointDurableExecution;Write
 lambda:CreateAlias;Write
+lambda:CreateCapacityProvider;Write
 lambda:CreateCodeSigningConfig;Write
 lambda:CreateEventSourceMapping;Write
 lambda:CreateFunction;Write
 lambda:CreateFunctionUrlConfig;Write
 lambda:DeleteAlias;Write
+lambda:DeleteCapacityProvider;Write
 lambda:DeleteCodeSigningConfig;Write
 lambda:DeleteEventSourceMapping;Write
 lambda:DeleteFunction;Write
@@ -19,7 +22,11 @@ lambda:DisableReplication;Permissions management
 lambda:EnableReplication;Permissions management
 lambda:GetAccountSettings;Read
 lambda:GetAlias;Read
+lambda:GetCapacityProvider;Read
 lambda:GetCodeSigningConfig;Read
+lambda:GetDurableExecution;Read
+lambda:GetDurableExecutionHistory;Read
+lambda:GetDurableExecutionState;Read
 lambda:GetEventSourceMapping;Read
 lambda:GetFunction;Read
 lambda:GetFunctionCodeSigningConfig;Read
@@ -27,6 +34,7 @@ lambda:GetFunctionConcurrency;Read
 lambda:GetFunctionConfiguration;Read
 lambda:GetFunctionEventInvokeConfig;Read
 lambda:GetFunctionRecursionConfig;Read
+lambda:GetFunctionScalingConfig;Read
 lambda:GetFunctionUrlConfig;Read
 lambda:GetLayerVersion;Read
 lambda:GetLayerVersionPolicy;Read
@@ -37,10 +45,13 @@ lambda:InvokeAsync;Write
 lambda:InvokeFunction;Write
 lambda:InvokeFunctionUrl;Write
 lambda:ListAliases;List
+lambda:ListCapacityProviders;List
 lambda:ListCodeSigningConfigs;List
+lambda:ListDurableExecutionsByFunction;List
 lambda:ListEventSourceMappings;List
 lambda:ListFunctionEventInvokeConfigs;List
 lambda:ListFunctionUrlConfigs;List
+lambda:ListFunctionVersionsByCapacityProvider;List
 lambda:ListFunctions;List
 lambda:ListFunctionsByCodeSigningConfig;List
 lambda:ListLayerVersions;List
@@ -48,19 +59,26 @@ lambda:ListLayers;List
 lambda:ListProvisionedConcurrencyConfigs;List
 lambda:ListTags;Read
 lambda:ListVersionsByFunction;List
+lambda:PassCapacityProvider;Write
 lambda:PublishLayerVersion;Write
 lambda:PublishVersion;Write
 lambda:PutFunctionCodeSigningConfig;Write
 lambda:PutFunctionConcurrency;Write
 lambda:PutFunctionEventInvokeConfig;Write
 lambda:PutFunctionRecursionConfig;Write
+lambda:PutFunctionScalingConfig;Write
 lambda:PutProvisionedConcurrencyConfig;Write
 lambda:PutRuntimeManagementConfig;Write
 lambda:RemoveLayerVersionPermission;Permissions management
 lambda:RemovePermission;Permissions management
+lambda:SendDurableExecutionCallbackFailure;Write
+lambda:SendDurableExecutionCallbackHeartbeat;Write
+lambda:SendDurableExecutionCallbackSuccess;Write
+lambda:StopDurableExecution;Write
 lambda:TagResource;Tagging
 lambda:UntagResource;Tagging
 lambda:UpdateAlias;Write
+lambda:UpdateCapacityProvider;Write
 lambda:UpdateCodeSigningConfig;Write
 lambda:UpdateEventSourceMapping;Write
 lambda:UpdateFunctionCode;Write

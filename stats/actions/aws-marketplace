@@ -1,8 +1,10 @@
 aws-marketplace:AcceptAgreementApprovalRequest;Write
+aws-marketplace:AcceptAgreementPaymentRequest;Write
 aws-marketplace:AcceptAgreementRequest;Write
 aws-marketplace:AssociateProductsWithPrivateMarketplace;Write
 aws-marketplace:BatchMeterUsage;Write
 aws-marketplace:CancelAgreement;Write
+aws-marketplace:CancelAgreementPaymentRequest;Write
 aws-marketplace:CancelAgreementRequest;Write
 aws-marketplace:CancelChangeSet;Write
 aws-marketplace:CreateAgreementRequest;Write
@@ -18,6 +20,7 @@ aws-marketplace:DescribeProcurementSystemConfiguration;Read
 aws-marketplace:DisassociateProductsFromPrivateMarketplace;Write
 aws-marketplace:GetAgreementApprovalRequest;Read
 aws-marketplace:GetAgreementEntitlements;Read
+aws-marketplace:GetAgreementPaymentRequest;Read
 aws-marketplace:GetAgreementRequest;Read
 aws-marketplace:GetAgreementTerms;List
 aws-marketplace:GetBuyerDashboard;Read
@@ -26,6 +29,7 @@ aws-marketplace:GetResourcePolicy;Read
 aws-marketplace:GetSellerDashboard;Read
 aws-marketplace:ListAgreementApprovalRequests;List
 aws-marketplace:ListAgreementCharges;List
+aws-marketplace:ListAgreementPaymentRequests;List
 aws-marketplace:ListAgreementRequests;List
 aws-marketplace:ListAssessments;List
 aws-marketplace:ListBuilds;Read
@@ -41,8 +45,10 @@ aws-marketplace:PutProcurementSystemConfiguration;Write
 aws-marketplace:PutResourcePolicy;Permissions management
 aws-marketplace:RegisterUsage;Write
 aws-marketplace:RejectAgreementApprovalRequest;Write
+aws-marketplace:RejectAgreementPaymentRequest;Write
 aws-marketplace:ResolveCustomer;Write
 aws-marketplace:SearchAgreements;List
+aws-marketplace:SendAgreementPaymentRequest;Write
 aws-marketplace:StartBuild;Write
 aws-marketplace:StartChangeSet;Write
 aws-marketplace:Subscribe;Write

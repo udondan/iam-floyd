@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [sagemaker-unified-studio-mcp](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssagemakerunifiedstudiomcpisamanagedmcpsolutionforawsdataprocessingserviceslikeemr_glue_athena.html).
+ * Statement provider for service [sagemaker-unified-studio-mcp](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerunifiedstudiomcp.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class SagemakerUnifiedStudioMcp extends PolicyStatement {
   public servicePrefix = 'sagemaker-unified-studio-mcp';
 
   /**
-   * Statement provider for service [sagemaker-unified-studio-mcp](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssagemakerunifiedstudiomcpisamanagedmcpsolutionforawsdataprocessingserviceslikeemr_glue_athena.html).
+   * Statement provider for service [sagemaker-unified-studio-mcp](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemakerunifiedstudiomcp.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,7 +23,7 @@ export class SagemakerUnifiedStudioMcp extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/sagemaker-unified-studio-mcp/latest/userguide/using-iam-roles.html
+   * https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/
    */
   public toCallPrivilegedTool() {
     return this.to('CallPrivilegedTool');
@@ -34,7 +34,7 @@ export class SagemakerUnifiedStudioMcp extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker-unified-studio-mcp/latest/userguide/using-iam-roles.html
+   * https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/
    */
   public toCallReadOnlyTool() {
     return this.to('CallReadOnlyTool');
@@ -45,7 +45,7 @@ export class SagemakerUnifiedStudioMcp extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/sagemaker-unified-studio-mcp/latest/userguide/using-iam-roles.html
+   * https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/
    */
   public toInvokeMcp() {
     return this.to('InvokeMcp');

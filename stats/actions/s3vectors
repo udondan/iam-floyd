@@ -9,8 +9,11 @@ s3vectors:GetVectorBucket;Read
 s3vectors:GetVectorBucketPolicy;Read
 s3vectors:GetVectors;Read
 s3vectors:ListIndexes;List
+s3vectors:ListTagsForResource;List
 s3vectors:ListVectorBuckets;List
 s3vectors:ListVectors;List
 s3vectors:PutVectorBucketPolicy;Permissions management
 s3vectors:PutVectors;Write
 s3vectors:QueryVectors;Read
+s3vectors:TagResource;Tagging
+s3vectors:UntagResource;Tagging

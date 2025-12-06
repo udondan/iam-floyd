@@ -46,6 +46,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to save the progress of an AWS Lambda durable execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_CheckpointDurableExecution.html
+   */
+  public toCheckpointDurableExecution() {
+    return this.to('CheckpointDurableExecution');
+  }
+
+  /**
    * Grants permission to create an alias for a Lambda function version
    *
    * Access Level: Write
@@ -54,6 +65,28 @@ export class Lambda extends PolicyStatement {
    */
   public toCreateAlias() {
     return this.to('CreateAlias');
+  }
+
+  /**
+   * Grants permission to create an AWS Lambda capacity provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifSecurityGroupIds()
+   * - .ifSubnetIds()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   * - kms:DescribeKey
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCapacityProvider.html
+   */
+  public toCreateCapacityProvider() {
+    return this.to('CreateCapacityProvider');
   }
 
   /**
@@ -103,6 +136,7 @@ export class Lambda extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - lambda:PassCapacityProvider
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
@@ -134,6 +168,17 @@ export class Lambda extends PolicyStatement {
    */
   public toDeleteAlias() {
     return this.to('DeleteAlias');
+  }
+
+  /**
+   * Grants permission to delete an AWS Lambda capacity provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteCapacityProvider.html
+   */
+  public toDeleteCapacityProvider() {
+    return this.to('DeleteCapacityProvider');
   }
 
   /**
@@ -287,6 +332,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about an AWS Lambda capacity provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetCapacityProvider.html
+   */
+  public toGetCapacityProvider() {
+    return this.to('GetCapacityProvider');
+  }
+
+  /**
    * Grants permission to view details about an AWS Lambda code signing config
    *
    * Access Level: Read
@@ -295,6 +351,39 @@ export class Lambda extends PolicyStatement {
    */
   public toGetCodeSigningConfig() {
     return this.to('GetCodeSigningConfig');
+  }
+
+  /**
+   * Grants permission to view details of an AWS Lambda durable execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecution.html
+   */
+  public toGetDurableExecution() {
+    return this.to('GetDurableExecution');
+  }
+
+  /**
+   * Grants permission to view execution history of an AWS Lambda durable execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecutionHistory.html
+   */
+  public toGetDurableExecutionHistory() {
+    return this.to('GetDurableExecutionHistory');
+  }
+
+  /**
+   * Grants permission to view current state of an AWS Lambda durable execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecutionState.html
+   */
+  public toGetDurableExecutionState() {
+    return this.to('GetDurableExecutionState');
   }
 
   /**
@@ -375,6 +464,17 @@ export class Lambda extends PolicyStatement {
    */
   public toGetFunctionRecursionConfig() {
     return this.to('GetFunctionRecursionConfig');
+  }
+
+  /**
+   * Grants permission to view the scaling configuration of an AWS Lambda function running on a capacity provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionScalingConfig.html
+   */
+  public toGetFunctionScalingConfig() {
+    return this.to('GetFunctionScalingConfig');
   }
 
   /**
@@ -501,6 +601,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of AWS Lambda capacity providers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_ListCapacityProviders.html
+   */
+  public toListCapacityProviders() {
+    return this.to('ListCapacityProviders');
+  }
+
+  /**
    * Grants permission to retrieve a list of AWS Lambda code signing configs
    *
    * Access Level: List
@@ -509,6 +620,17 @@ export class Lambda extends PolicyStatement {
    */
   public toListCodeSigningConfigs() {
     return this.to('ListCodeSigningConfigs');
+  }
+
+  /**
+   * Grants permission to retrieve a list of AWS Lambda durable executions of an AWS Lambda function
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_ListDurableExecutionsByFunction.html
+   */
+  public toListDurableExecutionsByFunction() {
+    return this.to('ListDurableExecutionsByFunction');
   }
 
   /**
@@ -545,6 +667,17 @@ export class Lambda extends PolicyStatement {
    */
   public toListFunctionUrlConfigs() {
     return this.to('ListFunctionUrlConfigs');
+  }
+
+  /**
+   * Grants permission to retrieve a list of AWS Lambda function versions by the capacity provider assigned
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionVersionsByCapacityProvider.html
+   */
+  public toListFunctionVersionsByCapacityProvider() {
+    return this.to('ListFunctionVersionsByCapacityProvider');
   }
 
   /**
@@ -603,7 +736,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping or code signing configuration resource
+   * Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource
    *
    * Access Level: Read
    *
@@ -622,6 +755,17 @@ export class Lambda extends PolicyStatement {
    */
   public toListVersionsByFunction() {
     return this.to('ListVersionsByFunction');
+  }
+
+  /**
+   * Grants permission to pass an AWS Lambda capacity provider to a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toPassCapacityProvider() {
+    return this.to('PassCapacityProvider');
   }
 
   /**
@@ -694,6 +838,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the scaling configuration of an AWS Lambda function running on a capacity provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionScalingConfig.html
+   */
+  public toPutFunctionScalingConfig() {
+    return this.to('PutFunctionScalingConfig');
+  }
+
+  /**
    * Grants permission to configure provisioned concurrency for an AWS Lambda function's alias or version
    *
    * Access Level: Write
@@ -742,7 +897,51 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an AWS Lambda function, event source mapping or code signing configuration resource
+   * Grants permission to send a failure response for a callback operation in an AWS Lambda durable execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackFailure.html
+   */
+  public toSendDurableExecutionCallbackFailure() {
+    return this.to('SendDurableExecutionCallbackFailure');
+  }
+
+  /**
+   * Grants permission to send a heartbeat for a callback operation in an AWS Lambda durable execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackHeartbeat.html
+   */
+  public toSendDurableExecutionCallbackHeartbeat() {
+    return this.to('SendDurableExecutionCallbackHeartbeat');
+  }
+
+  /**
+   * Grants permission to send a successful response for a callback operation in an AWS Lambda durable execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackSuccess.html
+   */
+  public toSendDurableExecutionCallbackSuccess() {
+    return this.to('SendDurableExecutionCallbackSuccess');
+  }
+
+  /**
+   * Grants permission to stop an AWS Lambda durable execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_StopDurableExecution.html
+   */
+  public toStopDurableExecution() {
+    return this.to('StopDurableExecution');
+  }
+
+  /**
+   * Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource
    *
    * Access Level: Tagging
    *
@@ -757,7 +956,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from an AWS Lambda function, event source mapping or code signing configuration resource
+   * Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource
    *
    * Access Level: Tagging
    *
@@ -779,6 +978,17 @@ export class Lambda extends PolicyStatement {
    */
   public toUpdateAlias() {
     return this.to('UpdateAlias');
+  }
+
+  /**
+   * Grants permission to update an AWS Lambda capacity provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateCapacityProvider.html
+   */
+  public toUpdateCapacityProvider() {
+    return this.to('UpdateCapacityProvider');
   }
 
   /**
@@ -881,12 +1091,15 @@ export class Lambda extends PolicyStatement {
       'RemovePermission'
     ],
     Write: [
+      'CheckpointDurableExecution',
       'CreateAlias',
+      'CreateCapacityProvider',
       'CreateCodeSigningConfig',
       'CreateEventSourceMapping',
       'CreateFunction',
       'CreateFunctionUrlConfig',
       'DeleteAlias',
+      'DeleteCapacityProvider',
       'DeleteCodeSigningConfig',
       'DeleteEventSourceMapping',
       'DeleteFunction',
@@ -899,15 +1112,22 @@ export class Lambda extends PolicyStatement {
       'InvokeAsync',
       'InvokeFunction',
       'InvokeFunctionUrl',
+      'PassCapacityProvider',
       'PublishLayerVersion',
       'PublishVersion',
       'PutFunctionCodeSigningConfig',
       'PutFunctionConcurrency',
       'PutFunctionEventInvokeConfig',
       'PutFunctionRecursionConfig',
+      'PutFunctionScalingConfig',
       'PutProvisionedConcurrencyConfig',
       'PutRuntimeManagementConfig',
+      'SendDurableExecutionCallbackFailure',
+      'SendDurableExecutionCallbackHeartbeat',
+      'SendDurableExecutionCallbackSuccess',
+      'StopDurableExecution',
       'UpdateAlias',
+      'UpdateCapacityProvider',
       'UpdateCodeSigningConfig',
       'UpdateEventSourceMapping',
       'UpdateFunctionCode',
@@ -919,7 +1139,11 @@ export class Lambda extends PolicyStatement {
     Read: [
       'GetAccountSettings',
       'GetAlias',
+      'GetCapacityProvider',
       'GetCodeSigningConfig',
+      'GetDurableExecution',
+      'GetDurableExecutionHistory',
+      'GetDurableExecutionState',
       'GetEventSourceMapping',
       'GetFunction',
       'GetFunctionCodeSigningConfig',
@@ -927,6 +1151,7 @@ export class Lambda extends PolicyStatement {
       'GetFunctionConfiguration',
       'GetFunctionEventInvokeConfig',
       'GetFunctionRecursionConfig',
+      'GetFunctionScalingConfig',
       'GetFunctionUrlConfig',
       'GetLayerVersion',
       'GetLayerVersionPolicy',
@@ -937,10 +1162,13 @@ export class Lambda extends PolicyStatement {
     ],
     List: [
       'ListAliases',
+      'ListCapacityProviders',
       'ListCodeSigningConfigs',
+      'ListDurableExecutionsByFunction',
       'ListEventSourceMappings',
       'ListFunctionEventInvokeConfigs',
       'ListFunctionUrlConfigs',
+      'ListFunctionVersionsByCapacityProvider',
       'ListFunctions',
       'ListFunctionsByCodeSigningConfig',
       'ListLayerVersions',
@@ -953,6 +1181,23 @@ export class Lambda extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type capacityProvider to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param capacityProviderName - Identifier for the capacityProviderName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capacity-provider:${ capacityProviderName }`);
+  }
 
   /**
    * Adds a resource of type code signing config to the statement
@@ -969,6 +1214,23 @@ export class Lambda extends PolicyStatement {
    */
   public onCodeSigningConfig(codeSigningConfigId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:code-signing-config:${ codeSigningConfigId }`);
+  }
+
+  /**
+   * Adds a resource of type durable execution to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param functionName - Identifier for the functionName.
+   * @param version - Identifier for the version.
+   * @param executionName - Identifier for the executionName.
+   * @param executionId - Identifier for the executionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDurableExecution(functionName: string, version: string, executionName: string, executionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:function:${ functionName }:${ version }/durable-execution/${ executionName }/${ executionId }`);
   }
 
   /**
@@ -1076,6 +1338,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateCapacityProvider()
    * - .toCreateCodeSigningConfig()
    * - .toCreateEventSourceMapping()
    * - .toCreateFunction()
@@ -1095,6 +1358,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
+   * - capacityProvider
    * - code signing config
    * - eventSourceMapping
    * - function
@@ -1115,6 +1379,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateCapacityProvider()
    * - .toCreateCodeSigningConfig()
    * - .toCreateEventSourceMapping()
    * - .toCreateFunction()
@@ -1258,6 +1523,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
    *
    * Applies to actions:
+   * - .toCreateCapacityProvider()
    * - .toCreateFunction()
    * - .toUpdateFunctionConfiguration()
    *
@@ -1286,6 +1552,7 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
    *
    * Applies to actions:
+   * - .toCreateCapacityProvider()
    * - .toCreateFunction()
    * - .toUpdateFunctionConfiguration()
    *

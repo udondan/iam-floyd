@@ -1,5 +1,10 @@
 opensearch:ApplicationAccessAll;Permissions management
+opensearch:CancelAutoOptimizeJob;Write
 opensearch:CancelDirectQuery;Write
+opensearch:DeleteAutoOptimizeJob;Write
+opensearch:GetAutoOptimizeJob;Read
 opensearch:GetDirectQuery;Read
 opensearch:GetDirectQueryResult;Read
+opensearch:ListAutoOptimizeJobs;List
 opensearch:StartDirectQuery;Write
+opensearch:SubmitAutoOptimizeJob;Write

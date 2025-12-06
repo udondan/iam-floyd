@@ -1,6 +1,9 @@
 partnercentral:Catalog
 partnercentral:ChannelHandshakeType
+partnercentral:FulfillmentTypes
+partnercentral:Programs
 partnercentral:RelatedEntityType
 partnercentral:RequestTag/${TagKey}
 partnercentral:ResourceTag/${TagKey}
 partnercentral:TagKeys
+partnercentral:VerificationType

@@ -1,3 +1,5 @@
+partnercentral-account-management:AccessLegacyPartnerCentral;Write
+partnercentral-account-management:AccessMarketingCentral;Write
 partnercentral-account-management:AssociatePartnerAccount;Write
 partnercentral-account-management:AssociatePartnerUser;Write
 partnercentral-account-management:DisassociatePartnerUser;Write

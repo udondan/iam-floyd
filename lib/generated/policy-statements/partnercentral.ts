@@ -34,6 +34,20 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to accept connection invitations in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AcceptConnectionInvitation.html
+   */
+  public toAcceptConnectionInvitation() {
+    return this.to('AcceptConnectionInvitation');
+  }
+
+  /**
    * Grants permission to accept Engagement Invitations on AWS Partner Central
    *
    * Access Level: Write
@@ -48,6 +62,21 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to amend benefit applications in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AmendBenefitApplication.html
+   */
+  public toAmendBenefitApplication() {
+    return this.to('AmendBenefitApplication');
+  }
+
+  /**
    * Grants permission to assign Opportunities on AWS Partner Central
    *
    * Access Level: Write
@@ -59,6 +88,36 @@ export class Partnercentral extends PolicyStatement {
    */
   public toAssignOpportunity() {
     return this.to('AssignOpportunity');
+  }
+
+  /**
+   * Grants permission to associate AWS Training and Certification email domains in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssociateAwsTrainingCertificationEmailDomain.html
+   */
+  public toAssociateAwsTrainingCertificationEmailDomain() {
+    return this.to('AssociateAwsTrainingCertificationEmailDomain');
+  }
+
+  /**
+   * Grants permission to associate benefit application resources in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssociateBenefitApplicationResource.html
+   */
+  public toAssociateBenefitApplicationResource() {
+    return this.to('AssociateBenefitApplicationResource');
   }
 
   /**
@@ -77,6 +136,21 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel benefit applications in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelBenefitApplication.html
+   */
+  public toCancelBenefitApplication() {
+    return this.to('CancelBenefitApplication');
+  }
+
+  /**
    * Grants permission to cancel channel handshakes in AWS Partner Central
    *
    * Access Level: Write
@@ -90,6 +164,76 @@ export class Partnercentral extends PolicyStatement {
    */
   public toCancelChannelHandshake() {
     return this.to('CancelChannelHandshake');
+  }
+
+  /**
+   * Grants permission to cancel connections in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelConnection.html
+   */
+  public toCancelConnection() {
+    return this.to('CancelConnection');
+  }
+
+  /**
+   * Grants permission to cancel connection invitations in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelConnectionInvitation.html
+   */
+  public toCancelConnectionInvitation() {
+    return this.to('CancelConnectionInvitation');
+  }
+
+  /**
+   * Grants permission to cancel profile update tasks in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelProfileUpdateTask.html
+   */
+  public toCancelProfileUpdateTask() {
+    return this.to('CancelProfileUpdateTask');
+  }
+
+  /**
+   * Grants permission to create benefit applications in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateBenefitApplication.html
+   */
+  public toCreateBenefitApplication() {
+    return this.to('CreateBenefitApplication');
+  }
+
+  /**
+   * Grants permission to create business plans in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toCreateBusinessPlan() {
+    return this.to('CreateBusinessPlan');
   }
 
   /**
@@ -111,6 +255,38 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create collaboration channel members in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toCreateCollaborationChannelMembers() {
+    return this.to('CreateCollaborationChannelMembers');
+  }
+
+  /**
+   * Grants permission to create collaboration channel requests in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toCreateCollaborationChannelRequest() {
+    return this.to('CreateCollaborationChannelRequest');
+  }
+
+  /**
+   * Grants permission to create connection invitations in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateConnectionInvitation.html
+   */
+  public toCreateConnectionInvitation() {
+    return this.to('CreateConnectionInvitation');
+  }
+
+  /**
    * Grants permission to creating engagements in AWS Partner Central
    *
    * Access Level: Write
@@ -122,6 +298,20 @@ export class Partnercentral extends PolicyStatement {
    */
   public toCreateEngagement() {
     return this.to('CreateEngagement');
+  }
+
+  /**
+   * Grants permission to create engagement contexts in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateEngagementContext.html
+   */
+  public toCreateEngagementContext() {
+    return this.to('CreateEngagementContext');
   }
 
   /**
@@ -152,6 +342,23 @@ export class Partnercentral extends PolicyStatement {
    */
   public toCreateOpportunity() {
     return this.to('CreateOpportunity');
+  }
+
+  /**
+   * Grants permission to create partners in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreatePartner.html
+   */
+  public toCreatePartner() {
+    return this.to('CreatePartner');
   }
 
   /**
@@ -263,6 +470,36 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate AWS Training and Certification email domains in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DisassociateAwsTrainingCertificationEmailDomain.html
+   */
+  public toDisassociateAwsTrainingCertificationEmailDomain() {
+    return this.to('DisassociateAwsTrainingCertificationEmailDomain');
+  }
+
+  /**
+   * Grants permission to disassociate benefit application resources in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DisassociateBenefitApplicationResource.html
+   */
+  public toDisassociateBenefitApplicationResource() {
+    return this.to('DisassociateBenefitApplicationResource');
+  }
+
+  /**
    * Grants permission to disassociate Opportunities on AWS Partner Central from other entities
    *
    * Access Level: Write
@@ -278,6 +515,30 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enroll in partner paths in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toEnrollInPartnerPath() {
+    return this.to('EnrollInPartnerPath');
+  }
+
+  /**
+   * Grants permission to retrieve alliance lead contact information in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetAllianceLeadContact.html
+   */
+  public toGetAllianceLeadContact() {
+    return this.to('GetAllianceLeadContact');
+  }
+
+  /**
    * Grants permission to retrieve AWS Opportunity Summaries for Opportunities on AWS Partner Central
    *
    * Access Level: Read
@@ -289,6 +550,111 @@ export class Partnercentral extends PolicyStatement {
    */
   public toGetAwsOpportunitySummary() {
     return this.to('GetAwsOpportunitySummary');
+  }
+
+  /**
+   * Grants permission to retrieve benefit details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefit.html
+   */
+  public toGetBenefit() {
+    return this.to('GetBenefit');
+  }
+
+  /**
+   * Grants permission to retrieve benefit allocation details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefitAllocation.html
+   */
+  public toGetBenefitAllocation() {
+    return this.to('GetBenefitAllocation');
+  }
+
+  /**
+   * Grants permission to retrieve benefit application details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefitApplication.html
+   */
+  public toGetBenefitApplication() {
+    return this.to('GetBenefitApplication');
+  }
+
+  /**
+   * Grants permission to retrieve business plan details in AWS Partner Central
+   *
+   * Access Level: Read
+   */
+  public toGetBusinessPlan() {
+    return this.to('GetBusinessPlan');
+  }
+
+  /**
+   * Grants permission to retrieve collaboration channel details in AWS Partner Central
+   *
+   * Access Level: Read
+   */
+  public toGetCollaborationChannel() {
+    return this.to('GetCollaborationChannel');
+  }
+
+  /**
+   * Grants permission to retrieve connection details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnection.html
+   */
+  public toGetConnection() {
+    return this.to('GetConnection');
+  }
+
+  /**
+   * Grants permission to retrieve connection invitation details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnectionInvitation.html
+   */
+  public toGetConnectionInvitation() {
+    return this.to('GetConnectionInvitation');
+  }
+
+  /**
+   * Grants permission to retrieve connection preferences in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnectionPreferences.html
+   */
+  public toGetConnectionPreferences() {
+    return this.to('GetConnectionPreferences');
   }
 
   /**
@@ -331,6 +697,72 @@ export class Partnercentral extends PolicyStatement {
    */
   public toGetOpportunity() {
     return this.to('GetOpportunity');
+  }
+
+  /**
+   * Grants permission to retrieve partner details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetPartner.html
+   */
+  public toGetPartner() {
+    return this.to('GetPartner');
+  }
+
+  /**
+   * Grants permission to retrieve partner dashboard information in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   */
+  public toGetPartnerDashboard() {
+    return this.to('GetPartnerDashboard');
+  }
+
+  /**
+   * Grants permission to retrieve public partner profile details in AWS Partner Central
+   *
+   * Access Level: Read
+   */
+  public toGetPartnerProfile() {
+    return this.to('GetPartnerProfile');
+  }
+
+  /**
+   * Grants permission to retrieve profile update task details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetProfileUpdateTask.html
+   */
+  public toGetProfileUpdateTask() {
+    return this.to('GetProfileUpdateTask');
+  }
+
+  /**
+   * Grants permission to retrieve profile visibility settings in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetProfileVisibility.html
+   */
+  public toGetProfileVisibility() {
+    return this.to('GetProfileVisibility');
   }
 
   /**
@@ -403,6 +835,77 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve verification details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   * - .ifVerificationType()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetVerification.html
+   */
+  public toGetVerification() {
+    return this.to('GetVerification');
+  }
+
+  /**
+   * Grants permission to list benefit allocations in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefitAllocations.html
+   */
+  public toListBenefitAllocations() {
+    return this.to('ListBenefitAllocations');
+  }
+
+  /**
+   * Grants permission to list benefit applications in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefitApplications.html
+   */
+  public toListBenefitApplications() {
+    return this.to('ListBenefitApplications');
+  }
+
+  /**
+   * Grants permission to list benefits in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefits.html
+   */
+  public toListBenefits() {
+    return this.to('ListBenefits');
+  }
+
+  /**
+   * Grants permission to list business plans in AWS Partner Central
+   *
+   * Access Level: List
+   */
+  public toListBusinessPlans() {
+    return this.to('ListBusinessPlans');
+  }
+
+  /**
    * Grants permission to list channel handshakes in AWS Partner Central
    *
    * Access Level: List
@@ -415,6 +918,43 @@ export class Partnercentral extends PolicyStatement {
    */
   public toListChannelHandshakes() {
     return this.to('ListChannelHandshakes');
+  }
+
+  /**
+   * Grants permission to list collaboration channels in AWS Partner Central
+   *
+   * Access Level: List
+   */
+  public toListCollaborationChannels() {
+    return this.to('ListCollaborationChannels');
+  }
+
+  /**
+   * Grants permission to list connection invitations in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListConnectionInvitations.html
+   */
+  public toListConnectionInvitations() {
+    return this.to('ListConnectionInvitations');
+  }
+
+  /**
+   * Grants permission to list connections in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListConnections.html
+   */
+  public toListConnections() {
+    return this.to('ListConnections');
   }
 
   /**
@@ -516,6 +1056,43 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list opportunity from engagement tasks in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListOpportunityFromEngagementTasks.html
+   */
+  public toListOpportunityFromEngagementTasks() {
+    return this.to('ListOpportunityFromEngagementTasks');
+  }
+
+  /**
+   * Grants permission to list partner paths in AWS Partner Central
+   *
+   * Access Level: List
+   */
+  public toListPartnerPaths() {
+    return this.to('ListPartnerPaths');
+  }
+
+  /**
+   * Grants permission to list partners in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListPartners.html
+   */
+  public toListPartners() {
+    return this.to('ListPartners');
+  }
+
+  /**
    * Grants permission to list program management accounts in AWS Partner Central
    *
    * Access Level: List
@@ -602,6 +1179,45 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set alliance lead contact information in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutAllianceLeadContact.html
+   */
+  public toPutAllianceLeadContact() {
+    return this.to('PutAllianceLeadContact');
+  }
+
+  /**
+   * Grants permission to update business plans in AWS Partner Central
+   *
+   * Access Level: Write
+   */
+  public toPutBusinessPlan() {
+    return this.to('PutBusinessPlan');
+  }
+
+  /**
+   * Grants permission to set profile visibility in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutProfileVisibility.html
+   */
+  public toPutProfileVisibility() {
+    return this.to('PutProfileVisibility');
+  }
+
+  /**
    * Grants permission to put selling system settings in AWS Partner Central
    *
    * Access Level: Write
@@ -610,6 +1226,21 @@ export class Partnercentral extends PolicyStatement {
    */
   public toPutSellingSystemSettings() {
     return this.to('PutSellingSystemSettings');
+  }
+
+  /**
+   * Grants permission to recall benefit applications in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RecallBenefitApplication.html
+   */
+  public toRecallBenefitApplication() {
+    return this.to('RecallBenefitApplication');
   }
 
   /**
@@ -628,6 +1259,20 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reject connection invitations in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectConnectionInvitation.html
+   */
+  public toRejectConnectionInvitation() {
+    return this.to('RejectConnectionInvitation');
+  }
+
+  /**
    * Grants permission to reject Engagement Invitations on AWS Partner Central
    *
    * Access Level: Write
@@ -639,6 +1284,29 @@ export class Partnercentral extends PolicyStatement {
    */
   public toRejectEngagementInvitation() {
     return this.to('RejectEngagementInvitation');
+  }
+
+  /**
+   * Grants permission to search public partner profiles in AWS Partner Central
+   *
+   * Access Level: List
+   */
+  public toSearchPartnerProfiles() {
+    return this.to('SearchPartnerProfiles');
+  }
+
+  /**
+   * Grants permission to send email verification codes in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SendEmailVerificationCode.html
+   */
+  public toSendEmailVerificationCode() {
+    return this.to('SendEmailVerificationCode');
   }
 
   /**
@@ -692,6 +1360,46 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate tasks that start Opportunities from Engagements on AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * Dependent actions:
+   * - partnercentral:CreateEngagementContext
+   * - partnercentral:CreateOpportunity
+   * - partnercentral:CreateResourceSnapshot
+   * - partnercentral:CreateResourceSnapshotJob
+   * - partnercentral:GetEngagement
+   * - partnercentral:StartResourceSnapshotJob
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartOpportunityFromEngagementTask.html
+   */
+  public toStartOpportunityFromEngagementTask() {
+    return this.to('StartOpportunityFromEngagementTask');
+  }
+
+  /**
+   * Grants permission to start profile update tasks in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartProfileUpdateTask.html
+   */
+  public toStartProfileUpdateTask() {
+    return this.to('StartProfileUpdateTask');
+  }
+
+  /**
    * Grants permission to starting resource snapshot jobs in AWS Partner Central
    *
    * Access Level: Write
@@ -706,6 +1414,21 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start verification processes in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   * - .ifVerificationType()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartVerification.html
+   */
+  public toStartVerification() {
+    return this.to('StartVerification');
+  }
+
+  /**
    * Grants permission to stopping resource snapshot jobs in AWS Partner Central
    *
    * Access Level: Write
@@ -717,6 +1440,21 @@ export class Partnercentral extends PolicyStatement {
    */
   public toStopResourceSnapshotJob() {
     return this.to('StopResourceSnapshotJob');
+  }
+
+  /**
+   * Grants permission to submit benefit applications in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SubmitBenefitApplication.html
+   */
+  public toSubmitBenefitApplication() {
+    return this.to('SubmitBenefitApplication');
   }
 
   /**
@@ -767,6 +1505,49 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update benefit applications in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateBenefitApplication.html
+   */
+  public toUpdateBenefitApplication() {
+    return this.to('UpdateBenefitApplication');
+  }
+
+  /**
+   * Grants permission to update connection preferences in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateConnectionPreferences.html
+   */
+  public toUpdateConnectionPreferences() {
+    return this.to('UpdateConnectionPreferences');
+  }
+
+  /**
+   * Grants permission to update engagement contexts in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateEngagementContext.html
+   */
+  public toUpdateEngagementContext() {
+    return this.to('UpdateEngagementContext');
+  }
+
+  /**
    * Grants permission to update Opportunities on AWS Partner Central
    *
    * Access Level: Write
@@ -813,14 +1594,29 @@ export class Partnercentral extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptChannelHandshake',
+      'AcceptConnectionInvitation',
       'AcceptEngagementInvitation',
+      'AmendBenefitApplication',
       'AssignOpportunity',
+      'AssociateAwsTrainingCertificationEmailDomain',
+      'AssociateBenefitApplicationResource',
       'AssociateOpportunity',
+      'CancelBenefitApplication',
       'CancelChannelHandshake',
+      'CancelConnection',
+      'CancelConnectionInvitation',
+      'CancelProfileUpdateTask',
+      'CreateBenefitApplication',
+      'CreateBusinessPlan',
       'CreateChannelHandshake',
+      'CreateCollaborationChannelMembers',
+      'CreateCollaborationChannelRequest',
+      'CreateConnectionInvitation',
       'CreateEngagement',
+      'CreateEngagementContext',
       'CreateEngagementInvitation',
       'CreateOpportunity',
+      'CreatePartner',
       'CreateProgramManagementAccount',
       'CreateRelationship',
       'CreateResourceSnapshot',
@@ -828,45 +1624,87 @@ export class Partnercentral extends PolicyStatement {
       'DeleteProgramManagementAccount',
       'DeleteRelationship',
       'DeleteResourceSnapshotJob',
+      'DisassociateAwsTrainingCertificationEmailDomain',
+      'DisassociateBenefitApplicationResource',
       'DisassociateOpportunity',
+      'EnrollInPartnerPath',
+      'PutAllianceLeadContact',
+      'PutBusinessPlan',
+      'PutProfileVisibility',
       'PutSellingSystemSettings',
+      'RecallBenefitApplication',
       'RejectChannelHandshake',
+      'RejectConnectionInvitation',
       'RejectEngagementInvitation',
+      'SendEmailVerificationCode',
       'StartEngagementByAcceptingInvitationTask',
       'StartEngagementFromOpportunityTask',
+      'StartOpportunityFromEngagementTask',
+      'StartProfileUpdateTask',
       'StartResourceSnapshotJob',
+      'StartVerification',
       'StopResourceSnapshotJob',
+      'SubmitBenefitApplication',
       'SubmitOpportunity',
+      'UpdateBenefitApplication',
+      'UpdateConnectionPreferences',
+      'UpdateEngagementContext',
       'UpdateOpportunity',
       'UpdateProgramManagementAccount',
       'UpdateRelationship'
     ],
     Read: [
+      'GetAllianceLeadContact',
       'GetAwsOpportunitySummary',
+      'GetBenefit',
+      'GetBenefitAllocation',
+      'GetBenefitApplication',
+      'GetBusinessPlan',
+      'GetCollaborationChannel',
+      'GetConnection',
+      'GetConnectionInvitation',
+      'GetConnectionPreferences',
       'GetEngagement',
       'GetEngagementInvitation',
       'GetOpportunity',
+      'GetPartner',
+      'GetPartnerDashboard',
+      'GetPartnerProfile',
+      'GetProfileUpdateTask',
+      'GetProfileVisibility',
       'GetProgramManagementAccount',
       'GetRelationship',
       'GetResourceSnapshot',
       'GetResourceSnapshotJob',
       'GetSellingSystemSettings',
+      'GetVerification',
       'ListEngagementMembers',
       'ListEngagementResourceAssociations',
       'ListTagsForResource'
     ],
     List: [
+      'ListBenefitAllocations',
+      'ListBenefitApplications',
+      'ListBenefits',
+      'ListBusinessPlans',
       'ListChannelHandshakes',
+      'ListCollaborationChannels',
+      'ListConnectionInvitations',
+      'ListConnections',
       'ListEngagementByAcceptingInvitationTasks',
       'ListEngagementFromOpportunityTasks',
       'ListEngagementInvitations',
       'ListEngagements',
       'ListOpportunities',
+      'ListOpportunityFromEngagementTasks',
+      'ListPartnerPaths',
+      'ListPartners',
       'ListProgramManagementAccounts',
       'ListRelationships',
       'ListResourceSnapshotJobs',
       'ListResourceSnapshots',
-      'ListSolutions'
+      'ListSolutions',
+      'SearchPartnerProfiles'
     ],
     Tagging: [
       'TagResource',
@@ -1001,6 +1839,127 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Partner to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-partner-account.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPartner(catalog: string, identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/partner/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type Connection to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-account-connections.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param identifier - Identifier for the identifier.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onConnection(catalog: string, identifier: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }::catalog/${ catalog }/connection/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type ConnectionInvitation to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-account-connections.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param identifier - Identifier for the identifier.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onConnectionInvitation(catalog: string, identifier: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }::catalog/${ catalog }/connection-invitation/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type ConnectionPreferences to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-account-connections.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onConnectionPreferences(catalog: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/connection-preferences`);
+  }
+
+  /**
+   * Adds a resource of type OpportunityFromEngagementTask to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-multi-partner-opportunities.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param taskId - Identifier for the taskId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOpportunityFromEngagementTask(catalog: string, taskId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }::catalog/${ catalog }/opportunity-from-engagement-task/${ taskId }`);
+  }
+
+  /**
+   * Adds a resource of type Benefit to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefits.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param identifier - Identifier for the identifier.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBenefit(catalog: string, identifier: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }::catalog/${ catalog }/benefit/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type BenefitAllocation to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefits.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBenefitAllocation(catalog: string, identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/benefit-allocation/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type BenefitApplication to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefits.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBenefitApplication(catalog: string, identifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/benefit-application/${ identifier }`);
+  }
+
+  /**
    * Adds a resource of type ProgramManagementAccount to the statement
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-channel-management.html
@@ -1056,18 +2015,36 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Dashboard to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-analytics.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param tableId - Identifier for the tableId.
+   * @param dashboardId - Identifier for the dashboardId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDashboard(catalog: string, tableId: string, dashboardId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral::${ account ?? this.defaultAccount }:catalog/${ catalog }/ReportingData/${ tableId }/Dashboard/${ dashboardId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateBenefitApplication()
    * - .toCreateChannelHandshake()
    * - .toCreateOpportunity()
+   * - .toCreatePartner()
    * - .toCreateProgramManagementAccount()
    * - .toCreateRelationship()
    * - .toCreateResourceSnapshotJob()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
+   * - .toStartOpportunityFromEngagementTask()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1084,24 +2061,49 @@ export class Partnercentral extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAmendBenefitApplication()
+   * - .toAssociateAwsTrainingCertificationEmailDomain()
+   * - .toAssociateBenefitApplicationResource()
+   * - .toCancelBenefitApplication()
    * - .toCancelChannelHandshake()
+   * - .toCancelProfileUpdateTask()
+   * - .toCreateBenefitApplication()
    * - .toCreateChannelHandshake()
+   * - .toCreatePartner()
    * - .toCreateProgramManagementAccount()
    * - .toCreateRelationship()
    * - .toDeleteProgramManagementAccount()
    * - .toDeleteRelationship()
+   * - .toDisassociateAwsTrainingCertificationEmailDomain()
+   * - .toDisassociateBenefitApplicationResource()
+   * - .toGetAllianceLeadContact()
+   * - .toGetBenefit()
+   * - .toGetBenefitAllocation()
+   * - .toGetBenefitApplication()
+   * - .toGetPartner()
+   * - .toGetProfileUpdateTask()
+   * - .toGetProfileVisibility()
    * - .toGetRelationship()
    * - .toListTagsForResource()
+   * - .toPutAllianceLeadContact()
+   * - .toPutProfileVisibility()
+   * - .toRecallBenefitApplication()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
+   * - .toStartOpportunityFromEngagementTask()
+   * - .toStartProfileUpdateTask()
+   * - .toSubmitBenefitApplication()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateBenefitApplication()
    * - .toUpdateProgramManagementAccount()
    * - .toUpdateRelationship()
    *
    * Applies to resource types:
    * - Opportunity
    * - resource-snapshot-job
+   * - Partner
+   * - BenefitApplication
    * - ProgramManagementAccount
    * - Relationship
    * - ChannelHandshake
@@ -1120,14 +2122,17 @@ export class Partnercentral extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateBenefitApplication()
    * - .toCreateChannelHandshake()
    * - .toCreateOpportunity()
+   * - .toCreatePartner()
    * - .toCreateProgramManagementAccount()
    * - .toCreateRelationship()
    * - .toCreateResourceSnapshotJob()
    * - .toListTagsForResource()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
+   * - .toStartOpportunityFromEngagementTask()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -1145,14 +2150,26 @@ export class Partnercentral extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAcceptChannelHandshake()
+   * - .toAcceptConnectionInvitation()
    * - .toAcceptEngagementInvitation()
+   * - .toAmendBenefitApplication()
    * - .toAssignOpportunity()
+   * - .toAssociateAwsTrainingCertificationEmailDomain()
+   * - .toAssociateBenefitApplicationResource()
    * - .toAssociateOpportunity()
+   * - .toCancelBenefitApplication()
    * - .toCancelChannelHandshake()
+   * - .toCancelConnection()
+   * - .toCancelConnectionInvitation()
+   * - .toCancelProfileUpdateTask()
+   * - .toCreateBenefitApplication()
    * - .toCreateChannelHandshake()
+   * - .toCreateConnectionInvitation()
    * - .toCreateEngagement()
+   * - .toCreateEngagementContext()
    * - .toCreateEngagementInvitation()
    * - .toCreateOpportunity()
+   * - .toCreatePartner()
    * - .toCreateProgramManagementAccount()
    * - .toCreateRelationship()
    * - .toCreateResourceSnapshot()
@@ -1160,17 +2177,36 @@ export class Partnercentral extends PolicyStatement {
    * - .toDeleteProgramManagementAccount()
    * - .toDeleteRelationship()
    * - .toDeleteResourceSnapshotJob()
+   * - .toDisassociateAwsTrainingCertificationEmailDomain()
+   * - .toDisassociateBenefitApplicationResource()
    * - .toDisassociateOpportunity()
+   * - .toGetAllianceLeadContact()
    * - .toGetAwsOpportunitySummary()
+   * - .toGetBenefit()
+   * - .toGetBenefitAllocation()
+   * - .toGetBenefitApplication()
+   * - .toGetConnection()
+   * - .toGetConnectionInvitation()
+   * - .toGetConnectionPreferences()
    * - .toGetEngagement()
    * - .toGetEngagementInvitation()
    * - .toGetOpportunity()
+   * - .toGetPartner()
+   * - .toGetPartnerDashboard()
+   * - .toGetProfileUpdateTask()
+   * - .toGetProfileVisibility()
    * - .toGetProgramManagementAccount()
    * - .toGetRelationship()
    * - .toGetResourceSnapshot()
    * - .toGetResourceSnapshotJob()
    * - .toGetSellingSystemSettings()
+   * - .toGetVerification()
+   * - .toListBenefitAllocations()
+   * - .toListBenefitApplications()
+   * - .toListBenefits()
    * - .toListChannelHandshakes()
+   * - .toListConnectionInvitations()
+   * - .toListConnections()
    * - .toListEngagementByAcceptingInvitationTasks()
    * - .toListEngagementFromOpportunityTasks()
    * - .toListEngagementInvitations()
@@ -1178,21 +2214,35 @@ export class Partnercentral extends PolicyStatement {
    * - .toListEngagementResourceAssociations()
    * - .toListEngagements()
    * - .toListOpportunities()
+   * - .toListOpportunityFromEngagementTasks()
+   * - .toListPartners()
    * - .toListProgramManagementAccounts()
    * - .toListRelationships()
    * - .toListResourceSnapshotJobs()
    * - .toListResourceSnapshots()
    * - .toListSolutions()
    * - .toListTagsForResource()
+   * - .toPutAllianceLeadContact()
+   * - .toPutProfileVisibility()
+   * - .toRecallBenefitApplication()
    * - .toRejectChannelHandshake()
+   * - .toRejectConnectionInvitation()
    * - .toRejectEngagementInvitation()
+   * - .toSendEmailVerificationCode()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
+   * - .toStartOpportunityFromEngagementTask()
+   * - .toStartProfileUpdateTask()
    * - .toStartResourceSnapshotJob()
+   * - .toStartVerification()
    * - .toStopResourceSnapshotJob()
+   * - .toSubmitBenefitApplication()
    * - .toSubmitOpportunity()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateBenefitApplication()
+   * - .toUpdateConnectionPreferences()
+   * - .toUpdateEngagementContext()
    * - .toUpdateOpportunity()
    * - .toUpdateProgramManagementAccount()
    * - .toUpdateRelationship()
@@ -1224,6 +2274,40 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Filters access by benefit fulfillment types
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateBenefitApplication()
+   * - .toListBenefitAllocations()
+   * - .toListBenefitApplications()
+   * - .toListBenefits()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFulfillmentTypes(value: string | string[], operator?: Operator | string) {
+    return this.if(`FulfillmentTypes`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by program
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   *
+   * Applies to actions:
+   * - .toListBenefitApplications()
+   * - .toListBenefits()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrograms(value: string | string[], operator?: Operator | string) {
+    return this.if(`Programs`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by entity types for Opportunity association
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
@@ -1237,5 +2321,21 @@ export class Partnercentral extends PolicyStatement {
    */
   public ifRelatedEntityType(value: string | string[], operator?: Operator | string) {
     return this.if(`RelatedEntityType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the type of verification being performed
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   *
+   * Applies to actions:
+   * - .toGetVerification()
+   * - .toStartVerification()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVerificationType(value: string | string[], operator?: Operator | string) {
+    return this.if(`VerificationType`, value, operator ?? 'StringLike');
   }
 }

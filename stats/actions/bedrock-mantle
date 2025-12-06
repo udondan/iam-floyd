@@ -1,0 +1,7 @@
+bedrock-mantle:CallWithBearerToken;List
+bedrock-mantle:CancelInference;Write
+bedrock-mantle:CreateInference;Write
+bedrock-mantle:DeleteInference;Write
+bedrock-mantle:GetInference;Read
+bedrock-mantle:GetModel;Read
+bedrock-mantle:ListModels;List

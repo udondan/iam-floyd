@@ -1,4 +1,5 @@
 logs:AssociateKmsKey;Write
+logs:AssociateSourceToS3TableIntegration;Write
 logs:CancelExportTask;Write
 logs:CreateDelivery;Write
 logs:CreateExportTask;Write
@@ -21,6 +22,7 @@ logs:DeleteLogDelivery;Write
 logs:DeleteLogGroup;Write
 logs:DeleteLogStream;Write
 logs:DeleteMetricFilter;Write
+logs:DeletePipelineRule;Write
 logs:DeleteQueryDefinition;Write
 logs:DeleteResourcePolicy;Permissions management
 logs:DeleteRetentionPolicy;Write
@@ -44,6 +46,7 @@ logs:DescribeQueryDefinitions;List
 logs:DescribeResourcePolicies;List
 logs:DescribeSubscriptionFilters;List
 logs:DisassociateKmsKey;Write
+logs:DisassociateSourceFromS3TableIntegration;Write
 logs:FilterLogEvents;Read
 logs:GetDataProtectionPolicy;Read
 logs:GetDelivery;Read
@@ -54,13 +57,16 @@ logs:GetIntegration;Read
 logs:GetLogAnomalyDetector;Read
 logs:GetLogDelivery;Read
 logs:GetLogEvents;Read
+logs:GetLogFields;Read
 logs:GetLogGroupFields;Read
 logs:GetLogRecord;Read
 logs:GetQueryResults;Read
 logs:GetScheduledQuery;Read
 logs:GetScheduledQueryHistory;Read
 logs:GetTransformer;Read
+logs:IntegrateWithS3Table;Write
 logs:Link;Write
+logs:ListAggregateLogGroupSummaries;List
 logs:ListAnomalies;List
 logs:ListEntitiesForLogGroup;List
 logs:ListIntegrations;List
@@ -70,8 +76,10 @@ logs:ListLogGroups;List
 logs:ListLogGroupsForEntity;List
 logs:ListLogGroupsForQuery;List
 logs:ListScheduledQueries;List
+logs:ListSourcesForS3TableIntegration;List
 logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
+logs:ProcessWithPipeline;Write
 logs:PutAccountPolicy;Write
 logs:PutDataProtectionPolicy;Write
 logs:PutDeliveryDestination;Write
@@ -82,7 +90,9 @@ logs:PutDestinationPolicy;Write
 logs:PutIndexPolicy;Write
 logs:PutIntegration;Write
 logs:PutLogEvents;Write
+logs:PutLogGroupDeletionProtection;Write
 logs:PutMetricFilter;Write
+logs:PutPipelineRule;Write
 logs:PutQueryDefinition;Write
 logs:PutResourcePolicy;Permissions management
 logs:PutRetentionPolicy;Write

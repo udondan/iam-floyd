@@ -6,6 +6,7 @@ acm
 acm-pca
 action-recommendations
 activate
+aidevops
 aiops
 airflow
 airflow-serverless
@@ -40,6 +41,7 @@ autoscaling
 autoscaling-plans
 aws-marketplace
 aws-marketplace-management
+aws-mcp
 aws-portal
 awsconnector
 b2bi
@@ -54,6 +56,7 @@ bcm-pricing-calculator
 bcm-recommended-actions
 bedrock
 bedrock-agentcore
+bedrock-mantle
 billing
 billingconductor
 braket
@@ -332,6 +335,7 @@ route53-recovery-cluster
 route53-recovery-control-config
 route53-recovery-readiness
 route53domains
+route53globalresolver
 route53profiles
 route53resolver
 rtbfabric
@@ -354,6 +358,7 @@ scn
 sdb
 secretsmanager
 security-ir
+securityagent
 securityhub
 securitylake
 serverlessrepo
@@ -405,6 +410,7 @@ tnb
 transcribe
 transfer
 transform
+transform-custom
 translate
 trustedadvisor
 ts

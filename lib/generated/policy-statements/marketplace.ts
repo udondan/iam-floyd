@@ -30,6 +30,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to accept a payment request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toAcceptAgreementPaymentRequest() {
+    return this.to('AcceptAgreementPaymentRequest');
+  }
+
+  /**
    * Grants permission to users to accept their agreement requests. Note that this action is not applicable to Marketplace purchases
    *
    * Access Level: Write
@@ -49,6 +60,17 @@ export class AwsMarketplace extends PolicyStatement {
    */
   public toCancelAgreement() {
     return this.to('CancelAgreement');
+  }
+
+  /**
+   * Grants permission to users to cancel a payment request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toCancelAgreementPaymentRequest() {
+    return this.to('CancelAgreementPaymentRequest');
   }
 
   /**
@@ -107,6 +129,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to view details for a payment request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toGetAgreementPaymentRequest() {
+    return this.to('GetAgreementPaymentRequest');
+  }
+
+  /**
    * Grants permission to users to view the details of their subscription requests for data products that require subscription verification
    *
    * Access Level: Read
@@ -151,6 +184,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to list payment requests for an agreement
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toListAgreementPaymentRequests() {
+    return this.to('ListAgreementPaymentRequests');
+  }
+
+  /**
    * Grants permission to users to list their subscription requests for products that require subscription verification
    *
    * Access Level: List
@@ -184,6 +228,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to reject a payment request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toRejectAgreementPaymentRequest() {
+    return this.to('RejectAgreementPaymentRequest');
+  }
+
+  /**
    * Grants permission to users to search their agreements
    *
    * Access Level: List
@@ -192,6 +247,17 @@ export class AwsMarketplace extends PolicyStatement {
    */
   public toSearchAgreements() {
     return this.to('SearchAgreements');
+  }
+
+  /**
+   * Grants permission to users to send payment request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toSendAgreementPaymentRequest() {
+    return this.to('SendAgreementPaymentRequest');
   }
 
   /**
@@ -252,11 +318,15 @@ export class AwsMarketplace extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAgreementApprovalRequest',
+      'AcceptAgreementPaymentRequest',
       'AcceptAgreementRequest',
       'CancelAgreement',
+      'CancelAgreementPaymentRequest',
       'CancelAgreementRequest',
       'CreateAgreementRequest',
       'RejectAgreementApprovalRequest',
+      'RejectAgreementPaymentRequest',
+      'SendAgreementPaymentRequest',
       'Subscribe',
       'Unsubscribe',
       'UpdateAgreementApprovalRequest',
@@ -266,6 +336,7 @@ export class AwsMarketplace extends PolicyStatement {
       'DescribeAgreement',
       'GetAgreementApprovalRequest',
       'GetAgreementEntitlements',
+      'GetAgreementPaymentRequest',
       'GetAgreementRequest',
       'ListEntitlementDetails'
     ],
@@ -273,6 +344,7 @@ export class AwsMarketplace extends PolicyStatement {
       'GetAgreementTerms',
       'ListAgreementApprovalRequests',
       'ListAgreementCharges',
+      'ListAgreementPaymentRequests',
       'ListAgreementRequests',
       'SearchAgreements',
       'ViewSubscriptions'

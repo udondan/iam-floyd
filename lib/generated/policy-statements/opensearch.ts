@@ -30,6 +30,17 @@ export class Opensearch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel submitted Auto Optimize Job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html
+   */
+  public toCancelAutoOptimizeJob() {
+    return this.to('CancelAutoOptimizeJob');
+  }
+
+  /**
    * Grants permission to cancel the query that is submitted on the OpenSearch DataSource resource
    *
    * Access Level: Write
@@ -38,6 +49,28 @@ export class Opensearch extends PolicyStatement {
    */
   public toCancelDirectQuery() {
     return this.to('CancelDirectQuery');
+  }
+
+  /**
+   * Grants permission to delete Auto Optimize Job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html
+   */
+  public toDeleteAutoOptimizeJob() {
+    return this.to('DeleteAutoOptimizeJob');
+  }
+
+  /**
+   * Grants permission to get the Auto Optimize Job details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html
+   */
+  public toGetAutoOptimizeJob() {
+    return this.to('GetAutoOptimizeJob');
   }
 
   /**
@@ -63,6 +96,17 @@ export class Opensearch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of Auto Optimize Jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html
+   */
+  public toListAutoOptimizeJobs() {
+    return this.to('ListAutoOptimizeJobs');
+  }
+
+  /**
    * Grants permission to start a direct query on the provided OpenSearch DataSource arns
    *
    * Access Level: Write
@@ -73,17 +117,35 @@ export class Opensearch extends PolicyStatement {
     return this.to('StartDirectQuery');
   }
 
+  /**
+   * Grants permission to create new Auto Optimize Job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html
+   */
+  public toSubmitAutoOptimizeJob() {
+    return this.to('SubmitAutoOptimizeJob');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'ApplicationAccessAll'
     ],
     Write: [
+      'CancelAutoOptimizeJob',
       'CancelDirectQuery',
-      'StartDirectQuery'
+      'DeleteAutoOptimizeJob',
+      'StartDirectQuery',
+      'SubmitAutoOptimizeJob'
     ],
     Read: [
+      'GetAutoOptimizeJob',
       'GetDirectQuery',
       'GetDirectQueryResult'
+    ],
+    List: [
+      'ListAutoOptimizeJobs'
     ]
   };
 

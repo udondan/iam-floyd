@@ -1,6 +1,15 @@
+partnercentral:Benefit
+partnercentral:BenefitAllocation
+partnercentral:BenefitApplication
 partnercentral:ChannelHandshake
+partnercentral:Connection
+partnercentral:ConnectionInvitation
+partnercentral:ConnectionPreferences
+partnercentral:Dashboard
 partnercentral:Engagement
 partnercentral:Opportunity
+partnercentral:OpportunityFromEngagementTask
+partnercentral:Partner
 partnercentral:ProgramManagementAccount
 partnercentral:Relationship
 partnercentral:ResourceSnapshot

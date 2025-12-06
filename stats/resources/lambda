@@ -1,4 +1,6 @@
+lambda:capacityProvider
 lambda:code signing config
+lambda:durable execution
 lambda:eventSourceMapping
 lambda:function
 lambda:function alias
