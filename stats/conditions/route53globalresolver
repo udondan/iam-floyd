@@ -1,0 +1,3 @@
+route53globalresolver:RequestTag/${TagKey}
+route53globalresolver:ResourceTag/${TagKey}
+route53globalresolver:TagKeys

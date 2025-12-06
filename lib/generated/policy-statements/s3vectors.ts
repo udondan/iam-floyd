@@ -23,6 +23,14 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifSseType()
+   * - .ifKmsKeyArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateIndex.html
    */
   public toCreateIndex() {
@@ -37,6 +45,10 @@ export class S3vectors extends PolicyStatement {
    * Possible conditions:
    * - .ifSseType()
    * - .ifKmsKeyArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_CreateVectorBucket.html
    */
@@ -49,6 +61,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteIndex.html
    */
   public toDeleteIndex() {
@@ -59,6 +75,10 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to delete a specified vector bucket
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucket.html
    */
@@ -71,6 +91,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectorBucketPolicy.html
    */
   public toDeleteVectorBucketPolicy() {
@@ -81,6 +105,10 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to delete a batch of vectors from a specified vector index
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_DeleteVectors.html
    */
@@ -93,6 +121,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetIndex.html
    */
   public toGetIndex() {
@@ -103,6 +135,10 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to get the attributes of a specified vector bucket
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucket.html
    */
@@ -115,6 +151,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectorBucketPolicy.html
    */
   public toGetVectorBucketPolicy() {
@@ -125,6 +165,10 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to get a batch of vectors by their vector keys
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_GetVectors.html
    */
@@ -137,10 +181,29 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListIndexes.html
    */
   public toListIndexes() {
     return this.to('ListIndexes');
+  }
+
+  /**
+   * Grants permission to list tags for specified S3Vector resource
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -159,6 +222,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * Dependent actions:
    * - s3vectors:GetVectors
    *
@@ -173,6 +240,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectorBucketPolicy.html
    */
   public toPutVectorBucketPolicy() {
@@ -183,6 +254,10 @@ export class S3vectors extends PolicyStatement {
    * Grants permission to add a batch of vectors to a specified vector index
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_PutVectors.html
    */
@@ -195,6 +270,10 @@ export class S3vectors extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
    * Dependent actions:
    * - s3vectors:GetVectors
    *
@@ -202,6 +281,39 @@ export class S3vectors extends PolicyStatement {
    */
   public toQueryVectors() {
     return this.to('QueryVectors');
+  }
+
+  /**
+   * Grants permission to tag a S3Vector resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a S3Vector resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_S3VectorBuckets_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   protected accessLevelList: AccessLevelList = {
@@ -226,8 +338,13 @@ export class S3vectors extends PolicyStatement {
     ],
     List: [
       'ListIndexes',
+      'ListTagsForResource',
       'ListVectorBuckets',
       'ListVectors'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -241,6 +358,10 @@ export class S3vectors extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    */
   public onIndex(bucketName: string, indexName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3vectors:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bucket/${ bucketName }/index/${ indexName }`);
@@ -255,9 +376,123 @@ export class S3vectors extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifVectorBucketTag()
    */
   public onVectorBucket(bucketName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3vectors:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bucket/${ bucketName }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateIndex()
+   * - .toCreateVectorBucket()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateIndex()
+   * - .toCreateVectorBucket()
+   * - .toDeleteIndex()
+   * - .toDeleteVectorBucket()
+   * - .toDeleteVectorBucketPolicy()
+   * - .toDeleteVectors()
+   * - .toGetIndex()
+   * - .toGetVectorBucket()
+   * - .toGetVectorBucketPolicy()
+   * - .toGetVectors()
+   * - .toListIndexes()
+   * - .toListTagsForResource()
+   * - .toListVectors()
+   * - .toPutVectorBucketPolicy()
+   * - .toPutVectors()
+   * - .toQueryVectors()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - Index
+   * - VectorBucket
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateIndex()
+   * - .toCreateVectorBucket()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the vector bucket
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html#s3-vectors-condition-keyss3-vectors-access-management.html
+   *
+   * Applies to actions:
+   * - .toCreateIndex()
+   * - .toCreateVectorBucket()
+   * - .toDeleteIndex()
+   * - .toDeleteVectorBucket()
+   * - .toDeleteVectorBucketPolicy()
+   * - .toDeleteVectors()
+   * - .toGetIndex()
+   * - .toGetVectorBucket()
+   * - .toGetVectorBucketPolicy()
+   * - .toGetVectors()
+   * - .toListIndexes()
+   * - .toListTagsForResource()
+   * - .toListVectors()
+   * - .toPutVectorBucketPolicy()
+   * - .toPutVectors()
+   * - .toQueryVectors()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - Index
+   * - VectorBucket
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVectorBucketTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`VectorBucketTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -266,6 +501,7 @@ export class S3vectors extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html#s3-vectors-condition-keyss3-vectors-access-management.html
    *
    * Applies to actions:
+   * - .toCreateIndex()
    * - .toCreateVectorBucket()
    *
    * @param value The value(s) to check
@@ -281,6 +517,7 @@ export class S3vectors extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-access-management.html#s3-vectors-condition-keyss3-vectors-access-management.html
    *
    * Applies to actions:
+   * - .toCreateIndex()
    * - .toCreateVectorBucket()
    *
    * @param value The value(s) to check

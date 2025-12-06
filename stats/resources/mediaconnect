@@ -3,5 +3,10 @@ mediaconnect:Entitlement
 mediaconnect:Flow
 mediaconnect:Gateway
 mediaconnect:GatewayInstance
+mediaconnect:Offering
 mediaconnect:Output
+mediaconnect:Reservation
+mediaconnect:RouterInput
+mediaconnect:RouterNetworkInterface
+mediaconnect:RouterOutput
 mediaconnect:Source

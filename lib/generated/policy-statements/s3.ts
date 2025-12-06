@@ -258,6 +258,7 @@ export class S3 extends PolicyStatement {
    * - s3tables:CreateTable
    * - s3tables:CreateTableBucket
    * - s3tables:GetTable
+   * - s3tables:PutTableBucketPolicy
    * - s3tables:PutTableEncryption
    * - s3tables:PutTablePolicy
    *
@@ -4109,7 +4110,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by existing access point tag key and value
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/AmazonS3/latest/userguide/access-points.html#tagging-and-policies
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html#tagging-and-policies
    *
    * Applies to actions:
    * - .toCreateAccessPoint()
@@ -4135,7 +4136,7 @@ export class S3 extends PolicyStatement {
   /**
    * Filters access by the tags associated with the bucket
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/AmazonS3/latest/userguide/buckets-tagging.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html
    *
    * Applies to resource types:
    * - accesspointobject

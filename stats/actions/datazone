@@ -85,6 +85,7 @@ datazone:GetCellRun;Read
 datazone:GetCellRunResult;Read
 datazone:GetConnection;Read
 datazone:GetConversation;Read
+datazone:GetDataExportConfiguration;Read
 datazone:GetDataProduct;Read
 datazone:GetDataSource;Read
 datazone:GetDataSourceRun;Read
@@ -167,6 +168,7 @@ datazone:PostLineageEvent;Write
 datazone:PostTimeSeriesDataPoints;Write
 datazone:ProvisionDomain;Write
 datazone:PutCellRunResult;Write
+datazone:PutDataExportConfiguration;Write
 datazone:PutDomainSharingPolicy;Permissions management
 datazone:PutEnvironmentBlueprintConfiguration;Write
 datazone:RefreshToken;Write

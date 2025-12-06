@@ -89,6 +89,7 @@ export class SecurityIr extends PolicyStatement {
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - organizations:DescribeOrganization
+   * - organizations:ListAWSServiceAccessForOrganization
    * - organizations:ListDelegatedAdministrators
    *
    * https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CreateMembership.html
@@ -175,6 +176,17 @@ export class SecurityIr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list investigations for a case
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListInvestigations.html
+   */
+  public toListInvestigations() {
+    return this.to('ListInvestigations');
+  }
+
+  /**
    * Grants permission to list memberships
    *
    * Access Level: List
@@ -198,6 +210,17 @@ export class SecurityIr extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to send feedback for investigation results
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/security-ir/latest/APIReference/API_SendFeedback.html
+   */
+  public toSendFeedback() {
+    return this.to('SendFeedback');
   }
 
   /**
@@ -298,6 +321,7 @@ export class SecurityIr extends PolicyStatement {
       'GetMembership',
       'ListCaseEdits',
       'ListComments',
+      'ListInvestigations',
       'ListTagsForResource'
     ],
     Write: [
@@ -307,6 +331,7 @@ export class SecurityIr extends PolicyStatement {
       'CreateCaseComment',
       'CreateMembership',
       'GetCaseAttachmentUploadUrl',
+      'SendFeedback',
       'UpdateCase',
       'UpdateCaseComment',
       'UpdateCaseStatus',

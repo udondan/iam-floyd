@@ -30,6 +30,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to evaluate Cedar policies for authorization requests
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toAuthorizeAction() {
+    return this.to('AuthorizeAction');
+  }
+
+  /**
    * Grants permission to create one or more memory records
    *
    * Access Level: Write
@@ -188,6 +199,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new evaluator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateEvaluator.html
+   */
+  public toCreateEvaluator() {
+    return this.to('CreateEvaluator');
+  }
+
+  /**
    * Grants permission to create an Event
    *
    * Access Level: Write
@@ -239,7 +261,6 @@ export class BedrockAgentcore extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifKmsKeyArn()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -263,6 +284,42 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toCreateOauth2CredentialProvider() {
     return this.to('CreateOauth2CredentialProvider');
+  }
+
+  /**
+   * Grants permission to create a new online evaluation configuration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateOnlineEvaluationConfig.html
+   */
+  public toCreateOnlineEvaluationConfig() {
+    return this.to('CreateOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to create a new policy within a policy engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicy.html
+   */
+  public toCreatePolicy() {
+    return this.to('CreatePolicy');
+  }
+
+  /**
+   * Grants permission to create a new policy engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicyEngine.html
+   */
+  public toCreatePolicyEngine() {
+    return this.to('CreatePolicyEngine');
   }
 
   /**
@@ -336,6 +393,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an evaluator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteEvaluator.html
+   */
+  public toDeleteEvaluator() {
+    return this.to('DeleteEvaluator');
+  }
+
+  /**
    * Grants permission to delete an Event
    *
    * Access Level: Write
@@ -406,6 +474,50 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an online evaluation configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteOnlineEvaluationConfig.html
+   */
+  public toDeleteOnlineEvaluationConfig() {
+    return this.to('DeleteOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to delete a policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePolicy.html
+   */
+  public toDeletePolicy() {
+    return this.to('DeletePolicy');
+  }
+
+  /**
+   * Grants permission to delete a policy engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePolicyEngine.html
+   */
+  public toDeletePolicyEngine() {
+    return this.to('DeletePolicyEngine');
+  }
+
+  /**
+   * Grants permission to delete the resource-based policy for a Bedrock resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
+  }
+
+  /**
    * Grants permission to delete a registered Workload Identity
    *
    * Access Level: Write
@@ -414,6 +526,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeleteWorkloadIdentity() {
     return this.to('DeleteWorkloadIdentity');
+  }
+
+  /**
+   * Grants permission to run an evaluation using an evaluator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_Evaluate.html
+   */
+  public toEvaluate() {
+    return this.to('Evaluate');
   }
 
   /**
@@ -505,6 +628,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of an evaluator
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetEvaluator.html
+   */
+  public toGetEvaluator() {
+    return this.to('GetEvaluator');
+  }
+
+  /**
    * Grants permission to fetch an Event
    *
    * Access Level: Read
@@ -575,6 +709,50 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of an online evaluation configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetOnlineEvaluationConfig.html
+   */
+  public toGetOnlineEvaluationConfig() {
+    return this.to('GetOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to retrieve a policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html
+   */
+  public toGetPolicy() {
+    return this.to('GetPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve a policy engine
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngine.html
+   */
+  public toGetPolicyEngine() {
+    return this.to('GetPolicyEngine');
+  }
+
+  /**
+   * Grants permission to retrieve status and results of a policy generation request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGeneration.html
+   */
+  public toGetPolicyGeneration() {
+    return this.to('GetPolicyGeneration');
+  }
+
+  /**
    * Grants permission to retrieve an API Key associated with an Api Key Credential Provider
    *
    * Access Level: Read
@@ -594,6 +772,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetResourceOauth2Token() {
     return this.to('GetResourceOauth2Token');
+  }
+
+  /**
+   * Grants permission to retrieve the resource-based policy for a Bedrock resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
   }
 
   /**
@@ -681,6 +870,28 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toInvokeAgentRuntimeForUser() {
     return this.to('InvokeAgentRuntimeForUser');
+  }
+
+  /**
+   * Grants permission to invoke an agent runtime endpoint with WebSocket stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeWithWebSocketStream.html
+   */
+  public toInvokeAgentRuntimeWithWebSocketStream() {
+    return this.to('InvokeAgentRuntimeWithWebSocketStream');
+  }
+
+  /**
+   * Grants permission to invoke an agent runtime endpoint with WebSocket stream and with X-Amzn-Bedrock-AgentCore-Runtime-User-Id header
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeWithWebSocketStream.html
+   */
+  public toInvokeAgentRuntimeWithWebSocketStreamForUser() {
+    return this.to('InvokeAgentRuntimeWithWebSocketStreamForUser');
   }
 
   /**
@@ -805,6 +1016,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list evaluators
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListEvaluators.html
+   */
+  public toListEvaluators() {
+    return this.to('ListEvaluators');
+  }
+
+  /**
    * Grants permission to list events
    *
    * Access Level: List
@@ -853,6 +1075,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list extraction jobs for this memory
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListMemoryExtractionJobs.html
+   */
+  public toListMemoryExtractionJobs() {
+    return this.to('ListMemoryExtractionJobs');
+  }
+
+  /**
    * Grants permission to list memory records
    *
    * Access Level: List
@@ -876,6 +1109,61 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListOauth2CredentialProviders() {
     return this.to('ListOauth2CredentialProviders');
+  }
+
+  /**
+   * Grants permission to list online evaluation configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListOnlineEvaluationConfigs.html
+   */
+  public toListOnlineEvaluationConfigs() {
+    return this.to('ListOnlineEvaluationConfigs');
+  }
+
+  /**
+   * Grants permission to list policies within a policy engine
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicies.html
+   */
+  public toListPolicies() {
+    return this.to('ListPolicies');
+  }
+
+  /**
+   * Grants permission to list policy engines
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngines.html
+   */
+  public toListPolicyEngines() {
+    return this.to('ListPolicyEngines');
+  }
+
+  /**
+   * Grants permission to list generated policy assets from a generation request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html
+   */
+  public toListPolicyGenerationAssets() {
+    return this.to('ListPolicyGenerationAssets');
+  }
+
+  /**
+   * Grants permission to list policy generation requests
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerations.html
+   */
+  public toListPolicyGenerations() {
+    return this.to('ListPolicyGenerations');
   }
 
   /**
@@ -912,6 +1200,50 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListWorkloadIdentities() {
     return this.to('ListWorkloadIdentities');
+  }
+
+  /**
+   * Grants permission to create or modify wildcard policies that apply to gateway resources
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toManageAdminPolicy() {
+    return this.to('ManageAdminPolicy');
+  }
+
+  /**
+   * Grants permission to create or modify policies that apply to specific gateway resources
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toManageResourceScopedPolicy() {
+    return this.to('ManageResourceScopedPolicy');
+  }
+
+  /**
+   * Grants permission to perform partial evaluation of Cedar policies to authorize a caller to list tools they are allowed to call
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toPartiallyAuthorizeActions() {
+    return this.to('PartiallyAuthorizeActions');
+  }
+
+  /**
+   * Grants permission to create or update the resource-based policy for a Bedrock resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -960,6 +1292,33 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toStartCodeInterpreterSession() {
     return this.to('StartCodeInterpreterSession');
+  }
+
+  /**
+   * Grants permission to start memory extraction job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifStrategyId()
+   * - .ifSessionId()
+   * - .ifActorId()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartMemoryExtractionJob.html
+   */
+  public toStartMemoryExtractionJob() {
+    return this.to('StartMemoryExtractionJob');
+  }
+
+  /**
+   * Grants permission to start an AI-powered policy generation request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html
+   */
+  public toStartPolicyGeneration() {
+    return this.to('StartPolicyGeneration');
   }
 
   /**
@@ -1083,6 +1442,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an evaluator
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateEvaluator.html
+   */
+  public toUpdateEvaluator() {
+    return this.to('UpdateEvaluator');
+  }
+
+  /**
    * Grants permission to update an existing gateway
    *
    * Access Level: Write
@@ -1133,6 +1503,42 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an online evaluation configuration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateOnlineEvaluationConfig.html
+   */
+  public toUpdateOnlineEvaluationConfig() {
+    return this.to('UpdateOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to update an existing policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePolicy.html
+   */
+  public toUpdatePolicy() {
+    return this.to('UpdatePolicy');
+  }
+
+  /**
+   * Grants permission to update a policy engine
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePolicyEngine.html
+   */
+  public toUpdatePolicyEngine() {
+    return this.to('UpdatePolicyEngine');
+  }
+
+  /**
    * Grants permission to update the metadata of an existing Workload Identity
    *
    * Access Level: Write
@@ -1146,7 +1552,11 @@ export class BedrockAgentcore extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AllowVendedLogDeliveryForResource',
+      'AuthorizeAction',
       'InvokeGateway',
+      'ManageAdminPolicy',
+      'ManageResourceScopedPolicy',
+      'PartiallyAuthorizeActions',
       'SynchronizeGatewayTargets'
     ],
     Write: [
@@ -1158,32 +1568,47 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateApiKeyCredentialProvider',
       'CreateBrowser',
       'CreateCodeInterpreter',
+      'CreateEvaluator',
       'CreateEvent',
       'CreateGateway',
       'CreateGatewayTarget',
       'CreateMemory',
       'CreateOauth2CredentialProvider',
+      'CreateOnlineEvaluationConfig',
+      'CreatePolicy',
+      'CreatePolicyEngine',
       'CreateWorkloadIdentity',
       'DeleteAgentRuntime',
       'DeleteAgentRuntimeEndpoint',
       'DeleteApiKeyCredentialProvider',
       'DeleteBrowser',
       'DeleteCodeInterpreter',
+      'DeleteEvaluator',
       'DeleteEvent',
       'DeleteGateway',
       'DeleteGatewayTarget',
       'DeleteMemory',
       'DeleteMemoryRecord',
       'DeleteOauth2CredentialProvider',
+      'DeleteOnlineEvaluationConfig',
+      'DeletePolicy',
+      'DeletePolicyEngine',
+      'DeleteResourcePolicy',
       'DeleteWorkloadIdentity',
+      'Evaluate',
       'GetWorkloadAccessToken',
       'GetWorkloadAccessTokenForJWT',
       'GetWorkloadAccessTokenForUserId',
       'InvokeAgentRuntime',
       'InvokeAgentRuntimeForUser',
+      'InvokeAgentRuntimeWithWebSocketStream',
+      'InvokeAgentRuntimeWithWebSocketStreamForUser',
       'InvokeCodeInterpreter',
+      'PutResourcePolicy',
       'StartBrowserSession',
       'StartCodeInterpreterSession',
+      'StartMemoryExtractionJob',
+      'StartPolicyGeneration',
       'StopBrowserSession',
       'StopCodeInterpreterSession',
       'StopRuntimeSession',
@@ -1191,10 +1616,14 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateAgentRuntimeEndpoint',
       'UpdateApiKeyCredentialProvider',
       'UpdateBrowserStream',
+      'UpdateEvaluator',
       'UpdateGateway',
       'UpdateGatewayTarget',
       'UpdateMemory',
       'UpdateOauth2CredentialProvider',
+      'UpdateOnlineEvaluationConfig',
+      'UpdatePolicy',
+      'UpdatePolicyEngine',
       'UpdateWorkloadIdentity'
     ],
     Read: [
@@ -1209,14 +1638,20 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetBrowserSession',
       'GetCodeInterpreter',
       'GetCodeInterpreterSession',
+      'GetEvaluator',
       'GetEvent',
       'GetGateway',
       'GetGatewayTarget',
       'GetMemory',
       'GetMemoryRecord',
       'GetOauth2CredentialProvider',
+      'GetOnlineEvaluationConfig',
+      'GetPolicy',
+      'GetPolicyEngine',
+      'GetPolicyGeneration',
       'GetResourceApiKey',
       'GetResourceOauth2Token',
+      'GetResourcePolicy',
       'GetTokenVault',
       'GetWorkloadIdentity',
       'ListApiKeyCredentialProviders',
@@ -1233,11 +1668,18 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListBrowsers',
       'ListCodeInterpreterSessions',
       'ListCodeInterpreters',
+      'ListEvaluators',
       'ListEvents',
       'ListGatewayTargets',
       'ListGateways',
       'ListMemories',
+      'ListMemoryExtractionJobs',
       'ListMemoryRecords',
+      'ListOnlineEvaluationConfigs',
+      'ListPolicies',
+      'ListPolicyEngines',
+      'ListPolicyGenerationAssets',
+      'ListPolicyGenerations',
       'ListSessions',
       'ListTagsForResource',
       'RetrieveMemoryRecords'
@@ -1247,6 +1689,34 @@ export class BedrockAgentcore extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type evaluator to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/evaluator.html
+   *
+   * @param evaluatorId - Identifier for the evaluatorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onEvaluator(evaluatorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:evaluator/${ evaluatorId }`);
+  }
+
+  /**
+   * Adds a resource of type online-evaluation-config to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/onlineEvaluationConfig.html
+   *
+   * @param onlineEvaluationConfigId - Identifier for the onlineEvaluationConfigId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOnlineEvaluationConfig(onlineEvaluationConfigId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:online-evaluation-config/${ onlineEvaluationConfigId }`);
+  }
 
   /**
    * Adds a resource of type memory to the statement
@@ -1466,6 +1936,50 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type policy-engine to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policyEngine.html
+   *
+   * @param policyEngineId - Identifier for the policyEngineId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPolicyEngine(policyEngineId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-engine/${ policyEngineId }`);
+  }
+
+  /**
+   * Adds a resource of type policy to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policy.html
+   *
+   * @param policyEngineId - Identifier for the policyEngineId.
+   * @param policyId - Identifier for the policyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPolicy(policyEngineId: string, policyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-engine/${ policyEngineId }/policy/${ policyId }`);
+  }
+
+  /**
+   * Adds a resource of type policy-generation to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/policyGeneration.html
+   *
+   * @param policyEngineId - Identifier for the policyEngineId.
+   * @param policyGenerationId - Identifier for the policyGenerationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPolicyGeneration(policyEngineId: string, policyGenerationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-engine/${ policyEngineId }/policy-generation/${ policyGenerationId }`);
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -1634,21 +2148,6 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
-   * Filters access by KMS Key arn provided
-   *
-   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-kmsKeyArn
-   *
-   * Applies to actions:
-   * - .toCreateMemory()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifKmsKeyArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`KmsKeyArn`, value, operator ?? 'StringLike');
-  }
-
-  /**
    * Filters access by Actor Id
    *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-actorId
@@ -1659,6 +2158,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toGetEvent()
    * - .toListEvents()
    * - .toListSessions()
+   * - .toStartMemoryExtractionJob()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1695,6 +2195,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toDeleteEvent()
    * - .toGetEvent()
    * - .toListEvents()
+   * - .toStartMemoryExtractionJob()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1711,6 +2212,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Applies to actions:
    * - .toListMemoryRecords()
    * - .toRetrieveMemoryRecords()
+   * - .toStartMemoryExtractionJob()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

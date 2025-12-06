@@ -145,6 +145,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke MLflow APIs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow.html
+   */
+  public toCallMlflowAppApi() {
+    return this.to('CallMlflowAppApi');
+  }
+
+  /**
    * Grants permission for Partner App SDK to access the Partner App for reading or writing data use cases
    *
    * Access Level: Write
@@ -888,6 +899,25 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an MLflow app
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateMlflowApp.html
+   */
+  public toCreateMlflowApp() {
+    return this.to('CreateMlflowApp');
+  }
+
+  /**
    * Grants permission to create an MLflow tracking server
    *
    * Access Level: Write
@@ -1227,6 +1257,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreatePresignedDomainUrl() {
     return this.to('CreatePresignedDomainUrl');
+  }
+
+  /**
+   * Grants permission to return a URL that you can use from your browser to connect to the MLflow app
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePresignedMlflowAppUrl.html
+   */
+  public toCreatePresignedMlflowAppUrl() {
+    return this.to('CreatePresignedMlflowAppUrl');
   }
 
   /**
@@ -1909,6 +1950,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteLineageGroupPolicy() {
     return this.to('DeleteLineageGroupPolicy');
+  }
+
+  /**
+   * Grants permission to delete an MLflow app
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteMlflowApp.html
+   */
+  public toDeleteMlflowApp() {
+    return this.to('DeleteMlflowApp');
   }
 
   /**
@@ -2664,6 +2716,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeLineageGroup() {
     return this.to('DescribeLineageGroup');
+  }
+
+  /**
+   * Grants permission to get information about an MLflow app
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeMlflowApp.html
+   */
+  public toDescribeMlflowApp() {
+    return this.to('DescribeMlflowApp');
   }
 
   /**
@@ -3705,6 +3768,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toListLineageGroups() {
     return this.to('ListLineageGroups');
+  }
+
+  /**
+   * Grants permission to list SageMaker MLflow Apps in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListMlflowApps.html
+   */
+  public toListMlflowApps() {
+    return this.to('ListMlflowApps');
   }
 
   /**
@@ -4987,6 +5061,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an MLflow app
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateMlflowApp.html
+   */
+  public toUpdateMlflowApp() {
+    return this.to('UpdateMlflowApp');
+  }
+
+  /**
    * Grants permission to update an MLflow tracking server
    *
    * Access Level: Write
@@ -5273,6 +5358,7 @@ export class Sagemaker extends PolicyStatement {
       'BatchAddClusterNodes',
       'BatchDeleteClusterNodes',
       'BatchPutMetrics',
+      'CallMlflowAppApi',
       'CallPartnerAppApi',
       'CreateAction',
       'CreateAlgorithm',
@@ -5309,6 +5395,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateInferenceRecommendationsJob',
       'CreateLabelingJob',
       'CreateLineageGroupPolicy',
+      'CreateMlflowApp',
       'CreateMlflowTrackingServer',
       'CreateModel',
       'CreateModelBiasJobDefinition',
@@ -5326,6 +5413,7 @@ export class Sagemaker extends PolicyStatement {
       'CreatePartnerAppPresignedUrl',
       'CreatePipeline',
       'CreatePresignedDomainUrl',
+      'CreatePresignedMlflowAppUrl',
       'CreatePresignedMlflowTrackingServerUrl',
       'CreatePresignedNotebookInstanceUrl',
       'CreateProcessingJob',
@@ -5375,6 +5463,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteInferenceComponent',
       'DeleteInferenceExperiment',
       'DeleteLineageGroupPolicy',
+      'DeleteMlflowApp',
       'DeleteMlflowTrackingServer',
       'DeleteModel',
       'DeleteModelBiasJobDefinition',
@@ -5469,6 +5558,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdateInferenceComponent',
       'UpdateInferenceComponentRuntimeConfig',
       'UpdateInferenceExperiment',
+      'UpdateMlflowApp',
       'UpdateMlflowTrackingServer',
       'UpdateModelCard',
       'UpdateModelPackage',
@@ -5539,6 +5629,7 @@ export class Sagemaker extends PolicyStatement {
       'DescribeInferenceRecommendationsJob',
       'DescribeLabelingJob',
       'DescribeLineageGroup',
+      'DescribeMlflowApp',
       'DescribeMlflowTrackingServer',
       'DescribeModel',
       'DescribeModelBiasJobDefinition',
@@ -5632,6 +5723,7 @@ export class Sagemaker extends PolicyStatement {
       'ListLabelingJobs',
       'ListLabelingJobsForWorkteam',
       'ListLineageGroups',
+      'ListMlflowApps',
       'ListMlflowTrackingServers',
       'ListModelBiasJobDefinitions',
       'ListModelCardExportJobs',
@@ -6847,6 +6939,24 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type mlflow-app to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MlflowApp.html
+   *
+   * @param mLflowAppId - Identifier for the mLflowAppId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onMlflowApp(mLflowAppId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-app/${ mLflowAppId }`);
+  }
+
+  /**
    * Adds a resource of type compute-quota to the statement
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-governance.html
@@ -6940,6 +7050,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateInferenceExperiment()
    * - .toCreateInferenceRecommendationsJob()
    * - .toCreateLabelingJob()
+   * - .toCreateMlflowApp()
    * - .toCreateMlflowTrackingServer()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
@@ -7047,6 +7158,7 @@ export class Sagemaker extends PolicyStatement {
    * - model-card
    * - model-card-export-job
    * - mlflow-tracking-server
+   * - mlflow-app
    * - compute-quota
    * - cluster-scheduler-config
    * - partner-app
@@ -7099,6 +7211,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateInferenceExperiment()
    * - .toCreateInferenceRecommendationsJob()
    * - .toCreateLabelingJob()
+   * - .toCreateMlflowApp()
    * - .toCreateMlflowTrackingServer()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
@@ -7907,6 +8020,7 @@ export class Sagemaker extends PolicyStatement {
    * - model-card
    * - model-card-export-job
    * - mlflow-tracking-server
+   * - mlflow-app
    * - compute-quota
    * - cluster-scheduler-config
    * - partner-app

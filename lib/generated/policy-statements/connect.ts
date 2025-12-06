@@ -296,6 +296,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate security profiles with an AI agent in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateSecurityProfiles.html
+   */
+  public toAssociateSecurityProfiles() {
+    return this.to('AssociateSecurityProfiles');
+  }
+
+  /**
    * Grants permission to associate a user to a traffic distribution group in the specified Amazon Connect instance
    *
    * Access Level: Write
@@ -330,6 +345,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a workspace with a user or routing profile in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateWorkspace.html
+   */
+  public toAssociateWorkspace() {
+    return this.to('AssociateWorkspace');
+  }
+
+  /**
    * Grants permission to grant access and to associate the datasets with the specified AWS account
    *
    * Access Level: Write
@@ -339,6 +369,55 @@ export class Connect extends PolicyStatement {
    */
   public toBatchAssociateAnalyticsDataSet() {
     return this.to('BatchAssociateAnalyticsDataSet');
+  }
+
+  /**
+   * Grants permission to batch create values in a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifExpressionValue()
+   * - .ifPrimaryAttribute()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchCreateDataTableValue.html
+   */
+  public toBatchCreateDataTableValue() {
+    return this.to('BatchCreateDataTableValue');
+  }
+
+  /**
+   * Grants permission to batch delete values in a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifPrimaryAttribute()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchDeleteDataTableValue.html
+   */
+  public toBatchDeleteDataTableValue() {
+    return this.to('BatchDeleteDataTableValue');
+  }
+
+  /**
+   * Grants permission to batch describe values in a data table in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifPrimaryAttribute()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchDescribeDataTableValue.html
+   */
+  public toBatchDescribeDataTableValue() {
+    return this.to('BatchDescribeDataTableValue');
   }
 
   /**
@@ -396,6 +475,23 @@ export class Connect extends PolicyStatement {
    */
   public toBatchPutContact() {
     return this.to('BatchPutContact');
+  }
+
+  /**
+   * Grants permission to batch update values in a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifExpressionValue()
+   * - .ifPrimaryAttribute()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchUpdateDataTableValue.html
+   */
+  public toBatchUpdateDataTableValue() {
+    return this.to('BatchUpdateDataTableValue');
   }
 
   /**
@@ -510,6 +606,36 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an alias of a flow module version in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowModuleAlias.html
+   */
+  public toCreateContactFlowModuleAlias() {
+    return this.to('CreateContactFlowModuleAlias');
+  }
+
+  /**
+   * Grants permission to create a version of a flow module in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowModuleVersion.html
+   */
+  public toCreateContactFlowModuleVersion() {
+    return this.to('CreateContactFlowModuleVersion');
+  }
+
+  /**
    * Grants permission to create a version a flow in an Amazon Connect instance
    *
    * Access Level: Write
@@ -523,6 +649,36 @@ export class Connect extends PolicyStatement {
    */
   public toCreateContactFlowVersion() {
     return this.to('CreateContactFlowVersion');
+  }
+
+  /**
+   * Grants permission to create a dataTable in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateDataTable.html
+   */
+  public toCreateDataTable() {
+    return this.to('CreateDataTable');
+  }
+
+  /**
+   * Grants permission to create an attribute for a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateDataTableAttribute.html
+   */
+  public toCreateDataTableAttribute() {
+    return this.to('CreateDataTableAttribute');
   }
 
   /**
@@ -936,6 +1092,37 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a workspace in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateWorkspace.html
+   */
+  public toCreateWorkspace() {
+    return this.to('CreateWorkspace');
+  }
+
+  /**
+   * Grants permission to create a workspace page in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateWorkspacePage.html
+   */
+  public toCreateWorkspacePage() {
+    return this.to('CreateWorkspacePage');
+  }
+
+  /**
    * Grants permission to deactivate an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form
    *
    * Access Level: Write
@@ -1015,6 +1202,36 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an alias of a flow module version in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowModuleAlias.html
+   */
+  public toDeleteContactFlowModuleAlias() {
+    return this.to('DeleteContactFlowModuleAlias');
+  }
+
+  /**
+   * Grants permission to delete a version of a flow module in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowModuleVersion.html
+   */
+  public toDeleteContactFlowModuleVersion() {
+    return this.to('DeleteContactFlowModuleVersion');
+  }
+
+  /**
    * Grants permission to delete a version of a flow in an Amazon Connect instance
    *
    * Access Level: Write
@@ -1028,6 +1245,36 @@ export class Connect extends PolicyStatement {
    */
   public toDeleteContactFlowVersion() {
     return this.to('DeleteContactFlowVersion');
+  }
+
+  /**
+   * Grants permission to delete a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteDataTable.html
+   */
+  public toDeleteDataTable() {
+    return this.to('DeleteDataTable');
+  }
+
+  /**
+   * Grants permission to delete an attribute of a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteDataTableAttribute.html
+   */
+  public toDeleteDataTableAttribute() {
+    return this.to('DeleteDataTableAttribute');
   }
 
   /**
@@ -1373,6 +1620,51 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a workspace in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteWorkspace.html
+   */
+  public toDeleteWorkspace() {
+    return this.to('DeleteWorkspace');
+  }
+
+  /**
+   * Grants permission to delete workspace media in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteWorkspaceMedia.html
+   */
+  public toDeleteWorkspaceMedia() {
+    return this.to('DeleteWorkspaceMedia');
+  }
+
+  /**
+   * Grants permission to delete a workspace page in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteWorkspacePage.html
+   */
+  public toDeleteWorkspacePage() {
+    return this.to('DeleteWorkspacePage');
+  }
+
+  /**
    * Grants permission to describe agent status in an Amazon Connect instance
    *
    * Access Level: Read
@@ -1462,6 +1754,51 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeContactFlowModule() {
     return this.to('DescribeContactFlowModule');
+  }
+
+  /**
+   * Grants permission to describe an alias of a flow module version in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlowModuleAlias.html
+   */
+  public toDescribeContactFlowModuleAlias() {
+    return this.to('DescribeContactFlowModuleAlias');
+  }
+
+  /**
+   * Grants permission to describe a data table in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeDataTable.html
+   */
+  public toDescribeDataTable() {
+    return this.to('DescribeDataTable');
+  }
+
+  /**
+   * Grants permission to describe an attribute of a data table in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeDataTableAttribute.html
+   */
+  public toDescribeDataTableAttribute() {
+    return this.to('DescribeDataTableAttribute');
   }
 
   /**
@@ -1791,6 +2128,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a workspace in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeWorkspace.html
+   */
+  public toDescribeWorkspace() {
+    return this.to('DescribeWorkspace');
+  }
+
+  /**
    * Grants permission to revoke access and to disassociate a dataset with the specified AWS account
    *
    * Access Level: Write
@@ -1997,6 +2349,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate security profiles with an AI agent in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateSecurityProfiles.html
+   */
+  public toDisassociateSecurityProfiles() {
+    return this.to('DisassociateSecurityProfiles');
+  }
+
+  /**
    * Grants permission to disassociate a user from a traffic distribution group in the specified Amazon Connect instance
    *
    * Access Level: Write
@@ -2026,6 +2393,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a workspace from a user or routing profile in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateWorkspace.html
+   */
+  public toDisassociateWorkspace() {
+    return this.to('DisassociateWorkspace');
+  }
+
+  /**
    * Grants permission to dismiss terminated Contact from Agent CCP
    *
    * Access Level: Write
@@ -2038,6 +2420,22 @@ export class Connect extends PolicyStatement {
    */
   public toDismissUserContact() {
     return this.to('DismissUserContact');
+  }
+
+  /**
+   * Grants permission to evaluate values in a data table in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifPrimaryAttribute()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_EvaluateDataTableValues.html
+   */
+  public toEvaluateDataTableValues() {
+    return this.to('EvaluateDataTableValues');
   }
 
   /**
@@ -2255,6 +2653,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import workspace media in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ImportWorkspaceMedia.html
+   */
+  public toImportWorkspaceMedia() {
+    return this.to('ImportWorkspaceMedia');
+  }
+
+  /**
    * Grants permission to list agent statuses in an Amazon Connect instance
    *
    * Access Level: List
@@ -2360,6 +2773,36 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the aliases of a flow module in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlowModuleAliases.html
+   */
+  public toListContactFlowModuleAliases() {
+    return this.to('ListContactFlowModuleAliases');
+  }
+
+  /**
+   * Grants permission to list all the versions of a flow module in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlowModuleVersions.html
+   */
+  public toListContactFlowModuleVersions() {
+    return this.to('ListContactFlowModuleVersions');
+  }
+
+  /**
    * Grants permission to list contact flow module resources in an Amazon Connect instance
    *
    * Access Level: List
@@ -2418,6 +2861,67 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list attributes of a data table in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDataTableAttributes.html
+   */
+  public toListDataTableAttributes() {
+    return this.to('ListDataTableAttributes');
+  }
+
+  /**
+   * Grants permission to list primary values in a data table in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifPrimaryAttribute()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDataTablePrimaryValues.html
+   */
+  public toListDataTablePrimaryValues() {
+    return this.to('ListDataTablePrimaryValues');
+  }
+
+  /**
+   * Grants permission to list values in a data table in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifPrimaryAttribute()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDataTableValues.html
+   */
+  public toListDataTableValues() {
+    return this.to('ListDataTableValues');
+  }
+
+  /**
+   * Grants permission to list data tables in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDataTables.html
+   */
+  public toListDataTables() {
+    return this.to('ListDataTables');
+  }
+
+  /**
    * Grants permission to list default vocabularies associated with a Amazon Connect instance
    *
    * Access Level: List
@@ -2429,6 +2933,21 @@ export class Connect extends PolicyStatement {
    */
   public toListDefaultVocabularies() {
     return this.to('ListDefaultVocabularies');
+  }
+
+  /**
+   * Grants permission to list security profiles associated with an entity in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEntitySecurityProfiles.html
+   */
+  public toListEntitySecurityProfiles() {
+    return this.to('ListEntitySecurityProfiles');
   }
 
   /**
@@ -2790,6 +3309,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list flow modules associated with a security profile in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfileFlowModules.html
+   */
+  public toListSecurityProfileFlowModules() {
+    return this.to('ListSecurityProfileFlowModules');
+  }
+
+  /**
    * Grants permission to list permissions associated with security profile in an Amazon Connect instance
    *
    * Access Level: List
@@ -2958,6 +3492,50 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list workspace media in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListWorkspaceMedia.html
+   */
+  public toListWorkspaceMedia() {
+    return this.to('ListWorkspaceMedia');
+  }
+
+  /**
+   * Grants permission to list workspace pages in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListWorkspacePages.html
+   */
+  public toListWorkspacePages() {
+    return this.to('ListWorkspacePages');
+  }
+
+  /**
+   * Grants permission to list workspaces in an Amazon Connect instance
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListWorkspaces.html
+   */
+  public toListWorkspaces() {
+    return this.to('ListWorkspaces');
+  }
+
+  /**
    * Grants permission to monitor an ongoing contact
    *
    * Access Level: Write
@@ -3107,6 +3685,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search evaluation resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeContactEvaluation
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactEvaluations.html
+   */
+  public toSearchContactEvaluations() {
+    return this.to('SearchContactEvaluations');
+  }
+
+  /**
    * Grants permission to search contact flow module resources in an Amazon Connect instance
    *
    * Access Level: Read
@@ -3164,6 +3760,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search data tables in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeDataTable
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchDataTables.html
+   */
+  public toSearchDataTables() {
+    return this.to('SearchDataTables');
+  }
+
+  /**
    * Grants permission to search email address resources in an Amazon Connect instance
    *
    * Access Level: Read
@@ -3179,6 +3793,24 @@ export class Connect extends PolicyStatement {
    */
   public toSearchEmailAddresses() {
     return this.to('SearchEmailAddresses');
+  }
+
+  /**
+   * Grants permission to search evaluation forms resources in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeEvaluationForm
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEvaluationForms.html
+   */
+  public toSearchEvaluationForms() {
+    return this.to('SearchEvaluationForms');
   }
 
   /**
@@ -3378,6 +4010,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search views in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeView
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchViews.html
+   */
+  public toSearchViews() {
+    return this.to('SearchViews');
+  }
+
+  /**
    * Grants permission to search vocabularies in a Amazon Connect instance
    *
    * Access Level: List
@@ -3389,6 +4039,39 @@ export class Connect extends PolicyStatement {
    */
   public toSearchVocabularies() {
     return this.to('SearchVocabularies');
+  }
+
+  /**
+   * Grants permission to search workspace associations in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchWorkspaceAssociations.html
+   */
+  public toSearchWorkspaceAssociations() {
+    return this.to('SearchWorkspaceAssociations');
+  }
+
+  /**
+   * Grants permission to search workspaces in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * Dependent actions:
+   * - connect:DescribeWorkspace
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchWorkspaces.html
+   */
+  public toSearchWorkspaces() {
+    return this.to('SearchWorkspaces');
   }
 
   /**
@@ -3493,6 +4176,20 @@ export class Connect extends PolicyStatement {
    */
   public toStartContactEvaluation() {
     return this.to('StartContactEvaluation');
+  }
+
+  /**
+   * Grants permission to start message processing on an ongoing contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactMediaProcessing.html
+   */
+  public toStartContactMediaProcessing() {
+    return this.to('StartContactMediaProcessing');
   }
 
   /**
@@ -3654,6 +4351,20 @@ export class Connect extends PolicyStatement {
    */
   public toStopContact() {
     return this.to('StopContact');
+  }
+
+  /**
+   * Grants permission to stop message processing on an ongoing contact
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactMediaProcessing.html
+   */
+  public toStopContactMediaProcessing() {
+    return this.to('StopContactMediaProcessing');
   }
 
   /**
@@ -3917,6 +4628,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an alias of a flow module version in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowModuleAlias.html
+   */
+  public toUpdateContactFlowModuleAlias() {
+    return this.to('UpdateContactFlowModuleAlias');
+  }
+
+  /**
    * Grants permission to update contact flow module content in an Amazon Connect instance
    *
    * Access Level: Write
@@ -3994,6 +4720,52 @@ export class Connect extends PolicyStatement {
    */
   public toUpdateContactSchedule() {
     return this.to('UpdateContactSchedule');
+  }
+
+  /**
+   * Grants permission to update an attribute of a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateDataTableAttribute.html
+   */
+  public toUpdateDataTableAttribute() {
+    return this.to('UpdateDataTableAttribute');
+  }
+
+  /**
+   * Grants permission to update metadata of a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateDataTableMetadata.html
+   */
+  public toUpdateDataTableMetadata() {
+    return this.to('UpdateDataTableMetadata');
+  }
+
+  /**
+   * Grants permission to update primary values in a data table in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   * - .ifPrimaryAttribute()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateDataTablePrimaryValues.html
+   */
+  public toUpdateDataTablePrimaryValues() {
+    return this.to('UpdateDataTablePrimaryValues');
   }
 
   /**
@@ -4594,6 +5366,66 @@ export class Connect extends PolicyStatement {
     return this.to('UpdateViewMetadata');
   }
 
+  /**
+   * Grants permission to update workspace metadata in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateWorkspaceMetadata.html
+   */
+  public toUpdateWorkspaceMetadata() {
+    return this.to('UpdateWorkspaceMetadata');
+  }
+
+  /**
+   * Grants permission to update a workspace page in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateWorkspacePage.html
+   */
+  public toUpdateWorkspacePage() {
+    return this.to('UpdateWorkspacePage');
+  }
+
+  /**
+   * Grants permission to update workspace theme in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateWorkspaceTheme.html
+   */
+  public toUpdateWorkspaceTheme() {
+    return this.to('UpdateWorkspaceTheme');
+  }
+
+  /**
+   * Grants permission to update workspace visibility in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateWorkspaceVisibility.html
+   */
+  public toUpdateWorkspaceVisibility() {
+    return this.to('UpdateWorkspaceVisibility');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ActivateEvaluationForm',
@@ -4613,11 +5445,16 @@ export class Connect extends PolicyStatement {
       'AssociateQueueQuickConnects',
       'AssociateRoutingProfileQueues',
       'AssociateSecurityKey',
+      'AssociateSecurityProfiles',
       'AssociateTrafficDistributionGroupUser',
       'AssociateUserProficiencies',
+      'AssociateWorkspace',
       'BatchAssociateAnalyticsDataSet',
+      'BatchCreateDataTableValue',
+      'BatchDeleteDataTableValue',
       'BatchDisassociateAnalyticsDataSet',
       'BatchPutContact',
+      'BatchUpdateDataTableValue',
       'ClaimPhoneNumber',
       'CompleteAttachedFileUpload',
       'CreateAgentStatus',
@@ -4625,7 +5462,11 @@ export class Connect extends PolicyStatement {
       'CreateContact',
       'CreateContactFlow',
       'CreateContactFlowModule',
+      'CreateContactFlowModuleAlias',
+      'CreateContactFlowModuleVersion',
       'CreateContactFlowVersion',
+      'CreateDataTable',
+      'CreateDataTableAttribute',
       'CreateEmailAddress',
       'CreateEvaluationForm',
       'CreateHoursOfOperation',
@@ -4650,12 +5491,18 @@ export class Connect extends PolicyStatement {
       'CreateView',
       'CreateViewVersion',
       'CreateVocabulary',
+      'CreateWorkspace',
+      'CreateWorkspacePage',
       'DeactivateEvaluationForm',
       'DeleteAttachedFile',
       'DeleteContactEvaluation',
       'DeleteContactFlow',
       'DeleteContactFlowModule',
+      'DeleteContactFlowModuleAlias',
+      'DeleteContactFlowModuleVersion',
       'DeleteContactFlowVersion',
+      'DeleteDataTable',
+      'DeleteDataTableAttribute',
       'DeleteEmailAddress',
       'DeleteEvaluationForm',
       'DeleteHoursOfOperation',
@@ -4678,6 +5525,9 @@ export class Connect extends PolicyStatement {
       'DeleteView',
       'DeleteViewVersion',
       'DeleteVocabulary',
+      'DeleteWorkspace',
+      'DeleteWorkspaceMedia',
+      'DeleteWorkspacePage',
       'DisassociateAnalyticsDataSet',
       'DisassociateApprovedOrigin',
       'DisassociateBot',
@@ -4691,10 +5541,13 @@ export class Connect extends PolicyStatement {
       'DisassociateQueueQuickConnects',
       'DisassociateRoutingProfileQueues',
       'DisassociateSecurityKey',
+      'DisassociateSecurityProfiles',
       'DisassociateTrafficDistributionGroupUser',
       'DisassociateUserProficiencies',
+      'DisassociateWorkspace',
       'DismissUserContact',
       'ImportPhoneNumber',
+      'ImportWorkspaceMedia',
       'MonitorContact',
       'PauseContact',
       'PutUserStatus',
@@ -4709,6 +5562,7 @@ export class Connect extends PolicyStatement {
       'StartAttachedFileUpload',
       'StartChatContact',
       'StartContactEvaluation',
+      'StartContactMediaProcessing',
       'StartContactRecording',
       'StartContactStreaming',
       'StartEmailContact',
@@ -4720,6 +5574,7 @@ export class Connect extends PolicyStatement {
       'StartTaskContact',
       'StartWebRTCContact',
       'StopContact',
+      'StopContactMediaProcessing',
       'StopContactRecording',
       'StopContactStreaming',
       'StopForecastingPlanningSchedulingIntegration',
@@ -4735,11 +5590,15 @@ export class Connect extends PolicyStatement {
       'UpdateContactEvaluation',
       'UpdateContactFlowContent',
       'UpdateContactFlowMetadata',
+      'UpdateContactFlowModuleAlias',
       'UpdateContactFlowModuleContent',
       'UpdateContactFlowModuleMetadata',
       'UpdateContactFlowName',
       'UpdateContactRoutingData',
       'UpdateContactSchedule',
+      'UpdateDataTableAttribute',
+      'UpdateDataTableMetadata',
+      'UpdateDataTablePrimaryValues',
       'UpdateEmailAddressMetadata',
       'UpdateEvaluationForm',
       'UpdateHoursOfOperation',
@@ -4778,9 +5637,14 @@ export class Connect extends PolicyStatement {
       'UpdateUserRoutingProfile',
       'UpdateUserSecurityProfiles',
       'UpdateViewContent',
-      'UpdateViewMetadata'
+      'UpdateViewMetadata',
+      'UpdateWorkspaceMetadata',
+      'UpdateWorkspacePage',
+      'UpdateWorkspaceTheme',
+      'UpdateWorkspaceVisibility'
     ],
     Read: [
+      'BatchDescribeDataTableValue',
       'BatchGetAttachedFileMetadata',
       'DescribeAgentStatus',
       'DescribeAuthenticationProfile',
@@ -4788,6 +5652,9 @@ export class Connect extends PolicyStatement {
       'DescribeContactEvaluation',
       'DescribeContactFlow',
       'DescribeContactFlowModule',
+      'DescribeContactFlowModuleAlias',
+      'DescribeDataTable',
+      'DescribeDataTableAttribute',
       'DescribeEmailAddress',
       'DescribeEvaluationForm',
       'DescribeForecastingPlanningSchedulingIntegration',
@@ -4810,6 +5677,8 @@ export class Connect extends PolicyStatement {
       'DescribeUserHierarchyStructure',
       'DescribeView',
       'DescribeVocabulary',
+      'DescribeWorkspace',
+      'EvaluateDataTableValues',
       'GetAttachedFile',
       'GetContactAttributes',
       'GetContactMetrics',
@@ -4825,10 +5694,13 @@ export class Connect extends PolicyStatement {
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',
       'SearchAgentStatuses',
+      'SearchContactEvaluations',
       'SearchContactFlowModules',
       'SearchContactFlows',
       'SearchContacts',
+      'SearchDataTables',
       'SearchEmailAddresses',
+      'SearchEvaluationForms',
       'SearchHoursOfOperationOverrides',
       'SearchHoursOfOperations',
       'SearchPredefinedAttributes',
@@ -4838,7 +5710,10 @@ export class Connect extends PolicyStatement {
       'SearchRoutingProfiles',
       'SearchSecurityProfiles',
       'SearchUserHierarchyGroups',
-      'SearchUsers'
+      'SearchUsers',
+      'SearchViews',
+      'SearchWorkspaceAssociations',
+      'SearchWorkspaces'
     ],
     List: [
       'BatchGetFlowAssociation',
@@ -4851,11 +5726,18 @@ export class Connect extends PolicyStatement {
       'ListAuthenticationProfiles',
       'ListBots',
       'ListContactEvaluations',
+      'ListContactFlowModuleAliases',
+      'ListContactFlowModuleVersions',
       'ListContactFlowModules',
       'ListContactFlowVersions',
       'ListContactFlows',
       'ListContactReferences',
+      'ListDataTableAttributes',
+      'ListDataTablePrimaryValues',
+      'ListDataTableValues',
+      'ListDataTables',
       'ListDefaultVocabularies',
+      'ListEntitySecurityProfiles',
       'ListEvaluationFormVersions',
       'ListEvaluationForms',
       'ListFlowAssociations',
@@ -4881,6 +5763,7 @@ export class Connect extends PolicyStatement {
       'ListRules',
       'ListSecurityKeys',
       'ListSecurityProfileApplications',
+      'ListSecurityProfileFlowModules',
       'ListSecurityProfilePermissions',
       'ListSecurityProfiles',
       'ListTaskTemplates',
@@ -4892,6 +5775,9 @@ export class Connect extends PolicyStatement {
       'ListUsers',
       'ListViewVersions',
       'ListViews',
+      'ListWorkspaceMedia',
+      'ListWorkspacePages',
+      'ListWorkspaces',
       'SearchAvailablePhoneNumbers',
       'SearchResourceTags',
       'SearchVocabularies'
@@ -5019,6 +5905,24 @@ export class Connect extends PolicyStatement {
    */
   public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type data-table to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/data-tables.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param dataTableId - Identifier for the dataTableId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataTable(instanceId: string, dataTableId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/data-table/${ dataTableId }`);
   }
 
   /**
@@ -5534,6 +6438,40 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ai-agent to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-agents.html
+   *
+   * @param assistantId - Identifier for the assistantId.
+   * @param aIAgentId - Identifier for the aIAgentId.
+   * @param version - Identifier for the version.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAiAgent(assistantId: string, aIAgentId: string, version: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-agent/${ assistantId }/${ aIAgentId }:${ version }`);
+  }
+
+  /**
+   * Adds a resource of type workspace to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/workspaces.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param workspaceId - Identifier for the workspaceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkspace(instanceId: string, workspaceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/workspace/${ workspaceId }`);
+  }
+
+  /**
    * Filters access by using tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -5560,6 +6498,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateUserHierarchyGroup()
    * - .toCreateView()
    * - .toCreateVocabulary()
+   * - .toCreateWorkspace()
    * - .toDeleteAttachedFile()
    * - .toGetAttachedFile()
    * - .toImportPhoneNumber()
@@ -5587,15 +6526,30 @@ export class Connect extends PolicyStatement {
    * - .toAssociatePhoneNumberContactFlow()
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
+   * - .toAssociateSecurityProfiles()
    * - .toAssociateTrafficDistributionGroupUser()
+   * - .toAssociateWorkspace()
+   * - .toBatchCreateDataTableValue()
+   * - .toBatchDeleteDataTableValue()
+   * - .toBatchDescribeDataTableValue()
    * - .toBatchGetFlowAssociation()
+   * - .toBatchUpdateDataTableValue()
    * - .toCreateContact()
+   * - .toCreateContactFlowModuleAlias()
+   * - .toCreateContactFlowModuleVersion()
    * - .toCreateContactFlowVersion()
+   * - .toCreateDataTable()
+   * - .toCreateDataTableAttribute()
    * - .toCreateViewVersion()
+   * - .toCreateWorkspacePage()
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
+   * - .toDeleteContactFlowModuleAlias()
+   * - .toDeleteContactFlowModuleVersion()
    * - .toDeleteContactFlowVersion()
+   * - .toDeleteDataTable()
+   * - .toDeleteDataTableAttribute()
    * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
@@ -5612,10 +6566,16 @@ export class Connect extends PolicyStatement {
    * - .toDeleteView()
    * - .toDeleteViewVersion()
    * - .toDeleteVocabulary()
+   * - .toDeleteWorkspace()
+   * - .toDeleteWorkspaceMedia()
+   * - .toDeleteWorkspacePage()
    * - .toDescribeAgentStatus()
    * - .toDescribeContactEvaluation()
    * - .toDescribeContactFlow()
    * - .toDescribeContactFlowModule()
+   * - .toDescribeContactFlowModuleAlias()
+   * - .toDescribeDataTable()
+   * - .toDescribeDataTableAttribute()
    * - .toDescribeEmailAddress()
    * - .toDescribeEvaluationForm()
    * - .toDescribeHoursOfOperation()
@@ -5631,13 +6591,17 @@ export class Connect extends PolicyStatement {
    * - .toDescribeUser()
    * - .toDescribeView()
    * - .toDescribeVocabulary()
+   * - .toDescribeWorkspace()
    * - .toDisassociateEmailAddressAlias()
    * - .toDisassociateFlow()
    * - .toDisassociatePhoneNumberContactFlow()
    * - .toDisassociateQueueQuickConnects()
    * - .toDisassociateRoutingProfileQueues()
+   * - .toDisassociateSecurityProfiles()
    * - .toDisassociateTrafficDistributionGroupUser()
+   * - .toDisassociateWorkspace()
    * - .toDismissUserContact()
+   * - .toEvaluateDataTableValues()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
    * - .toGetFlowAssociation()
@@ -5646,30 +6610,45 @@ export class Connect extends PolicyStatement {
    * - .toGetPromptFile()
    * - .toGetTaskTemplate()
    * - .toGetTrafficDistribution()
+   * - .toImportWorkspaceMedia()
+   * - .toListContactFlowModuleAliases()
+   * - .toListContactFlowModuleVersions()
    * - .toListContactFlowVersions()
+   * - .toListDataTableAttributes()
+   * - .toListDataTablePrimaryValues()
+   * - .toListDataTableValues()
+   * - .toListEntitySecurityProfiles()
    * - .toListQueueQuickConnects()
    * - .toListRoutingProfileManualAssignmentQueues()
    * - .toListRoutingProfileQueues()
    * - .toListSecurityProfileApplications()
+   * - .toListSecurityProfileFlowModules()
    * - .toListSecurityProfilePermissions()
    * - .toListTagsForResource()
    * - .toListTrafficDistributionGroupUsers()
    * - .toListViewVersions()
+   * - .toListWorkspaceMedia()
+   * - .toListWorkspacePages()
    * - .toMonitorContact()
    * - .toPauseContact()
    * - .toPutUserStatus()
    * - .toReleasePhoneNumber()
    * - .toResumeContact()
    * - .toSearchResourceTags()
+   * - .toSearchWorkspaceAssociations()
    * - .toStartEmailContact()
    * - .toStartOutboundEmailContact()
    * - .toStartTaskContact()
    * - .toUpdateAgentStatus()
    * - .toUpdateContactFlowContent()
    * - .toUpdateContactFlowMetadata()
+   * - .toUpdateContactFlowModuleAlias()
    * - .toUpdateContactFlowModuleContent()
    * - .toUpdateContactFlowModuleMetadata()
    * - .toUpdateContactFlowName()
+   * - .toUpdateDataTableAttribute()
+   * - .toUpdateDataTableMetadata()
+   * - .toUpdateDataTablePrimaryValues()
    * - .toUpdateEmailAddressMetadata()
    * - .toUpdateHoursOfOperation()
    * - .toUpdatePhoneNumber()
@@ -5698,6 +6677,10 @@ export class Connect extends PolicyStatement {
    * - .toUpdateUserSecurityProfiles()
    * - .toUpdateViewContent()
    * - .toUpdateViewMetadata()
+   * - .toUpdateWorkspaceMetadata()
+   * - .toUpdateWorkspacePage()
+   * - .toUpdateWorkspaceTheme()
+   * - .toUpdateWorkspaceVisibility()
    *
    * Applies to resource types:
    * - instance
@@ -5705,6 +6688,7 @@ export class Connect extends PolicyStatement {
    * - routing-profile
    * - security-profile
    * - hierarchy-group
+   * - data-table
    * - queue
    * - quick-connect
    * - contact-flow
@@ -5727,6 +6711,7 @@ export class Connect extends PolicyStatement {
    * - customer-managed-view-version
    * - attached-file
    * - email-address
+   * - workspace
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -5763,6 +6748,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateUserHierarchyGroup()
    * - .toCreateView()
    * - .toCreateVocabulary()
+   * - .toCreateWorkspace()
    * - .toDeleteAttachedFile()
    * - .toGetAttachedFile()
    * - .toImportPhoneNumber()
@@ -5886,6 +6872,22 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Filters access by restricting data table operations based on expression type
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toBatchCreateDataTableValue()
+   * - .toBatchUpdateDataTableValue()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifExpressionValue(value: string | string[], operator?: Operator | string) {
+    return this.if(`ExpressionValue`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by Flow type
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -5930,13 +6932,19 @@ export class Connect extends PolicyStatement {
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateSecurityKey()
+   * - .toAssociateSecurityProfiles()
    * - .toAssociateTrafficDistributionGroupUser()
    * - .toAssociateUserProficiencies()
+   * - .toAssociateWorkspace()
    * - .toBatchAssociateAnalyticsDataSet()
+   * - .toBatchCreateDataTableValue()
+   * - .toBatchDeleteDataTableValue()
+   * - .toBatchDescribeDataTableValue()
    * - .toBatchDisassociateAnalyticsDataSet()
    * - .toBatchGetAttachedFileMetadata()
    * - .toBatchGetFlowAssociation()
    * - .toBatchPutContact()
+   * - .toBatchUpdateDataTableValue()
    * - .toClaimPhoneNumber()
    * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
@@ -5944,7 +6952,11 @@ export class Connect extends PolicyStatement {
    * - .toCreateContact()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
+   * - .toCreateContactFlowModuleAlias()
+   * - .toCreateContactFlowModuleVersion()
    * - .toCreateContactFlowVersion()
+   * - .toCreateDataTable()
+   * - .toCreateDataTableAttribute()
    * - .toCreateEmailAddress()
    * - .toCreateEvaluationForm()
    * - .toCreateHoursOfOperation()
@@ -5967,12 +6979,18 @@ export class Connect extends PolicyStatement {
    * - .toCreateView()
    * - .toCreateViewVersion()
    * - .toCreateVocabulary()
+   * - .toCreateWorkspace()
+   * - .toCreateWorkspacePage()
    * - .toDeactivateEvaluationForm()
    * - .toDeleteAttachedFile()
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
+   * - .toDeleteContactFlowModuleAlias()
+   * - .toDeleteContactFlowModuleVersion()
    * - .toDeleteContactFlowVersion()
+   * - .toDeleteDataTable()
+   * - .toDeleteDataTableAttribute()
    * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
@@ -5994,12 +7012,18 @@ export class Connect extends PolicyStatement {
    * - .toDeleteView()
    * - .toDeleteViewVersion()
    * - .toDeleteVocabulary()
+   * - .toDeleteWorkspace()
+   * - .toDeleteWorkspaceMedia()
+   * - .toDeleteWorkspacePage()
    * - .toDescribeAgentStatus()
    * - .toDescribeAuthenticationProfile()
    * - .toDescribeContact()
    * - .toDescribeContactEvaluation()
    * - .toDescribeContactFlow()
    * - .toDescribeContactFlowModule()
+   * - .toDescribeContactFlowModuleAlias()
+   * - .toDescribeDataTable()
+   * - .toDescribeDataTableAttribute()
    * - .toDescribeEmailAddress()
    * - .toDescribeEvaluationForm()
    * - .toDescribeForecastingPlanningSchedulingIntegration()
@@ -6020,6 +7044,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeUserHierarchyStructure()
    * - .toDescribeView()
    * - .toDescribeVocabulary()
+   * - .toDescribeWorkspace()
    * - .toDisassociateAnalyticsDataSet()
    * - .toDisassociateApprovedOrigin()
    * - .toDisassociateBot()
@@ -6032,9 +7057,12 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateQueueQuickConnects()
    * - .toDisassociateRoutingProfileQueues()
    * - .toDisassociateSecurityKey()
+   * - .toDisassociateSecurityProfiles()
    * - .toDisassociateTrafficDistributionGroupUser()
    * - .toDisassociateUserProficiencies()
+   * - .toDisassociateWorkspace()
    * - .toDismissUserContact()
+   * - .toEvaluateDataTableValues()
    * - .toGetAttachedFile()
    * - .toGetContactAttributes()
    * - .toGetContactMetrics()
@@ -6047,6 +7075,7 @@ export class Connect extends PolicyStatement {
    * - .toGetMetricDataV2()
    * - .toGetPromptFile()
    * - .toGetTaskTemplate()
+   * - .toImportWorkspaceMedia()
    * - .toListAnalyticsDataAssociations()
    * - .toListAnalyticsDataLakeDataSets()
    * - .toListApprovedOrigins()
@@ -6054,10 +7083,17 @@ export class Connect extends PolicyStatement {
    * - .toListAuthenticationProfiles()
    * - .toListBots()
    * - .toListContactEvaluations()
+   * - .toListContactFlowModuleAliases()
+   * - .toListContactFlowModuleVersions()
    * - .toListContactFlowVersions()
    * - .toListContactFlows()
    * - .toListContactReferences()
+   * - .toListDataTableAttributes()
+   * - .toListDataTablePrimaryValues()
+   * - .toListDataTableValues()
+   * - .toListDataTables()
    * - .toListDefaultVocabularies()
+   * - .toListEntitySecurityProfiles()
    * - .toListEvaluationFormVersions()
    * - .toListEvaluationForms()
    * - .toListFlowAssociations()
@@ -6077,6 +7113,7 @@ export class Connect extends PolicyStatement {
    * - .toListRules()
    * - .toListSecurityKeys()
    * - .toListSecurityProfileApplications()
+   * - .toListSecurityProfileFlowModules()
    * - .toListSecurityProfilePermissions()
    * - .toListSecurityProfiles()
    * - .toListUseCases()
@@ -6085,16 +7122,22 @@ export class Connect extends PolicyStatement {
    * - .toListUsers()
    * - .toListViewVersions()
    * - .toListViews()
+   * - .toListWorkspaceMedia()
+   * - .toListWorkspacePages()
+   * - .toListWorkspaces()
    * - .toMonitorContact()
    * - .toPauseContact()
    * - .toPutUserStatus()
    * - .toReplicateInstance()
    * - .toResumeContact()
    * - .toSearchAgentStatuses()
+   * - .toSearchContactEvaluations()
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
    * - .toSearchContacts()
+   * - .toSearchDataTables()
    * - .toSearchEmailAddresses()
+   * - .toSearchEvaluationForms()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
    * - .toSearchPredefinedAttributes()
@@ -6106,12 +7149,16 @@ export class Connect extends PolicyStatement {
    * - .toSearchSecurityProfiles()
    * - .toSearchUserHierarchyGroups()
    * - .toSearchUsers()
+   * - .toSearchViews()
    * - .toSearchVocabularies()
+   * - .toSearchWorkspaceAssociations()
+   * - .toSearchWorkspaces()
    * - .toSendOutboundChatMessage()
    * - .toSendOutboundEmail()
    * - .toStartAttachedFileUpload()
    * - .toStartChatContact()
    * - .toStartContactEvaluation()
+   * - .toStartContactMediaProcessing()
    * - .toStartEmailContact()
    * - .toStartForecastingPlanningSchedulingIntegration()
    * - .toStartOutboundChatContact()
@@ -6120,6 +7167,7 @@ export class Connect extends PolicyStatement {
    * - .toStartTaskContact()
    * - .toStartWebRTCContact()
    * - .toStopContact()
+   * - .toStopContactMediaProcessing()
    * - .toStopForecastingPlanningSchedulingIntegration()
    * - .toSubmitContactEvaluation()
    * - .toTagContact()
@@ -6132,11 +7180,15 @@ export class Connect extends PolicyStatement {
    * - .toUpdateContactEvaluation()
    * - .toUpdateContactFlowContent()
    * - .toUpdateContactFlowMetadata()
+   * - .toUpdateContactFlowModuleAlias()
    * - .toUpdateContactFlowModuleContent()
    * - .toUpdateContactFlowModuleMetadata()
    * - .toUpdateContactFlowName()
    * - .toUpdateContactRoutingData()
    * - .toUpdateContactSchedule()
+   * - .toUpdateDataTableAttribute()
+   * - .toUpdateDataTableMetadata()
+   * - .toUpdateDataTablePrimaryValues()
    * - .toUpdateEmailAddressMetadata()
    * - .toUpdateEvaluationForm()
    * - .toUpdateHoursOfOperation()
@@ -6174,6 +7226,10 @@ export class Connect extends PolicyStatement {
    * - .toUpdateUserSecurityProfiles()
    * - .toUpdateViewContent()
    * - .toUpdateViewMetadata()
+   * - .toUpdateWorkspaceMetadata()
+   * - .toUpdateWorkspacePage()
+   * - .toUpdateWorkspaceTheme()
+   * - .toUpdateWorkspaceVisibility()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -6244,6 +7300,29 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Filters access by restricting which primary attributes the user can manage
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toBatchCreateDataTableValue()
+   * - .toBatchDeleteDataTableValue()
+   * - .toBatchDescribeDataTableValue()
+   * - .toBatchUpdateDataTableValue()
+   * - .toEvaluateDataTableValues()
+   * - .toListDataTablePrimaryValues()
+   * - .toListDataTableValues()
+   * - .toUpdateDataTablePrimaryValues()
+   *
+   * @param primaryAttribute The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrimaryAttribute(primaryAttribute: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`PrimaryAttribute/${ primaryAttribute }`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by restricting searches using analysis outputs from Amazon Connect Contact Lens
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
@@ -6266,9 +7345,12 @@ export class Connect extends PolicyStatement {
    * Applies to actions:
    * - .toAssociateTrafficDistributionGroupUser()
    * - .toSearchAgentStatuses()
+   * - .toSearchContactEvaluations()
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
+   * - .toSearchDataTables()
    * - .toSearchEmailAddresses()
+   * - .toSearchEvaluationForms()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
    * - .toSearchPrompts()
@@ -6278,6 +7360,8 @@ export class Connect extends PolicyStatement {
    * - .toSearchSecurityProfiles()
    * - .toSearchUserHierarchyGroups()
    * - .toSearchUsers()
+   * - .toSearchViews()
+   * - .toSearchWorkspaces()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

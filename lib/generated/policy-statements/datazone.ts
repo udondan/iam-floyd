@@ -806,6 +806,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve DataZone catalog data export configuration
+   *
+   * Access Level: Read
+   */
+  public toGetDataExportConfiguration() {
+    return this.to('GetDataExportConfiguration');
+  }
+
+  /**
    * Grants permission to get data product
    *
    * Access Level: Read
@@ -1544,6 +1553,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create and update DataZone catalog data export configuration
+   *
+   * Access Level: Write
+   */
+  public toPutDataExportConfiguration() {
+    return this.to('PutDataExportConfiguration');
+  }
+
+  /**
    * Grants permission to add a resource policy for a DataZone Domain
    *
    * Access Level: Permissions management
@@ -2106,6 +2124,7 @@ export class Datazone extends PolicyStatement {
       'PostTimeSeriesDataPoints',
       'ProvisionDomain',
       'PutCellRunResult',
+      'PutDataExportConfiguration',
       'PutEnvironmentBlueprintConfiguration',
       'RefreshToken',
       'RejectPredictions',
@@ -2170,6 +2189,7 @@ export class Datazone extends PolicyStatement {
       'GetCellRunResult',
       'GetConnection',
       'GetConversation',
+      'GetDataExportConfiguration',
       'GetDataProduct',
       'GetDataSource',
       'GetDataSourceRun',

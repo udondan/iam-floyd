@@ -1,4 +1,5 @@
 connect:agent-status
+connect:ai-agent
 connect:attached-file
 connect:authentication-profile
 connect:aws-managed-view
@@ -8,6 +9,7 @@ connect:contact-flow
 connect:contact-flow-module
 connect:customer-managed-view
 connect:customer-managed-view-version
+connect:data-table
 connect:email-address
 connect:evaluation-form
 connect:hierarchy-group
@@ -35,3 +37,4 @@ connect:wildcard-legacy-phone-number
 connect:wildcard-phone-number
 connect:wildcard-queue
 connect:wildcard-quick-connect
+connect:workspace

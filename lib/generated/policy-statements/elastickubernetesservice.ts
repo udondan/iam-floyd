@@ -108,6 +108,21 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a capability for an Amazon EKS cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCapability.html
+   */
+  public toCreateCapability() {
+    return this.to('CreateCapability');
+  }
+
+  /**
    * Grants permission to create an Amazon EKS cluster
    *
    * Access Level: Write
@@ -210,6 +225,17 @@ export class Eks extends PolicyStatement {
    */
   public toDeleteAddon() {
     return this.to('DeleteAddon');
+  }
+
+  /**
+   * Grants permission to delete a capability from an Amazon EKS cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCapability.html
+   */
+  public toDeleteCapability() {
+    return this.to('DeleteCapability');
   }
 
   /**
@@ -320,6 +346,17 @@ export class Eks extends PolicyStatement {
    */
   public toDescribeAddonVersions() {
     return this.to('DescribeAddonVersions');
+  }
+
+  /**
+   * Grants permission to describe a capability for an Amazon EKS cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCapability.html
+   */
+  public toDescribeCapability() {
+    return this.to('DescribeCapability');
   }
 
   /**
@@ -501,6 +538,17 @@ export class Eks extends PolicyStatement {
    */
   public toListAssociatedAccessPolicies() {
     return this.to('ListAssociatedAccessPolicies');
+  }
+
+  /**
+   * Grants permission to list capabilities for an Amazon EKS cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListCapabilities.html
+   */
+  public toListCapabilities() {
+    return this.to('ListCapabilities');
   }
 
   /**
@@ -716,6 +764,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a capability for an Amazon EKS cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateCapability.html
+   */
+  public toUpdateCapability() {
+    return this.to('UpdateCapability');
+  }
+
+  /**
    * Grants permission to update Amazon EKS cluster configurations (eg: API server endpoint access)
    *
    * Access Level: Write
@@ -796,6 +855,7 @@ export class Eks extends PolicyStatement {
       'DescribeAddon',
       'DescribeAddonConfiguration',
       'DescribeAddonVersions',
+      'DescribeCapability',
       'DescribeCluster',
       'DescribeClusterVersions',
       'DescribeEksAnywhereSubscription',
@@ -816,6 +876,7 @@ export class Eks extends PolicyStatement {
       'AssociateIdentityProviderConfig',
       'CreateAccessEntry',
       'CreateAddon',
+      'CreateCapability',
       'CreateCluster',
       'CreateEksAnywhereSubscription',
       'CreateFargateProfile',
@@ -823,6 +884,7 @@ export class Eks extends PolicyStatement {
       'CreatePodIdentityAssociation',
       'DeleteAccessEntry',
       'DeleteAddon',
+      'DeleteCapability',
       'DeleteCluster',
       'DeleteEksAnywhereSubscription',
       'DeleteFargateProfile',
@@ -836,6 +898,7 @@ export class Eks extends PolicyStatement {
       'StartInsightsRefresh',
       'UpdateAccessEntry',
       'UpdateAddon',
+      'UpdateCapability',
       'UpdateClusterConfig',
       'UpdateClusterVersion',
       'UpdateEksAnywhereSubscription',
@@ -848,6 +911,7 @@ export class Eks extends PolicyStatement {
       'ListAccessPolicies',
       'ListAddons',
       'ListAssociatedAccessPolicies',
+      'ListCapabilities',
       'ListClusters',
       'ListEksAnywhereSubscriptions',
       'ListFargateProfiles',
@@ -1048,6 +1112,26 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type capability to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/capabilities.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param capabilityType - Identifier for the capabilityType.
+   * @param capabilityName - Identifier for the capabilityName.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCapability(clusterName: string, capabilityType: string, capabilityName: string, uUID: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:eks:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capability/${ clusterName }/${ capabilityType }/${ capabilityName }/${ uUID }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the EKS service
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
@@ -1056,6 +1140,7 @@ export class Eks extends PolicyStatement {
    * - .toAssociateIdentityProviderConfig()
    * - .toCreateAccessEntry()
    * - .toCreateAddon()
+   * - .toCreateCapability()
    * - .toCreateCluster()
    * - .toCreateEksAnywhereSubscription()
    * - .toCreateFargateProfile()
@@ -1087,6 +1172,7 @@ export class Eks extends PolicyStatement {
    * - podidentityassociation
    * - access-entry
    * - dashboard
+   * - capability
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1105,6 +1191,7 @@ export class Eks extends PolicyStatement {
    * - .toAssociateIdentityProviderConfig()
    * - .toCreateAccessEntry()
    * - .toCreateAddon()
+   * - .toCreateCapability()
    * - .toCreateCluster()
    * - .toCreateEksAnywhereSubscription()
    * - .toCreateFargateProfile()

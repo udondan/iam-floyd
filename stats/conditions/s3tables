@@ -2,6 +2,7 @@ s3tables:KMSKeyArn
 s3tables:RequestTag/${TagKey}
 s3tables:ResourceTag/${TagKey}
 s3tables:SSEAlgorithm
+s3tables:StorageClass
 s3tables:TableBucketTag/${TagKey}
 s3tables:TagKeys
 s3tables:namespace

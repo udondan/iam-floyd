@@ -30,6 +30,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a log source to an S3 Tables integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateSourceToS3TableIntegration.html
+   */
+  public toAssociateSourceToS3TableIntegration() {
+    return this.to('AssociateSourceToS3TableIntegration');
+  }
+
+  /**
    * Grants permission to cancel an export task if it is in PENDING or RUNNING state
    *
    * Access Level: Write
@@ -288,6 +299,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete telemetry pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toDeletePipelineRule() {
+    return this.to('DeletePipelineRule');
+  }
+
+  /**
    * Grants permission to delete a saved CloudWatch Logs Insights query definition
    *
    * Access Level: Write
@@ -541,6 +563,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a log source from an S3 Tables integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DisassociateSourceFromS3TableIntegration.html
+   */
+  public toDisassociateSourceFromS3TableIntegration() {
+    return this.to('DisassociateSourceFromS3TableIntegration');
+  }
+
+  /**
    * Grants permission to retrieve log events, optionally filtered by a filter pattern from the specified log group
    *
    * Access Level: Read
@@ -651,6 +684,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of log fields for a data source
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html
+   */
+  public toGetLogFields() {
+    return this.to('GetLogFields');
+  }
+
+  /**
    * Grants permission to return a list of the fields that are included in log events in the specified log group, along with the percentage of log events that contain each field
    *
    * Access Level: Read
@@ -717,6 +761,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deliver log events to S3 Tables
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toIntegrateWithS3Table() {
+    return this.to('IntegrateWithS3Table');
+  }
+
+  /**
    * Grants permission to share CloudWatch resources with a monitoring account
    *
    * Access Level: Write
@@ -725,6 +780,17 @@ export class Logs extends PolicyStatement {
    */
   public toLink() {
     return this.to('Link');
+  }
+
+  /**
+   * Grants permission to return an aggregate summary of all log groups in the region grouped by specified data-source characteristics
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAggregateLogGroupSummaries.html
+   */
+  public toListAggregateLogGroupSummaries() {
+    return this.to('ListAggregateLogGroupSummaries');
   }
 
   /**
@@ -827,6 +893,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return all log sources associated with an S3 Tables integration
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSourcesForS3TableIntegration.html
+   */
+  public toListSourcesForS3TableIntegration() {
+    return this.to('ListSourcesForS3TableIntegration');
+  }
+
+  /**
    * Grants permission to list the tags for the specified resource
    *
    * Access Level: List
@@ -846,6 +923,17 @@ export class Logs extends PolicyStatement {
    */
   public toListTagsLogGroup() {
     return this.to('ListTagsLogGroup');
+  }
+
+  /**
+   * Grants permission to process and transform log events through pipeline transformers before storage
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toProcessWithPipeline() {
+    return this.to('ProcessWithPipeline');
   }
 
   /**
@@ -976,6 +1064,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable deletion protection for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogGroupDeletionProtection.html
+   */
+  public toPutLogGroupDeletionProtection() {
+    return this.to('PutLogGroupDeletionProtection');
+  }
+
+  /**
    * Grants permission to create or update a metric filter and associates it with the specified log group
    *
    * Access Level: Write
@@ -984,6 +1083,17 @@ export class Logs extends PolicyStatement {
    */
   public toPutMetricFilter() {
     return this.to('PutMetricFilter');
+  }
+
+  /**
+   * Grants permission to create telemetry pipeline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
+   */
+  public toPutPipelineRule() {
+    return this.to('PutPipelineRule');
   }
 
   /**
@@ -1241,6 +1351,7 @@ export class Logs extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateKmsKey',
+      'AssociateSourceToS3TableIntegration',
       'CancelExportTask',
       'CreateDelivery',
       'CreateExportTask',
@@ -1263,13 +1374,17 @@ export class Logs extends PolicyStatement {
       'DeleteLogGroup',
       'DeleteLogStream',
       'DeleteMetricFilter',
+      'DeletePipelineRule',
       'DeleteQueryDefinition',
       'DeleteRetentionPolicy',
       'DeleteScheduledQuery',
       'DeleteSubscriptionFilter',
       'DeleteTransformer',
       'DisassociateKmsKey',
+      'DisassociateSourceFromS3TableIntegration',
+      'IntegrateWithS3Table',
       'Link',
+      'ProcessWithPipeline',
       'PutAccountPolicy',
       'PutDataProtectionPolicy',
       'PutDeliveryDestination',
@@ -1280,7 +1395,9 @@ export class Logs extends PolicyStatement {
       'PutIndexPolicy',
       'PutIntegration',
       'PutLogEvents',
+      'PutLogGroupDeletionProtection',
       'PutMetricFilter',
+      'PutPipelineRule',
       'PutQueryDefinition',
       'PutRetentionPolicy',
       'PutSubscriptionFilter',
@@ -1312,6 +1429,7 @@ export class Logs extends PolicyStatement {
       'DescribeQueryDefinitions',
       'DescribeResourcePolicies',
       'DescribeSubscriptionFilters',
+      'ListAggregateLogGroupSummaries',
       'ListAnomalies',
       'ListEntitiesForLogGroup',
       'ListIntegrations',
@@ -1321,6 +1439,7 @@ export class Logs extends PolicyStatement {
       'ListLogGroupsForEntity',
       'ListLogGroupsForQuery',
       'ListScheduledQueries',
+      'ListSourcesForS3TableIntegration',
       'ListTagsForResource',
       'ListTagsLogGroup'
     ],
@@ -1335,6 +1454,7 @@ export class Logs extends PolicyStatement {
       'GetLogAnomalyDetector',
       'GetLogDelivery',
       'GetLogEvents',
+      'GetLogFields',
       'GetLogGroupFields',
       'GetLogRecord',
       'GetQueryResults',

@@ -23,7 +23,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_CreateNamespace.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_CreateNamespace.html
    */
   public toCreateNamespace() {
     return this.to('CreateNamespace');
@@ -43,7 +43,7 @@ export class S3tables extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_CreateTable.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_CreateTable.html
    */
   public toCreateTable() {
     return this.to('CreateTable');
@@ -62,7 +62,7 @@ export class S3tables extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_CreateTableBucket.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_CreateTableBucket.html
    */
   public toCreateTableBucket() {
     return this.to('CreateTableBucket');
@@ -76,7 +76,7 @@ export class S3tables extends PolicyStatement {
    * Possible conditions:
    * - .ifNamespace()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_DeleteNamespace.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteNamespace.html
    */
   public toDeleteNamespace() {
     return this.to('DeleteNamespace');
@@ -91,7 +91,7 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_DeleteTable.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTable.html
    */
   public toDeleteTable() {
     return this.to('DeleteTable');
@@ -102,7 +102,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_DeleteTableBucket.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucket.html
    */
   public toDeleteTableBucket() {
     return this.to('DeleteTableBucket');
@@ -113,7 +113,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_DeleteTableBucketEncryption.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketEncryption.html
    */
   public toDeleteTableBucketEncryption() {
     return this.to('DeleteTableBucketEncryption');
@@ -124,10 +124,21 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_DeleteTableBucketPolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketPolicy.html
    */
   public toDeleteTableBucketPolicy() {
     return this.to('DeleteTableBucketPolicy');
+  }
+
+  /**
+   * Grants permission to delete table bucket replication configuration on a bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketReplication.html
+   */
+  public toDeleteTableBucketReplication() {
+    return this.to('DeleteTableBucketReplication');
   }
 
   /**
@@ -139,10 +150,25 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_DeleteTablePolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTablePolicy.html
    */
   public toDeleteTablePolicy() {
     return this.to('DeleteTablePolicy');
+  }
+
+  /**
+   * Grants permission to delete table replication configuration on a table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableReplication.html
+   */
+  public toDeleteTableReplication() {
+    return this.to('DeleteTableReplication');
   }
 
   /**
@@ -153,7 +179,7 @@ export class S3tables extends PolicyStatement {
    * Possible conditions:
    * - .ifNamespace()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetNamespace.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetNamespace.html
    */
   public toGetNamespace() {
     return this.to('GetNamespace');
@@ -168,7 +194,7 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTable.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTable.html
    */
   public toGetTable() {
     return this.to('GetTable');
@@ -179,7 +205,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableBucket.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucket.html
    */
   public toGetTableBucket() {
     return this.to('GetTableBucket');
@@ -190,7 +216,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableBucketEncryption.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketEncryption.html
    */
   public toGetTableBucketEncryption() {
     return this.to('GetTableBucketEncryption');
@@ -201,7 +227,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableBucketMaintenanceConfiguration.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketMaintenanceConfiguration.html
    */
   public toGetTableBucketMaintenanceConfiguration() {
     return this.to('GetTableBucketMaintenanceConfiguration');
@@ -212,10 +238,32 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableBucketPolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketPolicy.html
    */
   public toGetTableBucketPolicy() {
     return this.to('GetTableBucketPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve a table bucket replication configuration on a bucket
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketReplication.html
+   */
+  public toGetTableBucketReplication() {
+    return this.to('GetTableBucketReplication');
+  }
+
+  /**
+   * Grants permission to retrieve the storage class configuration for a table bucket
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketStorageClass.html
+   */
+  public toGetTableBucketStorageClass() {
+    return this.to('GetTableBucketStorageClass');
   }
 
   /**
@@ -242,7 +290,7 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableEncryption.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableEncryption.html
    */
   public toGetTableEncryption() {
     return this.to('GetTableEncryption');
@@ -257,7 +305,7 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableMaintenanceConfiguration.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableMaintenanceConfiguration.html
    */
   public toGetTableMaintenanceConfiguration() {
     return this.to('GetTableMaintenanceConfiguration');
@@ -272,7 +320,7 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableMaintenanceJobStatus.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableMaintenanceJobStatus.html
    */
   public toGetTableMaintenanceJobStatus() {
     return this.to('GetTableMaintenanceJobStatus');
@@ -287,7 +335,7 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTableMetadataLocation.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableMetadataLocation.html
    */
   public toGetTableMetadataLocation() {
     return this.to('GetTableMetadataLocation');
@@ -302,10 +350,85 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_GetTablePolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTablePolicy.html
    */
   public toGetTablePolicy() {
     return this.to('GetTablePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve a table maintenance configuration on a system table
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableRecordExpirationConfiguration.html
+   */
+  public toGetTableRecordExpirationConfiguration() {
+    return this.to('GetTableRecordExpirationConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve the status of table record expiration jobs on a system table
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableRecordExpirationJobStatus.html
+   */
+  public toGetTableRecordExpirationJobStatus() {
+    return this.to('GetTableRecordExpirationJobStatus');
+  }
+
+  /**
+   * Grants permission to retrieve a table replication configuration on a table
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableReplication.html
+   */
+  public toGetTableReplication() {
+    return this.to('GetTableReplication');
+  }
+
+  /**
+   * Grants permission to retrieve a table replication status on a table
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableReplicationStatus.html
+   */
+  public toGetTableReplicationStatus() {
+    return this.to('GetTableReplicationStatus');
+  }
+
+  /**
+   * Grants permission to retrieve the storage class configuration for a specific table
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableStorageClass.html
+   */
+  public toGetTableStorageClass() {
+    return this.to('GetTableStorageClass');
   }
 
   /**
@@ -313,7 +436,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_ListNamespaces.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_ListNamespaces.html
    */
   public toListNamespaces() {
     return this.to('ListNamespaces');
@@ -324,7 +447,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_ListTableBuckets.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_ListTableBuckets.html
    */
   public toListTableBuckets() {
     return this.to('ListTableBuckets');
@@ -338,14 +461,14 @@ export class S3tables extends PolicyStatement {
    * Possible conditions:
    * - .ifNamespace()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_ListTables.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_ListTables.html
    */
   public toListTables() {
     return this.to('ListTables');
   }
 
   /**
-   * Grants permission to list the tag for a S3Table's resource
+   * Grants permission to list the tags for an S3 Tables resource
    *
    * Access Level: List
    *
@@ -368,7 +491,7 @@ export class S3tables extends PolicyStatement {
    * - .ifKMSKeyArn()
    * - .ifSSEAlgorithm()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_PutTableBucketEncryption.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketEncryption.html
    */
   public toPutTableBucketEncryption() {
     return this.to('PutTableBucketEncryption');
@@ -379,7 +502,7 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_PutTableBucketMaintenanceConfiguration.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketMaintenanceConfiguration.html
    */
   public toPutTableBucketMaintenanceConfiguration() {
     return this.to('PutTableBucketMaintenanceConfiguration');
@@ -390,10 +513,35 @@ export class S3tables extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_PutTableBucketPolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketPolicy.html
    */
   public toPutTableBucketPolicy() {
     return this.to('PutTableBucketPolicy');
+  }
+
+  /**
+   * Grants permission to put table bucket replication configuration on a bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketReplication.html
+   */
+  public toPutTableBucketReplication() {
+    return this.to('PutTableBucketReplication');
+  }
+
+  /**
+   * Grants permission to set or update the storage class configuration for a table bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifStorageClass()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ss3Buckets_PutTableBucketStorageClass.html
+   */
+  public toPutTableBucketStorageClass() {
+    return this.to('PutTableBucketStorageClass');
   }
 
   /**
@@ -436,7 +584,7 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_PutTableMaintenanceConfiguration.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableMaintenanceConfiguration.html
    */
   public toPutTableMaintenanceConfiguration() {
     return this.to('PutTableMaintenanceConfiguration');
@@ -451,10 +599,56 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_PutTablePolicy.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTablePolicy.html
    */
   public toPutTablePolicy() {
     return this.to('PutTablePolicy');
+  }
+
+  /**
+   * Grants permission to put a table record expiration configuration on a system table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableRecordExpirationConfiguration.html
+   */
+  public toPutTableRecordExpirationConfiguration() {
+    return this.to('PutTableRecordExpirationConfiguration');
+  }
+
+  /**
+   * Grants permission to put table replication configuration on a table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableReplication.html
+   */
+  public toPutTableReplication() {
+    return this.to('PutTableReplication');
+  }
+
+  /**
+   * Grants permission to set or update the storage class configuration for a table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifNamespace()
+   * - .ifTableName()
+   * - .ifStorageClass()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableStorageClass.html
+   */
+  public toPutTableStorageClass() {
+    return this.to('PutTableStorageClass');
   }
 
   /**
@@ -466,14 +660,14 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_RenameTable.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_RenameTable.html
    */
   public toRenameTable() {
     return this.to('RenameTable');
   }
 
   /**
-   * Grants permission to tag a S3Table's resource
+   * Grants permission to tag a S3 Tables resource
    *
    * Access Level: Tagging
    *
@@ -490,7 +684,7 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag a S3Table's resource
+   * Grants permission to untag a S3 Tables resource
    *
    * Access Level: Tagging
    *
@@ -514,7 +708,7 @@ export class S3tables extends PolicyStatement {
    * - .ifNamespace()
    * - .ifTableName()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3TableBuckets_UpdateTableMetadataLocation.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_UpdateTableMetadataLocation.html
    */
   public toUpdateTableMetadataLocation() {
     return this.to('UpdateTableMetadataLocation');
@@ -529,11 +723,18 @@ export class S3tables extends PolicyStatement {
       'DeleteTable',
       'DeleteTableBucket',
       'DeleteTableBucketEncryption',
+      'DeleteTableBucketReplication',
+      'DeleteTableReplication',
       'PutTableBucketEncryption',
       'PutTableBucketMaintenanceConfiguration',
+      'PutTableBucketReplication',
+      'PutTableBucketStorageClass',
       'PutTableData',
       'PutTableEncryption',
       'PutTableMaintenanceConfiguration',
+      'PutTableRecordExpirationConfiguration',
+      'PutTableReplication',
+      'PutTableStorageClass',
       'RenameTable',
       'UpdateTableMetadataLocation'
     ],
@@ -550,12 +751,19 @@ export class S3tables extends PolicyStatement {
       'GetTableBucketEncryption',
       'GetTableBucketMaintenanceConfiguration',
       'GetTableBucketPolicy',
+      'GetTableBucketReplication',
+      'GetTableBucketStorageClass',
       'GetTableData',
       'GetTableEncryption',
       'GetTableMaintenanceConfiguration',
       'GetTableMaintenanceJobStatus',
       'GetTableMetadataLocation',
-      'GetTablePolicy'
+      'GetTablePolicy',
+      'GetTableRecordExpirationConfiguration',
+      'GetTableRecordExpirationJobStatus',
+      'GetTableReplication',
+      'GetTableReplicationStatus',
+      'GetTableStorageClass'
     ],
     List: [
       'ListNamespaces',
@@ -705,6 +913,22 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
+   * Filters access by the storage class that can be set on tables under a table bucket
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html
+   *
+   * Applies to actions:
+   * - .toPutTableBucketStorageClass()
+   * - .toPutTableStorageClass()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifStorageClass(value: string | string[], operator?: Operator | string) {
+    return this.if(`StorageClass`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the tags associated with the table bucket
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-setting-up.htmls3-tables-setting-up.html
@@ -738,6 +962,7 @@ export class S3tables extends PolicyStatement {
    * - .toDeleteNamespace()
    * - .toDeleteTable()
    * - .toDeleteTablePolicy()
+   * - .toDeleteTableReplication()
    * - .toGetNamespace()
    * - .toGetTable()
    * - .toGetTableData()
@@ -746,11 +971,19 @@ export class S3tables extends PolicyStatement {
    * - .toGetTableMaintenanceJobStatus()
    * - .toGetTableMetadataLocation()
    * - .toGetTablePolicy()
+   * - .toGetTableRecordExpirationConfiguration()
+   * - .toGetTableRecordExpirationJobStatus()
+   * - .toGetTableReplication()
+   * - .toGetTableReplicationStatus()
+   * - .toGetTableStorageClass()
    * - .toListTables()
    * - .toPutTableData()
    * - .toPutTableEncryption()
    * - .toPutTableMaintenanceConfiguration()
    * - .toPutTablePolicy()
+   * - .toPutTableRecordExpirationConfiguration()
+   * - .toPutTableReplication()
+   * - .toPutTableStorageClass()
    * - .toRenameTable()
    * - .toUpdateTableMetadataLocation()
    *
@@ -772,6 +1005,7 @@ export class S3tables extends PolicyStatement {
    * Applies to actions:
    * - .toDeleteTable()
    * - .toDeleteTablePolicy()
+   * - .toDeleteTableReplication()
    * - .toGetTable()
    * - .toGetTableData()
    * - .toGetTableEncryption()
@@ -779,9 +1013,17 @@ export class S3tables extends PolicyStatement {
    * - .toGetTableMaintenanceJobStatus()
    * - .toGetTableMetadataLocation()
    * - .toGetTablePolicy()
+   * - .toGetTableRecordExpirationConfiguration()
+   * - .toGetTableRecordExpirationJobStatus()
+   * - .toGetTableReplication()
+   * - .toGetTableReplicationStatus()
+   * - .toGetTableStorageClass()
    * - .toPutTableData()
    * - .toPutTableMaintenanceConfiguration()
    * - .toPutTablePolicy()
+   * - .toPutTableRecordExpirationConfiguration()
+   * - .toPutTableReplication()
+   * - .toPutTableStorageClass()
    * - .toRenameTable()
    * - .toUpdateTableMetadataLocation()
    *

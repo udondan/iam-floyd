@@ -3,12 +3,14 @@ connect:AttributeType
 connect:Channel
 connect:ContactAssociationId
 connect:ContactInitiationMethod
+connect:ExpressionValue
 connect:FlowType
 connect:InstanceId
 connect:ListRealtimeContactAnalysisSegmentsByOutputType
 connect:ListRealtimeContactAnalysisSegmentsBySegmentType
 connect:MonitorCapabilities
 connect:PreferredUserArn
+connect:PrimaryAttribute/${PrimaryAttribute}
 connect:RequestTag/${TagKey}
 connect:ResourceTag/${TagKey}
 connect:SearchContactsByContactAnalysis

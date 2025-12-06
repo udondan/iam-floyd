@@ -1,2 +1,6 @@
+s3vectors:RequestTag/${TagKey}
+s3vectors:ResourceTag/${TagKey}
+s3vectors:TagKeys
+s3vectors:VectorBucketTag/${TagKey}
 s3vectors:kmsKeyArn
 s3vectors:sseType

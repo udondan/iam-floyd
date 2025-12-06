@@ -1388,20 +1388,6 @@ export class Omics extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type TaggingResource to the statement
-   *
-   * https://docs.aws.amazon.com/omics/latest/api/API_TagResource.html
-   *
-   * @param tagKey - Identifier for the tagKey.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onTaggingResource(tagKey: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tag/${ tagKey }`);
-  }
-
-  /**
    * Adds a resource of type TaskResource to the statement
    *
    * https://docs.aws.amazon.com/omics/latest/api/API_TaskListItem.html

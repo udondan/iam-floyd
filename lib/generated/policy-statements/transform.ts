@@ -23,7 +23,7 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toAssociateConnectorResource() {
     return this.to('AssociateConnectorResource');
@@ -34,10 +34,21 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toCreateProfile() {
     return this.to('CreateProfile');
+  }
+
+  /**
+   * Grants permission to invoke DeleteAgentRuntimeConfiguration on AWS Transform
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toDeleteAgentRuntimeConfiguration() {
+    return this.to('DeleteAgentRuntimeConfiguration');
   }
 
   /**
@@ -45,7 +56,7 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toDeleteConnector() {
     return this.to('DeleteConnector');
@@ -56,10 +67,43 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toDeleteProfile() {
     return this.to('DeleteProfile');
+  }
+
+  /**
+   * Grants permission to invoke GetAccountSettings on AWS Transform
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toGetAccountSettings() {
+    return this.to('GetAccountSettings');
+  }
+
+  /**
+   * Grants permission to invoke GetAgent on AWS Transform
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toGetAgent() {
+    return this.to('GetAgent');
+  }
+
+  /**
+   * Grants permission to invoke GetAgentRuntimeConfiguration on AWS Transform
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toGetAgentRuntimeConfiguration() {
+    return this.to('GetAgentRuntimeConfiguration');
   }
 
   /**
@@ -67,10 +111,21 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toGetConnector() {
     return this.to('GetConnector');
+  }
+
+  /**
+   * Grants permission to invoke ListAgents on AWS Transform
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toListAgents() {
+    return this.to('ListAgents');
   }
 
   /**
@@ -78,7 +133,7 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toListConnectors() {
     return this.to('ListConnectors');
@@ -89,7 +144,7 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toListProfiles() {
     return this.to('ListProfiles');
@@ -100,10 +155,21 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to invoke PutAgentRuntimeConfiguration on AWS Transform
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toPutAgentRuntimeConfiguration() {
+    return this.to('PutAgentRuntimeConfiguration');
   }
 
   /**
@@ -111,7 +177,7 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toRejectConnector() {
     return this.to('RejectConnector');
@@ -126,7 +192,7 @@ export class Transform extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -140,10 +206,32 @@ export class Transform extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to invoke UpdateAccountSettings on AWS Transform
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toUpdateAccountSettings() {
+    return this.to('UpdateAccountSettings');
+  }
+
+  /**
+   * Grants permission to invoke UpdateAgentAccess on AWS Transform
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toUpdateAgentAccess() {
+    return this.to('UpdateAgentAccess');
   }
 
   /**
@@ -151,7 +239,7 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toUpdateProfile() {
     return this.to('UpdateProfile');
@@ -161,13 +249,21 @@ export class Transform extends PolicyStatement {
     Write: [
       'AssociateConnectorResource',
       'CreateProfile',
+      'DeleteAgentRuntimeConfiguration',
       'DeleteConnector',
       'DeleteProfile',
+      'PutAgentRuntimeConfiguration',
       'RejectConnector',
+      'UpdateAccountSettings',
+      'UpdateAgentAccess',
       'UpdateProfile'
     ],
     Read: [
+      'GetAccountSettings',
+      'GetAgent',
+      'GetAgentRuntimeConfiguration',
       'GetConnector',
+      'ListAgents',
       'ListTagsForResource'
     ],
     List: [

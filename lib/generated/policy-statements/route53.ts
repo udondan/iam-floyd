@@ -802,6 +802,17 @@ export class Route53 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update features for a specified hosted zone
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHostedZoneFeatures.html
+   */
+  public toUpdateHostedZoneFeatures() {
+    return this.to('UpdateHostedZoneFeatures');
+  }
+
+  /**
    * Grants permission to update the comment for a specified traffic policy version
    *
    * Access Level: Write
@@ -854,6 +865,7 @@ export class Route53 extends PolicyStatement {
       'EnableHostedZoneDNSSEC',
       'UpdateHealthCheck',
       'UpdateHostedZoneComment',
+      'UpdateHostedZoneFeatures',
       'UpdateTrafficPolicyComment',
       'UpdateTrafficPolicyInstance'
     ],

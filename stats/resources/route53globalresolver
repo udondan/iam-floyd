@@ -1,0 +1,5 @@
+route53globalresolver:access-source
+route53globalresolver:access-token
+route53globalresolver:dns-view
+route53globalresolver:firewall-domain-list
+route53globalresolver:global-resolver

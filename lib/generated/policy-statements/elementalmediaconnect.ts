@@ -46,8 +46,8 @@ export class Mediaconnect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowMediaStreams.html
    */
@@ -61,8 +61,8 @@ export class Mediaconnect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowOutputs.html
    */
@@ -76,8 +76,8 @@ export class Mediaconnect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowSources.html
    */
@@ -91,13 +91,24 @@ export class Mediaconnect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowVpcInterfaces.html
    */
   public toAddFlowVpcInterfaces() {
     return this.to('AddFlowVpcInterfaces');
+  }
+
+  /**
+   * Grants permission to associate a router network interface
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_AssociateRouterNetworkInterface.html
+   */
+  public toAssociateRouterNetworkInterface() {
+    return this.to('AssociateRouterNetworkInterface');
   }
 
   /**
@@ -117,8 +128,8 @@ export class Mediaconnect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateFlow.html
    */
@@ -135,6 +146,73 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toCreateGateway() {
     return this.to('CreateGateway');
+  }
+
+  /**
+   * Grants permission to create a new router input in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - iam:PassRole
+   * - mediaconnect:AssociateRouterNetworkInterface
+   * - mediaconnect:CreateRouterInput
+   * - mediaconnect:TagResource
+   * - mediaconnect:UpdateFlowOutput
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateRouterInput.html
+   */
+  public toCreateRouterInput() {
+    return this.to('CreateRouterInput');
+  }
+
+  /**
+   * Grants permission to create a new router network interface in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - mediaconnect:CreateRouterNetworkInterface
+   * - mediaconnect:TagResource
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateRouterNetworkInterface.html
+   */
+  public toCreateRouterNetworkInterface() {
+    return this.to('CreateRouterNetworkInterface');
+  }
+
+  /**
+   * Grants permission to create a new router output in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - iam:PassRole
+   * - mediaconnect:AssociateRouterNetworkInterface
+   * - mediaconnect:CreateRouterOutput
+   * - mediaconnect:TagResource
+   * - mediaconnect:UpdateFlowSource
+   * - medialive:UpdateInput
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateRouterOutput.html
+   */
+  public toCreateRouterOutput() {
+    return this.to('CreateRouterOutput');
   }
 
   /**
@@ -168,6 +246,39 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toDeleteGateway() {
     return this.to('DeleteGateway');
+  }
+
+  /**
+   * Grants permission to delete a router input in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteRouterInput.html
+   */
+  public toDeleteRouterInput() {
+    return this.to('DeleteRouterInput');
+  }
+
+  /**
+   * Grants permission to delete a router network interface from AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteRouterNetworkInterface.html
+   */
+  public toDeleteRouterNetworkInterface() {
+    return this.to('DeleteRouterNetworkInterface');
+  }
+
+  /**
+   * Grants permission to delete a router output from AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteRouterOutput.html
+   */
+  public toDeleteRouterOutput() {
+    return this.to('DeleteRouterOutput');
   }
 
   /**
@@ -272,7 +383,7 @@ export class Mediaconnect extends PolicyStatement {
   /**
    * Grants permission to discover gateway poll endpoint
    *
-   * Access Level: Write
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/api/API_DiscoverGatewayPollEndpoint.html
    */
@@ -281,13 +392,68 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about a specific router input in AWS Elemental MediaConnect
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterInput.html
+   */
+  public toGetRouterInput() {
+    return this.to('GetRouterInput');
+  }
+
+  /**
+   * Grants permission to retrieve metadata about a router input source in AWS Elemental MediaConnect
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterInputSourceMetadata.html
+   */
+  public toGetRouterInputSourceMetadata() {
+    return this.to('GetRouterInputSourceMetadata');
+  }
+
+  /**
+   * Grants permission to retrieve the thumbnail for a router input in AWS Elemental MediaConnect
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterInputThumbnail.html
+   */
+  public toGetRouterInputThumbnail() {
+    return this.to('GetRouterInputThumbnail');
+  }
+
+  /**
+   * Grants permission to retrieve information about a specific router network interface in AWS Elemental MediaConnect
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterNetworkInterface.html
+   */
+  public toGetRouterNetworkInterface() {
+    return this.to('GetRouterNetworkInterface');
+  }
+
+  /**
+   * Grants permission to retrieve information about a specific router output in AWS Elemental MediaConnect
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterOutput.html
+   */
+  public toGetRouterOutput() {
+    return this.to('GetRouterOutput');
+  }
+
+  /**
    * Grants permission to grant entitlements on any flow
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/api/API_GrantFlowEntitlements.html
    */
@@ -370,6 +536,39 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toListReservations() {
     return this.to('ListReservations');
+  }
+
+  /**
+   * Grants permission to retrieve a list of router inputs in AWS Elemental MediaConnect
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListRouterInputs.html
+   */
+  public toListRouterInputs() {
+    return this.to('ListRouterInputs');
+  }
+
+  /**
+   * Grants permission to retrieve a list of router network interfaces in AWS Elemental MediaConnect
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListRouterNetworkInterfaces.html
+   */
+  public toListRouterNetworkInterfaces() {
+    return this.to('ListRouterNetworkInterfaces');
+  }
+
+  /**
+   * Grants permission to retrieve a list of router outputs in AWS Elemental MediaConnect
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListRouterOutputs.html
+   */
+  public toListRouterOutputs() {
+    return this.to('ListRouterOutputs');
   }
 
   /**
@@ -472,6 +671,28 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restart a router input in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RestartRouterInput.html
+   */
+  public toRestartRouterInput() {
+    return this.to('RestartRouterInput');
+  }
+
+  /**
+   * Grants permission to restart a router output in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_RestartRouterOutput.html
+   */
+  public toRestartRouterOutput() {
+    return this.to('RestartRouterOutput');
+  }
+
+  /**
    * Grants permission to revoke entitlements on any flow
    *
    * Access Level: Write
@@ -494,6 +715,28 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a router input in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_StartRouterInput.html
+   */
+  public toStartRouterInput() {
+    return this.to('StartRouterInput');
+  }
+
+  /**
+   * Grants permission to start a router output in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_StartRouterOutput.html
+   */
+  public toStartRouterOutput() {
+    return this.to('StartRouterOutput');
+  }
+
+  /**
    * Grants permission to stop flows
    *
    * Access Level: Write
@@ -502,6 +745,28 @@ export class Mediaconnect extends PolicyStatement {
    */
   public toStopFlow() {
     return this.to('StopFlow');
+  }
+
+  /**
+   * Grants permission to stop a router input in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_StopRouterInput.html
+   */
+  public toStopRouterInput() {
+    return this.to('StopRouterInput');
+  }
+
+  /**
+   * Grants permission to stops a router output in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_StopRouterOutput.html
+   */
+  public toStopRouterOutput() {
+    return this.to('StopRouterOutput');
   }
 
   /**
@@ -521,13 +786,24 @@ export class Mediaconnect extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/api/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to associate a router input with a router output in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_TakeRouterInput.html
+   */
+  public toTakeRouterInput() {
+    return this.to('TakeRouterInput');
   }
 
   /**
@@ -654,6 +930,58 @@ export class Mediaconnect extends PolicyStatement {
     return this.to('UpdateGatewayInstance');
   }
 
+  /**
+   * Grants permission to update the configuration of a router input in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - iam:PassRole
+   * - mediaconnect:AssociateRouterNetworkInterface
+   * - mediaconnect:UpdateFlowOutput
+   * - mediaconnect:UpdateRouterInput
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateRouterInput.html
+   */
+  public toUpdateRouterInput() {
+    return this.to('UpdateRouterInput');
+  }
+
+  /**
+   * Grants permission to updated the configuration of a router network interface in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - mediaconnect:UpdateRouterNetworkInterface
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateRouterNetworkInterface.html
+   */
+  public toUpdateRouterNetworkInterface() {
+    return this.to('UpdateRouterNetworkInterface');
+  }
+
+  /**
+   * Grants permission to update the configuration of a router output in AWS Elemental MediaConnect
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - iam:PassRole
+   * - mediaconnect:AssociateRouterNetworkInterface
+   * - mediaconnect:UpdateFlowSource
+   * - mediaconnect:UpdateRouterOutput
+   * - medialive:UpdateInput
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateRouterOutput.html
+   */
+  public toUpdateRouterOutput() {
+    return this.to('UpdateRouterOutput');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddBridgeOutputs',
@@ -662,14 +990,20 @@ export class Mediaconnect extends PolicyStatement {
       'AddFlowOutputs',
       'AddFlowSources',
       'AddFlowVpcInterfaces',
+      'AssociateRouterNetworkInterface',
       'CreateBridge',
       'CreateFlow',
       'CreateGateway',
+      'CreateRouterInput',
+      'CreateRouterNetworkInterface',
+      'CreateRouterOutput',
       'DeleteBridge',
       'DeleteFlow',
       'DeleteGateway',
+      'DeleteRouterInput',
+      'DeleteRouterNetworkInterface',
+      'DeleteRouterOutput',
       'DeregisterGatewayInstance',
-      'DiscoverGatewayPollEndpoint',
       'GrantFlowEntitlements',
       'PollGateway',
       'PurchaseOffering',
@@ -679,10 +1013,17 @@ export class Mediaconnect extends PolicyStatement {
       'RemoveFlowOutput',
       'RemoveFlowSource',
       'RemoveFlowVpcInterface',
+      'RestartRouterInput',
+      'RestartRouterOutput',
       'RevokeFlowEntitlement',
       'StartFlow',
+      'StartRouterInput',
+      'StartRouterOutput',
       'StopFlow',
+      'StopRouterInput',
+      'StopRouterOutput',
       'SubmitGatewayStateChange',
+      'TakeRouterInput',
       'UpdateBridge',
       'UpdateBridgeOutput',
       'UpdateBridgeSource',
@@ -692,7 +1033,10 @@ export class Mediaconnect extends PolicyStatement {
       'UpdateFlowMediaStream',
       'UpdateFlowOutput',
       'UpdateFlowSource',
-      'UpdateGatewayInstance'
+      'UpdateGatewayInstance',
+      'UpdateRouterInput',
+      'UpdateRouterNetworkInterface',
+      'UpdateRouterOutput'
     ],
     Read: [
       'DescribeBridge',
@@ -703,6 +1047,12 @@ export class Mediaconnect extends PolicyStatement {
       'DescribeGatewayInstance',
       'DescribeOffering',
       'DescribeReservation',
+      'DiscoverGatewayPollEndpoint',
+      'GetRouterInput',
+      'GetRouterInputSourceMetadata',
+      'GetRouterInputThumbnail',
+      'GetRouterNetworkInterface',
+      'GetRouterOutput',
       'ListTagsForResource'
     ],
     List: [
@@ -712,13 +1062,31 @@ export class Mediaconnect extends PolicyStatement {
       'ListGatewayInstances',
       'ListGateways',
       'ListOfferings',
-      'ListReservations'
+      'ListReservations',
+      'ListRouterInputs',
+      'ListRouterNetworkInterfaces',
+      'ListRouterOutputs'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type Bridge to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway-components-bridges.html
+   *
+   * @param bridgeId - Identifier for the bridgeId.
+   * @param bridgeName - Identifier for the bridgeName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBridge(bridgeId: string, bridgeName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bridge:${ bridgeId }:${ bridgeName }`);
+  }
 
   /**
    * Adds a resource of type Entitlement to the statement
@@ -757,6 +1125,50 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Gateway to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param gatewayName - Identifier for the gatewayName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGateway(gatewayId: string, gatewayName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }`);
+  }
+
+  /**
+   * Adds a resource of type GatewayInstance to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway-components-instances.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param gatewayName - Identifier for the gatewayName.
+   * @param instanceId - Identifier for the instanceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGatewayInstance(gatewayId: string, gatewayName: string, instanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }:instance:${ instanceId }`);
+  }
+
+  /**
+   * Adds a resource of type Offering to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/offering.html
+   *
+   * @param offeringId - Identifier for the offeringId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOffering(offeringId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:offering:${ offeringId }`);
+  }
+
+  /**
    * Adds a resource of type Output to the statement
    *
    * https://docs.aws.amazon.com/mediaconnect/latest/ug/outputs.html
@@ -772,6 +1184,72 @@ export class Mediaconnect extends PolicyStatement {
    */
   public onOutput(outputId: string, outputName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:output:${ outputId }:${ outputName }`);
+  }
+
+  /**
+   * Adds a resource of type Reservation to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/reservation.html
+   *
+   * @param reservationId - Identifier for the reservationId.
+   * @param reservationName - Identifier for the reservationName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onReservation(reservationId: string, reservationName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reservation:${ reservationId }:${ reservationName }`);
+  }
+
+  /**
+   * Adds a resource of type RouterInput to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/API_RouterInput.html
+   *
+   * @param routerInputId - Identifier for the routerInputId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRouterInput(routerInputId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:routerInput:${ routerInputId }`);
+  }
+
+  /**
+   * Adds a resource of type RouterNetworkInterface to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/API_RouterNetworkInterface.html
+   *
+   * @param routerNetworkInterfaceId - Identifier for the routerNetworkInterfaceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRouterNetworkInterface(routerNetworkInterfaceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:routerNetworkInterface:${ routerNetworkInterfaceId }`);
+  }
+
+  /**
+   * Adds a resource of type RouterOutput to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/API_RouterOutput.html
+   *
+   * @param routerOutputId - Identifier for the routerOutputId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRouterOutput(routerOutputId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:routerOutput:${ routerOutputId }`);
   }
 
   /**
@@ -793,55 +1271,9 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type Gateway to the statement
-   *
-   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway.html
-   *
-   * @param gatewayId - Identifier for the gatewayId.
-   * @param gatewayName - Identifier for the gatewayName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onGateway(gatewayId: string, gatewayName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }`);
-  }
-
-  /**
-   * Adds a resource of type Bridge to the statement
-   *
-   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway-components-bridges.html
-   *
-   * @param flowId - Identifier for the flowId.
-   * @param flowName - Identifier for the flowName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onBridge(flowId: string, flowName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bridge:${ flowId }:${ flowName }`);
-  }
-
-  /**
-   * Adds a resource of type GatewayInstance to the statement
-   *
-   * https://docs.aws.amazon.com/mediaconnect/latest/ug/gateway-components-instances.html
-   *
-   * @param gatewayId - Identifier for the gatewayId.
-   * @param gatewayName - Identifier for the gatewayName.
-   * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onGatewayInstance(gatewayId: string, gatewayName: string, instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway:${ gatewayId }:${ gatewayName }:instance:${ instanceId }`);
-  }
-
-  /**
    * Filters access by tags that are passed in the request
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
    * - .toAddFlowMediaStreams()
@@ -849,6 +1281,9 @@ export class Mediaconnect extends PolicyStatement {
    * - .toAddFlowSources()
    * - .toAddFlowVpcInterfaces()
    * - .toCreateFlow()
+   * - .toCreateRouterInput()
+   * - .toCreateRouterNetworkInterface()
+   * - .toCreateRouterOutput()
    * - .toGrantFlowEntitlements()
    * - .toTagResource()
    *
@@ -863,12 +1298,15 @@ export class Mediaconnect extends PolicyStatement {
   /**
    * Filters access by tags associated with the resource
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to resource types:
    * - Entitlement
    * - Flow
    * - Output
+   * - RouterInput
+   * - RouterNetworkInterface
+   * - RouterOutput
    * - Source
    *
    * @param tagKey The tag key to check
@@ -890,6 +1328,9 @@ export class Mediaconnect extends PolicyStatement {
    * - .toAddFlowSources()
    * - .toAddFlowVpcInterfaces()
    * - .toCreateFlow()
+   * - .toCreateRouterInput()
+   * - .toCreateRouterNetworkInterface()
+   * - .toCreateRouterOutput()
    * - .toGrantFlowEntitlements()
    * - .toTagResource()
    * - .toUntagResource()
