@@ -13,6 +13,19 @@
         "organizations:ListAWSServiceAccessForOrganization"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsDataSyncToServiceCatalogRegions",
+      "Effect": "Allow",
+      "Action": [
+        "account:ListRegions"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }
