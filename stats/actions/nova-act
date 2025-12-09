@@ -1,0 +1,16 @@
+nova-act:CreateAct;Write
+nova-act:CreateSession;Write
+nova-act:CreateWorkflowDefinition;Write
+nova-act:CreateWorkflowRun;Write
+nova-act:DeleteWorkflowDefinition;Write
+nova-act:DeleteWorkflowRun;Write
+nova-act:GetWorkflowDefinition;Read
+nova-act:GetWorkflowRun;Read
+nova-act:InvokeActStep;Write
+nova-act:ListActs;Read
+nova-act:ListModels;Read
+nova-act:ListSessions;Read
+nova-act:ListWorkflowDefinitions;List
+nova-act:ListWorkflowRuns;List
+nova-act:UpdateAct;Write
+nova-act:UpdateWorkflowRun;Write

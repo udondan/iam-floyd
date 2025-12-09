@@ -40,6 +40,7 @@ ce:ListCommitmentPurchaseAnalyses;List
 ce:ListCostAllocationTagBackfillHistory;List
 ce:ListCostAllocationTags;List
 ce:ListCostCategoryDefinitions;List
+ce:ListCostCategoryResourceAssociations;List
 ce:ListSavingsPlansPurchaseRecommendationGeneration;List
 ce:ListTagsForResource;Read
 ce:ProvideAnomalyFeedback;Write

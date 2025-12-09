@@ -738,6 +738,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete account-level enforced guardrail configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteEnforcedGuardrailConfiguration.html
+   */
+  public toDeleteEnforcedGuardrailConfiguration() {
+    return this.to('DeleteEnforcedGuardrailConfiguration');
+  }
+
+  /**
    * Grants permission to delete a prompt flow
    *
    * Access Level: Write
@@ -1877,6 +1888,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list account-level enforced guardrail configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListEnforcedGuardrailsConfiguration.html
+   */
+  public toListEnforcedGuardrailsConfiguration() {
+    return this.to('ListEnforcedGuardrailsConfiguration');
+  }
+
+  /**
    * Grants permission to get the list of evaluation jobs that you have submitted
    *
    * Access Level: List
@@ -2202,6 +2224,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toPrepareFlow() {
     return this.to('PrepareFlow');
+  }
+
+  /**
+   * Grants permission to set account-level enforced guardrail configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutEnforcedGuardrailConfiguration.html
+   */
+  public toPutEnforcedGuardrailConfiguration() {
+    return this.to('PutEnforcedGuardrailConfiguration');
   }
 
   /**
@@ -2546,6 +2579,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing custom model deployment with a new custom model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateCustomModelDeployment.html
+   */
+  public toUpdateCustomModelDeployment() {
+    return this.to('UpdateCustomModelDeployment');
+  }
+
+  /**
    * Grants permission to update a data automation project
    *
    * Access Level: Write
@@ -2791,6 +2835,7 @@ export class Bedrock extends PolicyStatement {
       'DeleteCustomModelDeployment',
       'DeleteDataAutomationProject',
       'DeleteDataSource',
+      'DeleteEnforcedGuardrailConfiguration',
       'DeleteFlow',
       'DeleteFlowAlias',
       'DeleteFlowVersion',
@@ -2819,6 +2864,7 @@ export class Bedrock extends PolicyStatement {
       'InvokeDataAutomationAsync',
       'PrepareAgent',
       'PrepareFlow',
+      'PutEnforcedGuardrailConfiguration',
       'PutFoundationModelEntitlement',
       'PutInvocationStep',
       'PutModelInvocationLoggingConfiguration',
@@ -2845,6 +2891,7 @@ export class Bedrock extends PolicyStatement {
       'UpdateAutomatedReasoningPolicyAnnotations',
       'UpdateAutomatedReasoningPolicyTestCase',
       'UpdateBlueprint',
+      'UpdateCustomModelDeployment',
       'UpdateDataAutomationProject',
       'UpdateDataSource',
       'UpdateFlow',
@@ -2873,6 +2920,7 @@ export class Bedrock extends PolicyStatement {
       'ListCustomModels',
       'ListDataAutomationProjects',
       'ListDataSources',
+      'ListEnforcedGuardrailsConfiguration',
       'ListEvaluationJobs',
       'ListFlowAliases',
       'ListFlowExecutionEvents',

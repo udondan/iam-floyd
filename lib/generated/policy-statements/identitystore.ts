@@ -345,6 +345,23 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reserve a user by getting a userId
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toReserveUser() {
+    return this.to('ReserveUser');
+  }
+
+  /**
    * Grants permission to update information about a group in the specified IdentityStore
    *
    * Access Level: Write
@@ -407,6 +424,7 @@ export class Identitystore extends PolicyStatement {
       'DeleteGroupMembership',
       'DeleteIdentityStore',
       'DeleteUser',
+      'ReserveUser',
       'UpdateGroup',
       'UpdateIdentityStore',
       'UpdateUser'
@@ -563,6 +581,7 @@ export class Identitystore extends PolicyStatement {
    * - .toListGroupMembershipsForMember()
    * - .toListGroups()
    * - .toListUsers()
+   * - .toReserveUser()
    * - .toUpdateGroup()
    * - .toUpdateUser()
    *
