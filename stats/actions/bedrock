@@ -53,6 +53,7 @@ bedrock:DeleteCustomModel;Write
 bedrock:DeleteCustomModelDeployment;Write
 bedrock:DeleteDataAutomationProject;Write
 bedrock:DeleteDataSource;Write
+bedrock:DeleteEnforcedGuardrailConfiguration;Write
 bedrock:DeleteFlow;Write
 bedrock:DeleteFlowAlias;Write
 bedrock:DeleteFlowVersion;Write
@@ -155,6 +156,7 @@ bedrock:ListCustomModelDeployments;List
 bedrock:ListCustomModels;List
 bedrock:ListDataAutomationProjects;List
 bedrock:ListDataSources;List
+bedrock:ListEnforcedGuardrailsConfiguration;List
 bedrock:ListEvaluationJobs;List
 bedrock:ListFlowAliases;List
 bedrock:ListFlowExecutionEvents;List
@@ -185,6 +187,7 @@ bedrock:ListTagsForResource;Read
 bedrock:OptimizePrompt;Read
 bedrock:PrepareAgent;Write
 bedrock:PrepareFlow;Write
+bedrock:PutEnforcedGuardrailConfiguration;Write
 bedrock:PutFoundationModelEntitlement;Write
 bedrock:PutInvocationStep;Write
 bedrock:PutModelInvocationLoggingConfiguration;Write
@@ -215,6 +218,7 @@ bedrock:UpdateAutomatedReasoningPolicy;Write
 bedrock:UpdateAutomatedReasoningPolicyAnnotations;Write
 bedrock:UpdateAutomatedReasoningPolicyTestCase;Write
 bedrock:UpdateBlueprint;Write
+bedrock:UpdateCustomModelDeployment;Write
 bedrock:UpdateDataAutomationProject;Write
 bedrock:UpdateDataSource;Write
 bedrock:UpdateFlow;Write

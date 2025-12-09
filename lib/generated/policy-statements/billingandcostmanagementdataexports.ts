@@ -27,7 +27,7 @@ export class BcmDataExports extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateExport.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_CreateExport.html
    */
   public toCreateExport() {
     return this.to('CreateExport');
@@ -41,7 +41,7 @@ export class BcmDataExports extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteExport.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_DeleteExport.html
    */
   public toDeleteExport() {
     return this.to('DeleteExport');
@@ -55,7 +55,7 @@ export class BcmDataExports extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetExecution.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetExecution.html
    */
   public toGetExecution() {
     return this.to('GetExecution');
@@ -69,7 +69,7 @@ export class BcmDataExports extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetExport.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetExport.html
    */
   public toGetExport() {
     return this.to('GetExport');
@@ -80,7 +80,7 @@ export class BcmDataExports extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTable.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetTable.html
    */
   public toGetTable() {
     return this.to('GetTable');
@@ -94,7 +94,7 @@ export class BcmDataExports extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListExecutions.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListExecutions.html
    */
   public toListExecutions() {
     return this.to('ListExecutions');
@@ -105,7 +105,7 @@ export class BcmDataExports extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListExports.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListExports.html
    */
   public toListExports() {
     return this.to('ListExports');
@@ -116,7 +116,7 @@ export class BcmDataExports extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListTables.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListTables.html
    */
   public toListTables() {
     return this.to('ListTables');
@@ -130,7 +130,7 @@ export class BcmDataExports extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -146,7 +146,7 @@ export class BcmDataExports extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -161,7 +161,7 @@ export class BcmDataExports extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -175,7 +175,7 @@ export class BcmDataExports extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateExport.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_UpdateExport.html
    */
   public toUpdateExport() {
     return this.to('UpdateExport');
@@ -207,7 +207,7 @@ export class BcmDataExports extends PolicyStatement {
   /**
    * Adds a resource of type export to the statement
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Export.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_Export.html
    *
    * @param identifier - Identifier for the identifier.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -224,7 +224,7 @@ export class BcmDataExports extends PolicyStatement {
   /**
    * Adds a resource of type table to the statement
    *
-   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Table.html
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_Table.html
    *
    * @param identifier - Identifier for the identifier.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -233,6 +233,22 @@ export class BcmDataExports extends PolicyStatement {
    */
   public onTable(identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bcm-data-exports:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ identifier }`);
+  }
+
+  /**
+   * Adds a resource of type billingview to the statement
+   *
+   * https://docs.aws.amazon.com/cur/latest/userguide/
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBillingview(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:billing::${ account ?? this.defaultAccount }:billingview/${ resourceId }`);
   }
 
   /**
@@ -269,6 +285,7 @@ export class BcmDataExports extends PolicyStatement {
    *
    * Applies to resource types:
    * - export
+   * - billingview
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

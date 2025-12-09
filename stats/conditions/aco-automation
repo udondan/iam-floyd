@@ -1,0 +1,3 @@
+aco-automation:RequestTag/${TagKey}
+aco-automation:ResourceTag/${TagKey}
+aco-automation:TagKeys

@@ -541,6 +541,17 @@ export class Ce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve resource associations of all Cost Categories defined in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryResourceAssociations.html
+   */
+  public toListCostCategoryResourceAssociations() {
+    return this.to('ListCostCategoryResourceAssociations');
+  }
+
+  /**
    * Grants permission to retrieve a list of your historical recommendation generations
    *
    * Access Level: List
@@ -798,6 +809,7 @@ export class Ce extends PolicyStatement {
       'ListCostAllocationTagBackfillHistory',
       'ListCostAllocationTags',
       'ListCostCategoryDefinitions',
+      'ListCostCategoryResourceAssociations',
       'ListSavingsPlansPurchaseRecommendationGeneration'
     ],
     Tagging: [

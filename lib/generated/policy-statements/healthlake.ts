@@ -46,6 +46,7 @@ export class Healthlake extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -609,6 +610,7 @@ export class Healthlake extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toCreateFHIRDatastore()
    * - .toTagResource()
    *
    * Applies to resource types:

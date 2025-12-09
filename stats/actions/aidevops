@@ -23,7 +23,6 @@ aidevops:GetService;Read
 aidevops:HandleServiceRegistrationCallback;Read
 aidevops:InitiateChatForCase;Write
 aidevops:InitiateServiceRegistration;Read
-aidevops:InvokeAgent;Write
 aidevops:ListAgentSpaces;List
 aidevops:ListAssociations;List
 aidevops:ListBacklogTasks;List
