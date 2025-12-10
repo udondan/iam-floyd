@@ -26,6 +26,7 @@
         "securityagent:BatchGetFindings",
         "securityagent:BatchGetPentestJobs",
         "securityagent:BatchGetPentests",
+        "securityagent:BatchGetSecurityTestContentMetadata",
         "securityagent:BatchGetTasks",
         "securityagent:CreateDocumentReview",
         "securityagent:CreatePentest",

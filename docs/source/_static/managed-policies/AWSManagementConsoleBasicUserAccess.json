@@ -29,7 +29,9 @@
         "q:GetConversation",
         "q:PassRequest",
         "resource-explorer-2:ListIndexes",
-        "resource-explorer-2:Search"
+        "resource-explorer-2:Search",
+        "action-recommendations:ListRecommendedActions",
+        "account:GetAccountInformation"
       ],
       "Resource": "*"
     }

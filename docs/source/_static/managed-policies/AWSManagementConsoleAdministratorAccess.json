@@ -82,7 +82,9 @@
         "resource-explorer-2:TagResource",
         "resource-explorer-2:UntagResource",
         "resource-explorer-2:UpdateIndexType",
-        "resource-explorer-2:UpdateView"
+        "resource-explorer-2:UpdateView",
+        "action-recommendations:ListRecommendedActions",
+        "account:GetAccountInformation"
       ],
       "Resource": "*"
     }
