@@ -26,6 +26,15 @@
         "ec2:GetManagedPrefixListEntries"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "VPCEndpointStatement",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeVpcEndpointServiceConfigurations"
+      ],
+      "Resource": "*"
     }
   ]
 }
