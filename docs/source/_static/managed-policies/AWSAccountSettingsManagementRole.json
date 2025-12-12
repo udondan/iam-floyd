@@ -1,0 +1,97 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "account:GetContactInformation",
+        "account:PutContactInformation",
+        "account:GetAccountInformation",
+        "account:CloseAccount"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "payments:ListTagsForResource",
+        "payments:UntagResource",
+        "payments:TagResource",
+        "payments:ListPaymentPreferences",
+        "payments:GetPaymentInstrument",
+        "payments:GetPaymentStatus",
+        "payments:MakePayment",
+        "payments:UpdatePaymentPreferences",
+        "payments:CreatePaymentInstrument",
+        "payments:UpdatePaymentInstrument"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "invoicing:GetInvoicePDF"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "billing:GetSellerOfRecord"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "freetier:GetAccountPlanState"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ce:GetCostAndUsage"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "pricing:GetProducts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "tax:GetTaxRegistration",
+        "tax:PutTaxRegistration",
+        "tax:ListTaxRegistrations",
+        "tax:DeleteTaxRegistration",
+        "tax:BatchPutTaxRegistration",
+        "tax:GetTaxRegistrationDocument"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "customer-verification:GetCustomerVerificationDetails",
+        "customer-verification:GetCustomerVerificationEligibility",
+        "customer-verification:CreateCustomerVerificationDetails",
+        "customer-verification:CreateUploadUrls",
+        "customer-verification:UpdateCustomerVerificationDetails"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sso:ListInstances",
+        "sso:ListApplications"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
