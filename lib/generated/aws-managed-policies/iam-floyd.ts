@@ -2,6 +2,8 @@
 export class AwsManagedPolicy {
     /** Allow Access Analyzer to analyze resource metadata */
     public static AccessAnalyzerServiceRolePolicy = 'aws-service-role/AccessAnalyzerServiceRolePolicy';
+    /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to account management, notification, cost and usage analysis, and identity provider management. */
+    public static AccountManagementFromVercel = 'AccountManagementFromVercel';
     /** Provides full access to AWS services and resources. */
     public static AdministratorAccess = 'AdministratorAccess';
     /** Grants account administrative permissions while explicitly allowing direct access to resources needed by Amplify applications. */
@@ -1070,6 +1072,8 @@ export class AwsManagedPolicy {
     public static AWSAccountManagementFullAccess = 'AWSAccountManagementFullAccess';
     /** Provides read-only access to AWS Account Management */
     public static AWSAccountManagementReadOnlyAccess = 'AWSAccountManagementReadOnlyAccess';
+    /** Provides required permissions to manage an account for AWS applications. */
+    public static AWSAccountSettingsManagementRole = 'AWSAccountSettingsManagementRole';
     /** Allows users to access the Account Usage Report page. */
     public static AWSAccountUsageReportAccess = 'AWSAccountUsageReportAccess';
     /** Provides access for the Discovery Agentless Connector to register with AWS Application Discovery Service. */
@@ -2520,6 +2524,10 @@ export class AwsManagedPolicy {
     public static ComputeOptimizerServiceRolePolicy = 'aws-service-role/ComputeOptimizerServiceRolePolicy';
     /** Policy needed for AWSConfig to create conformance packs */
     public static ConfigConformsServiceRolePolicy = 'aws-service-role/ConfigConformsServiceRolePolicy';
+    /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to manage all resources for the services that are integrated with the Vercel Marketplace. */
+    public static ConsoleFullAccessFromVercel = 'ConsoleFullAccessFromVercel';
+    /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to view all resources for the services that are integrated with the Vercel Marketplace. */
+    public static ConsoleViewOnlyAccessFromVercel = 'ConsoleViewOnlyAccessFromVercel';
     /** This managed policy provides admin access to Cost Optimization Hub. */
     public static CostOptimizationHubAdminAccess = 'CostOptimizationHubAdminAccess';
     /** This managed policy provides read-only access to Cost Optimization Hub. */

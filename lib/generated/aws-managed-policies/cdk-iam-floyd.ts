@@ -14,6 +14,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AccessAnalyzerServiceRolePolicy);
     }
 
+    /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to account management, notification, cost and usage analysis, and identity provider management. */
+    public AccountManagementFromVercel(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AccountManagementFromVercel);
+    }
+
     /** Provides full access to AWS services and resources. */
     public AdministratorAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AdministratorAccess);
@@ -2682,6 +2687,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read-only access to AWS Account Management */
     public AWSAccountManagementReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAccountManagementReadOnlyAccess);
+    }
+
+    /** Provides required permissions to manage an account for AWS applications. */
+    public AWSAccountSettingsManagementRole(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAccountSettingsManagementRole);
     }
 
     /** Allows users to access the Account Usage Report page. */
@@ -6307,6 +6317,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Policy needed for AWSConfig to create conformance packs */
     public ConfigConformsServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ConfigConformsServiceRolePolicy);
+    }
+
+    /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to manage all resources for the services that are integrated with the Vercel Marketplace. */
+    public ConsoleFullAccessFromVercel(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ConsoleFullAccessFromVercel);
+    }
+
+    /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to view all resources for the services that are integrated with the Vercel Marketplace. */
+    public ConsoleViewOnlyAccessFromVercel(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ConsoleViewOnlyAccessFromVercel);
     }
 
     /** This managed policy provides admin access to Cost Optimization Hub. */

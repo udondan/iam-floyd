@@ -1,0 +1,158 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DSQL",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:GetCluster",
+        "dsql:ListClusters",
+        "dsql:ListTagsForResource",
+        "dsql:UpdateCluster",
+        "dsql:DbConnectAdmin",
+        "dsql:DbConnect"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "DynamoDB",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:UpdateTimeToLive",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:UntagResource",
+        "dynamodb:PutItem",
+        "dynamodb:ListTables",
+        "dynamodb:DeleteItem",
+        "dynamodb:Scan",
+        "dynamodb:ListTagsOfResource",
+        "dynamodb:Query",
+        "dynamodb:UpdateItem",
+        "dynamodb:DescribeTimeToLive",
+        "dynamodb:TagResource",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:DescribeLimits",
+        "dynamodb:UpdateTable",
+        "dynamodb:GetRecords"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "Aurora",
+      "Effect": "Allow",
+      "Action": [
+        "rds-db:connect",
+        "rds:Describe*",
+        "rds:ListTagsForResource",
+        "rds:RebootDBInstance",
+        "rds:DeleteDBInstance",
+        "rds:StartDBInstance",
+        "rds:ModifyDBInstance",
+        "rds:ApplyPendingMaintenanceAction",
+        "rds:StartDBCluster",
+        "rds:DeleteDBCluster",
+        "rds:RebootDBCluster",
+        "rds:CreateDBClusterEndpoint",
+        "rds:ModifyDBClusterEndpoint",
+        "rds:ModifyDBCluster",
+        "rds:DeleteDBClusterEndpoint",
+        "rds:FailoverDBCluster",
+        "rds:DeleteDBClusterParameterGroup",
+        "rds:ModifyDBClusterParameterGroup",
+        "rds:CopyDBClusterParameterGroup",
+        "rds:ResetDBClusterParameterGroup",
+        "rds:CreateDBClusterParameterGroup",
+        "rds:ResetDBParameterGroup",
+        "rds:ModifyDBParameterGroup",
+        "rds:CopyDBParameterGroup",
+        "rds:DeleteDBParameterGroup",
+        "rds:CreateDBParameterGroup",
+        "rds:DeleteDBClusterAutomatedBackup",
+        "rds:CopyDBClusterSnapshot",
+        "rds:RestoreDBClusterToPointInTime",
+        "rds:RestoreDBClusterFromSnapshot",
+        "rds:CreateDBClusterSnapshot",
+        "rds:DeleteDBClusterSnapshot",
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AuroraRestricted",
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBInstance"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "rds:DatabaseEngine": "aurora-postgresql"
+        }
+      }
+    },
+    {
+      "Sid": "Observability",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DeleteAlarms",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics",
+        "cloudwatch:PutMetricAlarm",
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents",
+        "tag:GetTagKeys",
+        "tag:GetTagValues"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "ApplicationAutoscalingIntegration",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DeleteScalingPolicy",
+        "application-autoscaling:DeregisterScalableTarget",
+        "application-autoscaling:PutScalingPolicy",
+        "application-autoscaling:RegisterScalableTarget"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "application-autoscaling:service-namespace": "dynamodb"
+        }
+      }
+    },
+    {
+      "Sid": "ApplicationAutoscalingDescribeActions",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DescribeScalableTargets",
+        "application-autoscaling:DescribeScalingActivities",
+        "application-autoscaling:DescribeScalingPolicies"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ViewFreeTierState",
+      "Effect": "Allow",
+      "Action": [
+        "freetier:GetAccountPlanState"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
