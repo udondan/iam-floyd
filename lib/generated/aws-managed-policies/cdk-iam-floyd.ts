@@ -3224,6 +3224,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCleanRoomsReadOnlyAccess);
     }
 
+    /** Allow AWS Clean Rooms to access other AWS services such as CloudWatch APIs on your behalf. */
+    public AWSCleanRoomsServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCleanRoomsServiceRolePolicy);
+    }
+
     /** Provides administrator access to AWS Cloud9. */
     public AWSCloud9Administrator(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSCloud9Administrator);
@@ -5892,6 +5897,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment. */
     public AWSTrustedAdvisorServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTrustedAdvisorServiceRolePolicy);
+    }
+
+    /** Provides read-only access to user attributes from AWS IAM Identity Center for the user attributes that the customer has opted in to. */
+    public AWSUserAttributeCostAllocationPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSUserAttributeCostAllocationPolicy);
     }
 
     /** Allows AWS User Notifications to call AWS services on your behalf. */
