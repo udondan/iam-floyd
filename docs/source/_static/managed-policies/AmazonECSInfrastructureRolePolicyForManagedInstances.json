@@ -43,16 +43,25 @@
         "arn:aws:ec2:*:*:instance/*",
         "arn:aws:ec2:*:*:network-interface/*",
         "arn:aws:ec2:*:*:launch-template/*",
-        "arn:aws:ec2:*:*:security-group/*",
-        "arn:aws:ec2:*:*:subnet/*",
-        "arn:aws:ec2:*:*:volume/*",
-        "arn:aws:ec2:*:*:image/*"
+        "arn:aws:ec2:*:*:volume/*"
       ],
       "Condition": {
         "StringEquals": {
           "aws:RequestTag/AmazonECSManaged": "true"
         }
       }
+    },
+    {
+      "Sid": "CreateFleetForSupportingResources",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateFleet"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*::image/*"
+      ]
     },
     {
       "Sid": "RunInstancesForManagedInstances",

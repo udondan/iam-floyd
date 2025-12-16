@@ -106,6 +106,29 @@
         "dataexchange:GetDataSet"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CustomerProfilesIntegrationReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "connect:ListInstances",
+        "profile:ListDomains",
+        "profile:GetDomain",
+        "profile:ListIntegrations",
+        "profile:ListAccountIntegrations",
+        "profile:ListProfileObjectTypes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CustomerProfilesIntegrationWriteAccess",
+      "Effect": "Allow",
+      "Action": [
+        "profile:PutProfileObjectType"
+      ],
+      "Resource": [
+        "arn:aws:profile:*:*:domains/*/object-types/*"
+      ]
     }
   ]
 }

@@ -1286,6 +1286,8 @@ export class AwsManagedPolicy {
     public static AWSCleanRoomsMLReadOnlyAccess = 'AWSCleanRoomsMLReadOnlyAccess';
     /** Allows read-only access to AWS Clean Rooms resources and read-only access to related AWS Glue and Amazon CloudWatch Logs resources. */
     public static AWSCleanRoomsReadOnlyAccess = 'AWSCleanRoomsReadOnlyAccess';
+    /** Allow AWS Clean Rooms to access other AWS services such as CloudWatch APIs on your behalf. */
+    public static AWSCleanRoomsServiceRolePolicy = 'aws-service-role/AWSCleanRoomsServiceRolePolicy';
     /** Provides administrator access to AWS Cloud9. */
     public static AWSCloud9Administrator = 'AWSCloud9Administrator';
     /** Provides the ability to be invited into AWS Cloud9 shared development environments. */
@@ -2354,6 +2356,8 @@ export class AwsManagedPolicy {
     public static AWSTrustedAdvisorReportingServiceRolePolicy = 'aws-service-role/AWSTrustedAdvisorReportingServiceRolePolicy';
     /** Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment. */
     public static AWSTrustedAdvisorServiceRolePolicy = 'aws-service-role/AWSTrustedAdvisorServiceRolePolicy';
+    /** Provides read-only access to user attributes from AWS IAM Identity Center for the user attributes that the customer has opted in to. */
+    public static AWSUserAttributeCostAllocationPolicy = 'aws-service-role/AWSUserAttributeCostAllocationPolicy';
     /** Allows AWS User Notifications to call AWS services on your behalf. */
     public static AWSUserNotificationsServiceLinkedRolePolicy = 'aws-service-role/AWSUserNotificationsServiceLinkedRolePolicy';
     /** Provides full access for viewing entitled Vendor Insights resources and managing Vendor Insights subscriptions */
