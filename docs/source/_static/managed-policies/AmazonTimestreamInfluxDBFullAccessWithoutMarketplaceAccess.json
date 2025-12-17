@@ -21,7 +21,9 @@
         "timestream-influxdb:UpdateDbCluster",
         "timestream-influxdb:DeleteDbCluster",
         "timestream-influxdb:ListDbClusters",
-        "timestream-influxdb:ListDbInstancesForCluster"
+        "timestream-influxdb:ListDbInstancesForCluster",
+        "timestream-influxdb:RebootDbInstance",
+        "timestream-influxdb:RebootDbCluster"
       ],
       "Resource": [
         "arn:aws:timestream-influxdb:*:*:*"

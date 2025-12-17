@@ -770,6 +770,7 @@
         "elasticloadbalancing:DescribeTargetGroupAttributes",
         "elasticloadbalancing:DescribeTargetHealth",
         "events:DescribeRule",
+        "events:ListTagsForResource",
         "events:ListTargetsByRule",
         "iam:GetPolicy",
         "iam:GetPolicyVersion",
