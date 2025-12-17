@@ -8,7 +8,8 @@
         "artifact:GetReport",
         "artifact:GetReportMetadata",
         "artifact:GetTermForReport",
-        "artifact:ListReports"
+        "artifact:ListReports",
+        "artifact:ListReportVersions"
       ],
       "Resource": "*"
     }
