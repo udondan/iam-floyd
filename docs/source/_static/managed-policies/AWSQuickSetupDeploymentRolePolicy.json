@@ -113,6 +113,8 @@
         "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ChangeCalendarState",
         "arn:aws:ssm:*::document/AmazonCloudWatch-ManageAgent",
         "arn:aws:ssm:*::document/AWSQuickSetupType-InstallAndManageCloudWatchAgent",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-ConfigureDevOpsGuru",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-DeployConformancePack",
         "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ApplyInstanceState"
       ]
     },
@@ -147,6 +149,8 @@
         "arn:aws:ssm:*::document/AWSQuickSetupType-Scheduler-ApplyInstanceState",
         "arn:aws:ssm:*::document/AmazonCloudWatch-ManageAgent",
         "arn:aws:ssm:*::document/AWSQuickSetupType-InstallAndManageCloudWatchAgent",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-ConfigureDevOpsGuru",
+        "arn:aws:ssm:*::document/AWSQuickSetupType-DeployConformancePack",
         "arn:aws:ec2:*:*:instance/*",
         "arn:aws:ssm:*:*:managed-instance/*",
         "arn:aws:ssm:*:*:association/*"
