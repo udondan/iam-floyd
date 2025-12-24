@@ -11,7 +11,9 @@
         "ec2:DescribeSubnets",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeInstances",
-        "ec2:DescribeInternetGateways"
+        "ec2:DescribeInternetGateways",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeNetworkAcls"
       ],
       "Resource": "*"
     },
@@ -22,7 +24,9 @@
         "ssm:DescribeAutomationStepExecutions",
         "ssm:DescribeInstanceInformation",
         "ssm:DescribeAutomationExecutions",
-        "ssm:GetAutomationExecution"
+        "ssm:DescribeActivations",
+        "ssm:GetAutomationExecution",
+        "ssm:GetServiceSetting"
       ],
       "Resource": "*"
     },
