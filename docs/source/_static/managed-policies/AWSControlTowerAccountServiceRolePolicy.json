@@ -10,12 +10,14 @@
         "ForAnyValue:StringEquals": {
           "events:source": "aws.securityhub"
         },
+        "ForAllValues:StringEquals": {
+          "events:detail-type": "Security Hub Findings - Imported"
+        },
         "Null": {
           "events:detail-type": "false"
         },
         "StringEquals": {
-          "events:ManagedBy": "controltower.amazonaws.com",
-          "events:detail-type": "Security Hub Findings - Imported"
+          "events:ManagedBy": "controltower.amazonaws.com"
         }
       }
     },
