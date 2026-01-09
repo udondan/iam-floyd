@@ -335,6 +335,8 @@
         "eks:DescribeCluster",
         "eks:DescribeFargateProfile",
         "eks:DescribeNodeGroup",
+        "eks:ListAccessEntries",
+        "eks:ListAssociatedAccessPolicies",
         "eks:ListClusters",
         "eks:ListFargateProfiles",
         "eks:ListNodeGroups",
