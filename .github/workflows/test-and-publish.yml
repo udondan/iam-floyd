@@ -71,7 +71,7 @@ jobs:
         run: git rev-parse HEAD > /tmp/sha
 
       - name: Store SHA as artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -87,7 +87,7 @@ jobs:
           node-version: 22.x
 
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v7
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -128,7 +128,7 @@ jobs:
           node-version: 22.x
 
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v7
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -180,7 +180,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v7
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -234,7 +234,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v7
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
@@ -277,7 +277,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Fetch latest SHA
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v7
         with:
           name: ${{ github.run_id }}
           path: /tmp/sha
