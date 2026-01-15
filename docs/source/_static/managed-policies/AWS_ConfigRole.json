@@ -2,7 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "AWSConfigRoleStatementID",
+      "Sid": "AWSConfigRoleStatementID1",
       "Effect": "Allow",
       "Action": [
         "access-analyzer:GetAnalyzer",
@@ -921,7 +921,14 @@
         "iot:ListPackages",
         "iot:ListPolicies",
         "iot:ListProvisioningTemplates",
-        "iot:ListRoleAliases",
+        "iot:ListRoleAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSConfigRoleStatementID2",
+      "Effect": "Allow",
+      "Action": [
         "iot:ListScheduledAudits",
         "iot:ListSecurityProfiles",
         "iot:ListSecurityProfilesForTarget",
@@ -1601,8 +1608,11 @@
         "s3tables:GetTableBucket",
         "s3tables:GetTableBucketEncryption",
         "s3tables:GetTableBucketMaintenanceConfiguration",
+        "s3tables:GetTableBucketMetricsConfiguration",
         "s3tables:GetTableBucketPolicy",
+        "s3tables:GetTableBucketStorageClass",
         "s3tables:ListTableBuckets",
+        "s3tables:ListTagsForResource",
         "sagemaker:DescribeApp",
         "sagemaker:DescribeAppImageConfig",
         "sagemaker:DescribeCluster",
