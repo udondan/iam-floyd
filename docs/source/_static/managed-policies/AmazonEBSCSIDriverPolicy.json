@@ -168,7 +168,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:DeleteSnapshot"
+        "ec2:DeleteSnapshot",
+        "ec2:LockSnapshot"
       ],
       "Resource": "arn:aws:ec2:*:*:snapshot/*",
       "Condition": {
@@ -180,7 +181,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:DeleteSnapshot"
+        "ec2:DeleteSnapshot",
+        "ec2:LockSnapshot"
       ],
       "Resource": "arn:aws:ec2:*:*:snapshot/*",
       "Condition": {
