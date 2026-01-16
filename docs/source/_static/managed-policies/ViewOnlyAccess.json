@@ -339,7 +339,14 @@
         "workdocs:DescribeAvailableDirectories",
         "workdocs:DescribeInstances",
         "workmail:Describe*",
-        "workspaces:Describe*"
+        "workspaces:Describe*",
+        "xray:GetEncryptionConfig",
+        "xray:GetGroups",
+        "xray:GetSamplingRules",
+        "xray:GetSamplingStatisticSummaries",
+        "xray:GetSamplingTargets",
+        "xray:GetTraceSegmentDestination",
+        "xray:ListResourcePolicies"
       ],
       "Resource": "*"
     },
