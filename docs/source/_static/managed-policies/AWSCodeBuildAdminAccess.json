@@ -58,6 +58,14 @@
       "Resource": "arn:aws:ecs:*:*:task/*/*"
     },
     {
+      "Sid": "SSMOpenDataChannelAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": "arn:aws:ssm:*:*:session/*"
+    },
+    {
       "Sid": "CodeStarConnectionsReadWriteAccess",
       "Effect": "Allow",
       "Action": [
