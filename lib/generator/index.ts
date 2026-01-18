@@ -557,7 +557,10 @@ export function createModule(module: Module): Promise<void> {
     // Check for custom method name in fixes
     const keySplit = key.split(':');
     const keyWithoutPrefix = keySplit[keySplit.length - 1];
-    const customMethodName = get(fixes, `${module.filename}.conditions.${keyWithoutPrefix}.methodName`);
+    const customMethodName = get(
+      fixes,
+      `${module.filename}.conditions.${keyWithoutPrefix}.methodName`,
+    );
     if (typeof customMethodName !== 'undefined') {
       methodName = customMethodName;
     } else {
@@ -574,7 +577,9 @@ export function createModule(module: Module): Promise<void> {
     const conflictingKeys = conditionBaseNames.get(methodName) || [];
     if (conflictingKeys.length > 1 && name.length > 1 && name[1].length) {
       // This is a parameterized condition that conflicts with others
-      const paramPart = name[1].replace(/^\$\{([^}]+)\}(.*)/, '$1$2').replace(/[^a-zA-Z0-9]/g, '');
+      const paramPart = name[1]
+        .replace(/^\$\{([^}]+)\}(.*)/, '$1$2')
+        .replace(/[^a-zA-Z0-9]/g, '');
       if (paramPart.length) {
         methodName += upperFirst(camelCase(paramPart));
       }
@@ -1019,7 +1024,7 @@ function createConditionName(key: string, servicePrefix: string): string {
     methodName += 'Facebook';
   } else if (split[0] != servicePrefix) {
     // for global conditions and conditions related to other services
-    methodName += upperFirst(split[0]);
+    methodName += upperFirst(camelCase(split[0]));
   }
   methodName += upperFirst(camelCase(split[1]));
   return methodName;
