@@ -1,6 +1,10 @@
 ---
 name: Test / Publish / Release
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 concurrency:
   group: test-${{ github.head_ref }}
   cancel-in-progress: true
@@ -84,7 +88,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22.x
+          node-version: x
 
       - name: Fetch latest SHA
         uses: actions/download-artifact@v5
@@ -125,7 +129,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22.x
+          node-version: 24.x
 
       - name: Fetch latest SHA
         uses: actions/download-artifact@v5
@@ -230,7 +234,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22.x
+          node-version: 24.x
           registry-url: https://registry.npmjs.org
 
       - name: Fetch latest SHA
@@ -257,8 +261,6 @@ jobs:
 
       - name: Publish to npm
         run: make install build publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-cdk-iam-floyd:
     name: Publish cdk-iam-floyd
@@ -273,7 +275,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22.x
+          node-version: 24.x
           registry-url: https://registry.npmjs.org
 
       - name: Fetch latest SHA
@@ -306,8 +308,6 @@ jobs:
 
       - name: Publish to npm
         run: make build publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   success:
     name: Test succeeded
