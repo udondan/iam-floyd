@@ -33,6 +33,7 @@ mgn:DisassociateApplications;Write
 mgn:DisassociateSourceServers;Write
 mgn:DisconnectFromService;Write
 mgn:FinalizeCutover;Write
+mgn:GetAccountSettings;Read
 mgn:GetAgentCommandForMgn;Read
 mgn:GetAgentConfirmedResumeInfoForMgn;Read
 mgn:GetAgentInstallationAssetsForMgn;Read
@@ -112,6 +113,7 @@ mgn:TerminateTargetInstances;Write
 mgn:UnarchiveApplication;Write
 mgn:UnarchiveWave;Write
 mgn:UntagResource;Tagging
+mgn:UpdateAccountSettings;Write
 mgn:UpdateAgentBacklogForMgn;Write
 mgn:UpdateAgentConversionInfoForMgn;Write
 mgn:UpdateAgentReplicationInfoForMgn;Write

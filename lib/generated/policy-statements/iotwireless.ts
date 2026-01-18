@@ -27,7 +27,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateAwsAccountWithPartnerAccount.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateAwsAccountWithPartnerAccount.html
    */
   public toAssociateAwsAccountWithPartnerAccount() {
     return this.to('AssociateAwsAccountWithPartnerAccount');
@@ -38,7 +38,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateMulticastGroupWithFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateMulticastGroupWithFuotaTask.html
    */
   public toAssociateMulticastGroupWithFuotaTask() {
     return this.to('AssociateMulticastGroupWithFuotaTask');
@@ -49,7 +49,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessDeviceWithFuotaTask.html
    */
   public toAssociateWirelessDeviceWithFuotaTask() {
     return this.to('AssociateWirelessDeviceWithFuotaTask');
@@ -60,7 +60,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessDeviceWithMulticastGroup.html
    */
   public toAssociateWirelessDeviceWithMulticastGroup() {
     return this.to('AssociateWirelessDeviceWithMulticastGroup');
@@ -74,7 +74,7 @@ export class Iotwireless extends PolicyStatement {
    * Dependent actions:
    * - iot:DescribeThing
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessDeviceWithThing.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessDeviceWithThing.html
    */
   public toAssociateWirelessDeviceWithThing() {
     return this.to('AssociateWirelessDeviceWithThing');
@@ -85,7 +85,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessGatewayWithCertificate.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessGatewayWithCertificate.html
    */
   public toAssociateWirelessGatewayWithCertificate() {
     return this.to('AssociateWirelessGatewayWithCertificate');
@@ -99,7 +99,7 @@ export class Iotwireless extends PolicyStatement {
    * Dependent actions:
    * - iot:DescribeThing
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateWirelessGatewayWithThing.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateWirelessGatewayWithThing.html
    */
   public toAssociateWirelessGatewayWithThing() {
     return this.to('AssociateWirelessGatewayWithThing');
@@ -110,7 +110,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CancelMulticastGroupSession.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CancelMulticastGroupSession.html
    */
   public toCancelMulticastGroupSession() {
     return this.to('CancelMulticastGroupSession');
@@ -125,7 +125,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDestination.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateDestination.html
    */
   public toCreateDestination() {
     return this.to('CreateDestination');
@@ -140,7 +140,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDeviceProfile.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateDeviceProfile.html
    */
   public toCreateDeviceProfile() {
     return this.to('CreateDeviceProfile');
@@ -155,7 +155,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateFuotaTask.html
    */
   public toCreateFuotaTask() {
     return this.to('CreateFuotaTask');
@@ -170,7 +170,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateMulticastGroup.html
    */
   public toCreateMulticastGroup() {
     return this.to('CreateMulticastGroup');
@@ -185,7 +185,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateNetworkAnalyzerConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateNetworkAnalyzerConfiguration.html
    */
   public toCreateNetworkAnalyzerConfiguration() {
     return this.to('CreateNetworkAnalyzerConfiguration');
@@ -200,7 +200,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateServiceProfile.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateServiceProfile.html
    */
   public toCreateServiceProfile() {
     return this.to('CreateServiceProfile');
@@ -215,7 +215,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessDevice.html
    */
   public toCreateWirelessDevice() {
     return this.to('CreateWirelessDevice');
@@ -230,7 +230,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGateway.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGateway.html
    */
   public toCreateWirelessGateway() {
     return this.to('CreateWirelessGateway');
@@ -241,7 +241,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGatewayTask.html
    */
   public toCreateWirelessGatewayTask() {
     return this.to('CreateWirelessGatewayTask');
@@ -256,7 +256,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTaskDefinition.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGatewayTaskDefinition.html
    */
   public toCreateWirelessGatewayTaskDefinition() {
     return this.to('CreateWirelessGatewayTaskDefinition');
@@ -267,7 +267,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteDestination.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteDestination.html
    */
   public toDeleteDestination() {
     return this.to('DeleteDestination');
@@ -278,7 +278,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteDeviceProfile.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteDeviceProfile.html
    */
   public toDeleteDeviceProfile() {
     return this.to('DeleteDeviceProfile');
@@ -289,7 +289,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteFuotaTask.html
    */
   public toDeleteFuotaTask() {
     return this.to('DeleteFuotaTask');
@@ -300,7 +300,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteMulticastGroup.html
    */
   public toDeleteMulticastGroup() {
     return this.to('DeleteMulticastGroup');
@@ -311,7 +311,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteNetworkAnalyzerConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteNetworkAnalyzerConfiguration.html
    */
   public toDeleteNetworkAnalyzerConfiguration() {
     return this.to('DeleteNetworkAnalyzerConfiguration');
@@ -322,7 +322,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteQueuedMessages.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteQueuedMessages.html
    */
   public toDeleteQueuedMessages() {
     return this.to('DeleteQueuedMessages');
@@ -333,7 +333,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteServiceProfile.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteServiceProfile.html
    */
   public toDeleteServiceProfile() {
     return this.to('DeleteServiceProfile');
@@ -344,7 +344,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessDevice.html
    */
   public toDeleteWirelessDevice() {
     return this.to('DeleteWirelessDevice');
@@ -355,7 +355,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessDeviceImportTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessDeviceImportTask.html
    */
   public toDeleteWirelessDeviceImportTask() {
     return this.to('DeleteWirelessDeviceImportTask');
@@ -366,7 +366,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGateway.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessGateway.html
    */
   public toDeleteWirelessGateway() {
     return this.to('DeleteWirelessGateway');
@@ -377,7 +377,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGatewayTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessGatewayTask.html
    */
   public toDeleteWirelessGatewayTask() {
     return this.to('DeleteWirelessGatewayTask');
@@ -388,7 +388,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeleteWirelessGatewayTaskDefinition.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeleteWirelessGatewayTaskDefinition.html
    */
   public toDeleteWirelessGatewayTaskDefinition() {
     return this.to('DeleteWirelessGatewayTaskDefinition');
@@ -399,7 +399,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DeregisterWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DeregisterWirelessDevice.html
    */
   public toDeregisterWirelessDevice() {
     return this.to('DeregisterWirelessDevice');
@@ -410,7 +410,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateAwsAccountFromPartnerAccount.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateAwsAccountFromPartnerAccount.html
    */
   public toDisassociateAwsAccountFromPartnerAccount() {
     return this.to('DisassociateAwsAccountFromPartnerAccount');
@@ -421,7 +421,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateMulticastGroupFromFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateMulticastGroupFromFuotaTask.html
    */
   public toDisassociateMulticastGroupFromFuotaTask() {
     return this.to('DisassociateMulticastGroupFromFuotaTask');
@@ -432,7 +432,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessDeviceFromFuotaTask.html
    */
   public toDisassociateWirelessDeviceFromFuotaTask() {
     return this.to('DisassociateWirelessDeviceFromFuotaTask');
@@ -443,7 +443,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessDeviceFromMulticastGroup.html
    */
   public toDisassociateWirelessDeviceFromMulticastGroup() {
     return this.to('DisassociateWirelessDeviceFromMulticastGroup');
@@ -457,7 +457,7 @@ export class Iotwireless extends PolicyStatement {
    * Dependent actions:
    * - iot:DescribeThing
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessDeviceFromThing.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessDeviceFromThing.html
    */
   public toDisassociateWirelessDeviceFromThing() {
     return this.to('DisassociateWirelessDeviceFromThing');
@@ -468,7 +468,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessGatewayFromCertificate.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessGatewayFromCertificate.html
    */
   public toDisassociateWirelessGatewayFromCertificate() {
     return this.to('DisassociateWirelessGatewayFromCertificate');
@@ -482,7 +482,7 @@ export class Iotwireless extends PolicyStatement {
    * Dependent actions:
    * - iot:DescribeThing
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_DisassociateWirelessGatewayFromThing.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_DisassociateWirelessGatewayFromThing.html
    */
   public toDisassociateWirelessGatewayFromThing() {
     return this.to('DisassociateWirelessGatewayFromThing');
@@ -493,7 +493,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetDestination.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetDestination.html
    */
   public toGetDestination() {
     return this.to('GetDestination');
@@ -504,7 +504,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetDeviceProfile.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetDeviceProfile.html
    */
   public toGetDeviceProfile() {
     return this.to('GetDeviceProfile');
@@ -515,7 +515,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetEventConfigurationByResourceTypes.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetEventConfigurationByResourceTypes.html
    */
   public toGetEventConfigurationByResourceTypes() {
     return this.to('GetEventConfigurationByResourceTypes');
@@ -526,7 +526,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetFuotaTask.html
    */
   public toGetFuotaTask() {
     return this.to('GetFuotaTask');
@@ -537,7 +537,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetLogLevelsByResourceTypes.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetLogLevelsByResourceTypes.html
    */
   public toGetLogLevelsByResourceTypes() {
     return this.to('GetLogLevelsByResourceTypes');
@@ -548,7 +548,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMetricConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetMetricConfiguration.html
    */
   public toGetMetricConfiguration() {
     return this.to('GetMetricConfiguration');
@@ -559,7 +559,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMetrics.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetMetrics.html
    */
   public toGetMetrics() {
     return this.to('GetMetrics');
@@ -570,7 +570,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetMulticastGroup.html
    */
   public toGetMulticastGroup() {
     return this.to('GetMulticastGroup');
@@ -581,7 +581,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetMulticastGroupSession.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetMulticastGroupSession.html
    */
   public toGetMulticastGroupSession() {
     return this.to('GetMulticastGroupSession');
@@ -592,7 +592,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetNetworkAnalyzerConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetNetworkAnalyzerConfiguration.html
    */
   public toGetNetworkAnalyzerConfiguration() {
     return this.to('GetNetworkAnalyzerConfiguration');
@@ -603,7 +603,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPartnerAccount.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetPartnerAccount.html
    */
   public toGetPartnerAccount() {
     return this.to('GetPartnerAccount');
@@ -614,7 +614,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPosition.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetPosition.html
    */
   public toGetPosition() {
     return this.to('GetPosition');
@@ -625,7 +625,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPositionConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetPositionConfiguration.html
    */
   public toGetPositionConfiguration() {
     return this.to('GetPositionConfiguration');
@@ -636,7 +636,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetPositionEstimate.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetPositionEstimate.html
    */
   public toGetPositionEstimate() {
     return this.to('GetPositionEstimate');
@@ -647,7 +647,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourceEventConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourceEventConfiguration.html
    */
   public toGetResourceEventConfiguration() {
     return this.to('GetResourceEventConfiguration');
@@ -658,7 +658,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourceLogLevel.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourceLogLevel.html
    */
   public toGetResourceLogLevel() {
     return this.to('GetResourceLogLevel');
@@ -669,7 +669,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html
    */
   public toGetResourcePosition() {
     return this.to('GetResourcePosition');
@@ -680,7 +680,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetServiceEndpoint.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetServiceEndpoint.html
    */
   public toGetServiceEndpoint() {
     return this.to('GetServiceEndpoint');
@@ -691,7 +691,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetServiceProfile.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetServiceProfile.html
    */
   public toGetServiceProfile() {
     return this.to('GetServiceProfile');
@@ -702,7 +702,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessDevice.html
    */
   public toGetWirelessDevice() {
     return this.to('GetWirelessDevice');
@@ -713,7 +713,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDeviceImportTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessDeviceImportTask.html
    */
   public toGetWirelessDeviceImportTask() {
     return this.to('GetWirelessDeviceImportTask');
@@ -724,7 +724,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessDeviceStatistics.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessDeviceStatistics.html
    */
   public toGetWirelessDeviceStatistics() {
     return this.to('GetWirelessDeviceStatistics');
@@ -735,7 +735,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGateway.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGateway.html
    */
   public toGetWirelessGateway() {
     return this.to('GetWirelessGateway');
@@ -746,7 +746,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayCertificate.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayCertificate.html
    */
   public toGetWirelessGatewayCertificate() {
     return this.to('GetWirelessGatewayCertificate');
@@ -757,7 +757,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayFirmwareInformation.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayFirmwareInformation.html
    */
   public toGetWirelessGatewayFirmwareInformation() {
     return this.to('GetWirelessGatewayFirmwareInformation');
@@ -768,7 +768,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayStatistics.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayStatistics.html
    */
   public toGetWirelessGatewayStatistics() {
     return this.to('GetWirelessGatewayStatistics');
@@ -779,7 +779,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayTask.html
    */
   public toGetWirelessGatewayTask() {
     return this.to('GetWirelessGatewayTask');
@@ -790,7 +790,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetWirelessGatewayTaskDefinition.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetWirelessGatewayTaskDefinition.html
    */
   public toGetWirelessGatewayTaskDefinition() {
     return this.to('GetWirelessGatewayTaskDefinition');
@@ -801,7 +801,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDestinations.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListDestinations.html
    */
   public toListDestinations() {
     return this.to('ListDestinations');
@@ -812,7 +812,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDeviceProfiles.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListDeviceProfiles.html
    */
   public toListDeviceProfiles() {
     return this.to('ListDeviceProfiles');
@@ -823,7 +823,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListDevicesForWirelessDeviceImportTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListDevicesForWirelessDeviceImportTask.html
    */
   public toListDevicesForWirelessDeviceImportTask() {
     return this.to('ListDevicesForWirelessDeviceImportTask');
@@ -834,7 +834,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListEventConfigurations.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListEventConfigurations.html
    */
   public toListEventConfigurations() {
     return this.to('ListEventConfigurations');
@@ -845,7 +845,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListFuotaTasks.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListFuotaTasks.html
    */
   public toListFuotaTasks() {
     return this.to('ListFuotaTasks');
@@ -856,7 +856,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListMulticastGroups.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListMulticastGroups.html
    */
   public toListMulticastGroups() {
     return this.to('ListMulticastGroups');
@@ -867,7 +867,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListMulticastGroupsByFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListMulticastGroupsByFuotaTask.html
    */
   public toListMulticastGroupsByFuotaTask() {
     return this.to('ListMulticastGroupsByFuotaTask');
@@ -878,7 +878,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListNetworkAnalyzerConfigurations.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListNetworkAnalyzerConfigurations.html
    */
   public toListNetworkAnalyzerConfigurations() {
     return this.to('ListNetworkAnalyzerConfigurations');
@@ -889,7 +889,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListPartnerAccounts.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListPartnerAccounts.html
    */
   public toListPartnerAccounts() {
     return this.to('ListPartnerAccounts');
@@ -900,7 +900,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListPositionConfigurations.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListPositionConfigurations.html
    */
   public toListPositionConfigurations() {
     return this.to('ListPositionConfigurations');
@@ -911,7 +911,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListQueuedMessages.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListQueuedMessages.html
    */
   public toListQueuedMessages() {
     return this.to('ListQueuedMessages');
@@ -922,7 +922,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListServiceProfiles.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListServiceProfiles.html
    */
   public toListServiceProfiles() {
     return this.to('ListServiceProfiles');
@@ -933,7 +933,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -944,7 +944,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessDeviceImportTasks.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListWirelessDeviceImportTasks.html
    */
   public toListWirelessDeviceImportTasks() {
     return this.to('ListWirelessDeviceImportTasks');
@@ -955,7 +955,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessDevices.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListWirelessDevices.html
    */
   public toListWirelessDevices() {
     return this.to('ListWirelessDevices');
@@ -966,7 +966,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessGatewayTaskDefinitions.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListWirelessGatewayTaskDefinitions.html
    */
   public toListWirelessGatewayTaskDefinitions() {
     return this.to('ListWirelessGatewayTaskDefinitions');
@@ -977,7 +977,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ListWirelessGateways.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ListWirelessGateways.html
    */
   public toListWirelessGateways() {
     return this.to('ListWirelessGateways');
@@ -988,7 +988,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_PutPositionConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_PutPositionConfiguration.html
    */
   public toPutPositionConfiguration() {
     return this.to('PutPositionConfiguration');
@@ -999,7 +999,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_PutResourceLogLevel.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_PutResourceLogLevel.html
    */
   public toPutResourceLogLevel() {
     return this.to('PutResourceLogLevel');
@@ -1010,7 +1010,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ResetAllResourceLogLevels.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ResetAllResourceLogLevels.html
    */
   public toResetAllResourceLogLevels() {
     return this.to('ResetAllResourceLogLevels');
@@ -1021,7 +1021,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_ResetResourceLogLevel.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_ResetResourceLogLevel.html
    */
   public toResetResourceLogLevel() {
     return this.to('ResetResourceLogLevel');
@@ -1032,7 +1032,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_SendDataToMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_SendDataToMulticastGroup.html
    */
   public toSendDataToMulticastGroup() {
     return this.to('SendDataToMulticastGroup');
@@ -1043,7 +1043,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_SendDataToWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_SendDataToWirelessDevice.html
    */
   public toSendDataToWirelessDevice() {
     return this.to('SendDataToWirelessDevice');
@@ -1054,7 +1054,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartBulkAssociateWirelessDeviceWithMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartBulkAssociateWirelessDeviceWithMulticastGroup.html
    */
   public toStartBulkAssociateWirelessDeviceWithMulticastGroup() {
     return this.to('StartBulkAssociateWirelessDeviceWithMulticastGroup');
@@ -1065,7 +1065,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartBulkDisassociateWirelessDeviceFromMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartBulkDisassociateWirelessDeviceFromMulticastGroup.html
    */
   public toStartBulkDisassociateWirelessDeviceFromMulticastGroup() {
     return this.to('StartBulkDisassociateWirelessDeviceFromMulticastGroup');
@@ -1076,7 +1076,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartFuotaTask.html
    */
   public toStartFuotaTask() {
     return this.to('StartFuotaTask');
@@ -1087,7 +1087,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartMulticastGroupSession.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartMulticastGroupSession.html
    */
   public toStartMulticastGroupSession() {
     return this.to('StartMulticastGroupSession');
@@ -1113,7 +1113,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartSingleWirelessDeviceImportTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartSingleWirelessDeviceImportTask.html
    */
   public toStartSingleWirelessDeviceImportTask() {
     return this.to('StartSingleWirelessDeviceImportTask');
@@ -1128,7 +1128,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartWirelessDeviceImportTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartWirelessDeviceImportTask.html
    */
   public toStartWirelessDeviceImportTask() {
     return this.to('StartWirelessDeviceImportTask');
@@ -1143,7 +1143,7 @@ export class Iotwireless extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_TagResource.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -1154,7 +1154,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_TestWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_TestWirelessDevice.html
    */
   public toTestWirelessDevice() {
     return this.to('TestWirelessDevice');
@@ -1168,7 +1168,7 @@ export class Iotwireless extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UntagResource.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -1179,7 +1179,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateDestination.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateDestination.html
    */
   public toUpdateDestination() {
     return this.to('UpdateDestination');
@@ -1190,7 +1190,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateEventConfigurationByResourceTypes.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateEventConfigurationByResourceTypes.html
    */
   public toUpdateEventConfigurationByResourceTypes() {
     return this.to('UpdateEventConfigurationByResourceTypes');
@@ -1201,7 +1201,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateFuotaTask.html
    */
   public toUpdateFuotaTask() {
     return this.to('UpdateFuotaTask');
@@ -1212,7 +1212,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateLogLevelsByResourceTypes.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateLogLevelsByResourceTypes.html
    */
   public toUpdateLogLevelsByResourceTypes() {
     return this.to('UpdateLogLevelsByResourceTypes');
@@ -1223,7 +1223,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateMetricConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateMetricConfiguration.html
    */
   public toUpdateMetricConfiguration() {
     return this.to('UpdateMetricConfiguration');
@@ -1234,7 +1234,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateMulticastGroup.html
    */
   public toUpdateMulticastGroup() {
     return this.to('UpdateMulticastGroup');
@@ -1245,7 +1245,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateNetworkAnalyzerConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateNetworkAnalyzerConfiguration.html
    */
   public toUpdateNetworkAnalyzerConfiguration() {
     return this.to('UpdateNetworkAnalyzerConfiguration');
@@ -1256,7 +1256,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdatePartnerAccount.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdatePartnerAccount.html
    */
   public toUpdatePartnerAccount() {
     return this.to('UpdatePartnerAccount');
@@ -1267,7 +1267,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdatePosition.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdatePosition.html
    */
   public toUpdatePosition() {
     return this.to('UpdatePosition');
@@ -1278,7 +1278,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourceEventConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourceEventConfiguration.html
    */
   public toUpdateResourceEventConfiguration() {
     return this.to('UpdateResourceEventConfiguration');
@@ -1289,7 +1289,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html
    */
   public toUpdateResourcePosition() {
     return this.to('UpdateResourcePosition');
@@ -1300,7 +1300,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateWirelessDevice.html
    */
   public toUpdateWirelessDevice() {
     return this.to('UpdateWirelessDevice');
@@ -1311,7 +1311,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessDeviceImportTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateWirelessDeviceImportTask.html
    */
   public toUpdateWirelessDeviceImportTask() {
     return this.to('UpdateWirelessDeviceImportTask');
@@ -1322,7 +1322,7 @@ export class Iotwireless extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateWirelessGateway.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateWirelessGateway.html
    */
   public toUpdateWirelessGateway() {
     return this.to('UpdateWirelessGateway');
@@ -1453,7 +1453,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type WirelessDevice to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessDevice.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessDevice.html
    *
    * @param wirelessDeviceId - Identifier for the wirelessDeviceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1470,7 +1470,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type WirelessGateway to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGateway.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGateway.html
    *
    * @param wirelessGatewayId - Identifier for the wirelessGatewayId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1487,7 +1487,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type DeviceProfile to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDeviceProfile.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateDeviceProfile.html
    *
    * @param deviceProfileId - Identifier for the deviceProfileId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1504,7 +1504,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type ServiceProfile to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateServiceProfile.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateServiceProfile.html
    *
    * @param serviceProfileId - Identifier for the serviceProfileId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1521,7 +1521,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type Destination to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateDestination.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateDestination.html
    *
    * @param destinationName - Identifier for the destinationName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1538,7 +1538,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type SidewalkAccount to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_AssociateAwsAccountWithPartnerAccount.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_AssociateAwsAccountWithPartnerAccount.html
    *
    * @param sidewalkAccountId - Identifier for the sidewalkAccountId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1555,7 +1555,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type WirelessGatewayTaskDefinition to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateWirelessGatewayTaskDefinition.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateWirelessGatewayTaskDefinition.html
    *
    * @param wirelessGatewayTaskDefinitionId - Identifier for the wirelessGatewayTaskDefinitionId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1572,7 +1572,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type FuotaTask to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateFuotaTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateFuotaTask.html
    *
    * @param fuotaTaskId - Identifier for the fuotaTaskId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1589,7 +1589,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type MulticastGroup to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateMulticastGroup.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateMulticastGroup.html
    *
    * @param multicastGroupId - Identifier for the multicastGroupId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1606,7 +1606,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type NetworkAnalyzerConfiguration to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_CreateNetworkAnalyzerConfiguration.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_CreateNetworkAnalyzerConfiguration.html
    *
    * @param networkAnalyzerConfigurationName - Identifier for the networkAnalyzerConfigurationName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1651,7 +1651,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Adds a resource of type ImportTask to the statement
    *
-   * https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_StartWirelessDeviceImportTask.html
+   * https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_StartWirelessDeviceImportTask.html
    *
    * @param importTaskId - Identifier for the importTaskId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1668,7 +1668,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Filters access by a tag key that is present in the request that the user makes to IoT Wireless
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toAssociateAwsAccountWithPartnerAccount()
@@ -1696,7 +1696,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Filters access by tag key component of a tag attached to an IoT Wireless resource
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
    * - WirelessDevice
@@ -1722,7 +1722,7 @@ export class Iotwireless extends PolicyStatement {
   /**
    * Filters access by the list of all the tag key names associated with the resource in the request
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
    * - .toAssociateAwsAccountWithPartnerAccount()
@@ -1745,5 +1745,41 @@ export class Iotwireless extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by destination name associated with the IoT Wireless resource
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDestinationName(value: string | string[], operator?: Operator | string) {
+    return this.if(`DestinationName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by device profile id associated with the IoT Wireless resource
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDeviceProfileId(value: string | string[], operator?: Operator | string) {
+    return this.if(`DeviceProfileId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by service profile id associated with the IoT Wireless resource
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotwireless.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifServiceProfileId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ServiceProfileId`, value, operator ?? 'StringLike');
   }
 }

@@ -34,6 +34,20 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a serverless collection to a specified collection group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCollectionGroup()
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollection.html
+   */
+  public toAddCollectionToCollectionGroup() {
+    return this.to('AddCollectionToCollectionGroup');
+  }
+
+  /**
    * Grants permission to get attributes for one or more collections
    *
    * Access Level: Read
@@ -45,6 +59,20 @@ export class Aoss extends PolicyStatement {
    */
   public toBatchGetCollection() {
     return this.to('BatchGetCollection');
+  }
+
+  /**
+   * Grants permission to get attributes for one or more collection groups
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCollectionGroup()
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollectionGroup.html
+   */
+  public toBatchGetCollectionGroup() {
+    return this.to('BatchGetCollectionGroup');
   }
 
   /**
@@ -109,6 +137,21 @@ export class Aoss extends PolicyStatement {
    */
   public toCreateCollection() {
     return this.to('CreateCollection');
+  }
+
+  /**
+   * Grants permission to create a serverless collection group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollectionGroup.html
+   */
+  public toCreateCollectionGroup() {
+    return this.to('CreateCollectionGroup');
   }
 
   /**
@@ -211,6 +254,17 @@ export class Aoss extends PolicyStatement {
    */
   public toDeleteCollection() {
     return this.to('DeleteCollection');
+  }
+
+  /**
+   * Grants permission to delete a serverless collection group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteCollectionGroup.html
+   */
+  public toDeleteCollectionGroup() {
+    return this.to('DeleteCollectionGroup');
   }
 
   /**
@@ -359,6 +413,17 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list collection groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollectionGroups.html
+   */
+  public toListCollectionGroups() {
+    return this.to('ListCollectionGroups');
+  }
+
+  /**
    * Grants permission to list collections
    *
    * Access Level: List
@@ -492,6 +557,17 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a collection group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateCollectionGroup.html
+   */
+  public toUpdateCollectionGroup() {
+    return this.to('UpdateCollectionGroup');
+  }
+
+  /**
    * Grants permission to update an opensearch index
    *
    * Access Level: Write
@@ -555,8 +631,10 @@ export class Aoss extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'APIAccessAll',
+      'AddCollectionToCollectionGroup',
       'CreateAccessPolicy',
       'CreateCollection',
+      'CreateCollectionGroup',
       'CreateIndex',
       'CreateLifecyclePolicy',
       'CreateSecurityConfig',
@@ -565,6 +643,7 @@ export class Aoss extends PolicyStatement {
       'DashboardsAccessAll',
       'DeleteAccessPolicy',
       'DeleteCollection',
+      'DeleteCollectionGroup',
       'DeleteIndex',
       'DeleteLifecyclePolicy',
       'DeleteSecurityConfig',
@@ -575,6 +654,7 @@ export class Aoss extends PolicyStatement {
       'UpdateAccessPolicy',
       'UpdateAccountSettings',
       'UpdateCollection',
+      'UpdateCollectionGroup',
       'UpdateIndex',
       'UpdateLifecyclePolicy',
       'UpdateSecurityConfig',
@@ -583,6 +663,7 @@ export class Aoss extends PolicyStatement {
     ],
     Read: [
       'BatchGetCollection',
+      'BatchGetCollectionGroup',
       'BatchGetEffectiveLifecyclePolicy',
       'BatchGetLifecyclePolicy',
       'BatchGetVpcEndpoint',
@@ -595,6 +676,7 @@ export class Aoss extends PolicyStatement {
     ],
     List: [
       'ListAccessPolicies',
+      'ListCollectionGroups',
       'ListCollections',
       'ListLifecyclePolicies',
       'ListSecurityConfigs',
@@ -619,6 +701,23 @@ export class Aoss extends PolicyStatement {
    */
   public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:aoss:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:collection/${ collectionId }`);
+  }
+
+  /**
+   * Adds a resource of type CollectionGroup to the statement
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html
+   *
+   * @param collectionGroupId - Identifier for the collectionGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCollectionGroup(collectionGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aoss:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:collection-group/${ collectionGroupId }`);
   }
 
   /**
@@ -676,6 +775,22 @@ export class Aoss extends PolicyStatement {
   }
 
   /**
+   * Filters access by the collection group name
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys
+   *
+   * Applies to actions:
+   * - .toAddCollectionToCollectionGroup()
+   * - .toBatchGetCollectionGroup()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCollectionGroup(value: string | string[], operator?: Operator | string) {
+    return this.if(`collection-group`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the index
    *
    * https://docs.aws.amazon.com/opensearch-service/latest/developerguide/security-iam-serverless.html#security_iam_serverless-conditionkeys
@@ -701,6 +816,7 @@ export class Aoss extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCollection()
+   * - .toCreateCollectionGroup()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -720,6 +836,7 @@ export class Aoss extends PolicyStatement {
    *
    * Applies to resource types:
    * - Collection
+   * - CollectionGroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -734,6 +851,7 @@ export class Aoss extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCollection()
+   * - .toCreateCollectionGroup()
    * - .toTagResource()
    * - .toUntagResource()
    *

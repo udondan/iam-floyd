@@ -23,7 +23,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetSearchJob.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_GetSearchJob.html
    */
   public toGetSearchJob() {
     return this.to('GetSearchJob');
@@ -34,7 +34,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetSearchResultExportJob.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_GetSearchResultExportJob.html
    */
   public toGetSearchResultExportJob() {
     return this.to('GetSearchResultExportJob');
@@ -45,7 +45,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListSearchJobBackups.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobBackups.html
    */
   public toListSearchJobBackups() {
     return this.to('ListSearchJobBackups');
@@ -56,7 +56,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListSearchJobResults.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobResults.html
    */
   public toListSearchJobResults() {
     return this.to('ListSearchJobResults');
@@ -67,7 +67,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListSearchJobs.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchJobs.html
    */
   public toListSearchJobs() {
     return this.to('ListSearchJobs');
@@ -78,7 +78,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListSearchResultExportJobs.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListSearchResultExportJobs.html
    */
   public toListSearchResultExportJobs() {
     return this.to('ListSearchResultExportJobs');
@@ -89,7 +89,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -105,7 +105,7 @@ export class BackupSearch extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartSearchJob.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StartSearchJob.html
    */
   public toStartSearchJob() {
     return this.to('StartSearchJob');
@@ -123,7 +123,7 @@ export class BackupSearch extends PolicyStatement {
    * Dependent actions:
    * - iam:PassRole
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartSearchResultExportJob.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StartSearchResultExportJob.html
    */
   public toStartSearchResultExportJob() {
     return this.to('StartSearchResultExportJob');
@@ -134,7 +134,7 @@ export class BackupSearch extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StopSearchJob.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_StopSearchJob.html
    */
   public toStopSearchJob() {
     return this.to('StopSearchJob');
@@ -149,7 +149,7 @@ export class BackupSearch extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_TagResource.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -163,7 +163,7 @@ export class BackupSearch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UntagResource.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BKS_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -195,7 +195,7 @@ export class BackupSearch extends PolicyStatement {
   /**
    * Adds a resource of type searchJob to the statement
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/search-jobs.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-search.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -212,7 +212,7 @@ export class BackupSearch extends PolicyStatement {
   /**
    * Adds a resource of type searchExportJob to the statement
    *
-   * https://docs.aws.amazon.com/aws-backup/latest/devguide/search-export-jobs.html
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-search.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

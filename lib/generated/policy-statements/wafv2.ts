@@ -30,6 +30,7 @@ export class Wafv2 extends PolicyStatement {
    * - appsync:SetWebACL
    * - cognito-idp:AssociateWebACL
    * - ec2:AssociateVerifiedAccessInstanceWebAcl
+   * - elasticloadbalancing:CreateWebACLAssociation
    * - elasticloadbalancing:SetWebAcl
    * - wafv2:GetPermissionPolicy
    * - wafv2:PutPermissionPolicy
@@ -281,6 +282,7 @@ export class Wafv2 extends PolicyStatement {
    * - appsync:SetWebACL
    * - cognito-idp:DisassociateWebACL
    * - ec2:DisassociateVerifiedAccessInstanceWebAcl
+   * - elasticloadbalancing:DeleteWebACLAssociation
    * - elasticloadbalancing:SetWebAcl
    * - wafv2:PutPermissionPolicy
    *
@@ -451,6 +453,7 @@ export class Wafv2 extends PolicyStatement {
    * - apprunner:DescribeWebAclForService
    * - cognito-idp:GetWebACLForResource
    * - ec2:GetVerifiedAccessInstanceWebAcl
+   * - elasticloadbalancing:GetLoadBalancerWebACL
    * - wafv2:GetWebACL
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACLForResource.html
@@ -560,6 +563,7 @@ export class Wafv2 extends PolicyStatement {
    * - apprunner:ListAssociatedServicesForWebAcl
    * - cognito-idp:ListResourcesForWebACL
    * - ec2:DescribeVerifiedAccessInstanceWebAclAssociations
+   * - elasticloadbalancing:DescribeWebACLAssociation
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListResourcesForWebACL.html
    */

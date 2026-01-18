@@ -1,8 +1,11 @@
+payment-cryptography:AddKeyReplicationRegions;Write
 payment-cryptography:CreateAlias;Write
 payment-cryptography:CreateKey;Write
 payment-cryptography:DecryptData;Write
 payment-cryptography:DeleteAlias;Write
 payment-cryptography:DeleteKey;Write
+payment-cryptography:DisableDefaultKeyReplicationRegions;Write
+payment-cryptography:EnableDefaultKeyReplicationRegions;Write
 payment-cryptography:EncryptData;Write
 payment-cryptography:ExportKey;Write
 payment-cryptography:GenerateCardValidationData;Write
@@ -10,6 +13,8 @@ payment-cryptography:GenerateMac;Write
 payment-cryptography:GenerateMacEmvPinChange;Write
 payment-cryptography:GeneratePinData;Write
 payment-cryptography:GetAlias;Read
+payment-cryptography:GetCertificateSigningRequest;Read
+payment-cryptography:GetDefaultKeyReplicationRegions;Read
 payment-cryptography:GetKey;Read
 payment-cryptography:GetParametersForExport;Read
 payment-cryptography:GetParametersForImport;Read
@@ -19,10 +24,12 @@ payment-cryptography:ListAliases;List
 payment-cryptography:ListKeys;List
 payment-cryptography:ListTagsForResource;Read
 payment-cryptography:ReEncryptData;Write
+payment-cryptography:RemoveKeyReplicationRegions;Write
 payment-cryptography:RestoreKey;Write
 payment-cryptography:StartKeyUsage;Write
 payment-cryptography:StopKeyUsage;Write
 payment-cryptography:TagResource;Tagging
+payment-cryptography:TranslateKeyMaterial;Write
 payment-cryptography:TranslatePinData;Write
 payment-cryptography:UntagResource;Tagging
 payment-cryptography:UpdateAlias;Write

@@ -92,6 +92,9 @@ export class Bedrock extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifBearerTokenType()
+   *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
   public toCallWithBearerToken() {
@@ -173,7 +176,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
@@ -200,7 +202,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
@@ -242,7 +243,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html
    */
@@ -258,7 +258,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html
    */
@@ -300,7 +299,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateEvaluationJob.html
    */
@@ -368,7 +366,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
    */
@@ -445,7 +442,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCopyJob.html
    */
@@ -461,7 +457,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelCustomizationJob.html
    */
@@ -477,7 +472,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelEvaluationJob.html
    */
@@ -493,7 +487,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html
    */
@@ -509,7 +502,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelInvocationJob.html
    */
@@ -540,7 +532,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreatePromptRouter.html
    */
@@ -571,7 +562,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateProvisionedModelThroughput.html
    */
@@ -1673,7 +1663,6 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifGuardrailIdentifier()
-   * - .ifBearerTokenType()
    * - .ifServiceTier()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html
@@ -1691,7 +1680,6 @@ export class Bedrock extends PolicyStatement {
    * - .ifInferenceProfileArn()
    * - .ifPromptRouterArn()
    * - .ifGuardrailIdentifier()
-   * - .ifBearerTokenType()
    * - .ifServiceTier()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html
@@ -2238,7 +2226,7 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
-   * Grants permission to put entitlement to access a foundation model
+   * Grants permission to put entitlement to access a serverless foundation model. Do not use to restrict model access
    *
    * Access Level: Write
    *
@@ -2456,7 +2444,6 @@ export class Bedrock extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_TagResource.html
    */
@@ -2471,7 +2458,6 @@ export class Bedrock extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifBearerTokenType()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UntagResource.html
    */
@@ -3521,7 +3507,7 @@ export class Bedrock extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onCustomModelDeployment(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-model/${ resourceId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-model-deployment/${ resourceId }`);
   }
 
   /**
@@ -3659,23 +3645,7 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
    *
    * Applies to actions:
-   * - .toCreateAutomatedReasoningPolicy()
-   * - .toCreateAutomatedReasoningPolicyVersion()
-   * - .toCreateCustomModel()
-   * - .toCreateCustomModelDeployment()
-   * - .toCreateEvaluationJob()
-   * - .toCreateGuardrail()
-   * - .toCreateModelCopyJob()
-   * - .toCreateModelCustomizationJob()
-   * - .toCreateModelEvaluationJob()
-   * - .toCreateModelImportJob()
-   * - .toCreateModelInvocationJob()
-   * - .toCreatePromptRouter()
-   * - .toCreateProvisionedModelThroughput()
-   * - .toInvokeModel()
-   * - .toInvokeModelWithResponseStream()
-   * - .toTagResource()
-   * - .toUntagResource()
+   * - .toCallWithBearerToken()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

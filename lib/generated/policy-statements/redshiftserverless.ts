@@ -443,6 +443,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the resources that are denylisted from global autonomics decisions for a specified workgroup
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
+   */
+  public toListAutonomicsDenylist() {
+    return this.to('ListAutonomicsDenylist');
+  }
+
+  /**
    * Grants permission to list custom domain associations in Amazon Redshift Serverless
    *
    * Access Level: List
@@ -710,6 +721,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or remove resources from the global autonomics denylist for a specified workgroup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
+   */
+  public toUpdateAutonomicsDenylist() {
+    return this.to('UpdateAutonomicsDenylist');
+  }
+
+  /**
    * Grants permission to update a certificate associated with a custom domain
    *
    * Access Level: Write
@@ -841,6 +863,7 @@ export class RedshiftServerless extends PolicyStatement {
       'RestoreFromSnapshot',
       'RestoreTableFromRecoveryPoint',
       'RestoreTableFromSnapshot',
+      'UpdateAutonomicsDenylist',
       'UpdateCustomDomainAssociation',
       'UpdateEndpointAccess',
       'UpdateNamespace',
@@ -865,7 +888,8 @@ export class RedshiftServerless extends PolicyStatement {
       'GetTableRestoreStatus',
       'GetTrack',
       'GetUsageLimit',
-      'GetWorkgroup'
+      'GetWorkgroup',
+      'ListAutonomicsDenylist'
     ],
     List: [
       'ListCustomDomainAssociations',

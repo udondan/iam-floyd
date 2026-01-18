@@ -1,6 +1,7 @@
 groundstation:CancelContact;Write
 groundstation:CreateConfig;Write
 groundstation:CreateDataflowEndpointGroup;Write
+groundstation:CreateDataflowEndpointGroupV2;Write
 groundstation:CreateEphemeris;Write
 groundstation:CreateMissionProfile;Write
 groundstation:DeleteConfig;Write

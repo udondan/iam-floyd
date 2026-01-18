@@ -3,4 +3,5 @@ aoss:RequestTag/${TagKey}
 aoss:ResourceTag/${TagKey}
 aoss:TagKeys
 aoss:collection
+aoss:collection-group
 aoss:index

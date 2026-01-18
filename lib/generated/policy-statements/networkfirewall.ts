@@ -45,6 +45,10 @@ export class NetworkFirewall extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AssociateFirewallPolicy.html
    */
   public toAssociateFirewallPolicy() {
@@ -60,6 +64,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toAssociateSubnets() {
     return this.to('AssociateSubnets');
+  }
+
+  /**
+   * Grants permission to attach proxy rule groups to a proxy configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_AttachRuleGroupsToProxyConfiguration.html
+   */
+  public toAttachRuleGroupsToProxyConfiguration() {
+    return this.to('AttachRuleGroupsToProxyConfiguration');
   }
 
   /**
@@ -93,6 +108,65 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toCreateFirewallPolicy() {
     return this.to('CreateFirewallPolicy');
+  }
+
+  /**
+   * Grants permission to create an AWS Network Firewall proxy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:AttachApplianceToNatGateway
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxy.html
+   */
+  public toCreateProxy() {
+    return this.to('CreateProxy');
+  }
+
+  /**
+   * Grants permission to create an AWS Network Firewall proxy configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyConfiguration.html
+   */
+  public toCreateProxyConfiguration() {
+    return this.to('CreateProxyConfiguration');
+  }
+
+  /**
+   * Grants permission to create an AWS Network Firewall proxy rule group
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyRuleGroup.html
+   */
+  public toCreateProxyRuleGroup() {
+    return this.to('CreateProxyRuleGroup');
+  }
+
+  /**
+   * Grants permission to add proxy rules to a proxy rule group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateProxyRules.html
+   */
+  public toCreateProxyRules() {
+    return this.to('CreateProxyRules');
   }
 
   /**
@@ -177,6 +251,53 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toDeleteNetworkFirewallTransitGatewayAttachment() {
     return this.to('DeleteNetworkFirewallTransitGatewayAttachment');
+  }
+
+  /**
+   * Grants permission to delete a proxy
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DetachApplianceFromNatGateway
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxy.html
+   */
+  public toDeleteProxy() {
+    return this.to('DeleteProxy');
+  }
+
+  /**
+   * Grants permission to delete a proxy configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyConfiguration.html
+   */
+  public toDeleteProxyConfiguration() {
+    return this.to('DeleteProxyConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a proxy rule group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyRuleGroup.html
+   */
+  public toDeleteProxyRuleGroup() {
+    return this.to('DeleteProxyRuleGroup');
+  }
+
+  /**
+   * Grants permission to remove proxy rules from a proxy rule group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteProxyRules.html
+   */
+  public toDeleteProxyRules() {
+    return this.to('DeleteProxyRules');
   }
 
   /**
@@ -283,6 +404,50 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the data objects that define a proxy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxy.html
+   */
+  public toDescribeProxy() {
+    return this.to('DescribeProxy');
+  }
+
+  /**
+   * Grants permission to retrieve the data objects that define a proxy configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyConfiguration.html
+   */
+  public toDescribeProxyConfiguration() {
+    return this.to('DescribeProxyConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve the data objects that define a proxy rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyRule.html
+   */
+  public toDescribeProxyRule() {
+    return this.to('DescribeProxyRule');
+  }
+
+  /**
+   * Grants permission to retrieve the data objects that define a proxy rule group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeProxyRuleGroup.html
+   */
+  public toDescribeProxyRuleGroup() {
+    return this.to('DescribeProxyRuleGroup');
+  }
+
+  /**
    * Grants permission to describe a resource policy for a firewall policy or rule group or firewall
    *
    * Access Level: Read
@@ -346,6 +511,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toDescribeVpcEndpointAssociation() {
     return this.to('DescribeVpcEndpointAssociation');
+  }
+
+  /**
+   * Grants permission to detach proxy rule groups from a proxy configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DetachRuleGroupsFromProxyConfiguration.html
+   */
+  public toDetachRuleGroupsFromProxyConfiguration() {
+    return this.to('DetachRuleGroupsFromProxyConfiguration');
   }
 
   /**
@@ -434,6 +610,39 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toListFlowOperations() {
     return this.to('ListFlowOperations');
+  }
+
+  /**
+   * Grants permission to retrieve the metadata for proxies
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxies.html
+   */
+  public toListProxies() {
+    return this.to('ListProxies');
+  }
+
+  /**
+   * Grants permission to retrieve the metadata for proxy configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxyConfigurations.html
+   */
+  public toListProxyConfigurations() {
+    return this.to('ListProxyConfigurations');
+  }
+
+  /**
+   * Grants permission to retrieve the metadata for proxy rule groups
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListProxyRuleGroups.html
+   */
+  public toListProxyRuleGroups() {
+    return this.to('ListProxyRuleGroups');
   }
 
   /**
@@ -653,6 +862,61 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify a proxy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxy.html
+   */
+  public toUpdateProxy() {
+    return this.to('UpdateProxy');
+  }
+
+  /**
+   * Grants permission to modify a proxy configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyConfiguration.html
+   */
+  public toUpdateProxyConfiguration() {
+    return this.to('UpdateProxyConfiguration');
+  }
+
+  /**
+   * Grants permission to update an existing proxy rule on a proxy rule group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRule.html
+   */
+  public toUpdateProxyRule() {
+    return this.to('UpdateProxyRule');
+  }
+
+  /**
+   * Grants permission to modify rule group priorities on a proxy configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRuleGroupPriorities.html
+   */
+  public toUpdateProxyRuleGroupPriorities() {
+    return this.to('UpdateProxyRuleGroupPriorities');
+  }
+
+  /**
+   * Grants permission to update proxy rule priorities within a proxy rule group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateProxyRulePriorities.html
+   */
+  public toUpdateProxyRulePriorities() {
+    return this.to('UpdateProxyRulePriorities');
+  }
+
+  /**
    * Grants permission to modify a rule group
    *
    * Access Level: Write
@@ -691,18 +955,28 @@ export class NetworkFirewall extends PolicyStatement {
       'AssociateAvailabilityZones',
       'AssociateFirewallPolicy',
       'AssociateSubnets',
+      'AttachRuleGroupsToProxyConfiguration',
       'CreateFirewall',
       'CreateFirewallPolicy',
+      'CreateProxy',
+      'CreateProxyConfiguration',
+      'CreateProxyRuleGroup',
+      'CreateProxyRules',
       'CreateRuleGroup',
       'CreateTLSInspectionConfiguration',
       'CreateVpcEndpointAssociation',
       'DeleteFirewall',
       'DeleteFirewallPolicy',
       'DeleteNetworkFirewallTransitGatewayAttachment',
+      'DeleteProxy',
+      'DeleteProxyConfiguration',
+      'DeleteProxyRuleGroup',
+      'DeleteProxyRules',
       'DeleteResourcePolicy',
       'DeleteRuleGroup',
       'DeleteTLSInspectionConfiguration',
       'DeleteVpcEndpointAssociation',
+      'DetachRuleGroupsFromProxyConfiguration',
       'DisassociateAvailabilityZones',
       'DisassociateSubnets',
       'PutResourcePolicy',
@@ -718,6 +992,11 @@ export class NetworkFirewall extends PolicyStatement {
       'UpdateFirewallPolicy',
       'UpdateFirewallPolicyChangeProtection',
       'UpdateLoggingConfiguration',
+      'UpdateProxy',
+      'UpdateProxyConfiguration',
+      'UpdateProxyRule',
+      'UpdateProxyRuleGroupPriorities',
+      'UpdateProxyRulePriorities',
       'UpdateRuleGroup',
       'UpdateSubnetChangeProtection',
       'UpdateTLSInspectionConfiguration'
@@ -728,6 +1007,10 @@ export class NetworkFirewall extends PolicyStatement {
       'DescribeFirewallPolicy',
       'DescribeFlowOperation',
       'DescribeLoggingConfiguration',
+      'DescribeProxy',
+      'DescribeProxyConfiguration',
+      'DescribeProxyRule',
+      'DescribeProxyRuleGroup',
       'DescribeResourcePolicy',
       'DescribeRuleGroup',
       'DescribeRuleGroupMetadata',
@@ -742,6 +1025,9 @@ export class NetworkFirewall extends PolicyStatement {
       'ListFirewallPolicies',
       'ListFirewalls',
       'ListFlowOperations',
+      'ListProxies',
+      'ListProxyConfigurations',
+      'ListProxyRuleGroups',
       'ListRuleGroups',
       'ListTLSInspectionConfigurations',
       'ListTagsForResource',
@@ -856,13 +1142,68 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ProxyRuleGroup to the statement
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ProxyRuleGroup.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProxyRuleGroup(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:network-firewall:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:proxy-rule-group/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type ProxyConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ProxyConfiguration.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProxyConfiguration(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:network-firewall:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:proxy-configuration/${ name }`);
+  }
+
+  /**
+   * Adds a resource of type Proxy to the statement
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_Proxy.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProxy(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:network-firewall:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:proxy/${ name }`);
+  }
+
+  /**
    * Filters access by on the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toAssociateFirewallPolicy()
    * - .toCreateFirewall()
    * - .toCreateFirewallPolicy()
+   * - .toCreateProxy()
+   * - .toCreateProxyConfiguration()
+   * - .toCreateProxyRuleGroup()
    * - .toCreateRuleGroup()
    * - .toCreateTLSInspectionConfiguration()
    * - .toCreateVpcEndpointAssociation()
@@ -888,6 +1229,9 @@ export class NetworkFirewall extends PolicyStatement {
    * - StatelessRuleGroup
    * - TLSInspectionConfiguration
    * - VpcEndpointAssociation
+   * - ProxyRuleGroup
+   * - ProxyConfiguration
+   * - Proxy
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -903,8 +1247,12 @@ export class NetworkFirewall extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toAssociateFirewallPolicy()
    * - .toCreateFirewall()
    * - .toCreateFirewallPolicy()
+   * - .toCreateProxy()
+   * - .toCreateProxyConfiguration()
+   * - .toCreateProxyRuleGroup()
    * - .toCreateRuleGroup()
    * - .toCreateTLSInspectionConfiguration()
    * - .toCreateVpcEndpointAssociation()

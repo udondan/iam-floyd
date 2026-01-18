@@ -30,17 +30,6 @@ export class NetworkSecurityDirector extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the status of network security scan
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_GetNetworkSecurityScan.html
-   */
-  public toGetNetworkSecurityScan() {
-    return this.to('GetNetworkSecurityScan');
-  }
-
-  /**
    * Grants permission to get a resource
    *
    * Access Level: Read
@@ -49,6 +38,17 @@ export class NetworkSecurityDirector extends PolicyStatement {
    */
   public toGetResource() {
     return this.to('GetResource');
+  }
+
+  /**
+   * Grants permission to list account summaries for an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_ListAccountSummaries.html
+   */
+  public toListAccountSummaries() {
+    return this.to('ListAccountSummaries');
   }
 
   /**
@@ -96,17 +96,6 @@ export class NetworkSecurityDirector extends PolicyStatement {
   }
 
   /**
-   * Grants permission to start a network security scan
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/network-security-director/latest/APIReference/API_StartNetworkSecurityScan.html
-   */
-  public toStartNetworkSecurityScan() {
-    return this.to('StartNetworkSecurityScan');
-  }
-
-  /**
    * Grants permission to update the status of a finding
    *
    * Access Level: Write
@@ -120,17 +109,16 @@ export class NetworkSecurityDirector extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Read: [
       'GetFinding',
-      'GetNetworkSecurityScan',
       'GetResource'
     ],
     List: [
+      'ListAccountSummaries',
       'ListFindings',
       'ListInsights',
       'ListRemediations',
       'ListResources'
     ],
     Write: [
-      'StartNetworkSecurityScan',
       'UpdateFinding'
     ]
   };

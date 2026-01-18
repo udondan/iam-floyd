@@ -430,6 +430,7 @@ export class Organizations extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifTransferType()
+   * - .ifTransferDirection()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteOrganizationToTransferResponsibility.html
    */
@@ -1181,8 +1182,10 @@ export class Organizations extends PolicyStatement {
    *
    * Applies to actions:
    * - .toDescribeResponsibilityTransfer()
+   * - .toInviteOrganizationToTransferResponsibility()
    * - .toListInboundResponsibilityTransfers()
    * - .toListOutboundResponsibilityTransfers()
+   * - .toListTagsForResource()
    * - .toTagResource()
    * - .toTerminateResponsibilityTransfer()
    * - .toUntagResource()
@@ -1205,6 +1208,7 @@ export class Organizations extends PolicyStatement {
    * - .toInviteOrganizationToTransferResponsibility()
    * - .toListInboundResponsibilityTransfers()
    * - .toListOutboundResponsibilityTransfers()
+   * - .toListTagsForResource()
    * - .toTagResource()
    * - .toTerminateResponsibilityTransfer()
    * - .toUntagResource()

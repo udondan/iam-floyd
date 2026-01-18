@@ -37,7 +37,6 @@ export class Lambda extends PolicyStatement {
    * Possible conditions:
    * - .ifPrincipal()
    * - .ifFunctionUrlAuthType()
-   * - .ifInvokedViaFunctionUrl()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html
    */
@@ -1476,7 +1475,6 @@ export class Lambda extends PolicyStatement {
    * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
    *
    * Applies to actions:
-   * - .toAddPermission()
    * - .toInvokeFunction()
    *
    * @param value `true` or `false`. **Default:** `true`

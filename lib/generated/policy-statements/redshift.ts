@@ -812,6 +812,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the list of resources that are denylisted from global autonomics decisions for a specified cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
+   */
+  public toDescribeAutonomicsDenylist() {
+    return this.to('DescribeAutonomicsDenylist');
+  }
+
+  /**
    * Grants permission to describe database revisions for a cluster
    *
    * Access Level: List
@@ -1534,6 +1545,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or remove resources from the global autonomics denylist for a specified cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html
+   */
+  public toModifyAutonomicsDenylist() {
+    return this.to('ModifyAutonomicsDenylist');
+  }
+
+  /**
    * Grants permission to modify the settings of a cluster
    *
    * Access Level: Write
@@ -2054,6 +2076,7 @@ export class Redshift extends PolicyStatement {
       'GetClusterCredentialsWithIAM',
       'ModifyAquaConfiguration',
       'ModifyAuthenticationProfile',
+      'ModifyAutonomicsDenylist',
       'ModifyCluster',
       'ModifyClusterDbRevision',
       'ModifyClusterMaintenance',
@@ -2107,6 +2130,7 @@ export class Redshift extends PolicyStatement {
     Read: [
       'DescribeAccountAttributes',
       'DescribeAuthenticationProfiles',
+      'DescribeAutonomicsDenylist',
       'DescribeClusterParameterGroups',
       'DescribeClusterParameters',
       'DescribeClusterSecurityGroups',

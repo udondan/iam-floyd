@@ -109,6 +109,17 @@ export class Servicequotas extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view the generated report
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetQuotaUtilizationReport.html
+   */
+  public toGetQuotaUtilizationReport() {
+    return this.to('GetQuotaUtilizationReport');
+  }
+
+  /**
    * Grants permission to retrieve the details for a particular service quota increase request
    *
    * Access Level: Read
@@ -287,6 +298,17 @@ export class Servicequotas extends PolicyStatement {
   }
 
   /**
+   * Grants permission to query quota utilization and create a report for your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StartQuotaUtilizationReport.html
+   */
+  public toStartQuotaUtilizationReport() {
+    return this.to('StartQuotaUtilizationReport');
+  }
+
+  /**
    * Grants permission to stop automatic management of Service Quotas for an AWS account and remove all associated configurations
    *
    * Access Level: Write
@@ -353,6 +375,7 @@ export class Servicequotas extends PolicyStatement {
       'GetAWSDefaultServiceQuota',
       'GetAssociationForServiceQuotaTemplate',
       'GetAutoManagementConfiguration',
+      'GetQuotaUtilizationReport',
       'GetRequestedServiceQuotaChange',
       'GetServiceQuota',
       'GetServiceQuotaIncreaseRequestFromTemplate',
@@ -362,7 +385,8 @@ export class Servicequotas extends PolicyStatement {
       'ListServiceQuotaIncreaseRequestsInTemplate',
       'ListServiceQuotas',
       'ListServices',
-      'ListTagsForResource'
+      'ListTagsForResource',
+      'StartQuotaUtilizationReport'
     ],
     Tagging: [
       'TagResource',

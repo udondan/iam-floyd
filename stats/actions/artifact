@@ -9,6 +9,7 @@ artifact:GetReportMetadata;Read
 artifact:GetTermForReport;Read
 artifact:ListAgreements;List
 artifact:ListCustomerAgreements;List
+artifact:ListReportVersions;List
 artifact:ListReports;List
 artifact:PutAccountSettings;Write
 artifact:TerminateAgreement;Write

@@ -2,6 +2,7 @@ ssm:AccessRequestId
 ssm:AutoApprove
 ssm:DocumentCategories
 ssm:DocumentType
+ssm:DocumentVersion
 ssm:InventoryTypeName
 ssm:Overwrite
 ssm:Policies

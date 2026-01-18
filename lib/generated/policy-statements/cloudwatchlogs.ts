@@ -52,6 +52,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an import from CloudTrail Lake to CloudWatch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelImportTask.html
+   */
+  public toCancelImportTask() {
+    return this.to('CancelImportTask');
+  }
+
+  /**
    * Grants permission to create a delivery connecting a delivery source to a delivery destination
    *
    * Access Level: Write
@@ -75,6 +86,17 @@ export class Logs extends PolicyStatement {
    */
   public toCreateExportTask() {
     return this.to('CreateExportTask');
+  }
+
+  /**
+   * Grants permission to start an asynchronous process to import data from a CloudTrail Lake event data store into a managed log group in CloudWatch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateImportTask.html
+   */
+  public toCreateImportTask() {
+    return this.to('CreateImportTask');
   }
 
   /**
@@ -461,6 +483,28 @@ export class Logs extends PolicyStatement {
    */
   public toDescribeFieldIndexes() {
     return this.to('DescribeFieldIndexes');
+  }
+
+  /**
+   * Grants permission to return detailed information about the individual batches within an import task, including status and any error
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTaskBatches.html
+   */
+  public toDescribeImportTaskBatches() {
+    return this.to('DescribeImportTaskBatches');
+  }
+
+  /**
+   * Grants permission to return all the import tasks associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTasks.html
+   */
+  public toDescribeImportTasks() {
+    return this.to('DescribeImportTasks');
   }
 
   /**
@@ -1353,8 +1397,10 @@ export class Logs extends PolicyStatement {
       'AssociateKmsKey',
       'AssociateSourceToS3TableIntegration',
       'CancelExportTask',
+      'CancelImportTask',
       'CreateDelivery',
       'CreateExportTask',
+      'CreateImportTask',
       'CreateLogAnomalyDetector',
       'CreateLogDelivery',
       'CreateLogGroup',
@@ -1421,6 +1467,8 @@ export class Logs extends PolicyStatement {
       'DescribeDestinations',
       'DescribeExportTasks',
       'DescribeFieldIndexes',
+      'DescribeImportTaskBatches',
+      'DescribeImportTasks',
       'DescribeIndexPolicies',
       'DescribeLogGroups',
       'DescribeLogStreams',

@@ -183,6 +183,17 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create WebAcl association to WAF
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toCreateWebACLAssociation() {
+    return this.to('CreateWebACLAssociation');
+  }
+
+  /**
    * Grants permission to delete the specified listener
    *
    * Access Level: Write
@@ -270,6 +281,17 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    */
   public toDeleteTrustStore() {
     return this.to('DeleteTrustStore');
+  }
+
+  /**
+   * Grants permission to delete WebAcl association to WAF
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toDeleteWebACLAssociation() {
+    return this.to('DeleteWebACLAssociation');
   }
 
   /**
@@ -461,6 +483,28 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    */
   public toDescribeTrustStores() {
     return this.to('DescribeTrustStores');
+  }
+
+  /**
+   * Grants permission to describe WebAcl association to WAF
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toDescribeWebACLAssociation() {
+    return this.to('DescribeWebACLAssociation');
+  }
+
+  /**
+   * Grants permission to get Load Balancer WebAcl to WAF
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
+   */
+  public toGetLoadBalancerWebACL() {
+    return this.to('GetLoadBalancerWebACL');
   }
 
   /**
@@ -770,7 +814,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetWebAcl.html
+   * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
    */
   public toSetWebAcl() {
     return this.to('SetWebAcl');
@@ -815,7 +859,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'RemoveTags'
     ],
     'Permissions management': [
-      'AllowVendedLogDeliveryForResource'
+      'AllowVendedLogDeliveryForResource',
+      'CreateWebACLAssociation',
+      'DeleteWebACLAssociation',
+      'DescribeWebACLAssociation',
+      'GetLoadBalancerWebACL'
     ],
     Read: [
       'DescribeAccountLimits',

@@ -1,8 +1,10 @@
 logs:AssociateKmsKey;Write
 logs:AssociateSourceToS3TableIntegration;Write
 logs:CancelExportTask;Write
+logs:CancelImportTask;Write
 logs:CreateDelivery;Write
 logs:CreateExportTask;Write
+logs:CreateImportTask;Write
 logs:CreateLogAnomalyDetector;Write
 logs:CreateLogDelivery;Write
 logs:CreateLogGroup;Write
@@ -37,6 +39,8 @@ logs:DescribeDeliverySources;List
 logs:DescribeDestinations;List
 logs:DescribeExportTasks;List
 logs:DescribeFieldIndexes;List
+logs:DescribeImportTaskBatches;List
+logs:DescribeImportTasks;List
 logs:DescribeIndexPolicies;List
 logs:DescribeLogGroups;List
 logs:DescribeLogStreams;List

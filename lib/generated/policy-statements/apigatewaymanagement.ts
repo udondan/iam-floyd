@@ -254,11 +254,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifRequestAuthorizerType()
-   * - .ifRequestAuthorizerUri()
-   * - .ifRequestCognitoUserPoolProviderArn()
    * - .ifResourceAuthorizerType()
-   * - .ifResourceAuthorizerUri()
-   * - .ifResourceCognitoUserPoolProviderArn()
    * - .ifAwsResourceTag()
    */
   public onAuthorizer(restApiId: string, authorizerId: string, region?: string, partition?: string) {
@@ -276,8 +272,6 @@ export class Apigateway extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifRequestAuthorizerType()
-   * - .ifRequestAuthorizerUri()
-   * - .ifRequestCognitoUserPoolProviderArn()
    * - .ifAwsResourceTag()
    */
   public onAuthorizers(restApiId: string, region?: string, partition?: string) {
@@ -806,7 +800,6 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestApiKeyRequired()
    * - .ifRequestApiName()
    * - .ifRequestAuthorizerType()
-   * - .ifRequestAuthorizerUri()
    * - .ifRequestDisableExecuteApiEndpoint()
    * - .ifRequestEndpointType()
    * - .ifRequestRouteAuthorizationType()
@@ -814,7 +807,6 @@ export class Apigateway extends PolicyStatement {
    * - .ifResourceApiKeyRequired()
    * - .ifResourceApiName()
    * - .ifResourceAuthorizerType()
-   * - .ifResourceAuthorizerUri()
    * - .ifResourceDisableExecuteApiEndpoint()
    * - .ifResourceEndpointType()
    * - .ifResourceRouteAuthorizationType()
@@ -837,7 +829,6 @@ export class Apigateway extends PolicyStatement {
    * - .ifRequestApiKeyRequired()
    * - .ifRequestApiName()
    * - .ifRequestAuthorizerType()
-   * - .ifRequestAuthorizerUri()
    * - .ifRequestDisableExecuteApiEndpoint()
    * - .ifRequestEndpointType()
    * - .ifRequestRouteAuthorizationType()
@@ -1127,40 +1118,6 @@ export class Apigateway extends PolicyStatement {
   }
 
   /**
-   * Filters access by URI of a Lambda authorizer function. Available during CreateAuthorizer and UpdateAuthorizer. Also available during import and reimport as an ArrayOfString
-   *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
-   *
-   * Applies to resource types:
-   * - Authorizer
-   * - Authorizers
-   * - RestApi
-   * - RestApis
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifRequestAuthorizerUri(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/AuthorizerUri`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by Cognito user pool provider ARN. Available during CreateAuthorizer and UpdateAuthorizer
-   *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
-   *
-   * Applies to resource types:
-   * - Authorizer
-   * - Authorizers
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
-   */
-  public ifRequestCognitoUserPoolProviderArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`Request/CognitoUserPoolProviderArn`, value, operator ?? 'ArnLike');
-  }
-
-  /**
    * Filters access by status of the default execute-api endpoint. Available during the CreateRestApi and DeleteRestApi operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -1377,37 +1334,6 @@ export class Apigateway extends PolicyStatement {
    */
   public ifResourceAuthorizerType(value: string | string[], operator?: Operator | string) {
     return this.if(`Resource/AuthorizerType`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by URI of a Lambda authorizer function. Available during UpdateAuthorizer and DeleteAuthorizer operations. Also available during reimport as an ArrayOfString
-   *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
-   *
-   * Applies to resource types:
-   * - Authorizer
-   * - RestApi
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifResourceAuthorizerUri(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/AuthorizerUri`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by Cognito user pool provider ARN. Available during CreateAuthorizer and UpdateAuthorizer
-   *
-   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
-   *
-   * Applies to resource types:
-   * - Authorizer
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
-   */
-  public ifResourceCognitoUserPoolProviderArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`Resource/CognitoUserPoolProviderArn`, value, operator ?? 'ArnLike');
   }
 
   /**

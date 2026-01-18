@@ -19,6 +19,20 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add replication regions to an existing AWS Payment Cryptography key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html
+   */
+  public toAddKeyReplicationRegions() {
+    return this.to('AddKeyReplicationRegions');
+  }
+
+  /**
    * Grants permission to create a user-friendly name for a Key
    *
    * Access Level: Write
@@ -37,6 +51,9 @@ export class PaymentCryptography extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifKeyClass()
+   * - .ifKeyUsage()
+   * - .ifKeyAlgorithm()
    *
    * Dependent actions:
    * - payment-cryptography:TagResource
@@ -51,6 +68,9 @@ export class PaymentCryptography extends PolicyStatement {
    * Grants permission to decrypt ciphertext data to plaintext using symmetric, asymmetric or DUKPT data encryption key
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_DecryptData.html
    */
@@ -78,6 +98,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html
    */
   public toDeleteKey() {
@@ -85,9 +108,34 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable default key replication regions for account-level replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html
+   */
+  public toDisableDefaultKeyReplicationRegions() {
+    return this.to('DisableDefaultKeyReplicationRegions');
+  }
+
+  /**
+   * Grants permission to enable default key replication regions for account-level replication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html
+   */
+  public toEnableDefaultKeyReplicationRegions() {
+    return this.to('EnableDefaultKeyReplicationRegions');
+  }
+
+  /**
    * Grants permission to encrypt plaintext data to ciphertext using symmetric, asymmetric or DUKPT data encryption key
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_EncryptData.html
    */
@@ -100,6 +148,11 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   * - .ifCertificateAuthorityPublicKeyIdentifier()
+   * - .ifWrappingKeyIdentifier()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html
    */
   public toExportKey() {
@@ -110,6 +163,9 @@ export class PaymentCryptography extends PolicyStatement {
    * Grants permission to generate card-related data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) or Card Security Codes (CSC) that check the validity of a magnetic stripe card
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateCardValidationData.html
    */
@@ -122,6 +178,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateMac.html
    */
   public toGenerateMac() {
@@ -133,6 +192,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateMacEmvPinChange.html
    */
   public toGenerateMacEmvPinChange() {
@@ -143,6 +205,9 @@ export class PaymentCryptography extends PolicyStatement {
    * Grants permission to generate pin-related data such as PIN, PIN Verification Value (PVV), PIN Block and PIN Offset during new card issuance or card re-issuance
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GeneratePinData.html
    */
@@ -166,9 +231,37 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the Certificate Signing Request for a public key from a key of class PUBLIC_KEY
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetCertificateSigningRequest.html
+   */
+  public toGetCertificateSigningRequest() {
+    return this.to('GetCertificateSigningRequest');
+  }
+
+  /**
+   * Grants permission to retrieve the default key replication regions configured at the account level
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html
+   */
+  public toGetDefaultKeyReplicationRegions() {
+    return this.to('GetDefaultKeyReplicationRegions');
+  }
+
+  /**
    * Grants permission to return the detailed information about the specified key
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html
    */
@@ -203,6 +296,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html
    */
   public toGetPublicKeyCertificate() {
@@ -217,6 +313,9 @@ export class PaymentCryptography extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifImportKeyMaterial()
+   * - .ifCertificateAuthorityPublicKeyIdentifier()
+   * - .ifWrappingKeyIdentifier()
    *
    * Dependent actions:
    * - payment-cryptography:TagResource
@@ -265,6 +364,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_ReEncryptData.html
    */
   public toReEncryptData() {
@@ -272,9 +374,26 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove replication regions from an existing AWS Payment Cryptography key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RemoveKeyReplicationRegions.html
+   */
+  public toRemoveKeyReplicationRegions() {
+    return this.to('RemoveKeyReplicationRegions');
+  }
+
+  /**
    * Grants permission to cancel a scheduled key deletion if at any point during the waiting period a Key needs to be revived
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RestoreKey.html
    */
@@ -287,6 +406,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html
    */
   public toStartKeyUsage() {
@@ -297,6 +419,9 @@ export class PaymentCryptography extends PolicyStatement {
    * Grants permission to disable an enabled Key
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html
    */
@@ -320,9 +445,26 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to translate wrapping key type for a wrapped key
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_TranslateKeyMaterial.html
+   */
+  public toTranslateKeyMaterial() {
+    return this.to('TranslateKeyMaterial');
+  }
+
+  /**
    * Grants permission to translate encrypted PIN block from and to ISO 9564 formats 0,1,3,4
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_TranslatePinData.html
    */
@@ -364,6 +506,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyAuthRequestCryptogram.html
    */
   public toVerifyAuthRequestCryptogram() {
@@ -374,6 +519,9 @@ export class PaymentCryptography extends PolicyStatement {
    * Grants permission to verify card-related validation data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) and Card Security Codes (CSC)
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyCardValidationData.html
    */
@@ -386,6 +534,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyMac.html
    */
   public toVerifyMac() {
@@ -397,6 +548,9 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyPinData.html
    */
   public toVerifyPinData() {
@@ -405,11 +559,14 @@ export class PaymentCryptography extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AddKeyReplicationRegions',
       'CreateAlias',
       'CreateKey',
       'DecryptData',
       'DeleteAlias',
       'DeleteKey',
+      'DisableDefaultKeyReplicationRegions',
+      'EnableDefaultKeyReplicationRegions',
       'EncryptData',
       'ExportKey',
       'GenerateCardValidationData',
@@ -418,9 +575,11 @@ export class PaymentCryptography extends PolicyStatement {
       'GeneratePinData',
       'ImportKey',
       'ReEncryptData',
+      'RemoveKeyReplicationRegions',
       'RestoreKey',
       'StartKeyUsage',
       'StopKeyUsage',
+      'TranslateKeyMaterial',
       'TranslatePinData',
       'UpdateAlias',
       'VerifyAuthRequestCryptogram',
@@ -430,6 +589,8 @@ export class PaymentCryptography extends PolicyStatement {
     ],
     Read: [
       'GetAlias',
+      'GetCertificateSigningRequest',
+      'GetDefaultKeyReplicationRegions',
       'GetKey',
       'GetParametersForExport',
       'GetParametersForImport',
@@ -538,6 +699,10 @@ export class PaymentCryptography extends PolicyStatement {
   /**
    * Filters access by the CertificateAuthorityPublicKeyIdentifier specified in the request or the ImportKey, and ExportKey operations
    *
+   * Applies to actions:
+   * - .toExportKey()
+   * - .toImportKey()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -547,6 +712,9 @@ export class PaymentCryptography extends PolicyStatement {
 
   /**
    * Filters access by the type of key material being imported [RootCertificatePublicKey, TrustedCertificatePublicKey, Tr34KeyBlock, Tr31KeyBlock] for the ImportKey operation
+   *
+   * Applies to actions:
+   * - .toImportKey()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -558,6 +726,9 @@ export class PaymentCryptography extends PolicyStatement {
   /**
    * Filters access by KeyAlgorithm specified in the request for the CreateKey operation
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -567,6 +738,9 @@ export class PaymentCryptography extends PolicyStatement {
 
   /**
    * Filters access by KeyClass specified in the request for the CreateKey operation
+   *
+   * Applies to actions:
+   * - .toCreateKey()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -578,6 +752,9 @@ export class PaymentCryptography extends PolicyStatement {
   /**
    * Filters access by KeyClass specified in the request or associated with a key for the CreateKey operation
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -587,6 +764,31 @@ export class PaymentCryptography extends PolicyStatement {
 
   /**
    * Filters access by aliases in the request for the specified operation
+   *
+   * Applies to actions:
+   * - .toAddKeyReplicationRegions()
+   * - .toDecryptData()
+   * - .toDeleteKey()
+   * - .toEncryptData()
+   * - .toExportKey()
+   * - .toGenerateCardValidationData()
+   * - .toGenerateMac()
+   * - .toGenerateMacEmvPinChange()
+   * - .toGeneratePinData()
+   * - .toGetCertificateSigningRequest()
+   * - .toGetKey()
+   * - .toGetPublicKeyCertificate()
+   * - .toReEncryptData()
+   * - .toRemoveKeyReplicationRegions()
+   * - .toRestoreKey()
+   * - .toStartKeyUsage()
+   * - .toStopKeyUsage()
+   * - .toTranslateKeyMaterial()
+   * - .toTranslatePinData()
+   * - .toVerifyAuthRequestCryptogram()
+   * - .toVerifyCardValidationData()
+   * - .toVerifyMac()
+   * - .toVerifyPinData()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -611,6 +813,10 @@ export class PaymentCryptography extends PolicyStatement {
 
   /**
    * Filters access by the WrappingKeyIdentifier specified in the request for the ImportKey, and ExportKey operations
+   *
+   * Applies to actions:
+   * - .toExportKey()
+   * - .toImportKey()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

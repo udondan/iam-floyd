@@ -3,6 +3,7 @@ odb:CreateCloudAutonomousVmCluster;Write
 odb:CreateCloudExadataInfrastructure;Write
 odb:CreateCloudVmCluster;Write
 odb:CreateDbNode;Write
+odb:CreateGrantShare;Write
 odb:CreateOdbNetwork;Write
 odb:CreateOdbPeeringConnection;Write
 odb:CreateOutboundIntegration;Write
@@ -10,6 +11,7 @@ odb:DeleteCloudAutonomousVmCluster;Write
 odb:DeleteCloudExadataInfrastructure;Write
 odb:DeleteCloudVmCluster;Write
 odb:DeleteDbNode;Write
+odb:DeleteGrantShare;Write
 odb:DeleteOdbNetwork;Write
 odb:DeleteOdbPeeringConnection;Write
 odb:DeleteResourcePolicy;Write
@@ -43,6 +45,7 @@ odb:StopDbNode;Write
 odb:TagResource;Tagging
 odb:UntagResource;Tagging
 odb:UpdateCloudExadataInfrastructure;Write
+odb:UpdateGrantShare;Write
 odb:UpdateOdbNetwork;Write
 odb:UpdateOdbPeeringConnection;Write
 odb:UpdateOutboundIntegration;Write

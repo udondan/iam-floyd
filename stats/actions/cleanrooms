@@ -76,6 +76,7 @@ cleanrooms:TagResource;Tagging
 cleanrooms:UntagResource;Tagging
 cleanrooms:UpdateAnalysisTemplate;Write
 cleanrooms:UpdateCollaboration;Write
+cleanrooms:UpdateCollaborationChangeRequest;Write
 cleanrooms:UpdateConfiguredAudienceModelAssociation;Write
 cleanrooms:UpdateConfiguredTable;Write
 cleanrooms:UpdateConfiguredTableAllowedColumns;Write

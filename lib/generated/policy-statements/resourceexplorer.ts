@@ -73,8 +73,6 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to create resource explorer setup
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_CreateResourceExplorerSetup.html
    */
   public toCreateResourceExplorerSetup() {
     return this.to('CreateResourceExplorerSetup');
@@ -84,8 +82,6 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to create resource explorer streaming access
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/resource-explorer/latest/userguide/API_CreateStreamingAccessForService.html
    */
   public toCreateStreamingAccessForService() {
     return this.to('CreateStreamingAccessForService');
@@ -121,6 +117,8 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to delete resource explorer setup
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_DeleteResourceExplorerSetup.html
    */
   public toDeleteResourceExplorerSetup() {
     return this.to('DeleteResourceExplorerSetup');
@@ -216,6 +214,8 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to get resource explorer setup
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetResourceExplorerSetup.html
    */
   public toGetResourceExplorerSetup() {
     return this.to('GetResourceExplorerSetup');
@@ -236,6 +236,8 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to get service index
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetServiceIndex.html
    */
   public toGetServiceIndex() {
     return this.to('GetServiceIndex');
@@ -245,6 +247,8 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to get service view
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetServiceView.html
    */
   public toGetServiceView() {
     return this.to('GetServiceView');
@@ -298,6 +302,8 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to list service indexes in all AWS Regions
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListServiceIndexes.html
    */
   public toListServiceIndexes() {
     return this.to('ListServiceIndexes');
@@ -307,6 +313,8 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to list service views in all AWS Regions
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListServiceViews.html
    */
   public toListServiceViews() {
     return this.to('ListServiceViews');
@@ -316,6 +324,8 @@ export class ResourceExplorer2 extends PolicyStatement {
    * Grants permission to list streaming access for services
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListStreamingAccessForServices.html
    */
   public toListStreamingAccessForServices() {
     return this.to('ListStreamingAccessForServices');

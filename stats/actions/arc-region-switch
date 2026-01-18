@@ -13,6 +13,7 @@ arc-region-switch:ListPlanExecutions;List
 arc-region-switch:ListPlans;List
 arc-region-switch:ListPlansInRegion;List
 arc-region-switch:ListRoute53HealthChecks;List
+arc-region-switch:ListRoute53HealthChecksInRegion;List
 arc-region-switch:ListTagsForResource;Read
 arc-region-switch:PutResourcePolicy;Permissions management
 arc-region-switch:StartPlanExecution;Write

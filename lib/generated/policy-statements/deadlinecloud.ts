@@ -193,7 +193,12 @@ export class Deadline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
+   * - deadline:TagResource
    * - identitystore:ListGroupMembershipsForMember
    *
    * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_CreateBudget.html
@@ -1840,6 +1845,7 @@ export class Deadline extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifFarmMembershipLevels()
    */
   public onBudget(farmId: string, budgetId: string, account?: string, region?: string, partition?: string) {
@@ -1923,21 +1929,6 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type metered-product to the statement
-   *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/cmf-ubl.html
-   *
-   * @param licenseEndpointId - Identifier for the licenseEndpointId.
-   * @param productId - Identifier for the productId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onMeteredProduct(licenseEndpointId: string, productId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:deadline:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:license-endpoint/${ licenseEndpointId }/metered-product/${ productId }`);
-  }
-
-  /**
    * Adds a resource of type monitor to the statement
    *
    * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/working-with-deadline-monitor.html
@@ -2001,6 +1992,7 @@ export class Deadline extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateBudget()
    * - .toCreateFarm()
    * - .toCreateFleet()
    * - .toCreateLicenseEndpoint()
@@ -2023,6 +2015,7 @@ export class Deadline extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
+   * - budget
    * - farm
    * - fleet
    * - license-endpoint
@@ -2044,6 +2037,7 @@ export class Deadline extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateBudget()
    * - .toCreateFarm()
    * - .toCreateFleet()
    * - .toCreateLicenseEndpoint()

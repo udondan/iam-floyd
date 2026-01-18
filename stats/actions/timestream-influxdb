@@ -11,6 +11,8 @@ timestream-influxdb:ListDbInstances;List
 timestream-influxdb:ListDbInstancesForCluster;Read
 timestream-influxdb:ListDbParameterGroups;List
 timestream-influxdb:ListTagsForResource;Read
+timestream-influxdb:RebootDbCluster;Write
+timestream-influxdb:RebootDbInstance;Write
 timestream-influxdb:TagResource;Tagging
 timestream-influxdb:UntagResource;Tagging
 timestream-influxdb:UpdateDbCluster;Write

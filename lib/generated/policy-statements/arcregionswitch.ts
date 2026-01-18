@@ -188,6 +188,17 @@ export class ArcRegionSwitch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list Route 53 health checks in a specific AWS Region using the Region switch Regional data plane
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListRoute53HealthChecksInRegion.html
+   */
+  public toListRoute53HealthChecksInRegion() {
+    return this.to('ListRoute53HealthChecksInRegion');
+  }
+
+  /**
    * Grants permission to list tags for a resource
    *
    * Access Level: Read
@@ -315,7 +326,8 @@ export class ArcRegionSwitch extends PolicyStatement {
       'ListPlanExecutions',
       'ListPlans',
       'ListPlansInRegion',
-      'ListRoute53HealthChecks'
+      'ListRoute53HealthChecks',
+      'ListRoute53HealthChecksInRegion'
     ],
     Tagging: [
       'TagResource',

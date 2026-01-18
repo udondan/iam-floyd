@@ -60,6 +60,21 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a data flow endpoint group using the V2 operation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroupV2.html
+   */
+  public toCreateDataflowEndpointGroupV2() {
+    return this.to('CreateDataflowEndpointGroupV2');
+  }
+
+  /**
    * Grants permission to create an ephemeris item
    *
    * Access Level: Write
@@ -424,6 +439,7 @@ export class Groundstation extends PolicyStatement {
       'CancelContact',
       'CreateConfig',
       'CreateDataflowEndpointGroup',
+      'CreateDataflowEndpointGroupV2',
       'CreateEphemeris',
       'CreateMissionProfile',
       'DeleteConfig',
@@ -615,6 +631,7 @@ export class Groundstation extends PolicyStatement {
    * Applies to actions:
    * - .toCreateConfig()
    * - .toCreateDataflowEndpointGroup()
+   * - .toCreateDataflowEndpointGroupV2()
    * - .toCreateEphemeris()
    * - .toCreateMissionProfile()
    * - .toReserveContact()
@@ -656,6 +673,7 @@ export class Groundstation extends PolicyStatement {
    * Applies to actions:
    * - .toCreateConfig()
    * - .toCreateDataflowEndpointGroup()
+   * - .toCreateDataflowEndpointGroupV2()
    * - .toCreateEphemeris()
    * - .toCreateMissionProfile()
    * - .toReserveContact()

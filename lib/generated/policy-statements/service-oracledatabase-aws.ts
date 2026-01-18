@@ -84,6 +84,15 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an ODB Grant Share
+   *
+   * Access Level: Write
+   */
+  public toCreateGrantShare() {
+    return this.to('CreateGrantShare');
+  }
+
+  /**
    * Grants permission to create an ODB network
    *
    * Access Level: Write
@@ -162,6 +171,15 @@ export class Odb extends PolicyStatement {
    */
   public toDeleteDbNode() {
     return this.to('DeleteDbNode');
+  }
+
+  /**
+   * Grants permission to delete an ODB Grant Share
+   *
+   * Access Level: Write
+   */
+  public toDeleteGrantShare() {
+    return this.to('DeleteGrantShare');
   }
 
   /**
@@ -534,6 +552,15 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an ODB Grant Share
+   *
+   * Access Level: Write
+   */
+  public toUpdateGrantShare() {
+    return this.to('UpdateGrantShare');
+  }
+
+  /**
    * Grants permission to update properties of a specified ODB network
    *
    * Access Level: Write
@@ -571,6 +598,7 @@ export class Odb extends PolicyStatement {
       'CreateCloudExadataInfrastructure',
       'CreateCloudVmCluster',
       'CreateDbNode',
+      'CreateGrantShare',
       'CreateOdbNetwork',
       'CreateOdbPeeringConnection',
       'CreateOutboundIntegration',
@@ -578,6 +606,7 @@ export class Odb extends PolicyStatement {
       'DeleteCloudExadataInfrastructure',
       'DeleteCloudVmCluster',
       'DeleteDbNode',
+      'DeleteGrantShare',
       'DeleteOdbNetwork',
       'DeleteOdbPeeringConnection',
       'DeleteResourcePolicy',
@@ -587,6 +616,7 @@ export class Odb extends PolicyStatement {
       'StartDbNode',
       'StopDbNode',
       'UpdateCloudExadataInfrastructure',
+      'UpdateGrantShare',
       'UpdateOdbNetwork',
       'UpdateOdbPeeringConnection',
       'UpdateOutboundIntegration'

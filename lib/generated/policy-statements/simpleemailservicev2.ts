@@ -117,6 +117,8 @@ export class SesV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateCustomVerificationEmailTemplate.html
    */
@@ -194,6 +196,8 @@ export class SesV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateEmailTemplate.html
    */
@@ -348,6 +352,7 @@ export class SesV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteCustomVerificationEmailTemplate.html
    */
@@ -407,6 +412,7 @@ export class SesV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteEmailTemplate.html
    */
@@ -567,6 +573,7 @@ export class SesV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetCustomVerificationEmailTemplate.html
    */
@@ -677,6 +684,23 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get insights about email address
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetEmailAddressInsights.html
+   */
+  public toGetEmailAddressInsights() {
+    return this.to('GetEmailAddressInsights');
+  }
+
+  /**
    * Grants permission to get information about a specific identity
    *
    * Access Level: Read
@@ -713,6 +737,7 @@ export class SesV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetEmailTemplate.html
    */
@@ -1574,6 +1599,7 @@ export class SesV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateCustomVerificationEmailTemplate.html
    */
@@ -1603,6 +1629,7 @@ export class SesV2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateEmailTemplate.html
    */
@@ -1657,6 +1684,7 @@ export class SesV2 extends PolicyStatement {
       'GetDeliverabilityTestReport',
       'GetDomainDeliverabilityCampaign',
       'GetDomainStatisticsReport',
+      'GetEmailAddressInsights',
       'GetEmailIdentity',
       'GetEmailIdentityPolicies',
       'GetEmailTemplate',
@@ -1819,6 +1847,9 @@ export class SesV2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCustomVerificationEmailTemplate(templateName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custom-verification-email-template/${ templateName }`);
@@ -1912,6 +1943,9 @@ export class SesV2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ses:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:template/${ templateName }`);
@@ -1974,9 +2008,11 @@ export class SesV2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateConfigurationSet()
    * - .toCreateContactList()
+   * - .toCreateCustomVerificationEmailTemplate()
    * - .toCreateDedicatedIpPool()
    * - .toCreateDeliverabilityTestReport()
    * - .toCreateEmailIdentity()
+   * - .toCreateEmailTemplate()
    * - .toCreateMultiRegionEndpoint()
    * - .toCreateTenant()
    * - .toCreateTenantResourceAssociation()
@@ -2004,21 +2040,25 @@ export class SesV2 extends PolicyStatement {
    * - .toDeleteConfigurationSetEventDestination()
    * - .toDeleteContact()
    * - .toDeleteContactList()
+   * - .toDeleteCustomVerificationEmailTemplate()
    * - .toDeleteDedicatedIpPool()
    * - .toDeleteEmailIdentity()
    * - .toDeleteEmailIdentityPolicy()
+   * - .toDeleteEmailTemplate()
    * - .toDeleteMultiRegionEndpoint()
    * - .toDeleteTenant()
    * - .toDeleteTenantResourceAssociation()
    * - .toGetConfigurationSet()
    * - .toGetConfigurationSetEventDestinations()
    * - .toGetContact()
+   * - .toGetCustomVerificationEmailTemplate()
    * - .toGetDedicatedIpPool()
    * - .toGetDedicatedIps()
    * - .toGetDeliverabilityTestReport()
    * - .toGetDomainStatisticsReport()
    * - .toGetEmailIdentity()
    * - .toGetEmailIdentityPolicies()
+   * - .toGetEmailTemplate()
    * - .toGetMultiRegionEndpoint()
    * - .toGetReputationEntity()
    * - .toGetTenant()
@@ -2043,16 +2083,20 @@ export class SesV2 extends PolicyStatement {
    * - .toUpdateConfigurationSetEventDestination()
    * - .toUpdateContact()
    * - .toUpdateContactList()
+   * - .toUpdateCustomVerificationEmailTemplate()
    * - .toUpdateEmailIdentityPolicy()
+   * - .toUpdateEmailTemplate()
    * - .toUpdateReputationEntityCustomerManagedStatus()
    * - .toUpdateReputationEntityPolicy()
    *
    * Applies to resource types:
    * - configuration-set
    * - contact-list
+   * - custom-verification-email-template
    * - dedicated-ip-pool
    * - deliverability-test-report
    * - identity
+   * - template
    * - mailmanager-archive
    * - tenant
    *
@@ -2072,9 +2116,11 @@ export class SesV2 extends PolicyStatement {
    * Applies to actions:
    * - .toCreateConfigurationSet()
    * - .toCreateContactList()
+   * - .toCreateCustomVerificationEmailTemplate()
    * - .toCreateDedicatedIpPool()
    * - .toCreateDeliverabilityTestReport()
    * - .toCreateEmailIdentity()
+   * - .toCreateEmailTemplate()
    * - .toCreateMultiRegionEndpoint()
    * - .toCreateTenant()
    * - .toCreateTenantResourceAssociation()
@@ -2138,6 +2184,7 @@ export class SesV2 extends PolicyStatement {
    * - .toGetDeliverabilityTestReport()
    * - .toGetDomainDeliverabilityCampaign()
    * - .toGetDomainStatisticsReport()
+   * - .toGetEmailAddressInsights()
    * - .toGetEmailIdentity()
    * - .toGetEmailIdentityPolicies()
    * - .toGetEmailTemplate()

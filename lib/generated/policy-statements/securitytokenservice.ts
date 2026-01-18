@@ -1115,7 +1115,7 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Filters access by the duration in seconds when getting a bearer token
+   * Filters access by the duration in seconds when getting a bearer token or a JSON Web Token (JWT) from the GetWebIdentityToken API
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_durationseconds
    *
@@ -1124,10 +1124,10 @@ export class Sts extends PolicyStatement {
    * - .toGetWebIdentityToken()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifDurationSeconds(value: string | string[], operator?: Operator | string) {
-    return this.if(`DurationSeconds`, value, operator ?? 'StringLike');
+  public ifDurationSeconds(value: number | number[], operator?: Operator | string) {
+    return this.if(`DurationSeconds`, value, operator ?? 'NumericEquals');
   }
 
   /**

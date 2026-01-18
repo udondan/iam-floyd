@@ -27,7 +27,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifCatalog()
    * - .ifChannelHandshakeType()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AcceptChannelHandshake.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_AcceptChannelHandshake.html
    */
   public toAcceptChannelHandshake() {
     return this.to('AcceptChannelHandshake');
@@ -41,7 +41,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AcceptConnectionInvitation.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_AcceptConnectionInvitation.html
    */
   public toAcceptConnectionInvitation() {
     return this.to('AcceptConnectionInvitation');
@@ -69,8 +69,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AmendBenefitApplication.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_AmendBenefitApplication.html
    */
   public toAmendBenefitApplication() {
     return this.to('AmendBenefitApplication');
@@ -99,7 +101,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssociateAwsTrainingCertificationEmailDomain.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_AssociateAwsTrainingCertificationEmailDomain.html
    */
   public toAssociateAwsTrainingCertificationEmailDomain() {
     return this.to('AssociateAwsTrainingCertificationEmailDomain');
@@ -113,8 +115,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_AssociateBenefitApplicationResource.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_AssociateBenefitApplicationResource.html
    */
   public toAssociateBenefitApplicationResource() {
     return this.to('AssociateBenefitApplicationResource');
@@ -143,8 +147,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelBenefitApplication.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_CancelBenefitApplication.html
    */
   public toCancelBenefitApplication() {
     return this.to('CancelBenefitApplication');
@@ -160,7 +166,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifCatalog()
    * - .ifChannelHandshakeType()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelChannelHandshake.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CancelChannelHandshake.html
    */
   public toCancelChannelHandshake() {
     return this.to('CancelChannelHandshake');
@@ -174,7 +180,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelConnection.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelConnection.html
    */
   public toCancelConnection() {
     return this.to('CancelConnection');
@@ -188,7 +194,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelConnectionInvitation.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelConnectionInvitation.html
    */
   public toCancelConnectionInvitation() {
     return this.to('CancelConnectionInvitation');
@@ -203,7 +209,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CancelProfileUpdateTask.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CancelProfileUpdateTask.html
    */
   public toCancelProfileUpdateTask() {
     return this.to('CancelProfileUpdateTask');
@@ -220,8 +226,9 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifCatalog()
    * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateBenefitApplication.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_CreateBenefitApplication.html
    */
   public toCreateBenefitApplication() {
     return this.to('CreateBenefitApplication');
@@ -248,7 +255,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifCatalog()
    * - .ifChannelHandshakeType()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateChannelHandshake.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateChannelHandshake.html
    */
   public toCreateChannelHandshake() {
     return this.to('CreateChannelHandshake');
@@ -280,7 +287,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateConnectionInvitation.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CreateConnectionInvitation.html
    */
   public toCreateConnectionInvitation() {
     return this.to('CreateConnectionInvitation');
@@ -355,7 +362,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreatePartner.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_CreatePartner.html
    */
   public toCreatePartner() {
     return this.to('CreatePartner');
@@ -372,7 +379,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateProgramManagementAccount.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateProgramManagementAccount.html
    */
   public toCreateProgramManagementAccount() {
     return this.to('CreateProgramManagementAccount');
@@ -389,7 +396,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_CreateRelationship.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_CreateRelationship.html
    */
   public toCreateRelationship() {
     return this.to('CreateRelationship');
@@ -434,7 +441,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteProgramManagementAccount.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_DeleteProgramManagementAccount.html
    */
   public toDeleteProgramManagementAccount() {
     return this.to('DeleteProgramManagementAccount');
@@ -449,7 +456,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DeleteRelationship.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_DeleteRelationship.html
    */
   public toDeleteRelationship() {
     return this.to('DeleteRelationship');
@@ -478,7 +485,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DisassociateAwsTrainingCertificationEmailDomain.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_DisassociateAwsTrainingCertificationEmailDomain.html
    */
   public toDisassociateAwsTrainingCertificationEmailDomain() {
     return this.to('DisassociateAwsTrainingCertificationEmailDomain');
@@ -492,8 +499,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_DisassociateBenefitApplicationResource.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_DisassociateBenefitApplicationResource.html
    */
   public toDisassociateBenefitApplicationResource() {
     return this.to('DisassociateBenefitApplicationResource');
@@ -532,7 +541,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetAllianceLeadContact.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetAllianceLeadContact.html
    */
   public toGetAllianceLeadContact() {
     return this.to('GetAllianceLeadContact');
@@ -560,8 +569,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefit.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefit.html
    */
   public toGetBenefit() {
     return this.to('GetBenefit');
@@ -575,8 +586,9 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefitAllocation.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefitAllocation.html
    */
   public toGetBenefitAllocation() {
     return this.to('GetBenefitAllocation');
@@ -590,8 +602,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetBenefitApplication.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_GetBenefitApplication.html
    */
   public toGetBenefitApplication() {
     return this.to('GetBenefitApplication');
@@ -623,7 +637,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnection.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnection.html
    */
   public toGetConnection() {
     return this.to('GetConnection');
@@ -637,7 +651,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnectionInvitation.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnectionInvitation.html
    */
   public toGetConnectionInvitation() {
     return this.to('GetConnectionInvitation');
@@ -651,7 +665,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetConnectionPreferences.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetConnectionPreferences.html
    */
   public toGetConnectionPreferences() {
     return this.to('GetConnectionPreferences');
@@ -708,7 +722,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetPartner.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetPartner.html
    */
   public toGetPartner() {
     return this.to('GetPartner');
@@ -744,7 +758,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetProfileUpdateTask.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetProfileUpdateTask.html
    */
   public toGetProfileUpdateTask() {
     return this.to('GetProfileUpdateTask');
@@ -759,7 +773,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetProfileVisibility.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetProfileVisibility.html
    */
   public toGetProfileVisibility() {
     return this.to('GetProfileVisibility');
@@ -786,7 +800,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetRelationship.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_GetRelationship.html
    */
   public toGetRelationship() {
     return this.to('GetRelationship');
@@ -843,7 +857,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifCatalog()
    * - .ifVerificationType()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetVerification.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_GetVerification.html
    */
   public toGetVerification() {
     return this.to('GetVerification');
@@ -858,7 +872,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifCatalog()
    * - .ifFulfillmentTypes()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefitAllocations.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefitAllocations.html
    */
   public toListBenefitAllocations() {
     return this.to('ListBenefitAllocations');
@@ -874,7 +888,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifFulfillmentTypes()
    * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefitApplications.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefitApplications.html
    */
   public toListBenefitApplications() {
     return this.to('ListBenefitApplications');
@@ -890,7 +904,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifFulfillmentTypes()
    * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListBenefits.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_ListBenefits.html
    */
   public toListBenefits() {
     return this.to('ListBenefits');
@@ -914,7 +928,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifCatalog()
    * - .ifChannelHandshakeType()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListChannelHandshakes.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListChannelHandshakes.html
    */
   public toListChannelHandshakes() {
     return this.to('ListChannelHandshakes');
@@ -937,7 +951,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListConnectionInvitations.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListConnectionInvitations.html
    */
   public toListConnectionInvitations() {
     return this.to('ListConnectionInvitations');
@@ -951,7 +965,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListConnections.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListConnections.html
    */
   public toListConnections() {
     return this.to('ListConnections');
@@ -1086,7 +1100,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListPartners.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_ListPartners.html
    */
   public toListPartners() {
     return this.to('ListPartners');
@@ -1100,7 +1114,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListProgramManagementAccounts.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListProgramManagementAccounts.html
    */
   public toListProgramManagementAccounts() {
     return this.to('ListProgramManagementAccounts');
@@ -1114,7 +1128,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListRelationships.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_ListRelationships.html
    */
   public toListRelationships() {
     return this.to('ListRelationships');
@@ -1171,6 +1185,8 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListTagsForResource.html
    */
@@ -1187,7 +1203,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutAllianceLeadContact.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_PutAllianceLeadContact.html
    */
   public toPutAllianceLeadContact() {
     return this.to('PutAllianceLeadContact');
@@ -1211,7 +1227,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutProfileVisibility.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_PutProfileVisibility.html
    */
   public toPutProfileVisibility() {
     return this.to('PutProfileVisibility');
@@ -1236,8 +1252,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RecallBenefitApplication.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_RecallBenefitApplication.html
    */
   public toRecallBenefitApplication() {
     return this.to('RecallBenefitApplication');
@@ -1252,7 +1270,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifCatalog()
    * - .ifChannelHandshakeType()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectChannelHandshake.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_RejectChannelHandshake.html
    */
   public toRejectChannelHandshake() {
     return this.to('RejectChannelHandshake');
@@ -1266,7 +1284,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_RejectConnectionInvitation.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_RejectConnectionInvitation.html
    */
   public toRejectConnectionInvitation() {
     return this.to('RejectConnectionInvitation');
@@ -1303,7 +1321,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SendEmailVerificationCode.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_SendEmailVerificationCode.html
    */
   public toSendEmailVerificationCode() {
     return this.to('SendEmailVerificationCode');
@@ -1393,7 +1411,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartProfileUpdateTask.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartProfileUpdateTask.html
    */
   public toStartProfileUpdateTask() {
     return this.to('StartProfileUpdateTask');
@@ -1422,7 +1440,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifCatalog()
    * - .ifVerificationType()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartVerification.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_StartVerification.html
    */
   public toStartVerification() {
     return this.to('StartVerification');
@@ -1450,8 +1468,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_SubmitBenefitApplication.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_SubmitBenefitApplication.html
    */
   public toSubmitBenefitApplication() {
     return this.to('SubmitBenefitApplication');
@@ -1481,6 +1501,8 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_TagResource.html
    */
@@ -1497,6 +1519,8 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UntagResource.html
    */
@@ -1512,8 +1536,10 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifCatalog()
+   * - .ifFulfillmentTypes()
+   * - .ifPrograms()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateBenefitApplication.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_benefits_UpdateBenefitApplication.html
    */
   public toUpdateBenefitApplication() {
     return this.to('UpdateBenefitApplication');
@@ -1527,7 +1553,7 @@ export class Partnercentral extends PolicyStatement {
    * Possible conditions:
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateConnectionPreferences.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_account_UpdateConnectionPreferences.html
    */
   public toUpdateConnectionPreferences() {
     return this.to('UpdateConnectionPreferences');
@@ -1570,7 +1596,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateProgramManagementAccount.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_UpdateProgramManagementAccount.html
    */
   public toUpdateProgramManagementAccount() {
     return this.to('UpdateProgramManagementAccount');
@@ -1585,7 +1611,7 @@ export class Partnercentral extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifCatalog()
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_UpdateRelationship.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_channel_UpdateRelationship.html
    */
   public toUpdateRelationship() {
     return this.to('UpdateRelationship');
@@ -1841,7 +1867,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Adds a resource of type Partner to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-partner-account.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-partner-registration.html
    *
    * @param catalog - Identifier for the catalog.
    * @param identifier - Identifier for the identifier.
@@ -1915,7 +1941,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Adds a resource of type Benefit to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefits.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/using-the-benefits-api.html
    *
    * @param catalog - Identifier for the catalog.
    * @param identifier - Identifier for the identifier.
@@ -1929,7 +1955,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Adds a resource of type BenefitAllocation to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefits.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefit-allocations.html
    *
    * @param catalog - Identifier for the catalog.
    * @param identifier - Identifier for the identifier.
@@ -1944,7 +1970,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Adds a resource of type BenefitApplication to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefits.html
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-benefit-applications.html
    *
    * @param catalog - Identifier for the catalog.
    * @param identifier - Identifier for the identifier.
@@ -2017,7 +2043,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Adds a resource of type Dashboard to the statement
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-analytics.html
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/partner-analytics.html
    *
    * @param catalog - Identifier for the catalog.
    * @param tableId - Identifier for the tableId.
@@ -2146,7 +2172,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Filters access by a specific Catalog
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central
    *
    * Applies to actions:
    * - .toAcceptChannelHandshake()
@@ -2257,7 +2283,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Filters access by channel handshake types
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central
    *
    * Applies to actions:
    * - .toAcceptChannelHandshake()
@@ -2276,13 +2302,26 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Filters access by benefit fulfillment types
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central
    *
    * Applies to actions:
+   * - .toAmendBenefitApplication()
+   * - .toAssociateBenefitApplicationResource()
+   * - .toCancelBenefitApplication()
    * - .toCreateBenefitApplication()
+   * - .toDisassociateBenefitApplicationResource()
+   * - .toGetBenefit()
+   * - .toGetBenefitAllocation()
+   * - .toGetBenefitApplication()
    * - .toListBenefitAllocations()
    * - .toListBenefitApplications()
    * - .toListBenefits()
+   * - .toListTagsForResource()
+   * - .toRecallBenefitApplication()
+   * - .toSubmitBenefitApplication()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateBenefitApplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2294,11 +2333,24 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Filters access by program
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central
    *
    * Applies to actions:
+   * - .toAmendBenefitApplication()
+   * - .toAssociateBenefitApplicationResource()
+   * - .toCancelBenefitApplication()
+   * - .toCreateBenefitApplication()
+   * - .toDisassociateBenefitApplicationResource()
+   * - .toGetBenefit()
+   * - .toGetBenefitApplication()
    * - .toListBenefitApplications()
    * - .toListBenefits()
+   * - .toListTagsForResource()
+   * - .toRecallBenefitApplication()
+   * - .toSubmitBenefitApplication()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateBenefitApplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2310,7 +2362,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Filters access by entity types for Opportunity association
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central
    *
    * Applies to actions:
    * - .toAssociateOpportunity()
@@ -2326,7 +2378,7 @@ export class Partnercentral extends PolicyStatement {
   /**
    * Filters access by the type of verification being performed
    *
-   * https://docs.aws.amazon.com/partner-central/latest/APIReference/access-control.html#managing-permissions-with-condition-keys
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-aws-partner-central.html#condition-keys-for-aws-partner-central
    *
    * Applies to actions:
    * - .toGetVerification()

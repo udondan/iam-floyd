@@ -140,6 +140,17 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list report versions in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListReportVersions.html
+   */
+  public toListReportVersions() {
+    return this.to('ListReportVersions');
+  }
+
+  /**
    * Grants permission to list reports in your account
    *
    * Access Level: List
@@ -191,6 +202,7 @@ export class Artifact extends PolicyStatement {
     List: [
       'ListAgreements',
       'ListCustomerAgreements',
+      'ListReportVersions',
       'ListReports'
     ]
   };
