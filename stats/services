@@ -121,7 +121,6 @@ datazone
 dax
 dbqms
 deadline
-deepracer
 detective
 devicefarm
 devops-guru
@@ -142,6 +141,7 @@ ec2messages
 ecr
 ecr-public
 ecs
+ecs-mcp
 eks
 eks-auth
 eks-mcp
