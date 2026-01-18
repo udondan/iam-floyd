@@ -19,249 +19,299 @@ export class TransformCustom extends PolicyStatement {
   }
 
   /**
-   * Grants permission to invoke CompleteTransformationPackageUpload on AWS Transform Custom
+   * Grants permission to invoke CompleteTransformationPackageUpload on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toCompleteTransformationPackageUpload() {
     return this.to('CompleteTransformationPackageUpload');
   }
 
   /**
-   * Grants permission to invoke ConverseStream on AWS Transform Custom
+   * Grants permission to invoke ConverseStream on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toConverseStream() {
     return this.to('ConverseStream');
   }
 
   /**
-   * Grants permission to invoke CreateCampaign on AWS Transform Custom
+   * Grants permission to invoke CreateCampaign on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toCreateCampaign() {
     return this.to('CreateCampaign');
   }
 
   /**
-   * Grants permission to invoke CompleteTransformationPackageUrl on AWS Transform Custom
+   * Grants permission to invoke CreateTransformationPackageUrl on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toCreateTransformationPackageUrl() {
     return this.to('CreateTransformationPackageUrl');
   }
 
   /**
-   * Grants permission to invoke DeleteCampaign on AWS Transform Custom
+   * Grants permission to invoke DeleteCampaign on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toDeleteCampaign() {
     return this.to('DeleteCampaign');
   }
 
   /**
-   * Grants permission to invoke DeleteKnowledgeItem on AWS Transform Custom
+   * Grants permission to invoke DeleteKnowledgeItem on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toDeleteKnowledgeItem() {
     return this.to('DeleteKnowledgeItem');
   }
 
   /**
-   * Grants permission to invoke DeleteTransformationPackage on AWS Transform Custom
+   * Grants permission to invoke DeleteTransformationPackage on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toDeleteTransformationPackage() {
     return this.to('DeleteTransformationPackage');
   }
 
   /**
-   * Grants permission to invoke ExecuteTransformation on AWS Transform Custom
+   * Grants permission to invoke ExecuteTransformation on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toExecuteTransformation() {
     return this.to('ExecuteTransformation');
   }
 
   /**
-   * Grants permission to invoke GetCampaign on AWS Transform Custom
+   * Grants permission to invoke GetCampaign on AWS Transform custom
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toGetCampaign() {
     return this.to('GetCampaign');
   }
 
   /**
-   * Grants permission to invoke GetKnowledgeItem on AWS Transform Custom
+   * Grants permission to invoke GetKnowledgeItem on AWS Transform custom
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toGetKnowledgeItem() {
     return this.to('GetKnowledgeItem');
   }
 
   /**
-   * Grants permission to invoke GetTransformationPackageUrl on AWS Transform Custom
+   * Grants permission to invoke GetTransformationPackageUrl on AWS Transform custom
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toGetTransformationPackageUrl() {
     return this.to('GetTransformationPackageUrl');
   }
 
   /**
-   * Grants permission to invoke ListCampaignRepositories on AWS Transform Custom
+   * Grants permission to invoke ListCampaignRepositories on AWS Transform custom
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toListCampaignRepositories() {
     return this.to('ListCampaignRepositories');
   }
 
   /**
-   * Grants permission to invoke ListCampaign on AWS Transform Custom
+   * Grants permission to invoke ListCampaign on AWS Transform custom
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toListCampaigns() {
     return this.to('ListCampaigns');
   }
 
   /**
-   * Grants permission to invoke ListKnowledgeItems on AWS Transform Custom
+   * Grants permission to invoke ListKnowledgeItems on AWS Transform custom
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toListKnowledgeItems() {
     return this.to('ListKnowledgeItems');
   }
 
   /**
-   * Grants permission to invoke ListTagsForResource on AWS Transform Custom
+   * Grants permission to invoke ListTagsForResource on AWS Transform custom
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
   }
 
   /**
-   * Grants permission to invoke ListTransformationPackageMetadata on AWS Transform Custom
+   * Grants permission to invoke ListTransformationPackageMetadata on AWS Transform custom
    *
-   * Access Level: Read
+   * Access Level: List
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toListTransformationPackageMetadata() {
     return this.to('ListTransformationPackageMetadata');
   }
 
   /**
-   * Grants permission to invoke TagResource on AWS Transform Custom
+   * Grants permission to invoke TagResource on AWS Transform custom
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toTagResource() {
     return this.to('TagResource');
   }
 
   /**
-   * Grants permission to invoke UntagResource on AWS Transform Custom
+   * Grants permission to invoke UntagResource on AWS Transform custom
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
   }
 
   /**
-   * Grants permission to invoke UpdateCampaign on AWS Transform Custom
+   * Grants permission to invoke UpdateCampaign on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toUpdateCampaign() {
     return this.to('UpdateCampaign');
   }
 
   /**
-   * Grants permission to invoke UpdateCampaignRepositories on AWS Transform Custom
+   * Grants permission to invoke UpdateCampaignRepositories on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toUpdateCampaignRepositoryStatus() {
     return this.to('UpdateCampaignRepositoryStatus');
   }
 
   /**
-   * Grants permission to invoke UpdateKnowledgeItemConfiguration on AWS Transform Custom
+   * Grants permission to invoke UpdateKnowledgeItemConfiguration on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toUpdateKnowledgeItemConfiguration() {
     return this.to('UpdateKnowledgeItemConfiguration');
   }
 
   /**
-   * Grants permission to invoke UpdateKnowledgeItemStatus on AWS Transform Custom
+   * Grants permission to invoke UpdateKnowledgeItemStatus on AWS Transform custom
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html/
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
    */
   public toUpdateKnowledgeItemStatus() {
     return this.to('UpdateKnowledgeItemStatus');
@@ -287,9 +337,11 @@ export class TransformCustom extends PolicyStatement {
       'GetKnowledgeItem',
       'GetTransformationPackageUrl',
       'ListCampaignRepositories',
+      'ListTagsForResource'
+    ],
+    List: [
       'ListCampaigns',
       'ListKnowledgeItems',
-      'ListTagsForResource',
       'ListTransformationPackageMetadata'
     ],
     Tagging: [
@@ -307,23 +359,12 @@ export class TransformCustom extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCampaign(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:transform-custom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:campaign/${ name }`);
-  }
-
-  /**
-   * Adds a resource of type conversation to the statement
-   *
-   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
-   *
-   * @param conversationId - Identifier for the conversationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onConversation(conversationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:transform-custom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:conversation/${ conversationId }`);
   }
 
   /**
@@ -336,6 +377,9 @@ export class TransformCustom extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onKnowledgeItem(transformationPackageName: string, id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:transform-custom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ transformationPackageName }/knowledge-item/${ id }`);
@@ -350,6 +394,9 @@ export class TransformCustom extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPackage(name: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:transform-custom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ name }`);
@@ -361,6 +408,8 @@ export class TransformCustom extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateCampaign()
+   * - .toCreateTransformationPackageUrl()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -376,6 +425,29 @@ export class TransformCustom extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCompleteTransformationPackageUpload()
+   * - .toCreateCampaign()
+   * - .toCreateTransformationPackageUrl()
+   * - .toDeleteCampaign()
+   * - .toDeleteKnowledgeItem()
+   * - .toDeleteTransformationPackage()
+   * - .toExecuteTransformation()
+   * - .toGetCampaign()
+   * - .toGetKnowledgeItem()
+   * - .toGetTransformationPackageUrl()
+   * - .toListCampaignRepositories()
+   * - .toTagResource()
+   * - .toUpdateCampaign()
+   * - .toUpdateCampaignRepositoryStatus()
+   * - .toUpdateKnowledgeItemConfiguration()
+   * - .toUpdateKnowledgeItemStatus()
+   *
+   * Applies to resource types:
+   * - campaign
+   * - knowledge-item
+   * - package
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -390,6 +462,8 @@ export class TransformCustom extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateCampaign()
+   * - .toCreateTransformationPackageUrl()
    * - .toTagResource()
    * - .toUntagResource()
    *

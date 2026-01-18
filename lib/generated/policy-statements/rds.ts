@@ -66,6 +66,7 @@ export class Rds extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifReqTag()
+   * - .ifTagsFromRequest()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddTagsToResource.html
    */
@@ -1854,6 +1855,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplica.html
    */
   public toPromoteReadReplica() {
@@ -2228,6 +2232,14 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   *
+   * Dependent actions:
+   * - rds:AddTagsToResource
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstanceAutomatedBackupsReplication.html
    */
   public toStartDBInstanceAutomatedBackupsReplication() {
@@ -2564,6 +2576,9 @@ export class Rds extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onClusterAutoBackup(dbClusterAutomatedBackupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster-auto-backup:${ dbClusterAutomatedBackupId }`);
@@ -2578,6 +2593,9 @@ export class Rds extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAutoBackup(dbInstanceAutomatedBackupId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:rds:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:auto-backup:${ dbInstanceAutomatedBackupId }`);
@@ -2983,6 +3001,7 @@ export class Rds extends PolicyStatement {
    * - .toRestoreDBInstanceFromDBSnapshot()
    * - .toRestoreDBInstanceFromS3()
    * - .toRestoreDBInstanceToPointInTime()
+   * - .toStartDBInstanceAutomatedBackupsReplication()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3006,6 +3025,8 @@ export class Rds extends PolicyStatement {
    * Applies to resource types:
    * - cluster
    * - shardgrp
+   * - cluster-auto-backup
+   * - auto-backup
    * - cluster-endpoint
    * - cluster-pg
    * - cluster-snapshot
@@ -3075,6 +3096,7 @@ export class Rds extends PolicyStatement {
    * - .toRestoreDBInstanceFromDBSnapshot()
    * - .toRestoreDBInstanceFromS3()
    * - .toRestoreDBInstanceToPointInTime()
+   * - .toStartDBInstanceAutomatedBackupsReplication()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3315,6 +3337,20 @@ export class Rds extends PolicyStatement {
   }
 
   /**
+   * Filters access for rds:AddTagsToResource based on whether tags are explicitly specified in the Tags or TagSpecification request parameters. Evaluates to true when tags are provided in these parameters. Evaluates as false when tags are implicitly inherited from source resources
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifTagsFromRequest(value?: boolean) {
+    return this.if(`TagsFromRequest`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the tenant database name in CreateTenantDatabase and by the new tenant database name in ModifyTenantDatabase
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
@@ -3509,6 +3545,7 @@ export class Rds extends PolicyStatement {
    * - .toRestoreDBInstanceFromDBSnapshot()
    * - .toRestoreDBInstanceFromS3()
    * - .toRestoreDBInstanceToPointInTime()
+   * - .toStartDBInstanceAutomatedBackupsReplication()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

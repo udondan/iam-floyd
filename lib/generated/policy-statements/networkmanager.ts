@@ -158,6 +158,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a prefix list core network association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetworkPrefixListAssociation.html
+   */
+  public toCreateCoreNetworkPrefixListAssociation() {
+    return this.to('CreateCoreNetworkPrefixListAssociation');
+  }
+
+  /**
    * Grants permission to create a new device
    *
    * Access Level: Write
@@ -397,6 +408,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a prefix list core network association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetworkPrefixListAssociation.html
+   */
+  public toDeleteCoreNetworkPrefixListAssociation() {
+    return this.to('DeleteCoreNetworkPrefixListAssociation');
+  }
+
+  /**
    * Grants permission to delete a device
    *
    * Access Level: Write
@@ -446,7 +468,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to delete a resource
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteResourcePolicy.html
    */
@@ -852,6 +874,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all routing policies associated to core network attachments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachmentRoutingPolicyAssociations.html
+   */
+  public toListAttachmentRoutingPolicyAssociations() {
+    return this.to('ListAttachmentRoutingPolicyAssociations');
+  }
+
+  /**
    * Grants permission to describe attachments
    *
    * Access Level: List
@@ -882,6 +915,28 @@ export class Networkmanager extends PolicyStatement {
    */
   public toListCoreNetworkPolicyVersions() {
     return this.to('ListCoreNetworkPolicyVersions');
+  }
+
+  /**
+   * Grants permission to list core network prefix list associaitons
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkPrefixListAssociations.html
+   */
+  public toListCoreNetworkPrefixListAssociations() {
+    return this.to('ListCoreNetworkPrefixListAssociations');
+  }
+
+  /**
+   * Grants permission to list core network routing information
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkRoutingInformation.html
+   */
+  public toListCoreNetworkRoutingInformation() {
+    return this.to('ListCoreNetworkRoutingInformation');
   }
 
   /**
@@ -932,6 +987,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put an attachment routing policy label
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutAttachmentRoutingPolicyLabel.html
+   */
+  public toPutAttachmentRoutingPolicyLabel() {
+    return this.to('PutAttachmentRoutingPolicyLabel');
+  }
+
+  /**
    * Grants permission to create a core network policy
    *
    * Access Level: Write
@@ -948,7 +1014,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to create or update a resource policy
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutResourcePolicy.html
    */
@@ -982,6 +1048,17 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove an attachment routing policy label
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RemoveAttachmentRoutingPolicyLabel.html
+   */
+  public toRemoveAttachmentRoutingPolicyLabel() {
+    return this.to('RemoveAttachmentRoutingPolicyLabel');
+  }
+
+  /**
    * Grants permission to restore the core network policy to a previous version
    *
    * Access Level: Write
@@ -998,7 +1075,7 @@ export class Networkmanager extends PolicyStatement {
   /**
    * Grants permission to start organization service access update
    *
-   * Access Level: Write
+   * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_StartOrganizationServiceAccessUpdate.html
    */
@@ -1173,6 +1250,7 @@ export class Networkmanager extends PolicyStatement {
       'CreateConnectPeer',
       'CreateConnection',
       'CreateCoreNetwork',
+      'CreateCoreNetworkPrefixListAssociation',
       'CreateDevice',
       'CreateDirectConnectGatewayAttachment',
       'CreateGlobalNetwork',
@@ -1187,11 +1265,11 @@ export class Networkmanager extends PolicyStatement {
       'DeleteConnection',
       'DeleteCoreNetwork',
       'DeleteCoreNetworkPolicyVersion',
+      'DeleteCoreNetworkPrefixListAssociation',
       'DeleteDevice',
       'DeleteGlobalNetwork',
       'DeleteLink',
       'DeletePeering',
-      'DeleteResourcePolicy',
       'DeleteSite',
       'DeregisterTransitGateway',
       'DisassociateConnectPeer',
@@ -1199,12 +1277,12 @@ export class Networkmanager extends PolicyStatement {
       'DisassociateLink',
       'DisassociateTransitGatewayConnectPeer',
       'ExecuteCoreNetworkChangeSet',
+      'PutAttachmentRoutingPolicyLabel',
       'PutCoreNetworkPolicy',
-      'PutResourcePolicy',
       'RegisterTransitGateway',
       'RejectAttachment',
+      'RemoveAttachmentRoutingPolicyLabel',
       'RestoreCoreNetworkPolicyVersion',
-      'StartOrganizationServiceAccessUpdate',
       'StartRouteAnalysis',
       'UpdateConnection',
       'UpdateCoreNetwork',
@@ -1216,6 +1294,11 @@ export class Networkmanager extends PolicyStatement {
       'UpdateSite',
       'UpdateVpcAttachment'
     ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy',
+      'StartOrganizationServiceAccessUpdate'
+    ],
     List: [
       'DescribeGlobalNetworks',
       'GetConnections',
@@ -1226,9 +1309,12 @@ export class Networkmanager extends PolicyStatement {
       'GetSites',
       'GetTransitGatewayConnectPeerAssociations',
       'GetTransitGatewayRegistrations',
+      'ListAttachmentRoutingPolicyAssociations',
       'ListAttachments',
       'ListConnectPeers',
       'ListCoreNetworkPolicyVersions',
+      'ListCoreNetworkPrefixListAssociations',
+      'ListCoreNetworkRoutingInformation',
       'ListCoreNetworks',
       'ListOrganizationServiceAccessStatus',
       'ListPeerings'

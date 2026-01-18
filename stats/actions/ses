@@ -90,6 +90,7 @@ ses:GetDeliverabilityDashboardOptions;Read
 ses:GetDeliverabilityTestReport;Read
 ses:GetDomainDeliverabilityCampaign;Read
 ses:GetDomainStatisticsReport;Read
+ses:GetEmailAddressInsights;Read
 ses:GetEmailIdentity;Read
 ses:GetEmailIdentityPolicies;Read
 ses:GetEmailTemplate;Read

@@ -183,6 +183,31 @@ export class TimestreamInfluxdb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reboot a Timestream InfluxDB Cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - timestream-influxdb:RebootDbInstance
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RebootDbCluster.html
+   */
+  public toRebootDbCluster() {
+    return this.to('RebootDbCluster');
+  }
+
+  /**
+   * Grants permission to reboot a Timestream InfluxDB instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RebootDbInstance.html
+   */
+  public toRebootDbInstance() {
+    return this.to('RebootDbInstance');
+  }
+
+  /**
    * Grants permission to tag a Timestream InfluxDB resource
    *
    * Access Level: Tagging
@@ -245,6 +270,8 @@ export class TimestreamInfluxdb extends PolicyStatement {
       'CreateDbParameterGroup',
       'DeleteDbCluster',
       'DeleteDbInstance',
+      'RebootDbCluster',
+      'RebootDbInstance',
       'UpdateDbCluster',
       'UpdateDbInstance'
     ],

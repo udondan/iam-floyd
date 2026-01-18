@@ -35,7 +35,7 @@ export class BedrockMantle extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
    */
   public toCancelInference() {
     return this.to('CancelInference');
@@ -50,7 +50,7 @@ export class BedrockMantle extends PolicyStatement {
    * - .ifServiceTier()
    * - .ifModel()
    *
-   * https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.htmlwelcome
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
    */
   public toCreateInference() {
     return this.to('CreateInference');
@@ -61,7 +61,7 @@ export class BedrockMantle extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
    */
   public toDeleteInference() {
     return this.to('DeleteInference');
@@ -72,7 +72,7 @@ export class BedrockMantle extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
    */
   public toGetInference() {
     return this.to('GetInference');
@@ -83,7 +83,7 @@ export class BedrockMantle extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
    */
   public toGetModel() {
     return this.to('GetModel');
@@ -94,7 +94,7 @@ export class BedrockMantle extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#welcome
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
    */
   public toListModels() {
     return this.to('ListModels');
@@ -119,7 +119,7 @@ export class BedrockMantle extends PolicyStatement {
   /**
    * Adds a resource of type project to the statement
    *
-   * https://docs.aws.amazon.com/Bedrock/latest/UserGuide/aws-mantle.html#Project
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html#Project
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

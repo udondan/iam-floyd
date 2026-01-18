@@ -15,6 +15,7 @@ ec2:CapacityReservationFleet
 ec2:ClientRootCertificateChainArn
 ec2:CloudwatchLogGroupArn
 ec2:CloudwatchLogStreamArn
+ec2:CommitmentDuration
 ec2:CpuOptionsAmdSevSnp
 ec2:CreateAction
 ec2:CreateDate
@@ -49,8 +50,12 @@ ec2:InstancePlatform
 ec2:InstanceProfile
 ec2:InstanceType
 ec2:InternetGatewayID
+ec2:InterruptibleCapacityReservationId
+ec2:InterruptionType
+ec2:IpamPrefixListResolverTargetId
 ec2:Ipv4IpamPoolId
 ec2:Ipv6IpamPoolId
+ec2:IsInterruptible
 ec2:IsLaunchTemplateResource
 ec2:KeyPairName
 ec2:KeyPairType
@@ -112,6 +117,7 @@ ec2:SourceOutpostArn
 ec2:Subnet
 ec2:SubnetID
 ec2:TagKeys
+ec2:TargetInstanceCount
 ec2:Tenancy
 ec2:VolumeID
 ec2:VolumeInitializationRate
@@ -123,6 +129,8 @@ ec2:Vpc
 ec2:VpcID
 ec2:VpcPeeringConnectionID
 ec2:VpceMultiRegion
+ec2:VpcePrivateDnsPreference
+ec2:VpcePrivateDnsSpecifiedDomains
 ec2:VpceServiceName
 ec2:VpceServiceOwner
 ec2:VpceServicePrivateDnsName
@@ -131,6 +139,7 @@ ec2:VpceSupportedRegion
 ec2:transitGatewayAttachmentId
 ec2:transitGatewayConnectPeerId
 ec2:transitGatewayId
+ec2:transitGatewayMeteringPolicyId
 ec2:transitGatewayMulticastDomainId
 ec2:transitGatewayPolicyTableId
 ec2:transitGatewayRouteTableAnnouncementId

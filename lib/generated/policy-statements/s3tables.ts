@@ -120,6 +120,17 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a metrics configuration on a table bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_DeleteTableBucketMetricsConfiguration.html
+   */
+  public toDeleteTableBucketMetricsConfiguration() {
+    return this.to('DeleteTableBucketMetricsConfiguration');
+  }
+
+  /**
    * Grants permission to delete a policy on a table bucket
    *
    * Access Level: Permissions management
@@ -231,6 +242,17 @@ export class S3tables extends PolicyStatement {
    */
   public toGetTableBucketMaintenanceConfiguration() {
     return this.to('GetTableBucketMaintenanceConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve a metrics configuration on a bucket
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_GetTableBucketMetricsConfiguration.html
+   */
+  public toGetTableBucketMetricsConfiguration() {
+    return this.to('GetTableBucketMetricsConfiguration');
   }
 
   /**
@@ -509,6 +531,17 @@ export class S3tables extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or overwrite a metrics configuration on a table bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketMetricsConfiguration.html
+   */
+  public toPutTableBucketMetricsConfiguration() {
+    return this.to('PutTableBucketMetricsConfiguration');
+  }
+
+  /**
    * Grants permission to create or overwrite a policy on a table bucket
    *
    * Access Level: Permissions management
@@ -538,7 +571,7 @@ export class S3tables extends PolicyStatement {
    * Possible conditions:
    * - .ifStorageClass()
    *
-   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ss3Buckets_PutTableBucketStorageClass.html
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3Buckets_PutTableBucketStorageClass.html
    */
   public toPutTableBucketStorageClass() {
     return this.to('PutTableBucketStorageClass');
@@ -723,10 +756,12 @@ export class S3tables extends PolicyStatement {
       'DeleteTable',
       'DeleteTableBucket',
       'DeleteTableBucketEncryption',
+      'DeleteTableBucketMetricsConfiguration',
       'DeleteTableBucketReplication',
       'DeleteTableReplication',
       'PutTableBucketEncryption',
       'PutTableBucketMaintenanceConfiguration',
+      'PutTableBucketMetricsConfiguration',
       'PutTableBucketReplication',
       'PutTableBucketStorageClass',
       'PutTableData',
@@ -750,6 +785,7 @@ export class S3tables extends PolicyStatement {
       'GetTableBucket',
       'GetTableBucketEncryption',
       'GetTableBucketMaintenanceConfiguration',
+      'GetTableBucketMetricsConfiguration',
       'GetTableBucketPolicy',
       'GetTableBucketReplication',
       'GetTableBucketStorageClass',

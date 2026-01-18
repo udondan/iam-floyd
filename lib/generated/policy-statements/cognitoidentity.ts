@@ -38,6 +38,9 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifIdentityPoolArn()
+   *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentities.html
    */
   public toDeleteIdentities() {
@@ -59,6 +62,9 @@ export class CognitoIdentity extends PolicyStatement {
    * Grants permission to return metadata related to the given identity, including when the identity was created and any associated linked logins
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifIdentityPoolArn()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentity.html
    */
@@ -82,6 +88,12 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifCognitoIdentityUnauthIdentityPoolArn()
+   * - .ifCognitoIdentityUnauthAccountId()
+   * - .ifCognitoIdentityAuthIdentityPoolArn()
+   * - .ifCognitoIdentityAuthAccountId()
+   *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html
    */
   public toGetCredentialsForIdentity() {
@@ -92,6 +104,12 @@ export class CognitoIdentity extends PolicyStatement {
    * Grants permission to generate (or retrieve) a Cognito ID. Supplying multiple logins will create an implicit linked account
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCognitoIdentityUnauthIdentityPoolArn()
+   * - .ifCognitoIdentityUnauthAccountId()
+   * - .ifCognitoIdentityAuthIdentityPoolArn()
+   * - .ifCognitoIdentityAuthAccountId()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html
    */
@@ -147,6 +165,12 @@ export class CognitoIdentity extends PolicyStatement {
    * Grants permission to get an OpenID token, using a known Cognito ID
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCognitoIdentityUnauthIdentityPoolArn()
+   * - .ifCognitoIdentityUnauthAccountId()
+   * - .ifCognitoIdentityAuthIdentityPoolArn()
+   * - .ifCognitoIdentityAuthAccountId()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdToken.html
    */
@@ -284,6 +308,10 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCognitoIdentityAuthIdentityPoolArn()
+   * - .ifCognitoIdentityAuthAccountId()
+   *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkIdentity.html
    */
   public toUnlinkIdentity() {
@@ -370,7 +398,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag key-value pairs in the request
+   * Filters access by tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -387,7 +415,7 @@ export class CognitoIdentity extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag key-value pairs attached to the resource
+   * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
@@ -417,5 +445,91 @@ export class CognitoIdentity extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the owning AWS account ID for identity pool authenticated users. Applies to unauthenticated (public) API operations
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-auth-account-id
+   *
+   * Applies to actions:
+   * - .toGetCredentialsForIdentity()
+   * - .toGetId()
+   * - .toGetOpenIdToken()
+   * - .toUnlinkIdentity()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCognitoIdentityAuthAccountId(value: string | string[], operator?: Operator | string) {
+    return this.if(`cognito-identity-auth:AccountId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the identity pool ID for a given authenticated-user identity ID. Applies to unauthenticated (public) API operations
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-auth-identity-pool-arn
+   *
+   * Applies to actions:
+   * - .toGetCredentialsForIdentity()
+   * - .toGetId()
+   * - .toGetOpenIdToken()
+   * - .toUnlinkIdentity()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifCognitoIdentityAuthIdentityPoolArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`cognito-identity-auth:IdentityPoolArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the owning AWS account ID of an identity pool for identity pool guest users. Applies to unauthenticated (public) API operations
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-unauth-account-id
+   *
+   * Applies to actions:
+   * - .toGetCredentialsForIdentity()
+   * - .toGetId()
+   * - .toGetOpenIdToken()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCognitoIdentityUnauthAccountId(value: string | string[], operator?: Operator | string) {
+    return this.if(`cognito-identity-unauth:AccountId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the identity pool ID for a given guest-user identity ID. Applies to unauthenticated (public) API operations
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-unauth-identity-pool-arn
+   *
+   * Applies to actions:
+   * - .toGetCredentialsForIdentity()
+   * - .toGetId()
+   * - .toGetOpenIdToken()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifCognitoIdentityUnauthIdentityPoolArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`cognito-identity-unauth:IdentityPoolArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the identity pool ID for a given identity ID for DeleteIdentities and DescribeIdentity
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-identity-pool-arn
+   *
+   * Applies to actions:
+   * - .toDeleteIdentities()
+   * - .toDescribeIdentity()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifIdentityPoolArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`IdentityPoolArn`, value, operator ?? 'ArnLike');
   }
 }

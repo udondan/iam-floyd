@@ -1667,7 +1667,9 @@ export class Ssm extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
+   * - .ifDocumentVersion()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html
    */
@@ -1682,8 +1684,10 @@ export class Ssm extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAutoApprove()
+   * - .ifDocumentVersion()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartChangeRequestExecution.html
    */
@@ -2159,7 +2163,7 @@ export class Ssm extends PolicyStatement {
   /**
    * Adds a resource of type automation-execution to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/running-automations.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/running-simple-automations.html
    *
    * @param automationExecutionId - Identifier for the automationExecutionId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2184,6 +2188,9 @@ export class Ssm extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifDocumentType()
    */
   public onAutomationDefinition(automationDefinitionName: string, versionId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-definition/${ automationDefinitionName }:${ versionId }`);
@@ -2546,6 +2553,8 @@ export class Ssm extends PolicyStatement {
    * - .toSendAutomationSignal()
    * - .toSendCommand()
    * - .toStartAssociationsOnce()
+   * - .toStartAutomationExecution()
+   * - .toStartChangeRequestExecution()
    * - .toStartSession()
    * - .toStopAutomationExecution()
    * - .toUnlabelParameterVersion()
@@ -2689,6 +2698,7 @@ export class Ssm extends PolicyStatement {
    * - .toUpdateDocumentMetadata()
    *
    * Applies to resource types:
+   * - automation-definition
    * - document
    *
    * @param value The value(s) to check
@@ -2696,6 +2706,22 @@ export class Ssm extends PolicyStatement {
    */
   public ifDocumentType(value: string | string[], operator?: Operator | string) {
     return this.if(`DocumentType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by verifying that a user has permission to access a specific version of a document
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toStartAutomationExecution()
+   * - .toStartChangeRequestExecution()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDocumentVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`DocumentVersion`, value, operator ?? 'StringLike');
   }
 
   /**

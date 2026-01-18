@@ -71,6 +71,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get user preferences
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toBatchGetPreferences() {
+    return this.to('BatchGetPreferences');
+  }
+
+  /**
+   * Grants permission to update user preferences
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toBatchUpdatePreferences() {
+    return this.to('BatchUpdatePreferences');
+  }
+
+  /**
    * Grants permission to cancel a SPICE ingestions on a dataset
    *
    * Access Level: Write
@@ -1432,6 +1454,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the administrative self upgrade configuration associated with an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeSelfUpgradeConfiguration.html
+   */
+  public toDescribeSelfUpgradeConfiguration() {
+    return this.to('DescribeSelfUpgradeConfiguration');
+  }
+
+  /**
    * Grants permission to describe a template
    *
    * Access Level: Read
@@ -1696,6 +1729,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toGetGroupMapping() {
     return this.to('GetGroupMapping');
+  }
+
+  /**
+   * Grants permission to get identity context for a user
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetIdentityContext.html
+   */
+  public toGetIdentityContext() {
+    return this.to('GetIdentityContext');
   }
 
   /**
@@ -2016,6 +2060,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListRoleMemberships() {
     return this.to('ListRoleMemberships');
+  }
+
+  /**
+   * Grants permission to list all of the pending self upgrade requests associated with an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListSelfUpgrades.html
+   */
+  public toListSelfUpgrades() {
+    return this.to('ListSelfUpgrades');
   }
 
   /**
@@ -3029,6 +3084,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to take action on pending self upgrade requests associated with an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSelfUpgrade.html
+   */
+  public toUpdateSelfUpgrade() {
+    return this.to('UpdateSelfUpgrade');
+  }
+
+  /**
+   * Grants permission to update the administrative self upgrade configuration associated with an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSelfUpgradeConfiguration.html
+   */
+  public toUpdateSelfUpgradeConfiguration() {
+    return this.to('UpdateSelfUpgradeConfiguration');
+  }
+
+  /**
    * Grants permission to update a template
    *
    * Access Level: Write
@@ -3183,6 +3260,7 @@ export class Quicksight extends PolicyStatement {
       'AccountConfigurations',
       'BatchCreateTopicReviewedAnswer',
       'BatchDeleteTopicReviewedAnswer',
+      'BatchUpdatePreferences',
       'CancelIngestion',
       'CreateAccountCustomization',
       'CreateAccountSubscription',
@@ -3300,6 +3378,8 @@ export class Quicksight extends PolicyStatement {
       'UpdateResourcePermissions',
       'UpdateRoleCustomPermission',
       'UpdateSPICECapacityConfiguration',
+      'UpdateSelfUpgrade',
+      'UpdateSelfUpgradeConfiguration',
       'UpdateTemplate',
       'UpdateTemplateAlias',
       'UpdateTheme',
@@ -3328,6 +3408,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateTopicPermissions'
     ],
     Read: [
+      'BatchGetPreferences',
       'DescribeAccountCustomPermission',
       'DescribeAccountCustomization',
       'DescribeAccountSettings',
@@ -3371,6 +3452,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeQuickSightQSearchConfiguration',
       'DescribeRefreshSchedule',
       'DescribeRoleCustomPermission',
+      'DescribeSelfUpgradeConfiguration',
       'DescribeTemplate',
       'DescribeTemplateAlias',
       'DescribeTemplatePermissions',
@@ -3389,6 +3471,7 @@ export class Quicksight extends PolicyStatement {
       'GetFlowMetadata',
       'GetFlowPermissions',
       'GetGroupMapping',
+      'GetIdentityContext',
       'GetSessionEmbedUrl',
       'ListFolderMembers',
       'ListTagsForResource',
@@ -3425,6 +3508,7 @@ export class Quicksight extends PolicyStatement {
       'ListNamespaces',
       'ListRefreshSchedules',
       'ListRoleMemberships',
+      'ListSelfUpgrades',
       'ListTemplateAliases',
       'ListTemplateVersions',
       'ListTemplates',

@@ -4257,6 +4257,10 @@ export class Connect extends PolicyStatement {
    * - .ifInstanceId()
    * - .ifSubtype()
    *
+   * Dependent actions:
+   * - wisdom:GetMessageTemplate
+   * - wisdom:RenderMessageTemplate
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html
    */
   public toStartOutboundChatContact() {

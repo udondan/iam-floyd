@@ -974,6 +974,17 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a change request in a collaboration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateCollaborationChangeRequest.html
+   */
+  public toUpdateCollaborationChangeRequest() {
+    return this.to('UpdateCollaborationChangeRequest');
+  }
+
+  /**
    * Grants permission to update a configured audience model association
    *
    * Access Level: Write
@@ -1207,6 +1218,7 @@ export class Cleanrooms extends PolicyStatement {
       'StartProtectedQuery',
       'UpdateAnalysisTemplate',
       'UpdateCollaboration',
+      'UpdateCollaborationChangeRequest',
       'UpdateConfiguredAudienceModelAssociation',
       'UpdateConfiguredTable',
       'UpdateConfiguredTableAllowedColumns',

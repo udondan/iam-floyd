@@ -6,6 +6,7 @@ account:EnableRegion;Write
 account:GetAccountInformation;Read
 account:GetAlternateContact;Read
 account:GetContactInformation;Read
+account:GetGovCloudAccountInformation;Read
 account:GetPrimaryEmail;Read
 account:GetRegionOptStatus;Read
 account:ListRegions;List

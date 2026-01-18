@@ -1,5 +1,8 @@
 network-firewall:Firewall
 network-firewall:FirewallPolicy
+network-firewall:Proxy
+network-firewall:ProxyConfiguration
+network-firewall:ProxyRuleGroup
 network-firewall:StatefulRuleGroup
 network-firewall:StatelessRuleGroup
 network-firewall:TLSInspectionConfiguration

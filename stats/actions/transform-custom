@@ -10,10 +10,10 @@ transform-custom:GetCampaign;Read
 transform-custom:GetKnowledgeItem;Read
 transform-custom:GetTransformationPackageUrl;Read
 transform-custom:ListCampaignRepositories;Read
-transform-custom:ListCampaigns;Read
-transform-custom:ListKnowledgeItems;Read
+transform-custom:ListCampaigns;List
+transform-custom:ListKnowledgeItems;List
 transform-custom:ListTagsForResource;Read
-transform-custom:ListTransformationPackageMetadata;Read
+transform-custom:ListTransformationPackageMetadata;List
 transform-custom:TagResource;Tagging
 transform-custom:UntagResource;Tagging
 transform-custom:UpdateCampaign;Write

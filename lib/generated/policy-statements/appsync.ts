@@ -52,6 +52,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a web ACL and a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
+   */
+  public toAssociateWebACL() {
+    return this.to('AssociateWebACL');
+  }
+
+  /**
    * Grants permission to create an API
    *
    * Access Level: Write
@@ -354,6 +365,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate a web ACL and a resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
+   */
+  public toDisassociateWebACL() {
+    return this.to('DisassociateWebACL');
+  }
+
+  /**
    * Grants permission to evaluate code with a runtime and context
    *
    * Access Level: Read
@@ -608,6 +630,17 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get associated web ACLs for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
+   */
+  public toGetWebACLForResource() {
+    return this.to('GetWebACLForResource');
+  }
+
+  /**
    * Grants permission to send a GraphQL query to a GraphQL API
    *
    * Access Level: Write
@@ -724,6 +757,17 @@ export class Appsync extends PolicyStatement {
    */
   public toListResolversByFunction() {
     return this.to('ListResolversByFunction');
+  }
+
+  /**
+   * Grants permission to get associated resources for a web ACL
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
+   */
+  public toListResourcesForWebACL() {
+    return this.to('ListResourcesForWebACL');
   }
 
   /**
@@ -1025,6 +1069,7 @@ export class Appsync extends PolicyStatement {
       'AssociateApi',
       'AssociateMergedGraphqlApi',
       'AssociateSourceGraphqlApi',
+      'AssociateWebACL',
       'CreateApi',
       'CreateApiCache',
       'CreateApiKey',
@@ -1049,6 +1094,7 @@ export class Appsync extends PolicyStatement {
       'DisassociateApi',
       'DisassociateMergedGraphqlApi',
       'DisassociateSourceGraphqlApi',
+      'DisassociateWebACL',
       'EventConnect',
       'EventPublish',
       'EventSubscribe',
@@ -1091,6 +1137,7 @@ export class Appsync extends PolicyStatement {
       'GetSchemaCreationStatus',
       'GetSourceApiAssociation',
       'GetType',
+      'GetWebACLForResource',
       'ListTagsForResource'
     ],
     List: [
@@ -1103,6 +1150,7 @@ export class Appsync extends PolicyStatement {
       'ListGraphqlApis',
       'ListResolvers',
       'ListResolversByFunction',
+      'ListResourcesForWebACL',
       'ListSourceApiAssociations',
       'ListTypes',
       'ListTypesByAssociation'

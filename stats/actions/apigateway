@@ -1,18 +1,44 @@
 apigateway:AddCertificateToDomain;Permissions management
 apigateway:CreateAccessAssociation;Permissions management
+apigateway:CreatePortal;Write
+apigateway:CreatePortalProduct;Write
+apigateway:CreateProductPage;Write
+apigateway:CreateProductRestEndpointPage;Write
 apigateway:CreateRoutingRule;Write
 apigateway:DELETE;Write
+apigateway:DeletePortal;Write
+apigateway:DeletePortalProduct;Write
+apigateway:DeletePortalProductSharingPolicy;Permissions management
+apigateway:DeleteProductPage;Write
+apigateway:DeleteProductRestEndpointPage;Write
 apigateway:DeleteRoutingRule;Write
+apigateway:DisablePortal;Write
 apigateway:GET;Read
+apigateway:GetPortal;Read
+apigateway:GetPortalProduct;Read
+apigateway:GetPortalProductSharingPolicy;Read
+apigateway:GetProductPage;Read
+apigateway:GetProductRestEndpointPage;Read
 apigateway:GetRoutingRule;Read
+apigateway:ListPortalProducts;List
+apigateway:ListPortals;List
+apigateway:ListProductPages;List
+apigateway:ListProductRestEndpointPages;List
 apigateway:ListRoutingRules;List
 apigateway:PATCH;Write
 apigateway:POST;Write
 apigateway:PUT;Write
+apigateway:PreviewPortal;Write
+apigateway:PublishPortal;Write
+apigateway:PutPortalProductSharingPolicy;Permissions management
 apigateway:RejectAccessAssociation;Permissions management
 apigateway:RemoveCertificateFromDomain;Permissions management
 apigateway:SetWebACL;Permissions management
 apigateway:UpdateDomainNameManagementPolicy;Permissions management
 apigateway:UpdateDomainNamePolicy;Permissions management
+apigateway:UpdatePortal;Write
+apigateway:UpdatePortalProduct;Write
+apigateway:UpdateProductPage;Write
+apigateway:UpdateProductRestEndpointPage;Write
 apigateway:UpdateRestApiPolicy;Permissions management
 apigateway:UpdateRoutingRule;Write

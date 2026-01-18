@@ -215,6 +215,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifImageVersionArns()
    * - .ifOwnerUserProfileArn()
    * - .ifSpaceSharingType()
+   * - .ifStudioLifecycleConfigArns()
    *
    * Dependent actions:
    * - sagemaker:AddTags
@@ -502,6 +503,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifVolumeKmsKey()
    * - .ifImageArns()
    * - .ifImageVersionArns()
+   * - .ifStudioLifecycleConfigArns()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
@@ -1380,6 +1382,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifOwnerUserProfileArn()
    * - .ifRemoteAccess()
    * - .ifSpaceSharingType()
+   * - .ifStudioLifecycleConfigArns()
    *
    * Dependent actions:
    * - sagemaker:AddTags
@@ -1532,6 +1535,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifDomainSharingOutputKmsKey()
    * - .ifImageArns()
    * - .ifImageVersionArns()
+   * - .ifStudioLifecycleConfigArns()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -4907,6 +4911,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifImageVersionArns()
    * - .ifAppNetworkAccessType()
    * - .ifVpcSubnets()
+   * - .ifStudioLifecycleConfigArns()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateDomain.html
    */
@@ -5264,6 +5269,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifOwnerUserProfileArn()
    * - .ifRemoteAccess()
    * - .ifSpaceSharingType()
+   * - .ifStudioLifecycleConfigArns()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html
    */
@@ -5321,6 +5327,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifDomainSharingOutputKmsKey()
    * - .ifImageArns()
    * - .ifImageVersionArns()
+   * - .ifStudioLifecycleConfigArns()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateUserProfile.html
    */
@@ -6929,10 +6936,6 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
    */
   public onMlflowTrackingServer(mlflowTrackingServerName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-tracking-server/${ mlflowTrackingServerName }`);
@@ -6947,10 +6950,6 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
    */
   public onMlflowApp(mLflowAppId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-app/${ mLflowAppId }`);
@@ -7001,10 +7000,6 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
    */
   public onPartnerApp(appId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:partner-app/${ appId }`);
@@ -7097,6 +7092,25 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .toCreateMlflowApp()
+   * - .toCreateMlflowTrackingServer()
+   * - .toCreatePartnerApp()
+   * - .toCreatePartnerAppPresignedUrl()
+   * - .toCreatePresignedMlflowAppUrl()
+   * - .toCreatePresignedMlflowTrackingServerUrl()
+   * - .toDeleteMlflowApp()
+   * - .toDeleteMlflowTrackingServer()
+   * - .toDeletePartnerApp()
+   * - .toDescribeMlflowApp()
+   * - .toDescribeMlflowTrackingServer()
+   * - .toDescribePartnerApp()
+   * - .toStartMlflowTrackingServer()
+   * - .toStopMlflowTrackingServer()
+   * - .toUpdateMlflowApp()
+   * - .toUpdateMlflowTrackingServer()
+   * - .toUpdatePartnerApp()
+   *
    * Applies to resource types:
    * - device
    * - device-fleet
@@ -7157,11 +7171,8 @@ export class Sagemaker extends PolicyStatement {
    * - lineage-group
    * - model-card
    * - model-card-export-job
-   * - mlflow-tracking-server
-   * - mlflow-app
    * - compute-quota
    * - cluster-scheduler-config
-   * - partner-app
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -7959,6 +7970,25 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .toCreateMlflowApp()
+   * - .toCreateMlflowTrackingServer()
+   * - .toCreatePartnerApp()
+   * - .toCreatePartnerAppPresignedUrl()
+   * - .toCreatePresignedMlflowAppUrl()
+   * - .toCreatePresignedMlflowTrackingServerUrl()
+   * - .toDeleteMlflowApp()
+   * - .toDeleteMlflowTrackingServer()
+   * - .toDeletePartnerApp()
+   * - .toDescribeMlflowApp()
+   * - .toDescribeMlflowTrackingServer()
+   * - .toDescribePartnerApp()
+   * - .toStartMlflowTrackingServer()
+   * - .toStopMlflowTrackingServer()
+   * - .toUpdateMlflowApp()
+   * - .toUpdateMlflowTrackingServer()
+   * - .toUpdatePartnerApp()
+   *
    * Applies to resource types:
    * - device
    * - device-fleet
@@ -8019,11 +8049,8 @@ export class Sagemaker extends PolicyStatement {
    * - lineage-group
    * - model-card
    * - model-card-export-job
-   * - mlflow-tracking-server
-   * - mlflow-app
    * - compute-quota
    * - cluster-scheduler-config
-   * - partner-app
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -8112,6 +8139,27 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifSpaceSharingType(value: string | string[], operator?: Operator | string) {
     return this.if(`SpaceSharingType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of lifecycle configuration ARNs associated with the resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateApp()
+   * - .toCreateDomain()
+   * - .toCreateSpace()
+   * - .toCreateUserProfile()
+   * - .toUpdateDomain()
+   * - .toUpdateSpace()
+   * - .toUpdateUserProfile()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifStudioLifecycleConfigArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`StudioLifecycleConfigArns`, value, operator ?? 'ArnLike');
   }
 
   /**

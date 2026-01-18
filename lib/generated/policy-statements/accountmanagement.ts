@@ -122,6 +122,17 @@ export class Account extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the linked GovCloud account information for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/accounts/latest/reference/API_GetGovCloudAccountInformation.html
+   */
+  public toGetGovCloudAccountInformation() {
+    return this.to('GetGovCloudAccountInformation');
+  }
+
+  /**
    * Grants permission to retrieve the primary email address of an account
    *
    * Access Level: Read
@@ -223,6 +234,7 @@ export class Account extends PolicyStatement {
       'GetAccountInformation',
       'GetAlternateContact',
       'GetContactInformation',
+      'GetGovCloudAccountInformation',
       'GetPrimaryEmail',
       'GetRegionOptStatus'
     ],

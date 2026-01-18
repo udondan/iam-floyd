@@ -13,6 +13,7 @@ rds:ResourceTag/${TagKey}
 rds:StorageEncrypted
 rds:StorageSize
 rds:TagKeys
+rds:TagsFromRequest
 rds:TenantDatabaseName
 rds:Vpc
 rds:cluster-pg-tag/${TagKey}

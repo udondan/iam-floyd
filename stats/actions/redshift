@@ -60,6 +60,7 @@ redshift:DeleteUsageLimit;Write
 redshift:DeregisterNamespace;Write
 redshift:DescribeAccountAttributes;Read
 redshift:DescribeAuthenticationProfiles;Read
+redshift:DescribeAutonomicsDenylist;Read
 redshift:DescribeClusterDbRevisions;List
 redshift:DescribeClusterParameterGroups;Read
 redshift:DescribeClusterParameters;Read
@@ -124,6 +125,7 @@ redshift:ListSchemas;List
 redshift:ListTables;List
 redshift:ModifyAquaConfiguration;Write
 redshift:ModifyAuthenticationProfile;Write
+redshift:ModifyAutonomicsDenylist;Write
 redshift:ModifyCluster;Write
 redshift:ModifyClusterDbRevision;Write
 redshift:ModifyClusterIamRoles;Permissions management

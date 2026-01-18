@@ -538,6 +538,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach an appliance with a public/private Natgateway
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachApplianceToNatGateway.html
+   */
+  public toAttachApplianceToNatGateway() {
+    return this.to('AttachApplianceToNatGateway');
+  }
+
+  /**
    * Grants permission to link an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC's security groups
    *
    * Access Level: Write
@@ -1339,6 +1353,23 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an interruptible Capacity Reservation by specifying the number of unused instances you want to allocate from your source reservation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInterruptibleCapacityReservationAllocation.html
+   */
+  public toCreateInterruptibleCapacityReservationAllocation() {
+    return this.to('CreateInterruptibleCapacityReservationAllocation');
+  }
+
+  /**
    * Grants permission to create an Amazon VPC IP Address Manager (IPAM)
    *
    * Access Level: Write
@@ -1374,6 +1405,23 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a policy in Amazon VPC IP Address Manager (IPAM) that defines rules for allocating public IPv4 addresses from IPAM pools to AWS resources
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPolicy.html
+   */
+  public toCreateIpamPolicy() {
+    return this.to('CreateIpamPolicy');
+  }
+
+  /**
    * Grants permission to create an IP address pool for Amazon VPC IP Address Manager (IPAM), which is a collection of contiguous IP address CIDRs
    *
    * Access Level: Write
@@ -1388,6 +1436,40 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateIpamPool() {
     return this.to('CreateIpamPool');
+  }
+
+  /**
+   * Grants permission to create an IPAM prefix list resolver that defines rules for selecting CIDRs to include in prefix lists
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPrefixListResolver.html
+   */
+  public toCreateIpamPrefixListResolver() {
+    return this.to('CreateIpamPrefixListResolver');
+  }
+
+  /**
+   * Grants permission to create an IPAM prefix list resolver target that links a resolver to a managed prefix list
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPrefixListResolverTarget.html
+   */
+  public toCreateIpamPrefixListResolverTarget() {
+    return this.to('CreateIpamPrefixListResolverTarget');
   }
 
   /**
@@ -1735,6 +1817,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateNetworkInterfacePermission() {
     return this.to('CreateNetworkInterfacePermission');
+  }
+
+  /**
+   * Grants permission to allow Oracle Database@AWS to create a peering connection between an ODB network and a VPC
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateOdbNetworkPeering.html
+   */
+  public toCreateOdbNetworkPeering() {
+    return this.to('CreateOdbNetworkPeering');
   }
 
   /**
@@ -2156,6 +2252,37 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a metering policy for a transit gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMeteringPolicy.html
+   */
+  public toCreateTransitGatewayMeteringPolicy() {
+    return this.to('CreateTransitGatewayMeteringPolicy');
+  }
+
+  /**
+   * Grants permission to create an entry for a transit gateway metering policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMeteringPolicyEntry.html
+   */
+  public toCreateTransitGatewayMeteringPolicyEntry() {
+    return this.to('CreateTransitGatewayMeteringPolicyEntry');
+  }
+
+  /**
    * Grants permission to create a multicast domain for a transit gateway
    *
    * Access Level: Write
@@ -2405,6 +2532,23 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a VPC Encryption Control
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEncryptionControl.html
+   */
+  public toCreateVpcEncryptionControl() {
+    return this.to('CreateVpcEncryptionControl');
+  }
+
+  /**
    * Grants permission to create a VPC endpoint for an AWS service
    *
    * Access Level: Write
@@ -2471,6 +2615,23 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateVpcPeeringConnection() {
     return this.to('CreateVpcPeeringConnection');
+  }
+
+  /**
+   * Grants permission to create a VPN concentrator that aggregates multiple VPN connections to a transit gateway
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConcentrator.html
+   */
+  public toCreateVpnConcentrator() {
+    return this.to('CreateVpnConcentrator');
   }
 
   /**
@@ -2788,6 +2949,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an Amazon VPC IP Address Manager (IPAM) policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPolicy.html
+   */
+  public toDeleteIpamPolicy() {
+    return this.to('DeleteIpamPolicy');
+  }
+
+  /**
    * Grants permission to delete an Amazon VPC IP Address Manager (IPAM) pool
    *
    * Access Level: Write
@@ -2799,6 +2974,34 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteIpamPool() {
     return this.to('DeleteIpamPool');
+  }
+
+  /**
+   * Grants permission to delete an IPAM prefix list resolver
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPrefixListResolver.html
+   */
+  public toDeleteIpamPrefixListResolver() {
+    return this.to('DeleteIpamPrefixListResolver');
+  }
+
+  /**
+   * Grants permission to delete an IPAM prefix list resolver target
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPrefixListResolverTarget.html
+   */
+  public toDeleteIpamPrefixListResolverTarget() {
+    return this.to('DeleteIpamPrefixListResolverTarget');
   }
 
   /**
@@ -3107,6 +3310,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteNetworkInterfacePermission() {
     return this.to('DeleteNetworkInterfacePermission');
+  }
+
+  /**
+   * Grants permission to allow Oracle Database@AWS to delete a peering connection between an ODB network and a VPC
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteOdbNetworkPeering.html
+   */
+  public toDeleteOdbNetworkPeering() {
+    return this.to('DeleteOdbNetworkPeering');
   }
 
   /**
@@ -3430,6 +3647,34 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a transit gateway metering policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMeteringPolicy.html
+   */
+  public toDeleteTransitGatewayMeteringPolicy() {
+    return this.to('DeleteTransitGatewayMeteringPolicy');
+  }
+
+  /**
+   * Grants permission to delete an entry from a transit gateway metering policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMeteringPolicyEntry.html
+   */
+  public toDeleteTransitGatewayMeteringPolicyEntry() {
+    return this.to('DeleteTransitGatewayMeteringPolicyEntry');
+  }
+
+  /**
    * Grants permission to delete a transit gateway multicast domain
    *
    * Access Level: Write
@@ -3640,6 +3885,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a VPC Encryption Control
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEncryptionControl.html
+   */
+  public toDeleteVpcEncryptionControl() {
+    return this.to('DeleteVpcEncryptionControl');
+  }
+
+  /**
    * Grants permission to delete one or more VPC endpoint connection notifications
    *
    * Access Level: Write
@@ -3693,6 +3952,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteVpcPeeringConnection() {
     return this.to('DeleteVpcPeeringConnection');
+  }
+
+  /**
+   * Grants permission to delete a VPN concentrator
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConcentrator.html
+   */
+  public toDeleteVpnConcentrator() {
+    return this.to('DeleteVpnConcentrator');
   }
 
   /**
@@ -4085,6 +4358,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeCapacityReservationFleets() {
     return this.to('DescribeCapacityReservationFleets');
+  }
+
+  /**
+   * Grants permission to describe the topology of one or more Capacity Reservations
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationTopology.html
+   */
+  public toDescribeCapacityReservationTopology() {
+    return this.to('DescribeCapacityReservationTopology');
   }
 
   /**
@@ -4704,6 +4991,34 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe EC2 instance SQL HA history states
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceSqlHaHistoryStates.html
+   */
+  public toDescribeInstanceSqlHaHistoryStates() {
+    return this.to('DescribeInstanceSqlHaHistoryStates');
+  }
+
+  /**
+   * Grants permission to describe EC2 instance SQL HA states
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceSqlHaStates.html
+   */
+  public toDescribeInstanceSqlHaStates() {
+    return this.to('DescribeInstanceSqlHaStates');
+  }
+
+  /**
    * Grants permission to describe the status of one or more instances
    *
    * Access Level: List
@@ -4816,6 +5131,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe Amazon VPC IP Address Manager (IPAM) policies
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPolicies.html
+   */
+  public toDescribeIpamPolicies() {
+    return this.to('DescribeIpamPolicies');
+  }
+
+  /**
    * Grants permission to describe Amazon VPC IP Address Manager (IPAM) pools
    *
    * Access Level: List
@@ -4827,6 +5156,34 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeIpamPools() {
     return this.to('DescribeIpamPools');
+  }
+
+  /**
+   * Grants permission to describe IPAM prefix list resolver targets
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPrefixListResolverTargets.html
+   */
+  public toDescribeIpamPrefixListResolverTargets() {
+    return this.to('DescribeIpamPrefixListResolverTargets');
+  }
+
+  /**
+   * Grants permission to describe IPAM prefix list resolvers
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPrefixListResolvers.html
+   */
+  public toDescribeIpamPrefixListResolvers() {
+    return this.to('DescribeIpamPrefixListResolvers');
   }
 
   /**
@@ -5827,6 +6184,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more transit gateway metering policies
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayMeteringPolicies.html
+   */
+  public toDescribeTransitGatewayMeteringPolicies() {
+    return this.to('DescribeTransitGatewayMeteringPolicies');
+  }
+
+  /**
    * Grants permission to describe one or more transit gateway multicast domains
    *
    * Access Level: List
@@ -6149,6 +6520,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more VPC Encryption Controls
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEncryptionControls.html
+   */
+  public toDescribeVpcEncryptionControls() {
+    return this.to('DescribeVpcEncryptionControls');
+  }
+
+  /**
    * Grants permission to describe the VPC endpoint associations
    *
    * Access Level: List
@@ -6275,6 +6660,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more VPN concentrators
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConcentrators.html
+   */
+  public toDescribeVpnConcentrators() {
+    return this.to('DescribeVpnConcentrators');
+  }
+
+  /**
    * Grants permission to describe one or more VPN connections
    *
    * Access Level: List
@@ -6300,6 +6699,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDescribeVpnGateways() {
     return this.to('DescribeVpnGateways');
+  }
+
+  /**
+   * Grants permission to detach an appliance from a public/private Natgateway
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachApplianceFromNatGateway.html
+   */
+  public toDetachApplianceFromNatGateway() {
+    return this.to('DetachApplianceFromNatGateway');
   }
 
   /**
@@ -6541,6 +6954,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable EC2 instance SQL HA standby detections
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableInstanceSqlHaStandbyDetections.html
+   */
+  public toDisableInstanceSqlHaStandbyDetections() {
+    return this.to('DisableInstanceSqlHaStandbyDetections');
+  }
+
+  /**
    * Grants permission to disable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
    *
    * Access Level: Write
@@ -6555,6 +6982,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDisableIpamOrganizationAdminAccount() {
     return this.to('DisableIpamOrganizationAdminAccount');
+  }
+
+  /**
+   * Grants permission to disable a policy in Amazon VPC IP Address Manager (IPAM) that controls public IPv4 address allocation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableIpamPolicy.html
+   */
+  public toDisableIpamPolicy() {
+    return this.to('DisableIpamPolicy');
   }
 
   /**
@@ -7095,6 +7536,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable EC2 instance SQL HA standby detections
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableInstanceSqlHaStandbyDetections.html
+   */
+  public toEnableInstanceSqlHaStandbyDetections() {
+    return this.to('EnableInstanceSqlHaStandbyDetections');
+  }
+
+  /**
    * Grants permission to enable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account
    *
    * Access Level: Write
@@ -7111,6 +7566,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toEnableIpamOrganizationAdminAccount() {
     return this.to('EnableIpamOrganizationAdminAccount');
+  }
+
+  /**
+   * Grants permission to enable an Amazon VPC IP Address Manager (IPAM) policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableIpamPolicy.html
+   */
+  public toEnableIpamPolicy() {
+    return this.to('EnableIpamPolicy');
   }
 
   /**
@@ -7541,6 +8010,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the currently enabled policy in Amazon VPC IP Address Manager (IPAM)
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEnabledIpamPolicy.html
+   */
+  public toGetEnabledIpamPolicy() {
+    return this.to('GetEnabledIpamPolicy');
+  }
+
+  /**
    * Grants permission to generate a CloudFormation template to streamline the integration of VPC flow logs with Amazon Athena
    *
    * Access Level: Read
@@ -7580,6 +8063,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetHostReservationPurchasePreview() {
     return this.to('GetHostReservationPurchasePreview');
+  }
+
+  /**
+   * Grants permission to retrieve the ancestry chain of an AMI back to its root AMI
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageAncestry.html
+   */
+  public toGetImageAncestry() {
+    return this.to('GetImageAncestry');
   }
 
   /**
@@ -7709,6 +8206,34 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the rules that define how Amazon VPC IP Address Manager (IPAM) pools allocate IP addresses to AWS resource types within an IPAM policy
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPolicyAllocationRules.html
+   */
+  public toGetIpamPolicyAllocationRules() {
+    return this.to('GetIpamPolicyAllocationRules');
+  }
+
+  /**
+   * Grants permission to retrieve the AWS Organizations targets associated with an Amazon VPC IP Address Manager (IPAM) policy
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPolicyOrganizationTargets.html
+   */
+  public toGetIpamPolicyOrganizationTargets() {
+    return this.to('GetIpamPolicyOrganizationTargets');
+  }
+
+  /**
    * Grants permission to get a list of all the CIDR allocations in an Amazon VPC IP Address Manager (IPAM) pool
    *
    * Access Level: List
@@ -7734,6 +8259,48 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetIpamPoolCidrs() {
     return this.to('GetIpamPoolCidrs');
+  }
+
+  /**
+   * Grants permission to get rules for an IPAM prefix list resolver
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverRules.html
+   */
+  public toGetIpamPrefixListResolverRules() {
+    return this.to('GetIpamPrefixListResolverRules');
+  }
+
+  /**
+   * Grants permission to get CIDR entries for a specific version of an IPAM prefix list resolver
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverVersionEntries.html
+   */
+  public toGetIpamPrefixListResolverVersionEntries() {
+    return this.to('GetIpamPrefixListResolverVersionEntries');
+  }
+
+  /**
+   * Grants permission to get versions of an IPAM prefix list resolver
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverVersions.html
+   */
+  public toGetIpamPrefixListResolverVersions() {
+    return this.to('GetIpamPrefixListResolverVersions');
   }
 
   /**
@@ -7989,6 +8556,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the entries for a transit gateway metering policy
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayMeteringPolicyEntries.html
+   */
+  public toGetTransitGatewayMeteringPolicyEntries() {
+    return this.to('GetTransitGatewayMeteringPolicyEntries');
+  }
+
+  /**
    * Grants permission to get information about the associations for a transit gateway multicast domain
    *
    * Access Level: List
@@ -8126,6 +8707,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toGetVerifiedAccessInstanceWebAcl() {
     return this.to('GetVerifiedAccessInstanceWebAcl');
+  }
+
+  /**
+   * Grants permission to describe resources that would block VPC Encryption Control enforcement
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetVpcResourcesBlockingEncryptionEnforcement.html
+   */
+  public toGetVpcResourcesBlockingEncryptionEnforcement() {
+    return this.to('GetVpcResourcesBlockingEncryptionEnforcement');
   }
 
   /**
@@ -8319,6 +8914,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toListSnapshotsInRecycleBin() {
     return this.to('ListSnapshotsInRecycleBin');
+  }
+
+  /**
+   * Grants permission to list EBS volumes in Recycle Bin
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ListVolumesInRecycleBin.html
+   */
+  public toListVolumesInRecycleBin() {
+    return this.to('ListVolumesInRecycleBin');
   }
 
   /**
@@ -8704,6 +9313,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the rules that define how Amazon VPC IP Address Manager (IPAM) pools allocate IP addresses to AWS resource types within an IPAM policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPolicyAllocationRules.html
+   */
+  public toModifyIpamPolicyAllocationRules() {
+    return this.to('ModifyIpamPolicyAllocationRules');
+  }
+
+  /**
    * Grants permission to modify the configurations of an Amazon VPC IP Address Manager (IPAM) pool
    *
    * Access Level: Write
@@ -8715,6 +9338,34 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyIpamPool() {
     return this.to('ModifyIpamPool');
+  }
+
+  /**
+   * Grants permission to modify an IPAM prefix list resolver
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPrefixListResolver.html
+   */
+  public toModifyIpamPrefixListResolver() {
+    return this.to('ModifyIpamPrefixListResolver');
+  }
+
+  /**
+   * Grants permission to modify an IPAM prefix list resolver target
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPrefixListResolverTarget.html
+   */
+  public toModifyIpamPrefixListResolverTarget() {
+    return this.to('ModifyIpamPrefixListResolverTarget');
   }
 
   /**
@@ -8813,6 +9464,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyNetworkInterfaceAttribute() {
     return this.to('ModifyNetworkInterfaceAttribute');
+  }
+
+  /**
+   * Grants permission to allow Oracle Database@AWS to modify the settings of a peering connection between an ODB network and a VPC
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyOdbNetworkPeering.html
+   */
+  public toModifyOdbNetworkPeering() {
+    return this.to('ModifyOdbNetworkPeering');
   }
 
   /**
@@ -8995,6 +9660,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyTransitGateway() {
     return this.to('ModifyTransitGateway');
+  }
+
+  /**
+   * Grants permission to modify a transit gateway metering policy
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayMeteringPolicy.html
+   */
+  public toModifyTransitGatewayMeteringPolicy() {
+    return this.to('ModifyTransitGatewayMeteringPolicy');
   }
 
   /**
@@ -9191,6 +9870,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyVpcBlockPublicAccessOptions() {
     return this.to('ModifyVpcBlockPublicAccessOptions');
+  }
+
+  /**
+   * Grants permission to modify an existing VPC Encryption Control
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEncryptionControl.html
+   */
+  public toModifyVpcEncryptionControl() {
+    return this.to('ModifyVpcEncryptionControl');
   }
 
   /**
@@ -10095,6 +10788,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restore an EBS volume from Recycle Bin
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreVolumeFromRecycleBin.html
+   */
+  public toRestoreVolumeFromRecycleBin() {
+    return this.to('RestoreVolumeFromRecycleBin');
+  }
+
+  /**
    * Grants permission to remove an inbound authorization rule from a Client VPN endpoint
    *
    * Access Level: Write
@@ -10442,6 +11149,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the number of instances allocated to an interruptible reservation, allowing you to add more capacity or reclaim capacity to your source Capacity Reservation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateInterruptibleCapacityReservationAllocation.html
+   */
+  public toUpdateInterruptibleCapacityReservationAllocation() {
+    return this.to('UpdateInterruptibleCapacityReservationAllocation');
+  }
+
+  /**
    * Grants permission to update descriptions for one or more outbound rules in a VPC security group
    *
    * Access Level: Write
@@ -10570,9 +11291,13 @@ export class Ec2 extends PolicyStatement {
       'CreateInstanceEventWindow',
       'CreateInstanceExportTask',
       'CreateInternetGateway',
+      'CreateInterruptibleCapacityReservationAllocation',
       'CreateIpam',
       'CreateIpamExternalResourceVerificationToken',
+      'CreateIpamPolicy',
       'CreateIpamPool',
+      'CreateIpamPrefixListResolver',
+      'CreateIpamPrefixListResolverTarget',
       'CreateIpamResourceDiscovery',
       'CreateIpamScope',
       'CreateKeyPair',
@@ -10616,6 +11341,8 @@ export class Ec2 extends PolicyStatement {
       'CreateTransitGateway',
       'CreateTransitGatewayConnect',
       'CreateTransitGatewayConnectPeer',
+      'CreateTransitGatewayMeteringPolicy',
+      'CreateTransitGatewayMeteringPolicyEntry',
       'CreateTransitGatewayMulticastDomain',
       'CreateTransitGatewayPeeringAttachment',
       'CreateTransitGatewayPolicyTable',
@@ -10631,10 +11358,12 @@ export class Ec2 extends PolicyStatement {
       'CreateVolume',
       'CreateVpc',
       'CreateVpcBlockPublicAccessExclusion',
+      'CreateVpcEncryptionControl',
       'CreateVpcEndpoint',
       'CreateVpcEndpointConnectionNotification',
       'CreateVpcEndpointServiceConfiguration',
       'CreateVpcPeeringConnection',
+      'CreateVpnConcentrator',
       'CreateVpnConnection',
       'CreateVpnConnectionRoute',
       'CreateVpnGateway',
@@ -10656,7 +11385,10 @@ export class Ec2 extends PolicyStatement {
       'DeleteInternetGateway',
       'DeleteIpam',
       'DeleteIpamExternalResourceVerificationToken',
+      'DeleteIpamPolicy',
       'DeleteIpamPool',
+      'DeleteIpamPrefixListResolver',
+      'DeleteIpamPrefixListResolverTarget',
       'DeleteIpamResourceDiscovery',
       'DeleteIpamScope',
       'DeleteKeyPair',
@@ -10697,6 +11429,8 @@ export class Ec2 extends PolicyStatement {
       'DeleteTransitGateway',
       'DeleteTransitGatewayConnect',
       'DeleteTransitGatewayConnectPeer',
+      'DeleteTransitGatewayMeteringPolicy',
+      'DeleteTransitGatewayMeteringPolicyEntry',
       'DeleteTransitGatewayMulticastDomain',
       'DeleteTransitGatewayPeeringAttachment',
       'DeleteTransitGatewayPolicyTable',
@@ -10712,10 +11446,12 @@ export class Ec2 extends PolicyStatement {
       'DeleteVolume',
       'DeleteVpc',
       'DeleteVpcBlockPublicAccessExclusion',
+      'DeleteVpcEncryptionControl',
       'DeleteVpcEndpointConnectionNotifications',
       'DeleteVpcEndpointServiceConfigurations',
       'DeleteVpcEndpoints',
       'DeleteVpcPeeringConnection',
+      'DeleteVpnConcentrator',
       'DeleteVpnConnection',
       'DeleteVpnConnectionRoute',
       'DeleteVpnGateway',
@@ -10743,7 +11479,9 @@ export class Ec2 extends PolicyStatement {
       'DisableImage',
       'DisableImageDeprecation',
       'DisableImageDeregistrationProtection',
+      'DisableInstanceSqlHaStandbyDetections',
       'DisableIpamOrganizationAdminAccount',
+      'DisableIpamPolicy',
       'DisableRouteServerPropagation',
       'DisableSerialConsoleAccess',
       'DisableTransitGatewayRouteTablePropagation',
@@ -10779,7 +11517,9 @@ export class Ec2 extends PolicyStatement {
       'EnableImage',
       'EnableImageDeprecation',
       'EnableImageDeregistrationProtection',
+      'EnableInstanceSqlHaStandbyDetections',
       'EnableIpamOrganizationAdminAccount',
+      'EnableIpamPolicy',
       'EnableReachabilityAnalyzerOrganizationSharing',
       'EnableRouteServerPropagation',
       'EnableSerialConsoleAccess',
@@ -10825,7 +11565,10 @@ export class Ec2 extends PolicyStatement {
       'ModifyInstanceNetworkPerformanceOptions',
       'ModifyInstancePlacement',
       'ModifyIpam',
+      'ModifyIpamPolicyAllocationRules',
       'ModifyIpamPool',
+      'ModifyIpamPrefixListResolver',
+      'ModifyIpamPrefixListResolverTarget',
       'ModifyIpamResourceCidr',
       'ModifyIpamResourceDiscovery',
       'ModifyIpamScope',
@@ -10845,6 +11588,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyTrafficMirrorFilterRule',
       'ModifyTrafficMirrorSession',
       'ModifyTransitGateway',
+      'ModifyTransitGatewayMeteringPolicy',
       'ModifyTransitGatewayPrefixListReference',
       'ModifyTransitGatewayVpcAttachment',
       'ModifyVerifiedAccessEndpoint',
@@ -10859,6 +11603,7 @@ export class Ec2 extends PolicyStatement {
       'ModifyVpcAttribute',
       'ModifyVpcBlockPublicAccessExclusion',
       'ModifyVpcBlockPublicAccessOptions',
+      'ModifyVpcEncryptionControl',
       'ModifyVpcEndpoint',
       'ModifyVpcEndpointConnectionNotification',
       'ModifyVpcEndpointServiceConfiguration',
@@ -10919,6 +11664,7 @@ export class Ec2 extends PolicyStatement {
       'RestoreManagedPrefixListVersion',
       'RestoreSnapshotFromRecycleBin',
       'RestoreSnapshotTier',
+      'RestoreVolumeFromRecycleBin',
       'RevokeClientVpnIngress',
       'RevokeSecurityGroupEgress',
       'RevokeSecurityGroupIngress',
@@ -10939,23 +11685,29 @@ export class Ec2 extends PolicyStatement {
       'UnlockSnapshot',
       'UnmonitorInstances',
       'UpdateCapacityManagerOrganizationsAccess',
+      'UpdateInterruptibleCapacityReservationAllocation',
       'UpdateSecurityGroupRuleDescriptionsEgress',
       'UpdateSecurityGroupRuleDescriptionsIngress',
       'WithdrawByoipCidr'
     ],
     'Permissions management': [
+      'AttachApplianceToNatGateway',
       'CancelImageLaunchPermission',
       'CreateCoipPoolPermission',
       'CreateLocalGatewayRouteTablePermission',
       'CreateNetworkInterfacePermission',
+      'CreateOdbNetworkPeering',
       'DeleteCoipPoolPermission',
       'DeleteLocalGatewayRouteTablePermission',
       'DeleteNetworkInterfacePermission',
+      'DeleteOdbNetworkPeering',
       'DeleteResourcePolicy',
+      'DetachApplianceFromNatGateway',
       'DisableImageBlockPublicAccess',
       'DisableSnapshotBlockPublicAccess',
       'EnableImageBlockPublicAccess',
       'EnableSnapshotBlockPublicAccess',
+      'ModifyOdbNetworkPeering',
       'ModifySnapshotAttribute',
       'ModifyVpcEndpointServicePermissions',
       'PutResourcePolicy',
@@ -10983,6 +11735,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeCapacityManagerDataExports',
       'DescribeCapacityReservationBillingRequests',
       'DescribeCapacityReservationFleets',
+      'DescribeCapacityReservationTopology',
       'DescribeCapacityReservations',
       'DescribeCarrierGateways',
       'DescribeClassicLinkInstances',
@@ -11027,6 +11780,8 @@ export class Ec2 extends PolicyStatement {
       'DescribeInstanceEventNotificationAttributes',
       'DescribeInstanceEventWindows',
       'DescribeInstanceImageMetadata',
+      'DescribeInstanceSqlHaHistoryStates',
+      'DescribeInstanceSqlHaStates',
       'DescribeInstanceStatus',
       'DescribeInstanceTopology',
       'DescribeInstanceTypeOfferings',
@@ -11035,7 +11790,10 @@ export class Ec2 extends PolicyStatement {
       'DescribeInternetGateways',
       'DescribeIpamByoasn',
       'DescribeIpamExternalResourceVerificationTokens',
+      'DescribeIpamPolicies',
       'DescribeIpamPools',
+      'DescribeIpamPrefixListResolverTargets',
+      'DescribeIpamPrefixListResolvers',
       'DescribeIpamResourceDiscoveries',
       'DescribeIpamResourceDiscoveryAssociations',
       'DescribeIpamScopes',
@@ -11107,6 +11865,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeTransitGatewayAttachments',
       'DescribeTransitGatewayConnectPeers',
       'DescribeTransitGatewayConnects',
+      'DescribeTransitGatewayMeteringPolicies',
       'DescribeTransitGatewayMulticastDomains',
       'DescribeTransitGatewayPeeringAttachments',
       'DescribeTransitGatewayPolicyTables',
@@ -11130,6 +11889,7 @@ export class Ec2 extends PolicyStatement {
       'DescribeVpcBlockPublicAccessOptions',
       'DescribeVpcClassicLink',
       'DescribeVpcClassicLinkDnsSupport',
+      'DescribeVpcEncryptionControls',
       'DescribeVpcEndpointAssociations',
       'DescribeVpcEndpointConnectionNotifications',
       'DescribeVpcEndpointConnections',
@@ -11139,13 +11899,17 @@ export class Ec2 extends PolicyStatement {
       'DescribeVpcEndpoints',
       'DescribeVpcPeeringConnections',
       'DescribeVpcs',
+      'DescribeVpnConcentrators',
       'DescribeVpnConnections',
       'DescribeVpnGateways',
       'GetGroupsForCapacityReservation',
       'GetInstanceMetadataDefaults',
       'GetInstanceTypesFromInstanceRequirements',
+      'GetIpamPolicyAllocationRules',
+      'GetIpamPolicyOrganizationTargets',
       'GetIpamPoolAllocations',
       'GetTransitGatewayAttachmentPropagations',
+      'GetTransitGatewayMeteringPolicyEntries',
       'GetTransitGatewayMulticastDomainAssociations',
       'GetTransitGatewayPolicyTableAssociations',
       'GetTransitGatewayPolicyTableEntries',
@@ -11156,11 +11920,13 @@ export class Ec2 extends PolicyStatement {
       'GetVerifiedAccessEndpointTargets',
       'GetVerifiedAccessGroupPolicy',
       'GetVerifiedAccessInstanceWebAcl',
+      'GetVpcResourcesBlockingEncryptionEnforcement',
       'GetVpnConnectionDeviceSampleConfiguration',
       'GetVpnConnectionDeviceTypes',
       'GetVpnTunnelReplacementStatus',
       'ListImagesInRecycleBin',
       'ListSnapshotsInRecycleBin',
+      'ListVolumesInRecycleBin',
       'SearchLocalGatewayRoutes',
       'SearchTransitGatewayMulticastGroups',
       'SearchTransitGatewayRoutes'
@@ -11185,8 +11951,10 @@ export class Ec2 extends PolicyStatement {
       'GetDefaultCreditSpecification',
       'GetEbsDefaultKmsKeyId',
       'GetEbsEncryptionByDefault',
+      'GetEnabledIpamPolicy',
       'GetFlowLogsIntegrationTemplate',
       'GetHostReservationPurchasePreview',
+      'GetImageAncestry',
       'GetImageBlockPublicAccessState',
       'GetInstanceTpmEkPub',
       'GetInstanceUefiData',
@@ -11195,6 +11963,9 @@ export class Ec2 extends PolicyStatement {
       'GetIpamDiscoveredPublicAddresses',
       'GetIpamDiscoveredResourceCidrs',
       'GetIpamPoolCidrs',
+      'GetIpamPrefixListResolverRules',
+      'GetIpamPrefixListResolverVersionEntries',
+      'GetIpamPrefixListResolverVersions',
       'GetIpamResourceCidrs',
       'GetLaunchTemplateData',
       'GetManagedPrefixListAssociations',
@@ -11330,6 +12101,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAvailabilityZone()
    * - .ifAvailabilityZoneId()
    * - .ifCapacityReservationFleet()
+   * - .ifCommitmentDuration()
    * - .ifCreateDate()
    * - .ifDestinationCapacityReservationId()
    * - .ifEbsOptimized()
@@ -11340,6 +12112,9 @@ export class Ec2 extends PolicyStatement {
    * - .ifInstanceMatchCriteria()
    * - .ifInstancePlatform()
    * - .ifInstanceType()
+   * - .ifInterruptibleCapacityReservationId()
+   * - .ifInterruptionType()
+   * - .ifIsInterruptible()
    * - .ifIsLaunchTemplateResource()
    * - .ifLaunchTemplate()
    * - .ifOutpostArn()
@@ -11347,6 +12122,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifSourceCapacityReservationId()
+   * - .ifTargetInstanceCount()
    * - .ifTenancy()
    */
   public onCapacityReservation(capacityReservationId: string, account?: string, region?: string, partition?: string) {
@@ -11934,6 +12710,28 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ipam-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param ipamPolicyId - Identifier for the ipamPolicyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpamPolicy(ipamPolicyId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2::${ account ?? this.defaultAccount }:ipam-policy/${ ipamPolicyId }`);
+  }
+
+  /**
    * Adds a resource of type ipam-pool to the statement
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
@@ -11953,6 +12751,50 @@ export class Ec2 extends PolicyStatement {
    */
   public onIpamPool(ipamPoolId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2::${ account ?? this.defaultAccount }:ipam-pool/${ ipamPoolId }`);
+  }
+
+  /**
+   * Adds a resource of type ipam-prefix-list-resolver to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param ipamPrefixListResolverId - Identifier for the ipamPrefixListResolverId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpamPrefixListResolver(ipamPrefixListResolverId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2::${ account ?? this.defaultAccount }:ipam-prefix-list-resolver/${ ipamPrefixListResolverId }`);
+  }
+
+  /**
+   * Adds a resource of type ipam-prefix-list-resolver-target to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param ipamPrefixListResolverTargetId - Identifier for the ipamPrefixListResolverTargetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onIpamPrefixListResolverTarget(ipamPrefixListResolverTargetId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2::${ account ?? this.defaultAccount }:ipam-prefix-list-resolver-target/${ ipamPrefixListResolverTargetId }`);
   }
 
   /**
@@ -12311,6 +13153,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
+   * - .ifVpc()
    */
   public onNatgateway(natGatewayId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:natgateway/${ natGatewayId }`);
@@ -12517,6 +13360,7 @@ export class Ec2 extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAttribute()
    * - .ifAttribute()
+   * - .ifIpamPrefixListResolverTargetId()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -13033,6 +13877,29 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type transit-gateway-metering-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param transitGatewayMeteringPolicyId - Identifier for the transitGatewayMeteringPolicyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   * - .ifTransitGatewayMeteringPolicyId()
+   */
+  public onTransitGatewayMeteringPolicy(transitGatewayMeteringPolicyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transit-gateway-metering-policy/${ transitGatewayMeteringPolicyId }`);
+  }
+
+  /**
    * Adds a resource of type transit-gateway-multicast-domain to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html
@@ -13317,6 +14184,28 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type vpc-encryption-control to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-control.html
+   *
+   * @param vpcEncryptionControlId - Identifier for the vpcEncryptionControlId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAttribute()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVpcEncryptionControl(vpcEncryptionControlId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpc-encryption-control/${ vpcEncryptionControlId }`);
+  }
+
+  /**
    * Adds a resource of type vpc-endpoint-connection to the statement
    *
    * https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html
@@ -13356,6 +14245,8 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    * - .ifResourceTag()
    * - .ifVpceMultiRegion()
+   * - .ifVpcePrivateDnsPreference()
+   * - .ifVpcePrivateDnsSpecifiedDomains()
    * - .ifVpceServiceName()
    * - .ifVpceServiceOwner()
    * - .ifVpceServiceRegion()
@@ -13487,6 +14378,27 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type vpn-concentrator to the statement
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
+   *
+   * @param vpnConcentratorId - Identifier for the vpnConcentratorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onVpnConcentrator(vpnConcentratorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpn-concentrator/${ vpnConcentratorId }`);
+  }
+
+  /**
    * Adds a resource of type vpn-connection-device-type to the statement
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
@@ -13599,9 +14511,13 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceEventWindow()
    * - .toCreateInstanceExportTask()
    * - .toCreateInternetGateway()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateIpam()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
+   * - .toCreateIpamPrefixListResolver()
+   * - .toCreateIpamPrefixListResolverTarget()
    * - .toCreateIpamResourceDiscovery()
    * - .toCreateIpamScope()
    * - .toCreateKeyPair()
@@ -13638,6 +14554,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGateway()
    * - .toCreateTransitGatewayConnect()
    * - .toCreateTransitGatewayConnectPeer()
+   * - .toCreateTransitGatewayMeteringPolicy()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
@@ -13651,9 +14568,11 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toCreateVpcEncryptionControl()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointServiceConfiguration()
    * - .toCreateVpcPeeringConnection()
+   * - .toCreateVpnConcentrator()
    * - .toCreateVpnConnection()
    * - .toCreateVpnGateway()
    * - .toDeleteTags()
@@ -13698,7 +14617,10 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam-external-resource-verification-token
    * - ipam
+   * - ipam-policy
    * - ipam-pool
+   * - ipam-prefix-list-resolver
+   * - ipam-prefix-list-resolver-target
    * - ipam-resource-discovery-association
    * - ipam-resource-discovery
    * - ipam-scope
@@ -13744,6 +14666,7 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-attachment
    * - transit-gateway-connect-peer
    * - transit-gateway
+   * - transit-gateway-metering-policy
    * - transit-gateway-multicast-domain
    * - transit-gateway-policy-table
    * - transit-gateway-route-table-announcement
@@ -13756,6 +14679,7 @@ export class Ec2 extends PolicyStatement {
    * - verified-access-trust-provider
    * - volume
    * - vpc-block-public-access-exclusion
+   * - vpc-encryption-control
    * - vpc-endpoint-connection
    * - vpc-endpoint
    * - vpc-endpoint-service
@@ -13763,6 +14687,7 @@ export class Ec2 extends PolicyStatement {
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
+   * - vpn-concentrator
    * - vpn-connection
    * - vpn-gateway
    *
@@ -13810,6 +14735,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateTransitGatewayRouteTable()
    * - .toAssociateVerifiedAccessInstanceWebAcl()
    * - .toAssociateVpcCidrBlock()
+   * - .toAttachApplianceToNatGateway()
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
@@ -13843,7 +14769,10 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceConnectEndpoint()
    * - .toCreateInstanceExportTask()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
+   * - .toCreateIpamPrefixListResolver()
+   * - .toCreateIpamPrefixListResolverTarget()
    * - .toCreateIpamScope()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
@@ -13860,6 +14789,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
+   * - .toCreateOdbNetworkPeering()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRoute()
    * - .toCreateRouteServerEndpoint()
@@ -13876,6 +14806,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTrafficMirrorSession()
    * - .toCreateTrafficMirrorTarget()
    * - .toCreateTransitGatewayConnectPeer()
+   * - .toCreateTransitGatewayMeteringPolicy()
+   * - .toCreateTransitGatewayMeteringPolicyEntry()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
@@ -13889,9 +14821,11 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toCreateVpcEncryptionControl()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointConnectionNotification()
    * - .toCreateVpcPeeringConnection()
+   * - .toCreateVpnConcentrator()
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
    * - .toDeleteCapacityManagerDataExport()
@@ -13913,7 +14847,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteInternetGateway()
    * - .toDeleteIpam()
    * - .toDeleteIpamExternalResourceVerificationToken()
+   * - .toDeleteIpamPolicy()
    * - .toDeleteIpamPool()
+   * - .toDeleteIpamPrefixListResolver()
+   * - .toDeleteIpamPrefixListResolverTarget()
    * - .toDeleteIpamResourceDiscovery()
    * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
@@ -13936,6 +14873,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteNetworkInsightsPath()
    * - .toDeleteNetworkInterface()
    * - .toDeleteNetworkInterfacePermission()
+   * - .toDeleteOdbNetworkPeering()
    * - .toDeletePlacementGroup()
    * - .toDeletePublicIpv4Pool()
    * - .toDeleteQueuedReservedInstances()
@@ -13956,6 +14894,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGateway()
    * - .toDeleteTransitGatewayConnect()
    * - .toDeleteTransitGatewayConnectPeer()
+   * - .toDeleteTransitGatewayMeteringPolicy()
+   * - .toDeleteTransitGatewayMeteringPolicyEntry()
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
    * - .toDeleteTransitGatewayPolicyTable()
@@ -13971,10 +14911,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVolume()
    * - .toDeleteVpc()
    * - .toDeleteVpcBlockPublicAccessExclusion()
+   * - .toDeleteVpcEncryptionControl()
    * - .toDeleteVpcEndpointConnectionNotifications()
    * - .toDeleteVpcEndpointServiceConfigurations()
    * - .toDeleteVpcEndpoints()
    * - .toDeleteVpcPeeringConnection()
+   * - .toDeleteVpnConcentrator()
    * - .toDeleteVpnConnection()
    * - .toDeleteVpnConnectionRoute()
    * - .toDeleteVpnGateway()
@@ -14001,6 +14943,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVolumeAttribute()
    * - .toDescribeVpcAttribute()
    * - .toDescribeVpcEndpointServicePermissions()
+   * - .toDetachApplianceFromNatGateway()
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
@@ -14013,6 +14956,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
    * - .toDisableImageDeregistrationProtection()
+   * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisableIpamPolicy()
    * - .toDisableRouteServerPropagation()
    * - .toDisableTransitGatewayRouteTablePropagation()
    * - .toDisableVgwRoutePropagation()
@@ -14040,6 +14985,8 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
+   * - .toEnableInstanceSqlHaStandbyDetections()
+   * - .toEnableIpamPolicy()
    * - .toEnableRouteServerPropagation()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
@@ -14058,14 +15005,20 @@ export class Ec2 extends PolicyStatement {
    * - .toGetDeclarativePoliciesReportSummary()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
+   * - .toGetImageAncestry()
    * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
    * - .toGetIpamDiscoveredAccounts()
    * - .toGetIpamDiscoveredPublicAddresses()
    * - .toGetIpamDiscoveredResourceCidrs()
+   * - .toGetIpamPolicyAllocationRules()
+   * - .toGetIpamPolicyOrganizationTargets()
    * - .toGetIpamPoolAllocations()
    * - .toGetIpamPoolCidrs()
+   * - .toGetIpamPrefixListResolverRules()
+   * - .toGetIpamPrefixListResolverVersionEntries()
+   * - .toGetIpamPrefixListResolverVersions()
    * - .toGetIpamResourceCidrs()
    * - .toGetLaunchTemplateData()
    * - .toGetManagedPrefixListAssociations()
@@ -14079,6 +15032,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetRouteServerPropagations()
    * - .toGetRouteServerRoutingDatabase()
    * - .toGetSecurityGroupsForVpc()
+   * - .toGetTransitGatewayMeteringPolicyEntries()
    * - .toGetTransitGatewayMulticastDomainAssociations()
    * - .toGetTransitGatewayPolicyTableAssociations()
    * - .toGetTransitGatewayPolicyTableEntries()
@@ -14086,6 +15040,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetVerifiedAccessEndpointTargets()
    * - .toGetVerifiedAccessGroupPolicy()
    * - .toGetVerifiedAccessInstanceWebAcl()
+   * - .toGetVpcResourcesBlockingEncryptionEnforcement()
    * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toGetVpnTunnelReplacementStatus()
    * - .toImportByoipCidrToIpam()
@@ -14114,7 +15069,10 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
+   * - .toModifyIpamPolicyAllocationRules()
    * - .toModifyIpamPool()
+   * - .toModifyIpamPrefixListResolver()
+   * - .toModifyIpamPrefixListResolverTarget()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
    * - .toModifyIpamScope()
@@ -14122,6 +15080,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLocalGatewayRoute()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyOdbNetworkPeering()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyPublicIpDnsNameOptions()
    * - .toModifyReservedInstances()
@@ -14135,6 +15094,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorFilterRule()
    * - .toModifyTrafficMirrorSession()
    * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayMeteringPolicy()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVerifiedAccessEndpoint()
@@ -14148,6 +15108,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toModifyVpcAttribute()
    * - .toModifyVpcBlockPublicAccessExclusion()
+   * - .toModifyVpcEncryptionControl()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
    * - .toModifyVpcEndpointServiceConfiguration()
@@ -14201,6 +15162,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreManagedPrefixListVersion()
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRevokeClientVpnIngress()
    * - .toRevokeSecurityGroupEgress()
    * - .toRevokeSecurityGroupIngress()
@@ -14222,6 +15184,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUnassignPrivateNatGatewayAddress()
    * - .toUnlockSnapshot()
    * - .toUnmonitorInstances()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
    *
@@ -14254,7 +15217,10 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam-external-resource-verification-token
    * - ipam
+   * - ipam-policy
    * - ipam-pool
+   * - ipam-prefix-list-resolver
+   * - ipam-prefix-list-resolver-target
    * - ipam-resource-discovery-association
    * - ipam-resource-discovery
    * - ipam-scope
@@ -14300,6 +15266,7 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-attachment
    * - transit-gateway-connect-peer
    * - transit-gateway
+   * - transit-gateway-metering-policy
    * - transit-gateway-multicast-domain
    * - transit-gateway-policy-table
    * - transit-gateway-route-table-announcement
@@ -14312,6 +15279,7 @@ export class Ec2 extends PolicyStatement {
    * - verified-access-trust-provider
    * - volume
    * - vpc-block-public-access-exclusion
+   * - vpc-encryption-control
    * - vpc-endpoint-connection
    * - vpc-endpoint
    * - vpc-endpoint-service
@@ -14319,6 +15287,7 @@ export class Ec2 extends PolicyStatement {
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
+   * - vpn-concentrator
    * - vpn-connection
    * - vpn-gateway
    *
@@ -14364,9 +15333,13 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceEventWindow()
    * - .toCreateInstanceExportTask()
    * - .toCreateInternetGateway()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateIpam()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
+   * - .toCreateIpamPrefixListResolver()
+   * - .toCreateIpamPrefixListResolverTarget()
    * - .toCreateIpamResourceDiscovery()
    * - .toCreateIpamScope()
    * - .toCreateKeyPair()
@@ -14403,6 +15376,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGateway()
    * - .toCreateTransitGatewayConnect()
    * - .toCreateTransitGatewayConnectPeer()
+   * - .toCreateTransitGatewayMeteringPolicy()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
@@ -14416,9 +15390,11 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toCreateVpcEncryptionControl()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointServiceConfiguration()
    * - .toCreateVpcPeeringConnection()
+   * - .toCreateVpnConcentrator()
    * - .toCreateVpnConnection()
    * - .toCreateVpnGateway()
    * - .toDeleteTags()
@@ -14463,7 +15439,10 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam-external-resource-verification-token
    * - ipam
+   * - ipam-policy
    * - ipam-pool
+   * - ipam-prefix-list-resolver
+   * - ipam-prefix-list-resolver-target
    * - ipam-resource-discovery-association
    * - ipam-resource-discovery
    * - ipam-scope
@@ -14509,6 +15488,7 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-attachment
    * - transit-gateway-connect-peer
    * - transit-gateway
+   * - transit-gateway-metering-policy
    * - transit-gateway-multicast-domain
    * - transit-gateway-policy-table
    * - transit-gateway-route-table-announcement
@@ -14521,6 +15501,7 @@ export class Ec2 extends PolicyStatement {
    * - verified-access-trust-provider
    * - volume
    * - vpc-block-public-access-exclusion
+   * - vpc-encryption-control
    * - vpc-endpoint-connection
    * - vpc-endpoint
    * - vpc-endpoint-service
@@ -14528,6 +15509,7 @@ export class Ec2 extends PolicyStatement {
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
+   * - vpn-concentrator
    * - vpn-connection
    * - vpn-gateway
    *
@@ -14670,6 +15652,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
    * - .toModifyIpamPool()
+   * - .toModifyIpamPrefixListResolver()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
    * - .toModifyIpamScope()
@@ -14727,7 +15710,10 @@ export class Ec2 extends PolicyStatement {
    * - instance
    * - ipam-external-resource-verification-token
    * - ipam
+   * - ipam-policy
    * - ipam-pool
+   * - ipam-prefix-list-resolver
+   * - ipam-prefix-list-resolver-target
    * - ipam-resource-discovery
    * - ipam-scope
    * - launch-template
@@ -14789,6 +15775,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
    * - .toModifyIpamPool()
+   * - .toModifyIpamPrefixListResolver()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
    * - .toModifyIpamScope()
@@ -14796,6 +15783,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLocalGatewayRoute()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyOdbNetworkPeering()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyPublicIpDnsNameOptions()
    * - .toModifyReservedInstances()
@@ -14807,6 +15795,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorFilterRule()
    * - .toModifyTrafficMirrorSession()
    * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayMeteringPolicy()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVerifiedAccessEndpoint()
@@ -14820,6 +15809,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toModifyVpcAttribute()
    * - .toModifyVpcBlockPublicAccessExclusion()
+   * - .toModifyVpcEncryptionControl()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointServiceConfiguration()
    * - .toModifyVpcEndpointServicePayerResponsibility()
@@ -14851,7 +15841,10 @@ export class Ec2 extends PolicyStatement {
    * - instance
    * - ipam-external-resource-verification-token
    * - ipam
+   * - ipam-policy
    * - ipam-pool
+   * - ipam-prefix-list-resolver
+   * - ipam-prefix-list-resolver-target
    * - ipam-resource-discovery
    * - ipam-scope
    * - launch-template
@@ -14867,6 +15860,7 @@ export class Ec2 extends PolicyStatement {
    * - traffic-mirror-session
    * - transit-gateway-attachment
    * - transit-gateway
+   * - transit-gateway-metering-policy
    * - transit-gateway-route-table
    * - verified-access-endpoint
    * - verified-access-group
@@ -14874,6 +15868,7 @@ export class Ec2 extends PolicyStatement {
    * - verified-access-trust-provider
    * - volume
    * - vpc-block-public-access-exclusion
+   * - vpc-encryption-control
    * - vpc-endpoint
    * - vpc-endpoint-service
    * - vpc
@@ -14999,6 +15994,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateImage()
    * - .toCreateInstanceConnectEndpoint()
    * - .toCreateInstanceExportTask()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateLocalGatewayRoute()
    * - .toCreateMacSystemIntegrityProtectionModificationTask()
    * - .toCreateNatGateway()
@@ -15033,6 +16029,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
    * - .toDisableFastSnapshotRestores()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateAddress()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateIamInstanceProfile()
@@ -15041,6 +16038,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
    * - .toEnableFastSnapshotRestores()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toEnableVolumeIO()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -15088,6 +16086,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotInstances()
    * - .toResetInstanceAttribute()
    * - .toResetNetworkInterfaceAttribute()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
    * - .toSendSpotInstanceInterruptions()
@@ -15097,6 +16096,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUnassignIpv6Addresses()
    * - .toUnassignPrivateIpAddresses()
    * - .toUnmonitorInstances()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -15140,6 +16140,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateImage()
    * - .toCreateInstanceConnectEndpoint()
    * - .toCreateInstanceExportTask()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateMacSystemIntegrityProtectionModificationTask()
    * - .toCreateNatGateway()
    * - .toCreateNetworkInsightsPath()
@@ -15159,10 +16160,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVolumeAttribute()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
    * - .toDisassociateRouteTable()
    * - .toDisassociateSubnetCidrBlock()
    * - .toDisassociateTransitGatewayMulticastDomain()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toEnableVolumeIO()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
@@ -15200,6 +16203,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRequestSpotFleet()
    * - .toRequestSpotInstances()
    * - .toResetInstanceAttribute()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    * - .toSendDiagnosticInterrupt()
    * - .toSendSpotInstanceInterruptions()
@@ -15207,6 +16211,7 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -15358,6 +16363,21 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by commitment duration of the Capacity Reservation
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifCommitmentDuration(value: number | number[], operator?: Operator | string) {
+    return this.if(`CommitmentDuration`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
    * Filters access by the state of AMD SEV-SNP CPU Options. Currently, only US East (Ohio) and Europe (Ireland) are supported
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html
@@ -15445,10 +16465,12 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
    * - .toRejectCapacityReservationBillingOwnership()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -15617,6 +16639,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateMacSystemIntegrityProtectionModificationTask()
    * - .toCreateNetworkInsightsPath()
    * - .toCreateReplaceRootVolumeTask()
@@ -15627,8 +16650,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -15660,6 +16685,7 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -15721,6 +16747,7 @@ export class Ec2 extends PolicyStatement {
    * - .toPauseVolumeIO()
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    * - .toUnlockSnapshot()
    *
@@ -15744,10 +16771,12 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
    * - .toRejectCapacityReservationBillingOwnership()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -15779,10 +16808,12 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
    * - .toRejectCapacityReservationBillingOwnership()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -15926,6 +16957,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
+   * - .toGetImageAncestry()
    * - .toImportImage()
    * - .toModifyFleet()
    * - .toModifyImageAttribute()
@@ -15969,6 +17001,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
+   * - .toGetImageAncestry()
    * - .toImportImage()
    * - .toModifyFleet()
    * - .toModifyImageAttribute()
@@ -16051,7 +17084,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeInstanceAttribute()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -16113,7 +17148,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -16166,10 +17203,12 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
    * - .toRejectCapacityReservationBillingOwnership()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -16201,7 +17240,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -16266,7 +17307,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -16317,10 +17360,12 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
    * - .toRejectCapacityReservationBillingOwnership()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -16353,7 +17398,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeInstanceAttribute()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -16403,10 +17450,12 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservation()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
    * - .toRejectCapacityReservationBillingOwnership()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -16442,7 +17491,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -16504,6 +17555,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFleet()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateMacSystemIntegrityProtectionModificationTask()
    * - .toCreateNetworkInsightsPath()
    * - .toCreateReplaceRootVolumeTask()
@@ -16515,8 +17567,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -16550,6 +17604,7 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -16589,12 +17644,73 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ID of an interruptible Capacity Reservation
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateInterruptibleCapacityReservationAllocation()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInterruptibleCapacityReservationId(value: string | string[], operator?: Operator | string) {
+    return this.if(`InterruptibleCapacityReservationId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the type of interruption
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateInterruptibleCapacityReservationAllocation()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInterruptionType(value: string | string[], operator?: Operator | string) {
+    return this.if(`InterruptionType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the IPAM prefix list resolver target ID that is syncing CIDRs to a managed prefix list
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toDeleteManagedPrefixList()
+   * - .toGetManagedPrefixListAssociations()
+   * - .toGetManagedPrefixListEntries()
+   * - .toModifyManagedPrefixList()
+   *
+   * Applies to resource types:
+   * - prefix-list
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIpamPrefixListResolverTargetId(value: string | string[], operator?: Operator | string) {
+    return this.if(`IpamPrefixListResolverTargetId`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the ID of an IPAM pool provided for IPv4 CIDR block allocation
    *
    * Applies to actions:
    * - .toAssociateRouteServer()
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateVpcCidrBlock()
+   * - .toCreateNatGateway()
    * - .toCreateSubnet()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
@@ -16620,6 +17736,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateSecurityGroupVpc()
    * - .toAssociateSubnetCidrBlock()
    * - .toAssociateVpcCidrBlock()
+   * - .toCreateNatGateway()
    * - .toCreateSubnet()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
@@ -16635,6 +17752,24 @@ export class Ec2 extends PolicyStatement {
    */
   public ifIpv6IpamPoolId(value: string | string[], operator?: Operator | string) {
     return this.if(`Ipv6IpamPoolId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by whether Capacity Reservations are interruptible
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateInterruptibleCapacityReservationAllocation()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifIsInterruptible(value?: boolean) {
+    return this.if(`IsInterruptible`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -16898,7 +18033,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -16961,7 +18098,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -17024,7 +18163,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
    * - .toGetInstanceTpmEkPub()
@@ -17224,6 +18365,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
+   * - .toGetImageAncestry()
    * - .toImportImage()
    * - .toImportSnapshot()
    * - .toLockSnapshot()
@@ -17278,6 +18420,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toPauseVolumeIO()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -17326,6 +18469,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetSnapshotAttribute()
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    * - .toUnlockSnapshot()
    *
@@ -17731,6 +18875,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
    * - .toExportImage()
+   * - .toGetImageAncestry()
    * - .toImportImage()
    * - .toModifyFleet()
    * - .toModifyFpgaImageAttribute()
@@ -17842,6 +18987,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateTrunkInterface()
    * - .toAssociateVerifiedAccessInstanceWebAcl()
    * - .toAssociateVpcCidrBlock()
+   * - .toAttachApplianceToNatGateway()
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
@@ -17893,9 +19039,13 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceEventWindow()
    * - .toCreateInstanceExportTask()
    * - .toCreateInternetGateway()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateIpam()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
+   * - .toCreateIpamPrefixListResolver()
+   * - .toCreateIpamPrefixListResolverTarget()
    * - .toCreateIpamResourceDiscovery()
    * - .toCreateIpamScope()
    * - .toCreateKeyPair()
@@ -17917,6 +19067,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
+   * - .toCreateOdbNetworkPeering()
    * - .toCreatePlacementGroup()
    * - .toCreatePublicIpv4Pool()
    * - .toCreateReplaceRootVolumeTask()
@@ -17942,6 +19093,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGateway()
    * - .toCreateTransitGatewayConnect()
    * - .toCreateTransitGatewayConnectPeer()
+   * - .toCreateTransitGatewayMeteringPolicy()
+   * - .toCreateTransitGatewayMeteringPolicyEntry()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
@@ -17957,10 +19110,12 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toCreateVpcEncryptionControl()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointConnectionNotification()
    * - .toCreateVpcEndpointServiceConfiguration()
    * - .toCreateVpcPeeringConnection()
+   * - .toCreateVpnConcentrator()
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
    * - .toCreateVpnGateway()
@@ -17983,7 +19138,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteInternetGateway()
    * - .toDeleteIpam()
    * - .toDeleteIpamExternalResourceVerificationToken()
+   * - .toDeleteIpamPolicy()
    * - .toDeleteIpamPool()
+   * - .toDeleteIpamPrefixListResolver()
+   * - .toDeleteIpamPrefixListResolverTarget()
    * - .toDeleteIpamResourceDiscovery()
    * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
@@ -18006,6 +19164,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteNetworkInsightsPath()
    * - .toDeleteNetworkInterface()
    * - .toDeleteNetworkInterfacePermission()
+   * - .toDeleteOdbNetworkPeering()
    * - .toDeletePlacementGroup()
    * - .toDeletePublicIpv4Pool()
    * - .toDeleteQueuedReservedInstances()
@@ -18028,6 +19187,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGateway()
    * - .toDeleteTransitGatewayConnect()
    * - .toDeleteTransitGatewayConnectPeer()
+   * - .toDeleteTransitGatewayMeteringPolicy()
+   * - .toDeleteTransitGatewayMeteringPolicyEntry()
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
    * - .toDeleteTransitGatewayPolicyTable()
@@ -18043,10 +19204,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVolume()
    * - .toDeleteVpc()
    * - .toDeleteVpcBlockPublicAccessExclusion()
+   * - .toDeleteVpcEncryptionControl()
    * - .toDeleteVpcEndpointConnectionNotifications()
    * - .toDeleteVpcEndpointServiceConfigurations()
    * - .toDeleteVpcEndpoints()
    * - .toDeleteVpcPeeringConnection()
+   * - .toDeleteVpnConcentrator()
    * - .toDeleteVpnConnection()
    * - .toDeleteVpnConnectionRoute()
    * - .toDeleteVpnGateway()
@@ -18075,6 +19238,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeCapacityManagerDataExports()
    * - .toDescribeCapacityReservationBillingRequests()
    * - .toDescribeCapacityReservationFleets()
+   * - .toDescribeCapacityReservationTopology()
    * - .toDescribeCapacityReservations()
    * - .toDescribeCarrierGateways()
    * - .toDescribeClassicLinkInstances()
@@ -18119,6 +19283,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeInstanceEventNotificationAttributes()
    * - .toDescribeInstanceEventWindows()
    * - .toDescribeInstanceImageMetadata()
+   * - .toDescribeInstanceSqlHaHistoryStates()
+   * - .toDescribeInstanceSqlHaStates()
    * - .toDescribeInstanceStatus()
    * - .toDescribeInstanceTopology()
    * - .toDescribeInstanceTypeOfferings()
@@ -18127,7 +19293,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeInternetGateways()
    * - .toDescribeIpamByoasn()
    * - .toDescribeIpamExternalResourceVerificationTokens()
+   * - .toDescribeIpamPolicies()
    * - .toDescribeIpamPools()
+   * - .toDescribeIpamPrefixListResolverTargets()
+   * - .toDescribeIpamPrefixListResolvers()
    * - .toDescribeIpamResourceDiscoveries()
    * - .toDescribeIpamResourceDiscoveryAssociations()
    * - .toDescribeIpamScopes()
@@ -18199,6 +19368,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeTransitGatewayAttachments()
    * - .toDescribeTransitGatewayConnectPeers()
    * - .toDescribeTransitGatewayConnects()
+   * - .toDescribeTransitGatewayMeteringPolicies()
    * - .toDescribeTransitGatewayMulticastDomains()
    * - .toDescribeTransitGatewayPeeringAttachments()
    * - .toDescribeTransitGatewayPolicyTables()
@@ -18222,6 +19392,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVpcBlockPublicAccessOptions()
    * - .toDescribeVpcClassicLink()
    * - .toDescribeVpcClassicLinkDnsSupport()
+   * - .toDescribeVpcEncryptionControls()
    * - .toDescribeVpcEndpointAssociations()
    * - .toDescribeVpcEndpointConnectionNotifications()
    * - .toDescribeVpcEndpointConnections()
@@ -18231,8 +19402,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVpcEndpoints()
    * - .toDescribeVpcPeeringConnections()
    * - .toDescribeVpcs()
+   * - .toDescribeVpnConcentrators()
    * - .toDescribeVpnConnections()
    * - .toDescribeVpnGateways()
+   * - .toDetachApplianceFromNatGateway()
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
@@ -18250,7 +19423,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImageBlockPublicAccess()
    * - .toDisableImageDeprecation()
    * - .toDisableImageDeregistrationProtection()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisableIpamOrganizationAdminAccount()
+   * - .toDisableIpamPolicy()
    * - .toDisableRouteServerPropagation()
    * - .toDisableSerialConsoleAccess()
    * - .toDisableSnapshotBlockPublicAccess()
@@ -18288,7 +19463,9 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImageBlockPublicAccess()
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toEnableIpamOrganizationAdminAccount()
+   * - .toEnableIpamPolicy()
    * - .toEnableReachabilityAnalyzerOrganizationSharing()
    * - .toEnableRouteServerPropagation()
    * - .toEnableSerialConsoleAccess()
@@ -18319,9 +19496,11 @@ export class Ec2 extends PolicyStatement {
    * - .toGetDefaultCreditSpecification()
    * - .toGetEbsDefaultKmsKeyId()
    * - .toGetEbsEncryptionByDefault()
+   * - .toGetEnabledIpamPolicy()
    * - .toGetFlowLogsIntegrationTemplate()
    * - .toGetGroupsForCapacityReservation()
    * - .toGetHostReservationPurchasePreview()
+   * - .toGetImageAncestry()
    * - .toGetImageBlockPublicAccessState()
    * - .toGetInstanceMetadataDefaults()
    * - .toGetInstanceTpmEkPub()
@@ -18331,8 +19510,13 @@ export class Ec2 extends PolicyStatement {
    * - .toGetIpamDiscoveredAccounts()
    * - .toGetIpamDiscoveredPublicAddresses()
    * - .toGetIpamDiscoveredResourceCidrs()
+   * - .toGetIpamPolicyAllocationRules()
+   * - .toGetIpamPolicyOrganizationTargets()
    * - .toGetIpamPoolAllocations()
    * - .toGetIpamPoolCidrs()
+   * - .toGetIpamPrefixListResolverRules()
+   * - .toGetIpamPrefixListResolverVersionEntries()
+   * - .toGetIpamPrefixListResolverVersions()
    * - .toGetIpamResourceCidrs()
    * - .toGetLaunchTemplateData()
    * - .toGetManagedPrefixListAssociations()
@@ -18351,6 +19535,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetSpotPlacementScores()
    * - .toGetSubnetCidrReservations()
    * - .toGetTransitGatewayAttachmentPropagations()
+   * - .toGetTransitGatewayMeteringPolicyEntries()
    * - .toGetTransitGatewayMulticastDomainAssociations()
    * - .toGetTransitGatewayPolicyTableAssociations()
    * - .toGetTransitGatewayPolicyTableEntries()
@@ -18361,6 +19546,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetVerifiedAccessEndpointTargets()
    * - .toGetVerifiedAccessGroupPolicy()
    * - .toGetVerifiedAccessInstanceWebAcl()
+   * - .toGetVpcResourcesBlockingEncryptionEnforcement()
    * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toGetVpnConnectionDeviceTypes()
    * - .toGetVpnTunnelReplacementStatus()
@@ -18374,6 +19560,7 @@ export class Ec2 extends PolicyStatement {
    * - .toInjectApiError()
    * - .toListImagesInRecycleBin()
    * - .toListSnapshotsInRecycleBin()
+   * - .toListVolumesInRecycleBin()
    * - .toLockSnapshot()
    * - .toModifyAddressAttribute()
    * - .toModifyAvailabilityZoneGroup()
@@ -18401,7 +19588,10 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
+   * - .toModifyIpamPolicyAllocationRules()
    * - .toModifyIpamPool()
+   * - .toModifyIpamPrefixListResolver()
+   * - .toModifyIpamPrefixListResolverTarget()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
    * - .toModifyIpamScope()
@@ -18409,6 +19599,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLocalGatewayRoute()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyOdbNetworkPeering()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyPublicIpDnsNameOptions()
    * - .toModifyReservedInstances()
@@ -18422,6 +19613,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorFilterRule()
    * - .toModifyTrafficMirrorSession()
    * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayMeteringPolicy()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVerifiedAccessEndpoint()
@@ -18436,6 +19628,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVpcAttribute()
    * - .toModifyVpcBlockPublicAccessExclusion()
    * - .toModifyVpcBlockPublicAccessOptions()
+   * - .toModifyVpcEncryptionControl()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
    * - .toModifyVpcEndpointServiceConfiguration()
@@ -18499,6 +19692,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreManagedPrefixListVersion()
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRevokeClientVpnIngress()
    * - .toRevokeSecurityGroupEgress()
    * - .toRevokeSecurityGroupIngress()
@@ -18523,6 +19717,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUnlockSnapshot()
    * - .toUnmonitorInstances()
    * - .toUpdateCapacityManagerOrganizationsAccess()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
    * - .toWithdrawByoipCidr()
@@ -18556,7 +19751,10 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam-external-resource-verification-token
    * - ipam
+   * - ipam-policy
    * - ipam-pool
+   * - ipam-prefix-list-resolver
+   * - ipam-prefix-list-resolver-target
    * - ipam-resource-discovery-association
    * - ipam-resource-discovery
    * - ipam-scope
@@ -18602,6 +19800,7 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-attachment
    * - transit-gateway-connect-peer
    * - transit-gateway
+   * - transit-gateway-metering-policy
    * - transit-gateway-multicast-domain
    * - transit-gateway-policy-table
    * - transit-gateway-route-table-announcement
@@ -18614,6 +19813,7 @@ export class Ec2 extends PolicyStatement {
    * - verified-access-trust-provider
    * - volume
    * - vpc-block-public-access-exclusion
+   * - vpc-encryption-control
    * - vpc-endpoint-connection
    * - vpc-endpoint
    * - vpc-endpoint-service
@@ -18621,6 +19821,7 @@ export class Ec2 extends PolicyStatement {
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
+   * - vpn-concentrator
    * - vpn-connection-device-type
    * - vpn-connection
    * - vpn-gateway
@@ -18811,6 +20012,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateTransitGatewayRouteTable()
    * - .toAssociateVerifiedAccessInstanceWebAcl()
    * - .toAssociateVpcCidrBlock()
+   * - .toAttachApplianceToNatGateway()
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
@@ -18843,7 +20045,10 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateInstanceConnectEndpoint()
    * - .toCreateInstanceExportTask()
    * - .toCreateIpamExternalResourceVerificationToken()
+   * - .toCreateIpamPolicy()
    * - .toCreateIpamPool()
+   * - .toCreateIpamPrefixListResolver()
+   * - .toCreateIpamPrefixListResolverTarget()
    * - .toCreateIpamScope()
    * - .toCreateLaunchTemplateVersion()
    * - .toCreateLocalGatewayRoute()
@@ -18860,6 +20065,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInsightsPath()
    * - .toCreateNetworkInterface()
    * - .toCreateNetworkInterfacePermission()
+   * - .toCreateOdbNetworkPeering()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRoute()
    * - .toCreateRouteServerEndpoint()
@@ -18876,6 +20082,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTrafficMirrorSession()
    * - .toCreateTrafficMirrorTarget()
    * - .toCreateTransitGatewayConnectPeer()
+   * - .toCreateTransitGatewayMeteringPolicy()
+   * - .toCreateTransitGatewayMeteringPolicyEntry()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
@@ -18889,9 +20097,11 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateVolume()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toCreateVpcEncryptionControl()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcEndpointConnectionNotification()
    * - .toCreateVpcPeeringConnection()
+   * - .toCreateVpnConcentrator()
    * - .toCreateVpnConnection()
    * - .toCreateVpnConnectionRoute()
    * - .toDeleteCapacityManagerDataExport()
@@ -18913,7 +20123,10 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteInternetGateway()
    * - .toDeleteIpam()
    * - .toDeleteIpamExternalResourceVerificationToken()
+   * - .toDeleteIpamPolicy()
    * - .toDeleteIpamPool()
+   * - .toDeleteIpamPrefixListResolver()
+   * - .toDeleteIpamPrefixListResolverTarget()
    * - .toDeleteIpamResourceDiscovery()
    * - .toDeleteIpamScope()
    * - .toDeleteKeyPair()
@@ -18936,6 +20149,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteNetworkInsightsPath()
    * - .toDeleteNetworkInterface()
    * - .toDeleteNetworkInterfacePermission()
+   * - .toDeleteOdbNetworkPeering()
    * - .toDeletePlacementGroup()
    * - .toDeletePublicIpv4Pool()
    * - .toDeleteQueuedReservedInstances()
@@ -18956,6 +20170,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGateway()
    * - .toDeleteTransitGatewayConnect()
    * - .toDeleteTransitGatewayConnectPeer()
+   * - .toDeleteTransitGatewayMeteringPolicy()
+   * - .toDeleteTransitGatewayMeteringPolicyEntry()
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
    * - .toDeleteTransitGatewayPolicyTable()
@@ -18971,10 +20187,12 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteVolume()
    * - .toDeleteVpc()
    * - .toDeleteVpcBlockPublicAccessExclusion()
+   * - .toDeleteVpcEncryptionControl()
    * - .toDeleteVpcEndpointConnectionNotifications()
    * - .toDeleteVpcEndpointServiceConfigurations()
    * - .toDeleteVpcEndpoints()
    * - .toDeleteVpcPeeringConnection()
+   * - .toDeleteVpnConcentrator()
    * - .toDeleteVpnConnection()
    * - .toDeleteVpnConnectionRoute()
    * - .toDeleteVpnGateway()
@@ -19001,6 +20219,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVolumeAttribute()
    * - .toDescribeVpcAttribute()
    * - .toDescribeVpcEndpointServicePermissions()
+   * - .toDetachApplianceFromNatGateway()
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
@@ -19013,6 +20232,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
    * - .toDisableImageDeregistrationProtection()
+   * - .toDisableInstanceSqlHaStandbyDetections()
+   * - .toDisableIpamPolicy()
    * - .toDisableRouteServerPropagation()
    * - .toDisableTransitGatewayRouteTablePropagation()
    * - .toDisableVgwRoutePropagation()
@@ -19040,6 +20261,8 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
+   * - .toEnableInstanceSqlHaStandbyDetections()
+   * - .toEnableIpamPolicy()
    * - .toEnableRouteServerPropagation()
    * - .toEnableTransitGatewayRouteTablePropagation()
    * - .toEnableVgwRoutePropagation()
@@ -19057,14 +20280,20 @@ export class Ec2 extends PolicyStatement {
    * - .toGetConsoleScreenshot()
    * - .toGetDeclarativePoliciesReportSummary()
    * - .toGetFlowLogsIntegrationTemplate()
+   * - .toGetImageAncestry()
    * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetIpamAddressHistory()
    * - .toGetIpamDiscoveredAccounts()
    * - .toGetIpamDiscoveredPublicAddresses()
    * - .toGetIpamDiscoveredResourceCidrs()
+   * - .toGetIpamPolicyAllocationRules()
+   * - .toGetIpamPolicyOrganizationTargets()
    * - .toGetIpamPoolAllocations()
    * - .toGetIpamPoolCidrs()
+   * - .toGetIpamPrefixListResolverRules()
+   * - .toGetIpamPrefixListResolverVersionEntries()
+   * - .toGetIpamPrefixListResolverVersions()
    * - .toGetIpamResourceCidrs()
    * - .toGetLaunchTemplateData()
    * - .toGetManagedPrefixListAssociations()
@@ -19078,6 +20307,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetRouteServerPropagations()
    * - .toGetRouteServerRoutingDatabase()
    * - .toGetSecurityGroupsForVpc()
+   * - .toGetTransitGatewayMeteringPolicyEntries()
    * - .toGetTransitGatewayMulticastDomainAssociations()
    * - .toGetTransitGatewayPolicyTableAssociations()
    * - .toGetTransitGatewayPolicyTableEntries()
@@ -19085,6 +20315,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetVerifiedAccessEndpointTargets()
    * - .toGetVerifiedAccessGroupPolicy()
    * - .toGetVerifiedAccessInstanceWebAcl()
+   * - .toGetVpcResourcesBlockingEncryptionEnforcement()
    * - .toGetVpnConnectionDeviceSampleConfiguration()
    * - .toGetVpnTunnelReplacementStatus()
    * - .toImportByoipCidrToIpam()
@@ -19112,7 +20343,10 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyIpam()
+   * - .toModifyIpamPolicyAllocationRules()
    * - .toModifyIpamPool()
+   * - .toModifyIpamPrefixListResolver()
+   * - .toModifyIpamPrefixListResolverTarget()
    * - .toModifyIpamResourceCidr()
    * - .toModifyIpamResourceDiscovery()
    * - .toModifyIpamScope()
@@ -19120,6 +20354,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyLocalGatewayRoute()
    * - .toModifyManagedPrefixList()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyOdbNetworkPeering()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyPublicIpDnsNameOptions()
    * - .toModifyReservedInstances()
@@ -19133,6 +20368,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorFilterRule()
    * - .toModifyTrafficMirrorSession()
    * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayMeteringPolicy()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVerifiedAccessEndpoint()
@@ -19146,6 +20382,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolumeAttribute()
    * - .toModifyVpcAttribute()
    * - .toModifyVpcBlockPublicAccessExclusion()
+   * - .toModifyVpcEncryptionControl()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointConnectionNotification()
    * - .toModifyVpcEndpointServiceConfiguration()
@@ -19198,6 +20435,7 @@ export class Ec2 extends PolicyStatement {
    * - .toRestoreManagedPrefixListVersion()
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRevokeClientVpnIngress()
    * - .toRevokeSecurityGroupEgress()
    * - .toRevokeSecurityGroupIngress()
@@ -19219,6 +20457,7 @@ export class Ec2 extends PolicyStatement {
    * - .toUnassignPrivateNatGatewayAddress()
    * - .toUnlockSnapshot()
    * - .toUnmonitorInstances()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    * - .toUpdateSecurityGroupRuleDescriptionsEgress()
    * - .toUpdateSecurityGroupRuleDescriptionsIngress()
    *
@@ -19251,7 +20490,10 @@ export class Ec2 extends PolicyStatement {
    * - internet-gateway
    * - ipam-external-resource-verification-token
    * - ipam
+   * - ipam-policy
    * - ipam-pool
+   * - ipam-prefix-list-resolver
+   * - ipam-prefix-list-resolver-target
    * - ipam-resource-discovery-association
    * - ipam-resource-discovery
    * - ipam-scope
@@ -19297,6 +20539,7 @@ export class Ec2 extends PolicyStatement {
    * - transit-gateway-attachment
    * - transit-gateway-connect-peer
    * - transit-gateway
+   * - transit-gateway-metering-policy
    * - transit-gateway-multicast-domain
    * - transit-gateway-policy-table
    * - transit-gateway-route-table-announcement
@@ -19309,6 +20552,7 @@ export class Ec2 extends PolicyStatement {
    * - verified-access-trust-provider
    * - volume
    * - vpc-block-public-access-exclusion
+   * - vpc-encryption-control
    * - vpc-endpoint-connection
    * - vpc-endpoint
    * - vpc-endpoint-service
@@ -19316,6 +20560,7 @@ export class Ec2 extends PolicyStatement {
    * - vpc-flow-log
    * - vpc
    * - vpc-peering-connection
+   * - vpn-concentrator
    * - vpn-connection
    * - vpn-gateway
    *
@@ -19372,14 +20617,17 @@ export class Ec2 extends PolicyStatement {
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
    * - .toDisableImageDeregistrationProtection()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisassociateIamInstanceProfile()
    * - .toEnableFastLaunch()
    * - .toEnableImage()
    * - .toEnableImageDeprecation()
    * - .toEnableImageDeregistrationProtection()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toExportImage()
    * - .toGetConsoleOutput()
    * - .toGetConsoleScreenshot()
+   * - .toGetImageAncestry()
    * - .toGetInstanceTpmEkPub()
    * - .toGetInstanceUefiData()
    * - .toGetLaunchTemplateData()
@@ -19745,10 +20993,12 @@ export class Ec2 extends PolicyStatement {
    * - .toAcceptCapacityReservationBillingOwnership()
    * - .toAssociateCapacityReservationBillingOwner()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toDescribeCapacityBlockExtensionOfferings()
    * - .toDisassociateCapacityReservationBillingOwner()
    * - .toMoveCapacityReservationInstances()
    * - .toRejectCapacityReservationBillingOwnership()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -19894,6 +21144,25 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the number of instances the interruptible Capacity Reservation is assigned
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .toCreateInterruptibleCapacityReservationAllocation()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifTargetInstanceCount(value: number | number[], operator?: Operator | string) {
+    return this.if(`TargetInstanceCount`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
    * Filters access by the tenancy of the VPC or instance (default, dedicated, or host)
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
@@ -19924,10 +21193,13 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateFlowLogs()
    * - .toCreateImage()
    * - .toCreateInstanceExportTask()
+   * - .toCreateInterruptibleCapacityReservationAllocation()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
    * - .toCreateMacSystemIntegrityProtectionModificationTask()
+   * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
    * - .toCreateNetworkInsightsPath()
+   * - .toCreateOdbNetworkPeering()
    * - .toCreateReplaceRootVolumeTask()
    * - .toCreateRouteTable()
    * - .toCreateSecurityGroup()
@@ -19936,7 +21208,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateTransitGatewayVpcAttachment()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toCreateVpcEncryptionControl()
    * - .toCreateVpcPeeringConnection()
+   * - .toDeleteOdbNetworkPeering()
    * - .toDeleteQueuedReservedInstances()
    * - .toDeleteVpc()
    * - .toDescribeCapacityBlockExtensionOfferings()
@@ -19947,6 +21221,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
+   * - .toDisableInstanceSqlHaStandbyDetections()
    * - .toDisableVpcClassicLink()
    * - .toDisableVpcClassicLinkDnsSupport()
    * - .toDisassociateCapacityReservationBillingOwner()
@@ -19954,6 +21229,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateRouteServer()
    * - .toDisassociateSecurityGroupVpc()
    * - .toDisassociateVpcCidrBlock()
+   * - .toEnableInstanceSqlHaStandbyDetections()
    * - .toEnableVpcClassicLink()
    * - .toEnableVpcClassicLinkDnsSupport()
    * - .toGetConsoleOutput()
@@ -19964,6 +21240,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetPasswordData()
    * - .toGetReservedInstancesExchangeQuote()
    * - .toGetSecurityGroupsForVpc()
+   * - .toGetVpcResourcesBlockingEncryptionEnforcement()
    * - .toModifyClientVpnEndpoint()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
@@ -19975,6 +21252,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceNetworkPerformanceOptions()
    * - .toModifyInstancePlacement()
    * - .toModifyNetworkInterfaceAttribute()
+   * - .toModifyOdbNetworkPeering()
    * - .toModifyPrivateDnsNameOptions()
    * - .toModifyReservedInstances()
    * - .toModifyVpcAttribute()
@@ -19993,6 +21271,7 @@ export class Ec2 extends PolicyStatement {
    * - .toStopInstances()
    * - .toTerminateInstances()
    * - .toUnmonitorInstances()
+   * - .toUpdateInterruptibleCapacityReservationAllocation()
    *
    * Applies to resource types:
    * - capacity-reservation
@@ -20029,6 +21308,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toPauseVolumeIO()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -20060,6 +21340,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -20095,6 +21376,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toPauseVolumeIO()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -20148,6 +21430,7 @@ export class Ec2 extends PolicyStatement {
    * - .toResetSnapshotAttribute()
    * - .toRestoreSnapshotFromRecycleBin()
    * - .toRestoreSnapshotTier()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    * - .toUnlockSnapshot()
    *
@@ -20185,6 +21468,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toPauseVolumeIO()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -20220,6 +21504,7 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
    * - .toPauseVolumeIO()
+   * - .toRestoreVolumeFromRecycleBin()
    * - .toRunInstances()
    *
    * Applies to resource types:
@@ -20324,6 +21609,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - carrier-gateway
+   * - natgateway
    * - network-acl
    * - network-interface
    * - route-table
@@ -20355,7 +21641,9 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateEgressOnlyInternetGateway()
    * - .toCreateFlowLogs()
    * - .toCreateLocalGatewayRouteTableVpcAssociation()
+   * - .toCreateNatGateway()
    * - .toCreateNetworkAcl()
+   * - .toCreateOdbNetworkPeering()
    * - .toCreateRouteTable()
    * - .toCreateSecurityGroup()
    * - .toCreateSubnet()
@@ -20363,8 +21651,10 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGatewayVpcAttachment()
    * - .toCreateVpc()
    * - .toCreateVpcBlockPublicAccessExclusion()
+   * - .toCreateVpcEncryptionControl()
    * - .toCreateVpcEndpoint()
    * - .toCreateVpcPeeringConnection()
+   * - .toDeleteOdbNetworkPeering()
    * - .toDeleteVpc()
    * - .toDescribeVpcAttribute()
    * - .toDetachClassicLinkVpc()
@@ -20378,7 +21668,9 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVpcClassicLink()
    * - .toEnableVpcClassicLinkDnsSupport()
    * - .toGetSecurityGroupsForVpc()
+   * - .toGetVpcResourcesBlockingEncryptionEnforcement()
    * - .toModifyClientVpnEndpoint()
+   * - .toModifyOdbNetworkPeering()
    * - .toModifyVpcAttribute()
    * - .toModifyVpcTenancy()
    *
@@ -20446,6 +21738,42 @@ export class Ec2 extends PolicyStatement {
    */
   public ifVpceMultiRegion(value: string | string[], operator?: Operator | string) {
     return this.if(`VpceMultiRegion`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the private DNS preference
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateVpcEndpoint()
+   *
+   * Applies to resource types:
+   * - vpc-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcePrivateDnsPreference(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcePrivateDnsPreference`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the private DNS domains
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateVpcEndpoint()
+   *
+   * Applies to resource types:
+   * - vpc-endpoint
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcePrivateDnsSpecifiedDomains(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcePrivateDnsSpecifiedDomains`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -20572,6 +21900,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toCreateTransitGatewayConnect()
    * - .toCreateTransitGatewayConnectPeer()
+   * - .toCreateTransitGatewayMeteringPolicy()
+   * - .toCreateTransitGatewayMeteringPolicyEntry()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
@@ -20586,6 +21916,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDisassociateTransitGatewayPolicyTable()
    * - .toDisassociateTransitGatewayRouteTable()
    * - .toEnableTransitGatewayRouteTablePropagation()
+   * - .toModifyTransitGatewayMeteringPolicy()
    * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toRejectTransitGatewayMulticastDomainAssociations()
@@ -20629,11 +21960,13 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateNetworkInsightsPath()
    * - .toCreateTags()
    * - .toCreateTransitGateway()
+   * - .toCreateTransitGatewayMeteringPolicy()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
    * - .toCreateTransitGatewayPolicyTable()
    * - .toCreateTransitGatewayRouteTable()
    * - .toCreateTransitGatewayVpcAttachment()
+   * - .toCreateVpnConcentrator()
    * - .toCreateVpnConnection()
    * - .toDeleteTransitGateway()
    * - .toModifyTransitGateway()
@@ -20646,6 +21979,28 @@ export class Ec2 extends PolicyStatement {
    */
   public ifTransitGatewayId(value: string | string[], operator?: Operator | string) {
     return this.if(`transitGatewayId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a metering policy id
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateTransitGatewayMeteringPolicy()
+   * - .toCreateTransitGatewayMeteringPolicyEntry()
+   * - .toDeleteTransitGatewayMeteringPolicy()
+   * - .toDeleteTransitGatewayMeteringPolicyEntry()
+   * - .toGetTransitGatewayMeteringPolicyEntries()
+   * - .toModifyTransitGatewayMeteringPolicy()
+   *
+   * Applies to resource types:
+   * - transit-gateway-metering-policy
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTransitGatewayMeteringPolicyId(value: string | string[], operator?: Operator | string) {
+    return this.if(`transitGatewayMeteringPolicyId`, value, operator ?? 'StringLike');
   }
 
   /**

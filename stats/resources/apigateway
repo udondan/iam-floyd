@@ -36,9 +36,13 @@ apigateway:MethodResponse
 apigateway:Model
 apigateway:ModelTemplate
 apigateway:Models
+apigateway:Portal
+apigateway:PortalProduct
 apigateway:PrivateBasePathMapping
 apigateway:PrivateBasePathMappings
 apigateway:PrivateDomainName
+apigateway:ProductPage
+apigateway:ProductRestEndpointPage
 apigateway:RequestValidator
 apigateway:RequestValidators
 apigateway:Resource

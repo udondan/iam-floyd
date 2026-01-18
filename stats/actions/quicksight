@@ -2,6 +2,8 @@ quicksight:AccountConfigurations;Write
 quicksight:AllowVendedLogDeliveryForResource;Permissions management
 quicksight:BatchCreateTopicReviewedAnswer;Write
 quicksight:BatchDeleteTopicReviewedAnswer;Write
+quicksight:BatchGetPreferences;Read
+quicksight:BatchUpdatePreferences;Write
 quicksight:CancelIngestion;Write
 quicksight:CreateAccountCustomization;Write
 quicksight:CreateAccountSubscription;Write
@@ -113,6 +115,7 @@ quicksight:DescribeQuickIndexCapacity;Read
 quicksight:DescribeQuickSightQSearchConfiguration;Read
 quicksight:DescribeRefreshSchedule;Read
 quicksight:DescribeRoleCustomPermission;Read
+quicksight:DescribeSelfUpgradeConfiguration;Read
 quicksight:DescribeTemplate;Read
 quicksight:DescribeTemplateAlias;Read
 quicksight:DescribeTemplatePermissions;Read
@@ -135,6 +138,7 @@ quicksight:GetDashboardEmbedUrl;Read
 quicksight:GetFlowMetadata;Read
 quicksight:GetFlowPermissions;Read
 quicksight:GetGroupMapping;Read
+quicksight:GetIdentityContext;Read
 quicksight:GetSessionEmbedUrl;Read
 quicksight:ListActionConnectors;List
 quicksight:ListAgents;List
@@ -163,6 +167,7 @@ quicksight:ListKMSKeysForUser;List
 quicksight:ListNamespaces;List
 quicksight:ListRefreshSchedules;List
 quicksight:ListRoleMemberships;List
+quicksight:ListSelfUpgrades;List
 quicksight:ListTagsForResource;Read
 quicksight:ListTemplateAliases;List
 quicksight:ListTemplateVersions;List
@@ -250,6 +255,8 @@ quicksight:UpdateRefreshSchedule;Write
 quicksight:UpdateResourcePermissions;Write
 quicksight:UpdateRoleCustomPermission;Write
 quicksight:UpdateSPICECapacityConfiguration;Write
+quicksight:UpdateSelfUpgrade;Write
+quicksight:UpdateSelfUpgradeConfiguration;Write
 quicksight:UpdateTemplate;Write
 quicksight:UpdateTemplateAlias;Write
 quicksight:UpdateTemplatePermissions;Permissions management

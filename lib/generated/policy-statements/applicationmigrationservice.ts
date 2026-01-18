@@ -432,6 +432,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get account settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetAccountSettings.html
+   */
+  public toGetAccountSettings() {
+    return this.to('GetAccountSettings');
+  }
+
+  /**
    * Grants permission to get agent command
    *
    * Access Level: Read
@@ -1691,6 +1702,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update account settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateAccountSettings.html
+   */
+  public toUpdateAccountSettings() {
+    return this.to('UpdateAccountSettings');
+  }
+
+  /**
    * Grants permission to update agent backlog
    *
    * Access Level: Write
@@ -1957,6 +1979,7 @@ export class Mgn extends PolicyStatement {
       'TerminateTargetInstances',
       'UnarchiveApplication',
       'UnarchiveWave',
+      'UpdateAccountSettings',
       'UpdateAgentBacklogForMgn',
       'UpdateAgentConversionInfoForMgn',
       'UpdateAgentReplicationInfoForMgn',
@@ -1979,6 +2002,7 @@ export class Mgn extends PolicyStatement {
       'DescribeJobLogItems',
       'DescribeReplicationServerAssociationsForMgn',
       'DescribeSnapshotRequestsForMgn',
+      'GetAccountSettings',
       'GetAgentCommandForMgn',
       'GetAgentConfirmedResumeInfoForMgn',
       'GetAgentInstallationAssetsForMgn',

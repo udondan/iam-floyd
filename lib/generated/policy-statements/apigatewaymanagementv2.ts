@@ -19,6 +19,71 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Portal
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestPortalDisplayName()
+   * - .ifRequestPortalDomainName()
+   * - .ifRequestCognitoUserPoolArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals.html#portalspost
+   */
+  public toCreatePortal() {
+    return this.to('CreatePortal');
+  }
+
+  /**
+   * Grants permission to create a Portal Product
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestPortalProductDisplayName()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts.html#portalproductspost
+   */
+  public toCreatePortalProduct() {
+    return this.to('CreatePortalProduct');
+  }
+
+  /**
+   * Grants permission to create a Product Page
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestProductPageTitle()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages.html#portalproducts-portalproductid-productpagespost
+   */
+  public toCreateProductPage() {
+    return this.to('CreateProductPage');
+  }
+
+  /**
+   * Grants permission to create a Product REST Endpoint Page
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestRestApiId()
+   * - .ifRequestStage()
+   * - .ifRequestMethod()
+   * - .ifRequestProductRestEndpointPageEndpointPrefix()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages.html#portalproducts-portalproductid-productrestendpointpagespost
+   */
+  public toCreateProductRestEndpointPage() {
+    return this.to('CreateProductRestEndpointPage');
+  }
+
+  /**
    * Grants permission to create a routing rule
    *
    * Access Level: Write
@@ -50,6 +115,61 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a Portal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portaliddelete
+   */
+  public toDeletePortal() {
+    return this.to('DeletePortal');
+  }
+
+  /**
+   * Grants permission to delete a Portal Product
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductiddelete
+   */
+  public toDeletePortalProduct() {
+    return this.to('DeletePortalProduct');
+  }
+
+  /**
+   * Grants permission to delete a Portal Product Sharing Policy
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicydelete
+   */
+  public toDeletePortalProductSharingPolicy() {
+    return this.to('DeletePortalProductSharingPolicy');
+  }
+
+  /**
+   * Grants permission to delete a Product Page
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageiddelete
+   */
+  public toDeleteProductPage() {
+    return this.to('DeleteProductPage');
+  }
+
+  /**
+   * Grants permission to delete a Product REST Endpoint Page
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageiddelete
+   */
+  public toDeleteProductRestEndpointPage() {
+    return this.to('DeleteProductRestEndpointPage');
+  }
+
+  /**
    * Grants permission to delete a routing rule
    *
    * Access Level: Write
@@ -66,6 +186,17 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable a Portal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-publish.html#portals-portalid-publishdelete
+   */
+  public toDisablePortal() {
+    return this.to('DisablePortal');
+  }
+
+  /**
    * Grants permission to read a particular resource
    *
    * Access Level: Read
@@ -74,6 +205,61 @@ export class ApigatewayV2 extends PolicyStatement {
    */
   public toGET() {
     return this.to('GET');
+  }
+
+  /**
+   * Grants permission to read a Portal
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portalidget
+   */
+  public toGetPortal() {
+    return this.to('GetPortal');
+  }
+
+  /**
+   * Grants permission to read a Portal Product
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductidget
+   */
+  public toGetPortalProduct() {
+    return this.to('GetPortalProduct');
+  }
+
+  /**
+   * Grants permission to read a Portal Product Sharing Policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicyget
+   */
+  public toGetPortalProductSharingPolicy() {
+    return this.to('GetPortalProductSharingPolicy');
+  }
+
+  /**
+   * Grants permission to read a Product Page
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageidget
+   */
+  public toGetProductPage() {
+    return this.to('GetProductPage');
+  }
+
+  /**
+   * Grants permission to read a Product REST Endpoint Page
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageidget
+   */
+  public toGetProductRestEndpointPage() {
+    return this.to('GetProductRestEndpointPage');
   }
 
   /**
@@ -88,6 +274,50 @@ export class ApigatewayV2 extends PolicyStatement {
    */
   public toGetRoutingRule() {
     return this.to('GetRoutingRule');
+  }
+
+  /**
+   * Grants permission to list Portal Products
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts.html#portalproductsget
+   */
+  public toListPortalProducts() {
+    return this.to('ListPortalProducts');
+  }
+
+  /**
+   * Grants permission to list Portals
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals.html#portalsget
+   */
+  public toListPortals() {
+    return this.to('ListPortals');
+  }
+
+  /**
+   * Grants permission to list Product Pages
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages.html#portalproducts-portalproductid-productpagesget
+   */
+  public toListProductPages() {
+    return this.to('ListProductPages');
+  }
+
+  /**
+   * Grants permission to list Product REST Endpoint Pages
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages.html#portalproducts-portalproductid-productrestendpointpagesget
+   */
+  public toListProductRestEndpointPages() {
+    return this.to('ListProductRestEndpointPages');
   }
 
   /**
@@ -150,6 +380,101 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to preview a Portal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-preview.html#portals-portalid-previewpost
+   */
+  public toPreviewPortal() {
+    return this.to('PreviewPortal');
+  }
+
+  /**
+   * Grants permission to publish a Portal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid-publish.html#portals-portalid-publishpost
+   */
+  public toPublishPortal() {
+    return this.to('PublishPortal');
+  }
+
+  /**
+   * Grants permission to put a Portal Product Sharing Policy
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-sharingpolicy.html#portalproducts-portalproductid-sharingpolicyput
+   */
+  public toPutPortalProductSharingPolicy() {
+    return this.to('PutPortalProductSharingPolicy');
+  }
+
+  /**
+   * Grants permission to update a Portal
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestPortalDisplayName()
+   * - .ifRequestPortalDomainName()
+   * - .ifRequestCognitoUserPoolArn()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portals-portalid.html#portals-portalidpatch
+   */
+  public toUpdatePortal() {
+    return this.to('UpdatePortal');
+  }
+
+  /**
+   * Grants permission to update a Portal Product
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestPortalProductDisplayName()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid.html#portalproducts-portalproductidpatch
+   */
+  public toUpdatePortalProduct() {
+    return this.to('UpdatePortalProduct');
+  }
+
+  /**
+   * Grants permission to update a Product Page
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestProductPageTitle()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productpages-productpageid.html#portalproducts-portalproductid-productpages-productpageidpatch
+   */
+  public toUpdateProductPage() {
+    return this.to('UpdateProductPage');
+  }
+
+  /**
+   * Grants permission to update a Product REST Endpoint Page
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestProductRestEndpointPageEndpointPrefix()
+   *
+   * https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/portalproducts-portalproductid-productrestendpointpages-productrestendpointpageid.html#portalproducts-portalproductid-productrestendpointpages-productrestendpointpageidpatch
+   */
+  public toUpdateProductRestEndpointPage() {
+    return this.to('UpdateProductRestEndpointPage');
+  }
+
+  /**
    * Grants permission to update a routing rule using the PutRoutingRule API
    *
    * Access Level: Write
@@ -169,19 +494,47 @@ export class ApigatewayV2 extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CreatePortal',
+      'CreatePortalProduct',
+      'CreateProductPage',
+      'CreateProductRestEndpointPage',
       'CreateRoutingRule',
       'DELETE',
+      'DeletePortal',
+      'DeletePortalProduct',
+      'DeleteProductPage',
+      'DeleteProductRestEndpointPage',
       'DeleteRoutingRule',
+      'DisablePortal',
       'PATCH',
       'POST',
       'PUT',
+      'PreviewPortal',
+      'PublishPortal',
+      'UpdatePortal',
+      'UpdatePortalProduct',
+      'UpdateProductPage',
+      'UpdateProductRestEndpointPage',
       'UpdateRoutingRule'
+    ],
+    'Permissions management': [
+      'DeletePortalProductSharingPolicy',
+      'PutPortalProductSharingPolicy'
     ],
     Read: [
       'GET',
+      'GetPortal',
+      'GetPortalProduct',
+      'GetPortalProductSharingPolicy',
+      'GetProductPage',
+      'GetProductRestEndpointPage',
       'GetRoutingRule'
     ],
     List: [
+      'ListPortalProducts',
+      'ListPortals',
+      'ListProductPages',
+      'ListProductRestEndpointPages',
       'ListRoutingRules'
     ]
   };
@@ -730,6 +1083,86 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Portal to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param portalId - Identifier for the portalId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifResourceCognitoUserPoolArn()
+   * - .ifResourcePortalDisplayName()
+   * - .ifResourcePortalDomainName()
+   * - .ifResourcePortalPublishStatus()
+   * - .ifAwsResourceTag()
+   */
+  public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/portals/${ portalId }`);
+  }
+
+  /**
+   * Adds a resource of type PortalProduct to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param portalProductId - Identifier for the portalProductId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifResourcePortalProductDisplayName()
+   * - .ifAwsResourceTag()
+   */
+  public onPortalProduct(portalProductId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/portalproducts/${ portalProductId }`);
+  }
+
+  /**
+   * Adds a resource of type ProductPage to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param portalProductId - Identifier for the portalProductId.
+   * @param productPageId - Identifier for the productPageId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifResourceProductPageTitle()
+   * - .ifAwsResourceTag()
+   */
+  public onProductPage(portalProductId: string, productPageId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/portalproducts/${ portalProductId }/productpages/${ productPageId }`);
+  }
+
+  /**
+   * Adds a resource of type ProductRestEndpointPage to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * @param portalProductId - Identifier for the portalProductId.
+   * @param productRestEndpointPageId - Identifier for the productRestEndpointPageId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifResourceMethod()
+   * - .ifResourceProductRestEndpointPageEndpointPrefix()
+   * - .ifResourceRestApiId()
+   * - .ifResourceStage()
+   * - .ifAwsResourceTag()
+   */
+  public onProductRestEndpointPage(portalProductId: string, productRestEndpointPageId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apigateway:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/portalproducts/${ portalProductId }/productrestendpointpages/${ productRestEndpointPageId }`);
+  }
+
+  /**
    * Filters access by access log destination. Available during the CreateStage and UpdateStage operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -831,6 +1264,22 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by a Portal's CognitoUserPoolArn that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreatePortal()
+   * - .toUpdatePortal()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifRequestCognitoUserPoolArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/CognitoUserPoolArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by base paths defined on the condition of a routing rule. Available during the CreateRoutingRule and UpdateRoutingRule operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
@@ -878,6 +1327,21 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by a ProductRestEndpointPage's HTTP Method that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateProductRestEndpointPage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestMethod(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/Method`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by URI of the truststore used for mutual TLS authentication. Available during the CreateDomainName and UpdateDomainName operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -902,6 +1366,54 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by a Portal's Display Name that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreatePortal()
+   * - .toUpdatePortal()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestPortalDisplayName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/PortalDisplayName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a Portal's vanity domain name that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreatePortal()
+   * - .toUpdatePortal()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestPortalDomainName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/PortalDomainName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a PortalProduct's Display Name that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreatePortalProduct()
+   * - .toUpdatePortalProduct()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestPortalProductDisplayName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/PortalProductDisplayName`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by priority of the routing rule. Available during the CreateRoutingRule and UpdateRoutingRule operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
@@ -915,6 +1427,53 @@ export class ApigatewayV2 extends PolicyStatement {
    */
   public ifRequestPriority(value: number | number[], operator?: Operator | string) {
     return this.if(`Request/Priority`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by a ProductPage's Title that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateProductPage()
+   * - .toUpdateProductPage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestProductPageTitle(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/ProductPageTitle`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a ProductRestEndpointPage's EndpointPrefix that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateProductRestEndpointPage()
+   * - .toUpdateProductRestEndpointPage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestProductRestEndpointPageEndpointPrefix(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/ProductRestEndpointPageEndpointPrefix`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a ProductRestEndpointPage's Amazon API Gateway API ID that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateProductRestEndpointPage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestRestApiId(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/RestApiId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -957,6 +1516,21 @@ export class ApigatewayV2 extends PolicyStatement {
    */
   public ifRequestSecurityPolicy(value: string | string[], operator?: Operator | string) {
     return this.if(`Request/SecurityPolicy`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a ProductRestEndpointPage's Amazon API Gateway Stage Name that is passed in the request
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toCreateProductRestEndpointPage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestStage(value: string | string[], operator?: Operator | string) {
+    return this.if(`Request/Stage`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1067,6 +1641,21 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by a Portal's CognitoUserPoolArn associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Portal
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifResourceCognitoUserPoolArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/CognitoUserPoolArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by base paths defined on the condition of the existing routing rule. Available during the UpdateRoutingRule and DeleteRoutingRule operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
@@ -1115,6 +1704,21 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by a ProductRestEndpointPage's HTTP Method associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - ProductRestEndpointPage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceMethod(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/Method`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by URI of the truststore used for mutual TLS authentication. Available during the UpdateDomainName and DeleteDomainName operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
@@ -1139,6 +1743,66 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by a Portal's Display Name associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Portal
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourcePortalDisplayName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/PortalDisplayName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a Portal's vanity domain name associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Portal
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourcePortalDomainName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/PortalDomainName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a PortalProduct's Display Name associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - PortalProduct
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourcePortalProductDisplayName(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/PortalProductDisplayName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a Portal's published status associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - Portal
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourcePortalPublishStatus(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/PortalPublishStatus`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by priority of the existing routing rule. Available during the UpdateRoutingRule and DeleteRoutingRule operations
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-routing-mode
@@ -1155,6 +1819,51 @@ export class ApigatewayV2 extends PolicyStatement {
    */
   public ifResourcePriority(value: number | number[], operator?: Operator | string) {
     return this.if(`Resource/Priority`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by a ProductPage's Title associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - ProductPage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceProductPageTitle(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/ProductPageTitle`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a ProductRestEndpointPage's EndpointPrefix associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - ProductRestEndpointPage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceProductRestEndpointPageEndpointPrefix(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/ProductRestEndpointPageEndpointPrefix`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a ProductRestEndpointPage's Amazon API Gateway API ID associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - ProductRestEndpointPage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceRestApiId(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/RestApiId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1198,15 +1907,34 @@ export class ApigatewayV2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by a ProductRestEndpointPage's Amazon API Gateway Stage Name associated with the resource
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - ProductRestEndpointPage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceStage(value: string | string[], operator?: Operator | string) {
+    return this.if(`Resource/Stage`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
    *
    * Applies to actions:
+   * - .toCreatePortal()
+   * - .toCreatePortalProduct()
    * - .toDELETE()
    * - .toPATCH()
    * - .toPOST()
    * - .toPUT()
+   * - .toUpdatePortal()
+   * - .toUpdatePortalProduct()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1259,6 +1987,10 @@ export class ApigatewayV2 extends PolicyStatement {
    * - Stages
    * - VpcLink
    * - VpcLinks
+   * - Portal
+   * - PortalProduct
+   * - ProductPage
+   * - ProductRestEndpointPage
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1274,10 +2006,14 @@ export class ApigatewayV2 extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging.html
    *
    * Applies to actions:
+   * - .toCreatePortal()
+   * - .toCreatePortalProduct()
    * - .toDELETE()
    * - .toPATCH()
    * - .toPOST()
    * - .toPUT()
+   * - .toUpdatePortal()
+   * - .toUpdatePortalProduct()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

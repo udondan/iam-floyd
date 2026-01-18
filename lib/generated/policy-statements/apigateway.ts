@@ -19,33 +19,33 @@ export class ExecuteApi extends PolicyStatement {
   }
 
   /**
-   * Used to invalidate API cache upon a client request
+   * Grants permission to invalidate API cache upon a client request
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html
    */
   public toInvalidateCache() {
     return this.to('InvalidateCache');
   }
 
   /**
-   * Used to invoke an API upon a client request
+   * Grants permission to invoke an API upon a client request
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html
    */
   public toInvoke() {
     return this.to('Invoke');
   }
 
   /**
-   * ManageConnections controls access to the @connections API
+   * Grants permission to access the Websocket @connections Route
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/apigateway/api-reference/apigateway-websocket-control-access-iam.html
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-control-access-iam.html
    */
   public toManageConnections() {
     return this.to('ManageConnections');
@@ -95,7 +95,7 @@ export class ExecuteApi extends PolicyStatement {
   }
 
   /**
-   * Filters access by the domain name ARN the API is called from
+   * Filters access by the DomainName ARN the API is called from
    *
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_service-with-iam.html
    *
@@ -103,9 +103,9 @@ export class ExecuteApi extends PolicyStatement {
    * - execute-api-general
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifViaDomainArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`viaDomainArn`, value, operator ?? 'StringLike');
+    return this.if(`viaDomainArn`, value, operator ?? 'ArnLike');
   }
 }
