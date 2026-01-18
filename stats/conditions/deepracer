@@ -1,5 +1,0 @@
-deepracer:MultiUser
-deepracer:RequestTag/${TagKey}
-deepracer:ResourceTag/${TagKey}
-deepracer:TagKeys
-deepracer:UserToken
