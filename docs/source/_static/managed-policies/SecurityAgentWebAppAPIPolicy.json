@@ -46,6 +46,7 @@
         "securityagent:ListPentestJobsForPentest",
         "securityagent:ListPentests",
         "securityagent:ListTasks",
+        "securityagent:StartCodeRemediation",
         "securityagent:StartPentestExecution",
         "securityagent:StopPentestExecution",
         "securityagent:UpdateFinding",
