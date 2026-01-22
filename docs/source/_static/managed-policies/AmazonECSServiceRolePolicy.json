@@ -153,6 +153,21 @@
       ]
     },
     {
+      "Sid": "OpenDataChannel",
+      "Effect": "Allow",
+      "Action": [
+        "ssmmessages:OpenDataChannel"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:session/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
+    },
+    {
       "Sid": "CloudMapResourceCreation",
       "Effect": "Allow",
       "Action": [
