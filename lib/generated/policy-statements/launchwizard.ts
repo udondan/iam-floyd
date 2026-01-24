@@ -151,6 +151,17 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a version of a deployment pattern
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetDeploymentPatternVersion.html
+   */
+  public toGetDeploymentPatternVersion() {
+    return this.to('GetDeploymentPatternVersion');
+  }
+
+  /**
    * Grants permission to get infrastructure suggestion
    *
    * Access Level: Read
@@ -283,6 +294,17 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the versions of a deployment pattern
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeploymentPatternVersions.html
+   */
+  public toListDeploymentPatternVersions() {
+    return this.to('ListDeploymentPatternVersions');
+  }
+
+  /**
    * Grants permission to list deployments
    *
    * Access Level: List
@@ -327,7 +349,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for a LaunchWizard resource.
+   * Grants permission to list tags for a LaunchWizard resource
    *
    * Access Level: Read
    *
@@ -393,7 +415,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag a LaunchWizard resource.
+   * Grants permission to tag a LaunchWizard resource
    *
    * Access Level: Tagging
    *
@@ -404,7 +426,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag a LaunchWizard resource.
+   * Grants permission to untag a LaunchWizard resource
    *
    * Access Level: Tagging
    *
@@ -412,6 +434,17 @@ export class Launchwizard extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a deployment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_UpdateDeployment.html
+   */
+  public toUpdateDeployment() {
+    return this.to('UpdateDeployment');
   }
 
   /**
@@ -436,6 +469,7 @@ export class Launchwizard extends PolicyStatement {
       'DeleteSettingsSet',
       'PutSettingsSet',
       'StartProvisioning',
+      'UpdateDeployment',
       'UpdateSettingsSet'
     ],
     Read: [
@@ -444,6 +478,7 @@ export class Launchwizard extends PolicyStatement {
       'DescribeProvisioningEvents',
       'DescribeSettingsSet',
       'GetDeployment',
+      'GetDeploymentPatternVersion',
       'GetInfrastructureSuggestion',
       'GetIpAddress',
       'GetResourceCostEstimate',
@@ -459,6 +494,7 @@ export class Launchwizard extends PolicyStatement {
       'ListAdditionalNodes',
       'ListAllowedResources',
       'ListDeploymentEvents',
+      'ListDeploymentPatternVersions',
       'ListDeployments',
       'ListProvisionedApps',
       'ListResourceCostEstimates',
@@ -476,6 +512,8 @@ export class Launchwizard extends PolicyStatement {
   /**
    * Adds a resource of type deployment to the statement
    *
+   * https://docs.aws.amazon.com/launchwizard/Resources/Deployment.html
+   *
    * @param deploymentId - Identifier for the deploymentId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
@@ -489,7 +527,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag key-value pairs in the request
+   * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -506,7 +544,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Filters access based on tag key-value pairs attached to the resource
+   * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
@@ -515,6 +553,7 @@ export class Launchwizard extends PolicyStatement {
    * - .toGetDeployment()
    * - .toListTagsForResource()
    * - .toTagResource()
+   * - .toUpdateDeployment()
    *
    * Applies to resource types:
    * - deployment
@@ -528,7 +567,7 @@ export class Launchwizard extends PolicyStatement {
   }
 
   /**
-   * Filters access based on the presence of tag keys in the request
+   * Filters access by the presence of tag keys in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *

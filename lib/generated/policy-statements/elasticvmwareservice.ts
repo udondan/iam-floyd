@@ -23,6 +23,10 @@ export class Evs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:AssociateAddress
+   * - ec2:DescribeAddresses
+   *
    * https://docs.aws.amazon.com/evs/latest/APIReference/API_AssociateEipToVlan.html
    */
   public toAssociateEipToVlan() {
@@ -38,6 +42,50 @@ export class Evs extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateSubnet
+   * - ec2:CreateTags
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteSubnet
+   * - ec2:DeleteVolume
+   * - ec2:DescribeAddresses
+   * - ec2:DescribeDhcpOptions
+   * - ec2:DescribeHosts
+   * - ec2:DescribeInstanceStatus
+   * - ec2:DescribeInstances
+   * - ec2:DescribeKeyPairs
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribePlacementGroups
+   * - ec2:DescribeRouteServerEndpoints
+   * - ec2:DescribeRouteServerPeers
+   * - ec2:DescribeRouteServers
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVolumes
+   * - ec2:DescribeVpcs
+   * - ec2:DetachNetworkInterface
+   * - ec2:DetachVolume
+   * - ec2:GetAllowedImagesSettings
+   * - ec2:GetRouteServerAssociations
+   * - ec2:ModifyInstanceAttribute
+   * - ec2:ModifyNetworkInterfaceAttribute
+   * - ec2:RunInstances
+   * - ec2:TerminateInstances
+   * - iam:CreateServiceLinkedRole
+   * - kms:DescribeKey
+   * - kms:ListAliases
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:GetSecretValue
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
+   * - servicequotas:GetServiceQuota
+   * - servicequotas:ListServiceQuotas
+   * - support:DescribeServices
+   * - support:DescribeSupportLevel
+   *
    * https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironment.html
    */
   public toCreateEnvironment() {
@@ -48,6 +96,32 @@ export class Evs extends PolicyStatement {
    * Grants permission to add host to an Amazon EVS environment
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateTags
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeDhcpOptions
+   * - ec2:DescribeHosts
+   * - ec2:DescribeInstanceStatus
+   * - ec2:DescribeInstances
+   * - ec2:DescribeKeyPairs
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribePlacementGroups
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - ec2:ModifyNetworkInterfaceAttribute
+   * - ec2:RunInstances
+   * - evs:CreateEnvironmentHost
+   * - secretsmanager:CreateSecret
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:GetRandomPassword
+   * - secretsmanager:GetSecretValue
+   * - secretsmanager:TagResource
+   * - secretsmanager:UpdateSecret
+   * - servicequotas:GetServiceQuota
+   * - servicequotas:ListServiceQuotas
    *
    * https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironmentHost.html
    */
@@ -60,6 +134,19 @@ export class Evs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteSubnet
+   * - ec2:DescribeInstanceStatus
+   * - ec2:DescribeInstances
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:ModifyInstanceAttribute
+   * - ec2:ModifyNetworkInterfaceAttribute
+   * - ec2:TerminateInstances
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:GetSecretValue
+   *
    * https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironment.html
    */
   public toDeleteEnvironment() {
@@ -71,6 +158,17 @@ export class Evs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeInstanceStatus
+   * - ec2:DescribeInstances
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:ModifyInstanceAttribute
+   * - ec2:ModifyNetworkInterfaceAttribute
+   * - ec2:TerminateInstances
+   * - secretsmanager:DeleteSecret
+   * - secretsmanager:GetSecretValue
+   *
    * https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironmentHost.html
    */
   public toDeleteEnvironmentHost() {
@@ -81,6 +179,9 @@ export class Evs extends PolicyStatement {
    * Grants permission to disassociate an Elastic IP address (EIP) from a public VLAN in an Amazon EVS environment
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - ec2:DisassociateAddress
    *
    * https://docs.aws.amazon.com/evs/latest/APIReference/API_DisassociateEipFromVlan.html
    */
@@ -97,6 +198,17 @@ export class Evs extends PolicyStatement {
    */
   public toGetEnvironment() {
     return this.to('GetEnvironment');
+  }
+
+  /**
+   * Grants permission to get versions provided for launch by Amazon EVS
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_GetVersions.html
+   */
+  public toGetVersions() {
+    return this.to('GetVersions');
   }
 
   /**
@@ -185,6 +297,7 @@ export class Evs extends PolicyStatement {
     ],
     Read: [
       'GetEnvironment',
+      'GetVersions',
       'ListTagsForResource'
     ],
     List: [

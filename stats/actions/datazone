@@ -50,6 +50,7 @@ datazone:DeleteAssetType;Write
 datazone:DeleteCell;Write
 datazone:DeleteCellRun;Write
 datazone:DeleteConnection;Write
+datazone:DeleteDataExportConfiguration;Write
 datazone:DeleteDataProduct;Write
 datazone:DeleteDataSource;Write
 datazone:DeleteDomain;Write
@@ -171,6 +172,7 @@ datazone:PutCellRunResult;Write
 datazone:PutDataExportConfiguration;Write
 datazone:PutDomainSharingPolicy;Permissions management
 datazone:PutEnvironmentBlueprintConfiguration;Write
+datazone:QueryGraph;List
 datazone:RefreshToken;Write
 datazone:RejectPredictions;Write
 datazone:RejectSubscriptionRequest;Write
