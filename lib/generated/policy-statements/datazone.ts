@@ -491,6 +491,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete DataZone catalog data export configuration
+   *
+   * Access Level: Write
+   */
+  public toDeleteDataExportConfiguration() {
+    return this.to('DeleteDataExportConfiguration');
+  }
+
+  /**
    * Grants permission to delete data product
    *
    * Access Level: Write
@@ -1580,6 +1589,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to query graph
+   *
+   * Access Level: List
+   */
+  public toQueryGraph() {
+    return this.to('QueryGraph');
+  }
+
+  /**
    * Grants permission to refresh token
    *
    * Access Level: Write
@@ -2095,6 +2113,7 @@ export class Datazone extends PolicyStatement {
       'DeleteCell',
       'DeleteCellRun',
       'DeleteConnection',
+      'DeleteDataExportConfiguration',
       'DeleteDataProduct',
       'DeleteDataSource',
       'DeleteDomain',
@@ -2269,6 +2288,7 @@ export class Datazone extends PolicyStatement {
       'ListSubscriptions',
       'ListTimeSeriesDataPoints',
       'ListWarehouseMetadata',
+      'QueryGraph',
       'Search',
       'SearchGroupProfiles',
       'SearchListings',

@@ -10,6 +10,7 @@ launchwizard:DescribeProvisionedApp;Read
 launchwizard:DescribeProvisioningEvents;Read
 launchwizard:DescribeSettingsSet;Read
 launchwizard:GetDeployment;Read
+launchwizard:GetDeploymentPatternVersion;Read
 launchwizard:GetInfrastructureSuggestion;Read
 launchwizard:GetIpAddress;Read
 launchwizard:GetResourceCostEstimate;Read
@@ -22,6 +23,7 @@ launchwizard:GetWorkloadDeploymentPattern;Read
 launchwizard:ListAdditionalNodes;List
 launchwizard:ListAllowedResources;List
 launchwizard:ListDeploymentEvents;List
+launchwizard:ListDeploymentPatternVersions;List
 launchwizard:ListDeployments;List
 launchwizard:ListProvisionedApps;List
 launchwizard:ListResourceCostEstimates;List
@@ -34,4 +36,5 @@ launchwizard:PutSettingsSet;Write
 launchwizard:StartProvisioning;Write
 launchwizard:TagResource;Tagging
 launchwizard:UntagResource;Tagging
+launchwizard:UpdateDeployment;Write
 launchwizard:UpdateSettingsSet;Write

@@ -24,7 +24,7 @@ copyright = '2020, Daniel Schroeder'
 author = 'Daniel Schroeder'
 
 # The full version, including alpha/beta/rc tags
-release = '0.739.0'
+release = '0.740.0'
 
 # -- General configuration ---------------------------------------------------
 

@@ -5,6 +5,7 @@ evs:DeleteEnvironment;Write
 evs:DeleteEnvironmentHost;Write
 evs:DisassociateEipFromVlan;Write
 evs:GetEnvironment;Read
+evs:GetVersions;Read
 evs:ListEnvironmentHosts;List
 evs:ListEnvironmentVlans;List
 evs:ListEnvironments;List
