@@ -338,18 +338,17 @@ export class ArcRegionSwitch extends PolicyStatement {
   /**
    * Adds a resource of type plan to the statement
    *
-   * https://docs.aws.amazon.com/r53recovery/latest/dg/plan.html
+   * https://docs.aws.amazon.com/arc-region-switch/latest/api/API_Plan.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onPlan(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:arc-region-switch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:plan/${ resourceId }`);
+  public onPlan(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:arc-region-switch::${ account ?? this.defaultAccount }:plan/${ resourceId }`);
   }
 
   /**
