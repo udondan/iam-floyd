@@ -63,6 +63,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve multiple agent spaces in a single request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetAgentSpaces.html
+   */
+  public toBatchGetAgentSpaces() {
+    return this.to('BatchGetAgentSpaces');
+  }
+
+  /**
    * Grants permission to retrieve one or more Artifact Metadata records for the given Agent Instance
    *
    * Access Level: Read
@@ -82,6 +93,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toBatchGetFindings() {
     return this.to('BatchGetFindings');
+  }
+
+  /**
+   * Grants permission to retrieve multiple pentest job tasks in a single request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobTasks.html
+   */
+  public toBatchGetPentestJobTasks() {
+    return this.to('BatchGetPentestJobTasks');
   }
 
   /**
@@ -140,6 +162,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an agent space record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreateAgentSpace.html
+   */
+  public toCreateAgentSpace() {
+    return this.to('CreateAgentSpace');
+  }
+
+  /**
    * Grants permission to create a new application
    *
    * Access Level: Write
@@ -152,6 +185,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
+  }
+
+  /**
+   * Grants permission to create a design review
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreateDesignReview.html
+   */
+  public toCreateDesignReview() {
+    return this.to('CreateDesignReview');
   }
 
   /**
@@ -210,6 +254,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a customer managed Security Requirement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreateSecurityRequirement.html
+   */
+  public toCreateSecurityRequirement() {
+    return this.to('CreateSecurityRequirement');
+  }
+
+  /**
    * Grants permission to delete an agent instance record
    *
    * Access Level: Write
@@ -218,6 +273,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toDeleteAgentInstance() {
     return this.to('DeleteAgentInstance');
+  }
+
+  /**
+   * Grants permission to delete an agent space record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_DeleteAgentSpace.html
+   */
+  public toDeleteAgentSpace() {
+    return this.to('DeleteAgentSpace');
   }
 
   /**
@@ -254,6 +320,28 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a design review
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_DeleteDesignReview.html
+   */
+  public toDeleteDesignReview() {
+    return this.to('DeleteDesignReview');
+  }
+
+  /**
+   * Grants permission to delete a document review
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_DeleteDocumentReview.html
+   */
+  public toDeleteDocumentReview() {
+    return this.to('DeleteDocumentReview');
+  }
+
+  /**
    * Grants permission to delete the integration of an application
    *
    * Access Level: Write
@@ -273,6 +361,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toDeleteMembership() {
     return this.to('DeleteMembership');
+  }
+
+  /**
+   * Grants permission to delete a customer managed Security Requirement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_DeleteSecurityRequirement.html
+   */
+  public toDeleteSecurityRequirement() {
+    return this.to('DeleteSecurityRequirement');
   }
 
   /**
@@ -331,6 +430,28 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the status of the associated agent space design review
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_GetDesignReview.html
+   */
+  public toGetDesignReview() {
+    return this.to('GetDesignReview');
+  }
+
+  /**
+   * Grants permission to get design review artifact for a specific document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_GetDesignReviewArtifact.html
+   */
+  public toGetDesignReviewArtifact() {
+    return this.to('GetDesignReviewArtifact');
+  }
+
+  /**
    * Grants permission to retrieve a document review task
    *
    * Access Level: Read
@@ -386,6 +507,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a Security Requirement
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_GetSecurityRequirement.html
+   */
+  public toGetSecurityRequirement() {
+    return this.to('GetSecurityRequirement');
+  }
+
+  /**
    * Grants permission to process and invalidate a one time login session
    *
    * Access Level: Write
@@ -430,6 +562,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list agent spaces
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListAgentSpaces.html
+   */
+  public toListAgentSpaces() {
+    return this.to('ListAgentSpaces');
+  }
+
+  /**
    * Grants permission to list all applications in the account
    *
    * Access Level: List
@@ -460,6 +603,28 @@ export class Securityagent extends PolicyStatement {
    */
   public toListControls() {
     return this.to('ListControls');
+  }
+
+  /**
+   * Grants permission to list design review comments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListDesignReviewComments.html
+   */
+  public toListDesignReviewComments() {
+    return this.to('ListDesignReviewComments');
+  }
+
+  /**
+   * Grants permission to list all design reviews for the given project
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListDesignReviews.html
+   */
+  public toListDesignReviews() {
+    return this.to('ListDesignReviews');
   }
 
   /**
@@ -540,6 +705,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list pentest job tasks associated with a pentest job
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListPentestJobTasks.html
+   */
+  public toListPentestJobTasks() {
+    return this.to('ListPentestJobTasks');
+  }
+
+  /**
    * Grants permission to list penetration test jobs associated with a penetration test
    *
    * Access Level: List
@@ -570,6 +746,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toListResourcesFromIntegration() {
     return this.to('ListResourcesFromIntegration');
+  }
+
+  /**
+   * Grants permission to list all Security Requirements
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListSecurityRequirements.html
+   */
+  public toListSecurityRequirements() {
+    return this.to('ListSecurityRequirements');
   }
 
   /**
@@ -606,6 +793,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate the execution of a penetration test
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_StartPentestJob.html
+   */
+  public toStartPentestJob() {
+    return this.to('StartPentestJob');
+  }
+
+  /**
    * Grants permission to stop the execution of a running penetration test
    *
    * Access Level: Write
@@ -614,6 +812,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toStopPentestExecution() {
     return this.to('StopPentestExecution');
+  }
+
+  /**
+   * Grants permission to stop the execution of a running penetration test
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_StopPentestJob.html
+   */
+  public toStopPentestJob() {
+    return this.to('StopPentestJob');
   }
 
   /**
@@ -628,6 +837,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to toggle the status of a managed Security Requirement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ToggleManagedSecurityRequirement.html
+   */
+  public toToggleManagedSecurityRequirement() {
+    return this.to('ToggleManagedSecurityRequirement');
+  }
+
+  /**
    * Grants permission to update an agent instance record
    *
    * Access Level: Write
@@ -636,6 +856,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toUpdateAgentInstance() {
     return this.to('UpdateAgentInstance');
+  }
+
+  /**
+   * Grants permission to update an agent space record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateAgentSpace.html
+   */
+  public toUpdateAgentSpace() {
+    return this.to('UpdateAgentSpace');
   }
 
   /**
@@ -697,6 +928,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a customer managed Security Requirement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateSecurityRequirement.html
+   */
+  public toUpdateSecurityRequirement() {
+    return this.to('UpdateSecurityRequirement');
+  }
+
+  /**
    * Grants permission to verify ownership for a registered target domain in an agent instance
    *
    * Access Level: Write
@@ -713,36 +955,50 @@ export class Securityagent extends PolicyStatement {
       'AddControl',
       'BatchDeletePentests',
       'CreateAgentInstance',
+      'CreateAgentSpace',
       'CreateApplication',
+      'CreateDesignReview',
       'CreateDocumentReview',
       'CreateIntegration',
       'CreateMembership',
       'CreateOneTimeLoginSession',
       'CreatePentest',
+      'CreateSecurityRequirement',
       'DeleteAgentInstance',
+      'DeleteAgentSpace',
       'DeleteApplication',
       'DeleteArtifact',
       'DeleteControl',
+      'DeleteDesignReview',
+      'DeleteDocumentReview',
       'DeleteIntegration',
       'DeleteMembership',
+      'DeleteSecurityRequirement',
       'HandleOneTimeLoginSession',
       'InitiateProviderRegistration',
       'StartCodeRemediation',
       'StartPentestExecution',
+      'StartPentestJob',
       'StopPentestExecution',
+      'StopPentestJob',
       'ToggleManagedControl',
+      'ToggleManagedSecurityRequirement',
       'UpdateAgentInstance',
+      'UpdateAgentSpace',
       'UpdateApplication',
       'UpdateControl',
       'UpdateFinding',
       'UpdateIntegratedResources',
       'UpdatePentest',
+      'UpdateSecurityRequirement',
       'VerifyTargetDomain'
     ],
     Read: [
       'BatchGetAgentInstances',
+      'BatchGetAgentSpaces',
       'BatchGetArtifactMetadata',
       'BatchGetFindings',
+      'BatchGetPentestJobTasks',
       'BatchGetPentestJobs',
       'BatchGetPentests',
       'BatchGetSecurityTestContentMetadata',
@@ -752,18 +1008,24 @@ export class Securityagent extends PolicyStatement {
       'GetArtifact',
       'GetCodeReviewTask',
       'GetControl',
+      'GetDesignReview',
+      'GetDesignReviewArtifact',
       'GetDocReviewTask',
       'GetDocumentReview',
       'GetDocumentReviewArtifact',
       'GetIntegration',
-      'GetLoginSessionCredentials'
+      'GetLoginSessionCredentials',
+      'GetSecurityRequirement'
     ],
     List: [
       'ListAgentInstanceTasks',
       'ListAgentInstances',
+      'ListAgentSpaces',
       'ListApplications',
       'ListArtifacts',
       'ListControls',
+      'ListDesignReviewComments',
+      'ListDesignReviews',
       'ListDiscoveredEndpoints',
       'ListDocumentReviewComments',
       'ListDocumentReviews',
@@ -771,9 +1033,11 @@ export class Securityagent extends PolicyStatement {
       'ListIntegratedResources',
       'ListIntegrations',
       'ListMemberships',
+      'ListPentestJobTasks',
       'ListPentestJobsForPentest',
       'ListPentests',
       'ListResourcesFromIntegration',
+      'ListSecurityRequirements',
       'ListTasks'
     ]
   };
@@ -807,6 +1071,20 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type SecurityRequirement to the statement
+   *
+   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param securityRequirementId - Identifier for the securityRequirementId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSecurityRequirement(securityRequirementId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:security-requirement/${ securityRequirementId }`);
+  }
+
+  /**
    * Adds a resource of type Integration to the statement
    *
    * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
@@ -835,6 +1113,20 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type AgentSpace to the statement
+   *
+   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param agentId - Identifier for the agentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAgentSpace(agentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }`);
+  }
+
+  /**
    * Adds a resource of type Artifact to the statement
    *
    * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
@@ -846,7 +1138,7 @@ export class Securityagent extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onArtifact(agentId: string, artifactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-instance/${ agentId }/artifact/${ artifactId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/artifact/${ artifactId }`);
   }
 
   /**
@@ -861,7 +1153,7 @@ export class Securityagent extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPentest(agentId: string, pentestId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-instance/${ agentId }/pentest/${ pentestId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/pentest/${ pentestId }`);
   }
 
   /**
@@ -876,7 +1168,7 @@ export class Securityagent extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPentestJob(agentId: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-instance/${ agentId }/pentest-job/${ jobId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/pentest-job/${ jobId }`);
   }
 
   /**
@@ -891,7 +1183,7 @@ export class Securityagent extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onPentestTask(agentId: string, taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-instance/${ agentId }/pentest-task/${ taskId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/pentest-task/${ taskId }`);
   }
 
   /**
@@ -906,6 +1198,6 @@ export class Securityagent extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
   public onFinding(agentId: string, findingId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-instance/${ agentId }/finding/${ findingId }`);
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/finding/${ findingId }`);
   }
 }
