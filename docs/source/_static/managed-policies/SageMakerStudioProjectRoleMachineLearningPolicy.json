@@ -141,6 +141,24 @@
       }
     },
     {
+      "Sid": "SageMakerMlflowServerlessPermission",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateMlflowApp",
+        "sagemaker:CreatePresignedMlflowAppUrl",
+        "sagemaker:DeleteMlflowApp",
+        "sagemaker:DescribeMlflowApp",
+        "sagemaker:UpdateMlflowApp",
+        "sagemaker:CallMlflowAppApi"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:mlflow-app/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
       "Sid": "SageMakerBYOFSPermissions",
       "Effect": "Allow",
       "Action": [
@@ -351,7 +369,8 @@
         "sagemaker:ListArtifacts",
         "sagemaker:ListHubs",
         "sagemaker:ListPipelines",
-        "sagemaker:ListContexts"
+        "sagemaker:ListContexts",
+        "sagemaker:ListMlflowApps"
       ],
       "Resource": "*",
       "Condition": {

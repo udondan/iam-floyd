@@ -206,6 +206,7 @@
         "sagemaker:QueryLineage",
         "sagemaker:*InferenceComponent*",
         "sagemaker:*Job*",
+        "sagemaker:*MlflowApp*",
         "sagemaker:StartMlflowTrackingServer",
         "sagemaker:StopMlflowTrackingServer",
         "sagemaker:CreatePresignedMlflowTrackingServerUrl",

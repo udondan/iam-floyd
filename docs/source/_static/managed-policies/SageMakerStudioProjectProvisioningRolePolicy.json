@@ -1934,7 +1934,8 @@
       ],
       "Resource": [
         "arn:aws:sagemaker:*:*:domain/*",
-        "arn:aws:sagemaker:*:*:mlflow-tracking-server/*"
+        "arn:aws:sagemaker:*:*:mlflow-tracking-server/*",
+        "arn:aws:sagemaker:*:*:mlflow-app/*"
       ],
       "Condition": {
         "StringEquals": {
@@ -1954,7 +1955,8 @@
       ],
       "Resource": [
         "arn:aws:sagemaker:*:*:domain/*",
-        "arn:aws:sagemaker:*:*:mlflow-tracking-server/*"
+        "arn:aws:sagemaker:*:*:mlflow-tracking-server/*",
+        "arn:aws:sagemaker:*:*:mlflow-app/*"
       ],
       "Condition": {
         "StringEquals": {
@@ -2163,6 +2165,33 @@
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         },
+        "Null": {
+          "aws:ResourceTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "MLFlowServerlessCreate",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateMlflowApp"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:mlflow-app/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AmazonDataZoneProject": "false"
+        }
+      }
+    },
+    {
+      "Sid": "MLFlowServerlessDescribeDelete",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:DeleteMlflowApp",
+        "sagemaker:DescribeMlflowApp"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:mlflow-app/*",
+      "Condition": {
         "Null": {
           "aws:ResourceTag/AmazonDataZoneProject": "false"
         }

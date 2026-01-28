@@ -2139,6 +2139,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodGatedModelAccess);
     }
 
+    /** This policy provides administrative privileges required for setting up the SageMaker HyperPod inference operator. It enables the inference operator to access AWS networking resources, Amazon S3, Amazon ECR, Amazon CloudWatch, AWS Certificate Manager, and SageMaker resources necessary to deploy and manage inference workloads on HyperPod clusters */
+    public AmazonSageMakerHyperPodInferenceAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodInferenceAccess);
+    }
+
     /** This policy provides administrative privileges required for setting up SageMaker HyperPod observability. It enables access to Amazon Managed Prometheus, Amazon Managed Grafana and EKS Addons. The policy also includes broad access to Grafana HTTP APIs through ServiceAccountTokens across all Amazon Managed Grafana workspaces in your account. */
     public AmazonSageMakerHyperPodObservabilityAdminAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodObservabilityAdminAccess);

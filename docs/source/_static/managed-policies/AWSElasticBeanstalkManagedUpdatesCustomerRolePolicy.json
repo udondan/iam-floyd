@@ -291,7 +291,8 @@
         "StringEquals": {
           "ec2:CreateAction": [
             "CreateLaunchTemplate",
-            "RunInstances"
+            "RunInstances",
+            "AllocateAddress"
           ]
         }
       }
