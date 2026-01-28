@@ -1,4 +1,5 @@
 securityagent:AgentInstance
+securityagent:AgentSpace
 securityagent:Application
 securityagent:Artifact
 securityagent:Control
@@ -7,3 +8,4 @@ securityagent:Integration
 securityagent:Pentest
 securityagent:PentestJob
 securityagent:PentestTask
+securityagent:SecurityRequirement
