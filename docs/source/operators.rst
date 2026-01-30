@@ -1,5 +1,5 @@
 Operators
-=====
+=========
 
 .. include:: _warning.rst
 .. include:: _links.rst
