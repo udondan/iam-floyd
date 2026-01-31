@@ -114,6 +114,7 @@ redshift:FailoverPrimaryCompute;Write
 redshift:FetchResults;Read
 redshift:GetClusterCredentials;Write
 redshift:GetClusterCredentialsWithIAM;Write
+redshift:GetIdentityCenterAuthToken;Read
 redshift:GetReservedNodeExchangeConfigurationOptions;Read
 redshift:GetReservedNodeExchangeOfferings;Read
 redshift:GetResourcePolicy;Read
