@@ -2,18 +2,12 @@
 name: Test Documentation
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-      - '.github/workflows/test-docs.yml'
   pull_request:
     branches:
       - main
     paths:
-      - 'docs/**'
-      - '.github/workflows/test-docs.yml'
+      - "docs/**"
+      - ".github/workflows/test-docs.yml"
 
 jobs:
   test-docs:
@@ -26,12 +20,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Build documentation
         run: |
           cd docs
-          make html
+          make install html
 
       - name: Check for build errors
         run: |
