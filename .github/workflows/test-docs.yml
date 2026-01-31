@@ -1,0 +1,43 @@
+---
+name: Test Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - '.github/workflows/test-docs.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - '.github/workflows/test-docs.yml'
+
+jobs:
+  test-docs:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Build documentation
+        run: |
+          cd docs
+          make html
+
+      - name: Check for build errors
+        run: |
+          if [ -f docs/build/html/index.html ]; then
+            echo "Documentation built successfully"
+          else
+            echo "Documentation build failed - index.html not found"
+            exit 1
+          fi
