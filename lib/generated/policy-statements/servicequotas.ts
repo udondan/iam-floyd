@@ -135,6 +135,9 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifService()
+   *
    * Dependent actions:
    * - autoscaling:DescribeAccountLimits
    * - cloudformation:DescribeAccountLimits
@@ -155,6 +158,9 @@ export class Servicequotas extends PolicyStatement {
    * Grants permission to retrieve the details for a service quota increase request from the service quota template
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifService()
    *
    * Dependent actions:
    * - organizations:DescribeOrganization
@@ -191,6 +197,9 @@ export class Servicequotas extends PolicyStatement {
    * Grants permission to request a list of the changes to specific service quotas
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifService()
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistoryByQuota.html
    */
@@ -460,6 +469,9 @@ export class Servicequotas extends PolicyStatement {
    * https://docs.aws.amazon.com/servicequotas/latest/userguide/identity-access-management.html#condition-keys
    *
    * Applies to actions:
+   * - .toGetServiceQuota()
+   * - .toGetServiceQuotaIncreaseRequestFromTemplate()
+   * - .toListRequestedServiceQuotaChangeHistoryByQuota()
    * - .toPutServiceQuotaIncreaseRequestIntoTemplate()
    * - .toRequestServiceQuotaIncrease()
    *

@@ -164,4 +164,5 @@ s3:UpdateBucketMetadataInventoryTableConfiguration;Write
 s3:UpdateBucketMetadataJournalTableConfiguration;Write
 s3:UpdateJobPriority;Write
 s3:UpdateJobStatus;Write
+s3:UpdateObjectEncryption;Write
 s3:UpdateStorageLensGroup;Write

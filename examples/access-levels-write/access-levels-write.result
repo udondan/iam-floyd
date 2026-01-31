@@ -49,6 +49,7 @@
         "s3:UpdateBucketMetadataJournalTableConfiguration",
         "s3:UpdateJobPriority",
         "s3:UpdateJobStatus",
+        "s3:UpdateObjectEncryption",
         "s3:UpdateStorageLensGroup"
     ],
     "Resource": "*",

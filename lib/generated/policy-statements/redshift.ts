@@ -1426,6 +1426,17 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an authorized token for Identity Center users to access Redshift clusters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/identity-center-authentication.html
+   */
+  public toGetIdentityCenterAuthToken() {
+    return this.to('GetIdentityCenterAuthToken');
+  }
+
+  /**
    * Grants permission to get the configuration options for the reserved-node exchange
    *
    * Access Level: Read
@@ -2164,6 +2175,7 @@ export class Redshift extends PolicyStatement {
       'DescribeTags',
       'DescribeUsageLimits',
       'FetchResults',
+      'GetIdentityCenterAuthToken',
       'GetReservedNodeExchangeConfigurationOptions',
       'GetReservedNodeExchangeOfferings',
       'GetResourcePolicy'

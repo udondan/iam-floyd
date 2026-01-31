@@ -483,6 +483,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start experiments on a Global Table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
+   */
+  public toInjectError() {
+    return this.to('InjectError');
+  }
+
+  /**
    * Grants permission to list backups associated with the account and endpoint
    *
    * Access Level: List
@@ -979,6 +990,7 @@ export class Dynamodb extends PolicyStatement {
       'EnableKinesisStreamingDestination',
       'ExportTableToPointInTime',
       'ImportTable',
+      'InjectError',
       'PartiQLDelete',
       'PartiQLInsert',
       'PartiQLUpdate',

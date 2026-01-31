@@ -21,6 +21,7 @@ redshift-serverless:DescribeOneTimeCredit;Read
 redshift-serverless:GetCredentials;Write
 redshift-serverless:GetCustomDomainAssociation;Read
 redshift-serverless:GetEndpointAccess;Read
+redshift-serverless:GetIdentityCenterAuthToken;Read
 redshift-serverless:GetManagedWorkgroup;Read
 redshift-serverless:GetNamespace;Read
 redshift-serverless:GetRecoveryPoint;Read

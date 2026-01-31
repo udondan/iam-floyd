@@ -37,6 +37,7 @@ dynamodb:GetRecords;Read
 dynamodb:GetResourcePolicy;Read
 dynamodb:GetShardIterator;Read
 dynamodb:ImportTable;Write
+dynamodb:InjectError;Write
 dynamodb:ListBackups;List
 dynamodb:ListContributorInsights;List
 dynamodb:ListExports;List
