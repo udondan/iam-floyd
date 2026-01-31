@@ -1700,6 +1700,8 @@ export class AwsManagedPolicy {
     public static AWSHealthImagingFullAccess = 'AWSHealthImagingFullAccess';
     /** Provides read only access to AWS Health Imaging service. */
     public static AWSHealthImagingReadOnlyAccess = 'AWSHealthImagingReadOnlyAccess';
+    /** Provides permissions for AWS HealthImaging to manage service operations and publish service metrics */
+    public static AWSHealthImagingServiceRolePolicy = 'aws-service-role/AWSHealthImagingServiceRolePolicy';
     /** Provides the list of actions that are allowed for roles assumed with the IAM Identity Center identity context. AWS Security Token Service (AWS STS) automatically attaches this policy to assumed roles. The identity context is passed as ProvidedContext. */
     public static AWSIAMIdentityCenterAllowListForIdentityContext = 'AWSIAMIdentityCenterAllowListForIdentityContext';
     /** Provides access to manage IAM Identity Center users from an external provider. */
