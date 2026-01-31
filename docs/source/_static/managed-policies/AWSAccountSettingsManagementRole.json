@@ -89,7 +89,9 @@
       "Effect": "Allow",
       "Action": [
         "sso:ListInstances",
-        "sso:ListApplications"
+        "sso:ListApplications",
+        "sso:DescribeApplication",
+        "sso:DescribeInstance"
       ],
       "Resource": "*"
     }
