@@ -6,6 +6,11 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["docutils"],
+      "enabled": false,
+      "description": "Ignore docutils updates due to sphinx-tabs incompatibility - see https://github.com/executablebooks/sphinx-tabs/issues/212"
     }
   ],
   "rebaseWhen": "auto"
