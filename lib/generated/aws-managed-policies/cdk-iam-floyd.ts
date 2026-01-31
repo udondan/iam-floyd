@@ -4259,6 +4259,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSHealthImagingReadOnlyAccess);
     }
 
+    /** Provides permissions for AWS HealthImaging to manage service operations and publish service metrics */
+    public AWSHealthImagingServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSHealthImagingServiceRolePolicy);
+    }
+
     /** Provides the list of actions that are allowed for roles assumed with the IAM Identity Center identity context. AWS Security Token Service (AWS STS) automatically attaches this policy to assumed roles. The identity context is passed as ProvidedContext. */
     public AWSIAMIdentityCenterAllowListForIdentityContext(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIAMIdentityCenterAllowListForIdentityContext);

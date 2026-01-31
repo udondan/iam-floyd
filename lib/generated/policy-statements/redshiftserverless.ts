@@ -311,6 +311,17 @@ export class RedshiftServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an authorized token for Identity Center users to access Redshift Serverless workgroups
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/redshift/latest/mgmt/identity-center-authentication.html
+   */
+  public toGetIdentityCenterAuthToken() {
+    return this.to('GetIdentityCenterAuthToken');
+  }
+
+  /**
    * Grants permission to create a Amazon Redshift Managed Serverless workgroup with the specified configuration settings
    *
    * Access Level: Read
@@ -877,6 +888,7 @@ export class RedshiftServerless extends PolicyStatement {
       'DescribeOneTimeCredit',
       'GetCustomDomainAssociation',
       'GetEndpointAccess',
+      'GetIdentityCenterAuthToken',
       'GetManagedWorkgroup',
       'GetNamespace',
       'GetRecoveryPoint',

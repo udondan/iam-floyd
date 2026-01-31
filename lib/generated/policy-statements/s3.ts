@@ -3451,6 +3451,27 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the server-side encryption type of an existing object in a general purpose bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifXAmzServerSideEncryption()
+   * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateObjectEncryption.html
+   */
+  public toUpdateObjectEncryption() {
+    return this.to('UpdateObjectEncryption');
+  }
+
+  /**
    * Grants permission to update an existing S3 Storage Lens group
    *
    * Access Level: Write
@@ -3520,6 +3541,7 @@ export class S3 extends PolicyStatement {
       'UpdateBucketMetadataJournalTableConfiguration',
       'UpdateJobPriority',
       'UpdateJobStatus',
+      'UpdateObjectEncryption',
       'UpdateStorageLensGroup'
     ],
     'Permissions management': [
@@ -4583,6 +4605,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
@@ -4762,6 +4785,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
@@ -4941,6 +4965,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
@@ -5318,6 +5343,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
@@ -5497,6 +5523,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
@@ -5708,6 +5735,7 @@ export class S3 extends PolicyStatement {
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
    * - .toUpdateJobStatus()
+   * - .toUpdateObjectEncryption()
    * - .toUpdateStorageLensGroup()
    *
    * @param value The value(s) to check
@@ -5873,6 +5901,7 @@ export class S3 extends PolicyStatement {
    * - .toBypassGovernanceRetention()
    * - .toPutObject()
    * - .toReplicateObject()
+   * - .toUpdateObjectEncryption()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -5890,6 +5919,7 @@ export class S3 extends PolicyStatement {
    * - .toBypassGovernanceRetention()
    * - .toPutObject()
    * - .toReplicateObject()
+   * - .toUpdateObjectEncryption()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
