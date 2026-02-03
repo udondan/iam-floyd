@@ -240,12 +240,16 @@
     {
       "Effect": "Allow",
       "Action": [
-        "iam:GetInstanceProfile",
         "iam:CreateInstanceProfile",
         "iam:DeleteInstanceProfile",
         "iam:RemoveRoleFromInstanceProfile"
       ],
       "Resource": "arn:aws:iam::*:instance-profile/eks*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:GetInstanceProfile",
+      "Resource": "arn:aws:iam::*:instance-profile/*"
     },
     {
       "Effect": "Allow",
