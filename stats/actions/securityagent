@@ -5,6 +5,7 @@ securityagent:BatchGetAgentInstances;Read
 securityagent:BatchGetAgentSpaces;Read
 securityagent:BatchGetArtifactMetadata;Read
 securityagent:BatchGetFindings;Read
+securityagent:BatchGetPentestJobContentMetadata;Read
 securityagent:BatchGetPentestJobTasks;Read
 securityagent:BatchGetPentestJobs;Read
 securityagent:BatchGetPentests;Read
