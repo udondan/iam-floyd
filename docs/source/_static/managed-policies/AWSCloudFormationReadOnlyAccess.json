@@ -5,6 +5,7 @@
       "Effect": "Allow",
       "Action": [
         "cloudformation:Describe*",
+        "cloudformation:BatchDescribe*",
         "cloudformation:EstimateTemplateCost",
         "cloudformation:Get*",
         "cloudformation:List*",
