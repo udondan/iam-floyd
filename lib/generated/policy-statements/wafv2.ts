@@ -27,6 +27,7 @@ export class Wafv2 extends PolicyStatement {
    * - amplify:AssociateWebACL
    * - apigateway:SetWebACL
    * - apprunner:AssociateWebAcl
+   * - appsync:AssociateWebACL
    * - appsync:SetWebACL
    * - cognito-idp:AssociateWebACL
    * - ec2:AssociateVerifiedAccessInstanceWebAcl
@@ -279,6 +280,7 @@ export class Wafv2 extends PolicyStatement {
    * - amplify:DisassociateWebACL
    * - apigateway:SetWebACL
    * - apprunner:DisassociateWebAcl
+   * - appsync:DisassociateWebACL
    * - appsync:SetWebACL
    * - cognito-idp:DisassociateWebACL
    * - ec2:DisassociateVerifiedAccessInstanceWebAcl
@@ -451,6 +453,7 @@ export class Wafv2 extends PolicyStatement {
    * Dependent actions:
    * - amplify:GetWebACLForResource
    * - apprunner:DescribeWebAclForService
+   * - appsync:GetWebACLForResource
    * - cognito-idp:GetWebACLForResource
    * - ec2:GetVerifiedAccessInstanceWebAcl
    * - elasticloadbalancing:GetLoadBalancerWebACL
@@ -561,6 +564,7 @@ export class Wafv2 extends PolicyStatement {
    * Dependent actions:
    * - amplify:ListResourcesForWebACL
    * - apprunner:ListAssociatedServicesForWebAcl
+   * - appsync:ListResourcesForWebACL
    * - cognito-idp:ListResourcesForWebACL
    * - ec2:DescribeVerifiedAccessInstanceWebAclAssociations
    * - elasticloadbalancing:DescribeWebACLAssociation

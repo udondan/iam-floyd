@@ -96,6 +96,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve multiple pentest job contents metadata in a single request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobContentMetadata.html
+   */
+  public toBatchGetPentestJobContentMetadata() {
+    return this.to('BatchGetPentestJobContentMetadata');
+  }
+
+  /**
    * Grants permission to retrieve multiple pentest job tasks in a single request
    *
    * Access Level: Read
@@ -998,6 +1009,7 @@ export class Securityagent extends PolicyStatement {
       'BatchGetAgentSpaces',
       'BatchGetArtifactMetadata',
       'BatchGetFindings',
+      'BatchGetPentestJobContentMetadata',
       'BatchGetPentestJobTasks',
       'BatchGetPentestJobs',
       'BatchGetPentests',

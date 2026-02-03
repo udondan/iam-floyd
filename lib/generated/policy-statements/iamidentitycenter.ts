@@ -19,6 +19,21 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a region to an IAM Identity Center instance
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:AddRegion
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html
+   */
+  public toAddRegion() {
+    return this.to('AddRegion');
+  }
+
+  /**
    * Grants permission to connect a directory to be used by AWS IAM Identity Center
    *
    * Access Level: Write
@@ -638,6 +653,20 @@ export class Sso extends PolicyStatement {
    */
   public toDescribePermissionSetProvisioningStatus() {
     return this.to('DescribePermissionSetProvisioningStatus');
+  }
+
+  /**
+   * Grants permission to retrieve configuration details for a specific IAM Identity Center instance region
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html
+   */
+  public toDescribeRegion() {
+    return this.to('DescribeRegion');
   }
 
   /**
@@ -1332,6 +1361,20 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all regions configured for an IAM Identity Center instance
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html
+   */
+  public toListRegions() {
+    return this.to('ListRegions');
+  }
+
+  /**
    * Grants permission to list the tags that are attached to a specified resource
    *
    * Access Level: Read
@@ -1512,6 +1555,21 @@ export class Sso extends PolicyStatement {
    */
   public toPutPermissionsPolicy() {
     return this.to('PutPermissionsPolicy');
+  }
+
+  /**
+   * Grants permission to remove a region from an IAM Identity Center instance
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:RemoveRegion
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html
+   */
+  public toRemoveRegion() {
+    return this.to('RemoveRegion');
   }
 
   /**
@@ -1831,6 +1889,7 @@ export class Sso extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AddRegion',
       'AssociateDirectory',
       'AssociateProfile',
       'CreateAccountAssignment',
@@ -1871,6 +1930,7 @@ export class Sso extends PolicyStatement {
       'PutApplicationSessionConfiguration',
       'PutInlinePolicyToPermissionSet',
       'PutMfaDeviceManagementForDirectory',
+      'RemoveRegion',
       'StartSSO',
       'UpdateApplication',
       'UpdateApplicationInstanceActiveCertificate',
@@ -1908,6 +1968,7 @@ export class Sso extends PolicyStatement {
       'DescribeInstanceAccessControlAttributeConfiguration',
       'DescribePermissionSet',
       'DescribePermissionSetProvisioningStatus',
+      'DescribeRegion',
       'DescribeRegisteredRegions',
       'DescribeTrustedTokenIssuer',
       'GetApplicationAccessScope',
@@ -1956,6 +2017,7 @@ export class Sso extends PolicyStatement {
       'ListPermissionSets',
       'ListPermissionSetsProvisionedToAccount',
       'ListProfiles',
+      'ListRegions',
       'ListTrustedTokenIssuers'
     ],
     Tagging: [

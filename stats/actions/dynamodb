@@ -1,3 +1,4 @@
+dynamodb:AssociateTableReplica;Write
 dynamodb:BatchGetItem;Read
 dynamodb:BatchWriteItem;Write
 dynamodb:ConditionCheckItem;Read
@@ -54,6 +55,8 @@ dynamodb:PurchaseReservedCapacityOfferings;Write
 dynamodb:PutItem;Write
 dynamodb:PutResourcePolicy;Permissions management
 dynamodb:Query;Read
+dynamodb:ReadDataForReplication;Read
+dynamodb:ReplicateSettings;Write
 dynamodb:RestoreTableFromAwsBackup;Write
 dynamodb:RestoreTableFromBackup;Write
 dynamodb:RestoreTableToPointInTime;Write
@@ -72,3 +75,4 @@ dynamodb:UpdateKinesisStreamingDestination;Write
 dynamodb:UpdateTable;Write
 dynamodb:UpdateTableReplicaAutoScaling;Write
 dynamodb:UpdateTimeToLive;Write
+dynamodb:WriteDataForReplication;Write

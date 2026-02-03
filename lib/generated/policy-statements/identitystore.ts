@@ -19,6 +19,20 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a region to an IdentityStore
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toAddRegion() {
+    return this.to('AddRegion');
+  }
+
+  /**
    * Grants permission to create a group in the specified IdentityStore
    *
    * Access Level: Write
@@ -189,6 +203,23 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve configuration details for a specific IdentityStore region
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeRegion() {
+    return this.to('DescribeRegion');
+  }
+
+  /**
    * Grants permission to retrieve information about user in the specified IdentityStore
    *
    * Access Level: Read
@@ -327,6 +358,23 @@ export class Identitystore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all regions configured for an IdentityStore
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPrimaryRegion()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListRegions() {
+    return this.to('ListRegions');
+  }
+
+  /**
    * Grants permission to search for users in the specified IdentityStore
    *
    * Access Level: List
@@ -342,6 +390,20 @@ export class Identitystore extends PolicyStatement {
    */
   public toListUsers() {
     return this.to('ListUsers');
+  }
+
+  /**
+   * Grants permission to remove a region from an IdentityStore
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toRemoveRegion() {
+    return this.to('RemoveRegion');
   }
 
   /**
@@ -416,6 +478,7 @@ export class Identitystore extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AddRegion',
       'CreateGroup',
       'CreateGroupMembership',
       'CreateIdentityStore',
@@ -424,6 +487,7 @@ export class Identitystore extends PolicyStatement {
       'DeleteGroupMembership',
       'DeleteIdentityStore',
       'DeleteUser',
+      'RemoveRegion',
       'ReserveUser',
       'UpdateGroup',
       'UpdateIdentityStore',
@@ -432,6 +496,7 @@ export class Identitystore extends PolicyStatement {
     Read: [
       'DescribeGroup',
       'DescribeGroupMembership',
+      'DescribeRegion',
       'DescribeUser',
       'GetGroupId',
       'GetGroupMembershipId',
@@ -442,6 +507,7 @@ export class Identitystore extends PolicyStatement {
       'ListGroupMemberships',
       'ListGroupMembershipsForMember',
       'ListGroups',
+      'ListRegions',
       'ListUsers'
     ]
   };
@@ -572,6 +638,7 @@ export class Identitystore extends PolicyStatement {
    * - .toDeleteUser()
    * - .toDescribeGroup()
    * - .toDescribeGroupMembership()
+   * - .toDescribeRegion()
    * - .toDescribeUser()
    * - .toGetGroupId()
    * - .toGetGroupMembershipId()
@@ -580,6 +647,7 @@ export class Identitystore extends PolicyStatement {
    * - .toListGroupMemberships()
    * - .toListGroupMembershipsForMember()
    * - .toListGroups()
+   * - .toListRegions()
    * - .toListUsers()
    * - .toReserveUser()
    * - .toUpdateGroup()

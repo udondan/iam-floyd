@@ -1,3 +1,4 @@
+identitystore:AddRegion;Write
 identitystore:CreateGroup;Write
 identitystore:CreateGroupMembership;Write
 identitystore:CreateIdentityStore;Write
@@ -8,6 +9,7 @@ identitystore:DeleteIdentityStore;Write
 identitystore:DeleteUser;Write
 identitystore:DescribeGroup;Read
 identitystore:DescribeGroupMembership;Read
+identitystore:DescribeRegion;Read
 identitystore:DescribeUser;Read
 identitystore:GetGroupId;Read
 identitystore:GetGroupMembershipId;Read
@@ -16,7 +18,9 @@ identitystore:IsMemberInGroups;Read
 identitystore:ListGroupMemberships;List
 identitystore:ListGroupMembershipsForMember;List
 identitystore:ListGroups;List
+identitystore:ListRegions;List
 identitystore:ListUsers;List
+identitystore:RemoveRegion;Write
 identitystore:ReserveUser;Write
 identitystore:UpdateGroup;Write
 identitystore:UpdateIdentityStore;Write

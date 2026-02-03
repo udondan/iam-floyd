@@ -19,6 +19,17 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create multi account global table replica
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
+   */
+  public toAssociateTableReplica() {
+    return this.to('AssociateTableReplica');
+  }
+
+  /**
    * Grants permission to return the attributes of one or more items from one or more tables
    *
    * Access Level: Read
@@ -708,6 +719,28 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to read data from a multi account global table replica
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
+   */
+  public toReadDataForReplication() {
+    return this.to('ReadDataForReplication');
+  }
+
+  /**
+   * Grants permission to configure settings for a multi account global table replica
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
+   */
+  public toReplicateSettings() {
+    return this.to('ReplicateSettings');
+  }
+
+  /**
    * Grants permission to create a new table from recovery point on AWS Backup
    *
    * Access Level: Write
@@ -943,7 +976,58 @@ export class Dynamodb extends PolicyStatement {
     return this.to('UpdateTimeToLive');
   }
 
+  /**
+   * Grants permission to write data to a multi account global table replica
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
+   */
+  public toWriteDataForReplication() {
+    return this.to('WriteDataForReplication');
+  }
+
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'AssociateTableReplica',
+      'BatchWriteItem',
+      'CreateBackup',
+      'CreateGlobalTable',
+      'CreateGlobalTableWitness',
+      'CreateTable',
+      'CreateTableReplica',
+      'DeleteBackup',
+      'DeleteGlobalTableWitness',
+      'DeleteItem',
+      'DeleteTable',
+      'DeleteTableReplica',
+      'DisableKinesisStreamingDestination',
+      'EnableKinesisStreamingDestination',
+      'ExportTableToPointInTime',
+      'ImportTable',
+      'InjectError',
+      'PartiQLDelete',
+      'PartiQLInsert',
+      'PartiQLUpdate',
+      'PurchaseReservedCapacityOfferings',
+      'PutItem',
+      'ReplicateSettings',
+      'RestoreTableFromAwsBackup',
+      'RestoreTableFromBackup',
+      'RestoreTableToPointInTime',
+      'StartAwsBackupJob',
+      'UpdateContinuousBackups',
+      'UpdateContributorInsights',
+      'UpdateGlobalTable',
+      'UpdateGlobalTableSettings',
+      'UpdateGlobalTableVersion',
+      'UpdateItem',
+      'UpdateKinesisStreamingDestination',
+      'UpdateTable',
+      'UpdateTableReplicaAutoScaling',
+      'UpdateTimeToLive',
+      'WriteDataForReplication'
+    ],
     Read: [
       'BatchGetItem',
       'ConditionCheckItem',
@@ -972,44 +1056,8 @@ export class Dynamodb extends PolicyStatement {
       'ListTagsOfResource',
       'PartiQLSelect',
       'Query',
+      'ReadDataForReplication',
       'Scan'
-    ],
-    Write: [
-      'BatchWriteItem',
-      'CreateBackup',
-      'CreateGlobalTable',
-      'CreateGlobalTableWitness',
-      'CreateTable',
-      'CreateTableReplica',
-      'DeleteBackup',
-      'DeleteGlobalTableWitness',
-      'DeleteItem',
-      'DeleteTable',
-      'DeleteTableReplica',
-      'DisableKinesisStreamingDestination',
-      'EnableKinesisStreamingDestination',
-      'ExportTableToPointInTime',
-      'ImportTable',
-      'InjectError',
-      'PartiQLDelete',
-      'PartiQLInsert',
-      'PartiQLUpdate',
-      'PurchaseReservedCapacityOfferings',
-      'PutItem',
-      'RestoreTableFromAwsBackup',
-      'RestoreTableFromBackup',
-      'RestoreTableToPointInTime',
-      'StartAwsBackupJob',
-      'UpdateContinuousBackups',
-      'UpdateContributorInsights',
-      'UpdateGlobalTable',
-      'UpdateGlobalTableSettings',
-      'UpdateGlobalTableVersion',
-      'UpdateItem',
-      'UpdateKinesisStreamingDestination',
-      'UpdateTable',
-      'UpdateTableReplicaAutoScaling',
-      'UpdateTimeToLive'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',

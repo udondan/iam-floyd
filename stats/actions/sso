@@ -1,3 +1,4 @@
+sso:AddRegion;Write
 sso:AssociateDirectory;Write
 sso:AssociateProfile;Write
 sso:AttachCustomerManagedPolicyReferenceToPermissionSet;Permissions management
@@ -39,6 +40,7 @@ sso:DescribeInstance;Read
 sso:DescribeInstanceAccessControlAttributeConfiguration;Read
 sso:DescribePermissionSet;Read
 sso:DescribePermissionSetProvisioningStatus;Read
+sso:DescribeRegion;Read
 sso:DescribeRegisteredRegions;Read
 sso:DescribeTrustedTokenIssuer;Read
 sso:DetachCustomerManagedPolicyReferenceFromPermissionSet;Permissions management
@@ -87,6 +89,7 @@ sso:ListPermissionSets;List
 sso:ListPermissionSetsProvisionedToAccount;List
 sso:ListProfileAssociations;Read
 sso:ListProfiles;List
+sso:ListRegions;List
 sso:ListTagsForResource;Read
 sso:ListTrustedTokenIssuers;List
 sso:ProvisionPermissionSet;Write
@@ -99,6 +102,7 @@ sso:PutInlinePolicyToPermissionSet;Write
 sso:PutMfaDeviceManagementForDirectory;Write
 sso:PutPermissionsBoundaryToPermissionSet;Permissions management
 sso:PutPermissionsPolicy;Permissions management
+sso:RemoveRegion;Write
 sso:SearchGroups;Read
 sso:SearchUsers;Read
 sso:StartSSO;Write
