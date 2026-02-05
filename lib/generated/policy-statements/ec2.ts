@@ -8889,6 +8889,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to temporarily inject latency to I/O operations for a target Amazon EBS volume
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#ebs-actions-reference
+   */
+  public toInjectVolumeIOLatency() {
+    return this.to('InjectVolumeIOLatency');
+  }
+
+  /**
    * Grants permission to list Amazon Machine Images (AMIs) that are currently in the Recycle Bin
    *
    * Access Level: List
@@ -11538,6 +11552,7 @@ export class Ec2 extends PolicyStatement {
       'ImportSnapshot',
       'ImportVolume',
       'InjectApiError',
+      'InjectVolumeIOLatency',
       'LockSnapshot',
       'ModifyAddressAttribute',
       'ModifyAvailabilityZoneGroup',
@@ -15048,6 +15063,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportImage()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toLockSnapshot()
    * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservation()
@@ -16049,6 +16065,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetReservedInstancesExchangeQuote()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
@@ -16174,6 +16191,7 @@ export class Ec2 extends PolicyStatement {
    * - .toGetLaunchTemplateData()
    * - .toGetPasswordData()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toModifyFleet()
    * - .toModifyInstanceAttribute()
    * - .toModifyInstanceCapacityReservationAttributes()
@@ -16739,6 +16757,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toLockSnapshot()
    * - .toModifyInstanceAttribute()
    * - .toModifySnapshotTier()
@@ -18416,6 +18435,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
@@ -19558,6 +19578,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportSnapshot()
    * - .toImportVolume()
    * - .toInjectApiError()
+   * - .toInjectVolumeIOLatency()
    * - .toListImagesInRecycleBin()
    * - .toListSnapshotsInRecycleBin()
    * - .toListVolumesInRecycleBin()
@@ -20323,6 +20344,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportImage()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toLockSnapshot()
    * - .toModifyAddressAttribute()
    * - .toModifyCapacityReservationFleet()
@@ -21304,6 +21326,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
@@ -21372,6 +21395,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
@@ -21417,6 +21441,7 @@ export class Ec2 extends PolicyStatement {
    * - .toImportInstance()
    * - .toImportSnapshot()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toLockSnapshot()
    * - .toModifyInstanceAttribute()
    * - .toModifySnapshotAttribute()
@@ -21464,6 +21489,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
@@ -21500,6 +21526,7 @@ export class Ec2 extends PolicyStatement {
    * - .toEnableVolumeIO()
    * - .toImportInstance()
    * - .toImportVolume()
+   * - .toInjectVolumeIOLatency()
    * - .toModifyInstanceAttribute()
    * - .toModifyVolume()
    * - .toModifyVolumeAttribute()
