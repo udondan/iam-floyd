@@ -498,6 +498,10 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifFisActionId()
+   * - .ifFisTargetArns()
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
    */
   public toInjectError() {
@@ -1296,6 +1300,32 @@ export class Dynamodb extends PolicyStatement {
    */
   public ifFirstPartitionKeyValues(value: string | string[], operator?: Operator | string) {
     return this.if(`FirstPartitionKeyValues`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of an AWS FIS action
+   *
+   * Applies to actions:
+   * - .toInjectError()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFisActionId(value: string | string[], operator?: Operator | string) {
+    return this.if(`FisActionId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of an AWS FIS target
+   *
+   * Applies to actions:
+   * - .toInjectError()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifFisTargetArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`FisTargetArns`, value, operator ?? 'ArnLike');
   }
 
   /**

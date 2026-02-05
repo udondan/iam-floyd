@@ -1,6 +1,8 @@
 dynamodb:Attributes
 dynamodb:EnclosingOperation
 dynamodb:FirstPartitionKeyValues
+dynamodb:FisActionId
+dynamodb:FisTargetArns
 dynamodb:FourthPartitionKeyValues
 dynamodb:FullTableScan
 dynamodb:LeadingKeys

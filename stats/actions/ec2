@@ -605,6 +605,7 @@ ec2:ImportKeyPair;Write
 ec2:ImportSnapshot;Write
 ec2:ImportVolume;Write
 ec2:InjectApiError;Write
+ec2:InjectVolumeIOLatency;Write
 ec2:ListImagesInRecycleBin;List
 ec2:ListSnapshotsInRecycleBin;List
 ec2:ListVolumesInRecycleBin;List
