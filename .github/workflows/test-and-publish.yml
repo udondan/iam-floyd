@@ -213,13 +213,12 @@ jobs:
           touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
       - name: Create release
-        uses: actions/create-release@v1
+        run: |
+          gh release create "v${{ steps.get_version.outputs.VERSION }}" \
+            --title "v${{ steps.get_version.outputs.VERSION }}" \
+            --notes-file "CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md"
         env:
-          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
-        with:
-          tag_name: v${{ steps.get_version.outputs.VERSION }}
-          release_name: v${{ steps.get_version.outputs.VERSION }}
-          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+          GH_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
 
   publish-iam-floyd:
     name: Publish iam-floyd
