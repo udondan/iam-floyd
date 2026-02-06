@@ -131,6 +131,34 @@
         "arn:aws:aws-marketplace:*:*:AWSMarketplace*/OfferSet/*",
         "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Offer/*"
       ]
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:DescribeAgreement"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AmazonQPartnerAssistantAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:PassRequest"
+      ],
+      "Resource": "*"
     }
   ]
 }

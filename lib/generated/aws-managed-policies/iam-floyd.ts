@@ -2168,6 +2168,8 @@ export class AwsManagedPolicy {
     public static AWSSavingsPlansReadOnlyAccess = 'AWSSavingsPlansReadOnlyAccess';
     /** Provides access to retrieve and describe secrets from Secrets Manager. This policy also allows decrypting KMS keys for Secrets Manager secrets. */
     public static AWSSecretsManagerClientReadOnlyAccess = 'AWSSecretsManagerClientReadOnlyAccess';
+    /** Provides permissions for authenticated users to access the Security Agent Web Application for configuring and executing automated security penetration tests. This policy enables users to manage pentests, view findings, monitor test execution, and interact with AWS resources required for security testing operations. */
+    public static AWSSecurityAgentWebAppPolicy = 'service-role/AWSSecurityAgentWebAppPolicy';
     /** Provides full access to use AWS Security Hub. */
     public static AWSSecurityHubFullAccess = 'AWSSecurityHubFullAccess';
     /** Grants permission to enable and manage AWS Security Hub within an organization. Includes enabling the service across the organization, and determining the delegated administrator account for the service. */
@@ -2824,6 +2826,8 @@ export class AwsManagedPolicy {
     public static SecretsManagerReadWrite = 'SecretsManagerReadWrite';
     /** Provides permissions for authenticated users to access the Security Agent Web Application for configuring and executing automated security penetration tests. This policy enables users to manage pentests, view findings, monitor test execution, and interact with AWS resources required for security testing operations. */
     public static SecurityAgentWebAppAPIPolicy = 'service-role/SecurityAgentWebAppAPIPolicy';
+    /** Provides permissions for authenticated users to access the Security Agent Web Application for configuring and executing automated security penetration tests. This policy enables users to manage pentests, view findings, monitor test execution, and interact with AWS resources required for security testing operations. */
+    public static SecurityAgentWebAppPolicy = 'SecurityAgentWebAppPolicy';
     /** The security audit template grants access to read security configuration metadata. It is useful for software that audits the configuration of an AWS account. */
     public static SecurityAudit = 'SecurityAudit';
     /** Provides access to manage resources created by Security Lake. */

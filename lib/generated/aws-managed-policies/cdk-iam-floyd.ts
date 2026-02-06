@@ -5429,6 +5429,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecretsManagerClientReadOnlyAccess);
     }
 
+    /** Provides permissions for authenticated users to access the Security Agent Web Application for configuring and executing automated security penetration tests. This policy enables users to manage pentests, view findings, monitor test execution, and interact with AWS resources required for security testing operations. */
+    public AWSSecurityAgentWebAppPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecurityAgentWebAppPolicy);
+    }
+
     /** Provides full access to use AWS Security Hub. */
     public AWSSecurityHubFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecurityHubFullAccess);
@@ -7067,6 +7072,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides permissions for authenticated users to access the Security Agent Web Application for configuring and executing automated security penetration tests. This policy enables users to manage pentests, view findings, monitor test execution, and interact with AWS resources required for security testing operations. */
     public SecurityAgentWebAppAPIPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SecurityAgentWebAppAPIPolicy);
+    }
+
+    /** Provides permissions for authenticated users to access the Security Agent Web Application for configuring and executing automated security penetration tests. This policy enables users to manage pentests, view findings, monitor test execution, and interact with AWS resources required for security testing operations. */
+    public SecurityAgentWebAppPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.SecurityAgentWebAppPolicy);
     }
 
     /** The security audit template grants access to read security configuration metadata. It is useful for software that audits the configuration of an AWS account. */
