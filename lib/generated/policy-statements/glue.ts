@@ -807,6 +807,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete connection type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toDeleteConnectionType() {
+    return this.to('DeleteConnectionType');
+  }
+
+  /**
    * Grants permission to delete a crawler
    *
    * Access Level: Write
@@ -1119,7 +1130,7 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe connection type in glue studio
+   * Grants permission to describe connection type in glue
    *
    * Access Level: Permissions management
    *
@@ -2361,7 +2372,7 @@ export class Glue extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list connection types in glue studio
+   * Grants permission to list connection types in glue
    *
    * Access Level: Permissions management
    *
@@ -2738,6 +2749,20 @@ export class Glue extends PolicyStatement {
    */
   public toRefreshOAuth2Tokens() {
     return this.to('RefreshOAuth2Tokens');
+  }
+
+  /**
+   * Grants permission to register connection type
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toRegisterConnectionType() {
+    return this.to('RegisterConnectionType');
   }
 
   /**
@@ -3627,6 +3652,7 @@ export class Glue extends PolicyStatement {
       'DeleteColumnStatisticsForTable',
       'DeleteColumnStatisticsTaskSettings',
       'DeleteConnection',
+      'DeleteConnectionType',
       'DeleteCrawler',
       'DeleteCustomEntityType',
       'DeleteDataQualityRuleset',
@@ -3662,6 +3688,7 @@ export class Glue extends PolicyStatement {
       'PutDataQualityStatisticAnnotation',
       'PutSchemaVersionMetadata',
       'PutWorkflowRunProperties',
+      'RegisterConnectionType',
       'RegisterSchemaVersion',
       'RemoveSchemaVersionMetadata',
       'RenameTable',
@@ -4243,6 +4270,23 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type connectionType to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param connectionTypeName - Identifier for the connectionTypeName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnectionType(connectionTypeName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connectionType:${ connectionTypeName }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -4282,6 +4326,7 @@ export class Glue extends PolicyStatement {
    * - .toDeleteIntegration()
    * - .toDescribeIntegrations()
    * - .toModifyIntegration()
+   * - .toRegisterConnectionType()
    *
    * Applies to resource types:
    * - connection
@@ -4299,6 +4344,7 @@ export class Glue extends PolicyStatement {
    * - dataQualityRuleset
    * - customEntityType
    * - integration
+   * - connectionType
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

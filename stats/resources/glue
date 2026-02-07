@@ -2,6 +2,7 @@ glue:blueprint
 glue:catalog
 glue:completion
 glue:connection
+glue:connectionType
 glue:crawler
 glue:customEntityType
 glue:dataQualityRuleset

@@ -188,6 +188,21 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new browser profile
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateBrowserProfile.html
+   */
+  public toCreateBrowserProfile() {
+    return this.to('CreateBrowserProfile');
+  }
+
+  /**
    * Grants permission to create a new custom code interpreter
    *
    * Access Level: Write
@@ -208,6 +223,11 @@ export class BedrockAgentcore extends PolicyStatement {
    * Grants permission to create a new evaluator
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateEvaluator.html
    */
@@ -267,6 +287,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifKmsKeyArn()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -296,6 +317,11 @@ export class BedrockAgentcore extends PolicyStatement {
    * Grants permission to create a new online evaluation configuration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -385,6 +411,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeleteBrowser() {
     return this.to('DeleteBrowser');
+  }
+
+  /**
+   * Grants permission to delete a browser profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteBrowserProfile.html
+   */
+  public toDeleteBrowserProfile() {
+    return this.to('DeleteBrowserProfile');
   }
 
   /**
@@ -598,6 +635,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetBrowser() {
     return this.to('GetBrowser');
+  }
+
+  /**
+   * Grants permission to get details of a browser profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetBrowserProfile.html
+   */
+  public toGetBrowserProfile() {
+    return this.to('GetBrowserProfile');
   }
 
   /**
@@ -978,6 +1026,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list browser profiles
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListBrowserProfiles.html
+   */
+  public toListBrowserProfiles() {
+    return this.to('ListBrowserProfiles');
+  }
+
+  /**
    * Grants permission to list browser sessions
    *
    * Access Level: List
@@ -1265,6 +1324,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toRetrieveMemoryRecords() {
     return this.to('RetrieveMemoryRecords');
+  }
+
+  /**
+   * Grants permission to save a browser session profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html
+   */
+  public toSaveBrowserSessionProfile() {
+    return this.to('SaveBrowserSessionProfile');
   }
 
   /**
@@ -1577,6 +1647,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateAgentRuntimeEndpoint',
       'CreateApiKeyCredentialProvider',
       'CreateBrowser',
+      'CreateBrowserProfile',
       'CreateCodeInterpreter',
       'CreateEvaluator',
       'CreateEvent',
@@ -1592,6 +1663,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteAgentRuntimeEndpoint',
       'DeleteApiKeyCredentialProvider',
       'DeleteBrowser',
+      'DeleteBrowserProfile',
       'DeleteCodeInterpreter',
       'DeleteEvaluator',
       'DeleteEvent',
@@ -1615,6 +1687,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'InvokeAgentRuntimeWithWebSocketStreamForUser',
       'InvokeCodeInterpreter',
       'PutResourcePolicy',
+      'SaveBrowserSessionProfile',
       'StartBrowserSession',
       'StartCodeInterpreterSession',
       'StartMemoryExtractionJob',
@@ -1645,6 +1718,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetAgentRuntimeEndpoint',
       'GetApiKeyCredentialProvider',
       'GetBrowser',
+      'GetBrowserProfile',
       'GetBrowserSession',
       'GetCodeInterpreter',
       'GetCodeInterpreterSession',
@@ -1674,6 +1748,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListAgentRuntimeEndpoints',
       'ListAgentRuntimeVersions',
       'ListAgentRuntimes',
+      'ListBrowserProfiles',
       'ListBrowserSessions',
       'ListBrowsers',
       'ListCodeInterpreterSessions',
@@ -1709,6 +1784,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEvaluator(evaluatorId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:evaluator/${ evaluatorId }`);
@@ -1723,6 +1801,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOnlineEvaluationConfig(onlineEvaluationConfigId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:online-evaluation-config/${ onlineEvaluationConfigId }`);
@@ -1912,6 +1993,22 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type browser-profile to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/browserProfile.html
+   *
+   * @param browserProfileId - Identifier for the browserProfileId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBrowserProfile(browserProfileId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:aws:browser-profile/${ browserProfileId }`);
+  }
+
+  /**
    * Adds a resource of type workload-identity-directory to the statement
    *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/workloadIdentityDirectory.html
@@ -1999,10 +2096,13 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateAgentRuntimeEndpoint()
    * - .toCreateApiKeyCredentialProvider()
    * - .toCreateBrowser()
+   * - .toCreateBrowserProfile()
    * - .toCreateCodeInterpreter()
+   * - .toCreateEvaluator()
    * - .toCreateGateway()
    * - .toCreateMemory()
    * - .toCreateOauth2CredentialProvider()
+   * - .toCreateOnlineEvaluationConfig()
    * - .toCreateWorkloadIdentity()
    * - .toTagResource()
    *
@@ -2019,7 +2119,13 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
+   * Applies to actions:
+   * - .toCreateEvaluator()
+   * - .toCreateOnlineEvaluationConfig()
+   *
    * Applies to resource types:
+   * - evaluator
+   * - online-evaluation-config
    * - memory
    * - gateway
    * - workload-identity
@@ -2029,6 +2135,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - runtime-endpoint
    * - code-interpreter-custom
    * - browser-custom
+   * - browser-profile
    * - workload-identity-directory
    * - token-vault
    *
@@ -2050,10 +2157,13 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateAgentRuntimeEndpoint()
    * - .toCreateApiKeyCredentialProvider()
    * - .toCreateBrowser()
+   * - .toCreateBrowserProfile()
    * - .toCreateCodeInterpreter()
+   * - .toCreateEvaluator()
    * - .toCreateGateway()
    * - .toCreateMemory()
    * - .toCreateOauth2CredentialProvider()
+   * - .toCreateOnlineEvaluationConfig()
    * - .toCreateWorkloadIdentity()
    * - .toTagResource()
    * - .toUntagResource()
@@ -2155,6 +2265,21 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public ifInboundJwtClaimSub(value: string | string[], operator?: Operator | string) {
     return this.if(`InboundJwtClaim/sub`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by KMS Key arn provided
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/#condition-keys-kmsKeyArn
+   *
+   * Applies to actions:
+   * - .toCreateMemory()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`KmsKeyArn`, value, operator ?? 'StringLike');
   }
 
   /**
