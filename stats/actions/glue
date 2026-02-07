@@ -58,6 +58,7 @@ glue:DeleteColumnStatisticsForPartition;Write
 glue:DeleteColumnStatisticsForTable;Write
 glue:DeleteColumnStatisticsTaskSettings;Write
 glue:DeleteConnection;Write
+glue:DeleteConnectionType;Write
 glue:DeleteCrawler;Write
 glue:DeleteCustomEntityType;Write
 glue:DeleteDataQualityRuleset;Write
@@ -224,6 +225,7 @@ glue:PutSchemaVersionMetadata;Write
 glue:PutWorkflowRunProperties;Write
 glue:QuerySchemaVersionMetadata;List
 glue:RefreshOAuth2Tokens;Permissions management
+glue:RegisterConnectionType;Write
 glue:RegisterSchemaVersion;Write
 glue:RemoveSchemaVersionMetadata;Write
 glue:RenameTable;Write

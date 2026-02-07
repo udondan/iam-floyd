@@ -10,6 +10,7 @@ bedrock-agentcore:CreateAgentRuntime;Write
 bedrock-agentcore:CreateAgentRuntimeEndpoint;Write
 bedrock-agentcore:CreateApiKeyCredentialProvider;Write
 bedrock-agentcore:CreateBrowser;Write
+bedrock-agentcore:CreateBrowserProfile;Write
 bedrock-agentcore:CreateCodeInterpreter;Write
 bedrock-agentcore:CreateEvaluator;Write
 bedrock-agentcore:CreateEvent;Write
@@ -25,6 +26,7 @@ bedrock-agentcore:DeleteAgentRuntime;Write
 bedrock-agentcore:DeleteAgentRuntimeEndpoint;Write
 bedrock-agentcore:DeleteApiKeyCredentialProvider;Write
 bedrock-agentcore:DeleteBrowser;Write
+bedrock-agentcore:DeleteBrowserProfile;Write
 bedrock-agentcore:DeleteCodeInterpreter;Write
 bedrock-agentcore:DeleteEvaluator;Write
 bedrock-agentcore:DeleteEvent;Write
@@ -44,6 +46,7 @@ bedrock-agentcore:GetAgentRuntime;Read
 bedrock-agentcore:GetAgentRuntimeEndpoint;Read
 bedrock-agentcore:GetApiKeyCredentialProvider;Read
 bedrock-agentcore:GetBrowser;Read
+bedrock-agentcore:GetBrowserProfile;Read
 bedrock-agentcore:GetBrowserSession;Read
 bedrock-agentcore:GetCodeInterpreter;Read
 bedrock-agentcore:GetCodeInterpreterSession;Read
@@ -77,6 +80,7 @@ bedrock-agentcore:ListAgentRuntimeEndpoints;List
 bedrock-agentcore:ListAgentRuntimeVersions;List
 bedrock-agentcore:ListAgentRuntimes;List
 bedrock-agentcore:ListApiKeyCredentialProviders;Read
+bedrock-agentcore:ListBrowserProfiles;List
 bedrock-agentcore:ListBrowserSessions;List
 bedrock-agentcore:ListBrowsers;List
 bedrock-agentcore:ListCodeInterpreterSessions;List
@@ -102,6 +106,7 @@ bedrock-agentcore:ManageResourceScopedPolicy;Permissions management
 bedrock-agentcore:PartiallyAuthorizeActions;Permissions management
 bedrock-agentcore:PutResourcePolicy;Write
 bedrock-agentcore:RetrieveMemoryRecords;List
+bedrock-agentcore:SaveBrowserSessionProfile;Write
 bedrock-agentcore:SetTokenVaultCMK;Read
 bedrock-agentcore:StartBrowserSession;Write
 bedrock-agentcore:StartCodeInterpreterSession;Write
