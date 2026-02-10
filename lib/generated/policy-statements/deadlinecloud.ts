@@ -254,6 +254,10 @@ export class Deadline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - deadline:GetJobTemplate
    * - identitystore:ListGroupMembershipsForMember
@@ -670,7 +674,7 @@ export class Deadline extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetApplicationVersion.html
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html
    */
   public toGetApplicationVersion() {
     return this.to('GetApplicationVersion');
@@ -736,6 +740,8 @@ export class Deadline extends PolicyStatement {
    * Grants permission to read job template
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/working-with-deadline-monitor.html
    */
   public toGetJobTemplate() {
     return this.to('GetJobTemplate');
@@ -1324,7 +1330,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Grants permission to list all tags on specified Deadline Cloud resources
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Possible conditions:
    * - .ifCalledAction()
@@ -1377,7 +1383,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Grants permission to search for jobs in multiple queues
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Dependent actions:
    * - identitystore:ListGroupMembershipsForMember
@@ -1391,7 +1397,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Grants permission to search the steps within a single job or to search the steps for multiple queues
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Dependent actions:
    * - identitystore:ListGroupMembershipsForMember
@@ -1405,7 +1411,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Grants permission to search the tasks within a single job or to search the tasks for multiple queues
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Dependent actions:
    * - identitystore:ListGroupMembershipsForMember
@@ -1419,7 +1425,7 @@ export class Deadline extends PolicyStatement {
   /**
    * Grants permission to search for workers in multiple fleets
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * Dependent actions:
    * - identitystore:ListGroupMembershipsForMember
@@ -1790,6 +1796,11 @@ export class Deadline extends PolicyStatement {
       'GetStorageProfileForQueue',
       'GetTask',
       'GetWorker',
+      'ListTagsForResource',
+      'SearchJobs',
+      'SearchSteps',
+      'SearchTasks',
+      'SearchWorkers',
       'StartSessionsStatisticsAggregation'
     ],
     List: [
@@ -1819,13 +1830,8 @@ export class Deadline extends PolicyStatement {
       'ListSteps',
       'ListStorageProfiles',
       'ListStorageProfilesForQueue',
-      'ListTagsForResource',
       'ListTasks',
-      'ListWorkers',
-      'SearchJobs',
-      'SearchSteps',
-      'SearchTasks',
-      'SearchWorkers'
+      'ListWorkers'
     ],
     Tagging: [
       'TagResource',
@@ -1903,6 +1909,7 @@ export class Deadline extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifFarmMembershipLevels()
    * - .ifJobMembershipLevels()
    * - .ifQueueMembershipLevels()
@@ -1995,6 +2002,7 @@ export class Deadline extends PolicyStatement {
    * - .toCreateBudget()
    * - .toCreateFarm()
    * - .toCreateFleet()
+   * - .toCreateJob()
    * - .toCreateLicenseEndpoint()
    * - .toCreateMonitor()
    * - .toCreateQueue()
@@ -2018,6 +2026,7 @@ export class Deadline extends PolicyStatement {
    * - budget
    * - farm
    * - fleet
+   * - job
    * - license-endpoint
    * - monitor
    * - queue
@@ -2040,6 +2049,7 @@ export class Deadline extends PolicyStatement {
    * - .toCreateBudget()
    * - .toCreateFarm()
    * - .toCreateFleet()
+   * - .toCreateJob()
    * - .toCreateLicenseEndpoint()
    * - .toCreateMonitor()
    * - .toCreateQueue()
