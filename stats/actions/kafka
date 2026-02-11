@@ -4,11 +4,13 @@ kafka:CreateCluster;Write
 kafka:CreateClusterV2;Write
 kafka:CreateConfiguration;Write
 kafka:CreateReplicator;Write
+kafka:CreateTopic;Write
 kafka:CreateVpcConnection;Write
 kafka:DeleteCluster;Write
 kafka:DeleteClusterPolicy;Write
 kafka:DeleteConfiguration;Write
 kafka:DeleteReplicator;Write
+kafka:DeleteTopic;Write
 kafka:DeleteVpcConnection;Write
 kafka:DescribeCluster;Read
 kafka:DescribeClusterOperation;Read
@@ -54,3 +56,4 @@ kafka:UpdateRebalancing;Write
 kafka:UpdateReplicationInfo;Write
 kafka:UpdateSecurity;Write
 kafka:UpdateStorage;Write
+kafka:UpdateTopic;Write

@@ -140,6 +140,21 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Kafka topic in an MSK cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kafka-cluster:Connect
+   * - kafka-cluster:CreateTopic
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics.html
+   */
+  public toCreateTopic() {
+    return this.to('CreateTopic');
+  }
+
+  /**
    * Grants permission to create a MSK VPC connection
    *
    * Access Level: Write
@@ -213,6 +228,22 @@ export class Kafka extends PolicyStatement {
    */
   public toDeleteReplicator() {
     return this.to('DeleteReplicator');
+  }
+
+  /**
+   * Grants permission to delete a Kafka topic from an MSK cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kafka-cluster:Connect
+   * - kafka-cluster:DeleteTopic
+   * - kafka-cluster:DescribeTopic
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html
+   */
+  public toDeleteTopic() {
+    return this.to('DeleteTopic');
   }
 
   /**
@@ -745,6 +776,23 @@ export class Kafka extends PolicyStatement {
     return this.to('UpdateStorage');
   }
 
+  /**
+   * Grants permission to update the configuration of a Kafka topic in an MSK cluster
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kafka-cluster:AlterTopic
+   * - kafka-cluster:AlterTopicDynamicConfiguration
+   * - kafka-cluster:Connect
+   * - kafka-cluster:DescribeTopic
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html
+   */
+  public toUpdateTopic() {
+    return this.to('UpdateTopic');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchAssociateScramSecret',
@@ -753,11 +801,13 @@ export class Kafka extends PolicyStatement {
       'CreateClusterV2',
       'CreateConfiguration',
       'CreateReplicator',
+      'CreateTopic',
       'CreateVpcConnection',
       'DeleteCluster',
       'DeleteClusterPolicy',
       'DeleteConfiguration',
       'DeleteReplicator',
+      'DeleteTopic',
       'DeleteVpcConnection',
       'PutClusterPolicy',
       'RebootBroker',
@@ -773,7 +823,8 @@ export class Kafka extends PolicyStatement {
       'UpdateRebalancing',
       'UpdateReplicationInfo',
       'UpdateSecurity',
-      'UpdateStorage'
+      'UpdateStorage',
+      'UpdateTopic'
     ],
     Read: [
       'DescribeCluster',
