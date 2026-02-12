@@ -34,6 +34,10 @@ export class BcmPricingCalculator extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_CreateBillScenario.html
    */
   public toCreateBillScenario() {
@@ -66,6 +70,10 @@ export class BcmPricingCalculator extends PolicyStatement {
    * Grants permission to create a new Workload estimate
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_CreateWorkloadEstimate.html
    */
@@ -475,11 +483,10 @@ export class BcmPricingCalculator extends PolicyStatement {
    *
    * @param billEstimateId - Identifier for the billEstimateId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onBillEstimate(billEstimateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bcm-pricing-calculator:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bill-estimate/${ billEstimateId }`);
+  public onBillEstimate(billEstimateId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bcm-pricing-calculator::${ account ?? this.defaultAccount }:bill-estimate/${ billEstimateId }`);
   }
 
   /**
@@ -489,11 +496,13 @@ export class BcmPricingCalculator extends PolicyStatement {
    *
    * @param billScenarioId - Identifier for the billScenarioId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onBillScenario(billScenarioId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bcm-pricing-calculator:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bill-scenario/${ billScenarioId }`);
+  public onBillScenario(billScenarioId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bcm-pricing-calculator::${ account ?? this.defaultAccount }:bill-scenario/${ billScenarioId }`);
   }
 
   /**
@@ -503,11 +512,13 @@ export class BcmPricingCalculator extends PolicyStatement {
    *
    * @param workloadEstimateId - Identifier for the workloadEstimateId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onWorkloadEstimate(workloadEstimateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:bcm-pricing-calculator:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workload-estimate/${ workloadEstimateId }`);
+  public onWorkloadEstimate(workloadEstimateId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bcm-pricing-calculator::${ account ?? this.defaultAccount }:workload-estimate/${ workloadEstimateId }`);
   }
 
   /**
@@ -516,6 +527,8 @@ export class BcmPricingCalculator extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateBillScenario()
+   * - .toCreateWorkloadEstimate()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -531,6 +544,14 @@ export class BcmPricingCalculator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - bill-scenario
+   * - workload-estimate
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -545,6 +566,8 @@ export class BcmPricingCalculator extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateBillScenario()
+   * - .toCreateWorkloadEstimate()
    * - .toTagResource()
    * - .toUntagResource()
    *

@@ -87,4 +87,30 @@ export class Signin extends PolicyStatement {
       'ListTrustedIdentityPropagationApplicationsForConsole'
     ]
   };
+
+  /**
+   * Adds a resource of type oauth2-public-client-localhost to the statement
+   *
+   * https://docs.aws.amazon.com/signin/latest/APIReference
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOauth2PublicClientLocalhost(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:signin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:oauth2/public-client/localhost`);
+  }
+
+  /**
+   * Adds a resource of type oauth2-public-client-remote to the statement
+   *
+   * https://docs.aws.amazon.com/signin/latest/APIReference
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOauth2PublicClientRemote(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:signin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:oauth2/public-client/remote`);
+  }
 }
