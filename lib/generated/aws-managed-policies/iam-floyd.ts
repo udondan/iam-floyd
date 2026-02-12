@@ -2710,6 +2710,8 @@ export class AwsManagedPolicy {
     public static OpensearchIngestionSelfManagedVpcePolicy = 'aws-service-role/OpensearchIngestionSelfManagedVpcePolicy';
     /** Provides access to associate and dissociate partner central users with IAM roles */
     public static PartnerCentralAccountManagementUserRoleAssociation = 'PartnerCentralAccountManagementUserRoleAssociation';
+    /** Policy provides access to manage all the incentive benefits in AWS Partner Central. */
+    public static PartnerCentralIncentiveBenefitManagement = 'PartnerCentralIncentiveBenefitManagement';
     /** Provides full access to AWS services and resources, but does not allow management of Users and groups. */
     public static PowerUserAccess = 'PowerUserAccess';
     /** Grants permissions to AWS Services and Resources used or managed by Amazon Q Apps. */

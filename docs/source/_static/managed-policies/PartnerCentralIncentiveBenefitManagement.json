@@ -1,0 +1,138 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BenefitsManagement",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListBenefits",
+        "partnercentral:GetBenefit",
+        "partnercentral:CreateBenefitApplication",
+        "partnercentral:AmendBenefitApplication",
+        "partnercentral:UpdateBenefitApplication",
+        "partnercentral:SubmitBenefitApplication",
+        "partnercentral:GetBenefitApplication",
+        "partnercentral:CancelBenefitApplication",
+        "partnercentral:RecallBenefitApplication",
+        "partnercentral:ListBenefitApplications",
+        "partnercentral:AssociateBenefitApplicationResource",
+        "partnercentral:DisassociateBenefitApplicationResource",
+        "partnercentral:ListBenefitAllocations",
+        "partnercentral:GetBenefitAllocation"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral:*:*:catalog/*/benefit-application/*",
+        "arn:aws:partnercentral:*:*:catalog/*/benefit-allocation/*",
+        "arn:aws:partnercentral:*:*:catalog/*/benefit/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerCentralBenefitsTaggingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:TagResource",
+        "partnercentral:UntagResource",
+        "partnercentral:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral:*:*:catalog/*/benefit-application/*",
+        "arn:aws:partnercentral:*:*:catalog/*/benefit-allocation/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListPartners",
+        "partnercentral:GetPartner"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/partner/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AWSPartnerOpportunityAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetAwsOpportunitySummary",
+        "partnercentral:GetOpportunity",
+        "partnercentral:ListOpportunities"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/opportunity/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ListingAWSMarketplaceEntities",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceOffersAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Solution/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/OfferSet/*",
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Offer/*"
+      ]
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementsReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:SearchAgreements",
+        "aws-marketplace:DescribeAgreement"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerCentralEphemeralWriteS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::aws-partner-central-marketplace-ephemeral-writeonly-files/${aws:PrincipalAccount}/*"
+    }
+  ]
+}

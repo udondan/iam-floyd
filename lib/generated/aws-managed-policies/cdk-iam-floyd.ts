@@ -6784,6 +6784,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.PartnerCentralAccountManagementUserRoleAssociation);
     }
 
+    /** Policy provides access to manage all the incentive benefits in AWS Partner Central. */
+    public PartnerCentralIncentiveBenefitManagement(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.PartnerCentralIncentiveBenefitManagement);
+    }
+
     /** Provides full access to AWS services and resources, but does not allow management of Users and groups. */
     public PowerUserAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.PowerUserAccess);
