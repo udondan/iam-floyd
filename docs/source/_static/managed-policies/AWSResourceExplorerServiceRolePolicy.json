@@ -779,6 +779,7 @@
         "iam:ListAttachedRolePolicies",
         "iam:ListRolePolicies",
         "kinesis:DescribeStreamSummary",
+        "kinesis:ListTagsForResource",
         "kinesis:ListTagsForStream",
         "lambda:GetEventSourceMapping",
         "lambda:GetFunction",
