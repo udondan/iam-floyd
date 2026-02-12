@@ -1483,6 +1483,7 @@ export class Workspaces extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateWorkspaceApplication()
+   * - .toCreateWorkspaces()
    * - .toDeployWorkspaceApplications()
    * - .toDescribeApplicationAssociations()
    * - .toDescribeBundleAssociations()
