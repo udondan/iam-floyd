@@ -1274,6 +1274,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspector2ManagedCisPolicy);
     }
 
+    /** Grants permissions to communicate with Inspector2 Telemetry Channel */
+    public AmazonInspector2ManagedTelemetryPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspector2ManagedTelemetryPolicy);
+    }
+
     /** Provides read only access to the Amazon inspector2 service and relevant support services */
     public AmazonInspector2ReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspector2ReadOnlyAccess);

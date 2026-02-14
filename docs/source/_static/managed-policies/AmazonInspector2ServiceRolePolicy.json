@@ -50,6 +50,7 @@
         "elasticloadbalancing:DescribeTargetGroupAttributes",
         "elasticloadbalancing:DescribeTargetHealth",
         "network-firewall:DescribeFirewall",
+        "network-firewall:DescribeFirewallMetadata",
         "network-firewall:DescribeFirewallPolicy",
         "network-firewall:DescribeResourcePolicy",
         "network-firewall:DescribeRuleGroup",
@@ -110,6 +111,7 @@
       ],
       "Resource": [
         "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ssm:*:*:document/AWS-ConfigureAWSPackage",
         "arn:aws:ssm:*:*:document/AmazonInspector2-*",
         "arn:aws:ssm:*:*:document/AWS-GatherSoftwareInventory",
         "arn:aws:ssm:*:*:managed-instance/*",
