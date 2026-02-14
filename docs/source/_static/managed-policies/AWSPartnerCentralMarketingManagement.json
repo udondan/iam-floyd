@@ -85,6 +85,18 @@
       "Resource": [
         "arn:aws:partnercentral::*:catalog/AWS/ReportingData/MarketingCampaign_V1/Dashboard/*"
       ]
+    },
+    {
+      "Sid": "AmazonQPartnerAssistantAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:PassRequest"
+      ],
+      "Resource": "*"
     }
   ]
 }

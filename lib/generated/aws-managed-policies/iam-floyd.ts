@@ -506,6 +506,8 @@ export class AwsManagedPolicy {
     public static AmazonInspector2FullAccessV2 = 'AmazonInspector2FullAccess_v2';
     /** This is a managed policy that customer should attach to their roles to communicate with inspector service for CIS scans */
     public static AmazonInspector2ManagedCisPolicy = 'AmazonInspector2ManagedCisPolicy';
+    /** Grants permissions to communicate with Inspector2 Telemetry Channel */
+    public static AmazonInspector2ManagedTelemetryPolicy = 'AmazonInspector2ManagedTelemetryPolicy';
     /** Provides read only access to the Amazon inspector2 service and relevant support services */
     public static AmazonInspector2ReadOnlyAccess = 'AmazonInspector2ReadOnlyAccess';
     /** Grants Amazon Inspector access to AWS Services needed to perform security assessments */
