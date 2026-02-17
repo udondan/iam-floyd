@@ -5534,6 +5534,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceCatalogSyncServiceRolePolicy);
     }
 
+    /** This Service Linked Role provides AIDevOps ability to provide usage information. */
+    public AWSServiceRoleForAIDevOpsPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForAIDevOpsPolicy);
+    }
+
     /** Permissions required for managing nodegroups in the customer's account. These policies related to management of the following resources: AutoscalingGroups, SecurityGroups, LaunchTemplates and InstanceProfiles. */
     public AWSServiceRoleForAmazonEKSNodegroup(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForAmazonEKSNodegroup);

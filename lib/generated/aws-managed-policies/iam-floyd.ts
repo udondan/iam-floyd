@@ -2210,6 +2210,8 @@ export class AwsManagedPolicy {
     public static AWSServiceCatalogOrgsDataSyncServiceRolePolicy = 'aws-service-role/AWSServiceCatalogOrgsDataSyncServiceRolePolicy';
     /** A Service Linked Role for AWS ServiceCatalog to sync Provisioning Artifacts from source repositories */
     public static AWSServiceCatalogSyncServiceRolePolicy = 'aws-service-role/AWSServiceCatalogSyncServiceRolePolicy';
+    /** This Service Linked Role provides AIDevOps ability to provide usage information. */
+    public static AWSServiceRoleForAIDevOpsPolicy = 'aws-service-role/AWSServiceRoleForAIDevOpsPolicy';
     /** Permissions required for managing nodegroups in the customer's account. These policies related to management of the following resources: AutoscalingGroups, SecurityGroups, LaunchTemplates and InstanceProfiles. */
     public static AWSServiceRoleForAmazonEKSNodegroup = 'aws-service-role/AWSServiceRoleForAmazonEKSNodegroup';
     /** This Service Linked Role provides Amazon Q Developer ability to provide usage information. */
