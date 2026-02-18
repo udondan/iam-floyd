@@ -1,7 +1,15 @@
 bedrock-mantle:CallWithBearerToken;List
+bedrock-mantle:CancelFineTuningJob;Write
 bedrock-mantle:CancelInference;Write
+bedrock-mantle:CreateFile;Write
+bedrock-mantle:CreateFineTuningJob;Write
 bedrock-mantle:CreateInference;Write
+bedrock-mantle:DeleteFile;Write
 bedrock-mantle:DeleteInference;Write
+bedrock-mantle:GetFile;Read
+bedrock-mantle:GetFineTuningJob;Read
 bedrock-mantle:GetInference;Read
 bedrock-mantle:GetModel;Read
+bedrock-mantle:ListFiles;List
+bedrock-mantle:ListFineTuningJobs;List
 bedrock-mantle:ListModels;List

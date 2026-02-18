@@ -776,13 +776,12 @@ export class Appconfig extends PolicyStatement {
    *
    * @param applicationId - Identifier for the applicationId.
    * @param configurationProfileId - Identifier for the configurationProfileId.
-   * @param versionNumber - Identifier for the versionNumber.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, versionNumber: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/configurationprofile/${ configurationProfileId }/hostedconfigurationversion/${ versionNumber }`);
+  public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appconfig:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }/configurationprofile/${ configurationProfileId }`);
   }
 
   /**

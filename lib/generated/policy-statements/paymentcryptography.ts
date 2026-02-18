@@ -160,6 +160,20 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate a KekValidationRequest or a KekValidationResponse for node-to-node initialization between payment processing nodes using Australian Standard 2805 (AS2805)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRequestAlias()
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateAs2805KekValidation.html
+   */
+  public toGenerateAs2805KekValidation() {
+    return this.to('GenerateAs2805KekValidation');
+  }
+
+  /**
    * Grants permission to generate card-related data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) or Card Security Codes (CSC) that check the validity of a magnetic stripe card
    *
    * Access Level: Write
@@ -569,6 +583,7 @@ export class PaymentCryptography extends PolicyStatement {
       'EnableDefaultKeyReplicationRegions',
       'EncryptData',
       'ExportKey',
+      'GenerateAs2805KekValidation',
       'GenerateCardValidationData',
       'GenerateMac',
       'GenerateMacEmvPinChange',
@@ -711,7 +726,7 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
-   * Filters access by the type of key material being imported [RootCertificatePublicKey, TrustedCertificatePublicKey, Tr34KeyBlock, Tr31KeyBlock] for the ImportKey operation
+   * Filters access by the type of key material being imported [RootCertificatePublicKey, TrustedCertificatePublicKey, Tr34KeyBlock, Tr31KeyBlock, DiffieHellmanTr31KeyBlock, As2805KeyCryptogram] for the ImportKey operation
    *
    * Applies to actions:
    * - .toImportKey()
@@ -771,6 +786,7 @@ export class PaymentCryptography extends PolicyStatement {
    * - .toDeleteKey()
    * - .toEncryptData()
    * - .toExportKey()
+   * - .toGenerateAs2805KekValidation()
    * - .toGenerateCardValidationData()
    * - .toGenerateMac()
    * - .toGenerateMacEmvPinChange()

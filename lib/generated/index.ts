@@ -88,6 +88,7 @@ export { Guardduty } from './policy-statements/guardduty';
 export { Honeycode } from './policy-statements/honeycode';
 export { Inspector } from './policy-statements/inspector';
 export { Inspector2 } from './policy-statements/inspector2';
+export { Inspector2Telemetry } from './policy-statements/inspector2telemetrychannel';
 export { InspectorScan } from './policy-statements/inspectorscan';
 export { Ivs } from './policy-statements/interactivevideoservice';
 export { Ivschat } from './policy-statements/interactivevideoservicechat';

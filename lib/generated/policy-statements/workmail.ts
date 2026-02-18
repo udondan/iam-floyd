@@ -56,6 +56,9 @@ export class Workmail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifImpersonationRoleId()
+   *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssumeImpersonationRole.html
    */
   public toAssumeImpersonationRole() {
@@ -1617,5 +1620,20 @@ export class Workmail extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ImpersonationRoleId that is passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html#amazonworkmail-policy-keys
+   *
+   * Applies to actions:
+   * - .toAssumeImpersonationRole()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifImpersonationRoleId(value: string | string[], operator?: Operator | string) {
+    return this.if(`ImpersonationRoleId`, value, operator ?? 'StringLike');
   }
 }
