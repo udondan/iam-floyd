@@ -6950,6 +6950,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onMlflowApp(mLflowAppId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-app/${ mLflowAppId }`);
@@ -7000,6 +7004,10 @@ export class Sagemaker extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onPartnerApp(appId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:partner-app/${ appId }`);
@@ -7093,23 +7101,13 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * Applies to actions:
-   * - .toCreateMlflowApp()
    * - .toCreateMlflowTrackingServer()
-   * - .toCreatePartnerApp()
-   * - .toCreatePartnerAppPresignedUrl()
-   * - .toCreatePresignedMlflowAppUrl()
    * - .toCreatePresignedMlflowTrackingServerUrl()
-   * - .toDeleteMlflowApp()
    * - .toDeleteMlflowTrackingServer()
-   * - .toDeletePartnerApp()
-   * - .toDescribeMlflowApp()
    * - .toDescribeMlflowTrackingServer()
-   * - .toDescribePartnerApp()
    * - .toStartMlflowTrackingServer()
    * - .toStopMlflowTrackingServer()
-   * - .toUpdateMlflowApp()
    * - .toUpdateMlflowTrackingServer()
-   * - .toUpdatePartnerApp()
    *
    * Applies to resource types:
    * - device
@@ -7171,8 +7169,10 @@ export class Sagemaker extends PolicyStatement {
    * - lineage-group
    * - model-card
    * - model-card-export-job
+   * - mlflow-app
    * - compute-quota
    * - cluster-scheduler-config
+   * - partner-app
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -7971,23 +7971,13 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * Applies to actions:
-   * - .toCreateMlflowApp()
    * - .toCreateMlflowTrackingServer()
-   * - .toCreatePartnerApp()
-   * - .toCreatePartnerAppPresignedUrl()
-   * - .toCreatePresignedMlflowAppUrl()
    * - .toCreatePresignedMlflowTrackingServerUrl()
-   * - .toDeleteMlflowApp()
    * - .toDeleteMlflowTrackingServer()
-   * - .toDeletePartnerApp()
-   * - .toDescribeMlflowApp()
    * - .toDescribeMlflowTrackingServer()
-   * - .toDescribePartnerApp()
    * - .toStartMlflowTrackingServer()
    * - .toStopMlflowTrackingServer()
-   * - .toUpdateMlflowApp()
    * - .toUpdateMlflowTrackingServer()
-   * - .toUpdatePartnerApp()
    *
    * Applies to resource types:
    * - device
@@ -8049,8 +8039,10 @@ export class Sagemaker extends PolicyStatement {
    * - lineage-group
    * - model-card
    * - model-card-export-job
+   * - mlflow-app
    * - compute-quota
    * - cluster-scheduler-config
+   * - partner-app
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

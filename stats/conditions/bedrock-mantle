@@ -1,3 +1,5 @@
 bedrock-mantle:BearerTokenType
+bedrock-mantle:Files
+bedrock-mantle:FineTuningJob
 bedrock-mantle:Model
 bedrock-mantle:ServiceTier
