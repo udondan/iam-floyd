@@ -64,7 +64,9 @@
         "autoscaling:EnableMetricsCollection",
         "autoscaling:PutScheduledUpdateGroupAction",
         "autoscaling:ResumeProcesses",
-        "autoscaling:SuspendProcesses"
+        "autoscaling:SuspendProcesses",
+        "autoscaling:PutWarmPool",
+        "autoscaling:DeleteWarmPool"
       ],
       "Resource": "arn:aws:autoscaling:*:*:*:autoScalingGroupName/eks-*"
     },
@@ -138,7 +140,8 @@
         "ec2:GetConsoleOutput",
         "ec2:DescribeRouteTables",
         "ec2:DescribeSubnets",
-        "ec2:DescribeCapacityReservations"
+        "ec2:DescribeCapacityReservations",
+        "autoscaling:DescribeWarmPool"
       ],
       "Resource": "*"
     },
