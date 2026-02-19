@@ -65,6 +65,14 @@
         "application-autoscaling:DescribeScalingPolicies"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ViewFreeTierState",
+      "Effect": "Allow",
+      "Action": [
+        "freetier:GetAccountPlanState"
+      ],
+      "Resource": "*"
     }
   ]
 }
