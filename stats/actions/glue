@@ -66,6 +66,7 @@ glue:DeleteDatabase;Write
 glue:DeleteDevEndpoint;Write
 glue:DeleteGlueIdentityCenterConfiguration;Write
 glue:DeleteIntegration;Write
+glue:DeleteIntegrationResourceProperty;Write
 glue:DeleteIntegrationTableProperties;Write
 glue:DeleteJob;Write
 glue:DeleteMLTransform;Write
@@ -201,6 +202,7 @@ glue:ListDataQualityRulesetEvaluationRuns;List
 glue:ListDataQualityRulesets;List
 glue:ListDevEndpoints;List
 glue:ListEntities;Permissions management
+glue:ListIntegrationResourceProperties;List
 glue:ListJobUpgradeAnalyses;List
 glue:ListJobs;List
 glue:ListMLTransforms;List
