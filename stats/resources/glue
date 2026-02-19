@@ -9,6 +9,7 @@ glue:dataQualityRuleset
 glue:database
 glue:devendpoint
 glue:integration
+glue:integrationResourceProperty
 glue:job
 glue:mlTransform
 glue:registry

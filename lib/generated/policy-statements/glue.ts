@@ -480,6 +480,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-CreateIntegrationResourceProperty
    */
   public toCreateIntegrationResourceProperty() {
@@ -899,6 +903,17 @@ export class Glue extends PolicyStatement {
    */
   public toDeleteIntegration() {
     return this.to('DeleteIntegration');
+  }
+
+  /**
+   * Grants permission to delete the integration resource property
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DeleteIntegrationResourceProperty
+   */
+  public toDeleteIntegrationResourceProperty() {
+    return this.to('DeleteIntegrationResourceProperty');
   }
 
   /**
@@ -2482,6 +2497,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list zero-ETL integration resource properties
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-ListIntegrationResourceProperties
+   */
+  public toListIntegrationResourceProperties() {
+    return this.to('ListIntegrationResourceProperties');
+  }
+
+  /**
    * Grants permission to list upgrade analyses for a job
    *
    * Access Level: List
@@ -3660,6 +3686,7 @@ export class Glue extends PolicyStatement {
       'DeleteDevEndpoint',
       'DeleteGlueIdentityCenterConfiguration',
       'DeleteIntegration',
+      'DeleteIntegrationResourceProperty',
       'DeleteIntegrationTableProperties',
       'DeleteJob',
       'DeleteMLTransform',
@@ -3893,6 +3920,7 @@ export class Glue extends PolicyStatement {
       'ListDataQualityRulesetEvaluationRuns',
       'ListDataQualityRulesets',
       'ListDevEndpoints',
+      'ListIntegrationResourceProperties',
       'ListJobUpgradeAnalyses',
       'ListJobs',
       'ListMLTransforms',
@@ -4287,6 +4315,24 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type integrationResourceProperty to the statement
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
+   *
+   * @param resourceType - Identifier for the resourceType.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntegrationResourceProperty(resourceType: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integrationresourceproperty/${ resourceType }/${ resourceName }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -4299,6 +4345,7 @@ export class Glue extends PolicyStatement {
    * - .toCreateDataQualityRuleset()
    * - .toCreateDevEndpoint()
    * - .toCreateIntegration()
+   * - .toCreateIntegrationResourceProperty()
    * - .toCreateJob()
    * - .toCreateMLTransform()
    * - .toCreateRegistry()
@@ -4345,6 +4392,7 @@ export class Glue extends PolicyStatement {
    * - customEntityType
    * - integration
    * - connectionType
+   * - integrationResourceProperty
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4367,6 +4415,7 @@ export class Glue extends PolicyStatement {
    * - .toCreateDataQualityRuleset()
    * - .toCreateDevEndpoint()
    * - .toCreateIntegration()
+   * - .toCreateIntegrationResourceProperty()
    * - .toCreateJob()
    * - .toCreateMLTransform()
    * - .toCreateRegistry()
