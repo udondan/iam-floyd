@@ -161,6 +161,18 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "AmazonQPartnerAssistantAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:PassRequest"
+      ],
+      "Resource": "*"
     }
   ]
 }
