@@ -2500,6 +2500,8 @@ export class AwsManagedPolicy {
     public static CloudWatchLambdaApplicationSignalsExecutionRolePolicy = 'CloudWatchLambdaApplicationSignalsExecutionRolePolicy';
     /** Policy required for the Lambda Insights Extension */
     public static CloudWatchLambdaInsightsExecutionRolePolicy = 'CloudWatchLambdaInsightsExecutionRolePolicy';
+    /** Grants permissions to call CloudWatch Logs using API key authentication. */
+    public static CloudWatchLogsAPIKeyAccess = 'CloudWatchLogsAPIKeyAccess';
     /** Provides capabilities to manage Observability Access Manager links and establish sharing of CloudWatch Logs resources */
     public static CloudWatchLogsCrossAccountSharingConfiguration = 'CloudWatchLogsCrossAccountSharingConfiguration';
     /** Provides full access to CloudWatch Logs */

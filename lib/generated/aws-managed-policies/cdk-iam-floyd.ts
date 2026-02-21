@@ -6259,6 +6259,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchLambdaInsightsExecutionRolePolicy);
     }
 
+    /** Grants permissions to call CloudWatch Logs using API key authentication. */
+    public CloudWatchLogsAPIKeyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchLogsAPIKeyAccess);
+    }
+
     /** Provides capabilities to manage Observability Access Manager links and establish sharing of CloudWatch Logs resources */
     public CloudWatchLogsCrossAccountSharingConfiguration(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchLogsCrossAccountSharingConfiguration);
