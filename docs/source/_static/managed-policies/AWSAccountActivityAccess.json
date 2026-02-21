@@ -6,7 +6,6 @@
       "Action": [
         "account:GetAccountInformation",
         "account:GetAlternateContact",
-        "account:GetChallengeQuestions",
         "account:GetContactInformation",
         "account:GetRegionOptStatus",
         "account:ListRegions",
