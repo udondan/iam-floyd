@@ -41,6 +41,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to authenticate requests using bearer token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
+  /**
    * Grants permission to cancel an export task if it is in PENDING or RUNNING state
    *
    * Access Level: Write
@@ -992,6 +1003,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or disable bearer token based authentication for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutBearerTokenAuthentication.html
+   */
+  public toPutBearerTokenAuthentication() {
+    return this.to('PutBearerTokenAuthentication');
+  }
+
+  /**
    * Grants permission to attach a data protection policy to detect and redact sensitive information from log events
    *
    * Access Level: Write
@@ -1396,6 +1418,7 @@ export class Logs extends PolicyStatement {
     Write: [
       'AssociateKmsKey',
       'AssociateSourceToS3TableIntegration',
+      'CallWithBearerToken',
       'CancelExportTask',
       'CancelImportTask',
       'CreateDelivery',
@@ -1432,6 +1455,7 @@ export class Logs extends PolicyStatement {
       'Link',
       'ProcessWithPipeline',
       'PutAccountPolicy',
+      'PutBearerTokenAuthentication',
       'PutDataProtectionPolicy',
       'PutDeliveryDestination',
       'PutDeliveryDestinationPolicy',

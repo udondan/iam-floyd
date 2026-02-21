@@ -6,6 +6,7 @@ bedrock:automated-reasoning-policy
 bedrock:automated-reasoning-policy-version
 bedrock:bedrock-marketplace-model-endpoint
 bedrock:blueprint
+bedrock:blueprint-optimization-invocation
 bedrock:custom-model
 bedrock:custom-model-deployment
 bedrock:data-automation-invocation-job
