@@ -6,6 +6,7 @@ bedrock:AssociateThirdPartyKnowledgeBase;Write
 bedrock:BatchDeleteEvaluationJob;Write
 bedrock:CallWithBearerToken;Read
 bedrock:CancelAutomatedReasoningPolicyBuildWorkflow;Write
+bedrock:CopyBlueprintStage;Write
 bedrock:CountTokens;Read
 bedrock:CreateAgent;Write
 bedrock:CreateAgentActionGroup;Write
@@ -94,6 +95,7 @@ bedrock:GetAutomatedReasoningPolicyNextScenario;Read
 bedrock:GetAutomatedReasoningPolicyTestCase;Read
 bedrock:GetAutomatedReasoningPolicyTestResult;Read
 bedrock:GetBlueprint;Read
+bedrock:GetBlueprintOptimizationStatus;Read
 bedrock:GetBlueprintRecommendation;Read
 bedrock:GetCustomModel;Read
 bedrock:GetCustomModelDeployment;Read
@@ -131,6 +133,7 @@ bedrock:GetUseCaseForModelAccess;Read
 bedrock:IngestKnowledgeBaseDocuments;Write
 bedrock:InvokeAgent;Read
 bedrock:InvokeAutomatedReasoningPolicy;Read
+bedrock:InvokeBlueprintOptimizationAsync;Write
 bedrock:InvokeBlueprintRecommendationAsync;Write
 bedrock:InvokeBuilder;Write
 bedrock:InvokeDataAutomation;Write

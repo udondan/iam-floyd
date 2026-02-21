@@ -17,6 +17,7 @@ connect:hours-of-operation
 connect:instance
 connect:integration-association
 connect:legacy-phone-number
+connect:notification
 connect:phone-number
 connect:prompt
 connect:qualified-aws-managed-view

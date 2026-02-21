@@ -12,6 +12,7 @@ connect:AssociateInstanceStorageConfig;Write
 connect:AssociateLambdaFunction;Write
 connect:AssociateLexBot;Write
 connect:AssociatePhoneNumberContactFlow;Write
+connect:AssociateQueueEmailAddresses;Write
 connect:AssociateQueueQuickConnects;Write
 connect:AssociateRoutingProfileQueues;Write
 connect:AssociateSecurityKey;Write
@@ -46,6 +47,7 @@ connect:CreateHoursOfOperation;Write
 connect:CreateHoursOfOperationOverride;Write
 connect:CreateInstance;Write
 connect:CreateIntegrationAssociation;Write
+connect:CreateNotification;Write
 connect:CreateParticipant;Write
 connect:CreatePersistentContactAssociation;Write
 connect:CreatePredefinedAttribute;Write
@@ -82,6 +84,7 @@ connect:DeleteHoursOfOperation;Write
 connect:DeleteHoursOfOperationOverride;Write
 connect:DeleteInstance;Write
 connect:DeleteIntegrationAssociation;Write
+connect:DeleteNotification;Write
 connect:DeletePredefinedAttribute;Write
 connect:DeletePrompt;Write
 connect:DeletePushNotificationRegistration;Write
@@ -118,6 +121,7 @@ connect:DescribeHoursOfOperationOverride;Read
 connect:DescribeInstance;Read
 connect:DescribeInstanceAttribute;Read
 connect:DescribeInstanceStorageConfig;Read
+connect:DescribeNotification;Read
 connect:DescribePhoneNumber;Read
 connect:DescribePredefinedAttribute;Read
 connect:DescribePrompt;Read
@@ -143,6 +147,7 @@ connect:DisassociateInstanceStorageConfig;Write
 connect:DisassociateLambdaFunction;Write
 connect:DisassociateLexBot;Write
 connect:DisassociatePhoneNumberContactFlow;Write
+connect:DisassociateQueueEmailAddresses;Write
 connect:DisassociateQueueQuickConnects;Write
 connect:DisassociateRoutingProfileQueues;Write
 connect:DisassociateSecurityKey;Write
@@ -198,10 +203,12 @@ connect:ListInstances;List
 connect:ListIntegrationAssociations;List
 connect:ListLambdaFunctions;List
 connect:ListLexBots;List
+connect:ListNotifications;Read
 connect:ListPhoneNumbers;List
 connect:ListPhoneNumbersV2;List
 connect:ListPredefinedAttributes;List
 connect:ListPrompts;List
+connect:ListQueueEmailAddresses;List
 connect:ListQueueQuickConnects;List
 connect:ListQueues;List
 connect:ListQuickConnects;List
@@ -222,6 +229,7 @@ connect:ListTrafficDistributionGroupUsers;List
 connect:ListTrafficDistributionGroups;List
 connect:ListUseCases;List
 connect:ListUserHierarchyGroups;List
+connect:ListUserNotifications;Read
 connect:ListUserProficiencies;List
 connect:ListUsers;List
 connect:ListViewVersions;List
@@ -247,6 +255,7 @@ connect:SearchEmailAddresses;Read
 connect:SearchEvaluationForms;Read
 connect:SearchHoursOfOperationOverrides;Read
 connect:SearchHoursOfOperations;Read
+connect:SearchNotifications;Read
 connect:SearchPredefinedAttributes;Read
 connect:SearchPrompts;Read
 connect:SearchQueues;Read
@@ -312,6 +321,7 @@ connect:UpdateHoursOfOperation;Write
 connect:UpdateHoursOfOperationOverride;Write
 connect:UpdateInstanceAttribute;Write
 connect:UpdateInstanceStorageConfig;Write
+connect:UpdateNotificationContent;Write
 connect:UpdateParticipantAuthentication;Write
 connect:UpdateParticipantRoleConfig;Write
 connect:UpdatePhoneNumber;Write
@@ -339,6 +349,7 @@ connect:UpdateUserHierarchy;Write
 connect:UpdateUserHierarchyGroupName;Write
 connect:UpdateUserHierarchyStructure;Write
 connect:UpdateUserIdentityInfo;Write
+connect:UpdateUserNotificationStatus;Write
 connect:UpdateUserPhoneConfig;Write
 connect:UpdateUserProficiencies;Write
 connect:UpdateUserRoutingProfile;Write

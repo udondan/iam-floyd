@@ -1,5 +1,6 @@
 logs:AssociateKmsKey;Write
 logs:AssociateSourceToS3TableIntegration;Write
+logs:CallWithBearerToken;Write
 logs:CancelExportTask;Write
 logs:CancelImportTask;Write
 logs:CreateDelivery;Write
@@ -85,6 +86,7 @@ logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
 logs:ProcessWithPipeline;Write
 logs:PutAccountPolicy;Write
+logs:PutBearerTokenAuthentication;Write
 logs:PutDataProtectionPolicy;Write
 logs:PutDeliveryDestination;Write
 logs:PutDeliveryDestinationPolicy;Write

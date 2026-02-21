@@ -252,6 +252,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a set of email addresses with a queue
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateQueueEmailAddresses.html
+   */
+  public toAssociateQueueEmailAddresses() {
+    return this.to('AssociateQueueEmailAddresses');
+  }
+
+  /**
    * Grants permission to associate quick connects with a queue in an Amazon Connect instance
    *
    * Access Level: Write
@@ -808,6 +823,22 @@ export class Connect extends PolicyStatement {
    */
   public toCreateIntegrationAssociation() {
     return this.to('CreateIntegrationAssociation');
+  }
+
+  /**
+   * Grants permission to create a notification in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateNotification.html
+   */
+  public toCreateNotification() {
+    return this.to('CreateNotification');
   }
 
   /**
@@ -1381,6 +1412,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a notification in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteNotification.html
+   */
+  public toDeleteNotification() {
+    return this.to('DeleteNotification');
+  }
+
+  /**
    * Grants permission to delete a predefined attribute in an Amazon Connect instance
    *
    * Access Level: Write
@@ -1923,6 +1969,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a notification in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeNotification.html
+   */
+  public toDescribeNotification() {
+    return this.to('DescribeNotification');
+  }
+
+  /**
    * Grants permission to describe phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: Read
@@ -2302,6 +2363,21 @@ export class Connect extends PolicyStatement {
    */
   public toDisassociatePhoneNumberContactFlow() {
     return this.to('DisassociatePhoneNumberContactFlow');
+  }
+
+  /**
+   * Grants permission to disassociate a set of email addresses from a queue
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateQueueEmailAddresses.html
+   */
+  public toDisassociateQueueEmailAddresses() {
+    return this.to('DisassociateQueueEmailAddresses');
   }
 
   /**
@@ -3109,6 +3185,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list notifications in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListNotifications.html
+   */
+  public toListNotifications() {
+    return this.to('ListNotifications');
+  }
+
+  /**
    * Grants permission to list phone number resources in an Amazon Connect instance
    *
    * Access Level: List
@@ -3156,6 +3246,21 @@ export class Connect extends PolicyStatement {
    */
   public toListPrompts() {
     return this.to('ListPrompts');
+  }
+
+  /**
+   * Grants permission to list the email address metadata associated with a queue
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueueEmailAddresses.html
+   */
+  public toListQueueEmailAddresses() {
+    return this.to('ListQueueEmailAddresses');
   }
 
   /**
@@ -3432,6 +3537,21 @@ export class Connect extends PolicyStatement {
    */
   public toListUserHierarchyGroups() {
     return this.to('ListUserHierarchyGroups');
+  }
+
+  /**
+   * Grants permission to list notifications for a user in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserNotifications.html
+   */
+  public toListUserNotifications() {
+    return this.to('ListUserNotifications');
   }
 
   /**
@@ -3848,6 +3968,21 @@ export class Connect extends PolicyStatement {
    */
   public toSearchHoursOfOperations() {
     return this.to('SearchHoursOfOperations');
+  }
+
+  /**
+   * Grants permission to search notifications in an Amazon Connect instance
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   * - .ifSearchTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchNotifications.html
+   */
+  public toSearchNotifications() {
+    return this.to('SearchNotifications');
   }
 
   /**
@@ -4880,6 +5015,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the content of a notification in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateNotificationContent.html
+   */
+  public toUpdateNotificationContent() {
+    return this.to('UpdateNotificationContent');
+  }
+
+  /**
    * Grants permission to update and continue authentication for a specific contact
    *
    * Access Level: Write
@@ -5282,6 +5432,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the status of a user notification in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserNotificationStatus.html
+   */
+  public toUpdateUserNotificationStatus() {
+    return this.to('UpdateUserNotificationStatus');
+  }
+
+  /**
    * Grants permission to update phone configuration settings for a user in an Amazon Connect instance
    *
    * Access Level: Write
@@ -5446,6 +5611,7 @@ export class Connect extends PolicyStatement {
       'AssociateLambdaFunction',
       'AssociateLexBot',
       'AssociatePhoneNumberContactFlow',
+      'AssociateQueueEmailAddresses',
       'AssociateQueueQuickConnects',
       'AssociateRoutingProfileQueues',
       'AssociateSecurityKey',
@@ -5477,6 +5643,7 @@ export class Connect extends PolicyStatement {
       'CreateHoursOfOperationOverride',
       'CreateInstance',
       'CreateIntegrationAssociation',
+      'CreateNotification',
       'CreateParticipant',
       'CreatePersistentContactAssociation',
       'CreatePredefinedAttribute',
@@ -5513,6 +5680,7 @@ export class Connect extends PolicyStatement {
       'DeleteHoursOfOperationOverride',
       'DeleteInstance',
       'DeleteIntegrationAssociation',
+      'DeleteNotification',
       'DeletePredefinedAttribute',
       'DeletePrompt',
       'DeletePushNotificationRegistration',
@@ -5542,6 +5710,7 @@ export class Connect extends PolicyStatement {
       'DisassociateLambdaFunction',
       'DisassociateLexBot',
       'DisassociatePhoneNumberContactFlow',
+      'DisassociateQueueEmailAddresses',
       'DisassociateQueueQuickConnects',
       'DisassociateRoutingProfileQueues',
       'DisassociateSecurityKey',
@@ -5609,6 +5778,7 @@ export class Connect extends PolicyStatement {
       'UpdateHoursOfOperationOverride',
       'UpdateInstanceAttribute',
       'UpdateInstanceStorageConfig',
+      'UpdateNotificationContent',
       'UpdateParticipantAuthentication',
       'UpdateParticipantRoleConfig',
       'UpdatePhoneNumber',
@@ -5636,6 +5806,7 @@ export class Connect extends PolicyStatement {
       'UpdateUserHierarchyGroupName',
       'UpdateUserHierarchyStructure',
       'UpdateUserIdentityInfo',
+      'UpdateUserNotificationStatus',
       'UpdateUserPhoneConfig',
       'UpdateUserProficiencies',
       'UpdateUserRoutingProfile',
@@ -5667,6 +5838,7 @@ export class Connect extends PolicyStatement {
       'DescribeInstance',
       'DescribeInstanceAttribute',
       'DescribeInstanceStorageConfig',
+      'DescribeNotification',
       'DescribePhoneNumber',
       'DescribePredefinedAttribute',
       'DescribePrompt',
@@ -5695,8 +5867,10 @@ export class Connect extends PolicyStatement {
       'GetMetricDataV2',
       'GetPromptFile',
       'GetTaskTemplate',
+      'ListNotifications',
       'ListRealtimeContactAnalysisSegments',
       'ListTagsForResource',
+      'ListUserNotifications',
       'SearchAgentStatuses',
       'SearchContactEvaluations',
       'SearchContactFlowModules',
@@ -5707,6 +5881,7 @@ export class Connect extends PolicyStatement {
       'SearchEvaluationForms',
       'SearchHoursOfOperationOverrides',
       'SearchHoursOfOperations',
+      'SearchNotifications',
       'SearchPredefinedAttributes',
       'SearchPrompts',
       'SearchQueues',
@@ -5757,6 +5932,7 @@ export class Connect extends PolicyStatement {
       'ListPhoneNumbersV2',
       'ListPredefinedAttributes',
       'ListPrompts',
+      'ListQueueEmailAddresses',
       'ListQueueQuickConnects',
       'ListQueues',
       'ListQuickConnects',
@@ -6476,6 +6652,24 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type notification to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/notifications.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param notificationId - Identifier for the notificationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNotification(instanceId: string, notificationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/notification/${ notificationId }`);
+  }
+
+  /**
    * Filters access by using tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -6491,6 +6685,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateHoursOfOperation()
    * - .toCreateInstance()
    * - .toCreateIntegrationAssociation()
+   * - .toCreateNotification()
    * - .toCreatePrompt()
    * - .toCreateQueue()
    * - .toCreateQuickConnect()
@@ -6528,6 +6723,7 @@ export class Connect extends PolicyStatement {
    * - .toAssociateEmailAddressAlias()
    * - .toAssociateFlow()
    * - .toAssociatePhoneNumberContactFlow()
+   * - .toAssociateQueueEmailAddresses()
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateSecurityProfiles()
@@ -6558,6 +6754,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
    * - .toDeleteInstance()
+   * - .toDeleteNotification()
    * - .toDeletePrompt()
    * - .toDeleteQueue()
    * - .toDeleteQuickConnect()
@@ -6584,6 +6781,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeEvaluationForm()
    * - .toDescribeHoursOfOperation()
    * - .toDescribeInstance()
+   * - .toDescribeNotification()
    * - .toDescribePhoneNumber()
    * - .toDescribePrompt()
    * - .toDescribeQueue()
@@ -6599,6 +6797,7 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateEmailAddressAlias()
    * - .toDisassociateFlow()
    * - .toDisassociatePhoneNumberContactFlow()
+   * - .toDisassociateQueueEmailAddresses()
    * - .toDisassociateQueueQuickConnects()
    * - .toDisassociateRoutingProfileQueues()
    * - .toDisassociateSecurityProfiles()
@@ -6622,6 +6821,7 @@ export class Connect extends PolicyStatement {
    * - .toListDataTablePrimaryValues()
    * - .toListDataTableValues()
    * - .toListEntitySecurityProfiles()
+   * - .toListQueueEmailAddresses()
    * - .toListQueueQuickConnects()
    * - .toListRoutingProfileManualAssignmentQueues()
    * - .toListRoutingProfileQueues()
@@ -6630,6 +6830,7 @@ export class Connect extends PolicyStatement {
    * - .toListSecurityProfilePermissions()
    * - .toListTagsForResource()
    * - .toListTrafficDistributionGroupUsers()
+   * - .toListUserNotifications()
    * - .toListViewVersions()
    * - .toListWorkspaceMedia()
    * - .toListWorkspacePages()
@@ -6655,6 +6856,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateDataTablePrimaryValues()
    * - .toUpdateEmailAddressMetadata()
    * - .toUpdateHoursOfOperation()
+   * - .toUpdateNotificationContent()
    * - .toUpdatePhoneNumber()
    * - .toUpdatePhoneNumberMetadata()
    * - .toUpdatePrompt()
@@ -6676,6 +6878,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateTrafficDistribution()
    * - .toUpdateUserHierarchy()
    * - .toUpdateUserIdentityInfo()
+   * - .toUpdateUserNotificationStatus()
    * - .toUpdateUserPhoneConfig()
    * - .toUpdateUserRoutingProfile()
    * - .toUpdateUserSecurityProfiles()
@@ -6716,6 +6919,7 @@ export class Connect extends PolicyStatement {
    * - attached-file
    * - email-address
    * - workspace
+   * - notification
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -6741,6 +6945,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateHoursOfOperation()
    * - .toCreateInstance()
    * - .toCreateIntegrationAssociation()
+   * - .toCreateNotification()
    * - .toCreatePrompt()
    * - .toCreateQueue()
    * - .toCreateQuickConnect()
@@ -6933,6 +7138,7 @@ export class Connect extends PolicyStatement {
    * - .toAssociateLambdaFunction()
    * - .toAssociateLexBot()
    * - .toAssociatePhoneNumberContactFlow()
+   * - .toAssociateQueueEmailAddresses()
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
    * - .toAssociateSecurityKey()
@@ -6966,6 +7172,7 @@ export class Connect extends PolicyStatement {
    * - .toCreateHoursOfOperation()
    * - .toCreateHoursOfOperationOverride()
    * - .toCreateIntegrationAssociation()
+   * - .toCreateNotification()
    * - .toCreateParticipant()
    * - .toCreatePersistentContactAssociation()
    * - .toCreatePredefinedAttribute()
@@ -7001,6 +7208,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteHoursOfOperationOverride()
    * - .toDeleteInstance()
    * - .toDeleteIntegrationAssociation()
+   * - .toDeleteNotification()
    * - .toDeletePredefinedAttribute()
    * - .toDeletePrompt()
    * - .toDeletePushNotificationRegistration()
@@ -7036,6 +7244,7 @@ export class Connect extends PolicyStatement {
    * - .toDescribeInstance()
    * - .toDescribeInstanceAttribute()
    * - .toDescribeInstanceStorageConfig()
+   * - .toDescribeNotification()
    * - .toDescribePredefinedAttribute()
    * - .toDescribePrompt()
    * - .toDescribeQueue()
@@ -7058,6 +7267,7 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateLambdaFunction()
    * - .toDisassociateLexBot()
    * - .toDisassociatePhoneNumberContactFlow()
+   * - .toDisassociateQueueEmailAddresses()
    * - .toDisassociateQueueQuickConnects()
    * - .toDisassociateRoutingProfileQueues()
    * - .toDisassociateSecurityKey()
@@ -7108,8 +7318,10 @@ export class Connect extends PolicyStatement {
    * - .toListIntegrationAssociations()
    * - .toListLambdaFunctions()
    * - .toListLexBots()
+   * - .toListNotifications()
    * - .toListPredefinedAttributes()
    * - .toListPrompts()
+   * - .toListQueueEmailAddresses()
    * - .toListQueueQuickConnects()
    * - .toListRoutingProfileManualAssignmentQueues()
    * - .toListRoutingProfileQueues()
@@ -7122,6 +7334,7 @@ export class Connect extends PolicyStatement {
    * - .toListSecurityProfiles()
    * - .toListUseCases()
    * - .toListUserHierarchyGroups()
+   * - .toListUserNotifications()
    * - .toListUserProficiencies()
    * - .toListUsers()
    * - .toListViewVersions()
@@ -7144,6 +7357,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchEvaluationForms()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
+   * - .toSearchNotifications()
    * - .toSearchPredefinedAttributes()
    * - .toSearchPrompts()
    * - .toSearchQueues()
@@ -7199,6 +7413,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateHoursOfOperationOverride()
    * - .toUpdateInstanceAttribute()
    * - .toUpdateInstanceStorageConfig()
+   * - .toUpdateNotificationContent()
    * - .toUpdateParticipantAuthentication()
    * - .toUpdateParticipantRoleConfig()
    * - .toUpdatePhoneNumber()
@@ -7224,6 +7439,7 @@ export class Connect extends PolicyStatement {
    * - .toUpdateUserHierarchyGroupName()
    * - .toUpdateUserHierarchyStructure()
    * - .toUpdateUserIdentityInfo()
+   * - .toUpdateUserNotificationStatus()
    * - .toUpdateUserPhoneConfig()
    * - .toUpdateUserProficiencies()
    * - .toUpdateUserRoutingProfile()
@@ -7357,6 +7573,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchEvaluationForms()
    * - .toSearchHoursOfOperationOverrides()
    * - .toSearchHoursOfOperations()
+   * - .toSearchNotifications()
    * - .toSearchPrompts()
    * - .toSearchQueues()
    * - .toSearchQuickConnects()

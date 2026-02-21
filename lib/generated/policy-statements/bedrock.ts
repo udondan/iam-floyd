@@ -113,6 +113,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to copy a blueprint from one stage to another
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html
+   */
+  public toCopyBlueprintStage() {
+    return this.to('CopyBlueprintStage');
+  }
+
+  /**
    * Grants permission to count the number of tokens in an input prompt
    *
    * Access Level: Read
@@ -1175,6 +1186,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the status of a blueprint optimization job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html
+   */
+  public toGetBlueprintOptimizationStatus() {
+    return this.to('GetBlueprintOptimizationStatus');
+  }
+
+  /**
    * Grants permission to retrieve blueprint recommendation
    *
    * Access Level: Read
@@ -1577,6 +1599,21 @@ export class Bedrock extends PolicyStatement {
    */
   public toInvokeAutomatedReasoningPolicy() {
     return this.to('InvokeAutomatedReasoningPolicy');
+  }
+
+  /**
+   * Grants permission to invoke an async job to perform blueprint optimization
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html
+   */
+  public toInvokeBlueprintOptimizationAsync() {
+    return this.to('InvokeBlueprintOptimizationAsync');
   }
 
   /**
@@ -2721,6 +2758,7 @@ export class Bedrock extends PolicyStatement {
       'GetAutomatedReasoningPolicyTestCase',
       'GetAutomatedReasoningPolicyTestResult',
       'GetBlueprint',
+      'GetBlueprintOptimizationStatus',
       'GetBlueprintRecommendation',
       'GetCustomModel',
       'GetCustomModelDeployment',
@@ -2775,6 +2813,7 @@ export class Bedrock extends PolicyStatement {
       'AssociateThirdPartyKnowledgeBase',
       'BatchDeleteEvaluationJob',
       'CancelAutomatedReasoningPolicyBuildWorkflow',
+      'CopyBlueprintStage',
       'CreateAgent',
       'CreateAgentActionGroup',
       'CreateAgentAlias',
@@ -2844,6 +2883,7 @@ export class Bedrock extends PolicyStatement {
       'DisassociateAgentKnowledgeBase',
       'EndSession',
       'IngestKnowledgeBaseDocuments',
+      'InvokeBlueprintOptimizationAsync',
       'InvokeBlueprintRecommendationAsync',
       'InvokeBuilder',
       'InvokeDataAutomation',
@@ -3449,6 +3489,23 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type blueprint-optimization-invocation to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBlueprintOptimizationInvocation(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:blueprint-optimization-invocation/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type data-automation-invocation-job to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
@@ -3544,6 +3601,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
    * - .toCreateSession()
+   * - .toInvokeBlueprintOptimizationAsync()
    * - .toInvokeDataAutomationAsync()
    * - .toInvokeModel()
    * - .toPutResourcePolicy()
@@ -3587,6 +3645,7 @@ export class Bedrock extends PolicyStatement {
    * - imported-model
    * - data-automation-project
    * - blueprint
+   * - blueprint-optimization-invocation
    * - data-automation-invocation-job
    * - session
    * - custom-model-deployment
@@ -3630,6 +3689,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreatePromptVersion()
    * - .toCreateProvisionedModelThroughput()
    * - .toCreateSession()
+   * - .toInvokeBlueprintOptimizationAsync()
    * - .toInvokeDataAutomationAsync()
    * - .toInvokeModel()
    * - .toPutResourcePolicy()
