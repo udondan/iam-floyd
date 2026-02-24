@@ -228,11 +228,6 @@
     },
     {
       "Effect": "Allow",
-      "Action": "ssm:StartAutomationExecution",
-      "Resource": "arn:aws:ssm:*:*:automation-definition/ImageBuilder*"
-    },
-    {
-      "Effect": "Allow",
       "Action": [
         "ssm:CreateAssociation",
         "ssm:DeleteAssociation"

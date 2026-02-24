@@ -614,6 +614,26 @@
           "eks:accessScope": "cluster"
         }
       }
+    },
+    {
+      "Sid": "GuardDutyMalwareScanPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:StartMalwareScan",
+        "guardduty:GetMalwareScan"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GuardDutyMalwareScanIAMPassPermissions",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "malware-protection.guardduty.amazonaws.com"
+        }
+      }
     }
   ]
 }
