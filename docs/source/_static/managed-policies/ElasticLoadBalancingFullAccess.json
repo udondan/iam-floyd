@@ -24,6 +24,7 @@
         "ec2:GetCoipPoolUsage",
         "ec2:GetSecurityGroupsForVpc",
         "ec2:DescribeVpcPeeringConnections",
+        "ec2:DescribeAvailabilityZones",
         "cognito-idp:DescribeUserPoolClient"
       ],
       "Resource": "*"
