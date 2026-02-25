@@ -104,7 +104,8 @@
       "Resource": [
         "arn:aws:ec2:*:*:subnet/*",
         "arn:aws:ec2:*:*:security-group/*",
-        "arn:aws:ec2:*::image/*"
+        "arn:aws:ec2:*::image/*",
+        "arn:aws:resource-groups:*:*:group/*"
       ]
     },
     {
@@ -167,7 +168,19 @@
         "ec2:DescribeAvailabilityZones",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSubnets",
-        "ec2:DescribeVpcs"
+        "ec2:DescribeVpcs",
+        "ec2:DescribeCapacityReservations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListResourceGroupResources",
+      "Effect": "Allow",
+      "Action": [
+        "resource-groups:ListGroupResources",
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStackResources",
+        "tag:GetResources"
       ],
       "Resource": "*"
     }
