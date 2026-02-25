@@ -16,6 +16,7 @@ healthlake:GenerateDocumentWithPost;Write
 healthlake:GetCapabilities;Read
 healthlake:GetExportedFile;Read
 healthlake:GetHistoryByResourceId;Read
+healthlake:InquirePreAuthClaim;Read
 healthlake:ListFHIRDatastores;List
 healthlake:ListFHIRExportJobs;List
 healthlake:ListFHIRImportJobs;List
@@ -27,6 +28,7 @@ healthlake:MemberMatch;Write
 healthlake:MemberRemove;Write
 healthlake:PatchResource;Write
 healthlake:ProcessBundle;Write
+healthlake:QuestionnairePackage;Read
 healthlake:ReadResource;Read
 healthlake:RetrieveAttributionStatus;Write
 healthlake:SearchEverything;Read
@@ -37,6 +39,7 @@ healthlake:StartFHIRExportJob;Write
 healthlake:StartFHIRExportJobWithGet;Write
 healthlake:StartFHIRExportJobWithPost;Write
 healthlake:StartFHIRImportJob;Write
+healthlake:SubmitPreAuthClaim;Write
 healthlake:TagResource;Tagging
 healthlake:UntagResource;Tagging
 healthlake:UpdateResource;Write

@@ -1,0 +1,12 @@
+elemental-inference:AssociateFeed;Write
+elemental-inference:CreateFeed;Write
+elemental-inference:DeleteFeed;Write
+elemental-inference:DisassociateFeed;Write
+elemental-inference:GetFeed;Read
+elemental-inference:GetMetadata;Write
+elemental-inference:ListFeeds;List
+elemental-inference:ListTagsForResource;Read
+elemental-inference:PutMedia;Write
+elemental-inference:TagResource;Tagging
+elemental-inference:UntagResource;Tagging
+elemental-inference:UpdateFeed;Write

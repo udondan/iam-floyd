@@ -290,6 +290,7 @@ export { Elasticloadbalancing } from './policy-statements/elasticloadbalancing';
 export { ElasticloadbalancingV2 } from './policy-statements/elasticloadbalancingv2';
 export { ElementalAppliancesSoftware } from './policy-statements/elementalappliancesandsoftware';
 export { ElementalActivations } from './policy-statements/elementalappliancesandsoftwareactivationservice';
+export { ElementalInference } from './policy-statements/elementalinference';
 export { Mediaconnect } from './policy-statements/elementalmediaconnect';
 export { Mediaconvert } from './policy-statements/elementalmediaconvert';
 export { Medialive } from './policy-statements/elementalmedialive';

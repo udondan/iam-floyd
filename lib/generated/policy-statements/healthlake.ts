@@ -222,6 +222,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to inquire about the status of a prior authorization Claim
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-inquire.html
+   */
+  public toInquirePreAuthClaim() {
+    return this.to('InquirePreAuthClaim');
+  }
+
+  /**
    * Grants permission to list all FHIR datastores that are in the user's account, regardless of datastore status
    *
    * Access Level: List
@@ -343,6 +354,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve Questionnaire packages with dependency Library and ValueSet resources
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-questionnaire-package.html
+   */
+  public toQuestionnairePackage() {
+    return this.to('QuestionnairePackage');
+  }
+
+  /**
    * Grants permission to read resource
    *
    * Access Level: Read
@@ -453,6 +475,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit a prior authorization Claim request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-submit.html
+   */
+  public toSubmitPreAuthClaim() {
+    return this.to('SubmitPreAuthClaim');
+  }
+
+  /**
    * Grants permission to add tags to a datastore
    *
    * Access Level: Tagging
@@ -536,6 +569,7 @@ export class Healthlake extends PolicyStatement {
       'StartFHIRExportJobWithGet',
       'StartFHIRExportJobWithPost',
       'StartFHIRImportJob',
+      'SubmitPreAuthClaim',
       'UpdateResource'
     ],
     Read: [
@@ -549,8 +583,10 @@ export class Healthlake extends PolicyStatement {
       'GetCapabilities',
       'GetExportedFile',
       'GetHistoryByResourceId',
+      'InquirePreAuthClaim',
       'LookupCodeSystemWithGet',
       'LookupCodeSystemWithPost',
+      'QuestionnairePackage',
       'ReadResource',
       'SearchEverything',
       'SearchWithGet',
