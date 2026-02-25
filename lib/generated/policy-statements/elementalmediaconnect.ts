@@ -1156,9 +1156,28 @@ export class Mediaconnect extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type MediaStream to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/media-streams.html
+   *
+   * @param flowId - Identifier for the flowId.
+   * @param flowName - Identifier for the flowName.
+   * @param mediaStreamName - Identifier for the mediaStreamName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMediaStream(flowId: string, flowName: string, mediaStreamName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow:${ flowId }:${ flowName }/mediaStream/${ mediaStreamName }`);
+  }
+
+  /**
    * Adds a resource of type Offering to the statement
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/ug/offering.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/offerings.html
    *
    * @param offeringId - Identifier for the offeringId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
@@ -1189,7 +1208,7 @@ export class Mediaconnect extends PolicyStatement {
   /**
    * Adds a resource of type Reservation to the statement
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/ug/reservation.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/reservations.html
    *
    * @param reservationId - Identifier for the reservationId.
    * @param reservationName - Identifier for the reservationName.
@@ -1204,7 +1223,7 @@ export class Mediaconnect extends PolicyStatement {
   /**
    * Adds a resource of type RouterInput to the statement
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/ug/API_RouterInput.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/managing-router-io.html
    *
    * @param routerInputId - Identifier for the routerInputId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1221,7 +1240,7 @@ export class Mediaconnect extends PolicyStatement {
   /**
    * Adds a resource of type RouterNetworkInterface to the statement
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/ug/API_RouterNetworkInterface.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/managing-router-network-interfaces.html
    *
    * @param routerNetworkInterfaceId - Identifier for the routerNetworkInterfaceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1238,7 +1257,7 @@ export class Mediaconnect extends PolicyStatement {
   /**
    * Adds a resource of type RouterOutput to the statement
    *
-   * https://docs.aws.amazon.com/mediaconnect/latest/ug/API_RouterOutput.html
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/managing-router-io.html
    *
    * @param routerOutputId - Identifier for the routerOutputId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -1268,6 +1287,25 @@ export class Mediaconnect extends PolicyStatement {
    */
   public onSource(sourceId: string, sourceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:source:${ sourceId }:${ sourceName }`);
+  }
+
+  /**
+   * Adds a resource of type VpcInterface to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconnect/latest/ug/vpc-interfaces.html
+   *
+   * @param flowId - Identifier for the flowId.
+   * @param flowName - Identifier for the flowName.
+   * @param vpcInterfaceName - Identifier for the vpcInterfaceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcInterface(flowId: string, flowName: string, vpcInterfaceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mediaconnect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow:${ flowId }:${ flowName }/vpcInterface/${ vpcInterfaceName }`);
   }
 
   /**
@@ -1303,11 +1341,13 @@ export class Mediaconnect extends PolicyStatement {
    * Applies to resource types:
    * - Entitlement
    * - Flow
+   * - MediaStream
    * - Output
    * - RouterInput
    * - RouterNetworkInterface
    * - RouterOutput
    * - Source
+   * - VpcInterface
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
