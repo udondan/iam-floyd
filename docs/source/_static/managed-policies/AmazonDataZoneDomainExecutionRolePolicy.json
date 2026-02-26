@@ -111,6 +111,7 @@
         "datazone:ListSubscriptions",
         "datazone:ListTimeSeriesDataPoints",
         "datazone:ListWarehouseMetadata",
+        "datazone:QueryGraph",
         "datazone:RejectPredictions",
         "datazone:RejectSubscriptionRequest",
         "datazone:RemoveEntityOwner",
