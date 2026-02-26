@@ -1,6 +1,7 @@
 cloudwatch:BatchGetServiceLevelIndicatorReport;Read
 cloudwatch:BatchGetServiceLevelObjectiveBudgetReport;Read
 cloudwatch:CreateServiceLevelObjective;Write
+cloudwatch:DeleteAlarmMuteRule;Write
 cloudwatch:DeleteAlarms;Write
 cloudwatch:DeleteAnomalyDetector;Write
 cloudwatch:DeleteDashboards;Write
@@ -19,6 +20,7 @@ cloudwatch:EnableInsightRules;Write
 cloudwatch:EnableTopologyDiscovery;Write
 cloudwatch:GenerateQuery;Read
 cloudwatch:GenerateQueryResultsSummary;Read
+cloudwatch:GetAlarmMuteRule;Read
 cloudwatch:GetDashboard;Read
 cloudwatch:GetInsightRuleReport;Read
 cloudwatch:GetMetricData;Read
@@ -31,6 +33,7 @@ cloudwatch:GetServiceLevelObjective;Read
 cloudwatch:GetTopologyDiscoveryStatus;Read
 cloudwatch:GetTopologyMap;Read
 cloudwatch:Link;Write
+cloudwatch:ListAlarmMuteRules;List
 cloudwatch:ListDashboards;List
 cloudwatch:ListEntitiesForMetric;List
 cloudwatch:ListManagedInsightRules;Read
@@ -39,6 +42,7 @@ cloudwatch:ListMetrics;List
 cloudwatch:ListServiceLevelObjectives;List
 cloudwatch:ListServices;List
 cloudwatch:ListTagsForResource;List
+cloudwatch:PutAlarmMuteRule;Write
 cloudwatch:PutAnomalyDetector;Write
 cloudwatch:PutCompositeAlarm;Write
 cloudwatch:PutDashboard;Write

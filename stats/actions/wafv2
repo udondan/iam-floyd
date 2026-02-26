@@ -29,6 +29,7 @@ wafv2:GetRateBasedStatementManagedKeys;Read
 wafv2:GetRegexPatternSet;Read
 wafv2:GetRuleGroup;Read
 wafv2:GetSampledRequests;Read
+wafv2:GetTopPathStatisticsByTraffic;Read
 wafv2:GetWebACL;Read
 wafv2:GetWebACLForResource;Read
 wafv2:ListAPIKeys;List

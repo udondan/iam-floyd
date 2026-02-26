@@ -432,6 +432,17 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve aggregated path statistics with bot traffic analysis for a WebACL within a specified time window
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetTopPathStatisticsByTraffic.html
+   */
+  public toGetTopPathStatisticsByTraffic() {
+    return this.to('GetTopPathStatisticsByTraffic');
+  }
+
+  /**
    * Grants permission to retrieve details about a WebACL
    *
    * Access Level: Read
@@ -801,6 +812,7 @@ export class Wafv2 extends PolicyStatement {
       'GetRegexPatternSet',
       'GetRuleGroup',
       'GetSampledRequests',
+      'GetTopPathStatisticsByTraffic',
       'GetWebACL',
       'GetWebACLForResource',
       'ListTagsForResource'
