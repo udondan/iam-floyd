@@ -3,7 +3,7 @@ elemental-inference:CreateFeed;Write
 elemental-inference:DeleteFeed;Write
 elemental-inference:DisassociateFeed;Write
 elemental-inference:GetFeed;Read
-elemental-inference:GetMetadata;Write
+elemental-inference:GetMetadata;Read
 elemental-inference:ListFeeds;List
 elemental-inference:ListTagsForResource;Read
 elemental-inference:PutMedia;Write

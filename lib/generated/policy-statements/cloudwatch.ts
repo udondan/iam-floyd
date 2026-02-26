@@ -56,6 +56,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an alarm mute rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarmMuteRule.html
+   */
+  public toDeleteAlarmMuteRule() {
+    return this.to('DeleteAlarmMuteRule');
+  }
+
+  /**
    * Grants permission to delete a collection of alarms
    *
    * Access Level: Write
@@ -254,6 +265,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an alarm mute rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetAlarmMuteRule.html
+   */
+  public toGetAlarmMuteRule() {
+    return this.to('GetAlarmMuteRule');
+  }
+
+  /**
    * Grants permission to display the details of the CloudWatch dashboard you specify
    *
    * Access Level: Read
@@ -386,6 +408,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of alarm mute rules owned by the user's account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListAlarmMuteRules.html
+   */
+  public toListAlarmMuteRules() {
+    return this.to('ListAlarmMuteRules');
+  }
+
+  /**
    * Grants permission to return a list of all CloudWatch dashboards in your account
    *
    * Access Level: List
@@ -476,6 +509,21 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to create or update an alarm mute rule
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAlarmMuteRule.html
+   */
+  public toPutAlarmMuteRule() {
+    return this.to('PutAlarmMuteRule');
   }
 
   /**
@@ -677,6 +725,7 @@ export class Cloudwatch extends PolicyStatement {
       'DescribeInsightRules',
       'GenerateQuery',
       'GenerateQueryResultsSummary',
+      'GetAlarmMuteRule',
       'GetDashboard',
       'GetInsightRuleReport',
       'GetMetricData',
@@ -692,6 +741,7 @@ export class Cloudwatch extends PolicyStatement {
     ],
     Write: [
       'CreateServiceLevelObjective',
+      'DeleteAlarmMuteRule',
       'DeleteAlarms',
       'DeleteAnomalyDetector',
       'DeleteDashboards',
@@ -704,6 +754,7 @@ export class Cloudwatch extends PolicyStatement {
       'EnableInsightRules',
       'EnableTopologyDiscovery',
       'Link',
+      'PutAlarmMuteRule',
       'PutAnomalyDetector',
       'PutCompositeAlarm',
       'PutDashboard',
@@ -718,6 +769,7 @@ export class Cloudwatch extends PolicyStatement {
       'UpdateServiceLevelObjective'
     ],
     List: [
+      'ListAlarmMuteRules',
       'ListDashboards',
       'ListEntitiesForMetric',
       'ListMetricStreams',
@@ -747,6 +799,23 @@ export class Cloudwatch extends PolicyStatement {
    */
   public onAlarm(alarmName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:alarm:${ alarmName }`);
+  }
+
+  /**
+   * Adds a resource of type alarm-mute-rule to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param alarmMuteRuleName - Identifier for the alarmMuteRuleName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAlarmMuteRule(alarmMuteRuleName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:alarm-mute-rule:${ alarmMuteRuleName }`);
   }
 
   /**
@@ -839,6 +908,7 @@ export class Cloudwatch extends PolicyStatement {
    * Applies to actions:
    * - .toCreateServiceLevelObjective()
    * - .toListManagedInsightRules()
+   * - .toPutAlarmMuteRule()
    * - .toPutCompositeAlarm()
    * - .toPutInsightRule()
    * - .toPutManagedInsightRules()
@@ -861,6 +931,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Applies to resource types:
    * - alarm
+   * - alarm-mute-rule
    * - insight-rule
    * - metric-stream
    * - slo
@@ -882,6 +953,7 @@ export class Cloudwatch extends PolicyStatement {
    * Applies to actions:
    * - .toCreateServiceLevelObjective()
    * - .toListManagedInsightRules()
+   * - .toPutAlarmMuteRule()
    * - .toPutCompositeAlarm()
    * - .toPutInsightRule()
    * - .toPutManagedInsightRules()

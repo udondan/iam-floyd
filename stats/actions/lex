@@ -22,6 +22,7 @@ lex:CreateTestSetDiscrepancyReport;Write
 lex:CreateUploadUrl;Write
 lex:DeleteBot;Write
 lex:DeleteBotAlias;Write
+lex:DeleteBotAnalyzerRecommendation;Write
 lex:DeleteBotChannel;Write
 lex:DeleteBotChannelAssociation;Write
 lex:DeleteBotLocale;Write
@@ -42,6 +43,7 @@ lex:DeleteTestSet;Write
 lex:DeleteUtterances;Write
 lex:DescribeBot;Read
 lex:DescribeBotAlias;Read
+lex:DescribeBotAnalyzerRecommendation;Read
 lex:DescribeBotChannel;Read
 lex:DescribeBotLocale;Read
 lex:DescribeBotRecommendation;Read
@@ -87,6 +89,7 @@ lex:GetUtterancesView;List
 lex:ListAggregatedUtterances;List
 lex:ListBotAliasReplicas;List
 lex:ListBotAliases;List
+lex:ListBotAnalyzerRecommendations;List
 lex:ListBotChannels;List
 lex:ListBotLocales;List
 lex:ListBotRecommendations;List
@@ -124,6 +127,7 @@ lex:PutSlotType;Write
 lex:RecognizeText;Write
 lex:RecognizeUtterance;Write
 lex:SearchAssociatedTranscripts;List
+lex:StartBotAnalyzer;Write
 lex:StartBotRecommendation;Write
 lex:StartBotResourceGeneration;Write
 lex:StartConversation;Write
@@ -131,6 +135,7 @@ lex:StartImport;Write
 lex:StartMigration;Write
 lex:StartTestExecution;Write
 lex:StartTestSetGeneration;Write
+lex:StopBotAnalyzer;Write
 lex:StopBotRecommendation;Write
 lex:TagResource;Tagging
 lex:UntagResource;Tagging

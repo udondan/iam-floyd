@@ -101,6 +101,9 @@ export class Ebs extends PolicyStatement {
    * - .ifParentSnapshot()
    * - .ifVolumeSize()
    *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
    * https://docs.aws.amazon.com/ebs/latest/APIReference/API_StartSnapshot.html
    */
   public toStartSnapshot() {

@@ -1,4 +1,5 @@
 cloudwatch:alarm
+cloudwatch:alarm-mute-rule
 cloudwatch:dashboard
 cloudwatch:insight-rule
 cloudwatch:metric-stream

@@ -278,6 +278,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a bot analyzer recommendation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotAnalyzerRecommendation.html
+   */
+  public toDeleteBotAnalyzerRecommendation() {
+    return this.to('DeleteBotAnalyzerRecommendation');
+  }
+
+  /**
    * Grants permission to delete an existing bot channel
    *
    * Access Level: Write
@@ -467,6 +478,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toDescribeBotAlias() {
     return this.to('DescribeBotAlias');
+  }
+
+  /**
+   * Grants permission to describe a bot analyzer recommendation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAnalyzerRecommendation.html
+   */
+  public toDescribeBotAnalyzerRecommendation() {
+    return this.to('DescribeBotAnalyzerRecommendation');
   }
 
   /**
@@ -742,6 +764,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toListBotAliases() {
     return this.to('ListBotAliases');
+  }
+
+  /**
+   * Grants permission to list bot analyzer recommendations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAnalyzerRecommendations.html
+   */
+  public toListBotAnalyzerRecommendations() {
+    return this.to('ListBotAnalyzerRecommendations');
   }
 
   /**
@@ -1089,6 +1122,17 @@ export class LexV2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a bot analyzer for an existing bot locale
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotAnalyzer.html
+   */
+  public toStartBotAnalyzer() {
+    return this.to('StartBotAnalyzer');
+  }
+
+  /**
    * Grants permission to start a bot recommendation for an existing bot locale
    *
    * Access Level: Write
@@ -1177,6 +1221,17 @@ export class LexV2 extends PolicyStatement {
    */
   public toStartTestSetGeneration() {
     return this.to('StartTestSetGeneration');
+  }
+
+  /**
+   * Grants permission to stop a bot analyzer for an existing bot locale
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StopBotAnalyzer.html
+   */
+  public toStopBotAnalyzer() {
+    return this.to('StopBotAnalyzer');
   }
 
   /**
@@ -1364,6 +1419,7 @@ export class LexV2 extends PolicyStatement {
       'CreateUploadUrl',
       'DeleteBot',
       'DeleteBotAlias',
+      'DeleteBotAnalyzerRecommendation',
       'DeleteBotChannel',
       'DeleteBotLocale',
       'DeleteBotReplica',
@@ -1382,12 +1438,14 @@ export class LexV2 extends PolicyStatement {
       'PutSession',
       'RecognizeText',
       'RecognizeUtterance',
+      'StartBotAnalyzer',
       'StartBotRecommendation',
       'StartBotResourceGeneration',
       'StartConversation',
       'StartImport',
       'StartTestExecution',
       'StartTestSetGeneration',
+      'StopBotAnalyzer',
       'StopBotRecommendation',
       'UpdateBot',
       'UpdateBotAlias',
@@ -1404,6 +1462,7 @@ export class LexV2 extends PolicyStatement {
     Read: [
       'DescribeBot',
       'DescribeBotAlias',
+      'DescribeBotAnalyzerRecommendation',
       'DescribeBotChannel',
       'DescribeBotLocale',
       'DescribeBotRecommendation',
@@ -1433,6 +1492,7 @@ export class LexV2 extends PolicyStatement {
       'ListAggregatedUtterances',
       'ListBotAliasReplicas',
       'ListBotAliases',
+      'ListBotAnalyzerRecommendations',
       'ListBotChannels',
       'ListBotLocales',
       'ListBotRecommendations',

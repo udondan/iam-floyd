@@ -23,7 +23,7 @@ export class ElementalInference extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_AssociateFeed.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_AssociateFeed.html
    */
   public toAssociateFeed() {
     return this.to('AssociateFeed');
@@ -38,7 +38,7 @@ export class ElementalInference extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_CreateFeed.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_CreateFeed.html
    */
   public toCreateFeed() {
     return this.to('CreateFeed');
@@ -49,7 +49,7 @@ export class ElementalInference extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_DeleteFeed.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteFeed.html
    */
   public toDeleteFeed() {
     return this.to('DeleteFeed');
@@ -60,7 +60,7 @@ export class ElementalInference extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_DisassociateFeed.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DisassociateFeed.html
    */
   public toDisassociateFeed() {
     return this.to('DisassociateFeed');
@@ -71,7 +71,7 @@ export class ElementalInference extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_GetFeed.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetFeed.html
    */
   public toGetFeed() {
     return this.to('GetFeed');
@@ -80,9 +80,9 @@ export class ElementalInference extends PolicyStatement {
   /**
    * Grants permission to retrieve metadata for a specific feed output
    *
-   * Access Level: Write
+   * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_GetMetadata.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetMetadata.html
    */
   public toGetMetadata() {
     return this.to('GetMetadata');
@@ -93,7 +93,7 @@ export class ElementalInference extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_ListFeeds.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListFeeds.html
    */
   public toListFeeds() {
     return this.to('ListFeeds');
@@ -104,7 +104,7 @@ export class ElementalInference extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -115,7 +115,7 @@ export class ElementalInference extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_PutMedia.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_PutMedia.html
    */
   public toPutMedia() {
     return this.to('PutMedia');
@@ -130,7 +130,7 @@ export class ElementalInference extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_TagResource.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -144,7 +144,7 @@ export class ElementalInference extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_UntagResource.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -155,7 +155,7 @@ export class ElementalInference extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/api/API_UpdateFeed.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UpdateFeed.html
    */
   public toUpdateFeed() {
     return this.to('UpdateFeed');
@@ -167,12 +167,12 @@ export class ElementalInference extends PolicyStatement {
       'CreateFeed',
       'DeleteFeed',
       'DisassociateFeed',
-      'GetMetadata',
       'PutMedia',
       'UpdateFeed'
     ],
     Read: [
       'GetFeed',
+      'GetMetadata',
       'ListTagsForResource'
     ],
     List: [
@@ -185,9 +185,9 @@ export class ElementalInference extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type FeedResource to the statement
+   * Adds a resource of type feed to the statement
    *
-   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_Feed.html
+   * https://docs.aws.amazon.com/elemental-inference/latest/userguide/elemental-inference-configuration.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -197,7 +197,7 @@ export class ElementalInference extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onFeedResource(id: string, account?: string, region?: string, partition?: string) {
+  public onFeed(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:elemental-inference:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:feed/${ id }`);
   }
 
@@ -224,7 +224,7 @@ export class ElementalInference extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
-   * - FeedResource
+   * - feed
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
