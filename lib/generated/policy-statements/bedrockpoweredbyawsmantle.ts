@@ -19,6 +19,17 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Grants permission to archive a specific project
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toArchiveProject() {
+    return this.to('ArchiveProject');
+  }
+
+  /**
    * Grants permission to make API calls using bearer token authentication
    *
    * Access Level: List
@@ -97,6 +108,21 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a project
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toCreateProject() {
+    return this.to('CreateProject');
+  }
+
+  /**
    * Grants permission to delete a specific file
    *
    * Access Level: Write
@@ -172,6 +198,17 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of a specific project
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toGetProject() {
+    return this.to('GetProject');
+  }
+
+  /**
    * Grants permission to list all available files in a project
    *
    * Access Level: List
@@ -204,27 +241,99 @@ export class BedrockMantle extends PolicyStatement {
     return this.to('ListModels');
   }
 
+  /**
+   * Grants permission to list projects
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toListProjects() {
+    return this.to('ListProjects');
+  }
+
+  /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to tag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a specific project
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toUpdateProject() {
+    return this.to('UpdateProject');
+  }
+
   protected accessLevelList: AccessLevelList = {
-    List: [
-      'CallWithBearerToken',
-      'ListFiles',
-      'ListFineTuningJobs',
-      'ListModels'
-    ],
     Write: [
+      'ArchiveProject',
       'CancelFineTuningJob',
       'CancelInference',
       'CreateFile',
       'CreateFineTuningJob',
       'CreateInference',
+      'CreateProject',
       'DeleteFile',
-      'DeleteInference'
+      'DeleteInference',
+      'UpdateProject'
+    ],
+    List: [
+      'CallWithBearerToken',
+      'ListFiles',
+      'ListFineTuningJobs',
+      'ListModels',
+      'ListProjects'
     ],
     Read: [
       'GetFile',
       'GetFineTuningJob',
       'GetInference',
-      'GetModel'
+      'GetModel',
+      'GetProject',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -237,9 +346,85 @@ export class BedrockMantle extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-mantle:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ resourceId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toArchiveProject()
+   * - .toCancelFineTuningJob()
+   * - .toCancelInference()
+   * - .toCreateFile()
+   * - .toCreateFineTuningJob()
+   * - .toCreateInference()
+   * - .toCreateProject()
+   * - .toDeleteFile()
+   * - .toDeleteInference()
+   * - .toGetFile()
+   * - .toGetFineTuningJob()
+   * - .toGetInference()
+   * - .toGetModel()
+   * - .toGetProject()
+   * - .toListFiles()
+   * - .toListFineTuningJobs()
+   * - .toListModels()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateProject()
+   *
+   * Applies to resource types:
+   * - project
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 
   /**
