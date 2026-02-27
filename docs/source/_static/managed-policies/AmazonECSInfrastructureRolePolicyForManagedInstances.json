@@ -141,8 +141,8 @@
         "arn:aws:iam::*:role/ecsInstanceRole*"
       ],
       "Condition": {
-        "StringEquals": {
-          "iam:PassedToService": "ec2.amazonaws.com"
+        "StringLike": {
+          "iam:PassedToService": "ec2.*"
         }
       }
     },

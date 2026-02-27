@@ -1111,6 +1111,144 @@
         "ram:GetResourceShareInvitations"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "MLAccountDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "airflow-serverless:ListWorkflow*",
+        "airflow-serverless:ListTask*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AirflowServerlessPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "airflow-serverless:CreateWorkflow",
+        "airflow-serverless:DeleteWorkflow",
+        "airflow-serverless:GetTaskInstance",
+        "airflow-serverless:GetWorkflow",
+        "airflow-serverless:GetWorkflowRun",
+        "airflow-serverless:ListTagsForResource",
+        "airflow-serverless:StartWorkflowRun",
+        "airflow-serverless:StopWorkflowRun",
+        "airflow-serverless:TagResource",
+        "airflow-serverless:UntagResource",
+        "airflow-serverless:UpdateWorkflow"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "AirflowCloudwatchLogsActions",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup",
+        "logs:PutLogEvents",
+        "logs:GetLogEvents",
+        "logs:GetLogRecord",
+        "logs:GetLogGroupFields",
+        "logs:GetQueryResults"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:log-group:/aws/mwaa-serverless/${aws:PrincipalTag/AmazonDataZoneDomain}-${aws:PrincipalTag/AmazonDataZoneProject}/*"
+      ]
+    },
+    {
+      "Sid": "WorkflowsCreateGrant",
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateGrant"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "airflow-serverless.*.amazonaws.com"
+        },
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:airflow-serverless:workflow-arn"
+        },
+        "ForAllValues:StringEquals": {
+          "kms:GrantOperations": [
+            "Decrypt",
+            "Encrypt",
+            "GenerateDataKey",
+            "GenerateDataKeyWithoutPlaintext",
+            "RetireGrant"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "WorkflowsKms",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/KmsKeyId}",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "kms:EncryptionContextKeys": "aws:airflow-serverless:workflow-arn"
+        }
+      }
+    },
+    {
+      "Sid": "CreateSLR",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/airflow-serverless.amazonaws.com/AWSServiceRoleForAmazonMWAAServerless"
+      ]
+    },
+    {
+      "Sid": "DataZoneUserPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:GenerateCode",
+        "datazone:SendMessage",
+        "datazone:*Conversation*",
+        "datazone:*Cell*",
+        "datazone:*Notebook*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AthenaSession",
+      "Effect": "Allow",
+      "Action": [
+        "athena:GetSessionEndpoint",
+        "athena:GetResourceDashboard",
+        "athena:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
+        }
+      }
+    },
+    {
+      "Sid": "SQLWorkBenchMLActionsWithResourceType",
+      "Effect": "Allow",
+      "Action": [
+        "sqlworkbench:GetConnection"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}",
+          "aws:ResourceTag/sqlworkbench-resource-owner": "${aws:userid}"
+        }
+      }
     }
   ]
 }
