@@ -183,9 +183,13 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create WebAcl association to WAF
+   * Grants permission to associate WAF WebACL to the specified load balancer
    *
-   * Access Level: Permissions management
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
    */
@@ -284,9 +288,13 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete WebAcl association to WAF
+   * Grants permission to disassociate WAF WebACL from the specified load balancer
    *
-   * Access Level: Permissions management
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
    */
@@ -486,9 +494,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe WebAcl association to WAF
+   * Grants permission to describe all load balancers associated to a WAF WebACL in your account
    *
-   * Access Level: Permissions management
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
    */
@@ -497,9 +505,13 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get Load Balancer WebAcl to WAF
+   * Grants permission to retrieve the WAF WebACL associated to the specified load balancer
    *
-   * Access Level: Permissions management
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL
    */
@@ -829,12 +841,14 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'CreateRule',
       'CreateTargetGroup',
       'CreateTrustStore',
+      'CreateWebACLAssociation',
       'DeleteListener',
       'DeleteLoadBalancer',
       'DeleteRule',
       'DeleteSharedTrustStoreAssociation',
       'DeleteTargetGroup',
       'DeleteTrustStore',
+      'DeleteWebACLAssociation',
       'DeregisterTargets',
       'ModifyCapacityReservation',
       'ModifyIpPools',
@@ -859,11 +873,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'RemoveTags'
     ],
     'Permissions management': [
-      'AllowVendedLogDeliveryForResource',
-      'CreateWebACLAssociation',
-      'DeleteWebACLAssociation',
-      'DescribeWebACLAssociation',
-      'GetLoadBalancerWebACL'
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'DescribeAccountLimits',
@@ -881,12 +891,14 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       'DescribeTrustStoreAssociations',
       'DescribeTrustStoreRevocations',
       'DescribeTrustStores',
+      'GetLoadBalancerWebACL',
       'GetResourcePolicy',
       'GetTrustStoreCaCertificatesBundle',
       'GetTrustStoreRevocationContent'
     ],
     List: [
-      'DescribeLoadBalancers'
+      'DescribeLoadBalancers',
+      'DescribeWebACLAssociation'
     ]
   };
 
@@ -1123,13 +1135,16 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toCreateRule()
    * - .toCreateTargetGroup()
    * - .toCreateTrustStore()
+   * - .toCreateWebACLAssociation()
    * - .toDeleteListener()
    * - .toDeleteLoadBalancer()
    * - .toDeleteRule()
    * - .toDeleteSharedTrustStoreAssociation()
    * - .toDeleteTargetGroup()
    * - .toDeleteTrustStore()
+   * - .toDeleteWebACLAssociation()
    * - .toDeregisterTargets()
+   * - .toGetLoadBalancerWebACL()
    * - .toGetResourcePolicy()
    * - .toGetTrustStoreCaCertificatesBundle()
    * - .toGetTrustStoreRevocationContent()
@@ -1236,13 +1251,16 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * - .toCreateRule()
    * - .toCreateTargetGroup()
    * - .toCreateTrustStore()
+   * - .toCreateWebACLAssociation()
    * - .toDeleteListener()
    * - .toDeleteLoadBalancer()
    * - .toDeleteRule()
    * - .toDeleteSharedTrustStoreAssociation()
    * - .toDeleteTargetGroup()
    * - .toDeleteTrustStore()
+   * - .toDeleteWebACLAssociation()
    * - .toDeregisterTargets()
+   * - .toGetLoadBalancerWebACL()
    * - .toGetResourcePolicy()
    * - .toGetTrustStoreCaCertificatesBundle()
    * - .toGetTrustStoreRevocationContent()

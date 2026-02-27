@@ -38,6 +38,7 @@ ec2:AttachApplianceToNatGateway;Permissions management
 ec2:AttachClassicLinkVpc;Write
 ec2:AttachInternetGateway;Write
 ec2:AttachNetworkInterface;Write
+ec2:AttachResourcesToPlacementGroup;Permissions management
 ec2:AttachVerifiedAccessTrustProvider;Write
 ec2:AttachVolume;Write
 ec2:AttachVpnGateway;Write
@@ -125,6 +126,8 @@ ec2:CreateRouteServer;Write
 ec2:CreateRouteServerEndpoint;Write
 ec2:CreateRouteServerPeer;Write
 ec2:CreateRouteTable;Write
+ec2:CreateSecondaryNetwork;Write
+ec2:CreateSecondarySubnet;Write
 ec2:CreateSecurityGroup;Write
 ec2:CreateSnapshot;Write
 ec2:CreateSnapshots;Write
@@ -221,6 +224,8 @@ ec2:DeleteRouteServer;Write
 ec2:DeleteRouteServerEndpoint;Write
 ec2:DeleteRouteServerPeer;Write
 ec2:DeleteRouteTable;Write
+ec2:DeleteSecondaryNetwork;Write
+ec2:DeleteSecondarySubnet;Write
 ec2:DeleteSecurityGroup;Write
 ec2:DeleteSnapshot;Write
 ec2:DeleteSpotDatafeedSubscription;Write
@@ -390,6 +395,9 @@ ec2:DescribeRouteServers;List
 ec2:DescribeRouteTables;List
 ec2:DescribeScheduledInstanceAvailability;List
 ec2:DescribeScheduledInstances;List
+ec2:DescribeSecondaryInterfaces;List
+ec2:DescribeSecondaryNetworks;List
+ec2:DescribeSecondarySubnets;List
 ec2:DescribeSecurityGroupReferences;List
 ec2:DescribeSecurityGroupRules;List
 ec2:DescribeSecurityGroupVpcAssociations;List
@@ -456,6 +464,7 @@ ec2:DetachApplianceFromNatGateway;Permissions management
 ec2:DetachClassicLinkVpc;Write
 ec2:DetachInternetGateway;Write
 ec2:DetachNetworkInterface;Write
+ec2:DetachResourcesFromPlacementGroup;Permissions management
 ec2:DetachVerifiedAccessTrustProvider;Write
 ec2:DetachVolume;Write
 ec2:DetachVpnGateway;Write

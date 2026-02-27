@@ -66,6 +66,9 @@ ec2:route-server
 ec2:route-server-endpoint
 ec2:route-server-peer
 ec2:route-table
+ec2:secondary-interface
+ec2:secondary-network
+ec2:secondary-subnet
 ec2:security-group
 ec2:security-group-rule
 ec2:snapshot

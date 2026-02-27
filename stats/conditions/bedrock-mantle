@@ -2,4 +2,7 @@ bedrock-mantle:BearerTokenType
 bedrock-mantle:Files
 bedrock-mantle:FineTuningJob
 bedrock-mantle:Model
+bedrock-mantle:RequestTag/${TagKey}
+bedrock-mantle:ResourceTag/${TagKey}
 bedrock-mantle:ServiceTier
+bedrock-mantle:TagKeys

@@ -314,6 +314,8 @@ export class Glue extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifLakeFormationPermissions()
    * - .ifFederatedAuthorizationSource()
    *
@@ -412,6 +414,8 @@ export class Glue extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    * - .ifLakeFormationPermissions()
    * - .ifFederatedAuthorizationSource()
    *
@@ -2784,6 +2788,8 @@ export class Glue extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
    */
@@ -3963,6 +3969,9 @@ export class Glue extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCatalog(catalogName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalogName }`);
@@ -3977,6 +3986,9 @@ export class Glue extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:database/${ databaseName }`);
@@ -4339,10 +4351,12 @@ export class Glue extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateBlueprint()
+   * - .toCreateCatalog()
    * - .toCreateConnection()
    * - .toCreateCrawler()
    * - .toCreateCustomEntityType()
    * - .toCreateDataQualityRuleset()
+   * - .toCreateDatabase()
    * - .toCreateDevEndpoint()
    * - .toCreateIntegration()
    * - .toCreateIntegrationResourceProperty()
@@ -4354,6 +4368,7 @@ export class Glue extends PolicyStatement {
    * - .toCreateTrigger()
    * - .toCreateUsageProfile()
    * - .toCreateWorkflow()
+   * - .toRegisterConnectionType()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -4376,6 +4391,8 @@ export class Glue extends PolicyStatement {
    * - .toRegisterConnectionType()
    *
    * Applies to resource types:
+   * - catalog
+   * - database
    * - connection
    * - devendpoint
    * - job
@@ -4409,10 +4426,12 @@ export class Glue extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateBlueprint()
+   * - .toCreateCatalog()
    * - .toCreateConnection()
    * - .toCreateCrawler()
    * - .toCreateCustomEntityType()
    * - .toCreateDataQualityRuleset()
+   * - .toCreateDatabase()
    * - .toCreateDevEndpoint()
    * - .toCreateIntegration()
    * - .toCreateIntegrationResourceProperty()
@@ -4424,6 +4443,7 @@ export class Glue extends PolicyStatement {
    * - .toCreateTrigger()
    * - .toCreateUsageProfile()
    * - .toCreateWorkflow()
+   * - .toRegisterConnectionType()
    * - .toTagResource()
    * - .toUntagResource()
    *

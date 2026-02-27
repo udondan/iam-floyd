@@ -594,6 +594,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach resources to a placement group
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/UserGuide/placement-groups.html
+   */
+  public toAttachResourcesToPlacementGroup() {
+    return this.to('AttachResourcesToPlacementGroup');
+  }
+
+  /**
    * Grants permission to attach a trust provider to a Verified Access instance
    *
    * Access Level: Write
@@ -2002,6 +2016,40 @@ export class Ec2 extends PolicyStatement {
    */
   public toCreateRouteTable() {
     return this.to('CreateRouteTable');
+  }
+
+  /**
+   * Grants permission to create a secondary network
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecondaryNetwork.html
+   */
+  public toCreateSecondaryNetwork() {
+    return this.to('CreateSecondaryNetwork');
+  }
+
+  /**
+   * Grants permission to create a secondary subnet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * Dependent actions:
+   * - ec2:CreateTags
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecondarySubnet.html
+   */
+  public toCreateSecondarySubnet() {
+    return this.to('CreateSecondarySubnet');
   }
 
   /**
@@ -3461,6 +3509,34 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteRouteTable() {
     return this.to('DeleteRouteTable');
+  }
+
+  /**
+   * Grants permission to delete a secondary network
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSecondaryNetwork.html
+   */
+  public toDeleteSecondaryNetwork() {
+    return this.to('DeleteSecondaryNetwork');
+  }
+
+  /**
+   * Grants permission to delete a secondary subnet
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSecondarySubnet.html
+   */
+  public toDeleteSecondarySubnet() {
+    return this.to('DeleteSecondarySubnet');
   }
 
   /**
@@ -5834,6 +5910,48 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe one or more secondary interfaces
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecondaryInterfaces.html
+   */
+  public toDescribeSecondaryInterfaces() {
+    return this.to('DescribeSecondaryInterfaces');
+  }
+
+  /**
+   * Grants permission to describe one or more secondary networks
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecondaryNetworks.html
+   */
+  public toDescribeSecondaryNetworks() {
+    return this.to('DescribeSecondaryNetworks');
+  }
+
+  /**
+   * Grants permission to describe one or more secondary subnets
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecondarySubnets.html
+   */
+  public toDescribeSecondarySubnets() {
+    return this.to('DescribeSecondarySubnets');
+  }
+
+  /**
    * Grants permission to describe the VPCs on the other side of a VPC peering connection that are referencing specified VPC security groups
    *
    * Access Level: List
@@ -6755,6 +6873,20 @@ export class Ec2 extends PolicyStatement {
    */
   public toDetachNetworkInterface() {
     return this.to('DetachNetworkInterface');
+  }
+
+  /**
+   * Grants permission to detach resources from a placement group
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/UserGuide/placement-groups.html
+   */
+  public toDetachResourcesFromPlacementGroup() {
+    return this.to('DetachResourcesFromPlacementGroup');
   }
 
   /**
@@ -11341,6 +11473,8 @@ export class Ec2 extends PolicyStatement {
       'CreateRouteServerEndpoint',
       'CreateRouteServerPeer',
       'CreateRouteTable',
+      'CreateSecondaryNetwork',
+      'CreateSecondarySubnet',
       'CreateSecurityGroup',
       'CreateSnapshot',
       'CreateSnapshots',
@@ -11431,6 +11565,8 @@ export class Ec2 extends PolicyStatement {
       'DeleteRouteServerEndpoint',
       'DeleteRouteServerPeer',
       'DeleteRouteTable',
+      'DeleteSecondaryNetwork',
+      'DeleteSecondarySubnet',
       'DeleteSecurityGroup',
       'DeleteSnapshot',
       'DeleteSpotDatafeedSubscription',
@@ -11707,6 +11843,7 @@ export class Ec2 extends PolicyStatement {
     ],
     'Permissions management': [
       'AttachApplianceToNatGateway',
+      'AttachResourcesToPlacementGroup',
       'CancelImageLaunchPermission',
       'CreateCoipPoolPermission',
       'CreateLocalGatewayRouteTablePermission',
@@ -11718,6 +11855,7 @@ export class Ec2 extends PolicyStatement {
       'DeleteOdbNetworkPeering',
       'DeleteResourcePolicy',
       'DetachApplianceFromNatGateway',
+      'DetachResourcesFromPlacementGroup',
       'DisableImageBlockPublicAccess',
       'DisableSnapshotBlockPublicAccess',
       'EnableImageBlockPublicAccess',
@@ -11855,6 +11993,9 @@ export class Ec2 extends PolicyStatement {
       'DescribeRouteTables',
       'DescribeScheduledInstanceAvailability',
       'DescribeScheduledInstances',
+      'DescribeSecondaryInterfaces',
+      'DescribeSecondaryNetworks',
+      'DescribeSecondarySubnets',
       'DescribeSecurityGroupReferences',
       'DescribeSecurityGroupRules',
       'DescribeSecurityGroupVpcAssociations',
@@ -13547,6 +13688,73 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type secondary-interface to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param secondaryInterfaceId - Identifier for the secondaryInterfaceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifAvailabilityZone()
+   * - .ifAvailabilityZoneId()
+   * - .ifIsLaunchTemplateResource()
+   * - .ifLaunchTemplate()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onSecondaryInterface(secondaryInterfaceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:secondary-interface/${ secondaryInterfaceId }`);
+  }
+
+  /**
+   * Adds a resource of type secondary-network to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param secondaryNetworkId - Identifier for the secondaryNetworkId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onSecondaryNetwork(secondaryNetworkId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:secondary-network/${ secondaryNetworkId }`);
+  }
+
+  /**
+   * Adds a resource of type secondary-subnet to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#EC2_ARN_Format
+   *
+   * @param secondarySubnetId - Identifier for the secondarySubnetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onSecondarySubnet(secondarySubnetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ec2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:secondary-subnet/${ secondarySubnetId }`);
+  }
+
+  /**
    * Adds a resource of type security-group to the statement
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html
@@ -14557,6 +14765,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateRouteServerEndpoint()
    * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
+   * - .toCreateSecondaryNetwork()
+   * - .toCreateSecondarySubnet()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -14667,6 +14877,9 @@ export class Ec2 extends PolicyStatement {
    * - route-server
    * - route-server-peer
    * - route-table
+   * - secondary-interface
+   * - secondary-network
+   * - secondary-subnet
    * - security-group
    * - security-group-rule
    * - snapshot
@@ -14754,6 +14967,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
+   * - .toAttachResourcesToPlacementGroup()
    * - .toAttachVerifiedAccessTrustProvider()
    * - .toAttachVolume()
    * - .toAttachVpnGateway()
@@ -14810,6 +15024,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateRouteServerEndpoint()
    * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
+   * - .toCreateSecondarySubnet()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -14898,6 +15113,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteRouteServerEndpoint()
    * - .toDeleteRouteServerPeer()
    * - .toDeleteRouteTable()
+   * - .toDeleteSecondaryNetwork()
+   * - .toDeleteSecondarySubnet()
    * - .toDeleteSecurityGroup()
    * - .toDeleteSnapshot()
    * - .toDeleteSubnet()
@@ -14962,6 +15179,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
+   * - .toDetachResourcesFromPlacementGroup()
    * - .toDetachVerifiedAccessTrustProvider()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
@@ -15268,6 +15486,9 @@ export class Ec2 extends PolicyStatement {
    * - route-server
    * - route-server-peer
    * - route-table
+   * - secondary-interface
+   * - secondary-network
+   * - secondary-subnet
    * - security-group
    * - security-group-rule
    * - snapshot
@@ -15380,6 +15601,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateRouteServerEndpoint()
    * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
+   * - .toCreateSecondaryNetwork()
+   * - .toCreateSecondarySubnet()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -15490,6 +15713,9 @@ export class Ec2 extends PolicyStatement {
    * - route-server
    * - route-server-peer
    * - route-table
+   * - secondary-interface
+   * - secondary-network
+   * - secondary-subnet
    * - security-group
    * - security-group-rule
    * - snapshot
@@ -16123,6 +16349,7 @@ export class Ec2 extends PolicyStatement {
    * - reserved-instances
    * - route-server-endpoint
    * - route-server-peer
+   * - secondary-interface
    * - snapshot
    * - subnet
    * - volume
@@ -16234,6 +16461,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to resource types:
    * - capacity-reservation
    * - instance
+   * - secondary-interface
    * - subnet
    * - volume
    *
@@ -17809,6 +18037,7 @@ export class Ec2 extends PolicyStatement {
    * - launch-template
    * - network-interface
    * - placement-group
+   * - secondary-interface
    * - security-group
    * - snapshot
    * - subnet
@@ -17902,6 +18131,7 @@ export class Ec2 extends PolicyStatement {
    * - launch-template
    * - network-interface
    * - placement-group
+   * - secondary-interface
    * - security-group
    * - snapshot
    * - subnet
@@ -18765,11 +18995,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the name of a placement group
    *
    * Applies to actions:
+   * - .toAttachResourcesToPlacementGroup()
    * - .toCreateFleet()
    * - .toCreatePlacementGroup()
    * - .toCreateTags()
    * - .toDeletePlacementGroup()
    * - .toDeleteResourcePolicy()
+   * - .toDetachResourcesFromPlacementGroup()
    * - .toGetResourcePolicy()
    * - .toModifyInstancePlacement()
    * - .toPutResourcePolicy()
@@ -18793,11 +19025,13 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAttachResourcesToPlacementGroup()
    * - .toCreateFleet()
    * - .toCreatePlacementGroup()
    * - .toCreateTags()
    * - .toDeletePlacementGroup()
    * - .toDeleteResourcePolicy()
+   * - .toDetachResourcesFromPlacementGroup()
    * - .toGetResourcePolicy()
    * - .toModifyInstancePlacement()
    * - .toPutResourcePolicy()
@@ -19011,6 +19245,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
+   * - .toAttachResourcesToPlacementGroup()
    * - .toAttachVerifiedAccessTrustProvider()
    * - .toAttachVolume()
    * - .toAttachVpnGateway()
@@ -19098,6 +19333,8 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateRouteServerEndpoint()
    * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
+   * - .toCreateSecondaryNetwork()
+   * - .toCreateSecondarySubnet()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -19194,6 +19431,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteRouteServerEndpoint()
    * - .toDeleteRouteServerPeer()
    * - .toDeleteRouteTable()
+   * - .toDeleteSecondaryNetwork()
+   * - .toDeleteSecondarySubnet()
    * - .toDeleteSecurityGroup()
    * - .toDeleteSnapshot()
    * - .toDeleteSpotDatafeedSubscription()
@@ -19363,6 +19602,9 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeRouteTables()
    * - .toDescribeScheduledInstanceAvailability()
    * - .toDescribeScheduledInstances()
+   * - .toDescribeSecondaryInterfaces()
+   * - .toDescribeSecondaryNetworks()
+   * - .toDescribeSecondarySubnets()
    * - .toDescribeSecurityGroupReferences()
    * - .toDescribeSecurityGroupRules()
    * - .toDescribeSecurityGroupVpcAssociations()
@@ -19429,6 +19671,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
+   * - .toDetachResourcesFromPlacementGroup()
    * - .toDetachVerifiedAccessTrustProvider()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
@@ -19807,6 +20050,9 @@ export class Ec2 extends PolicyStatement {
    * - route-server
    * - route-server-peer
    * - route-table
+   * - secondary-interface
+   * - secondary-network
+   * - secondary-subnet
    * - security-group
    * - security-group-rule
    * - snapshot
@@ -20037,6 +20283,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAttachClassicLinkVpc()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
+   * - .toAttachResourcesToPlacementGroup()
    * - .toAttachVerifiedAccessTrustProvider()
    * - .toAttachVolume()
    * - .toAttachVpnGateway()
@@ -20092,6 +20339,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateRouteServerEndpoint()
    * - .toCreateRouteServerPeer()
    * - .toCreateRouteTable()
+   * - .toCreateSecondarySubnet()
    * - .toCreateSecurityGroup()
    * - .toCreateSnapshot()
    * - .toCreateSnapshots()
@@ -20180,6 +20428,8 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteRouteServerEndpoint()
    * - .toDeleteRouteServerPeer()
    * - .toDeleteRouteTable()
+   * - .toDeleteSecondaryNetwork()
+   * - .toDeleteSecondarySubnet()
    * - .toDeleteSecurityGroup()
    * - .toDeleteSnapshot()
    * - .toDeleteSubnet()
@@ -20244,6 +20494,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDetachClassicLinkVpc()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
+   * - .toDetachResourcesFromPlacementGroup()
    * - .toDetachVerifiedAccessTrustProvider()
    * - .toDetachVolume()
    * - .toDetachVpnGateway()
@@ -20547,6 +20798,9 @@ export class Ec2 extends PolicyStatement {
    * - route-server
    * - route-server-peer
    * - route-table
+   * - secondary-interface
+   * - secondary-network
+   * - secondary-subnet
    * - security-group
    * - security-group-rule
    * - snapshot
