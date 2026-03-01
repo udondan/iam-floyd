@@ -1,6 +1,8 @@
+aidevops:AllowVendedLogDeliveryForResource;Permissions management
 aidevops:AssociateService;Write
 aidevops:CreateAgentSpace;Write
 aidevops:CreateBacklogTask;Write
+aidevops:CreateChat;Write
 aidevops:CreateKnowledgeItem;Write
 aidevops:CreateOneTimeLoginSession;Write
 aidevops:DeleteAgentSpace;Write
@@ -26,6 +28,7 @@ aidevops:InitiateServiceRegistration;Read
 aidevops:ListAgentSpaces;List
 aidevops:ListAssociations;List
 aidevops:ListBacklogTasks;List
+aidevops:ListChats;List
 aidevops:ListExecutions;List
 aidevops:ListGoals;List
 aidevops:ListJournalRecords;List
@@ -37,9 +40,11 @@ aidevops:ListWebhooks;List
 aidevops:RegisterService;Write
 aidevops:SearchServiceAccessibleResource;Read
 aidevops:SendChatMessage;Write
+aidevops:StreamMessage;Write
 aidevops:UpdateAgentSpace;Write
 aidevops:UpdateAssociation;Write
 aidevops:UpdateBacklogTask;Write
+aidevops:UpdateGoal;Write
 aidevops:UpdateKnowledgeItem;Write
 aidevops:UpdateOperatorAppTeams;Write
 aidevops:UpdateRecommendation;Write

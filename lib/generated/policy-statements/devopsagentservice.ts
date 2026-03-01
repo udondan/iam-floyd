@@ -19,6 +19,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to authorize vended logs
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to associate service
    *
    * Access Level: Write
@@ -49,6 +60,17 @@ export class Aidevops extends PolicyStatement {
    */
   public toCreateBacklogTask() {
     return this.to('CreateBacklogTask');
+  }
+
+  /**
+   * Grants permission to create a new chat session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toCreateChat() {
+    return this.to('CreateChat');
   }
 
   /**
@@ -327,6 +349,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list existing chat sessions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toListChats() {
+    return this.to('ListChats');
+  }
+
+  /**
    * Grants permission to list executions
    *
    * Access Level: List
@@ -448,6 +481,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke an agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toStreamMessage() {
+    return this.to('StreamMessage');
+  }
+
+  /**
    * Grants permission to update agentspace
    *
    * Access Level: Write
@@ -478,6 +522,17 @@ export class Aidevops extends PolicyStatement {
    */
   public toUpdateBacklogTask() {
     return this.to('UpdateBacklogTask');
+  }
+
+  /**
+   * Grants permission to update a goal
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toUpdateGoal() {
+    return this.to('UpdateGoal');
   }
 
   /**
@@ -514,10 +569,14 @@ export class Aidevops extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Write: [
       'AssociateService',
       'CreateAgentSpace',
       'CreateBacklogTask',
+      'CreateChat',
       'CreateKnowledgeItem',
       'CreateOneTimeLoginSession',
       'DeleteAgentSpace',
@@ -532,9 +591,11 @@ export class Aidevops extends PolicyStatement {
       'InitiateChatForCase',
       'RegisterService',
       'SendChatMessage',
+      'StreamMessage',
       'UpdateAgentSpace',
       'UpdateAssociation',
       'UpdateBacklogTask',
+      'UpdateGoal',
       'UpdateKnowledgeItem',
       'UpdateOperatorAppTeams',
       'UpdateRecommendation'
@@ -556,6 +617,7 @@ export class Aidevops extends PolicyStatement {
       'ListAgentSpaces',
       'ListAssociations',
       'ListBacklogTasks',
+      'ListChats',
       'ListExecutions',
       'ListGoals',
       'ListJournalRecords',
