@@ -641,7 +641,8 @@
             "redshift-serverless.amazonaws.com",
             "redshift.amazonaws.com",
             "emr-serverless.amazonaws.com",
-            "airflow.amazonaws.com"
+            "airflow.amazonaws.com",
+            "athena.amazonaws.com"
           ]
         }
       }

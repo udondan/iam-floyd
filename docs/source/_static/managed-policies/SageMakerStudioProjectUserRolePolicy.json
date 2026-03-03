@@ -2,7 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "CommonUserCodeCommitPermissions",
+      "Sid": "CodeCommit",
       "Effect": "Allow",
       "Action": [
         "codecommit:BatchGetCommits",
@@ -75,7 +75,7 @@
       }
     },
     {
-      "Sid": "CodeCommitKmsPermissions",
+      "Sid": "CodeCommitKms",
       "Effect": "Allow",
       "Action": [
         "kms:ReEncryptFrom",
@@ -101,7 +101,7 @@
       }
     },
     {
-      "Sid": "AllowCodeWhispererGenerateRecommendations",
+      "Sid": "CodeWhisperer",
       "Effect": "Allow",
       "Action": [
         "codewhisperer:GenerateRecommendations"
@@ -829,10 +829,10 @@
       "Resource": "arn:aws:kms:*:*:key/${aws:PrincipalTag/DomainKmsKeyId}",
       "Condition": {
         "StringEquals": {
-          "kms:EncryptionContext:aws:datazone:domainId": "${aws:PrincipalTag/AmazonDataZoneDomain}",
-          "kms:ViaService": [
-            "datazone.*.amazonaws.com"
-          ]
+          "kms:EncryptionContext:aws:datazone:domainId": "${aws:PrincipalTag/AmazonDataZoneDomain}"
+        },
+        "StringLike": {
+          "kms:ViaService": "datazone.*.amazonaws.com"
         }
       }
     },
@@ -1325,6 +1325,7 @@
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": [
+            "airflow-serverless.amazonaws.com",
             "sagemaker.amazonaws.com",
             "glue.amazonaws.com",
             "airflow.amazonaws.com",
@@ -1399,7 +1400,7 @@
       }
     },
     {
-      "Sid": "RedshiftDataActionsForResources",
+      "Sid": "RedshiftDataActions",
       "Effect": "Allow",
       "Action": [
         "redshift-data:BatchExecuteStatement",

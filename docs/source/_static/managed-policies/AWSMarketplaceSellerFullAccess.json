@@ -173,6 +173,15 @@
         "q:PassRequest"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "VerificationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:StartVerification",
+        "partnercentral:GetVerification"
+      ],
+      "Resource": "*"
     }
   ]
 }
