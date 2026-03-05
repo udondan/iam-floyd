@@ -4269,6 +4269,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSHealthImagingServiceRolePolicy);
     }
 
+    /** Managed Policy For Amazon HealthOmics Service Linked Role */
+    public AWSHealthOmicsServiceLinkedRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSHealthOmicsServiceLinkedRolePolicy);
+    }
+
     /** Provides the list of actions that are allowed for roles assumed with the IAM Identity Center identity context. AWS Security Token Service (AWS STS) automatically attaches this policy to assumed roles. The identity context is passed as ProvidedContext. */
     public AWSIAMIdentityCenterAllowListForIdentityContext(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIAMIdentityCenterAllowListForIdentityContext);
@@ -5907,6 +5912,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Enables the management of transformation resources and execution of transformations in AWS Transform custom. */
     public AWSTransformCustomManageTransformations(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformCustomManageTransformations);
+    }
+
+    /** Enables the AWS Transform service to read a specified SecretsManager Secret in connection to specified KMS key. This policy grants permissions to read the specified secret value and decrypt it is the secret is encrypted */
+    public AWSTransformSecretsManagerConnectorPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformSecretsManagerConnectorPolicy);
     }
 
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */
