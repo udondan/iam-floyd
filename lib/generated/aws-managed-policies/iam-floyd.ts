@@ -1704,6 +1704,8 @@ export class AwsManagedPolicy {
     public static AWSHealthImagingReadOnlyAccess = 'AWSHealthImagingReadOnlyAccess';
     /** Provides permissions for AWS HealthImaging to manage service operations and publish service metrics */
     public static AWSHealthImagingServiceRolePolicy = 'aws-service-role/AWSHealthImagingServiceRolePolicy';
+    /** Managed Policy For Amazon HealthOmics Service Linked Role */
+    public static AWSHealthOmicsServiceLinkedRolePolicy = 'aws-service-role/AWSHealthOmicsServiceLinkedRolePolicy';
     /** Provides the list of actions that are allowed for roles assumed with the IAM Identity Center identity context. AWS Security Token Service (AWS STS) automatically attaches this policy to assumed roles. The identity context is passed as ProvidedContext. */
     public static AWSIAMIdentityCenterAllowListForIdentityContext = 'AWSIAMIdentityCenterAllowListForIdentityContext';
     /** Provides access to manage IAM Identity Center users from an external provider. */
@@ -2360,6 +2362,8 @@ export class AwsManagedPolicy {
     public static AWSTransformCustomFullAccess = 'AWSTransformCustomFullAccess';
     /** Enables the management of transformation resources and execution of transformations in AWS Transform custom. */
     public static AWSTransformCustomManageTransformations = 'AWSTransformCustomManageTransformations';
+    /** Enables the AWS Transform service to read a specified SecretsManager Secret in connection to specified KMS key. This policy grants permissions to read the specified secret value and decrypt it is the secret is encrypted */
+    public static AWSTransformSecretsManagerConnectorPolicy = 'AWSTransformSecretsManagerConnectorPolicy';
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */
     public static AWSTrustedAdvisorPriorityFullAccess = 'AWSTrustedAdvisorPriorityFullAccess';
     /** Provides read-only access to AWS Trusted Advisor Priority. This includes permission to view the delegated administrator accounts. */
