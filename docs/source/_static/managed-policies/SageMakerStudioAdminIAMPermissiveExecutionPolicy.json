@@ -11,7 +11,8 @@
         "redshift-data:*",
         "redshift-serverless:*",
         "redshift:*",
-        "s3:*"
+        "s3:*",
+        "s3tables:*"
       ],
       "Resource": "*"
     },

@@ -461,6 +461,14 @@
           "kms:EncryptionContextKeys": "aws:datazone:domainId"
         }
       }
+    },
+    {
+      "Sid": "GlueCatalogPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetCatalog"
+      ],
+      "Resource": "*"
     }
   ]
 }

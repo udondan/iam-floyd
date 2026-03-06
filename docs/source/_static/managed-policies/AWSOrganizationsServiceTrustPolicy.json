@@ -18,6 +18,12 @@
         "iam:CreateServiceLinkedRole"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ListRolesSLR",
+      "Effect": "Allow",
+      "Action": "iam:ListRoles",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/*"
     }
   ]
 }
