@@ -27,6 +27,7 @@
         "ArnLike": {
           "iam:AssociatedResourceARN": [
             "arn:aws:ssm:*:*:document/AWSQuickSetupType-Scheduler-ChangeCalendarState",
+            "arn:aws:ssm:*:*:automation-execution/*",
             "arn:aws:ssm:*:*:automation-definition/AWSQuickSetupType-Scheduler-ChangeCalendarState*"
           ]
         }

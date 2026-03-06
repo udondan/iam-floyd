@@ -32,7 +32,10 @@
     {
       "Effect": "Allow",
       "Action": [
-        "profile:BatchGetProfile"
+        "profile:BatchGetProfile",
+        "profile:GetRecommender",
+        "profile:GetCalculatedAttributeForProfile",
+        "profile:GetProfileRecommendations"
       ],
       "Resource": "*"
     }
