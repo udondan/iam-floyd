@@ -453,6 +453,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInstanceId()
@@ -531,6 +532,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInstanceId()
@@ -847,6 +849,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateParticipant.html
@@ -861,6 +864,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePersistentContactAssociation.html
@@ -1173,6 +1177,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInstanceId()
@@ -1745,6 +1750,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -2520,6 +2526,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInstanceId()
@@ -2536,6 +2543,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -2798,6 +2806,7 @@ export class Connect extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListAssociatedContacts.html
@@ -2840,6 +2849,7 @@ export class Connect extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactEvaluations.html
@@ -2925,6 +2935,7 @@ export class Connect extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -3305,6 +3316,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/contact-lens/latest/APIReference/API_ListRealtimeContactAnalysisSegments.html
    */
   public toListRealtimeContactAnalysisSegments() {
@@ -3317,6 +3331,7 @@ export class Connect extends PolicyStatement {
    * Access Level: List
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifListRealtimeContactAnalysisSegmentsByOutputType()
    * - .ifListRealtimeContactAnalysisSegmentsBySegmentType()
    *
@@ -3765,6 +3780,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifContactAssociationId()
    * - .ifChannel()
    * - .ifUserArn()
@@ -3865,6 +3881,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Read
    *
    * Possible conditions:
+   * - .ifSearchTag()
    * - .ifInstanceId()
    * - .ifSearchContactsByContactAnalysis()
    * - .ifChannel()
@@ -4271,6 +4288,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInstanceId()
@@ -4305,6 +4323,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactEvaluation.html
@@ -4333,6 +4352,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifContactAssociationId()
    * - .ifChannel()
    * - .ifUserArn()
@@ -4347,6 +4367,9 @@ export class Connect extends PolicyStatement {
    * Grants permission to start chat streaming using the Amazon Connect API
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html
    */
@@ -4434,6 +4457,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -4512,6 +4536,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifContactAssociationId()
    * - .ifChannel()
    * - .ifUserArn()
@@ -4526,6 +4551,9 @@ export class Connect extends PolicyStatement {
    * Grants permission to stop chat streaming using the Amazon Connect API
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html
    */
@@ -4567,6 +4595,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifContactAssociationId()
    * - .ifChannel()
    * - .ifUserArn()
@@ -4583,6 +4612,8 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -4615,6 +4646,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -4632,6 +4664,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsTagKeys()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -4692,6 +4725,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -4709,6 +4743,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -4833,6 +4868,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -4850,6 +4886,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    * - .ifContactAssociationId()
    * - .ifChannel()
@@ -5049,6 +5086,7 @@ export class Connect extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateParticipantRoleConfig.html
@@ -6703,6 +6741,7 @@ export class Connect extends PolicyStatement {
    * - .toImportPhoneNumber()
    * - .toReplicateInstance()
    * - .toStartAttachedFileUpload()
+   * - .toTagContact()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -6732,16 +6771,21 @@ export class Connect extends PolicyStatement {
    * - .toBatchCreateDataTableValue()
    * - .toBatchDeleteDataTableValue()
    * - .toBatchDescribeDataTableValue()
+   * - .toBatchGetAttachedFileMetadata()
    * - .toBatchGetFlowAssociation()
    * - .toBatchUpdateDataTableValue()
+   * - .toCompleteAttachedFileUpload()
    * - .toCreateContact()
    * - .toCreateContactFlowModuleAlias()
    * - .toCreateContactFlowModuleVersion()
    * - .toCreateContactFlowVersion()
    * - .toCreateDataTable()
    * - .toCreateDataTableAttribute()
+   * - .toCreateParticipant()
+   * - .toCreatePersistentContactAssociation()
    * - .toCreateViewVersion()
    * - .toCreateWorkspacePage()
+   * - .toDeleteAttachedFile()
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
    * - .toDeleteContactFlowModule()
@@ -6771,6 +6815,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteWorkspaceMedia()
    * - .toDeleteWorkspacePage()
    * - .toDescribeAgentStatus()
+   * - .toDescribeContact()
    * - .toDescribeContactEvaluation()
    * - .toDescribeContactFlow()
    * - .toDescribeContactFlowModule()
@@ -6805,6 +6850,8 @@ export class Connect extends PolicyStatement {
    * - .toDisassociateWorkspace()
    * - .toDismissUserContact()
    * - .toEvaluateDataTableValues()
+   * - .toGetAttachedFile()
+   * - .toGetContactAttributes()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
    * - .toGetFlowAssociation()
@@ -6814,15 +6861,20 @@ export class Connect extends PolicyStatement {
    * - .toGetTaskTemplate()
    * - .toGetTrafficDistribution()
    * - .toImportWorkspaceMedia()
+   * - .toListAssociatedContacts()
+   * - .toListContactEvaluations()
    * - .toListContactFlowModuleAliases()
    * - .toListContactFlowModuleVersions()
    * - .toListContactFlowVersions()
+   * - .toListContactReferences()
    * - .toListDataTableAttributes()
    * - .toListDataTablePrimaryValues()
    * - .toListDataTableValues()
    * - .toListEntitySecurityProfiles()
    * - .toListQueueEmailAddresses()
    * - .toListQueueQuickConnects()
+   * - .toListRealtimeContactAnalysisSegments()
+   * - .toListRealtimeContactAnalysisSegmentsV2()
    * - .toListRoutingProfileManualAssignmentQueues()
    * - .toListRoutingProfileQueues()
    * - .toListSecurityProfileApplications()
@@ -6839,24 +6891,39 @@ export class Connect extends PolicyStatement {
    * - .toPutUserStatus()
    * - .toReleasePhoneNumber()
    * - .toResumeContact()
+   * - .toResumeContactRecording()
    * - .toSearchResourceTags()
    * - .toSearchWorkspaceAssociations()
+   * - .toStartAttachedFileUpload()
+   * - .toStartContactEvaluation()
+   * - .toStartContactRecording()
+   * - .toStartContactStreaming()
    * - .toStartEmailContact()
    * - .toStartOutboundEmailContact()
+   * - .toStartScreenSharing()
    * - .toStartTaskContact()
+   * - .toStopContactRecording()
+   * - .toStopContactStreaming()
+   * - .toSuspendContactRecording()
+   * - .toTransferContact()
    * - .toUpdateAgentStatus()
+   * - .toUpdateContact()
+   * - .toUpdateContactAttributes()
    * - .toUpdateContactFlowContent()
    * - .toUpdateContactFlowMetadata()
    * - .toUpdateContactFlowModuleAlias()
    * - .toUpdateContactFlowModuleContent()
    * - .toUpdateContactFlowModuleMetadata()
    * - .toUpdateContactFlowName()
+   * - .toUpdateContactRoutingData()
+   * - .toUpdateContactSchedule()
    * - .toUpdateDataTableAttribute()
    * - .toUpdateDataTableMetadata()
    * - .toUpdateDataTablePrimaryValues()
    * - .toUpdateEmailAddressMetadata()
    * - .toUpdateHoursOfOperation()
    * - .toUpdateNotificationContent()
+   * - .toUpdateParticipantRoleConfig()
    * - .toUpdatePhoneNumber()
    * - .toUpdatePhoneNumberMetadata()
    * - .toUpdatePrompt()
@@ -6963,7 +7030,9 @@ export class Connect extends PolicyStatement {
    * - .toImportPhoneNumber()
    * - .toReplicateInstance()
    * - .toStartAttachedFileUpload()
+   * - .toTagContact()
    * - .toTagResource()
+   * - .toUntagContact()
    * - .toUntagResource()
    *
    * @param value The value(s) to check
@@ -7568,6 +7637,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchContactEvaluations()
    * - .toSearchContactFlowModules()
    * - .toSearchContactFlows()
+   * - .toSearchContacts()
    * - .toSearchDataTables()
    * - .toSearchEmailAddresses()
    * - .toSearchEvaluationForms()

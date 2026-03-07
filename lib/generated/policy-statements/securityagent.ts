@@ -151,6 +151,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve multiple target domains in a single request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetTargetDomains.html
+   */
+  public toBatchGetTargetDomains() {
+    return this.to('BatchGetTargetDomains');
+  }
+
+  /**
    * Grants permission to retrieve multiple security testing tasks in a single request
    *
    * Access Level: Read
@@ -276,6 +287,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a target domain record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreateTargetDomain.html
+   */
+  public toCreateTargetDomain() {
+    return this.to('CreateTargetDomain');
+  }
+
+  /**
    * Grants permission to delete an agent instance record
    *
    * Access Level: Write
@@ -386,6 +408,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a target domain record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_DeleteTargetDomain.html
+   */
+  public toDeleteTargetDomain() {
+    return this.to('DeleteTargetDomain');
+  }
+
+  /**
    * Grants permission to retrieve security findings for a penetration test or security testing tasks in a penetration test
    *
    * Access Level: Read
@@ -460,6 +493,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toGetDesignReviewArtifact() {
     return this.to('GetDesignReviewArtifact');
+  }
+
+  /**
+   * Grants permission to get feedback for a design review comment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_GetDesignReviewFeedback.html
+   */
+  public toGetDesignReviewFeedback() {
+    return this.to('GetDesignReviewFeedback');
   }
 
   /**
@@ -771,6 +815,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list target domains
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListTargetDomains.html
+   */
+  public toListTargetDomains() {
+    return this.to('ListTargetDomains');
+  }
+
+  /**
    * Grants permission to list security testing tasks associated with a pentest job
    *
    * Access Level: List
@@ -779,6 +834,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toListTasks() {
     return this.to('ListTasks');
+  }
+
+  /**
+   * Grants permission to submit feedback for a design review comment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_PutDesignReviewFeedback.html
+   */
+  public toPutDesignReviewFeedback() {
+    return this.to('PutDesignReviewFeedback');
   }
 
   /**
@@ -950,7 +1016,18 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to verify ownership for a registered target domain in an agent instance
+   * Grants permission to update a target domain record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateTargetDomain.html
+   */
+  public toUpdateTargetDomain() {
+    return this.to('UpdateTargetDomain');
+  }
+
+  /**
+   * Grants permission to verify ownership for a registered target domain
    *
    * Access Level: Write
    *
@@ -975,6 +1052,7 @@ export class Securityagent extends PolicyStatement {
       'CreateOneTimeLoginSession',
       'CreatePentest',
       'CreateSecurityRequirement',
+      'CreateTargetDomain',
       'DeleteAgentInstance',
       'DeleteAgentSpace',
       'DeleteApplication',
@@ -985,8 +1063,10 @@ export class Securityagent extends PolicyStatement {
       'DeleteIntegration',
       'DeleteMembership',
       'DeleteSecurityRequirement',
+      'DeleteTargetDomain',
       'HandleOneTimeLoginSession',
       'InitiateProviderRegistration',
+      'PutDesignReviewFeedback',
       'StartCodeRemediation',
       'StartPentestExecution',
       'StartPentestJob',
@@ -1002,6 +1082,7 @@ export class Securityagent extends PolicyStatement {
       'UpdateIntegratedResources',
       'UpdatePentest',
       'UpdateSecurityRequirement',
+      'UpdateTargetDomain',
       'VerifyTargetDomain'
     ],
     Read: [
@@ -1014,6 +1095,7 @@ export class Securityagent extends PolicyStatement {
       'BatchGetPentestJobs',
       'BatchGetPentests',
       'BatchGetSecurityTestContentMetadata',
+      'BatchGetTargetDomains',
       'BatchGetTasks',
       'DescribeFindings',
       'GetApplication',
@@ -1022,6 +1104,7 @@ export class Securityagent extends PolicyStatement {
       'GetControl',
       'GetDesignReview',
       'GetDesignReviewArtifact',
+      'GetDesignReviewFeedback',
       'GetDocReviewTask',
       'GetDocumentReview',
       'GetDocumentReviewArtifact',
@@ -1050,6 +1133,7 @@ export class Securityagent extends PolicyStatement {
       'ListPentests',
       'ListResourcesFromIntegration',
       'ListSecurityRequirements',
+      'ListTargetDomains',
       'ListTasks'
     ]
   };
@@ -1136,6 +1220,20 @@ export class Securityagent extends PolicyStatement {
    */
   public onAgentSpace(agentId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }`);
+  }
+
+  /**
+   * Adds a resource of type TargetDomain to the statement
+   *
+   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param targetDomainId - Identifier for the targetDomainId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTargetDomain(targetDomainId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target-domain/${ targetDomainId }`);
   }
 
   /**

@@ -18,6 +18,7 @@ mpa:ListSessions;List
 mpa:ListTagsForResource;List
 mpa:PutResourcePolicy;Permissions management
 mpa:StartActiveApprovalTeamDeletion;Write
+mpa:StartApprovalTeamBaseline;Write
 mpa:StartSession;Write
 mpa:TagResource;Tagging
 mpa:UntagResource;Tagging

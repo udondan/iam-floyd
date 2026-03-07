@@ -1,0 +1,6 @@
+health-agent:Agent
+health-agent:Domain
+health-agent:Integration
+health-agent:PatientInsightsJob
+health-agent:Session
+health-agent:Subscription

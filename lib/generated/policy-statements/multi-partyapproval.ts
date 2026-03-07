@@ -274,6 +274,20 @@ export class Mpa extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a baseline for an active approval team
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/mpa/latest/APIReference/API_StartApprovalTeamBaseline.html
+   */
+  public toStartApprovalTeamBaseline() {
+    return this.to('StartApprovalTeamBaseline');
+  }
+
+  /**
    * Grants permission to start an approval session
    *
    * Access Level: Write
@@ -342,6 +356,7 @@ export class Mpa extends PolicyStatement {
       'DeleteIdentitySource',
       'DeleteInactiveApprovalTeamVersion',
       'StartActiveApprovalTeamDeletion',
+      'StartApprovalTeamBaseline',
       'StartSession',
       'UpdateApprovalTeam'
     ],
@@ -455,6 +470,7 @@ export class Mpa extends PolicyStatement {
    * - .toGetIdentitySource()
    * - .toGetSession()
    * - .toStartActiveApprovalTeamDeletion()
+   * - .toStartApprovalTeamBaseline()
    * - .toStartSession()
    * - .toTagResource()
    * - .toUntagResource()

@@ -43,6 +43,7 @@ export { Comprehendmedical } from './policy-statements/comprehendmedical';
 export { Connect } from './policy-statements/connect';
 export { Cases } from './policy-statements/connectcases';
 export { Profile } from './policy-statements/connectcustomerprofiles';
+export { HealthAgent } from './policy-statements/connecthealth';
 export { ConnectCampaigns } from './policy-statements/connectoutboundcampaigns';
 export { Voiceid } from './policy-statements/connectvoiceid';
 export { Dlm } from './policy-statements/datalifecyclemanager';

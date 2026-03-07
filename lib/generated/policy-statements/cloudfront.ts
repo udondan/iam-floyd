@@ -161,6 +161,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - cloudfront:CreateConnectionGroup
    *
@@ -2430,6 +2434,7 @@ export class Cloudfront extends PolicyStatement {
    * - .toCreateAnycastIpList()
    * - .toCreateConnectionFunction()
    * - .toCreateConnectionGroup()
+   * - .toCreateDistribution()
    * - .toCreateDistributionTenant()
    * - .toCreateStreamingDistributionWithTags()
    * - .toCreateTrustStore()
@@ -2476,6 +2481,7 @@ export class Cloudfront extends PolicyStatement {
    * - .toCreateAnycastIpList()
    * - .toCreateConnectionFunction()
    * - .toCreateConnectionGroup()
+   * - .toCreateDistribution()
    * - .toCreateDistributionTenant()
    * - .toCreateStreamingDistributionWithTags()
    * - .toCreateTrustStore()
