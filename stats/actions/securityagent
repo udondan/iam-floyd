@@ -10,6 +10,7 @@ securityagent:BatchGetPentestJobTasks;Read
 securityagent:BatchGetPentestJobs;Read
 securityagent:BatchGetPentests;Read
 securityagent:BatchGetSecurityTestContentMetadata;Read
+securityagent:BatchGetTargetDomains;Read
 securityagent:BatchGetTasks;Read
 securityagent:CreateAgentInstance;Write
 securityagent:CreateAgentSpace;Write
@@ -21,6 +22,7 @@ securityagent:CreateMembership;Write
 securityagent:CreateOneTimeLoginSession;Write
 securityagent:CreatePentest;Write
 securityagent:CreateSecurityRequirement;Write
+securityagent:CreateTargetDomain;Write
 securityagent:DeleteAgentInstance;Write
 securityagent:DeleteAgentSpace;Write
 securityagent:DeleteApplication;Write
@@ -31,6 +33,7 @@ securityagent:DeleteDocumentReview;Write
 securityagent:DeleteIntegration;Write
 securityagent:DeleteMembership;Write
 securityagent:DeleteSecurityRequirement;Write
+securityagent:DeleteTargetDomain;Write
 securityagent:DescribeFindings;Read
 securityagent:GetApplication;Read
 securityagent:GetArtifact;Read
@@ -38,6 +41,7 @@ securityagent:GetCodeReviewTask;Read
 securityagent:GetControl;Read
 securityagent:GetDesignReview;Read
 securityagent:GetDesignReviewArtifact;Read
+securityagent:GetDesignReviewFeedback;Read
 securityagent:GetDocReviewTask;Read
 securityagent:GetDocumentReview;Read
 securityagent:GetDocumentReviewArtifact;Read
@@ -66,7 +70,9 @@ securityagent:ListPentestJobsForPentest;List
 securityagent:ListPentests;List
 securityagent:ListResourcesFromIntegration;List
 securityagent:ListSecurityRequirements;List
+securityagent:ListTargetDomains;List
 securityagent:ListTasks;List
+securityagent:PutDesignReviewFeedback;Write
 securityagent:StartCodeRemediation;Write
 securityagent:StartPentestExecution;Write
 securityagent:StartPentestJob;Write
@@ -82,4 +88,5 @@ securityagent:UpdateFinding;Write
 securityagent:UpdateIntegratedResources;Write
 securityagent:UpdatePentest;Write
 securityagent:UpdateSecurityRequirement;Write
+securityagent:UpdateTargetDomain;Write
 securityagent:VerifyTargetDomain;Write

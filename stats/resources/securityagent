@@ -9,3 +9,4 @@ securityagent:Pentest
 securityagent:PentestJob
 securityagent:PentestTask
 securityagent:SecurityRequirement
+securityagent:TargetDomain
