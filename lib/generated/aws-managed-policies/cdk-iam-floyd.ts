@@ -1959,6 +1959,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53FullAccess);
     }
 
+    /** Provides full access to retrieve, list, create, update, and delete all Amazon Route 53 Global Resolver resources. */
+    public AmazonRoute53GlobalResolverFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53GlobalResolverFullAccess);
+    }
+
+    /** Provides read only access to retrieve and list all Amazon Route 53 Global Resolver resources. */
+    public AmazonRoute53GlobalResolverReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53GlobalResolverReadOnlyAccess);
+    }
+
     /** This policy grants full access to Amazon Route 53 Profile resources. */
     public AmazonRoute53ProfilesFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53ProfilesFullAccess);
