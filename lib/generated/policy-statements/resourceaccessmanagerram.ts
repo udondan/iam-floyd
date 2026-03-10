@@ -46,6 +46,7 @@ export class Ram extends PolicyStatement {
    * - .ifPrincipal()
    * - .ifRequestedResourceType()
    * - .ifResourceArn()
+   * - .ifRetainSharingOnAccountLeaveOrganization()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceShare.html
    */
@@ -113,6 +114,7 @@ export class Ram extends PolicyStatement {
    * - .ifRequestedAllowsExternalPrincipals()
    * - .ifPrincipal()
    * - .ifAllowsExternalPrincipals()
+   * - .ifRetainSharingOnAccountLeaveOrganization()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html
    */
@@ -161,6 +163,7 @@ export class Ram extends PolicyStatement {
    * - .ifResourceTag()
    * - .ifResourceShareName()
    * - .ifAllowsExternalPrincipals()
+   * - .ifRetainSharingOnAccountLeaveOrganization()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DeleteResourceShare.html
    */
@@ -181,6 +184,7 @@ export class Ram extends PolicyStatement {
    * - .ifPrincipal()
    * - .ifRequestedResourceType()
    * - .ifResourceArn()
+   * - .ifRetainSharingOnAccountLeaveOrganization()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceShare.html
    */
@@ -359,6 +363,7 @@ export class Ram extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceShareName()
    * - .ifAllowsExternalPrincipals()
+   * - .ifRetainSharingOnAccountLeaveOrganization()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceSharePermissions.html
    */
@@ -386,6 +391,17 @@ export class Ram extends PolicyStatement {
    */
   public toListResources() {
     return this.to('ListResources');
+  }
+
+  /**
+   * Grants permission to list source associations for resource shares
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListSourceAssociations.html
+   */
+  public toListSourceAssociations() {
+    return this.to('ListSourceAssociations');
   }
 
   /**
@@ -499,6 +515,7 @@ export class Ram extends PolicyStatement {
    * - .ifResourceShareName()
    * - .ifAllowsExternalPrincipals()
    * - .ifRequestedAllowsExternalPrincipals()
+   * - .ifRetainSharingOnAccountLeaveOrganization()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UpdateResourceShare.html
    */
@@ -545,7 +562,8 @@ export class Ram extends PolicyStatement {
       'ListReplacePermissionAssociationsWork',
       'ListResourceSharePermissions',
       'ListResourceTypes',
-      'ListResources'
+      'ListResources',
+      'ListSourceAssociations'
     ],
     Tagging: [
       'TagResource',
@@ -872,6 +890,25 @@ export class Ram extends PolicyStatement {
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by RetainSharingOnAccountLeaveOrganization value within ResourceShareConfiguration that is set on resource share
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * Applies to actions:
+   * - .toAssociateResourceShare()
+   * - .toCreateResourceShare()
+   * - .toDeleteResourceShare()
+   * - .toDisassociateResourceShare()
+   * - .toListResourceSharePermissions()
+   * - .toUpdateResourceShare()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifRetainSharingOnAccountLeaveOrganization(value?: boolean) {
+    return this.if(`RetainSharingOnAccountLeaveOrganization`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

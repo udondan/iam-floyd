@@ -30,6 +30,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add a new secret to a confidential client
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddUserPoolClientSecret.html
+   */
+  public toAddUserPoolClientSecret() {
+    return this.to('AddUserPoolClientSecret');
+  }
+
+  /**
    * Grants permission to add any user to any group
    *
    * Access Level: Write
@@ -583,6 +594,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a secret from a list of secrets associated with a client
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClientSecret.html
+   */
+  public toDeleteUserPoolClientSecret() {
+    return this.to('DeleteUserPoolClientSecret');
+  }
+
+  /**
    * Grants permission to delete any user pool domain
    *
    * Access Level: Write
@@ -973,6 +995,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all secrets associated with a client
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClientSecrets.html
+   */
+  public toListUserPoolClientSecrets() {
+    return this.to('ListUserPoolClientSecrets');
+  }
+
+  /**
    * Grants permission to list all app clients in user pools
    *
    * Access Level: List
@@ -1327,6 +1360,7 @@ export class CognitoIdp extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddCustomAttributes',
+      'AddUserPoolClientSecret',
       'AdminAddUserToGroup',
       'AdminConfirmSignUp',
       'AdminCreateUser',
@@ -1372,6 +1406,7 @@ export class CognitoIdp extends PolicyStatement {
       'DeleteUserAttributes',
       'DeleteUserPool',
       'DeleteUserPoolClient',
+      'DeleteUserPoolClientSecret',
       'DeleteUserPoolDomain',
       'DisassociateWebACL',
       'ForgetDevice',
@@ -1442,6 +1477,7 @@ export class CognitoIdp extends PolicyStatement {
       'ListTagsForResource',
       'ListTerms',
       'ListUserImportJobs',
+      'ListUserPoolClientSecrets',
       'ListUserPoolClients',
       'ListUserPools',
       'ListUsers',
