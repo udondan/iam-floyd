@@ -780,6 +780,10 @@ export class AwsManagedPolicy {
     public static AmazonRoute53DomainsReadOnlyAccess = 'AmazonRoute53DomainsReadOnlyAccess';
     /** Provides full access to all Amazon Route 53 via the AWS Management Console. */
     public static AmazonRoute53FullAccess = 'AmazonRoute53FullAccess';
+    /** Provides full access to retrieve, list, create, update, and delete all Amazon Route 53 Global Resolver resources. */
+    public static AmazonRoute53GlobalResolverFullAccess = 'AmazonRoute53GlobalResolverFullAccess';
+    /** Provides read only access to retrieve and list all Amazon Route 53 Global Resolver resources. */
+    public static AmazonRoute53GlobalResolverReadOnlyAccess = 'AmazonRoute53GlobalResolverReadOnlyAccess';
     /** This policy grants full access to Amazon Route 53 Profile resources. */
     public static AmazonRoute53ProfilesFullAccess = 'AmazonRoute53ProfilesFullAccess';
     /** This policy grants read-only access to Amazon Route 53 Profile resources. */
