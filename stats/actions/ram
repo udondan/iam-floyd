@@ -24,6 +24,7 @@ ram:ListReplacePermissionAssociationsWork;List
 ram:ListResourceSharePermissions;List
 ram:ListResourceTypes;List
 ram:ListResources;List
+ram:ListSourceAssociations;List
 ram:PromotePermissionCreatedFromPolicy;Write
 ram:PromoteResourceShareCreatedFromPolicy;Write
 ram:RejectResourceShareInvitation;Write

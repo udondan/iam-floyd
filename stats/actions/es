@@ -97,6 +97,8 @@ es:RejectInboundConnection;Write
 es:RejectInboundCrossClusterSearchConnection;Write
 es:RemoveTags;Tagging
 es:RevokeVpcEndpointAccess;Write
+es:RollbackElasticsearchServiceSoftwareUpdate;Write
+es:RollbackServiceSoftwareUpdate;Write
 es:StartDomainMaintenance;Write
 es:StartElasticsearchServiceSoftwareUpdate;Write
 es:StartServiceSoftwareUpdate;Write

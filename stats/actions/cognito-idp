@@ -1,4 +1,5 @@
 cognito-idp:AddCustomAttributes;Write
+cognito-idp:AddUserPoolClientSecret;Write
 cognito-idp:AdminAddUserToGroup;Write
 cognito-idp:AdminConfirmSignUp;Write
 cognito-idp:AdminCreateUser;Write
@@ -49,6 +50,7 @@ cognito-idp:DeleteUser;Write
 cognito-idp:DeleteUserAttributes;Write
 cognito-idp:DeleteUserPool;Write
 cognito-idp:DeleteUserPoolClient;Write
+cognito-idp:DeleteUserPoolClientSecret;Write
 cognito-idp:DeleteUserPoolDomain;Write
 cognito-idp:DescribeIdentityProvider;Read
 cognito-idp:DescribeManagedLoginBranding;Read
@@ -85,6 +87,7 @@ cognito-idp:ListResourcesForWebACL;List
 cognito-idp:ListTagsForResource;List
 cognito-idp:ListTerms;List
 cognito-idp:ListUserImportJobs;List
+cognito-idp:ListUserPoolClientSecrets;List
 cognito-idp:ListUserPoolClients;List
 cognito-idp:ListUserPools;List
 cognito-idp:ListUsers;List

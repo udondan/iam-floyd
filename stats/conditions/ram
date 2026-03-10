@@ -8,5 +8,6 @@ ram:RequestedResourceType
 ram:ResourceArn
 ram:ResourceShareName
 ram:ResourceTag/${TagKey}
+ram:RetainSharingOnAccountLeaveOrganization
 ram:ShareOwnerAccountId
 ram:TagKeys

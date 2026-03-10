@@ -4010,13 +4010,14 @@ export class Chime extends PolicyStatement {
    *
    * @param meetingId - Identifier for the meetingId.
    * @param accountId - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onMeeting(meetingId: string, accountId?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:chime::${ accountId ?? this.defaultAccount }:meeting/${ meetingId }`);
+  public onMeeting(meetingId: string, accountId?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:chime:${ region ?? this.defaultRegion }:${ accountId ?? this.defaultAccount }:meeting/${ meetingId }`);
   }
 
   /**

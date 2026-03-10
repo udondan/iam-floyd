@@ -1131,6 +1131,28 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to rollback a service software update of an elasticsearch domain to its previous version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RollbackServiceSoftwareUpdate.html
+   */
+  public toRollbackElasticsearchServiceSoftwareUpdate() {
+    return this.to('RollbackElasticsearchServiceSoftwareUpdate');
+  }
+
+  /**
+   * Grants permission to rollback a service software update of an opensearch domain to its previous version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RollbackServiceSoftwareUpdate.html
+   */
+  public toRollbackServiceSoftwareUpdate() {
+    return this.to('RollbackServiceSoftwareUpdate');
+  }
+
+  /**
    * Grants permission to initiate the maintenance on the node
    *
    * Access Level: Write
@@ -1341,6 +1363,8 @@ export class Es extends PolicyStatement {
       'RejectInboundConnection',
       'RejectInboundCrossClusterSearchConnection',
       'RevokeVpcEndpointAccess',
+      'RollbackElasticsearchServiceSoftwareUpdate',
+      'RollbackServiceSoftwareUpdate',
       'StartDomainMaintenance',
       'StartElasticsearchServiceSoftwareUpdate',
       'StartServiceSoftwareUpdate',
