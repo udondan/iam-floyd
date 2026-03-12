@@ -1770,7 +1770,8 @@
         "arn:aws:iam::*:role/aws-service-role/ops.emr-serverless.amazonaws.com/AWSServiceRoleForAmazonEMRServerless",
         "arn:aws:iam::*:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
         "arn:aws:iam::*:role/aws-service-role/elasticmapreduce.amazonaws.com/AWSServiceRoleForEMRCleanup",
-        "arn:aws:iam::*:role/aws-service-role/emr-containers.amazonaws.com/AWSServiceRoleForAmazonEMRContainers"
+        "arn:aws:iam::*:role/aws-service-role/emr-containers.amazonaws.com/AWSServiceRoleForAmazonEMRContainers",
+        "arn:aws:iam::*:role/aws-service-role/ops.athena.amazonaws.com/AWSServiceRoleForAmazonAthena"
       ]
     },
     {

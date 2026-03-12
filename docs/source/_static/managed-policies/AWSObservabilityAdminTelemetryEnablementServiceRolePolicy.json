@@ -9,7 +9,9 @@
         "ec2:DescribeVpcs",
         "logs:DescribeLogGroups",
         "logs:DescribeResourcePolicies",
-        "logs:ListLogGroups"
+        "logs:ListLogGroups",
+        "ec2:MonitorInstances",
+        "logs:DescribeDeliverySources"
       ],
       "Resource": "*",
       "Condition": {
