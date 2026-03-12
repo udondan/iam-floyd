@@ -898,7 +898,15 @@
       "Effect": "Allow",
       "Action": [
         "emr-serverless:ListApplications",
-        "emr-serverless:GetApplication"
+        "emr-serverless:GetApplication",
+        "emr-serverless:GetDashboardForJobRun",
+        "emr-serverless:GetJobRun",
+        "emr-serverless:ListJobRunAttempts",
+        "emr-serverless:ListJobRuns",
+        "emr-serverless:ListTagsForResource",
+        "emr-serverless:StartApplication",
+        "emr-serverless:StartJobRun",
+        "emr-serverless:AccessLivyEndpoints"
       ],
       "Resource": "*"
     }

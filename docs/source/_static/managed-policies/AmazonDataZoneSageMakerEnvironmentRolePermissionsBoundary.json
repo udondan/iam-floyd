@@ -1183,6 +1183,14 @@
         "sso:AssociateProfile"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "DenyUpdateNotebookInstanceLifecycleConfig",
+      "Effect": "Deny",
+      "Action": [
+        "sagemaker:UpdateNotebookInstanceLifecycleConfig"
+      ],
+      "Resource": "*"
     }
   ]
 }
