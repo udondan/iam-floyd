@@ -15,6 +15,22 @@
       }
     },
     {
+      "Sid": "PartnerCentralAgentsSandboxSessionAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:UseSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": "Sandbox"
+        },
+        "Bool": {
+          "aws:IsMcpServiceAction": "true"
+        }
+      }
+    },
+    {
       "Sid": "PassAWSPartnerCentralSnapshotJobRole",
       "Effect": "Allow",
       "Action": [

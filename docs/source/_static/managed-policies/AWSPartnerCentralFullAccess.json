@@ -159,6 +159,25 @@
         "q:PassRequest"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "PartnerCentralAgentsSessionAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:UseSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        },
+        "Bool": {
+          "aws:IsMcpServiceAction": "true"
+        }
+      }
     }
   ]
 }

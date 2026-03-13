@@ -49,6 +49,33 @@
         "arn:aws:elasticbeanstalk:*:*:application/*",
         "arn:aws:elasticbeanstalk:*:*:environment/*"
       ]
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisInvokeFoundationModel",
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeModel",
+      "Resource": "arn:aws:bedrock:*::foundation-model/anthropic.claude-*"
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisInvokeInferenceProfile",
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeModel",
+      "Resource": "arn:aws:bedrock:*:*:inference-profile/*anthropic.claude-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AIEnvironmentAnalysisReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:ListFoundationModels",
+        "elasticbeanstalk:DescribeEvents",
+        "elasticbeanstalk:DescribeEnvironmentHealth"
+      ],
+      "Resource": "*"
     }
   ]
 }
