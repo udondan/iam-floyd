@@ -133,6 +133,25 @@
         "s3:PutObject"
       ],
       "Resource": "arn:aws:s3:::aws-partner-central-marketplace-ephemeral-writeonly-files/${aws:PrincipalAccount}/*"
+    },
+    {
+      "Sid": "PartnerCentralAgentsSessionAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:UseSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        },
+        "Bool": {
+          "aws:IsMcpServiceAction": "true"
+        }
+      }
     }
   ]
 }
