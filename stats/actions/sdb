@@ -5,6 +5,9 @@ sdb:DeleteAttributes;Write
 sdb:DeleteDomain;Write
 sdb:DomainMetadata;Read
 sdb:GetAttributes;Read
+sdb:GetExport;Read
 sdb:ListDomains;List
+sdb:ListExports;List
 sdb:PutAttributes;Write
 sdb:Select;Read
+sdb:StartDomainExport;Write

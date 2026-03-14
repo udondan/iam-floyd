@@ -108,3 +108,4 @@ partnercentral:UpdateEngagementContext;Write
 partnercentral:UpdateOpportunity;Write
 partnercentral:UpdateProgramManagementAccount;Write
 partnercentral:UpdateRelationship;Write
+partnercentral:UseSession;Write
