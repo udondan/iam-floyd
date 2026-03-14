@@ -1058,6 +1058,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get notebook exports
+   *
+   * Access Level: Read
+   */
+  public toGetNotebookExport() {
+    return this.to('GetNotebookExport');
+  }
+
+  /**
    * Grants permission to get Project details
    *
    * Access Level: Read
@@ -1778,6 +1787,24 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export notebooks
+   *
+   * Access Level: Write
+   */
+  public toStartNotebookExport() {
+    return this.to('StartNotebookExport');
+  }
+
+  /**
+   * Grants permission to import notebooks
+   *
+   * Access Level: Write
+   */
+  public toStartNotebookImport() {
+    return this.to('StartNotebookImport');
+  }
+
+  /**
    * Grants permission to stop metadata generation run
    *
    * Access Level: Write
@@ -2157,6 +2184,8 @@ export class Datazone extends PolicyStatement {
       'StartDataSourceRun',
       'StartMetadataGenerationRun',
       'StartNotebookCompute',
+      'StartNotebookExport',
+      'StartNotebookImport',
       'StopMetadataGenerationRun',
       'StopNotebookCompute',
       'UpdateAccountPool',
@@ -2234,6 +2263,7 @@ export class Datazone extends PolicyStatement {
       'GetMetadataGenerationRun',
       'GetNotebook',
       'GetNotebookCompute',
+      'GetNotebookExport',
       'GetProject',
       'GetProjectProfile',
       'GetRule',

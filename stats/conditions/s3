@@ -38,6 +38,7 @@ s3:signatureAge
 s3:signatureversion
 s3:versionid
 s3:x-amz-acl
+s3:x-amz-bucket-namespace
 s3:x-amz-content-sha256
 s3:x-amz-copy-source
 s3:x-amz-grant-full-control

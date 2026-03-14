@@ -1617,6 +1617,18 @@ export class Partnercentral extends PolicyStatement {
     return this.to('UpdateRelationship');
   }
 
+  /**
+   * Grants permission to use Partner Central Agents sessions in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   */
+  public toUseSession() {
+    return this.to('UseSession');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptChannelHandshake',
@@ -1677,7 +1689,8 @@ export class Partnercentral extends PolicyStatement {
       'UpdateEngagementContext',
       'UpdateOpportunity',
       'UpdateProgramManagementAccount',
-      'UpdateRelationship'
+      'UpdateRelationship',
+      'UseSession'
     ],
     Read: [
       'GetAllianceLeadContact',
@@ -2272,6 +2285,7 @@ export class Partnercentral extends PolicyStatement {
    * - .toUpdateOpportunity()
    * - .toUpdateProgramManagementAccount()
    * - .toUpdateRelationship()
+   * - .toUseSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

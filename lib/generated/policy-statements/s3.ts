@@ -229,6 +229,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzGrantReadAcp()
    * - .ifXAmzGrantWrite()
    * - .ifXAmzGrantWriteAcp()
+   * - .ifXAmzBucketNamespace()
    * - .ifXAmzObjectOwnership()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
@@ -5575,6 +5576,21 @@ export class S3 extends PolicyStatement {
    */
   public ifXAmzAcl(value: string | string[], operator?: Operator | string) {
     return this.if(`x-amz-acl`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by general purpose bucket namespace type
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/gpbucketnamespaces.html
+   *
+   * Applies to actions:
+   * - .toCreateBucket()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifXAmzBucketNamespace(value: string | string[], operator?: Operator | string) {
+    return this.if(`x-amz-bucket-namespace`, value, operator ?? 'StringLike');
   }
 
   /**

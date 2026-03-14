@@ -163,17 +163,6 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a routing control
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol-routingcontrolarn.html
-   */
-  public toDescribeRoutingControlByName() {
-    return this.to('DescribeRoutingControlByName');
-  }
-
-  /**
    * Grants permission to describe a safety rule
    *
    * Access Level: Read
@@ -368,7 +357,6 @@ export class Route53RecoveryControlConfig extends PolicyStatement {
       'DescribeCluster',
       'DescribeControlPanel',
       'DescribeRoutingControl',
-      'DescribeRoutingControlByName',
       'DescribeSafetyRule',
       'GetResourcePolicy',
       'ListClusters',

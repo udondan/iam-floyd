@@ -113,6 +113,7 @@ datazone:GetListing;Read
 datazone:GetMetadataGenerationRun;Read
 datazone:GetNotebook;Read
 datazone:GetNotebookCompute;Read
+datazone:GetNotebookExport;Read
 datazone:GetProject;Read
 datazone:GetProjectProfile;Read
 datazone:GetRule;Read
@@ -193,6 +194,8 @@ datazone:StartConversation;Write
 datazone:StartDataSourceRun;Write
 datazone:StartMetadataGenerationRun;Write
 datazone:StartNotebookCompute;Write
+datazone:StartNotebookExport;Write
+datazone:StartNotebookImport;Write
 datazone:StopMetadataGenerationRun;Write
 datazone:StopNotebookCompute;Write
 datazone:TagResource;Tagging
