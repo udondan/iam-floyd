@@ -5,9 +5,9 @@
       "Sid": "AllowPassRoleToElasticBeanstalkAndDownstreamServices",
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "*",
+      "Resource": "arn:aws:iam::*:role/*",
       "Condition": {
-        "StringLikeIfExists": {
+        "StringEquals": {
           "iam:PassedToService": [
             "elasticbeanstalk.amazonaws.com",
             "ec2.amazonaws.com",
@@ -219,6 +219,21 @@
         "StringEquals": {
           "ecs:CreateAction": [
             "RegisterTaskDefinition"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "LaunchTemplateTagPropagationPermissions",
+      "Effect": "Allow",
+      "Action": "ec2:createTags",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "CreateLaunchTemplate",
+            "RunInstances",
+            "AllocateAddress"
           ]
         }
       }

@@ -1184,11 +1184,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonGrafanaServiceLinkedRolePolicy);
     }
 
-    /** Provides full access to use Amazon GuardDuty. */
-    public AmazonGuardDutyFullAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonGuardDutyFullAccess);
-    }
-
     /** Provides full access to use Amazon GuardDuty */
     public AmazonGuardDutyFullAccessV2(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonGuardDutyFullAccessV2);
