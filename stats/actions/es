@@ -68,6 +68,7 @@ es:GetApplication;Read
 es:GetCompatibleElasticsearchVersions;List
 es:GetCompatibleVersions;List
 es:GetDataSource;Read
+es:GetDefaultApplicationSetting;Read
 es:GetDirectQueryDataSource;Read
 es:GetDomainMaintenanceStatus;Read
 es:GetIndex;Read
@@ -93,6 +94,7 @@ es:ListVpcEndpoints;List
 es:ListVpcEndpointsForDomain;List
 es:PurchaseReservedElasticsearchInstanceOffering;Write
 es:PurchaseReservedInstanceOffering;Write
+es:PutDefaultApplicationSetting;Write
 es:RejectInboundConnection;Write
 es:RejectInboundCrossClusterSearchConnection;Write
 es:RemoveTags;Tagging

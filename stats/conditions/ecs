@@ -15,6 +15,7 @@ ecs:enable-execute-command
 ecs:enable-service-connect
 ecs:enable-vpc-lattice
 ecs:fargate-ephemeral-storage-kms-key
+ecs:instance-metadata-tags-propagation
 ecs:namespace
 ecs:privileged
 ecs:propagate-tags

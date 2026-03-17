@@ -809,6 +809,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the default application setting for OpenSearch Service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetDefaultApplicationSetting.html
+   */
+  public toGetDefaultApplicationSetting() {
+    return this.to('GetDefaultApplicationSetting');
+  }
+
+  /**
    * Grants permission to get the data source for the provided OpenSearch arns
    *
    * Access Level: Read
@@ -1081,6 +1092,17 @@ export class Es extends PolicyStatement {
    */
   public toPurchaseReservedInstanceOffering() {
     return this.to('PurchaseReservedInstanceOffering');
+  }
+
+  /**
+   * Grants permission to set or remove the default application setting for OpenSearch Service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_PutDefaultApplicationSetting.html
+   */
+  public toPutDefaultApplicationSetting() {
+    return this.to('PutDefaultApplicationSetting');
   }
 
   /**
@@ -1360,6 +1382,7 @@ export class Es extends PolicyStatement {
       'ESHttpPut',
       'PurchaseReservedElasticsearchInstanceOffering',
       'PurchaseReservedInstanceOffering',
+      'PutDefaultApplicationSetting',
       'RejectInboundConnection',
       'RejectInboundCrossClusterSearchConnection',
       'RevokeVpcEndpointAccess',
@@ -1401,6 +1424,7 @@ export class Es extends PolicyStatement {
       'ESHttpHead',
       'GetApplication',
       'GetDataSource',
+      'GetDefaultApplicationSetting',
       'GetDirectQueryDataSource',
       'GetDomainMaintenanceStatus',
       'GetIndex',

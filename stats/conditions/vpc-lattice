@@ -1,4 +1,5 @@
 vpc-lattice:AuthType
+vpc-lattice:CreateAction
 vpc-lattice:DomainName
 vpc-lattice:PrivateDnsPreference
 vpc-lattice:PrivateDnsSpecifiedDomains
