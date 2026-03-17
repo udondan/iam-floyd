@@ -1,3 +1,6 @@
 uxc:DeleteAccountColor;Write
 uxc:GetAccountColor;Read
+uxc:GetAccountCustomizations;Read
+uxc:ListServices;Read
 uxc:PutAccountColor;Write
+uxc:UpdateAccountCustomizations;Write

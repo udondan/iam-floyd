@@ -1,0 +1,13 @@
+interconnect:AcceptConnectionProposal;Write
+interconnect:CreateConnection;Write
+interconnect:DeleteConnection;Write
+interconnect:DescribeConnectionProposal;Read
+interconnect:GetConnection;Read
+interconnect:GetEnvironment;Read
+interconnect:ListAttachPoints;Read
+interconnect:ListConnections;List
+interconnect:ListEnvironments;List
+interconnect:ListTagsForResource;Read
+interconnect:TagResource;Tagging
+interconnect:UntagResource;Tagging
+interconnect:UpdateConnection;Write

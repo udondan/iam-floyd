@@ -70,6 +70,7 @@ bedrock-agentcore:GetWorkloadAccessTokenForJWT;Write
 bedrock-agentcore:GetWorkloadAccessTokenForUserId;Write
 bedrock-agentcore:GetWorkloadIdentity;Read
 bedrock-agentcore:InvokeAgentRuntime;Write
+bedrock-agentcore:InvokeAgentRuntimeCommand;Write
 bedrock-agentcore:InvokeAgentRuntimeForUser;Write
 bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStream;Write
 bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStreamForUser;Write

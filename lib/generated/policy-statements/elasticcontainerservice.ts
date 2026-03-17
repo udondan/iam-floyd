@@ -25,6 +25,7 @@ export class Ecs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPropagateTags()
+   * - .ifInstanceMetadataTagsPropagation()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -836,6 +837,7 @@ export class Ecs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPropagateTags()
+   * - .ifInstanceMetadataTagsPropagation()
    * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCapacityProvider.html
@@ -1655,6 +1657,21 @@ export class Ecs extends PolicyStatement {
    */
   public ifFargateEphemeralStorageKmsKey(value: string | string[], operator?: Operator | string) {
     return this.if(`fargate-ephemeral-storage-kms-key`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the instance metadata tags propagation setting of your Amazon ECS capacity provider
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateCapacityProvider()
+   * - .toUpdateCapacityProvider()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifInstanceMetadataTagsPropagation(value?: boolean) {
+    return this.if(`instance-metadata-tags-propagation`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

@@ -916,6 +916,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke commands on an agent runtime endpoint
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeAgentRuntimeCommand.html
+   */
+  public toInvokeAgentRuntimeCommand() {
+    return this.to('InvokeAgentRuntimeCommand');
+  }
+
+  /**
    * Grants permission to invoke an agent runtime endpoint with X-Amzn-Bedrock-AgentCore-Runtime-User-Id header
    *
    * Access Level: Write
@@ -1682,6 +1693,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetWorkloadAccessTokenForJWT',
       'GetWorkloadAccessTokenForUserId',
       'InvokeAgentRuntime',
+      'InvokeAgentRuntimeCommand',
       'InvokeAgentRuntimeForUser',
       'InvokeAgentRuntimeWithWebSocketStream',
       'InvokeAgentRuntimeWithWebSocketStreamForUser',
