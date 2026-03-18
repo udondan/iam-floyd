@@ -5,6 +5,8 @@
       "Effect": "Allow",
       "Action": [
         "uxc:GetAccountColor",
+        "uxc:GetAccountCustomizations",
+        "uxc:ListServices",
         "ec2:DescribeRegions",
         "notifications:GetFeatureOptInStatus",
         "notifications:ListManagedNotificationEvents",

@@ -444,6 +444,26 @@
         "ssm:GetParameter"
       ],
       "Resource": "arn:aws:ssm:*::parameter/aws/service/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "imagebuilder:StartImagePipelineExecution",
+      "Resource": "arn:aws:imagebuilder:*:*:image-pipeline/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "imagebuilder:TagResource",
+      "Resource": "arn:aws:imagebuilder:*:*:image-pipeline/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }
