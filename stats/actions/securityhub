@@ -1,5 +1,6 @@
 securityhub:AcceptAdministratorInvitation;Write
 securityhub:AcceptInvitation;Write
+securityhub:AllowVendedLogDeliveryForResource;Permissions management
 securityhub:BatchDeleteAutomationRules;Write
 securityhub:BatchDisableStandards;Write
 securityhub:BatchEnableStandards;Write

@@ -1,3 +1,5 @@
 medical-imaging:RequestTag/${TagKey}
 medical-imaging:ResourceTag/${TagKey}
+medical-imaging:SeriesInstanceUID
+medical-imaging:StudyInstanceUID
 medical-imaging:TagKeys

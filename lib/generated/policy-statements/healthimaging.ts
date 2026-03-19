@@ -71,6 +71,10 @@ export class MedicalImaging extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifStudyInstanceUID()
+   * - .ifSeriesInstanceUID()
+   *
    * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMBulkdata.html
    */
   public toGetDICOMBulkdata() {
@@ -93,6 +97,10 @@ export class MedicalImaging extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifStudyInstanceUID()
+   * - .ifSeriesInstanceUID()
+   *
    * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstance.html
    */
   public toGetDICOMInstance() {
@@ -103,6 +111,10 @@ export class MedicalImaging extends PolicyStatement {
    * Grants permission to get dicom instance frames in format requested by the customer
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifStudyInstanceUID()
+   * - .ifSeriesInstanceUID()
    *
    * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstanceFrames.html
    */
@@ -115,6 +127,10 @@ export class MedicalImaging extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifStudyInstanceUID()
+   * - .ifSeriesInstanceUID()
+   *
    * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstanceMetadata.html
    */
   public toGetDICOMInstanceMetadata() {
@@ -125,6 +141,10 @@ export class MedicalImaging extends PolicyStatement {
    * Grants permission to retrieve metadata for all DICOM instances belonging to a given DICOM series in DICOM JSON format
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifStudyInstanceUID()
+   * - .ifSeriesInstanceUID()
    *
    * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMSeriesMetadata.html
    */
@@ -225,6 +245,10 @@ export class MedicalImaging extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifStudyInstanceUID()
+   * - .ifSeriesInstanceUID()
+   *
    * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMInstances.html
    */
   public toSearchDICOMInstances() {
@@ -235,6 +259,9 @@ export class MedicalImaging extends PolicyStatement {
    * Grants permission to search dicom series that returns data in DICOM JSON format
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifStudyInstanceUID()
    *
    * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMSeries.html
    */
@@ -290,6 +317,9 @@ export class MedicalImaging extends PolicyStatement {
    * Grants permission to store a dicom study that returns result in DICOM JSON format
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifStudyInstanceUID()
    *
    * https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOMStudy.html
    */
@@ -464,5 +494,47 @@ export class MedicalImaging extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the SeriesInstanceUID parameter in the request
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-policy-keys
+   *
+   * Applies to actions:
+   * - .toGetDICOMBulkdata()
+   * - .toGetDICOMInstance()
+   * - .toGetDICOMInstanceFrames()
+   * - .toGetDICOMInstanceMetadata()
+   * - .toGetDICOMSeriesMetadata()
+   * - .toSearchDICOMInstances()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSeriesInstanceUID(value: string | string[], operator?: Operator | string) {
+    return this.if(`SeriesInstanceUID`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the StudyInstanceUID parameter in the request
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awshealthimaging.html#awshealthimaging-policy-keys
+   *
+   * Applies to actions:
+   * - .toGetDICOMBulkdata()
+   * - .toGetDICOMInstance()
+   * - .toGetDICOMInstanceFrames()
+   * - .toGetDICOMInstanceMetadata()
+   * - .toGetDICOMSeriesMetadata()
+   * - .toSearchDICOMInstances()
+   * - .toSearchDICOMSeries()
+   * - .toStoreDICOMStudy()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifStudyInstanceUID(value: string | string[], operator?: Operator | string) {
+    return this.if(`StudyInstanceUID`, value, operator ?? 'StringLike');
   }
 }

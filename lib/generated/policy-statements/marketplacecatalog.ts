@@ -45,7 +45,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeAssessment.html
    */
   public toDescribeAssessment() {
     return this.to('DescribeAssessment');
@@ -89,7 +89,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListAssessments.html
    */
   public toListAssessments() {
     return this.to('ListAssessments');
@@ -249,6 +249,20 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    */
   public onChangeSet(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:${ catalog }/ChangeSet/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type Assessment to the statement
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeAssessment.html#API_DescribeAssessment_ResponseSyntax
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param resourceId - Identifier for the resourceId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAssessment(catalog: string, resourceId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace:${ region ?? this.defaultRegion }::${ catalog }/Assessment/${ resourceId }`);
   }
 
   /**
