@@ -41,6 +41,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to log delivery for resources
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AllowVendedLogDeliveryForResource.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to delete one or more automation rules in Security Hub
    *
    * Access Level: Write
@@ -1395,6 +1406,9 @@ export class Securityhub extends PolicyStatement {
       'UpdateSecurityControl',
       'UpdateSecurityHubConfiguration',
       'UpdateStandardsControl'
+    ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
     ],
     Read: [
       'BatchGetAutomationRules',
