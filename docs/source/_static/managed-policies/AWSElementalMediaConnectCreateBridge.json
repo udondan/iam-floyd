@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mediaconnect:CreateBridge",
+        "mediaconnect:AddBridgeSources",
+        "mediaconnect:AddBridgeOutputs"
+      ],
+      "Resource": [
+        "arn:aws:mediaconnect:*:*:bridge:*:*",
+        "arn:aws:mediaconnect:*:*:bridge:*:*/bridgeSource/*",
+        "arn:aws:mediaconnect:*:*:bridge:*:*/bridgeOutput/*"
+      ]
+    }
+  ]
+}

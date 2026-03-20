@@ -3999,6 +3999,26 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElasticLoadBalancingServiceRolePolicy);
     }
 
+    /** Provides full access to create MediaConnect Gateway Bridges and all its associated sub-resources. */
+    public AWSElementalMediaConnectCreateBridge(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElementalMediaConnectCreateBridge);
+    }
+
+    /** Provides full access to create MediaConnect Flows and all its associated sub-resources. */
+    public AWSElementalMediaConnectCreateFlow(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElementalMediaConnectCreateFlow);
+    }
+
+    /** Provides full access to delete MediaConnect Gateway Bridges and all its associated sub-resources. */
+    public AWSElementalMediaConnectDeleteBridge(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElementalMediaConnectDeleteBridge);
+    }
+
+    /** Provides full access to delete MediaConnect Flows and all its associated sub-resources. */
+    public AWSElementalMediaConnectDeleteFlow(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElementalMediaConnectDeleteFlow);
+    }
+
     /** Provides full access to AWS Elemental MediaConnect resources. */
     public AWSElementalMediaConnectFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElementalMediaConnectFullAccess);
