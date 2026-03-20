@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "mediaconnect.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mediaconnect:CreateFlow",
+        "mediaconnect:AddFlowSources",
+        "mediaconnect:AddFlowOutputs",
+        "mediaconnect:GrantFlowEntitlements",
+        "mediaconnect:AddFlowMediaStreams",
+        "mediaconnect:AddFlowVpcInterfaces",
+        "mediaconnect:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:mediaconnect:*:*:flow:*:*",
+        "arn:aws:mediaconnect:*:*:source:*:*",
+        "arn:aws:mediaconnect:*:*:output:*:*",
+        "arn:aws:mediaconnect:*:*:entitlement:*:*",
+        "arn:aws:mediaconnect:*:*:flow:*:*/vpcInterface/*",
+        "arn:aws:mediaconnect:*:*:flow:*:*/mediaStream/*"
+      ]
+    }
+  ]
+}

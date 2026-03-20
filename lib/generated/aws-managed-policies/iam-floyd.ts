@@ -1596,6 +1596,14 @@ export class AwsManagedPolicy {
     public static AWSElasticLoadBalancingClassicServiceRolePolicy = 'aws-service-role/AWSElasticLoadBalancingClassicServiceRolePolicy';
     /** Service Linked Role Policy for AWS Elastic Load Balancing Control Plane */
     public static AWSElasticLoadBalancingServiceRolePolicy = 'aws-service-role/AWSElasticLoadBalancingServiceRolePolicy';
+    /** Provides full access to create MediaConnect Gateway Bridges and all its associated sub-resources. */
+    public static AWSElementalMediaConnectCreateBridge = 'AWSElementalMediaConnectCreateBridge';
+    /** Provides full access to create MediaConnect Flows and all its associated sub-resources. */
+    public static AWSElementalMediaConnectCreateFlow = 'AWSElementalMediaConnectCreateFlow';
+    /** Provides full access to delete MediaConnect Gateway Bridges and all its associated sub-resources. */
+    public static AWSElementalMediaConnectDeleteBridge = 'AWSElementalMediaConnectDeleteBridge';
+    /** Provides full access to delete MediaConnect Flows and all its associated sub-resources. */
+    public static AWSElementalMediaConnectDeleteFlow = 'AWSElementalMediaConnectDeleteFlow';
     /** Provides full access to AWS Elemental MediaConnect resources. */
     public static AWSElementalMediaConnectFullAccess = 'AWSElementalMediaConnectFullAccess';
     /** Provides read-only access to AWS Elemental MediaConnect resources. */
