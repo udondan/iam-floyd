@@ -30,7 +30,9 @@
         "cloudformation:DescribeStackEvents",
         "cloudformation:DescribeStacks",
         "cloudformation:UpdateStack",
-        "cloudformation:DeleteStack"
+        "cloudformation:DeleteStack",
+        "cloudformation:TagResource",
+        "cloudformation:UntagResource"
       ],
       "Resource": [
         "*"
