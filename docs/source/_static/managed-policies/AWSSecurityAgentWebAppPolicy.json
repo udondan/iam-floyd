@@ -6,7 +6,9 @@
       "Effect": "Allow",
       "Action": [
         "securityagent:ListAgentSpaces",
-        "securityagent:ListSecurityRequirements"
+        "securityagent:ListSecurityRequirements",
+        "securityagent:ListTargetDomains",
+        "securityagent:BatchGetTargetDomains"
       ],
       "Resource": "*",
       "Condition": {
@@ -36,7 +38,6 @@
         "securityagent:GetDesignReview",
         "securityagent:GetDesignReviewArtifact",
         "securityagent:ListArtifacts",
-        "securityagent:ListSecurityRequirements",
         "securityagent:ListDiscoveredEndpoints",
         "securityagent:ListDesignReviewComments",
         "securityagent:ListDesignReviews",
@@ -49,7 +50,9 @@
         "securityagent:StartPentestJob",
         "securityagent:StopPentestJob",
         "securityagent:UpdateFinding",
-        "securityagent:UpdatePentest"
+        "securityagent:UpdatePentest",
+        "securityagent:GetDesignReviewFeedback",
+        "securityagent:PutDesignReviewFeedback"
       ],
       "Resource": "arn:aws:securityagent:*:*:agent-space*",
       "Condition": {
