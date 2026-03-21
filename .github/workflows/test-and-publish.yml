@@ -125,6 +125,9 @@ jobs:
     name: Test cdk-iam-floyd
     needs: finalize
     runs-on: ubuntu-latest
+    concurrency:
+      group: cdk-deployment
+      cancel-in-progress: false
     steps:
       - name: Set up Node.js
         uses: actions/setup-node@v6
