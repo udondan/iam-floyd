@@ -4,6 +4,7 @@ batch:job
 batch:job-definition
 batch:job-definition-revision
 batch:job-queue
+batch:quota-share
 batch:scheduling-policy
 batch:service-environment
 batch:service-job

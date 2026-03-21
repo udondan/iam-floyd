@@ -1,4 +1,3 @@
-aidevops:AgentSpaceResourceAgentSpaceId
-aidevops:AssociationResourceAgentSpaceId
-aidevops:AssociationResourceAssociationId
-aidevops:ServiceResourceServiceId
+aidevops:RequestTag/${TagKey}
+aidevops:ResourceTag/${TagKey}
+aidevops:TagKeys

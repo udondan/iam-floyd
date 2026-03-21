@@ -75,6 +75,21 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Batch quota share in your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateQuotaShare.html
+   */
+  public toCreateQuotaShare() {
+    return this.to('CreateQuotaShare');
+  }
+
+  /**
    * Grants permission to create an AWS Batch scheduling policy in your account
    *
    * Access Level: Write
@@ -138,6 +153,17 @@ export class Batch extends PolicyStatement {
    */
   public toDeleteJobQueue() {
     return this.to('DeleteJobQueue');
+  }
+
+  /**
+   * Grants permission to delete an AWS Batch quota share in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteQuotaShare.html
+   */
+  public toDeleteQuotaShare() {
+    return this.to('DeleteQuotaShare');
   }
 
   /**
@@ -229,6 +255,17 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an AWS Batch quota share in your account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeQuotaShare.html
+   */
+  public toDescribeQuotaShare() {
+    return this.to('DescribeQuotaShare');
+  }
+
+  /**
    * Grants permission to describe one or more AWS Batch scheduling policies in your account
    *
    * Access Level: Read
@@ -303,6 +340,17 @@ export class Batch extends PolicyStatement {
    */
   public toListJobsByConsumableResource() {
     return this.to('ListJobsByConsumableResource');
+  }
+
+  /**
+   * Grants permission to list AWS Batch quota shares in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListQuotaShares.html
+   */
+  public toListQuotaShares() {
+    return this.to('ListQuotaShares');
   }
 
   /**
@@ -390,6 +438,7 @@ export class Batch extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifSchedulingPriority()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitServiceJob.html
    */
@@ -482,6 +531,17 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an AWS Batch quota share in your account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateQuotaShare.html
+   */
+  public toUpdateQuotaShare() {
+    return this.to('UpdateQuotaShare');
+  }
+
+  /**
    * Grants permission to update an AWS Batch scheduling policy in your account
    *
    * Access Level: Write
@@ -503,17 +563,33 @@ export class Batch extends PolicyStatement {
     return this.to('UpdateServiceEnvironment');
   }
 
+  /**
+   * Grants permission to update a service job in an AWS Batch job queue in your account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifSchedulingPriority()
+   *
+   * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateServiceJob.html
+   */
+  public toUpdateServiceJob() {
+    return this.to('UpdateServiceJob');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelJob',
       'CreateComputeEnvironment',
       'CreateConsumableResource',
       'CreateJobQueue',
+      'CreateQuotaShare',
       'CreateSchedulingPolicy',
       'CreateServiceEnvironment',
       'DeleteComputeEnvironment',
       'DeleteConsumableResource',
       'DeleteJobQueue',
+      'DeleteQuotaShare',
       'DeleteSchedulingPolicy',
       'DeleteServiceEnvironment',
       'DeregisterJobDefinition',
@@ -525,8 +601,10 @@ export class Batch extends PolicyStatement {
       'UpdateComputeEnvironment',
       'UpdateConsumableResource',
       'UpdateJobQueue',
+      'UpdateQuotaShare',
       'UpdateSchedulingPolicy',
-      'UpdateServiceEnvironment'
+      'UpdateServiceEnvironment',
+      'UpdateServiceJob'
     ],
     Read: [
       'DescribeComputeEnvironments',
@@ -534,6 +612,7 @@ export class Batch extends PolicyStatement {
       'DescribeJobDefinitions',
       'DescribeJobQueues',
       'DescribeJobs',
+      'DescribeQuotaShare',
       'DescribeSchedulingPolicies',
       'DescribeServiceEnvironments',
       'DescribeServiceJob',
@@ -545,6 +624,7 @@ export class Batch extends PolicyStatement {
       'ListConsumableResources',
       'ListJobs',
       'ListJobsByConsumableResource',
+      'ListQuotaShares',
       'ListServiceJobs'
     ],
     Tagging: [
@@ -705,6 +785,24 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type quota-share to the statement
+   *
+   * https://docs.aws.amazon.com/batch/latest/userguide/quota-share.html
+   *
+   * @param jobQueueName - Identifier for the jobQueueName.
+   * @param quotaShareName - Identifier for the quotaShareName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQuotaShare(jobQueueName: string, quotaShareName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:batch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job-queue/${ jobQueueName }/quota-share/${ quotaShareName }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -713,6 +811,7 @@ export class Batch extends PolicyStatement {
    * - .toCreateComputeEnvironment()
    * - .toCreateConsumableResource()
    * - .toCreateJobQueue()
+   * - .toCreateQuotaShare()
    * - .toCreateSchedulingPolicy()
    * - .toCreateServiceEnvironment()
    * - .toRegisterJobDefinition()
@@ -745,6 +844,7 @@ export class Batch extends PolicyStatement {
    * - service-environment
    * - service-job
    * - consumable-resource
+   * - quota-share
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -763,6 +863,7 @@ export class Batch extends PolicyStatement {
    * - .toCreateComputeEnvironment()
    * - .toCreateConsumableResource()
    * - .toCreateJobQueue()
+   * - .toCreateQuotaShare()
    * - .toCreateSchedulingPolicy()
    * - .toCreateServiceEnvironment()
    * - .toRegisterJobDefinition()
@@ -970,6 +1071,22 @@ export class Batch extends PolicyStatement {
    */
   public ifPrivileged(value?: boolean) {
     return this.if(`Privileged`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the scheduling priority for jobs in the job queue
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toSubmitServiceJob()
+   * - .toUpdateServiceJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifSchedulingPriority(value: number | number[], operator?: Operator | string) {
+    return this.if(`SchedulingPriority`, value, operator ?? 'NumericEquals');
   }
 
   /**
