@@ -13,6 +13,7 @@ batch:LogDriver
 batch:Privileged
 batch:RequestTag/${TagKey}
 batch:ResourceTag/${TagKey}
+batch:SchedulingPriority
 batch:ShareIdentifier
 batch:TagKeys
 batch:User

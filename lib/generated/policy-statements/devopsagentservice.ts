@@ -45,6 +45,11 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
   public toCreateAgentSpace() {
@@ -63,7 +68,7 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new chat session
+   * Grants permission to create a chat
    *
    * Access Level: Write
    *
@@ -74,31 +79,12 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new knowledge item
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toCreateKnowledgeItem() {
-    return this.to('CreateKnowledgeItem');
-  }
-
-  /**
-   * Grants permission to generate secure one-time session for initiating off-console Application login
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toCreateOneTimeLoginSession() {
-    return this.to('CreateOneTimeLoginSession');
-  }
-
-  /**
    * Grants permission to delete agentspace
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
@@ -107,20 +93,12 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a knowledge item
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toDeleteKnowledgeItem() {
-    return this.to('DeleteKnowledgeItem');
-  }
-
-  /**
    * Grants permission to deregister a service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
@@ -162,17 +140,6 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to discover topology information
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toDiscoverTopology() {
-    return this.to('DiscoverTopology');
-  }
-
-  /**
    * Grants permission to enable the Operator App to access the given AgentSpace
    *
    * Access Level: Write
@@ -195,7 +162,7 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get account usage
+   * Grants permission to retrieve account usage information
    *
    * Access Level: Read
    *
@@ -209,6 +176,9 @@ export class Aidevops extends PolicyStatement {
    * Grants permission to get agentspace
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
@@ -239,25 +209,14 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a knowledge item
+   * Grants permission to get operator auth config for any enabled auth flow
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
-  public toGetKnowledgeItem() {
-    return this.to('GetKnowledgeItem');
-  }
-
-  /**
-   * Grants permission to enable operator auth config for any enabled auth flow
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toGetOperatorAppTeams() {
-    return this.to('GetOperatorAppTeams');
+  public toGetOperatorApp() {
+    return this.to('GetOperatorApp');
   }
 
   /**
@@ -276,21 +235,13 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
   public toGetService() {
     return this.to('GetService');
-  }
-
-  /**
-   * Grants permission to handle OAuth callback from external service
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toHandleServiceRegistrationCallback() {
-    return this.to('HandleServiceRegistrationCallback');
   }
 
   /**
@@ -302,17 +253,6 @@ export class Aidevops extends PolicyStatement {
    */
   public toInitiateChatForCase() {
     return this.to('InitiateChatForCase');
-  }
-
-  /**
-   * Grants permission to initiate OAuth flow
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toInitiateServiceRegistration() {
-    return this.to('InitiateServiceRegistration');
   }
 
   /**
@@ -349,7 +289,7 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list existing chat sessions
+   * Grants permission to list chats
    *
    * Access Level: List
    *
@@ -393,17 +333,6 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list knowledge items
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toListKnowledgeItems() {
-    return this.to('ListKnowledgeItems');
-  }
-
-  /**
    * Grants permission to list pending messages
    *
    * Access Level: List
@@ -437,6 +366,20 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to list webhooks for association
    *
    * Access Level: List
@@ -451,6 +394,11 @@ export class Aidevops extends PolicyStatement {
    * Grants permission to register specific service
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
@@ -470,31 +418,54 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to invoke an agent
+   * Grants permission to send chat messages
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
-  public toSendChatMessage() {
-    return this.to('SendChatMessage');
+  public toSendMessage() {
+    return this.to('SendMessage');
   }
 
   /**
-   * Grants permission to invoke an agent
+   * Grants permission to tag a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
-  public toStreamMessage() {
-    return this.to('StreamMessage');
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
    * Grants permission to update agentspace
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
@@ -536,25 +507,14 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a knowledge item
+   * Grants permission to update the external Identity Provider configuration for the Operator App
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
    */
-  public toUpdateKnowledgeItem() {
-    return this.to('UpdateKnowledgeItem');
-  }
-
-  /**
-   * Grants permission to update the list of teams that the Operator App is enabled for
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
-   */
-  public toUpdateOperatorAppTeams() {
-    return this.to('UpdateOperatorAppTeams');
+  public toUpdateOperatorAppIdpConfig() {
+    return this.to('UpdateOperatorAppIdpConfig');
   }
 
   /**
@@ -568,6 +528,17 @@ export class Aidevops extends PolicyStatement {
     return this.to('UpdateRecommendation');
   }
 
+  /**
+   * Grants permission to validate aws association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toValidateAwsAssociations() {
+    return this.to('ValidateAwsAssociations');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AllowVendedLogDeliveryForResource'
@@ -577,40 +548,33 @@ export class Aidevops extends PolicyStatement {
       'CreateAgentSpace',
       'CreateBacklogTask',
       'CreateChat',
-      'CreateKnowledgeItem',
-      'CreateOneTimeLoginSession',
       'DeleteAgentSpace',
-      'DeleteKnowledgeItem',
       'DeregisterService',
       'DescribeSupportLevel',
       'DisableOperatorApp',
       'DisassociateService',
-      'DiscoverTopology',
       'EnableOperatorApp',
       'EndChatForCase',
       'InitiateChatForCase',
       'RegisterService',
-      'SendChatMessage',
-      'StreamMessage',
+      'SendMessage',
       'UpdateAgentSpace',
       'UpdateAssociation',
       'UpdateBacklogTask',
       'UpdateGoal',
-      'UpdateKnowledgeItem',
-      'UpdateOperatorAppTeams',
-      'UpdateRecommendation'
+      'UpdateOperatorAppIdpConfig',
+      'UpdateRecommendation',
+      'ValidateAwsAssociations'
     ],
     Read: [
       'GetAccountUsage',
       'GetAgentSpace',
       'GetAssociation',
       'GetBacklogTask',
-      'GetKnowledgeItem',
-      'GetOperatorAppTeams',
+      'GetOperatorApp',
       'GetRecommendation',
       'GetService',
-      'HandleServiceRegistrationCallback',
-      'InitiateServiceRegistration',
+      'ListTagsForResource',
       'SearchServiceAccessibleResource'
     ],
     List: [
@@ -621,16 +585,19 @@ export class Aidevops extends PolicyStatement {
       'ListExecutions',
       'ListGoals',
       'ListJournalRecords',
-      'ListKnowledgeItems',
       'ListPendingMessages',
       'ListRecommendations',
       'ListServices',
       'ListWebhooks'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
   /**
-   * Adds a resource of type AgentSpaceResource to the statement
+   * Adds a resource of type agentspace to the statement
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/
    *
@@ -640,14 +607,14 @@ export class Aidevops extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifAgentSpaceResourceAgentSpaceId()
+   * - .ifAwsResourceTag()
    */
-  public onAgentSpaceResource(agentSpaceId: string, account?: string, region?: string, partition?: string) {
+  public onAgentspace(agentSpaceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:aidevops:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agentspace/${ agentSpaceId }`);
   }
 
   /**
-   * Adds a resource of type AssociationResource to the statement
+   * Adds a resource of type associations to the statement
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/
    *
@@ -656,17 +623,13 @@ export class Aidevops extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAssociationResourceAgentSpaceId()
-   * - .ifAssociationResourceAssociationId()
    */
-  public onAssociationResource(agentSpaceId: string, associationId: string, account?: string, region?: string, partition?: string) {
+  public onAssociations(agentSpaceId: string, associationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:aidevops:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agentspace/${ agentSpaceId }/associations/${ associationId }`);
   }
 
   /**
-   * Adds a resource of type ServiceResource to the statement
+   * Adds a resource of type service to the statement
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/
    *
@@ -676,69 +639,76 @@ export class Aidevops extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
-   * - .ifServiceResourceServiceId()
+   * - .ifAwsResourceTag()
    */
-  public onServiceResource(serviceId: string, account?: string, region?: string, partition?: string) {
+  public onService(serviceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:aidevops:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }`);
   }
 
   /**
-   * Filters access by unique identifier for an AgentSpace
+   * Filters access by the tags that are passed in the request
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
-   * Applies to resource types:
-   * - AgentSpaceResource
+   * Applies to actions:
+   * - .toCreateAgentSpace()
+   * - .toListTagsForResource()
+   * - .toRegisterService()
+   * - .toTagResource()
    *
+   * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAgentSpaceResourceAgentSpaceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`AgentSpaceResourceAgentSpaceId`, value, operator ?? 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
-   * Filters access by unique identifier for an AgentSpace
+   * Filters access by the tags associated with the resource
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateAgentSpace()
+   * - .toDeleteAgentSpace()
+   * - .toDeregisterService()
+   * - .toGetAgentSpace()
+   * - .toGetService()
+   * - .toListTagsForResource()
+   * - .toRegisterService()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAgentSpace()
    *
    * Applies to resource types:
-   * - AssociationResource
+   * - agentspace
+   * - service
    *
+   * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAssociationResourceAgentSpaceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`AssociationResourceAgentSpaceId`, value, operator ?? 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
-   * Filters access by unique identifier for a service association within an AgentSpace
+   * Filters access by the tag keys that are passed in the request
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
-   * Applies to resource types:
-   * - AssociationResource
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAssociationResourceAssociationId(value: string | string[], operator?: Operator | string) {
-    return this.if(`AssociationResourceAssociationId`, value, operator ?? 'StringLike');
-  }
-
-  /**
-   * Filters access by unique identifier for a registered service
-   *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/
-   *
-   * Applies to resource types:
-   * - ServiceResource
+   * Applies to actions:
+   * - .toCreateAgentSpace()
+   * - .toListTagsForResource()
+   * - .toRegisterService()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifServiceResourceServiceId(value: string | string[], operator?: Operator | string) {
-    return this.if(`ServiceResourceServiceId`, value, operator ?? 'StringLike');
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }
