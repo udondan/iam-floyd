@@ -160,6 +160,61 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "AccessSecretStatement",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/EvsAccess": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DecryptSecretWithKmsKeyStatement",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "secretsmanager.*.amazonaws.com",
+          "kms:EncryptionContext:SecretARN": "arn:aws:secretsmanager:*:*:secret:*",
+          "kms:EncryptionContext:SecretVersionId": "*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "aws:ResourceTag/EvsAccess": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DescribeKmsKeyStatement",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "secretsmanager.*.amazonaws.com"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "Null": {
+          "aws:ResourceTag/EvsAccess": "false"
+        }
+      }
     }
   ]
 }
