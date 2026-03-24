@@ -191,7 +191,8 @@
       "Action": [
         "cloudformation:SetTypeConfiguration",
         "cloudformation:DeactivateType",
-        "cloudformation:ActivateType"
+        "cloudformation:ActivateType",
+        "cloudformation:BatchDescribeTypeConfigurations"
       ],
       "Resource": "arn:aws:cloudformation:*:*:type/hook/AWS-ControlTower*"
     },

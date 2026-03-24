@@ -5069,6 +5069,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerLedSupportReadOnlyAccess);
     }
 
+    /** Provides full access to ProServe tools. */
+    public AWSPartnerProServeToolsFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerProServeToolsFullAccess);
+    }
+
+    /** Provides access to create and manage own assessments in ProServe tools. */
+    public AWSPartnerProServeToolsIndividualContributor(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerProServeToolsIndividualContributor);
+    }
+
+    /** Provides read access to organizational assessments with ability to manage own assessments. */
+    public AWSPartnerProServeToolsOrganizationReaderIndividualContributor(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerProServeToolsOrganizationReaderIndividualContributor);
+    }
+
     /** Grants permission to AWS PCS compute nodes to connect to AWS PCS clusters. */
     public AWSPCSComputeNodePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPCSComputeNodePolicy);
