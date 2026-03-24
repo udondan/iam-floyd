@@ -96,6 +96,17 @@ export class Polly extends PolicyStatement {
   }
 
   /**
+   * Grants permission to perform synthesis with bidirectional streaming
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisStream.html
+   */
+  public toStartSpeechSynthesisStream() {
+    return this.to('StartSpeechSynthesisStream');
+  }
+
+  /**
    * Grants permission to synthesize long inputs to the provided S3 location
    *
    * Access Level: Write
@@ -134,6 +145,7 @@ export class Polly extends PolicyStatement {
     Read: [
       'GetLexicon',
       'GetSpeechSynthesisTask',
+      'StartSpeechSynthesisStream',
       'SynthesizeSpeech'
     ]
   };
