@@ -79,6 +79,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new knowledge item
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toCreateKnowledgeItem() {
+    return this.to('CreateKnowledgeItem');
+  }
+
+  /**
    * Grants permission to delete agentspace
    *
    * Access Level: Write
@@ -90,6 +101,17 @@ export class Aidevops extends PolicyStatement {
    */
   public toDeleteAgentSpace() {
     return this.to('DeleteAgentSpace');
+  }
+
+  /**
+   * Grants permission to delete a knowledge item
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toDeleteKnowledgeItem() {
+    return this.to('DeleteKnowledgeItem');
   }
 
   /**
@@ -137,6 +159,17 @@ export class Aidevops extends PolicyStatement {
    */
   public toDisassociateService() {
     return this.to('DisassociateService');
+  }
+
+  /**
+   * Grants permission to discover topology information
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toDiscoverTopology() {
+    return this.to('DiscoverTopology');
   }
 
   /**
@@ -206,6 +239,17 @@ export class Aidevops extends PolicyStatement {
    */
   public toGetBacklogTask() {
     return this.to('GetBacklogTask');
+  }
+
+  /**
+   * Grants permission to get a knowledge item
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toGetKnowledgeItem() {
+    return this.to('GetKnowledgeItem');
   }
 
   /**
@@ -330,6 +374,28 @@ export class Aidevops extends PolicyStatement {
    */
   public toListJournalRecords() {
     return this.to('ListJournalRecords');
+  }
+
+  /**
+   * Grants permission to list knowledge item versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toListKnowledgeItemVersions() {
+    return this.to('ListKnowledgeItemVersions');
+  }
+
+  /**
+   * Grants permission to list knowledge items
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toListKnowledgeItems() {
+    return this.to('ListKnowledgeItems');
   }
 
   /**
@@ -507,6 +573,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a knowledge item
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toUpdateKnowledgeItem() {
+    return this.to('UpdateKnowledgeItem');
+  }
+
+  /**
    * Grants permission to update the external Identity Provider configuration for the Operator App
    *
    * Access Level: Write
@@ -548,11 +625,14 @@ export class Aidevops extends PolicyStatement {
       'CreateAgentSpace',
       'CreateBacklogTask',
       'CreateChat',
+      'CreateKnowledgeItem',
       'DeleteAgentSpace',
+      'DeleteKnowledgeItem',
       'DeregisterService',
       'DescribeSupportLevel',
       'DisableOperatorApp',
       'DisassociateService',
+      'DiscoverTopology',
       'EnableOperatorApp',
       'EndChatForCase',
       'InitiateChatForCase',
@@ -562,6 +642,7 @@ export class Aidevops extends PolicyStatement {
       'UpdateAssociation',
       'UpdateBacklogTask',
       'UpdateGoal',
+      'UpdateKnowledgeItem',
       'UpdateOperatorAppIdpConfig',
       'UpdateRecommendation',
       'ValidateAwsAssociations'
@@ -571,6 +652,7 @@ export class Aidevops extends PolicyStatement {
       'GetAgentSpace',
       'GetAssociation',
       'GetBacklogTask',
+      'GetKnowledgeItem',
       'GetOperatorApp',
       'GetRecommendation',
       'GetService',
@@ -585,6 +667,8 @@ export class Aidevops extends PolicyStatement {
       'ListExecutions',
       'ListGoals',
       'ListJournalRecords',
+      'ListKnowledgeItemVersions',
+      'ListKnowledgeItems',
       'ListPendingMessages',
       'ListRecommendations',
       'ListServices',

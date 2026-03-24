@@ -70,6 +70,7 @@ gamelift:GetComputeAccess;Read
 gamelift:GetComputeAuthToken;Read
 gamelift:GetGameSessionLogUrl;Read
 gamelift:GetInstanceAccess;Read
+gamelift:GetPlayerConnectionDetails;Read
 gamelift:ListAliases;List
 gamelift:ListBuilds;List
 gamelift:ListCompute;List

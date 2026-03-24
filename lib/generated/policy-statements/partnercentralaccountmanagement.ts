@@ -47,6 +47,20 @@ export class PartnercentralAccountManagement extends PolicyStatement {
   }
 
   /**
+   * Grants permission to Single Sign-On from AWS Partner Central into ProServe Tools
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProServeRole()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   */
+  public toAccessProServeTools() {
+    return this.to('AccessProServeTools');
+  }
+
+  /**
    * Grants permission to associate Partner account to AWS account
    *
    * Access Level: Write
@@ -83,6 +97,7 @@ export class PartnercentralAccountManagement extends PolicyStatement {
     Write: [
       'AccessLegacyPartnerCentral',
       'AccessMarketingCentral',
+      'AccessProServeTools',
       'AssociatePartnerAccount',
       'AssociatePartnerUser',
       'DisassociatePartnerUser'
@@ -117,5 +132,20 @@ export class PartnercentralAccountManagement extends PolicyStatement {
    */
   public ifMarketingCentralRole(value: string | string[], operator?: Operator | string) {
     return this.if(`MarketingCentralRole`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by ProServe Tools role
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/getting-started/controlling-access-in-apc-account-management.html
+   *
+   * Applies to actions:
+   * - .toAccessProServeTools()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProServeRole(value: string | string[], operator?: Operator | string) {
+    return this.if(`ProServeRole`, value, operator ?? 'StringLike');
   }
 }

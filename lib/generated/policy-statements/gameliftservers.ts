@@ -934,6 +934,17 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve player connection endpoints and player gateway tokens for a game session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_GetPlayerConnectionDetails.html
+   */
+  public toGetPlayerConnectionDetails() {
+    return this.to('GetPlayerConnectionDetails');
+  }
+
+  /**
    * Grants permission to retrieve all aliases that are defined in the current Region
    *
    * Access Level: List
@@ -1562,6 +1573,7 @@ export class Gamelift extends PolicyStatement {
       'GetComputeAuthToken',
       'GetGameSessionLogUrl',
       'GetInstanceAccess',
+      'GetPlayerConnectionDetails',
       'ListTagsForResource',
       'RequestUploadCredentials',
       'ResolveAlias',
@@ -1760,7 +1772,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type script to the statement
    *
-   * https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-console-scripts.html
+   * https://docs.aws.amazon.com/gameliftservers/latest/realtimeguide/realtime-intro.html
    *
    * @param scriptId - Identifier for the scriptId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
