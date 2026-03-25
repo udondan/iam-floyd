@@ -1,3 +1,9 @@
+route53profiles:FirewallRuleGroupPriority
+route53profiles:HostedZoneDomains
 route53profiles:RequestTag/${TagKey}
+route53profiles:ResolverRuleDomains
+route53profiles:ResourceArns
+route53profiles:ResourceIds
 route53profiles:ResourceTag/${TagKey}
+route53profiles:ResourceTypes
 route53profiles:TagKeys
