@@ -33,7 +33,7 @@ Support for:
 - 445 Services
 - 20450 Actions
 - 2170 Resource Types
-- 2292 Condition keys
+- 2298 Condition keys
 
 ..
    /stats

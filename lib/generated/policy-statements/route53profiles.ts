@@ -26,6 +26,7 @@ export class Route53profiles extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifResourceIds()
    *
    * Dependent actions:
    * - ec2:DescribeVpcs
@@ -40,6 +41,13 @@ export class Route53profiles extends PolicyStatement {
    * Grants permission to associates a resource, such as DNS Firewall rule group, private hosted zone, resolver rule, etc. to a specified Profile
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceTypes()
+   * - .ifHostedZoneDomains()
+   * - .ifResolverRuleDomains()
+   * - .ifFirewallRuleGroupPriority()
+   * - .ifResourceArns()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_AssociateResourceToProfile.html
    */
@@ -78,6 +86,9 @@ export class Route53profiles extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifResourceIds()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateProfile.html
    */
   public toDisassociateProfile() {
@@ -88,6 +99,13 @@ export class Route53profiles extends PolicyStatement {
    * Grants permission to delete the asoociation between the resource. such as DNS Firewall rule group, private hosted zone, resolver rule, etc. and the specified Profile
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifResourceTypes()
+   * - .ifHostedZoneDomains()
+   * - .ifResolverRuleDomains()
+   * - .ifFirewallRuleGroupPriority()
+   * - .ifResourceArns()
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_DisassociateResourceFromProfile.html
    */
@@ -228,6 +246,12 @@ export class Route53profiles extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifResourceTypes()
+   * - .ifHostedZoneDomains()
+   * - .ifResolverRuleDomains()
+   * - .ifFirewallRuleGroupPriority()
+   *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileResourceAssociation.html
    */
   public toUpdateProfileResourceAssociation() {
@@ -348,5 +372,105 @@ export class Route53profiles extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by priority range of a Firewall Rule Group
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html
+   *
+   * Applies to actions:
+   * - .toAssociateResourceToProfile()
+   * - .toDisassociateResourceFromProfile()
+   * - .toUpdateProfileResourceAssociation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifFirewallRuleGroupPriority(value: number | number[], operator?: Operator | string) {
+    return this.if(`FirewallRuleGroupPriority`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by Hosted Zone domains
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html
+   *
+   * Applies to actions:
+   * - .toAssociateResourceToProfile()
+   * - .toDisassociateResourceFromProfile()
+   * - .toUpdateProfileResourceAssociation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifHostedZoneDomains(value: string | string[], operator?: Operator | string) {
+    return this.if(`HostedZoneDomains`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by Resolver Rule domains
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html
+   *
+   * Applies to actions:
+   * - .toAssociateResourceToProfile()
+   * - .toDisassociateResourceFromProfile()
+   * - .toUpdateProfileResourceAssociation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResolverRuleDomains(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResolverRuleDomains`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by specific resource ARNs
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html
+   *
+   * Applies to actions:
+   * - .toAssociateResourceToProfile()
+   * - .toDisassociateResourceFromProfile()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifResourceArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceArns`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by given VPCs
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html
+   *
+   * Applies to actions:
+   * - .toAssociateProfile()
+   * - .toDisassociateProfile()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceIds(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceIds`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by specific resource type. Possible options include 'HostedZone', 'FirewallRuleGroup', 'ResolverQueryLoggingConfig', 'ResolverRule', and 'VpcEndpoint'
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53profiles.html
+   *
+   * Applies to actions:
+   * - .toAssociateResourceToProfile()
+   * - .toDisassociateResourceFromProfile()
+   * - .toUpdateProfileResourceAssociation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceTypes(value: string | string[], operator?: Operator | string) {
+    return this.if(`ResourceTypes`, value, operator ?? 'StringLike');
   }
 }
