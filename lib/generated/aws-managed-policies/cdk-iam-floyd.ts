@@ -3809,6 +3809,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2SqlHaServiceRolePolicy);
     }
 
+    /** Grants Amazon EC2 and AWS SSM permissions to restore SQL Server database from application consistent snapshots created by AWS VSS. */
+    public AWSEC2VssRestorePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2VssRestorePolicy);
+    }
+
     /** This policy is attached to the IAM role that's attached to your Amazon EC2 Windows Instances to enable the Amazon EC2 VSS solution to create and add tags to Amazon Machine Images (AMI) and EBS Snapshots. */
     public AWSEC2VssSnapshotPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSEC2VssSnapshotPolicy);
@@ -5599,6 +5604,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForAWSTransform);
     }
 
+    /** Allows AWS Transform Custom to publish CloudWatch metrics to your account on your behalf. */
+    public AWSServiceRoleForAWSTransformCustom(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForAWSTransformCustom);
+    }
+
     /** Provides access to Systems Manager resources used by CloudWatch Alarms */
     public AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy);
@@ -6457,6 +6467,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** This policy allows DAX to create and manage Network interface, Security group, Subnet and Vpc on behalf of customer */
     public DAXServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DAXServiceRolePolicy);
+    }
+
+    /** Discovery and Assessment permissions for database connector used in database modernization */
+    public DBModDiscoveryAndAssessment(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DBModDiscoveryAndAssessment);
+    }
+
+    /** Resource provisioning and data migration permissions for database connector used in database modernization */
+    public DBModProvisioningAndMigration(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DBModProvisioningAndMigration);
     }
 
     /** Provides access to read-only APIs needed to run EC2 Declarative Policies Account Status Report. */

@@ -1520,6 +1520,8 @@ export class AwsManagedPolicy {
     public static AWSEC2SqlHaInstancePolicy = 'AWSEC2SqlHaInstancePolicy';
     /** EC2 SQL High Availability service permissions to detect standby/passive instances */
     public static AWSEC2SqlHaServiceRolePolicy = 'aws-service-role/AWSEC2SqlHaServiceRolePolicy';
+    /** Grants Amazon EC2 and AWS SSM permissions to restore SQL Server database from application consistent snapshots created by AWS VSS. */
+    public static AWSEC2VssRestorePolicy = 'AWSEC2VssRestorePolicy';
     /** This policy is attached to the IAM role that's attached to your Amazon EC2 Windows Instances to enable the Amazon EC2 VSS solution to create and add tags to Amazon Machine Images (AMI) and EBS Snapshots. */
     public static AWSEC2VssSnapshotPolicy = 'AWSEC2VssSnapshotPolicy';
     /** Enables access to AWS services and resources used or managed by AWS ECR pull through cache */
@@ -2236,6 +2238,8 @@ export class AwsManagedPolicy {
     public static AWSServiceRoleForAmazonQDeveloper = 'aws-service-role/AWSServiceRoleForAmazonQDeveloper';
     /** This Service-Linked Role provides AWS Transform with the ability to provide usage information. */
     public static AWSServiceRoleForAWSTransform = 'aws-service-role/AWSServiceRoleForAWSTransform';
+    /** Allows AWS Transform Custom to publish CloudWatch metrics to your account on your behalf. */
+    public static AWSServiceRoleForAWSTransformCustom = 'aws-service-role/AWSServiceRoleForAWSTransformCustom';
     /** Provides access to Systems Manager resources used by CloudWatch Alarms */
     public static AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy = 'aws-service-role/AWSServiceRoleForCloudWatchAlarmsActionSSMServiceRolePolicy';
     /** Allows CloudWatch to access RDS Performance Insights metrics on your behalf */
@@ -2580,6 +2584,10 @@ export class AwsManagedPolicy {
     public static DataScientist = 'job-function/DataScientist';
     /** This policy allows DAX to create and manage Network interface, Security group, Subnet and Vpc on behalf of customer */
     public static DAXServiceRolePolicy = 'aws-service-role/DAXServiceRolePolicy';
+    /** Discovery and Assessment permissions for database connector used in database modernization */
+    public static DBModDiscoveryAndAssessment = 'DBModDiscoveryAndAssessment';
+    /** Resource provisioning and data migration permissions for database connector used in database modernization */
+    public static DBModProvisioningAndMigration = 'DBModProvisioningAndMigration';
     /** Provides access to read-only APIs needed to run EC2 Declarative Policies Account Status Report. */
     public static DeclarativePoliciesEC2Report = 'aws-service-role/DeclarativePoliciesEC2Report';
     /** Permissions required to support Amazon CloudWatch Contributor Insights for Amazon DynamoDB. */
