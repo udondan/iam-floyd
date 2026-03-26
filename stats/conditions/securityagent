@@ -1,1 +1,3 @@
-
+securityagent:RequestTag/${TagKey}
+securityagent:ResourceTag/${TagKey}
+securityagent:TagKeys

@@ -1,12 +1,5 @@
-securityagent:AgentInstance
 securityagent:AgentSpace
 securityagent:Application
-securityagent:Artifact
-securityagent:Control
-securityagent:Finding
 securityagent:Integration
-securityagent:Pentest
-securityagent:PentestJob
-securityagent:PentestTask
-securityagent:SecurityRequirement
+securityagent:SecurityRequirementPack
 securityagent:TargetDomain

@@ -1,5 +1,5 @@
 import { AccessLevelList } from '../../shared/access-level';
-import { PolicyStatement } from '../../shared';
+import { PolicyStatement, Operator } from '../../shared';
 
 /**
  * Statement provider for service [securityagent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html).
@@ -19,7 +19,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add an Artifact for the given Agent Instance
+   * Grants permission to add an Artifact for the given Agent Space
    *
    * Access Level: Write
    *
@@ -27,17 +27,6 @@ export class Securityagent extends PolicyStatement {
    */
   public toAddArtifact() {
     return this.to('AddArtifact');
-  }
-
-  /**
-   * Grants permission to add a customer managed Control
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/securityagent/API_AddControl.html
-   */
-  public toAddControl() {
-    return this.to('AddControl');
   }
 
   /**
@@ -52,17 +41,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve multiple agent instances in a single request
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_BatchGetAgentInstances.html
-   */
-  public toBatchGetAgentInstances() {
-    return this.to('BatchGetAgentInstances');
-  }
-
-  /**
    * Grants permission to retrieve multiple agent spaces in a single request
    *
    * Access Level: Read
@@ -74,7 +52,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve one or more Artifact Metadata records for the given Agent Instance
+   * Grants permission to retrieve one or more Artifact Metadata records for the given Agent Space
    *
    * Access Level: Read
    *
@@ -173,20 +151,13 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an agent instance record
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/securityagent/API_CreateAgentInstance.html
-   */
-  public toCreateAgentInstance() {
-    return this.to('CreateAgentInstance');
-  }
-
-  /**
    * Grants permission to create an agent space record
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/securityagent/API_CreateAgentSpace.html
    */
@@ -198,6 +169,10 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to create a new application
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -221,20 +196,13 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a document review
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/securityagent/API_CreateDocumentReview.html
-   */
-  public toCreateDocumentReview() {
-    return this.to('CreateDocumentReview');
-  }
-
-  /**
    * Grants permission to create a security testing integration
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/securityagent/API_CreateIntegration.html
    */
@@ -243,7 +211,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a single member to a agent instance with specified role
+   * Grants permission to add a single member to a agent space with specified role
    *
    * Access Level: Write
    *
@@ -298,17 +266,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an agent instance record
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/securityagent/API_DeleteAgentInstance.html
-   */
-  public toDeleteAgentInstance() {
-    return this.to('DeleteAgentInstance');
-  }
-
-  /**
    * Grants permission to delete an agent space record
    *
    * Access Level: Write
@@ -342,17 +299,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a customer managed Control
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/securityagent/API_DeleteControl.html
-   */
-  public toDeleteControl() {
-    return this.to('DeleteControl');
-  }
-
-  /**
    * Grants permission to delete a design review
    *
    * Access Level: Write
@@ -361,17 +307,6 @@ export class Securityagent extends PolicyStatement {
    */
   public toDeleteDesignReview() {
     return this.to('DeleteDesignReview');
-  }
-
-  /**
-   * Grants permission to delete a document review
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/securityagent/API_DeleteDocumentReview.html
-   */
-  public toDeleteDocumentReview() {
-    return this.to('DeleteDocumentReview');
   }
 
   /**
@@ -386,7 +321,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a single member associated to an agent instance
+   * Grants permission to remove a single member associated to an agent space
    *
    * Access Level: Write
    *
@@ -441,7 +376,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve an Artifact for the given Agent Instance
+   * Grants permission to retrieve an Artifact for the given Agent Space
    *
    * Access Level: Read
    *
@@ -460,17 +395,6 @@ export class Securityagent extends PolicyStatement {
    */
   public toGetCodeReviewTask() {
     return this.to('GetCodeReviewTask');
-  }
-
-  /**
-   * Grants permission to retrieve a Control
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_GetControl.html
-   */
-  public toGetControl() {
-    return this.to('GetControl');
   }
 
   /**
@@ -518,28 +442,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the status of the associated agent instance document review
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_GetDocumentReview.html
-   */
-  public toGetDocumentReview() {
-    return this.to('GetDocumentReview');
-  }
-
-  /**
-   * Grants permission to get document review artifact for a specific document
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_GetDocumentReviewArtifact.html
-   */
-  public toGetDocumentReviewArtifact() {
-    return this.to('GetDocumentReviewArtifact');
-  }
-
-  /**
    * Grants permission to get the integration metadata by ID
    *
    * Access Level: Read
@@ -548,17 +450,6 @@ export class Securityagent extends PolicyStatement {
    */
   public toGetIntegration() {
     return this.to('GetIntegration');
-  }
-
-  /**
-   * Grants permission to retrieve credentials for a one time login session
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_GetLoginSessionCredentials.html
-   */
-  public toGetLoginSessionCredentials() {
-    return this.to('GetLoginSessionCredentials');
   }
 
   /**
@@ -573,17 +464,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to process and invalidate a one time login session
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/securityagent/API_HandleOneTimeLoginSession.html
-   */
-  public toHandleOneTimeLoginSession() {
-    return this.to('HandleOneTimeLoginSession');
-  }
-
-  /**
    * Grants permission to initiate the registration of Security Agent App for the given provider (eg: GitHub)
    *
    * Access Level: Write
@@ -592,28 +472,6 @@ export class Securityagent extends PolicyStatement {
    */
   public toInitiateProviderRegistration() {
     return this.to('InitiateProviderRegistration');
-  }
-
-  /**
-   * Grants permission to list tasks for a specific agent instance
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/securityagent/API_ListAgentInstanceTasks.html
-   */
-  public toListAgentInstanceTasks() {
-    return this.to('ListAgentInstanceTasks');
-  }
-
-  /**
-   * Grants permission to list agent instances
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/securityagent/API_ListAgentInstances.html
-   */
-  public toListAgentInstances() {
-    return this.to('ListAgentInstances');
   }
 
   /**
@@ -650,17 +508,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all Controls
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/securityagent/API_ListControls.html
-   */
-  public toListControls() {
-    return this.to('ListControls');
-  }
-
-  /**
    * Grants permission to list design review comments
    *
    * Access Level: List
@@ -694,28 +541,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list document review comments
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/securityagent/API_ListDocumentReviewComments.html
-   */
-  public toListDocumentReviewComments() {
-    return this.to('ListDocumentReviewComments');
-  }
-
-  /**
-   * Grants permission to list all document reviews for the given project
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/securityagent/API_ListDocumentReviews.html
-   */
-  public toListDocumentReviews() {
-    return this.to('ListDocumentReviews');
-  }
-
-  /**
    * Grants permission to list findings with filtering and pagination support
    *
    * Access Level: List
@@ -727,7 +552,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list integrated resources for an agent instance
+   * Grants permission to list integrated resources for an agent space
    *
    * Access Level: List
    *
@@ -749,7 +574,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all members associated to an agent instance with pagination support
+   * Grants permission to list all members associated to an agent space with pagination support
    *
    * Access Level: List
    *
@@ -812,6 +637,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toListSecurityRequirements() {
     return this.to('ListSecurityRequirements');
+  }
+
+  /**
+   * Grants permission to list the tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -903,14 +739,18 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to toggle the status
+   * Grants permission to add tags to a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/securityagent/API_ToggleManagedControl.html
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/securityagent/API_TagResource.html
    */
-  public toToggleManagedControl() {
-    return this.to('ToggleManagedControl');
+  public toTagResource() {
+    return this.to('TagResource');
   }
 
   /**
@@ -925,14 +765,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an agent instance record
+   * Grants permission to remove tags from a resource
    *
-   * Access Level: Write
+   * Access Level: Tagging
    *
-   * https://docs.aws.amazon.com/securityagent/API_UpdateAgentInstance.html
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UntagResource.html
    */
-  public toUpdateAgentInstance() {
-    return this.to('UpdateAgentInstance');
+  public toUntagResource() {
+    return this.to('UntagResource');
   }
 
   /**
@@ -961,17 +804,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a customer managed Control
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/securityagent/API_UpdateControl.html
-   */
-  public toUpdateControl() {
-    return this.to('UpdateControl');
-  }
-
-  /**
    * Grants permission to update an existing security finding with new details or status
    *
    * Access Level: Write
@@ -983,7 +815,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update integrated resources for an agent instance
+   * Grants permission to update integrated resources for an agent space
    *
    * Access Level: Write
    *
@@ -1040,31 +872,24 @@ export class Securityagent extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddArtifact',
-      'AddControl',
       'BatchDeletePentests',
-      'CreateAgentInstance',
       'CreateAgentSpace',
       'CreateApplication',
       'CreateDesignReview',
-      'CreateDocumentReview',
       'CreateIntegration',
       'CreateMembership',
       'CreateOneTimeLoginSession',
       'CreatePentest',
       'CreateSecurityRequirement',
       'CreateTargetDomain',
-      'DeleteAgentInstance',
       'DeleteAgentSpace',
       'DeleteApplication',
       'DeleteArtifact',
-      'DeleteControl',
       'DeleteDesignReview',
-      'DeleteDocumentReview',
       'DeleteIntegration',
       'DeleteMembership',
       'DeleteSecurityRequirement',
       'DeleteTargetDomain',
-      'HandleOneTimeLoginSession',
       'InitiateProviderRegistration',
       'PutDesignReviewFeedback',
       'StartCodeRemediation',
@@ -1072,12 +897,9 @@ export class Securityagent extends PolicyStatement {
       'StartPentestJob',
       'StopPentestExecution',
       'StopPentestJob',
-      'ToggleManagedControl',
       'ToggleManagedSecurityRequirement',
-      'UpdateAgentInstance',
       'UpdateAgentSpace',
       'UpdateApplication',
-      'UpdateControl',
       'UpdateFinding',
       'UpdateIntegratedResources',
       'UpdatePentest',
@@ -1086,7 +908,6 @@ export class Securityagent extends PolicyStatement {
       'VerifyTargetDomain'
     ],
     Read: [
-      'BatchGetAgentInstances',
       'BatchGetAgentSpaces',
       'BatchGetArtifactMetadata',
       'BatchGetFindings',
@@ -1101,29 +922,21 @@ export class Securityagent extends PolicyStatement {
       'GetApplication',
       'GetArtifact',
       'GetCodeReviewTask',
-      'GetControl',
       'GetDesignReview',
       'GetDesignReviewArtifact',
       'GetDesignReviewFeedback',
       'GetDocReviewTask',
-      'GetDocumentReview',
-      'GetDocumentReviewArtifact',
       'GetIntegration',
-      'GetLoginSessionCredentials',
-      'GetSecurityRequirement'
+      'GetSecurityRequirement',
+      'ListTagsForResource'
     ],
     List: [
-      'ListAgentInstanceTasks',
-      'ListAgentInstances',
       'ListAgentSpaces',
       'ListApplications',
       'ListArtifacts',
-      'ListControls',
       'ListDesignReviewComments',
       'ListDesignReviews',
       'ListDiscoveredEndpoints',
-      'ListDocumentReviewComments',
-      'ListDocumentReviews',
       'ListFindings',
       'ListIntegratedResources',
       'ListIntegrations',
@@ -1135,6 +948,10 @@ export class Securityagent extends PolicyStatement {
       'ListSecurityRequirements',
       'ListTargetDomains',
       'ListTasks'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -1147,37 +964,29 @@ export class Securityagent extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }`);
   }
 
   /**
-   * Adds a resource of type Control to the statement
+   * Adds a resource of type SecurityRequirementPack to the statement
    *
    * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
    *
-   * @param controlId - Identifier for the controlId.
+   * @param securityRequirementPackId - Identifier for the securityRequirementPackId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onControl(controlId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:control/${ controlId }`);
-  }
-
-  /**
-   * Adds a resource of type SecurityRequirement to the statement
    *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
-   *
-   * @param securityRequirementId - Identifier for the securityRequirementId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onSecurityRequirement(securityRequirementId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:security-requirement/${ securityRequirementId }`);
+  public onSecurityRequirementPack(securityRequirementPackId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:security-requirement-pack/${ securityRequirementPackId }`);
   }
 
   /**
@@ -1189,23 +998,12 @@ export class Securityagent extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIntegration(integrationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:integration/${ integrationId }`);
-  }
-
-  /**
-   * Adds a resource of type AgentInstance to the statement
-   *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
-   *
-   * @param agentId - Identifier for the agentId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAgentInstance(agentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-instance/${ agentId }`);
   }
 
   /**
@@ -1217,6 +1015,9 @@ export class Securityagent extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAgentSpace(agentId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }`);
@@ -1231,83 +1032,69 @@ export class Securityagent extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTargetDomain(targetDomainId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target-domain/${ targetDomainId }`);
   }
 
   /**
-   * Adds a resource of type Artifact to the statement
+   * Filters access by the tags that are passed in the request
    *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
-   * @param agentId - Identifier for the agentId.
-   * @param artifactId - Identifier for the artifactId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   * Applies to actions:
+   * - .toCreateAgentSpace()
+   * - .toCreateApplication()
+   * - .toCreateIntegration()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public onArtifact(agentId: string, artifactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/artifact/${ artifactId }`);
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
-   * Adds a resource of type Pentest to the statement
+   * Filters access by the tags associated with the resource
    *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * @param agentId - Identifier for the agentId.
-   * @param pentestId - Identifier for the pentestId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   * Applies to resource types:
+   * - Application
+   * - SecurityRequirementPack
+   * - Integration
+   * - AgentSpace
+   * - TargetDomain
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public onPentest(agentId: string, pentestId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/pentest/${ pentestId }`);
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**
-   * Adds a resource of type PentestJob to the statement
+   * Filters access by the tag keys that are passed in the request
    *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
-   * @param agentId - Identifier for the agentId.
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   * Applies to actions:
+   * - .toCreateAgentSpace()
+   * - .toCreateApplication()
+   * - .toCreateIntegration()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public onPentestJob(agentId: string, jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/pentest-job/${ jobId }`);
-  }
-
-  /**
-   * Adds a resource of type PentestTask to the statement
-   *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
-   *
-   * @param agentId - Identifier for the agentId.
-   * @param taskId - Identifier for the taskId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onPentestTask(agentId: string, taskId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/pentest-task/${ taskId }`);
-  }
-
-  /**
-   * Adds a resource of type Finding to the statement
-   *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
-   *
-   * @param agentId - Identifier for the agentId.
-   * @param findingId - Identifier for the findingId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onFinding(agentId: string, findingId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }/finding/${ findingId }`);
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }
