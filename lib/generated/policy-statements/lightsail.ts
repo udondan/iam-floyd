@@ -167,6 +167,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateContactMethod.html
    */
   public toCreateContactMethod() {
@@ -2311,6 +2315,9 @@ export class Lightsail extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onContactMethod(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ContactMethod/${ id }`);
@@ -2375,6 +2382,7 @@ export class Lightsail extends PolicyStatement {
    * Applies to actions:
    * - .toCreateBucket()
    * - .toCreateCertificate()
+   * - .toCreateContactMethod()
    * - .toCreateContainerService()
    * - .toCreateDisk()
    * - .toCreateDiskFromSnapshot()
@@ -2416,6 +2424,7 @@ export class Lightsail extends PolicyStatement {
    * - RelationalDatabase
    * - RelationalDatabaseSnapshot
    * - Certificate
+   * - ContactMethod
    * - ContainerService
    * - Distribution
    * - Bucket
@@ -2436,6 +2445,7 @@ export class Lightsail extends PolicyStatement {
    * Applies to actions:
    * - .toCreateBucket()
    * - .toCreateCertificate()
+   * - .toCreateContactMethod()
    * - .toCreateContainerService()
    * - .toCreateDisk()
    * - .toCreateDiskFromSnapshot()
