@@ -34,6 +34,26 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AdministratorAccessAWSElasticBeanstalk);
     }
 
+    /** Provides permissions required by the AWS DevOps Agent to conduct investigations and perform analysis on customer AWS resources. */
+    public AIDevOpsAgentAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentAccessPolicy);
+    }
+
+    /** Provides full access to Amazon DevOps Agent via the AWS Management Console */
+    public AIDevOpsAgentFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentFullAccess);
+    }
+
+    /** Provides read only access to Amazon DevOps Agent via the AWS Management Console */
+    public AIDevOpsAgentReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentReadOnlyAccess);
+    }
+
+    /** Provides access to use the AWS DevOps operator web app for an Agent Space. */
+    public AIDevOpsOperatorAppAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsOperatorAppAccessPolicy);
+    }
+
     /** Provides permissions required by the Amazon AI Operations Assistant to generate incident report of the investigation. */
     public AIOpsAssistantIncidentReportPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIOpsAssistantIncidentReportPolicy);

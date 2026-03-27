@@ -1,0 +1,72 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowOperatorAgentSpaceActions",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:GetAgentSpace",
+        "aidevops:GetAssociation",
+        "aidevops:ListAssociations",
+        "aidevops:CreateBacklogTask",
+        "aidevops:GetBacklogTask",
+        "aidevops:UpdateBacklogTask",
+        "aidevops:ListBacklogTasks",
+        "aidevops:ListJournalRecords",
+        "aidevops:DiscoverTopology",
+        "aidevops:ListGoals",
+        "aidevops:ListRecommendations",
+        "aidevops:ListExecutions",
+        "aidevops:GetRecommendation",
+        "aidevops:UpdateRecommendation",
+        "aidevops:CreateKnowledgeItem",
+        "aidevops:ListKnowledgeItems",
+        "aidevops:ListKnowledgeItemVersions",
+        "aidevops:GetKnowledgeItem",
+        "aidevops:UpdateKnowledgeItem",
+        "aidevops:DeleteKnowledgeItem",
+        "aidevops:ListPendingMessages",
+        "aidevops:InitiateChatForCase",
+        "aidevops:EndChatForCase",
+        "aidevops:DescribeSupportLevel",
+        "aidevops:ListChats",
+        "aidevops:CreateChat",
+        "aidevops:SendMessage"
+      ],
+      "Resource": "arn:aws:aidevops:*:*:agentspace/${aws:PrincipalTag/AgentSpaceId}",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowOperatorAccountActions",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:GetAccountUsage"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSupportOperatorActions",
+      "Effect": "Allow",
+      "Action": [
+        "support:DescribeCases",
+        "support:InitiateChatForCase",
+        "support:DescribeSupportLevel"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}
