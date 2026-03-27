@@ -10,6 +10,14 @@ export class AwsManagedPolicy {
     public static AdministratorAccessAmplify = 'AdministratorAccess-Amplify';
     /** Grants account administrative permissions. Explicitly allows developers and administrators to gain direct access to resources they need to manage AWS Elastic Beanstalk applications */
     public static AdministratorAccessAWSElasticBeanstalk = 'AdministratorAccess-AWSElasticBeanstalk';
+    /** Provides permissions required by the AWS DevOps Agent to conduct investigations and perform analysis on customer AWS resources. */
+    public static AIDevOpsAgentAccessPolicy = 'AIDevOpsAgentAccessPolicy';
+    /** Provides full access to Amazon DevOps Agent via the AWS Management Console */
+    public static AIDevOpsAgentFullAccess = 'AIDevOpsAgentFullAccess';
+    /** Provides read only access to Amazon DevOps Agent via the AWS Management Console */
+    public static AIDevOpsAgentReadOnlyAccess = 'AIDevOpsAgentReadOnlyAccess';
+    /** Provides access to use the AWS DevOps operator web app for an Agent Space. */
+    public static AIDevOpsOperatorAppAccessPolicy = 'AIDevOpsOperatorAppAccessPolicy';
     /** Provides permissions required by the Amazon AI Operations Assistant to generate incident report of the investigation. */
     public static AIOpsAssistantIncidentReportPolicy = 'AIOpsAssistantIncidentReportPolicy';
     /** Provides ReadOnly permissions required by the Amazon AI Operations Assistant to do analysis on customer AWS resources during investigations. */

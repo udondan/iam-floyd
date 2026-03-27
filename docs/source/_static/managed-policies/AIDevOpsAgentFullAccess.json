@@ -1,0 +1,161 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AIDevOpsAgentSpaceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateAgentSpace",
+        "aidevops:DeleteAgentSpace",
+        "aidevops:GetAgentSpace",
+        "aidevops:ListAgentSpaces",
+        "aidevops:UpdateAgentSpace"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsServiceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:DeregisterService",
+        "aidevops:GetService",
+        "aidevops:ListServices",
+        "aidevops:RegisterService",
+        "aidevops:SearchServiceAccessibleResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsAssociationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:AssociateService",
+        "aidevops:DisassociateService",
+        "aidevops:GetAssociation",
+        "aidevops:ListAssociations",
+        "aidevops:UpdateAssociation",
+        "aidevops:ValidateAwsAssociations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsWebhookAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:ListWebhooks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsOperatorAppAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:DisableOperatorApp",
+        "aidevops:EnableOperatorApp",
+        "aidevops:GetOperatorApp",
+        "aidevops:UpdateOperatorAppIdpConfig"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsKnowledgeAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateKnowledgeItem",
+        "aidevops:DeleteKnowledgeItem",
+        "aidevops:GetKnowledgeItem",
+        "aidevops:ListKnowledgeItems",
+        "aidevops:ListKnowledgeItemVersions",
+        "aidevops:UpdateKnowledgeItem"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsBacklogAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateBacklogTask",
+        "aidevops:GetBacklogTask",
+        "aidevops:ListBacklogTasks",
+        "aidevops:ListGoals",
+        "aidevops:UpdateBacklogTask",
+        "aidevops:UpdateGoal"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsRecommendationAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:GetRecommendation",
+        "aidevops:ListRecommendations",
+        "aidevops:UpdateRecommendation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsAgentChatAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:CreateChat",
+        "aidevops:ListChats",
+        "aidevops:ListPendingMessages",
+        "aidevops:SendMessage"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsJournalAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:ListExecutions",
+        "aidevops:ListJournalRecords"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsTopologyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:DiscoverTopology"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsSupportAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:DescribeSupportLevel",
+        "aidevops:EndChatForCase",
+        "aidevops:InitiateChatForCase"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsUsageAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:GetAccountUsage"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsTaggingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:ListTagsForResource",
+        "aidevops:TagResource",
+        "aidevops:UntagResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AIDevOpsVendedLogs",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:AllowVendedLogDeliveryForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
