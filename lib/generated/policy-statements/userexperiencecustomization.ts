@@ -23,7 +23,7 @@ export class Uxc extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/DeleteAccountColor.html
+   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_DeleteAccountColor.html
    */
   public toDeleteAccountColor() {
     return this.to('DeleteAccountColor');
@@ -34,7 +34,7 @@ export class Uxc extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/GetAccountColor.html
+   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_GetAccountColor.html
    */
   public toGetAccountColor() {
     return this.to('GetAccountColor');
@@ -45,7 +45,7 @@ export class Uxc extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_GetAccountCustomizations.html
+   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_GetAccountCustomizations.html
    */
   public toGetAccountCustomizations() {
     return this.to('GetAccountCustomizations');
@@ -56,7 +56,7 @@ export class Uxc extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_ListServices.html
+   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_ListServices.html
    */
   public toListServices() {
     return this.to('ListServices');
@@ -67,7 +67,7 @@ export class Uxc extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/PutAccountColor.html
+   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_PutAccountColor.html
    */
   public toPutAccountColor() {
     return this.to('PutAccountColor');
@@ -78,7 +78,7 @@ export class Uxc extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/API_UpdateAccountCustomizations.html
+   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/APIReference/API_UpdateAccountCustomizations.html
    */
   public toUpdateAccountCustomizations() {
     return this.to('UpdateAccountCustomizations');

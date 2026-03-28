@@ -126,6 +126,26 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_CreateConfiguration.html
+   */
+  public toCreateConfiguration() {
+    return this.to('CreateConfiguration');
+  }
+
+  /**
    * Grants permission to create a multipart read set upload
    *
    * Access Level: Write
@@ -272,6 +292,17 @@ export class Omics extends PolicyStatement {
    */
   public toDeleteAnnotationStoreVersions() {
     return this.to('DeleteAnnotationStoreVersions');
+  }
+
+  /**
+   * Grants permission to delete a configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteConfiguration.html
+   */
+  public toDeleteConfiguration() {
+    return this.to('DeleteConfiguration');
   }
 
   /**
@@ -426,6 +457,17 @@ export class Omics extends PolicyStatement {
    */
   public toGetAnnotationStoreVersion() {
     return this.to('GetAnnotationStoreVersion');
+  }
+
+  /**
+   * Grants permission to retrieve configuration details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetConfiguration.html
+   */
+  public toGetConfiguration() {
+    return this.to('GetConfiguration');
   }
 
   /**
@@ -679,6 +721,17 @@ export class Omics extends PolicyStatement {
    */
   public toListAnnotationStores() {
     return this.to('ListAnnotationStores');
+  }
+
+  /**
+   * Grants permission to retrieve a list of configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListConfigurations.html
+   */
+  public toListConfigurations() {
+    return this.to('ListConfigurations');
   }
 
   /**
@@ -1135,6 +1188,7 @@ export class Omics extends PolicyStatement {
       'CompleteMultipartReadSetUpload',
       'CreateAnnotationStore',
       'CreateAnnotationStoreVersion',
+      'CreateConfiguration',
       'CreateMultipartReadSetUpload',
       'CreateReferenceStore',
       'CreateRunCache',
@@ -1146,6 +1200,7 @@ export class Omics extends PolicyStatement {
       'CreateWorkflowVersion',
       'DeleteAnnotationStore',
       'DeleteAnnotationStoreVersions',
+      'DeleteConfiguration',
       'DeleteReference',
       'DeleteReferenceStore',
       'DeleteRun',
@@ -1179,6 +1234,7 @@ export class Omics extends PolicyStatement {
       'GetAnnotationImportJob',
       'GetAnnotationStore',
       'GetAnnotationStoreVersion',
+      'GetConfiguration',
       'GetReadSet',
       'GetReadSetActivationJob',
       'GetReadSetExportJob',
@@ -1204,6 +1260,7 @@ export class Omics extends PolicyStatement {
       'ListAnnotationImportJobs',
       'ListAnnotationStoreVersions',
       'ListAnnotationStores',
+      'ListConfigurations',
       'ListMultipartReadSetUploads',
       'ListReadSetActivationJobs',
       'ListReadSetExportJobs',
@@ -1264,6 +1321,23 @@ export class Omics extends PolicyStatement {
    */
   public onAnnotationStoreVersion(annotationStoreName: string, annotationStoreVersionName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:annotationStore/${ annotationStoreName }/version/${ annotationStoreVersionName }`);
+  }
+
+  /**
+   * Adds a resource of type configuration to the statement
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_ConfigurationListItem.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConfiguration(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration/${ name }`);
   }
 
   /**
@@ -1461,6 +1535,7 @@ export class Omics extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAnnotationStore()
    * - .toCreateAnnotationStoreVersion()
+   * - .toCreateConfiguration()
    * - .toCreateReferenceStore()
    * - .toCreateRunCache()
    * - .toCreateRunGroup()
@@ -1487,6 +1562,7 @@ export class Omics extends PolicyStatement {
    * Applies to resource types:
    * - AnnotationStore
    * - AnnotationStoreVersion
+   * - configuration
    * - readSet
    * - reference
    * - referenceStore
@@ -1514,6 +1590,7 @@ export class Omics extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAnnotationStore()
    * - .toCreateAnnotationStoreVersion()
+   * - .toCreateConfiguration()
    * - .toCreateReferenceStore()
    * - .toCreateRunCache()
    * - .toCreateRunGroup()

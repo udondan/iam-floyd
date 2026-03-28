@@ -567,6 +567,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view detailed information about insights for an OpenSearch Service domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeInsightDetails.html
+   */
+  public toDescribeInsightDetails() {
+    return this.to('DescribeInsightDetails');
+  }
+
+  /**
    * Grants permission to view the instance count, storage, and master node limits for a given engine version and instance type
    *
    * Access Level: List
@@ -982,6 +993,17 @@ export class Es extends PolicyStatement {
    */
   public toListElasticsearchVersions() {
     return this.to('ListElasticsearchVersions');
+  }
+
+  /**
+   * Grants permission to list insights for OpenSearch Service domains in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListInsights.html
+   */
+  public toListInsights() {
+    return this.to('ListInsights');
   }
 
   /**
@@ -1418,6 +1440,7 @@ export class Es extends PolicyStatement {
       'DescribeDryRunProgress',
       'DescribeElasticsearchDomain',
       'DescribeElasticsearchDomainConfig',
+      'DescribeInsightDetails',
       'DescribePackages',
       'ESCrossClusterGet',
       'ESHttpGet',
@@ -1458,6 +1481,7 @@ export class Es extends PolicyStatement {
       'ListElasticsearchInstanceTypeDetails',
       'ListElasticsearchInstanceTypes',
       'ListElasticsearchVersions',
+      'ListInsights',
       'ListInstanceTypeDetails',
       'ListPackagesForDomain',
       'ListScheduledActions',

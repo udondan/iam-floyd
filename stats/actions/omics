@@ -7,6 +7,7 @@ omics:CancelVariantImportJob;Write
 omics:CompleteMultipartReadSetUpload;Write
 omics:CreateAnnotationStore;Write
 omics:CreateAnnotationStoreVersion;Write
+omics:CreateConfiguration;Write
 omics:CreateMultipartReadSetUpload;Write
 omics:CreateReferenceStore;Write
 omics:CreateRunCache;Write
@@ -18,6 +19,7 @@ omics:CreateWorkflow;Write
 omics:CreateWorkflowVersion;Write
 omics:DeleteAnnotationStore;Write
 omics:DeleteAnnotationStoreVersions;Write
+omics:DeleteConfiguration;Write
 omics:DeleteReference;Write
 omics:DeleteReferenceStore;Write
 omics:DeleteRun;Write
@@ -32,6 +34,7 @@ omics:DeleteWorkflowVersion;Write
 omics:GetAnnotationImportJob;Read
 omics:GetAnnotationStore;Read
 omics:GetAnnotationStoreVersion;Read
+omics:GetConfiguration;Read
 omics:GetReadSet;Read
 omics:GetReadSetActivationJob;Read
 omics:GetReadSetExportJob;Read
@@ -55,6 +58,7 @@ omics:GetWorkflowVersion;Read
 omics:ListAnnotationImportJobs;List
 omics:ListAnnotationStoreVersions;List
 omics:ListAnnotationStores;List
+omics:ListConfigurations;List
 omics:ListMultipartReadSetUploads;List
 omics:ListReadSetActivationJobs;List
 omics:ListReadSetExportJobs;List
