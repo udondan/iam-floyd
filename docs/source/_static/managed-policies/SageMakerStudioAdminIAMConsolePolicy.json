@@ -469,6 +469,40 @@
         "glue:GetCatalog"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "SSOApplicationPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DeleteApplication"
+      ],
+      "Resource": [
+        "arn:aws:sso::*:application/*/*"
+      ],
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "datazone.amazonaws.com"
+        },
+        "Bool": {
+          "aws:ViaAWSService": "true"
+        }
+      }
+    },
+    {
+      "Sid": "SSOKMSPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "sso.*.amazonaws.com"
+        },
+        "Null": {
+          "kms:EncryptionContext:aws:sso:instance-arn": "false"
+        }
+      }
     }
   ]
 }

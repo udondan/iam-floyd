@@ -381,6 +381,15 @@
         "arn:aws:bedrock:*::foundation-model/*",
         "arn:aws:bedrock:*:*:inference-profile/*"
       ]
+    },
+    {
+      "Sid": "AgentCoreEvaluationLambdaAccess",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction",
+        "lambda:GetFunction"
+      ],
+      "Resource": "arn:aws:lambda:*:*:function:*"
     }
   ]
 }
