@@ -34,6 +34,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_BatchDeletePentests.html
    */
   public toBatchDeletePentests() {
@@ -44,6 +47,9 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve multiple agent spaces in a single request
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetAgentSpaces.html
    */
@@ -67,6 +73,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetFindings.html
    */
   public toBatchGetFindings() {
@@ -77,6 +86,9 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve multiple pentest job contents metadata in a single request
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobContentMetadata.html
    */
@@ -89,6 +101,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobTasks.html
    */
   public toBatchGetPentestJobTasks() {
@@ -99,6 +114,9 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve multiple security testing jobs in a single request
    *
    * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobs.html
    */
@@ -111,21 +129,13 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetPentests.html
    */
   public toBatchGetPentests() {
     return this.to('BatchGetPentests');
-  }
-
-  /**
-   * Grants permission to retrieve multiple security testing contents metadata in a single request
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_BatchGetSecurityTestContentMetadata.html
-   */
-  public toBatchGetSecurityTestContentMetadata() {
-    return this.to('BatchGetSecurityTestContentMetadata');
   }
 
   /**
@@ -140,17 +150,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve multiple security testing tasks in a single request
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_BatchGetTasks.html
-   */
-  public toBatchGetTasks() {
-    return this.to('BatchGetTasks');
-  }
-
-  /**
    * Grants permission to create an agent space record
    *
    * Access Level: Write
@@ -158,6 +157,11 @@ export class Securityagent extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKeyWithoutPlaintext
    *
    * https://docs.aws.amazon.com/securityagent/API_CreateAgentSpace.html
    */
@@ -176,6 +180,7 @@ export class Securityagent extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - kms:DescribeKey
    * - sso:CreateApplication
    *
    * https://docs.aws.amazon.com/securityagent/API_CreateApplication.html
@@ -237,6 +242,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_CreatePentest.html
    */
   public toCreatePentest() {
@@ -269,6 +277,9 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to delete an agent space record
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_DeleteAgentSpace.html
    */
@@ -354,17 +365,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve security findings for a penetration test or security testing tasks in a penetration test
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_DescribeFindings.html
-   */
-  public toDescribeFindings() {
-    return this.to('DescribeFindings');
-  }
-
-  /**
    * Grants permission to get application details by application ID
    *
    * Access Level: Read
@@ -384,17 +384,6 @@ export class Securityagent extends PolicyStatement {
    */
   public toGetArtifact() {
     return this.to('GetArtifact');
-  }
-
-  /**
-   * Grants permission to retrieve a Code Review Task
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_GetCodeReviewTask.html
-   */
-  public toGetCodeReviewTask() {
-    return this.to('GetCodeReviewTask');
   }
 
   /**
@@ -428,17 +417,6 @@ export class Securityagent extends PolicyStatement {
    */
   public toGetDesignReviewFeedback() {
     return this.to('GetDesignReviewFeedback');
-  }
-
-  /**
-   * Grants permission to retrieve a document review task
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/securityagent/API_GetDocReviewTask.html
-   */
-  public toGetDocReviewTask() {
-    return this.to('GetDocReviewTask');
   }
 
   /**
@@ -497,7 +475,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all artifacts for the given project
+   * Grants permission to list all artifacts for the given agent space
    *
    * Access Level: List
    *
@@ -519,7 +497,7 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all design reviews for the given project
+   * Grants permission to list all design reviews for the given agent space
    *
    * Access Level: List
    *
@@ -534,6 +512,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_ListDiscoveredEndpoints.html
    */
   public toListDiscoveredEndpoints() {
@@ -544,6 +525,9 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to list findings with filtering and pagination support
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_ListFindings.html
    */
@@ -589,6 +573,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_ListPentestJobTasks.html
    */
   public toListPentestJobTasks() {
@@ -600,6 +587,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_ListPentestJobsForPentest.html
    */
   public toListPentestJobsForPentest() {
@@ -610,6 +600,9 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to list penetration tests with optional filtering by status
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_ListPentests.html
    */
@@ -662,17 +655,6 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list security testing tasks associated with a pentest job
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/securityagent/API_ListTasks.html
-   */
-  public toListTasks() {
-    return this.to('ListTasks');
-  }
-
-  /**
    * Grants permission to submit feedback for a design review comment
    *
    * Access Level: Write
@@ -688,6 +670,10 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   *
    * https://docs.aws.amazon.com/securityagent/API_StartCodeRemediation.html
    */
   public toStartCodeRemediation() {
@@ -699,16 +685,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/securityagent/API_StartPentestExecution.html
-   */
-  public toStartPentestExecution() {
-    return this.to('StartPentestExecution');
-  }
-
-  /**
-   * Grants permission to initiate the execution of a penetration test
-   *
-   * Access Level: Write
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
    *
    * https://docs.aws.amazon.com/securityagent/API_StartPentestJob.html
    */
@@ -721,16 +700,8 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/securityagent/API_StopPentestExecution.html
-   */
-  public toStopPentestExecution() {
-    return this.to('StopPentestExecution');
-  }
-
-  /**
-   * Grants permission to stop the execution of a running penetration test
-   *
-   * Access Level: Write
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_StopPentestJob.html
    */
@@ -783,6 +754,9 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
    * https://docs.aws.amazon.com/securityagent/API_UpdateAgentSpace.html
    */
   public toUpdateAgentSpace() {
@@ -796,6 +770,7 @@ export class Securityagent extends PolicyStatement {
    *
    * Dependent actions:
    * - iam:PassRole
+   * - kms:DescribeKey
    *
    * https://docs.aws.amazon.com/securityagent/API_UpdateApplication.html
    */
@@ -807,6 +782,9 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to update an existing security finding with new details or status
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_UpdateFinding.html
    */
@@ -829,6 +807,9 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to update an existing penetration test with new configuration or settings
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_UpdatePentest.html
    */
@@ -893,9 +874,7 @@ export class Securityagent extends PolicyStatement {
       'InitiateProviderRegistration',
       'PutDesignReviewFeedback',
       'StartCodeRemediation',
-      'StartPentestExecution',
       'StartPentestJob',
-      'StopPentestExecution',
       'StopPentestJob',
       'ToggleManagedSecurityRequirement',
       'UpdateAgentSpace',
@@ -915,17 +894,12 @@ export class Securityagent extends PolicyStatement {
       'BatchGetPentestJobTasks',
       'BatchGetPentestJobs',
       'BatchGetPentests',
-      'BatchGetSecurityTestContentMetadata',
       'BatchGetTargetDomains',
-      'BatchGetTasks',
-      'DescribeFindings',
       'GetApplication',
       'GetArtifact',
-      'GetCodeReviewTask',
       'GetDesignReview',
       'GetDesignReviewArtifact',
       'GetDesignReviewFeedback',
-      'GetDocReviewTask',
       'GetIntegration',
       'GetSecurityRequirement',
       'ListTagsForResource'
@@ -946,8 +920,7 @@ export class Securityagent extends PolicyStatement {
       'ListPentests',
       'ListResourcesFromIntegration',
       'ListSecurityRequirements',
-      'ListTargetDomains',
-      'ListTasks'
+      'ListTargetDomains'
     ],
     Tagging: [
       'TagResource',

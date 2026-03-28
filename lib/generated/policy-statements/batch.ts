@@ -787,7 +787,7 @@ export class Batch extends PolicyStatement {
   /**
    * Adds a resource of type quota-share to the statement
    *
-   * https://docs.aws.amazon.com/batch/latest/userguide/quota-share.html
+   * https://docs.aws.amazon.com/batch/latest/userguide/quota-shares.html
    *
    * @param jobQueueName - Identifier for the jobQueueName.
    * @param quotaShareName - Identifier for the quotaShareName.

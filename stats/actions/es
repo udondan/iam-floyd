@@ -46,6 +46,7 @@ es:DescribeElasticsearchDomains;List
 es:DescribeElasticsearchInstanceTypeLimits;List
 es:DescribeInboundConnections;List
 es:DescribeInboundCrossClusterSearchConnections;List
+es:DescribeInsightDetails;Read
 es:DescribeInstanceTypeLimits;List
 es:DescribeOutboundConnections;List
 es:DescribeOutboundCrossClusterSearchConnections;List
@@ -84,6 +85,7 @@ es:ListDomainsForPackage;List
 es:ListElasticsearchInstanceTypeDetails;List
 es:ListElasticsearchInstanceTypes;List
 es:ListElasticsearchVersions;List
+es:ListInsights;List
 es:ListInstanceTypeDetails;List
 es:ListPackagesForDomain;List
 es:ListScheduledActions;List
