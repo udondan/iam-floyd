@@ -127,7 +127,9 @@
         "datazone:StopNotebookCompute",
         "datazone:StartConversation",
         "datazone:GenerateCode",
-        "datazone:SendMessage"
+        "datazone:SendMessage",
+        "datazone:StartNotebookImport",
+        "datazone:StartNotebookExport"
       ],
       "Resource": "*"
     },

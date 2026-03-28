@@ -57,7 +57,9 @@
         "datazone:StopNotebookCompute",
         "datazone:StartConversation",
         "datazone:GenerateCode",
-        "datazone:SendMessage"
+        "datazone:SendMessage",
+        "datazone:StartNotebookImport",
+        "datazone:StartNotebookExport"
       ],
       "Resource": "*"
     },
@@ -243,7 +245,9 @@
         "sagemaker:StartMlflowTrackingServer",
         "sagemaker:StopMlflowTrackingServer",
         "sagemaker:CreatePresignedMlflowTrackingServerUrl",
-        "sagemaker-mlflow:*"
+        "sagemaker-mlflow:*",
+        "sagemaker:*Feature*",
+        "sagemaker:*Record"
       ],
       "Resource": "*"
     },
@@ -277,6 +281,7 @@
       "Effect": "Allow",
       "Action": [
         "cloudwatch:PutMetricData",
+        "cloudwatch:GetMetricData",
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
         "logs:Describe*",
