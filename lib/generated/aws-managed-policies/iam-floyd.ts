@@ -1256,6 +1256,8 @@ export class AwsManagedPolicy {
     public static AWSBatchServiceRolePolicyForSageMaker = 'aws-service-role/AWSBatchServiceRolePolicyForSageMaker';
     /** A service linked role to provide Billing and Cost Management Data Exports access to AWS service data for exporting the data to a target location, such as Amazon S3, on behalf of a customer. */
     public static AWSBCMDataExportsServiceRolePolicy = 'aws-service-role/AWSBCMDataExportsServiceRolePolicy';
+    /** Allows Bedrock AgentCore Gateway to managed VPC Lattice resources on your behalf */
+    public static AWSBedrockAgentCoreGatewayNetworkServiceRolePolicy = 'aws-service-role/AWSBedrockAgentCoreGatewayNetworkServiceRolePolicy';
     /** Use the AWSBillingConductorFullAccess managed policy to allow complete access to AWS Billing Conductor (ABC) console and APIs. This policy allows users to list, create and delete ABC resources. */
     public static AWSBillingConductorFullAccess = 'AWSBillingConductorFullAccess';
     /** Use the AWSBillingConductorReadOnlyAccess managed policy to allow read only access to AWS Billing Conductor (ABC) console and APIs. This policy grants permission to view and list all ABC resources. It does not include the ability to create or delete resources. */

@@ -3149,6 +3149,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBCMDataExportsServiceRolePolicy);
     }
 
+    /** Allows Bedrock AgentCore Gateway to managed VPC Lattice resources on your behalf */
+    public AWSBedrockAgentCoreGatewayNetworkServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBedrockAgentCoreGatewayNetworkServiceRolePolicy);
+    }
+
     /** Use the AWSBillingConductorFullAccess managed policy to allow complete access to AWS Billing Conductor (ABC) console and APIs. This policy allows users to list, create and delete ABC resources. */
     public AWSBillingConductorFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingConductorFullAccess);
