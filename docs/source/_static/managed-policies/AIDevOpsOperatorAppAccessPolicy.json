@@ -15,6 +15,7 @@
         "aidevops:ListJournalRecords",
         "aidevops:DiscoverTopology",
         "aidevops:ListGoals",
+        "aidevops:UpdateGoal",
         "aidevops:ListRecommendations",
         "aidevops:ListExecutions",
         "aidevops:GetRecommendation",
