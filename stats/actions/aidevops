@@ -4,6 +4,7 @@ aidevops:CreateAgentSpace;Write
 aidevops:CreateBacklogTask;Write
 aidevops:CreateChat;Write
 aidevops:CreateKnowledgeItem;Write
+aidevops:CreateOneTimeLoginSession;Write
 aidevops:DeleteAgentSpace;Write
 aidevops:DeleteKnowledgeItem;Write
 aidevops:DeregisterService;Write

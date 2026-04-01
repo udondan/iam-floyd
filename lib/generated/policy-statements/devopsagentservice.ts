@@ -90,6 +90,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate secure one-time session for initiating off-console Application login
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toCreateOneTimeLoginSession() {
+    return this.to('CreateOneTimeLoginSession');
+  }
+
+  /**
    * Grants permission to delete agentspace
    *
    * Access Level: Write
@@ -626,6 +637,7 @@ export class Aidevops extends PolicyStatement {
       'CreateBacklogTask',
       'CreateChat',
       'CreateKnowledgeItem',
+      'CreateOneTimeLoginSession',
       'DeleteAgentSpace',
       'DeleteKnowledgeItem',
       'DeregisterService',

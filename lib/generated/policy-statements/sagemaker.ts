@@ -2133,6 +2133,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a processing job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteProcessingJob.html
+   */
+  public toDeleteProcessingJob() {
+    return this.to('DeleteProcessingJob');
+  }
+
+  /**
    * Grants permission to delete a project
    *
    * Access Level: Write
@@ -2203,6 +2214,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteTags() {
     return this.to('DeleteTags');
+  }
+
+  /**
+   * Grants permission to delete a training job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTrainingJob.html
+   */
+  public toDeleteTrainingJob() {
+    return this.to('DeleteTrainingJob');
   }
 
   /**
@@ -4445,6 +4467,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start deep health checks for a SageMaker Hyperpod cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartClusterHealthCheck.html
+   */
+  public toStartClusterHealthCheck() {
+    return this.to('StartClusterHealthCheck');
+  }
+
+  /**
    * Grants permission to start an edge deployment stage
    *
    * Access Level: Write
@@ -5486,11 +5519,13 @@ export class Sagemaker extends PolicyStatement {
       'DeleteOptimizationJob',
       'DeletePartnerApp',
       'DeletePipeline',
+      'DeleteProcessingJob',
       'DeleteProject',
       'DeleteRecord',
       'DeleteResourcePolicy',
       'DeleteSpace',
       'DeleteStudioLifecycleConfig',
+      'DeleteTrainingJob',
       'DeleteTrial',
       'DeleteTrialComponent',
       'DeleteUserProfile',
@@ -5513,6 +5548,7 @@ export class Sagemaker extends PolicyStatement {
       'SendPipelineExecutionStepFailure',
       'SendPipelineExecutionStepSuccess',
       'SendSharedModelEvent',
+      'StartClusterHealthCheck',
       'StartEdgeDeploymentStage',
       'StartHumanLoop',
       'StartInferenceExperiment',

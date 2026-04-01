@@ -2037,6 +2037,7 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifPrimaryRegion()
    */
   public onPermissionSet(instanceId: string, permissionSetId: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sso:::permissionSet/${ instanceId }/${ permissionSetId }`);
@@ -2064,6 +2065,7 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifPrimaryRegion()
    */
   public onInstance(instanceId: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sso:::instance/${ instanceId }`);
@@ -2082,6 +2084,7 @@ export class Sso extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    * - .ifApplicationAccount()
+   * - .ifPrimaryRegion()
    */
   public onApplication(instanceId: string, applicationId: string, accountId?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sso::${ accountId ?? this.defaultAccount }:application/${ instanceId }/${ applicationId }`);
@@ -2099,6 +2102,7 @@ export class Sso extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifPrimaryRegion()
    */
   public onTrustedTokenIssuer(instanceId: string, trustedTokenIssuerId: string, accountId?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sso::${ accountId ?? this.defaultAccount }:trustedTokenIssuer/${ instanceId }/${ trustedTokenIssuerId }`);
@@ -2238,5 +2242,96 @@ export class Sso extends PolicyStatement {
    */
   public ifApplicationAccount(value: string | string[], operator?: Operator | string) {
     return this.if(`ApplicationAccount`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the primary region of the IAM Identity Center instance
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/API_InstanceMetadata.html
+   *
+   * Applies to actions:
+   * - .toAddRegion()
+   * - .toAttachCustomerManagedPolicyReferenceToPermissionSet()
+   * - .toAttachManagedPolicyToPermissionSet()
+   * - .toCreateAccountAssignment()
+   * - .toCreateApplication()
+   * - .toCreateApplicationAssignment()
+   * - .toCreateInstanceAccessControlAttributeConfiguration()
+   * - .toCreatePermissionSet()
+   * - .toCreateTrustedTokenIssuer()
+   * - .toDeleteAccountAssignment()
+   * - .toDeleteApplication()
+   * - .toDeleteApplicationAccessScope()
+   * - .toDeleteApplicationAssignment()
+   * - .toDeleteApplicationAuthenticationMethod()
+   * - .toDeleteApplicationGrant()
+   * - .toDeleteInlinePolicyFromPermissionSet()
+   * - .toDeleteInstance()
+   * - .toDeleteInstanceAccessControlAttributeConfiguration()
+   * - .toDeletePermissionSet()
+   * - .toDeletePermissionsBoundaryFromPermissionSet()
+   * - .toDeleteTrustedTokenIssuer()
+   * - .toDescribeAccountAssignmentCreationStatus()
+   * - .toDescribeAccountAssignmentDeletionStatus()
+   * - .toDescribeApplication()
+   * - .toDescribeApplicationAssignment()
+   * - .toDescribeInstance()
+   * - .toDescribeInstanceAccessControlAttributeConfiguration()
+   * - .toDescribePermissionSet()
+   * - .toDescribePermissionSetProvisioningStatus()
+   * - .toDescribeRegion()
+   * - .toDescribeTrustedTokenIssuer()
+   * - .toDetachCustomerManagedPolicyReferenceFromPermissionSet()
+   * - .toDetachManagedPolicyFromPermissionSet()
+   * - .toGetApplicationAccessScope()
+   * - .toGetApplicationAssignmentConfiguration()
+   * - .toGetApplicationAuthenticationMethod()
+   * - .toGetApplicationGrant()
+   * - .toGetApplicationSessionConfiguration()
+   * - .toGetInlinePolicyForPermissionSet()
+   * - .toGetPermissionsBoundaryForPermissionSet()
+   * - .toListAccountAssignmentCreationStatus()
+   * - .toListAccountAssignmentDeletionStatus()
+   * - .toListAccountAssignments()
+   * - .toListAccountAssignmentsForPrincipal()
+   * - .toListAccountsForProvisionedPermissionSet()
+   * - .toListApplicationAccessScopes()
+   * - .toListApplicationAssignments()
+   * - .toListApplicationAssignmentsForPrincipal()
+   * - .toListApplicationAuthenticationMethods()
+   * - .toListApplicationGrants()
+   * - .toListCustomerManagedPolicyReferencesInPermissionSet()
+   * - .toListManagedPoliciesInPermissionSet()
+   * - .toListPermissionSetProvisioningStatus()
+   * - .toListPermissionSets()
+   * - .toListPermissionSetsProvisionedToAccount()
+   * - .toListRegions()
+   * - .toListTrustedTokenIssuers()
+   * - .toProvisionPermissionSet()
+   * - .toPutApplicationAccessScope()
+   * - .toPutApplicationAssignmentConfiguration()
+   * - .toPutApplicationAuthenticationMethod()
+   * - .toPutApplicationGrant()
+   * - .toPutApplicationSessionConfiguration()
+   * - .toPutInlinePolicyToPermissionSet()
+   * - .toPutPermissionsBoundaryToPermissionSet()
+   * - .toRemoveRegion()
+   * - .toUpdateApplication()
+   * - .toUpdateInstance()
+   * - .toUpdateInstanceAccessControlAttributeConfiguration()
+   * - .toUpdatePermissionSet()
+   * - .toUpdateTrustedTokenIssuer()
+   *
+   * Applies to resource types:
+   * - PermissionSet
+   * - Instance
+   * - Application
+   * - TrustedTokenIssuer
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPrimaryRegion(value: string | string[], operator?: Operator | string) {
+    return this.if(`PrimaryRegion`, value, operator ?? 'StringLike');
   }
 }

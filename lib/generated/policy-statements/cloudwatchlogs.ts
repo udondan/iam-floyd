@@ -163,6 +163,21 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a lookup table
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLookupTable.html
+   */
+  public toCreateLookupTable() {
+    return this.to('CreateLookupTable');
+  }
+
+  /**
    * Grants permission to create a scheduled query
    *
    * Access Level: Write
@@ -318,6 +333,17 @@ export class Logs extends PolicyStatement {
    */
   public toDeleteLogStream() {
     return this.to('DeleteLogStream');
+  }
+
+  /**
+   * Grants permission to delete a lookup table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLookupTable.html
+   */
+  public toDeleteLookupTable() {
+    return this.to('DeleteLookupTable');
   }
 
   /**
@@ -552,6 +578,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return all lookup tables
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLookupTables.html
+   */
+  public toDescribeLookupTables() {
+    return this.to('DescribeLookupTables');
+  }
+
+  /**
    * Grants permission to return all the metrics filters associated with the specified log group
    *
    * Access Level: List
@@ -769,6 +806,17 @@ export class Logs extends PolicyStatement {
    */
   public toGetLogRecord() {
     return this.to('GetLogRecord');
+  }
+
+  /**
+   * Grants permission to retrieve a lookup table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLookupTable.html
+   */
+  public toGetLookupTable() {
+    return this.to('GetLookupTable');
   }
 
   /**
@@ -1404,6 +1452,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a lookup table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLookupTable.html
+   */
+  public toUpdateLookupTable() {
+    return this.to('UpdateLookupTable');
+  }
+
+  /**
    * Grants permission to update a scheduled query
    *
    * Access Level: Write
@@ -1428,6 +1487,7 @@ export class Logs extends PolicyStatement {
       'CreateLogDelivery',
       'CreateLogGroup',
       'CreateLogStream',
+      'CreateLookupTable',
       'CreateScheduledQuery',
       'DeleteAccountPolicy',
       'DeleteDataProtectionPolicy',
@@ -1442,6 +1502,7 @@ export class Logs extends PolicyStatement {
       'DeleteLogDelivery',
       'DeleteLogGroup',
       'DeleteLogStream',
+      'DeleteLookupTable',
       'DeleteMetricFilter',
       'DeletePipelineRule',
       'DeleteQueryDefinition',
@@ -1476,6 +1537,7 @@ export class Logs extends PolicyStatement {
       'UpdateDeliveryConfiguration',
       'UpdateLogAnomalyDetector',
       'UpdateLogDelivery',
+      'UpdateLookupTable',
       'UpdateScheduledQuery'
     ],
     'Permissions management': [
@@ -1496,6 +1558,7 @@ export class Logs extends PolicyStatement {
       'DescribeIndexPolicies',
       'DescribeLogGroups',
       'DescribeLogStreams',
+      'DescribeLookupTables',
       'DescribeMetricFilters',
       'DescribeQueries',
       'DescribeQueryDefinitions',
@@ -1529,6 +1592,7 @@ export class Logs extends PolicyStatement {
       'GetLogFields',
       'GetLogGroupFields',
       'GetLogRecord',
+      'GetLookupTable',
       'GetQueryResults',
       'GetScheduledQuery',
       'GetScheduledQueryHistory',
@@ -1687,6 +1751,23 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type lookup-table to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LookupTable.html
+   *
+   * @param lookupTableName - Identifier for the lookupTableName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLookupTable(lookupTableName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:logs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:lookup-table:${ lookupTableName }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1695,6 +1776,7 @@ export class Logs extends PolicyStatement {
    * - .toCreateDelivery()
    * - .toCreateLogAnomalyDetector()
    * - .toCreateLogGroup()
+   * - .toCreateLookupTable()
    * - .toCreateScheduledQuery()
    * - .toPutDeliveryDestination()
    * - .toPutDeliverySource()
@@ -1725,6 +1807,7 @@ export class Logs extends PolicyStatement {
    * - delivery-destination
    * - anomaly-detector
    * - scheduled-query
+   * - lookup-table
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1743,6 +1826,7 @@ export class Logs extends PolicyStatement {
    * - .toCreateDelivery()
    * - .toCreateLogAnomalyDetector()
    * - .toCreateLogGroup()
+   * - .toCreateLookupTable()
    * - .toCreateScheduledQuery()
    * - .toPutDeliveryDestination()
    * - .toPutDeliverySource()

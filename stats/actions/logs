@@ -10,6 +10,7 @@ logs:CreateLogAnomalyDetector;Write
 logs:CreateLogDelivery;Write
 logs:CreateLogGroup;Write
 logs:CreateLogStream;Write
+logs:CreateLookupTable;Write
 logs:CreateScheduledQuery;Write
 logs:DeleteAccountPolicy;Write
 logs:DeleteDataProtectionPolicy;Write
@@ -24,6 +25,7 @@ logs:DeleteLogAnomalyDetector;Write
 logs:DeleteLogDelivery;Write
 logs:DeleteLogGroup;Write
 logs:DeleteLogStream;Write
+logs:DeleteLookupTable;Write
 logs:DeleteMetricFilter;Write
 logs:DeletePipelineRule;Write
 logs:DeleteQueryDefinition;Write
@@ -45,6 +47,7 @@ logs:DescribeImportTasks;List
 logs:DescribeIndexPolicies;List
 logs:DescribeLogGroups;List
 logs:DescribeLogStreams;List
+logs:DescribeLookupTables;List
 logs:DescribeMetricFilters;List
 logs:DescribeQueries;List
 logs:DescribeQueryDefinitions;List
@@ -65,6 +68,7 @@ logs:GetLogEvents;Read
 logs:GetLogFields;Read
 logs:GetLogGroupFields;Read
 logs:GetLogRecord;Read
+logs:GetLookupTable;Read
 logs:GetQueryResults;Read
 logs:GetScheduledQuery;Read
 logs:GetScheduledQueryHistory;Read
@@ -119,4 +123,5 @@ logs:UpdateAnomaly;Write
 logs:UpdateDeliveryConfiguration;Write
 logs:UpdateLogAnomalyDetector;Write
 logs:UpdateLogDelivery;Write
+logs:UpdateLookupTable;Write
 logs:UpdateScheduledQuery;Write

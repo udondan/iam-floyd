@@ -1071,6 +1071,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe an automation job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAutomationJob.html
+   */
+  public toDescribeAutomationJob() {
+    return this.to('DescribeAutomationJob');
+  }
+
+  /**
    * Grants permission to describe a brand
    *
    * Access Level: Read
@@ -2512,6 +2523,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start an automation job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAutomationJob.html
+   */
+  public toStartAutomationJob() {
+    return this.to('StartAutomationJob');
+  }
+
+  /**
    * Grants permission to start a dashboard snapshot job
    *
    * Access Level: Write
@@ -3339,6 +3361,7 @@ export class Quicksight extends PolicyStatement {
       'SetGroupMapping',
       'StartAssetBundleExportJob',
       'StartAssetBundleImportJob',
+      'StartAutomationJob',
       'StartDashboardSnapshotJob',
       'StartDashboardSnapshotJobSchedule',
       'Subscribe',
@@ -3421,6 +3444,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeAnalysisPermissions',
       'DescribeAssetBundleExportJob',
       'DescribeAssetBundleImportJob',
+      'DescribeAutomationJob',
       'DescribeBrand',
       'DescribeBrandAssignment',
       'DescribeBrandPublishedVersion',
@@ -3968,6 +3992,51 @@ export class Quicksight extends PolicyStatement {
    */
   public onFlow(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type automation to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Automation.html
+   *
+   * @param automationGroupId - Identifier for the automationGroupId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAutomation(automationGroupId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ automationGroupId }/automation/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type automationJob to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AutomationJob.html
+   *
+   * @param automationGroupId - Identifier for the automationGroupId.
+   * @param automationId - Identifier for the automationId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAutomationJob(automationGroupId: string, automationId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ automationGroupId }/automation/${ automationId }/job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type automationGroup to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AutomationGroup.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAutomationGroup(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ resourceId }`);
   }
 
   /**
