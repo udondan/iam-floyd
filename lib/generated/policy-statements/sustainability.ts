@@ -29,9 +29,33 @@ export class Sustainability extends PolicyStatement {
     return this.to('GetCarbonFootprintSummary');
   }
 
+  /**
+   * Grants permission to view estimated carbon emission values based on customer grouping and filtering parameters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sustainability/latest/APIReference/API_GetEstimatedCarbonEmissions.html
+   */
+  public toGetEstimatedCarbonEmissions() {
+    return this.to('GetEstimatedCarbonEmissions');
+  }
+
+  /**
+   * Grants permission to view the possible dimension values available for the estimated carbon emission values
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sustainability/latest/APIReference/API_GetEstimatedCarbonEmissionsDimensionValues.html
+   */
+  public toGetEstimatedCarbonEmissionsDimensionValues() {
+    return this.to('GetEstimatedCarbonEmissionsDimensionValues');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
-      'GetCarbonFootprintSummary'
+      'GetCarbonFootprintSummary',
+      'GetEstimatedCarbonEmissions',
+      'GetEstimatedCarbonEmissionsDimensionValues'
     ]
   };
 }

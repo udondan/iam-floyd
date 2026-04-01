@@ -13,4 +13,5 @@ acm:RenewCertificate;Write
 acm:RequestCertificate;Write
 acm:ResendValidationEmail;Write
 acm:RevokeCertificate;Write
+acm:SearchCertificates;List
 acm:UpdateCertificateOptions;Write

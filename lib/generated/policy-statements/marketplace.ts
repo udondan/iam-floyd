@@ -30,6 +30,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to accept an agreement cancellation request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toAcceptAgreementCancellationRequest() {
+    return this.to('AcceptAgreementCancellationRequest');
+  }
+
+  /**
    * Grants permission to users to accept a payment request
    *
    * Access Level: Write
@@ -41,7 +52,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to accept their agreement requests. Note that this action is not applicable to Marketplace purchases
+   * Grants permission to users to accept their agreement requests
    *
    * Access Level: Write
    *
@@ -52,7 +63,18 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to cancel their agreements. Note that this action is not applicable to Marketplace purchases
+   * Grants permission to users to create a billing adjustment request against an agreement
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toBatchCreateBillingAdjustmentRequest() {
+    return this.to('BatchCreateBillingAdjustmentRequest');
+  }
+
+  /**
+   * Grants permission to users to cancel their agreements
    *
    * Access Level: Write
    *
@@ -60,6 +82,17 @@ export class AwsMarketplace extends PolicyStatement {
    */
   public toCancelAgreement() {
     return this.to('CancelAgreement');
+  }
+
+  /**
+   * Grants permission to users to withdraw a pending agreement cancellation request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toCancelAgreementCancellationRequest() {
+    return this.to('CancelAgreementCancellationRequest');
   }
 
   /**
@@ -85,7 +118,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to create an agreement request. Note that this action is not applicable to Marketplace purchases
+   * Grants permission to users to create an agreement request
    *
    * Access Level: Write
    *
@@ -115,6 +148,17 @@ export class AwsMarketplace extends PolicyStatement {
    */
   public toGetAgreementApprovalRequest() {
     return this.to('GetAgreementApprovalRequest');
+  }
+
+  /**
+   * Grants permission to users to view the details of an agreement cancellation request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toGetAgreementCancellationRequest() {
+    return this.to('GetAgreementCancellationRequest');
   }
 
   /**
@@ -162,6 +206,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to view the details of a billing adjustment request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toGetBillingAdjustmentRequest() {
+    return this.to('GetBillingAdjustmentRequest');
+  }
+
+  /**
    * Grants permission to users to list their incoming subscription requests (for providers who provide products that require subscription verification)
    *
    * Access Level: List
@@ -173,6 +228,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to list agreement cancellation requests
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toListAgreementCancellationRequests() {
+    return this.to('ListAgreementCancellationRequests');
+  }
+
+  /**
    * Grants permission to users to view charges associated with their agreements
    *
    * Access Level: List
@@ -181,6 +247,17 @@ export class AwsMarketplace extends PolicyStatement {
    */
   public toListAgreementCharges() {
     return this.to('ListAgreementCharges');
+  }
+
+  /**
+   * Grants permission to users to list invoice line items for an agreement
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toListAgreementInvoiceLineItems() {
+    return this.to('ListAgreementInvoiceLineItems');
   }
 
   /**
@@ -206,6 +283,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to list billing adjustment requests
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toListBillingAdjustmentRequests() {
+    return this.to('ListBillingAdjustmentRequests');
+  }
+
+  /**
    * Grants permission to users to view details of the entitlements associated with an agreement. Note that this action is not applicable to Marketplace purchases
    *
    * Access Level: Read
@@ -228,6 +316,17 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
+   * Grants permission to users to reject an agreement cancellation request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toRejectAgreementCancellationRequest() {
+    return this.to('RejectAgreementCancellationRequest');
+  }
+
+  /**
    * Grants permission to users to reject a payment request
    *
    * Access Level: Write
@@ -247,6 +346,17 @@ export class AwsMarketplace extends PolicyStatement {
    */
   public toSearchAgreements() {
     return this.to('SearchAgreements');
+  }
+
+  /**
+   * Grants permission to users to send an agreement cancellation request
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   */
+  public toSendAgreementCancellationRequest() {
+    return this.to('SendAgreementCancellationRequest');
   }
 
   /**
@@ -318,14 +428,19 @@ export class AwsMarketplace extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAgreementApprovalRequest',
+      'AcceptAgreementCancellationRequest',
       'AcceptAgreementPaymentRequest',
       'AcceptAgreementRequest',
+      'BatchCreateBillingAdjustmentRequest',
       'CancelAgreement',
+      'CancelAgreementCancellationRequest',
       'CancelAgreementPaymentRequest',
       'CancelAgreementRequest',
       'CreateAgreementRequest',
       'RejectAgreementApprovalRequest',
+      'RejectAgreementCancellationRequest',
       'RejectAgreementPaymentRequest',
+      'SendAgreementCancellationRequest',
       'SendAgreementPaymentRequest',
       'Subscribe',
       'Unsubscribe',
@@ -335,17 +450,22 @@ export class AwsMarketplace extends PolicyStatement {
     Read: [
       'DescribeAgreement',
       'GetAgreementApprovalRequest',
+      'GetAgreementCancellationRequest',
       'GetAgreementEntitlements',
       'GetAgreementPaymentRequest',
       'GetAgreementRequest',
+      'GetBillingAdjustmentRequest',
       'ListEntitlementDetails'
     ],
     List: [
       'GetAgreementTerms',
       'ListAgreementApprovalRequests',
+      'ListAgreementCancellationRequests',
       'ListAgreementCharges',
+      'ListAgreementInvoiceLineItems',
       'ListAgreementPaymentRequests',
       'ListAgreementRequests',
+      'ListBillingAdjustmentRequests',
       'SearchAgreements',
       'ViewSubscriptions'
     ]

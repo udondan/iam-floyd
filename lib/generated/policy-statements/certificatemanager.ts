@@ -107,7 +107,7 @@ export class Acm extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of the certificate ARNs and the domain name for each ARN
+   * Grants permission to retrieve a list of certificates for specific certificate parameters
    *
    * Access Level: List
    *
@@ -212,6 +212,17 @@ export class Acm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of certificates matching search criteria
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/acm/latest/APIReference/API_SearchCertificates.html
+   */
+  public toSearchCertificates() {
+    return this.to('SearchCertificates');
+  }
+
+  /**
    * Grants permission to update a certificate configuration. Use this to specify whether to opt in to or out of certificate transparency logging
    *
    * Access Level: Write
@@ -245,7 +256,8 @@ export class Acm extends PolicyStatement {
       'ListTagsForCertificate'
     ],
     List: [
-      'ListCertificates'
+      'ListCertificates',
+      'SearchCertificates'
     ]
   };
 

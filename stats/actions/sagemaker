@@ -130,12 +130,14 @@ sagemaker:DeleteNotebookInstanceLifecycleConfig;Write
 sagemaker:DeleteOptimizationJob;Write
 sagemaker:DeletePartnerApp;Write
 sagemaker:DeletePipeline;Write
+sagemaker:DeleteProcessingJob;Write
 sagemaker:DeleteProject;Write
 sagemaker:DeleteRecord;Write
 sagemaker:DeleteResourcePolicy;Write
 sagemaker:DeleteSpace;Write
 sagemaker:DeleteStudioLifecycleConfig;Write
 sagemaker:DeleteTags;Tagging
+sagemaker:DeleteTrainingJob;Write
 sagemaker:DeleteTrial;Write
 sagemaker:DeleteTrialComponent;Write
 sagemaker:DeleteUserProfile;Write
@@ -337,6 +339,7 @@ sagemaker:SendHeartbeat;Write
 sagemaker:SendPipelineExecutionStepFailure;Write
 sagemaker:SendPipelineExecutionStepSuccess;Write
 sagemaker:SendSharedModelEvent;Write
+sagemaker:StartClusterHealthCheck;Write
 sagemaker:StartEdgeDeploymentStage;Write
 sagemaker:StartHumanLoop;Write
 sagemaker:StartInferenceExperiment;Write

@@ -158,7 +158,7 @@ export class Shield extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get attack details
+   * Grants permission to get attack details. For getting attack details protected by AWS WAF anti-DDoS managed rule group, this action additionally calls wafv2:DescribeTopContributorsByEvent to retrieve application layer attack contributors, which requires to have wafv2:DescribeTopContributorsByEvent permission in IAM policy
    *
    * Access Level: Read
    *

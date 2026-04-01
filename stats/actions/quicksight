@@ -82,6 +82,7 @@ quicksight:DescribeAnalysis;Read
 quicksight:DescribeAnalysisPermissions;Read
 quicksight:DescribeAssetBundleExportJob;Read
 quicksight:DescribeAssetBundleImportJob;Read
+quicksight:DescribeAutomationJob;Read
 quicksight:DescribeBrand;Read
 quicksight:DescribeBrandAssignment;Read
 quicksight:DescribeBrandPublishedVersion;Read
@@ -206,6 +207,7 @@ quicksight:SearchUsers;List
 quicksight:SetGroupMapping;Write
 quicksight:StartAssetBundleExportJob;Write
 quicksight:StartAssetBundleImportJob;Write
+quicksight:StartAutomationJob;Write
 quicksight:StartDashboardSnapshotJob;Write
 quicksight:StartDashboardSnapshotJobSchedule;Write
 quicksight:Subscribe;Write

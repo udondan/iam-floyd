@@ -5,6 +5,9 @@ quicksight:analysis
 quicksight:assetBundleExportJob
 quicksight:assetBundleImportJob
 quicksight:assignment
+quicksight:automation
+quicksight:automationGroup
+quicksight:automationJob
 quicksight:brand
 quicksight:customization
 quicksight:custompermissions
