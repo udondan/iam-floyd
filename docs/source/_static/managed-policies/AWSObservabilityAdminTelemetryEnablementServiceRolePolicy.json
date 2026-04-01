@@ -249,6 +249,33 @@
       }
     },
     {
+      "Sid": "TelemetryOperationsForSecurityHub",
+      "Effect": "Allow",
+      "Action": [
+        "securityhub:AllowVendedLogDeliveryForResource",
+        "securityhub:DescribeHub"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForCloudfront",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:AllowVendedLogDeliveryForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "TelemetryOperationsForCloudTrailLogs",
       "Effect": "Allow",
       "Action": [

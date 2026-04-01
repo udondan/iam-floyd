@@ -85,6 +85,28 @@
         "aws-marketplace:DescribeEntity"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementCancellationRequestAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListAgreementCancellationRequests",
+        "aws-marketplace:GetAgreementCancellationRequest",
+        "aws-marketplace:AcceptAgreementCancellationRequest",
+        "aws-marketplace:CancelAgreement",
+        "aws-marketplace:RejectAgreementCancellationRequest"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "StringEquals": {
+          "aws-marketplace:PartyType": "Acceptor"
+        }
+      }
     }
   ]
 }
