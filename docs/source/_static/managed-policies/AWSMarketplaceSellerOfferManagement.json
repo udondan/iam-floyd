@@ -76,6 +76,28 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "AWSMarketplaceAgreementsCancellationAndAdjustmentReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListAgreementInvoiceLineItems",
+        "aws-marketplace:ListBillingAdjustmentRequests",
+        "aws-marketplace:GetBillingAdjustmentRequest",
+        "aws-marketplace:ListAgreementCancellationRequests",
+        "aws-marketplace:GetAgreementCancellationRequest"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws-marketplace:AgreementType": [
+            "PurchaseAgreement"
+          ]
+        },
+        "StringEquals": {
+          "aws-marketplace:PartyType": "Proposer"
+        }
+      }
     }
   ]
 }

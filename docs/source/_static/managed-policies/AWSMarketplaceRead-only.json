@@ -43,6 +43,14 @@
         "aws-marketplace:ListPrivateListings"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListAgreementCancellationRequests",
+        "aws-marketplace:GetAgreementCancellationRequest"
+      ],
+      "Resource": "*"
     }
   ]
 }

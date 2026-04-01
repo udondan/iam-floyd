@@ -21,7 +21,9 @@
         "datazone:GetGroupProfile",
         "datazone:SearchGroupProfiles",
         "datazone:SearchUserProfiles",
-        "datazone:ListProjectMemberships"
+        "datazone:ListProjectMemberships",
+        "datazone:GetConnection",
+        "datazone:ListConnections"
       ],
       "Resource": [
         "*"
