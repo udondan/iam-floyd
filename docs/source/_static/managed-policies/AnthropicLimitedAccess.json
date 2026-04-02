@@ -1,0 +1,49 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AnthropicLimitedWorkspace",
+      "Effect": "Allow",
+      "Action": [
+        "aws-external-anthropic:Get*",
+        "aws-external-anthropic:List*",
+        "aws-external-anthropic:CancelBatchInference",
+        "aws-external-anthropic:CountTokens",
+        "aws-external-anthropic:CreateBatchInference",
+        "aws-external-anthropic:CreateFile",
+        "aws-external-anthropic:CreateInference",
+        "aws-external-anthropic:CreateSkill",
+        "aws-external-anthropic:CreateUserProfile",
+        "aws-external-anthropic:DeleteBatchInference",
+        "aws-external-anthropic:DeleteFile",
+        "aws-external-anthropic:DeleteSkill",
+        "aws-external-anthropic:UpdateSkill",
+        "aws-external-anthropic:UpdateUserProfile"
+      ],
+      "Resource": "arn:aws:aws-external-anthropic:*:*:workspace/*"
+    },
+    {
+      "Sid": "AnthropicLimitedGetToken",
+      "Effect": "Allow",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "sts:IdentityTokenAudience": [
+            "https://api.anthropic.com",
+            "https://platform.claude.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:CalledViaLast": "aws-external-anthropic.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AnthropicLimitedTagToken",
+      "Effect": "Allow",
+      "Action": "sts:TagGetWebIdentityToken",
+      "Resource": "*"
+    }
+  ]
+}

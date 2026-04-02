@@ -38,12 +38,7 @@
       "Action": [
         "elasticloadbalancing:RegisterTargets"
       ],
-      "Resource": "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*",
-      "Condition": {
-        "StringEquals": {
-          "aws:ResourceTag/eks:eks-cluster-name": "${aws:PrincipalTag/eks:eks-cluster-name}"
-        }
-      }
+      "Resource": "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*"
     },
     {
       "Effect": "Allow",
@@ -128,7 +123,9 @@
         "elasticloadbalancing:AddListenerCertificates",
         "elasticloadbalancing:ModifyListenerAttributes",
         "elasticloadbalancing:RemoveListenerCertificates",
-        "elasticloadbalancing:ModifyRule"
+        "elasticloadbalancing:ModifyRule",
+        "elasticloadbalancing:ModifyIpPools",
+        "elasticloadbalancing:ModifyCapacityReservation"
       ],
       "Resource": "*",
       "Condition": {

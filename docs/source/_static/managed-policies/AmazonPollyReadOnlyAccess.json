@@ -9,7 +9,8 @@
         "polly:GetSpeechSynthesisTask",
         "polly:ListLexicons",
         "polly:ListSpeechSynthesisTasks",
-        "polly:SynthesizeSpeech"
+        "polly:SynthesizeSpeech",
+        "polly:StartSpeechSynthesisStream"
       ],
       "Resource": [
         "*"

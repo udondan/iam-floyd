@@ -2604,6 +2604,26 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmplifyBackendDeployFullAccess);
     }
 
+    /** Provides full access to Claude Platform on AWS */
+    public AnthropicFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicFullAccess);
+    }
+
+    /** Provides read and inference access to Claude Platform on AWS */
+    public AnthropicInferenceAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicInferenceAccess);
+    }
+
+    /** Provides limited access to Claude Platform on AWS */
+    public AnthropicLimitedAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicLimitedAccess);
+    }
+
+    /** Provides read only access to Claude Platform on AWS */
+    public AnthropicReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicReadOnlyAccess);
+    }
+
     /** Allows API Gateway to manage associated AWS Resources on behalf of the customer. */
     public APIGatewayServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.APIGatewayServiceRolePolicy);

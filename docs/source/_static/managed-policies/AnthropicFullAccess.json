@@ -1,0 +1,69 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AnthropicFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-external-anthropic:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AnthropicSubscriptionManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:Unsubscribe"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws-marketplace:ProductId": [
+            "prod-3qbeiztufnva6"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AnthropicSubscriptionView",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AnthropicFullEnableFederation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetOutboundWebIdentityFederationInfo",
+        "iam:EnableOutboundWebIdentityFederation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AnthropicFullGetToken",
+      "Effect": "Allow",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "sts:IdentityTokenAudience": [
+            "https://api.anthropic.com",
+            "https://platform.claude.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:CalledViaLast": "aws-external-anthropic.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AnthropicFullTagToken",
+      "Effect": "Allow",
+      "Action": "sts:TagGetWebIdentityToken",
+      "Resource": "*"
+    }
+  ]
+}

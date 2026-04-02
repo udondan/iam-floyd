@@ -1038,6 +1038,14 @@ export class AwsManagedPolicy {
     public static AmazonZocaloReadOnlyAccess = 'AmazonZocaloReadOnlyAccess';
     /** Provides Amplify full access permissions to deploy Amplify backend resources (AWS AppSync, Amazon Cognito, Amazon S3 and other related services) via the AWS Cloud Development Kit (AWS CDK) */
     public static AmplifyBackendDeployFullAccess = 'service-role/AmplifyBackendDeployFullAccess';
+    /** Provides full access to Claude Platform on AWS */
+    public static AnthropicFullAccess = 'AnthropicFullAccess';
+    /** Provides read and inference access to Claude Platform on AWS */
+    public static AnthropicInferenceAccess = 'AnthropicInferenceAccess';
+    /** Provides limited access to Claude Platform on AWS */
+    public static AnthropicLimitedAccess = 'AnthropicLimitedAccess';
+    /** Provides read only access to Claude Platform on AWS */
+    public static AnthropicReadOnlyAccess = 'AnthropicReadOnlyAccess';
     /** Allows API Gateway to manage associated AWS Resources on behalf of the customer. */
     public static APIGatewayServiceRolePolicy = 'aws-service-role/APIGatewayServiceRolePolicy';
     /** Allows AppIntegrations to manage AppFlow resources and publish CloudWatch metric data on your behalf. */
