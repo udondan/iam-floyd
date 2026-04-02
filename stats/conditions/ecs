@@ -9,6 +9,8 @@ ecs:cluster
 ecs:compute-compatibility
 ecs:container-instances
 ecs:container-name
+ecs:daemon
+ecs:daemon-task-definition
 ecs:enable-ebs-volumes
 ecs:enable-ecs-managed-tags
 ecs:enable-execute-command

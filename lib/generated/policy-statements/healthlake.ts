@@ -101,6 +101,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a FHIR Bulk Member Match Job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-member-match.html
+   */
+  public toDescribeFHIRBulkMemberMatchJob() {
+    return this.to('DescribeFHIRBulkMemberMatchJob');
+  }
+
+  /**
    * Grants permission to get the properties associated with the FHIR datastore, including the datastore ID, datastore ARN, datastore name, datastore status, created at, datastore type version, and datastore endpoint
    *
    * Access Level: Read
@@ -431,6 +442,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to begin a FHIR Bulk Member Match Job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-member-match.html
+   */
+  public toStartFHIRBulkMemberMatchJob() {
+    return this.to('StartFHIRBulkMemberMatchJob');
+  }
+
+  /**
    * Grants permission to begin a FHIR Export job
    *
    * Access Level: Write
@@ -565,6 +587,7 @@ export class Healthlake extends PolicyStatement {
       'ProcessBundle',
       'RetrieveAttributionStatus',
       'StartFHIRBulkDeleteJob',
+      'StartFHIRBulkMemberMatchJob',
       'StartFHIRExportJob',
       'StartFHIRExportJobWithGet',
       'StartFHIRExportJobWithPost',
@@ -574,6 +597,7 @@ export class Healthlake extends PolicyStatement {
     ],
     Read: [
       'DescribeFHIRBulkDeleteJob',
+      'DescribeFHIRBulkMemberMatchJob',
       'DescribeFHIRDatastore',
       'DescribeFHIRExportJob',
       'DescribeFHIRExportJobWithGet',

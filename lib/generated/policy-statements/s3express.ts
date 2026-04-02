@@ -304,6 +304,24 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a metrics configuration of a directory bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html
+   */
+  public toGetMetricsConfiguration() {
+    return this.to('GetMetricsConfiguration');
+  }
+
+  /**
    * Grants permission to list access points
    *
    * Access Level: List
@@ -454,6 +472,24 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set or update a metrics configuration for the CloudWatch request metrics of a directory bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html
+   */
+  public toPutMetricsConfiguration() {
+    return this.to('PutMetricsConfiguration');
+  }
+
+  /**
    * Grants permission to create a new user-defined tag or update an existing tag
    *
    * Access Level: Tagging
@@ -500,7 +536,8 @@ export class S3express extends PolicyStatement {
       'DeleteAccessPoint',
       'DeleteBucket',
       'PutEncryptionConfiguration',
-      'PutLifecycleConfiguration'
+      'PutLifecycleConfiguration',
+      'PutMetricsConfiguration'
     ],
     'Permissions management': [
       'DeleteAccessPointPolicy',
@@ -516,7 +553,8 @@ export class S3express extends PolicyStatement {
       'GetAccessPointScope',
       'GetBucketPolicy',
       'GetEncryptionConfiguration',
-      'GetLifecycleConfiguration'
+      'GetLifecycleConfiguration',
+      'GetMetricsConfiguration'
     ],
     List: [
       'ListAccessPointsForDirectoryBuckets',
@@ -781,6 +819,7 @@ export class S3express extends PolicyStatement {
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
    * - .toListTagsForResource()
@@ -789,6 +828,7 @@ export class S3express extends PolicyStatement {
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toPutMetricsConfiguration()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -832,6 +872,7 @@ export class S3express extends PolicyStatement {
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
    * - .toListTagsForResource()
@@ -840,6 +881,7 @@ export class S3express extends PolicyStatement {
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toPutMetricsConfiguration()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -870,6 +912,7 @@ export class S3express extends PolicyStatement {
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
    * - .toListTagsForResource()
@@ -878,6 +921,7 @@ export class S3express extends PolicyStatement {
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toPutMetricsConfiguration()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -923,6 +967,7 @@ export class S3express extends PolicyStatement {
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
    * - .toListTagsForResource()
@@ -931,6 +976,7 @@ export class S3express extends PolicyStatement {
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toPutMetricsConfiguration()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -961,6 +1007,7 @@ export class S3express extends PolicyStatement {
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
    * - .toGetLifecycleConfiguration()
+   * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
    * - .toListAllMyDirectoryBuckets()
    * - .toListTagsForResource()
@@ -969,6 +1016,7 @@ export class S3express extends PolicyStatement {
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
    * - .toPutLifecycleConfiguration()
+   * - .toPutMetricsConfiguration()
    * - .toTagResource()
    * - .toUntagResource()
    *

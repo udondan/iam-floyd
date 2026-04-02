@@ -458,6 +458,7 @@ export { Wellarchitected } from './policy-statements/well-architectedtool';
 export { Wickr } from './policy-statements/wickr';
 export { WorkspacesInstances } from './policy-statements/workspacesmanagedinstances';
 export { Xray } from './policy-statements/x-ray';
+export { AwsExternalAnthropic } from './policy-statements/claudeplatformonaws';
 export { Dbqms } from './policy-statements/databasequerymetadataservice';
 export { Mpa } from './policy-statements/multi-partyapproval';
 export { Networkflowmonitor } from './policy-statements/networkflowmonitor';

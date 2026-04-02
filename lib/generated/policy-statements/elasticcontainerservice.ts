@@ -53,6 +53,28 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new daemon in a specified cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCapacityProvider()
+   * - .ifDaemonTaskDefinition()
+   * - .ifEnableEcsManagedTags()
+   * - .ifEnableExecuteCommand()
+   * - .ifPropagateTags()
+   * - .ifTaskCpu()
+   * - .ifTaskMemory()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateDaemon.html
+   */
+  public toCreateDaemon() {
+    return this.to('CreateDaemon');
+  }
+
+  /**
    * Grants permission to create a new Amazon ECS Express Gateway service with cluster and task definition
    *
    * Access Level: Write
@@ -179,6 +201,28 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a specified daemon within a cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteDaemon.html
+   */
+  public toDeleteDaemon() {
+    return this.to('DeleteDaemon');
+  }
+
+  /**
+   * Grants permission to delete the specified daemon task definition
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteDaemonTaskDefinition.html
+   */
+  public toDeleteDaemonTaskDefinition() {
+    return this.to('DeleteDaemonTaskDefinition');
+  }
+
+  /**
    * Grants permission to delete a specified Express Gateway service
    *
    * Access Level: Write
@@ -294,6 +338,50 @@ export class Ecs extends PolicyStatement {
    */
   public toDescribeContainerInstances() {
     return this.to('DescribeContainerInstances');
+  }
+
+  /**
+   * Grants permission to describe the specified daemon running in your cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeDaemon.html
+   */
+  public toDescribeDaemon() {
+    return this.to('DescribeDaemon');
+  }
+
+  /**
+   * Grants permission to describe one or more of your daemon deployments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeDaemonDeployments.html
+   */
+  public toDescribeDaemonDeployments() {
+    return this.to('DescribeDaemonDeployments');
+  }
+
+  /**
+   * Grants permission to describe one or more of your daemon revisions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeDaemonRevisions.html
+   */
+  public toDescribeDaemonRevisions() {
+    return this.to('DescribeDaemonRevisions');
+  }
+
+  /**
+   * Grants permission to describe a daemon task definition
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeDaemonTaskDefinition.html
+   */
+  public toDescribeDaemonTaskDefinition() {
+    return this.to('DescribeDaemonTaskDefinition');
   }
 
   /**
@@ -471,6 +559,42 @@ export class Ecs extends PolicyStatement {
    */
   public toListContainerInstances() {
     return this.to('ListContainerInstances');
+  }
+
+  /**
+   * Grants permission to get a list of daemon deployments for a specified daemon
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListDaemonDeployments.html
+   */
+  public toListDaemonDeployments() {
+    return this.to('ListDaemonDeployments');
+  }
+
+  /**
+   * Grants permission to get a list of daemon task definitions that are registered to your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListDaemonTaskDefinitions.html
+   */
+  public toListDaemonTaskDefinitions() {
+    return this.to('ListDaemonTaskDefinitions');
+  }
+
+  /**
+   * Grants permission to get a list of daemons that are running in a specified cluster
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCluster()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListDaemons.html
+   */
+  public toListDaemons() {
+    return this.to('ListDaemons');
   }
 
   /**
@@ -658,6 +782,24 @@ export class Ecs extends PolicyStatement {
    */
   public toRegisterContainerInstance() {
     return this.to('RegisterContainerInstance');
+  }
+
+  /**
+   * Grants permission to register a new daemon task definition from the supplied family and containerDefinitions
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifPrivileged()
+   * - .ifTaskCpu()
+   * - .ifTaskMemory()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterDaemonTaskDefinition.html
+   */
+  public toRegisterDaemonTaskDefinition() {
+    return this.to('RegisterDaemonTaskDefinition');
   }
 
   /**
@@ -902,6 +1044,26 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to modify the parameters of a daemon
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCapacityProvider()
+   * - .ifDaemonTaskDefinition()
+   * - .ifEnableEcsManagedTags()
+   * - .ifEnableExecuteCommand()
+   * - .ifPropagateTags()
+   * - .ifTaskCpu()
+   * - .ifTaskMemory()
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateDaemon.html
+   */
+  public toUpdateDaemon() {
+    return this.to('UpdateDaemon');
+  }
+
+  /**
    * Grants permission to modify the parameters of an Express Gateway service
    *
    * Access Level: Write
@@ -995,6 +1157,7 @@ export class Ecs extends PolicyStatement {
     Write: [
       'CreateCapacityProvider',
       'CreateCluster',
+      'CreateDaemon',
       'CreateExpressGatewayService',
       'CreateService',
       'CreateTaskSet',
@@ -1002,6 +1165,8 @@ export class Ecs extends PolicyStatement {
       'DeleteAttributes',
       'DeleteCapacityProvider',
       'DeleteCluster',
+      'DeleteDaemon',
+      'DeleteDaemonTaskDefinition',
       'DeleteExpressGatewayService',
       'DeleteService',
       'DeleteTaskDefinitions',
@@ -1017,6 +1182,7 @@ export class Ecs extends PolicyStatement {
       'PutClusterCapacityProviders',
       'PutSystemLogEvents',
       'RegisterContainerInstance',
+      'RegisterDaemonTaskDefinition',
       'RegisterTaskDefinition',
       'RunTask',
       'StartTask',
@@ -1031,6 +1197,7 @@ export class Ecs extends PolicyStatement {
       'UpdateClusterSettings',
       'UpdateContainerAgent',
       'UpdateContainerInstancesState',
+      'UpdateDaemon',
       'UpdateExpressGatewayService',
       'UpdateService',
       'UpdateServicePrimaryTaskSet',
@@ -1041,6 +1208,10 @@ export class Ecs extends PolicyStatement {
       'DescribeCapacityProviders',
       'DescribeClusters',
       'DescribeContainerInstances',
+      'DescribeDaemon',
+      'DescribeDaemonDeployments',
+      'DescribeDaemonRevisions',
+      'DescribeDaemonTaskDefinition',
       'DescribeExpressGatewayService',
       'DescribeServiceDeployments',
       'DescribeServiceRevisions',
@@ -1056,6 +1227,9 @@ export class Ecs extends PolicyStatement {
       'ListAttributes',
       'ListClusters',
       'ListContainerInstances',
+      'ListDaemonDeployments',
+      'ListDaemonTaskDefinitions',
+      'ListDaemons',
       'ListServiceDeployments',
       'ListServices',
       'ListServicesByNamespace',
@@ -1168,6 +1342,85 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type daemon to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_daemons.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param daemonName - Identifier for the daemonName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCluster()
+   */
+  public onDaemon(clusterName: string, daemonName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:daemon/${ clusterName }/${ daemonName }`);
+  }
+
+  /**
+   * Adds a resource of type daemon-deployment to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/daemon-deployment.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param daemonName - Identifier for the daemonName.
+   * @param daemonDeploymentId - Identifier for the daemonDeploymentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCluster()
+   * - .ifDaemon()
+   */
+  public onDaemonDeployment(clusterName: string, daemonName: string, daemonDeploymentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:daemon-deployment/${ clusterName }/${ daemonName }/${ daemonDeploymentId }`);
+  }
+
+  /**
+   * Adds a resource of type daemon-revision to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/daemon-revision.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param daemonName - Identifier for the daemonName.
+   * @param daemonRevisionId - Identifier for the daemonRevisionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCluster()
+   * - .ifDaemon()
+   */
+  public onDaemonRevision(clusterName: string, daemonName: string, daemonRevisionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:daemon-revision/${ clusterName }/${ daemonName }/${ daemonRevisionId }`);
+  }
+
+  /**
+   * Adds a resource of type daemon-task-definition to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/daemon-task-definitions.html
+   *
+   * @param daemonTaskDefinitionFamilyName - Identifier for the daemonTaskDefinitionFamilyName.
+   * @param daemonTaskDefinitionRevisionNumber - Identifier for the daemonTaskDefinitionRevisionNumber.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDaemonTaskDefinition(daemonTaskDefinitionFamilyName: string, daemonTaskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:daemon-task-definition/${ daemonTaskDefinitionFamilyName }:${ daemonTaskDefinitionRevisionNumber }`);
+  }
+
+  /**
    * Adds a resource of type task to the statement
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html
@@ -1251,10 +1504,12 @@ export class Ecs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCapacityProvider()
    * - .toCreateCluster()
+   * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toRegisterContainerInstance()
+   * - .toRegisterDaemonTaskDefinition()
    * - .toRegisterTaskDefinition()
    * - .toRunTask()
    * - .toStartTask()
@@ -1276,11 +1531,14 @@ export class Ecs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCapacityProvider()
    * - .toCreateCluster()
+   * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toDeleteAttributes()
    * - .toDeleteCapacityProvider()
    * - .toDeleteCluster()
+   * - .toDeleteDaemon()
+   * - .toDeleteDaemonTaskDefinition()
    * - .toDeleteExpressGatewayService()
    * - .toDeleteService()
    * - .toDeleteTaskDefinitions()
@@ -1289,6 +1547,10 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeCapacityProviders()
    * - .toDescribeClusters()
    * - .toDescribeContainerInstances()
+   * - .toDescribeDaemon()
+   * - .toDescribeDaemonDeployments()
+   * - .toDescribeDaemonRevisions()
+   * - .toDescribeDaemonTaskDefinition()
    * - .toDescribeExpressGatewayService()
    * - .toDescribeServiceDeployments()
    * - .toDescribeServiceRevisions()
@@ -1299,6 +1561,7 @@ export class Ecs extends PolicyStatement {
    * - .toGetTaskProtection()
    * - .toListAttributes()
    * - .toListContainerInstances()
+   * - .toListDaemonDeployments()
    * - .toListServiceDeployments()
    * - .toListTagsForResource()
    * - .toListTasks()
@@ -1306,6 +1569,7 @@ export class Ecs extends PolicyStatement {
    * - .toPutClusterCapacityProviders()
    * - .toPutSystemLogEvents()
    * - .toRegisterContainerInstance()
+   * - .toRegisterDaemonTaskDefinition()
    * - .toRegisterTaskDefinition()
    * - .toRunTask()
    * - .toStartTask()
@@ -1321,6 +1585,7 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateClusterSettings()
    * - .toUpdateContainerAgent()
    * - .toUpdateContainerInstancesState()
+   * - .toUpdateDaemon()
    * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    * - .toUpdateServicePrimaryTaskSet()
@@ -1333,6 +1598,10 @@ export class Ecs extends PolicyStatement {
    * - service
    * - service-deployment
    * - service-revision
+   * - daemon
+   * - daemon-deployment
+   * - daemon-revision
+   * - daemon-task-definition
    * - task
    * - task-definition
    * - capacity-provider
@@ -1354,10 +1623,12 @@ export class Ecs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCapacityProvider()
    * - .toCreateCluster()
+   * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toRegisterContainerInstance()
+   * - .toRegisterDaemonTaskDefinition()
    * - .toRegisterTaskDefinition()
    * - .toRunTask()
    * - .toStartTask()
@@ -1447,11 +1718,13 @@ export class Ecs extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCluster()
+   * - .toCreateDaemon()
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toPutClusterCapacityProviders()
    * - .toPutSystemLogEvents()
    * - .toRunTask()
+   * - .toUpdateDaemon()
    * - .toUpdateService()
    *
    * @param value The value(s) to check
@@ -1467,14 +1740,19 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toCreateTaskSet()
    * - .toDeleteAttributes()
+   * - .toDeleteDaemon()
    * - .toDeleteExpressGatewayService()
    * - .toDeleteService()
    * - .toDeleteTaskSet()
    * - .toDescribeContainerInstances()
+   * - .toDescribeDaemon()
+   * - .toDescribeDaemonDeployments()
+   * - .toDescribeDaemonRevisions()
    * - .toDescribeExpressGatewayService()
    * - .toDescribeServiceDeployments()
    * - .toDescribeServiceRevisions()
@@ -1483,6 +1761,8 @@ export class Ecs extends PolicyStatement {
    * - .toDescribeTasks()
    * - .toExecuteCommand()
    * - .toGetTaskProtection()
+   * - .toListDaemonDeployments()
+   * - .toListDaemons()
    * - .toListServiceDeployments()
    * - .toListServices()
    * - .toListTasks()
@@ -1496,6 +1776,7 @@ export class Ecs extends PolicyStatement {
    * - .toStopTask()
    * - .toUpdateContainerAgent()
    * - .toUpdateContainerInstancesState()
+   * - .toUpdateDaemon()
    * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    * - .toUpdateServicePrimaryTaskSet()
@@ -1505,6 +1786,9 @@ export class Ecs extends PolicyStatement {
    * Applies to resource types:
    * - service-deployment
    * - service-revision
+   * - daemon
+   * - daemon-deployment
+   * - daemon-revision
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
@@ -1559,6 +1843,42 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of an Amazon ECS daemon
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toDescribeDaemonDeployments()
+   * - .toDescribeDaemonRevisions()
+   *
+   * Applies to resource types:
+   * - daemon-deployment
+   * - daemon-revision
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDaemon(value: string | string[], operator?: Operator | string) {
+    return this.if(`daemon`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the ARN of an Amazon ECS daemon task definition
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreateDaemon()
+   * - .toUpdateDaemon()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDaemonTaskDefinition(value: string | string[], operator?: Operator | string) {
+    return this.if(`daemon-task-definition`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by the Amazon ECS managed Amazon EBS volume capability of your ECS task or service
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -1582,8 +1902,10 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
+   * - .toUpdateDaemon()
    * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
@@ -1599,9 +1921,11 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateDaemon()
    * - .toCreateService()
    * - .toRunTask()
    * - .toStartTask()
+   * - .toUpdateDaemon()
    * - .toUpdateService()
    *
    * @param value The value(s) to check
@@ -1697,6 +2021,7 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toRegisterDaemonTaskDefinition()
    * - .toRegisterTaskDefinition()
    *
    * @param value The value(s) to check
@@ -1713,9 +2038,11 @@ export class Ecs extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCapacityProvider()
+   * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toUpdateCapacityProvider()
+   * - .toUpdateDaemon()
    * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
@@ -1790,9 +2117,12 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
+   * - .toRegisterDaemonTaskDefinition()
    * - .toRegisterTaskDefinition()
+   * - .toUpdateDaemon()
    * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
@@ -1827,9 +2157,12 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
+   * - .toRegisterDaemonTaskDefinition()
    * - .toRegisterTaskDefinition()
+   * - .toUpdateDaemon()
    * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
