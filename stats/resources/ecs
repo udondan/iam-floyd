@@ -1,6 +1,10 @@
 ecs:capacity-provider
 ecs:cluster
 ecs:container-instance
+ecs:daemon
+ecs:daemon-deployment
+ecs:daemon-revision
+ecs:daemon-task-definition
 ecs:service
 ecs:service-deployment
 ecs:service-revision

@@ -1,5 +1,6 @@
 ecs:CreateCapacityProvider;Write
 ecs:CreateCluster;Write
+ecs:CreateDaemon;Write
 ecs:CreateExpressGatewayService;Write
 ecs:CreateService;Write
 ecs:CreateTaskSet;Write
@@ -7,6 +8,8 @@ ecs:DeleteAccountSetting;Write
 ecs:DeleteAttributes;Write
 ecs:DeleteCapacityProvider;Write
 ecs:DeleteCluster;Write
+ecs:DeleteDaemon;Write
+ecs:DeleteDaemonTaskDefinition;Write
 ecs:DeleteExpressGatewayService;Write
 ecs:DeleteService;Write
 ecs:DeleteTaskDefinitions;Write
@@ -16,6 +19,10 @@ ecs:DeregisterTaskDefinition;Write
 ecs:DescribeCapacityProviders;Read
 ecs:DescribeClusters;Read
 ecs:DescribeContainerInstances;Read
+ecs:DescribeDaemon;Read
+ecs:DescribeDaemonDeployments;Read
+ecs:DescribeDaemonRevisions;Read
+ecs:DescribeDaemonTaskDefinition;Read
 ecs:DescribeExpressGatewayService;Read
 ecs:DescribeServiceDeployments;Read
 ecs:DescribeServiceRevisions;Read
@@ -30,6 +37,9 @@ ecs:ListAccountSettings;Read
 ecs:ListAttributes;List
 ecs:ListClusters;List
 ecs:ListContainerInstances;List
+ecs:ListDaemonDeployments;List
+ecs:ListDaemonTaskDefinitions;List
+ecs:ListDaemons;List
 ecs:ListServiceDeployments;List
 ecs:ListServices;List
 ecs:ListServicesByNamespace;List
@@ -44,6 +54,7 @@ ecs:PutAttributes;Write
 ecs:PutClusterCapacityProviders;Write
 ecs:PutSystemLogEvents;Write
 ecs:RegisterContainerInstance;Write
+ecs:RegisterDaemonTaskDefinition;Write
 ecs:RegisterTaskDefinition;Write
 ecs:RunTask;Write
 ecs:StartTask;Write
@@ -60,6 +71,7 @@ ecs:UpdateCluster;Write
 ecs:UpdateClusterSettings;Write
 ecs:UpdateContainerAgent;Write
 ecs:UpdateContainerInstancesState;Write
+ecs:UpdateDaemon;Write
 ecs:UpdateExpressGatewayService;Write
 ecs:UpdateService;Write
 ecs:UpdateServicePrimaryTaskSet;Write

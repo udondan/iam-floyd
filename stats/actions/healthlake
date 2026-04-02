@@ -5,6 +5,7 @@ healthlake:CreateResource;Write
 healthlake:DeleteFHIRDatastore;Write
 healthlake:DeleteResource;Write
 healthlake:DescribeFHIRBulkDeleteJob;Read
+healthlake:DescribeFHIRBulkMemberMatchJob;Read
 healthlake:DescribeFHIRDatastore;Read
 healthlake:DescribeFHIRExportJob;Read
 healthlake:DescribeFHIRExportJobWithGet;Read
@@ -35,6 +36,7 @@ healthlake:SearchEverything;Read
 healthlake:SearchWithGet;Read
 healthlake:SearchWithPost;Read
 healthlake:StartFHIRBulkDeleteJob;Write
+healthlake:StartFHIRBulkMemberMatchJob;Write
 healthlake:StartFHIRExportJob;Write
 healthlake:StartFHIRExportJobWithGet;Write
 healthlake:StartFHIRExportJobWithPost;Write
