@@ -1,0 +1,46 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AnthropicReadOnlyWorkspace",
+      "Effect": "Allow",
+      "Action": [
+        "aws-external-anthropic:Get*",
+        "aws-external-anthropic:List*"
+      ],
+      "Resource": "arn:aws:aws-external-anthropic:*:*:workspace/*"
+    },
+    {
+      "Sid": "AnthropicReadOnlyResourceless",
+      "Effect": "Allow",
+      "Action": [
+        "aws-external-anthropic:GetAccountStatus",
+        "aws-external-anthropic:CallWithBearerToken"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AnthropicReadOnlyGetToken",
+      "Effect": "Allow",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "sts:IdentityTokenAudience": [
+            "https://api.anthropic.com",
+            "https://platform.claude.com"
+          ]
+        },
+        "StringEquals": {
+          "aws:CalledViaLast": "aws-external-anthropic.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AnthropicReadOnlyTagToken",
+      "Effect": "Allow",
+      "Action": "sts:TagGetWebIdentityToken",
+      "Resource": "*"
+    }
+  ]
+}
