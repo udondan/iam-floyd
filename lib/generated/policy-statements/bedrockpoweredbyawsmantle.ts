@@ -30,6 +30,21 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a customized model with a project
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProjectArn()
+   * - .ifCustomizedModelArn()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toAssociateCustomizedModel() {
+    return this.to('AssociateCustomizedModel');
+  }
+
+  /**
    * Grants permission to make API calls using bearer token authentication
    *
    * Access Level: List
@@ -64,6 +79,21 @@ export class BedrockMantle extends PolicyStatement {
    */
   public toCancelInference() {
     return this.to('CancelInference');
+  }
+
+  /**
+   * Grants permission to import a customized model with custom weights
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toCreateCustomizedModel() {
+    return this.to('CreateCustomizedModel');
   }
 
   /**
@@ -123,6 +153,34 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a capacity reservation for a model
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifProjectArn()
+   * - .ifReservationArn()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toCreateReservation() {
+    return this.to('CreateReservation');
+  }
+
+  /**
+   * Grants permission to delete a customized model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toDeleteCustomizedModel() {
+    return this.to('DeleteCustomizedModel');
+  }
+
+  /**
    * Grants permission to delete a specific file
    *
    * Access Level: Write
@@ -145,6 +203,47 @@ export class BedrockMantle extends PolicyStatement {
    */
   public toDeleteInference() {
     return this.to('DeleteInference');
+  }
+
+  /**
+   * Grants permission to delete a capacity reservation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProjectArn()
+   * - .ifReservationArn()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toDeleteReservation() {
+    return this.to('DeleteReservation');
+  }
+
+  /**
+   * Grants permission to disassociate a customized model from a project
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProjectArn()
+   * - .ifCustomizedModelArn()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toDisassociateCustomizedModel() {
+    return this.to('DisassociateCustomizedModel');
+  }
+
+  /**
+   * Grants permission to get customized model
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toGetCustomizedModel() {
+    return this.to('GetCustomizedModel');
   }
 
   /**
@@ -209,6 +308,39 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get reservation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toGetReservation() {
+    return this.to('GetReservation');
+  }
+
+  /**
+   * Grants permission to list project associations for a customized model
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toListCustomizedModelAssociations() {
+    return this.to('ListCustomizedModelAssociations');
+  }
+
+  /**
+   * Grants permission to list customized models
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toListCustomizedModels() {
+    return this.to('ListCustomizedModels');
+  }
+
+  /**
    * Grants permission to list all available files in a project
    *
    * Access Level: List
@@ -250,6 +382,17 @@ export class BedrockMantle extends PolicyStatement {
    */
   public toListProjects() {
     return this.to('ListProjects');
+  }
+
+  /**
+   * Grants permission to list reservations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toListReservations() {
+    return this.to('ListReservations');
   }
 
   /**
@@ -303,32 +446,59 @@ export class BedrockMantle extends PolicyStatement {
     return this.to('UpdateProject');
   }
 
+  /**
+   * Grants permission to update reservation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifProjectArn()
+   * - .ifReservationArn()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toUpdateReservation() {
+    return this.to('UpdateReservation');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ArchiveProject',
+      'AssociateCustomizedModel',
       'CancelFineTuningJob',
       'CancelInference',
+      'CreateCustomizedModel',
       'CreateFile',
       'CreateFineTuningJob',
       'CreateInference',
       'CreateProject',
+      'CreateReservation',
+      'DeleteCustomizedModel',
       'DeleteFile',
       'DeleteInference',
-      'UpdateProject'
+      'DeleteReservation',
+      'DisassociateCustomizedModel',
+      'UpdateProject',
+      'UpdateReservation'
     ],
     List: [
       'CallWithBearerToken',
+      'ListCustomizedModelAssociations',
+      'ListCustomizedModels',
       'ListFiles',
       'ListFineTuningJobs',
       'ListModels',
-      'ListProjects'
+      'ListProjects',
+      'ListReservations'
     ],
     Read: [
+      'GetCustomizedModel',
       'GetFile',
       'GetFineTuningJob',
       'GetInference',
       'GetModel',
       'GetProject',
+      'GetReservation',
       'ListTagsForResource'
     ],
     Tagging: [
@@ -355,12 +525,48 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type customized-model to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html#CustomizedModel
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomizedModel(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-mantle:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:customized-model/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type reservation to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html#Reservation
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onReservation(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-mantle:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reservation/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateCustomizedModel()
    * - .toCreateProject()
+   * - .toCreateReservation()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -378,19 +584,27 @@ export class BedrockMantle extends PolicyStatement {
    *
    * Applies to actions:
    * - .toArchiveProject()
+   * - .toAssociateCustomizedModel()
    * - .toCancelFineTuningJob()
    * - .toCancelInference()
+   * - .toCreateCustomizedModel()
    * - .toCreateFile()
    * - .toCreateFineTuningJob()
    * - .toCreateInference()
    * - .toCreateProject()
+   * - .toCreateReservation()
+   * - .toDeleteCustomizedModel()
    * - .toDeleteFile()
    * - .toDeleteInference()
+   * - .toDeleteReservation()
+   * - .toDisassociateCustomizedModel()
+   * - .toGetCustomizedModel()
    * - .toGetFile()
    * - .toGetFineTuningJob()
    * - .toGetInference()
    * - .toGetModel()
    * - .toGetProject()
+   * - .toGetReservation()
    * - .toListFiles()
    * - .toListFineTuningJobs()
    * - .toListModels()
@@ -398,9 +612,12 @@ export class BedrockMantle extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateProject()
+   * - .toUpdateReservation()
    *
    * Applies to resource types:
    * - project
+   * - customized-model
+   * - reservation
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -416,7 +633,9 @@ export class BedrockMantle extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateCustomizedModel()
    * - .toCreateProject()
+   * - .toCreateReservation()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -440,6 +659,22 @@ export class BedrockMantle extends PolicyStatement {
    */
   public ifBearerTokenType(value: string | string[], operator?: Operator | string) {
     return this.if(`BearerTokenType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of the customized model being associated or referenced in cross-resource operations
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys
+   *
+   * Applies to actions:
+   * - .toAssociateCustomizedModel()
+   * - .toDisassociateCustomizedModel()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCustomizedModelArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`CustomizedModelArn`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -489,6 +724,42 @@ export class BedrockMantle extends PolicyStatement {
    */
   public ifModel(value: string | string[], operator?: Operator | string) {
     return this.if(`Model`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of the project being associated or referenced in cross-resource operations
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys
+   *
+   * Applies to actions:
+   * - .toAssociateCustomizedModel()
+   * - .toCreateReservation()
+   * - .toDeleteReservation()
+   * - .toDisassociateCustomizedModel()
+   * - .toUpdateReservation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProjectArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ProjectArn`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ARN of the reservation being referenced in cross-resource operations
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateReservation()
+   * - .toDeleteReservation()
+   * - .toUpdateReservation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifReservationArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`ReservationArn`, value, operator ?? 'StringLike');
   }
 
   /**
