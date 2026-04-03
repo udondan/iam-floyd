@@ -4,11 +4,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "scheduler:ListSchedules",
-        "scheduler:ListScheduleGroups",
-        "scheduler:GetSchedule",
-        "scheduler:GetScheduleGroup",
-        "scheduler:ListTagsForResource"
+        "scheduler:List*",
+        "scheduler:Get*"
       ],
       "Resource": "*"
     }
