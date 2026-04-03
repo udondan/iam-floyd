@@ -23,6 +23,15 @@
       "Resource": "arn:aws:aws-external-anthropic:*:*:workspace/*"
     },
     {
+      "Sid": "AnthropicLimitedResourceless",
+      "Effect": "Allow",
+      "Action": [
+        "aws-external-anthropic:GetAccountStatus",
+        "aws-external-anthropic:CallWithBearerToken"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "AnthropicLimitedGetToken",
       "Effect": "Allow",
       "Action": "sts:GetWebIdentityToken",
