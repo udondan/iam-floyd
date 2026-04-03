@@ -1,8 +1,11 @@
 bedrock-mantle:BearerTokenType
+bedrock-mantle:CustomizedModelArn
 bedrock-mantle:Files
 bedrock-mantle:FineTuningJob
 bedrock-mantle:Model
+bedrock-mantle:ProjectArn
 bedrock-mantle:RequestTag/${TagKey}
+bedrock-mantle:ReservationArn
 bedrock-mantle:ResourceTag/${TagKey}
 bedrock-mantle:ServiceTier
 bedrock-mantle:TagKeys

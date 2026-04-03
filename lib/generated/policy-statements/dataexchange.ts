@@ -45,6 +45,10 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/api-permissions-ref.html
    */
   public toCreateAsset() {
@@ -645,6 +649,9 @@ export class Dataexchange extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:dataexchange:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-sets/${ dataSetId }/revisions/${ revisionId }/assets/${ assetId }`);
@@ -705,6 +712,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateAsset()
    * - .toCreateDataGrant()
    * - .toCreateDataSet()
    * - .toCreateEventAction()
@@ -728,6 +736,7 @@ export class Dataexchange extends PolicyStatement {
    * Applies to resource types:
    * - data-sets
    * - revisions
+   * - assets
    * - event-actions
    * - data-grants
    *
@@ -745,6 +754,7 @@ export class Dataexchange extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateAsset()
    * - .toCreateDataGrant()
    * - .toCreateDataSet()
    * - .toCreateEventAction()
