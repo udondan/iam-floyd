@@ -812,6 +812,10 @@ export class AwsManagedPolicy {
     public static AmazonRoute53ResolverFullAccess = 'AmazonRoute53ResolverFullAccess';
     /** Read only policy for Route 53 Resolver */
     public static AmazonRoute53ResolverReadOnlyAccess = 'AmazonRoute53ResolverReadOnlyAccess';
+    /** Provides full access to all S3 directory buckets. */
+    public static AmazonS3ExpressFullAccess = 'AmazonS3ExpressFullAccess';
+    /** Provides read only access to S3Express operations for S3 directory buckets. */
+    public static AmazonS3ExpressReadOnlyAccess = 'AmazonS3ExpressReadOnlyAccess';
     /** Provides full access to all buckets via the AWS Management Console. */
     public static AmazonS3FullAccess = 'AmazonS3FullAccess';
     /** Provides AWS Lambda functions permissions to interact with Amazon S3 Object Lambda. Also grants Lambda permissions to write to CloudWatch Logs. */

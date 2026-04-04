@@ -2039,6 +2039,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonRoute53ResolverReadOnlyAccess);
     }
 
+    /** Provides full access to all S3 directory buckets. */
+    public AmazonS3ExpressFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3ExpressFullAccess);
+    }
+
+    /** Provides read only access to S3Express operations for S3 directory buckets. */
+    public AmazonS3ExpressReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3ExpressReadOnlyAccess);
+    }
+
     /** Provides full access to all buckets via the AWS Management Console. */
     public AmazonS3FullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3FullAccess);

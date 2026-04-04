@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3ExpressReadOnlySessionObjectAccess",
+      "Effect": "Allow",
+      "Action": "s3express:CreateSession",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "s3express:SessionMode": "ReadOnly"
+        }
+      }
+    },
+    {
+      "Sid": "S3ExpressReadOnlyControlPlaneAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3express:GetBucketPolicy",
+        "s3express:GetEncryptionConfiguration",
+        "s3express:GetLifecycleConfiguration",
+        "s3express:GetAccessPoint",
+        "s3express:GetAccessPointPolicy",
+        "s3express:GetAccessPointScope",
+        "s3express:ListAllMyDirectoryBuckets",
+        "s3express:ListAccessPointsForDirectoryBuckets",
+        "s3express:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
