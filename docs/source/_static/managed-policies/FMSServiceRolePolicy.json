@@ -104,6 +104,14 @@
       "Resource": "*"
     },
     {
+      "Sid": "CloudfrontVpcOriginAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:GetVpcOrigin"
+      ],
+      "Resource": "arn:aws:cloudfront::*:vpcorigin/*"
+    },
+    {
       "Sid": "ConfigScoped",
       "Effect": "Allow",
       "Action": [
