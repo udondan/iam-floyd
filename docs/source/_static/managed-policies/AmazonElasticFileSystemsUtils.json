@@ -69,6 +69,19 @@
         "logs:PutRetentionPolicy"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": [
+            "efs-utils/S3Files",
+            "efs-utils/EFS"
+          ]
+        }
+      }
     }
   ]
 }
