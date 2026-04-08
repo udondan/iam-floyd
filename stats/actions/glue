@@ -215,6 +215,7 @@ glue:ListTableOptimizerRuns;List
 glue:ListTriggers;List
 glue:ListUsageProfiles;List
 glue:ListWorkflows;List
+glue:ManagedConnector;Permissions management
 glue:ModifyIntegration;Write
 glue:NotifyEvent;Write
 glue:PassConnection;Write

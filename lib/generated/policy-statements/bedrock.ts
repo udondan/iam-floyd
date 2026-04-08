@@ -277,6 +277,21 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Data Automation Library
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationLibrary.html
+   */
+  public toCreateDataAutomationLibrary() {
+    return this.to('CreateDataAutomationLibrary');
+  }
+
+  /**
    * Grants permission to create a data automation project
    *
    * Access Level: Write
@@ -714,6 +729,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toDeleteCustomModelDeployment() {
     return this.to('DeleteCustomModelDeployment');
+  }
+
+  /**
+   * Grants permission to delete a Data Automation Library
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_DeleteDataAutomationLibrary.html
+   */
+  public toDeleteDataAutomationLibrary() {
+    return this.to('DeleteDataAutomationLibrary');
   }
 
   /**
@@ -1230,6 +1256,39 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an existing Data Automation Library
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibrary.html
+   */
+  public toGetDataAutomationLibrary() {
+    return this.to('GetDataAutomationLibrary');
+  }
+
+  /**
+   * Grants permission to get a Data Automation Library entity
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibraryEntity.html
+   */
+  public toGetDataAutomationLibraryEntity() {
+    return this.to('GetDataAutomationLibraryEntity');
+  }
+
+  /**
+   * Grants permission to get details about a Data Automation Library ingestion job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetDataAutomationLibraryIngestionJob.html
+   */
+  public toGetDataAutomationLibraryIngestionJob() {
+    return this.to('GetDataAutomationLibraryIngestionJob');
+  }
+
+  /**
    * Grants permission to retrieve an existing data automation project
    *
    * Access Level: Read
@@ -1665,6 +1724,21 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke a Data Automation Library ingestion job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_InvokeDataAutomationLibraryIngestionJob.html
+   */
+  public toInvokeDataAutomationLibraryIngestionJob() {
+    return this.to('InvokeDataAutomationLibraryIngestionJob');
+  }
+
+  /**
    * Grants permission to invoke a prompt flow with user input
    *
    * Access Level: Read
@@ -1888,6 +1962,39 @@ export class Bedrock extends PolicyStatement {
    */
   public toListCustomModels() {
     return this.to('ListCustomModels');
+  }
+
+  /**
+   * Grants permission to list Data Automation Libraries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraries.html
+   */
+  public toListDataAutomationLibraries() {
+    return this.to('ListDataAutomationLibraries');
+  }
+
+  /**
+   * Grants permission to list Data Automation Library entities
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraryEntities.html
+   */
+  public toListDataAutomationLibraryEntities() {
+    return this.to('ListDataAutomationLibraryEntities');
+  }
+
+  /**
+   * Grants permission to list Data Automation Library ingestion jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListDataAutomationLibraryIngestionJobs.html
+   */
+  public toListDataAutomationLibraryIngestionJobs() {
+    return this.to('ListDataAutomationLibraryIngestionJobs');
   }
 
   /**
@@ -2613,6 +2720,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a Data Automation Library
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateDataAutomationLibrary.html
+   */
+  public toUpdateDataAutomationLibrary() {
+    return this.to('UpdateDataAutomationLibrary');
+  }
+
+  /**
    * Grants permission to update a data automation project
    *
    * Access Level: Write
@@ -2762,6 +2880,9 @@ export class Bedrock extends PolicyStatement {
       'GetBlueprintRecommendation',
       'GetCustomModel',
       'GetCustomModelDeployment',
+      'GetDataAutomationLibrary',
+      'GetDataAutomationLibraryEntity',
+      'GetDataAutomationLibraryIngestionJob',
       'GetDataAutomationProject',
       'GetDataAutomationStatus',
       'GetDataSource',
@@ -2824,6 +2945,7 @@ export class Bedrock extends PolicyStatement {
       'CreateBlueprintVersion',
       'CreateCustomModel',
       'CreateCustomModelDeployment',
+      'CreateDataAutomationLibrary',
       'CreateDataAutomationProject',
       'CreateDataSource',
       'CreateEvaluationJob',
@@ -2858,6 +2980,7 @@ export class Bedrock extends PolicyStatement {
       'DeleteBlueprint',
       'DeleteCustomModel',
       'DeleteCustomModelDeployment',
+      'DeleteDataAutomationLibrary',
       'DeleteDataAutomationProject',
       'DeleteDataSource',
       'DeleteEnforcedGuardrailConfiguration',
@@ -2888,6 +3011,7 @@ export class Bedrock extends PolicyStatement {
       'InvokeBuilder',
       'InvokeDataAutomation',
       'InvokeDataAutomationAsync',
+      'InvokeDataAutomationLibraryIngestionJob',
       'PrepareAgent',
       'PrepareFlow',
       'PutEnforcedGuardrailConfiguration',
@@ -2918,6 +3042,7 @@ export class Bedrock extends PolicyStatement {
       'UpdateAutomatedReasoningPolicyTestCase',
       'UpdateBlueprint',
       'UpdateCustomModelDeployment',
+      'UpdateDataAutomationLibrary',
       'UpdateDataAutomationProject',
       'UpdateDataSource',
       'UpdateFlow',
@@ -2944,6 +3069,9 @@ export class Bedrock extends PolicyStatement {
       'ListBlueprints',
       'ListCustomModelDeployments',
       'ListCustomModels',
+      'ListDataAutomationLibraries',
+      'ListDataAutomationLibraryEntities',
+      'ListDataAutomationLibraryIngestionJobs',
       'ListDataAutomationProjects',
       'ListDataSources',
       'ListEnforcedGuardrailsConfiguration',
@@ -3537,6 +3665,40 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type data-automation-library to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param dataAutomationLibraryId - Identifier for the dataAutomationLibraryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataAutomationLibrary(dataAutomationLibraryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-library/${ dataAutomationLibraryId }`);
+  }
+
+  /**
+   * Adds a resource of type data-automation-library-ingestion-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param ingestionJobId - Identifier for the ingestionJobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataAutomationLibraryIngestionJob(ingestionJobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:data-automation-library-ingestion-job/${ ingestionJobId }`);
+  }
+
+  /**
    * Adds a resource of type session to the statement
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
@@ -3584,6 +3746,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateBlueprint()
    * - .toCreateCustomModel()
    * - .toCreateCustomModelDeployment()
+   * - .toCreateDataAutomationLibrary()
    * - .toCreateDataAutomationProject()
    * - .toCreateEvaluationJob()
    * - .toCreateFlow()
@@ -3603,6 +3766,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateSession()
    * - .toInvokeBlueprintOptimizationAsync()
    * - .toInvokeDataAutomationAsync()
+   * - .toInvokeDataAutomationLibraryIngestionJob()
    * - .toInvokeModel()
    * - .toPutResourcePolicy()
    * - .toTagResource()
@@ -3647,6 +3811,8 @@ export class Bedrock extends PolicyStatement {
    * - blueprint
    * - blueprint-optimization-invocation
    * - data-automation-invocation-job
+   * - data-automation-library
+   * - data-automation-library-ingestion-job
    * - session
    * - custom-model-deployment
    *
@@ -3672,6 +3838,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateBlueprint()
    * - .toCreateCustomModel()
    * - .toCreateCustomModelDeployment()
+   * - .toCreateDataAutomationLibrary()
    * - .toCreateDataAutomationProject()
    * - .toCreateEvaluationJob()
    * - .toCreateFlow()
@@ -3691,6 +3858,7 @@ export class Bedrock extends PolicyStatement {
    * - .toCreateSession()
    * - .toInvokeBlueprintOptimizationAsync()
    * - .toInvokeDataAutomationAsync()
+   * - .toInvokeDataAutomationLibraryIngestionJob()
    * - .toInvokeModel()
    * - .toPutResourcePolicy()
    * - .toTagResource()

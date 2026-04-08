@@ -1,0 +1,5 @@
+s3files:AccessPointArn
+s3files:CreateAction
+s3files:RequestTag/${TagKey}
+s3files:ResourceTag/${TagKey}
+s3files:TagKeys

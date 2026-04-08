@@ -1,0 +1,24 @@
+s3files:ClientMount;Read
+s3files:ClientRootAccess;Write
+s3files:ClientWrite;Write
+s3files:CreateAccessPoint;Write
+s3files:CreateFileSystem;Write
+s3files:CreateMountTarget;Write
+s3files:DeleteAccessPoint;Write
+s3files:DeleteFileSystem;Write
+s3files:DeleteFileSystemPolicy;Permissions management
+s3files:DeleteMountTarget;Write
+s3files:GetAccessPoint;Read
+s3files:GetFileSystem;Read
+s3files:GetFileSystemPolicy;Read
+s3files:GetMountTarget;Read
+s3files:GetSynchronizationConfiguration;Read
+s3files:ListAccessPoints;List
+s3files:ListFileSystems;List
+s3files:ListMountTargets;List
+s3files:ListTagsForResource;Read
+s3files:PutFileSystemPolicy;Permissions management
+s3files:PutSynchronizationConfiguration;Write
+s3files:TagResource;Tagging
+s3files:UntagResource;Tagging
+s3files:UpdateMountTarget;Write
