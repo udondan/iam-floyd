@@ -549,7 +549,7 @@
       }
     },
     {
-      "Sid": "GlueJobCloudwatchPutMetricActions",
+      "Sid": "GlueJobCWPutMetricActions",
       "Effect": "Allow",
       "Action": [
         "cloudwatch:PutMetricData"
@@ -700,7 +700,7 @@
       }
     },
     {
-      "Sid": "AirflowListDomainS3BucketPermissions",
+      "Sid": "AirflowListDomainS3Permissions",
       "Effect": "Allow",
       "Action": [
         "s3:ListBucket"
@@ -716,7 +716,7 @@
       }
     },
     {
-      "Sid": "ListDomainBucketFromAthenaFederatedCatalog",
+      "Sid": "ListDomainBucketFromAthenaCatalog",
       "Effect": "Allow",
       "Action": [
         "s3:ListBucket"
@@ -734,7 +734,7 @@
       }
     },
     {
-      "Sid": "AccessDomainS3BucketPermissions",
+      "Sid": "DomainS3BucketPermissions",
       "Effect": "Allow",
       "Action": [
         "s3:GetObject*",
@@ -800,7 +800,7 @@
       }
     },
     {
-      "Sid": "AccessDomainS3BucketKmsPermissions",
+      "Sid": "DomainS3BucketKmsPermissions",
       "Effect": "Allow",
       "Action": [
         "kms:GenerateDataKey",
@@ -945,7 +945,7 @@
       }
     },
     {
-      "Sid": "DefaultAthenaDataCatalogPermissions",
+      "Sid": "AthenaDataCatalogPermissions",
       "Effect": "Allow",
       "Action": [
         "athena:GetDatabase",
@@ -1295,7 +1295,7 @@
       }
     },
     {
-      "Sid": "FederatedDataConnectionPermissions",
+      "Sid": "GlueConnectionPermissions",
       "Effect": "Allow",
       "Action": [
         "glue:GetConnection",
@@ -1310,7 +1310,7 @@
       }
     },
     {
-      "Sid": "UnRestrictedAccessForGlueEntities",
+      "Sid": "UnrestrictedAccessGlueEntities",
       "Effect": "Allow",
       "Action": [
         "glue:ListConnectionTypes",
@@ -1636,7 +1636,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "EMRGetClusterSessionCredentials",
+      "Sid": "EMRGetClusterSessionCreds",
       "Effect": "Allow",
       "Action": [
         "elasticmapreduce:GetClusterSessionCredentials"
@@ -2139,7 +2139,7 @@
       }
     },
     {
-      "Sid": "IamPassRoleToBedrockPermissions",
+      "Sid": "IamPassRoleToBedrock",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": [
@@ -2241,7 +2241,7 @@
       }
     },
     {
-      "Sid": "AccessSecretPermissionsForAmazonBedrockIDE",
+      "Sid": "SecretPermissionsForBedrockIDE",
       "Effect": "Allow",
       "Action": [
         "secretsmanager:DescribeSecret",
@@ -2271,7 +2271,7 @@
       }
     },
     {
-      "Sid": "AccessSecretKmsPermissionsForAmazonBedrockIDE",
+      "Sid": "SecretKmsPermissionsForBedrockIDE",
       "Effect": "Allow",
       "Action": [
         "kms:GenerateDataKey",
@@ -2313,7 +2313,7 @@
       }
     },
     {
-      "Sid": "InvokeFunctionPermissionsForAmazonBedrockIDE",
+      "Sid": "InvokeFunctionForAmazonBedrockIDE",
       "Effect": "Allow",
       "Action": "lambda:InvokeFunction",
       "Resource": "arn:aws:lambda:*:*:function:amazon-bedrock-ide-*",
@@ -2326,7 +2326,7 @@
       }
     },
     {
-      "Sid": "LambdaInvokeFunctionViaBedrockPermissions",
+      "Sid": "LambdaInvokeFunctionViaBedrock",
       "Effect": "Allow",
       "Action": "lambda:InvokeFunction",
       "Resource": "arn:aws:lambda:*:*:function:amazon-bedrock*",
@@ -2339,7 +2339,7 @@
       }
     },
     {
-      "Sid": "GetDataZoneEnvironmentCloudFormationStackPermissions",
+      "Sid": "GetDataZoneEnvironmentCFNStackPermissions",
       "Effect": "Allow",
       "Action": [
         "cloudformation:GetTemplate",
@@ -2354,7 +2354,7 @@
       }
     },
     {
-      "Sid": "CloudFormationGetDataZoneEnvironmentStackPermissions",
+      "Sid": "CFNGetDataZoneEnvironmentStack",
       "Effect": "Allow",
       "Action": [
         "cloudformation:DescribeStacks",
@@ -2369,7 +2369,7 @@
       }
     },
     {
-      "Sid": "GetGlueUserDefinedFuncLakeFormationPermissions",
+      "Sid": "GetGlueUserDefinedFuncLF",
       "Effect": "Allow",
       "Action": [
         "glue:GetUserDefinedFunction",
@@ -2388,7 +2388,7 @@
       }
     },
     {
-      "Sid": "GetGlueUserDefinedFuncPermissions",
+      "Sid": "GlueGetUserDefinedFunc",
       "Effect": "Allow",
       "Action": [
         "glue:GetUserDefinedFunction",
@@ -2404,12 +2404,13 @@
       }
     },
     {
-      "Sid": "FederatedConnectionGetSecretPermissions",
+      "Sid": "DataConnectionAllProjectResources",
       "Effect": "Allow",
       "Action": [
-        "secretsmanager:GetSecretValue"
+        "secretsmanager:GetSecretValue",
+        "glue:GetConnections"
       ],
-      "Resource": "arn:*:secretsmanager:*:*:secret:*",
+      "Resource": "*",
       "Condition": {
         "StringEquals": {
           "aws:ResourceTag/for-use-with-all-datazone-projects": "true"
@@ -2417,7 +2418,7 @@
       }
     },
     {
-      "Sid": "FederatedConnectionLambdaLogsPermissions",
+      "Sid": "DataConnectionLambdaLogs",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup",
@@ -2427,15 +2428,16 @@
       "Resource": "arn:aws:logs:*:*:log-group:/aws/lambda/athenafederatedcatalog*"
     },
     {
-      "Sid": "FederatedConnectionDDBPermissions",
+      "Sid": "UnrestrictedDataConnectionPermissions",
       "Effect": "Allow",
       "Action": [
-        "dynamodb:ListTables"
+        "dynamodb:ListTables",
+        "glue:ManagedConnector"
       ],
       "Resource": "*"
     },
     {
-      "Sid": "FederatedConnectionEC2Permissions",
+      "Sid": "DataConnectionEC2",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateNetworkInterface",
@@ -2450,7 +2452,7 @@
       }
     },
     {
-      "Sid": "FederatedConnectionDeleteENIPermissions",
+      "Sid": "DataConnectionDeleteENI",
       "Effect": "Allow",
       "Action": "ec2:DeleteNetworkInterface",
       "Resource": "arn:aws:ec2:*:*:*/*",
@@ -2461,7 +2463,7 @@
       }
     },
     {
-      "Sid": "FederatedConnectionDescribeENIPermissions",
+      "Sid": "DataConnectionDescribeENI",
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeNetworkInterfaces"
@@ -2540,7 +2542,7 @@
       }
     },
     {
-      "Sid": "LakeformationResourceSharingPermissions",
+      "Sid": "LFResourceSharingPermissions",
       "Effect": "Allow",
       "Action": [
         "lakeformation:BatchGrantPermissions",

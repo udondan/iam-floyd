@@ -816,6 +816,18 @@ export class AwsManagedPolicy {
     public static AmazonS3ExpressFullAccess = 'AmazonS3ExpressFullAccess';
     /** Provides read only access to S3Express operations for S3 directory buckets. */
     public static AmazonS3ExpressReadOnlyAccess = 'AmazonS3ExpressReadOnlyAccess';
+    /** Provides root client access to an S3 Files file system. */
+    public static AmazonS3FilesClientFullAccess = 'AmazonS3FilesClientFullAccess';
+    /** Provides read only client access to an S3 Files file system. */
+    public static AmazonS3FilesClientReadOnlyAccess = 'AmazonS3FilesClientReadOnlyAccess';
+    /** Provides read and write client access to an S3 Files file system. */
+    public static AmazonS3FilesClientReadWriteAccess = 'AmazonS3FilesClientReadWriteAccess';
+    /** Provides management access to Amazon S3 Files resources */
+    public static AmazonS3FilesCSIDriverPolicy = 'service-role/AmazonS3FilesCSIDriverPolicy';
+    /** Provides full access to all S3 Files via the AWS Management Console. */
+    public static AmazonS3FilesFullAccess = 'AmazonS3FilesFullAccess';
+    /** Provides read only access to all S3 Files via the AWS Management Console. */
+    public static AmazonS3FilesReadOnlyAccess = 'AmazonS3FilesReadOnlyAccess';
     /** Provides full access to all buckets via the AWS Management Console. */
     public static AmazonS3FullAccess = 'AmazonS3FullAccess';
     /** Provides AWS Lambda functions permissions to interact with Amazon S3 Object Lambda. Also grants Lambda permissions to write to CloudWatch Logs. */

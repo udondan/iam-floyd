@@ -2049,6 +2049,36 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3ExpressReadOnlyAccess);
     }
 
+    /** Provides root client access to an S3 Files file system. */
+    public AmazonS3FilesClientFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3FilesClientFullAccess);
+    }
+
+    /** Provides read only client access to an S3 Files file system. */
+    public AmazonS3FilesClientReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3FilesClientReadOnlyAccess);
+    }
+
+    /** Provides read and write client access to an S3 Files file system. */
+    public AmazonS3FilesClientReadWriteAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3FilesClientReadWriteAccess);
+    }
+
+    /** Provides management access to Amazon S3 Files resources */
+    public AmazonS3FilesCSIDriverPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3FilesCSIDriverPolicy);
+    }
+
+    /** Provides full access to all S3 Files via the AWS Management Console. */
+    public AmazonS3FilesFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3FilesFullAccess);
+    }
+
+    /** Provides read only access to all S3 Files via the AWS Management Console. */
+    public AmazonS3FilesReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3FilesReadOnlyAccess);
+    }
+
     /** Provides full access to all buckets via the AWS Management Console. */
     public AmazonS3FullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonS3FullAccess);
