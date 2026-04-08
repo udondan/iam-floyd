@@ -146,6 +146,9 @@ export class SesMailmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateRuleSet.html
    */
   public toCreateRuleSet() {
@@ -172,9 +175,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteAddonInstance.html
    */
   public toDeleteAddonInstance() {
@@ -185,9 +185,6 @@ export class SesMailmanager extends PolicyStatement {
    * Grants permission to delete an addon subscription
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteAddonSubscription.html
    */
@@ -211,9 +208,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteArchive.html
    */
   public toDeleteArchive() {
@@ -224,9 +218,6 @@ export class SesMailmanager extends PolicyStatement {
    * Grants permission to delete an ingress point
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteIngressPoint.html
    */
@@ -239,9 +230,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteRelay.html
    */
   public toDeleteRelay() {
@@ -253,9 +241,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteRuleSet.html
    */
   public toDeleteRuleSet() {
@@ -266,9 +251,6 @@ export class SesMailmanager extends PolicyStatement {
    * Grants permission to delete a traffic point
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_DeleteTrafficPolicy.html
    */
@@ -292,9 +274,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetAddonInstance.html
    */
   public toGetAddonInstance() {
@@ -305,9 +284,6 @@ export class SesMailmanager extends PolicyStatement {
    * Grants permission to get information about an addon subscription
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetAddonSubscription.html
    */
@@ -341,9 +317,6 @@ export class SesMailmanager extends PolicyStatement {
    * Grants permission to get information about an archive
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetArchive.html
    */
@@ -411,9 +384,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetIngressPoint.html
    */
   public toGetIngressPoint() {
@@ -436,9 +406,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetRelay.html
    */
   public toGetRelay() {
@@ -450,9 +417,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetRuleSet.html
    */
   public toGetRuleSet() {
@@ -463,9 +427,6 @@ export class SesMailmanager extends PolicyStatement {
    * Grants permission to get information about a traffic policy
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_GetTrafficPolicy.html
    */
@@ -727,9 +688,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateArchive.html
    */
   public toUpdateArchive() {
@@ -742,7 +700,6 @@ export class SesMailmanager extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsRequestTag()
    * - .ifMailManagerTrafficPolicyArn()
    * - .ifMailManagerRuleSetArn()
    *
@@ -757,9 +714,6 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateRelay.html
    */
   public toUpdateRelay() {
@@ -771,8 +725,8 @@ export class SesMailmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateRuleSet.html
    */
@@ -784,9 +738,6 @@ export class SesMailmanager extends PolicyStatement {
    * Grants permission to update a traffic policy
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_UpdateTrafficPolicy.html
    */
@@ -1019,26 +970,7 @@ export class SesMailmanager extends PolicyStatement {
    * - .toCreateRelay()
    * - .toCreateRuleSet()
    * - .toCreateTrafficPolicy()
-   * - .toDeleteAddonInstance()
-   * - .toDeleteAddonSubscription()
-   * - .toDeleteArchive()
-   * - .toDeleteIngressPoint()
-   * - .toDeleteRelay()
-   * - .toDeleteRuleSet()
-   * - .toDeleteTrafficPolicy()
-   * - .toGetAddonInstance()
-   * - .toGetAddonSubscription()
-   * - .toGetArchive()
-   * - .toGetIngressPoint()
-   * - .toGetRelay()
-   * - .toGetRuleSet()
-   * - .toGetTrafficPolicy()
    * - .toTagResource()
-   * - .toUpdateArchive()
-   * - .toUpdateIngressPoint()
-   * - .toUpdateRelay()
-   * - .toUpdateRuleSet()
-   * - .toUpdateTrafficPolicy()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1054,17 +986,54 @@ export class SesMailmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAllowVendedLogDeliveryForResource()
+   * - .toCreateAddonInstance()
+   * - .toCreateAddonSubscription()
+   * - .toCreateAddressList()
    * - .toCreateAddressListImportJob()
+   * - .toCreateArchive()
+   * - .toCreateIngressPoint()
+   * - .toCreateRelay()
+   * - .toCreateRuleSet()
+   * - .toCreateTrafficPolicy()
+   * - .toDeleteAddonInstance()
+   * - .toDeleteAddonSubscription()
    * - .toDeleteAddressList()
+   * - .toDeleteArchive()
+   * - .toDeleteIngressPoint()
+   * - .toDeleteRelay()
+   * - .toDeleteRuleSet()
+   * - .toDeleteTrafficPolicy()
    * - .toDeregisterMemberFromAddressList()
+   * - .toGetAddonInstance()
+   * - .toGetAddonSubscription()
    * - .toGetAddressList()
    * - .toGetAddressListImportJob()
+   * - .toGetArchive()
+   * - .toGetArchiveExport()
+   * - .toGetArchiveMessage()
+   * - .toGetArchiveMessageContent()
+   * - .toGetArchiveSearch()
+   * - .toGetArchiveSearchResults()
+   * - .toGetIngressPoint()
    * - .toGetMemberOfAddressList()
+   * - .toGetRelay()
+   * - .toGetRuleSet()
+   * - .toGetTrafficPolicy()
    * - .toListAddressListImportJobs()
    * - .toListMembersOfAddressList()
    * - .toRegisterMemberToAddressList()
    * - .toStartAddressListImportJob()
+   * - .toStartArchiveExport()
+   * - .toStartArchiveSearch()
    * - .toStopAddressListImportJob()
+   * - .toStopArchiveExport()
+   * - .toStopArchiveSearch()
+   * - .toUpdateArchive()
+   * - .toUpdateIngressPoint()
+   * - .toUpdateRelay()
+   * - .toUpdateRuleSet()
+   * - .toUpdateTrafficPolicy()
    *
    * Applies to resource types:
    * - addon-instance
@@ -1127,6 +1096,9 @@ export class SesMailmanager extends PolicyStatement {
    * Filters access by SES Mail Manager ingress point type, for example OPEN or AUTH
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsesmailmanager.html#amazonsesmailmanager-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateIngressPoint()
    *
    * Applies to resource types:
    * - mailmanager-ingress-point

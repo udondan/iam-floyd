@@ -118,6 +118,17 @@ export class Transform extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke GetWebAppUrl on AWS Transform
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toGetWebAppUrl() {
+    return this.to('GetWebAppUrl');
+  }
+
+  /**
    * Grants permission to invoke ListAgents on AWS Transform
    *
    * Access Level: Read
@@ -263,6 +274,7 @@ export class Transform extends PolicyStatement {
       'GetAgent',
       'GetAgentRuntimeConfiguration',
       'GetConnector',
+      'GetWebAppUrl',
       'ListAgents',
       'ListTagsForResource'
     ],

@@ -10,6 +10,8 @@ bedrock:blueprint-optimization-invocation
 bedrock:custom-model
 bedrock:custom-model-deployment
 bedrock:data-automation-invocation-job
+bedrock:data-automation-library
+bedrock:data-automation-library-ingestion-job
 bedrock:data-automation-profile
 bedrock:data-automation-project
 bedrock:default-prompt-router

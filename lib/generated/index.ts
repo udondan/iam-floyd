@@ -167,6 +167,7 @@ export { Route53RecoveryReadiness } from './policy-statements/route53recoveryrea
 export { Route53resolver } from './policy-statements/route53resolver';
 export { S3 } from './policy-statements/s3';
 export { S3express } from './policy-statements/s3express';
+export { S3files } from './policy-statements/s3files';
 export { Glacier } from './policy-statements/s3glacier';
 export { S3ObjectLambda } from './policy-statements/s3objectlambda';
 export { S3Outposts } from './policy-statements/s3onoutposts';

@@ -18,6 +18,7 @@ bedrock:CreateBlueprint;Write
 bedrock:CreateBlueprintVersion;Write
 bedrock:CreateCustomModel;Write
 bedrock:CreateCustomModelDeployment;Write
+bedrock:CreateDataAutomationLibrary;Write
 bedrock:CreateDataAutomationProject;Write
 bedrock:CreateDataSource;Write
 bedrock:CreateEvaluationJob;Write
@@ -52,6 +53,7 @@ bedrock:DeleteAutomatedReasoningPolicyTestCase;Write
 bedrock:DeleteBlueprint;Write
 bedrock:DeleteCustomModel;Write
 bedrock:DeleteCustomModelDeployment;Write
+bedrock:DeleteDataAutomationLibrary;Write
 bedrock:DeleteDataAutomationProject;Write
 bedrock:DeleteDataSource;Write
 bedrock:DeleteEnforcedGuardrailConfiguration;Write
@@ -99,6 +101,9 @@ bedrock:GetBlueprintOptimizationStatus;Read
 bedrock:GetBlueprintRecommendation;Read
 bedrock:GetCustomModel;Read
 bedrock:GetCustomModelDeployment;Read
+bedrock:GetDataAutomationLibrary;Read
+bedrock:GetDataAutomationLibraryEntity;Read
+bedrock:GetDataAutomationLibraryIngestionJob;Read
 bedrock:GetDataAutomationProject;Read
 bedrock:GetDataAutomationStatus;Read
 bedrock:GetDataSource;Read
@@ -138,6 +143,7 @@ bedrock:InvokeBlueprintRecommendationAsync;Write
 bedrock:InvokeBuilder;Write
 bedrock:InvokeDataAutomation;Write
 bedrock:InvokeDataAutomationAsync;Write
+bedrock:InvokeDataAutomationLibraryIngestionJob;Write
 bedrock:InvokeFlow;Read
 bedrock:InvokeInlineAgent;Read
 bedrock:InvokeModel;Read
@@ -157,6 +163,9 @@ bedrock:ListAutomatedReasoningPolicyTestResults;List
 bedrock:ListBlueprints;List
 bedrock:ListCustomModelDeployments;List
 bedrock:ListCustomModels;List
+bedrock:ListDataAutomationLibraries;List
+bedrock:ListDataAutomationLibraryEntities;List
+bedrock:ListDataAutomationLibraryIngestionJobs;List
 bedrock:ListDataAutomationProjects;List
 bedrock:ListDataSources;List
 bedrock:ListEnforcedGuardrailsConfiguration;List
@@ -222,6 +231,7 @@ bedrock:UpdateAutomatedReasoningPolicyAnnotations;Write
 bedrock:UpdateAutomatedReasoningPolicyTestCase;Write
 bedrock:UpdateBlueprint;Write
 bedrock:UpdateCustomModelDeployment;Write
+bedrock:UpdateDataAutomationLibrary;Write
 bedrock:UpdateDataAutomationProject;Write
 bedrock:UpdateDataSource;Write
 bedrock:UpdateFlow;Write

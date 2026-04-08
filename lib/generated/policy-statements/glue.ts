@@ -2647,6 +2647,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to use Glue managed connectors to query data
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations
+   */
+  public toManagedConnector() {
+    return this.to('ManagedConnector');
+  }
+
+  /**
    * Grants permission to modify a zero-ETL integration
    *
    * Access Level: Write
@@ -3902,6 +3913,7 @@ export class Glue extends PolicyStatement {
       'GlueNotebookRefreshCredentials',
       'ListConnectionTypes',
       'ListEntities',
+      'ManagedConnector',
       'PutResourcePolicy',
       'RefreshOAuth2Tokens',
       'RequestLogParsing',

@@ -1547,6 +1547,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutAlarm.html
    */
   public toPutAlarm() {
@@ -2284,6 +2288,9 @@ export class Lightsail extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAlarm(id: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lightsail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:Alarm/${ id }`);
@@ -2397,6 +2404,7 @@ export class Lightsail extends PolicyStatement {
    * - .toCreateRelationalDatabase()
    * - .toCreateRelationalDatabaseFromSnapshot()
    * - .toCreateRelationalDatabaseSnapshot()
+   * - .toPutAlarm()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -2423,6 +2431,7 @@ export class Lightsail extends PolicyStatement {
    * - LoadBalancer
    * - RelationalDatabase
    * - RelationalDatabaseSnapshot
+   * - Alarm
    * - Certificate
    * - ContactMethod
    * - ContainerService
@@ -2460,6 +2469,7 @@ export class Lightsail extends PolicyStatement {
    * - .toCreateRelationalDatabase()
    * - .toCreateRelationalDatabaseFromSnapshot()
    * - .toCreateRelationalDatabaseSnapshot()
+   * - .toPutAlarm()
    * - .toTagResource()
    * - .toUntagResource()
    *
