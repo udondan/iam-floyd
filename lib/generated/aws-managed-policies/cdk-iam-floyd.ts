@@ -2164,6 +2164,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerCanvasSMDataScienceAssistantAccess);
     }
 
+    /** This policy grants permissions to Amazon SageMaker Capacity Reservations to publish CloudWatch metrics into customer accounts for utilization visibility. */
+    public AmazonSageMakerCapacityReservationServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerCapacityReservationServiceRolePolicy);
+    }
+
     /** This policy grants permissions commonly needed to use Amazon SageMaker Cluster. */
     public AmazonSageMakerClusterInstanceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerClusterInstanceRolePolicy);

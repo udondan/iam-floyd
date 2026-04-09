@@ -51,6 +51,7 @@
         "ce:GetCostAndUsage",
         "ce:ListCostAllocationTags",
         "ce:ListCostCategoryDefinitions",
+        "ce:ListCostCategoryResourceAssociations",
         "ce:ListTagsForResource",
         "ce:TagResource",
         "ce:UpdateCostAllocationTagsStatus",

@@ -24,6 +24,7 @@
         "ce:DescribeCostCategoryDefinition",
         "ce:GetCostAndUsage",
         "ce:ListCostCategoryDefinitions",
+        "ce:ListCostCategoryResourceAssociations",
         "ce:ListTagsForResource",
         "ce:ListCostAllocationTags",
         "ce:ListCostAllocationTagBackfillHistory",
