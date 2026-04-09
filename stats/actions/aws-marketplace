@@ -30,6 +30,11 @@ aws-marketplace:GetAgreementTerms;List
 aws-marketplace:GetBillingAdjustmentRequest;Read
 aws-marketplace:GetBuyerDashboard;Read
 aws-marketplace:GetEntitlements;Read
+aws-marketplace:GetListing;Read
+aws-marketplace:GetOffer;Read
+aws-marketplace:GetOfferSet;Read
+aws-marketplace:GetOfferTerms;Read
+aws-marketplace:GetProduct;Read
 aws-marketplace:GetResourcePolicy;Read
 aws-marketplace:GetSellerDashboard;Read
 aws-marketplace:ListAgreementApprovalRequests;List
@@ -44,8 +49,10 @@ aws-marketplace:ListBuilds;Read
 aws-marketplace:ListChangeSets;List
 aws-marketplace:ListEntities;List
 aws-marketplace:ListEntitlementDetails;Read
+aws-marketplace:ListFulfillmentOptions;List
 aws-marketplace:ListPrivateListings;List
 aws-marketplace:ListPrivateMarketplaceRequests;List
+aws-marketplace:ListPurchaseOptions;List
 aws-marketplace:ListTagsForResource;Read
 aws-marketplace:MeterUsage;Write
 aws-marketplace:PutDeploymentParameter;Write
@@ -57,6 +64,8 @@ aws-marketplace:RejectAgreementCancellationRequest;Write
 aws-marketplace:RejectAgreementPaymentRequest;Write
 aws-marketplace:ResolveCustomer;Write
 aws-marketplace:SearchAgreements;List
+aws-marketplace:SearchFacets;List
+aws-marketplace:SearchListings;List
 aws-marketplace:SendAgreementCancellationRequest;Write
 aws-marketplace:SendAgreementPaymentRequest;Write
 aws-marketplace:StartBuild;Write

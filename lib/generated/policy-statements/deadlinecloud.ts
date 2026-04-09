@@ -784,6 +784,17 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get settings for a monitor
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetMonitorSettings.html
+   */
+  public toGetMonitorSettings() {
+    return this.to('GetMonitorSettings');
+  }
+
+  /**
    * Grants permission to get a queue
    *
    * Access Level: Read
@@ -1571,6 +1582,17 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update settings for a monitor
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_UpdateMonitorSettings.html
+   */
+  public toUpdateMonitorSettings() {
+    return this.to('UpdateMonitorSettings');
+  }
+
+  /**
    * Grants permission to update a queue
    *
    * Access Level: Write
@@ -1762,6 +1784,7 @@ export class Deadline extends PolicyStatement {
       'UpdateJob',
       'UpdateLimit',
       'UpdateMonitor',
+      'UpdateMonitorSettings',
       'UpdateQueue',
       'UpdateQueueEnvironment',
       'UpdateQueueFleetAssociation',
@@ -1784,6 +1807,7 @@ export class Deadline extends PolicyStatement {
       'GetLicenseEndpoint',
       'GetLimit',
       'GetMonitor',
+      'GetMonitorSettings',
       'GetQueue',
       'GetQueueEnvironment',
       'GetQueueFleetAssociation',
