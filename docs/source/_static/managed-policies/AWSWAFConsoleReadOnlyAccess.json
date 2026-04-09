@@ -118,10 +118,19 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowGetActionsForALB",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:GetLoadBalancerWebACL"
+      ],
+      "Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*"
+    },
+    {
       "Sid": "AllowListActionsForALB",
       "Effect": "Allow",
       "Action": [
-        "elasticloadbalancing:DescribeLoadBalancers"
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeWebACLAssociation"
       ],
       "Resource": "*"
     },
@@ -134,11 +143,20 @@
       "Resource": "arn:aws:apigateway:*::/*"
     },
     {
+      "Sid": "AllowGetActionsForAppSync",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GetWebACLForResource"
+      ],
+      "Resource": "arn:aws:appsync:*:*:apis/*"
+    },
+    {
       "Sid": "AllowListActionsForAppSync",
       "Effect": "Allow",
       "Action": [
         "appsync:ListGraphqlApis",
-        "appsync:ListApis"
+        "appsync:ListApis",
+        "appsync:ListResourcesForWebACL"
       ],
       "Resource": "*"
     },

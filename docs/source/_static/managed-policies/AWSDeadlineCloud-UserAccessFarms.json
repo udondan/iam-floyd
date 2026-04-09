@@ -10,7 +10,8 @@
         "identitystore:ListGroupMembershipsForMember",
         "deadline:GetApplicationVersion",
         "ec2:DescribeInstanceTypes",
-        "identitystore:ListUsers"
+        "identitystore:ListUsers",
+        "deadline:GetMonitorSettings"
       ],
       "Resource": [
         "*"

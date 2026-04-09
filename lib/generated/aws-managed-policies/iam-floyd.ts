@@ -862,6 +862,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerCanvasFullAccess = 'AmazonSageMakerCanvasFullAccess';
     /** Provides permissions for Amazon SageMaker Canvas to use the SageMaker Data Science Assistant service. The Data Science Assistant currently uses both Amazon SageMaker and Amazon Q Developer to process user prompts. */
     public static AmazonSageMakerCanvasSMDataScienceAssistantAccess = 'AmazonSageMakerCanvasSMDataScienceAssistantAccess';
+    /** This policy grants permissions to Amazon SageMaker Capacity Reservations to publish CloudWatch metrics into customer accounts for utilization visibility. */
+    public static AmazonSageMakerCapacityReservationServiceRolePolicy = 'aws-service-role/AmazonSageMakerCapacityReservationServiceRolePolicy';
     /** This policy grants permissions commonly needed to use Amazon SageMaker Cluster. */
     public static AmazonSageMakerClusterInstanceRolePolicy = 'AmazonSageMakerClusterInstanceRolePolicy';
     /** Managed policy for Service Linked Role for Amazon SageMaker Core Services */

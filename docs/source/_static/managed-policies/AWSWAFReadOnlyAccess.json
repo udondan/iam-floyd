@@ -128,6 +128,38 @@
         "amplify:ListResourcesForWebACL"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowGetActionsForAppSync",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GetWebACLForResource"
+      ],
+      "Resource": "arn:aws:appsync:*:*:apis/*"
+    },
+    {
+      "Sid": "AllowListActionsForAppSync",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:ListResourcesForWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowGetActionsForELB",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:GetLoadBalancerWebACL"
+      ],
+      "Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*"
+    },
+    {
+      "Sid": "AllowListActionsForELB",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:DescribeWebACLAssociation"
+      ],
+      "Resource": "*"
     }
   ]
 }

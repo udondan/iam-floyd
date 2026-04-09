@@ -68,10 +68,21 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowListActionsForALB",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:DescribeWebACLAssociation"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "AllowActionsForALB",
       "Effect": "Allow",
       "Action": [
-        "elasticloadbalancing:SetWebAcl"
+        "elasticloadbalancing:SetWebAcl",
+        "elasticloadbalancing:CreateWebACLAssociation",
+        "elasticloadbalancing:DeleteWebACLAssociation",
+        "elasticloadbalancing:GetLoadBalancerWebACL"
       ],
       "Resource": "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*"
     },
@@ -84,10 +95,21 @@
       "Resource": "arn:aws:apigateway:*::/restapis/*/stages/*"
     },
     {
+      "Sid": "AllowListActionsForAppSync",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:ListResourcesForWebACL"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "AllowActionsForAppSync",
       "Effect": "Allow",
       "Action": [
-        "appsync:SetWebACL"
+        "appsync:SetWebACL",
+        "appsync:AssociateWebACL",
+        "appsync:DisassociateWebACL",
+        "appsync:GetWebACLForResource"
       ],
       "Resource": "arn:aws:appsync:*:*:apis/*"
     },
