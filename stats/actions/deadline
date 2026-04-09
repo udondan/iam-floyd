@@ -48,6 +48,7 @@ deadline:GetJobTemplate;Read
 deadline:GetLicenseEndpoint;Read
 deadline:GetLimit;Read
 deadline:GetMonitor;Read
+deadline:GetMonitorSettings;Read
 deadline:GetQueue;Read
 deadline:GetQueueEnvironment;Read
 deadline:GetQueueFleetAssociation;Read
@@ -103,6 +104,7 @@ deadline:UpdateFleet;Write
 deadline:UpdateJob;Write
 deadline:UpdateLimit;Write
 deadline:UpdateMonitor;Write
+deadline:UpdateMonitorSettings;Write
 deadline:UpdateQueue;Write
 deadline:UpdateQueueEnvironment;Write
 deadline:UpdateQueueFleetAssociation;Write

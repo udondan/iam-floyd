@@ -57,11 +57,14 @@ workspaces:DisassociateConnectionAlias;Write
 workspaces:DisassociateIpGroups;Write
 workspaces:DisassociateWorkspaceApplication;Write
 workspaces:GetAccountLink;Read
+workspaces:GetTroubleshootingRecommendation;Read
 workspaces:ImportClientBranding;Write
 workspaces:ImportCustomWorkspaceImage;Write
 workspaces:ImportWorkspaceImage;Write
+workspaces:InvokeTroubleshootingInvestigation;Read
 workspaces:ListAccountLinks;List
 workspaces:ListAvailableManagementCidrRanges;List
+workspaces:ListTroubleshootingRecommendations;Read
 workspaces:MigrateWorkspace;Write
 workspaces:ModifyAccount;Write
 workspaces:ModifyCertificateBasedAuthProperties;Write

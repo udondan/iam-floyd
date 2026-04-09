@@ -742,6 +742,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get troubleshooting recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toGetTroubleshootingRecommendation() {
+    return this.to('GetTroubleshootingRecommendation');
+  }
+
+  /**
    * Grants permission to import AWS WorkSpaces Client branding data within a directory
    *
    * Access Level: Write
@@ -779,6 +790,17 @@ export class Workspaces extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke troubleshooting investigation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toInvokeTroubleshootingInvestigation() {
+    return this.to('InvokeTroubleshootingInvestigation');
+  }
+
+  /**
    * Grants permission to retrieve links with the AWS Account(s) that share your configuration for WorkSpaces BYOL
    *
    * Access Level: List
@@ -798,6 +820,17 @@ export class Workspaces extends PolicyStatement {
    */
   public toListAvailableManagementCidrRanges() {
     return this.to('ListAvailableManagementCidrRanges');
+  }
+
+  /**
+   * Grants permission to list troubleshooting recommendations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-advisor.html
+   */
+  public toListTroubleshootingRecommendations() {
+    return this.to('ListTroubleshootingRecommendations');
   }
 
   /**
@@ -1272,7 +1305,10 @@ export class Workspaces extends PolicyStatement {
       'DescribeWorkspaceDirectories',
       'DescribeWorkspaceImagePermissions',
       'DescribeWorkspacesConnectionStatus',
-      'GetAccountLink'
+      'GetAccountLink',
+      'GetTroubleshootingRecommendation',
+      'InvokeTroubleshootingInvestigation',
+      'ListTroubleshootingRecommendations'
     ],
     List: [
       'DescribeApplicationAssociations',

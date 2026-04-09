@@ -3,4 +3,9 @@ aws-marketplace:ChangeSet
 aws-marketplace:Dashboard
 aws-marketplace:DeploymentParameter
 aws-marketplace:Entity
+aws-marketplace:Listing
+aws-marketplace:Offer
+aws-marketplace:OfferSet
+aws-marketplace:Product
+aws-marketplace:PurchaseOption
 aws-marketplace:SellerDashboard
