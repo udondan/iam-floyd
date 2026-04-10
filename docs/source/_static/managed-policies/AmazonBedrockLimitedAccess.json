@@ -93,7 +93,10 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "aws:CalledViaLast": "bedrock.amazonaws.com"
+          "aws:CalledViaLast": [
+            "bedrock.amazonaws.com",
+            "bedrock-mantle.amazonaws.com"
+          ]
         }
       }
     }

@@ -40,6 +40,37 @@
       ]
     },
     {
+      "Sid": "OpenSearchServerless",
+      "Effect": "Allow",
+      "Action": [
+        "aoss:BatchGetCollection",
+        "aoss:BatchGetCollectionGroup",
+        "aoss:GetAccessPolicy",
+        "aoss:GetIndex",
+        "aoss:GetSecurityPolicy",
+        "aoss:ListAccessPolicies",
+        "aoss:ListCollectionGroups",
+        "aoss:ListCollections",
+        "aoss:ListSecurityPolicies",
+        "aoss:ListSecurityConfigs",
+        "aoss:ListTagsForResource"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "OpenSearchApplications",
+      "Effect": "Allow",
+      "Action": [
+        "es:GetApplication",
+        "es:ListApplications"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
       "Sid": "Observability",
       "Effect": "Allow",
       "Action": [
