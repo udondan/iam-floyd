@@ -12,6 +12,8 @@ bedrock-agentcore:online-evaluation-config
 bedrock-agentcore:policy
 bedrock-agentcore:policy-engine
 bedrock-agentcore:policy-generation
+bedrock-agentcore:registry
+bedrock-agentcore:registry-record
 bedrock-agentcore:runtime
 bedrock-agentcore:runtime-endpoint
 bedrock-agentcore:token-vault

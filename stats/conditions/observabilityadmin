@@ -1,7 +1,11 @@
 observabilityadmin:CentralizationBackupRegion
+observabilityadmin:CentralizationDestinationAccount
 observabilityadmin:CentralizationDestinationRegion
+observabilityadmin:CentralizationRuleName
+observabilityadmin:CentralizationSourceId
 observabilityadmin:CentralizationSourceRegions
 observabilityadmin:RequestTag/${TagKey}
 observabilityadmin:ResourceTag/${TagKey}
 observabilityadmin:SourceType
 observabilityadmin:TagKeys
+observabilityadmin:TargetRegions
