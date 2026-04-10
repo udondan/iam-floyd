@@ -29,6 +29,9 @@ export class Observabilityadmin extends PolicyStatement {
    * - .ifCentralizationSourceRegions()
    * - .ifCentralizationDestinationRegion()
    * - .ifCentralizationBackupRegion()
+   * - .ifCentralizationRuleName()
+   * - .ifCentralizationSourceId()
+   * - .ifCentralizationDestinationAccount()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateCentralizationRuleForOrganization.html
    */
@@ -75,6 +78,7 @@ export class Observabilityadmin extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifTargetRegions()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryRule.html
    */
@@ -90,6 +94,7 @@ export class Observabilityadmin extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifTargetRegions()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryRuleForOrganization.html
    */
@@ -101,6 +106,9 @@ export class Observabilityadmin extends PolicyStatement {
    * Grants permission to delete an organization centralization rule with the specified name for the organization
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCentralizationRuleName()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteCentralizationRuleForOrganization.html
    */
@@ -156,6 +164,9 @@ export class Observabilityadmin extends PolicyStatement {
    * Grants permission to retrieve the specified organization centralization rule for the organization
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCentralizationRuleName()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetCentralizationRuleForOrganization.html
    */
@@ -256,6 +267,9 @@ export class Observabilityadmin extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifTargetRegions()
+   *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourceTelemetry.html
    */
   public toListResourceTelemetry() {
@@ -266,6 +280,9 @@ export class Observabilityadmin extends PolicyStatement {
    * Grants permission to retrieve telemetry configurations for resources associated with accounts in the organization
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifTargetRegions()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourceTelemetryForOrganization.html
    */
@@ -344,6 +361,9 @@ export class Observabilityadmin extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifTargetRegions()
+   *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluation.html
    */
   public toStartTelemetryEvaluation() {
@@ -354,6 +374,9 @@ export class Observabilityadmin extends PolicyStatement {
    * Grants permission to start the Telemetry Config feature for the organization
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTargetRegions()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluationForOrganization.html
    */
@@ -443,6 +466,9 @@ export class Observabilityadmin extends PolicyStatement {
    * - .ifCentralizationSourceRegions()
    * - .ifCentralizationDestinationRegion()
    * - .ifCentralizationBackupRegion()
+   * - .ifCentralizationRuleName()
+   * - .ifCentralizationSourceId()
+   * - .ifCentralizationDestinationAccount()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateCentralizationRuleForOrganization.html
    */
@@ -466,6 +492,9 @@ export class Observabilityadmin extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifTargetRegions()
+   *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateTelemetryRule.html
    */
   public toUpdateTelemetryRule() {
@@ -476,6 +505,9 @@ export class Observabilityadmin extends PolicyStatement {
    * Grants permission to update the specified telemetry rule for the organization
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTargetRegions()
    *
    * https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateTelemetryRuleForOrganization.html
    */
@@ -709,6 +741,22 @@ export class Observabilityadmin extends PolicyStatement {
   }
 
   /**
+   * Filters access by the destination account that is passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationdestinationaccount
+   *
+   * Applies to actions:
+   * - .toCreateCentralizationRuleForOrganization()
+   * - .toUpdateCentralizationRuleForOrganization()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCentralizationDestinationAccount(value: string | string[], operator?: Operator | string) {
+    return this.if(`CentralizationDestinationAccount`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the destination region that is passed in the request
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationdestinationregion
@@ -722,6 +770,40 @@ export class Observabilityadmin extends PolicyStatement {
    */
   public ifCentralizationDestinationRegion(value: string | string[], operator?: Operator | string) {
     return this.if(`CentralizationDestinationRegion`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the name of the centralization rule that is passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationrulename
+   *
+   * Applies to actions:
+   * - .toCreateCentralizationRuleForOrganization()
+   * - .toDeleteCentralizationRuleForOrganization()
+   * - .toGetCentralizationRuleForOrganization()
+   * - .toUpdateCentralizationRuleForOrganization()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCentralizationRuleName(value: string | string[], operator?: Operator | string) {
+    return this.if(`CentralizationRuleName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the source account, organizational unit, or organization IDs that is passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-centralizationsourceid
+   *
+   * Applies to actions:
+   * - .toCreateCentralizationRuleForOrganization()
+   * - .toUpdateCentralizationRuleForOrganization()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCentralizationSourceId(value: string | string[], operator?: Operator | string) {
+    return this.if(`CentralizationSourceId`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -753,5 +835,27 @@ export class Observabilityadmin extends PolicyStatement {
    */
   public ifSourceType(value: string | string[], operator?: Operator | string) {
     return this.if(`SourceType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the regions that are targetted by the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/reference_policies_condition-keys.htmlcondition-keys-observabilityadmin.html#condition-keys-targetregions
+   *
+   * Applies to actions:
+   * - .toCreateTelemetryRule()
+   * - .toCreateTelemetryRuleForOrganization()
+   * - .toListResourceTelemetry()
+   * - .toListResourceTelemetryForOrganization()
+   * - .toStartTelemetryEvaluation()
+   * - .toStartTelemetryEvaluationForOrganization()
+   * - .toUpdateTelemetryRule()
+   * - .toUpdateTelemetryRuleForOrganization()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTargetRegions(value: string | string[], operator?: Operator | string) {
+    return this.if(`TargetRegions`, value, operator ?? 'StringLike');
   }
 }

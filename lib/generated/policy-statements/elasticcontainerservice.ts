@@ -24,10 +24,10 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifPropagateTags()
-   * - .ifInstanceMetadataTagsPropagation()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifInstanceMetadataTagsPropagation()
+   * - .ifPropagateTags()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html
    */
@@ -82,11 +82,11 @@ export class Ecs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifTaskDefinition()
-   * - .ifSubnet()
    * - .ifEnableEcsManagedTags()
    * - .ifPropagateTags()
+   * - .ifSubnet()
    * - .ifTaskCpu()
+   * - .ifTaskDefinition()
    * - .ifTaskMemory()
    *
    * Dependent actions:
@@ -107,18 +107,18 @@ export class Ecs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifAutoAssignPublicIp()
    * - .ifCapacityProvider()
-   * - .ifTaskDefinition()
    * - .ifEnableEbsVolumes()
+   * - .ifEnableEcsManagedTags()
    * - .ifEnableExecuteCommand()
    * - .ifEnableServiceConnect()
-   * - .ifNamespace()
    * - .ifEnableVpcLattice()
-   * - .ifEnableEcsManagedTags()
+   * - .ifNamespace()
    * - .ifPropagateTags()
-   * - .ifAutoAssignPublicIp()
    * - .ifSubnet()
    * - .ifTaskCpu()
+   * - .ifTaskDefinition()
    * - .ifTaskMemory()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html
@@ -135,8 +135,8 @@ export class Ecs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifCluster()
    * - .ifCapacityProvider()
+   * - .ifCluster()
    * - .ifService()
    * - .ifTaskDefinition()
    *
@@ -827,11 +827,11 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   * - .ifCluster()
    * - .ifCapacityProvider()
+   * - .ifCluster()
    * - .ifEnableEbsVolumes()
    * - .ifEnableExecuteCommand()
    *
@@ -850,8 +850,8 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifCluster()
    * - .ifContainerInstances()
@@ -946,9 +946,9 @@ export class Ecs extends PolicyStatement {
    * Access Level: Tagging
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    * - .ifCreateAction()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html
@@ -978,9 +978,9 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifPropagateTags()
-   * - .ifInstanceMetadataTagsPropagation()
    * - .ifAwsResourceTag()
+   * - .ifInstanceMetadataTagsPropagation()
+   * - .ifPropagateTags()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateCapacityProvider.html
    */
@@ -1069,9 +1069,9 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifSubnet()
    * - .ifEnableEcsManagedTags()
    * - .ifPropagateTags()
+   * - .ifSubnet()
    * - .ifTaskCpu()
    * - .ifTaskMemory()
    *
@@ -1087,18 +1087,18 @@ export class Ecs extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifAutoAssignPublicIp()
    * - .ifCapacityProvider()
    * - .ifEnableEbsVolumes()
+   * - .ifEnableEcsManagedTags()
    * - .ifEnableExecuteCommand()
    * - .ifEnableServiceConnect()
-   * - .ifNamespace()
-   * - .ifTaskDefinition()
    * - .ifEnableVpcLattice()
-   * - .ifEnableEcsManagedTags()
+   * - .ifNamespace()
    * - .ifPropagateTags()
-   * - .ifAutoAssignPublicIp()
    * - .ifSubnet()
    * - .ifTaskCpu()
+   * - .ifTaskDefinition()
    * - .ifTaskMemory()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
@@ -1244,6 +1244,24 @@ export class Ecs extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type capacity-provider to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-capacity-provider-console-v2.html
+   *
+   * @param capacityProviderName - Identifier for the capacityProviderName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capacity-provider/${ capacityProviderName }`);
+  }
+
+  /**
    * Adds a resource of type cluster to the statement
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html
@@ -1278,67 +1296,6 @@ export class Ecs extends PolicyStatement {
    */
   public onContainerInstance(clusterName: string, containerInstanceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:container-instance/${ clusterName }/${ containerInstanceId }`);
-  }
-
-  /**
-   * Adds a resource of type service to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html
-   *
-   * @param clusterName - Identifier for the clusterName.
-   * @param serviceName - Identifier for the serviceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onService(clusterName: string, serviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ clusterName }/${ serviceName }`);
-  }
-
-  /**
-   * Adds a resource of type service-deployment to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html
-   *
-   * @param clusterName - Identifier for the clusterName.
-   * @param serviceName - Identifier for the serviceName.
-   * @param serviceDeploymentId - Identifier for the serviceDeploymentId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifCluster()
-   * - .ifService()
-   */
-  public onServiceDeployment(clusterName: string, serviceName: string, serviceDeploymentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-deployment/${ clusterName }/${ serviceName }/${ serviceDeploymentId }`);
-  }
-
-  /**
-   * Adds a resource of type service-revision to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-revision.html
-   *
-   * @param clusterName - Identifier for the clusterName.
-   * @param serviceName - Identifier for the serviceName.
-   * @param serviceRevisionId - Identifier for the serviceRevisionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifCluster()
-   * - .ifService()
-   */
-  public onServiceRevision(clusterName: string, serviceName: string, serviceRevisionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-revision/${ clusterName }/${ serviceName }/${ serviceRevisionId }`);
   }
 
   /**
@@ -1421,6 +1378,67 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type service to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param serviceName - Identifier for the serviceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onService(clusterName: string, serviceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ clusterName }/${ serviceName }`);
+  }
+
+  /**
+   * Adds a resource of type service-deployment to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param serviceName - Identifier for the serviceName.
+   * @param serviceDeploymentId - Identifier for the serviceDeploymentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCluster()
+   * - .ifService()
+   */
+  public onServiceDeployment(clusterName: string, serviceName: string, serviceDeploymentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-deployment/${ clusterName }/${ serviceName }/${ serviceDeploymentId }`);
+  }
+
+  /**
+   * Adds a resource of type service-revision to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-revision.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param serviceName - Identifier for the serviceName.
+   * @param serviceRevisionId - Identifier for the serviceRevisionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCluster()
+   * - .ifService()
+   */
+  public onServiceRevision(clusterName: string, serviceName: string, serviceRevisionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-revision/${ clusterName }/${ serviceName }/${ serviceRevisionId }`);
+  }
+
+  /**
    * Adds a resource of type task to the statement
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html
@@ -1456,24 +1474,6 @@ export class Ecs extends PolicyStatement {
    */
   public onTaskDefinition(taskDefinitionFamilyName: string, taskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:task-definition/${ taskDefinitionFamilyName }:${ taskDefinitionRevisionNumber }`);
-  }
-
-  /**
-   * Adds a resource of type capacity-provider to the statement
-   *
-   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-capacity-provider-console-v2.html
-   *
-   * @param capacityProviderName - Identifier for the capacityProviderName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:ecs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:capacity-provider/${ capacityProviderName }`);
   }
 
   /**
@@ -1593,18 +1593,18 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateTaskSet()
    *
    * Applies to resource types:
+   * - capacity-provider
    * - cluster
    * - container-instance
-   * - service
-   * - service-deployment
-   * - service-revision
    * - daemon
    * - daemon-deployment
    * - daemon-revision
    * - daemon-task-definition
+   * - service
+   * - service-deployment
+   * - service-revision
    * - task
    * - task-definition
-   * - capacity-provider
    * - task-set
    *
    * @param tagKey The tag key to check
@@ -1663,12 +1663,12 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
    *
    * Applies to resource types:
+   * - capacity-provider
    * - cluster
    * - container-instance
    * - service
    * - task
    * - task-definition
-   * - capacity-provider
    * - task-set
    *
    * @param tagKey The tag key to check
@@ -1784,11 +1784,11 @@ export class Ecs extends PolicyStatement {
    * - .toUpdateTaskSet()
    *
    * Applies to resource types:
-   * - service-deployment
-   * - service-revision
    * - daemon
    * - daemon-deployment
    * - daemon-revision
+   * - service-deployment
+   * - service-revision
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

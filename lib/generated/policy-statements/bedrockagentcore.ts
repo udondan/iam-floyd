@@ -355,6 +355,28 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateRegistry.html
+   */
+  public toCreateRegistry() {
+    return this.to('CreateRegistry');
+  }
+
+  /**
+   * Grants permission to create a new registry record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateRegistryRecord.html
+   */
+  public toCreateRegistryRecord() {
+    return this.to('CreateRegistryRecord');
+  }
+
+  /**
    * Grants permission to create a new Workload Identity
    *
    * Access Level: Write
@@ -547,6 +569,28 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeletePolicyEngine() {
     return this.to('DeletePolicyEngine');
+  }
+
+  /**
+   * Grants permission to delete an existing registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteRegistry.html
+   */
+  public toDeleteRegistry() {
+    return this.to('DeleteRegistry');
+  }
+
+  /**
+   * Grants permission to delete an existing registry record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteRegistryRecord.html
+   */
+  public toDeleteRegistryRecord() {
+    return this.to('DeleteRegistryRecord');
   }
 
   /**
@@ -807,6 +851,28 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an existing registry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetRegistry.html
+   */
+  public toGetRegistry() {
+    return this.to('GetRegistry');
+  }
+
+  /**
+   * Grants permission to retrieve an existing registry record
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetRegistryRecord.html
+   */
+  public toGetRegistryRecord() {
+    return this.to('GetRegistryRecord');
+  }
+
+  /**
    * Grants permission to retrieve an API Key associated with an Api Key Credential Provider
    *
    * Access Level: Read
@@ -979,6 +1045,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toInvokeGateway() {
     return this.to('InvokeGateway');
+  }
+
+  /**
+   * Grants permission to invoke an MCP operation against an existing registry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toInvokeRegistryMcp() {
+    return this.to('InvokeRegistryMcp');
   }
 
   /**
@@ -1243,6 +1320,28 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list existing registries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListRegistries.html
+   */
+  public toListRegistries() {
+    return this.to('ListRegistries');
+  }
+
+  /**
+   * Grants permission to list existing registry records in a registry
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListRegistryRecords.html
+   */
+  public toListRegistryRecords() {
+    return this.to('ListRegistryRecords');
+  }
+
+  /**
    * Grants permission to list sessions
    *
    * Access Level: List
@@ -1349,6 +1448,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search for registry records
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SearchRegistryRecords.html
+   */
+  public toSearchRegistryRecords() {
+    return this.to('SearchRegistryRecords');
+  }
+
+  /**
    * Grants permission to associate a Customer Managed Key (CMK) or a Service Managed Key with a specific TokenVault
    *
    * Access Level: Read
@@ -1439,6 +1549,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toStopRuntimeSession() {
     return this.to('StopRuntimeSession');
+  }
+
+  /**
+   * Grants permission to submit a registry record for approval
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_SubmitRegistryRecordForApproval.html
+   */
+  public toSubmitRegistryRecordForApproval() {
+    return this.to('SubmitRegistryRecordForApproval');
   }
 
   /**
@@ -1630,6 +1751,39 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing registry
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistry.html
+   */
+  public toUpdateRegistry() {
+    return this.to('UpdateRegistry');
+  }
+
+  /**
+   * Grants permission to update an existing registry record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistryRecord.html
+   */
+  public toUpdateRegistryRecord() {
+    return this.to('UpdateRegistryRecord');
+  }
+
+  /**
+   * Grants permission to update the status of a registry record
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateRegistryRecordStatus.html
+   */
+  public toUpdateRegistryRecordStatus() {
+    return this.to('UpdateRegistryRecordStatus');
+  }
+
+  /**
    * Grants permission to update the metadata of an existing Workload Identity
    *
    * Access Level: Write
@@ -1669,6 +1823,8 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateOnlineEvaluationConfig',
       'CreatePolicy',
       'CreatePolicyEngine',
+      'CreateRegistry',
+      'CreateRegistryRecord',
       'CreateWorkloadIdentity',
       'DeleteAgentRuntime',
       'DeleteAgentRuntimeEndpoint',
@@ -1686,6 +1842,8 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteOnlineEvaluationConfig',
       'DeletePolicy',
       'DeletePolicyEngine',
+      'DeleteRegistry',
+      'DeleteRegistryRecord',
       'DeleteResourcePolicy',
       'DeleteWorkloadIdentity',
       'Evaluate',
@@ -1707,6 +1865,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'StopBrowserSession',
       'StopCodeInterpreterSession',
       'StopRuntimeSession',
+      'SubmitRegistryRecordForApproval',
       'UpdateAgentRuntime',
       'UpdateAgentRuntimeEndpoint',
       'UpdateApiKeyCredentialProvider',
@@ -1719,6 +1878,9 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateOnlineEvaluationConfig',
       'UpdatePolicy',
       'UpdatePolicyEngine',
+      'UpdateRegistry',
+      'UpdateRegistryRecord',
+      'UpdateRegistryRecordStatus',
       'UpdateWorkloadIdentity'
     ],
     Read: [
@@ -1745,14 +1907,18 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetPolicy',
       'GetPolicyEngine',
       'GetPolicyGeneration',
+      'GetRegistry',
+      'GetRegistryRecord',
       'GetResourceApiKey',
       'GetResourceOauth2Token',
       'GetResourcePolicy',
       'GetTokenVault',
       'GetWorkloadIdentity',
+      'InvokeRegistryMcp',
       'ListApiKeyCredentialProviders',
       'ListOauth2CredentialProviders',
       'ListWorkloadIdentities',
+      'SearchRegistryRecords',
       'SetTokenVaultCMK'
     ],
     List: [
@@ -1777,6 +1943,8 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListPolicyEngines',
       'ListPolicyGenerationAssets',
       'ListPolicyGenerations',
+      'ListRegistries',
+      'ListRegistryRecords',
       'ListSessions',
       'ListTagsForResource',
       'RetrieveMemoryRecords'
@@ -2097,6 +2265,35 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public onPolicyGeneration(policyEngineId: string, policyGenerationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-engine/${ policyEngineId }/policy-generation/${ policyGenerationId }`);
+  }
+
+  /**
+   * Adds a resource of type registry to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/registry.html
+   *
+   * @param registryId - Identifier for the registryId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRegistry(registryId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registry/${ registryId }`);
+  }
+
+  /**
+   * Adds a resource of type registry-record to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/registryRecord.html
+   *
+   * @param registryId - Identifier for the registryId.
+   * @param recordId - Identifier for the recordId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRegistryRecord(registryId: string, recordId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:registry/${ registryId }/record/${ recordId }`);
   }
 
   /**

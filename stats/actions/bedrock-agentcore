@@ -21,6 +21,8 @@ bedrock-agentcore:CreateOauth2CredentialProvider;Write
 bedrock-agentcore:CreateOnlineEvaluationConfig;Write
 bedrock-agentcore:CreatePolicy;Write
 bedrock-agentcore:CreatePolicyEngine;Write
+bedrock-agentcore:CreateRegistry;Write
+bedrock-agentcore:CreateRegistryRecord;Write
 bedrock-agentcore:CreateWorkloadIdentity;Write
 bedrock-agentcore:DeleteAgentRuntime;Write
 bedrock-agentcore:DeleteAgentRuntimeEndpoint;Write
@@ -38,6 +40,8 @@ bedrock-agentcore:DeleteOauth2CredentialProvider;Write
 bedrock-agentcore:DeleteOnlineEvaluationConfig;Write
 bedrock-agentcore:DeletePolicy;Write
 bedrock-agentcore:DeletePolicyEngine;Write
+bedrock-agentcore:DeleteRegistry;Write
+bedrock-agentcore:DeleteRegistryRecord;Write
 bedrock-agentcore:DeleteResourcePolicy;Write
 bedrock-agentcore:DeleteWorkloadIdentity;Write
 bedrock-agentcore:Evaluate;Write
@@ -61,6 +65,8 @@ bedrock-agentcore:GetOnlineEvaluationConfig;Read
 bedrock-agentcore:GetPolicy;Read
 bedrock-agentcore:GetPolicyEngine;Read
 bedrock-agentcore:GetPolicyGeneration;Read
+bedrock-agentcore:GetRegistry;Read
+bedrock-agentcore:GetRegistryRecord;Read
 bedrock-agentcore:GetResourceApiKey;Read
 bedrock-agentcore:GetResourceOauth2Token;Read
 bedrock-agentcore:GetResourcePolicy;Read
@@ -76,6 +82,7 @@ bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStream;Write
 bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStreamForUser;Write
 bedrock-agentcore:InvokeCodeInterpreter;Write
 bedrock-agentcore:InvokeGateway;Permissions management
+bedrock-agentcore:InvokeRegistryMcp;Read
 bedrock-agentcore:ListActors;List
 bedrock-agentcore:ListAgentRuntimeEndpoints;List
 bedrock-agentcore:ListAgentRuntimeVersions;List
@@ -99,6 +106,8 @@ bedrock-agentcore:ListPolicies;List
 bedrock-agentcore:ListPolicyEngines;List
 bedrock-agentcore:ListPolicyGenerationAssets;List
 bedrock-agentcore:ListPolicyGenerations;List
+bedrock-agentcore:ListRegistries;List
+bedrock-agentcore:ListRegistryRecords;List
 bedrock-agentcore:ListSessions;List
 bedrock-agentcore:ListTagsForResource;List
 bedrock-agentcore:ListWorkloadIdentities;Read
@@ -108,6 +117,7 @@ bedrock-agentcore:PartiallyAuthorizeActions;Permissions management
 bedrock-agentcore:PutResourcePolicy;Write
 bedrock-agentcore:RetrieveMemoryRecords;List
 bedrock-agentcore:SaveBrowserSessionProfile;Write
+bedrock-agentcore:SearchRegistryRecords;Read
 bedrock-agentcore:SetTokenVaultCMK;Read
 bedrock-agentcore:StartBrowserSession;Write
 bedrock-agentcore:StartCodeInterpreterSession;Write
@@ -116,6 +126,7 @@ bedrock-agentcore:StartPolicyGeneration;Write
 bedrock-agentcore:StopBrowserSession;Write
 bedrock-agentcore:StopCodeInterpreterSession;Write
 bedrock-agentcore:StopRuntimeSession;Write
+bedrock-agentcore:SubmitRegistryRecordForApproval;Write
 bedrock-agentcore:SynchronizeGatewayTargets;Permissions management
 bedrock-agentcore:TagResource;Tagging
 bedrock-agentcore:UntagResource;Tagging
@@ -131,4 +142,7 @@ bedrock-agentcore:UpdateOauth2CredentialProvider;Write
 bedrock-agentcore:UpdateOnlineEvaluationConfig;Write
 bedrock-agentcore:UpdatePolicy;Write
 bedrock-agentcore:UpdatePolicyEngine;Write
+bedrock-agentcore:UpdateRegistry;Write
+bedrock-agentcore:UpdateRegistryRecord;Write
+bedrock-agentcore:UpdateRegistryRecordStatus;Write
 bedrock-agentcore:UpdateWorkloadIdentity;Write
