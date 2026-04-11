@@ -15,6 +15,7 @@
         "elasticloadbalancing:DescribeLoadBalancerAttributes",
         "elasticloadbalancing:DescribeListeners",
         "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetGroupAttributes",
         "elasticloadbalancing:DescribeTargetHealth",
         "elasticloadbalancing:DescribeLoadBalancerPolicies"
       ],
@@ -179,6 +180,22 @@
       "Condition": {
         "StringEquals": {
           "ec2:CreateAction": "CreateSecurityGroup"
+        }
+      }
+    },
+    {
+      "Sid": "ManageTargetGroup",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:ModifyTargetGroupAttributes",
+        "elasticloadbalancing:DeregisterTargets"
+      ],
+      "Resource": [
+        "arn:aws:elasticloadbalancing:*:*:targetgroup/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/red-hat-managed": "true"
         }
       }
     }
