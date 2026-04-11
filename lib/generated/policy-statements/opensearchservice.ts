@@ -413,6 +413,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to deregister a capability from an OpenSearch Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DeregisterCapability.html
+   */
+  public toDeregisterCapability() {
+    return this.to('DeregisterCapability');
+  }
+
+  /**
    * Grants permission to view a description of the domain configuration for the specified OpenSearch Service domain, including the domain ID, service endpoint, and ARN
    *
    * Access Level: Read
@@ -787,6 +798,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a registered capability for an OpenSearch Application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_GetCapability.html
+   */
+  public toGetCapability() {
+    return this.to('GetCapability');
+  }
+
+  /**
    * Grants permission to fetch a list of compatible OpenSearch and Elasticsearch versions to which an OpenSearch Service domain can be upgraded. This permission is deprecated. Use GetCompatibleVersions instead
    *
    * Access Level: List
@@ -1128,6 +1150,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register a capability for an OpenSearch Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_RegisterCapability.html
+   */
+  public toRegisterCapability() {
+    return this.to('RegisterCapability');
+  }
+
+  /**
    * Grants permission to the destination domain owner to reject an inbound cross-cluster search connection request
    *
    * Access Level: Write
@@ -1396,6 +1429,7 @@ export class Es extends PolicyStatement {
       'DeleteOutboundCrossClusterSearchConnection',
       'DeletePackage',
       'DeleteVpcEndpoint',
+      'DeregisterCapability',
       'DissociatePackage',
       'DissociatePackages',
       'ESHttpDelete',
@@ -1405,6 +1439,7 @@ export class Es extends PolicyStatement {
       'PurchaseReservedElasticsearchInstanceOffering',
       'PurchaseReservedInstanceOffering',
       'PutDefaultApplicationSetting',
+      'RegisterCapability',
       'RejectInboundConnection',
       'RejectInboundCrossClusterSearchConnection',
       'RevokeVpcEndpointAccess',
@@ -1446,6 +1481,7 @@ export class Es extends PolicyStatement {
       'ESHttpGet',
       'ESHttpHead',
       'GetApplication',
+      'GetCapability',
       'GetDataSource',
       'GetDefaultApplicationSetting',
       'GetDirectQueryDataSource',

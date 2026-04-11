@@ -1,9 +1,15 @@
 bcm-dashboards:CreateDashboard;Write
+bcm-dashboards:CreateScheduledReport;Write
 bcm-dashboards:DeleteDashboard;Write
+bcm-dashboards:DeleteScheduledReport;Write
+bcm-dashboards:ExecuteScheduledReport;Write
 bcm-dashboards:GetDashboard;Read
 bcm-dashboards:GetResourcePolicy;Read
+bcm-dashboards:GetScheduledReport;Read
 bcm-dashboards:ListDashboards;Read
+bcm-dashboards:ListScheduledReports;List
 bcm-dashboards:ListTagsForResource;Read
 bcm-dashboards:TagResource;Tagging
 bcm-dashboards:UntagResource;Tagging
 bcm-dashboards:UpdateDashboard;Write
+bcm-dashboards:UpdateScheduledReport;Write

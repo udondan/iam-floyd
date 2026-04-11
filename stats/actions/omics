@@ -3,6 +3,7 @@ omics:AcceptShare;Write
 omics:BatchDeleteReadSet;Write
 omics:CancelAnnotationImportJob;Write
 omics:CancelRun;Write
+omics:CancelRunBatch;Write
 omics:CancelVariantImportJob;Write
 omics:CompleteMultipartReadSetUpload;Write
 omics:CreateAnnotationStore;Write
@@ -19,10 +20,12 @@ omics:CreateWorkflow;Write
 omics:CreateWorkflowVersion;Write
 omics:DeleteAnnotationStore;Write
 omics:DeleteAnnotationStoreVersions;Write
+omics:DeleteBatch;Write
 omics:DeleteConfiguration;Write
 omics:DeleteReference;Write
 omics:DeleteReferenceStore;Write
 omics:DeleteRun;Write
+omics:DeleteRunBatch;Write
 omics:DeleteRunCache;Write
 omics:DeleteRunGroup;Write
 omics:DeleteS3AccessPolicy;Write
@@ -34,6 +37,7 @@ omics:DeleteWorkflowVersion;Write
 omics:GetAnnotationImportJob;Read
 omics:GetAnnotationStore;Read
 omics:GetAnnotationStoreVersion;Read
+omics:GetBatch;Read
 omics:GetConfiguration;Read
 omics:GetReadSet;Read
 omics:GetReadSetActivationJob;Read
@@ -58,6 +62,7 @@ omics:GetWorkflowVersion;Read
 omics:ListAnnotationImportJobs;List
 omics:ListAnnotationStoreVersions;List
 omics:ListAnnotationStores;List
+omics:ListBatch;List
 omics:ListConfigurations;List
 omics:ListMultipartReadSetUploads;List
 omics:ListReadSetActivationJobs;List
@@ -72,6 +77,7 @@ omics:ListRunCaches;List
 omics:ListRunGroups;List
 omics:ListRunTasks;List
 omics:ListRuns;List
+omics:ListRunsInBatch;List
 omics:ListSequenceStores;List
 omics:ListShares;List
 omics:ListTagsForResource;List
@@ -86,6 +92,7 @@ omics:StartReadSetExportJob;Write
 omics:StartReadSetImportJob;Write
 omics:StartReferenceImportJob;Write
 omics:StartRun;Write
+omics:StartRunBatch;Write
 omics:StartVariantImportJob;Write
 omics:TagResource;Tagging
 omics:UntagResource;Tagging
