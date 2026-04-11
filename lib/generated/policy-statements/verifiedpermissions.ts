@@ -57,6 +57,17 @@ export class Verifiedpermissions extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an alias against a policy store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicyStoreAlias.html
+   */
+  public toCreatePolicyStoreAlias() {
+    return this.to('CreatePolicyStoreAlias');
+  }
+
+  /**
    * Grants permission to create a policy template
    *
    * Access Level: Write
@@ -98,6 +109,17 @@ export class Verifiedpermissions extends PolicyStatement {
    */
   public toDeletePolicyStore() {
     return this.to('DeletePolicyStore');
+  }
+
+  /**
+   * Grants permission to delete an alias for a policy store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_DeletePolicyStoreAlias.html
+   */
+  public toDeletePolicyStoreAlias() {
+    return this.to('DeletePolicyStoreAlias');
   }
 
   /**
@@ -145,6 +167,17 @@ export class Verifiedpermissions extends PolicyStatement {
    */
   public toGetPolicyStore() {
     return this.to('GetPolicyStore');
+  }
+
+  /**
+   * Grants permission to retrieve details about an alias for a policy store
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicyStoreAlias.html
+   */
+  public toGetPolicyStoreAlias() {
+    return this.to('GetPolicyStoreAlias');
   }
 
   /**
@@ -211,6 +244,17 @@ export class Verifiedpermissions extends PolicyStatement {
    */
   public toListPolicies() {
     return this.to('ListPolicies');
+  }
+
+  /**
+   * Grants permission to return a paginated list of all policy store aliases
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html
+   */
+  public toListPolicyStoreAliases() {
+    return this.to('ListPolicyStoreAliases');
   }
 
   /**
@@ -335,10 +379,12 @@ export class Verifiedpermissions extends PolicyStatement {
       'CreateIdentitySource',
       'CreatePolicy',
       'CreatePolicyStore',
+      'CreatePolicyStoreAlias',
       'CreatePolicyTemplate',
       'DeleteIdentitySource',
       'DeletePolicy',
       'DeletePolicyStore',
+      'DeletePolicyStoreAlias',
       'DeletePolicyTemplate',
       'PutSchema',
       'UpdateIdentitySource',
@@ -350,6 +396,7 @@ export class Verifiedpermissions extends PolicyStatement {
       'GetIdentitySource',
       'GetPolicy',
       'GetPolicyStore',
+      'GetPolicyStoreAlias',
       'GetPolicyTemplate',
       'GetSchema',
       'IsAuthorized',
@@ -359,6 +406,7 @@ export class Verifiedpermissions extends PolicyStatement {
     List: [
       'ListIdentitySources',
       'ListPolicies',
+      'ListPolicyStoreAliases',
       'ListPolicyStores',
       'ListPolicyTemplates'
     ],
@@ -371,7 +419,7 @@ export class Verifiedpermissions extends PolicyStatement {
   /**
    * Adds a resource of type policy-store to the statement
    *
-   * https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/policy-stores.html
+   * https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores.html
    *
    * @param policyStoreId - Identifier for the policyStoreId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.

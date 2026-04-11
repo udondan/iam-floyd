@@ -32,6 +32,7 @@ es:DeleteOutboundConnection;Write
 es:DeleteOutboundCrossClusterSearchConnection;Write
 es:DeletePackage;Write
 es:DeleteVpcEndpoint;Write
+es:DeregisterCapability;Write
 es:DescribeDomain;Read
 es:DescribeDomainAutoTunes;Read
 es:DescribeDomainChangeProgress;Read
@@ -66,6 +67,7 @@ es:ESHttpPatch;Write
 es:ESHttpPost;Write
 es:ESHttpPut;Write
 es:GetApplication;Read
+es:GetCapability;Read
 es:GetCompatibleElasticsearchVersions;List
 es:GetCompatibleVersions;List
 es:GetDataSource;Read
@@ -97,6 +99,7 @@ es:ListVpcEndpointsForDomain;List
 es:PurchaseReservedElasticsearchInstanceOffering;Write
 es:PurchaseReservedInstanceOffering;Write
 es:PutDefaultApplicationSetting;Write
+es:RegisterCapability;Write
 es:RejectInboundConnection;Write
 es:RejectInboundCrossClusterSearchConnection;Write
 es:RemoveTags;Tagging

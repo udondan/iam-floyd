@@ -74,6 +74,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a batch of workflow runs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_CancelRunBatch.html
+   */
+  public toCancelRunBatch() {
+    return this.to('CancelRunBatch');
+  }
+
+  /**
    * Grants permission to cancel a Variant Import Job
    *
    * Access Level: Write
@@ -295,6 +306,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a batch
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteBatch.html
+   */
+  public toDeleteBatch() {
+    return this.to('DeleteBatch');
+  }
+
+  /**
    * Grants permission to delete a configuration
    *
    * Access Level: Write
@@ -336,6 +358,17 @@ export class Omics extends PolicyStatement {
    */
   public toDeleteRun() {
     return this.to('DeleteRun');
+  }
+
+  /**
+   * Grants permission to delete a batch of workflow runs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_DeleteRunBatch.html
+   */
+  public toDeleteRunBatch() {
+    return this.to('DeleteRunBatch');
   }
 
   /**
@@ -457,6 +490,17 @@ export class Omics extends PolicyStatement {
    */
   public toGetAnnotationStoreVersion() {
     return this.to('GetAnnotationStoreVersion');
+  }
+
+  /**
+   * Grants permission to retrieve batch details and status
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_GetBatch.html
+   */
+  public toGetBatch() {
+    return this.to('GetBatch');
   }
 
   /**
@@ -724,6 +768,17 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve list of batches
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListBatch.html
+   */
+  public toListBatch() {
+    return this.to('ListBatch');
+  }
+
+  /**
    * Grants permission to retrieve a list of configurations
    *
    * Access Level: List
@@ -875,6 +930,17 @@ export class Omics extends PolicyStatement {
    */
   public toListRuns() {
     return this.to('ListRuns');
+  }
+
+  /**
+   * Grants permission to retrieve list of workflow runs in batch
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_ListRunsInBatch.html
+   */
+  public toListRunsInBatch() {
+    return this.to('ListRunsInBatch');
   }
 
   /**
@@ -1039,6 +1105,24 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start batch of workflow runs
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_StartRunBatch.html
+   */
+  public toStartRunBatch() {
+    return this.to('StartRunBatch');
+  }
+
+  /**
    * Grants permission to import a list of variant files to an Variant Store
    *
    * Access Level: Write
@@ -1184,6 +1268,7 @@ export class Omics extends PolicyStatement {
       'BatchDeleteReadSet',
       'CancelAnnotationImportJob',
       'CancelRun',
+      'CancelRunBatch',
       'CancelVariantImportJob',
       'CompleteMultipartReadSetUpload',
       'CreateAnnotationStore',
@@ -1200,10 +1285,12 @@ export class Omics extends PolicyStatement {
       'CreateWorkflowVersion',
       'DeleteAnnotationStore',
       'DeleteAnnotationStoreVersions',
+      'DeleteBatch',
       'DeleteConfiguration',
       'DeleteReference',
       'DeleteReferenceStore',
       'DeleteRun',
+      'DeleteRunBatch',
       'DeleteRunCache',
       'DeleteRunGroup',
       'DeleteS3AccessPolicy',
@@ -1219,6 +1306,7 @@ export class Omics extends PolicyStatement {
       'StartReadSetImportJob',
       'StartReferenceImportJob',
       'StartRun',
+      'StartRunBatch',
       'StartVariantImportJob',
       'UpdateAnnotationStore',
       'UpdateAnnotationStoreVersion',
@@ -1234,6 +1322,7 @@ export class Omics extends PolicyStatement {
       'GetAnnotationImportJob',
       'GetAnnotationStore',
       'GetAnnotationStoreVersion',
+      'GetBatch',
       'GetConfiguration',
       'GetReadSet',
       'GetReadSetActivationJob',
@@ -1260,6 +1349,7 @@ export class Omics extends PolicyStatement {
       'ListAnnotationImportJobs',
       'ListAnnotationStoreVersions',
       'ListAnnotationStores',
+      'ListBatch',
       'ListConfigurations',
       'ListMultipartReadSetUploads',
       'ListReadSetActivationJobs',
@@ -1274,6 +1364,7 @@ export class Omics extends PolicyStatement {
       'ListRunGroups',
       'ListRunTasks',
       'ListRuns',
+      'ListRunsInBatch',
       'ListSequenceStores',
       'ListShares',
       'ListTagsForResource',
@@ -1411,6 +1502,23 @@ export class Omics extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type runBatch to the statement
+   *
+   * https://docs.aws.amazon.com/omics/latest/api/API_BatchListItem.html
+   *
+   * @param batchId - Identifier for the batchId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRunBatch(batchId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:omics:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:runBatch/${ batchId }`);
+  }
+
+  /**
    * Adds a resource of type runCache to the statement
    *
    * https://docs.aws.amazon.com/omics/latest/api/API_RunCacheListItem.html
@@ -1544,6 +1652,7 @@ export class Omics extends PolicyStatement {
    * - .toCreateWorkflow()
    * - .toCreateWorkflowVersion()
    * - .toStartRun()
+   * - .toStartRunBatch()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1567,6 +1676,7 @@ export class Omics extends PolicyStatement {
    * - reference
    * - referenceStore
    * - run
+   * - runBatch
    * - runCache
    * - runGroup
    * - sequenceStore
@@ -1599,6 +1709,7 @@ export class Omics extends PolicyStatement {
    * - .toCreateWorkflow()
    * - .toCreateWorkflowVersion()
    * - .toStartRun()
+   * - .toStartRunBatch()
    * - .toTagResource()
    * - .toUntagResource()
    *

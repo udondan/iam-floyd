@@ -8,6 +8,7 @@ omics:readSet
 omics:reference
 omics:referenceStore
 omics:run
+omics:runBatch
 omics:runCache
 omics:runGroup
 omics:sequenceStore
