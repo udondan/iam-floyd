@@ -148,35 +148,10 @@
     {
       "Effect": "Allow",
       "Action": [
-        "shield:CreateProtection"
-      ],
-      "Resource": "*",
-      "Condition": {
-        "StringEquals": {
-          "aws:RequestTag/eks:eks-cluster-name": "${aws:PrincipalTag/eks:eks-cluster-name}"
-        },
-        "ForAllValues:StringEquals": {
-          "aws:TagKeys": [
-            "eks:eks-cluster-name",
-            "ingress.eks.amazonaws.com/stack",
-            "ingress.eks.amazonaws.com/resource",
-            "service.eks.amazonaws.com/stack",
-            "service.eks.amazonaws.com/resource"
-          ]
-        }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
+        "shield:CreateProtection",
         "shield:DeleteProtection"
       ],
-      "Resource": "*",
-      "Condition": {
-        "StringEquals": {
-          "aws:ResourceTag/eks:eks-cluster-name": "${aws:PrincipalTag/eks:eks-cluster-name}"
-        }
-      }
+      "Resource": "*"
     },
     {
       "Effect": "Allow",
