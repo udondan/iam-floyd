@@ -342,6 +342,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the status of OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toGetOTelEnrichment() {
+    return this.to('GetOTelEnrichment');
+  }
+
+  /**
    * Grants permission to retrieve information about a service
    *
    * Access Level: Read
@@ -664,6 +675,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toStartOTelEnrichment() {
+    return this.to('StartOTelEnrichment');
+  }
+
+  /**
    * Grants permission to stop all CloudWatch metric streams that you specify
    *
    * Access Level: Write
@@ -672,6 +694,17 @@ export class Cloudwatch extends PolicyStatement {
    */
   public toStopMetricStreams() {
     return this.to('StopMetricStreams');
+  }
+
+  /**
+   * Grants permission to disable OTel Enrichment of vended metrics for PromQL querying
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toStopOTelEnrichment() {
+    return this.to('StopOTelEnrichment');
   }
 
   /**
@@ -732,6 +765,7 @@ export class Cloudwatch extends PolicyStatement {
       'GetMetricStatistics',
       'GetMetricStream',
       'GetMetricWidgetImage',
+      'GetOTelEnrichment',
       'GetService',
       'GetServiceData',
       'GetServiceLevelObjective',
@@ -765,7 +799,9 @@ export class Cloudwatch extends PolicyStatement {
       'PutMetricStream',
       'SetAlarmState',
       'StartMetricStreams',
+      'StartOTelEnrichment',
       'StopMetricStreams',
+      'StopOTelEnrichment',
       'UpdateServiceLevelObjective'
     ],
     List: [
