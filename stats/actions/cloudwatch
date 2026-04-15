@@ -27,6 +27,7 @@ cloudwatch:GetMetricData;Read
 cloudwatch:GetMetricStatistics;Read
 cloudwatch:GetMetricStream;Read
 cloudwatch:GetMetricWidgetImage;Read
+cloudwatch:GetOTelEnrichment;Read
 cloudwatch:GetService;Read
 cloudwatch:GetServiceData;Read
 cloudwatch:GetServiceLevelObjective;Read
@@ -53,7 +54,9 @@ cloudwatch:PutMetricData;Write
 cloudwatch:PutMetricStream;Write
 cloudwatch:SetAlarmState;Write
 cloudwatch:StartMetricStreams;Write
+cloudwatch:StartOTelEnrichment;Write
 cloudwatch:StopMetricStreams;Write
+cloudwatch:StopOTelEnrichment;Write
 cloudwatch:TagResource;Tagging
 cloudwatch:UntagResource;Tagging
 cloudwatch:UpdateServiceLevelObjective;Write
