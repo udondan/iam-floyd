@@ -27,6 +27,7 @@
         "ec2:DescribeInternetGateways",
         "ec2:DescribeLaunchTemplates",
         "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribePlacementGroups",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSnapshots",
         "ec2:DescribeSpotPriceHistory",
@@ -41,6 +42,7 @@
         "ec2:GetCoipPoolUsage",
         "ec2:GetSecurityGroupsForVpc",
         "eks:DescribeCluster",
+        "ec2:DescribeIpamPools",
         "elasticloadbalancing:DescribeListenerAttributes",
         "elasticloadbalancing:DescribeListenerCertificates",
         "elasticloadbalancing:DescribeListeners",
@@ -52,10 +54,12 @@
         "elasticloadbalancing:DescribeTargetGroupAttributes",
         "elasticloadbalancing:DescribeTargetGroups",
         "elasticloadbalancing:DescribeTargetHealth",
+        "elasticloadbalancing:DeregisterTargets",
         "elasticloadbalancing:DescribeTrustStores",
         "iam:ListAttachedRolePolicies",
         "pricing:GetProducts",
         "shield:GetSubscriptionState",
+        "shield:DescribeProtection",
         "tag:GetResources"
       ],
       "Resource": "*"
@@ -311,11 +315,9 @@
       "Action": [
         "elasticloadbalancing:DeleteListener",
         "elasticloadbalancing:DeleteRule",
-        "elasticloadbalancing:DeregisterTargets",
         "elasticloadbalancing:DeleteLoadBalancer",
         "elasticloadbalancing:DeleteTargetGroup",
-        "ec2:DeleteSecurityGroup",
-        "shield:DescribeProtection"
+        "ec2:DeleteSecurityGroup"
       ],
       "Resource": "*",
       "Condition": {
