@@ -7,7 +7,8 @@
         "sagemaker:CreateTrainingJob",
         "sagemaker:DescribeTrainingJob",
         "sagemaker:StopTrainingJob",
-        "sagemaker:ListTags"
+        "sagemaker:ListTags",
+        "sagemaker:DeleteTrainingJob"
       ],
       "Resource": "arn:aws:sagemaker:*:*:training-job/AWSBatch*"
     },
