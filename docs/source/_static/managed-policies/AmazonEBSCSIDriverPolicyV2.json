@@ -1,0 +1,198 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadOnlyDescribeOperations",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeVolumesModifications",
+        "ec2:DescribeVolumeStatus"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CreateAndCopyVolumesWithManagedTag",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVolume",
+        "ec2:CopyVolumes"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/ebs.csi.aws.com/cluster": "true"
+        }
+      }
+    },
+    {
+      "Sid": "CopyManagedVolumes",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CopyVolumes"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/vol-*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/ebs.csi.aws.com/cluster": "true"
+        }
+      }
+    },
+    {
+      "Sid": "CopyCSIMigratedVolumes",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CopyVolumes"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/vol-*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/kubernetes.io/created-for/pvc/name": "*"
+        }
+      }
+    },
+    {
+      "Sid": "CreateSnapshotsWithManagedTag",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/ebs.csi.aws.com/cluster": "true"
+        }
+      }
+    },
+    {
+      "Sid": "CreateSnapshotsFromManagedVolumes",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/ebs.csi.aws.com/cluster": "true"
+        }
+      }
+    },
+    {
+      "Sid": "ManageManagedVolumes",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyVolume",
+        "ec2:AttachVolume",
+        "ec2:DetachVolume",
+        "ec2:DeleteVolume"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/ebs.csi.aws.com/cluster": "true"
+        }
+      }
+    },
+    {
+      "Sid": "ManageCSIMigratedVolumes",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyVolume",
+        "ec2:AttachVolume",
+        "ec2:DetachVolume",
+        "ec2:DeleteVolume"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/kubernetes.io/created-for/pvc/name": "*"
+        }
+      }
+    },
+    {
+      "Sid": "CreateVolumesFromAndEnableFSROnManagedSnapshots",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVolume",
+        "ec2:EnableFastSnapshotRestores"
+      ],
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/ebs.csi.aws.com/cluster": "true"
+        }
+      }
+    },
+    {
+      "Sid": "AttachDetachVolumesToAnyInstance",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachVolume",
+        "ec2:DetachVolume"
+      ],
+      "Resource": "arn:aws:ec2:*:*:instance/*"
+    },
+    {
+      "Sid": "DeleteAndLockManagedSnapshots",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteSnapshot",
+        "ec2:LockSnapshot"
+      ],
+      "Resource": "arn:aws:ec2:*:*:snapshot/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/ebs.csi.aws.com/cluster": "true"
+        }
+      }
+    },
+    {
+      "Sid": "TagResourcesOnCreation",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:volume/*",
+        "arn:aws:ec2:*:*:snapshot/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": [
+            "CreateVolume",
+            "CreateSnapshot",
+            "CopyVolumes"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ModifyTagsOnManagedVolumes",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:volume/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:ResourceTag/ebs.csi.aws.com/cluster": "true"
+        },
+        "Null": {
+          "aws:TagKeys": "false"
+        },
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "ebs.csi.aws.com/cluster",
+            "ebs.csi.aws.com/cluster-name",
+            "kubernetes.io/created-for/pvc/name"
+          ]
+        }
+      }
+    }
+  ]
+}

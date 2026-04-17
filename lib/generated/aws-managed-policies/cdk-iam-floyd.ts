@@ -649,9 +649,19 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonDynamoDBReadOnlyAccess);
     }
 
+    /** IAM Policy that allows the CSI driver service account to make calls to related services such as EC2 on your behalf. This policy restricts the Amazon EBS CSI driver to only managing EBS volumes and snapshots that belong to a specific EKS cluster. It requires the resource tag ebs.csi.aws.com/cluster-name to match the eks-cluster-name tag on the IAM principal, preventing cross-cluster access when multiple clusters share the same AWS account. Attach and detach operations on instances are restricted to instances tagged with either the eks:cluster-name tag (set automatically by EKS on managed node groups) or the ebs.csi.aws.com/cluster-name tag (for manually tagged instances). */
+    public AmazonEBSCSIDriverEKSClusterScopedPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEBSCSIDriverEKSClusterScopedPolicy);
+    }
+
     /** IAM Policy that allows the CSI driver service account to make calls to related services such as EC2 on your behalf. */
     public AmazonEBSCSIDriverPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEBSCSIDriverPolicy);
+    }
+
+    /** IAM Policy that allows the EBS CSI driver service account to make calls to related services such as EC2 on your behalf. It limits the Amazon EBS CSI driver to only managing EBS volumes and snapshots that are tagged with the key ebs.csi.aws.com/cluster set to true. Volumes provisioned by the in-tree Kubernetes volume plugin (CSI-migrated volumes) are also supported through the kubernetes.io/created-for/pvc/name resource tag. */
+    public AmazonEBSCSIDriverPolicyV2(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEBSCSIDriverPolicyV2);
     }
 
     /** Provides administrative access to Amazon ECR resources */

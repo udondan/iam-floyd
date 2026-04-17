@@ -253,7 +253,8 @@
       "Effect": "Allow",
       "Action": [
         "securityhub:AllowVendedLogDeliveryForResource",
-        "securityhub:DescribeHub"
+        "securityhub:DescribeHub",
+        "securityhub:DescribeSecurityHubV2"
       ],
       "Resource": "*",
       "Condition": {
