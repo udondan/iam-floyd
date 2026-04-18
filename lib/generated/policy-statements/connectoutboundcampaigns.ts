@@ -78,6 +78,17 @@ export class ConnectCampaigns extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the entry limits configuration of a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html
+   */
+  public toDeleteCampaignEntryLimits() {
+    return this.to('DeleteCampaignEntryLimits');
+  }
+
+  /**
    * Grants permission to remove configuration information for an Amazon Connect instance
    *
    * Access Level: Write
@@ -408,6 +419,17 @@ export class ConnectCampaigns extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the entry limits configuration of a campaign
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html
+   */
+  public toUpdateCampaignEntryLimits() {
+    return this.to('UpdateCampaignEntryLimits');
+  }
+
+  /**
    * Grants permission to update the flow association of a campaign
    *
    * Access Level: Write
@@ -469,6 +491,7 @@ export class ConnectCampaigns extends PolicyStatement {
       'DeleteCampaignChannelSubtypeConfig',
       'DeleteCampaignCommunicationLimits',
       'DeleteCampaignCommunicationTime',
+      'DeleteCampaignEntryLimits',
       'DeleteConnectInstanceConfig',
       'DeleteConnectInstanceIntegration',
       'DeleteInstanceOnboardingJob',
@@ -486,6 +509,7 @@ export class ConnectCampaigns extends PolicyStatement {
       'UpdateCampaignCommunicationLimits',
       'UpdateCampaignCommunicationTime',
       'UpdateCampaignDialerConfig',
+      'UpdateCampaignEntryLimits',
       'UpdateCampaignFlowAssociation',
       'UpdateCampaignName',
       'UpdateCampaignOutboundCallConfig',

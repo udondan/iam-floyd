@@ -30,6 +30,7 @@ cases:ListLayouts;List
 cases:ListTagsForResource;Read
 cases:ListTemplates;List
 cases:PutCaseEventConfiguration;Write
+cases:SearchAllRelatedItems;Read
 cases:SearchCases;Read
 cases:SearchRelatedItems;Read
 cases:TagResource;Tagging
