@@ -8,6 +8,7 @@
         "ec2:RunInstances"
       ],
       "Resource": [
+        "arn:aws:ec2:*:*:placement-group/*",
         "arn:aws:ec2:*:*:capacity-reservation/*",
         "arn:aws:ec2:*::image/*",
         "arn:aws:ec2:*:*:security-group/*",
