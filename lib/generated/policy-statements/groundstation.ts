@@ -160,6 +160,17 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a specific version of a contact
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeContactVersion.html
+   */
+  public toDescribeContactVersion() {
+    return this.to('DescribeContactVersion');
+  }
+
+  /**
    * Grants permission to describe an ephemeris item
    *
    * Access Level: Read
@@ -248,6 +259,17 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list antennas for a ground station
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListAntennas.html
+   */
+  public toListAntennas() {
+    return this.to('ListAntennas');
+  }
+
+  /**
    * Grants permission to return a list of past configurations
    *
    * Access Level: List
@@ -256,6 +278,17 @@ export class Groundstation extends PolicyStatement {
    */
   public toListConfigs() {
     return this.to('ListConfigs');
+  }
+
+  /**
+   * Grants permission to list versions of a contact
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListContactVersions.html
+   */
+  public toListContactVersions() {
+    return this.to('ListContactVersions');
   }
 
   /**
@@ -289,6 +322,17 @@ export class Groundstation extends PolicyStatement {
    */
   public toListEphemerides() {
     return this.to('ListEphemerides');
+  }
+
+  /**
+   * Grants permission to list reservations for a ground station
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListGroundStationReservations.html
+   */
+  public toListGroundStationReservations() {
+    return this.to('ListGroundStationReservations');
   }
 
   /**
@@ -413,6 +457,17 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a contact
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateContact.html
+   */
+  public toUpdateContact() {
+    return this.to('UpdateContact');
+  }
+
+  /**
    * Grants permission to update an ephemeris item
    *
    * Access Level: Write
@@ -450,11 +505,13 @@ export class Groundstation extends PolicyStatement {
       'ReserveContact',
       'UpdateAgentStatus',
       'UpdateConfig',
+      'UpdateContact',
       'UpdateEphemeris',
       'UpdateMissionProfile'
     ],
     Read: [
       'DescribeContact',
+      'DescribeContactVersion',
       'DescribeEphemeris',
       'GetAgentConfiguration',
       'GetAgentTaskResponseUrl',
@@ -466,10 +523,13 @@ export class Groundstation extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListAntennas',
       'ListConfigs',
+      'ListContactVersions',
       'ListContacts',
       'ListDataflowEndpointGroups',
       'ListEphemerides',
+      'ListGroundStationReservations',
       'ListGroundStations',
       'ListMissionProfiles',
       'ListSatellites'

@@ -50,6 +50,9 @@ export class Eks extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifEncryptionConfigProviderKeyArns()
+   *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_AssociateEncryptionConfig.html
    */
   public toAssociateEncryptionConfig() {
@@ -138,6 +141,13 @@ export class Eks extends PolicyStatement {
    * - .ifElasticLoadBalancingEnabled()
    * - .ifBlockStorageEnabled()
    * - .ifLoggingType()
+   * - .ifKubernetesVersion()
+   * - .ifEndpointPublicAccess()
+   * - .ifEndpointPrivateAccess()
+   * - .ifDeletionProtection()
+   * - .ifControlPlaneScalingTier()
+   * - .ifEncryptionConfigProviderKeyArns()
+   * - .ifZonalShiftEnabled()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
@@ -786,6 +796,11 @@ export class Eks extends PolicyStatement {
    * - .ifElasticLoadBalancingEnabled()
    * - .ifBlockStorageEnabled()
    * - .ifLoggingType()
+   * - .ifEndpointPublicAccess()
+   * - .ifEndpointPrivateAccess()
+   * - .ifDeletionProtection()
+   * - .ifControlPlaneScalingTier()
+   * - .ifZonalShiftEnabled()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html
    */
@@ -797,6 +812,9 @@ export class Eks extends PolicyStatement {
    * Grants permission to update the Kubernetes version of an Amazon EKS cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifKubernetesVersion()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html
    */
@@ -1347,6 +1365,37 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Filters access by the control plane scaling tier in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifControlPlaneScalingTier(value: string | string[], operator?: Operator | string) {
+    return this.if(`controlPlaneScalingTier`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the deletion protection setting in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifDeletionProtection(value?: boolean) {
+    return this.if(`deletionProtection`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the elastic load balancing enabled parameter in the create / update cluster request
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
@@ -1359,6 +1408,52 @@ export class Eks extends PolicyStatement {
    */
   public ifElasticLoadBalancingEnabled(value?: boolean) {
     return this.if(`elasticLoadBalancingEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the KMS key ARNs in the create cluster / Associate Encryption Config request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toAssociateEncryptionConfig()
+   * - .toCreateCluster()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifEncryptionConfigProviderKeyArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`encryptionConfigProviderKeyArns`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the endpoint private access setting in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEndpointPrivateAccess(value?: boolean) {
+    return this.if(`endpointPrivateAccess`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the endpoint public access setting in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEndpointPublicAccess(value?: boolean) {
+    return this.if(`endpointPublicAccess`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1392,6 +1487,22 @@ export class Eks extends PolicyStatement {
    */
   public ifKubernetesGroups(value: string | string[], operator?: Operator | string) {
     return this.if(`kubernetesGroups`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the Kubernetes version in the create cluster/ update cluster version request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterVersion()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifKubernetesVersion(value: string | string[], operator?: Operator | string) {
+    return this.if(`kubernetesVersion`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1492,5 +1603,20 @@ export class Eks extends PolicyStatement {
    */
   public ifUsername(value: string | string[], operator?: Operator | string) {
     return this.if(`username`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the zonal shift enabled setting in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifZonalShiftEnabled(value?: boolean) {
+    return this.if(`zonalShiftEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }

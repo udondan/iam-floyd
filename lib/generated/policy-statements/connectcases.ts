@@ -377,6 +377,17 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search for related items in the case domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_SearchAllRelatedItems.html
+   */
+  public toSearchAllRelatedItems() {
+    return this.to('SearchAllRelatedItems');
+  }
+
+  /**
    * Grants permission to search for cases in the case domain
    *
    * Access Level: Read
@@ -496,6 +507,7 @@ export class Cases extends PolicyStatement {
       'GetLayout',
       'GetTemplate',
       'ListTagsForResource',
+      'SearchAllRelatedItems',
       'SearchCases',
       'SearchRelatedItems'
     ],

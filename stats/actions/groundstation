@@ -9,6 +9,7 @@ groundstation:DeleteDataflowEndpointGroup;Write
 groundstation:DeleteEphemeris;Write
 groundstation:DeleteMissionProfile;Write
 groundstation:DescribeContact;Read
+groundstation:DescribeContactVersion;Read
 groundstation:DescribeEphemeris;Read
 groundstation:GetAgentConfiguration;Read
 groundstation:GetAgentTaskResponseUrl;Read
@@ -17,10 +18,13 @@ groundstation:GetDataflowEndpointGroup;Read
 groundstation:GetMinuteUsage;Read
 groundstation:GetMissionProfile;Read
 groundstation:GetSatellite;Read
+groundstation:ListAntennas;List
 groundstation:ListConfigs;List
+groundstation:ListContactVersions;List
 groundstation:ListContacts;List
 groundstation:ListDataflowEndpointGroups;List
 groundstation:ListEphemerides;List
+groundstation:ListGroundStationReservations;List
 groundstation:ListGroundStations;List
 groundstation:ListMissionProfiles;List
 groundstation:ListSatellites;List
@@ -31,5 +35,6 @@ groundstation:TagResource;Tagging
 groundstation:UntagResource;Tagging
 groundstation:UpdateAgentStatus;Write
 groundstation:UpdateConfig;Write
+groundstation:UpdateContact;Write
 groundstation:UpdateEphemeris;Write
 groundstation:UpdateMissionProfile;Write

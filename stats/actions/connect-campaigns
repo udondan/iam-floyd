@@ -3,6 +3,7 @@ connect-campaigns:DeleteCampaign;Write
 connect-campaigns:DeleteCampaignChannelSubtypeConfig;Write
 connect-campaigns:DeleteCampaignCommunicationLimits;Write
 connect-campaigns:DeleteCampaignCommunicationTime;Write
+connect-campaigns:DeleteCampaignEntryLimits;Write
 connect-campaigns:DeleteConnectInstanceConfig;Write
 connect-campaigns:DeleteConnectInstanceIntegration;Write
 connect-campaigns:DeleteInstanceOnboardingJob;Write
@@ -31,6 +32,7 @@ connect-campaigns:UpdateCampaignChannelSubtypeConfig;Write
 connect-campaigns:UpdateCampaignCommunicationLimits;Write
 connect-campaigns:UpdateCampaignCommunicationTime;Write
 connect-campaigns:UpdateCampaignDialerConfig;Write
+connect-campaigns:UpdateCampaignEntryLimits;Write
 connect-campaigns:UpdateCampaignFlowAssociation;Write
 connect-campaigns:UpdateCampaignName;Write
 connect-campaigns:UpdateCampaignOutboundCallConfig;Write
