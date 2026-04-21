@@ -10,6 +10,7 @@ datazone:BatchGetCell;Read
 datazone:BatchGetCellRun;Read
 datazone:BatchPutAttributesMetadata;Write
 datazone:BatchPutLinkedTypes;Write
+datazone:CancelMessage;Write
 datazone:CancelMetadataGenerationRun;Write
 datazone:CancelSubscription;Write
 datazone:CreateAccountPool;Write

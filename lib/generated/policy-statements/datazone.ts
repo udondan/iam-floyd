@@ -127,6 +127,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an in-progress agent response
+   *
+   * Access Level: Write
+   */
+  public toCancelMessage() {
+    return this.to('CancelMessage');
+  }
+
+  /**
    * Grants permission to cancel metadata generation run
    *
    * Access Level: Write
@@ -2100,6 +2109,7 @@ export class Datazone extends PolicyStatement {
       'BatchDeleteLinkedTypes',
       'BatchPutAttributesMetadata',
       'BatchPutLinkedTypes',
+      'CancelMessage',
       'CancelMetadataGenerationRun',
       'CancelSubscription',
       'CreateAccountPool',

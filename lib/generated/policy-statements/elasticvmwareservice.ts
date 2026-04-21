@@ -34,6 +34,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an entitlement in an Amazon EVS environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEntitlement.html
+   */
+  public toCreateEntitlement() {
+    return this.to('CreateEntitlement');
+  }
+
+  /**
    * Grants permission to create an Amazon EVS environment
    *
    * Access Level: Write
@@ -93,6 +104,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a connector in an Amazon EVS environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironmentConnector.html
+   */
+  public toCreateEnvironmentConnector() {
+    return this.to('CreateEnvironmentConnector');
+  }
+
+  /**
    * Grants permission to add host to an Amazon EVS environment
    *
    * Access Level: Write
@@ -130,6 +152,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an entitlement from an Amazon EVS environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEntitlement.html
+   */
+  public toDeleteEntitlement() {
+    return this.to('DeleteEntitlement');
+  }
+
+  /**
    * Grants permission to delete an Amazon EVS environment
    *
    * Access Level: Write
@@ -151,6 +184,17 @@ export class Evs extends PolicyStatement {
    */
   public toDeleteEnvironment() {
     return this.to('DeleteEnvironment');
+  }
+
+  /**
+   * Grants permission to delete a connector from an Amazon EVS environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironmentConnector.html
+   */
+  public toDeleteEnvironmentConnector() {
+    return this.to('DeleteEnvironmentConnector');
   }
 
   /**
@@ -212,6 +256,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of connectors associated with an Amazon EVS environment
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironmentConnectors.html
+   */
+  public toListEnvironmentConnectors() {
+    return this.to('ListEnvironmentConnectors');
+  }
+
+  /**
    * Grants permission to retrieve a list of hosts associated with an Amazon EVS environment
    *
    * Access Level: List
@@ -256,6 +311,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of entitlements associated with an Amazon EVS environment
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_ListVmEntitlements.html
+   */
+  public toListVmEntitlements() {
+    return this.to('ListVmEntitlements');
+  }
+
+  /**
    * Grants permission to tag a specified resource ARN
    *
    * Access Level: Tagging
@@ -286,14 +352,30 @@ export class Evs extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update a connector in an Amazon EVS environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_UpdateEnvironmentConnector.html
+   */
+  public toUpdateEnvironmentConnector() {
+    return this.to('UpdateEnvironmentConnector');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateEipToVlan',
+      'CreateEntitlement',
       'CreateEnvironment',
+      'CreateEnvironmentConnector',
       'CreateEnvironmentHost',
+      'DeleteEntitlement',
       'DeleteEnvironment',
+      'DeleteEnvironmentConnector',
       'DeleteEnvironmentHost',
-      'DisassociateEipFromVlan'
+      'DisassociateEipFromVlan',
+      'UpdateEnvironmentConnector'
     ],
     Read: [
       'GetEnvironment',
@@ -301,9 +383,11 @@ export class Evs extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListEnvironmentConnectors',
       'ListEnvironmentHosts',
       'ListEnvironmentVlans',
-      'ListEnvironments'
+      'ListEnvironments',
+      'ListVmEntitlements'
     ],
     Tagging: [
       'TagResource',

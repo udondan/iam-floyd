@@ -486,6 +486,17 @@ export class Cases extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a related item associated to a case in the case domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateRelatedItem.html
+   */
+  public toUpdateRelatedItem() {
+    return this.to('UpdateRelatedItem');
+  }
+
+  /**
    * Grants permission to update the template in the case domain
    *
    * Access Level: Write
@@ -532,6 +543,7 @@ export class Cases extends PolicyStatement {
       'UpdateCaseRule',
       'UpdateField',
       'UpdateLayout',
+      'UpdateRelatedItem',
       'UpdateTemplate'
     ],
     List: [
@@ -634,6 +646,8 @@ export class Cases extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   * - .ifCreatedBy()
+   * - .ifRelatedItemType()
    */
   public onRelatedItem(domainId: string, caseId: string, relatedItemId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cases:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }/case/${ caseId }/related-item/${ relatedItemId }`);
@@ -727,6 +741,36 @@ export class Cases extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
     return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by who created the the resource (user ARN or custom entity)
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - RelatedItem
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCreatedBy(value: string | string[], operator?: Operator | string) {
+    return this.if(`CreatedBy`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the type of related item. Possible values: Contact, Comment, File, Sla, ConnectCase, Custom
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - RelatedItem
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRelatedItemType(value: string | string[], operator?: Operator | string) {
+    return this.if(`RelatedItemType`, value, operator ?? 'StringLike');
   }
 
   /**

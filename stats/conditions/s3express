@@ -4,6 +4,7 @@ s3express:AllAccessRestrictedToLocalZoneGroup
 s3express:BucketTag/${TagKey}
 s3express:DataAccessPointAccount
 s3express:DataAccessPointArn
+s3express:InventoryAccessibleOptionalFields
 s3express:LocationName
 s3express:Permissions
 s3express:RequestTag/${TagKey}

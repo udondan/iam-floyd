@@ -95,6 +95,9 @@ export class SesMailmanager extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/sesmailmanager/latest/APIReference/API_CreateArchive.html
    */
   public toCreateArchive() {
