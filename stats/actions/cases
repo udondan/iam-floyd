@@ -39,4 +39,5 @@ cases:UpdateCase;Write
 cases:UpdateCaseRule;Write
 cases:UpdateField;Write
 cases:UpdateLayout;Write
+cases:UpdateRelatedItem;Write
 cases:UpdateTemplate;Write

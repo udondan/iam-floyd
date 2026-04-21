@@ -286,6 +286,24 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return an inventory configuration identified by the inventory configuration ID for a S3 directory bucket
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html
+   */
+  public toGetInventoryConfiguration() {
+    return this.to('GetInventoryConfiguration');
+  }
+
+  /**
    * Grants permission to return the lifecycle configuration information set on a directory bucket
    *
    * Access Level: Read
@@ -454,6 +472,25 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add an inventory configuration to the bucket, identified by the inventory ID
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifInventoryAccessibleOptionalFields()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html
+   */
+  public toPutInventoryConfiguration() {
+    return this.to('PutInventoryConfiguration');
+  }
+
+  /**
    * Grants permission to create a new lifecycle configuration for the directory bucket or replace an existing lifecycle configuration
    *
    * Access Level: Write
@@ -536,6 +573,7 @@ export class S3express extends PolicyStatement {
       'DeleteAccessPoint',
       'DeleteBucket',
       'PutEncryptionConfiguration',
+      'PutInventoryConfiguration',
       'PutLifecycleConfiguration',
       'PutMetricsConfiguration'
     ],
@@ -553,6 +591,7 @@ export class S3express extends PolicyStatement {
       'GetAccessPointScope',
       'GetBucketPolicy',
       'GetEncryptionConfiguration',
+      'GetInventoryConfiguration',
       'GetLifecycleConfiguration',
       'GetMetricsConfiguration'
     ],
@@ -771,6 +810,21 @@ export class S3express extends PolicyStatement {
   }
 
   /**
+   * Filters access by restricting which optional metadata fields a user can add when configuring S3 Inventory reports
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-s3-inventory-3
+   *
+   * Applies to actions:
+   * - .toPutInventoryConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInventoryAccessibleOptionalFields(value: string | string[], operator?: Operator | string) {
+    return this.if(`InventoryAccessibleOptionalFields`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by a specific Availability Zone or Local Zone ID
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-express-zonal-policy-keys.html#example-location-name
@@ -818,6 +872,7 @@ export class S3express extends PolicyStatement {
    * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
+   * - .toGetInventoryConfiguration()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
@@ -827,6 +882,7 @@ export class S3express extends PolicyStatement {
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
+   * - .toPutInventoryConfiguration()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
    * - .toTagResource()
@@ -871,6 +927,7 @@ export class S3express extends PolicyStatement {
    * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
+   * - .toGetInventoryConfiguration()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
@@ -880,6 +937,7 @@ export class S3express extends PolicyStatement {
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
+   * - .toPutInventoryConfiguration()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
    * - .toTagResource()
@@ -911,6 +969,7 @@ export class S3express extends PolicyStatement {
    * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
+   * - .toGetInventoryConfiguration()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
@@ -920,6 +979,7 @@ export class S3express extends PolicyStatement {
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
+   * - .toPutInventoryConfiguration()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
    * - .toTagResource()
@@ -966,6 +1026,7 @@ export class S3express extends PolicyStatement {
    * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
+   * - .toGetInventoryConfiguration()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
@@ -975,6 +1036,7 @@ export class S3express extends PolicyStatement {
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
+   * - .toPutInventoryConfiguration()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
    * - .toTagResource()
@@ -1006,6 +1068,7 @@ export class S3express extends PolicyStatement {
    * - .toGetAccessPointScope()
    * - .toGetBucketPolicy()
    * - .toGetEncryptionConfiguration()
+   * - .toGetInventoryConfiguration()
    * - .toGetLifecycleConfiguration()
    * - .toGetMetricsConfiguration()
    * - .toListAccessPointsForDirectoryBuckets()
@@ -1015,6 +1078,7 @@ export class S3express extends PolicyStatement {
    * - .toPutAccessPointScope()
    * - .toPutBucketPolicy()
    * - .toPutEncryptionConfiguration()
+   * - .toPutInventoryConfiguration()
    * - .toPutLifecycleConfiguration()
    * - .toPutMetricsConfiguration()
    * - .toTagResource()
