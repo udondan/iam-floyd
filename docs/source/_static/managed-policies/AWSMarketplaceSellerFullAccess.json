@@ -86,7 +86,10 @@
         "aws-marketplace:UntagResource",
         "aws-marketplace:ListTagsForResource"
       ],
-      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/*",
+        "arn:aws:aws-marketplace:*:*:catalog/AWSMarketplace*/*"
+      ]
     },
     {
       "Sid": "SellerSettings",
@@ -108,9 +111,20 @@
         "tax:ListSupplementalTaxRegistrations",
         "tax:PutSupplementalTaxRegistration",
         "tax:DeleteSupplementalTaxRegistration",
-        "tax:GetTaxRegistration"
+        "tax:GetTaxRegistration",
+        "aws-marketplace:ListPayables"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "InvoiceSubmissionManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:StartInvoiceSubmissionTask",
+        "aws-marketplace:GetInvoiceSubmissionTask",
+        "aws-marketplace:ListInvoiceSubmissionTasks"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:catalog/AWSMarketplace*/invoice-submission-task/*"
     },
     {
       "Sid": "Support",
@@ -128,7 +142,10 @@
         "aws-marketplace:PutResourcePolicy",
         "aws-marketplace:DeleteResourcePolicy"
       ],
-      "Resource": "arn:aws:aws-marketplace:*:*:AWSMarketplace/*"
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/*",
+        "arn:aws:aws-marketplace:*:*:catalog/AWSMarketplace*/*"
+      ]
     },
     {
       "Sid": "CreateServiceLinkedRole",
