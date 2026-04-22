@@ -3,6 +3,7 @@ aws-marketplace:ChangeSet
 aws-marketplace:Dashboard
 aws-marketplace:DeploymentParameter
 aws-marketplace:Entity
+aws-marketplace:InvoiceSubmissionTask
 aws-marketplace:Listing
 aws-marketplace:Offer
 aws-marketplace:OfferSet

@@ -1238,6 +1238,9 @@ export class Partnercentral extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_PutSellingSystemSettings.html
    */
   public toPutSellingSystemSettings() {
@@ -2263,6 +2266,7 @@ export class Partnercentral extends PolicyStatement {
    * - .toListTagsForResource()
    * - .toPutAllianceLeadContact()
    * - .toPutProfileVisibility()
+   * - .toPutSellingSystemSettings()
    * - .toRecallBenefitApplication()
    * - .toRejectChannelHandshake()
    * - .toRejectConnectionInvitation()
