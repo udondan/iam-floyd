@@ -1,4 +1,7 @@
 sagemaker:action
+sagemaker:ai-benchmark-job
+sagemaker:ai-recommendation-job
+sagemaker:ai-workload-config
 sagemaker:algorithm
 sagemaker:app
 sagemaker:app-image-config

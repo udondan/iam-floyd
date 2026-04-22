@@ -74,6 +74,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of an existing invoice submission task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toGetInvoiceSubmissionTask() {
+    return this.to('GetInvoiceSubmissionTask');
+  }
+
+  /**
    * Grants permission to get the resource policy of an existing entity
    *
    * Access Level: Read
@@ -118,7 +129,29 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags on an existing entity or a change set
+   * Grants permission to list existing invoice submission tasks
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toListInvoiceSubmissionTasks() {
+    return this.to('ListInvoiceSubmissionTasks');
+  }
+
+  /**
+   * Grants permission to list payables of the specified payable provenance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toListPayables() {
+    return this.to('ListPayables');
+  }
+
+  /**
+   * Grants permission to list tags on an existing entity, change set, or invoice submission task
    *
    * Access Level: Read
    *
@@ -157,7 +190,22 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag an existing entity or a change set
+   * Grants permission to initiate tasks that submit invoices for processing in AWS Marketplace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toStartInvoiceSubmissionTask() {
+    return this.to('StartInvoiceSubmissionTask');
+  }
+
+  /**
+   * Grants permission to add new tags to a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask
    *
    * Access Level: Tagging
    *
@@ -172,7 +220,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag an existing entity or a change set
+   * Grants permission to remove tags from a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask
    *
    * Access Level: Tagging
    *
@@ -188,7 +236,8 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelChangeSet',
-      'StartChangeSet'
+      'StartChangeSet',
+      'StartInvoiceSubmissionTask'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
@@ -198,13 +247,16 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'DescribeAssessment',
       'DescribeChangeSet',
       'DescribeEntity',
+      'GetInvoiceSubmissionTask',
       'GetResourcePolicy',
       'ListTagsForResource'
     ],
     List: [
       'ListAssessments',
       'ListChangeSets',
-      'ListEntities'
+      'ListEntities',
+      'ListInvoiceSubmissionTasks',
+      'ListPayables'
     ],
     Tagging: [
       'TagResource',
@@ -266,6 +318,24 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type InvoiceSubmissionTask to the statement
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onInvoiceSubmissionTask(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/invoice-submission-task/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the Intent parameter in the StartChangeSet request
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html
@@ -287,6 +357,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Applies to actions:
    * - .toStartChangeSet()
+   * - .toStartInvoiceSubmissionTask()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -305,6 +376,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Applies to resource types:
    * - Entity
    * - ChangeSet
+   * - InvoiceSubmissionTask
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -321,6 +393,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Applies to actions:
    * - .toStartChangeSet()
+   * - .toStartInvoiceSubmissionTask()
    * - .toTagResource()
    * - .toUntagResource()
    *

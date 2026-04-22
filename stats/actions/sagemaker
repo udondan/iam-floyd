@@ -10,6 +10,9 @@ sagemaker:BatchGetRecord;Read
 sagemaker:BatchPutMetrics;Write
 sagemaker:CallMlflowAppApi;Write
 sagemaker:CallPartnerAppApi;Write
+sagemaker:CreateAIBenchmarkJob;Write
+sagemaker:CreateAIRecommendationJob;Write
+sagemaker:CreateAIWorkloadConfig;Write
 sagemaker:CreateAction;Write
 sagemaker:CreateAlgorithm;Write
 sagemaker:CreateApp;Write
@@ -81,6 +84,9 @@ sagemaker:CreateTrialComponent;Write
 sagemaker:CreateUserProfile;Write
 sagemaker:CreateWorkforce;Write
 sagemaker:CreateWorkteam;Write
+sagemaker:DeleteAIBenchmarkJob;Write
+sagemaker:DeleteAIRecommendationJob;Write
+sagemaker:DeleteAIWorkloadConfig;Write
 sagemaker:DeleteAction;Write
 sagemaker:DeleteAlgorithm;Write
 sagemaker:DeleteApp;Write
@@ -145,6 +151,9 @@ sagemaker:DeleteWorkforce;Write
 sagemaker:DeleteWorkteam;Write
 sagemaker:DeployHubModel;Write
 sagemaker:DeregisterDevices;Write
+sagemaker:DescribeAIBenchmarkJob;Read
+sagemaker:DescribeAIRecommendationJob;Read
+sagemaker:DescribeAIWorkloadConfig;Read
 sagemaker:DescribeAction;Read
 sagemaker:DescribeAlgorithm;Read
 sagemaker:DescribeApp;Read
@@ -236,6 +245,9 @@ sagemaker:ImportHubContent;Write
 sagemaker:InvokeEndpoint;Read
 sagemaker:InvokeEndpointAsync;Read
 sagemaker:InvokeEndpointWithResponseStream;Read
+sagemaker:ListAIBenchmarkJobs;List
+sagemaker:ListAIRecommendationJobs;List
+sagemaker:ListAIWorkloadConfigs;List
 sagemaker:ListActions;List
 sagemaker:ListAlgorithms;List
 sagemaker:ListAliases;List
@@ -348,6 +360,8 @@ sagemaker:StartMonitoringSchedule;Write
 sagemaker:StartNotebookInstance;Write
 sagemaker:StartPipelineExecution;Write
 sagemaker:StartSession;Write
+sagemaker:StopAIBenchmarkJob;Write
+sagemaker:StopAIRecommendationJob;Write
 sagemaker:StopAutoMLJob;Write
 sagemaker:StopCompilationJob;Write
 sagemaker:StopEdgeDeploymentStage;Write

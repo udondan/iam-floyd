@@ -167,6 +167,51 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AI benchmark job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIBenchmarkJob.html
+   */
+  public toCreateAIBenchmarkJob() {
+    return this.to('CreateAIBenchmarkJob');
+  }
+
+  /**
+   * Grants permission to create an AI recommendation job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIRecommendationJob.html
+   */
+  public toCreateAIRecommendationJob() {
+    return this.to('CreateAIRecommendationJob');
+  }
+
+  /**
+   * Grants permission to create an AI workload configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIWorkloadConfig.html
+   */
+  public toCreateAIWorkloadConfig() {
+    return this.to('CreateAIWorkloadConfig');
+  }
+
+  /**
    * Grants permission to create an action
    *
    * Access Level: Write
@@ -1150,6 +1195,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifDirectInternetAccess()
    * - .ifInstanceTypes()
    * - .ifMinimumInstanceMetadataServiceVersion()
+   * - .ifNotebookInstanceLifecycleConfigArns()
    * - .ifRootAccess()
    * - .ifVolumeKmsKey()
    * - .ifVpcSecurityGroupIds()
@@ -1581,6 +1627,39 @@ export class Sagemaker extends PolicyStatement {
    */
   public toCreateWorkteam() {
     return this.to('CreateWorkteam');
+  }
+
+  /**
+   * Grants permission to delete an AI benchmark job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAIBenchmarkJob.html
+   */
+  public toDeleteAIBenchmarkJob() {
+    return this.to('DeleteAIBenchmarkJob');
+  }
+
+  /**
+   * Grants permission to delete an AI recommendation job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAIRecommendationJob.html
+   */
+  public toDeleteAIRecommendationJob() {
+    return this.to('DeleteAIRecommendationJob');
+  }
+
+  /**
+   * Grants permission to delete an AI workload configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteAIWorkloadConfig.html
+   */
+  public toDeleteAIWorkloadConfig() {
+    return this.to('DeleteAIWorkloadConfig');
   }
 
   /**
@@ -2302,6 +2381,39 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeregisterDevices() {
     return this.to('DeregisterDevices');
+  }
+
+  /**
+   * Grants permission to describe an AI benchmark job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAIBenchmarkJob.html
+   */
+  public toDescribeAIBenchmarkJob() {
+    return this.to('DescribeAIBenchmarkJob');
+  }
+
+  /**
+   * Grants permission to describe an AI recommendation job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAIRecommendationJob.html
+   */
+  public toDescribeAIRecommendationJob() {
+    return this.to('DescribeAIRecommendationJob');
+  }
+
+  /**
+   * Grants permission to describe an AI workload configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAIWorkloadConfig.html
+   */
+  public toDescribeAIWorkloadConfig() {
+    return this.to('DescribeAIWorkloadConfig');
   }
 
   /**
@@ -3321,6 +3433,39 @@ export class Sagemaker extends PolicyStatement {
    */
   public toInvokeEndpointWithResponseStream() {
     return this.to('InvokeEndpointWithResponseStream');
+  }
+
+  /**
+   * Grants permission to list AI benchmark jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAIBenchmarkJobs.html
+   */
+  public toListAIBenchmarkJobs() {
+    return this.to('ListAIBenchmarkJobs');
+  }
+
+  /**
+   * Grants permission to list AI recommendation jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAIRecommendationJobs.html
+   */
+  public toListAIRecommendationJobs() {
+    return this.to('ListAIRecommendationJobs');
+  }
+
+  /**
+   * Grants permission to list AI workload configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListAIWorkloadConfigs.html
+   */
+  public toListAIWorkloadConfigs() {
+    return this.to('ListAIWorkloadConfigs');
   }
 
   /**
@@ -4569,6 +4714,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop an AI benchmark job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopAIBenchmarkJob.html
+   */
+  public toStopAIBenchmarkJob() {
+    return this.to('StopAIBenchmarkJob');
+  }
+
+  /**
+   * Grants permission to stop an AI recommendation job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopAIRecommendationJob.html
+   */
+  public toStopAIRecommendationJob() {
+    return this.to('StopAIRecommendationJob');
+  }
+
+  /**
    * Grants permission to stop a running AutoML job
    *
    * Access Level: Write
@@ -5195,6 +5362,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAcceleratorTypes()
    * - .ifInstanceTypes()
    * - .ifMinimumInstanceMetadataServiceVersion()
+   * - .ifNotebookInstanceLifecycleConfigArns()
    * - .ifRootAccess()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateNotebookInstance.html
@@ -5400,6 +5568,9 @@ export class Sagemaker extends PolicyStatement {
       'BatchPutMetrics',
       'CallMlflowAppApi',
       'CallPartnerAppApi',
+      'CreateAIBenchmarkJob',
+      'CreateAIRecommendationJob',
+      'CreateAIWorkloadConfig',
       'CreateAction',
       'CreateAlgorithm',
       'CreateApp',
@@ -5470,6 +5641,9 @@ export class Sagemaker extends PolicyStatement {
       'CreateUserProfile',
       'CreateWorkforce',
       'CreateWorkteam',
+      'DeleteAIBenchmarkJob',
+      'DeleteAIRecommendationJob',
+      'DeleteAIWorkloadConfig',
       'DeleteAction',
       'DeleteAlgorithm',
       'DeleteApp',
@@ -5557,6 +5731,8 @@ export class Sagemaker extends PolicyStatement {
       'StartNotebookInstance',
       'StartPipelineExecution',
       'StartSession',
+      'StopAIBenchmarkJob',
+      'StopAIRecommendationJob',
       'StopAutoMLJob',
       'StopCompilationJob',
       'StopEdgeDeploymentStage',
@@ -5632,6 +5808,9 @@ export class Sagemaker extends PolicyStatement {
       'BatchGetMetrics',
       'BatchGetRecord',
       'CreateHubContentPresignedUrls',
+      'DescribeAIBenchmarkJob',
+      'DescribeAIRecommendationJob',
+      'DescribeAIWorkloadConfig',
       'DescribeAction',
       'DescribeAlgorithm',
       'DescribeApp',
@@ -5723,6 +5902,9 @@ export class Sagemaker extends PolicyStatement {
       'SearchTrainingPlanOfferings'
     ],
     List: [
+      'ListAIBenchmarkJobs',
+      'ListAIRecommendationJobs',
+      'ListAIWorkloadConfigs',
       'ListActions',
       'ListAlgorithms',
       'ListAliases',
@@ -7050,12 +7232,69 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ai-workload-config to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIWorkloadConfig.html
+   *
+   * @param aIWorkloadConfigName - Identifier for the aIWorkloadConfigName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onAiWorkloadConfig(aIWorkloadConfigName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-workload-config/${ aIWorkloadConfigName }`);
+  }
+
+  /**
+   * Adds a resource of type ai-benchmark-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIBenchmarkJob.html
+   *
+   * @param aIBenchmarkJobName - Identifier for the aIBenchmarkJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onAiBenchmarkJob(aIBenchmarkJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-benchmark-job/${ aIBenchmarkJobName }`);
+  }
+
+  /**
+   * Adds a resource of type ai-recommendation-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIRecommendationJob.html
+   *
+   * @param aIRecommendationJobName - Identifier for the aIRecommendationJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onAiRecommendationJob(aIRecommendationJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-recommendation-job/${ aIRecommendationJobName }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the SageMaker service
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * Applies to actions:
    * - .toAddTags()
+   * - .toCreateAIBenchmarkJob()
+   * - .toCreateAIRecommendationJob()
+   * - .toCreateAIWorkloadConfig()
    * - .toCreateAction()
    * - .toCreateAlgorithm()
    * - .toCreateApp()
@@ -7209,6 +7448,9 @@ export class Sagemaker extends PolicyStatement {
    * - compute-quota
    * - cluster-scheduler-config
    * - partner-app
+   * - ai-workload-config
+   * - ai-benchmark-job
+   * - ai-recommendation-job
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -7225,6 +7467,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAddTags()
+   * - .toCreateAIBenchmarkJob()
+   * - .toCreateAIRecommendationJob()
+   * - .toCreateAIWorkloadConfig()
    * - .toCreateAction()
    * - .toCreateAlgorithm()
    * - .toCreateApp()
@@ -7911,6 +8156,22 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Filters access by the list of notebook instance lifecycle configuration ARNs associated with the resource in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateNotebookInstance()
+   * - .toUpdateNotebookInstance()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifNotebookInstanceLifecycleConfigArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`NotebookInstanceLifecycleConfigArns`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by the output kms key associated with the resource in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
@@ -8079,6 +8340,9 @@ export class Sagemaker extends PolicyStatement {
    * - compute-quota
    * - cluster-scheduler-config
    * - partner-app
+   * - ai-workload-config
+   * - ai-benchmark-job
+   * - ai-recommendation-job
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
