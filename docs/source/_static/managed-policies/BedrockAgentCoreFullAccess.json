@@ -271,6 +271,17 @@
       }
     },
     {
+      "Sid": "CreateBedrockAgentCoreGatewayNetworkServiceLinkedRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/bedrock-agentcore.amazonaws.com/AWSServiceRoleForBedrockAgentCoreGatewayNetwork",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "bedrock-agentcore.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "CreateBedrockAgentCoreRuntimeIdentityServiceLinkedRolePermissions",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",

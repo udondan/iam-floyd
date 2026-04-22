@@ -24,6 +24,7 @@
         "ec2:DescribeInstances",
         "ec2:DescribeInstanceTypeOfferings",
         "ec2:DescribeInstanceTypes",
+        "ec2:DescribeInstanceStatus",
         "ec2:DescribeInternetGateways",
         "ec2:DescribeLaunchTemplates",
         "ec2:DescribeNetworkInterfaces",
@@ -56,6 +57,7 @@
         "elasticloadbalancing:DescribeTargetHealth",
         "elasticloadbalancing:DeregisterTargets",
         "elasticloadbalancing:DescribeTrustStores",
+        "elasticloadbalancing:DescribeCapacityReservation",
         "iam:ListAttachedRolePolicies",
         "pricing:GetProducts",
         "shield:GetSubscriptionState",
@@ -246,7 +248,8 @@
       "Action": [
         "iam:CreateInstanceProfile",
         "iam:DeleteInstanceProfile",
-        "iam:RemoveRoleFromInstanceProfile"
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:ListInstanceProfiles"
       ],
       "Resource": "arn:aws:iam::*:instance-profile/eks*"
     },
