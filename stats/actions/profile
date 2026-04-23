@@ -9,6 +9,8 @@ profile:CreateEventTrigger;Write
 profile:CreateIntegrationWorkflow;Write
 profile:CreateProfile;Write
 profile:CreateRecommender;Write
+profile:CreateRecommenderFilter;Write
+profile:CreateRecommenderSchema;Write
 profile:CreateSegmentDefinition;Write
 profile:CreateSegmentEstimate;Write
 profile:CreateSegmentSnapshot;Write
@@ -26,6 +28,8 @@ profile:DeleteProfileKey;Write
 profile:DeleteProfileObject;Write
 profile:DeleteProfileObjectType;Write
 profile:DeleteRecommender;Write
+profile:DeleteRecommenderFilter;Write
+profile:DeleteRecommenderSchema;Write
 profile:DeleteSegmentDefinition;Write
 profile:DeleteWorkflow;Write
 profile:DetectProfileObjectType;Read
@@ -47,6 +51,8 @@ profile:GetProfileObjectType;Read
 profile:GetProfileObjectTypeTemplate;Read
 profile:GetProfileRecommendations;Read
 profile:GetRecommender;Read
+profile:GetRecommenderFilter;Read
+profile:GetRecommenderSchema;Read
 profile:GetSegmentDefinition;Read
 profile:GetSegmentEstimate;Read
 profile:GetSegmentMembership;Read
@@ -75,7 +81,9 @@ profile:ListProfileHistoryRecords;List
 profile:ListProfileObjectTypeTemplates;List
 profile:ListProfileObjectTypes;List
 profile:ListProfileObjects;List
+profile:ListRecommenderFilters;List
 profile:ListRecommenderRecipes;List
+profile:ListRecommenderSchemas;List
 profile:ListRecommenders;List
 profile:ListRuleBasedMatches;List
 profile:ListSegmentDefinitions;List

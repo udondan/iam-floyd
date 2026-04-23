@@ -147,6 +147,36 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a recommender filter in the domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommenderFilter.html
+   */
+  public toCreateRecommenderFilter() {
+    return this.to('CreateRecommenderFilter');
+  }
+
+  /**
+   * Grants permission to create a recommender schema in the domain
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommenderSchema.html
+   */
+  public toCreateRecommenderSchema() {
+    return this.to('CreateRecommenderSchema');
+  }
+
+  /**
    * Grants permission to create a segment definition in the domain
    *
    * Access Level: Write
@@ -332,6 +362,28 @@ export class Profile extends PolicyStatement {
    */
   public toDeleteRecommender() {
     return this.to('DeleteRecommender');
+  }
+
+  /**
+   * Grants permission to delete a recommender filter in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommenderFilter.html
+   */
+  public toDeleteRecommenderFilter() {
+    return this.to('DeleteRecommenderFilter');
+  }
+
+  /**
+   * Grants permission to delete a recommender schema in the domain
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommenderSchema.html
+   */
+  public toDeleteRecommenderSchema() {
+    return this.to('DeleteRecommenderSchema');
   }
 
   /**
@@ -566,6 +618,28 @@ export class Profile extends PolicyStatement {
    */
   public toGetRecommender() {
     return this.to('GetRecommender');
+  }
+
+  /**
+   * Grants permission to get recommender filter details in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommenderFilter.html
+   */
+  public toGetRecommenderFilter() {
+    return this.to('GetRecommenderFilter');
+  }
+
+  /**
+   * Grants permission to get recommender schema details in the domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommenderSchema.html
+   */
+  public toGetRecommenderSchema() {
+    return this.to('GetRecommenderSchema');
   }
 
   /**
@@ -875,6 +949,17 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all recommender filters in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderFilters.html
+   */
+  public toListRecommenderFilters() {
+    return this.to('ListRecommenderFilters');
+  }
+
+  /**
    * Grants permission to list all the Recommenders Recipes in the domain
    *
    * Access Level: List
@@ -883,6 +968,17 @@ export class Profile extends PolicyStatement {
    */
   public toListRecommenderRecipes() {
     return this.to('ListRecommenderRecipes');
+  }
+
+  /**
+   * Grants permission to list all recommender schemas in the domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderSchemas.html
+   */
+  public toListRecommenderSchemas() {
+    return this.to('ListRecommenderSchemas');
   }
 
   /**
@@ -1177,6 +1273,8 @@ export class Profile extends PolicyStatement {
       'CreateIntegrationWorkflow',
       'CreateProfile',
       'CreateRecommender',
+      'CreateRecommenderFilter',
+      'CreateRecommenderSchema',
       'CreateSegmentDefinition',
       'CreateSegmentEstimate',
       'CreateSegmentSnapshot',
@@ -1194,6 +1292,8 @@ export class Profile extends PolicyStatement {
       'DeleteProfileObject',
       'DeleteProfileObjectType',
       'DeleteRecommender',
+      'DeleteRecommenderFilter',
+      'DeleteRecommenderSchema',
       'DeleteSegmentDefinition',
       'DeleteWorkflow',
       'MergeProfiles',
@@ -1233,6 +1333,8 @@ export class Profile extends PolicyStatement {
       'GetProfileObjectTypeTemplate',
       'GetProfileRecommendations',
       'GetRecommender',
+      'GetRecommenderFilter',
+      'GetRecommenderSchema',
       'GetSegmentDefinition',
       'GetSegmentEstimate',
       'GetSegmentMembership',
@@ -1266,7 +1368,9 @@ export class Profile extends PolicyStatement {
       'ListProfileObjectTypeTemplates',
       'ListProfileObjectTypes',
       'ListProfileObjects',
+      'ListRecommenderFilters',
       'ListRecommenderRecipes',
+      'ListRecommenderSchemas',
       'ListRecommenders',
       'ListRuleBasedMatches',
       'ListSegmentDefinitions',
@@ -1459,6 +1563,42 @@ export class Profile extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type recommender-filters to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param recommenderFilterName - Identifier for the recommenderFilterName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRecommenderFilters(domainName: string, recommenderFilterName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/recommender-filters/${ recommenderFilterName }`);
+  }
+
+  /**
+   * Adds a resource of type recommender-schemas to the statement
+   *
+   * https://docs.aws.amazon.com/customerprofiles/latest/APIReference/
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param recommenderSchemaName - Identifier for the recommenderSchemaName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRecommenderSchemas(domainName: string, recommenderSchemaName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:profile:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domains/${ domainName }/recommender-schemas/${ recommenderSchemaName }`);
+  }
+
+  /**
    * Filters access by a key that is present in the request the user makes to the customer profile service
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
@@ -1471,6 +1611,8 @@ export class Profile extends PolicyStatement {
    * - .toCreateEventTrigger()
    * - .toCreateIntegrationWorkflow()
    * - .toCreateRecommender()
+   * - .toCreateRecommenderFilter()
+   * - .toCreateRecommenderSchema()
    * - .toCreateSegmentDefinition()
    * - .toPutDomainObjectType()
    * - .toPutIntegration()
@@ -1501,6 +1643,8 @@ export class Profile extends PolicyStatement {
    * - layouts
    * - recommenders
    * - domain-object-types
+   * - recommender-filters
+   * - recommender-schemas
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1523,6 +1667,8 @@ export class Profile extends PolicyStatement {
    * - .toCreateEventTrigger()
    * - .toCreateIntegrationWorkflow()
    * - .toCreateRecommender()
+   * - .toCreateRecommenderFilter()
+   * - .toCreateRecommenderSchema()
    * - .toCreateSegmentDefinition()
    * - .toPutDomainObjectType()
    * - .toPutIntegration()

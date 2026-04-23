@@ -1,6 +1,7 @@
 ivs:BatchGetChannel;Read
 ivs:BatchGetStreamKey;Read
 ivs:BatchStartViewerSessionRevocation;Write
+ivs:CreateAdConfiguration;Write
 ivs:CreateChannel;Write
 ivs:CreateEncoderConfiguration;Write
 ivs:CreateIngestConfiguration;Write
@@ -10,6 +11,7 @@ ivs:CreateRecordingConfiguration;Write
 ivs:CreateStage;Write
 ivs:CreateStorageConfiguration;Write
 ivs:CreateStreamKey;Write
+ivs:DeleteAdConfiguration;Write
 ivs:DeleteChannel;Write
 ivs:DeleteEncoderConfiguration;Write
 ivs:DeleteIngestConfiguration;Write
@@ -21,6 +23,7 @@ ivs:DeleteStage;Write
 ivs:DeleteStorageConfiguration;Write
 ivs:DeleteStreamKey;Write
 ivs:DisconnectParticipant;Write
+ivs:GetAdConfiguration;Read
 ivs:GetChannel;Read
 ivs:GetComposition;Read
 ivs:GetEncoderConfiguration;Read
@@ -38,6 +41,8 @@ ivs:GetStreamKey;Read
 ivs:GetStreamSession;Read
 ivs:ImportPlaybackKeyPair;Write
 ivs:ImportPublicKey;Write
+ivs:InsertAdBreak;Write
+ivs:ListAdConfigurations;List
 ivs:ListChannels;List
 ivs:ListCompositions;List
 ivs:ListEncoderConfigurations;List

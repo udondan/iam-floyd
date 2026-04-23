@@ -433,6 +433,20 @@ export class Verifiedpermissions extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type policy-store-alias to the statement
+   *
+   * https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-store-aliases.html
+   *
+   * @param aliasName - Identifier for the aliasName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onPolicyStoreAlias(aliasName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:verifiedpermissions:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-store-alias/${ aliasName }`);
+  }
+
+  /**
    * Filters access by a tag key and value pair that is allowed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
