@@ -13,7 +13,8 @@
         "security-ir:GetCaseAttachmentDownloadUrl",
         "security-ir:ListComments",
         "security-ir:ListCaseEdits",
-        "security-ir:ListTagsForResource"
+        "security-ir:ListTagsForResource",
+        "security-ir:ListInvestigations"
       ],
       "Resource": "*"
     }

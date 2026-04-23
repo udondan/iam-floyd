@@ -361,6 +361,8 @@
         "storagegateway:ListVolumes",
         "swf:List*",
         "trustedadvisor:Describe*",
+        "uxc:GetAccountCustomizations",
+        "uxc:ListServices",
         "waf-regional:List*",
         "waf:List*",
         "wafv2:List*",
@@ -379,8 +381,8 @@
       "Resource": "*"
     },
     {
-      "Effect": "Allow",
       "Sid": "APIGatewayAccess",
+      "Effect": "Allow",
       "Action": [
         "apigateway:GET"
       ],
