@@ -52,7 +52,8 @@
         "autoscaling:PutLifecycleHook",
         "autoscaling:DeleteLifecycleHook",
         "autoscaling:CompleteLifecycleAction",
-        "autoscaling:RecordLifecycleActionHeartbeat"
+        "autoscaling:RecordLifecycleActionHeartbeat",
+        "autoscaling:TerminateInstanceInAutoScalingGroup"
       ],
       "Resource": "*",
       "Condition": {

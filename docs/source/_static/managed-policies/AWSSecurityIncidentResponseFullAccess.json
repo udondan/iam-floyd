@@ -2,45 +2,12 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "SecurityIRReadAccess",
+      "Sid": "SecurityIRFullAccess",
       "Effect": "Allow",
       "Action": [
-        "security-ir:BatchGetMemberAccountDetails",
-        "security-ir:GetMembership",
-        "security-ir:ListMemberships",
-        "security-ir:GetCase",
-        "security-ir:ListCases",
-        "security-ir:GetCaseAttachmentDownloadUrl",
-        "security-ir:ListComments",
-        "security-ir:ListCaseEdits",
-        "security-ir:ListTagsForResource"
+        "security-ir:*"
       ],
       "Resource": "*"
-    },
-    {
-      "Sid": "SecurityIRWriteAccess",
-      "Effect": "Allow",
-      "Action": [
-        "security-ir:CreateMembership",
-        "security-ir:UpdateMembership",
-        "security-ir:CancelMembership",
-        "security-ir:CreateCase",
-        "security-ir:UpdateCase",
-        "security-ir:CloseCase",
-        "security-ir:UpdateCaseStatus",
-        "security-ir:UpdateResolverType",
-        "security-ir:GetCaseAttachmentUploadUrl",
-        "security-ir:CreateCaseComment",
-        "security-ir:UpdateCaseComment",
-        "security-ir:TagResource",
-        "security-ir:UntagResource"
-      ],
-      "Resource": "*",
-      "Condition": {
-        "Bool": {
-          "aws:MultiFactorAuthPresent": "true"
-        }
-      }
     },
     {
       "Sid": "AllowCreationOfServiceLinkedRoleForSecurityIncidentResponse",
@@ -77,7 +44,15 @@
       "Effect": "Allow",
       "Action": [
         "organizations:DescribeOrganization",
-        "organizations:ListDelegatedAdministrators"
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListRoots",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListAccountsForParent",
+        "organizations:ListChildren",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAccounts",
+        "organizations:DescribeAccount"
       ],
       "Resource": "*"
     }
