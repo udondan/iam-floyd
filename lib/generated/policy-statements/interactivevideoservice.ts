@@ -52,6 +52,21 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new ad configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_CreateAdConfiguration.html
+   */
+  public toCreateAdConfiguration() {
+    return this.to('CreateAdConfiguration');
+  }
+
+  /**
    * Grants permission to create a new channel and an associated stream key
    *
    * Access Level: Write
@@ -187,6 +202,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an ad configuration for the specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_DeleteAdConfiguration.html
+   */
+  public toDeleteAdConfiguration() {
+    return this.to('DeleteAdConfiguration');
+  }
+
+  /**
    * Grants permission to delete a channel and channel's stream keys
    *
    * Access Level: Write
@@ -305,6 +331,17 @@ export class Ivs extends PolicyStatement {
    */
   public toDisconnectParticipant() {
     return this.to('DisconnectParticipant');
+  }
+
+  /**
+   * Grants permission to get the ad configuration for the specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_GetAdConfiguration.html
+   */
+  public toGetAdConfiguration() {
+    return this.to('GetAdConfiguration');
   }
 
   /**
@@ -500,6 +537,28 @@ export class Ivs extends PolicyStatement {
    */
   public toImportPublicKey() {
     return this.to('ImportPublicKey');
+  }
+
+  /**
+   * Grants permission to request an ad insertion on a channel using an associated ad configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_InsertAdBreak.html
+   */
+  public toInsertAdBreak() {
+    return this.to('InsertAdBreak');
+  }
+
+  /**
+   * Grants permission to get summary information about ad configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_ListAdConfigurations.html
+   */
+  public toListAdConfigurations() {
+    return this.to('ListAdConfigurations');
   }
 
   /**
@@ -866,6 +925,7 @@ export class Ivs extends PolicyStatement {
     Read: [
       'BatchGetChannel',
       'BatchGetStreamKey',
+      'GetAdConfiguration',
       'GetChannel',
       'GetComposition',
       'GetEncoderConfiguration',
@@ -885,6 +945,7 @@ export class Ivs extends PolicyStatement {
     ],
     Write: [
       'BatchStartViewerSessionRevocation',
+      'CreateAdConfiguration',
       'CreateChannel',
       'CreateEncoderConfiguration',
       'CreateIngestConfiguration',
@@ -894,6 +955,7 @@ export class Ivs extends PolicyStatement {
       'CreateStage',
       'CreateStorageConfiguration',
       'CreateStreamKey',
+      'DeleteAdConfiguration',
       'DeleteChannel',
       'DeleteEncoderConfiguration',
       'DeleteIngestConfiguration',
@@ -907,6 +969,7 @@ export class Ivs extends PolicyStatement {
       'DisconnectParticipant',
       'ImportPlaybackKeyPair',
       'ImportPublicKey',
+      'InsertAdBreak',
       'PutMetadata',
       'StartComposition',
       'StartParticipantReplication',
@@ -920,6 +983,7 @@ export class Ivs extends PolicyStatement {
       'UpdateStage'
     ],
     List: [
+      'ListAdConfigurations',
       'ListChannels',
       'ListCompositions',
       'ListEncoderConfigurations',
@@ -1030,6 +1094,23 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Ad-Configuration to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_AdConfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAdConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ivs:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ad-configuration/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type Stage to the statement
    *
    * https://docs.aws.amazon.com/ivs/latest/RealTimeAPIReference/API_Stage.html
@@ -1137,6 +1218,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateAdConfiguration()
    * - .toCreateChannel()
    * - .toCreateEncoderConfiguration()
    * - .toCreateIngestConfiguration()
@@ -1172,6 +1254,7 @@ export class Ivs extends PolicyStatement {
    * - Playback-Key-Pair
    * - Playback-Restriction-Policy
    * - Recording-Configuration
+   * - Ad-Configuration
    * - Stage
    * - Composition
    * - Encoder-Configuration
@@ -1193,6 +1276,7 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateAdConfiguration()
    * - .toCreateChannel()
    * - .toCreateEncoderConfiguration()
    * - .toCreateIngestConfiguration()

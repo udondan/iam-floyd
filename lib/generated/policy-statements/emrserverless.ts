@@ -128,6 +128,39 @@ export class EmrServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the resource dashboard
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetResourceDashboard.html
+   */
+  public toGetResourceDashboard() {
+    return this.to('GetResourceDashboard');
+  }
+
+  /**
+   * Grants permission to get details about a session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetSession.html
+   */
+  public toGetSession() {
+    return this.to('GetSession');
+  }
+
+  /**
+   * Grants permission to get the endpoint URL and authentication token for connecting to a session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetSessionEndpoint.html
+   */
+  public toGetSessionEndpoint() {
+    return this.to('GetSessionEndpoint');
+  }
+
+  /**
    * Grants permission to list applications
    *
    * Access Level: List
@@ -158,6 +191,17 @@ export class EmrServerless extends PolicyStatement {
    */
   public toListJobRuns() {
     return this.to('ListJobRuns');
+  }
+
+  /**
+   * Grants permission to list sessions associated with an application
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_ListSessions.html
+   */
+  public toListSessions() {
+    return this.to('ListSessions');
   }
 
   /**
@@ -201,6 +245,24 @@ export class EmrServerless extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a session in an application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_StartSession.html
+   */
+  public toStartSession() {
+    return this.to('StartSession');
+  }
+
+  /**
    * Grants permission to Stop an application
    *
    * Access Level: Write
@@ -224,6 +286,17 @@ export class EmrServerless extends PolicyStatement {
    */
   public toTagResource() {
     return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to terminate a session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_TerminateSession.html
+   */
+  public toTerminateSession() {
+    return this.to('TerminateSession');
   }
 
   /**
@@ -261,19 +334,25 @@ export class EmrServerless extends PolicyStatement {
       'DeleteApplication',
       'StartApplication',
       'StartJobRun',
+      'StartSession',
       'StopApplication',
+      'TerminateSession',
       'UpdateApplication'
     ],
     Read: [
       'GetApplication',
       'GetDashboardForJobRun',
       'GetJobRun',
+      'GetResourceDashboard',
+      'GetSession',
+      'GetSessionEndpoint',
       'ListTagsForResource'
     ],
     List: [
       'ListApplications',
       'ListJobRunAttempts',
-      'ListJobRuns'
+      'ListJobRuns',
+      'ListSessions'
     ],
     Tagging: [
       'TagResource',
@@ -317,6 +396,24 @@ export class EmrServerless extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type session to the statement
+   *
+   * https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param sessionId - Identifier for the sessionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSession(applicationId: string, sessionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:emr-serverless:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:/applications/${ applicationId }/sessions/${ sessionId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -324,6 +421,7 @@ export class EmrServerless extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApplication()
    * - .toStartJobRun()
+   * - .toStartSession()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -342,6 +440,7 @@ export class EmrServerless extends PolicyStatement {
    * Applies to resource types:
    * - application
    * - jobRun
+   * - session
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -359,6 +458,7 @@ export class EmrServerless extends PolicyStatement {
    * Applies to actions:
    * - .toCreateApplication()
    * - .toStartJobRun()
+   * - .toStartSession()
    * - .toTagResource()
    * - .toUntagResource()
    *
