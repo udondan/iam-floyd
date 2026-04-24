@@ -19,7 +19,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to approve an incoming subscription request (for providers who provide products that require subscription verification)
+   * Grants permission to approve an incoming subscription request (for providers who provide products that require subscription verification)
    *
    * Access Level: Write
    *
@@ -30,9 +30,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to accept an agreement cancellation request
+   * Grants permission to accept an agreement cancellation request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -41,9 +45,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to accept a payment request
+   * Grants permission to accept a payment request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -52,9 +60,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to accept their agreement requests
+   * Grants permission to accept an agreement request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAgreementType()
+   * - .ifProductId()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -63,9 +75,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to create a billing adjustment request against an agreement
+   * Grants permission to create a billing adjustment request against an agreement
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -74,9 +90,12 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to cancel their agreements
+   * Grants permission to cancel agreements
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -85,9 +104,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to withdraw a pending agreement cancellation request
+   * Grants permission to cancel a pending agreement cancellation request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -96,9 +119,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to cancel a payment request
+   * Grants permission to cancel a payment request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -107,7 +134,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to cancel pending subscription requests for products that require subscription verification
+   * Grants permission to cancel pending subscription requests for products that require subscription verification
    *
    * Access Level: Write
    *
@@ -118,9 +145,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to create an agreement request
+   * Grants permission to create an agreement request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAgreementType()
+   * - .ifProductId()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -129,9 +160,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to describe the metadata about the agreement
+   * Grants permission to describe the metadata about the agreement
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -140,7 +175,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to view the details of their incoming subscription requests (for providers who provide products that require subscription verification)
+   * Grants permission to view the details of incoming subscription requests (for providers who provide products that require subscription verification)
    *
    * Access Level: Read
    *
@@ -151,9 +186,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to view the details of an agreement cancellation request
+   * Grants permission to view the details of an agreement cancellation request
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -162,9 +201,12 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to view the entitlements associated with an agreement
+   * Grants permission to get the entitlements associated with an agreement
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -173,9 +215,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to view details for a payment request
+   * Grants permission to view details for a payment request
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -184,7 +230,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to view the details of their subscription requests for data products that require subscription verification
+   * Grants permission to view the details of subscription requests for data products that require subscription verification
    *
    * Access Level: Read
    *
@@ -195,9 +241,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to get a list of terms for an agreement
+   * Grants permission to get a list of terms for an agreement
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -206,9 +256,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to view the details of a billing adjustment request
+   * Grants permission to view the details of a billing adjustment request
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -217,7 +271,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to list their incoming subscription requests (for providers who provide products that require subscription verification)
+   * Grants permission to list incoming subscription requests (for providers who provide products that require subscription verification)
    *
    * Access Level: List
    *
@@ -228,9 +282,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to list agreement cancellation requests
+   * Grants permission to list agreement cancellation requests
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -239,9 +297,12 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to view charges associated with their agreements
+   * Grants permission to list charges associated with an agreement
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -250,9 +311,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to list invoice line items for an agreement
+   * Grants permission to list invoice line items for an agreement
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -261,9 +326,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to list payment requests for an agreement
+   * Grants permission to list payment requests for an agreement
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -272,7 +341,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to list their subscription requests for products that require subscription verification
+   * Grants permission to list subscription requests for products that require subscription verification
    *
    * Access Level: List
    *
@@ -283,9 +352,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to list billing adjustment requests
+   * Grants permission to list billing adjustment requests
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -294,7 +367,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to view details of the entitlements associated with an agreement. Note that this action is not applicable to Marketplace purchases
+   * Grants permission to list details of the entitlements associated with an agreement. Note that this action is not applicable to Marketplace purchases
    *
    * Access Level: Read
    *
@@ -305,7 +378,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to decline an incoming subscription requests (for providers who provide products that require subscription verification)
+   * Grants permission to decline an incoming subscription requests (for providers who provide products that require subscription verification)
    *
    * Access Level: Write
    *
@@ -316,9 +389,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to reject an agreement cancellation request
+   * Grants permission to reject an agreement cancellation request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -327,9 +404,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to reject a payment request
+   * Grants permission to reject a payment request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -338,9 +419,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to search their agreements
+   * Grants permission to search agreements
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -349,9 +434,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to send an agreement cancellation request
+   * Grants permission to send an agreement cancellation request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -360,9 +449,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to send payment request
+   * Grants permission to send a payment request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifPartyType()
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -371,7 +464,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to subscribe to AWS Marketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription
+   * Grants permission to subscribe to AWS Marketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription
    *
    * Access Level: Write
    *
@@ -382,7 +475,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to remove subscriptions to AWS Marketplace products. Includes the ability to disable auto-renewal for an existing subscription
+   * Grants permission to unsubscribe from AWS Marketplace products. Includes the ability to disable auto-renewal for an existing subscription
    *
    * Access Level: Write
    *
@@ -393,7 +486,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to make changes to an incoming subscription request, including the ability to delete the prospective subscriber's information (for providers who provide products that require subscription verification)
+   * Grants permission to make changes to an incoming subscription request, including the ability to delete the prospective subscriber's information (for providers who provide products that require subscription verification)
    *
    * Access Level: Write
    *
@@ -404,9 +497,12 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to update purchase orders for charges associated with their agreements
+   * Grants permission to update purchase orders for charges associated with an agreement
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAgreementType()
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    */
@@ -415,7 +511,7 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Grants permission to users to see their account's subscriptions
+   * Grants permission to view account's subscriptions
    *
    * Access Level: List
    *
@@ -476,6 +572,33 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    *
+   * Applies to actions:
+   * - .toAcceptAgreementCancellationRequest()
+   * - .toAcceptAgreementPaymentRequest()
+   * - .toAcceptAgreementRequest()
+   * - .toBatchCreateBillingAdjustmentRequest()
+   * - .toCancelAgreement()
+   * - .toCancelAgreementCancellationRequest()
+   * - .toCancelAgreementPaymentRequest()
+   * - .toCreateAgreementRequest()
+   * - .toDescribeAgreement()
+   * - .toGetAgreementCancellationRequest()
+   * - .toGetAgreementEntitlements()
+   * - .toGetAgreementPaymentRequest()
+   * - .toGetAgreementTerms()
+   * - .toGetBillingAdjustmentRequest()
+   * - .toListAgreementCancellationRequests()
+   * - .toListAgreementCharges()
+   * - .toListAgreementInvoiceLineItems()
+   * - .toListAgreementPaymentRequests()
+   * - .toListBillingAdjustmentRequests()
+   * - .toRejectAgreementCancellationRequest()
+   * - .toRejectAgreementPaymentRequest()
+   * - .toSearchAgreements()
+   * - .toSendAgreementCancellationRequest()
+   * - .toSendAgreementPaymentRequest()
+   * - .toUpdatePurchaseOrders()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -488,6 +611,27 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
    *
+   * Applies to actions:
+   * - .toAcceptAgreementCancellationRequest()
+   * - .toAcceptAgreementPaymentRequest()
+   * - .toBatchCreateBillingAdjustmentRequest()
+   * - .toCancelAgreementCancellationRequest()
+   * - .toCancelAgreementPaymentRequest()
+   * - .toDescribeAgreement()
+   * - .toGetAgreementCancellationRequest()
+   * - .toGetAgreementPaymentRequest()
+   * - .toGetAgreementTerms()
+   * - .toGetBillingAdjustmentRequest()
+   * - .toListAgreementCancellationRequests()
+   * - .toListAgreementInvoiceLineItems()
+   * - .toListAgreementPaymentRequests()
+   * - .toListBillingAdjustmentRequests()
+   * - .toRejectAgreementCancellationRequest()
+   * - .toRejectAgreementPaymentRequest()
+   * - .toSearchAgreements()
+   * - .toSendAgreementCancellationRequest()
+   * - .toSendAgreementPaymentRequest()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -496,9 +640,13 @@ export class AwsMarketplace extends PolicyStatement {
   }
 
   /**
-   * Filters access by product id for AWS Marketplace RedHat OpenShift and Bedrock Products. Note: Using this condition key will not restrict access to products in AWS Marketplace
+   * Filters access by product id for AWS Marketplace purchases
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html
+   *
+   * Applies to actions:
+   * - .toAcceptAgreementRequest()
+   * - .toCreateAgreementRequest()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

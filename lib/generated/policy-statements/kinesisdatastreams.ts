@@ -517,7 +517,7 @@ export class Kinesis extends PolicyStatement {
   /**
    * Adds a resource of type stream to the statement
    *
-   * https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-streams.html
+   * https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#stream
    *
    * @param streamName - Identifier for the streamName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -534,7 +534,7 @@ export class Kinesis extends PolicyStatement {
   /**
    * Adds a resource of type consumer to the statement
    *
-   * https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-consumers.html
+   * https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#enabled-application
    *
    * @param streamType - Identifier for the streamType.
    * @param streamName - Identifier for the streamName.
@@ -554,12 +554,15 @@ export class Kinesis extends PolicyStatement {
   /**
    * Adds a resource of type kmsKey to the statement
    *
-   * https://docs.aws.amazon.com/kinesis/latest/dev/concepts.html#kms_keys
+   * https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html
    *
    * @param keyId - Identifier for the keyId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:kms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:key/${ keyId }`);
@@ -625,6 +628,7 @@ export class Kinesis extends PolicyStatement {
    * Applies to resource types:
    * - stream
    * - consumer
+   * - kmsKey
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

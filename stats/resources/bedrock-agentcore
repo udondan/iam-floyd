@@ -6,6 +6,7 @@ bedrock-agentcore:code-interpreter
 bedrock-agentcore:code-interpreter-custom
 bedrock-agentcore:evaluator
 bedrock-agentcore:gateway
+bedrock-agentcore:harness
 bedrock-agentcore:memory
 bedrock-agentcore:oauth2credentialprovider
 bedrock-agentcore:online-evaluation-config

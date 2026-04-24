@@ -133,6 +133,17 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_CancelJob.html
+   */
+  public toCancelJob() {
+    return this.to('CancelJob');
+  }
+
+  /**
    * Grants permission to create a geofence-collection
    *
    * Access Level: Write
@@ -419,6 +430,17 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve job details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_GetJob.html
+   */
+  public toGetJob() {
+    return this.to('GetJob');
+  }
+
+  /**
    * Grants permission to retrieve the glyph file for a map resource
    *
    * Access Level: Read
@@ -504,6 +526,17 @@ export class Geo extends PolicyStatement {
    */
   public toListGeofences() {
     return this.to('ListGeofences');
+  }
+
+  /**
+   * Grants permission to list jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_ListJobs.html
+   */
+  public toListJobs() {
+    return this.to('ListJobs');
   }
 
   /**
@@ -631,6 +664,21 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_StartJob.html
+   */
+  public toStartJob() {
+    return this.to('StartJob');
+  }
+
+  /**
    * Grants permission to adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource
    *
    * Access Level: Tagging
@@ -747,6 +795,7 @@ export class Geo extends PolicyStatement {
       'BatchEvaluateGeofences',
       'BatchPutGeofence',
       'BatchUpdateDevicePosition',
+      'CancelJob',
       'CreateGeofenceCollection',
       'CreateKey',
       'CreateMap',
@@ -761,6 +810,7 @@ export class Geo extends PolicyStatement {
       'DeleteTracker',
       'DisassociateTrackerConsumer',
       'PutGeofence',
+      'StartJob',
       'UpdateGeofenceCollection',
       'UpdateKey',
       'UpdateMap',
@@ -782,6 +832,7 @@ export class Geo extends PolicyStatement {
       'GetDevicePosition',
       'GetDevicePositionHistory',
       'GetGeofence',
+      'GetJob',
       'GetMapGlyphs',
       'GetMapSprites',
       'GetMapStyleDescriptor',
@@ -798,6 +849,7 @@ export class Geo extends PolicyStatement {
     ],
     List: [
       'ListGeofenceCollections',
+      'ListJobs',
       'ListKeys',
       'ListMaps',
       'ListPlaceIndexes',
@@ -943,6 +995,7 @@ export class Geo extends PolicyStatement {
    * - .toCreatePlaceIndex()
    * - .toCreateRouteCalculator()
    * - .toCreateTracker()
+   * - .toStartJob()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -987,6 +1040,7 @@ export class Geo extends PolicyStatement {
    * - .toCreatePlaceIndex()
    * - .toCreateRouteCalculator()
    * - .toCreateTracker()
+   * - .toStartJob()
    * - .toTagResource()
    * - .toUntagResource()
    *

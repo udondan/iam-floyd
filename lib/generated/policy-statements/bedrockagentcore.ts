@@ -130,6 +130,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifSubnets()
    * - .ifSecurityGroups()
+   * - .ifRuntimeAuthorizerType()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -277,6 +278,26 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toCreateGatewayTarget() {
     return this.to('CreateGatewayTarget');
+  }
+
+  /**
+   * Grants permission to create a new harness
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - bedrock-agentcore:CreateAgentRuntime
+   * - bedrock-agentcore:GetAgentRuntime
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateHarness.html
+   */
+  public toCreateHarness() {
+    return this.to('CreateHarness');
   }
 
   /**
@@ -503,6 +524,22 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeleteGatewayTarget() {
     return this.to('DeleteGatewayTarget');
+  }
+
+  /**
+   * Grants permission to delete a harness
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - bedrock-agentcore:DeleteAgentRuntime
+   * - bedrock-agentcore:GetAgentRuntime
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteHarness.html
+   */
+  public toDeleteHarness() {
+    return this.to('DeleteHarness');
   }
 
   /**
@@ -771,6 +808,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetGatewayTarget() {
     return this.to('GetGatewayTarget');
+  }
+
+  /**
+   * Grants permission to get details of a harness
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetHarness.html
+   */
+  public toGetHarness() {
+    return this.to('GetHarness');
   }
 
   /**
@@ -1048,6 +1096,20 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke a harness
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - bedrock-agentcore:InvokeAgentRuntime
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeHarness.html
+   */
+  public toInvokeHarness() {
+    return this.to('InvokeHarness');
+  }
+
+  /**
    * Grants permission to invoke an MCP operation against an existing registry
    *
    * Access Level: Read
@@ -1214,6 +1276,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListGateways() {
     return this.to('ListGateways');
+  }
+
+  /**
+   * Grants permission to list harnesses
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnesses.html
+   */
+  public toListHarnesses() {
+    return this.to('ListHarnesses');
   }
 
   /**
@@ -1610,6 +1683,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * Possible conditions:
    * - .ifSubnets()
    * - .ifSecurityGroups()
+   * - .ifRuntimeAuthorizerType()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -1687,6 +1761,22 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toUpdateGatewayTarget() {
     return this.to('UpdateGatewayTarget');
+  }
+
+  /**
+   * Grants permission to update a harness
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - bedrock-agentcore:GetAgentRuntime
+   * - bedrock-agentcore:UpdateAgentRuntime
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateHarness.html
+   */
+  public toUpdateHarness() {
+    return this.to('UpdateHarness');
   }
 
   /**
@@ -1818,6 +1908,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateEvent',
       'CreateGateway',
       'CreateGatewayTarget',
+      'CreateHarness',
       'CreateMemory',
       'CreateOauth2CredentialProvider',
       'CreateOnlineEvaluationConfig',
@@ -1836,6 +1927,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteEvent',
       'DeleteGateway',
       'DeleteGatewayTarget',
+      'DeleteHarness',
       'DeleteMemory',
       'DeleteMemoryRecord',
       'DeleteOauth2CredentialProvider',
@@ -1856,6 +1948,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'InvokeAgentRuntimeWithWebSocketStream',
       'InvokeAgentRuntimeWithWebSocketStreamForUser',
       'InvokeCodeInterpreter',
+      'InvokeHarness',
       'PutResourcePolicy',
       'SaveBrowserSessionProfile',
       'StartBrowserSession',
@@ -1873,6 +1966,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateEvaluator',
       'UpdateGateway',
       'UpdateGatewayTarget',
+      'UpdateHarness',
       'UpdateMemory',
       'UpdateOauth2CredentialProvider',
       'UpdateOnlineEvaluationConfig',
@@ -1900,6 +1994,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetEvent',
       'GetGateway',
       'GetGatewayTarget',
+      'GetHarness',
       'GetMemory',
       'GetMemoryRecord',
       'GetOauth2CredentialProvider',
@@ -1935,6 +2030,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListEvents',
       'ListGatewayTargets',
       'ListGateways',
+      'ListHarnesses',
       'ListMemories',
       'ListMemoryExtractionJobs',
       'ListMemoryRecords',
@@ -2297,6 +2393,23 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type harness to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/harness.html
+   *
+   * @param harnessId - Identifier for the harnessId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHarness(harnessId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:harness/${ harnessId }`);
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -2310,6 +2423,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateCodeInterpreter()
    * - .toCreateEvaluator()
    * - .toCreateGateway()
+   * - .toCreateHarness()
    * - .toCreateMemory()
    * - .toCreateOauth2CredentialProvider()
    * - .toCreateOnlineEvaluationConfig()
@@ -2348,6 +2462,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - browser-profile
    * - workload-identity-directory
    * - token-vault
+   * - harness
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2371,6 +2486,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateCodeInterpreter()
    * - .toCreateEvaluator()
    * - .toCreateGateway()
+   * - .toCreateHarness()
    * - .toCreateMemory()
    * - .toCreateOauth2CredentialProvider()
    * - .toCreateOnlineEvaluationConfig()
@@ -2490,6 +2606,22 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public ifKmsKeyArn(value: string | string[], operator?: Operator | string) {
     return this.if(`KmsKeyArn`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the authorizer type configured for the AgentCore runtime
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-authorizer-type-condition-key.html
+   *
+   * Applies to actions:
+   * - .toCreateAgentRuntime()
+   * - .toUpdateAgentRuntime()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRuntimeAuthorizerType(value: string | string[], operator?: Operator | string) {
+    return this.if(`RuntimeAuthorizerType`, value, operator ?? 'StringLike');
   }
 
   /**

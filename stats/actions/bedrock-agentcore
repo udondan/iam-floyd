@@ -16,6 +16,7 @@ bedrock-agentcore:CreateEvaluator;Write
 bedrock-agentcore:CreateEvent;Write
 bedrock-agentcore:CreateGateway;Write
 bedrock-agentcore:CreateGatewayTarget;Write
+bedrock-agentcore:CreateHarness;Write
 bedrock-agentcore:CreateMemory;Write
 bedrock-agentcore:CreateOauth2CredentialProvider;Write
 bedrock-agentcore:CreateOnlineEvaluationConfig;Write
@@ -34,6 +35,7 @@ bedrock-agentcore:DeleteEvaluator;Write
 bedrock-agentcore:DeleteEvent;Write
 bedrock-agentcore:DeleteGateway;Write
 bedrock-agentcore:DeleteGatewayTarget;Write
+bedrock-agentcore:DeleteHarness;Write
 bedrock-agentcore:DeleteMemory;Write
 bedrock-agentcore:DeleteMemoryRecord;Write
 bedrock-agentcore:DeleteOauth2CredentialProvider;Write
@@ -58,6 +60,7 @@ bedrock-agentcore:GetEvaluator;Read
 bedrock-agentcore:GetEvent;Read
 bedrock-agentcore:GetGateway;Read
 bedrock-agentcore:GetGatewayTarget;Read
+bedrock-agentcore:GetHarness;Read
 bedrock-agentcore:GetMemory;Read
 bedrock-agentcore:GetMemoryRecord;Read
 bedrock-agentcore:GetOauth2CredentialProvider;Read
@@ -82,6 +85,7 @@ bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStream;Write
 bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStreamForUser;Write
 bedrock-agentcore:InvokeCodeInterpreter;Write
 bedrock-agentcore:InvokeGateway;Permissions management
+bedrock-agentcore:InvokeHarness;Write
 bedrock-agentcore:InvokeRegistryMcp;Read
 bedrock-agentcore:ListActors;List
 bedrock-agentcore:ListAgentRuntimeEndpoints;List
@@ -97,6 +101,7 @@ bedrock-agentcore:ListEvaluators;List
 bedrock-agentcore:ListEvents;List
 bedrock-agentcore:ListGatewayTargets;List
 bedrock-agentcore:ListGateways;List
+bedrock-agentcore:ListHarnesses;List
 bedrock-agentcore:ListMemories;List
 bedrock-agentcore:ListMemoryExtractionJobs;List
 bedrock-agentcore:ListMemoryRecords;List
@@ -137,6 +142,7 @@ bedrock-agentcore:UpdateBrowserStream;Write
 bedrock-agentcore:UpdateEvaluator;Write
 bedrock-agentcore:UpdateGateway;Write
 bedrock-agentcore:UpdateGatewayTarget;Write
+bedrock-agentcore:UpdateHarness;Write
 bedrock-agentcore:UpdateMemory;Write
 bedrock-agentcore:UpdateOauth2CredentialProvider;Write
 bedrock-agentcore:UpdateOnlineEvaluationConfig;Write

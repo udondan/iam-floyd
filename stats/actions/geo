@@ -7,6 +7,7 @@ geo:BatchPutGeofence;Write
 geo:BatchUpdateDevicePosition;Write
 geo:CalculateRoute;Read
 geo:CalculateRouteMatrix;Read
+geo:CancelJob;Write
 geo:CreateGeofenceCollection;Write
 geo:CreateKey;Write
 geo:CreateMap;Write
@@ -30,6 +31,7 @@ geo:ForecastGeofenceEvents;Read
 geo:GetDevicePosition;Read
 geo:GetDevicePositionHistory;Read
 geo:GetGeofence;Read
+geo:GetJob;Read
 geo:GetMapGlyphs;Read
 geo:GetMapSprites;Read
 geo:GetMapStyleDescriptor;Read
@@ -38,6 +40,7 @@ geo:GetPlace;Read
 geo:ListDevicePositions;Read
 geo:ListGeofenceCollections;List
 geo:ListGeofences;Read
+geo:ListJobs;List
 geo:ListKeys;List
 geo:ListMaps;List
 geo:ListPlaceIndexes;List
@@ -49,6 +52,7 @@ geo:PutGeofence;Write
 geo:SearchPlaceIndexForPosition;Read
 geo:SearchPlaceIndexForSuggestions;Read
 geo:SearchPlaceIndexForText;Read
+geo:StartJob;Write
 geo:TagResource;Tagging
 geo:UntagResource;Tagging
 geo:UpdateGeofenceCollection;Write
