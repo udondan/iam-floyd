@@ -29,7 +29,8 @@
         "ec2:DescribeInstanceTypeOfferings",
         "ec2:DescribeInstanceTypes",
         "ec2:DescribeSecurityGroups",
-        "ec2:DescribeSubnets"
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcEncryptionControls"
       ],
       "Resource": "*"
     },
