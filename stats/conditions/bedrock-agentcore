@@ -7,6 +7,7 @@ bedrock-agentcore:InboundJwtClaim/sub
 bedrock-agentcore:KmsKeyArn
 bedrock-agentcore:RequestTag/${TagKey}
 bedrock-agentcore:ResourceTag/${TagKey}
+bedrock-agentcore:RuntimeAuthorizerType
 bedrock-agentcore:TagKeys
 bedrock-agentcore:actorId
 bedrock-agentcore:namespace
