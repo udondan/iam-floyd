@@ -19,6 +19,7 @@
         "s3:GetBucketTagging",
         "s3:GetAccountPublicAccessBlock",
         "s3:ListAllMyBuckets",
+        "s3:ListBucket",
         "s3:GetBucketAcl",
         "s3:GetBucketPolicy",
         "s3:GetBucketPolicyStatus",
@@ -30,7 +31,9 @@
         "ec2:DescribeVpcs",
         "ec2:DescribeSecurityGroups",
         "ecs:ListClusters",
-        "ecs:DescribeClusters"
+        "ecs:DescribeClusters",
+        "ecs:DescribeTasks",
+        "ecs:DescribeTaskDefinition"
       ],
       "Resource": "*"
     },
