@@ -30,6 +30,20 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete multiple code reviews in a single request
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchDeleteCodeReviews.html
+   */
+  public toBatchDeleteCodeReviews() {
+    return this.to('BatchDeleteCodeReviews');
+  }
+
+  /**
    * Grants permission to delete multiple penetration tests in a single request
    *
    * Access Level: Write
@@ -66,6 +80,48 @@ export class Securityagent extends PolicyStatement {
    */
   public toBatchGetArtifactMetadata() {
     return this.to('BatchGetArtifactMetadata');
+  }
+
+  /**
+   * Grants permission to retrieve multiple code review job tasks in a single request
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetCodeReviewJobTasks.html
+   */
+  public toBatchGetCodeReviewJobTasks() {
+    return this.to('BatchGetCodeReviewJobTasks');
+  }
+
+  /**
+   * Grants permission to retrieve multiple code review jobs in a single request
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetCodeReviewJobs.html
+   */
+  public toBatchGetCodeReviewJobs() {
+    return this.to('BatchGetCodeReviewJobs');
+  }
+
+  /**
+   * Grants permission to retrieve multiple code reviews in a single request
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetCodeReviews.html
+   */
+  public toBatchGetCodeReviews() {
+    return this.to('BatchGetCodeReviews');
   }
 
   /**
@@ -187,6 +243,20 @@ export class Securityagent extends PolicyStatement {
    */
   public toCreateApplication() {
     return this.to('CreateApplication');
+  }
+
+  /**
+   * Grants permission to create a new code review configuration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreateCodeReview.html
+   */
+  public toCreateCodeReview() {
+    return this.to('CreateCodeReview');
   }
 
   /**
@@ -486,6 +556,48 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tasks associated with a code review job
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListCodeReviewJobTasks.html
+   */
+  public toListCodeReviewJobTasks() {
+    return this.to('ListCodeReviewJobTasks');
+  }
+
+  /**
+   * Grants permission to list code review jobs associated with a code review
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListCodeReviewJobsForCodeReview.html
+   */
+  public toListCodeReviewJobsForCodeReview() {
+    return this.to('ListCodeReviewJobsForCodeReview');
+  }
+
+  /**
+   * Grants permission to list code reviews with optional filtering by status
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListCodeReviews.html
+   */
+  public toListCodeReviews() {
+    return this.to('ListCodeReviews');
+  }
+
+  /**
    * Grants permission to list design review comments
    *
    * Access Level: List
@@ -681,6 +793,21 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate the execution of a code review
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   *
+   * https://docs.aws.amazon.com/securityagent/API_StartCodeReviewJob.html
+   */
+  public toStartCodeReviewJob() {
+    return this.to('StartCodeReviewJob');
+  }
+
+  /**
    * Grants permission to initiate the execution of a penetration test
    *
    * Access Level: Write
@@ -693,6 +820,20 @@ export class Securityagent extends PolicyStatement {
    */
   public toStartPentestJob() {
     return this.to('StartPentestJob');
+  }
+
+  /**
+   * Grants permission to stop the execution of a running code review
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_StopCodeReviewJob.html
+   */
+  public toStopCodeReviewJob() {
+    return this.to('StopCodeReviewJob');
   }
 
   /**
@@ -779,6 +920,20 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing code review with new configuration or settings
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateCodeReview.html
+   */
+  public toUpdateCodeReview() {
+    return this.to('UpdateCodeReview');
+  }
+
+  /**
    * Grants permission to update an existing security finding with new details or status
    *
    * Access Level: Write
@@ -853,9 +1008,11 @@ export class Securityagent extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddArtifact',
+      'BatchDeleteCodeReviews',
       'BatchDeletePentests',
       'CreateAgentSpace',
       'CreateApplication',
+      'CreateCodeReview',
       'CreateDesignReview',
       'CreateIntegration',
       'CreateMembership',
@@ -874,11 +1031,14 @@ export class Securityagent extends PolicyStatement {
       'InitiateProviderRegistration',
       'PutDesignReviewFeedback',
       'StartCodeRemediation',
+      'StartCodeReviewJob',
       'StartPentestJob',
+      'StopCodeReviewJob',
       'StopPentestJob',
       'ToggleManagedSecurityRequirement',
       'UpdateAgentSpace',
       'UpdateApplication',
+      'UpdateCodeReview',
       'UpdateFinding',
       'UpdateIntegratedResources',
       'UpdatePentest',
@@ -889,6 +1049,9 @@ export class Securityagent extends PolicyStatement {
     Read: [
       'BatchGetAgentSpaces',
       'BatchGetArtifactMetadata',
+      'BatchGetCodeReviewJobTasks',
+      'BatchGetCodeReviewJobs',
+      'BatchGetCodeReviews',
       'BatchGetFindings',
       'BatchGetPentestJobContentMetadata',
       'BatchGetPentestJobTasks',
@@ -908,6 +1071,9 @@ export class Securityagent extends PolicyStatement {
       'ListAgentSpaces',
       'ListApplications',
       'ListArtifacts',
+      'ListCodeReviewJobTasks',
+      'ListCodeReviewJobsForCodeReview',
+      'ListCodeReviews',
       'ListDesignReviewComments',
       'ListDesignReviews',
       'ListDiscoveredEndpoints',

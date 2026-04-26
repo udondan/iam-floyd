@@ -1,7 +1,11 @@
 securityagent:AddArtifact;Write
+securityagent:BatchDeleteCodeReviews;Write
 securityagent:BatchDeletePentests;Write
 securityagent:BatchGetAgentSpaces;Read
 securityagent:BatchGetArtifactMetadata;Read
+securityagent:BatchGetCodeReviewJobTasks;Read
+securityagent:BatchGetCodeReviewJobs;Read
+securityagent:BatchGetCodeReviews;Read
 securityagent:BatchGetFindings;Read
 securityagent:BatchGetPentestJobContentMetadata;Read
 securityagent:BatchGetPentestJobTasks;Read
@@ -10,6 +14,7 @@ securityagent:BatchGetPentests;Read
 securityagent:BatchGetTargetDomains;Read
 securityagent:CreateAgentSpace;Write
 securityagent:CreateApplication;Write
+securityagent:CreateCodeReview;Write
 securityagent:CreateDesignReview;Write
 securityagent:CreateIntegration;Write
 securityagent:CreateMembership;Write
@@ -36,6 +41,9 @@ securityagent:InitiateProviderRegistration;Write
 securityagent:ListAgentSpaces;List
 securityagent:ListApplications;List
 securityagent:ListArtifacts;List
+securityagent:ListCodeReviewJobTasks;List
+securityagent:ListCodeReviewJobsForCodeReview;List
+securityagent:ListCodeReviews;List
 securityagent:ListDesignReviewComments;List
 securityagent:ListDesignReviews;List
 securityagent:ListDiscoveredEndpoints;List
@@ -52,13 +60,16 @@ securityagent:ListTagsForResource;Read
 securityagent:ListTargetDomains;List
 securityagent:PutDesignReviewFeedback;Write
 securityagent:StartCodeRemediation;Write
+securityagent:StartCodeReviewJob;Write
 securityagent:StartPentestJob;Write
+securityagent:StopCodeReviewJob;Write
 securityagent:StopPentestJob;Write
 securityagent:TagResource;Tagging
 securityagent:ToggleManagedSecurityRequirement;Write
 securityagent:UntagResource;Tagging
 securityagent:UpdateAgentSpace;Write
 securityagent:UpdateApplication;Write
+securityagent:UpdateCodeReview;Write
 securityagent:UpdateFinding;Write
 securityagent:UpdateIntegratedResources;Write
 securityagent:UpdatePentest;Write
