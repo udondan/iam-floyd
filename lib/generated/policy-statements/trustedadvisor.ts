@@ -30,39 +30,6 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an engagement
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toCreateEngagement() {
-    return this.to('CreateEngagement');
-  }
-
-  /**
-   * Grants permission to create an engagement attachment
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toCreateEngagementAttachment() {
-    return this.to('CreateEngagementAttachment');
-  }
-
-  /**
-   * Grants permission to create an engagement communication
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toCreateEngagementCommunication() {
-    return this.to('CreateEngagementCommunication');
-  }
-
-  /**
    * Grants permission to the organization management account to delete email notification preferences from a delegated administrator account for Trusted Advisor Priority
    *
    * Access Level: Write
@@ -283,39 +250,6 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view an engagment
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toGetEngagement() {
-    return this.to('GetEngagement');
-  }
-
-  /**
-   * Grants permission to view an engagment attachment
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toGetEngagementAttachment() {
-    return this.to('GetEngagementAttachment');
-  }
-
-  /**
-   * Grants permission to view a specific engagement type
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toGetEngagementType() {
-    return this.to('GetEngagementType');
-  }
-
-  /**
    * Grants permission to get a specific recommendation within an AWS Organization's organization. This API supports only prioritized recommendations
    *
    * Access Level: Read
@@ -368,39 +302,6 @@ export class Trustedadvisor extends PolicyStatement {
    */
   public toListChecks() {
     return this.to('ListChecks');
-  }
-
-  /**
-   * Grants permission to view all communications for an engagement
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toListEngagementCommunications() {
-    return this.to('ListEngagementCommunications');
-  }
-
-  /**
-   * Grants permission to view all engagement types
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toListEngagementTypes() {
-    return this.to('ListEngagementTypes');
-  }
-
-  /**
-   * Grants permission to view all engagements
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toListEngagements() {
-    return this.to('ListEngagements');
   }
 
   /**
@@ -514,28 +415,6 @@ export class Trustedadvisor extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the details of an engagement
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toUpdateEngagement() {
-    return this.to('UpdateEngagement');
-  }
-
-  /**
-   * Grants permission to update the status of an engagement
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations
-   */
-  public toUpdateEngagementStatus() {
-    return this.to('UpdateEngagementStatus');
-  }
-
-  /**
    * Grants permission to create or update your email notification preferences for Trusted Advisor Priority
    *
    * Access Level: Write
@@ -593,9 +472,6 @@ export class Trustedadvisor extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'BatchUpdateRecommendationResourceExclusion',
-      'CreateEngagement',
-      'CreateEngagementAttachment',
-      'CreateEngagementCommunication',
       'DeleteNotificationConfigurationForDelegatedAdmin',
       'ExcludeCheckItems',
       'GenerateReport',
@@ -603,8 +479,6 @@ export class Trustedadvisor extends PolicyStatement {
       'RefreshCheck',
       'SetAccountAccess',
       'SetOrganizationAccess',
-      'UpdateEngagement',
-      'UpdateEngagementStatus',
       'UpdateNotificationConfigurations',
       'UpdateNotificationPreferences',
       'UpdateOrganizationRecommendationLifecycle',
@@ -629,15 +503,9 @@ export class Trustedadvisor extends PolicyStatement {
       'DescribeRisks',
       'DescribeServiceMetadata',
       'DownloadRisk',
-      'GetEngagement',
-      'GetEngagementAttachment',
-      'GetEngagementType',
       'GetOrganizationRecommendation',
       'GetRecommendation',
       'ListAccountsForParent',
-      'ListEngagementCommunications',
-      'ListEngagementTypes',
-      'ListEngagements',
       'ListOrganizationalUnitsForParent',
       'ListRoots'
     ],

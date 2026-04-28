@@ -32,6 +32,7 @@ kms:RotationPeriodInDays
 kms:ScheduleKeyDeletionPendingWindowInDays
 kms:SigningAlgorithm
 kms:TagKeys
+kms:TrailingDaysWithoutKeyUsage
 kms:ValidTo
 kms:ViaService
 kms:WrappingAlgorithm

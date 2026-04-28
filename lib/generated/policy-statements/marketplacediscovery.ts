@@ -23,7 +23,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetListing.html
    */
   public toGetListing() {
     return this.to('GetListing');
@@ -34,7 +34,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetOffer.html
    */
   public toGetOffer() {
     return this.to('GetOffer');
@@ -45,7 +45,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetOfferSet.html
    */
   public toGetOfferSet() {
     return this.to('GetOfferSet');
@@ -56,7 +56,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetOfferTerms.html
    */
   public toGetOfferTerms() {
     return this.to('GetOfferTerms');
@@ -67,7 +67,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_GetProduct.html
    */
   public toGetProduct() {
     return this.to('GetProduct');
@@ -78,14 +78,14 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_ListFulfillmentOptions.html
    */
   public toListFulfillmentOptions() {
     return this.to('ListFulfillmentOptions');
   }
 
   /**
-   * Grants permission to users to list their private offers
+   * Grants permission to list private offers
    *
    * Access Level: List
    *
@@ -100,18 +100,18 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_ListPurchaseOptions.html
    */
   public toListPurchaseOptions() {
     return this.to('ListPurchaseOptions');
   }
 
   /**
-   * Grants permission to retrieve facet values for filtering listings
+   * Grants permission to search for facet values to filter listings
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_SearchFacets.html
    */
   public toSearchFacets() {
     return this.to('SearchFacets');
@@ -122,7 +122,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-discovery_SearchListings.html
    */
   public toSearchListings() {
     return this.to('SearchListings');
@@ -148,7 +148,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
   /**
    * Adds a resource of type Product to the statement
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model
    *
    * @param catalogName - Identifier for the catalogName.
    * @param productId - Identifier for the productId.
@@ -161,7 +161,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
   /**
    * Adds a resource of type Listing to the statement
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model
    *
    * @param catalogName - Identifier for the catalogName.
    * @param listingId - Identifier for the listingId.
@@ -172,9 +172,22 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type AllListings to the statement
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model
+   *
+   * @param catalogName - Identifier for the catalogName.
+   * @param resourceName - Identifier for the resourceName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAllListings(catalogName: string, resourceName: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace:::catalog/${ catalogName }/listing/${ resourceName }`);
+  }
+
+  /**
    * Adds a resource of type Offer to the statement
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model
    *
    * @param catalogName - Identifier for the catalogName.
    * @param offerId - Identifier for the offerId.
@@ -187,7 +200,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
   /**
    * Adds a resource of type OfferSet to the statement
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model
    *
    * @param catalogName - Identifier for the catalogName.
    * @param offerSetId - Identifier for the offerSetId.
@@ -200,7 +213,7 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
   /**
    * Adds a resource of type PurchaseOption to the statement
    *
-   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-api-access-control.html
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model
    *
    * @param catalogName - Identifier for the catalogName.
    * @param purchaseOptionId - Identifier for the purchaseOptionId.
@@ -208,5 +221,18 @@ export class AwsMarketplaceDiscovery extends PolicyStatement {
    */
   public onPurchaseOption(catalogName: string, purchaseOptionId: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace:::catalog/${ catalogName }/purchaseOption/${ purchaseOptionId }`);
+  }
+
+  /**
+   * Adds a resource of type AllPurchaseOptions to the statement
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/discovery-apis.html#discovery-data-model
+   *
+   * @param catalogName - Identifier for the catalogName.
+   * @param resourceName - Identifier for the resourceName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAllPurchaseOptions(catalogName: string, resourceName: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace:::catalog/${ catalogName }/purchaseOption/${ resourceName }`);
   }
 }

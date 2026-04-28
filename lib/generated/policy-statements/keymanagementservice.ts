@@ -363,6 +363,7 @@ export class Kms extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifCallerAccount()
+   * - .ifTrailingDaysWithoutKeyUsage()
    * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKey.html
@@ -730,6 +731,21 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Controls permission to view the last usage of an AWS KMS key
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
+   *
+   * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyLastUsage.html
+   */
+  public toGetKeyLastUsage() {
+    return this.to('GetKeyLastUsage');
+  }
+
+  /**
    * Controls permission to view the key policy for the specified AWS KMS key
    *
    * Access Level: Read
@@ -1038,6 +1054,7 @@ export class Kms extends PolicyStatement {
    * Possible conditions:
    * - .ifCallerAccount()
    * - .ifScheduleKeyDeletionPendingWindowInDays()
+   * - .ifTrailingDaysWithoutKeyUsage()
    * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ScheduleKeyDeletion.html
@@ -1254,6 +1271,7 @@ export class Kms extends PolicyStatement {
     Read: [
       'DescribeCustomKeyStores',
       'DescribeKey',
+      'GetKeyLastUsage',
       'GetKeyPolicy',
       'GetKeyRotationStatus',
       'GetParametersForImport',
@@ -1409,6 +1427,7 @@ export class Kms extends PolicyStatement {
    * - .toGenerateDataKeyPairWithoutPlaintext()
    * - .toGenerateDataKeyWithoutPlaintext()
    * - .toGenerateMac()
+   * - .toGetKeyLastUsage()
    * - .toGetKeyPolicy()
    * - .toGetKeyRotationStatus()
    * - .toGetParametersForImport()
@@ -1936,6 +1955,22 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Filters access to the ScheduleKeyDeletion and DisableKey operations based on the number of days since the AWS KMS key was last used
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-trailing-days-without-key-usage
+   *
+   * Applies to actions:
+   * - .toDisableKey()
+   * - .toScheduleKeyDeletion()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifTrailingDaysWithoutKeyUsage(value: number | number[], operator?: Operator | string) {
+    return this.if(`TrailingDaysWithoutKeyUsage`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
    * Filters access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-valid-to
@@ -1985,6 +2020,7 @@ export class Kms extends PolicyStatement {
    * - .toGenerateDataKeyPairWithoutPlaintext()
    * - .toGenerateDataKeyWithoutPlaintext()
    * - .toGenerateMac()
+   * - .toGetKeyLastUsage()
    * - .toGetKeyPolicy()
    * - .toGetKeyRotationStatus()
    * - .toGetParametersForImport()
