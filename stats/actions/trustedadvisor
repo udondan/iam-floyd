@@ -1,7 +1,4 @@
 trustedadvisor:BatchUpdateRecommendationResourceExclusion;Write
-trustedadvisor:CreateEngagement;Write
-trustedadvisor:CreateEngagementAttachment;Write
-trustedadvisor:CreateEngagementCommunication;Write
 trustedadvisor:DeleteNotificationConfigurationForDelegatedAdmin;Write
 trustedadvisor:DescribeAccount;Read
 trustedadvisor:DescribeAccountAccess;Read
@@ -22,17 +19,11 @@ trustedadvisor:DescribeServiceMetadata;Read
 trustedadvisor:DownloadRisk;Read
 trustedadvisor:ExcludeCheckItems;Write
 trustedadvisor:GenerateReport;Write
-trustedadvisor:GetEngagement;Read
-trustedadvisor:GetEngagementAttachment;Read
-trustedadvisor:GetEngagementType;Read
 trustedadvisor:GetOrganizationRecommendation;Read
 trustedadvisor:GetRecommendation;Read
 trustedadvisor:IncludeCheckItems;Write
 trustedadvisor:ListAccountsForParent;Read
 trustedadvisor:ListChecks;List
-trustedadvisor:ListEngagementCommunications;Read
-trustedadvisor:ListEngagementTypes;Read
-trustedadvisor:ListEngagements;Read
 trustedadvisor:ListOrganizationRecommendationAccounts;List
 trustedadvisor:ListOrganizationRecommendationResources;List
 trustedadvisor:ListOrganizationRecommendations;List
@@ -43,8 +34,6 @@ trustedadvisor:ListRoots;Read
 trustedadvisor:RefreshCheck;Write
 trustedadvisor:SetAccountAccess;Write
 trustedadvisor:SetOrganizationAccess;Write
-trustedadvisor:UpdateEngagement;Write
-trustedadvisor:UpdateEngagementStatus;Write
 trustedadvisor:UpdateNotificationConfigurations;Write
 trustedadvisor:UpdateNotificationPreferences;Write
 trustedadvisor:UpdateOrganizationRecommendationLifecycle;Write

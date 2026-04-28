@@ -5,9 +5,12 @@ aidevops:CreateBacklogTask;Write
 aidevops:CreateChat;Write
 aidevops:CreateKnowledgeItem;Write
 aidevops:CreateOneTimeLoginSession;Write
+aidevops:CreatePrivateConnection;Write
 aidevops:DeleteAgentSpace;Write
 aidevops:DeleteKnowledgeItem;Write
+aidevops:DeletePrivateConnection;Write
 aidevops:DeregisterService;Write
+aidevops:DescribePrivateConnection;Read
 aidevops:DescribeSupportLevel;Write
 aidevops:DisableOperatorApp;Write
 aidevops:DisassociateService;Write
@@ -33,6 +36,7 @@ aidevops:ListJournalRecords;List
 aidevops:ListKnowledgeItemVersions;List
 aidevops:ListKnowledgeItems;List
 aidevops:ListPendingMessages;List
+aidevops:ListPrivateConnections;List
 aidevops:ListRecommendations;List
 aidevops:ListServices;List
 aidevops:ListTagsForResource;Read
@@ -48,5 +52,6 @@ aidevops:UpdateBacklogTask;Write
 aidevops:UpdateGoal;Write
 aidevops:UpdateKnowledgeItem;Write
 aidevops:UpdateOperatorAppIdpConfig;Write
+aidevops:UpdatePrivateConnectionCertificate;Write
 aidevops:UpdateRecommendation;Write
 aidevops:ValidateAwsAssociations;Write

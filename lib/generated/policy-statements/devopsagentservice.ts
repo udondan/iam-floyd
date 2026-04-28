@@ -101,6 +101,22 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a private connection
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toCreatePrivateConnection() {
+    return this.to('CreatePrivateConnection');
+  }
+
+  /**
    * Grants permission to delete agentspace
    *
    * Access Level: Write
@@ -126,6 +142,20 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a private connection
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toDeletePrivateConnection() {
+    return this.to('DeletePrivateConnection');
+  }
+
+  /**
    * Grants permission to deregister a service
    *
    * Access Level: Write
@@ -137,6 +167,20 @@ export class Aidevops extends PolicyStatement {
    */
   public toDeregisterService() {
     return this.to('DeregisterService');
+  }
+
+  /**
+   * Grants permission to describe a private connection
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toDescribePrivateConnection() {
+    return this.to('DescribePrivateConnection');
   }
 
   /**
@@ -421,6 +465,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list private connections
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toListPrivateConnections() {
+    return this.to('ListPrivateConnections');
+  }
+
+  /**
    * Grants permission to list recommendations
    *
    * Access Level: List
@@ -606,6 +661,20 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a private connection certificate
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   */
+  public toUpdatePrivateConnectionCertificate() {
+    return this.to('UpdatePrivateConnectionCertificate');
+  }
+
+  /**
    * Grants permission to update a recommendation
    *
    * Access Level: Write
@@ -638,8 +707,10 @@ export class Aidevops extends PolicyStatement {
       'CreateChat',
       'CreateKnowledgeItem',
       'CreateOneTimeLoginSession',
+      'CreatePrivateConnection',
       'DeleteAgentSpace',
       'DeleteKnowledgeItem',
+      'DeletePrivateConnection',
       'DeregisterService',
       'DescribeSupportLevel',
       'DisableOperatorApp',
@@ -656,10 +727,12 @@ export class Aidevops extends PolicyStatement {
       'UpdateGoal',
       'UpdateKnowledgeItem',
       'UpdateOperatorAppIdpConfig',
+      'UpdatePrivateConnectionCertificate',
       'UpdateRecommendation',
       'ValidateAwsAssociations'
     ],
     Read: [
+      'DescribePrivateConnection',
       'GetAccountUsage',
       'GetAgentSpace',
       'GetAssociation',
@@ -682,6 +755,7 @@ export class Aidevops extends PolicyStatement {
       'ListKnowledgeItemVersions',
       'ListKnowledgeItems',
       'ListPendingMessages',
+      'ListPrivateConnections',
       'ListRecommendations',
       'ListServices',
       'ListWebhooks'
@@ -725,6 +799,23 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type private-connection to the statement
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPrivateConnection(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aidevops:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:private-connection/${ name }`);
+  }
+
+  /**
    * Adds a resource of type service to the statement
    *
    * https://docs.aws.amazon.com/devopsagent/latest/userguide/
@@ -748,6 +839,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAgentSpace()
+   * - .toCreatePrivateConnection()
    * - .toListTagsForResource()
    * - .toRegisterService()
    * - .toTagResource()
@@ -767,8 +859,11 @@ export class Aidevops extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAgentSpace()
+   * - .toCreatePrivateConnection()
    * - .toDeleteAgentSpace()
+   * - .toDeletePrivateConnection()
    * - .toDeregisterService()
+   * - .toDescribePrivateConnection()
    * - .toGetAgentSpace()
    * - .toGetService()
    * - .toListTagsForResource()
@@ -776,9 +871,11 @@ export class Aidevops extends PolicyStatement {
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateAgentSpace()
+   * - .toUpdatePrivateConnectionCertificate()
    *
    * Applies to resource types:
    * - agentspace
+   * - private-connection
    * - service
    *
    * @param tagKey The tag key to check
@@ -796,6 +893,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAgentSpace()
+   * - .toCreatePrivateConnection()
    * - .toListTagsForResource()
    * - .toRegisterService()
    * - .toTagResource()

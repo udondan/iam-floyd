@@ -23,6 +23,7 @@ kms:GenerateDataKeyPairWithoutPlaintext;Write
 kms:GenerateDataKeyWithoutPlaintext;Write
 kms:GenerateMac;Write
 kms:GenerateRandom;Write
+kms:GetKeyLastUsage;Read
 kms:GetKeyPolicy;Read
 kms:GetKeyRotationStatus;Read
 kms:GetParametersForImport;Read
