@@ -14,6 +14,21 @@
       "Resource": [
         "*"
       ]
+    },
+    {
+      "Sid": "AllowCreateServiceLinkedRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/transform-custom.amazonaws.com/AWSServiceRoleForAWSTransformCustom"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "transform-custom.amazonaws.com"
+        }
+      }
     }
   ]
 }

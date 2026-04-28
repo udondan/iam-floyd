@@ -125,7 +125,8 @@
         "elasticloadbalancing:RemoveListenerCertificates",
         "elasticloadbalancing:ModifyRule",
         "elasticloadbalancing:ModifyIpPools",
-        "elasticloadbalancing:ModifyCapacityReservation"
+        "elasticloadbalancing:ModifyCapacityReservation",
+        "elasticloadbalancing:DescribeLoadBalancers"
       ],
       "Resource": "*",
       "Condition": {
