@@ -6,6 +6,7 @@ scheduler:GetSchedule;Read
 scheduler:GetScheduleGroup;Read
 scheduler:ListScheduleGroups;List
 scheduler:ListSchedules;List
+scheduler:ListSchedulesByTarget;List
 scheduler:ListTagsForResource;Read
 scheduler:TagResource;Tagging
 scheduler:UntagResource;Tagging

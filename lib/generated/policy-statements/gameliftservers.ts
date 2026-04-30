@@ -593,6 +593,17 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve container port mappings for a container fleet
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gameliftservers/latest/apireference/API_DescribeContainerGroupPortMappings.html
+   */
+  public toDescribeContainerGroupPortMappings() {
+    return this.to('DescribeContainerGroupPortMappings');
+  }
+
+  /**
    * Grants permission to retrieve the maximum allowed and current usage for EC2 instance types
    *
    * Access Level: Read
@@ -1542,6 +1553,7 @@ export class Gamelift extends PolicyStatement {
       'DescribeCompute',
       'DescribeContainerFleet',
       'DescribeContainerGroupDefinition',
+      'DescribeContainerGroupPortMappings',
       'DescribeEC2InstanceLimits',
       'DescribeFleetAttributes',
       'DescribeFleetCapacity',

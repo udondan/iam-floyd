@@ -21,6 +21,7 @@ wickr:GetGuestUserHistoryCount;Read
 wickr:GetNetwork;Read
 wickr:GetNetworkSettings;Read
 wickr:GetOidcInfo;Read
+wickr:GetOpentdfConfig;Read
 wickr:GetSecurityGroup;Read
 wickr:GetUser;Read
 wickr:GetUsersCount;Read
@@ -35,6 +36,7 @@ wickr:ListTagsForResource;Read
 wickr:ListUsers;Read
 wickr:RegisterOidcConfig;Write
 wickr:RegisterOidcConfigTest;Write
+wickr:RegisterOpentdfConfig;Write
 wickr:TagResource;Tagging
 wickr:UntagResource;Tagging
 wickr:UpdateBot;Write
