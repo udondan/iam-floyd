@@ -39,6 +39,7 @@ gamelift:DescribeBuild;Read
 gamelift:DescribeCompute;Read
 gamelift:DescribeContainerFleet;Read
 gamelift:DescribeContainerGroupDefinition;Read
+gamelift:DescribeContainerGroupPortMappings;Read
 gamelift:DescribeEC2InstanceLimits;Read
 gamelift:DescribeFleetAttributes;Read
 gamelift:DescribeFleetCapacity;Read

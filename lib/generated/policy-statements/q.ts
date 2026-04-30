@@ -30,6 +30,72 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate a login domain with an Amazon Q Developer Profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toAssociateLoginDomain() {
+    return this.to('AssociateLoginDomain');
+  }
+
+  /**
+   * Grants permission to describe multiple groups for an Amazon Q Developer Profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toBatchDescribeGroups() {
+    return this.to('BatchDescribeGroups');
+  }
+
+  /**
+   * Grants permission to describe multiple users for an Amazon Q Developer Profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toBatchDescribeUsers() {
+    return this.to('BatchDescribeUsers');
+  }
+
+  /**
+   * Grants permission to get multiple groups for an Amazon Q Developer Profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toBatchGetGroups() {
+    return this.to('BatchGetGroups');
+  }
+
+  /**
+   * Grants permission to get multiple users for an Amazon Q Developer Profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toBatchGetUsers() {
+    return this.to('BatchGetUsers');
+  }
+
+  /**
+   * Grants permission to create an artifact with Amazon Q
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toCreateArtifact() {
+    return this.to('CreateArtifact');
+  }
+
+  /**
    * Grants permission to create a user or group assignment for an Amazon Q Developer Profile
    *
    * Access Level: Write
@@ -94,6 +160,17 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a SCIM access token for an Amazon Q Developer Profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toCreateScimAccessToken() {
+    return this.to('CreateScimAccessToken');
+  }
+
+  /**
    * Grants permission to delete a user or group assignment for an Amazon Q Developer Profile
    *
    * Access Level: Write
@@ -151,6 +228,28 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a SCIM access token for an Amazon Q Developer Profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toDeleteScimAccessToken() {
+    return this.to('DeleteScimAccessToken');
+  }
+
+  /**
+   * Grants permission to disassociate a login domain from an Amazon Q Developer Profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toDisassociateLoginDomain() {
+    return this.to('DisassociateLoginDomain');
+  }
+
+  /**
    * Grants permission to generate code from CLI commands in Amazon Q
    *
    * Access Level: Read
@@ -170,6 +269,33 @@ export class Q extends PolicyStatement {
    */
   public toGenerateCodeRecommendations() {
     return this.to('GenerateCodeRecommendations');
+  }
+
+  /**
+   * Grants permission to view an Amazon Q artifact
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toGetArtifact() {
+    return this.to('GetArtifact');
+  }
+
+  /**
+   * Grants permission to view results of an action in an Amazon Q artifact
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - cloudformation:GetResource
+   * - cloudformation:GetResourceRequestStatus
+   * - cloudformation:ListResourceRequests
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toGetArtifactActionResult() {
+    return this.to('GetArtifactActionResult');
   }
 
   /**
@@ -253,6 +379,28 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list groups for an Amazon Q Developer Profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListGroups() {
+    return this.to('ListGroups');
+  }
+
+  /**
+   * Grants permission to list login domains for an Amazon Q Developer Profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListLoginDomains() {
+    return this.to('ListLoginDomains');
+  }
+
+  /**
    * Grants permission to list available plugins in Amazon Q
    *
    * Access Level: List
@@ -275,6 +423,17 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list SCIM access tokens for an Amazon Q Developer Profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListScimAccessTokens() {
+    return this.to('ListScimAccessTokens');
+  }
+
+  /**
    * Grants permission to list all tags associated with an Amazon Q resource
    *
    * Access Level: List
@@ -289,6 +448,17 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list users for an Amazon Q Developer Profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toListUsers() {
+    return this.to('ListUsers');
+  }
+
+  /**
    * Grants permission to allow Amazon Q to perform actions on your behalf
    *
    * Access Level: Write
@@ -297,6 +467,29 @@ export class Q extends PolicyStatement {
    */
   public toPassRequest() {
     return this.to('PassRequest');
+  }
+
+  /**
+   * Grants permission to perform an action in an Amazon Q artifact
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cloudformation:CancelResourceRequest
+   * - cloudformation:CreateResource
+   * - cloudformation:GetResource
+   * - cloudformation:GetResourceRequestStatus
+   * - cloudformation:ListResourceRequests
+   * - cloudformation:UpdateResource
+   * - iam:AttachRolePolicy
+   * - iam:CreatePolicy
+   * - iam:CreateRole
+   * - iam:PutRolePolicy
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toPerformArtifactAction() {
+    return this.to('PerformArtifactAction');
   }
 
   /**
@@ -403,6 +596,21 @@ export class Q extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a user or group assignment for an Amazon Q Developer Profile
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifIdentitystoreUserId()
+   * - .ifIdentitystoreGroupId()
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
+   */
+  public toUpdateAssignment() {
+    return this.to('UpdateAssignment');
+  }
+
+  /**
    * Grants permission to update OAuth user in Amazon Q
    *
    * Access Level: Write
@@ -504,21 +712,28 @@ export class Q extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateConnectorResource',
+      'AssociateLoginDomain',
+      'CreateArtifact',
       'CreateAssignment',
       'CreateAuthGrant',
       'CreateOAuthAppConnection',
       'CreatePlugin',
+      'CreateScimAccessToken',
       'DeleteAssignment',
       'DeleteConversation',
       'DeleteOAuthAppConnection',
       'DeletePlugin',
+      'DeleteScimAccessToken',
+      'DisassociateLoginDomain',
       'PassRequest',
+      'PerformArtifactAction',
       'RejectConnector',
       'SendEvent',
       'SendMessage',
       'StartConversation',
       'StartTroubleshootingAnalysis',
       'StartTroubleshootingResolutionExplanation',
+      'UpdateAssignment',
       'UpdateAuthGrant',
       'UpdateConversation',
       'UpdateOAuthAppConnection',
@@ -528,8 +743,14 @@ export class Q extends PolicyStatement {
       'VerifyOAuthAppConnection'
     ],
     Read: [
+      'BatchDescribeGroups',
+      'BatchDescribeUsers',
+      'BatchGetGroups',
+      'BatchGetUsers',
       'GenerateCodeFromCommands',
       'GenerateCodeRecommendations',
+      'GetArtifact',
+      'GetArtifactActionResult',
       'GetConnector',
       'GetConversation',
       'GetIdentityMetadata',
@@ -539,9 +760,13 @@ export class Q extends PolicyStatement {
     ],
     List: [
       'ListDashboardMetrics',
+      'ListGroups',
+      'ListLoginDomains',
       'ListPluginProviders',
       'ListPlugins',
-      'ListTagsForResource'
+      'ListScimAccessTokens',
+      'ListTagsForResource',
+      'ListUsers'
     ],
     Tagging: [
       'TagResource',
@@ -558,6 +783,9 @@ export class Q extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProfile(identifier: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:codewhisperer:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:profile/${ identifier }`);
@@ -611,6 +839,7 @@ export class Q extends PolicyStatement {
    * - .toUntagResource()
    *
    * Applies to resource types:
+   * - profile
    * - plugin
    *
    * @param tagKey The tag key to check
@@ -647,6 +876,7 @@ export class Q extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAssignment()
    * - .toDeleteAssignment()
+   * - .toUpdateAssignment()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -663,6 +893,7 @@ export class Q extends PolicyStatement {
    * Applies to actions:
    * - .toCreateAssignment()
    * - .toDeleteAssignment()
+   * - .toUpdateAssignment()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

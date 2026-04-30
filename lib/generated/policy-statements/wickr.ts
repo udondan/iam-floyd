@@ -276,6 +276,17 @@ export class Wickr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the OpenTDF integration configuration for a Wickr network
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/wickr/latest/APIReference/API_GetOpentdfConfig.html
+   */
+  public toGetOpentdfConfig() {
+    return this.to('GetOpentdfConfig');
+  }
+
+  /**
    * Grants permission to get security group information in a Wickr network
    *
    * Access Level: Read
@@ -430,6 +441,17 @@ export class Wickr extends PolicyStatement {
   }
 
   /**
+   * Grants permission to register and save OpenTDF integration configuration for a Wickr network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/wickr/latest/APIReference/API_RegisterOpentdfConfig.html
+   */
+  public toRegisterOpentdfConfig() {
+    return this.to('RegisterOpentdfConfig');
+  }
+
+  /**
    * Grants permission to add tags to a specified Wickr resource
    *
    * Access Level: Tagging
@@ -555,6 +577,7 @@ export class Wickr extends PolicyStatement {
       'DeleteSecurityGroup',
       'RegisterOidcConfig',
       'RegisterOidcConfigTest',
+      'RegisterOpentdfConfig',
       'UpdateBot',
       'UpdateDataRetention',
       'UpdateGuestUser',
@@ -572,6 +595,7 @@ export class Wickr extends PolicyStatement {
       'GetNetwork',
       'GetNetworkSettings',
       'GetOidcInfo',
+      'GetOpentdfConfig',
       'GetSecurityGroup',
       'GetUser',
       'GetUsersCount',

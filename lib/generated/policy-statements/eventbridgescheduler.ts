@@ -132,6 +132,17 @@ export class Scheduler extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the Amazon EventBridge Scheduler schedules in your account associated with a target
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/scheduler/latest/UserGuide/
+   */
+  public toListSchedulesByTarget() {
+    return this.to('ListSchedulesByTarget');
+  }
+
+  /**
    * Grants permission to lists tag for an Amazon EventBridge Scheduler resource
    *
    * Access Level: Read
@@ -208,7 +219,8 @@ export class Scheduler extends PolicyStatement {
     ],
     List: [
       'ListScheduleGroups',
-      'ListSchedules'
+      'ListSchedules',
+      'ListSchedulesByTarget'
     ],
     Tagging: [
       'TagResource',
