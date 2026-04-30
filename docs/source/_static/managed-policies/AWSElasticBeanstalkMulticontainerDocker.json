@@ -38,13 +38,19 @@
       "Sid": "AIEnvironmentAnalysisInvokeFoundationModel",
       "Effect": "Allow",
       "Action": "bedrock:InvokeModel",
-      "Resource": "arn:aws:bedrock:*::foundation-model/anthropic.claude-*"
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/anthropic.claude-*",
+        "arn:aws:bedrock:*::foundation-model/amazon.nova-*"
+      ]
     },
     {
       "Sid": "AIEnvironmentAnalysisInvokeInferenceProfile",
       "Effect": "Allow",
       "Action": "bedrock:InvokeModel",
-      "Resource": "arn:aws:bedrock:*:*:inference-profile/*anthropic.claude-*",
+      "Resource": [
+        "arn:aws:bedrock:*:*:inference-profile/*anthropic.claude-*",
+        "arn:aws:bedrock:*:*:inference-profile/*amazon.nova-*"
+      ],
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
@@ -58,6 +64,16 @@
         "bedrock:ListFoundationModels",
         "elasticbeanstalk:DescribeEvents",
         "elasticbeanstalk:DescribeEnvironmentHealth"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MarketplaceOperationsFromBedrock",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:ViewSubscriptions",
+        "aws-marketplace:Unsubscribe"
       ],
       "Resource": "*"
     }

@@ -112,7 +112,8 @@
         "tax:PutSupplementalTaxRegistration",
         "tax:DeleteSupplementalTaxRegistration",
         "tax:GetTaxRegistration",
-        "aws-marketplace:ListPayables"
+        "aws-marketplace:ListPayables",
+        "aws-marketplace:ListInvoiceSubmissionTasks"
       ],
       "Resource": "*"
     },
@@ -121,10 +122,19 @@
       "Effect": "Allow",
       "Action": [
         "aws-marketplace:StartInvoiceSubmissionTask",
-        "aws-marketplace:GetInvoiceSubmissionTask",
-        "aws-marketplace:ListInvoiceSubmissionTasks"
+        "aws-marketplace:GetInvoiceSubmissionTask"
       ],
       "Resource": "arn:aws:aws-marketplace:*:*:catalog/AWSMarketplace*/invoice-submission-task/*"
+    },
+    {
+      "Sid": "MarketplaceEphemeralWriteS3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::aws-partner-central-marketplace-ephemeral-writeonly-files/${aws:PrincipalAccount}/*"
+      ]
     },
     {
       "Sid": "Support",
