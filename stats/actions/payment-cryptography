@@ -1,10 +1,13 @@
 payment-cryptography:AddKeyReplicationRegions;Write
+payment-cryptography:AssociateMpaTeam;Write
 payment-cryptography:CreateAlias;Write
 payment-cryptography:CreateKey;Write
 payment-cryptography:DecryptData;Write
 payment-cryptography:DeleteAlias;Write
 payment-cryptography:DeleteKey;Write
+payment-cryptography:DeleteResourcePolicy;Permissions management
 payment-cryptography:DisableDefaultKeyReplicationRegions;Write
+payment-cryptography:DisassociateMpaTeam;Write
 payment-cryptography:EnableDefaultKeyReplicationRegions;Write
 payment-cryptography:EncryptData;Write
 payment-cryptography:ExportKey;Write
@@ -17,13 +20,16 @@ payment-cryptography:GetAlias;Read
 payment-cryptography:GetCertificateSigningRequest;Read
 payment-cryptography:GetDefaultKeyReplicationRegions;Read
 payment-cryptography:GetKey;Read
+payment-cryptography:GetMpaTeamAssociation;Read
 payment-cryptography:GetParametersForExport;Read
 payment-cryptography:GetParametersForImport;Read
 payment-cryptography:GetPublicKeyCertificate;Read
+payment-cryptography:GetResourcePolicy;Read
 payment-cryptography:ImportKey;Write
 payment-cryptography:ListAliases;List
 payment-cryptography:ListKeys;List
 payment-cryptography:ListTagsForResource;Read
+payment-cryptography:PutResourcePolicy;Permissions management
 payment-cryptography:ReEncryptData;Write
 payment-cryptography:RemoveKeyReplicationRegions;Write
 payment-cryptography:RestoreKey;Write

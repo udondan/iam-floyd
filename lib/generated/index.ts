@@ -199,6 +199,7 @@ export { Worklink } from './policy-statements/worklink';
 export { Workmail } from './policy-statements/workmail';
 export { Workmailmessageflow } from './policy-statements/workmailmessageflow';
 export { Workspaces } from './policy-statements/workspaces';
+export { AgentaccessMcp } from './policy-statements/workspacesagentaccessmcpserver';
 export { Wam } from './policy-statements/workspacesapplicationmanager';
 export { WorkspacesWeb } from './policy-statements/workspacessecurebrowser';
 export { Thinclient } from './policy-statements/workspacesthinclient';
