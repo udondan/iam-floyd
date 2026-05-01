@@ -1,9 +1,12 @@
+bedrock-agentcore:ab-test
 bedrock-agentcore:apikeycredentialprovider
+bedrock-agentcore:batch-evaluate
 bedrock-agentcore:browser
 bedrock-agentcore:browser-custom
 bedrock-agentcore:browser-profile
 bedrock-agentcore:code-interpreter
 bedrock-agentcore:code-interpreter-custom
+bedrock-agentcore:configuration-bundle
 bedrock-agentcore:evaluator
 bedrock-agentcore:gateway
 bedrock-agentcore:harness
@@ -13,6 +16,7 @@ bedrock-agentcore:online-evaluation-config
 bedrock-agentcore:policy
 bedrock-agentcore:policy-engine
 bedrock-agentcore:policy-generation
+bedrock-agentcore:recommendation
 bedrock-agentcore:registry
 bedrock-agentcore:registry-record
 bedrock-agentcore:runtime

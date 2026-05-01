@@ -121,6 +121,20 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an A/B test
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_CreateABTest.html
+   */
+  public toCreateABTest() {
+    return this.to('CreateABTest');
+  }
+
+  /**
    * Grants permission to create a new agent runtime
    *
    * Access Level: Write
@@ -221,6 +235,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new configuration bundle
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateConfigurationBundle.html
+   */
+  public toCreateConfigurationBundle() {
+    return this.to('CreateConfigurationBundle');
+  }
+
+  /**
    * Grants permission to create a new evaluator
    *
    * Access Level: Write
@@ -267,6 +292,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toCreateGateway() {
     return this.to('CreateGateway');
+  }
+
+  /**
+   * Grants permission to create a new rule in an existing gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateGatewayRule.html
+   */
+  public toCreateGatewayRule() {
+    return this.to('CreateGatewayRule');
   }
 
   /**
@@ -413,6 +449,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an A/B test
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteABTest.html
+   */
+  public toDeleteABTest() {
+    return this.to('DeleteABTest');
+  }
+
+  /**
    * Grants permission to delete an agent runtime
    *
    * Access Level: Write
@@ -446,6 +493,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a batch evaluation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteBatchEvaluation.html
+   */
+  public toDeleteBatchEvaluation() {
+    return this.to('DeleteBatchEvaluation');
+  }
+
+  /**
    * Grants permission to delete a custom browser
    *
    * Access Level: Write
@@ -476,6 +534,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeleteCodeInterpreter() {
     return this.to('DeleteCodeInterpreter');
+  }
+
+  /**
+   * Grants permission to delete a configuration bundle
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteConfigurationBundle.html
+   */
+  public toDeleteConfigurationBundle() {
+    return this.to('DeleteConfigurationBundle');
   }
 
   /**
@@ -513,6 +582,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeleteGateway() {
     return this.to('DeleteGateway');
+  }
+
+  /**
+   * Grants permission to delete an existing gateway rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteGatewayRule.html
+   */
+  public toDeleteGatewayRule() {
+    return this.to('DeleteGatewayRule');
   }
 
   /**
@@ -609,6 +689,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a recommendation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteRecommendation.html
+   */
+  public toDeleteRecommendation() {
+    return this.to('DeleteRecommendation');
+  }
+
+  /**
    * Grants permission to delete an existing registry
    *
    * Access Level: Write
@@ -664,6 +755,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of an A/B test
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetABTest.html
+   */
+  public toGetABTest() {
+    return this.to('GetABTest');
+  }
+
+  /**
    * Grants permission to retrieve an agent card for A2A
    *
    * Access Level: Read
@@ -705,6 +807,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetApiKeyCredentialProvider() {
     return this.to('GetApiKeyCredentialProvider');
+  }
+
+  /**
+   * Grants permission to get details of a batch evaluation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBatchEvaluation.html
+   */
+  public toGetBatchEvaluation() {
+    return this.to('GetBatchEvaluation');
   }
 
   /**
@@ -763,6 +876,28 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get details of a configuration bundle
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetConfigurationBundle.html
+   */
+  public toGetConfigurationBundle() {
+    return this.to('GetConfigurationBundle');
+  }
+
+  /**
+   * Grants permission to get a specific version of a configuration bundle
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetConfigurationBundleVersion.html
+   */
+  public toGetConfigurationBundleVersion() {
+    return this.to('GetConfigurationBundleVersion');
+  }
+
+  /**
    * Grants permission to get details of an evaluator
    *
    * Access Level: Read
@@ -797,6 +932,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetGateway() {
     return this.to('GetGateway');
+  }
+
+  /**
+   * Grants permission to retrieve an existing gateway rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGatewayRule.html
+   */
+  public toGetGatewayRule() {
+    return this.to('GetGatewayRule');
   }
 
   /**
@@ -896,6 +1042,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetPolicyGeneration() {
     return this.to('GetPolicyGeneration');
+  }
+
+  /**
+   * Grants permission to get details of a recommendation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetRecommendation.html
+   */
+  public toGetRecommendation() {
+    return this.to('GetRecommendation');
   }
 
   /**
@@ -1121,6 +1278,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list A/B tests
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListABTests.html
+   */
+  public toListABTests() {
+    return this.to('ListABTests');
+  }
+
+  /**
    * Grants permission to list Actors
    *
    * Access Level: List
@@ -1173,6 +1341,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListApiKeyCredentialProviders() {
     return this.to('ListApiKeyCredentialProviders');
+  }
+
+  /**
+   * Grants permission to list batch evaluations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListBatchEvaluations.html
+   */
+  public toListBatchEvaluations() {
+    return this.to('ListBatchEvaluations');
   }
 
   /**
@@ -1231,6 +1410,28 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list versions of a configuration bundle
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListConfigurationBundleVersions.html
+   */
+  public toListConfigurationBundleVersions() {
+    return this.to('ListConfigurationBundleVersions');
+  }
+
+  /**
+   * Grants permission to list configuration bundles
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListConfigurationBundles.html
+   */
+  public toListConfigurationBundles() {
+    return this.to('ListConfigurationBundles');
+  }
+
+  /**
    * Grants permission to list evaluators
    *
    * Access Level: List
@@ -1254,6 +1455,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListEvents() {
     return this.to('ListEvents');
+  }
+
+  /**
+   * Grants permission to list existing gateway rules
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListGatewayRules.html
+   */
+  public toListGatewayRules() {
+    return this.to('ListGatewayRules');
   }
 
   /**
@@ -1390,6 +1602,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListPolicyGenerations() {
     return this.to('ListPolicyGenerations');
+  }
+
+  /**
+   * Grants permission to list recommendations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListRecommendations.html
+   */
+  public toListRecommendations() {
+    return this.to('ListRecommendations');
   }
 
   /**
@@ -1543,6 +1766,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start a batch evaluation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBatchEvaluation.html
+   */
+  public toStartBatchEvaluation() {
+    return this.to('StartBatchEvaluation');
+  }
+
+  /**
    * Grants permission to start a new browser session
    *
    * Access Level: Write
@@ -1589,6 +1823,28 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toStartPolicyGeneration() {
     return this.to('StartPolicyGeneration');
+  }
+
+  /**
+   * Grants permission to start a recommendation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartRecommendation.html
+   */
+  public toStartRecommendation() {
+    return this.to('StartRecommendation');
+  }
+
+  /**
+   * Grants permission to stop a batch evaluation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBatchEvaluation.html
+   */
+  public toStopBatchEvaluation() {
+    return this.to('StopBatchEvaluation');
   }
 
   /**
@@ -1676,6 +1932,20 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an A/B test
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateABTest.html
+   */
+  public toUpdateABTest() {
+    return this.to('UpdateABTest');
+  }
+
+  /**
    * Grants permission to update an agent runtime
    *
    * Access Level: Write
@@ -1728,6 +1998,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a configuration bundle
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateConfigurationBundle.html
+   */
+  public toUpdateConfigurationBundle() {
+    return this.to('UpdateConfigurationBundle');
+  }
+
+  /**
    * Grants permission to update an evaluator
    *
    * Access Level: Write
@@ -1750,6 +2031,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toUpdateGateway() {
     return this.to('UpdateGateway');
+  }
+
+  /**
+   * Grants permission to update an existing gateway rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGatewayRule.html
+   */
+  public toUpdateGatewayRule() {
+    return this.to('UpdateGatewayRule');
   }
 
   /**
@@ -1898,15 +2190,18 @@ export class BedrockAgentcore extends PolicyStatement {
       'BatchCreateMemoryRecords',
       'BatchDeleteMemoryRecords',
       'BatchUpdateMemoryRecords',
+      'CreateABTest',
       'CreateAgentRuntime',
       'CreateAgentRuntimeEndpoint',
       'CreateApiKeyCredentialProvider',
       'CreateBrowser',
       'CreateBrowserProfile',
       'CreateCodeInterpreter',
+      'CreateConfigurationBundle',
       'CreateEvaluator',
       'CreateEvent',
       'CreateGateway',
+      'CreateGatewayRule',
       'CreateGatewayTarget',
       'CreateHarness',
       'CreateMemory',
@@ -1917,15 +2212,19 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateRegistry',
       'CreateRegistryRecord',
       'CreateWorkloadIdentity',
+      'DeleteABTest',
       'DeleteAgentRuntime',
       'DeleteAgentRuntimeEndpoint',
       'DeleteApiKeyCredentialProvider',
+      'DeleteBatchEvaluation',
       'DeleteBrowser',
       'DeleteBrowserProfile',
       'DeleteCodeInterpreter',
+      'DeleteConfigurationBundle',
       'DeleteEvaluator',
       'DeleteEvent',
       'DeleteGateway',
+      'DeleteGatewayRule',
       'DeleteGatewayTarget',
       'DeleteHarness',
       'DeleteMemory',
@@ -1934,6 +2233,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteOnlineEvaluationConfig',
       'DeletePolicy',
       'DeletePolicyEngine',
+      'DeleteRecommendation',
       'DeleteRegistry',
       'DeleteRegistryRecord',
       'DeleteResourcePolicy',
@@ -1951,20 +2251,26 @@ export class BedrockAgentcore extends PolicyStatement {
       'InvokeHarness',
       'PutResourcePolicy',
       'SaveBrowserSessionProfile',
+      'StartBatchEvaluation',
       'StartBrowserSession',
       'StartCodeInterpreterSession',
       'StartMemoryExtractionJob',
       'StartPolicyGeneration',
+      'StartRecommendation',
+      'StopBatchEvaluation',
       'StopBrowserSession',
       'StopCodeInterpreterSession',
       'StopRuntimeSession',
       'SubmitRegistryRecordForApproval',
+      'UpdateABTest',
       'UpdateAgentRuntime',
       'UpdateAgentRuntimeEndpoint',
       'UpdateApiKeyCredentialProvider',
       'UpdateBrowserStream',
+      'UpdateConfigurationBundle',
       'UpdateEvaluator',
       'UpdateGateway',
+      'UpdateGatewayRule',
       'UpdateGatewayTarget',
       'UpdateHarness',
       'UpdateMemory',
@@ -1981,18 +2287,23 @@ export class BedrockAgentcore extends PolicyStatement {
       'CompleteResourceTokenAuth',
       'ConnectBrowserAutomationStream',
       'ConnectBrowserLiveViewStream',
+      'GetABTest',
       'GetAgentCard',
       'GetAgentRuntime',
       'GetAgentRuntimeEndpoint',
       'GetApiKeyCredentialProvider',
+      'GetBatchEvaluation',
       'GetBrowser',
       'GetBrowserProfile',
       'GetBrowserSession',
       'GetCodeInterpreter',
       'GetCodeInterpreterSession',
+      'GetConfigurationBundle',
+      'GetConfigurationBundleVersion',
       'GetEvaluator',
       'GetEvent',
       'GetGateway',
+      'GetGatewayRule',
       'GetGatewayTarget',
       'GetHarness',
       'GetMemory',
@@ -2002,6 +2313,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetPolicy',
       'GetPolicyEngine',
       'GetPolicyGeneration',
+      'GetRecommendation',
       'GetRegistry',
       'GetRegistryRecord',
       'GetResourceApiKey',
@@ -2017,17 +2329,22 @@ export class BedrockAgentcore extends PolicyStatement {
       'SetTokenVaultCMK'
     ],
     List: [
+      'ListABTests',
       'ListActors',
       'ListAgentRuntimeEndpoints',
       'ListAgentRuntimeVersions',
       'ListAgentRuntimes',
+      'ListBatchEvaluations',
       'ListBrowserProfiles',
       'ListBrowserSessions',
       'ListBrowsers',
       'ListCodeInterpreterSessions',
       'ListCodeInterpreters',
+      'ListConfigurationBundleVersions',
+      'ListConfigurationBundles',
       'ListEvaluators',
       'ListEvents',
+      'ListGatewayRules',
       'ListGatewayTargets',
       'ListGateways',
       'ListHarnesses',
@@ -2039,6 +2356,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListPolicyEngines',
       'ListPolicyGenerationAssets',
       'ListPolicyGenerations',
+      'ListRecommendations',
       'ListRegistries',
       'ListRegistryRecords',
       'ListSessions',
@@ -2407,6 +2725,62 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public onHarness(harnessId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:harness/${ harnessId }`);
+  }
+
+  /**
+   * Adds a resource of type batch-evaluate to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/batchEvaluation.html
+   *
+   * @param batchEvaluationId - Identifier for the batchEvaluationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onBatchEvaluate(batchEvaluationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-evaluate/${ batchEvaluationId }`);
+  }
+
+  /**
+   * Adds a resource of type ab-test to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/abTest.html
+   *
+   * @param aBTestId - Identifier for the aBTestId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAbTest(aBTestId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ab-test/${ aBTestId }`);
+  }
+
+  /**
+   * Adds a resource of type recommendation to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/recommendation.html
+   *
+   * @param recommendationId - Identifier for the recommendationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRecommendation(recommendationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommendation/${ recommendationId }`);
+  }
+
+  /**
+   * Adds a resource of type configuration-bundle to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/configurationBundle.html
+   *
+   * @param configurationBundleId - Identifier for the configurationBundleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onConfigurationBundle(configurationBundleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-bundle/${ configurationBundleId }`);
   }
 
   /**

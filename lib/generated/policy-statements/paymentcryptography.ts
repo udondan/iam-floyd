@@ -33,6 +33,22 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an MPA approval team with a payment cryptography action
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - mpa:CancelSession
+   * - mpa:GetApprovalTeam
+   * - mpa:StartSession
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AssociateMpaTeam.html
+   */
+  public toAssociateMpaTeam() {
+    return this.to('AssociateMpaTeam');
+  }
+
+  /**
    * Grants permission to create a user-friendly name for a Key
    *
    * Access Level: Write
@@ -101,10 +117,24 @@ export class PaymentCryptography extends PolicyStatement {
    * Possible conditions:
    * - .ifRequestAlias()
    *
+   * Dependent actions:
+   * - mpa:CancelSession
+   *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html
    */
   public toDeleteKey() {
     return this.to('DeleteKey');
+  }
+
+  /**
+   * Grants permission to delete the resource-based policy attached to a key
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html
+   */
+  public toDeleteResourcePolicy() {
+    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -116,6 +146,21 @@ export class PaymentCryptography extends PolicyStatement {
    */
   public toDisableDefaultKeyReplicationRegions() {
     return this.to('DisableDefaultKeyReplicationRegions');
+  }
+
+  /**
+   * Grants permission to disassociate an MPA approval team from a payment cryptography action
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - mpa:CancelSession
+   * - mpa:StartSession
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisassociateMpaTeam.html
+   */
+  public toDisassociateMpaTeam() {
+    return this.to('DisassociateMpaTeam');
   }
 
   /**
@@ -284,6 +329,17 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about an MPA approval team association for a payment cryptography action
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetMpaTeamAssociation.html
+   */
+  public toGetMpaTeamAssociation() {
+    return this.to('GetMpaTeamAssociation');
+  }
+
+  /**
    * Grants permission to get the export token and the signing key certificate to initiate a TR-34 key export
    *
    * Access Level: Read
@@ -320,6 +376,17 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the resource-based policy attached to a key
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetResourcePolicy.html
+   */
+  public toGetResourcePolicy() {
+    return this.to('GetResourcePolicy');
+  }
+
+  /**
    * Grants permission to imports keys and public key certificates
    *
    * Access Level: Write
@@ -332,6 +399,7 @@ export class PaymentCryptography extends PolicyStatement {
    * - .ifWrappingKeyIdentifier()
    *
    * Dependent actions:
+   * - mpa:StartSession
    * - payment-cryptography:TagResource
    *
    * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html
@@ -371,6 +439,17 @@ export class PaymentCryptography extends PolicyStatement {
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to attach or replace a resource-based policy on a key
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_PutResourcePolicy.html
+   */
+  public toPutResourcePolicy() {
+    return this.to('PutResourcePolicy');
   }
 
   /**
@@ -574,12 +653,14 @@ export class PaymentCryptography extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddKeyReplicationRegions',
+      'AssociateMpaTeam',
       'CreateAlias',
       'CreateKey',
       'DecryptData',
       'DeleteAlias',
       'DeleteKey',
       'DisableDefaultKeyReplicationRegions',
+      'DisassociateMpaTeam',
       'EnableDefaultKeyReplicationRegions',
       'EncryptData',
       'ExportKey',
@@ -602,14 +683,20 @@ export class PaymentCryptography extends PolicyStatement {
       'VerifyMac',
       'VerifyPinData'
     ],
+    'Permissions management': [
+      'DeleteResourcePolicy',
+      'PutResourcePolicy'
+    ],
     Read: [
       'GetAlias',
       'GetCertificateSigningRequest',
       'GetDefaultKeyReplicationRegions',
       'GetKey',
+      'GetMpaTeamAssociation',
       'GetParametersForExport',
       'GetParametersForImport',
       'GetPublicKeyCertificate',
+      'GetResourcePolicy',
       'ListTagsForResource'
     ],
     List: [
@@ -654,6 +741,23 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type approval-team to the statement
+   *
+   * https://docs.aws.amazon.com/mpa/latest/userguide/mpa-concepts.html
+   *
+   * @param approvalTeamId - Identifier for the approvalTeamId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApprovalTeam(approvalTeamId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:mpa:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:approval-team/${ approvalTeamId }`);
+  }
+
+  /**
    * Filters access by both the key and value of the tag in the request for the specified operation
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -681,6 +785,7 @@ export class PaymentCryptography extends PolicyStatement {
    *
    * Applies to resource types:
    * - key
+   * - approval-team
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -726,7 +831,7 @@ export class PaymentCryptography extends PolicyStatement {
   }
 
   /**
-   * Filters access by the type of key material being imported [RootCertificatePublicKey, TrustedCertificatePublicKey, Tr34KeyBlock, Tr31KeyBlock, DiffieHellmanTr31KeyBlock, As2805KeyCryptogram] for the ImportKey operation
+   * Filters access by the type of key material being imported [RootCertificatePublicKey, TrustedCertificatePublicKey, Tr34KeyBlock, Tr31KeyBlock, DiffieHellmanTr31KeyBlock, As2805KeyCryptogram, KeyCryptogram] for the ImportKey operation
    *
    * Applies to actions:
    * - .toImportKey()

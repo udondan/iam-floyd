@@ -1,0 +1,15 @@
+agentaccess-mcp:DoubleClick;Write
+agentaccess-mcp:GetScreenshot;Read
+agentaccess-mcp:HoldKey;Write
+agentaccess-mcp:InvokeMcp;Write
+agentaccess-mcp:KeyPress;Write
+agentaccess-mcp:LeftClick;Write
+agentaccess-mcp:LeftClickDrag;Write
+agentaccess-mcp:LeftMouseDown;Write
+agentaccess-mcp:LeftMouseUp;Write
+agentaccess-mcp:MiddleClick;Write
+agentaccess-mcp:MovePointer;Write
+agentaccess-mcp:RightClick;Write
+agentaccess-mcp:Scroll;Write
+agentaccess-mcp:TripleClick;Write
+agentaccess-mcp:TypeText;Write
