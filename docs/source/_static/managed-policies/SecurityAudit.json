@@ -829,6 +829,7 @@
         "sso:ListRegions",
         "sso:ListTagsForResource",
         "sso:ListTrustedTokenIssuers",
+        "sso-directory:ListExternalIdPConfigurationsForDirectory",
         "states:DescribeStateMachine",
         "states:ListStateMachines",
         "storagegateway:DescribeBandwidthRateLimit",

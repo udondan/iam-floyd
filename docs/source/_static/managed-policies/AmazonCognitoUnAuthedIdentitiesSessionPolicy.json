@@ -16,6 +16,7 @@
         "firehose:*",
         "personalize:*",
         "geo:GetMap*",
+        "geo:ListMaps",
         "geo:SearchPlaceIndex*",
         "geo:GetPlace",
         "geo:CalculateRoute*",
