@@ -1,5 +1,6 @@
 cloudwatch:BatchGetServiceLevelIndicatorReport;Read
 cloudwatch:BatchGetServiceLevelObjectiveBudgetReport;Read
+cloudwatch:CallWithBearerToken;Write
 cloudwatch:CreateServiceLevelObjective;Write
 cloudwatch:DeleteAlarmMuteRule;Write
 cloudwatch:DeleteAlarms;Write

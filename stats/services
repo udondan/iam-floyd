@@ -23,6 +23,7 @@ appfabric
 appflow
 application-autoscaling
 application-signals
+application-signals-mcp
 application-transformation
 applicationinsights
 appmesh

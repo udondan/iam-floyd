@@ -41,6 +41,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to make API calls to CloudWatch using bearer token authentication
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
+  /**
    * Grants permission to create a service level objective
    *
    * Access Level: Write
@@ -569,6 +580,10 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html
    */
   public toPutDashboard() {
@@ -774,6 +789,7 @@ export class Cloudwatch extends PolicyStatement {
       'ListManagedInsightRules'
     ],
     Write: [
+      'CallWithBearerToken',
       'CreateServiceLevelObjective',
       'DeleteAlarmMuteRule',
       'DeleteAlarms',
@@ -862,6 +878,9 @@ export class Cloudwatch extends PolicyStatement {
    * @param dashboardName - Identifier for the dashboardName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDashboard(dashboardName: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch::${ account ?? this.defaultAccount }:dashboard/${ dashboardName }`);
@@ -946,6 +965,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .toListManagedInsightRules()
    * - .toPutAlarmMuteRule()
    * - .toPutCompositeAlarm()
+   * - .toPutDashboard()
    * - .toPutInsightRule()
    * - .toPutManagedInsightRules()
    * - .toPutMetricAlarm()
@@ -968,6 +988,7 @@ export class Cloudwatch extends PolicyStatement {
    * Applies to resource types:
    * - alarm
    * - alarm-mute-rule
+   * - dashboard
    * - insight-rule
    * - metric-stream
    * - slo
@@ -991,6 +1012,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .toListManagedInsightRules()
    * - .toPutAlarmMuteRule()
    * - .toPutCompositeAlarm()
+   * - .toPutDashboard()
    * - .toPutInsightRule()
    * - .toPutManagedInsightRules()
    * - .toPutMetricAlarm()
