@@ -53,6 +53,7 @@ securityhub:EnableImportFindingsForProduct;Write
 securityhub:EnableOrganizationAdminAccount;Write
 securityhub:EnableSecurityHub;Write
 securityhub:EnableSecurityHubV2;Write
+securityhub:GenerateRecommendedPolicyV2;Write
 securityhub:GetAdhocInsightResults;Read
 securityhub:GetAdministratorAccount;Read
 securityhub:GetAggregatorV2;Read
@@ -74,12 +75,15 @@ securityhub:GetInsights;List
 securityhub:GetInvitationsCount;Read
 securityhub:GetMasterAccount;Read
 securityhub:GetMembers;Read
+securityhub:GetRecommendedPolicyV2;Read
 securityhub:GetResourcesStatisticsV2;Read
 securityhub:GetResourcesTrendsV2;Read
 securityhub:GetResourcesV2;Read
 securityhub:GetSecurityControlDefinition;Read
 securityhub:GetUsage;Read
+securityhub:GetUsageV2;Read
 securityhub:InviteMembers;Write
+securityhub:ListAccountUsageV2;List
 securityhub:ListAggregatorsV2;List
 securityhub:ListAutomationRules;List
 securityhub:ListAutomationRulesV2;List

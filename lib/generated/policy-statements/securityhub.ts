@@ -676,6 +676,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to generate policy recommendations for an OCSF finding
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GenerateRecommendedPolicyV2.html
+   */
+  public toGenerateRecommendedPolicyV2() {
+    return this.to('GenerateRecommendedPolicyV2');
+  }
+
+  /**
    * Grants permission to retrieve aggregated statistical data about the findings
    *
    * Access Level: Read
@@ -907,6 +918,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve policy recommendations for an OCSF finding
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetRecommendedPolicyV2.html
+   */
+  public toGetRecommendedPolicyV2() {
+    return this.to('GetRecommendedPolicyV2');
+  }
+
+  /**
    * Grants permission to retrieve aggregate statistics about resources
    *
    * Access Level: Read
@@ -965,6 +987,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve information about Security Hub usage for an account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetUsageV2.html
+   */
+  public toGetUsageV2() {
+    return this.to('GetUsageV2');
+  }
+
+  /**
    * Grants permission to invite other AWS accounts to become Security Hub member accounts
    *
    * Access Level: Write
@@ -973,6 +1006,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toInviteMembers() {
     return this.to('InviteMembers');
+  }
+
+  /**
+   * Grants permission to retrieve a list of Security Hub usage for accounts in an organization
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListAccountUsageV2.html
+   */
+  public toListAccountUsageV2() {
+    return this.to('ListAccountUsageV2');
   }
 
   /**
@@ -1391,6 +1435,7 @@ export class Securityhub extends PolicyStatement {
       'EnableOrganizationAdminAccount',
       'EnableSecurityHub',
       'EnableSecurityHubV2',
+      'GenerateRecommendedPolicyV2',
       'InviteMembers',
       'StartConfigurationPolicyAssociation',
       'StartConfigurationPolicyDisassociation',
@@ -1443,11 +1488,13 @@ export class Securityhub extends PolicyStatement {
       'GetInvitationsCount',
       'GetMasterAccount',
       'GetMembers',
+      'GetRecommendedPolicyV2',
       'GetResourcesStatisticsV2',
       'GetResourcesTrendsV2',
       'GetResourcesV2',
       'GetSecurityControlDefinition',
       'GetUsage',
+      'GetUsageV2',
       'ListControlEvaluationSummaries',
       'ListTagsForResource',
       'SendFindingEvents',
@@ -1456,6 +1503,7 @@ export class Securityhub extends PolicyStatement {
     List: [
       'GetEnabledStandards',
       'GetInsights',
+      'ListAccountUsageV2',
       'ListAggregatorsV2',
       'ListAutomationRules',
       'ListAutomationRulesV2',

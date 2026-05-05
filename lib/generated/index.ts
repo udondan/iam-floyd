@@ -22,6 +22,7 @@ export { Cloudsearch } from './policy-statements/cloudsearch';
 export { Cloudwatch } from './policy-statements/cloudwatch';
 export { Applicationinsights } from './policy-statements/cloudwatchapplicationinsights';
 export { ApplicationSignals } from './policy-statements/cloudwatchapplicationsignals';
+export { ApplicationSignalsMcp } from './policy-statements/cloudwatchapplicationsignalsmcpserver';
 export { Evidently } from './policy-statements/cloudwatchevidently';
 export { Internetmonitor } from './policy-statements/cloudwatchinternetmonitor';
 export { Logs } from './policy-statements/cloudwatchlogs';

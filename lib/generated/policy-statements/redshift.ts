@@ -93,7 +93,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Amazon Redshift to continuously validate that the target data warehouse can receive data replicated from the source ARN
+   * Grants permission to Amazon Redshift to continuously validate that the target namespace can receive data replicated from the source ARN
    *
    * Access Level: Write
    *
@@ -369,7 +369,7 @@ export class Redshift extends PolicyStatement {
   }
 
   /**
-   * Grants permission to the source principal to create an inbound integration for data to be replicated from the source into the target data warehouse
+   * Grants permission to the source principal to create an integration into the namespace of target data warehouse
    *
    * Access Level: Write
    *
