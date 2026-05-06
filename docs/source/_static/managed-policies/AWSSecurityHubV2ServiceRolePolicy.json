@@ -119,6 +119,64 @@
         "iam:GetAccountSummary"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleIA2IamPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/aws-service-role/access-analyzer.amazonaws.com/AWSServiceRoleForAccessAnalyzer"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "access-analyzer.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleIA2ResAPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "access-analyzer:CreateServiceLinkedAnalyzer",
+        "access-analyzer:DeleteServiceLinkedAnalyzer"
+      ],
+      "Resource": "arn:*:access-analyzer:*:*:analyzer/*"
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleIA2ResAListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "access-analyzer:ListAnalyzers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleIA2APIPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "access-analyzer:GetFindingRecommendation",
+        "access-analyzer:GenerateFindingRecommendation"
+      ],
+      "Resource": "arn:*:access-analyzer:*:*:analyzer/_AccessAnalyzerForSecurityHubV2*"
+    },
+    {
+      "Sid": "SecurityHubV2ServiceRoleAPIPolicyPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRolePolicy",
+        "iam:GetUserPolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:policy/*",
+        "arn:aws:iam::*:role/*",
+        "arn:aws:iam::*:user/*"
+      ]
     }
   ]
 }
