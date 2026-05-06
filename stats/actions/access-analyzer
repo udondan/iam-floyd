@@ -6,8 +6,10 @@ access-analyzer:CheckNoPublicAccess;Read
 access-analyzer:CreateAccessPreview;Write
 access-analyzer:CreateAnalyzer;Write
 access-analyzer:CreateArchiveRule;Write
+access-analyzer:CreateServiceLinkedAnalyzer;Write
 access-analyzer:DeleteAnalyzer;Write
 access-analyzer:DeleteArchiveRule;Write
+access-analyzer:DeleteServiceLinkedAnalyzer;Write
 access-analyzer:GenerateFindingRecommendation;Write
 access-analyzer:GetAccessPreview;Read
 access-analyzer:GetAnalyzedResource;Read

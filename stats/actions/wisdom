@@ -62,7 +62,9 @@ wisdom:ListKnowledgeBases;List
 wisdom:ListMessageTemplateVersions;List
 wisdom:ListMessageTemplates;List
 wisdom:ListMessages;List
+wisdom:ListModels;List
 wisdom:ListQuickResponses;List
+wisdom:ListSpans;List
 wisdom:ListTagsForResource;Read
 wisdom:NotifyRecommendationsReceived;Write
 wisdom:PutFeedback;Write

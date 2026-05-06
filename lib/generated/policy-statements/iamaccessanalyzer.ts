@@ -114,6 +114,24 @@ export class AccessAnalyzer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a service-linked analyzer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateServiceLinkedAnalyzer.html
+   */
+  public toCreateServiceLinkedAnalyzer() {
+    return this.to('CreateServiceLinkedAnalyzer');
+  }
+
+  /**
    * Grants permission to delete the specified analyzer
    *
    * Access Level: Write
@@ -137,6 +155,21 @@ export class AccessAnalyzer extends PolicyStatement {
    */
   public toDeleteArchiveRule() {
     return this.to('DeleteArchiveRule');
+  }
+
+  /**
+   * Grants permission to delete the specified service-linked analyzer
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteServiceLinkedAnalyzer.html
+   */
+  public toDeleteServiceLinkedAnalyzer() {
+    return this.to('DeleteServiceLinkedAnalyzer');
   }
 
   /**
@@ -435,8 +468,10 @@ export class AccessAnalyzer extends PolicyStatement {
       'CreateAccessPreview',
       'CreateAnalyzer',
       'CreateArchiveRule',
+      'CreateServiceLinkedAnalyzer',
       'DeleteAnalyzer',
       'DeleteArchiveRule',
+      'DeleteServiceLinkedAnalyzer',
       'GenerateFindingRecommendation',
       'StartPolicyGeneration',
       'StartResourceScan',
@@ -513,7 +548,9 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAnalyzer()
+   * - .toCreateServiceLinkedAnalyzer()
    * - .toDeleteAnalyzer()
+   * - .toDeleteServiceLinkedAnalyzer()
    * - .toGetAnalyzer()
    * - .toTagResource()
    *
@@ -548,7 +585,9 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAnalyzer()
+   * - .toCreateServiceLinkedAnalyzer()
    * - .toDeleteAnalyzer()
+   * - .toDeleteServiceLinkedAnalyzer()
    * - .toGetAnalyzer()
    * - .toTagResource()
    * - .toUntagResource()

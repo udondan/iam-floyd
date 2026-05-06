@@ -780,6 +780,17 @@ export class Wisdom extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list models available for an assistant
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListModels.html
+   */
+  public toListModels() {
+    return this.to('ListModels');
+  }
+
+  /**
    * Grants permission to list the quick response with a knowledge base
    *
    * Access Level: List
@@ -788,6 +799,17 @@ export class Wisdom extends PolicyStatement {
    */
   public toListQuickResponses() {
     return this.to('ListQuickResponses');
+  }
+
+  /**
+   * Grants permission to list AI agent traces for a session
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListSpans.html
+   */
+  public toListSpans() {
+    return this.to('ListSpans');
   }
 
   /**
@@ -1225,7 +1247,9 @@ export class Wisdom extends PolicyStatement {
       'ListMessageTemplateVersions',
       'ListMessageTemplates',
       'ListMessages',
-      'ListQuickResponses'
+      'ListModels',
+      'ListQuickResponses',
+      'ListSpans'
     ],
     Tagging: [
       'TagResource',

@@ -13,6 +13,7 @@ export { Dsql } from './policy-statements/auroradsql';
 export { Bedrock } from './policy-statements/bedrock';
 export { BedrockAgentcore } from './policy-statements/bedrockagentcore';
 export { BedrockMantle } from './policy-statements/bedrockpoweredbyawsmantle';
+export { Researchstudio } from './policy-statements/biodiscovery';
 export { Braket } from './policy-statements/braket';
 export { Chime } from './policy-statements/chime';
 export { Clouddirectory } from './policy-statements/clouddirectory';
@@ -370,7 +371,6 @@ export { AwsMarketplaceProcurementSystemsIntegration } from './policy-statements
 export { AwsMarketplaceReporting } from './policy-statements/marketplacereporting';
 export { AwsMarketplaceSellerReporting } from './policy-statements/marketplacesellerreporting';
 export { VendorInsights } from './policy-statements/marketplacevendorinsights';
-export { AwsMcp } from './policy-statements/mcpserver';
 export { Serviceextract } from './policy-statements/microserviceextractorfor-net';
 export { Mapcredits } from './policy-statements/migrationaccelerationprogramcredits';
 export { Mgh } from './policy-statements/migrationhub';

@@ -11,6 +11,7 @@ aidevops:DeleteKnowledgeItem;Write
 aidevops:DeletePrivateConnection;Write
 aidevops:DeregisterService;Write
 aidevops:DescribePrivateConnection;Read
+aidevops:DescribeServices;Read
 aidevops:DescribeSupportLevel;Write
 aidevops:DisableOperatorApp;Write
 aidevops:DisassociateService;Write
