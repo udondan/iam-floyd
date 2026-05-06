@@ -45,7 +45,6 @@ autoscaling-plans
 aws-external-anthropic
 aws-marketplace
 aws-marketplace-management
-aws-mcp
 aws-portal
 awsconnector
 b2bi
@@ -331,6 +330,7 @@ redshift-serverless
 refactor-spaces
 rekognition
 repostspace
+researchstudio
 resiliencehub
 resource-explorer
 resource-explorer-2

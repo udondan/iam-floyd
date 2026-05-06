@@ -23,7 +23,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/userguide/configuring-capabilities-for-aws-devops-agent-vended-logs-and-metrics.html
    */
   public toAllowVendedLogDeliveryForResource() {
     return this.to('AllowVendedLogDeliveryForResource');
@@ -34,7 +34,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_AssociateService.html
    */
   public toAssociateService() {
     return this.to('AssociateService');
@@ -50,7 +50,7 @@ export class Aidevops extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateAgentSpace.html
    */
   public toCreateAgentSpace() {
     return this.to('CreateAgentSpace');
@@ -61,7 +61,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateBacklogTask.html
    */
   public toCreateBacklogTask() {
     return this.to('CreateBacklogTask');
@@ -72,7 +72,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateChat.html
    */
   public toCreateChat() {
     return this.to('CreateChat');
@@ -83,7 +83,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateKnowledgeItem.html
    */
   public toCreateKnowledgeItem() {
     return this.to('CreateKnowledgeItem');
@@ -94,7 +94,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toCreateOneTimeLoginSession() {
     return this.to('CreateOneTimeLoginSession');
@@ -110,7 +110,7 @@ export class Aidevops extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreatePrivateConnection.html
    */
   public toCreatePrivateConnection() {
     return this.to('CreatePrivateConnection');
@@ -124,7 +124,7 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeleteAgentSpace.html
    */
   public toDeleteAgentSpace() {
     return this.to('DeleteAgentSpace');
@@ -135,7 +135,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toDeleteKnowledgeItem() {
     return this.to('DeleteKnowledgeItem');
@@ -149,7 +149,7 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeletePrivateConnection.html
    */
   public toDeletePrivateConnection() {
     return this.to('DeletePrivateConnection');
@@ -163,7 +163,7 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeregisterService.html
    */
   public toDeregisterService() {
     return this.to('DeregisterService');
@@ -177,18 +177,29 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DescribePrivateConnection.html
    */
   public toDescribePrivateConnection() {
     return this.to('DescribePrivateConnection');
   }
 
   /**
-   * Grants permission to describe a chat for a case
+   * Grants permission to describe support services
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
+   */
+  public toDescribeServices() {
+    return this.to('DescribeServices');
+  }
+
+  /**
+   * Grants permission to describe customer support level
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toDescribeSupportLevel() {
     return this.to('DescribeSupportLevel');
@@ -199,7 +210,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DisableOperatorApp.html
    */
   public toDisableOperatorApp() {
     return this.to('DisableOperatorApp');
@@ -210,7 +221,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DisassociateService.html
    */
   public toDisassociateService() {
     return this.to('DisassociateService');
@@ -221,7 +232,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toDiscoverTopology() {
     return this.to('DiscoverTopology');
@@ -232,7 +243,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_EnableOperatorApp.html
    */
   public toEnableOperatorApp() {
     return this.to('EnableOperatorApp');
@@ -243,7 +254,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toEndChatForCase() {
     return this.to('EndChatForCase');
@@ -254,7 +265,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAccountUsage.html
    */
   public toGetAccountUsage() {
     return this.to('GetAccountUsage');
@@ -268,7 +279,7 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAgentSpace.html
    */
   public toGetAgentSpace() {
     return this.to('GetAgentSpace');
@@ -279,7 +290,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAssociation.html
    */
   public toGetAssociation() {
     return this.to('GetAssociation');
@@ -290,7 +301,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetBacklogTask.html
    */
   public toGetBacklogTask() {
     return this.to('GetBacklogTask');
@@ -301,7 +312,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toGetKnowledgeItem() {
     return this.to('GetKnowledgeItem');
@@ -312,7 +323,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetOperatorApp.html
    */
   public toGetOperatorApp() {
     return this.to('GetOperatorApp');
@@ -323,7 +334,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetRecommendation.html
    */
   public toGetRecommendation() {
     return this.to('GetRecommendation');
@@ -337,7 +348,7 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetService.html
    */
   public toGetService() {
     return this.to('GetService');
@@ -348,7 +359,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toInitiateChatForCase() {
     return this.to('InitiateChatForCase');
@@ -359,7 +370,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAgentSpaces.html
    */
   public toListAgentSpaces() {
     return this.to('ListAgentSpaces');
@@ -370,7 +381,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssociations.html
    */
   public toListAssociations() {
     return this.to('ListAssociations');
@@ -381,7 +392,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListBacklogTasks.html
    */
   public toListBacklogTasks() {
     return this.to('ListBacklogTasks');
@@ -392,7 +403,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListChats.html
    */
   public toListChats() {
     return this.to('ListChats');
@@ -403,7 +414,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListExecutions.html
    */
   public toListExecutions() {
     return this.to('ListExecutions');
@@ -414,7 +425,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListGoals.html
    */
   public toListGoals() {
     return this.to('ListGoals');
@@ -425,7 +436,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListJournalRecords.html
    */
   public toListJournalRecords() {
     return this.to('ListJournalRecords');
@@ -436,7 +447,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toListKnowledgeItemVersions() {
     return this.to('ListKnowledgeItemVersions');
@@ -447,7 +458,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toListKnowledgeItems() {
     return this.to('ListKnowledgeItems');
@@ -458,7 +469,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListPendingMessages.html
    */
   public toListPendingMessages() {
     return this.to('ListPendingMessages');
@@ -469,7 +480,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListPrivateConnections.html
    */
   public toListPrivateConnections() {
     return this.to('ListPrivateConnections');
@@ -480,7 +491,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListRecommendations.html
    */
   public toListRecommendations() {
     return this.to('ListRecommendations');
@@ -491,7 +502,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListServices.html
    */
   public toListServices() {
     return this.to('ListServices');
@@ -505,7 +516,7 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -516,7 +527,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListWebhooks.html
    */
   public toListWebhooks() {
     return this.to('ListWebhooks');
@@ -532,7 +543,7 @@ export class Aidevops extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_RegisterService.html
    */
   public toRegisterService() {
     return this.to('RegisterService');
@@ -543,7 +554,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toSearchServiceAccessibleResource() {
     return this.to('SearchServiceAccessibleResource');
@@ -554,7 +565,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_SendMessage.html
    */
   public toSendMessage() {
     return this.to('SendMessage');
@@ -570,7 +581,7 @@ export class Aidevops extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -585,7 +596,7 @@ export class Aidevops extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -599,7 +610,7 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateAgentSpace.html
    */
   public toUpdateAgentSpace() {
     return this.to('UpdateAgentSpace');
@@ -610,7 +621,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateAssociation.html
    */
   public toUpdateAssociation() {
     return this.to('UpdateAssociation');
@@ -621,7 +632,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateBacklogTask.html
    */
   public toUpdateBacklogTask() {
     return this.to('UpdateBacklogTask');
@@ -632,7 +643,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateGoal.html
    */
   public toUpdateGoal() {
     return this.to('UpdateGoal');
@@ -643,7 +654,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/what-is.html
    */
   public toUpdateKnowledgeItem() {
     return this.to('UpdateKnowledgeItem');
@@ -654,7 +665,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateOperatorAppIdpConfig.html
    */
   public toUpdateOperatorAppIdpConfig() {
     return this.to('UpdateOperatorAppIdpConfig');
@@ -668,7 +679,7 @@ export class Aidevops extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdatePrivateConnectionCertificate.html
    */
   public toUpdatePrivateConnectionCertificate() {
     return this.to('UpdatePrivateConnectionCertificate');
@@ -679,7 +690,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateRecommendation.html
    */
   public toUpdateRecommendation() {
     return this.to('UpdateRecommendation');
@@ -690,7 +701,7 @@ export class Aidevops extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/devopsagent/latest/userguide/what-is.html
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ValidateAwsAssociations.html
    */
   public toValidateAwsAssociations() {
     return this.to('ValidateAwsAssociations');
@@ -733,6 +744,7 @@ export class Aidevops extends PolicyStatement {
     ],
     Read: [
       'DescribePrivateConnection',
+      'DescribeServices',
       'GetAccountUsage',
       'GetAgentSpace',
       'GetAssociation',

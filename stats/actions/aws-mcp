@@ -1,3 +1,0 @@
-aws-mcp:CallReadOnlyTool;Read
-aws-mcp:CallReadWriteTool;Write
-aws-mcp:InvokeMcp;List

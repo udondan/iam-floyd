@@ -1,0 +1,6 @@
+researchstudio:AssignPrincipal;Write
+researchstudio:CreateApplication;Write
+researchstudio:DeleteApplication;Write
+researchstudio:DeletePrincipal;Write
+researchstudio:GetApplication;Read
+researchstudio:ListApplications;List
