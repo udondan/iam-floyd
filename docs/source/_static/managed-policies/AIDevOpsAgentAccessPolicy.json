@@ -713,6 +713,7 @@
         "servicecatalog:GetAttributeGroup",
         "servicecatalog:List*",
         "servicequotas:GetServiceQuota",
+        "servicequotas:ListServiceQuotas",
         "ses:Describe*",
         "ses:GetAccount",
         "ses:GetAddonInstance",
