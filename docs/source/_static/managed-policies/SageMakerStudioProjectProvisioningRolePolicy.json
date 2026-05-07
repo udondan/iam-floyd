@@ -328,7 +328,8 @@
       "Condition": {
         "ArnEquals": {
           "iam:PolicyARN": [
-            "arn:aws:iam::aws:policy/SageMakerStudioAdminProjectUserRolePolicy"
+            "arn:aws:iam::aws:policy/SageMakerStudioAdminProjectUserRolePolicy",
+            "arn:aws:iam::aws:policy/SageMakerStudioAdminIAMDefaultExecutionPolicy"
           ]
         },
         "Null": {
@@ -1055,7 +1056,7 @@
         "cloudformation:DeleteChangeSet"
       ],
       "Resource": [
-        "arn:aws:cloudformation:*:*:transform/Serverless*"
+        "arn:aws:cloudformation:*:*:transform/*"
       ]
     },
     {

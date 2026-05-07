@@ -32,7 +32,8 @@
         "aidevops:DescribeSupportLevel",
         "aidevops:ListChats",
         "aidevops:CreateChat",
-        "aidevops:SendMessage"
+        "aidevops:SendMessage",
+        "aidevops:DescribeServices"
       ],
       "Resource": "arn:aws:aidevops:*:*:agentspace/${aws:PrincipalTag/AgentSpaceId}",
       "Condition": {
@@ -59,6 +60,7 @@
       "Effect": "Allow",
       "Action": [
         "support:DescribeCases",
+        "support:DescribeServices",
         "support:InitiateChatForCase",
         "support:DescribeSupportLevel"
       ],
