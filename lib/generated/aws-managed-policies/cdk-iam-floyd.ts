@@ -4854,6 +4854,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceDeploymentServiceRolePolicy);
     }
 
+    /** Provides full access to the AWS Marketplace Discovery API for searching and retrieving product and pricing information. */
+    public AWSMarketplaceDiscoveryFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceDiscoveryFullAccess);
+    }
+
     /** Provides the ability to subscribe and unsubscribe to AWS Marketplace software, allows users to manage Marketplace software instances from the Marketplace 'Your Software' page, and provides administrative access to EC2. */
     public AWSMarketplaceFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMarketplaceFullAccess);

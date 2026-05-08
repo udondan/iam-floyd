@@ -1938,6 +1938,8 @@ export class AwsManagedPolicy {
     public static AWSMarketplaceAmiIngestion = 'AWSMarketplaceAmiIngestion';
     /** Allows AWS Marketplace to create and manage seller deployment parameters for the products that you subscribe to on AWS Marketplace. */
     public static AWSMarketplaceDeploymentServiceRolePolicy = 'aws-service-role/AWSMarketplaceDeploymentServiceRolePolicy';
+    /** Provides full access to the AWS Marketplace Discovery API for searching and retrieving product and pricing information. */
+    public static AWSMarketplaceDiscoveryFullAccess = 'AWSMarketplaceDiscoveryFullAccess';
     /** Provides the ability to subscribe and unsubscribe to AWS Marketplace software, allows users to manage Marketplace software instances from the Marketplace 'Your Software' page, and provides administrative access to EC2. */
     public static AWSMarketplaceFullAccess = 'AWSMarketplaceFullAccess';
     /** Provides read access to AWS Marketplace Entitlements */

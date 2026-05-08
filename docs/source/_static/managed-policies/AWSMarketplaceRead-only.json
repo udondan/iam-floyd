@@ -47,6 +47,27 @@
     {
       "Effect": "Allow",
       "Action": [
+        "aws-marketplace:GetListing",
+        "aws-marketplace:GetProduct",
+        "aws-marketplace:GetOffer",
+        "aws-marketplace:GetOfferTerms",
+        "aws-marketplace:GetOfferSet",
+        "aws-marketplace:ListPurchaseOptions",
+        "aws-marketplace:ListFulfillmentOptions",
+        "aws-marketplace:SearchFacets",
+        "aws-marketplace:SearchListings"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/product/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/listing/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/offer/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/offerSet/*",
+        "arn:aws:aws-marketplace:::catalog/AWSMarketplace*/purchaseOption/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "aws-marketplace:ListAgreementCancellationRequests",
         "aws-marketplace:GetAgreementCancellationRequest"
       ],
