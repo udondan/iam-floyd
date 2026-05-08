@@ -13,6 +13,8 @@ bedrock-agentcore:harness
 bedrock-agentcore:memory
 bedrock-agentcore:oauth2credentialprovider
 bedrock-agentcore:online-evaluation-config
+bedrock-agentcore:payment-manager
+bedrock-agentcore:paymentcredentialprovider
 bedrock-agentcore:policy
 bedrock-agentcore:policy-engine
 bedrock-agentcore:policy-generation

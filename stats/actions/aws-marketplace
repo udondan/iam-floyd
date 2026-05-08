@@ -31,6 +31,7 @@ aws-marketplace:GetBillingAdjustmentRequest;Read
 aws-marketplace:GetBuyerDashboard;Read
 aws-marketplace:GetEntitlements;Read
 aws-marketplace:GetInvoiceSubmissionTask;Read
+aws-marketplace:GetIssuedTaxInvoice;Read
 aws-marketplace:GetListing;Read
 aws-marketplace:GetOffer;Read
 aws-marketplace:GetOfferSet;Read
@@ -52,6 +53,7 @@ aws-marketplace:ListEntities;List
 aws-marketplace:ListEntitlementDetails;Read
 aws-marketplace:ListFulfillmentOptions;List
 aws-marketplace:ListInvoiceSubmissionTasks;List
+aws-marketplace:ListIssuedTaxInvoices;List
 aws-marketplace:ListPayables;List
 aws-marketplace:ListPrivateListings;List
 aws-marketplace:ListPrivateMarketplaceRequests;List

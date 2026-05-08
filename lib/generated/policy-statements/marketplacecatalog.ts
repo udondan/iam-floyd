@@ -85,6 +85,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of a specific tax invoice issued by AWS on behalf of a seller
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toGetIssuedTaxInvoice() {
+    return this.to('GetIssuedTaxInvoice');
+  }
+
+  /**
    * Grants permission to get the resource policy of an existing entity
    *
    * Access Level: Read
@@ -140,6 +151,17 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tax invoices issued by AWS on behalf of a seller
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toListIssuedTaxInvoices() {
+    return this.to('ListIssuedTaxInvoices');
+  }
+
+  /**
    * Grants permission to list payables of the specified payable provenance
    *
    * Access Level: List
@@ -151,7 +173,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags on an existing entity, change set, or invoice submission task
+   * Grants permission to list tags on an existing entity, change set, invoice submission task, or issued tax invoice
    *
    * Access Level: Read
    *
@@ -205,7 +227,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add new tags to a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask
+   * Grants permission to add new tags to a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask, IssuedTaxInvoice
    *
    * Access Level: Tagging
    *
@@ -220,7 +242,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask
+   * Grants permission to remove tags from a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask, IssuedTaxInvoice
    *
    * Access Level: Tagging
    *
@@ -248,6 +270,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'DescribeChangeSet',
       'DescribeEntity',
       'GetInvoiceSubmissionTask',
+      'GetIssuedTaxInvoice',
       'GetResourcePolicy',
       'ListTagsForResource'
     ],
@@ -256,6 +279,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'ListChangeSets',
       'ListEntities',
       'ListInvoiceSubmissionTasks',
+      'ListIssuedTaxInvoices',
       'ListPayables'
     ],
     Tagging: [
@@ -336,6 +360,24 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type IssuedTaxInvoice to the statement
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIssuedTaxInvoice(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/issued-tax-invoice/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the Intent parameter in the StartChangeSet request
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html
@@ -377,6 +419,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * - Entity
    * - ChangeSet
    * - InvoiceSubmissionTask
+   * - IssuedTaxInvoice
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

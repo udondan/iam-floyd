@@ -23,6 +23,10 @@ export class Networkmonitor extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_CreateMonitor.html
    */
   public toCreateMonitor() {
@@ -33,6 +37,10 @@ export class Networkmonitor extends PolicyStatement {
    * Grants permission to create a probe
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_CreateProbe.html
    */
@@ -110,6 +118,10 @@ export class Networkmonitor extends PolicyStatement {
    * Grants permission to add tags to a resource
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/networkmonitor/latest/APIReference/API_TagResource.html
    */
@@ -215,6 +227,11 @@ export class Networkmonitor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .toCreateMonitor()
+   * - .toCreateProbe()
+   * - .toTagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -246,6 +263,9 @@ export class Networkmonitor extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateMonitor()
+   * - .toCreateProbe()
+   * - .toTagResource()
    * - .toUntagResource()
    *
    * @param value The value(s) to check

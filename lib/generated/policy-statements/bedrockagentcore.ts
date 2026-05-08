@@ -390,6 +390,72 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new payment connector under a payment manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentConnector.html
+   */
+  public toCreatePaymentConnector() {
+    return this.to('CreatePaymentConnector');
+  }
+
+  /**
+   * Grants permission to create a new Payment Credential Provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentCredentialProvider.html
+   */
+  public toCreatePaymentCredentialProvider() {
+    return this.to('CreatePaymentCredentialProvider');
+  }
+
+  /**
+   * Grants permission to create a new payment instrument
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentInstrument.html
+   */
+  public toCreatePaymentInstrument() {
+    return this.to('CreatePaymentInstrument');
+  }
+
+  /**
+   * Grants permission to create a new payment manager
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentManager.html
+   */
+  public toCreatePaymentManager() {
+    return this.to('CreatePaymentManager');
+  }
+
+  /**
+   * Grants permission to create a new payment session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePaymentSession.html
+   */
+  public toCreatePaymentSession() {
+    return this.to('CreatePaymentSession');
+  }
+
+  /**
    * Grants permission to create a new policy within a policy engine
    *
    * Access Level: Write
@@ -664,6 +730,61 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toDeleteOnlineEvaluationConfig() {
     return this.to('DeleteOnlineEvaluationConfig');
+  }
+
+  /**
+   * Grants permission to delete a payment connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentConnector.html
+   */
+  public toDeletePaymentConnector() {
+    return this.to('DeletePaymentConnector');
+  }
+
+  /**
+   * Grants permission to delete a registered Payment Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentCredentialProvider.html
+   */
+  public toDeletePaymentCredentialProvider() {
+    return this.to('DeletePaymentCredentialProvider');
+  }
+
+  /**
+   * Grants permission to delete a payment instrument
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentInstrument.html
+   */
+  public toDeletePaymentInstrument() {
+    return this.to('DeletePaymentInstrument');
+  }
+
+  /**
+   * Grants permission to delete a payment manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentManager.html
+   */
+  public toDeletePaymentManager() {
+    return this.to('DeletePaymentManager');
+  }
+
+  /**
+   * Grants permission to delete a payment session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeletePaymentSession.html
+   */
+  public toDeletePaymentSession() {
+    return this.to('DeletePaymentSession');
   }
 
   /**
@@ -1012,6 +1133,72 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of a payment connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentConnector.html
+   */
+  public toGetPaymentConnector() {
+    return this.to('GetPaymentConnector');
+  }
+
+  /**
+   * Grants permission to fetch a registered Payment Credential Provider by its name
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentCredentialProvider.html
+   */
+  public toGetPaymentCredentialProvider() {
+    return this.to('GetPaymentCredentialProvider');
+  }
+
+  /**
+   * Grants permission to retrieve details of a payment instrument
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentInstrument.html
+   */
+  public toGetPaymentInstrument() {
+    return this.to('GetPaymentInstrument');
+  }
+
+  /**
+   * Grants permission to retrieve the balance of a payment instrument
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentInstrumentBalance.html
+   */
+  public toGetPaymentInstrumentBalance() {
+    return this.to('GetPaymentInstrumentBalance');
+  }
+
+  /**
+   * Grants permission to retrieve details of a payment manager
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentManager.html
+   */
+  public toGetPaymentManager() {
+    return this.to('GetPaymentManager');
+  }
+
+  /**
+   * Grants permission to retrieve details of a payment session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPaymentSession.html
+   */
+  public toGetPaymentSession() {
+    return this.to('GetPaymentSession');
+  }
+
+  /**
    * Grants permission to retrieve a policy
    *
    * Access Level: Read
@@ -1097,6 +1284,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetResourceOauth2Token() {
     return this.to('GetResourceOauth2Token');
+  }
+
+  /**
+   * Grants permission to retrieve a payment authentication token associated with a Payment Credential Provider
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetResourcePaymentToken.html
+   */
+  public toGetResourcePaymentToken() {
+    return this.to('GetResourcePaymentToken');
   }
 
   /**
@@ -1561,6 +1759,61 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list payment connectors under a payment manager
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentConnectors.html
+   */
+  public toListPaymentConnectors() {
+    return this.to('ListPaymentConnectors');
+  }
+
+  /**
+   * Grants permission to list all Payment Credential Providers in the Token Vault
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentCredentialProviders.html
+   */
+  public toListPaymentCredentialProviders() {
+    return this.to('ListPaymentCredentialProviders');
+  }
+
+  /**
+   * Grants permission to list payment instruments
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentInstruments.html
+   */
+  public toListPaymentInstruments() {
+    return this.to('ListPaymentInstruments');
+  }
+
+  /**
+   * Grants permission to list payment managers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentManagers.html
+   */
+  public toListPaymentManagers() {
+    return this.to('ListPaymentManagers');
+  }
+
+  /**
+   * Grants permission to list payment sessions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPaymentSessions.html
+   */
+  public toListPaymentSessions() {
+    return this.to('ListPaymentSessions');
+  }
+
+  /**
    * Grants permission to list policies within a policy engine
    *
    * Access Level: List
@@ -1707,6 +1960,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to process a payment transaction
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ProcessPayment.html
+   */
+  public toProcessPayment() {
+    return this.to('ProcessPayment');
+  }
+
+  /**
    * Grants permission to create or update the resource-based policy for a Bedrock resource
    *
    * Access Level: Write
@@ -1757,7 +2021,7 @@ export class BedrockAgentcore extends PolicyStatement {
   /**
    * Grants permission to associate a Customer Managed Key (CMK) or a Service Managed Key with a specific TokenVault
    *
-   * Access Level: Read
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_SetTokenVaultCMK.html
    */
@@ -2111,6 +2375,42 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing payment connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentConnector.html
+   */
+  public toUpdatePaymentConnector() {
+    return this.to('UpdatePaymentConnector');
+  }
+
+  /**
+   * Grants permission to update an existing Payment Credential Provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentCredentialProvider.html
+   */
+  public toUpdatePaymentCredentialProvider() {
+    return this.to('UpdatePaymentCredentialProvider');
+  }
+
+  /**
+   * Grants permission to update an existing payment manager
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdatePaymentManager.html
+   */
+  public toUpdatePaymentManager() {
+    return this.to('UpdatePaymentManager');
+  }
+
+  /**
    * Grants permission to update an existing policy
    *
    * Access Level: Write
@@ -2207,6 +2507,11 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateMemory',
       'CreateOauth2CredentialProvider',
       'CreateOnlineEvaluationConfig',
+      'CreatePaymentConnector',
+      'CreatePaymentCredentialProvider',
+      'CreatePaymentInstrument',
+      'CreatePaymentManager',
+      'CreatePaymentSession',
       'CreatePolicy',
       'CreatePolicyEngine',
       'CreateRegistry',
@@ -2231,6 +2536,11 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteMemoryRecord',
       'DeleteOauth2CredentialProvider',
       'DeleteOnlineEvaluationConfig',
+      'DeletePaymentConnector',
+      'DeletePaymentCredentialProvider',
+      'DeletePaymentInstrument',
+      'DeletePaymentManager',
+      'DeletePaymentSession',
       'DeletePolicy',
       'DeletePolicyEngine',
       'DeleteRecommendation',
@@ -2249,8 +2559,10 @@ export class BedrockAgentcore extends PolicyStatement {
       'InvokeAgentRuntimeWithWebSocketStreamForUser',
       'InvokeCodeInterpreter',
       'InvokeHarness',
+      'ProcessPayment',
       'PutResourcePolicy',
       'SaveBrowserSessionProfile',
+      'SetTokenVaultCMK',
       'StartBatchEvaluation',
       'StartBrowserSession',
       'StartCodeInterpreterSession',
@@ -2276,6 +2588,9 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateMemory',
       'UpdateOauth2CredentialProvider',
       'UpdateOnlineEvaluationConfig',
+      'UpdatePaymentConnector',
+      'UpdatePaymentCredentialProvider',
+      'UpdatePaymentManager',
       'UpdatePolicy',
       'UpdatePolicyEngine',
       'UpdateRegistry',
@@ -2310,6 +2625,12 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetMemoryRecord',
       'GetOauth2CredentialProvider',
       'GetOnlineEvaluationConfig',
+      'GetPaymentConnector',
+      'GetPaymentCredentialProvider',
+      'GetPaymentInstrument',
+      'GetPaymentInstrumentBalance',
+      'GetPaymentManager',
+      'GetPaymentSession',
       'GetPolicy',
       'GetPolicyEngine',
       'GetPolicyGeneration',
@@ -2318,6 +2639,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetRegistryRecord',
       'GetResourceApiKey',
       'GetResourceOauth2Token',
+      'GetResourcePaymentToken',
       'GetResourcePolicy',
       'GetTokenVault',
       'GetWorkloadIdentity',
@@ -2325,8 +2647,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListApiKeyCredentialProviders',
       'ListOauth2CredentialProviders',
       'ListWorkloadIdentities',
-      'SearchRegistryRecords',
-      'SetTokenVaultCMK'
+      'SearchRegistryRecords'
     ],
     List: [
       'ListABTests',
@@ -2352,6 +2673,11 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListMemoryExtractionJobs',
       'ListMemoryRecords',
       'ListOnlineEvaluationConfigs',
+      'ListPaymentConnectors',
+      'ListPaymentCredentialProviders',
+      'ListPaymentInstruments',
+      'ListPaymentManagers',
+      'ListPaymentSessions',
       'ListPolicies',
       'ListPolicyEngines',
       'ListPolicyGenerationAssets',
@@ -2784,6 +3110,41 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type payment-manager to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/paymentManager.html
+   *
+   * @param paymentManagerId - Identifier for the paymentManagerId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPaymentManager(paymentManagerId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:payment-manager/${ paymentManagerId }`);
+  }
+
+  /**
+   * Adds a resource of type paymentcredentialprovider to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/paymentcredentialprovider.html
+   *
+   * @param tokenVaultId - Identifier for the tokenVaultId.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPaymentcredentialprovider(tokenVaultId: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:token-vault/${ tokenVaultId }/paymentcredentialprovider/${ name }`);
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -2801,6 +3162,8 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateMemory()
    * - .toCreateOauth2CredentialProvider()
    * - .toCreateOnlineEvaluationConfig()
+   * - .toCreatePaymentCredentialProvider()
+   * - .toCreatePaymentManager()
    * - .toCreateWorkloadIdentity()
    * - .toTagResource()
    *
@@ -2837,6 +3200,8 @@ export class BedrockAgentcore extends PolicyStatement {
    * - workload-identity-directory
    * - token-vault
    * - harness
+   * - payment-manager
+   * - paymentcredentialprovider
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2864,6 +3229,8 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateMemory()
    * - .toCreateOauth2CredentialProvider()
    * - .toCreateOnlineEvaluationConfig()
+   * - .toCreatePaymentCredentialProvider()
+   * - .toCreatePaymentManager()
    * - .toCreateWorkloadIdentity()
    * - .toTagResource()
    * - .toUntagResource()

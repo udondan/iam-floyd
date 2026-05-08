@@ -56,7 +56,6 @@ export class Braket extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateJob.html
@@ -72,7 +71,6 @@ export class Braket extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html
@@ -88,7 +86,6 @@ export class Braket extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateSpendingLimit.html
@@ -101,11 +98,6 @@ export class Braket extends PolicyStatement {
    * Grants permission to delete a spending limit
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_DeleteSpendingLimit.html
    */
@@ -178,7 +170,7 @@ export class Braket extends PolicyStatement {
   /**
    * Grants permission to search for devices available in Amazon Braket
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchDevices.html
    */
@@ -189,7 +181,7 @@ export class Braket extends PolicyStatement {
   /**
    * Grants permission to search for jobs
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchJobs.html
    */
@@ -200,7 +192,7 @@ export class Braket extends PolicyStatement {
   /**
    * Grants permission to search for quantum tasks
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchQuantumTasks.html
    */
@@ -253,11 +245,6 @@ export class Braket extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_UpdateSpendingLimit.html
    */
   public toUpdateSpendingLimit() {
@@ -282,10 +269,12 @@ export class Braket extends PolicyStatement {
       'GetServiceLinkedRoleStatus',
       'GetUserAgreementStatus',
       'ListTagsForResource',
+      'SearchSpendingLimits'
+    ],
+    List: [
       'SearchDevices',
       'SearchJobs',
-      'SearchQuantumTasks',
-      'SearchSpendingLimits'
+      'SearchQuantumTasks'
     ],
     Tagging: [
       'TagResource',
@@ -345,6 +334,21 @@ export class Braket extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type device to the statement
+   *
+   * https://docs.aws.amazon.com/braket/latest/developerguide/restrict-access.html
+   *
+   * @param deviceType - Identifier for the deviceType.
+   * @param provider - Identifier for the provider.
+   * @param deviceId - Identifier for the deviceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDevice(deviceType: string, provider: string, deviceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:braket:*:${ account ?? this.defaultAccount }:device/${ deviceType }/${ provider }/${ deviceId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -353,9 +357,7 @@ export class Braket extends PolicyStatement {
    * - .toCreateJob()
    * - .toCreateQuantumTask()
    * - .toCreateSpendingLimit()
-   * - .toDeleteSpendingLimit()
    * - .toTagResource()
-   * - .toUpdateSpendingLimit()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -369,13 +371,6 @@ export class Braket extends PolicyStatement {
    * Filters access by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toCreateJob()
-   * - .toCreateQuantumTask()
-   * - .toCreateSpendingLimit()
-   * - .toDeleteSpendingLimit()
-   * - .toUpdateSpendingLimit()
    *
    * Applies to resource types:
    * - quantum-task
@@ -399,10 +394,8 @@ export class Braket extends PolicyStatement {
    * - .toCreateJob()
    * - .toCreateQuantumTask()
    * - .toCreateSpendingLimit()
-   * - .toDeleteSpendingLimit()
    * - .toTagResource()
    * - .toUntagResource()
-   * - .toUpdateSpendingLimit()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
