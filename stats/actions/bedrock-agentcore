@@ -23,6 +23,11 @@ bedrock-agentcore:CreateHarness;Write
 bedrock-agentcore:CreateMemory;Write
 bedrock-agentcore:CreateOauth2CredentialProvider;Write
 bedrock-agentcore:CreateOnlineEvaluationConfig;Write
+bedrock-agentcore:CreatePaymentConnector;Write
+bedrock-agentcore:CreatePaymentCredentialProvider;Write
+bedrock-agentcore:CreatePaymentInstrument;Write
+bedrock-agentcore:CreatePaymentManager;Write
+bedrock-agentcore:CreatePaymentSession;Write
 bedrock-agentcore:CreatePolicy;Write
 bedrock-agentcore:CreatePolicyEngine;Write
 bedrock-agentcore:CreateRegistry;Write
@@ -47,6 +52,11 @@ bedrock-agentcore:DeleteMemory;Write
 bedrock-agentcore:DeleteMemoryRecord;Write
 bedrock-agentcore:DeleteOauth2CredentialProvider;Write
 bedrock-agentcore:DeleteOnlineEvaluationConfig;Write
+bedrock-agentcore:DeletePaymentConnector;Write
+bedrock-agentcore:DeletePaymentCredentialProvider;Write
+bedrock-agentcore:DeletePaymentInstrument;Write
+bedrock-agentcore:DeletePaymentManager;Write
+bedrock-agentcore:DeletePaymentSession;Write
 bedrock-agentcore:DeletePolicy;Write
 bedrock-agentcore:DeletePolicyEngine;Write
 bedrock-agentcore:DeleteRecommendation;Write
@@ -78,6 +88,12 @@ bedrock-agentcore:GetMemory;Read
 bedrock-agentcore:GetMemoryRecord;Read
 bedrock-agentcore:GetOauth2CredentialProvider;Read
 bedrock-agentcore:GetOnlineEvaluationConfig;Read
+bedrock-agentcore:GetPaymentConnector;Read
+bedrock-agentcore:GetPaymentCredentialProvider;Read
+bedrock-agentcore:GetPaymentInstrument;Read
+bedrock-agentcore:GetPaymentInstrumentBalance;Read
+bedrock-agentcore:GetPaymentManager;Read
+bedrock-agentcore:GetPaymentSession;Read
 bedrock-agentcore:GetPolicy;Read
 bedrock-agentcore:GetPolicyEngine;Read
 bedrock-agentcore:GetPolicyGeneration;Read
@@ -86,6 +102,7 @@ bedrock-agentcore:GetRegistry;Read
 bedrock-agentcore:GetRegistryRecord;Read
 bedrock-agentcore:GetResourceApiKey;Read
 bedrock-agentcore:GetResourceOauth2Token;Read
+bedrock-agentcore:GetResourcePaymentToken;Read
 bedrock-agentcore:GetResourcePolicy;Read
 bedrock-agentcore:GetTokenVault;Read
 bedrock-agentcore:GetWorkloadAccessToken;Write
@@ -126,6 +143,11 @@ bedrock-agentcore:ListMemoryExtractionJobs;List
 bedrock-agentcore:ListMemoryRecords;List
 bedrock-agentcore:ListOauth2CredentialProviders;Read
 bedrock-agentcore:ListOnlineEvaluationConfigs;List
+bedrock-agentcore:ListPaymentConnectors;List
+bedrock-agentcore:ListPaymentCredentialProviders;List
+bedrock-agentcore:ListPaymentInstruments;List
+bedrock-agentcore:ListPaymentManagers;List
+bedrock-agentcore:ListPaymentSessions;List
 bedrock-agentcore:ListPolicies;List
 bedrock-agentcore:ListPolicyEngines;List
 bedrock-agentcore:ListPolicyGenerationAssets;List
@@ -139,11 +161,12 @@ bedrock-agentcore:ListWorkloadIdentities;Read
 bedrock-agentcore:ManageAdminPolicy;Permissions management
 bedrock-agentcore:ManageResourceScopedPolicy;Permissions management
 bedrock-agentcore:PartiallyAuthorizeActions;Permissions management
+bedrock-agentcore:ProcessPayment;Write
 bedrock-agentcore:PutResourcePolicy;Write
 bedrock-agentcore:RetrieveMemoryRecords;List
 bedrock-agentcore:SaveBrowserSessionProfile;Write
 bedrock-agentcore:SearchRegistryRecords;Read
-bedrock-agentcore:SetTokenVaultCMK;Read
+bedrock-agentcore:SetTokenVaultCMK;Write
 bedrock-agentcore:StartBatchEvaluation;Write
 bedrock-agentcore:StartBrowserSession;Write
 bedrock-agentcore:StartCodeInterpreterSession;Write
@@ -172,6 +195,9 @@ bedrock-agentcore:UpdateHarness;Write
 bedrock-agentcore:UpdateMemory;Write
 bedrock-agentcore:UpdateOauth2CredentialProvider;Write
 bedrock-agentcore:UpdateOnlineEvaluationConfig;Write
+bedrock-agentcore:UpdatePaymentConnector;Write
+bedrock-agentcore:UpdatePaymentCredentialProvider;Write
+bedrock-agentcore:UpdatePaymentManager;Write
 bedrock-agentcore:UpdatePolicy;Write
 bedrock-agentcore:UpdatePolicyEngine;Write
 bedrock-agentcore:UpdateRegistry;Write

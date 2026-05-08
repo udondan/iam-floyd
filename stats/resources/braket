@@ -1,3 +1,4 @@
+braket:device
 braket:job
 braket:quantum-task
 braket:spending-limit
