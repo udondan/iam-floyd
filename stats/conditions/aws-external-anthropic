@@ -1,2 +1,5 @@
 aws-external-anthropic:BearerTokenType
 aws-external-anthropic:Capability
+aws-external-anthropic:RequestTag/${TagKey}
+aws-external-anthropic:ResourceTag/${TagKey}
+aws-external-anthropic:TagKeys

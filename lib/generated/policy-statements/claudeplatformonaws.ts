@@ -19,6 +19,61 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to archive a managed agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toArchiveAgent() {
+    return this.to('ArchiveAgent');
+  }
+
+  /**
+   * Grants permission to archive a managed agent environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toArchiveEnvironment() {
+    return this.to('ArchiveEnvironment');
+  }
+
+  /**
+   * Grants permission to archive a memory store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toArchiveMemoryStore() {
+    return this.to('ArchiveMemoryStore');
+  }
+
+  /**
+   * Grants permission to archive a managed agent session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toArchiveSession() {
+    return this.to('ArchiveSession');
+  }
+
+  /**
+   * Grants permission to archive a credential vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toArchiveVault() {
+    return this.to('ArchiveVault');
+  }
+
+  /**
    * Grants permission to archive a workspace
    *
    * Access Level: Write
@@ -78,6 +133,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a managed agent in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toCreateAgent() {
+    return this.to('CreateAgent');
+  }
+
+  /**
    * Grants permission to create a batch inference request
    *
    * Access Level: Write
@@ -86,6 +152,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toCreateBatchInference() {
     return this.to('CreateBatchInference');
+  }
+
+  /**
+   * Grants permission to create a managed agent environment in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toCreateEnvironment() {
+    return this.to('CreateEnvironment');
   }
 
   /**
@@ -111,6 +188,28 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a managed agent memory store in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toCreateMemoryStore() {
+    return this.to('CreateMemoryStore');
+  }
+
+  /**
+   * Grants permission to create a managed agent session in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toCreateSession() {
+    return this.to('CreateSession');
+  }
+
+  /**
    * Grants permission to create a skill in a workspace
    *
    * Access Level: Write
@@ -133,9 +232,35 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an enrollment URL for a user profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toCreateUserProfileEnrollmentUrl() {
+    return this.to('CreateUserProfileEnrollmentUrl');
+  }
+
+  /**
+   * Grants permission to create a managed agent credential vault in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toCreateVault() {
+    return this.to('CreateVault');
+  }
+
+  /**
    * Grants permission to create a workspace in an organization
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/#welcome
    */
@@ -155,6 +280,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a managed agent environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toDeleteEnvironment() {
+    return this.to('DeleteEnvironment');
+  }
+
+  /**
    * Grants permission to delete a file from a workspace
    *
    * Access Level: Write
@@ -163,6 +299,28 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toDeleteFile() {
     return this.to('DeleteFile');
+  }
+
+  /**
+   * Grants permission to delete a memory store
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toDeleteMemoryStore() {
+    return this.to('DeleteMemoryStore');
+  }
+
+  /**
+   * Grants permission to delete a managed agent session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toDeleteSession() {
+    return this.to('DeleteSession');
   }
 
   /**
@@ -177,6 +335,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a credential vault
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toDeleteVault() {
+    return this.to('DeleteVault');
+  }
+
+  /**
    * Grants permission to retrieve the status of account setup and AWS Marketplace registration
    *
    * Access Level: Read
@@ -185,6 +354,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toGetAccountStatus() {
     return this.to('GetAccountStatus');
+  }
+
+  /**
+   * Grants permission to retrieve details or versions of a managed agent
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toGetAgent() {
+    return this.to('GetAgent');
   }
 
   /**
@@ -199,6 +379,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of a managed agent environment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toGetEnvironment() {
+    return this.to('GetEnvironment');
+  }
+
+  /**
    * Grants permission to retrieve a file or its content from a workspace
    *
    * Access Level: Read
@@ -210,6 +401,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of a memory store, its memories, or its memory versions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toGetMemoryStore() {
+    return this.to('GetMemoryStore');
+  }
+
+  /**
    * Grants permission to retrieve information about a specific model
    *
    * Access Level: Read
@@ -218,6 +420,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toGetModel() {
     return this.to('GetModel');
+  }
+
+  /**
+   * Grants permission to retrieve details, events, or resources of a managed agent session
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toGetSession() {
+    return this.to('GetSession');
   }
 
   /**
@@ -243,6 +456,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve details of a credential vault or its credentials
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toGetVault() {
+    return this.to('GetVault');
+  }
+
+  /**
    * Grants permission to retrieve details of a workspace
    *
    * Access Level: Read
@@ -251,6 +475,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toGetWorkspace() {
     return this.to('GetWorkspace');
+  }
+
+  /**
+   * Grants permission to list managed agents in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toListAgents() {
+    return this.to('ListAgents');
   }
 
   /**
@@ -265,6 +500,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list managed agent environments in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toListEnvironments() {
+    return this.to('ListEnvironments');
+  }
+
+  /**
    * Grants permission to list files in a workspace
    *
    * Access Level: List
@@ -273,6 +519,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toListFiles() {
     return this.to('ListFiles');
+  }
+
+  /**
+   * Grants permission to list managed agent memory stores in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toListMemoryStores() {
+    return this.to('ListMemoryStores');
   }
 
   /**
@@ -287,6 +544,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list managed agent sessions in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toListSessions() {
+    return this.to('ListSessions');
+  }
+
+  /**
    * Grants permission to list skills in a workspace
    *
    * Access Level: List
@@ -295,6 +563,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toListSkills() {
     return this.to('ListSkills');
+  }
+
+  /**
+   * Grants permission to list tags for a resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
   }
 
   /**
@@ -309,6 +588,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list managed agent credential vaults in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toListVaults() {
+    return this.to('ListVaults');
+  }
+
+  /**
    * Grants permission to list workspaces in an organization
    *
    * Access Level: List
@@ -317,6 +607,79 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toListWorkspaces() {
     return this.to('ListWorkspaces');
+  }
+
+  /**
+   * Grants permission to tag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to untag a resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a managed agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toUpdateAgent() {
+    return this.to('UpdateAgent');
+  }
+
+  /**
+   * Grants permission to update a managed agent environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toUpdateEnvironment() {
+    return this.to('UpdateEnvironment');
+  }
+
+  /**
+   * Grants permission to update a memory store, mutate its memories, or redact a memory version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toUpdateMemoryStore() {
+    return this.to('UpdateMemoryStore');
+  }
+
+  /**
+   * Grants permission to update a managed agent session, append session events, or manage its resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toUpdateSession() {
+    return this.to('UpdateSession');
   }
 
   /**
@@ -342,6 +705,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a credential vault or manage its stored credentials
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/#welcome
+   */
+  public toUpdateVault() {
+    return this.to('UpdateVault');
+  }
+
+  /**
    * Grants permission to update a workspace
    *
    * Access Level: Write
@@ -354,40 +728,75 @@ export class AwsExternalAnthropic extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ArchiveAgent',
+      'ArchiveEnvironment',
+      'ArchiveMemoryStore',
+      'ArchiveSession',
+      'ArchiveVault',
       'ArchiveWorkspace',
       'AssumeConsole',
       'CancelBatchInference',
       'CountTokens',
+      'CreateAgent',
       'CreateBatchInference',
+      'CreateEnvironment',
       'CreateFile',
       'CreateInference',
+      'CreateMemoryStore',
+      'CreateSession',
       'CreateSkill',
       'CreateUserProfile',
+      'CreateUserProfileEnrollmentUrl',
+      'CreateVault',
       'CreateWorkspace',
       'DeleteBatchInference',
+      'DeleteEnvironment',
       'DeleteFile',
+      'DeleteMemoryStore',
+      'DeleteSession',
       'DeleteSkill',
+      'DeleteVault',
+      'UpdateAgent',
+      'UpdateEnvironment',
+      'UpdateMemoryStore',
+      'UpdateSession',
       'UpdateSkill',
       'UpdateUserProfile',
+      'UpdateVault',
       'UpdateWorkspace'
     ],
     List: [
       'CallWithBearerToken',
+      'ListAgents',
       'ListBatchInferences',
+      'ListEnvironments',
       'ListFiles',
+      'ListMemoryStores',
       'ListModels',
+      'ListSessions',
       'ListSkills',
       'ListUserProfiles',
+      'ListVaults',
       'ListWorkspaces'
     ],
     Read: [
       'GetAccountStatus',
+      'GetAgent',
       'GetBatchInference',
+      'GetEnvironment',
       'GetFile',
+      'GetMemoryStore',
       'GetModel',
+      'GetSession',
       'GetSkill',
       'GetUserProfile',
-      'GetWorkspace'
+      'GetVault',
+      'GetWorkspace',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -400,6 +809,9 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onWorkspace(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:aws-external-anthropic:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ resourceId }`);
@@ -433,5 +845,115 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public ifCapability(value: string | string[], operator?: Operator | string) {
     return this.if(`Capability`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateWorkspace()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toArchiveAgent()
+   * - .toArchiveEnvironment()
+   * - .toArchiveMemoryStore()
+   * - .toArchiveSession()
+   * - .toArchiveVault()
+   * - .toArchiveWorkspace()
+   * - .toCancelBatchInference()
+   * - .toCountTokens()
+   * - .toCreateAgent()
+   * - .toCreateBatchInference()
+   * - .toCreateEnvironment()
+   * - .toCreateFile()
+   * - .toCreateInference()
+   * - .toCreateMemoryStore()
+   * - .toCreateSession()
+   * - .toCreateSkill()
+   * - .toCreateUserProfile()
+   * - .toCreateUserProfileEnrollmentUrl()
+   * - .toCreateVault()
+   * - .toDeleteBatchInference()
+   * - .toDeleteEnvironment()
+   * - .toDeleteFile()
+   * - .toDeleteMemoryStore()
+   * - .toDeleteSession()
+   * - .toDeleteSkill()
+   * - .toDeleteVault()
+   * - .toGetAgent()
+   * - .toGetBatchInference()
+   * - .toGetEnvironment()
+   * - .toGetFile()
+   * - .toGetMemoryStore()
+   * - .toGetModel()
+   * - .toGetSession()
+   * - .toGetSkill()
+   * - .toGetUserProfile()
+   * - .toGetVault()
+   * - .toGetWorkspace()
+   * - .toListAgents()
+   * - .toListBatchInferences()
+   * - .toListEnvironments()
+   * - .toListFiles()
+   * - .toListMemoryStores()
+   * - .toListModels()
+   * - .toListSessions()
+   * - .toListSkills()
+   * - .toListTagsForResource()
+   * - .toListUserProfiles()
+   * - .toListVaults()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAgent()
+   * - .toUpdateEnvironment()
+   * - .toUpdateMemoryStore()
+   * - .toUpdateSession()
+   * - .toUpdateSkill()
+   * - .toUpdateUserProfile()
+   * - .toUpdateVault()
+   * - .toUpdateWorkspace()
+   *
+   * Applies to resource types:
+   * - workspace
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateWorkspace()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }
