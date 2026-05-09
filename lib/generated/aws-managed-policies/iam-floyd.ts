@@ -1062,8 +1062,6 @@ export class AwsManagedPolicy {
     public static AmplifyBackendDeployFullAccess = 'service-role/AmplifyBackendDeployFullAccess';
     /** Provides full access to Claude Platform on AWS */
     public static AnthropicFullAccess = 'AnthropicFullAccess';
-    /** Provides read and inference access to Claude Platform on AWS */
-    public static AnthropicInferenceAccess = 'AnthropicInferenceAccess';
     /** Provides limited access to Claude Platform on AWS */
     public static AnthropicLimitedAccess = 'AnthropicLimitedAccess';
     /** Provides read only access to Claude Platform on AWS */
@@ -1124,6 +1122,8 @@ export class AwsManagedPolicy {
     public static AWSAccountUsageReportAccess = 'AWSAccountUsageReportAccess';
     /** Provides access for the Discovery Agentless Connector to register with AWS Application Discovery Service. */
     public static AWSAgentlessDiscoveryService = 'AWSAgentlessDiscoveryService';
+    /** Allows AWS AppConfig to call AWS services on your behalf. */
+    public static AWSAppConfigServiceRolePolicy = 'aws-service-role/AWSAppConfigServiceRolePolicy';
     /** Provides full access to the AWS AppFabric service and read only access to dependent services such as S3, Kinesis, KMS. */
     public static AWSAppFabricFullAccess = 'AWSAppFabricFullAccess';
     /** Provides read only access to the AWS AppFabric */
@@ -2528,6 +2528,8 @@ export class AwsManagedPolicy {
     public static CloudWatchAgentAdminPolicy = 'CloudWatchAgentAdminPolicy';
     /** Permissions required to use AmazonCloudWatchAgent on servers */
     public static CloudWatchAgentServerPolicy = 'CloudWatchAgentServerPolicy';
+    /** Grants permissions to call CloudWatch using API key authentication. */
+    public static CloudWatchAPIKeyAccess = 'CloudWatchAPIKeyAccess';
     /** Provides full access to CloudWatch Application Insights and required dependencies. */
     public static CloudWatchApplicationInsightsFullAccess = 'CloudWatchApplicationInsightsFullAccess';
     /** Provides read only access to CloudWatch Application Insights. */
