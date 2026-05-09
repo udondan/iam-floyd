@@ -7,18 +7,37 @@
       "Action": [
         "aws-external-anthropic:Get*",
         "aws-external-anthropic:List*",
+        "aws-external-anthropic:ArchiveAgent",
+        "aws-external-anthropic:ArchiveEnvironment",
+        "aws-external-anthropic:ArchiveMemoryStore",
+        "aws-external-anthropic:ArchiveSession",
+        "aws-external-anthropic:ArchiveVault",
         "aws-external-anthropic:CancelBatchInference",
         "aws-external-anthropic:CountTokens",
+        "aws-external-anthropic:CreateAgent",
         "aws-external-anthropic:CreateBatchInference",
+        "aws-external-anthropic:CreateEnvironment",
         "aws-external-anthropic:CreateFile",
         "aws-external-anthropic:CreateInference",
+        "aws-external-anthropic:CreateMemoryStore",
+        "aws-external-anthropic:CreateSession",
         "aws-external-anthropic:CreateSkill",
         "aws-external-anthropic:CreateUserProfile",
+        "aws-external-anthropic:CreateVault",
         "aws-external-anthropic:DeleteBatchInference",
+        "aws-external-anthropic:DeleteEnvironment",
         "aws-external-anthropic:DeleteFile",
+        "aws-external-anthropic:DeleteMemoryStore",
+        "aws-external-anthropic:DeleteSession",
         "aws-external-anthropic:DeleteSkill",
+        "aws-external-anthropic:DeleteVault",
+        "aws-external-anthropic:UpdateAgent",
+        "aws-external-anthropic:UpdateEnvironment",
+        "aws-external-anthropic:UpdateMemoryStore",
+        "aws-external-anthropic:UpdateSession",
         "aws-external-anthropic:UpdateSkill",
-        "aws-external-anthropic:UpdateUserProfile"
+        "aws-external-anthropic:UpdateUserProfile",
+        "aws-external-anthropic:UpdateVault"
       ],
       "Resource": "arn:aws:aws-external-anthropic:*:*:workspace/*"
     },
@@ -53,6 +72,17 @@
       "Effect": "Allow",
       "Action": "sts:TagGetWebIdentityToken",
       "Resource": "*"
+    },
+    {
+      "Sid": "AnthropicLimitedConsoleAccess",
+      "Effect": "Allow",
+      "Action": "aws-external-anthropic:AssumeConsole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws-external-anthropic:Capability": "developer"
+        }
+      }
     }
   ]
 }

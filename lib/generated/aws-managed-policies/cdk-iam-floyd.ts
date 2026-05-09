@@ -2664,11 +2664,6 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicFullAccess);
     }
 
-    /** Provides read and inference access to Claude Platform on AWS */
-    public AnthropicInferenceAccess(): aws_iam.IManagedPolicy {
-        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicInferenceAccess);
-    }
-
     /** Provides limited access to Claude Platform on AWS */
     public AnthropicLimitedAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicLimitedAccess);
@@ -2817,6 +2812,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides access for the Discovery Agentless Connector to register with AWS Application Discovery Service. */
     public AWSAgentlessDiscoveryService(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAgentlessDiscoveryService);
+    }
+
+    /** Allows AWS AppConfig to call AWS services on your behalf. */
+    public AWSAppConfigServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAppConfigServiceRolePolicy);
     }
 
     /** Provides full access to the AWS AppFabric service and read only access to dependent services such as S3, Kinesis, KMS. */
@@ -6327,6 +6327,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Permissions required to use AmazonCloudWatchAgent on servers */
     public CloudWatchAgentServerPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchAgentServerPolicy);
+    }
+
+    /** Grants permissions to call CloudWatch using API key authentication. */
+    public CloudWatchAPIKeyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.CloudWatchAPIKeyAccess);
     }
 
     /** Provides full access to CloudWatch Application Insights and required dependencies. */
