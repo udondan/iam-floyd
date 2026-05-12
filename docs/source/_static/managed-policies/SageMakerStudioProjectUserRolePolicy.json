@@ -327,14 +327,10 @@
         "glue:DeleteDataQualityRuleset",
         "glue:GetDataQualityModel",
         "glue:GetDataQualityModelResult",
-        "glue:GetDataQualityResult",
         "glue:GetDataQualityRuleRecommendationRun",
         "glue:GetDataQualityRuleset",
         "glue:GetDataQualityRulesetEvaluationRun",
-        "glue:ListDataQualityResults",
-        "glue:ListDataQualityRuleRecommendationRuns",
-        "glue:ListDataQualityRulesetEvaluationRuns",
-        "glue:ListDataQualityRulesets",
+        "glue:GetDataQualityResult",
         "glue:PublishDataQuality",
         "glue:PutDataQualityProfileAnnotation",
         "glue:PutDataQualityStatisticAnnotation",
@@ -362,7 +358,34 @@
       }
     },
     {
-      "Sid": "GlueListJobsPermissions",
+      "Sid": "GlueDQ",
+      "Effect": "Allow",
+      "Action": "glue:ListDataQuality*",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableGlueWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GlueDQVetl",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetDataQualityResult",
+        "glue:PublishDataQuality"
+      ],
+      "Resource": [
+        "arn:aws:glue:*:*:dataQualityRuleset/dq_etl_ruleset_${aws:PrincipalTag/AmazonDataZoneProject}_*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/EnableGlueWorkloadsPermissions": "true"
+        }
+      }
+    },
+    {
+      "Sid": "GlueListJobs",
       "Effect": "Allow",
       "Action": [
         "glue:ListJobs"
@@ -376,7 +399,7 @@
       }
     },
     {
-      "Sid": "GlueVisualETLPermissions",
+      "Sid": "GlueVisualETL",
       "Effect": "Allow",
       "Action": [
         "glue:GetGeneratedCode"
@@ -384,7 +407,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "GlueCompletionsPermissions",
+      "Sid": "GlueCompletions",
       "Effect": "Allow",
       "Action": [
         "glue:StartCompletion",
@@ -396,7 +419,7 @@
       ]
     },
     {
-      "Sid": "GlueJobRunnerSessionLogPermissions",
+      "Sid": "GlueJobRunnerSessionLog",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup",
@@ -406,7 +429,7 @@
       "Resource": "arn:aws:logs:*:*:log-group:/aws-glue/*"
     },
     {
-      "Sid": "EC2TagsPermissionsForGlue",
+      "Sid": "EC2TagsForGlue",
       "Effect": "Allow",
       "Action": [
         "ec2:DeleteTags",
@@ -454,32 +477,21 @@
       }
     },
     {
-      "Sid": "EmrServerlessInteractivePermissions",
+      "Sid": "EMRS",
       "Effect": "Allow",
       "Action": [
         "emr-serverless:AccessInteractiveEndpoints",
         "emr-serverless:AccessLivyEndpoints",
         "emr-serverless:GetApplication",
         "emr-serverless:StartApplication",
-        "emr-serverless:StopApplication"
-      ],
-      "Resource": "arn:aws:emr-serverless:*:*:/applications/*",
-      "Condition": {
-        "StringEquals": {
-          "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
-        }
-      }
-    },
-    {
-      "Sid": "EmrServerlessJobAccessPermissions",
-      "Effect": "Allow",
-      "Action": [
+        "emr-serverless:StopApplication",
         "emr-serverless:GetDashboardForJobRun",
-        "emr-serverless:GetJobRun"
+        "emr-serverless:GetJobRun",
+        "emr-serverless:*Session*",
+        "emr-serverless:GetResourceDashboard",
+        "emr-serverless:TagResource"
       ],
-      "Resource": [
-        "arn:aws:emr-serverless:*:*:/applications/*/jobruns/*"
-      ],
+      "Resource": "*",
       "Condition": {
         "StringEquals": {
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
@@ -525,6 +537,7 @@
       "Action": [
         "logs:CreateLogStream",
         "logs:CreateLogGroup",
+        "logs:DescribeLogStreams",
         "logs:PutLogEvents",
         "logs:GetLogEvents",
         "logs:GetLogRecord",
@@ -559,7 +572,8 @@
         "StringLike": {
           "cloudwatch:namespace": [
             "Glue",
-            "AWS/Glue"
+            "AWS/Glue",
+            "Glue Data Quality"
           ]
         }
       }
@@ -845,7 +859,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "GlueJobLogGroupPermissions",
+      "Sid": "GlueJobLogGroup",
       "Effect": "Allow",
       "Action": [
         "logs:DescribeLogStreams",
@@ -860,14 +874,11 @@
         "logs:FilterLogEvents"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/output",
-        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/error",
-        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/output:log-stream:*",
-        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/error:log-stream:*"
+        "arn:aws:logs:*:*:log-group:${aws:PrincipalTag/LogGroupName}/*"
       ]
     },
     {
-      "Sid": "ProjectLogGroupPermissions",
+      "Sid": "ProjectLogGroup",
       "Effect": "Allow",
       "Action": [
         "logs:DescribeLogStreams",
