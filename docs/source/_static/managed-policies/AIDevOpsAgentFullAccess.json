@@ -125,6 +125,7 @@
       "Sid": "AIDevOpsSupportAccess",
       "Effect": "Allow",
       "Action": [
+        "aidevops:DescribeServices",
         "aidevops:DescribeSupportLevel",
         "aidevops:EndChatForCase",
         "aidevops:InitiateChatForCase"

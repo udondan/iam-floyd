@@ -326,6 +326,8 @@ export class AwsManagedPolicy {
     public static AmazonEKSCNIPolicy = 'AmazonEKS_CNI_Policy';
     /** Policy attached to the EKS Cluster Role that grants permissions to manage the cluster's block storage resources. */
     public static AmazonEKSBlockStoragePolicy = 'AmazonEKSBlockStoragePolicy';
+    /** Policy attached to the EKS Cluster Role that grants permissions to manage the cluster's block storage resources. */
+    public static AmazonEKSBlockStoragePolicyV2 = 'AmazonEKSBlockStoragePolicyV2';
     /** This policy provides Kubernetes the permissions it requires to manage resources on your behalf. Kubernetes requires Ec2:CreateTags permissions to place identifying information on EC2 resources including but not limited to Instances, Security Groups, and Elastic Network Interfaces. */
     public static AmazonEKSClusterPolicy = 'AmazonEKSClusterPolicy';
     /** Policy attached to the EKS Cluster Role that grants permissions to manage the cluster's compute resources. */
@@ -2448,6 +2450,8 @@ export class AwsManagedPolicy {
     public static AWSVendorInsightsVendorFullAccess = 'AWSVendorInsightsVendorFullAccess';
     /** Provides read-only access for viewing the Vendor Insights resources */
     public static AWSVendorInsightsVendorReadOnly = 'AWSVendorInsightsVendorReadOnly';
+    /** Provides permissions to control service managed resources and call APIs necessary for log field enrichment on behalf of customers. */
+    public static AWSVPCFlowLogsServiceRolePolicy = 'aws-service-role/AWSVPCFlowLogsServiceRolePolicy';
     /** Allows VPC Lattice to access AWS resources on your behalf. */
     public static AWSVpcLatticeServiceRolePolicy = 'aws-service-role/AWSVpcLatticeServiceRolePolicy';
     /** Allow Site-to-Site VPN to create and manage resources related to your VPN Connections. */

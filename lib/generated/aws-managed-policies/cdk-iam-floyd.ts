@@ -824,6 +824,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSBlockStoragePolicy);
     }
 
+    /** Policy attached to the EKS Cluster Role that grants permissions to manage the cluster's block storage resources. */
+    public AmazonEKSBlockStoragePolicyV2(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSBlockStoragePolicyV2);
+    }
+
     /** This policy provides Kubernetes the permissions it requires to manage resources on your behalf. Kubernetes requires Ec2:CreateTags permissions to place identifying information on EC2 resources including but not limited to Instances, Security Groups, and Elastic Network Interfaces. */
     public AmazonEKSClusterPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEKSClusterPolicy);
@@ -6127,6 +6132,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read-only access for viewing the Vendor Insights resources */
     public AWSVendorInsightsVendorReadOnly(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSVendorInsightsVendorReadOnly);
+    }
+
+    /** Provides permissions to control service managed resources and call APIs necessary for log field enrichment on behalf of customers. */
+    public AWSVPCFlowLogsServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSVPCFlowLogsServiceRolePolicy);
     }
 
     /** Allows VPC Lattice to access AWS resources on your behalf. */
