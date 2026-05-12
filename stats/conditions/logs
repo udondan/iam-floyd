@@ -3,3 +3,5 @@ logs:LogGeneratingResourceArns
 logs:RequestTag/${TagKey}
 logs:ResourceTag/${TagKey}
 logs:TagKeys
+logs:data_source_name
+logs:data_source_type

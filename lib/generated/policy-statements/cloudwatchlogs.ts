@@ -868,6 +868,10 @@ export class Logs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifDataSourceName()
+   * - .ifDataSourceType()
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
    */
   public toIntegrateWithS3Table() {
@@ -1032,6 +1036,10 @@ export class Logs extends PolicyStatement {
    * Grants permission to process and transform log events through pipeline transformers before storage
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataSourceName()
+   * - .ifDataSourceType()
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html
    */
@@ -1872,5 +1880,37 @@ export class Logs extends PolicyStatement {
    */
   public ifLogGeneratingResourceArns(value: string | string[], operator?: Operator | string) {
     return this.if(`LogGeneratingResourceArns`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the data source name passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toIntegrateWithS3Table()
+   * - .toProcessWithPipeline()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataSourceName(value: string | string[], operator?: Operator | string) {
+    return this.if(`data_source_name`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the data source type passed in the request
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html
+   *
+   * Applies to actions:
+   * - .toIntegrateWithS3Table()
+   * - .toProcessWithPipeline()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataSourceType(value: string | string[], operator?: Operator | string) {
+    return this.if(`data_source_type`, value, operator ?? 'StringLike');
   }
 }
