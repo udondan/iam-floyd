@@ -23,7 +23,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toArchiveAgent() {
     return this.to('ArchiveAgent');
@@ -34,7 +34,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toArchiveEnvironment() {
     return this.to('ArchiveEnvironment');
@@ -45,7 +45,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toArchiveMemoryStore() {
     return this.to('ArchiveMemoryStore');
@@ -56,7 +56,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toArchiveSession() {
     return this.to('ArchiveSession');
@@ -67,7 +67,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toArchiveVault() {
     return this.to('ArchiveVault');
@@ -78,7 +78,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toArchiveWorkspace() {
     return this.to('ArchiveWorkspace');
@@ -92,7 +92,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * Possible conditions:
    * - .ifCapability()
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toAssumeConsole() {
     return this.to('AssumeConsole');
@@ -105,6 +105,8 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifBearerTokenType()
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html
    */
   public toCallWithBearerToken() {
     return this.to('CallWithBearerToken');
@@ -115,7 +117,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCancelBatchInference() {
     return this.to('CancelBatchInference');
@@ -126,7 +128,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCountTokens() {
     return this.to('CountTokens');
@@ -137,7 +139,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateAgent() {
     return this.to('CreateAgent');
@@ -148,7 +150,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateBatchInference() {
     return this.to('CreateBatchInference');
@@ -159,7 +161,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateEnvironment() {
     return this.to('CreateEnvironment');
@@ -170,7 +172,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateFile() {
     return this.to('CreateFile');
@@ -181,7 +183,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateInference() {
     return this.to('CreateInference');
@@ -192,7 +194,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateMemoryStore() {
     return this.to('CreateMemoryStore');
@@ -203,7 +205,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateSession() {
     return this.to('CreateSession');
@@ -214,7 +216,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateSkill() {
     return this.to('CreateSkill');
@@ -225,7 +227,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateUserProfile() {
     return this.to('CreateUserProfile');
@@ -236,7 +238,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateUserProfileEnrollmentUrl() {
     return this.to('CreateUserProfileEnrollmentUrl');
@@ -247,7 +249,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateVault() {
     return this.to('CreateVault');
@@ -262,7 +264,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toCreateWorkspace() {
     return this.to('CreateWorkspace');
@@ -273,7 +275,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toDeleteBatchInference() {
     return this.to('DeleteBatchInference');
@@ -284,7 +286,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toDeleteEnvironment() {
     return this.to('DeleteEnvironment');
@@ -295,7 +297,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toDeleteFile() {
     return this.to('DeleteFile');
@@ -306,7 +308,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toDeleteMemoryStore() {
     return this.to('DeleteMemoryStore');
@@ -317,7 +319,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toDeleteSession() {
     return this.to('DeleteSession');
@@ -328,7 +330,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toDeleteSkill() {
     return this.to('DeleteSkill');
@@ -339,7 +341,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toDeleteVault() {
     return this.to('DeleteVault');
@@ -350,7 +352,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetAccountStatus() {
     return this.to('GetAccountStatus');
@@ -361,7 +363,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetAgent() {
     return this.to('GetAgent');
@@ -372,7 +374,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetBatchInference() {
     return this.to('GetBatchInference');
@@ -383,7 +385,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetEnvironment() {
     return this.to('GetEnvironment');
@@ -394,7 +396,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetFile() {
     return this.to('GetFile');
@@ -405,7 +407,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetMemoryStore() {
     return this.to('GetMemoryStore');
@@ -416,7 +418,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetModel() {
     return this.to('GetModel');
@@ -427,7 +429,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetSession() {
     return this.to('GetSession');
@@ -438,7 +440,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetSkill() {
     return this.to('GetSkill');
@@ -449,7 +451,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetUserProfile() {
     return this.to('GetUserProfile');
@@ -460,7 +462,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetVault() {
     return this.to('GetVault');
@@ -471,7 +473,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toGetWorkspace() {
     return this.to('GetWorkspace');
@@ -482,7 +484,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListAgents() {
     return this.to('ListAgents');
@@ -493,7 +495,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListBatchInferences() {
     return this.to('ListBatchInferences');
@@ -504,7 +506,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListEnvironments() {
     return this.to('ListEnvironments');
@@ -515,7 +517,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListFiles() {
     return this.to('ListFiles');
@@ -526,7 +528,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListMemoryStores() {
     return this.to('ListMemoryStores');
@@ -537,7 +539,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListModels() {
     return this.to('ListModels');
@@ -548,7 +550,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListSessions() {
     return this.to('ListSessions');
@@ -559,7 +561,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListSkills() {
     return this.to('ListSkills');
@@ -570,7 +572,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
@@ -581,7 +583,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListUserProfiles() {
     return this.to('ListUserProfiles');
@@ -592,7 +594,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListVaults() {
     return this.to('ListVaults');
@@ -603,7 +605,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toListWorkspaces() {
     return this.to('ListWorkspaces');
@@ -618,7 +620,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toTagResource() {
     return this.to('TagResource');
@@ -632,7 +634,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUntagResource() {
     return this.to('UntagResource');
@@ -643,7 +645,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUpdateAgent() {
     return this.to('UpdateAgent');
@@ -654,7 +656,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUpdateEnvironment() {
     return this.to('UpdateEnvironment');
@@ -665,7 +667,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUpdateMemoryStore() {
     return this.to('UpdateMemoryStore');
@@ -676,7 +678,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUpdateSession() {
     return this.to('UpdateSession');
@@ -687,7 +689,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUpdateSkill() {
     return this.to('UpdateSkill');
@@ -698,7 +700,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUpdateUserProfile() {
     return this.to('UpdateUserProfile');
@@ -709,7 +711,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUpdateVault() {
     return this.to('UpdateVault');
@@ -720,7 +722,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/#welcome
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
    */
   public toUpdateWorkspace() {
     return this.to('UpdateWorkspace');
@@ -803,7 +805,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
   /**
    * Adds a resource of type workspace to the statement
    *
-   * https://docs.aws.amazon.com/#Workspace
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/workspaces.html#workspaces
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -820,7 +822,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
   /**
    * Filters access by the Short-term or Long-term bearer tokens
    *
-   * https://docs.aws.amazon.com/
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html
    *
    * Applies to actions:
    * - .toCallWithBearerToken()
@@ -833,9 +835,20 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Filters access by the use of the Claude Platform console
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifCalledViaConsole(value?: boolean) {
+    return this.if(`CalledViaConsole`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
    * Filters access by the Claude Platform role used for the console session
    *
-   * https://docs.aws.amazon.com/
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-policies.html
    *
    * Applies to actions:
    * - .toAssumeConsole()
