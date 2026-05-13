@@ -182,6 +182,17 @@ export class Billing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view a credit allocation history
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetCreditAllocationHistory() {
+    return this.to('GetCreditAllocationHistory');
+  }
+
+  /**
    * Grants permission to view credits that have been redeemed
    *
    * Access Level: Read
@@ -406,6 +417,7 @@ export class Billing extends PolicyStatement {
       'GetBillingView',
       'GetBillingViewData',
       'GetContractInformation',
+      'GetCreditAllocationHistory',
       'GetCredits',
       'GetIAMAccessPreference',
       'GetSellerOfRecord',

@@ -10,6 +10,7 @@ billing:GetBillingPreferences;Read
 billing:GetBillingView;Read
 billing:GetBillingViewData;Read
 billing:GetContractInformation;Read
+billing:GetCreditAllocationHistory;Read
 billing:GetCredits;Read
 billing:GetIAMAccessPreference;Read
 billing:GetResourcePolicy;Permissions management
