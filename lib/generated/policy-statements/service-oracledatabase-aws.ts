@@ -30,6 +30,17 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an AWS Identity and Access Management (IAM) service role with a specified resource to enable AWS service integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AssociateIamRoleToResource.html
+   */
+  public toAssociateIamRoleToResource() {
+    return this.to('AssociateIamRoleToResource');
+  }
+
+  /**
    * Grants permission to create a new Autonomous VM cluster in the specified Exadata infrastructure
    *
    * Access Level: Write
@@ -211,6 +222,17 @@ export class Odb extends PolicyStatement {
    */
   public toDeleteResourcePolicy() {
     return this.to('DeleteResourcePolicy');
+  }
+
+  /**
+   * Grants permission to disassociate an AWS Identity and Access Management (IAM) service role from a specified resource to disable AWS service integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateIamRoleFromResource.html
+   */
+  public toDisassociateIamRoleFromResource() {
+    return this.to('DisassociateIamRoleFromResource');
   }
 
   /**
@@ -594,6 +616,7 @@ export class Odb extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptMarketplaceRegistration',
+      'AssociateIamRoleToResource',
       'CreateCloudAutonomousVmCluster',
       'CreateCloudExadataInfrastructure',
       'CreateCloudVmCluster',
@@ -610,6 +633,7 @@ export class Odb extends PolicyStatement {
       'DeleteOdbNetwork',
       'DeleteOdbPeeringConnection',
       'DeleteResourcePolicy',
+      'DisassociateIamRoleFromResource',
       'InitializeService',
       'PutResourcePolicy',
       'RebootDbNode',

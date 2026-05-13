@@ -41,6 +41,17 @@ export class Inspector2Telemetry extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send telemetry event for a telemetry session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_SendTelemetryEvent.html
+   */
+  public toSendTelemetryEvent() {
+    return this.to('SendTelemetryEvent');
+  }
+
+  /**
    * Grants permission to start a telemetry session
    *
    * Access Level: Write
@@ -66,6 +77,7 @@ export class Inspector2Telemetry extends PolicyStatement {
     Write: [
       'NotifyHeartbeat',
       'SendTelemetry',
+      'SendTelemetryEvent',
       'StartSession',
       'StopSession'
     ]

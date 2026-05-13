@@ -349,19 +349,6 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type user to the statement
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html
-   *
-   * @param userNameWithPath - Identifier for the userNameWithPath.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onUser(userNameWithPath: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iam::${ account ?? this.defaultAccount }:user/${ userNameWithPath }`);
-  }
-
-  /**
    * Adds a resource of type root-user to the statement
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html
@@ -1250,10 +1237,10 @@ export class Sts extends PolicyStatement {
    * - .toAssumeRoot()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
   public ifTaskPolicyArn(value: string | string[], operator?: Operator | string) {
-    return this.if(`TaskPolicyArn`, value, operator ?? 'StringLike');
+    return this.if(`TaskPolicyArn`, value, operator ?? 'ArnLike');
   }
 
   /**
