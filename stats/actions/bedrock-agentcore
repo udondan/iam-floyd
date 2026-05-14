@@ -96,7 +96,10 @@ bedrock-agentcore:GetPaymentManager;Read
 bedrock-agentcore:GetPaymentSession;Read
 bedrock-agentcore:GetPolicy;Read
 bedrock-agentcore:GetPolicyEngine;Read
+bedrock-agentcore:GetPolicyEngineSummary;Read
 bedrock-agentcore:GetPolicyGeneration;Read
+bedrock-agentcore:GetPolicyGenerationSummary;Read
+bedrock-agentcore:GetPolicySummary;Read
 bedrock-agentcore:GetRecommendation;Read
 bedrock-agentcore:GetRegistry;Read
 bedrock-agentcore:GetRegistryRecord;Read
@@ -149,9 +152,12 @@ bedrock-agentcore:ListPaymentInstruments;List
 bedrock-agentcore:ListPaymentManagers;List
 bedrock-agentcore:ListPaymentSessions;List
 bedrock-agentcore:ListPolicies;List
+bedrock-agentcore:ListPolicyEngineSummaries;List
 bedrock-agentcore:ListPolicyEngines;List
 bedrock-agentcore:ListPolicyGenerationAssets;List
+bedrock-agentcore:ListPolicyGenerationSummaries;List
 bedrock-agentcore:ListPolicyGenerations;List
+bedrock-agentcore:ListPolicySummaries;List
 bedrock-agentcore:ListRecommendations;List
 bedrock-agentcore:ListRegistries;List
 bedrock-agentcore:ListRegistryRecords;List

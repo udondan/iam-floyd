@@ -52,6 +52,24 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a Change Stream for a cluster
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html
+   */
+  public toCreateStream() {
+    return this.to('CreateStream');
+  }
+
+  /**
    * Grants permission to connect to the database
    *
    * Access Level: Write
@@ -93,6 +111,17 @@ export class Dsql extends PolicyStatement {
    */
   public toDeleteClusterPolicy() {
     return this.to('DeleteClusterPolicy');
+  }
+
+  /**
+   * Grants permission to delete a Change Stream
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html
+   */
+  public toDeleteStream() {
+    return this.to('DeleteStream');
   }
 
   /**
@@ -140,6 +169,17 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a Change Stream
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html
+   */
+  public toGetStream() {
+    return this.to('GetStream');
+  }
+
+  /**
    * Grants permission to retrieve the VPC endpoint service name for a cluster
    *
    * Access Level: Read
@@ -174,6 +214,17 @@ export class Dsql extends PolicyStatement {
    */
   public toListClusters() {
     return this.to('ListClusters');
+  }
+
+  /**
+   * Grants permission to retrieve a list of Change Streams for a cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html
+   */
+  public toListStreams() {
+    return this.to('ListStreams');
   }
 
   /**
@@ -331,14 +382,27 @@ export class Dsql extends PolicyStatement {
     return this.to('UpdateCluster');
   }
 
+  /**
+   * Grants permission to modify Change Stream attributes
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html
+   */
+  public toUpdateStream() {
+    return this.to('UpdateStream');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddPeerCluster',
       'CreateCluster',
+      'CreateStream',
       'DbConnect',
       'DbConnectAdmin',
       'DeleteCluster',
       'DeleteClusterPolicy',
+      'DeleteStream',
       'InjectError',
       'PutClusterPolicy',
       'PutMultiRegionProperties',
@@ -348,18 +412,21 @@ export class Dsql extends PolicyStatement {
       'StartRestoreJob',
       'StopBackupJob',
       'StopRestoreJob',
-      'UpdateCluster'
+      'UpdateCluster',
+      'UpdateStream'
     ],
     Read: [
       'GetBackupJob',
       'GetCluster',
       'GetClusterPolicy',
       'GetRestoreJob',
+      'GetStream',
       'GetVpcEndpointServiceName',
       'ListTagsForResource'
     ],
     List: [
-      'ListClusters'
+      'ListClusters',
+      'ListStreams'
     ],
     Tagging: [
       'TagResource',
@@ -385,12 +452,31 @@ export class Dsql extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Stream to the statement
+   *
+   * https://docs.aws.amazon.com/aurora-dsql/latest/userguide/cdc-streams.html
+   *
+   * @param clusterId - Identifier for the clusterId.
+   * @param streamId - Identifier for the streamId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStream(clusterId: string, streamId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dsql:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterId }/stream/${ streamId }`);
+  }
+
+  /**
    * Filters access by a tag key and value pair that is allowed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateCluster()
+   * - .toCreateStream()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -408,6 +494,7 @@ export class Dsql extends PolicyStatement {
    *
    * Applies to resource types:
    * - Cluster
+   * - Stream
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -424,6 +511,7 @@ export class Dsql extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateCluster()
+   * - .toCreateStream()
    * - .toTagResource()
    * - .toUntagResource()
    *

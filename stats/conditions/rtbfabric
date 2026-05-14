@@ -1,6 +1,7 @@
 rtbfabric:InboundExternalLinkGatewayId
 rtbfabric:InboundExternalLinkLinkId
 rtbfabric:LinkLinkId
+rtbfabric:LinkRoutingRuleRuleId
 rtbfabric:OutboundExternalLinkLinkId
 rtbfabric:RequestTag/${TagKey}
 rtbfabric:RequesterGatewayGatewayId

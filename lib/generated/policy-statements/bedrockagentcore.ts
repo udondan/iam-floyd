@@ -471,6 +471,10 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreatePolicyEngine.html
    */
   public toCreatePolicyEngine() {
@@ -1221,6 +1225,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a summary of a policy engine
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngineSummary.html
+   */
+  public toGetPolicyEngineSummary() {
+    return this.to('GetPolicyEngineSummary');
+  }
+
+  /**
    * Grants permission to retrieve status and results of a policy generation request
    *
    * Access Level: Read
@@ -1229,6 +1244,28 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetPolicyGeneration() {
     return this.to('GetPolicyGeneration');
+  }
+
+  /**
+   * Grants permission to retrieve a summary of a policy generation request
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyGenerationSummary.html
+   */
+  public toGetPolicyGenerationSummary() {
+    return this.to('GetPolicyGenerationSummary');
+  }
+
+  /**
+   * Grants permission to retrieve a summary of a policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicySummary.html
+   */
+  public toGetPolicySummary() {
+    return this.to('GetPolicySummary');
   }
 
   /**
@@ -1825,6 +1862,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list policy engine summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngineSummaries.html
+   */
+  public toListPolicyEngineSummaries() {
+    return this.to('ListPolicyEngineSummaries');
+  }
+
+  /**
    * Grants permission to list policy engines
    *
    * Access Level: List
@@ -1847,6 +1895,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list policy generation summaries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationSummaries.html
+   */
+  public toListPolicyGenerationSummaries() {
+    return this.to('ListPolicyGenerationSummaries');
+  }
+
+  /**
    * Grants permission to list policy generation requests
    *
    * Access Level: List
@@ -1855,6 +1914,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListPolicyGenerations() {
     return this.to('ListPolicyGenerations');
+  }
+
+  /**
+   * Grants permission to list policy summaries within a policy engine
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicySummaries.html
+   */
+  public toListPolicySummaries() {
+    return this.to('ListPolicySummaries');
   }
 
   /**
@@ -2633,7 +2703,10 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetPaymentSession',
       'GetPolicy',
       'GetPolicyEngine',
+      'GetPolicyEngineSummary',
       'GetPolicyGeneration',
+      'GetPolicyGenerationSummary',
+      'GetPolicySummary',
       'GetRecommendation',
       'GetRegistry',
       'GetRegistryRecord',
@@ -2679,9 +2752,12 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListPaymentManagers',
       'ListPaymentSessions',
       'ListPolicies',
+      'ListPolicyEngineSummaries',
       'ListPolicyEngines',
       'ListPolicyGenerationAssets',
+      'ListPolicyGenerationSummaries',
       'ListPolicyGenerations',
+      'ListPolicySummaries',
       'ListRecommendations',
       'ListRegistries',
       'ListRegistryRecords',
@@ -2972,6 +3048,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPolicyEngine(policyEngineId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy-engine/${ policyEngineId }`);
@@ -3164,6 +3243,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateOnlineEvaluationConfig()
    * - .toCreatePaymentCredentialProvider()
    * - .toCreatePaymentManager()
+   * - .toCreatePolicyEngine()
    * - .toCreateWorkloadIdentity()
    * - .toTagResource()
    *
@@ -3199,6 +3279,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - browser-profile
    * - workload-identity-directory
    * - token-vault
+   * - policy-engine
    * - harness
    * - payment-manager
    * - paymentcredentialprovider
@@ -3231,6 +3312,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateOnlineEvaluationConfig()
    * - .toCreatePaymentCredentialProvider()
    * - .toCreatePaymentManager()
+   * - .toCreatePolicyEngine()
    * - .toCreateWorkloadIdentity()
    * - .toTagResource()
    * - .toUntagResource()

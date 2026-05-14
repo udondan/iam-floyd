@@ -1,5 +1,6 @@
 rtbfabric:InboundExternalLink
 rtbfabric:Link
+rtbfabric:LinkRoutingRule
 rtbfabric:OutboundExternalLink
 rtbfabric:RequesterGateway
 rtbfabric:ResponderGateway
