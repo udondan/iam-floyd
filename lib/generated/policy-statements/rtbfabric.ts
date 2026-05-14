@@ -30,6 +30,17 @@ export class Rtbfabric extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an ACM certificate with a responder gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_AssociateCertificate.html
+   */
+  public toAssociateCertificate() {
+    return this.to('AssociateCertificate');
+  }
+
+  /**
    * Grants permission to create an inbound external link for a responder gateway
    *
    * Access Level: Write
@@ -57,6 +68,21 @@ export class Rtbfabric extends PolicyStatement {
    */
   public toCreateLink() {
     return this.to('CreateLink');
+  }
+
+  /**
+   * Grants permission to create a routing rule for a link
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLinkRoutingRule.html
+   */
+  public toCreateLinkRoutingRule() {
+    return this.to('CreateLinkRoutingRule');
   }
 
   /**
@@ -127,6 +153,17 @@ export class Rtbfabric extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a routing rule from a link
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteLinkRoutingRule.html
+   */
+  public toDeleteLinkRoutingRule() {
+    return this.to('DeleteLinkRoutingRule');
+  }
+
+  /**
    * Grants permission to delete an outbound external link
    *
    * Access Level: Write
@@ -160,6 +197,28 @@ export class Rtbfabric extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove a certificate association from a responder gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DisassociateCertificate.html
+   */
+  public toDisassociateCertificate() {
+    return this.to('DisassociateCertificate');
+  }
+
+  /**
+   * Grants permission to retrieve details of a certificate association with a responder gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetCertificateAssociation.html
+   */
+  public toGetCertificateAssociation() {
+    return this.to('GetCertificateAssociation');
+  }
+
+  /**
    * Grants permission to retrieve information about an inbound external link
    *
    * Access Level: Read
@@ -179,6 +238,17 @@ export class Rtbfabric extends PolicyStatement {
    */
   public toGetLink() {
     return this.to('GetLink');
+  }
+
+  /**
+   * Grants permission to retrieve information about a routing rule for a link
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetLinkRoutingRule.html
+   */
+  public toGetLinkRoutingRule() {
+    return this.to('GetLinkRoutingRule');
   }
 
   /**
@@ -212,6 +282,28 @@ export class Rtbfabric extends PolicyStatement {
    */
   public toGetResponderGateway() {
     return this.to('GetResponderGateway');
+  }
+
+  /**
+   * Grants permission to list certificate associations for a responder gateway
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListCertificateAssociations.html
+   */
+  public toListCertificateAssociations() {
+    return this.to('ListCertificateAssociations');
+  }
+
+  /**
+   * Grants permission to list routing rules for a link
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListLinkRoutingRules.html
+   */
+  public toListLinkRoutingRules() {
+    return this.to('ListLinkRoutingRules');
   }
 
   /**
@@ -321,6 +413,17 @@ export class Rtbfabric extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a routing rule for a link
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLinkRoutingRule.html
+   */
+  public toUpdateLinkRoutingRule() {
+    return this.to('UpdateLinkRoutingRule');
+  }
+
+  /**
    * Grants permission to update a requester gateway
    *
    * Access Level: Write
@@ -345,31 +448,40 @@ export class Rtbfabric extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptLink',
+      'AssociateCertificate',
       'CreateInboundExternalLink',
       'CreateLink',
+      'CreateLinkRoutingRule',
       'CreateOutboundExternalLink',
       'CreateRequesterGateway',
       'CreateResponderGateway',
       'DeleteInboundExternalLink',
       'DeleteLink',
+      'DeleteLinkRoutingRule',
       'DeleteOutboundExternalLink',
       'DeleteRequesterGateway',
       'DeleteResponderGateway',
+      'DisassociateCertificate',
       'RejectLink',
       'UpdateLink',
       'UpdateLinkModuleFlow',
+      'UpdateLinkRoutingRule',
       'UpdateRequesterGateway',
       'UpdateResponderGateway'
     ],
     Read: [
+      'GetCertificateAssociation',
       'GetInboundExternalLink',
       'GetLink',
+      'GetLinkRoutingRule',
       'GetOutboundExternalLink',
       'GetRequesterGateway',
       'GetResponderGateway',
       'ListTagsForResource'
     ],
     List: [
+      'ListCertificateAssociations',
+      'ListLinkRoutingRules',
       'ListLinks',
       'ListRequesterGateways',
       'ListResponderGateways'
@@ -419,6 +531,27 @@ export class Rtbfabric extends PolicyStatement {
    */
   public onLink(gatewayId: string, linkId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:rtbfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }/link/${ linkId }`);
+  }
+
+  /**
+   * Adds a resource of type LinkRoutingRule to the statement
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/userguide/links.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param linkId - Identifier for the linkId.
+   * @param ruleId - Identifier for the ruleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifLinkLinkId()
+   * - .ifLinkRoutingRuleRuleId()
+   */
+  public onLinkRoutingRule(gatewayId: string, linkId: string, ruleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:rtbfabric:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }/link/${ linkId }/routing-rule/${ ruleId }`);
   }
 
   /**
@@ -485,6 +618,7 @@ export class Rtbfabric extends PolicyStatement {
    * Applies to actions:
    * - .toCreateInboundExternalLink()
    * - .toCreateLink()
+   * - .toCreateLinkRoutingRule()
    * - .toCreateOutboundExternalLink()
    * - .toCreateRequesterGateway()
    * - .toCreateResponderGateway()
@@ -506,6 +640,7 @@ export class Rtbfabric extends PolicyStatement {
    * Applies to resource types:
    * - InboundExternalLink
    * - Link
+   * - LinkRoutingRule
    * - OutboundExternalLink
    * - RequesterGateway
    * - ResponderGateway
@@ -526,6 +661,7 @@ export class Rtbfabric extends PolicyStatement {
    * Applies to actions:
    * - .toCreateInboundExternalLink()
    * - .toCreateLink()
+   * - .toCreateLinkRoutingRule()
    * - .toCreateOutboundExternalLink()
    * - .toCreateRequesterGateway()
    * - .toCreateResponderGateway()
@@ -573,12 +709,28 @@ export class Rtbfabric extends PolicyStatement {
    *
    * Applies to resource types:
    * - Link
+   * - LinkRoutingRule
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLinkLinkId(value: string | string[], operator?: Operator | string) {
     return this.if(`LinkLinkId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by routing rule identifier supporting rule-* formats
+   *
+   * https://docs.aws.amazon.com/rtb-fabric/latest/userguide/security_iam_service-with-iam.html
+   *
+   * Applies to resource types:
+   * - LinkRoutingRule
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLinkRoutingRuleRuleId(value: string | string[], operator?: Operator | string) {
+    return this.if(`LinkRoutingRuleRuleId`, value, operator ?? 'StringLike');
   }
 
   /**

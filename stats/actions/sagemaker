@@ -1,3 +1,4 @@
+sagemaker:AccessModelPackage;Read
 sagemaker:AddAssociation;Write
 sagemaker:AddTags;Tagging
 sagemaker:AssociateTrialComponent;Write
