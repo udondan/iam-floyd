@@ -9,7 +9,9 @@
         "dsql:GetCluster",
         "dsql:GetVpcEndpointServiceName",
         "dsql:ListClusters",
-        "dsql:ListTagsForResource"
+        "dsql:ListTagsForResource",
+        "dsql:GetStream",
+        "dsql:ListStreams"
       ],
       "Resource": "*"
     },
