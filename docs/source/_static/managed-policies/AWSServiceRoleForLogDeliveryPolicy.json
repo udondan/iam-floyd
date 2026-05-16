@@ -15,6 +15,20 @@
           "aws:ResourceTag/LogDeliveryEnabled": "true"
         }
       }
+    },
+    {
+      "Sid": "KMSForFirehoseSSECMK",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "firehose.*.amazonaws.com"
+        }
+      }
     }
   ]
 }
