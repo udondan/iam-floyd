@@ -223,79 +223,21 @@
       "Sid": "AllowWisdomForConnectEnabledTaggedResources",
       "Effect": "Allow",
       "Action": [
-        "wisdom:CreateContent",
-        "wisdom:DeleteContent",
-        "wisdom:CreateKnowledgeBase",
-        "wisdom:GetAssistant",
-        "wisdom:GetKnowledgeBase",
-        "wisdom:GetContent",
-        "wisdom:GetRecommendations",
-        "wisdom:GetSession",
-        "wisdom:NotifyRecommendationsReceived",
-        "wisdom:QueryAssistant",
-        "wisdom:StartContentUpload",
-        "wisdom:UpdateContent",
-        "wisdom:UntagResource",
-        "wisdom:TagResource",
-        "wisdom:CreateSession",
-        "wisdom:CreateQuickResponse",
-        "wisdom:GetQuickResponse",
-        "wisdom:SearchQuickResponses",
-        "wisdom:StartImportJob",
-        "wisdom:GetImportJob",
-        "wisdom:ListImportJobs",
-        "wisdom:ListQuickResponses",
-        "wisdom:UpdateQuickResponse",
-        "wisdom:DeleteQuickResponse",
-        "wisdom:PutFeedback",
-        "wisdom:ListContentAssociations",
-        "wisdom:CreateMessageTemplate",
-        "wisdom:UpdateMessageTemplate",
-        "wisdom:UpdateMessageTemplateMetadata",
-        "wisdom:GetMessageTemplate",
-        "wisdom:DeleteMessageTemplate",
-        "wisdom:ListMessageTemplates",
-        "wisdom:SearchMessageTemplates",
-        "wisdom:ActivateMessageTemplate",
-        "wisdom:DeactivateMessageTemplate",
-        "wisdom:CreateMessageTemplateVersion",
-        "wisdom:ListMessageTemplateVersions",
-        "wisdom:CreateMessageTemplateAttachment",
-        "wisdom:DeleteMessageTemplateAttachment",
-        "wisdom:RenderMessageTemplate",
-        "wisdom:CreateAIAgent",
-        "wisdom:CreateAIAgentVersion",
-        "wisdom:DeleteAIAgent",
-        "wisdom:DeleteAIAgentVersion",
-        "wisdom:UpdateAIAgent",
-        "wisdom:UpdateAssistantAIAgent",
-        "wisdom:RemoveAssistantAIAgent",
-        "wisdom:GetAIAgent",
-        "wisdom:ListAIAgents",
-        "wisdom:ListAIAgentVersions",
-        "wisdom:CreateAIPrompt",
-        "wisdom:CreateAIPromptVersion",
-        "wisdom:DeleteAIPrompt",
-        "wisdom:DeleteAIPromptVersion",
-        "wisdom:UpdateAIPrompt",
-        "wisdom:GetAIPrompt",
-        "wisdom:ListAIPrompts",
-        "wisdom:ListAIPromptVersions",
-        "wisdom:CreateAIGuardrail",
-        "wisdom:CreateAIGuardrailVersion",
-        "wisdom:DeleteAIGuardrail",
-        "wisdom:DeleteAIGuardrailVersion",
-        "wisdom:UpdateAIGuardrail",
-        "wisdom:GetAIGuardrail",
-        "wisdom:ListAIGuardrails",
-        "wisdom:ListAIGuardrailVersions",
-        "wisdom:CreateAssistant",
-        "wisdom:ListTagsForResource",
-        "wisdom:SendMessage",
-        "wisdom:GetNextMessage",
-        "wisdom:ListMessages",
-        "wisdom:Retrieve",
-        "wisdom:ListAssistantAssociations"
+        "wisdom:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectEnabled": "True"
+        }
+      }
+    },
+    {
+      "Sid": "DenyWisdomForConnectEnabledTaggedResources",
+      "Effect": "Deny",
+      "Action": [
+        "wisdom:DeleteAssistant",
+        "wisdom:DeleteKnowledgeBase"
       ],
       "Resource": "*",
       "Condition": {
@@ -399,8 +341,8 @@
       "Resource": "arn:aws:chime:*:*:vc/*",
       "Condition": {
         "StringEquals": {
-          "aws:ResourceTag/AmazonConnectEnabled": "True",
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonConnectEnabled": "True"
         }
       }
     },
@@ -484,8 +426,8 @@
       "Resource": "arn:aws:social-messaging:*:*:phone-number-id/*",
       "Condition": {
         "StringEquals": {
-          "aws:ResourceTag/AmazonConnectEnabled": "True",
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonConnectEnabled": "True"
         }
       }
     },
@@ -512,8 +454,8 @@
       "Resource": "arn:aws:social-messaging:*:*:waba/*",
       "Condition": {
         "StringEquals": {
-          "aws:ResourceTag/AmazonConnectEnabled": "True",
-          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/AmazonConnectEnabled": "True"
         }
       }
     },

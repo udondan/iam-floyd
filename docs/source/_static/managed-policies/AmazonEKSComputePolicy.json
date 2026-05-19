@@ -99,6 +99,11 @@
           "iam:AWSServiceName": "spot.amazonaws.com"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "ec2:DescribeCapacityReservations",
+      "Resource": "*"
     }
   ]
 }
