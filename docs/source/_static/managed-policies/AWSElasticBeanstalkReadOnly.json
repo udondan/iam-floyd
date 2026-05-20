@@ -81,6 +81,23 @@
         "s3:ListBucket"
       ],
       "Resource": "arn:aws:s3:::elasticbeanstalk-*"
+    },
+    {
+      "Sid": "AllowCloudWatchLogsListAndDescribe",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk/*"
+    },
+    {
+      "Sid": "AllowCloudWatchLogsRead",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk/*:log-stream:*"
     }
   ]
 }
