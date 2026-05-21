@@ -212,6 +212,12 @@
         "cloudformation:ActivateType"
       ],
       "Resource": "arn:aws:cloudformation:*:*:type/hook/AWS-ControlTower*"
+    },
+    {
+      "Sid": "AllowBatchDescribeTypeConfigurationsForHookConfigFetch",
+      "Effect": "Allow",
+      "Action": "cloudformation:BatchDescribeTypeConfigurations",
+      "Resource": "*"
     }
   ]
 }

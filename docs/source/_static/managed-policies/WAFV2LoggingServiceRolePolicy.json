@@ -17,6 +17,20 @@
       "Effect": "Allow",
       "Action": "organizations:DescribeOrganization",
       "Resource": "*"
+    },
+    {
+      "Sid": "KMSForFirehoseSSECMK",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "firehose.*.amazonaws.com"
+        }
+      }
     }
   ]
 }
