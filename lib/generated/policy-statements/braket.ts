@@ -304,7 +304,7 @@ export class Braket extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/braket/latest/developerguide/braket-manage-access.html#resources
    *
-   * @param jobName - Identifier for the jobName.
+   * @param randomId - Identifier for the randomId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -312,8 +312,8 @@ export class Braket extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onJob(jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:braket:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobName }`);
+  public onJob(randomId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:braket:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ randomId }`);
   }
 
   /**
@@ -341,11 +341,10 @@ export class Braket extends PolicyStatement {
    * @param deviceType - Identifier for the deviceType.
    * @param provider - Identifier for the provider.
    * @param deviceId - Identifier for the deviceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onDevice(deviceType: string, provider: string, deviceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:braket:*:${ account ?? this.defaultAccount }:device/${ deviceType }/${ provider }/${ deviceId }`);
+  public onDevice(deviceType: string, provider: string, deviceId: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:braket:*:*:device/${ deviceType }/${ provider }/${ deviceId }`);
   }
 
   /**

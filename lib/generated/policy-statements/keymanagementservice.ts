@@ -90,11 +90,14 @@ export class Kms extends PolicyStatement {
    * - .ifCallerAccount()
    * - .ifEncryptionContext()
    * - .ifEncryptionContextKeys()
+   * - .ifGrantConstraintSourceArn()
    * - .ifGrantConstraintType()
    * - .ifGranteePrincipal()
+   * - .ifGranteeServicePrincipal()
    * - .ifGrantIsForAWSResource()
    * - .ifGrantOperations()
    * - .ifRetiringPrincipal()
+   * - .ifRetiringServicePrincipal()
    * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html
@@ -1588,6 +1591,21 @@ export class Kms extends PolicyStatement {
   }
 
   /**
+   * Filters access to the CreateGrant operation based on the value of SourceArn constraint in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-constraint-source-arn
+   *
+   * Applies to actions:
+   * - .toCreateGrant()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifGrantConstraintSourceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`GrantConstraintSourceArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access to the CreateGrant operation based on the grant constraint in the request
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grant-constraint-type
@@ -1647,6 +1665,21 @@ export class Kms extends PolicyStatement {
    */
   public ifGranteePrincipal(value: string | string[], operator?: Operator | string) {
     return this.if(`GranteePrincipal`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access to the CreateGrant operation based on the value of GranteeServicePrincipal in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-grantee-service-principal
+   *
+   * Applies to actions:
+   * - .toCreateGrant()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifGranteeServicePrincipal(value: string | string[], operator?: Operator | string) {
+    return this.if(`GranteeServicePrincipal`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -1906,6 +1939,21 @@ export class Kms extends PolicyStatement {
    */
   public ifRetiringPrincipal(value: string | string[], operator?: Operator | string) {
     return this.if(`RetiringPrincipal`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access to the CreateGrant operation based on the value of RetiringServicePrincipal in the request
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-retiring-service-principal
+   *
+   * Applies to actions:
+   * - .toCreateGrant()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRetiringServicePrincipal(value: string | string[], operator?: Operator | string) {
+    return this.if(`RetiringServicePrincipal`, value, operator ?? 'StringLike');
   }
 
   /**

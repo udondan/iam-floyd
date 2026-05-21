@@ -19,6 +19,17 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to continue a paused service deployment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContinueServiceDeployment.html
+   */
+  public toContinueServiceDeployment() {
+    return this.to('ContinueServiceDeployment');
+  }
+
+  /**
    * Grants permission to create a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling
    *
    * Access Level: Write
@@ -1155,6 +1166,7 @@ export class Ecs extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'ContinueServiceDeployment',
       'CreateCapacityProvider',
       'CreateCluster',
       'CreateDaemon',
@@ -1529,6 +1541,7 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toContinueServiceDeployment()
    * - .toCreateCapacityProvider()
    * - .toCreateCluster()
    * - .toCreateDaemon()
@@ -1740,6 +1753,7 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toContinueServiceDeployment()
    * - .toCreateDaemon()
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
@@ -1984,6 +1998,18 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters access by the ARN of an Amazon ECS gateway
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifGateway(value: string | string[], operator?: Operator | string) {
+    return this.if(`gateway`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by the instance metadata tags propagation setting of your Amazon ECS capacity provider
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -2059,6 +2085,7 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toContinueServiceDeployment()
    * - .toCreateTaskSet()
    * - .toDeleteTaskSet()
    * - .toDescribeServiceDeployments()

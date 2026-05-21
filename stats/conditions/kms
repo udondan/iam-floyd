@@ -7,10 +7,12 @@ kms:EncryptionAlgorithm
 kms:EncryptionContext
 kms:EncryptionContextKeys
 kms:ExpirationModel
+kms:GrantConstraintSourceArn
 kms:GrantConstraintType
 kms:GrantIsForAWSResource
 kms:GrantOperations
 kms:GranteePrincipal
+kms:GranteeServicePrincipal
 kms:KeyAgreementAlgorithm
 kms:KeyOrigin
 kms:KeySpec
@@ -28,6 +30,7 @@ kms:RequestTag/${TagKey}
 kms:ResourceAliases
 kms:ResourceTag/${TagKey}
 kms:RetiringPrincipal
+kms:RetiringServicePrincipal
 kms:RotationPeriodInDays
 kms:ScheduleKeyDeletionPendingWindowInDays
 kms:SigningAlgorithm

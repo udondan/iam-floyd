@@ -216,6 +216,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFunction.html
    */
   public toCreateFunction() {
@@ -259,6 +263,10 @@ export class Cloudfront extends PolicyStatement {
    * Grants permission to create a CloudFront KeyValueStore
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyValueStore.html
    */
@@ -2272,6 +2280,9 @@ export class Cloudfront extends PolicyStatement {
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFunction(name: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:function/${ name }`);
@@ -2285,6 +2296,9 @@ export class Cloudfront extends PolicyStatement {
    * @param name - Identifier for the name.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onKeyValueStore(name: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:cloudfront::${ account ?? this.defaultAccount }:key-value-store/${ name }`);
@@ -2396,7 +2410,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type trust-store to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewer-mtls-trust-stores.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/trust-stores-certificate-management.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2412,7 +2426,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type connection-function to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-connection-functions.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/connection-functions.html
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -2436,6 +2450,8 @@ export class Cloudfront extends PolicyStatement {
    * - .toCreateConnectionGroup()
    * - .toCreateDistribution()
    * - .toCreateDistributionTenant()
+   * - .toCreateFunction()
+   * - .toCreateKeyValueStore()
    * - .toCreateStreamingDistributionWithTags()
    * - .toCreateTrustStore()
    * - .toCreateVpcOrigin()
@@ -2457,6 +2473,8 @@ export class Cloudfront extends PolicyStatement {
    * Applies to resource types:
    * - distribution
    * - streaming-distribution
+   * - function
+   * - key-value-store
    * - anycast-ip-list
    * - vpcorigin
    * - distribution-tenant
@@ -2483,6 +2501,8 @@ export class Cloudfront extends PolicyStatement {
    * - .toCreateConnectionGroup()
    * - .toCreateDistribution()
    * - .toCreateDistributionTenant()
+   * - .toCreateFunction()
+   * - .toCreateKeyValueStore()
    * - .toCreateStreamingDistributionWithTags()
    * - .toCreateTrustStore()
    * - .toCreateVpcOrigin()
