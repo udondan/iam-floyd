@@ -34,6 +34,17 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowQArtifactsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:CreateArtifact",
+        "q:GetArtifact",
+        "q:GetArtifactActionResult",
+        "q:PerformArtifactAction"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "AllowCloudControlReadAccess",
       "Effect": "Allow",
       "Action": [

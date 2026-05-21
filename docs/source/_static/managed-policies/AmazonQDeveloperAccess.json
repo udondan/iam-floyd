@@ -38,6 +38,17 @@
         "sts:SetContext"
       ],
       "Resource": "arn:aws:sts::*:self"
+    },
+    {
+      "Sid": "AllowQArtifactsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:CreateArtifact",
+        "q:GetArtifact",
+        "q:GetArtifactActionResult",
+        "q:PerformArtifactAction"
+      ],
+      "Resource": "*"
     }
   ]
 }

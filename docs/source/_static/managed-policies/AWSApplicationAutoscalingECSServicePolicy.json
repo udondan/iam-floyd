@@ -5,6 +5,7 @@
       "Effect": "Allow",
       "Action": [
         "ecs:DescribeServices",
+        "ecs:DescribeServiceRevisions",
         "ecs:UpdateService",
         "cloudwatch:PutMetricAlarm",
         "cloudwatch:DescribeAlarms",
