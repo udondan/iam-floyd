@@ -1,3 +1,4 @@
+ecs:ContinueServiceDeployment;Write
 ecs:CreateCapacityProvider;Write
 ecs:CreateCluster;Write
 ecs:CreateDaemon;Write
