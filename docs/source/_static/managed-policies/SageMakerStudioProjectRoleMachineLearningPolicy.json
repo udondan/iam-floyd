@@ -1214,6 +1214,7 @@
       "Effect": "Allow",
       "Action": [
         "datazone:GenerateCode",
+        "datazone:CreateAsset*",
         "datazone:List*",
         "datazone:Search*",
         "datazone:*Message*",
