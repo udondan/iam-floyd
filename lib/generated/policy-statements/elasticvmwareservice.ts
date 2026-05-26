@@ -234,6 +234,17 @@ export class Evs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an Amazon EVS environment depot url
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/evs/latest/APIReference/API_GetDepotUrl.html
+   */
+  public toGetDepotUrl() {
+    return this.to('GetDepotUrl');
+  }
+
+  /**
    * Grants permission to get an Amazon EVS environment
    *
    * Access Level: Read
@@ -378,6 +389,7 @@ export class Evs extends PolicyStatement {
       'UpdateEnvironmentConnector'
     ],
     Read: [
+      'GetDepotUrl',
       'GetEnvironment',
       'GetVersions',
       'ListTagsForResource'

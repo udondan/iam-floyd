@@ -1,4 +1,5 @@
 transfer:RequestConnectorProtocol
+transfer:RequestSecurityPolicyName
 transfer:RequestServerDomain
 transfer:RequestServerEndpointType
 transfer:RequestServerProtocols

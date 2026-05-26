@@ -3458,6 +3458,7 @@ export class S3 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAuthType()
+   * - .ifExistingObjectTag()
    * - .ifResourceAccount()
    * - .ifSignatureAge()
    * - .ifSignatureversion()
@@ -4314,6 +4315,7 @@ export class S3 extends PolicyStatement {
    * - .toPutObjectTagging()
    * - .toPutObjectVersionAcl()
    * - .toPutObjectVersionTagging()
+   * - .toUpdateObjectEncryption()
    *
    * @param key The tag key to check
    * @param value The value(s) to check

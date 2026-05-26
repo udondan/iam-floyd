@@ -61,6 +61,7 @@ export class Transfer extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    * - .ifRequestConnectorProtocol()
+   * - .ifRequestSecurityPolicyName()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -99,6 +100,7 @@ export class Transfer extends PolicyStatement {
    * - .ifRequestServerEndpointType()
    * - .ifRequestServerDomain()
    * - .ifRequestServerProtocols()
+   * - .ifRequestSecurityPolicyName()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -807,6 +809,9 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifRequestSecurityPolicyName()
+   *
    * Dependent actions:
    * - iam:PassRole
    *
@@ -846,6 +851,7 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifRequestServerEndpointType()
    * - .ifRequestServerProtocols()
+   * - .ifRequestSecurityPolicyName()
    *
    * Dependent actions:
    * - iam:PassRole
@@ -1234,6 +1240,24 @@ export class Transfer extends PolicyStatement {
    */
   public ifRequestConnectorProtocol(value: string | string[], operator?: Operator | string) {
     return this.if(`RequestConnectorProtocol`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the security policy name that is passed in the request
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/transfer-condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateConnector()
+   * - .toCreateServer()
+   * - .toUpdateConnector()
+   * - .toUpdateServer()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRequestSecurityPolicyName(value: string | string[], operator?: Operator | string) {
+    return this.if(`RequestSecurityPolicyName`, value, operator ?? 'StringLike');
   }
 
   /**
