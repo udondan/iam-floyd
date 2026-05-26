@@ -131,6 +131,17 @@ export class Pi extends PolicyStatement {
   }
 
   /**
+   * Grants permission to call ListPerformanceAnalysisReportRecommendations API to retrieve a Performance Analysis Report Recommendations for a specified DB instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_ListPerformanceAnalysisReportRecommendations.html
+   */
+  public toListPerformanceAnalysisReportRecommendations() {
+    return this.to('ListPerformanceAnalysisReportRecommendations');
+  }
+
+  /**
    * Grants permission to call ListPerformanceAnalysisReports API to list Performance Analysis Reports for a specified DB instance
    *
    * Access Level: List
@@ -196,6 +207,7 @@ export class Pi extends PolicyStatement {
       'ListAvailableResourceMetrics'
     ],
     List: [
+      'ListPerformanceAnalysisReportRecommendations',
       'ListPerformanceAnalysisReports',
       'ListTagsForResource'
     ],

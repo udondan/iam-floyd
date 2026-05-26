@@ -8,6 +8,7 @@ evs:DeleteEnvironment;Write
 evs:DeleteEnvironmentConnector;Write
 evs:DeleteEnvironmentHost;Write
 evs:DisassociateEipFromVlan;Write
+evs:GetDepotUrl;Read
 evs:GetEnvironment;Read
 evs:GetVersions;Read
 evs:ListEnvironmentConnectors;List
