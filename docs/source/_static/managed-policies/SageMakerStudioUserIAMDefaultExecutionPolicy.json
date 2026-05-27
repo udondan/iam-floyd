@@ -54,7 +54,8 @@
         "datazone:StartConversation",
         "datazone:GenerateCode",
         "datazone:SendMessage",
-        "datazone:CancelMessage"
+        "datazone:CancelMessage",
+        "datazone:QueryGraph"
       ],
       "Resource": "*"
     },
