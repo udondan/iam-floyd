@@ -898,6 +898,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerHyperPodTrainingOperatorAccess = 'AmazonSageMakerHyperPodTrainingOperatorAccess';
     /** Provides access to create Amazon Augmented AI FlowDefinition resources against any Workteam. */
     public static AmazonSageMakerMechanicalTurkAccess = 'AmazonSageMakerMechanicalTurkAccess';
+    /** Grants permissions for SageMaker model customization workflows including serverless training, custom reward function for reinforcement learning, model evaluation, and deployment to SageMaker or Bedrock endpoints. */
+    public static AmazonSageMakerModelCustomizationCoreAccess = 'AmazonSageMakerModelCustomizationCoreAccess';
     /** This AWS managed policy grants permissions needed to use all Amazon SageMaker Governance features. The policy also provides select access to related services (e.g., S3, KMS). */
     public static AmazonSageMakerModelGovernanceUseAccess = 'AmazonSageMakerModelGovernanceUseAccess';
     /** This is a new managed policy for Model Registry in Sagemaker. This policy is a standalone policy that can be attached to the user role to access Model Registry related functionalities in Sagemaker. */

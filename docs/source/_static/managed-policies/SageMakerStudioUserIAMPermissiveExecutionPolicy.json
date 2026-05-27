@@ -30,7 +30,8 @@
         "scheduler:*",
         "sqlworkbench:*",
         "emr-serverless:*",
-        "airflow-serverless:*"
+        "airflow-serverless:*",
+        "airflow:*"
       ],
       "Resource": "*"
     },
@@ -128,9 +129,7 @@
         "datazone:UpdateEnvironment",
         "datazone:UpdateProject",
         "datazone:UpdateSubscriptionRequest",
-        "datazone:CreateNotebook",
-        "datazone:UpdateNotebook",
-        "datazone:DeleteNotebook",
+        "datazone:*Notebook*",
         "datazone:CreateCell",
         "datazone:UpdateCell",
         "datazone:DeleteCell",
@@ -140,13 +139,11 @@
         "datazone:DeleteCellRun",
         "datazone:BatchGetCellRun",
         "datazone:PutCellRunResult",
-        "datazone:StartNotebookCompute",
-        "datazone:StopNotebookCompute",
         "datazone:StartConversation",
         "datazone:GenerateCode",
         "datazone:SendMessage",
-        "datazone:StartNotebookImport",
-        "datazone:StartNotebookExport"
+        "datazone:CancelMessage",
+        "datazone:QueryGraph"
       ],
       "Resource": "*"
     },

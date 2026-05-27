@@ -2254,6 +2254,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerMechanicalTurkAccess);
     }
 
+    /** Grants permissions for SageMaker model customization workflows including serverless training, custom reward function for reinforcement learning, model evaluation, and deployment to SageMaker or Bedrock endpoints. */
+    public AmazonSageMakerModelCustomizationCoreAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerModelCustomizationCoreAccess);
+    }
+
     /** This AWS managed policy grants permissions needed to use all Amazon SageMaker Governance features. The policy also provides select access to related services (e.g., S3, KMS). */
     public AmazonSageMakerModelGovernanceUseAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerModelGovernanceUseAccess);
