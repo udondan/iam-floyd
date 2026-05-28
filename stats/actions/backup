@@ -53,6 +53,7 @@ backup:GetBackupVaultAccessPolicy;Read
 backup:GetBackupVaultNotifications;Read
 backup:GetBackupVaultSharingPolicy;Read
 backup:GetLegalHold;Read
+backup:GetPITRMalwareScanResults;Read
 backup:GetRecoveryPointIndexDetails;Read
 backup:GetRecoveryPointRestoreMetadata;Read
 backup:GetRestoreJobMetadata;Read

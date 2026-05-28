@@ -273,6 +273,7 @@ connect:SendChatIntegrationEvent;Write
 connect:SendIntegrationEvent;Write
 connect:SendOutboundChatMessage;Write
 connect:SendOutboundEmail;Write
+connect:SendOutboundWebNotification;Write
 connect:StartAttachedFileUpload;Write
 connect:StartChatContact;Write
 connect:StartContactEvaluation;Write

@@ -4283,6 +4283,27 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send outbound web notifications using the Amazon Connect API
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * Dependent actions:
+   * - connect:DescribeView
+   * - kms:Decrypt
+   * - profile:BatchGetProfile
+   * - profile:GetProfileRecommendations
+   * - profile:SearchProfiles
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundWebNotification.html
+   */
+  public toSendOutboundWebNotification() {
+    return this.to('SendOutboundWebNotification');
+  }
+
+  /**
    * Grants permission to start an attached file upload in an Amazon Connect instance
    *
    * Access Level: Write
@@ -5770,6 +5791,7 @@ export class Connect extends PolicyStatement {
       'SendIntegrationEvent',
       'SendOutboundChatMessage',
       'SendOutboundEmail',
+      'SendOutboundWebNotification',
       'StartAttachedFileUpload',
       'StartChatContact',
       'StartContactEvaluation',
@@ -7442,6 +7464,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchWorkspaces()
    * - .toSendOutboundChatMessage()
    * - .toSendOutboundEmail()
+   * - .toSendOutboundWebNotification()
    * - .toStartAttachedFileUpload()
    * - .toStartChatContact()
    * - .toStartContactEvaluation()

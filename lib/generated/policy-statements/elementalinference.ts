@@ -30,6 +30,21 @@ export class ElementalInference extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new dictionary
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_CreateDictionary.html
+   */
+  public toCreateDictionary() {
+    return this.to('CreateDictionary');
+  }
+
+  /**
    * Grants permission to create a new feed
    *
    * Access Level: Write
@@ -42,6 +57,17 @@ export class ElementalInference extends PolicyStatement {
    */
   public toCreateFeed() {
     return this.to('CreateFeed');
+  }
+
+  /**
+   * Grants permission to delete a dictionary
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteDictionary.html
+   */
+  public toDeleteDictionary() {
+    return this.to('DeleteDictionary');
   }
 
   /**
@@ -67,6 +93,28 @@ export class ElementalInference extends PolicyStatement {
   }
 
   /**
+   * Grants permission to export dictionary entries
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ExportDictionaryEntries.html
+   */
+  public toExportDictionaryEntries() {
+    return this.to('ExportDictionaryEntries');
+  }
+
+  /**
+   * Grants permission to get dictionary details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetDictionary.html
+   */
+  public toGetDictionary() {
+    return this.to('GetDictionary');
+  }
+
+  /**
    * Grants permission to get feed details
    *
    * Access Level: Read
@@ -86,6 +134,17 @@ export class ElementalInference extends PolicyStatement {
    */
   public toGetMetadata() {
     return this.to('GetMetadata');
+  }
+
+  /**
+   * Grants permission to list dictionaries in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListDictionaries.html
+   */
+  public toListDictionaries() {
+    return this.to('ListDictionaries');
   }
 
   /**
@@ -151,6 +210,17 @@ export class ElementalInference extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update dictionary configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UpdateDictionary.html
+   */
+  public toUpdateDictionary() {
+    return this.to('UpdateDictionary');
+  }
+
+  /**
    * Grants permission to update feed configuration
    *
    * Access Level: Write
@@ -164,18 +234,24 @@ export class ElementalInference extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateFeed',
+      'CreateDictionary',
       'CreateFeed',
+      'DeleteDictionary',
       'DeleteFeed',
       'DisassociateFeed',
       'PutMedia',
+      'UpdateDictionary',
       'UpdateFeed'
     ],
     Read: [
+      'ExportDictionaryEntries',
+      'GetDictionary',
       'GetFeed',
       'GetMetadata',
       'ListTagsForResource'
     ],
     List: [
+      'ListDictionaries',
       'ListFeeds'
     ],
     Tagging: [
@@ -183,6 +259,23 @@ export class ElementalInference extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type dictionary to the statement
+   *
+   * https://docs.aws.amazon.com/elemental-inference/latest/userguide/elemental-inference-configuration.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDictionary(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:elemental-inference:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dictionary/${ id }`);
+  }
 
   /**
    * Adds a resource of type feed to the statement
@@ -207,6 +300,7 @@ export class ElementalInference extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateDictionary()
    * - .toCreateFeed()
    * - .toTagResource()
    *
@@ -224,6 +318,7 @@ export class ElementalInference extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
+   * - dictionary
    * - feed
    *
    * @param tagKey The tag key to check
@@ -240,6 +335,7 @@ export class ElementalInference extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateDictionary()
    * - .toCreateFeed()
    * - .toTagResource()
    * - .toUntagResource()

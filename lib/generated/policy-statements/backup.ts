@@ -682,6 +682,17 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get point-in-time recovery (PITR) malware scan results
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetPITRMalwareScanResults.html
+   */
+  public toGetPITRMalwareScanResults() {
+    return this.to('GetPITRMalwareScanResults');
+  }
+
+  /**
    * Grants permission to get indexing details for a recovery point
    *
    * Access Level: Read
@@ -1495,6 +1506,7 @@ export class Backup extends PolicyStatement {
       'GetBackupVaultNotifications',
       'GetBackupVaultSharingPolicy',
       'GetLegalHold',
+      'GetPITRMalwareScanResults',
       'GetRecoveryPointIndexDetails',
       'GetRecoveryPointRestoreMetadata',
       'GetRestoreJobMetadata',
