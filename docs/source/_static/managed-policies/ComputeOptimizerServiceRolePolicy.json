@@ -52,6 +52,58 @@
         "ec2:DescribeRouteTables"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "ElastiCacheAccess",
+      "Effect": "Allow",
+      "Action": [
+        "elasticache:DescribeCacheClusters",
+        "elasticache:DescribeServerlessCaches"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MemoryDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "memorydb:DescribeClusters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DocumentDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBClusters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DynamoDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:ListTables",
+        "dynamodb:DescribeTable"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "WorkSpacesAccess",
+      "Effect": "Allow",
+      "Action": [
+        "workspaces:DescribeWorkspaces",
+        "workspaces:DescribeWorkspacesConnectionStatus"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListEndpoints",
+        "sagemaker:DescribeEndpoint"
+      ],
+      "Resource": "*"
     }
   ]
 }

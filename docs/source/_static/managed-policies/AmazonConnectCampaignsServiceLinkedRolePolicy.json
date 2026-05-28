@@ -16,9 +16,66 @@
         "connect:BatchPutContact",
         "connect:StopContact",
         "connect:DescribeContactFlow",
-        "connect:SendOutboundEmail"
+        "connect:SendOutboundEmail",
+        "connect:SendOutboundWebNotification"
       ],
       "Resource": "arn:aws:connect:*:*:instance/*"
+    },
+    {
+      "Sid": "ConnectChatAccess",
+      "Effect": "Allow",
+      "Action": [
+        "connect:SendOutboundChatMessage"
+      ],
+      "Resource": [
+        "arn:aws:connect:*:*:instance/*",
+        "arn:aws:connect:*:*:phone-number/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSocialMessagingSendMessageOperations",
+      "Effect": "Allow",
+      "Action": [
+        "social-messaging:SendWhatsAppMessage"
+      ],
+      "Resource": "arn:aws:social-messaging:*:*:phone-number-id/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonConnectEnabled": "True",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSocialMessagingTemplateOperations",
+      "Effect": "Allow",
+      "Action": [
+        "social-messaging:GetWhatsAppMessageTemplate"
+      ],
+      "Resource": "arn:aws:social-messaging:*:*:waba/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSMSVoiceOperationsForConnect",
+      "Effect": "Allow",
+      "Action": [
+        "sms-voice:SendTextMessage"
+      ],
+      "Resource": "arn:aws:sms-voice:*:*:phone-number/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Sid": "EventBridgeListRuleAccess",
