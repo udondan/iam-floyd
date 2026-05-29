@@ -4,9 +4,11 @@ iot:CommandExecutionParameterNumber/${CommandParameterName}
 iot:CommandExecutionParameterString/${CommandParameterName}
 iot:Delete
 iot:DomainName
+iot:IncludeSocketInformation
 iot:RequestTag/${TagKey}
 iot:ResourceTag/${TagKey}
 iot:TagKeys
 iot:ThingGroupArn
+iot:Topic
 iot:TunnelDestinationService
 iot:thingArn

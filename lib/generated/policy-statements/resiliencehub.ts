@@ -100,6 +100,39 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an assertion for a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateAssertion.html
+   */
+  public toCreateAssertion() {
+    return this.to('CreateAssertion');
+  }
+
+  /**
+   * Grants permission to create an input source for a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateInputSource.html
+   */
+  public toCreateInputSource() {
+    return this.to('CreateInputSource');
+  }
+
+  /**
+   * Grants permission to create a resilience policy that defines availability and disaster recovery requirements
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreatePolicy.html
+   */
+  public toCreatePolicy() {
+    return this.to('CreatePolicy');
+  }
+
+  /**
    * Grants permission to create recommendation template
    *
    * Access Level: Write
@@ -120,6 +153,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a report for a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateReport.html
+   */
+  public toCreateReport() {
+    return this.to('CreateReport');
+  }
+
+  /**
    * Grants permission to create resiliency policy
    *
    * Access Level: Write
@@ -132,6 +176,61 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toCreateResiliencyPolicy() {
     return this.to('CreateResiliencyPolicy');
+  }
+
+  /**
+   * Grants permission to create a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateService.html
+   */
+  public toCreateService() {
+    return this.to('CreateService');
+  }
+
+  /**
+   * Grants permission to create a service function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateServiceFunction.html
+   */
+  public toCreateServiceFunction() {
+    return this.to('CreateServiceFunction');
+  }
+
+  /**
+   * Grants permission to create service function resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateServiceFunctionResources.html
+   */
+  public toCreateServiceFunctionResources() {
+    return this.to('CreateServiceFunctionResources');
+  }
+
+  /**
+   * Grants permission to create a system that represents a logical grouping of services
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateSystem.html
+   */
+  public toCreateSystem() {
+    return this.to('CreateSystem');
+  }
+
+  /**
+   * Grants permission to create a user journey within a system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_CreateUserJourney.html
+   */
+  public toCreateUserJourney() {
+    return this.to('CreateUserJourney');
   }
 
   /**
@@ -190,6 +289,39 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an assertion
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteAssertion.html
+   */
+  public toDeleteAssertion() {
+    return this.to('DeleteAssertion');
+  }
+
+  /**
+   * Grants permission to delete an input source
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteInputSource.html
+   */
+  public toDeleteInputSource() {
+    return this.to('DeleteInputSource');
+  }
+
+  /**
+   * Grants permission to delete a resilience policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeletePolicy.html
+   */
+  public toDeletePolicy() {
+    return this.to('DeletePolicy');
+  }
+
+  /**
    * Grants permission to batch delete recommendation template
    *
    * Access Level: Write
@@ -209,6 +341,61 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toDeleteResiliencyPolicy() {
     return this.to('DeleteResiliencyPolicy');
+  }
+
+  /**
+   * Grants permission to delete a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteService.html
+   */
+  public toDeleteService() {
+    return this.to('DeleteService');
+  }
+
+  /**
+   * Grants permission to delete a service function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteServiceFunction.html
+   */
+  public toDeleteServiceFunction() {
+    return this.to('DeleteServiceFunction');
+  }
+
+  /**
+   * Grants permission to delete service function resources
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteServiceFunctionResources.html
+   */
+  public toDeleteServiceFunctionResources() {
+    return this.to('DeleteServiceFunctionResources');
+  }
+
+  /**
+   * Grants permission to delete a system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteSystem.html
+   */
+  public toDeleteSystem() {
+    return this.to('DeleteSystem');
+  }
+
+  /**
+   * Grants permission to delete a user journey
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_DeleteUserJourney.html
+   */
+  public toDeleteUserJourney() {
+    return this.to('DeleteUserJourney');
   }
 
   /**
@@ -330,6 +517,83 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toDescribeResourceGroupingRecommendationTask() {
     return this.to('DescribeResourceGroupingRecommendationTask');
+  }
+
+  /**
+   * Grants permission to retrieve a failure mode finding
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetFailureModeFinding.html
+   */
+  public toGetFailureModeFinding() {
+    return this.to('GetFailureModeFinding');
+  }
+
+  /**
+   * Grants permission to retrieve a resilience policy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetPolicy.html
+   */
+  public toGetPolicy() {
+    return this.to('GetPolicy');
+  }
+
+  /**
+   * Grants permission to retrieve a service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetService.html
+   */
+  public toGetService() {
+    return this.to('GetService');
+  }
+
+  /**
+   * Grants permission to retrieve a system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetSystem.html
+   */
+  public toGetSystem() {
+    return this.to('GetSystem');
+  }
+
+  /**
+   * Grants permission to retrieve a user journey
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_GetUserJourney.html
+   */
+  public toGetUserJourney() {
+    return this.to('GetUserJourney');
+  }
+
+  /**
+   * Grants permission to import a V1 app into the V2 resource model
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ImportApp.html
+   */
+  public toImportApp() {
+    return this.to('ImportApp');
+  }
+
+  /**
+   * Grants permission to import a V1 policy into V2
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ImportPolicy.html
+   */
+  public toImportPolicy() {
+    return this.to('ImportPolicy');
   }
 
   /**
@@ -484,6 +748,61 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list assertions for a service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListAssertions.html
+   */
+  public toListAssertions() {
+    return this.to('ListAssertions');
+  }
+
+  /**
+   * Grants permission to list dependencies discovered for services
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListDependencies.html
+   */
+  public toListDependencies() {
+    return this.to('ListDependencies');
+  }
+
+  /**
+   * Grants permission to list failure mode assessments
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListFailureModeAssessments.html
+   */
+  public toListFailureModeAssessments() {
+    return this.to('ListFailureModeAssessments');
+  }
+
+  /**
+   * Grants permission to list failure mode findings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListFailureModeFindings.html
+   */
+  public toListFailureModeFindings() {
+    return this.to('ListFailureModeFindings');
+  }
+
+  /**
+   * Grants permission to list input sources for a service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListInputSources.html
+   */
+  public toListInputSources() {
+    return this.to('ListInputSources');
+  }
+
+  /**
    * Grants permission to list metrics
    *
    * Access Level: List
@@ -495,6 +814,17 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resilience policies
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListPolicies.html
+   */
+  public toListPolicies() {
+    return this.to('ListPolicies');
+  }
+
+  /**
    * Grants permission to list recommendation templates
    *
    * Access Level: List
@@ -503,6 +833,17 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toListRecommendationTemplates() {
     return this.to('ListRecommendationTemplates');
+  }
+
+  /**
+   * Grants permission to list reports
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListReports.html
+   */
+  public toListReports() {
+    return this.to('ListReports');
   }
 
   /**
@@ -528,6 +869,61 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resources for a service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListResources.html
+   */
+  public toListResources() {
+    return this.to('ListResources');
+  }
+
+  /**
+   * Grants permission to list events for a service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceEvents.html
+   */
+  public toListServiceEvents() {
+    return this.to('ListServiceEvents');
+  }
+
+  /**
+   * Grants permission to list service functions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceFunctions.html
+   */
+  public toListServiceFunctions() {
+    return this.to('ListServiceFunctions');
+  }
+
+  /**
+   * Grants permission to list service topology edges
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServiceTopologyEdges.html
+   */
+  public toListServiceTopologyEdges() {
+    return this.to('ListServiceTopologyEdges');
+  }
+
+  /**
+   * Grants permission to list services
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListServices.html
+   */
+  public toListServices() {
+    return this.to('ListServices');
+  }
+
+  /**
    * Grants permission to list SOP recommendations
    *
    * Access Level: List
@@ -547,6 +943,28 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toListSuggestedResiliencyPolicies() {
     return this.to('ListSuggestedResiliencyPolicies');
+  }
+
+  /**
+   * Grants permission to list events for a system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSystemEvents.html
+   */
+  public toListSystemEvents() {
+    return this.to('ListSystemEvents');
+  }
+
+  /**
+   * Grants permission to list systems
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListSystems.html
+   */
+  public toListSystems() {
+    return this.to('ListSystems');
   }
 
   /**
@@ -580,6 +998,17 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toListUnsupportedAppVersionResources() {
     return this.to('ListUnsupportedAppVersionResources');
+  }
+
+  /**
+   * Grants permission to list user journeys for a system
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_ListUserJourneys.html
+   */
+  public toListUserJourneys() {
+    return this.to('ListUserJourneys');
   }
 
   /**
@@ -675,6 +1104,17 @@ export class Resiliencehub extends PolicyStatement {
    */
   public toStartAppAssessment() {
     return this.to('StartAppAssessment');
+  }
+
+  /**
+   * Grants permission to start a failure mode assessment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_StartFailureModeAssessment.html
+   */
+  public toStartFailureModeAssessment() {
+    return this.to('StartFailureModeAssessment');
   }
 
   /**
@@ -776,6 +1216,50 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an assertion
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateAssertion.html
+   */
+  public toUpdateAssertion() {
+    return this.to('UpdateAssertion');
+  }
+
+  /**
+   * Grants permission to update a dependency classification
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateDependency.html
+   */
+  public toUpdateDependency() {
+    return this.to('UpdateDependency');
+  }
+
+  /**
+   * Grants permission to update a failure mode finding
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateFailureModeFinding.html
+   */
+  public toUpdateFailureModeFinding() {
+    return this.to('UpdateFailureModeFinding');
+  }
+
+  /**
+   * Grants permission to update a resilience policy
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdatePolicy.html
+   */
+  public toUpdatePolicy() {
+    return this.to('UpdatePolicy');
+  }
+
+  /**
    * Grants permission to update resiliency policy
    *
    * Access Level: Write
@@ -786,6 +1270,50 @@ export class Resiliencehub extends PolicyStatement {
     return this.to('UpdateResiliencyPolicy');
   }
 
+  /**
+   * Grants permission to update a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateService.html
+   */
+  public toUpdateService() {
+    return this.to('UpdateService');
+  }
+
+  /**
+   * Grants permission to update a service function
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateServiceFunction.html
+   */
+  public toUpdateServiceFunction() {
+    return this.to('UpdateServiceFunction');
+  }
+
+  /**
+   * Grants permission to update a system
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateSystem.html
+   */
+  public toUpdateSystem() {
+    return this.to('UpdateSystem');
+  }
+
+  /**
+   * Grants permission to update a user journey
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_UpdateUserJourney.html
+   */
+  public toUpdateUserJourney() {
+    return this.to('UpdateUserJourney');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptResourceGroupingRecommendations',
@@ -794,15 +1322,34 @@ export class Resiliencehub extends PolicyStatement {
       'CreateApp',
       'CreateAppVersionAppComponent',
       'CreateAppVersionResource',
+      'CreateAssertion',
+      'CreateInputSource',
+      'CreatePolicy',
       'CreateRecommendationTemplate',
+      'CreateReport',
       'CreateResiliencyPolicy',
+      'CreateService',
+      'CreateServiceFunction',
+      'CreateServiceFunctionResources',
+      'CreateSystem',
+      'CreateUserJourney',
       'DeleteApp',
       'DeleteAppAssessment',
       'DeleteAppInputSource',
       'DeleteAppVersionAppComponent',
       'DeleteAppVersionResource',
+      'DeleteAssertion',
+      'DeleteInputSource',
+      'DeletePolicy',
       'DeleteRecommendationTemplate',
       'DeleteResiliencyPolicy',
+      'DeleteService',
+      'DeleteServiceFunction',
+      'DeleteServiceFunctionResources',
+      'DeleteSystem',
+      'DeleteUserJourney',
+      'ImportApp',
+      'ImportPolicy',
       'ImportResourcesToDraftAppVersion',
       'PublishAppVersion',
       'PutDraftAppVersionTemplate',
@@ -810,13 +1357,22 @@ export class Resiliencehub extends PolicyStatement {
       'RemoveDraftAppVersionResourceMappings',
       'ResolveAppVersionResources',
       'StartAppAssessment',
+      'StartFailureModeAssessment',
       'StartMetricsExport',
       'StartResourceGroupingRecommendationTask',
       'UpdateApp',
       'UpdateAppVersion',
       'UpdateAppVersionAppComponent',
       'UpdateAppVersionResource',
-      'UpdateResiliencyPolicy'
+      'UpdateAssertion',
+      'UpdateDependency',
+      'UpdateFailureModeFinding',
+      'UpdatePolicy',
+      'UpdateResiliencyPolicy',
+      'UpdateService',
+      'UpdateServiceFunction',
+      'UpdateSystem',
+      'UpdateUserJourney'
     ],
     Read: [
       'DescribeApp',
@@ -830,7 +1386,27 @@ export class Resiliencehub extends PolicyStatement {
       'DescribeMetricsExport',
       'DescribeResiliencyPolicy',
       'DescribeResourceGroupingRecommendationTask',
-      'ListTagsForResource'
+      'GetFailureModeFinding',
+      'GetPolicy',
+      'GetService',
+      'GetSystem',
+      'GetUserJourney',
+      'ListAssertions',
+      'ListDependencies',
+      'ListFailureModeAssessments',
+      'ListFailureModeFindings',
+      'ListInputSources',
+      'ListPolicies',
+      'ListReports',
+      'ListResources',
+      'ListServiceEvents',
+      'ListServiceFunctions',
+      'ListServiceTopologyEdges',
+      'ListServices',
+      'ListSystemEvents',
+      'ListSystems',
+      'ListTagsForResource',
+      'ListUserJourneys'
     ],
     List: [
       'ListAlarmRecommendations',
@@ -929,14 +1505,70 @@ export class Resiliencehub extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type policy to the statement
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_Policy.html
+   *
+   * @param policyId - Identifier for the policyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPolicy(policyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resiliencehub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy/${ policyId }`);
+  }
+
+  /**
+   * Adds a resource of type service to the statement
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_Service.html
+   *
+   * @param serviceId - Identifier for the serviceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onService(serviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resiliencehub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceId }`);
+  }
+
+  /**
+   * Adds a resource of type system to the statement
+   *
+   * https://docs.aws.amazon.com/resilience-hub/latest/APIReference/API_System.html
+   *
+   * @param systemId - Identifier for the systemId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSystem(systemId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:resiliencehub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:system/${ systemId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toCreateApp()
+   * - .toCreatePolicy()
    * - .toCreateRecommendationTemplate()
    * - .toCreateResiliencyPolicy()
+   * - .toCreateService()
+   * - .toCreateSystem()
+   * - .toImportApp()
+   * - .toImportPolicy()
    * - .toStartAppAssessment()
    * - .toTagResource()
    *
@@ -953,11 +1585,58 @@ export class Resiliencehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateAssertion()
+   * - .toCreateInputSource()
+   * - .toCreateReport()
+   * - .toCreateService()
+   * - .toCreateServiceFunction()
+   * - .toCreateServiceFunctionResources()
+   * - .toCreateUserJourney()
+   * - .toDeleteAssertion()
+   * - .toDeleteInputSource()
+   * - .toDeletePolicy()
+   * - .toDeleteService()
+   * - .toDeleteServiceFunction()
+   * - .toDeleteServiceFunctionResources()
+   * - .toDeleteSystem()
+   * - .toDeleteUserJourney()
+   * - .toGetFailureModeFinding()
+   * - .toGetPolicy()
+   * - .toGetService()
+   * - .toGetSystem()
+   * - .toGetUserJourney()
+   * - .toImportApp()
+   * - .toImportPolicy()
+   * - .toListAssertions()
+   * - .toListFailureModeAssessments()
+   * - .toListFailureModeFindings()
+   * - .toListInputSources()
+   * - .toListReports()
+   * - .toListResources()
+   * - .toListServiceEvents()
+   * - .toListServiceFunctions()
+   * - .toListServiceTopologyEdges()
+   * - .toListSystemEvents()
+   * - .toListUserJourneys()
+   * - .toStartFailureModeAssessment()
+   * - .toUpdateAssertion()
+   * - .toUpdateDependency()
+   * - .toUpdateFailureModeFinding()
+   * - .toUpdatePolicy()
+   * - .toUpdateService()
+   * - .toUpdateServiceFunction()
+   * - .toUpdateSystem()
+   * - .toUpdateUserJourney()
+   *
    * Applies to resource types:
    * - resiliency-policy
    * - application
    * - app-assessment
    * - recommendation-template
+   * - policy
+   * - service
+   * - system
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -974,8 +1653,13 @@ export class Resiliencehub extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateApp()
+   * - .toCreatePolicy()
    * - .toCreateRecommendationTemplate()
    * - .toCreateResiliencyPolicy()
+   * - .toCreateService()
+   * - .toCreateSystem()
+   * - .toImportApp()
+   * - .toImportPolicy()
    * - .toStartAppAssessment()
    * - .toTagResource()
    * - .toUntagResource()

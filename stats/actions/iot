@@ -136,6 +136,7 @@ iot:GetBucketsAggregation;Read
 iot:GetCardinality;Read
 iot:GetCommand;Read
 iot:GetCommandExecution;Read
+iot:GetConnection;Write
 iot:GetEffectivePolicies;Read
 iot:GetIndexingConfiguration;Read
 iot:GetJobDocument;Read
@@ -205,6 +206,7 @@ iot:ListScheduledAudits;List
 iot:ListSecurityProfiles;List
 iot:ListSecurityProfilesForTarget;List
 iot:ListStreams;List
+iot:ListSubscriptions;Write
 iot:ListTagsForResource;Read
 iot:ListTargetsForPolicy;List
 iot:ListTargetsForSecurityProfile;List
@@ -238,6 +240,7 @@ iot:ReplaceTopicRule;Write
 iot:RetainPublish;Write
 iot:RotateTunnelAccessToken;Write
 iot:SearchIndex;Read
+iot:SendDirectMessage;Write
 iot:SetDefaultAuthorizer;Permissions management
 iot:SetDefaultPolicyVersion;Permissions management
 iot:SetLoggingOptions;Write
