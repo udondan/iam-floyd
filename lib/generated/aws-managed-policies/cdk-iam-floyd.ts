@@ -5504,6 +5504,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSResilienceHubAsssessmentExecutionPolicy);
     }
 
+    /** Allows AWS Resilience Hub to access resources in your account for resilience discovery, assessment, and management. */
+    public AWSResilienceHubServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSResilienceHubServiceRolePolicy);
+    }
+
     /** Provides full access to AWS Resource Access Manager */
     public AWSResourceAccessManagerFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSResourceAccessManagerFullAccess);

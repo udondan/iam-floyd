@@ -2198,6 +2198,8 @@ export class AwsManagedPolicy {
     public static AWSRepostSpaceSupportOperationsPolicy = 'AWSRepostSpaceSupportOperationsPolicy';
     /** Policy for AWS Resilience Hub service role which allows access to other AWS services in order to execute assessment. */
     public static AWSResilienceHubAsssessmentExecutionPolicy = 'AWSResilienceHubAsssessmentExecutionPolicy';
+    /** Allows AWS Resilience Hub to access resources in your account for resilience discovery, assessment, and management. */
+    public static AWSResilienceHubServiceRolePolicy = 'aws-service-role/AWSResilienceHubServiceRolePolicy';
     /** Provides full access to AWS Resource Access Manager */
     public static AWSResourceAccessManagerFullAccess = 'AWSResourceAccessManagerFullAccess';
     /** Provides read only access to AWS Resource Access Manager. */
