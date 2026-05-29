@@ -2444,7 +2444,8 @@
       "Effect": "Allow",
       "Action": [
         "dynamodb:ListTables",
-        "glue:ManagedConnector"
+        "glue:ManagedConnector",
+        "glue:TestConnection"
       ],
       "Resource": "*"
     },
