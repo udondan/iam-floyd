@@ -1659,6 +1659,20 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the specified connection information
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifIncludeSocketInformation()
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
+   */
+  public toGetConnection() {
+    return this.to('GetConnection');
+  }
+
+  /**
    * Grants permission to get effective policies
    *
    * Access Level: Read
@@ -2418,6 +2432,17 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the specified connection's subscriptions
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
+   */
+  public toListSubscriptions() {
+    return this.to('ListSubscriptions');
+  }
+
+  /**
    * Grants permission to list all tags for a given resource
    *
    * Access Level: Read
@@ -2797,6 +2822,20 @@ export class Iot extends PolicyStatement {
    */
   public toSearchIndex() {
     return this.to('SearchIndex');
+  }
+
+  /**
+   * Grants permission to send a direct message to an IoT client
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifTopic()
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
+   */
+  public toSendDirectMessage() {
+    return this.to('SendDirectMessage');
   }
 
   /**
@@ -3471,6 +3510,8 @@ export class Iot extends PolicyStatement {
       'DisableTopicRule',
       'DisassociateSbomFromPackageVersion',
       'EnableTopicRule',
+      'GetConnection',
+      'ListSubscriptions',
       'OpenTunnel',
       'Publish',
       'PutVerificationStateOnViolation',
@@ -3485,6 +3526,7 @@ export class Iot extends PolicyStatement {
       'ReplaceTopicRule',
       'RetainPublish',
       'RotateTunnelAccessToken',
+      'SendDirectMessage',
       'SetLoggingOptions',
       'SetV2LoggingLevel',
       'SetV2LoggingOptions',
@@ -4446,6 +4488,21 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Filters access by GetConnection includeSocketInformation request parameter
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
+   *
+   * Applies to actions:
+   * - .toGetConnection()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifIncludeSocketInformation(value: string | string[], operator?: Operator | string) {
+    return this.if(`IncludeSocketInformation`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by a list of IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
@@ -4459,6 +4516,21 @@ export class Iot extends PolicyStatement {
    */
   public ifThingGroupArn(value: string | string[], operator?: Operator | string) {
     return this.if(`ThingGroupArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by based on the topic
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
+   *
+   * Applies to actions:
+   * - .toSendDirectMessage()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifTopic(value: string | string[], operator?: Operator | string) {
+    return this.if(`Topic`, value, operator ?? 'StringLike');
   }
 
   /**
