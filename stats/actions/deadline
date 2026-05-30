@@ -34,6 +34,7 @@ deadline:DeleteQueueEnvironment;Write
 deadline:DeleteQueueFleetAssociation;Write
 deadline:DeleteQueueLimitAssociation;Write
 deadline:DeleteStorageProfile;Write
+deadline:DeleteVolume;Write
 deadline:DeleteWorker;Write
 deadline:DisassociateMemberFromFarm;Permissions management
 deadline:DisassociateMemberFromFleet;Permissions management
@@ -60,6 +61,7 @@ deadline:GetStep;Read
 deadline:GetStorageProfile;Read
 deadline:GetStorageProfileForQueue;Read
 deadline:GetTask;Read
+deadline:GetVolume;Read
 deadline:GetWorker;Read
 deadline:ListAvailableMeteredProducts;List
 deadline:ListBudgets;List
@@ -89,6 +91,7 @@ deadline:ListStorageProfiles;List
 deadline:ListStorageProfilesForQueue;List
 deadline:ListTagsForResource;Read
 deadline:ListTasks;List
+deadline:ListVolumes;List
 deadline:ListWorkers;List
 deadline:PutMeteredProduct;Write
 deadline:SearchJobs;Read

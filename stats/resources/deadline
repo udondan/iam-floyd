@@ -5,4 +5,5 @@ deadline:job
 deadline:license-endpoint
 deadline:monitor
 deadline:queue
+deadline:volume
 deadline:worker

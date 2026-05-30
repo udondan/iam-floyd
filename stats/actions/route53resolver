@@ -41,6 +41,7 @@ route53resolver:ListFirewallDomainLists;List
 route53resolver:ListFirewallDomains;List
 route53resolver:ListFirewallRuleGroupAssociations;List
 route53resolver:ListFirewallRuleGroups;List
+route53resolver:ListFirewallRuleTypes;List
 route53resolver:ListFirewallRules;List
 route53resolver:ListOutpostResolvers;List
 route53resolver:ListResolverConfigs;List
