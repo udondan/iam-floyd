@@ -114,9 +114,11 @@
         "deadline:AssumeFleetRoleForRead",
         "deadline:GetFleet",
         "deadline:GetQueueFleetAssociation",
+        "deadline:GetVolume",
         "deadline:GetWorker",
         "deadline:ListQueueFleetAssociations",
         "deadline:ListSessionsForWorker",
+        "deadline:ListVolumes",
         "deadline:ListWorkers",
         "deadline:SearchWorkers"
       ],

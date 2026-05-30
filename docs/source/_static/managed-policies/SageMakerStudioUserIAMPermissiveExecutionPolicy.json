@@ -287,7 +287,8 @@
         "secretsmanager:DescribeSecret",
         "secretsmanager:GetSecretValue",
         "secretsmanager:UpdateSecret",
-        "secretsmanager:PutResourcePolicy"
+        "secretsmanager:PutResourcePolicy",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "*",
       "Condition": {
@@ -303,7 +304,8 @@
         "secretsmanager:CreateSecret",
         "secretsmanager:DescribeSecret",
         "secretsmanager:GetSecretValue",
-        "secretsmanager:UpdateSecret"
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "*",
       "Condition": {
