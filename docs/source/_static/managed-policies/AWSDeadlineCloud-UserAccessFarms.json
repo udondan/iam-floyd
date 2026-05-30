@@ -9,9 +9,9 @@
         "identitystore:DescribeUser",
         "identitystore:ListGroupMembershipsForMember",
         "deadline:GetApplicationVersion",
+        "deadline:GetMonitorSettings",
         "ec2:DescribeInstanceTypes",
-        "identitystore:ListUsers",
-        "deadline:GetMonitorSettings"
+        "identitystore:ListUsers"
       ],
       "Resource": [
         "*"
@@ -173,6 +173,7 @@
         "deadline:GetStorageProfile",
         "deadline:GetStorageProfileForQueue",
         "deadline:GetTask",
+        "deadline:GetVolume",
         "deadline:GetWorker",
         "deadline:ListJobParameterDefinitions",
         "deadline:ListQueueEnvironments",
@@ -186,6 +187,7 @@
         "deadline:ListStorageProfiles",
         "deadline:ListStorageProfilesForQueue",
         "deadline:ListTasks",
+        "deadline:ListVolumes",
         "deadline:ListWorkers",
         "deadline:SearchJobs",
         "deadline:SearchSteps",
