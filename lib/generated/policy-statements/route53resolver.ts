@@ -564,6 +564,17 @@ export class Route53resolver extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the types of Firewall rules that are available for use, including firewall advanced content category
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListFirewallRuleTypes.html
+   */
+  public toListFirewallRuleTypes() {
+    return this.to('ListFirewallRuleTypes');
+  }
+
+  /**
    * Grants permission to list all the Firewall rule under a specified Firewall rule group
    *
    * Access Level: List
@@ -929,6 +940,7 @@ export class Route53resolver extends PolicyStatement {
       'ListFirewallDomains',
       'ListFirewallRuleGroupAssociations',
       'ListFirewallRuleGroups',
+      'ListFirewallRuleTypes',
       'ListFirewallRules',
       'ListOutpostResolvers',
       'ListResolverConfigs',

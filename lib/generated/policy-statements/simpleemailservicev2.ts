@@ -436,12 +436,13 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove an email address from the suppression list for your account
+   * Grants permission to remove an email address from the suppression list for your account or tenant
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteSuppressedDestination.html
    */
@@ -819,12 +820,13 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve information about a specific email address that's on the suppression list for your account
+   * Grants permission to retrieve information about a specific email address that's on the suppression list for your account or tenant
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetSuppressedDestination.html
    */
@@ -1062,12 +1064,13 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list email addresses that are on the suppression list for your account
+   * Grants permission to list email addresses that are on the suppression list for your account or tenant
    *
    * Access Level: Read
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListSuppressedDestinations.html
    */
@@ -1427,17 +1430,33 @@ export class SesV2 extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add an email address to the suppression list
+   * Grants permission to add an email address to the suppression list for your account or tenant
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifApiVersion()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutSuppressedDestination.html
    */
   public toPutSuppressedDestination() {
     return this.to('PutSuppressedDestination');
+  }
+
+  /**
+   * Grants permission to change the settings for the tenant-level suppression list
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifApiVersion()
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutTenantSuppressionAttributes.html
+   */
+  public toPutTenantSuppressionAttributes() {
+    return this.to('PutTenantSuppressionAttributes');
   }
 
   /**
@@ -1750,6 +1769,7 @@ export class SesV2 extends PolicyStatement {
       'PutEmailIdentityFeedbackAttributes',
       'PutEmailIdentityMailFromAttributes',
       'PutSuppressedDestination',
+      'PutTenantSuppressionAttributes',
       'SendBulkEmail',
       'SendCustomVerificationEmail',
       'SendEmail',
@@ -2046,6 +2066,7 @@ export class SesV2 extends PolicyStatement {
    * - .toDeleteEmailIdentityPolicy()
    * - .toDeleteEmailTemplate()
    * - .toDeleteMultiRegionEndpoint()
+   * - .toDeleteSuppressedDestination()
    * - .toDeleteTenant()
    * - .toDeleteTenantResourceAssociation()
    * - .toGetConfigurationSet()
@@ -2061,10 +2082,12 @@ export class SesV2 extends PolicyStatement {
    * - .toGetEmailTemplate()
    * - .toGetMultiRegionEndpoint()
    * - .toGetReputationEntity()
+   * - .toGetSuppressedDestination()
    * - .toGetTenant()
    * - .toListRecommendations()
    * - .toListReputationEntities()
    * - .toListResourceTenants()
+   * - .toListSuppressedDestinations()
    * - .toListTenantResources()
    * - .toPutConfigurationSetArchivingOptions()
    * - .toPutConfigurationSetDeliveryOptions()
@@ -2080,6 +2103,8 @@ export class SesV2 extends PolicyStatement {
    * - .toPutEmailIdentityDkimSigningAttributes()
    * - .toPutEmailIdentityFeedbackAttributes()
    * - .toPutEmailIdentityMailFromAttributes()
+   * - .toPutSuppressedDestination()
+   * - .toPutTenantSuppressionAttributes()
    * - .toUpdateConfigurationSetEventDestination()
    * - .toUpdateContact()
    * - .toUpdateContactList()
@@ -2236,6 +2261,7 @@ export class SesV2 extends PolicyStatement {
    * - .toPutEmailIdentityFeedbackAttributes()
    * - .toPutEmailIdentityMailFromAttributes()
    * - .toPutSuppressedDestination()
+   * - .toPutTenantSuppressionAttributes()
    * - .toSendBulkEmail()
    * - .toSendCustomVerificationEmail()
    * - .toSendEmail()

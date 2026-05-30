@@ -591,6 +591,20 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a volume
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_DeleteVolume.html
+   */
+  public toDeleteVolume() {
+    return this.to('DeleteVolume');
+  }
+
+  /**
    * Grants permission to delete a worker
    *
    * Access Level: Write
@@ -946,6 +960,20 @@ export class Deadline extends PolicyStatement {
    */
   public toGetTask() {
     return this.to('GetTask');
+  }
+
+  /**
+   * Grants permission to get a volume
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetVolume.html
+   */
+  public toGetVolume() {
+    return this.to('GetVolume');
   }
 
   /**
@@ -1367,6 +1395,20 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list volumes
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - identitystore:ListGroupMembershipsForMember
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListVolumes.html
+   */
+  public toListVolumes() {
+    return this.to('ListVolumes');
+  }
+
+  /**
    * Grants permission to list all workers in a fleet
    *
    * Access Level: List
@@ -1776,6 +1818,7 @@ export class Deadline extends PolicyStatement {
       'DeleteQueueFleetAssociation',
       'DeleteQueueLimitAssociation',
       'DeleteStorageProfile',
+      'DeleteVolume',
       'DeleteWorker',
       'PutMeteredProduct',
       'UpdateBudget',
@@ -1819,6 +1862,7 @@ export class Deadline extends PolicyStatement {
       'GetStorageProfile',
       'GetStorageProfileForQueue',
       'GetTask',
+      'GetVolume',
       'GetWorker',
       'ListTagsForResource',
       'SearchJobs',
@@ -1855,6 +1899,7 @@ export class Deadline extends PolicyStatement {
       'ListStorageProfiles',
       'ListStorageProfilesForQueue',
       'ListTasks',
+      'ListVolumes',
       'ListWorkers'
     ],
     Tagging: [
@@ -1997,6 +2042,27 @@ export class Deadline extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type volume to the statement
+   *
+   * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/volumes.html
+   *
+   * @param farmId - Identifier for the farmId.
+   * @param fleetId - Identifier for the fleetId.
+   * @param volumeId - Identifier for the volumeId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifFarmMembershipLevels()
+   * - .ifFleetMembershipLevels()
+   */
+  public onVolume(farmId: string, fleetId: string, volumeId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:deadline:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:farm/${ farmId }/fleet/${ fleetId }/volume/${ volumeId }`);
+  }
+
+  /**
    * Adds a resource of type worker to the statement
    *
    * https://docs.aws.amazon.com/deadline-cloud/latest/userguide/security-iam.html
@@ -2054,6 +2120,7 @@ export class Deadline extends PolicyStatement {
    * - license-endpoint
    * - monitor
    * - queue
+   * - volume
    * - worker
    *
    * @param tagKey The tag key to check
@@ -2137,6 +2204,7 @@ export class Deadline extends PolicyStatement {
    * - fleet
    * - job
    * - queue
+   * - volume
    * - worker
    *
    * @param value The value(s) to check
@@ -2153,6 +2221,7 @@ export class Deadline extends PolicyStatement {
    *
    * Applies to resource types:
    * - fleet
+   * - volume
    * - worker
    *
    * @param value The value(s) to check
