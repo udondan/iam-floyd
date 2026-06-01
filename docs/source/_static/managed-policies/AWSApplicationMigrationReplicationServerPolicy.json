@@ -17,7 +17,8 @@
         "mgn:UpdateAgentReplicationProcessStateForMgn",
         "mgn:NotifyAgentReplicationProgressForMgn",
         "mgn:NotifyAgentConnectedForMgn",
-        "mgn:NotifyAgentDisconnectedForMgn"
+        "mgn:NotifyAgentDisconnectedForMgn",
+        "mgn:StartSnapshotGroupForMgn"
       ],
       "Resource": "*"
     },

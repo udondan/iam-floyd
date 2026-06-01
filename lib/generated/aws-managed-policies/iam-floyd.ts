@@ -1180,6 +1180,10 @@ export class AwsManagedPolicy {
     public static AWSApplicationMigrationConversionServerPolicy = 'service-role/AWSApplicationMigrationConversionServerPolicy';
     /** This policy provides Amazon EC2 operations required to use Application Migration Service (MGN) to launch the migrated servers as EC2 instances. Attach this policy to your IAM users or roles. */
     public static AWSApplicationMigrationEC2Access = 'AWSApplicationMigrationEC2Access';
+    /** Provides permissions to manage ONTAP file system */
+    public static AWSApplicationMigrationFSxProxyPolicy = 'service-role/AWSApplicationMigrationFSxProxyPolicy';
+    /** Provides permissions to manage PrivateLink between AWS Application Migration Service and customer's FSx file system */
+    public static AWSApplicationMigrationFSxProxyVPCPolicy = 'service-role/AWSApplicationMigrationFSxProxyVPCPolicy';
     /** This policy provides permissions to all public APIs of AWS Application Migration Service (MGN), as well as permissions to read KMS key information. Attach this policy to your IAM users or roles. */
     public static AWSApplicationMigrationFullAccess = 'AWSApplicationMigrationFullAccess';
     /** This policy allows AWS Application Migration Service (MGN) to send meta-data about the progress of servers being migrated using MGN to AWS Migration Hub (MGH). MGN automatically creates an IAM role with this policy attached, and assumes this role. We do not recommend that you attach this policy to your IAM users or roles. */

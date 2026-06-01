@@ -252,6 +252,31 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "FSxReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DescribeStorageVirtualMachines"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowTagSVMWithMapMigrated",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:TagResource"
+      ],
+      "Resource": "arn:aws:fsx:*:*:storage-virtual-machine/*",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "aws:TagKeys": [
+            "map-migrated"
+          ]
+        }
+      }
     }
   ]
 }

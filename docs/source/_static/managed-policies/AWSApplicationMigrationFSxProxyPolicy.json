@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FSxSecret",
+      "Effect": "Allow",
+      "Action": "secretsmanager:GetSecretValue",
+      "Resource": "arn:aws:secretsmanager:*:*:secret:*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "FSxDescribe",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DescribeVolumes",
+        "fsx:DescribeStorageVirtualMachines"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "FSxCreateVolume",
+      "Effect": "Allow",
+      "Action": "fsx:CreateVolume",
+      "Resource": "arn:aws:fsx:*:*:volume/*/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AWSApplicationMigrationServiceManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "FSxCreateVolumeSVM",
+      "Effect": "Allow",
+      "Action": "fsx:CreateVolume",
+      "Resource": "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
+    },
+    {
+      "Sid": "FSxTagging",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ],
+      "Resource": "arn:aws:fsx:*:*:volume/*/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "FSxUpdateAndDeleteVolume",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:UpdateVolume",
+        "fsx:DeleteVolume"
+      ],
+      "Resource": "arn:aws:fsx:*:*:volume/*/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+        }
+      }
+    }
+  ]
+}
