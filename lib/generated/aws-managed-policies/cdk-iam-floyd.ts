@@ -2959,6 +2959,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationEC2Access);
     }
 
+    /** Provides permissions to manage ONTAP file system */
+    public AWSApplicationMigrationFSxProxyPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationFSxProxyPolicy);
+    }
+
+    /** Provides permissions to manage PrivateLink between AWS Application Migration Service and customer's FSx file system */
+    public AWSApplicationMigrationFSxProxyVPCPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationFSxProxyVPCPolicy);
+    }
+
     /** This policy provides permissions to all public APIs of AWS Application Migration Service (MGN), as well as permissions to read KMS key information. Attach this policy to your IAM users or roles. */
     public AWSApplicationMigrationFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSApplicationMigrationFullAccess);
