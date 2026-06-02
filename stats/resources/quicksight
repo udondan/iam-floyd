@@ -23,6 +23,7 @@ quicksight:group
 quicksight:ingestion
 quicksight:namespace
 quicksight:refreshschedule
+quicksight:space
 quicksight:template
 quicksight:theme
 quicksight:topic
