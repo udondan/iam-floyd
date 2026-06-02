@@ -57,6 +57,20 @@
           "aws:ResourceTag/AWSNetworkFirewallManaged": "true"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecs:ListContainerInstances",
+        "ecs:ListTasks",
+        "ecs:DescribeTasks",
+        "ecs:DescribeContainerInstances"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:cluster/*",
+        "arn:aws:ecs:*:*:container-instance/*/*",
+        "arn:aws:ecs:*:*:task/*/*"
+      ]
     }
   ]
 }

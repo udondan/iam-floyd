@@ -84,6 +84,19 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "AllowTranscribeOperatorActions",
+      "Effect": "Allow",
+      "Action": [
+        "transcribe:StartStreamTranscriptionWebSocket"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     }
   ]
 }
