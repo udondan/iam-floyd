@@ -1565,6 +1565,17 @@ export class Mgn extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start snapshot group requests
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html
+   */
+  public toStartSnapshotGroupForMgn() {
+    return this.to('StartSnapshotGroupForMgn');
+  }
+
+  /**
    * Grants permission to start test
    *
    * Access Level: Write
@@ -1974,6 +1985,7 @@ export class Mgn extends PolicyStatement {
       'StartNetworkMigrationMapping',
       'StartNetworkMigrationMappingUpdate',
       'StartReplication',
+      'StartSnapshotGroupForMgn',
       'StartTest',
       'StopReplication',
       'TerminateTargetInstances',

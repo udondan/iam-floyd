@@ -106,6 +106,7 @@ mgn:StartNetworkMigrationDeployment;Write
 mgn:StartNetworkMigrationMapping;Write
 mgn:StartNetworkMigrationMappingUpdate;Write
 mgn:StartReplication;Write
+mgn:StartSnapshotGroupForMgn;Write
 mgn:StartTest;Write
 mgn:StopReplication;Write
 mgn:TagResource;Tagging

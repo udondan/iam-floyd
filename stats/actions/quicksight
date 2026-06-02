@@ -9,6 +9,7 @@ quicksight:CreateAccountCustomization;Write
 quicksight:CreateAccountSubscription;Write
 quicksight:CreateActionConnector;Write
 quicksight:CreateAdmin;Write
+quicksight:CreateAgent;Write
 quicksight:CreateAnalysis;Write
 quicksight:CreateBrand;Write
 quicksight:CreateCustomPermissions;Write
@@ -17,6 +18,7 @@ quicksight:CreateDataSet;Write
 quicksight:CreateDataSource;Write
 quicksight:CreateEmailCustomizationTemplate;Write
 quicksight:CreateExtensionAccess;Write
+quicksight:CreateFlow;Write
 quicksight:CreateFolder;Write
 quicksight:CreateFolderMembership;Write
 quicksight:CreateGroup;Write
@@ -27,6 +29,7 @@ quicksight:CreateNamespace;Write
 quicksight:CreateReader;Write
 quicksight:CreateRefreshSchedule;Write
 quicksight:CreateRoleMembership;Write
+quicksight:CreateSpace;Write
 quicksight:CreateTemplate;Write
 quicksight:CreateTemplateAlias;Write
 quicksight:CreateTheme;Write
@@ -39,6 +42,7 @@ quicksight:DeleteAccountCustomPermission;Write
 quicksight:DeleteAccountCustomization;Write
 quicksight:DeleteAccountSubscription;Write
 quicksight:DeleteActionConnector;Write
+quicksight:DeleteAgent;Write
 quicksight:DeleteAnalysis;Write
 quicksight:DeleteBrand;Write
 quicksight:DeleteBrandAssignment;Write
@@ -50,6 +54,7 @@ quicksight:DeleteDataSource;Write
 quicksight:DeleteDefaultQBusinessApplication;Write
 quicksight:DeleteEmailCustomizationTemplate;Write
 quicksight:DeleteExtensionAccess;Write
+quicksight:DeleteFlow;Write
 quicksight:DeleteFolder;Write
 quicksight:DeleteFolderMembership;Write
 quicksight:DeleteGroup;Write
@@ -60,6 +65,7 @@ quicksight:DeleteNamespace;Write
 quicksight:DeleteRefreshSchedule;Write
 quicksight:DeleteRoleCustomPermission;Write
 quicksight:DeleteRoleMembership;Write
+quicksight:DeleteSpace;Write
 quicksight:DeleteTemplate;Write
 quicksight:DeleteTemplateAlias;Write
 quicksight:DeleteTheme;Write
@@ -101,6 +107,7 @@ quicksight:DescribeDataSourcePermissions;Permissions management
 quicksight:DescribeDefaultQBusinessApplication;Read
 quicksight:DescribeEmailCustomizationTemplate;Read
 quicksight:DescribeExtensionAccess;Read
+quicksight:DescribeFlow;Read
 quicksight:DescribeFolder;Read
 quicksight:DescribeFolderPermissions;Read
 quicksight:DescribeFolderResolvedPermissions;Read
@@ -117,6 +124,8 @@ quicksight:DescribeQuickSightQSearchConfiguration;Read
 quicksight:DescribeRefreshSchedule;Read
 quicksight:DescribeRoleCustomPermission;Read
 quicksight:DescribeSelfUpgradeConfiguration;Read
+quicksight:DescribeSpace;Read
+quicksight:DescribeSpacePermissions;Permissions management
 quicksight:DescribeTemplate;Read
 quicksight:DescribeTemplateAlias;Read
 quicksight:DescribeTemplatePermissions;Read
@@ -169,6 +178,8 @@ quicksight:ListNamespaces;List
 quicksight:ListRefreshSchedules;List
 quicksight:ListRoleMemberships;List
 quicksight:ListSelfUpgrades;List
+quicksight:ListSpaceResources;List
+quicksight:ListSpaces;List
 quicksight:ListTagsForResource;Read
 quicksight:ListTemplateAliases;List
 quicksight:ListTemplateVersions;List
@@ -202,6 +213,7 @@ quicksight:SearchDirectoryGroups;List
 quicksight:SearchFlows;List
 quicksight:SearchFolders;Read
 quicksight:SearchGroups;List
+quicksight:SearchSpaces;List
 quicksight:SearchTopics;List
 quicksight:SearchUsers;List
 quicksight:SetGroupMapping;Write
@@ -220,6 +232,7 @@ quicksight:UpdateAccountCustomization;Write
 quicksight:UpdateAccountSettings;Write
 quicksight:UpdateActionConnector;Write
 quicksight:UpdateActionConnectorPermissions;Permissions management
+quicksight:UpdateAgent;Write
 quicksight:UpdateAgentPermissions;Permissions management
 quicksight:UpdateAnalysis;Write
 quicksight:UpdateAnalysisPermissions;Permissions management
@@ -241,6 +254,7 @@ quicksight:UpdateDataSourcePermissions;Permissions management
 quicksight:UpdateDefaultQBusinessApplication;Write
 quicksight:UpdateEmailCustomizationTemplate;Write
 quicksight:UpdateExtensionAccess;Write
+quicksight:UpdateFlow;Write
 quicksight:UpdateFlowPermissions;Permissions management
 quicksight:UpdateFolder;Write
 quicksight:UpdateFolderPermissions;Permissions management
@@ -259,6 +273,9 @@ quicksight:UpdateRoleCustomPermission;Write
 quicksight:UpdateSPICECapacityConfiguration;Write
 quicksight:UpdateSelfUpgrade;Write
 quicksight:UpdateSelfUpgradeConfiguration;Write
+quicksight:UpdateSpace;Write
+quicksight:UpdateSpacePermissions;Permissions management
+quicksight:UpdateSpaceResources;Write
 quicksight:UpdateTemplate;Write
 quicksight:UpdateTemplateAlias;Write
 quicksight:UpdateTemplatePermissions;Permissions management

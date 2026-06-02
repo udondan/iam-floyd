@@ -164,6 +164,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAgent.html
+   */
+  public toCreateAgent() {
+    return this.to('CreateAgent');
+  }
+
+  /**
    * Grants permission to create an analysis from a template
    *
    * Access Level: Write
@@ -283,6 +294,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateExtensionAccess() {
     return this.to('CreateExtensionAccess');
+  }
+
+  /**
+   * Grants permission to create a flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateFlow.html
+   */
+  public toCreateFlow() {
+    return this.to('CreateFlow');
   }
 
   /**
@@ -411,6 +433,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateRoleMembership() {
     return this.to('CreateRoleMembership');
+  }
+
+  /**
+   * Grants permission to create a space
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateSpace.html
+   */
+  public toCreateSpace() {
+    return this.to('CreateSpace');
   }
 
   /**
@@ -576,6 +609,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAgent.html
+   */
+  public toDeleteAgent() {
+    return this.to('DeleteAgent');
+  }
+
+  /**
    * Grants permission to delete an analysis
    *
    * Access Level: Write
@@ -705,6 +749,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteFlow.html
+   */
+  public toDeleteFlow() {
+    return this.to('DeleteFlow');
+  }
+
+  /**
    * Grants permission to delete a QuickSight Folder
    *
    * Access Level: Write
@@ -818,6 +873,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteRoleMembership() {
     return this.to('DeleteRoleMembership');
+  }
+
+  /**
+   * Grants permission to delete a space
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteSpace.html
+   */
+  public toDeleteSpace() {
+    return this.to('DeleteSpace');
   }
 
   /**
@@ -1009,7 +1075,7 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAgent.html
    */
   public toDescribeAgent() {
     return this.to('DescribeAgent');
@@ -1020,7 +1086,7 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAgentPermissions.html
    */
   public toDescribeAgentPermissions() {
     return this.to('DescribeAgentPermissions');
@@ -1296,6 +1362,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a flow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeFlow.html
+   */
+  public toDescribeFlow() {
+    return this.to('DescribeFlow');
+  }
+
+  /**
    * Grants permission to describe a QuickSight Folder
    *
    * Access Level: Read
@@ -1473,6 +1550,28 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeSelfUpgradeConfiguration() {
     return this.to('DescribeSelfUpgradeConfiguration');
+  }
+
+  /**
+   * Grants permission to describe a space
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeSpace.html
+   */
+  public toDescribeSpace() {
+    return this.to('DescribeSpace');
+  }
+
+  /**
+   * Grants permission to describe permissions for a space
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeSpacePermissions.html
+   */
+  public toDescribeSpacePermissions() {
+    return this.to('DescribeSpacePermissions');
   }
 
   /**
@@ -1780,7 +1879,7 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAgents.html
    */
   public toListAgents() {
     return this.to('ListAgents');
@@ -2085,6 +2184,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list resources in a space
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListSpaceResources.html
+   */
+  public toListSpaceResources() {
+    return this.to('ListSpaceResources');
+  }
+
+  /**
+   * Grants permission to list spaces
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListSpaces.html
+   */
+  public toListSpaces() {
+    return this.to('ListSpaces');
+  }
+
+  /**
    * Grants permission to list tags of a QuickSight resource
    *
    * Access Level: Read
@@ -2373,7 +2494,7 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchAgents.html
    */
   public toSearchAgents() {
     return this.to('SearchAgents');
@@ -2465,6 +2586,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toSearchGroups() {
     return this.to('SearchGroups');
+  }
+
+  /**
+   * Grants permission to search spaces
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchSpaces.html
+   */
+  public toSearchSpaces() {
+    return this.to('SearchSpaces');
   }
 
   /**
@@ -2677,11 +2809,22 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an agent
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAgent.html
+   */
+  public toUpdateAgent() {
+    return this.to('UpdateAgent');
+  }
+
+  /**
    * Grants permission to update agent permissions
    *
    * Access Level: Permissions management
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAgentPermissions.html
    */
   public toUpdateAgentPermissions() {
     return this.to('UpdateAgentPermissions');
@@ -2930,6 +3073,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateFlow.html
+   */
+  public toUpdateFlow() {
+    return this.to('UpdateFlow');
+  }
+
+  /**
    * Grants permission to update permissions for a flow
    *
    * Access Level: Permissions management
@@ -3128,6 +3282,39 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a space
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSpace.html
+   */
+  public toUpdateSpace() {
+    return this.to('UpdateSpace');
+  }
+
+  /**
+   * Grants permission to update permissions for a space
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSpacePermissions.html
+   */
+  public toUpdateSpacePermissions() {
+    return this.to('UpdateSpacePermissions');
+  }
+
+  /**
+   * Grants permission to update resources in a space
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSpaceResources.html
+   */
+  public toUpdateSpaceResources() {
+    return this.to('UpdateSpaceResources');
+  }
+
+  /**
    * Grants permission to update a template
    *
    * Access Level: Write
@@ -3288,6 +3475,7 @@ export class Quicksight extends PolicyStatement {
       'CreateAccountSubscription',
       'CreateActionConnector',
       'CreateAdmin',
+      'CreateAgent',
       'CreateAnalysis',
       'CreateBrand',
       'CreateCustomPermissions',
@@ -3296,6 +3484,7 @@ export class Quicksight extends PolicyStatement {
       'CreateDataSource',
       'CreateEmailCustomizationTemplate',
       'CreateExtensionAccess',
+      'CreateFlow',
       'CreateFolder',
       'CreateFolderMembership',
       'CreateGroup',
@@ -3306,6 +3495,7 @@ export class Quicksight extends PolicyStatement {
       'CreateReader',
       'CreateRefreshSchedule',
       'CreateRoleMembership',
+      'CreateSpace',
       'CreateTemplate',
       'CreateTemplateAlias',
       'CreateTheme',
@@ -3318,6 +3508,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteAccountCustomization',
       'DeleteAccountSubscription',
       'DeleteActionConnector',
+      'DeleteAgent',
       'DeleteAnalysis',
       'DeleteBrand',
       'DeleteBrandAssignment',
@@ -3329,6 +3520,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteDefaultQBusinessApplication',
       'DeleteEmailCustomizationTemplate',
       'DeleteExtensionAccess',
+      'DeleteFlow',
       'DeleteFolder',
       'DeleteFolderMembership',
       'DeleteGroup',
@@ -3339,6 +3531,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteRefreshSchedule',
       'DeleteRoleCustomPermission',
       'DeleteRoleMembership',
+      'DeleteSpace',
       'DeleteTemplate',
       'DeleteTemplateAlias',
       'DeleteTheme',
@@ -3371,6 +3564,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateAccountCustomization',
       'UpdateAccountSettings',
       'UpdateActionConnector',
+      'UpdateAgent',
       'UpdateAnalysis',
       'UpdateApplicationWithTokenExchangeGrant',
       'UpdateBrand',
@@ -3387,6 +3581,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateDefaultQBusinessApplication',
       'UpdateEmailCustomizationTemplate',
       'UpdateExtensionAccess',
+      'UpdateFlow',
       'UpdateFolder',
       'UpdateGroup',
       'UpdateIAMPolicyAssignment',
@@ -3403,6 +3598,8 @@ export class Quicksight extends PolicyStatement {
       'UpdateSPICECapacityConfiguration',
       'UpdateSelfUpgrade',
       'UpdateSelfUpgradeConfiguration',
+      'UpdateSpace',
+      'UpdateSpaceResources',
       'UpdateTemplate',
       'UpdateTemplateAlias',
       'UpdateTheme',
@@ -3417,6 +3614,7 @@ export class Quicksight extends PolicyStatement {
       'AllowVendedLogDeliveryForResource',
       'DescribeDataSetPermissions',
       'DescribeDataSourcePermissions',
+      'DescribeSpacePermissions',
       'DescribeTopicPermissions',
       'UpdateActionConnectorPermissions',
       'UpdateAgentPermissions',
@@ -3426,6 +3624,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateDataSourcePermissions',
       'UpdateFlowPermissions',
       'UpdateFolderPermissions',
+      'UpdateSpacePermissions',
       'UpdateTemplatePermissions',
       'UpdateThemePermissions',
       'UpdateTopicPermissions'
@@ -3461,6 +3660,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeDefaultQBusinessApplication',
       'DescribeEmailCustomizationTemplate',
       'DescribeExtensionAccess',
+      'DescribeFlow',
       'DescribeFolder',
       'DescribeFolderPermissions',
       'DescribeFolderResolvedPermissions',
@@ -3477,6 +3677,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeRefreshSchedule',
       'DescribeRoleCustomPermission',
       'DescribeSelfUpgradeConfiguration',
+      'DescribeSpace',
       'DescribeTemplate',
       'DescribeTemplateAlias',
       'DescribeTemplatePermissions',
@@ -3533,6 +3734,8 @@ export class Quicksight extends PolicyStatement {
       'ListRefreshSchedules',
       'ListRoleMemberships',
       'ListSelfUpgrades',
+      'ListSpaceResources',
+      'ListSpaces',
       'ListTemplateAliases',
       'ListTemplateVersions',
       'ListTemplates',
@@ -3554,6 +3757,7 @@ export class Quicksight extends PolicyStatement {
       'SearchDirectoryGroups',
       'SearchFlows',
       'SearchGroups',
+      'SearchSpaces',
       'SearchTopics',
       'SearchUsers'
     ],
@@ -3952,7 +4156,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Adds a resource of type agent to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Agent.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -4037,6 +4241,20 @@ export class Quicksight extends PolicyStatement {
    */
   public onAutomationGroup(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type space to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Space.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSpace(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:space/${ resourceId }`);
   }
 
   /**
