@@ -11,6 +11,8 @@ sagemaker:BatchGetRecord;Read
 sagemaker:BatchPutMetrics;Write
 sagemaker:CallMlflowAppApi;Write
 sagemaker:CallPartnerAppApi;Write
+sagemaker:CallWithBearerToken;Read
+sagemaker:CompleteRollout;Write
 sagemaker:CreateAIBenchmarkJob;Write
 sagemaker:CreateAIRecommendationJob;Write
 sagemaker:CreateAIWorkloadConfig;Write
@@ -48,6 +50,7 @@ sagemaker:CreateImageVersion;Write
 sagemaker:CreateInferenceComponent;Write
 sagemaker:CreateInferenceExperiment;Write
 sagemaker:CreateInferenceRecommendationsJob;Write
+sagemaker:CreateJob;Write
 sagemaker:CreateLabelingJob;Write
 sagemaker:CreateLineageGroupPolicy;Write
 sagemaker:CreateMlflowApp;Write
@@ -120,6 +123,7 @@ sagemaker:DeleteImage;Write
 sagemaker:DeleteImageVersion;Write
 sagemaker:DeleteInferenceComponent;Write
 sagemaker:DeleteInferenceExperiment;Write
+sagemaker:DeleteJob;Write
 sagemaker:DeleteLineageGroupPolicy;Write
 sagemaker:DeleteMlflowApp;Write
 sagemaker:DeleteMlflowTrackingServer;Write
@@ -193,6 +197,8 @@ sagemaker:DescribeImageVersion;Read
 sagemaker:DescribeInferenceComponent;Read
 sagemaker:DescribeInferenceExperiment;Read
 sagemaker:DescribeInferenceRecommendationsJob;Read
+sagemaker:DescribeJob;Read
+sagemaker:DescribeJobSchemaVersion;Read
 sagemaker:DescribeLabelingJob;Read
 sagemaker:DescribeLineageGroup;Read
 sagemaker:DescribeMlflowApp;Read
@@ -289,6 +295,8 @@ sagemaker:ListInferenceComponents;List
 sagemaker:ListInferenceExperiments;List
 sagemaker:ListInferenceRecommendationsJobSteps;List
 sagemaker:ListInferenceRecommendationsJobs;List
+sagemaker:ListJobSchemaVersions;List
+sagemaker:ListJobs;List
 sagemaker:ListLabelingJobs;List
 sagemaker:ListLabelingJobsForWorkteam;List
 sagemaker:ListLineageGroups;List
@@ -346,6 +354,8 @@ sagemaker:QueryLineage;List
 sagemaker:RegisterDevices;Write
 sagemaker:RenderUiTemplate;Read
 sagemaker:RetryPipelineExecution;Write
+sagemaker:Sample;Write
+sagemaker:SampleWithResponseStream;Write
 sagemaker:Search;Read
 sagemaker:SearchTrainingPlanOfferings;Read
 sagemaker:SendHeartbeat;Write
@@ -371,6 +381,7 @@ sagemaker:StopHumanLoop;Write
 sagemaker:StopHyperParameterTuningJob;Write
 sagemaker:StopInferenceExperiment;Write
 sagemaker:StopInferenceRecommendationsJob;Write
+sagemaker:StopJob;Write
 sagemaker:StopLabelingJob;Write
 sagemaker:StopMlflowTrackingServer;Write
 sagemaker:StopMonitoringSchedule;Write
@@ -420,6 +431,7 @@ sagemaker:UpdatePipeline;Write
 sagemaker:UpdatePipelineExecution;Write
 sagemaker:UpdatePipelineVersion;Write
 sagemaker:UpdateProject;Write
+sagemaker:UpdateReward;Write
 sagemaker:UpdateSharedModel;Write
 sagemaker:UpdateSpace;Write
 sagemaker:UpdateTrainingJob;Write

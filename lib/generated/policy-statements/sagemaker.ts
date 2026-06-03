@@ -178,6 +178,31 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to use bearer token in SageMaker Job and Inference runtime endpoints APIs
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifBearerTokenType()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CallWithBearerToken.html
+   */
+  public toCallWithBearerToken() {
+    return this.to('CallWithBearerToken');
+  }
+
+  /**
+   * Grants permission to mark a rollout as complete for a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompleteRollout.html
+   */
+  public toCompleteRollout() {
+    return this.to('CompleteRollout');
+  }
+
+  /**
    * Grants permission to create an AI benchmark job
    *
    * Access Level: Write
@@ -327,8 +352,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInterContainerTrafficEncryption()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -351,8 +376,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    * - .ifInterContainerTrafficEncryption()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -509,8 +534,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInterContainerTrafficEncryption()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -555,8 +580,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInstanceTypes()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
-   * - .ifDomainSharingOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifDomainSharingOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifImageArns()
    * - .ifImageVersionArns()
    * - .ifStudioLifecycleConfigArns()
@@ -658,7 +683,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAcceleratorTypes()
    * - .ifInstanceTypes()
    * - .ifModelArn()
-   * - .ifVolumeKmsKey()
+   * - .ifVolumeKmsKeyArn()
    * - .ifServerlessMaxConcurrency()
    * - .ifServerlessMemorySize()
    * - .ifNetworkIsolation()
@@ -701,8 +726,8 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifFeatureGroupOnlineStoreKmsKey()
-   * - .ifFeatureGroupOfflineStoreKmsKey()
+   * - .ifFeatureGroupOnlineStoreKmsKeyArn()
+   * - .ifFeatureGroupOfflineStoreKmsKeyArn()
    * - .ifFeatureGroupOfflineStoreS3Uri()
    * - .ifFeatureGroupEnableOnlineStore()
    * - .ifFeatureGroupOfflineStoreConfig()
@@ -820,8 +845,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInterContainerTrafficEncryption()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -923,6 +948,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a SageMaker model customization job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVpcSecurityGroupIds()
+   * - .ifVpcSubnets()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - sagemaker:AddTags
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateJob.html
+   */
+  public toCreateJob() {
+    return this.to('CreateJob');
+  }
+
+  /**
    * Grants permission to start a labeling job. A labeling job takes unlabeled data in and produces labeled data as output, which can be used for training SageMaker models
    *
    * Access Level: Write
@@ -930,8 +977,8 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifWorkteamArn()
    * - .ifWorkteamType()
-   * - .ifVolumeKmsKey()
-   * - .ifOutputKmsKey()
+   * - .ifVolumeKmsKeyArn()
+   * - .ifOutputKmsKeyArn()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
@@ -1029,8 +1076,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInterContainerTrafficEncryption()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -1085,8 +1132,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInterContainerTrafficEncryption()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -1152,8 +1199,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInterContainerTrafficEncryption()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -1179,8 +1226,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInterContainerTrafficEncryption()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -1208,7 +1255,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifMinimumInstanceMetadataServiceVersion()
    * - .ifNotebookInstanceLifecycleConfigArns()
    * - .ifRootAccess()
-   * - .ifVolumeKmsKey()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    *
@@ -1362,8 +1409,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInstanceTypes()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    * - .ifInterContainerTrafficEncryption()
@@ -1484,8 +1531,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInterContainerTrafficEncryption()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    * - .ifKeepAlivePeriod()
@@ -1531,8 +1578,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifInstanceTypes()
    * - .ifModelArn()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    *
    * Dependent actions:
    * - sagemaker:AddTags
@@ -1589,7 +1636,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifVpcSecurityGroupIds()
    * - .ifInstanceTypes()
-   * - .ifDomainSharingOutputKmsKey()
+   * - .ifDomainSharingOutputKmsKeyArn()
    * - .ifImageArns()
    * - .ifImageVersionArns()
    * - .ifStudioLifecycleConfigArns()
@@ -2033,6 +2080,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDeleteInferenceExperiment() {
     return this.to('DeleteInferenceExperiment');
+  }
+
+  /**
+   * Grants permission to delete a SageMaker model customization job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteJob.html
+   */
+  public toDeleteJob() {
+    return this.to('DeleteJob');
   }
 
   /**
@@ -2843,6 +2901,28 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeInferenceRecommendationsJob() {
     return this.to('DescribeInferenceRecommendationsJob');
+  }
+
+  /**
+   * Grants permission to return information about a SageMaker model customization job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeJob.html
+   */
+  public toDescribeJob() {
+    return this.to('DescribeJob');
+  }
+
+  /**
+   * Grants permission to return information about a job schema version for a particular JobCategory for the CreateJob API
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeJobSchemaVersion.html
+   */
+  public toDescribeJobSchemaVersion() {
+    return this.to('DescribeJobSchemaVersion');
   }
 
   /**
@@ -3920,6 +4000,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list job schema versions for a particular JobCategory for the CreateJob API
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListJobSchemaVersions.html
+   */
+  public toListJobSchemaVersions() {
+    return this.to('ListJobSchemaVersions');
+  }
+
+  /**
+   * Grants permission to list SageMaker model customization jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListJobs.html
+   */
+  public toListJobs() {
+    return this.to('ListJobs');
+  }
+
+  /**
    * Grants permission to list labeling jobs
    *
    * Access Level: List
@@ -4554,6 +4656,28 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke a sample request against a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Sample.html
+   */
+  public toSample() {
+    return this.to('Sample');
+  }
+
+  /**
+   * Grants permission to invoke a streaming sample request against a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SampleWithResponseStream.html
+   */
+  public toSampleWithResponseStream() {
+    return this.to('SampleWithResponseStream');
+  }
+
+  /**
    * Grants permission to search for SageMaker objects
    *
    * Access Level: Read
@@ -4832,6 +4956,17 @@ export class Sagemaker extends PolicyStatement {
    */
   public toStopInferenceRecommendationsJob() {
     return this.to('StopInferenceRecommendationsJob');
+  }
+
+  /**
+   * Grants permission to stop a SageMaker model customization job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopJob.html
+   */
+  public toStopJob() {
+    return this.to('StopJob');
   }
 
   /**
@@ -5117,7 +5252,7 @@ export class Sagemaker extends PolicyStatement {
    * Possible conditions:
    * - .ifVpcSecurityGroupIds()
    * - .ifInstanceTypes()
-   * - .ifDomainSharingOutputKmsKey()
+   * - .ifDomainSharingOutputKmsKeyArn()
    * - .ifImageArns()
    * - .ifImageVersionArns()
    * - .ifAppNetworkAccessType()
@@ -5349,8 +5484,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInstanceTypes()
    * - .ifMaxRuntimeInSeconds()
    * - .ifNetworkIsolation()
-   * - .ifOutputKmsKey()
-   * - .ifVolumeKmsKey()
+   * - .ifOutputKmsKeyArn()
+   * - .ifVolumeKmsKeyArn()
    * - .ifVpcSecurityGroupIds()
    * - .ifVpcSubnets()
    * - .ifInterContainerTrafficEncryption()
@@ -5459,6 +5594,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit reward scores for a trajectory in a job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateReward.html
+   */
+  public toUpdateReward() {
+    return this.to('UpdateReward');
+  }
+
+  /**
    * Grants permission to update a shared model
    *
    * Access Level: Write
@@ -5536,7 +5682,7 @@ export class Sagemaker extends PolicyStatement {
    * - .ifInstanceTypes()
    * - .ifVpcSecurityGroupIds()
    * - .ifInstanceTypes()
-   * - .ifDomainSharingOutputKmsKey()
+   * - .ifDomainSharingOutputKmsKeyArn()
    * - .ifImageArns()
    * - .ifImageVersionArns()
    * - .ifStudioLifecycleConfigArns()
@@ -5575,6 +5721,7 @@ export class Sagemaker extends PolicyStatement {
       'BatchDescribeModelPackage',
       'BatchGetMetrics',
       'BatchGetRecord',
+      'CallWithBearerToken',
       'CreateHubContentPresignedUrls',
       'DescribeAIBenchmarkJob',
       'DescribeAIRecommendationJob',
@@ -5617,6 +5764,8 @@ export class Sagemaker extends PolicyStatement {
       'DescribeInferenceComponent',
       'DescribeInferenceExperiment',
       'DescribeInferenceRecommendationsJob',
+      'DescribeJob',
+      'DescribeJobSchemaVersion',
       'DescribeLabelingJob',
       'DescribeLineageGroup',
       'DescribeMlflowApp',
@@ -5678,6 +5827,7 @@ export class Sagemaker extends PolicyStatement {
       'BatchPutMetrics',
       'CallMlflowAppApi',
       'CallPartnerAppApi',
+      'CompleteRollout',
       'CreateAIBenchmarkJob',
       'CreateAIRecommendationJob',
       'CreateAIWorkloadConfig',
@@ -5714,6 +5864,7 @@ export class Sagemaker extends PolicyStatement {
       'CreateInferenceComponent',
       'CreateInferenceExperiment',
       'CreateInferenceRecommendationsJob',
+      'CreateJob',
       'CreateLabelingJob',
       'CreateLineageGroupPolicy',
       'CreateMlflowApp',
@@ -5786,6 +5937,7 @@ export class Sagemaker extends PolicyStatement {
       'DeleteImageVersion',
       'DeleteInferenceComponent',
       'DeleteInferenceExperiment',
+      'DeleteJob',
       'DeleteLineageGroupPolicy',
       'DeleteMlflowApp',
       'DeleteMlflowTrackingServer',
@@ -5828,6 +5980,8 @@ export class Sagemaker extends PolicyStatement {
       'PutResourcePolicy',
       'RegisterDevices',
       'RetryPipelineExecution',
+      'Sample',
+      'SampleWithResponseStream',
       'SendHeartbeat',
       'SendPipelineExecutionStepFailure',
       'SendPipelineExecutionStepSuccess',
@@ -5851,6 +6005,7 @@ export class Sagemaker extends PolicyStatement {
       'StopHyperParameterTuningJob',
       'StopInferenceExperiment',
       'StopInferenceRecommendationsJob',
+      'StopJob',
       'StopLabelingJob',
       'StopMlflowTrackingServer',
       'StopMonitoringSchedule',
@@ -5900,6 +6055,7 @@ export class Sagemaker extends PolicyStatement {
       'UpdatePipelineExecution',
       'UpdatePipelineVersion',
       'UpdateProject',
+      'UpdateReward',
       'UpdateSharedModel',
       'UpdateSpace',
       'UpdateTrainingJob',
@@ -5957,6 +6113,8 @@ export class Sagemaker extends PolicyStatement {
       'ListInferenceExperiments',
       'ListInferenceRecommendationsJobSteps',
       'ListInferenceRecommendationsJobs',
+      'ListJobSchemaVersions',
+      'ListJobs',
       'ListLabelingJobs',
       'ListLabelingJobsForWorkteam',
       'ListLineageGroups',
@@ -6535,6 +6693,25 @@ export class Sagemaker extends PolicyStatement {
    */
   public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:processing-job/${ processingJobName }`);
+  }
+
+  /**
+   * Adds a resource of type job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html
+   *
+   * @param jobCategory - Identifier for the jobCategory.
+   * @param jobName - Identifier for the jobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onJob(jobCategory: string, jobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobCategory }/${ jobName }`);
   }
 
   /**
@@ -7339,6 +7516,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateInferenceComponent()
    * - .toCreateInferenceExperiment()
    * - .toCreateInferenceRecommendationsJob()
+   * - .toCreateJob()
    * - .toCreateLabelingJob()
    * - .toCreateMlflowApp()
    * - .toCreateMlflowTrackingServer()
@@ -7425,6 +7603,7 @@ export class Sagemaker extends PolicyStatement {
    * - cluster
    * - training-job
    * - processing-job
+   * - job
    * - hyper-parameter-tuning-job
    * - training-plan
    * - reserved-capacity
@@ -7514,6 +7693,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateInferenceComponent()
    * - .toCreateInferenceExperiment()
    * - .toCreateInferenceRecommendationsJob()
+   * - .toCreateJob()
    * - .toCreateLabelingJob()
    * - .toCreateMlflowApp()
    * - .toCreateMlflowTrackingServer()
@@ -7587,6 +7767,21 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifAppNetworkAccessType(value: string | string[], operator?: Operator | string) {
     return this.if(`AppNetworkAccessType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the type of bearer token used in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .toCallWithBearerToken()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBearerTokenType(value: string | string[], operator?: Operator | string) {
+    return this.if(`BearerTokenType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -7741,7 +7936,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Filters access by the Domain sharing output KMS key associated with the resource in the request
+   * Filters access by the Domain sharing output KMS key associated with the resource in the request. This key has been deprecated. It has been replaced by sagemaker:DomainSharingOutputKmsKeyArn
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDomainSharingOutputKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`DomainSharingOutputKmsKey`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the Domain sharing output KMS key associated with the resource in the request. The ARN of the key-id must be used
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -7754,8 +7961,8 @@ export class Sagemaker extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifDomainSharingOutputKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`DomainSharingOutputKmsKey`, value, operator ?? 'ArnLike');
+  public ifDomainSharingOutputKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`DomainSharingOutputKmsKeyArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -7816,7 +8023,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Filters access by the offline store kms key associated with the feature group resource in the request
+   * Filters access by the offline store kms key associated with the feature group resource in the request. This key has been deprecated. It has been replaced by sagemaker:FeatureGroupOfflineStoreKmsKeyArn
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifFeatureGroupOfflineStoreKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`FeatureGroupOfflineStoreKmsKey`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the offline store kms key associated with the feature group resource in the request. The ARN of the key-id must be used
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -7826,8 +8045,8 @@ export class Sagemaker extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifFeatureGroupOfflineStoreKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`FeatureGroupOfflineStoreKmsKey`, value, operator ?? 'ArnLike');
+  public ifFeatureGroupOfflineStoreKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`FeatureGroupOfflineStoreKmsKeyArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -7846,7 +8065,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Filters access by the online store kms key associated with the feature group resource in the request
+   * Filters access by the online store kms key associated with the feature group resource in the request. This key has been deprecated. It has been replaced by sagemaker:FeatureGroupOnlineStoreKmsKeyArn
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifFeatureGroupOnlineStoreKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`FeatureGroupOnlineStoreKmsKey`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the online store kms key associated with the feature group resource in the request. The ARN of the key-id must be used
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -7856,8 +8087,8 @@ export class Sagemaker extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifFeatureGroupOnlineStoreKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`FeatureGroupOnlineStoreKmsKey`, value, operator ?? 'ArnLike');
+  public ifFeatureGroupOnlineStoreKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`FeatureGroupOnlineStoreKmsKeyArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -7925,7 +8156,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Filters access by a key that is present in the request the user makes to the SageMaker service. This key is deprecated. It has been replaced by sagemaker:VolumeKmsKey
+   * Filters access by a key that is present in the request the user makes to the SageMaker service. This key has been deprecated. It has been replaced by sagemaker:VolumeKmsKeyArn
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -8184,7 +8415,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Filters access by the output kms key associated with the resource in the request
+   * Filters access by the output kms key associated with the resource in the request. This key has been deprecated. It has been replaced by sagemaker:OutputKmsKeyArn
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifOutputKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`OutputKmsKey`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the output kms key associated with the resource in the request. The ARN of the key-id must be used
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -8193,6 +8436,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateAutoMLJobV2()
    * - .toCreateDataQualityJobDefinition()
    * - .toCreateHyperParameterTuningJob()
+   * - .toCreateJob()
    * - .toCreateLabelingJob()
    * - .toCreateModelBiasJobDefinition()
    * - .toCreateModelExplainabilityJobDefinition()
@@ -8206,8 +8450,8 @@ export class Sagemaker extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifOutputKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`OutputKmsKey`, value, operator ?? 'ArnLike');
+  public ifOutputKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`OutputKmsKeyArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -8317,6 +8561,7 @@ export class Sagemaker extends PolicyStatement {
    * - cluster
    * - training-job
    * - processing-job
+   * - job
    * - hyper-parameter-tuning-job
    * - training-plan
    * - reserved-capacity
@@ -8509,7 +8754,19 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Filters access by the volume kms key associated with the resource in the request
+   * Filters access by the volume kms key associated with the resource in the request. This key has been deprecated. It has been replaced by sagemaker:VolumeKmsKeyArn
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifVolumeKmsKey(value: string | string[], operator?: Operator | string) {
+    return this.if(`VolumeKmsKey`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the volume kms key associated with the resource in the request. The ARN of the key-id must be used
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
@@ -8534,8 +8791,8 @@ export class Sagemaker extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
    */
-  public ifVolumeKmsKey(value: string | string[], operator?: Operator | string) {
-    return this.if(`VolumeKmsKey`, value, operator ?? 'ArnLike');
+  public ifVolumeKmsKeyArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`VolumeKmsKeyArn`, value, operator ?? 'ArnLike');
   }
 
   /**
@@ -8551,6 +8808,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateDomain()
    * - .toCreateEndpointConfig()
    * - .toCreateHyperParameterTuningJob()
+   * - .toCreateJob()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
    * - .toCreateModelExplainabilityJobDefinition()
@@ -8585,6 +8843,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreateDomain()
    * - .toCreateEndpointConfig()
    * - .toCreateHyperParameterTuningJob()
+   * - .toCreateJob()
    * - .toCreateModel()
    * - .toCreateModelBiasJobDefinition()
    * - .toCreateModelExplainabilityJobDefinition()

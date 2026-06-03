@@ -1,3 +1,4 @@
+transform:AccessTransformProfile;Write
 transform:AssociateConnectorResource;Write
 transform:CreateProfile;Write
 transform:DeleteAgentRuntimeConfiguration;Write
