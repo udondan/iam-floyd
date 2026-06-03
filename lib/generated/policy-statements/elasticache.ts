@@ -1383,6 +1383,7 @@ export class Elasticache extends PolicyStatement {
    * - .ifCacheNodeType()
    * - .ifCacheParameterGroupName()
    * - .ifClusterModeEnabled()
+   * - .ifDurability()
    * - .ifEngineType()
    * - .ifEngineVersion()
    * - .ifKmsKeyId()
@@ -1901,6 +1902,25 @@ export class Elasticache extends PolicyStatement {
    */
   public ifDataStorageUnit(value: string | string[], operator?: Operator | string) {
     return this.if(`DataStorageUnit`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the Durability parameter in the request. Valid values are default, async, sync, or disabled
+   *
+   * https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ConditionKeys.html#IAM.SpecifyingConditions
+   *
+   * Applies to actions:
+   * - .toCreateReplicationGroup()
+   * - .toModifyReplicationGroup()
+   *
+   * Applies to resource types:
+   * - replicationgroup
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDurability(value: string | string[], operator?: Operator | string) {
+    return this.if(`Durability`, value, operator ?? 'StringLike');
   }
 
   /**

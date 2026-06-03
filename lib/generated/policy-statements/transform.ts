@@ -19,9 +19,23 @@ export class Transform extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke AccessTransformProfile on AWS Transform
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
+   */
+  public toAccessTransformProfile() {
+    return this.to('AccessTransformProfile');
+  }
+
+  /**
    * Grants permission to invoke AssociateConnectorResource on AWS Transform
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -55,6 +69,9 @@ export class Transform extends PolicyStatement {
    * Grants permission to invoke DeleteConnector on AWS Transform
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -111,6 +128,9 @@ export class Transform extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
   public toGetConnector() {
@@ -143,6 +163,9 @@ export class Transform extends PolicyStatement {
    * Grants permission to invoke ListConnectors on AWS Transform
    *
    * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -187,6 +210,9 @@ export class Transform extends PolicyStatement {
    * Grants permission to invoke RejectConnector on AWS Transform
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html
    */
@@ -258,6 +284,7 @@ export class Transform extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'AccessTransformProfile',
       'AssociateConnectorResource',
       'CreateProfile',
       'DeleteAgentRuntimeConfiguration',
@@ -312,6 +339,9 @@ export class Transform extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onConnector(workspaceId: string, connectorId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:transform:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ workspaceId }/${ connectorId }`);
@@ -331,6 +361,29 @@ export class Transform extends PolicyStatement {
    */
   public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateConnectorResource()
+   * - .toDeleteConnector()
+   * - .toGetConnector()
+   * - .toListConnectors()
+   * - .toRejectConnector()
+   *
+   * Applies to resource types:
+   * - connector
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
   }
 
   /**

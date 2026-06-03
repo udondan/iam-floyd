@@ -5,6 +5,7 @@ elasticache:CacheNodeType
 elasticache:CacheParameterGroupName
 elasticache:ClusterModeEnabled
 elasticache:DataStorageUnit
+elasticache:Durability
 elasticache:EngineType
 elasticache:EngineVersion
 elasticache:KmsKeyId

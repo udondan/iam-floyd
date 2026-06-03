@@ -1,5 +1,6 @@
 sagemaker:AcceleratorTypes
 sagemaker:AppNetworkAccessType
+sagemaker:BearerTokenType
 sagemaker:CurrentCustomerMetadataProperties/${MetadataKey}
 sagemaker:CurrentModelLifeCycleStage
 sagemaker:CurrentModelLifeCycleStageStatus
@@ -9,13 +10,16 @@ sagemaker:DirectGatedModelAccess
 sagemaker:DirectInternetAccess
 sagemaker:DomainId
 sagemaker:DomainSharingOutputKmsKey
+sagemaker:DomainSharingOutputKmsKeyArn
 sagemaker:EnableRemoteDebug
 sagemaker:FeatureGroupDisableGlueTableCreation
 sagemaker:FeatureGroupEnableOnlineStore
 sagemaker:FeatureGroupOfflineStoreConfig
 sagemaker:FeatureGroupOfflineStoreKmsKey
+sagemaker:FeatureGroupOfflineStoreKmsKeyArn
 sagemaker:FeatureGroupOfflineStoreS3Uri
 sagemaker:FeatureGroupOnlineStoreKmsKey
+sagemaker:FeatureGroupOnlineStoreKmsKeyArn
 sagemaker:FileSystemAccessMode
 sagemaker:FileSystemDirectoryPath
 sagemaker:FileSystemId
@@ -34,6 +38,7 @@ sagemaker:ModelLifeCycle
 sagemaker:NetworkIsolation
 sagemaker:NotebookInstanceLifecycleConfigArns
 sagemaker:OutputKmsKey
+sagemaker:OutputKmsKeyArn
 sagemaker:OwnerUserProfileArn
 sagemaker:PipelineVersionId
 sagemaker:RemoteAccess
@@ -51,6 +56,7 @@ sagemaker:TaggingAction
 sagemaker:TargetModel
 sagemaker:UserProfileName
 sagemaker:VolumeKmsKey
+sagemaker:VolumeKmsKeyArn
 sagemaker:VpcSecurityGroupIds
 sagemaker:VpcSubnets
 sagemaker:WorkteamArn

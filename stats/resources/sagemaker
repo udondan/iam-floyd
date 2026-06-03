@@ -36,6 +36,7 @@ sagemaker:image-version
 sagemaker:inference-component
 sagemaker:inference-experiment
 sagemaker:inference-recommendations-job
+sagemaker:job
 sagemaker:labeling-job
 sagemaker:lineage-group
 sagemaker:mlflow-app
