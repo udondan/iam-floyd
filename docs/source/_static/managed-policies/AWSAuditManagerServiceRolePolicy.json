@@ -146,6 +146,7 @@
         "es:ListDomainNames",
         "organizations:DescribeOrganization",
         "organizations:DescribePolicy",
+        "organizations:DescribeAccount",
         "rds:DescribeCertificates",
         "rds:DescribeDBClusterEndpoints",
         "rds:DescribeDBClusterParameterGroups",
@@ -260,16 +261,15 @@
       ],
       "Resource": "arn:aws:events:*:*:rule/AuditManagerSecurityHubFindingsReceiver",
       "Condition": {
-        "StringEquals": {
-          "events:detail-type": "Security Hub Findings - Imported"
-        },
-        "Null": {
-          "events:source": "false"
-        },
         "ForAllValues:StringEquals": {
+          "events:detail-type": "Security Hub Findings - Imported",
           "events:source": [
             "aws.securityhub"
           ]
+        },
+        "Null": {
+          "events:source": "false",
+          "events:detail-type": "false"
         }
       }
     },
