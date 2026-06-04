@@ -1,6 +1,7 @@
 quicksight:AccountConfigurations;Write
 quicksight:AllowVendedLogDeliveryForResource;Permissions management
 quicksight:BatchCreateTopicReviewedAnswer;Write
+quicksight:BatchDeleteKnowledgeBase;Write
 quicksight:BatchDeleteTopicReviewedAnswer;Write
 quicksight:BatchGetPreferences;Read
 quicksight:BatchUpdatePreferences;Write
@@ -26,6 +27,7 @@ quicksight:CreateGroupMembership;Write
 quicksight:CreateIAMPolicyAssignment;Write
 quicksight:CreateIngestion;Write
 quicksight:CreateNamespace;Write
+quicksight:CreateOAuthClientApplication;Write
 quicksight:CreateReader;Write
 quicksight:CreateRefreshSchedule;Write
 quicksight:CreateRoleMembership;Write
@@ -61,7 +63,9 @@ quicksight:DeleteGroup;Write
 quicksight:DeleteGroupMembership;Write
 quicksight:DeleteIAMPolicyAssignment;Write
 quicksight:DeleteIdentityPropagationConfig;Write
+quicksight:DeleteKnowledgeBase;Write
 quicksight:DeleteNamespace;Write
+quicksight:DeleteOAuthClientApplication;Write
 quicksight:DeleteRefreshSchedule;Write
 quicksight:DeleteRoleCustomPermission;Write
 quicksight:DeleteRoleMembership;Write
@@ -117,7 +121,10 @@ quicksight:DescribeIAMPolicyAssignment;Read
 quicksight:DescribeIngestion;Read
 quicksight:DescribeIpRestriction;Read
 quicksight:DescribeKeyRegistration;Read
+quicksight:DescribeKnowledgeBase;Read
+quicksight:DescribeKnowledgeBasePermissions;Permissions management
 quicksight:DescribeNamespace;Read
+quicksight:DescribeOAuthClientApplication;Read
 quicksight:DescribeQPersonalizationConfiguration;Read
 quicksight:DescribeQuickIndexCapacity;Read
 quicksight:DescribeQuickSightQSearchConfiguration;Read
@@ -174,7 +181,9 @@ quicksight:ListIAMPolicyAssignmentsForUser;List
 quicksight:ListIdentityPropagationConfigs;List
 quicksight:ListIngestions;List
 quicksight:ListKMSKeysForUser;List
+quicksight:ListKnowledgeBases;List
 quicksight:ListNamespaces;List
+quicksight:ListOAuthClientApplications;List
 quicksight:ListRefreshSchedules;List
 quicksight:ListRoleMemberships;List
 quicksight:ListSelfUpgrades;List
@@ -192,6 +201,7 @@ quicksight:ListTopicReviewedAnswers;List
 quicksight:ListTopics;List
 quicksight:ListUserGroups;List
 quicksight:ListUsers;List
+quicksight:ListUsersIndexCapacity;List
 quicksight:ListVPCConnections;List
 quicksight:PassDataSet;Read
 quicksight:PassDataSource;Read
@@ -213,6 +223,7 @@ quicksight:SearchDirectoryGroups;List
 quicksight:SearchFlows;List
 quicksight:SearchFolders;Read
 quicksight:SearchGroups;List
+quicksight:SearchKnowledgeBases;List
 quicksight:SearchSpaces;List
 quicksight:SearchTopics;List
 quicksight:SearchUsers;List
@@ -263,6 +274,8 @@ quicksight:UpdateIAMPolicyAssignment;Write
 quicksight:UpdateIdentityPropagationConfig;Write
 quicksight:UpdateIpRestriction;Write
 quicksight:UpdateKeyRegistration;Write
+quicksight:UpdateKnowledgeBasePermissions;Permissions management
+quicksight:UpdateOAuthClientApplication;Write
 quicksight:UpdatePublicSharingSettings;Write
 quicksight:UpdateQPersonalizationConfiguration;Write
 quicksight:UpdateQuickIndexCapacity;Write

@@ -310,6 +310,7 @@ export { SmsVoiceV2 } from './policy-statements/endusermessagingsmsandvoicev2';
 export { SocialMessaging } from './policy-statements/endusermessagingsocial';
 export { Entityresolution } from './policy-statements/entityresolution';
 export { Fis } from './policy-statements/faultinjectionservice';
+export { FinopsAgent } from './policy-statements/finopsagent';
 export { Fms } from './policy-statements/firewallmanager';
 export { Freetier } from './policy-statements/freetier';
 export { Globalaccelerator } from './policy-statements/globalaccelerator';

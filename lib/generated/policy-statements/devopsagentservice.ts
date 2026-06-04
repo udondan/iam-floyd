@@ -57,6 +57,28 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an asset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateAsset.html
+   */
+  public toCreateAsset() {
+    return this.to('CreateAsset');
+  }
+
+  /**
+   * Grants permission to create an asset file
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateAssetFile.html
+   */
+  public toCreateAssetFile() {
+    return this.to('CreateAssetFile');
+  }
+
+  /**
    * Grants permission to create a new backlog task
    *
    * Access Level: Write
@@ -128,6 +150,28 @@ export class Aidevops extends PolicyStatement {
    */
   public toDeleteAgentSpace() {
     return this.to('DeleteAgentSpace');
+  }
+
+  /**
+   * Grants permission to delete an asset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeleteAsset.html
+   */
+  public toDeleteAsset() {
+    return this.to('DeleteAsset');
+  }
+
+  /**
+   * Grants permission to delete an asset file
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeleteAssetFile.html
+   */
+  public toDeleteAssetFile() {
+    return this.to('DeleteAssetFile');
   }
 
   /**
@@ -286,6 +330,39 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an asset
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAsset.html
+   */
+  public toGetAsset() {
+    return this.to('GetAsset');
+  }
+
+  /**
+   * Grants permission to get asset content
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAssetContent.html
+   */
+  public toGetAssetContent() {
+    return this.to('GetAssetContent');
+  }
+
+  /**
+   * Grants permission to get an asset file
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAssetFile.html
+   */
+  public toGetAssetFile() {
+    return this.to('GetAssetFile');
+  }
+
+  /**
    * Grants permission to get association
    *
    * Access Level: Read
@@ -374,6 +451,50 @@ export class Aidevops extends PolicyStatement {
    */
   public toListAgentSpaces() {
     return this.to('ListAgentSpaces');
+  }
+
+  /**
+   * Grants permission to list asset files
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssetFiles.html
+   */
+  public toListAssetFiles() {
+    return this.to('ListAssetFiles');
+  }
+
+  /**
+   * Grants permission to list asset types
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssetTypes.html
+   */
+  public toListAssetTypes() {
+    return this.to('ListAssetTypes');
+  }
+
+  /**
+   * Grants permission to list asset versions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssetVersions.html
+   */
+  public toListAssetVersions() {
+    return this.to('ListAssetVersions');
+  }
+
+  /**
+   * Grants permission to list assets
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAssets.html
+   */
+  public toListAssets() {
+    return this.to('ListAssets');
   }
 
   /**
@@ -617,6 +738,28 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an asset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateAsset.html
+   */
+  public toUpdateAsset() {
+    return this.to('UpdateAsset');
+  }
+
+  /**
+   * Grants permission to update an asset file
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateAssetFile.html
+   */
+  public toUpdateAssetFile() {
+    return this.to('UpdateAssetFile');
+  }
+
+  /**
    * Grants permission to update association
    *
    * Access Level: Write
@@ -714,12 +857,16 @@ export class Aidevops extends PolicyStatement {
     Write: [
       'AssociateService',
       'CreateAgentSpace',
+      'CreateAsset',
+      'CreateAssetFile',
       'CreateBacklogTask',
       'CreateChat',
       'CreateKnowledgeItem',
       'CreateOneTimeLoginSession',
       'CreatePrivateConnection',
       'DeleteAgentSpace',
+      'DeleteAsset',
+      'DeleteAssetFile',
       'DeleteKnowledgeItem',
       'DeletePrivateConnection',
       'DeregisterService',
@@ -733,6 +880,8 @@ export class Aidevops extends PolicyStatement {
       'RegisterService',
       'SendMessage',
       'UpdateAgentSpace',
+      'UpdateAsset',
+      'UpdateAssetFile',
       'UpdateAssociation',
       'UpdateBacklogTask',
       'UpdateGoal',
@@ -747,6 +896,9 @@ export class Aidevops extends PolicyStatement {
       'DescribeServices',
       'GetAccountUsage',
       'GetAgentSpace',
+      'GetAsset',
+      'GetAssetContent',
+      'GetAssetFile',
       'GetAssociation',
       'GetBacklogTask',
       'GetKnowledgeItem',
@@ -758,6 +910,10 @@ export class Aidevops extends PolicyStatement {
     ],
     List: [
       'ListAgentSpaces',
+      'ListAssetFiles',
+      'ListAssetTypes',
+      'ListAssetVersions',
+      'ListAssets',
       'ListAssociations',
       'ListBacklogTasks',
       'ListChats',
