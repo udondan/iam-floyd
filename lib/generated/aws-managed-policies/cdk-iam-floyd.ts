@@ -2249,6 +2249,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerHyperPodTrainingOperatorAccess);
     }
 
+    /** Provides permissions for Amazon SageMaker job execution roles to access data in Amazon S3, invoke agents through Amazon Bedrock AgentCore, track experiments with MLflow, publish model packages, write logs to Amazon CloudWatch, invoke AWS Lambda functions, and manage Amazon VPC network interfaces. */
+    public AmazonSageMakerJobFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerJobFullAccess);
+    }
+
+    /** Provides permissions for agent runtimes to invoke the Amazon SageMaker job runtime APIs used during model customization for sample generation, trajectory completion, and reward submission. */
+    public AmazonSageMakerJobRuntimeAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerJobRuntimeAccess);
+    }
+
     /** Provides access to create Amazon Augmented AI FlowDefinition resources against any Workteam. */
     public AmazonSageMakerMechanicalTurkAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonSageMakerMechanicalTurkAccess);
@@ -5374,9 +5384,19 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupPatchPolicyDeploymentRolePolicy);
     }
 
+    /** Grants permissions to manage State Manager associations for automated cleanup operations when Quick Setup configurations are deleted. */
+    public AWSQuickSetupPatchPolicyLambdaExecutionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupPatchPolicyLambdaExecutionPolicy);
+    }
+
     /** QuickSetup creates IAM roles which enable it to configure the Systems Manager Patch Manager feature on your behalf, and uses this policy when creating such roles to define the boundary of their permissions. */
     public AWSQuickSetupPatchPolicyPermissionsBoundary(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupPatchPolicyPermissionsBoundary);
+    }
+
+    /** Grants permissions to track which instances are managed by Quick Setup patch policy configurations through automated tagging and inventory collection. */
+    public AWSQuickSetupPatchPolicyTagManagementExecutionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSQuickSetupPatchPolicyTagManagementExecutionPolicy);
     }
 
     /** The AWSQuickSetupSchedulerPermissionsBoundary policy defines the list of permissions that are permitted in an IAM role created by Quick Setup. Quick Setup uses a role created with this policy to enable and configure scheduled operations on Amazon EC2 instances and other resources. */
@@ -6762,6 +6782,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** This policy grants read-only permissions that allow the WAL service for Amazon EMR to find and return the status of a cluster */
     public EMRDescribeClusterPolicyForEMRWAL(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.EMRDescribeClusterPolicyForEMRWAL);
+    }
+
+    /** Provides permissions required by the AWS FinOps Agent to perform cost analysis and spot cost saving opportunity on customer AWS resources. */
+    public FinOpsAgentAgentPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.FinOpsAgentAgentPolicy);
+    }
+
+    /** Provides access to use the AWS FinOps Agent web app for an Agent. */
+    public FinOpsAgentOperatorPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.FinOpsAgentOperatorPolicy);
     }
 
     /** Access policy to allow FM service linked role to perform FM-related actions on FM-managed resources within a customer AWS Organization account. */

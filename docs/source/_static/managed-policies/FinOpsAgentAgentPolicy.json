@@ -1,0 +1,118 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FinOpsAgentDataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ce:GetCostAndUsage",
+        "ce:GetCostAndUsageWithResources",
+        "ce:GetCostForecast",
+        "ce:GetUsageForecast",
+        "ce:GetDimensionValues",
+        "ce:GetTags",
+        "ce:GetCostCategories",
+        "ce:GetCostAndUsageComparisons",
+        "ce:GetCostComparisonDrivers",
+        "ce:GetSavingsPlansCoverage",
+        "ce:GetSavingsPlansUtilization",
+        "ce:GetSavingsPlansUtilizationDetails",
+        "ce:GetSavingsPlansPurchaseRecommendation",
+        "ce:GetReservationCoverage",
+        "ce:GetReservationUtilization",
+        "ce:GetReservationPurchaseRecommendation",
+        "ce:GetAnomalies",
+        "ce:GetAnomalyMonitors",
+        "ce:ListCostAllocationTags",
+        "ce:ListCostAllocationTagBackfillHistory",
+        "ce:DescribeCostCategoryDefinition",
+        "ce:ListCostCategoryDefinitions",
+        "budgets:ViewBudget",
+        "cost-optimization-hub:GetRecommendation",
+        "cost-optimization-hub:ListRecommendations",
+        "cost-optimization-hub:ListRecommendationSummaries",
+        "compute-optimizer:DescribeRecommendationExportJobs",
+        "compute-optimizer:GetEnrollmentStatus",
+        "compute-optimizer:GetEnrollmentStatusesForOrganization",
+        "compute-optimizer:GetRecommendationSummaries",
+        "compute-optimizer:GetEC2InstanceRecommendations",
+        "compute-optimizer:GetEC2RecommendationProjectedMetrics",
+        "compute-optimizer:GetAutoScalingGroupRecommendations",
+        "compute-optimizer:GetEBSVolumeRecommendations",
+        "compute-optimizer:GetLambdaFunctionRecommendations",
+        "compute-optimizer:GetRecommendationPreferences",
+        "compute-optimizer:GetEffectiveRecommendationPreferences",
+        "compute-optimizer:GetECSServiceRecommendations",
+        "compute-optimizer:GetECSServiceRecommendationProjectedMetrics",
+        "compute-optimizer:GetLicenseRecommendations",
+        "compute-optimizer:GetRDSDatabaseRecommendations",
+        "compute-optimizer:GetRDSDatabaseRecommendationProjectedMetrics",
+        "compute-optimizer:GetIdleRecommendations",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "ecs:ListServices",
+        "ecs:ListClusters",
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribeAutoScalingInstances",
+        "lambda:ListFunctions",
+        "lambda:ListProvisionedConcurrencyConfigs",
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeAccount",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "pricing:DescribeServices",
+        "pricing:GetAttributeValues",
+        "pricing:GetProducts",
+        "freetier:GetFreeTierUsage",
+        "bcm-pricing-calculator:GetPreferences",
+        "bcm-pricing-calculator:GetWorkloadEstimate",
+        "bcm-pricing-calculator:ListWorkloadEstimateUsage",
+        "bcm-pricing-calculator:ListWorkloadEstimates",
+        "cloudtrail:LookupEvents",
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:GetTrailStatus",
+        "cloudtrail:GetEventSelectors",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics",
+        "logs:StartQuery",
+        "logs:GetQueryResults"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EventBridgeManagedRuleManagementWritePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule",
+        "events:PutTargets",
+        "events:DeleteRule",
+        "events:RemoveTargets",
+        "events:EnableRule",
+        "events:DisableRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "finops-agent.amazonaws.com",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeManagedRuleManagementReadPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:ListTargetsByRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}
