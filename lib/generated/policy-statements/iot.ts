@@ -1831,6 +1831,9 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifIncludeSocketInformation()
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetThingConnectivityData.html
    */
   public toGetThingConnectivityData() {
@@ -4488,18 +4491,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Filters access by GetConnection includeSocketInformation request parameter
+   * Filters access by GetConnection and GetThingConnectivityData includeSocketInformation request parameter
    *
    * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html
    *
    * Applies to actions:
    * - .toGetConnection()
+   * - .toGetThingConnectivityData()
    *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param value `true` or `false`. **Default:** `true`
    */
-  public ifIncludeSocketInformation(value: string | string[], operator?: Operator | string) {
-    return this.if(`IncludeSocketInformation`, value, operator ?? 'StringLike');
+  public ifIncludeSocketInformation(value?: boolean) {
+    return this.if(`IncludeSocketInformation`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**

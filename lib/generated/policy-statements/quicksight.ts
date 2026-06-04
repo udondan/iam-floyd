@@ -56,6 +56,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete one or more knowledge bases
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchDeleteKnowledgeBase.html
+   */
+  public toBatchDeleteKnowledgeBase() {
+    return this.to('BatchDeleteKnowledgeBase');
+  }
+
+  /**
    * Grants permission to delete reviewed answers for a topic
    *
    * Access Level: Write
@@ -390,6 +401,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * Dependent actions:
    * - ds:CreateIdentityPoolDirectory
    *
@@ -397,6 +412,21 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateNamespace() {
     return this.to('CreateNamespace');
+  }
+
+  /**
+   * Grants permission to create an OAuth client application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateOAuthClientApplication.html
+   */
+  public toCreateOAuthClientApplication() {
+    return this.to('CreateOAuthClientApplication');
   }
 
   /**
@@ -826,6 +856,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a knowledge base
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteKnowledgeBase.html
+   */
+  public toDeleteKnowledgeBase() {
+    return this.to('DeleteKnowledgeBase');
+  }
+
+  /**
    * Grants permission to delete a QuickSight namespace
    *
    * Access Level: Write
@@ -837,6 +878,21 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteNamespace() {
     return this.to('DeleteNamespace');
+  }
+
+  /**
+   * Grants permission to delete an OAuth client application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteOAuthClientApplication.html
+   */
+  public toDeleteOAuthClientApplication() {
+    return this.to('DeleteOAuthClientApplication');
   }
 
   /**
@@ -1476,6 +1532,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a knowledge base
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeKnowledgeBase.html
+   */
+  public toDescribeKnowledgeBase() {
+    return this.to('DescribeKnowledgeBase');
+  }
+
+  /**
+   * Grants permission to describe the resource policy of a knowledge base
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeKnowledgeBasePermissions.html
+   */
+  public toDescribeKnowledgeBasePermissions() {
+    return this.to('DescribeKnowledgeBasePermissions');
+  }
+
+  /**
    * Grants permission to describe a QuickSight namespace
    *
    * Access Level: Read
@@ -1484,6 +1562,21 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeNamespace() {
     return this.to('DescribeNamespace');
+  }
+
+  /**
+   * Grants permission to describe an OAuth client application
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeOAuthClientApplication.html
+   */
+  public toDescribeOAuthClientApplication() {
+    return this.to('DescribeOAuthClientApplication');
   }
 
   /**
@@ -2140,6 +2233,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all knowledge bases in an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListKnowledgeBases.html
+   */
+  public toListKnowledgeBases() {
+    return this.to('ListKnowledgeBases');
+  }
+
+  /**
    * Grants permission to lists all namespaces in a QuickSight account
    *
    * Access Level: List
@@ -2148,6 +2252,21 @@ export class Quicksight extends PolicyStatement {
    */
   public toListNamespaces() {
     return this.to('ListNamespaces');
+  }
+
+  /**
+   * Grants permission to list OAuth client applications in an account
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListOAuthClientApplications.html
+   */
+  public toListOAuthClientApplications() {
+    return this.to('ListOAuthClientApplications');
   }
 
   /**
@@ -2346,6 +2465,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list users index capacity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   */
+  public toListUsersIndexCapacity() {
+    return this.to('ListUsersIndexCapacity');
+  }
+
+  /**
    * Grants permission to list all vpc connections
    *
    * Access Level: List
@@ -2438,6 +2568,10 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to create a QuickSight user, whose identity is associated with the IAM identity/role specified in the request
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html
    */
@@ -2586,6 +2720,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toSearchGroups() {
     return this.to('SearchGroups');
+  }
+
+  /**
+   * Grants permission to search for a sub-set of knowledge bases
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchKnowledgeBases.html
+   */
+  public toSearchKnowledgeBases() {
+    return this.to('SearchKnowledgeBases');
   }
 
   /**
@@ -3172,6 +3317,32 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the resource policy of a knowledge base
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateKnowledgeBasePermissions.html
+   */
+  public toUpdateKnowledgeBasePermissions() {
+    return this.to('UpdateKnowledgeBasePermissions');
+  }
+
+  /**
+   * Grants permission to update an OAuth client application
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateOAuthClientApplication.html
+   */
+  public toUpdateOAuthClientApplication() {
+    return this.to('UpdateOAuthClientApplication');
+  }
+
+  /**
    * Grants permission to enable or disable public sharing on an account
    *
    * Access Level: Write
@@ -3468,6 +3639,7 @@ export class Quicksight extends PolicyStatement {
     Write: [
       'AccountConfigurations',
       'BatchCreateTopicReviewedAnswer',
+      'BatchDeleteKnowledgeBase',
       'BatchDeleteTopicReviewedAnswer',
       'BatchUpdatePreferences',
       'CancelIngestion',
@@ -3492,6 +3664,7 @@ export class Quicksight extends PolicyStatement {
       'CreateIAMPolicyAssignment',
       'CreateIngestion',
       'CreateNamespace',
+      'CreateOAuthClientApplication',
       'CreateReader',
       'CreateRefreshSchedule',
       'CreateRoleMembership',
@@ -3527,7 +3700,9 @@ export class Quicksight extends PolicyStatement {
       'DeleteGroupMembership',
       'DeleteIAMPolicyAssignment',
       'DeleteIdentityPropagationConfig',
+      'DeleteKnowledgeBase',
       'DeleteNamespace',
+      'DeleteOAuthClientApplication',
       'DeleteRefreshSchedule',
       'DeleteRoleCustomPermission',
       'DeleteRoleMembership',
@@ -3588,6 +3763,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateIdentityPropagationConfig',
       'UpdateIpRestriction',
       'UpdateKeyRegistration',
+      'UpdateOAuthClientApplication',
       'UpdatePublicSharingSettings',
       'UpdateQPersonalizationConfiguration',
       'UpdateQuickIndexCapacity',
@@ -3614,6 +3790,7 @@ export class Quicksight extends PolicyStatement {
       'AllowVendedLogDeliveryForResource',
       'DescribeDataSetPermissions',
       'DescribeDataSourcePermissions',
+      'DescribeKnowledgeBasePermissions',
       'DescribeSpacePermissions',
       'DescribeTopicPermissions',
       'UpdateActionConnectorPermissions',
@@ -3624,6 +3801,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateDataSourcePermissions',
       'UpdateFlowPermissions',
       'UpdateFolderPermissions',
+      'UpdateKnowledgeBasePermissions',
       'UpdateSpacePermissions',
       'UpdateTemplatePermissions',
       'UpdateThemePermissions',
@@ -3670,7 +3848,9 @@ export class Quicksight extends PolicyStatement {
       'DescribeIngestion',
       'DescribeIpRestriction',
       'DescribeKeyRegistration',
+      'DescribeKnowledgeBase',
       'DescribeNamespace',
+      'DescribeOAuthClientApplication',
       'DescribeQPersonalizationConfiguration',
       'DescribeQuickIndexCapacity',
       'DescribeQuickSightQSearchConfiguration',
@@ -3730,7 +3910,9 @@ export class Quicksight extends PolicyStatement {
       'ListIdentityPropagationConfigs',
       'ListIngestions',
       'ListKMSKeysForUser',
+      'ListKnowledgeBases',
       'ListNamespaces',
+      'ListOAuthClientApplications',
       'ListRefreshSchedules',
       'ListRoleMemberships',
       'ListSelfUpgrades',
@@ -3747,6 +3929,7 @@ export class Quicksight extends PolicyStatement {
       'ListTopics',
       'ListUserGroups',
       'ListUsers',
+      'ListUsersIndexCapacity',
       'ListVPCConnections',
       'SearchActionConnectors',
       'SearchAgents',
@@ -3757,6 +3940,7 @@ export class Quicksight extends PolicyStatement {
       'SearchDirectoryGroups',
       'SearchFlows',
       'SearchGroups',
+      'SearchKnowledgeBases',
       'SearchSpaces',
       'SearchTopics',
       'SearchUsers'
@@ -3790,6 +3974,9 @@ export class Quicksight extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ resourceId }`);
@@ -3875,6 +4062,23 @@ export class Quicksight extends PolicyStatement {
    */
   public onVpcconnection(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpcConnection/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type oauthClientApplication to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_OAuthClientApplication.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOauthClientApplication(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:oauthClientApplication/${ resourceId }`);
   }
 
   /**
@@ -4028,6 +4232,9 @@ export class Quicksight extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:namespace/${ resourceId }`);
@@ -4156,7 +4363,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Adds a resource of type agent to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Agent.html
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -4244,6 +4451,23 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type knowledgeBase to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_KnowledgeBase.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onKnowledgeBase(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:knowledge-base/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type space to the statement
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Space.html
@@ -4255,6 +4479,20 @@ export class Quicksight extends PolicyStatement {
    */
   public onSpace(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:space/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type approvalPolicy to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ApprovalPolicy.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onApprovalPolicy(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:approval-policy/${ resourceId }`);
   }
 
   /**
@@ -4278,6 +4516,8 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
+   * - .toCreateNamespace()
+   * - .toCreateOAuthClientApplication()
    * - .toCreateTemplate()
    * - .toCreateTemplateAlias()
    * - .toCreateTheme()
@@ -4286,6 +4526,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateVPCConnection()
    * - .toDeleteDataSet()
    * - .toDeleteDataSource()
+   * - .toDeleteOAuthClientApplication()
    * - .toDeleteTopic()
    * - .toDeleteVPCConnection()
    * - .toDescribeDataSet()
@@ -4293,6 +4534,7 @@ export class Quicksight extends PolicyStatement {
    * - .toDescribeDataSource()
    * - .toDescribeDataSourcePermissions()
    * - .toDescribeIngestion()
+   * - .toDescribeOAuthClientApplication()
    * - .toDescribeTopic()
    * - .toDescribeTopicPermissions()
    * - .toDescribeTopicRefresh()
@@ -4300,16 +4542,19 @@ export class Quicksight extends PolicyStatement {
    * - .toListDataSets()
    * - .toListDataSources()
    * - .toListIngestions()
+   * - .toListOAuthClientApplications()
    * - .toListTopicReviewedAnswers()
    * - .toListTopics()
    * - .toListVPCConnections()
    * - .toPassDataSet()
    * - .toPassDataSource()
+   * - .toRegisterUser()
    * - .toTagResource()
    * - .toUpdateDataSet()
    * - .toUpdateDataSetPermissions()
    * - .toUpdateDataSource()
    * - .toUpdateDataSourcePermissions()
+   * - .toUpdateOAuthClientApplication()
    * - .toUpdateTopic()
    * - .toUpdateTopicPermissions()
    * - .toUpdateVPCConnection()
@@ -4328,15 +4573,18 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to resource types:
+   * - user
    * - analysis
    * - dashboard
    * - template
    * - vpcconnection
+   * - oauthClientApplication
    * - datasource
    * - dataset
    * - ingestion
    * - theme
    * - customization
+   * - namespace
    * - folder
    * - emailCustomizationTemplate
    * - topic
@@ -4345,6 +4593,7 @@ export class Quicksight extends PolicyStatement {
    * - custompermissions
    * - actionconnector
    * - flow
+   * - knowledgeBase
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4375,6 +4624,8 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
+   * - .toCreateNamespace()
+   * - .toCreateOAuthClientApplication()
    * - .toCreateTemplate()
    * - .toCreateTemplateAlias()
    * - .toCreateTheme()
@@ -4383,6 +4634,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateVPCConnection()
    * - .toDeleteDataSet()
    * - .toDeleteDataSource()
+   * - .toDeleteOAuthClientApplication()
    * - .toDeleteTopic()
    * - .toDeleteVPCConnection()
    * - .toDescribeDataSet()
@@ -4390,6 +4642,7 @@ export class Quicksight extends PolicyStatement {
    * - .toDescribeDataSource()
    * - .toDescribeDataSourcePermissions()
    * - .toDescribeIngestion()
+   * - .toDescribeOAuthClientApplication()
    * - .toDescribeTopic()
    * - .toDescribeTopicPermissions()
    * - .toDescribeTopicRefresh()
@@ -4397,17 +4650,20 @@ export class Quicksight extends PolicyStatement {
    * - .toListDataSets()
    * - .toListDataSources()
    * - .toListIngestions()
+   * - .toListOAuthClientApplications()
    * - .toListTopicReviewedAnswers()
    * - .toListTopics()
    * - .toListVPCConnections()
    * - .toPassDataSet()
    * - .toPassDataSource()
+   * - .toRegisterUser()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateDataSet()
    * - .toUpdateDataSetPermissions()
    * - .toUpdateDataSource()
    * - .toUpdateDataSourcePermissions()
+   * - .toUpdateOAuthClientApplication()
    * - .toUpdateTopic()
    * - .toUpdateTopicPermissions()
    * - .toUpdateVPCConnection()

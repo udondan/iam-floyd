@@ -2,6 +2,7 @@ quicksight:account
 quicksight:actionconnector
 quicksight:agent
 quicksight:analysis
+quicksight:approvalPolicy
 quicksight:assetBundleExportJob
 quicksight:assetBundleImportJob
 quicksight:assignment
@@ -21,7 +22,9 @@ quicksight:flow
 quicksight:folder
 quicksight:group
 quicksight:ingestion
+quicksight:knowledgeBase
 quicksight:namespace
+quicksight:oauthClientApplication
 quicksight:refreshschedule
 quicksight:space
 quicksight:template

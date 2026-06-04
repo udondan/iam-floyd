@@ -58,6 +58,34 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete multiple threat models in a single request
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchDeleteThreatModels.html
+   */
+  public toBatchDeleteThreatModels() {
+    return this.to('BatchDeleteThreatModels');
+  }
+
+  /**
+   * Grants permission to delete multiple threats
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchDeleteThreats.html
+   */
+  public toBatchDeleteThreats() {
+    return this.to('BatchDeleteThreats');
+  }
+
+  /**
    * Grants permission to retrieve multiple agent spaces in a single request
    *
    * Access Level: Read
@@ -206,6 +234,62 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve multiple tasks for a threat model job in a single request
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetThreatModelJobTasks.html
+   */
+  public toBatchGetThreatModelJobTasks() {
+    return this.to('BatchGetThreatModelJobTasks');
+  }
+
+  /**
+   * Grants permission to retrieve details for one or more threat model jobs
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetThreatModelJobs.html
+   */
+  public toBatchGetThreatModelJobs() {
+    return this.to('BatchGetThreatModelJobs');
+  }
+
+  /**
+   * Grants permission to retrieve multiple threat models in a single request
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetThreatModels.html
+   */
+  public toBatchGetThreatModels() {
+    return this.to('BatchGetThreatModels');
+  }
+
+  /**
+   * Grants permission to retrieve details for one or more threats
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetThreats.html
+   */
+  public toBatchGetThreats() {
+    return this.to('BatchGetThreats');
+  }
+
+  /**
    * Grants permission to create an agent space record
    *
    * Access Level: Write
@@ -341,6 +425,34 @@ export class Securityagent extends PolicyStatement {
    */
   public toCreateTargetDomain() {
     return this.to('CreateTargetDomain');
+  }
+
+  /**
+   * Grants permission to create a threat in a threat model
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreateThreat.html
+   */
+  public toCreateThreat() {
+    return this.to('CreateThreat');
+  }
+
+  /**
+   * Grants permission to create a new threat model configuration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreateThreatModel.html
+   */
+  public toCreateThreatModel() {
+    return this.to('CreateThreatModel');
   }
 
   /**
@@ -767,6 +879,62 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tasks associated with a specific threat model job
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListThreatModelJobTasks.html
+   */
+  public toListThreatModelJobTasks() {
+    return this.to('ListThreatModelJobTasks');
+  }
+
+  /**
+   * Grants permission to list threat model jobs for a threat model
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListThreatModelJobs.html
+   */
+  public toListThreatModelJobs() {
+    return this.to('ListThreatModelJobs');
+  }
+
+  /**
+   * Grants permission to list threat models for an agent space
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListThreatModels.html
+   */
+  public toListThreatModels() {
+    return this.to('ListThreatModels');
+  }
+
+  /**
+   * Grants permission to list threats for a threat model job with filtering and pagination support
+   *
+   * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListThreats.html
+   */
+  public toListThreats() {
+    return this.to('ListThreats');
+  }
+
+  /**
    * Grants permission to submit feedback for a design review comment
    *
    * Access Level: Write
@@ -823,6 +991,21 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate the execution of a threat model job
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKey
+   *
+   * https://docs.aws.amazon.com/securityagent/API_StartThreatModelJob.html
+   */
+  public toStartThreatModelJob() {
+    return this.to('StartThreatModelJob');
+  }
+
+  /**
    * Grants permission to stop the execution of a running code review
    *
    * Access Level: Write
@@ -848,6 +1031,20 @@ export class Securityagent extends PolicyStatement {
    */
   public toStopPentestJob() {
     return this.to('StopPentestJob');
+  }
+
+  /**
+   * Grants permission to stop a running threat model job
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_StopThreatModelJob.html
+   */
+  public toStopThreatModelJob() {
+    return this.to('StopThreatModelJob');
   }
 
   /**
@@ -995,6 +1192,34 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a threat
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateThreat.html
+   */
+  public toUpdateThreat() {
+    return this.to('UpdateThreat');
+  }
+
+  /**
+   * Grants permission to update an existing threat model with new configuration
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateThreatModel.html
+   */
+  public toUpdateThreatModel() {
+    return this.to('UpdateThreatModel');
+  }
+
+  /**
    * Grants permission to verify ownership for a registered target domain
    *
    * Access Level: Write
@@ -1010,6 +1235,8 @@ export class Securityagent extends PolicyStatement {
       'AddArtifact',
       'BatchDeleteCodeReviews',
       'BatchDeletePentests',
+      'BatchDeleteThreatModels',
+      'BatchDeleteThreats',
       'CreateAgentSpace',
       'CreateApplication',
       'CreateCodeReview',
@@ -1020,6 +1247,8 @@ export class Securityagent extends PolicyStatement {
       'CreatePentest',
       'CreateSecurityRequirement',
       'CreateTargetDomain',
+      'CreateThreat',
+      'CreateThreatModel',
       'DeleteAgentSpace',
       'DeleteApplication',
       'DeleteArtifact',
@@ -1033,8 +1262,10 @@ export class Securityagent extends PolicyStatement {
       'StartCodeRemediation',
       'StartCodeReviewJob',
       'StartPentestJob',
+      'StartThreatModelJob',
       'StopCodeReviewJob',
       'StopPentestJob',
+      'StopThreatModelJob',
       'ToggleManagedSecurityRequirement',
       'UpdateAgentSpace',
       'UpdateApplication',
@@ -1044,6 +1275,8 @@ export class Securityagent extends PolicyStatement {
       'UpdatePentest',
       'UpdateSecurityRequirement',
       'UpdateTargetDomain',
+      'UpdateThreat',
+      'UpdateThreatModel',
       'VerifyTargetDomain'
     ],
     Read: [
@@ -1058,6 +1291,10 @@ export class Securityagent extends PolicyStatement {
       'BatchGetPentestJobs',
       'BatchGetPentests',
       'BatchGetTargetDomains',
+      'BatchGetThreatModelJobTasks',
+      'BatchGetThreatModelJobs',
+      'BatchGetThreatModels',
+      'BatchGetThreats',
       'GetApplication',
       'GetArtifact',
       'GetDesignReview',
@@ -1086,7 +1323,11 @@ export class Securityagent extends PolicyStatement {
       'ListPentests',
       'ListResourcesFromIntegration',
       'ListSecurityRequirements',
-      'ListTargetDomains'
+      'ListTargetDomains',
+      'ListThreatModelJobTasks',
+      'ListThreatModelJobs',
+      'ListThreatModels',
+      'ListThreats'
     ],
     Tagging: [
       'TagResource',

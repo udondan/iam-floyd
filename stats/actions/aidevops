@@ -1,12 +1,16 @@
 aidevops:AllowVendedLogDeliveryForResource;Permissions management
 aidevops:AssociateService;Write
 aidevops:CreateAgentSpace;Write
+aidevops:CreateAsset;Write
+aidevops:CreateAssetFile;Write
 aidevops:CreateBacklogTask;Write
 aidevops:CreateChat;Write
 aidevops:CreateKnowledgeItem;Write
 aidevops:CreateOneTimeLoginSession;Write
 aidevops:CreatePrivateConnection;Write
 aidevops:DeleteAgentSpace;Write
+aidevops:DeleteAsset;Write
+aidevops:DeleteAssetFile;Write
 aidevops:DeleteKnowledgeItem;Write
 aidevops:DeletePrivateConnection;Write
 aidevops:DeregisterService;Write
@@ -20,6 +24,9 @@ aidevops:EnableOperatorApp;Write
 aidevops:EndChatForCase;Write
 aidevops:GetAccountUsage;Read
 aidevops:GetAgentSpace;Read
+aidevops:GetAsset;Read
+aidevops:GetAssetContent;Read
+aidevops:GetAssetFile;Read
 aidevops:GetAssociation;Read
 aidevops:GetBacklogTask;Read
 aidevops:GetKnowledgeItem;Read
@@ -28,6 +35,10 @@ aidevops:GetRecommendation;Read
 aidevops:GetService;Read
 aidevops:InitiateChatForCase;Write
 aidevops:ListAgentSpaces;List
+aidevops:ListAssetFiles;List
+aidevops:ListAssetTypes;List
+aidevops:ListAssetVersions;List
+aidevops:ListAssets;List
 aidevops:ListAssociations;List
 aidevops:ListBacklogTasks;List
 aidevops:ListChats;List
@@ -48,6 +59,8 @@ aidevops:SendMessage;Write
 aidevops:TagResource;Tagging
 aidevops:UntagResource;Tagging
 aidevops:UpdateAgentSpace;Write
+aidevops:UpdateAsset;Write
+aidevops:UpdateAssetFile;Write
 aidevops:UpdateAssociation;Write
 aidevops:UpdateBacklogTask;Write
 aidevops:UpdateGoal;Write

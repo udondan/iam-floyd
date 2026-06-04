@@ -181,6 +181,17 @@ export class HealthAgent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve aggregated analytics for a domain
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_GetDomainAnalytics.html
+   */
+  public toGetDomainAnalytics() {
+    return this.to('GetDomainAnalytics');
+  }
+
+  /**
    * Grants permission to get an existing integration
    *
    * Access Level: Read
@@ -343,6 +354,17 @@ export class HealthAgent extends PolicyStatement {
    */
   public toListProviders() {
     return this.to('ListProviders');
+  }
+
+  /**
+   * Grants permission to list session records for a domain
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connecthealth/latest/APIReference/API_ListSessionRecords.html
+   */
+  public toListSessionRecords() {
+    return this.to('ListSessionRecords');
   }
 
   /**
@@ -522,6 +544,7 @@ export class HealthAgent extends PolicyStatement {
       'GetAgent',
       'GetCareTeamProvider',
       'GetDomain',
+      'GetDomainAnalytics',
       'GetIntegration',
       'GetMedicalScribeListeningSession',
       'GetPatient',
@@ -539,6 +562,7 @@ export class HealthAgent extends PolicyStatement {
       'ListAgents',
       'ListDomains',
       'ListIntegrations',
+      'ListSessionRecords',
       'ListSubscriptions',
       'ListTagsForResource'
     ],

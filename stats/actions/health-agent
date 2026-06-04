@@ -12,6 +12,7 @@ health-agent:DeleteIntegration;Write
 health-agent:GetAgent;Read
 health-agent:GetCareTeamProvider;Read
 health-agent:GetDomain;Read
+health-agent:GetDomainAnalytics;Read
 health-agent:GetIntegration;Read
 health-agent:GetMedicalScribeListeningSession;Read
 health-agent:GetPatient;Read
@@ -27,6 +28,7 @@ health-agent:ListIntegrations;List
 health-agent:ListPatientAppointments;Read
 health-agent:ListPatientInsuranceCoverages;Read
 health-agent:ListProviders;Read
+health-agent:ListSessionRecords;List
 health-agent:ListSubscriptions;List
 health-agent:ListTagsForResource;List
 health-agent:MatchPatient;Read

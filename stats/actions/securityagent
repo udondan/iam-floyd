@@ -1,6 +1,8 @@
 securityagent:AddArtifact;Write
 securityagent:BatchDeleteCodeReviews;Write
 securityagent:BatchDeletePentests;Write
+securityagent:BatchDeleteThreatModels;Write
+securityagent:BatchDeleteThreats;Write
 securityagent:BatchGetAgentSpaces;Read
 securityagent:BatchGetArtifactMetadata;Read
 securityagent:BatchGetCodeReviewJobTasks;Read
@@ -12,6 +14,10 @@ securityagent:BatchGetPentestJobTasks;Read
 securityagent:BatchGetPentestJobs;Read
 securityagent:BatchGetPentests;Read
 securityagent:BatchGetTargetDomains;Read
+securityagent:BatchGetThreatModelJobTasks;Read
+securityagent:BatchGetThreatModelJobs;Read
+securityagent:BatchGetThreatModels;Read
+securityagent:BatchGetThreats;Read
 securityagent:CreateAgentSpace;Write
 securityagent:CreateApplication;Write
 securityagent:CreateCodeReview;Write
@@ -22,6 +28,8 @@ securityagent:CreateOneTimeLoginSession;Write
 securityagent:CreatePentest;Write
 securityagent:CreateSecurityRequirement;Write
 securityagent:CreateTargetDomain;Write
+securityagent:CreateThreat;Write
+securityagent:CreateThreatModel;Write
 securityagent:DeleteAgentSpace;Write
 securityagent:DeleteApplication;Write
 securityagent:DeleteArtifact;Write
@@ -58,12 +66,18 @@ securityagent:ListResourcesFromIntegration;List
 securityagent:ListSecurityRequirements;List
 securityagent:ListTagsForResource;Read
 securityagent:ListTargetDomains;List
+securityagent:ListThreatModelJobTasks;List
+securityagent:ListThreatModelJobs;List
+securityagent:ListThreatModels;List
+securityagent:ListThreats;List
 securityagent:PutDesignReviewFeedback;Write
 securityagent:StartCodeRemediation;Write
 securityagent:StartCodeReviewJob;Write
 securityagent:StartPentestJob;Write
+securityagent:StartThreatModelJob;Write
 securityagent:StopCodeReviewJob;Write
 securityagent:StopPentestJob;Write
+securityagent:StopThreatModelJob;Write
 securityagent:TagResource;Tagging
 securityagent:ToggleManagedSecurityRequirement;Write
 securityagent:UntagResource;Tagging
@@ -75,4 +89,6 @@ securityagent:UpdateIntegratedResources;Write
 securityagent:UpdatePentest;Write
 securityagent:UpdateSecurityRequirement;Write
 securityagent:UpdateTargetDomain;Write
+securityagent:UpdateThreat;Write
+securityagent:UpdateThreatModel;Write
 securityagent:VerifyTargetDomain;Write
