@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SageMakerJobRuntimePermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:Sample",
+        "sagemaker:SampleWithResponseStream",
+        "sagemaker:CompleteRollout",
+        "sagemaker:UpdateReward"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:job/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "BearerTokenPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CallWithBearerToken"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

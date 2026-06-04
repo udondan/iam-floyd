@@ -896,6 +896,10 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerHyperPodServiceRolePolicy = 'aws-service-role/AmazonSageMakerHyperPodServiceRolePolicy';
     /** This policy provides administrative permissions required to set up the SageMaker HyperPod training operator. It enables access to Amazon SageMaker HyperPod and EKS add-ons. The policy includes permissions to describe the SageMaker HyperPod resources in your account. */
     public static AmazonSageMakerHyperPodTrainingOperatorAccess = 'AmazonSageMakerHyperPodTrainingOperatorAccess';
+    /** Provides permissions for Amazon SageMaker job execution roles to access data in Amazon S3, invoke agents through Amazon Bedrock AgentCore, track experiments with MLflow, publish model packages, write logs to Amazon CloudWatch, invoke AWS Lambda functions, and manage Amazon VPC network interfaces. */
+    public static AmazonSageMakerJobFullAccess = 'AmazonSageMakerJobFullAccess';
+    /** Provides permissions for agent runtimes to invoke the Amazon SageMaker job runtime APIs used during model customization for sample generation, trajectory completion, and reward submission. */
+    public static AmazonSageMakerJobRuntimeAccess = 'AmazonSageMakerJobRuntimeAccess';
     /** Provides access to create Amazon Augmented AI FlowDefinition resources against any Workteam. */
     public static AmazonSageMakerMechanicalTurkAccess = 'AmazonSageMakerMechanicalTurkAccess';
     /** Grants permissions for SageMaker model customization workflows including serverless training, custom reward function for reinforcement learning, model evaluation, and deployment to SageMaker or Bedrock endpoints. */
@@ -2146,8 +2150,12 @@ export class AwsManagedPolicy {
     public static AWSQuickSetupPatchPolicyBaselineAccess = 'AWSQuickSetupPatchPolicyBaselineAccess';
     /** Provides permissions that allow Quick Setup to create resources associated with a patch policy configuration. */
     public static AWSQuickSetupPatchPolicyDeploymentRolePolicy = 'AWSQuickSetupPatchPolicyDeploymentRolePolicy';
+    /** Grants permissions to manage State Manager associations for automated cleanup operations when Quick Setup configurations are deleted. */
+    public static AWSQuickSetupPatchPolicyLambdaExecutionPolicy = 'AWSQuickSetupPatchPolicyLambdaExecutionPolicy';
     /** QuickSetup creates IAM roles which enable it to configure the Systems Manager Patch Manager feature on your behalf, and uses this policy when creating such roles to define the boundary of their permissions. */
     public static AWSQuickSetupPatchPolicyPermissionsBoundary = 'AWSQuickSetupPatchPolicyPermissionsBoundary';
+    /** Grants permissions to track which instances are managed by Quick Setup patch policy configurations through automated tagging and inventory collection. */
+    public static AWSQuickSetupPatchPolicyTagManagementExecutionPolicy = 'AWSQuickSetupPatchPolicyTagManagementExecutionPolicy';
     /** The AWSQuickSetupSchedulerPermissionsBoundary policy defines the list of permissions that are permitted in an IAM role created by Quick Setup. Quick Setup uses a role created with this policy to enable and configure scheduled operations on Amazon EC2 instances and other resources. */
     public static AWSQuickSetupSchedulerPermissionsBoundary = 'AWSQuickSetupSchedulerPermissionsBoundary';
     /** This policy grants administrative permssions that allow Quick Setup to create resources that are used during the Systems Manager onboarding process. */
@@ -2702,6 +2710,10 @@ export class AwsManagedPolicy {
     public static ElementalSupportCenterFullAccess = 'ElementalSupportCenterFullAccess';
     /** This policy grants read-only permissions that allow the WAL service for Amazon EMR to find and return the status of a cluster */
     public static EMRDescribeClusterPolicyForEMRWAL = 'aws-service-role/EMRDescribeClusterPolicyForEMRWAL';
+    /** Provides permissions required by the AWS FinOps Agent to perform cost analysis and spot cost saving opportunity on customer AWS resources. */
+    public static FinOpsAgentAgentPolicy = 'FinOpsAgentAgentPolicy';
+    /** Provides access to use the AWS FinOps Agent web app for an Agent. */
+    public static FinOpsAgentOperatorPolicy = 'FinOpsAgentOperatorPolicy';
     /** Access policy to allow FM service linked role to perform FM-related actions on FM-managed resources within a customer AWS Organization account. */
     public static FMSServiceRolePolicy = 'aws-service-role/FMSServiceRolePolicy';
     /** Allows Amazon FSx to delete its Service Linked Roles for Amazon S3 access */

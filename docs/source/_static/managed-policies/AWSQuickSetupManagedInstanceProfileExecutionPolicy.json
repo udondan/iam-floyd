@@ -54,14 +54,15 @@
       }
     },
     {
-      "Sid": "DefaultInstanceRolePassToEC2Permissions",
+      "Sid": "DefaultInstanceRolePassToEC2AndSSMPermissions",
       "Effect": "Allow",
       "Action": "iam:PassRole",
       "Resource": "arn:aws:iam::*:role/AmazonSSMRoleForInstancesQuickSetup",
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": [
-            "ec2.amazonaws.com"
+            "ec2.amazonaws.com",
+            "ssm.amazonaws.com"
           ]
         }
       }
@@ -91,6 +92,35 @@
         "ec2:DescribeInstances"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "SSMInstanceManagement",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DescribeInstanceInformation",
+        "ssm:UpdateManagedInstanceRole"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "TagRoles",
+      "Effect": "Allow",
+      "Action": "iam:TagRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "ForAllValues:StringLike": {
+          "aws:TagKeys": "QSConfigId-*"
+        }
+      }
+    },
+    {
+      "Sid": "DenyModifyQuickSetupAutomationRoles",
+      "Effect": "Deny",
+      "Action": [
+        "iam:TagRole",
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::*:role/AWS-QuickSetup-AutomationRole-*"
     },
     {
       "Sid": "AutomationsStartWithTagPermissions",
