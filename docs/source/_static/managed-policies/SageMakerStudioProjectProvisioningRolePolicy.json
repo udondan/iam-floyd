@@ -305,6 +305,7 @@
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRServiceRolePolicy",
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioEMRInstanceRolePolicy",
             "arn:aws:iam::aws:policy/service-role/AmazonEMRServicePolicy_v2",
+            "arn:aws:iam::aws:policy/service-role/AmazonEMRServicePolicyForSessions",
             "arn:aws:iam::aws:policy/service-role/AmazonS3TablesLakeFormationServiceRole",
             "arn:aws:iam::aws:policy/AmazonSageMakerPartnerAppsFullAccess",
             "arn:aws:iam::aws:policy/service-role/SageMakerStudioBedrockKnowledgeBaseServiceRolePolicy"
@@ -400,7 +401,8 @@
             "vpcArn",
             "VpcId",
             "CreatedForUseWithSageMakerStudio",
-            "SageMakerStudioQueryExecutionRole"
+            "SageMakerStudioQueryExecutionRole",
+            "SageMakerSpacesDomainId"
           ]
         },
         "Null": {

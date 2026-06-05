@@ -24,6 +24,7 @@
         "bedrock:*",
         "codewhisperer:*",
         "sagemaker-unified-studio-mcp:*",
+        "elasticmapreduce:*",
         "q:*",
         "sagemaker:*",
         "sagemaker-mlflow:*",
@@ -47,11 +48,13 @@
         "athena:TerminateSession",
         "emr-serverless:*Session*",
         "emr-serverless:*Dashboard*",
+        "elasticmapreduce:*Session*",
         "glue:CancelStatement",
         "glue:CreateSession",
         "glue:DeleteSession",
         "glue:GetDashboardUrl",
         "glue:GetSession",
+        "glue:GetSessionEndpoint",
         "glue:GetStatement",
         "glue:RunStatement",
         "glue:StopSession"
@@ -59,6 +62,7 @@
       "Resource": [
         "arn:aws:athena:*:*:workgroup/*/session/*",
         "arn:aws:emr-serverless:*:*:/applications/*/sessions/*",
+        "arn:aws:elasticmapreduce:*:*:cluster/*/session/*",
         "arn:aws:glue:*:*:session/*"
       ],
       "Condition": {
@@ -75,12 +79,15 @@
         "athena:TagResource",
         "athena:UntagResource",
         "emr-serverless:*Resource",
+        "elasticmapreduce:AddTags",
+        "elasticmapreduce:RemoveTags",
         "glue:TagResource",
         "glue:UntagResource"
       ],
       "Resource": [
         "arn:aws:athena:*:*:workgroup/*/session/*",
         "arn:aws:emr-serverless:*:*:/applications/*/sessions/*",
+        "arn:aws:elasticmapreduce:*:*:cluster/*/session/*",
         "arn:aws:glue:*:*:session/*"
       ],
       "Condition": {
@@ -220,6 +227,7 @@
             "redshift.amazonaws.com",
             "scheduler.amazonaws.com",
             "emr-serverless.amazonaws.com",
+            "elasticmapreduce.amazonaws.com",
             "airflow-serverless.amazonaws.com"
           ]
         }
