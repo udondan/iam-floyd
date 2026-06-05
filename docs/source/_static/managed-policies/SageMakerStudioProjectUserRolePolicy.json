@@ -300,13 +300,8 @@
       "Sid": "GluePermissions",
       "Effect": "Allow",
       "Action": [
-        "glue:CancelStatement",
-        "glue:GetSession",
-        "glue:ListStatements",
-        "glue:DeleteSession",
-        "glue:RunStatement",
-        "glue:GetStatement",
-        "glue:StopSession",
+        "glue:*Session*",
+        "glue:*Statement*",
         "glue:GetDashboardUrl",
         "glue:NotifyEvent",
         "glue:StartBlueprintRun",
@@ -1355,6 +1350,7 @@
             "glue.amazonaws.com",
             "airflow.amazonaws.com",
             "emr-serverless.amazonaws.com",
+            "elasticmapreduce.amazonaws.com",
             "scheduler.amazonaws.com",
             "access-grants.s3.amazonaws.com"
           ]
@@ -1622,7 +1618,9 @@
         "elasticmapreduce:ListInstanceGroups",
         "elasticmapreduce:ListBootstrapActions",
         "elasticmapreduce:GetManagedScalingPolicy",
-        "elasticmapreduce:GetOnClusterAppUIPresignedURL"
+        "elasticmapreduce:GetOnClusterAppUIPresignedURL",
+        "elasticmapreduce:*Session*",
+        "elasticmapreduce:AddTags"
       ],
       "Resource": [
         "arn:aws:elasticmapreduce:*:*:cluster/*"

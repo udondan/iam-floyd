@@ -2674,6 +2674,8 @@ export class AwsManagedPolicy {
     public static EC2FleetTimeShiftableServiceRolePolicy = 'aws-service-role/EC2FleetTimeShiftableServiceRolePolicy';
     /** Permissions need by EC2 Image Builder to perform a cross account distribution. */
     public static Ec2ImageBuilderCrossAccountDistributionAccess = 'Ec2ImageBuilderCrossAccountDistributionAccess';
+    /** Grants permissions that allow EC2 Image Builder to call AWS services on your behalf */
+    public static EC2ImageBuilderExecutionPolicy = 'EC2ImageBuilderExecutionPolicy';
     /** The EC2ImageBuilderLifecycleExecutionPolicy policy grants permissions for Image Builder to perform actions such as deprecate or delete Image Builder image resources and their underlying resources (AMIs, snapshots) to support automated rules for image lifecycle management tasks. */
     public static EC2ImageBuilderLifecycleExecutionPolicy = 'service-role/EC2ImageBuilderLifecycleExecutionPolicy';
     /** Allows customers to call EC2 Instance Connect to publish ephemeral keys to their EC2 instances and connect via ssh or the EC2 Instance Connect CLI. */
