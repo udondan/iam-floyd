@@ -2045,6 +2045,17 @@ export class Glue extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an interactive session endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-interactive-sessions.html#aws-glue-interactive-sessions-GetSessionEndpoint
+   */
+  public toGetSessionEndpoint() {
+    return this.to('GetSessionEndpoint');
+  }
+
+  /**
    * Grants permission to get a stage for SparkUI
    *
    * Access Level: Permissions management
@@ -3867,6 +3878,7 @@ export class Glue extends PolicyStatement {
       'GetSecurityConfiguration',
       'GetSecurityConfigurations',
       'GetSession',
+      'GetSessionEndpoint',
       'GetStatement',
       'GetTable',
       'GetTableOptimizer',
@@ -4016,6 +4028,9 @@ export class Glue extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ databaseName }/${ tableName }`);
@@ -4032,6 +4047,9 @@ export class Glue extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTableversion(databaseName: string, tableName: string, tableVersionName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tableVersion/${ databaseName }/${ tableName }/${ tableVersionName }`);
@@ -4064,6 +4082,9 @@ export class Glue extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUserdefinedfunction(databaseName: string, userDefinedFunctionName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:glue:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:userDefinedFunction/${ databaseName }/${ userDefinedFunctionName }`);
@@ -4405,7 +4426,10 @@ export class Glue extends PolicyStatement {
    * Applies to resource types:
    * - catalog
    * - database
+   * - table
+   * - tableversion
    * - connection
+   * - userdefinedfunction
    * - devendpoint
    * - job
    * - trigger

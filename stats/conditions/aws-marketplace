@@ -6,3 +6,4 @@ aws-marketplace:ProductId
 aws-marketplace:RequestTag/${TagKey}
 aws-marketplace:ResourceTag/${TagKey}
 aws-marketplace:TagKeys
+aws-marketplace:VerificationType

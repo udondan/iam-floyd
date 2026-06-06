@@ -163,6 +163,7 @@ glue:GetSchemaVersionsDiff;Read
 glue:GetSecurityConfiguration;Read
 glue:GetSecurityConfigurations;Read
 glue:GetSession;Read
+glue:GetSessionEndpoint;Read
 glue:GetStage;Permissions management
 glue:GetStageAttempt;Permissions management
 glue:GetStageAttemptTaskList;Permissions management

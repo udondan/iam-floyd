@@ -70,6 +70,7 @@ ivs:StopParticipantReplication;Write
 ivs:StopStream;Write
 ivs:TagResource;Tagging
 ivs:UntagResource;Tagging
+ivs:UpdateAdConfiguration;Write
 ivs:UpdateChannel;Write
 ivs:UpdateIngestConfiguration;Write
 ivs:UpdatePlaybackRestrictionPolicy;Write

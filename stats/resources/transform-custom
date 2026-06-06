@@ -1,3 +1,8 @@
+transform-custom:analysis
 transform-custom:campaign
+transform-custom:finding
 transform-custom:knowledge-item
 transform-custom:package
+transform-custom:remediation
+transform-custom:repository
+transform-custom:source

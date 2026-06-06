@@ -878,6 +878,17 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an ad configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/API_UpdateAdConfiguration.html
+   */
+  public toUpdateAdConfiguration() {
+    return this.to('UpdateAdConfiguration');
+  }
+
+  /**
    * Grants permission to update a channel's configuration
    *
    * Access Level: Write
@@ -977,6 +988,7 @@ export class Ivs extends PolicyStatement {
       'StopComposition',
       'StopParticipantReplication',
       'StopStream',
+      'UpdateAdConfiguration',
       'UpdateChannel',
       'UpdateIngestConfiguration',
       'UpdatePlaybackRestrictionPolicy',
