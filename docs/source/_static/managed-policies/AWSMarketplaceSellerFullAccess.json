@@ -88,7 +88,8 @@
       ],
       "Resource": [
         "arn:aws:aws-marketplace:*:*:AWSMarketplace*/*",
-        "arn:aws:aws-marketplace:*:*:catalog/AWSMarketplace*/*"
+        "arn:aws:aws-marketplace:*:*:catalog/AWSMarketplace*/*",
+        "arn:aws:aws-marketplace:*:*:verification-type/*/verification-evidence/*"
       ]
     },
     {
@@ -117,6 +118,27 @@
         "invoicing:ListInvoiceSummaries",
         "invoicing:GetInvoicePDF",
         "aws-marketplace:ListIssuedTaxInvoices"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MarketplaceSellerVerificationEvidenceManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:CreateVerificationEvidence",
+        "aws-marketplace:UpdateVerificationEvidence",
+        "aws-marketplace:GetVerificationEvidence"
+      ],
+      "Resource": "arn:aws:aws-marketplace:*:*:verification-type/*/verification-evidence/*"
+    },
+    {
+      "Sid": "MarketplaceSellerVerificationManagement",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListVerificationEvidence",
+        "aws-marketplace:StartVerification",
+        "aws-marketplace:GetVerification",
+        "aws-marketplace:ListVerifications"
       ],
       "Resource": "*"
     },
