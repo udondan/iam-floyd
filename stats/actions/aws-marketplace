@@ -12,6 +12,7 @@ aws-marketplace:CancelAgreementRequest;Write
 aws-marketplace:CancelChangeSet;Write
 aws-marketplace:CreateAgreementRequest;Write
 aws-marketplace:CreatePrivateMarketplaceRequests;Write
+aws-marketplace:CreateVerificationEvidence;Write
 aws-marketplace:DeleteResourcePolicy;Permissions management
 aws-marketplace:DescribeAgreement;Read
 aws-marketplace:DescribeAssessment;Read
@@ -39,6 +40,8 @@ aws-marketplace:GetOfferTerms;Read
 aws-marketplace:GetProduct;Read
 aws-marketplace:GetResourcePolicy;Read
 aws-marketplace:GetSellerDashboard;Read
+aws-marketplace:GetVerification;Read
+aws-marketplace:GetVerificationEvidence;Read
 aws-marketplace:ListAgreementApprovalRequests;List
 aws-marketplace:ListAgreementCancellationRequests;List
 aws-marketplace:ListAgreementCharges;List
@@ -59,6 +62,8 @@ aws-marketplace:ListPrivateListings;List
 aws-marketplace:ListPrivateMarketplaceRequests;List
 aws-marketplace:ListPurchaseOptions;List
 aws-marketplace:ListTagsForResource;Read
+aws-marketplace:ListVerificationEvidence;List
+aws-marketplace:ListVerifications;List
 aws-marketplace:MeterUsage;Write
 aws-marketplace:PutDeploymentParameter;Write
 aws-marketplace:PutProcurementSystemConfiguration;Write
@@ -76,10 +81,12 @@ aws-marketplace:SendAgreementPaymentRequest;Write
 aws-marketplace:StartBuild;Write
 aws-marketplace:StartChangeSet;Write
 aws-marketplace:StartInvoiceSubmissionTask;Write
+aws-marketplace:StartVerification;Write
 aws-marketplace:Subscribe;Write
 aws-marketplace:TagResource;Tagging
 aws-marketplace:Unsubscribe;Write
 aws-marketplace:UntagResource;Tagging
 aws-marketplace:UpdateAgreementApprovalRequest;Write
 aws-marketplace:UpdatePurchaseOrders;Write
+aws-marketplace:UpdateVerificationEvidence;Write
 aws-marketplace:ViewSubscriptions;List

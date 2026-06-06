@@ -495,6 +495,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a replica of a user pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolReplica.html
+   */
+  public toCreateUserPoolReplica() {
+    return this.to('CreateUserPoolReplica');
+  }
+
+  /**
    * Grants permission to delete any empty user pool group
    *
    * Access Level: Write
@@ -613,6 +624,17 @@ export class CognitoIdp extends PolicyStatement {
    */
   public toDeleteUserPoolDomain() {
     return this.to('DeleteUserPoolDomain');
+  }
+
+  /**
+   * Grants permission to delete a replica of a user pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolReplica.html
+   */
+  public toDeleteUserPoolReplica() {
+    return this.to('DeleteUserPoolReplica');
   }
 
   /**
@@ -1017,6 +1039,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list replicas of a user pool
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolReplicas.html
+   */
+  public toListUserPoolReplicas() {
+    return this.to('ListUserPoolReplicas');
+  }
+
+  /**
    * Grants permission to list all user pools
    *
    * Access Level: List
@@ -1336,6 +1369,17 @@ export class CognitoIdp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a replica of a user pool
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolReplica.html
+   */
+  public toUpdateUserPoolReplica() {
+    return this.to('UpdateUserPoolReplica');
+  }
+
+  /**
    * Grants permission to register a user's entered TOTP code and mark the user's software token MFA status as verified if successful
    *
    * Access Level: Write
@@ -1397,6 +1441,7 @@ export class CognitoIdp extends PolicyStatement {
       'CreateUserPool',
       'CreateUserPoolClient',
       'CreateUserPoolDomain',
+      'CreateUserPoolReplica',
       'DeleteGroup',
       'DeleteIdentityProvider',
       'DeleteManagedLoginBranding',
@@ -1408,6 +1453,7 @@ export class CognitoIdp extends PolicyStatement {
       'DeleteUserPoolClient',
       'DeleteUserPoolClientSecret',
       'DeleteUserPoolDomain',
+      'DeleteUserPoolReplica',
       'DisassociateWebACL',
       'ForgetDevice',
       'ForgotPassword',
@@ -1437,6 +1483,7 @@ export class CognitoIdp extends PolicyStatement {
       'UpdateUserPool',
       'UpdateUserPoolClient',
       'UpdateUserPoolDomain',
+      'UpdateUserPoolReplica',
       'VerifySoftwareToken',
       'VerifyUserAttribute'
     ],
@@ -1479,6 +1526,7 @@ export class CognitoIdp extends PolicyStatement {
       'ListUserImportJobs',
       'ListUserPoolClientSecrets',
       'ListUserPoolClients',
+      'ListUserPoolReplicas',
       'ListUserPools',
       'ListUsers',
       'ListUsersInGroup'

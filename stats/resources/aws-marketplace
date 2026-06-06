@@ -13,3 +13,4 @@ aws-marketplace:OfferSet
 aws-marketplace:Product
 aws-marketplace:PurchaseOption
 aws-marketplace:SellerDashboard
+aws-marketplace:VerificationEvidence

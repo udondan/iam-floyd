@@ -30,6 +30,21 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new verification evidence resource for BusinessVerification
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toCreateVerificationEvidence() {
+    return this.to('CreateVerificationEvidence');
+  }
+
+  /**
    * Grants permission to delete the resource policy of an existing entity
    *
    * Access Level: Permissions management
@@ -104,6 +119,31 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
+  }
+
+  /**
+   * Grants permission to retrieve the detailed status of a specific verification process, including PSP validation results
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifVerificationType()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toGetVerification() {
+    return this.to('GetVerification');
+  }
+
+  /**
+   * Grants permission to retrieve the complete content of a specific verification evidence resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toGetVerificationEvidence() {
+    return this.to('GetVerificationEvidence');
   }
 
   /**
@@ -184,6 +224,31 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list verification evidence resources with summary metadata
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toListVerificationEvidence() {
+    return this.to('ListVerificationEvidence');
+  }
+
+  /**
+   * Grants permission to list all verification statuses across jurisdictions and verification types
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifVerificationType()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toListVerifications() {
+    return this.to('ListVerifications');
+  }
+
+  /**
    * Grants permission to attach a resource policy to an existing entity
    *
    * Access Level: Permissions management
@@ -227,6 +292,20 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit verification evidence to a Payment Service Provider and enable data sharing for a specified jurisdiction
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifVerificationType()
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toStartVerification() {
+    return this.to('StartVerification');
+  }
+
+  /**
    * Grants permission to add new tags to a resource. Supported resource: Entity, ChangeSet, InvoiceSubmissionTask, IssuedTaxInvoice
    *
    * Access Level: Tagging
@@ -255,11 +334,25 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
     return this.to('UntagResource');
   }
 
+  /**
+   * Grants permission to update an existing verification evidence resource using full replacement semantics
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   */
+  public toUpdateVerificationEvidence() {
+    return this.to('UpdateVerificationEvidence');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CancelChangeSet',
+      'CreateVerificationEvidence',
       'StartChangeSet',
-      'StartInvoiceSubmissionTask'
+      'StartInvoiceSubmissionTask',
+      'StartVerification',
+      'UpdateVerificationEvidence'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
@@ -272,6 +365,8 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'GetInvoiceSubmissionTask',
       'GetIssuedTaxInvoice',
       'GetResourcePolicy',
+      'GetVerification',
+      'GetVerificationEvidence',
       'ListTagsForResource'
     ],
     List: [
@@ -280,7 +375,9 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       'ListEntities',
       'ListInvoiceSubmissionTasks',
       'ListIssuedTaxInvoices',
-      'ListPayables'
+      'ListPayables',
+      'ListVerificationEvidence',
+      'ListVerifications'
     ],
     Tagging: [
       'TagResource',
@@ -378,6 +475,24 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type VerificationEvidence to the statement
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   *
+   * @param verificationType - Identifier for the verificationType.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVerificationEvidence(verificationType: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:aws-marketplace:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:verification-type/${ verificationType }/verification-evidence/${ resourceId }`);
+  }
+
+  /**
    * Filters access by the Intent parameter in the StartChangeSet request
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html
@@ -393,11 +508,29 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   }
 
   /**
+   * Filters access by the verification type for verification process operations (StartVerification, GetVerification, ListVerifications). Valid values: BusinessVerification
+   *
+   * https://docs.aws.amazon.com/marketplace/latest/APIReference/compliance-api-access-control.html
+   *
+   * Applies to actions:
+   * - .toGetVerification()
+   * - .toListVerifications()
+   * - .toStartVerification()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVerificationType(value: string | string[], operator?: Operator | string) {
+    return this.if(`VerificationType`, value, operator ?? 'StringLike');
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateVerificationEvidence()
    * - .toStartChangeSet()
    * - .toStartInvoiceSubmissionTask()
    * - .toTagResource()
@@ -420,6 +553,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * - ChangeSet
    * - InvoiceSubmissionTask
    * - IssuedTaxInvoice
+   * - VerificationEvidence
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -435,6 +569,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateVerificationEvidence()
    * - .toStartChangeSet()
    * - .toStartInvoiceSubmissionTask()
    * - .toTagResource()

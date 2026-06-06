@@ -41,6 +41,7 @@ cognito-idp:CreateUserImportJob;Write
 cognito-idp:CreateUserPool;Write
 cognito-idp:CreateUserPoolClient;Write
 cognito-idp:CreateUserPoolDomain;Write
+cognito-idp:CreateUserPoolReplica;Write
 cognito-idp:DeleteGroup;Write
 cognito-idp:DeleteIdentityProvider;Write
 cognito-idp:DeleteManagedLoginBranding;Write
@@ -52,6 +53,7 @@ cognito-idp:DeleteUserPool;Write
 cognito-idp:DeleteUserPoolClient;Write
 cognito-idp:DeleteUserPoolClientSecret;Write
 cognito-idp:DeleteUserPoolDomain;Write
+cognito-idp:DeleteUserPoolReplica;Write
 cognito-idp:DescribeIdentityProvider;Read
 cognito-idp:DescribeManagedLoginBranding;Read
 cognito-idp:DescribeManagedLoginBrandingByClient;Read
@@ -89,6 +91,7 @@ cognito-idp:ListTerms;List
 cognito-idp:ListUserImportJobs;List
 cognito-idp:ListUserPoolClientSecrets;List
 cognito-idp:ListUserPoolClients;List
+cognito-idp:ListUserPoolReplicas;List
 cognito-idp:ListUserPools;List
 cognito-idp:ListUsers;List
 cognito-idp:ListUsersInGroup;List
@@ -117,5 +120,6 @@ cognito-idp:UpdateUserAttributes;Write
 cognito-idp:UpdateUserPool;Write
 cognito-idp:UpdateUserPoolClient;Write
 cognito-idp:UpdateUserPoolDomain;Write
+cognito-idp:UpdateUserPoolReplica;Write
 cognito-idp:VerifySoftwareToken;Write
 cognito-idp:VerifyUserAttribute;Write
