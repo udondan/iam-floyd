@@ -2,159 +2,80 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "AIDevOpsAgentSpaceAccess",
+      "Sid": "AIDevOpsAgentAccess",
       "Effect": "Allow",
       "Action": [
-        "aidevops:CreateAgentSpace",
-        "aidevops:DeleteAgentSpace",
-        "aidevops:GetAgentSpace",
-        "aidevops:ListAgentSpaces",
-        "aidevops:UpdateAgentSpace"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsServiceAccess",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:DeregisterService",
-        "aidevops:GetService",
-        "aidevops:ListServices",
-        "aidevops:RegisterService",
-        "aidevops:SearchServiceAccessibleResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsAssociationAccess",
-      "Effect": "Allow",
-      "Action": [
+        "aidevops:AllowVendedLogDeliveryForResource",
         "aidevops:AssociateService",
-        "aidevops:DisassociateService",
-        "aidevops:GetAssociation",
-        "aidevops:ListAssociations",
-        "aidevops:UpdateAssociation",
-        "aidevops:ValidateAwsAssociations"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsWebhookAccess",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:ListWebhooks"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsOperatorAppAccess",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:DisableOperatorApp",
-        "aidevops:EnableOperatorApp",
-        "aidevops:GetOperatorApp",
-        "aidevops:UpdateOperatorAppIdpConfig"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsKnowledgeAccess",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:CreateKnowledgeItem",
-        "aidevops:DeleteKnowledgeItem",
-        "aidevops:GetKnowledgeItem",
-        "aidevops:ListKnowledgeItems",
-        "aidevops:ListKnowledgeItemVersions",
-        "aidevops:UpdateKnowledgeItem"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsBacklogAccess",
-      "Effect": "Allow",
-      "Action": [
+        "aidevops:CreateAgentSpace",
+        "aidevops:CreateAsset",
+        "aidevops:CreateAssetFile",
         "aidevops:CreateBacklogTask",
-        "aidevops:GetBacklogTask",
-        "aidevops:ListBacklogTasks",
-        "aidevops:ListGoals",
-        "aidevops:UpdateBacklogTask",
-        "aidevops:UpdateGoal"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsRecommendationAccess",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:GetRecommendation",
-        "aidevops:ListRecommendations",
-        "aidevops:UpdateRecommendation"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsAgentChatAccess",
-      "Effect": "Allow",
-      "Action": [
         "aidevops:CreateChat",
-        "aidevops:ListChats",
-        "aidevops:ListPendingMessages",
-        "aidevops:SendMessage"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsJournalAccess",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:ListExecutions",
-        "aidevops:ListJournalRecords"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsTopologyAccess",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:DiscoverTopology"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsSupportAccess",
-      "Effect": "Allow",
-      "Action": [
+        "aidevops:CreateKnowledgeItem",
+        "aidevops:CreateOneTimeLoginSession",
+        "aidevops:CreatePrivateConnection",
+        "aidevops:DeleteAgentSpace",
+        "aidevops:DeleteAsset",
+        "aidevops:DeleteAssetFile",
+        "aidevops:DeleteKnowledgeItem",
+        "aidevops:DeletePrivateConnection",
+        "aidevops:DeregisterService",
+        "aidevops:DescribePrivateConnection",
         "aidevops:DescribeServices",
         "aidevops:DescribeSupportLevel",
+        "aidevops:DisableOperatorApp",
+        "aidevops:DisassociateService",
+        "aidevops:DiscoverTopology",
+        "aidevops:EnableOperatorApp",
         "aidevops:EndChatForCase",
-        "aidevops:InitiateChatForCase"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsUsageAccess",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:GetAccountUsage"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsTaggingAccess",
-      "Effect": "Allow",
-      "Action": [
+        "aidevops:GetAccountUsage",
+        "aidevops:GetAgentSpace",
+        "aidevops:GetAsset",
+        "aidevops:GetAssetContent",
+        "aidevops:GetAssetFile",
+        "aidevops:GetAssociation",
+        "aidevops:GetBacklogTask",
+        "aidevops:GetKnowledgeItem",
+        "aidevops:GetOperatorApp",
+        "aidevops:GetRecommendation",
+        "aidevops:GetService",
+        "aidevops:InitiateChatForCase",
+        "aidevops:ListAgentSpaces",
+        "aidevops:ListAssetFiles",
+        "aidevops:ListAssets",
+        "aidevops:ListAssetTypes",
+        "aidevops:ListAssetVersions",
+        "aidevops:ListAssociations",
+        "aidevops:ListBacklogTasks",
+        "aidevops:ListChats",
+        "aidevops:ListExecutions",
+        "aidevops:ListGoals",
+        "aidevops:ListJournalRecords",
+        "aidevops:ListKnowledgeItems",
+        "aidevops:ListKnowledgeItemVersions",
+        "aidevops:ListPendingMessages",
+        "aidevops:ListPrivateConnections",
+        "aidevops:ListRecommendations",
+        "aidevops:ListServices",
         "aidevops:ListTagsForResource",
+        "aidevops:ListWebhooks",
+        "aidevops:RegisterService",
+        "aidevops:SearchServiceAccessibleResource",
+        "aidevops:SendMessage",
         "aidevops:TagResource",
-        "aidevops:UntagResource"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AIDevOpsVendedLogs",
-      "Effect": "Allow",
-      "Action": [
-        "aidevops:AllowVendedLogDeliveryForResource"
+        "aidevops:UntagResource",
+        "aidevops:UpdateAgentSpace",
+        "aidevops:UpdateAsset",
+        "aidevops:UpdateAssetFile",
+        "aidevops:UpdateAssociation",
+        "aidevops:UpdateBacklogTask",
+        "aidevops:UpdateGoal",
+        "aidevops:UpdateKnowledgeItem",
+        "aidevops:UpdateOperatorAppIdpConfig",
+        "aidevops:UpdatePrivateConnectionCertificate",
+        "aidevops:UpdateRecommendation",
+        "aidevops:ValidateAwsAssociations"
       ],
       "Resource": "*"
     }
