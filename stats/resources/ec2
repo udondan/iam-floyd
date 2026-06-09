@@ -1,6 +1,7 @@
 ec2:capacity-block
 ec2:capacity-manager-data-export
 ec2:capacity-reservation
+ec2:capacity-reservation-cancellation-quote
 ec2:capacity-reservation-fleet
 ec2:carrier-gateway
 ec2:certificate
@@ -32,6 +33,7 @@ ec2:ipam
 ec2:ipam-external-resource-verification-token
 ec2:ipam-policy
 ec2:ipam-pool
+ec2:ipam-pool-allocation
 ec2:ipam-prefix-list-resolver
 ec2:ipam-prefix-list-resolver-target
 ec2:ipam-resource-discovery

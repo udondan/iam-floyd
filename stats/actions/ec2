@@ -1,6 +1,7 @@
 ec2:AcceptAddressTransfer;Write
 ec2:AcceptCapacityReservationBillingOwnership;Write
 ec2:AcceptReservedInstancesExchangeQuote;Write
+ec2:AcceptTransitGatewayClientVpnAttachment;Write
 ec2:AcceptTransitGatewayMulticastDomainAssociations;Write
 ec2:AcceptTransitGatewayPeeringAttachment;Write
 ec2:AcceptTransitGatewayVpcAttachment;Write
@@ -65,6 +66,7 @@ ec2:CopyVolumes;Write
 ec2:CreateCapacityManagerDataExport;Write
 ec2:CreateCapacityReservation;Write
 ec2:CreateCapacityReservationBySplitting;Write
+ec2:CreateCapacityReservationCancellationQuote;Write
 ec2:CreateCapacityReservationFleet;Write
 ec2:CreateCarrierGateway;Write
 ec2:CreateClientVpnEndpoint;Write
@@ -237,6 +239,7 @@ ec2:DeleteTrafficMirrorFilterRule;Write
 ec2:DeleteTrafficMirrorSession;Write
 ec2:DeleteTrafficMirrorTarget;Write
 ec2:DeleteTransitGateway;Write
+ec2:DeleteTransitGatewayClientVpnAttachment;Write
 ec2:DeleteTransitGatewayConnect;Write
 ec2:DeleteTransitGatewayConnectPeer;Write
 ec2:DeleteTransitGatewayMeteringPolicy;Write
@@ -289,6 +292,7 @@ ec2:DescribeCapacityBlockStatus;List
 ec2:DescribeCapacityBlocks;List
 ec2:DescribeCapacityManagerDataExports;List
 ec2:DescribeCapacityReservationBillingRequests;List
+ec2:DescribeCapacityReservationCancellationQuotes;List
 ec2:DescribeCapacityReservationFleets;List
 ec2:DescribeCapacityReservationTopology;List
 ec2:DescribeCapacityReservations;List
@@ -346,6 +350,7 @@ ec2:DescribeInternetGateways;List
 ec2:DescribeIpamByoasn;List
 ec2:DescribeIpamExternalResourceVerificationTokens;List
 ec2:DescribeIpamPolicies;List
+ec2:DescribeIpamPoolAllocations;List
 ec2:DescribeIpamPools;List
 ec2:DescribeIpamPrefixListResolverTargets;List
 ec2:DescribeIpamPrefixListResolvers;List
@@ -544,6 +549,7 @@ ec2:GetAwsNetworkPerformanceData;Read
 ec2:GetCapacityManagerAttributes;Read
 ec2:GetCapacityManagerMetricData;Read
 ec2:GetCapacityManagerMetricDimensions;Read
+ec2:GetCapacityManagerMonitoredTagKeys;List
 ec2:GetCapacityReservationUsage;Read
 ec2:GetCoipPoolUsage;Read
 ec2:GetConsoleOutput;Read
@@ -577,6 +583,7 @@ ec2:GetIpamResourceCidrs;Read
 ec2:GetLaunchTemplateData;Read
 ec2:GetManagedPrefixListAssociations;Read
 ec2:GetManagedPrefixListEntries;Read
+ec2:GetManagedResourceVisibility;List
 ec2:GetNetworkInsightsAccessScopeAnalysisFindings;Read
 ec2:GetNetworkInsightsAccessScopeContent;Read
 ec2:GetPasswordData;Read
@@ -647,6 +654,7 @@ ec2:ModifyInstancePlacement;Write
 ec2:ModifyIpam;Write
 ec2:ModifyIpamPolicyAllocationRules;Write
 ec2:ModifyIpamPool;Write
+ec2:ModifyIpamPoolAllocation;Write
 ec2:ModifyIpamPrefixListResolver;Write
 ec2:ModifyIpamPrefixListResolverTarget;Write
 ec2:ModifyIpamResourceCidr;Write
@@ -655,6 +663,7 @@ ec2:ModifyIpamScope;Write
 ec2:ModifyLaunchTemplate;Write
 ec2:ModifyLocalGatewayRoute;Write
 ec2:ModifyManagedPrefixList;Write
+ec2:ModifyManagedResourceVisibility;Write
 ec2:ModifyNetworkInterfaceAttribute;Write
 ec2:ModifyOdbNetworkPeering;Permissions management
 ec2:ModifyPrivateDnsNameOptions;Write
@@ -718,6 +727,7 @@ ec2:RegisterInstanceEventNotificationAttributes;Write
 ec2:RegisterTransitGatewayMulticastGroupMembers;Write
 ec2:RegisterTransitGatewayMulticastGroupSources;Write
 ec2:RejectCapacityReservationBillingOwnership;Write
+ec2:RejectTransitGatewayClientVpnAttachment;Write
 ec2:RejectTransitGatewayMulticastDomainAssociations;Write
 ec2:RejectTransitGatewayPeeringAttachment;Write
 ec2:RejectTransitGatewayVpcAttachment;Write
@@ -773,6 +783,7 @@ ec2:UnassignPrivateIpAddresses;Write
 ec2:UnassignPrivateNatGatewayAddress;Write
 ec2:UnlockSnapshot;Write
 ec2:UnmonitorInstances;Write
+ec2:UpdateCapacityManagerMonitoredTagKeys;Write
 ec2:UpdateCapacityManagerOrganizationsAccess;Write
 ec2:UpdateInterruptibleCapacityReservationAllocation;Write
 ec2:UpdateSecurityGroupRuleDescriptionsEgress;Write

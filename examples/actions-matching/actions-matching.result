@@ -1,5 +1,6 @@
 {
     "Action": [
+        "ec2:AcceptTransitGatewayClientVpnAttachment",
         "ec2:ApplySecurityGroupsToClientVpnTargetNetwork",
         "ec2:AssociateClientVpnTargetNetwork",
         "ec2:AttachVpnGateway",
@@ -12,6 +13,7 @@
         "ec2:CreateVpnGateway",
         "ec2:DeleteClientVpnEndpoint",
         "ec2:DeleteClientVpnRoute",
+        "ec2:DeleteTransitGatewayClientVpnAttachment",
         "ec2:DeleteVpnConcentrator",
         "ec2:DeleteVpnConnection",
         "ec2:DeleteVpnConnectionRoute",
@@ -38,6 +40,7 @@
         "ec2:ModifyVpnConnectionOptions",
         "ec2:ModifyVpnTunnelCertificate",
         "ec2:ModifyVpnTunnelOptions",
+        "ec2:RejectTransitGatewayClientVpnAttachment",
         "ec2:ReplaceVpnTunnel",
         "ec2:RevokeClientVpnIngress",
         "ec2:TerminateClientVpnConnections"
