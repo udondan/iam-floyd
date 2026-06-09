@@ -214,6 +214,34 @@
         "s3tables:PutTableBucketPolicy"
       ],
       "Resource": "arn:aws:s3tables:*:*:bucket/aws-cloudwatch"
+    },
+    {
+      "Sid": "LogAlarmScheduledQueryPassRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "logs.amazonaws.com"
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceArn": "arn:aws:logs:*:*:scheduled-query:*"
+        }
+      }
+    },
+    {
+      "Sid": "LogAlarmLogLinesPassRolePermissions",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "cloudwatch.amazonaws.com"
+        },
+        "ArnLike": {
+          "iam:AssociatedResourceArn": "arn:aws:cloudwatch:*:*:alarm:*"
+        }
+      }
     }
   ]
 }
