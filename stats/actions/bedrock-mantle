@@ -14,6 +14,7 @@ bedrock-mantle:DeleteFile;Write
 bedrock-mantle:DeleteInference;Write
 bedrock-mantle:DeleteReservation;Write
 bedrock-mantle:DisassociateCustomizedModel;Write
+bedrock-mantle:GetAccountDataRetention;Read
 bedrock-mantle:GetCustomizedModel;Read
 bedrock-mantle:GetFile;Read
 bedrock-mantle:GetFineTuningJob;Read
@@ -29,6 +30,7 @@ bedrock-mantle:ListModels;List
 bedrock-mantle:ListProjects;List
 bedrock-mantle:ListReservations;List
 bedrock-mantle:ListTagsForResource;Read
+bedrock-mantle:PutAccountDataRetention;Write
 bedrock-mantle:TagResource;Tagging
 bedrock-mantle:UntagResource;Tagging
 bedrock-mantle:UpdateProject;Write

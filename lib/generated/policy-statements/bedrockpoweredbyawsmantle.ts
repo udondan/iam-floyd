@@ -145,6 +145,7 @@ export class BedrockMantle extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifDataRetentionMode()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
    */
@@ -233,6 +234,17 @@ export class BedrockMantle extends PolicyStatement {
    */
   public toDisassociateCustomizedModel() {
     return this.to('DisassociateCustomizedModel');
+  }
+
+  /**
+   * Grants permission to retrieve the account-wide data retention setting
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toGetAccountDataRetention() {
+    return this.to('GetAccountDataRetention');
   }
 
   /**
@@ -407,6 +419,20 @@ export class BedrockMantle extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set the account-wide data retention setting
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataRetentionMode()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
+   */
+  public toPutAccountDataRetention() {
+    return this.to('PutAccountDataRetention');
+  }
+
+  /**
    * Grants permission to tag a resource
    *
    * Access Level: Tagging
@@ -439,6 +465,9 @@ export class BedrockMantle extends PolicyStatement {
    * Grants permission to update a specific project
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataRetentionMode()
    *
    * https://docs.aws.amazon.com/bedrock/latest/APIReference/#welcome
    */
@@ -478,6 +507,7 @@ export class BedrockMantle extends PolicyStatement {
       'DeleteInference',
       'DeleteReservation',
       'DisassociateCustomizedModel',
+      'PutAccountDataRetention',
       'UpdateProject',
       'UpdateReservation'
     ],
@@ -492,6 +522,7 @@ export class BedrockMantle extends PolicyStatement {
       'ListReservations'
     ],
     Read: [
+      'GetAccountDataRetention',
       'GetCustomizedModel',
       'GetFile',
       'GetFineTuningJob',
@@ -675,6 +706,23 @@ export class BedrockMantle extends PolicyStatement {
    */
   public ifCustomizedModelArn(value: string | string[], operator?: Operator | string) {
     return this.if(`CustomizedModelArn`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the data retention mode being set on a project or account
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrockmantle.html#amazonbedrockmantle-policy-keys
+   *
+   * Applies to actions:
+   * - .toCreateProject()
+   * - .toPutAccountDataRetention()
+   * - .toUpdateProject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataRetentionMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`DataRetentionMode`, value, operator ?? 'StringLike');
   }
 
   /**

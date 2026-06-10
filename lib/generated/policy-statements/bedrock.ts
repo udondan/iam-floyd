@@ -1036,6 +1036,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Returns the account-wide data retention mode for Amazon Bedrock
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetAccountDataRetention.html
+   */
+  public toGetAccountDataRetention() {
+    return this.to('GetAccountDataRetention');
+  }
+
+  /**
    * Grants permission to retrieve an existing agent
    *
    * Access Level: Read
@@ -2359,6 +2370,20 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Sets the account-wide data retention mode for Amazon Bedrock
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifDataRetentionMode()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutAccountDataRetention.html
+   */
+  public toPutAccountDataRetention() {
+    return this.to('PutAccountDataRetention');
+  }
+
+  /**
    * Grants permission to set account-level enforced guardrail configuration
    *
    * Access Level: Write
@@ -2860,6 +2885,7 @@ export class Bedrock extends PolicyStatement {
       'DetectGeneratedContent',
       'ExportAutomatedReasoningPolicyVersion',
       'GenerateQuery',
+      'GetAccountDataRetention',
       'GetAgent',
       'GetAgentActionGroup',
       'GetAgentAlias',
@@ -3014,6 +3040,7 @@ export class Bedrock extends PolicyStatement {
       'InvokeDataAutomationLibraryIngestionJob',
       'PrepareAgent',
       'PrepareFlow',
+      'PutAccountDataRetention',
       'PutEnforcedGuardrailConfiguration',
       'PutFoundationModelEntitlement',
       'PutInvocationStep',
@@ -3884,6 +3911,21 @@ export class Bedrock extends PolicyStatement {
    */
   public ifBearerTokenType(value: string | string[], operator?: Operator | string) {
     return this.if(`BearerTokenType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the specified Data Retention Mode
+   *
+   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html#amazonbedrock-policy-keys
+   *
+   * Applies to actions:
+   * - .toPutAccountDataRetention()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDataRetentionMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`DataRetentionMode`, value, operator ?? 'StringLike');
   }
 
   /**

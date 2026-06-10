@@ -1057,6 +1057,23 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Connector to the statement
+   *
+   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+   *
+   * @param connectorId - Identifier for the connectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1096,6 +1113,7 @@ export class Inspector2 extends PolicyStatement {
    * - CIS Scan Configuration
    * - Code Security Scan Configuration
    * - Code Security Integration
+   * - Connector
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
