@@ -1,4 +1,5 @@
 bedrock:BearerTokenType
+bedrock:DataRetentionMode
 bedrock:GuardrailIdentifier
 bedrock:InferenceProfileArn
 bedrock:InlineAgentName

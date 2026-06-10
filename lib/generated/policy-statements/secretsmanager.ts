@@ -21,7 +21,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Grants permission to retrieve and decrypt a list of secrets
    *
-   * Access Level: List
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_BatchGetSecretValue.html
    */
@@ -456,9 +456,13 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    List: [
+    Read: [
       'BatchGetSecretValue',
-      'ListSecrets'
+      'DescribeSecret',
+      'GetRandomPassword',
+      'GetResourcePolicy',
+      'GetSecretValue',
+      'ListSecretVersionIds'
     ],
     Write: [
       'CancelRotateSecret',
@@ -478,12 +482,8 @@ export class Secretsmanager extends PolicyStatement {
       'PutResourcePolicy',
       'ValidateResourcePolicy'
     ],
-    Read: [
-      'DescribeSecret',
-      'GetRandomPassword',
-      'GetResourcePolicy',
-      'GetSecretValue',
-      'ListSecretVersionIds'
+    List: [
+      'ListSecrets'
     ],
     Tagging: [
       'TagResource',

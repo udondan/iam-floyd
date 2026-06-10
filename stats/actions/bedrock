@@ -81,6 +81,7 @@ bedrock:DisassociateAgentKnowledgeBase;Write
 bedrock:EndSession;Write
 bedrock:ExportAutomatedReasoningPolicyVersion;Read
 bedrock:GenerateQuery;Read
+bedrock:GetAccountDataRetention;Read
 bedrock:GetAgent;Read
 bedrock:GetAgentActionGroup;Read
 bedrock:GetAgentAlias;Read
@@ -199,6 +200,7 @@ bedrock:ListTagsForResource;Read
 bedrock:OptimizePrompt;Read
 bedrock:PrepareAgent;Write
 bedrock:PrepareFlow;Write
+bedrock:PutAccountDataRetention;Write
 bedrock:PutEnforcedGuardrailConfiguration;Write
 bedrock:PutFoundationModelEntitlement;Write
 bedrock:PutInvocationStep;Write
