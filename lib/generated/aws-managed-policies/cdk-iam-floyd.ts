@@ -7094,6 +7094,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ReadOnlyAccess);
     }
 
+    /** Grants an IAM role or user full access to view re:Invent pass charge details and approve billing to their AWS accounts */
+    public ReInventTicketApprovalAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ReInventTicketApprovalAccess);
+    }
+
     /** Provides full access to Resource Groups and Tag Editor. */
     public ResourceGroupsandTagEditorFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ResourceGroupsandTagEditorFullAccess);

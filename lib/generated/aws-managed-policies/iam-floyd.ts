@@ -2834,6 +2834,8 @@ export class AwsManagedPolicy {
     public static RDSCloudHsmAuthorizationRole = 'service-role/RDSCloudHsmAuthorizationRole';
     /** Provides read-only access to AWS services and resources. */
     public static ReadOnlyAccess = 'ReadOnlyAccess';
+    /** Grants an IAM role or user full access to view re:Invent pass charge details and approve billing to their AWS accounts */
+    public static ReInventTicketApprovalAccess = 'ReInventTicketApprovalAccess';
     /** Provides full access to Resource Groups and Tag Editor. */
     public static ResourceGroupsandTagEditorFullAccess = 'ResourceGroupsandTagEditorFullAccess';
     /** Provides access to use Resource Groups and Tag Editor, but does not allow editing of tags via the Tag Editor. */
