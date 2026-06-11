@@ -41,7 +41,48 @@ export class Odb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new Autonomous VM cluster in the specified Exadata infrastructure
+   * Grants permission to create an Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabase.html
+   */
+  public toCreateAutonomousDatabase() {
+    return this.to('CreateAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to create a backup of the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabaseBackup.html
+   */
+  public toCreateAutonomousDatabaseBackup() {
+    return this.to('CreateAutonomousDatabaseBackup');
+  }
+
+  /**
+   * Grants permission to create a wallet for the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabaseWallet.html
+   */
+  public toCreateAutonomousDatabaseWallet() {
+    return this.to('CreateAutonomousDatabaseWallet');
+  }
+
+  /**
+   * Grants permission to create an Autonomous VM cluster in the specified Exadata infrastructure
    *
    * Access Level: Write
    *
@@ -143,6 +184,28 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteAutonomousDatabase.html
+   */
+  public toDeleteAutonomousDatabase() {
+    return this.to('DeleteAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to delete the specified Autonomous Database backup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteAutonomousDatabaseBackup.html
+   */
+  public toDeleteAutonomousDatabaseBackup() {
+    return this.to('DeleteAutonomousDatabaseBackup');
+  }
+
+  /**
    * Grants permission to Deletes an Autonomous VM cluster
    *
    * Access Level: Write
@@ -233,6 +296,50 @@ export class Odb extends PolicyStatement {
    */
   public toDisassociateIamRoleFromResource() {
     return this.to('DisassociateIamRoleFromResource');
+  }
+
+  /**
+   * Grants permission to fail over the specified Autonomous Database to a standby peer database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_FailoverAutonomousDatabase.html
+   */
+  public toFailoverAutonomousDatabase() {
+    return this.to('FailoverAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to get information about a specific Autonomous Database
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabase.html
+   */
+  public toGetAutonomousDatabase() {
+    return this.to('GetAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to get information about a specific Autonomous Database backup
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabaseBackup.html
+   */
+  public toGetAutonomousDatabaseBackup() {
+    return this.to('GetAutonomousDatabaseBackup');
+  }
+
+  /**
+   * Grants permission to get the wallet details for the specified Autonomous Database
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabaseWalletDetails.html
+   */
+  public toGetAutonomousDatabaseWalletDetails() {
+    return this.to('GetAutonomousDatabaseWalletDetails');
   }
 
   /**
@@ -352,6 +459,72 @@ export class Odb extends PolicyStatement {
    */
   public toInitializeService() {
     return this.to('InitializeService');
+  }
+
+  /**
+   * Grants permission to list information about the backups of the specified Autonomous Database
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseBackups.html
+   */
+  public toListAutonomousDatabaseBackups() {
+    return this.to('ListAutonomousDatabaseBackups');
+  }
+
+  /**
+   * Grants permission to list information about the character sets that are available for Autonomous Databases
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseCharacterSets.html
+   */
+  public toListAutonomousDatabaseCharacterSets() {
+    return this.to('ListAutonomousDatabaseCharacterSets');
+  }
+
+  /**
+   * Grants permission to list all clones of the specified Autonomous Database
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseClones.html
+   */
+  public toListAutonomousDatabaseClones() {
+    return this.to('ListAutonomousDatabaseClones');
+  }
+
+  /**
+   * Grants permission to list all peer databases of the specified Autonomous Database
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabasePeers.html
+   */
+  public toListAutonomousDatabasePeers() {
+    return this.to('ListAutonomousDatabasePeers');
+  }
+
+  /**
+   * Grants permission to list information about the Oracle Database software versions that are available for Autonomous Databases
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseVersions.html
+   */
+  public toListAutonomousDatabaseVersions() {
+    return this.to('ListAutonomousDatabaseVersions');
+  }
+
+  /**
+   * Grants permission to list information about the Autonomous Databases owned by your Amazon Web Services account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabases.html
+   */
+  public toListAutonomousDatabases() {
+    return this.to('ListAutonomousDatabases');
   }
 
   /**
@@ -499,6 +672,17 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to reboot the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_RebootAutonomousDatabase.html
+   */
+  public toRebootAutonomousDatabase() {
+    return this.to('RebootAutonomousDatabase');
+  }
+
+  /**
    * Grants permission to reboot the specified DB node in a VM cluster
    *
    * Access Level: Write
@@ -507,6 +691,39 @@ export class Odb extends PolicyStatement {
    */
   public toRebootDbNode() {
     return this.to('RebootDbNode');
+  }
+
+  /**
+   * Grants permission to restore the specified Autonomous Database to a point in time
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_RestoreAutonomousDatabase.html
+   */
+  public toRestoreAutonomousDatabase() {
+    return this.to('RestoreAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to shrink the storage of the specified Autonomous Database to reclaim unused space
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ShrinkAutonomousDatabase.html
+   */
+  public toShrinkAutonomousDatabase() {
+    return this.to('ShrinkAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to start the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_StartAutonomousDatabase.html
+   */
+  public toStartAutonomousDatabase() {
+    return this.to('StartAutonomousDatabase');
   }
 
   /**
@@ -521,6 +738,17 @@ export class Odb extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_StopAutonomousDatabase.html
+   */
+  public toStopAutonomousDatabase() {
+    return this.to('StopAutonomousDatabase');
+  }
+
+  /**
    * Grants permission to stop the specified DB node in a VM cluster
    *
    * Access Level: Write
@@ -529,6 +757,17 @@ export class Odb extends PolicyStatement {
    */
   public toStopDbNode() {
     return this.to('StopDbNode');
+  }
+
+  /**
+   * Grants permission to switch over the specified Autonomous Database to a standby peer database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_SwitchoverAutonomousDatabase.html
+   */
+  public toSwitchoverAutonomousDatabase() {
+    return this.to('SwitchoverAutonomousDatabase');
   }
 
   /**
@@ -560,6 +799,28 @@ export class Odb extends PolicyStatement {
    */
   public toUntagResource() {
     return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the properties of an Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateAutonomousDatabase.html
+   */
+  public toUpdateAutonomousDatabase() {
+    return this.to('UpdateAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to update the properties of an Autonomous Database backup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateAutonomousDatabaseBackup.html
+   */
+  public toUpdateAutonomousDatabaseBackup() {
+    return this.to('UpdateAutonomousDatabaseBackup');
   }
 
   /**
@@ -617,6 +878,9 @@ export class Odb extends PolicyStatement {
     Write: [
       'AcceptMarketplaceRegistration',
       'AssociateIamRoleToResource',
+      'CreateAutonomousDatabase',
+      'CreateAutonomousDatabaseBackup',
+      'CreateAutonomousDatabaseWallet',
       'CreateCloudAutonomousVmCluster',
       'CreateCloudExadataInfrastructure',
       'CreateCloudVmCluster',
@@ -625,6 +889,8 @@ export class Odb extends PolicyStatement {
       'CreateOdbNetwork',
       'CreateOdbPeeringConnection',
       'CreateOutboundIntegration',
+      'DeleteAutonomousDatabase',
+      'DeleteAutonomousDatabaseBackup',
       'DeleteCloudAutonomousVmCluster',
       'DeleteCloudExadataInfrastructure',
       'DeleteCloudVmCluster',
@@ -634,11 +900,20 @@ export class Odb extends PolicyStatement {
       'DeleteOdbPeeringConnection',
       'DeleteResourcePolicy',
       'DisassociateIamRoleFromResource',
+      'FailoverAutonomousDatabase',
       'InitializeService',
       'PutResourcePolicy',
+      'RebootAutonomousDatabase',
       'RebootDbNode',
+      'RestoreAutonomousDatabase',
+      'ShrinkAutonomousDatabase',
+      'StartAutonomousDatabase',
       'StartDbNode',
+      'StopAutonomousDatabase',
       'StopDbNode',
+      'SwitchoverAutonomousDatabase',
+      'UpdateAutonomousDatabase',
+      'UpdateAutonomousDatabaseBackup',
       'UpdateCloudExadataInfrastructure',
       'UpdateGrantShare',
       'UpdateOdbNetwork',
@@ -646,6 +921,9 @@ export class Odb extends PolicyStatement {
       'UpdateOutboundIntegration'
     ],
     Read: [
+      'GetAutonomousDatabase',
+      'GetAutonomousDatabaseBackup',
+      'GetAutonomousDatabaseWalletDetails',
       'GetCloudAutonomousVmCluster',
       'GetCloudExadataInfrastructure',
       'GetCloudExadataInfrastructureUnallocatedResources',
@@ -656,6 +934,10 @@ export class Odb extends PolicyStatement {
       'GetOdbNetwork',
       'GetOdbPeeringConnection',
       'GetResourcePolicy',
+      'ListAutonomousDatabaseCharacterSets',
+      'ListAutonomousDatabaseClones',
+      'ListAutonomousDatabasePeers',
+      'ListAutonomousDatabaseVersions',
       'ListAutonomousVirtualMachines',
       'ListDbServers',
       'ListDbSystemShapes',
@@ -664,6 +946,8 @@ export class Odb extends PolicyStatement {
       'ListTagsForResource'
     ],
     List: [
+      'ListAutonomousDatabaseBackups',
+      'ListAutonomousDatabases',
       'ListCloudAutonomousVmClusters',
       'ListCloudExadataInfrastructures',
       'ListCloudVmClusters',
@@ -676,6 +960,40 @@ export class Odb extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type autonomous-database to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AutonomousDatabase.html
+   *
+   * @param autonomousDatabaseId - Identifier for the autonomousDatabaseId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAutonomousDatabase(autonomousDatabaseId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:autonomous-database/${ autonomousDatabaseId }`);
+  }
+
+  /**
+   * Adds a resource of type autonomous-database-backup to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AutonomousDatabaseBackup.html
+   *
+   * @param autonomousDatabaseBackupId - Identifier for the autonomousDatabaseBackupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAutonomousDatabaseBackup(autonomousDatabaseBackupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:autonomous-database-backup/${ autonomousDatabaseBackupId }`);
+  }
 
   /**
    * Adds a resource of type cloud-autonomous-vm-cluster to the statement
@@ -785,6 +1103,8 @@ export class Odb extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateAutonomousDatabase()
+   * - .toCreateAutonomousDatabaseBackup()
    * - .toCreateCloudAutonomousVmCluster()
    * - .toCreateCloudExadataInfrastructure()
    * - .toCreateCloudVmCluster()
@@ -811,6 +1131,8 @@ export class Odb extends PolicyStatement {
    * - .toUntagResource()
    *
    * Applies to resource types:
+   * - autonomous-database
+   * - autonomous-database-backup
    * - cloud-autonomous-vm-cluster
    * - cloud-exadata-infrastructure
    * - cloud-vm-cluster
@@ -832,6 +1154,8 @@ export class Odb extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateAutonomousDatabase()
+   * - .toCreateAutonomousDatabaseBackup()
    * - .toCreateCloudAutonomousVmCluster()
    * - .toCreateCloudExadataInfrastructure()
    * - .toCreateCloudVmCluster()

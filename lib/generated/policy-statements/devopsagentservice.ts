@@ -139,6 +139,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a trigger
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateTrigger.html
+   */
+  public toCreateTrigger() {
+    return this.to('CreateTrigger');
+  }
+
+  /**
    * Grants permission to delete agentspace
    *
    * Access Level: Write
@@ -197,6 +208,17 @@ export class Aidevops extends PolicyStatement {
    */
   public toDeletePrivateConnection() {
     return this.to('DeletePrivateConnection');
+  }
+
+  /**
+   * Grants permission to delete a trigger
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_DeleteTrigger.html
+   */
+  public toDeleteTrigger() {
+    return this.to('DeleteTrigger');
   }
 
   /**
@@ -432,6 +454,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a trigger
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetTrigger.html
+   */
+  public toGetTrigger() {
+    return this.to('GetTrigger');
+  }
+
+  /**
    * Grants permission to initiate a chat for a case
    *
    * Access Level: Write
@@ -644,6 +677,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list triggers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListTriggers.html
+   */
+  public toListTriggers() {
+    return this.to('ListTriggers');
+  }
+
+  /**
    * Grants permission to list webhooks for association
    *
    * Access Level: List
@@ -840,6 +884,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a trigger
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateTrigger.html
+   */
+  public toUpdateTrigger() {
+    return this.to('UpdateTrigger');
+  }
+
+  /**
    * Grants permission to validate aws association
    *
    * Access Level: Write
@@ -864,11 +919,13 @@ export class Aidevops extends PolicyStatement {
       'CreateKnowledgeItem',
       'CreateOneTimeLoginSession',
       'CreatePrivateConnection',
+      'CreateTrigger',
       'DeleteAgentSpace',
       'DeleteAsset',
       'DeleteAssetFile',
       'DeleteKnowledgeItem',
       'DeletePrivateConnection',
+      'DeleteTrigger',
       'DeregisterService',
       'DescribeSupportLevel',
       'DisableOperatorApp',
@@ -889,6 +946,7 @@ export class Aidevops extends PolicyStatement {
       'UpdateOperatorAppIdpConfig',
       'UpdatePrivateConnectionCertificate',
       'UpdateRecommendation',
+      'UpdateTrigger',
       'ValidateAwsAssociations'
     ],
     Read: [
@@ -905,6 +963,7 @@ export class Aidevops extends PolicyStatement {
       'GetOperatorApp',
       'GetRecommendation',
       'GetService',
+      'GetTrigger',
       'ListTagsForResource',
       'SearchServiceAccessibleResource'
     ],
@@ -926,6 +985,7 @@ export class Aidevops extends PolicyStatement {
       'ListPrivateConnections',
       'ListRecommendations',
       'ListServices',
+      'ListTriggers',
       'ListWebhooks'
     ],
     Tagging: [

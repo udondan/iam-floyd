@@ -163,6 +163,7 @@ emr-serverless
 entityresolution
 es
 events
+eventsbilltoaws
 evidently
 evs
 execute-api

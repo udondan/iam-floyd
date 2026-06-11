@@ -8,11 +8,13 @@ aidevops:CreateChat;Write
 aidevops:CreateKnowledgeItem;Write
 aidevops:CreateOneTimeLoginSession;Write
 aidevops:CreatePrivateConnection;Write
+aidevops:CreateTrigger;Write
 aidevops:DeleteAgentSpace;Write
 aidevops:DeleteAsset;Write
 aidevops:DeleteAssetFile;Write
 aidevops:DeleteKnowledgeItem;Write
 aidevops:DeletePrivateConnection;Write
+aidevops:DeleteTrigger;Write
 aidevops:DeregisterService;Write
 aidevops:DescribePrivateConnection;Read
 aidevops:DescribeServices;Read
@@ -33,6 +35,7 @@ aidevops:GetKnowledgeItem;Read
 aidevops:GetOperatorApp;Read
 aidevops:GetRecommendation;Read
 aidevops:GetService;Read
+aidevops:GetTrigger;Read
 aidevops:InitiateChatForCase;Write
 aidevops:ListAgentSpaces;List
 aidevops:ListAssetFiles;List
@@ -52,6 +55,7 @@ aidevops:ListPrivateConnections;List
 aidevops:ListRecommendations;List
 aidevops:ListServices;List
 aidevops:ListTagsForResource;Read
+aidevops:ListTriggers;List
 aidevops:ListWebhooks;List
 aidevops:RegisterService;Write
 aidevops:SearchServiceAccessibleResource;Read
@@ -68,4 +72,5 @@ aidevops:UpdateKnowledgeItem;Write
 aidevops:UpdateOperatorAppIdpConfig;Write
 aidevops:UpdatePrivateConnectionCertificate;Write
 aidevops:UpdateRecommendation;Write
+aidevops:UpdateTrigger;Write
 aidevops:ValidateAwsAssociations;Write
