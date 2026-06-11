@@ -5,6 +5,8 @@
       "Sid": "AIDevOpsAgentReadOnlyAccess",
       "Effect": "Allow",
       "Action": [
+        "aidevops:DescribePrivateConnection",
+        "aidevops:DescribeServices",
         "aidevops:Get*",
         "aidevops:List*",
         "aidevops:SearchServiceAccessibleResource"
