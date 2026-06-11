@@ -402,6 +402,7 @@ export { Vpce } from './policy-statements/privatelink';
 export { Proton } from './policy-statements/proton';
 export { PurchaseOrders } from './policy-statements/purchaseordersconsole';
 export { Rbin } from './policy-statements/recyclebin';
+export { Eventsbilltoaws } from './policy-statements/reinventeventpassamountchargetocustomerawsaccount';
 export { Repostspace } from './policy-statements/repostprivate';
 export { Resiliencehub } from './policy-statements/resiliencehub';
 export { Ram } from './policy-statements/resourceaccessmanagerram';

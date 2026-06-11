@@ -1,3 +1,5 @@
+odb:autonomous-database
+odb:autonomous-database-backup
 odb:cloud-autonomous-vm-cluster
 odb:cloud-exadata-infrastructure
 odb:cloud-vm-cluster

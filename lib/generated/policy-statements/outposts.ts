@@ -79,6 +79,28 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a quote
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateQuote.html
+   */
+  public toCreateQuote() {
+    return this.to('CreateQuote');
+  }
+
+  /**
+   * Grants permission to create a renewal for the specified Outpost
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateRenewal.html
+   */
+  public toCreateRenewal() {
+    return this.to('CreateRenewal');
+  }
+
+  /**
    * Grants permission to create a site
    *
    * Access Level: Write
@@ -103,6 +125,17 @@ export class Outposts extends PolicyStatement {
    */
   public toDeleteOutpost() {
     return this.to('DeleteOutpost');
+  }
+
+  /**
+   * Grants permission to delete a quote
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_DeleteQuote.html
+   */
+  public toDeleteQuote() {
+    return this.to('DeleteQuote');
   }
 
   /**
@@ -216,6 +249,28 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about a quote
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetQuote.html
+   */
+  public toGetQuote() {
+    return this.to('GetQuote');
+  }
+
+  /**
+   * Grants permission to get renewal pricing for the specified Outpost
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetRenewalPricing.html
+   */
+  public toGetRenewalPricing() {
+    return this.to('GetRenewalPricing');
+  }
+
+  /**
    * Grants permission to get a site
    *
    * Access Level: Read
@@ -293,6 +348,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the orderable instance types for your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOrderableInstanceTypes.html
+   */
+  public toListOrderableInstanceTypes() {
+    return this.to('ListOrderableInstanceTypes');
+  }
+
+  /**
    * Grants permission to list the orders for your AWS account
    *
    * Access Level: List
@@ -312,6 +378,17 @@ export class Outposts extends PolicyStatement {
    */
   public toListOutposts() {
     return this.to('ListOutposts');
+  }
+
+  /**
+   * Grants permission to list quotes for your AWS account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListQuotes.html
+   */
+  public toListQuotes() {
+    return this.to('ListQuotes');
   }
 
   /**
@@ -399,6 +476,17 @@ export class Outposts extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a quote
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_UpdateQuote.html
+   */
+  public toUpdateQuote() {
+    return this.to('UpdateQuote');
+  }
+
+  /**
    * Grants permission to update a site
    *
    * Access Level: Write
@@ -438,12 +526,16 @@ export class Outposts extends PolicyStatement {
       'CreateOrder',
       'CreateOutpost',
       'CreatePrivateConnectivityConfig',
+      'CreateQuote',
+      'CreateRenewal',
       'CreateSite',
       'DeleteOutpost',
+      'DeleteQuote',
       'DeleteSite',
       'StartCapacityTask',
       'StartConnection',
       'UpdateOutpost',
+      'UpdateQuote',
       'UpdateSite',
       'UpdateSiteAddress',
       'UpdateSiteRackPhysicalProperties'
@@ -458,6 +550,8 @@ export class Outposts extends PolicyStatement {
       'GetOutpostInstanceTypes',
       'GetOutpostSupportedInstanceTypes',
       'GetPrivateConnectivityConfig',
+      'GetQuote',
+      'GetRenewalPricing',
       'GetSite',
       'GetSiteAddress',
       'ListTagsForResource'
@@ -468,8 +562,10 @@ export class Outposts extends PolicyStatement {
       'ListBlockingInstancesForCapacityTask',
       'ListCapacityTasks',
       'ListCatalogItems',
+      'ListOrderableInstanceTypes',
       'ListOrders',
       'ListOutposts',
+      'ListQuotes',
       'ListSites'
     ],
     Tagging: [
