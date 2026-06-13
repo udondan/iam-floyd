@@ -1,5 +1,6 @@
 aidevops:AllowVendedLogDeliveryForResource;Permissions management
 aidevops:AssociateService;Write
+aidevops:CreateAccessToken;Write
 aidevops:CreateAgentSpace;Write
 aidevops:CreateAsset;Write
 aidevops:CreateAssetFile;Write
@@ -24,6 +25,7 @@ aidevops:DisassociateService;Write
 aidevops:DiscoverTopology;Write
 aidevops:EnableOperatorApp;Write
 aidevops:EndChatForCase;Write
+aidevops:GetAccessToken;Read
 aidevops:GetAccountUsage;Read
 aidevops:GetAgentSpace;Read
 aidevops:GetAsset;Read
@@ -37,6 +39,7 @@ aidevops:GetRecommendation;Read
 aidevops:GetService;Read
 aidevops:GetTrigger;Read
 aidevops:InitiateChatForCase;Write
+aidevops:ListAccessTokens;List
 aidevops:ListAgentSpaces;List
 aidevops:ListAssetFiles;List
 aidevops:ListAssetTypes;List
@@ -58,6 +61,8 @@ aidevops:ListTagsForResource;Read
 aidevops:ListTriggers;List
 aidevops:ListWebhooks;List
 aidevops:RegisterService;Write
+aidevops:RevokeAccessToken;Write
+aidevops:RotateAccessToken;Write
 aidevops:SearchServiceAccessibleResource;Read
 aidevops:SendMessage;Write
 aidevops:TagResource;Tagging

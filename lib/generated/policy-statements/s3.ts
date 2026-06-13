@@ -39,6 +39,22 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to configure server access logs delivery to CloudWatch
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifResourceArnBeingAuthorized()
+   * - .ifDeliverySourceArn()
+   * - .ifLogType()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to associate Access Grants identity center
    *
    * Access Level: Permissions management
@@ -3546,50 +3562,8 @@ export class S3 extends PolicyStatement {
       'UpdateObjectEncryption',
       'UpdateStorageLensGroup'
     ],
-    'Permissions management': [
-      'AssociateAccessGrantsIdentityCenter',
-      'BypassGovernanceRetention',
-      'CreateAccessGrant',
-      'CreateAccessGrantsInstance',
-      'CreateAccessGrantsLocation',
-      'DeleteAccessGrant',
-      'DeleteAccessGrantsInstance',
-      'DeleteAccessGrantsInstanceResourcePolicy',
-      'DeleteAccessGrantsLocation',
-      'DeleteAccessPointPolicy',
-      'DeleteAccessPointPolicyForObjectLambda',
-      'DeleteBucketPolicy',
-      'DissociateAccessGrantsIdentityCenter',
-      'ObjectOwnerOverrideToBucketOwner',
-      'PutAccessGrantsInstanceResourcePolicy',
-      'PutAccessPointPolicy',
-      'PutAccessPointPolicyForObjectLambda',
-      'PutAccessPointPublicAccessBlock',
-      'PutAccountPublicAccessBlock',
-      'PutBucketAcl',
-      'PutBucketOwnershipControls',
-      'PutBucketPolicy',
-      'PutBucketPublicAccessBlock',
-      'PutMultiRegionAccessPointPolicy',
-      'PutObjectAcl',
-      'PutObjectVersionAcl',
-      'UpdateAccessGrantsLocation'
-    ],
-    Tagging: [
-      'DeleteJobTagging',
-      'DeleteObjectTagging',
-      'DeleteObjectVersionTagging',
-      'DeleteStorageLensConfigurationTagging',
-      'PutBucketTagging',
-      'PutJobTagging',
-      'PutObjectTagging',
-      'PutObjectVersionTagging',
-      'PutStorageLensConfigurationTagging',
-      'ReplicateTags',
-      'TagResource',
-      'UntagResource'
-    ],
     Read: [
+      'AllowVendedLogDeliveryForResource',
       'DescribeJob',
       'DescribeMultiRegionAccessPointOperation',
       'GetAccelerateConfiguration',
@@ -3652,6 +3626,49 @@ export class S3 extends PolicyStatement {
       'GetStorageLensConfigurationTagging',
       'GetStorageLensDashboard',
       'GetStorageLensGroup'
+    ],
+    'Permissions management': [
+      'AssociateAccessGrantsIdentityCenter',
+      'BypassGovernanceRetention',
+      'CreateAccessGrant',
+      'CreateAccessGrantsInstance',
+      'CreateAccessGrantsLocation',
+      'DeleteAccessGrant',
+      'DeleteAccessGrantsInstance',
+      'DeleteAccessGrantsInstanceResourcePolicy',
+      'DeleteAccessGrantsLocation',
+      'DeleteAccessPointPolicy',
+      'DeleteAccessPointPolicyForObjectLambda',
+      'DeleteBucketPolicy',
+      'DissociateAccessGrantsIdentityCenter',
+      'ObjectOwnerOverrideToBucketOwner',
+      'PutAccessGrantsInstanceResourcePolicy',
+      'PutAccessPointPolicy',
+      'PutAccessPointPolicyForObjectLambda',
+      'PutAccessPointPublicAccessBlock',
+      'PutAccountPublicAccessBlock',
+      'PutBucketAcl',
+      'PutBucketOwnershipControls',
+      'PutBucketPolicy',
+      'PutBucketPublicAccessBlock',
+      'PutMultiRegionAccessPointPolicy',
+      'PutObjectAcl',
+      'PutObjectVersionAcl',
+      'UpdateAccessGrantsLocation'
+    ],
+    Tagging: [
+      'DeleteJobTagging',
+      'DeleteObjectTagging',
+      'DeleteObjectVersionTagging',
+      'DeleteStorageLensConfigurationTagging',
+      'PutBucketTagging',
+      'PutJobTagging',
+      'PutObjectTagging',
+      'PutObjectVersionTagging',
+      'PutStorageLensConfigurationTagging',
+      'ReplicateTags',
+      'TagResource',
+      'UntagResource'
     ],
     List: [
       'ListAccessGrants',
@@ -4995,6 +5012,21 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Filters access by specific delivery source Amazon Resource Name (ARN)
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html
+   *
+   * Applies to actions:
+   * - .toAllowVendedLogDeliveryForResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifDeliverySourceArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`deliverySourceArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
    * Filters access by a specific replication destination region for targeted buckets of the AWS FIS action aws:s3:bucket-pause-replication
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html
@@ -5068,6 +5100,21 @@ export class S3 extends PolicyStatement {
    */
   public ifLocationconstraint(value: string | string[], operator?: Operator | string) {
     return this.if(`locationconstraint`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by specific log type, currently supports S3_SERVER_ACCESS_LOGS
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html
+   *
+   * Applies to actions:
+   * - .toAllowVendedLogDeliveryForResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLogType(value: string | string[], operator?: Operator | string) {
+    return this.if(`logType`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -5174,6 +5221,21 @@ export class S3 extends PolicyStatement {
    */
   public ifPrefix(value: string | string[], operator?: Operator | string) {
     return this.if(`prefix`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by source bucket Amazon Resource Name (ARN)
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html
+   *
+   * Applies to actions:
+   * - .toAllowVendedLogDeliveryForResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifResourceArnBeingAuthorized(value: string | string[], operator?: Operator | string) {
+    return this.if(`resourceArnBeingAuthorized`, value, operator ?? 'ArnLike');
   }
 
   /**

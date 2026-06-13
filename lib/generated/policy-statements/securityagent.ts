@@ -30,6 +30,23 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to batch create security requirements in a customer managed pack
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchCreateSecurityRequirements.html
+   */
+  public toBatchCreateSecurityRequirements() {
+    return this.to('BatchCreateSecurityRequirements');
+  }
+
+  /**
    * Grants permission to delete multiple code reviews in a single request
    *
    * Access Level: Write
@@ -55,6 +72,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toBatchDeletePentests() {
     return this.to('BatchDeletePentests');
+  }
+
+  /**
+   * Grants permission to batch delete security requirements from a customer managed pack
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchDeleteSecurityRequirements.html
+   */
+  public toBatchDeleteSecurityRequirements() {
+    return this.to('BatchDeleteSecurityRequirements');
   }
 
   /**
@@ -223,6 +251,23 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve multiple security requirements in a single request
+   *
+   * Access Level: Read
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchGetSecurityRequirements.html
+   */
+  public toBatchGetSecurityRequirements() {
+    return this.to('BatchGetSecurityRequirements');
+  }
+
+  /**
    * Grants permission to retrieve multiple target domains in a single request
    *
    * Access Level: Read
@@ -287,6 +332,23 @@ export class Securityagent extends PolicyStatement {
    */
   public toBatchGetThreats() {
     return this.to('BatchGetThreats');
+  }
+
+  /**
+   * Grants permission to batch update security requirements within a customer managed pack
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
+   * https://docs.aws.amazon.com/securityagent/API_BatchUpdateSecurityRequirements.html
+   */
+  public toBatchUpdateSecurityRequirements() {
+    return this.to('BatchUpdateSecurityRequirements');
   }
 
   /**
@@ -406,6 +468,21 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a private connection for VPC Lattice integration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreatePrivateConnection.html
+   */
+  public toCreatePrivateConnection() {
+    return this.to('CreatePrivateConnection');
+  }
+
+  /**
    * Grants permission to add a customer managed Security Requirement
    *
    * Access Level: Write
@@ -414,6 +491,28 @@ export class Securityagent extends PolicyStatement {
    */
   public toCreateSecurityRequirement() {
     return this.to('CreateSecurityRequirement');
+  }
+
+  /**
+   * Grants permission to create a customer managed security requirement pack
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:DescribeKey
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
+   * https://docs.aws.amazon.com/securityagent/API_CreateSecurityRequirementPack.html
+   */
+  public toCreateSecurityRequirementPack() {
+    return this.to('CreateSecurityRequirementPack');
   }
 
   /**
@@ -525,6 +624,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a private connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_DeletePrivateConnection.html
+   */
+  public toDeletePrivateConnection() {
+    return this.to('DeletePrivateConnection');
+  }
+
+  /**
    * Grants permission to delete a customer managed Security Requirement
    *
    * Access Level: Write
@@ -536,6 +646,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a customer managed security requirement pack and all its associated security requirements
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_DeleteSecurityRequirementPack.html
+   */
+  public toDeleteSecurityRequirementPack() {
+    return this.to('DeleteSecurityRequirementPack');
+  }
+
+  /**
    * Grants permission to delete a target domain record
    *
    * Access Level: Write
@@ -544,6 +665,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toDeleteTargetDomain() {
     return this.to('DeleteTargetDomain');
+  }
+
+  /**
+   * Grants permission to describe a private connection
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_DescribePrivateConnection.html
+   */
+  public toDescribePrivateConnection() {
+    return this.to('DescribePrivateConnection');
   }
 
   /**
@@ -613,6 +745,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the provider registration manifest used for browser-based integration registration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_GetProviderRegistrationManifest.html
+   */
+  public toGetProviderRegistrationManifest() {
+    return this.to('GetProviderRegistrationManifest');
+  }
+
+  /**
    * Grants permission to retrieve a Security Requirement
    *
    * Access Level: Read
@@ -621,6 +764,45 @@ export class Securityagent extends PolicyStatement {
    */
   public toGetSecurityRequirement() {
     return this.to('GetSecurityRequirement');
+  }
+
+  /**
+   * Grants permission to retrieve a security requirement pack
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityagent/API_GetSecurityRequirementPack.html
+   */
+  public toGetSecurityRequirementPack() {
+    return this.to('GetSecurityRequirementPack');
+  }
+
+  /**
+   * Grants permission to handle the provider OAuth registration callback that completes integration setup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_HandleProviderRegistrationCallback.html
+   */
+  public toHandleProviderRegistrationCallback() {
+    return this.to('HandleProviderRegistrationCallback');
+  }
+
+  /**
+   * Grants permission to import security requirements from uploaded documents for a customer managed security requirement pack
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ImportSecurityRequirements.html
+   */
+  public toImportSecurityRequirements() {
+    return this.to('ImportSecurityRequirements');
   }
 
   /**
@@ -835,6 +1017,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list private connections in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListPrivateConnections.html
+   */
+  public toListPrivateConnections() {
+    return this.to('ListPrivateConnections');
+  }
+
+  /**
    * Grants permission to list resources from Integration
    *
    * Access Level: List
@@ -846,9 +1039,26 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all security requirement packs in the account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityagent/API_ListSecurityRequirementPacks.html
+   */
+  public toListSecurityRequirementPacks() {
+    return this.to('ListSecurityRequirementPacks');
+  }
+
+  /**
    * Grants permission to list all Security Requirements
    *
    * Access Level: List
+   *
+   * Dependent actions:
+   * - kms:Decrypt
+   * - kms:GenerateDataKeyWithoutPlaintext
+   * - kms:ReEncryptFrom
+   * - kms:ReEncryptTo
    *
    * https://docs.aws.amazon.com/securityagent/API_ListSecurityRequirements.html
    */
@@ -1170,6 +1380,17 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the certificate associated with a private connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdatePrivateConnectionCertificate.html
+   */
+  public toUpdatePrivateConnectionCertificate() {
+    return this.to('UpdatePrivateConnectionCertificate');
+  }
+
+  /**
    * Grants permission to update a customer managed Security Requirement
    *
    * Access Level: Write
@@ -1178,6 +1399,17 @@ export class Securityagent extends PolicyStatement {
    */
   public toUpdateSecurityRequirement() {
     return this.to('UpdateSecurityRequirement');
+  }
+
+  /**
+   * Grants permission to update a security requirement pack
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityagent/API_UpdateSecurityRequirementPack.html
+   */
+  public toUpdateSecurityRequirementPack() {
+    return this.to('UpdateSecurityRequirementPack');
   }
 
   /**
@@ -1233,10 +1465,13 @@ export class Securityagent extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AddArtifact',
+      'BatchCreateSecurityRequirements',
       'BatchDeleteCodeReviews',
       'BatchDeletePentests',
+      'BatchDeleteSecurityRequirements',
       'BatchDeleteThreatModels',
       'BatchDeleteThreats',
+      'BatchUpdateSecurityRequirements',
       'CreateAgentSpace',
       'CreateApplication',
       'CreateCodeReview',
@@ -1245,7 +1480,9 @@ export class Securityagent extends PolicyStatement {
       'CreateMembership',
       'CreateOneTimeLoginSession',
       'CreatePentest',
+      'CreatePrivateConnection',
       'CreateSecurityRequirement',
+      'CreateSecurityRequirementPack',
       'CreateTargetDomain',
       'CreateThreat',
       'CreateThreatModel',
@@ -1255,8 +1492,12 @@ export class Securityagent extends PolicyStatement {
       'DeleteDesignReview',
       'DeleteIntegration',
       'DeleteMembership',
+      'DeletePrivateConnection',
       'DeleteSecurityRequirement',
+      'DeleteSecurityRequirementPack',
       'DeleteTargetDomain',
+      'HandleProviderRegistrationCallback',
+      'ImportSecurityRequirements',
       'InitiateProviderRegistration',
       'PutDesignReviewFeedback',
       'StartCodeRemediation',
@@ -1273,7 +1514,9 @@ export class Securityagent extends PolicyStatement {
       'UpdateFinding',
       'UpdateIntegratedResources',
       'UpdatePentest',
+      'UpdatePrivateConnectionCertificate',
       'UpdateSecurityRequirement',
+      'UpdateSecurityRequirementPack',
       'UpdateTargetDomain',
       'UpdateThreat',
       'UpdateThreatModel',
@@ -1290,18 +1533,22 @@ export class Securityagent extends PolicyStatement {
       'BatchGetPentestJobTasks',
       'BatchGetPentestJobs',
       'BatchGetPentests',
+      'BatchGetSecurityRequirements',
       'BatchGetTargetDomains',
       'BatchGetThreatModelJobTasks',
       'BatchGetThreatModelJobs',
       'BatchGetThreatModels',
       'BatchGetThreats',
+      'DescribePrivateConnection',
       'GetApplication',
       'GetArtifact',
       'GetDesignReview',
       'GetDesignReviewArtifact',
       'GetDesignReviewFeedback',
       'GetIntegration',
+      'GetProviderRegistrationManifest',
       'GetSecurityRequirement',
+      'GetSecurityRequirementPack',
       'ListTagsForResource'
     ],
     List: [
@@ -1321,7 +1568,9 @@ export class Securityagent extends PolicyStatement {
       'ListPentestJobTasks',
       'ListPentestJobsForPentest',
       'ListPentests',
+      'ListPrivateConnections',
       'ListResourcesFromIntegration',
+      'ListSecurityRequirementPacks',
       'ListSecurityRequirements',
       'ListTargetDomains',
       'ListThreatModelJobTasks',
@@ -1421,6 +1670,23 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type PrivateConnection to the statement
+   *
+   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param privateConnectionName - Identifier for the privateConnectionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPrivateConnection(privateConnectionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:private-connection/${ privateConnectionName }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1429,6 +1695,8 @@ export class Securityagent extends PolicyStatement {
    * - .toCreateAgentSpace()
    * - .toCreateApplication()
    * - .toCreateIntegration()
+   * - .toCreatePrivateConnection()
+   * - .toCreateSecurityRequirementPack()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1450,6 +1718,7 @@ export class Securityagent extends PolicyStatement {
    * - Integration
    * - AgentSpace
    * - TargetDomain
+   * - PrivateConnection
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1468,6 +1737,8 @@ export class Securityagent extends PolicyStatement {
    * - .toCreateAgentSpace()
    * - .toCreateApplication()
    * - .toCreateIntegration()
+   * - .toCreatePrivateConnection()
+   * - .toCreateSecurityRequirementPack()
    * - .toTagResource()
    * - .toUntagResource()
    *

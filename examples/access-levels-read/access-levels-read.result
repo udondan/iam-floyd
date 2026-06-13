@@ -1,5 +1,6 @@
 {
     "Action": [
+        "s3:AllowVendedLogDeliveryForResource",
         "s3:DescribeJob",
         "s3:DescribeMultiRegionAccessPointOperation",
         "s3:GetAccelerateConfiguration",
