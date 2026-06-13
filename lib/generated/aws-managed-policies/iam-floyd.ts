@@ -1074,6 +1074,8 @@ export class AwsManagedPolicy {
     public static AnthropicLimitedAccess = 'AnthropicLimitedAccess';
     /** Provides read only access to Claude Platform on AWS */
     public static AnthropicReadOnlyAccess = 'AnthropicReadOnlyAccess';
+    /** Provides access to operate a self-hosted environment runner for Claude Managed Agents */
+    public static AnthropicSelfHostedEnvironmentAccess = 'AnthropicSelfHostedEnvironmentAccess';
     /** Allows API Gateway to manage associated AWS Resources on behalf of the customer. */
     public static APIGatewayServiceRolePolicy = 'aws-service-role/APIGatewayServiceRolePolicy';
     /** Allows AppIntegrations to manage AppFlow resources and publish CloudWatch metric data on your behalf. */

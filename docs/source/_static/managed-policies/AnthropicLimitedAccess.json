@@ -24,6 +24,7 @@
         "aws-external-anthropic:CreateSkill",
         "aws-external-anthropic:CreateUserProfile",
         "aws-external-anthropic:CreateVault",
+        "aws-external-anthropic:CreateWebhook",
         "aws-external-anthropic:DeleteBatchInference",
         "aws-external-anthropic:DeleteEnvironment",
         "aws-external-anthropic:DeleteFile",
@@ -31,13 +32,17 @@
         "aws-external-anthropic:DeleteSession",
         "aws-external-anthropic:DeleteSkill",
         "aws-external-anthropic:DeleteVault",
+        "aws-external-anthropic:DeleteWebhook",
+        "aws-external-anthropic:ProcessEnvironmentWork",
+        "aws-external-anthropic:RotateWebhookSecret",
         "aws-external-anthropic:UpdateAgent",
         "aws-external-anthropic:UpdateEnvironment",
         "aws-external-anthropic:UpdateMemoryStore",
         "aws-external-anthropic:UpdateSession",
         "aws-external-anthropic:UpdateSkill",
         "aws-external-anthropic:UpdateUserProfile",
-        "aws-external-anthropic:UpdateVault"
+        "aws-external-anthropic:UpdateVault",
+        "aws-external-anthropic:UpdateWebhook"
       ],
       "Resource": "arn:aws:aws-external-anthropic:*:*:workspace/*"
     },
