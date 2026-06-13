@@ -2694,6 +2694,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicReadOnlyAccess);
     }
 
+    /** Provides access to operate a self-hosted environment runner for Claude Managed Agents */
+    public AnthropicSelfHostedEnvironmentAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AnthropicSelfHostedEnvironmentAccess);
+    }
+
     /** Allows API Gateway to manage associated AWS Resources on behalf of the customer. */
     public APIGatewayServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.APIGatewayServiceRolePolicy);
