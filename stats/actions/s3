@@ -1,4 +1,5 @@
 s3:AbortMultipartUpload;Write
+s3:AllowVendedLogDeliveryForResource;Read
 s3:AssociateAccessGrantsIdentityCenter;Permissions management
 s3:BypassGovernanceRetention;Permissions management
 s3:CreateAccessGrant;Permissions management

@@ -19,6 +19,7 @@ aws-external-anthropic:CreateSkill;Write
 aws-external-anthropic:CreateUserProfile;Write
 aws-external-anthropic:CreateUserProfileEnrollmentUrl;Write
 aws-external-anthropic:CreateVault;Write
+aws-external-anthropic:CreateWebhook;Write
 aws-external-anthropic:CreateWorkspace;Write
 aws-external-anthropic:DeleteBatchInference;Write
 aws-external-anthropic:DeleteEnvironment;Write
@@ -27,6 +28,7 @@ aws-external-anthropic:DeleteMemoryStore;Write
 aws-external-anthropic:DeleteSession;Write
 aws-external-anthropic:DeleteSkill;Write
 aws-external-anthropic:DeleteVault;Write
+aws-external-anthropic:DeleteWebhook;Write
 aws-external-anthropic:GetAccountStatus;Read
 aws-external-anthropic:GetAgent;Read
 aws-external-anthropic:GetBatchInference;Read
@@ -38,6 +40,7 @@ aws-external-anthropic:GetSession;Read
 aws-external-anthropic:GetSkill;Read
 aws-external-anthropic:GetUserProfile;Read
 aws-external-anthropic:GetVault;Read
+aws-external-anthropic:GetWebhook;Read
 aws-external-anthropic:GetWorkspace;Read
 aws-external-anthropic:ListAgents;List
 aws-external-anthropic:ListBatchInferences;List
@@ -50,7 +53,10 @@ aws-external-anthropic:ListSkills;List
 aws-external-anthropic:ListTagsForResource;Read
 aws-external-anthropic:ListUserProfiles;List
 aws-external-anthropic:ListVaults;List
+aws-external-anthropic:ListWebhooks;List
 aws-external-anthropic:ListWorkspaces;List
+aws-external-anthropic:ProcessEnvironmentWork;Write
+aws-external-anthropic:RotateWebhookSecret;Write
 aws-external-anthropic:TagResource;Tagging
 aws-external-anthropic:UntagResource;Tagging
 aws-external-anthropic:UpdateAgent;Write
@@ -60,4 +66,5 @@ aws-external-anthropic:UpdateSession;Write
 aws-external-anthropic:UpdateSkill;Write
 aws-external-anthropic:UpdateUserProfile;Write
 aws-external-anthropic:UpdateVault;Write
+aws-external-anthropic:UpdateWebhook;Write
 aws-external-anthropic:UpdateWorkspace;Write

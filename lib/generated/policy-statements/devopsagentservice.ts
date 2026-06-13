@@ -41,6 +41,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an access token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_CreateAccessToken.html
+   */
+  public toCreateAccessToken() {
+    return this.to('CreateAccessToken');
+  }
+
+  /**
    * Grants permission to create agentspace
    *
    * Access Level: Write
@@ -327,6 +338,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get access token details
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_GetAccessToken.html
+   */
+  public toGetAccessToken() {
+    return this.to('GetAccessToken');
+  }
+
+  /**
    * Grants permission to retrieve account usage information
    *
    * Access Level: Read
@@ -473,6 +495,17 @@ export class Aidevops extends PolicyStatement {
    */
   public toInitiateChatForCase() {
     return this.to('InitiateChatForCase');
+  }
+
+  /**
+   * Grants permission to list access tokens
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_ListAccessTokens.html
+   */
+  public toListAccessTokens() {
+    return this.to('ListAccessTokens');
   }
 
   /**
@@ -715,6 +748,28 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to revoke an access token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_RevokeAccessToken.html
+   */
+  public toRevokeAccessToken() {
+    return this.to('RevokeAccessToken');
+  }
+
+  /**
+   * Grants permission to rotate an access token
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_RotateAccessToken.html
+   */
+  public toRotateAccessToken() {
+    return this.to('RotateAccessToken');
+  }
+
+  /**
    * Grants permission to look up a registered service accessible resources
    *
    * Access Level: Read
@@ -911,6 +966,7 @@ export class Aidevops extends PolicyStatement {
     ],
     Write: [
       'AssociateService',
+      'CreateAccessToken',
       'CreateAgentSpace',
       'CreateAsset',
       'CreateAssetFile',
@@ -935,6 +991,8 @@ export class Aidevops extends PolicyStatement {
       'EndChatForCase',
       'InitiateChatForCase',
       'RegisterService',
+      'RevokeAccessToken',
+      'RotateAccessToken',
       'SendMessage',
       'UpdateAgentSpace',
       'UpdateAsset',
@@ -952,6 +1010,7 @@ export class Aidevops extends PolicyStatement {
     Read: [
       'DescribePrivateConnection',
       'DescribeServices',
+      'GetAccessToken',
       'GetAccountUsage',
       'GetAgentSpace',
       'GetAsset',
@@ -968,6 +1027,7 @@ export class Aidevops extends PolicyStatement {
       'SearchServiceAccessibleResource'
     ],
     List: [
+      'ListAccessTokens',
       'ListAgentSpaces',
       'ListAssetFiles',
       'ListAssetTypes',

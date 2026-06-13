@@ -44,6 +44,7 @@ healthlake:StartFHIRImportJob;Write
 healthlake:SubmitPreAuthClaim;Write
 healthlake:TagResource;Tagging
 healthlake:UntagResource;Tagging
+healthlake:UpdateFHIRDatastore;Write
 healthlake:UpdateResource;Write
 healthlake:ValidateResource;Read
 healthlake:VersionReadResource;Read

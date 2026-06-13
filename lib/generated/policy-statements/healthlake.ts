@@ -538,6 +538,17 @@ export class Healthlake extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the configuration of a datastore
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/healthlake/latest/APIReference/API_UpdateFHIRDatastore.html
+   */
+  public toUpdateFHIRDatastore() {
+    return this.to('UpdateFHIRDatastore');
+  }
+
+  /**
    * Grants permission to update resource
    *
    * Access Level: Write
@@ -593,6 +604,7 @@ export class Healthlake extends PolicyStatement {
       'StartFHIRExportJobWithPost',
       'StartFHIRImportJob',
       'SubmitPreAuthClaim',
+      'UpdateFHIRDatastore',
       'UpdateResource'
     ],
     Read: [

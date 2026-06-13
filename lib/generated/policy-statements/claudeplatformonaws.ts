@@ -256,6 +256,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a webhook in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toCreateWebhook() {
+    return this.to('CreateWebhook');
+  }
+
+  /**
    * Grants permission to create a workspace in an organization
    *
    * Access Level: Write
@@ -345,6 +356,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toDeleteVault() {
     return this.to('DeleteVault');
+  }
+
+  /**
+   * Grants permission to delete a webhook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toDeleteWebhook() {
+    return this.to('DeleteWebhook');
   }
 
   /**
@@ -466,6 +488,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toGetVault() {
     return this.to('GetVault');
+  }
+
+  /**
+   * Grants permission to retrieve details of a webhook
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toGetWebhook() {
+    return this.to('GetWebhook');
   }
 
   /**
@@ -601,6 +634,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list webhooks in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toListWebhooks() {
+    return this.to('ListWebhooks');
+  }
+
+  /**
    * Grants permission to list workspaces in an organization
    *
    * Access Level: List
@@ -609,6 +653,28 @@ export class AwsExternalAnthropic extends PolicyStatement {
    */
   public toListWorkspaces() {
     return this.to('ListWorkspaces');
+  }
+
+  /**
+   * Grants permission to process work items in a self-hosted managed agent environment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toProcessEnvironmentWork() {
+    return this.to('ProcessEnvironmentWork');
+  }
+
+  /**
+   * Grants permission to rotate the signing secret of a webhook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toRotateWebhookSecret() {
+    return this.to('RotateWebhookSecret');
   }
 
   /**
@@ -718,6 +784,17 @@ export class AwsExternalAnthropic extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a webhook
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/claude-platform/latest/userguide/iam-actions.html#iam-actions
+   */
+  public toUpdateWebhook() {
+    return this.to('UpdateWebhook');
+  }
+
+  /**
    * Grants permission to update a workspace
    *
    * Access Level: Write
@@ -750,6 +827,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
       'CreateUserProfile',
       'CreateUserProfileEnrollmentUrl',
       'CreateVault',
+      'CreateWebhook',
       'CreateWorkspace',
       'DeleteBatchInference',
       'DeleteEnvironment',
@@ -758,6 +836,9 @@ export class AwsExternalAnthropic extends PolicyStatement {
       'DeleteSession',
       'DeleteSkill',
       'DeleteVault',
+      'DeleteWebhook',
+      'ProcessEnvironmentWork',
+      'RotateWebhookSecret',
       'UpdateAgent',
       'UpdateEnvironment',
       'UpdateMemoryStore',
@@ -765,6 +846,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
       'UpdateSkill',
       'UpdateUserProfile',
       'UpdateVault',
+      'UpdateWebhook',
       'UpdateWorkspace'
     ],
     List: [
@@ -779,6 +861,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
       'ListSkills',
       'ListUserProfiles',
       'ListVaults',
+      'ListWebhooks',
       'ListWorkspaces'
     ],
     Read: [
@@ -793,6 +876,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
       'GetSkill',
       'GetUserProfile',
       'GetVault',
+      'GetWebhook',
       'GetWorkspace',
       'ListTagsForResource'
     ],
@@ -902,6 +986,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * - .toCreateUserProfile()
    * - .toCreateUserProfileEnrollmentUrl()
    * - .toCreateVault()
+   * - .toCreateWebhook()
    * - .toDeleteBatchInference()
    * - .toDeleteEnvironment()
    * - .toDeleteFile()
@@ -909,6 +994,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * - .toDeleteSession()
    * - .toDeleteSkill()
    * - .toDeleteVault()
+   * - .toDeleteWebhook()
    * - .toGetAgent()
    * - .toGetBatchInference()
    * - .toGetEnvironment()
@@ -919,6 +1005,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * - .toGetSkill()
    * - .toGetUserProfile()
    * - .toGetVault()
+   * - .toGetWebhook()
    * - .toGetWorkspace()
    * - .toListAgents()
    * - .toListBatchInferences()
@@ -931,6 +1018,9 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * - .toListTagsForResource()
    * - .toListUserProfiles()
    * - .toListVaults()
+   * - .toListWebhooks()
+   * - .toProcessEnvironmentWork()
+   * - .toRotateWebhookSecret()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateAgent()
@@ -940,6 +1030,7 @@ export class AwsExternalAnthropic extends PolicyStatement {
    * - .toUpdateSkill()
    * - .toUpdateUserProfile()
    * - .toUpdateVault()
+   * - .toUpdateWebhook()
    * - .toUpdateWorkspace()
    *
    * Applies to resource types:

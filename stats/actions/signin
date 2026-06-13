@@ -1,4 +1,13 @@
+signin:Authenticate;Read
 signin:AuthorizeOAuth2Access;Read
+signin:CreateAccount;Write
 signin:CreateOAuth2Token;Read
 signin:CreateTrustedIdentityPropagationApplicationForConsole;Write
+signin:DeleteConsoleAuthorizationConfiguration;Write
+signin:DeleteResourcePermissionStatement;Write
+signin:GetConsoleAuthorizationConfiguration;Read
+signin:GetResourcePolicy;Read
+signin:ListResourcePermissionStatements;List
 signin:ListTrustedIdentityPropagationApplicationsForConsole;List
+signin:PutConsoleAuthorizationConfiguration;Write
+signin:PutResourcePermissionStatement;Write
