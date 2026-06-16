@@ -407,6 +407,39 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve monetization revenue statistics ranked by source or path within a specified time window
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRevenueStatistics.html
+   */
+  public toGetRevenueStatistics() {
+    return this.to('GetRevenueStatistics');
+  }
+
+  /**
+   * Grants permission to retrieve a summary of monetization revenue statistics within a specified time window
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRevenueStatisticsSummary.html
+   */
+  public toGetRevenueStatisticsSummary() {
+    return this.to('GetRevenueStatisticsSummary');
+  }
+
+  /**
+   * Grants permission to retrieve monetization revenue statistics as a time series within a specified time window
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRevenueStatisticsTimeSeries.html
+   */
+  public toGetRevenueStatisticsTimeSeries() {
+    return this.to('GetRevenueStatisticsTimeSeries');
+  }
+
+  /**
    * Grants permission to retrieve details about a RuleGroup
    *
    * Access Level: Read
@@ -595,6 +628,17 @@ export class Wafv2 extends PolicyStatement {
    */
   public toListRuleGroups() {
     return this.to('ListRuleGroups');
+  }
+
+  /**
+   * Grants permission to retrieve a list of monetization settlement records within a specified time window
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListSettlementRecords.html
+   */
+  public toListSettlementRecords() {
+    return this.to('ListSettlementRecords');
   }
 
   /**
@@ -810,6 +854,9 @@ export class Wafv2 extends PolicyStatement {
       'GetPermissionPolicy',
       'GetRateBasedStatementManagedKeys',
       'GetRegexPatternSet',
+      'GetRevenueStatistics',
+      'GetRevenueStatisticsSummary',
+      'GetRevenueStatisticsTimeSeries',
       'GetRuleGroup',
       'GetSampledRequests',
       'GetTopPathStatisticsByTraffic',
@@ -832,6 +879,7 @@ export class Wafv2 extends PolicyStatement {
       'ListRegexPatternSets',
       'ListResourcesForWebACL',
       'ListRuleGroups',
+      'ListSettlementRecords',
       'ListWebACLs'
     ],
     Tagging: [

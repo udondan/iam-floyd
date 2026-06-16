@@ -27,6 +27,9 @@ wafv2:GetMobileSdkRelease;Read
 wafv2:GetPermissionPolicy;Read
 wafv2:GetRateBasedStatementManagedKeys;Read
 wafv2:GetRegexPatternSet;Read
+wafv2:GetRevenueStatistics;Read
+wafv2:GetRevenueStatisticsSummary;Read
+wafv2:GetRevenueStatisticsTimeSeries;Read
 wafv2:GetRuleGroup;Read
 wafv2:GetSampledRequests;Read
 wafv2:GetTopPathStatisticsByTraffic;Read
@@ -42,6 +45,7 @@ wafv2:ListMobileSdkReleases;List
 wafv2:ListRegexPatternSets;List
 wafv2:ListResourcesForWebACL;List
 wafv2:ListRuleGroups;List
+wafv2:ListSettlementRecords;List
 wafv2:ListTagsForResource;Read
 wafv2:ListWebACLs;List
 wafv2:PutFirewallManagerRuleGroups;Write
