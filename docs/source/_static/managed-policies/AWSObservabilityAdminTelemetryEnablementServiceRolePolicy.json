@@ -239,7 +239,21 @@
       "Sid": "TelemetryOperationsForBedrock",
       "Effect": "Allow",
       "Action": [
-        "bedrock-agentcore:AllowVendedLogDeliveryForResource"
+        "bedrock-agentcore:AllowVendedLogDeliveryForResource",
+        "bedrock:AllowVendedLogDeliveryForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryOperationsForS3",
+      "Effect": "Allow",
+      "Action": [
+        "s3:AllowVendedLogDeliveryForResource"
       ],
       "Resource": "*",
       "Condition": {
