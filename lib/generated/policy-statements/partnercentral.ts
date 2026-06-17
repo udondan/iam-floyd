@@ -792,6 +792,20 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve prospecting from engagement task details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_GetProspectingFromEngagementTask.html
+   */
+  public toGetProspectingFromEngagementTask() {
+    return this.to('GetProspectingFromEngagementTask');
+  }
+
+  /**
    * Grants permission to retrieve relationship details in AWS Partner Central
    *
    * Access Level: Read
@@ -1121,6 +1135,20 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list prospecting from engagement tasks in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_ListProspectingFromEngagementTasks.html
+   */
+  public toListProspectingFromEngagementTasks() {
+    return this.to('ListProspectingFromEngagementTasks');
+  }
+
+  /**
    * Grants permission to list relationships in AWS Partner Central
    *
    * Access Level: List
@@ -1177,7 +1205,7 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add lists tags to a resource. Supported resource: ResourceSnapshotJob
+   * Grants permission to list tags for a resource in AWS Partner Central
    *
    * Access Level: Read
    *
@@ -1418,6 +1446,20 @@ export class Partnercentral extends PolicyStatement {
    */
   public toStartProfileUpdateTask() {
     return this.to('StartProfileUpdateTask');
+  }
+
+  /**
+   * Grants permission to initiate tasks that start prospecting from an engagement in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_StartProspectingFromEngagementTask.html
+   */
+  public toStartProspectingFromEngagementTask() {
+    return this.to('StartProspectingFromEngagementTask');
   }
 
   /**
@@ -1682,6 +1724,7 @@ export class Partnercentral extends PolicyStatement {
       'StartEngagementFromOpportunityTask',
       'StartOpportunityFromEngagementTask',
       'StartProfileUpdateTask',
+      'StartProspectingFromEngagementTask',
       'StartResourceSnapshotJob',
       'StartVerification',
       'StopResourceSnapshotJob',
@@ -1715,6 +1758,7 @@ export class Partnercentral extends PolicyStatement {
       'GetProfileUpdateTask',
       'GetProfileVisibility',
       'GetProgramManagementAccount',
+      'GetProspectingFromEngagementTask',
       'GetRelationship',
       'GetResourceSnapshot',
       'GetResourceSnapshotJob',
@@ -1742,6 +1786,7 @@ export class Partnercentral extends PolicyStatement {
       'ListPartnerPaths',
       'ListPartners',
       'ListProgramManagementAccounts',
+      'ListProspectingFromEngagementTasks',
       'ListRelationships',
       'ListResourceSnapshotJobs',
       'ListResourceSnapshots',
@@ -2072,6 +2117,20 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ProspectingFromEngagementTask to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-your-leads.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param taskIdentifier - Identifier for the taskIdentifier.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onProspectingFromEngagementTask(catalog: string, taskIdentifier: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }::catalog/${ catalog }/prospecting-from-engagement-task/${ taskIdentifier }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -2238,6 +2297,7 @@ export class Partnercentral extends PolicyStatement {
    * - .toGetProfileUpdateTask()
    * - .toGetProfileVisibility()
    * - .toGetProgramManagementAccount()
+   * - .toGetProspectingFromEngagementTask()
    * - .toGetRelationship()
    * - .toGetResourceSnapshot()
    * - .toGetResourceSnapshotJob()
@@ -2259,6 +2319,7 @@ export class Partnercentral extends PolicyStatement {
    * - .toListOpportunityFromEngagementTasks()
    * - .toListPartners()
    * - .toListProgramManagementAccounts()
+   * - .toListProspectingFromEngagementTasks()
    * - .toListRelationships()
    * - .toListResourceSnapshotJobs()
    * - .toListResourceSnapshots()
@@ -2276,6 +2337,7 @@ export class Partnercentral extends PolicyStatement {
    * - .toStartEngagementFromOpportunityTask()
    * - .toStartOpportunityFromEngagementTask()
    * - .toStartProfileUpdateTask()
+   * - .toStartProspectingFromEngagementTask()
    * - .toStartResourceSnapshotJob()
    * - .toStartVerification()
    * - .toStopResourceSnapshotJob()

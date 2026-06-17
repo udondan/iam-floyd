@@ -52,6 +52,7 @@ partnercentral:GetPartnerProfile;Read
 partnercentral:GetProfileUpdateTask;Read
 partnercentral:GetProfileVisibility;Read
 partnercentral:GetProgramManagementAccount;Read
+partnercentral:GetProspectingFromEngagementTask;Read
 partnercentral:GetRelationship;Read
 partnercentral:GetResourceSnapshot;Read
 partnercentral:GetResourceSnapshotJob;Read
@@ -76,6 +77,7 @@ partnercentral:ListOpportunityFromEngagementTasks;List
 partnercentral:ListPartnerPaths;List
 partnercentral:ListPartners;List
 partnercentral:ListProgramManagementAccounts;List
+partnercentral:ListProspectingFromEngagementTasks;List
 partnercentral:ListRelationships;List
 partnercentral:ListResourceSnapshotJobs;List
 partnercentral:ListResourceSnapshots;List
@@ -95,6 +97,7 @@ partnercentral:StartEngagementByAcceptingInvitationTask;Write
 partnercentral:StartEngagementFromOpportunityTask;Write
 partnercentral:StartOpportunityFromEngagementTask;Write
 partnercentral:StartProfileUpdateTask;Write
+partnercentral:StartProspectingFromEngagementTask;Write
 partnercentral:StartResourceSnapshotJob;Write
 partnercentral:StartVerification;Write
 partnercentral:StopResourceSnapshotJob;Write
