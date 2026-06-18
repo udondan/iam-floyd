@@ -2214,6 +2214,8 @@ export class AwsManagedPolicy {
     public static AWSResilienceHubAsssessmentExecutionPolicy = 'AWSResilienceHubAsssessmentExecutionPolicy';
     /** Allows AWS Resilience Hub to access resources in your account for resilience discovery, assessment, and management. */
     public static AWSResilienceHubServiceRolePolicy = 'aws-service-role/AWSResilienceHubServiceRolePolicy';
+    /** Allows AWS Resilience Hub to access resources in your account for resilience discovery, assessment, and management. This policy grants wildcarded read-only permissions that may include sensitive information in the output. */
+    public static AWSResilienceHubV2AssessmentExecutionPolicy = 'AWSResilienceHubV2AssessmentExecutionPolicy';
     /** Provides full access to AWS Resource Access Manager */
     public static AWSResourceAccessManagerFullAccess = 'AWSResourceAccessManagerFullAccess';
     /** Provides read only access to AWS Resource Access Manager. */
