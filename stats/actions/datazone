@@ -65,6 +65,7 @@ datazone:DeleteEnvironmentProfile;Write
 datazone:DeleteFormType;Write
 datazone:DeleteGlossary;Write
 datazone:DeleteGlossaryTerm;Write
+datazone:DeleteLineageEvent;Write
 datazone:DeleteListing;Write
 datazone:DeleteNotebook;Write
 datazone:DeleteProject;Write

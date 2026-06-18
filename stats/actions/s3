@@ -27,8 +27,10 @@ s3:DeleteBucketWebsite;Write
 s3:DeleteJobTagging;Tagging
 s3:DeleteMultiRegionAccessPoint;Write
 s3:DeleteObject;Write
+s3:DeleteObjectAnnotation;Write
 s3:DeleteObjectTagging;Tagging
 s3:DeleteObjectVersion;Write
+s3:DeleteObjectVersionAnnotation;Write
 s3:DeleteObjectVersionTagging;Tagging
 s3:DeleteStorageLensConfiguration;Write
 s3:DeleteStorageLensConfigurationTagging;Tagging
@@ -80,6 +82,7 @@ s3:GetMultiRegionAccessPointPolicyStatus;Read
 s3:GetMultiRegionAccessPointRoutes;Read
 s3:GetObject;Read
 s3:GetObjectAcl;Read
+s3:GetObjectAnnotation;Read
 s3:GetObjectAttributes;Read
 s3:GetObjectLegalHold;Read
 s3:GetObjectRetention;Read
@@ -87,6 +90,8 @@ s3:GetObjectTagging;Read
 s3:GetObjectTorrent;Read
 s3:GetObjectVersion;Read
 s3:GetObjectVersionAcl;Read
+s3:GetObjectVersionAnnotation;Read
+s3:GetObjectVersionAnnotationForReplication;Read
 s3:GetObjectVersionAttributes;Read
 s3:GetObjectVersionForReplication;Read
 s3:GetObjectVersionTagging;Read
@@ -110,6 +115,8 @@ s3:ListCallerAccessGrants;List
 s3:ListJobs;List
 s3:ListMultiRegionAccessPoints;List
 s3:ListMultipartUploadParts;List
+s3:ListObjectAnnotations;List
+s3:ListObjectVersionAnnotations;List
 s3:ListStorageLensConfigurations;List
 s3:ListStorageLensGroups;List
 s3:ListTagsForResource;List
@@ -145,22 +152,26 @@ s3:PutMetricsConfiguration;Write
 s3:PutMultiRegionAccessPointPolicy;Permissions management
 s3:PutObject;Write
 s3:PutObjectAcl;Permissions management
+s3:PutObjectAnnotation;Write
 s3:PutObjectLegalHold;Write
 s3:PutObjectRetention;Write
 s3:PutObjectTagging;Tagging
 s3:PutObjectVersionAcl;Permissions management
+s3:PutObjectVersionAnnotation;Write
 s3:PutObjectVersionTagging;Tagging
 s3:PutReplicationConfiguration;Write
 s3:PutStorageLensConfiguration;Write
 s3:PutStorageLensConfigurationTagging;Tagging
 s3:ReplicateDelete;Write
 s3:ReplicateObject;Write
+s3:ReplicateObjectAnnotation;Write
 s3:ReplicateTags;Tagging
 s3:RestoreObject;Write
 s3:SubmitMultiRegionAccessPointRoutes;Write
 s3:TagResource;Tagging
 s3:UntagResource;Tagging
 s3:UpdateAccessGrantsLocation;Permissions management
+s3:UpdateBucketMetadataAnnotationTableConfiguration;Write
 s3:UpdateBucketMetadataInventoryTableConfiguration;Write
 s3:UpdateBucketMetadataJournalTableConfiguration;Write
 s3:UpdateJobPriority;Write

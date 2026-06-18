@@ -1,13 +1,16 @@
+bedrock:AgenticRetrieveStream;Read
 bedrock:AllowVendedLogDeliveryForResource;Permissions management
 bedrock:ApplyGuardrail;Read
 bedrock:AssociateAgentCollaborator;Write
 bedrock:AssociateAgentKnowledgeBase;Write
 bedrock:AssociateThirdPartyKnowledgeBase;Write
+bedrock:BatchDeleteAdvancedPromptOptimizationJob;Write
 bedrock:BatchDeleteEvaluationJob;Write
 bedrock:CallWithBearerToken;Read
 bedrock:CancelAutomatedReasoningPolicyBuildWorkflow;Write
 bedrock:CopyBlueprintStage;Write
 bedrock:CountTokens;Read
+bedrock:CreateAdvancedPromptOptimizationJob;Write
 bedrock:CreateAgent;Write
 bedrock:CreateAgentActionGroup;Write
 bedrock:CreateAgentAlias;Write
@@ -82,6 +85,7 @@ bedrock:EndSession;Write
 bedrock:ExportAutomatedReasoningPolicyVersion;Read
 bedrock:GenerateQuery;Read
 bedrock:GetAccountDataRetention;Read
+bedrock:GetAdvancedPromptOptimizationJob;Read
 bedrock:GetAgent;Read
 bedrock:GetAgentActionGroup;Read
 bedrock:GetAgentAlias;Read
@@ -108,6 +112,7 @@ bedrock:GetDataAutomationLibraryIngestionJob;Read
 bedrock:GetDataAutomationProject;Read
 bedrock:GetDataAutomationStatus;Read
 bedrock:GetDataSource;Read
+bedrock:GetDocumentContent;Read
 bedrock:GetEvaluationJob;Read
 bedrock:GetExecutionFlowSnapshot;Read
 bedrock:GetFlow;Read
@@ -146,10 +151,12 @@ bedrock:InvokeDataAutomation;Write
 bedrock:InvokeDataAutomationAsync;Write
 bedrock:InvokeDataAutomationLibraryIngestionJob;Write
 bedrock:InvokeFlow;Read
+bedrock:InvokeGuardrailChecks;Read
 bedrock:InvokeInlineAgent;Read
 bedrock:InvokeModel;Read
 bedrock:InvokeModelWithResponseStream;Read
 bedrock:InvokeTool;Read
+bedrock:ListAdvancedPromptOptimizationJobs;List
 bedrock:ListAgentActionGroups;List
 bedrock:ListAgentAliases;List
 bedrock:ListAgentCollaborators;List
@@ -216,6 +223,7 @@ bedrock:StartAutomatedReasoningPolicyBuildWorkflow;Write
 bedrock:StartAutomatedReasoningPolicyTestWorkflow;Write
 bedrock:StartFlowExecution;Write
 bedrock:StartIngestionJob;Write
+bedrock:StopAdvancedPromptOptimizationJob;Write
 bedrock:StopEvaluationJob;Write
 bedrock:StopFlowExecution;Write
 bedrock:StopIngestionJob;Write

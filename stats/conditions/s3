@@ -21,6 +21,7 @@ s3:ResourceAccount
 s3:ResourceTag/${TagKey}
 s3:TagKeys
 s3:TlsVersion
+s3:annotation-prefix
 s3:authType
 s3:delimiter
 s3:deliverySourceArn
@@ -30,6 +31,7 @@ s3:if-none-match
 s3:isReplicationPauseRequest
 s3:locationconstraint
 s3:logType
+s3:max-annotation-results
 s3:max-keys
 s3:object-lock-legal-hold
 s3:object-lock-mode
@@ -50,6 +52,8 @@ s3:x-amz-grant-read-acp
 s3:x-amz-grant-write
 s3:x-amz-grant-write-acp
 s3:x-amz-metadata-directive
+s3:x-amz-object-annotation-directive
+s3:x-amz-object-if-match
 s3:x-amz-object-ownership
 s3:x-amz-server-side-encryption
 s3:x-amz-server-side-encryption-aws-kms-key-id

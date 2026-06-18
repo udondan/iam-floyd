@@ -20,6 +20,7 @@ bedrock-agentcore:CreateGateway;Write
 bedrock-agentcore:CreateGatewayRule;Write
 bedrock-agentcore:CreateGatewayTarget;Write
 bedrock-agentcore:CreateHarness;Write
+bedrock-agentcore:CreateHarnessEndpoint;Write
 bedrock-agentcore:CreateMemory;Write
 bedrock-agentcore:CreateOauth2CredentialProvider;Write
 bedrock-agentcore:CreateOnlineEvaluationConfig;Write
@@ -48,6 +49,7 @@ bedrock-agentcore:DeleteGateway;Write
 bedrock-agentcore:DeleteGatewayRule;Write
 bedrock-agentcore:DeleteGatewayTarget;Write
 bedrock-agentcore:DeleteHarness;Write
+bedrock-agentcore:DeleteHarnessEndpoint;Write
 bedrock-agentcore:DeleteMemory;Write
 bedrock-agentcore:DeleteMemoryRecord;Write
 bedrock-agentcore:DeleteOauth2CredentialProvider;Write
@@ -65,6 +67,10 @@ bedrock-agentcore:DeleteRegistryRecord;Write
 bedrock-agentcore:DeleteResourcePolicy;Write
 bedrock-agentcore:DeleteWorkloadIdentity;Write
 bedrock-agentcore:Evaluate;Write
+bedrock-agentcore:GatewayAssociateWebACL;Write
+bedrock-agentcore:GatewayDisassociateWebACL;Write
+bedrock-agentcore:GatewayGetWebACLForResource;Read
+bedrock-agentcore:GatewayListResourcesForWebACL;List
 bedrock-agentcore:GetABTest;Read
 bedrock-agentcore:GetAgentCard;Read
 bedrock-agentcore:GetAgentRuntime;Read
@@ -84,6 +90,7 @@ bedrock-agentcore:GetGateway;Read
 bedrock-agentcore:GetGatewayRule;Read
 bedrock-agentcore:GetGatewayTarget;Read
 bedrock-agentcore:GetHarness;Read
+bedrock-agentcore:GetHarnessEndpoint;Read
 bedrock-agentcore:GetMemory;Read
 bedrock-agentcore:GetMemoryRecord;Read
 bedrock-agentcore:GetOauth2CredentialProvider;Read
@@ -122,6 +129,7 @@ bedrock-agentcore:InvokeCodeInterpreter;Write
 bedrock-agentcore:InvokeGateway;Permissions management
 bedrock-agentcore:InvokeHarness;Write
 bedrock-agentcore:InvokeRegistryMcp;Read
+bedrock-agentcore:InvokeWebSearch;Permissions management
 bedrock-agentcore:ListABTests;List
 bedrock-agentcore:ListActors;List
 bedrock-agentcore:ListAgentRuntimeEndpoints;List
@@ -141,6 +149,7 @@ bedrock-agentcore:ListEvents;List
 bedrock-agentcore:ListGatewayRules;List
 bedrock-agentcore:ListGatewayTargets;List
 bedrock-agentcore:ListGateways;List
+bedrock-agentcore:ListHarnessEndpoints;List
 bedrock-agentcore:ListHarnesses;List
 bedrock-agentcore:ListMemories;List
 bedrock-agentcore:ListMemoryExtractionJobs;List
@@ -199,6 +208,7 @@ bedrock-agentcore:UpdateGateway;Write
 bedrock-agentcore:UpdateGatewayRule;Write
 bedrock-agentcore:UpdateGatewayTarget;Write
 bedrock-agentcore:UpdateHarness;Write
+bedrock-agentcore:UpdateHarnessEndpoint;Write
 bedrock-agentcore:UpdateMemory;Write
 bedrock-agentcore:UpdateOauth2CredentialProvider;Write
 bedrock-agentcore:UpdateOnlineEvaluationConfig;Write

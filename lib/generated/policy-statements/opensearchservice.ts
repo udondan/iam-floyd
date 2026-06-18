@@ -104,6 +104,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a data source to an OpenSearch Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AttachDataSource.html
+   */
+  public toAttachDataSource() {
+    return this.to('AttachDataSource');
+  }
+
+  /**
    * Grants permission to provide access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint
    *
    * Access Level: Write
@@ -424,6 +435,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe the status of a data source attachment for an OpenSearch Application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DescribeDataSourceAttachment.html
+   */
+  public toDescribeDataSourceAttachment() {
+    return this.to('DescribeDataSourceAttachment');
+  }
+
+  /**
    * Grants permission to view a description of the domain configuration for the specified OpenSearch Service domain, including the domain ID, service endpoint, and ARN
    *
    * Access Level: Read
@@ -688,6 +710,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detach a data source from an OpenSearch Application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DetachDataSource.html
+   */
+  public toDetachDataSource() {
+    return this.to('DetachDataSource');
+  }
+
+  /**
    * Grants permission to disassociate a package from the specified OpenSearch Service domain
    *
    * Access Level: Write
@@ -927,6 +960,17 @@ export class Es extends PolicyStatement {
    */
   public toListApplications() {
     return this.to('ListApplications');
+  }
+
+  /**
+   * Grants permission to list data source attachments for an OpenSearch Application
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListDataSourceAttachments.html
+   */
+  public toListDataSourceAttachments() {
+    return this.to('ListDataSourceAttachments');
   }
 
   /**
@@ -1402,6 +1446,7 @@ export class Es extends PolicyStatement {
       'AddDirectQueryDataSource',
       'AssociatePackage',
       'AssociatePackages',
+      'AttachDataSource',
       'AuthorizeVpcEndpointAccess',
       'CancelDomainConfigChange',
       'CancelElasticsearchServiceSoftwareUpdate',
@@ -1430,6 +1475,7 @@ export class Es extends PolicyStatement {
       'DeletePackage',
       'DeleteVpcEndpoint',
       'DeregisterCapability',
+      'DetachDataSource',
       'DissociatePackage',
       'DissociatePackages',
       'ESHttpDelete',
@@ -1466,6 +1512,7 @@ export class Es extends PolicyStatement {
       'RemoveTags'
     ],
     Read: [
+      'DescribeDataSourceAttachment',
       'DescribeDomain',
       'DescribeDomainAutoTunes',
       'DescribeDomainChangeProgress',
@@ -1509,6 +1556,7 @@ export class Es extends PolicyStatement {
       'GetCompatibleElasticsearchVersions',
       'GetCompatibleVersions',
       'ListApplications',
+      'ListDataSourceAttachments',
       'ListDataSources',
       'ListDirectQueryDataSources',
       'ListDomainMaintenances',
