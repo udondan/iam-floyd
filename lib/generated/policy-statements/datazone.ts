@@ -626,6 +626,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete lineage events
+   *
+   * Access Level: Write
+   */
+  public toDeleteLineageEvent() {
+    return this.to('DeleteLineageEvent');
+  }
+
+  /**
    * Grants permission to delete listing
    *
    * Access Level: Write
@@ -2163,6 +2172,7 @@ export class Datazone extends PolicyStatement {
       'DeleteFormType',
       'DeleteGlossary',
       'DeleteGlossaryTerm',
+      'DeleteLineageEvent',
       'DeleteListing',
       'DeleteNotebook',
       'DeleteProject',

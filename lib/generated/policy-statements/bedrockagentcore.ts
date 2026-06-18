@@ -327,13 +327,33 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Dependent actions:
    * - bedrock-agentcore:CreateAgentRuntime
+   * - bedrock-agentcore:CreateMemory
    * - bedrock-agentcore:GetAgentRuntime
+   * - bedrock-agentcore:GetMemory
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateHarness.html
    */
   public toCreateHarness() {
     return this.to('CreateHarness');
+  }
+
+  /**
+   * Grants permission to create a new harness endpoint
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - bedrock-agentcore:CreateAgentRuntimeEndpoint
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_CreateHarnessEndpoint.html
+   */
+  public toCreateHarnessEndpoint() {
+    return this.to('CreateHarnessEndpoint');
   }
 
   /**
@@ -683,13 +703,29 @@ export class BedrockAgentcore extends PolicyStatement {
    *
    * Dependent actions:
    * - bedrock-agentcore:DeleteAgentRuntime
+   * - bedrock-agentcore:DeleteMemory
    * - bedrock-agentcore:GetAgentRuntime
+   * - bedrock-agentcore:GetMemory
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteHarness.html
    */
   public toDeleteHarness() {
     return this.to('DeleteHarness');
+  }
+
+  /**
+   * Grants permission to delete a harness endpoint
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - bedrock-agentcore:DeleteAgentRuntimeEndpoint
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_DeleteHarnessEndpoint.html
+   */
+  public toDeleteHarnessEndpoint() {
+    return this.to('DeleteHarnessEndpoint');
   }
 
   /**
@@ -877,6 +913,50 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toEvaluate() {
     return this.to('Evaluate');
+  }
+
+  /**
+   * Grants permission to associate an AWS WAF Web ACL with an AgentCore Gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayAssociateWebACL() {
+    return this.to('GatewayAssociateWebACL');
+  }
+
+  /**
+   * Grants permission to remove the AWS WAF Web ACL association from an AgentCore Gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayDisassociateWebACL() {
+    return this.to('GatewayDisassociateWebACL');
+  }
+
+  /**
+   * Grants permission to retrieve the AWS WAF Web ACL ARN currently associated with an AgentCore Gateway
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayGetWebACLForResource() {
+    return this.to('GatewayGetWebACLForResource');
+  }
+
+  /**
+   * Grants permission to list AgentCore Gateways associated with an AWS WAF Web ACL
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/
+   */
+  public toGatewayListResourcesForWebACL() {
+    return this.to('GatewayListResourcesForWebACL');
   }
 
   /**
@@ -1090,6 +1170,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toGetHarness() {
     return this.to('GetHarness');
+  }
+
+  /**
+   * Grants permission to get details of a harness endpoint
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetHarnessEndpoint.html
+   */
+  public toGetHarnessEndpoint() {
+    return this.to('GetHarnessEndpoint');
   }
 
   /**
@@ -1524,6 +1615,17 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke a web search target
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/welcome.html
+   */
+  public toInvokeWebSearch() {
+    return this.to('InvokeWebSearch');
+  }
+
+  /**
    * Grants permission to list A/B tests
    *
    * Access Level: List
@@ -1734,6 +1836,17 @@ export class BedrockAgentcore extends PolicyStatement {
    */
   public toListGateways() {
     return this.to('ListGateways');
+  }
+
+  /**
+   * Grants permission to list harness endpoints
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListHarnessEndpoints.html
+   */
+  public toListHarnessEndpoints() {
+    return this.to('ListHarnessEndpoints');
   }
 
   /**
@@ -2406,14 +2519,31 @@ export class BedrockAgentcore extends PolicyStatement {
    * Access Level: Write
    *
    * Dependent actions:
+   * - bedrock-agentcore:CreateMemory
    * - bedrock-agentcore:GetAgentRuntime
+   * - bedrock-agentcore:GetMemory
    * - bedrock-agentcore:UpdateAgentRuntime
+   * - bedrock-agentcore:UpdateMemory
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateHarness.html
    */
   public toUpdateHarness() {
     return this.to('UpdateHarness');
+  }
+
+  /**
+   * Grants permission to update harness endpoint
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - bedrock-agentcore:UpdateAgentRuntimeEndpoint
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateHarnessEndpoint.html
+   */
+  public toUpdateHarnessEndpoint() {
+    return this.to('UpdateHarnessEndpoint');
   }
 
   /**
@@ -2562,6 +2692,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'AllowVendedLogDeliveryForResource',
       'AuthorizeAction',
       'InvokeGateway',
+      'InvokeWebSearch',
       'ManageAdminPolicy',
       'ManageResourceScopedPolicy',
       'PartiallyAuthorizeActions',
@@ -2585,6 +2716,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'CreateGatewayRule',
       'CreateGatewayTarget',
       'CreateHarness',
+      'CreateHarnessEndpoint',
       'CreateMemory',
       'CreateOauth2CredentialProvider',
       'CreateOnlineEvaluationConfig',
@@ -2613,6 +2745,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteGatewayRule',
       'DeleteGatewayTarget',
       'DeleteHarness',
+      'DeleteHarnessEndpoint',
       'DeleteMemory',
       'DeleteMemoryRecord',
       'DeleteOauth2CredentialProvider',
@@ -2630,6 +2763,8 @@ export class BedrockAgentcore extends PolicyStatement {
       'DeleteResourcePolicy',
       'DeleteWorkloadIdentity',
       'Evaluate',
+      'GatewayAssociateWebACL',
+      'GatewayDisassociateWebACL',
       'GetWorkloadAccessToken',
       'GetWorkloadAccessTokenForJWT',
       'GetWorkloadAccessTokenForUserId',
@@ -2667,6 +2802,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'UpdateGatewayRule',
       'UpdateGatewayTarget',
       'UpdateHarness',
+      'UpdateHarnessEndpoint',
       'UpdateMemory',
       'UpdateOauth2CredentialProvider',
       'UpdateOnlineEvaluationConfig',
@@ -2684,6 +2820,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'CompleteResourceTokenAuth',
       'ConnectBrowserAutomationStream',
       'ConnectBrowserLiveViewStream',
+      'GatewayGetWebACLForResource',
       'GetABTest',
       'GetAgentCard',
       'GetAgentRuntime',
@@ -2703,6 +2840,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'GetGatewayRule',
       'GetGatewayTarget',
       'GetHarness',
+      'GetHarnessEndpoint',
       'GetMemory',
       'GetMemoryRecord',
       'GetOauth2CredentialProvider',
@@ -2735,6 +2873,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'SearchRegistryRecords'
     ],
     List: [
+      'GatewayListResourcesForWebACL',
       'ListABTests',
       'ListActors',
       'ListAgentRuntimeEndpoints',
@@ -2753,6 +2892,7 @@ export class BedrockAgentcore extends PolicyStatement {
       'ListGatewayRules',
       'ListGatewayTargets',
       'ListGateways',
+      'ListHarnessEndpoints',
       'ListHarnesses',
       'ListMemories',
       'ListMemoryExtractionJobs',
@@ -3145,6 +3285,24 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type harness-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/harness-endpoint.html
+   *
+   * @param harnessId - Identifier for the harnessId.
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHarnessEndpoint(harnessId: string, name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:harness/${ harnessId }/harness-endpoint/${ name }`);
+  }
+
+  /**
    * Adds a resource of type batch-evaluate to the statement
    *
    * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/batchEvaluation.html
@@ -3153,6 +3311,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onBatchEvaluate(batchEvaluationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:batch-evaluate/${ batchEvaluationId }`);
@@ -3167,6 +3328,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAbTest(aBTestId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ab-test/${ aBTestId }`);
@@ -3181,6 +3345,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRecommendation(recommendationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:recommendation/${ recommendationId }`);
@@ -3195,6 +3362,9 @@ export class BedrockAgentcore extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onConfigurationBundle(configurationBundleId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:configuration-bundle/${ configurationBundleId }`);
@@ -3236,6 +3406,19 @@ export class BedrockAgentcore extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type web-search to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/webSearch.html
+   *
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWebSearch(account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tool/web-search.v1`);
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
@@ -3250,6 +3433,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateEvaluator()
    * - .toCreateGateway()
    * - .toCreateHarness()
+   * - .toCreateHarnessEndpoint()
    * - .toCreateMemory()
    * - .toCreateOauth2CredentialProvider()
    * - .toCreateOnlineEvaluationConfig()
@@ -3293,6 +3477,11 @@ export class BedrockAgentcore extends PolicyStatement {
    * - token-vault
    * - policy-engine
    * - harness
+   * - harness-endpoint
+   * - batch-evaluate
+   * - ab-test
+   * - recommendation
+   * - configuration-bundle
    * - payment-manager
    * - paymentcredentialprovider
    *
@@ -3319,6 +3508,7 @@ export class BedrockAgentcore extends PolicyStatement {
    * - .toCreateEvaluator()
    * - .toCreateGateway()
    * - .toCreateHarness()
+   * - .toCreateHarnessEndpoint()
    * - .toCreateMemory()
    * - .toCreateOauth2CredentialProvider()
    * - .toCreateOnlineEvaluationConfig()

@@ -19,6 +19,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to perform agentic retrieve with streaming from retrievers
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toAgenticRetrieveStream() {
+    return this.to('AgenticRetrieveStream');
+  }
+
+  /**
    * Grants permission to configure vended log delivery for a knowledge base
    *
    * Access Level: Permissions management
@@ -77,6 +88,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete one or more advanced prompt optimization jobs
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_BatchDeleteAdvancedPromptOptimizationJob.html
+   */
+  public toBatchDeleteAdvancedPromptOptimizationJob() {
+    return this.to('BatchDeleteAdvancedPromptOptimizationJob');
+  }
+
+  /**
    * Grants permission to batch delete list of bedrock evaluation jobs
    *
    * Access Level: Write
@@ -132,6 +154,21 @@ export class Bedrock extends PolicyStatement {
    */
   public toCountTokens() {
     return this.to('CountTokens');
+  }
+
+  /**
+   * Grants permission to create an advanced prompt optimization job
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateAdvancedPromptOptimizationJob.html
+   */
+  public toCreateAdvancedPromptOptimizationJob() {
+    return this.to('CreateAdvancedPromptOptimizationJob');
   }
 
   /**
@@ -1047,6 +1084,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about an advanced prompt optimization job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetAdvancedPromptOptimizationJob.html
+   */
+  public toGetAdvancedPromptOptimizationJob() {
+    return this.to('GetAdvancedPromptOptimizationJob');
+  }
+
+  /**
    * Grants permission to retrieve an existing agent
    *
    * Access Level: Read
@@ -1330,6 +1378,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toGetDataSource() {
     return this.to('GetDataSource');
+  }
+
+  /**
+   * Grants permission to retrieve a document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toGetDocumentContent() {
+    return this.to('GetDocumentContent');
   }
 
   /**
@@ -1761,6 +1820,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke guardrail checks
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   */
+  public toInvokeGuardrailChecks() {
+    return this.to('InvokeGuardrailChecks');
+  }
+
+  /**
    * Grants permission to send user input (text-only) to the inline agent for Bedrock
    *
    * Access Level: Read
@@ -1819,6 +1889,17 @@ export class Bedrock extends PolicyStatement {
    */
   public toInvokeTool() {
     return this.to('InvokeTool');
+  }
+
+  /**
+   * Grants permission to list the advanced prompt optimization jobs in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListAdvancedPromptOptimizationJobs.html
+   */
+  public toListAdvancedPromptOptimizationJobs() {
+    return this.to('ListAdvancedPromptOptimizationJobs');
   }
 
   /**
@@ -2551,6 +2632,17 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Grants permission to stop an advanced prompt optimization job while in progress
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopAdvancedPromptOptimizationJob.html
+   */
+  public toStopAdvancedPromptOptimizationJob() {
+    return this.to('StopAdvancedPromptOptimizationJob');
+  }
+
+  /**
    * Grants permission to stop a evaluation job while in progress
    *
    * Access Level: Write
@@ -2875,10 +2967,8 @@ export class Bedrock extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    'Permissions management': [
-      'AllowVendedLogDeliveryForResource'
-    ],
     Read: [
+      'AgenticRetrieveStream',
       'ApplyGuardrail',
       'CallWithBearerToken',
       'CountTokens',
@@ -2886,6 +2976,7 @@ export class Bedrock extends PolicyStatement {
       'ExportAutomatedReasoningPolicyVersion',
       'GenerateQuery',
       'GetAccountDataRetention',
+      'GetAdvancedPromptOptimizationJob',
       'GetAgent',
       'GetAgentActionGroup',
       'GetAgentAlias',
@@ -2912,6 +3003,7 @@ export class Bedrock extends PolicyStatement {
       'GetDataAutomationProject',
       'GetDataAutomationStatus',
       'GetDataSource',
+      'GetDocumentContent',
       'GetEvaluationJob',
       'GetExecutionFlowSnapshot',
       'GetFlow',
@@ -2943,6 +3035,7 @@ export class Bedrock extends PolicyStatement {
       'InvokeAgent',
       'InvokeAutomatedReasoningPolicy',
       'InvokeFlow',
+      'InvokeGuardrailChecks',
       'InvokeInlineAgent',
       'InvokeModel',
       'InvokeModelWithResponseStream',
@@ -2954,13 +3047,18 @@ export class Bedrock extends PolicyStatement {
       'Retrieve',
       'ValidateFlowDefinition'
     ],
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Write: [
       'AssociateAgentCollaborator',
       'AssociateAgentKnowledgeBase',
       'AssociateThirdPartyKnowledgeBase',
+      'BatchDeleteAdvancedPromptOptimizationJob',
       'BatchDeleteEvaluationJob',
       'CancelAutomatedReasoningPolicyBuildWorkflow',
       'CopyBlueprintStage',
+      'CreateAdvancedPromptOptimizationJob',
       'CreateAgent',
       'CreateAgentActionGroup',
       'CreateAgentAlias',
@@ -3054,6 +3152,7 @@ export class Bedrock extends PolicyStatement {
       'StartAutomatedReasoningPolicyTestWorkflow',
       'StartFlowExecution',
       'StartIngestionJob',
+      'StopAdvancedPromptOptimizationJob',
       'StopEvaluationJob',
       'StopFlowExecution',
       'StopIngestionJob',
@@ -3082,6 +3181,7 @@ export class Bedrock extends PolicyStatement {
       'UpdateSession'
     ],
     List: [
+      'ListAdvancedPromptOptimizationJobs',
       'ListAgentActionGroups',
       'ListAgentAliases',
       'ListAgentCollaborators',
@@ -3760,11 +3860,29 @@ export class Bedrock extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type advanced-prompt-optimization-job to the statement
+   *
+   * https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAdvancedPromptOptimizationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:advanced-prompt-optimization-job/${ resourceId }`);
+  }
+
+  /**
    * Filters access by creating requests based on the allowed set of values for each of the mandatory tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateAdvancedPromptOptimizationJob()
    * - .toCreateAgent()
    * - .toCreateAgentActionGroup()
    * - .toCreateAgentAlias()
@@ -3842,6 +3960,7 @@ export class Bedrock extends PolicyStatement {
    * - data-automation-library-ingestion-job
    * - session
    * - custom-model-deployment
+   * - advanced-prompt-optimization-job
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3857,6 +3976,7 @@ export class Bedrock extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
+   * - .toCreateAdvancedPromptOptimizationJob()
    * - .toCreateAgent()
    * - .toCreateAgentActionGroup()
    * - .toCreateAgentAlias()

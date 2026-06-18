@@ -667,6 +667,27 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an annotation from an object
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifXAmzObjectIfMatch()
+   * - .ifExistingObjectTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html
+   */
+  public toDeleteObjectAnnotation() {
+    return this.to('DeleteObjectAnnotation');
+  }
+
+  /**
    * Grants permission to use the tagging subresource to remove the entire tag set from the specified object
    *
    * Access Level: Tagging
@@ -705,6 +726,28 @@ export class S3 extends PolicyStatement {
    */
   public toDeleteObjectVersion() {
     return this.to('DeleteObjectVersion');
+  }
+
+  /**
+   * Grants permission to delete an annotation from a specific version of an object
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifVersionid()
+   * - .ifXAmzObjectIfMatch()
+   * - .ifExistingObjectTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html
+   */
+  public toDeleteObjectVersionAnnotation() {
+    return this.to('DeleteObjectVersionAnnotation');
   }
 
   /**
@@ -1726,6 +1769,26 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve an annotation from an object
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifExistingObjectTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html
+   */
+  public toGetObjectAnnotation() {
+    return this.to('GetObjectAnnotation');
+  }
+
+  /**
    * Grants permission to retrieve attributes related to a specific object
    *
    * Access Level: Read
@@ -1864,6 +1927,46 @@ export class S3 extends PolicyStatement {
    */
   public toGetObjectVersionAcl() {
     return this.to('GetObjectVersionAcl');
+  }
+
+  /**
+   * Grants permission to retrieve an annotation from a specific version of an object
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifVersionid()
+   * - .ifExistingObjectTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html
+   */
+  public toGetObjectVersionAnnotation() {
+    return this.to('GetObjectVersionAnnotation');
+  }
+
+  /**
+   * Grants permission to get an object version annotation for replication
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
+   */
+  public toGetObjectVersionAnnotationForReplication() {
+    return this.to('GetObjectVersionAnnotationForReplication');
   }
 
   /**
@@ -2318,6 +2421,51 @@ export class S3 extends PolicyStatement {
    */
   public toListMultipartUploadParts() {
     return this.to('ListMultipartUploadParts');
+  }
+
+  /**
+   * Grants permission to list annotations on an object
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifAnnotationPrefix()
+   * - .ifMaxAnnotationResults()
+   * - .ifExistingObjectTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html
+   */
+  public toListObjectAnnotations() {
+    return this.to('ListObjectAnnotations');
+  }
+
+  /**
+   * Grants permission to list annotations on a specific version of an object
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifVersionid()
+   * - .ifAnnotationPrefix()
+   * - .ifMaxAnnotationResults()
+   * - .ifExistingObjectTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html
+   */
+  public toListObjectVersionAnnotations() {
+    return this.to('ListObjectVersionAnnotations');
   }
 
   /**
@@ -2986,6 +3134,7 @@ export class S3 extends PolicyStatement {
    * - .ifXAmzGrantWrite()
    * - .ifXAmzGrantWriteAcp()
    * - .ifXAmzMetadataDirective()
+   * - .ifXAmzObjectAnnotationDirective()
    * - .ifXAmzServerSideEncryption()
    * - .ifXAmzServerSideEncryptionAwsKmsKeyId()
    * - .ifXAmzServerSideEncryptionCustomerAlgorithm()
@@ -3031,6 +3180,27 @@ export class S3 extends PolicyStatement {
    */
   public toPutObjectAcl() {
     return this.to('PutObjectAcl');
+  }
+
+  /**
+   * Grants permission to add or replace an annotation on an object
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifXAmzObjectIfMatch()
+   * - .ifExistingObjectTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html
+   */
+  public toPutObjectAnnotation() {
+    return this.to('PutObjectAnnotation');
   }
 
   /**
@@ -3124,6 +3294,28 @@ export class S3 extends PolicyStatement {
    */
   public toPutObjectVersionAcl() {
     return this.to('PutObjectVersionAcl');
+  }
+
+  /**
+   * Grants permission to add or replace an annotation on a specific version of an object
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   * - .ifResourceAccount()
+   * - .ifVersionid()
+   * - .ifXAmzObjectIfMatch()
+   * - .ifExistingObjectTag()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html
+   */
+  public toPutObjectVersionAnnotation() {
+    return this.to('PutObjectVersionAnnotation');
   }
 
   /**
@@ -3256,6 +3448,25 @@ export class S3 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to replicate annotations to the destination bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/setting-repl-config-perm-overview.html
+   */
+  public toReplicateObjectAnnotation() {
+    return this.to('ReplicateObjectAnnotation');
+  }
+
+  /**
    * Grants permission to replicate object tags to the destination bucket
    *
    * Access Level: Tagging
@@ -3374,6 +3585,25 @@ export class S3 extends PolicyStatement {
    */
   public toUpdateAccessGrantsLocation() {
     return this.to('UpdateAccessGrantsLocation');
+  }
+
+  /**
+   * Grants permission to update the annotation table configuration for a bucket
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAuthType()
+   * - .ifResourceAccount()
+   * - .ifSignatureAge()
+   * - .ifSignatureversion()
+   * - .ifTlsVersion()
+   * - .ifXAmzContentSha256()
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataAnnotationTableConfiguration.html
+   */
+  public toUpdateBucketMetadataAnnotationTableConfiguration() {
+    return this.to('UpdateBucketMetadataAnnotationTableConfiguration');
   }
 
   /**
@@ -3525,7 +3755,9 @@ export class S3 extends PolicyStatement {
       'DeleteBucketWebsite',
       'DeleteMultiRegionAccessPoint',
       'DeleteObject',
+      'DeleteObjectAnnotation',
       'DeleteObjectVersion',
+      'DeleteObjectVersionAnnotation',
       'DeleteStorageLensConfiguration',
       'DeleteStorageLensGroup',
       'InitiateReplication',
@@ -3547,14 +3779,18 @@ export class S3 extends PolicyStatement {
       'PutLifecycleConfiguration',
       'PutMetricsConfiguration',
       'PutObject',
+      'PutObjectAnnotation',
       'PutObjectLegalHold',
       'PutObjectRetention',
+      'PutObjectVersionAnnotation',
       'PutReplicationConfiguration',
       'PutStorageLensConfiguration',
       'ReplicateDelete',
       'ReplicateObject',
+      'ReplicateObjectAnnotation',
       'RestoreObject',
       'SubmitMultiRegionAccessPointRoutes',
+      'UpdateBucketMetadataAnnotationTableConfiguration',
       'UpdateBucketMetadataInventoryTableConfiguration',
       'UpdateBucketMetadataJournalTableConfiguration',
       'UpdateJobPriority',
@@ -3610,6 +3846,7 @@ export class S3 extends PolicyStatement {
       'GetMultiRegionAccessPointRoutes',
       'GetObject',
       'GetObjectAcl',
+      'GetObjectAnnotation',
       'GetObjectAttributes',
       'GetObjectLegalHold',
       'GetObjectRetention',
@@ -3617,6 +3854,8 @@ export class S3 extends PolicyStatement {
       'GetObjectTorrent',
       'GetObjectVersion',
       'GetObjectVersionAcl',
+      'GetObjectVersionAnnotation',
+      'GetObjectVersionAnnotationForReplication',
       'GetObjectVersionAttributes',
       'GetObjectVersionForReplication',
       'GetObjectVersionTagging',
@@ -3684,6 +3923,8 @@ export class S3 extends PolicyStatement {
       'ListJobs',
       'ListMultiRegionAccessPoints',
       'ListMultipartUploadParts',
+      'ListObjectAnnotations',
+      'ListObjectVersionAnnotations',
       'ListStorageLensConfigurations',
       'ListStorageLensGroups',
       'ListTagsForResource'
@@ -4318,19 +4559,27 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html#tagging-and-policies
    *
    * Applies to actions:
+   * - .toDeleteObjectAnnotation()
    * - .toDeleteObjectTagging()
+   * - .toDeleteObjectVersionAnnotation()
    * - .toDeleteObjectVersionTagging()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAnnotation()
    * - .toGetObjectAttributes()
    * - .toGetObjectTagging()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAnnotation()
    * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionTagging()
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
    * - .toPutObjectAcl()
+   * - .toPutObjectAnnotation()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionAnnotation()
    * - .toPutObjectVersionTagging()
    * - .toUpdateObjectEncryption()
    *
@@ -4488,8 +4737,10 @@ export class S3 extends PolicyStatement {
    * - .toDeleteJobTagging()
    * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
+   * - .toDeleteObjectAnnotation()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionAnnotation()
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
@@ -4541,6 +4792,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAnnotation()
    * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
@@ -4548,6 +4800,8 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAnnotation()
+   * - .toGetObjectVersionAnnotationForReplication()
    * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
@@ -4571,6 +4825,8 @@ export class S3 extends PolicyStatement {
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
    * - .toListStorageLensConfigurations()
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
@@ -4605,22 +4861,26 @@ export class S3 extends PolicyStatement {
    * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
+   * - .toPutObjectAnnotation()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionAnnotation()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
+   * - .toReplicateObjectAnnotation()
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateAccessGrantsLocation()
+   * - .toUpdateBucketMetadataAnnotationTableConfiguration()
    * - .toUpdateBucketMetadataInventoryTableConfiguration()
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
@@ -4669,8 +4929,10 @@ export class S3 extends PolicyStatement {
    * - .toDeleteJobTagging()
    * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
+   * - .toDeleteObjectAnnotation()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionAnnotation()
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
@@ -4722,6 +4984,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAnnotation()
    * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
@@ -4729,6 +4992,8 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAnnotation()
+   * - .toGetObjectVersionAnnotationForReplication()
    * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
@@ -4751,6 +5016,8 @@ export class S3 extends PolicyStatement {
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
    * - .toListStorageLensConfigurations()
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
@@ -4785,22 +5052,26 @@ export class S3 extends PolicyStatement {
    * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
+   * - .toPutObjectAnnotation()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionAnnotation()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
+   * - .toReplicateObjectAnnotation()
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateAccessGrantsLocation()
+   * - .toUpdateBucketMetadataAnnotationTableConfiguration()
    * - .toUpdateBucketMetadataInventoryTableConfiguration()
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
@@ -4813,6 +5084,22 @@ export class S3 extends PolicyStatement {
    */
   public ifTlsVersion(value: number | number[], operator?: Operator | string) {
     return this.if(`TlsVersion`, value, operator ?? 'NumericEquals');
+  }
+
+  /**
+   * Filters access by the annotation name prefix specified in the request
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#example-annotation-prefix-condition
+   *
+   * Applies to actions:
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAnnotationPrefix(value: string | string[], operator?: Operator | string) {
+    return this.if(`annotation-prefix`, value, operator ?? 'StringLike');
   }
 
   /**
@@ -4849,8 +5136,10 @@ export class S3 extends PolicyStatement {
    * - .toDeleteJobTagging()
    * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
+   * - .toDeleteObjectAnnotation()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionAnnotation()
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
@@ -4902,6 +5191,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAnnotation()
    * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
@@ -4909,6 +5199,8 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAnnotation()
+   * - .toGetObjectVersionAnnotationForReplication()
    * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
@@ -4931,6 +5223,8 @@ export class S3 extends PolicyStatement {
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
    * - .toListStorageLensConfigurations()
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
@@ -4965,22 +5259,26 @@ export class S3 extends PolicyStatement {
    * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
+   * - .toPutObjectAnnotation()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionAnnotation()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
+   * - .toReplicateObjectAnnotation()
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateAccessGrantsLocation()
+   * - .toUpdateBucketMetadataAnnotationTableConfiguration()
    * - .toUpdateBucketMetadataInventoryTableConfiguration()
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
@@ -5115,6 +5413,22 @@ export class S3 extends PolicyStatement {
    */
   public ifLogType(value: string | string[], operator?: Operator | string) {
     return this.if(`logType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the maximum number of annotation results requested
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#example-annotation-max-results
+   *
+   * Applies to actions:
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMaxAnnotationResults(value: number | number[], operator?: Operator | string) {
+    return this.if(`max-annotation-results`, value, operator ?? 'NumericEquals');
   }
 
   /**
@@ -5272,8 +5586,10 @@ export class S3 extends PolicyStatement {
    * - .toDeleteJobTagging()
    * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
+   * - .toDeleteObjectAnnotation()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionAnnotation()
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
@@ -5325,6 +5641,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAnnotation()
    * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
@@ -5332,6 +5649,8 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAnnotation()
+   * - .toGetObjectVersionAnnotationForReplication()
    * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
@@ -5354,6 +5673,8 @@ export class S3 extends PolicyStatement {
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
    * - .toListStorageLensConfigurations()
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
@@ -5388,22 +5709,26 @@ export class S3 extends PolicyStatement {
    * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
+   * - .toPutObjectAnnotation()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionAnnotation()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
+   * - .toReplicateObjectAnnotation()
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateAccessGrantsLocation()
+   * - .toUpdateBucketMetadataAnnotationTableConfiguration()
    * - .toUpdateBucketMetadataInventoryTableConfiguration()
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
@@ -5452,8 +5777,10 @@ export class S3 extends PolicyStatement {
    * - .toDeleteJobTagging()
    * - .toDeleteMultiRegionAccessPoint()
    * - .toDeleteObject()
+   * - .toDeleteObjectAnnotation()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionAnnotation()
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
@@ -5505,6 +5832,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMultiRegionAccessPointRoutes()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAnnotation()
    * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
@@ -5512,6 +5840,8 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAnnotation()
+   * - .toGetObjectVersionAnnotationForReplication()
    * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
@@ -5534,6 +5864,8 @@ export class S3 extends PolicyStatement {
    * - .toListJobs()
    * - .toListMultiRegionAccessPoints()
    * - .toListMultipartUploadParts()
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
    * - .toListStorageLensConfigurations()
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
@@ -5568,22 +5900,26 @@ export class S3 extends PolicyStatement {
    * - .toPutMultiRegionAccessPointPolicy()
    * - .toPutObject()
    * - .toPutObjectAcl()
+   * - .toPutObjectAnnotation()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionAnnotation()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
+   * - .toReplicateObjectAnnotation()
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toSubmitMultiRegionAccessPointRoutes()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateAccessGrantsLocation()
+   * - .toUpdateBucketMetadataAnnotationTableConfiguration()
    * - .toUpdateBucketMetadataInventoryTableConfiguration()
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
@@ -5605,13 +5941,17 @@ export class S3 extends PolicyStatement {
    *
    * Applies to actions:
    * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionAnnotation()
    * - .toDeleteObjectVersionTagging()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAnnotation()
    * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionTagging()
    * - .toGetObjectVersionTorrent()
+   * - .toListObjectVersionAnnotations()
    * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionAnnotation()
    * - .toPutObjectVersionTagging()
    *
    * @param value The value(s) to check
@@ -5689,8 +6029,10 @@ export class S3 extends PolicyStatement {
    * - .toDeleteBucketWebsite()
    * - .toDeleteJobTagging()
    * - .toDeleteObject()
+   * - .toDeleteObjectAnnotation()
    * - .toDeleteObjectTagging()
    * - .toDeleteObjectVersion()
+   * - .toDeleteObjectVersionAnnotation()
    * - .toDeleteObjectVersionTagging()
    * - .toDeleteStorageLensConfiguration()
    * - .toDeleteStorageLensConfigurationTagging()
@@ -5736,6 +6078,7 @@ export class S3 extends PolicyStatement {
    * - .toGetMetricsConfiguration()
    * - .toGetObject()
    * - .toGetObjectAcl()
+   * - .toGetObjectAnnotation()
    * - .toGetObjectAttributes()
    * - .toGetObjectLegalHold()
    * - .toGetObjectRetention()
@@ -5743,6 +6086,8 @@ export class S3 extends PolicyStatement {
    * - .toGetObjectTorrent()
    * - .toGetObjectVersion()
    * - .toGetObjectVersionAcl()
+   * - .toGetObjectVersionAnnotation()
+   * - .toGetObjectVersionAnnotationForReplication()
    * - .toGetObjectVersionAttributes()
    * - .toGetObjectVersionForReplication()
    * - .toGetObjectVersionTagging()
@@ -5764,6 +6109,8 @@ export class S3 extends PolicyStatement {
    * - .toListCallerAccessGrants()
    * - .toListJobs()
    * - .toListMultipartUploadParts()
+   * - .toListObjectAnnotations()
+   * - .toListObjectVersionAnnotations()
    * - .toListStorageLensConfigurations()
    * - .toListStorageLensGroups()
    * - .toListTagsForResource()
@@ -5796,21 +6143,25 @@ export class S3 extends PolicyStatement {
    * - .toPutMetricsConfiguration()
    * - .toPutObject()
    * - .toPutObjectAcl()
+   * - .toPutObjectAnnotation()
    * - .toPutObjectLegalHold()
    * - .toPutObjectRetention()
    * - .toPutObjectTagging()
    * - .toPutObjectVersionAcl()
+   * - .toPutObjectVersionAnnotation()
    * - .toPutObjectVersionTagging()
    * - .toPutReplicationConfiguration()
    * - .toPutStorageLensConfiguration()
    * - .toPutStorageLensConfigurationTagging()
    * - .toReplicateDelete()
    * - .toReplicateObject()
+   * - .toReplicateObjectAnnotation()
    * - .toReplicateTags()
    * - .toRestoreObject()
    * - .toTagResource()
    * - .toUntagResource()
    * - .toUpdateAccessGrantsLocation()
+   * - .toUpdateBucketMetadataAnnotationTableConfiguration()
    * - .toUpdateBucketMetadataInventoryTableConfiguration()
    * - .toUpdateBucketMetadataJournalTableConfiguration()
    * - .toUpdateJobPriority()
@@ -5955,6 +6306,39 @@ export class S3 extends PolicyStatement {
    */
   public ifXAmzMetadataDirective(value: string | string[], operator?: Operator | string) {
     return this.if(`x-amz-metadata-directive`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the annotation copy directive specified in the request
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html
+   *
+   * Applies to actions:
+   * - .toPutObject()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifXAmzObjectAnnotationDirective(value: string | string[], operator?: Operator | string) {
+    return this.if(`x-amz-object-annotation-directive`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the ETag of the object version specified in the request
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html#example-annotation-conditional-writes
+   *
+   * Applies to actions:
+   * - .toDeleteObjectAnnotation()
+   * - .toDeleteObjectVersionAnnotation()
+   * - .toPutObjectAnnotation()
+   * - .toPutObjectVersionAnnotation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifXAmzObjectIfMatch(value: string | string[], operator?: Operator | string) {
+    return this.if(`x-amz-object-if-match`, value, operator ?? 'StringLike');
   }
 
   /**

@@ -13,6 +13,8 @@
         "s3:ListJobs",
         "s3:ListMultiRegionAccessPoints",
         "s3:ListMultipartUploadParts",
+        "s3:ListObjectAnnotations",
+        "s3:ListObjectVersionAnnotations",
         "s3:ListStorageLensConfigurations",
         "s3:ListStorageLensGroups",
         "s3:ListTagsForResource"

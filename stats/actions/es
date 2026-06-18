@@ -5,6 +5,7 @@ es:AddDirectQueryDataSource;Write
 es:AddTags;Tagging
 es:AssociatePackage;Write
 es:AssociatePackages;Write
+es:AttachDataSource;Write
 es:AuthorizeVpcEndpointAccess;Write
 es:CancelDomainConfigChange;Write
 es:CancelElasticsearchServiceSoftwareUpdate;Write
@@ -33,6 +34,7 @@ es:DeleteOutboundCrossClusterSearchConnection;Write
 es:DeletePackage;Write
 es:DeleteVpcEndpoint;Write
 es:DeregisterCapability;Write
+es:DescribeDataSourceAttachment;Read
 es:DescribeDomain;Read
 es:DescribeDomainAutoTunes;Read
 es:DescribeDomainChangeProgress;Read
@@ -57,6 +59,7 @@ es:DescribeReservedElasticsearchInstances;List
 es:DescribeReservedInstanceOfferings;List
 es:DescribeReservedInstances;List
 es:DescribeVpcEndpoints;List
+es:DetachDataSource;Write
 es:DissociatePackage;Write
 es:DissociatePackages;Write
 es:ESCrossClusterGet;Read
@@ -79,6 +82,7 @@ es:GetPackageVersionHistory;Read
 es:GetUpgradeHistory;Read
 es:GetUpgradeStatus;Read
 es:ListApplications;List
+es:ListDataSourceAttachments;List
 es:ListDataSources;List
 es:ListDirectQueryDataSources;List
 es:ListDomainMaintenances;List
