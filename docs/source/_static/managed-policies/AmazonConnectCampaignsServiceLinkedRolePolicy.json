@@ -10,6 +10,14 @@
       "Resource": "*"
     },
     {
+      "Sid": "ConnectCampaignsMetricsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "connect:GetMetricDataV2"
+      ],
+      "Resource": "arn:aws:connect-campaigns:*:*:campaign/*"
+    },
+    {
       "Sid": "ConnectAccess",
       "Effect": "Allow",
       "Action": [
