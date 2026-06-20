@@ -148,6 +148,7 @@ export class Eks extends PolicyStatement {
    * - .ifControlPlaneScalingTier()
    * - .ifEncryptionConfigProviderKeyArns()
    * - .ifZonalShiftEnabled()
+   * - .ifControlPlaneEgressMode()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
@@ -801,6 +802,7 @@ export class Eks extends PolicyStatement {
    * - .ifDeletionProtection()
    * - .ifControlPlaneScalingTier()
    * - .ifZonalShiftEnabled()
+   * - .ifControlPlaneEgressMode()
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html
    */
@@ -1362,6 +1364,22 @@ export class Eks extends PolicyStatement {
    */
   public ifComputeConfigEnabled(value?: boolean) {
     return this.if(`computeConfigEnabled`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * Filters access by the control plane egress mode specified in the create / update cluster request
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies
+   *
+   * Applies to actions:
+   * - .toCreateCluster()
+   * - .toUpdateClusterConfig()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifControlPlaneEgressMode(value: string | string[], operator?: Operator | string) {
+    return this.if(`controlPlaneEgressMode`, value, operator ?? 'StringLike');
   }
 
   /**

@@ -210,6 +210,17 @@ export class Mq extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the resources shared to a broker
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/brokers-broker-id-shared-resources.html
+   */
+  public toDescribeSharedResources() {
+    return this.to('DescribeSharedResources');
+  }
+
+  /**
    * Grants permission to return information about an ActiveMQ user
    *
    * Access Level: Read
@@ -365,6 +376,7 @@ export class Mq extends PolicyStatement {
       'DescribeBrokerInstanceOptions',
       'DescribeConfiguration',
       'DescribeConfigurationRevision',
+      'DescribeSharedResources',
       'DescribeUser'
     ],
     List: [

@@ -1084,6 +1084,7 @@ export class Ecs extends PolicyStatement {
    * - .ifPropagateTags()
    * - .ifSubnet()
    * - .ifTaskCpu()
+   * - .ifTaskDefinition()
    * - .ifTaskMemory()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateExpressGatewayService.html
@@ -2169,6 +2170,7 @@ export class Ecs extends PolicyStatement {
    * - .toCreateExpressGatewayService()
    * - .toCreateService()
    * - .toCreateTaskSet()
+   * - .toUpdateExpressGatewayService()
    * - .toUpdateService()
    *
    * @param value The value(s) to check

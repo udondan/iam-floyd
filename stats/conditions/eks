@@ -10,6 +10,7 @@ eks:bootstrapSelfManagedAddons
 eks:clientId
 eks:clusterName
 eks:computeConfigEnabled
+eks:controlPlaneEgressMode
 eks:controlPlaneScalingTier
 eks:deletionProtection
 eks:elasticLoadBalancingEnabled

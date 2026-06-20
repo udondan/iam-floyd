@@ -82,6 +82,11 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - logs:CreateScheduledQuery
+   * - logs:DeleteScheduledQuery
+   * - logs:GetScheduledQuery
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html
    */
   public toDeleteAlarms() {
@@ -298,6 +303,20 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get a dataset
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDataset.html
+   */
+  public toGetDataset() {
+    return this.to('GetDataset');
+  }
+
+  /**
    * Grants permission to return the top-N report of unique contributors over a time range for a given insight rule
    *
    * Access Level: Read
@@ -309,7 +328,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data
+   * Grants permission to retrieve batch amounts of CloudWatch classic metric data and perform metric math on retrieved data; and grants permission to retrieve OTLP metric data using PromQL
    *
    * Access Level: Read
    *
@@ -607,6 +626,29 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update a log-based alarm and associate it with a CloudWatch Logs Insights scheduled query
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAlarmActions()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - logs:CreateScheduledQuery
+   * - logs:DeleteScheduledQuery
+   * - logs:GetScheduledQuery
+   * - logs:UpdateScheduledQuery
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutLogAlarm.html
+   */
+  public toPutLogAlarm() {
+    return this.to('PutLogAlarm');
+  }
+
+  /**
    * Grants permission to create managed Insight Rules
    *
    * Access Level: Write
@@ -639,7 +681,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Grants permission to publish metric data points to Amazon CloudWatch
+   * Grants permission to publish metric data points to Amazon CloudWatch using CloudWatch and OTLP formats
    *
    * Access Level: Write
    *
@@ -775,6 +817,7 @@ export class Cloudwatch extends PolicyStatement {
       'GenerateQueryResultsSummary',
       'GetAlarmMuteRule',
       'GetDashboard',
+      'GetDataset',
       'GetInsightRuleReport',
       'GetMetricData',
       'GetMetricStatistics',
@@ -809,6 +852,7 @@ export class Cloudwatch extends PolicyStatement {
       'PutCompositeAlarm',
       'PutDashboard',
       'PutInsightRule',
+      'PutLogAlarm',
       'PutManagedInsightRules',
       'PutMetricAlarm',
       'PutMetricData',
@@ -887,6 +931,23 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param datasetId - Identifier for the datasetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataset(datasetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudwatch:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }`);
+  }
+
+  /**
    * Adds a resource of type insight-rule to the statement
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
@@ -956,7 +1017,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the allowed set of values for each of the tags
+   * Filters access by the presence of tags in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -967,6 +1028,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .toPutCompositeAlarm()
    * - .toPutDashboard()
    * - .toPutInsightRule()
+   * - .toPutLogAlarm()
    * - .toPutManagedInsightRules()
    * - .toPutMetricAlarm()
    * - .toPutMetricStream()
@@ -981,14 +1043,25 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag-value associated with the resource
+   * Filters access by tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toGetDataset()
+   * - .toGetMetricData()
+   * - .toListMetrics()
+   * - .toListTagsForResource()
+   * - .toPutMetricAlarm()
+   * - .toPutMetricData()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - alarm
    * - alarm-mute-rule
    * - dashboard
+   * - dataset
    * - insight-rule
    * - metric-stream
    * - slo
@@ -1003,7 +1076,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of mandatory tags in the request
+   * Filters access by the presence of tags in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
@@ -1014,6 +1087,7 @@ export class Cloudwatch extends PolicyStatement {
    * - .toPutCompositeAlarm()
    * - .toPutDashboard()
    * - .toPutInsightRule()
+   * - .toPutLogAlarm()
    * - .toPutManagedInsightRules()
    * - .toPutMetricAlarm()
    * - .toPutMetricStream()
@@ -1028,12 +1102,13 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on defined alarm actions
+   * Filters access by defined alarm actions
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-alarm-actions.html
    *
    * Applies to actions:
    * - .toPutCompositeAlarm()
+   * - .toPutLogAlarm()
    * - .toPutMetricAlarm()
    *
    * @param value The value(s) to check
@@ -1044,7 +1119,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of optional namespace values
+   * Filters access by the presence of optional namespace values
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-namespace.html
    *
@@ -1059,7 +1134,7 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the Log Groups specified in an Insight Rule
+   * Filters access by the Log Groups specified in an Insight Rule
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-contributor.html
    *

@@ -12,6 +12,7 @@ mq:DescribeBrokerEngineTypes;Read
 mq:DescribeBrokerInstanceOptions;Read
 mq:DescribeConfiguration;Read
 mq:DescribeConfigurationRevision;Read
+mq:DescribeSharedResources;Read
 mq:DescribeUser;Read
 mq:ListBrokers;List
 mq:ListConfigurationRevisions;List

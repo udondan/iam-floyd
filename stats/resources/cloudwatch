@@ -1,6 +1,7 @@
 cloudwatch:alarm
 cloudwatch:alarm-mute-rule
 cloudwatch:dashboard
+cloudwatch:dataset
 cloudwatch:insight-rule
 cloudwatch:metric-stream
 cloudwatch:service

@@ -23,6 +23,7 @@ quicksight:folder
 quicksight:group
 quicksight:ingestion
 quicksight:knowledgeBase
+quicksight:limitsProfile
 quicksight:namespace
 quicksight:oauthClientApplication
 quicksight:refreshschedule
