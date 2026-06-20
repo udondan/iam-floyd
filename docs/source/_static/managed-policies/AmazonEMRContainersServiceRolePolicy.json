@@ -15,7 +15,9 @@
         "elasticloadbalancing:DescribeTargetGroups",
         "elasticloadbalancing:DescribeTargetHealth",
         "eks:ListPodIdentityAssociations",
-        "eks:DescribePodIdentityAssociation"
+        "eks:DescribePodIdentityAssociation",
+        "ec2:DescribeVpcEndpointServiceConfigurations",
+        "ec2:DescribeVpcEndpointServicePermissions"
       ],
       "Resource": "*"
     },
@@ -41,6 +43,46 @@
       "Condition": {
         "StringEquals": {
           "aws:ResourceTag/emr-container:endpoint:managed-certificate": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VPCEndpointServiceCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpcEndpointServiceConfiguration"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint-service/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/emr-containers:managed-endpoint-resource": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VPCEndpointServiceManage",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVpcEndpointServiceConfigurations",
+        "ec2:ModifyVpcEndpointServicePermissions"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint-service/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/emr-containers:managed-endpoint-resource": "true"
+        }
+      }
+    },
+    {
+      "Sid": "VPCEndpointServiceTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": "arn:aws:ec2:*:*:vpc-endpoint-service/*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateVpcEndpointServiceConfiguration"
         }
       }
     }

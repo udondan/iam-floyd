@@ -4,7 +4,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:DeleteNetworkInterface"
+        "ec2:DeleteNetworkInterface",
+        "ec2:AssignIpv6Addresses"
       ],
       "Resource": "*",
       "Condition": {
