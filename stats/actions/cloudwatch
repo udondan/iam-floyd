@@ -23,6 +23,7 @@ cloudwatch:GenerateQuery;Read
 cloudwatch:GenerateQueryResultsSummary;Read
 cloudwatch:GetAlarmMuteRule;Read
 cloudwatch:GetDashboard;Read
+cloudwatch:GetDataset;Read
 cloudwatch:GetInsightRuleReport;Read
 cloudwatch:GetMetricData;Read
 cloudwatch:GetMetricStatistics;Read
@@ -49,6 +50,7 @@ cloudwatch:PutAnomalyDetector;Write
 cloudwatch:PutCompositeAlarm;Write
 cloudwatch:PutDashboard;Write
 cloudwatch:PutInsightRule;Write
+cloudwatch:PutLogAlarm;Write
 cloudwatch:PutManagedInsightRules;Write
 cloudwatch:PutMetricAlarm;Write
 cloudwatch:PutMetricData;Write

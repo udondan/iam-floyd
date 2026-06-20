@@ -815,6 +815,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get compute
+   *
+   * Access Level: Read
+   */
+  public toGetCompute() {
+    return this.to('GetCompute');
+  }
+
+  /**
    * Grants permission to get connections
    *
    * Access Level: Read
@@ -1769,6 +1778,15 @@ export class Datazone extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start compute
+   *
+   * Access Level: Write
+   */
+  public toStartCompute() {
+    return this.to('StartCompute');
+  }
+
+  /**
    * Grants permission to start conversations
    *
    * Access Level: Write
@@ -1820,6 +1838,24 @@ export class Datazone extends PolicyStatement {
    */
   public toStartNotebookImport() {
     return this.to('StartNotebookImport');
+  }
+
+  /**
+   * Grants permission to start notebook sync
+   *
+   * Access Level: Write
+   */
+  public toStartNotebookSync() {
+    return this.to('StartNotebookSync');
+  }
+
+  /**
+   * Grants permission to stop compute
+   *
+   * Access Level: Write
+   */
+  public toStopCompute() {
+    return this.to('StopCompute');
   }
 
   /**
@@ -2200,12 +2236,15 @@ export class Datazone extends PolicyStatement {
       'SsoLogin',
       'SsoLogout',
       'StartAccountBootstrapAction',
+      'StartCompute',
       'StartConversation',
       'StartDataSourceRun',
       'StartMetadataGenerationRun',
       'StartNotebookCompute',
       'StartNotebookExport',
       'StartNotebookImport',
+      'StartNotebookSync',
+      'StopCompute',
       'StopMetadataGenerationRun',
       'StopNotebookCompute',
       'UpdateAccountPool',
@@ -2255,6 +2294,7 @@ export class Datazone extends PolicyStatement {
       'GetCell',
       'GetCellRun',
       'GetCellRunResult',
+      'GetCompute',
       'GetConnection',
       'GetConversation',
       'GetDataExportConfiguration',

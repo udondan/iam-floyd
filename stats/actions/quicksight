@@ -1,9 +1,11 @@
 quicksight:AccountConfigurations;Write
 quicksight:AllowVendedLogDeliveryForResource;Permissions management
+quicksight:BatchAssignLimitsProfile;Write
 quicksight:BatchCreateTopicReviewedAnswer;Write
 quicksight:BatchDeleteKnowledgeBase;Write
 quicksight:BatchDeleteTopicReviewedAnswer;Write
 quicksight:BatchGetPreferences;Read
+quicksight:BatchUnassignLimitsProfile;Write
 quicksight:BatchUpdatePreferences;Write
 quicksight:CancelIngestion;Write
 quicksight:CreateAccountCustomization;Write
@@ -26,6 +28,7 @@ quicksight:CreateGroup;Write
 quicksight:CreateGroupMembership;Write
 quicksight:CreateIAMPolicyAssignment;Write
 quicksight:CreateIngestion;Write
+quicksight:CreateLimitsProfile;Write
 quicksight:CreateNamespace;Write
 quicksight:CreateOAuthClientApplication;Write
 quicksight:CreateReader;Write
@@ -64,6 +67,7 @@ quicksight:DeleteGroupMembership;Write
 quicksight:DeleteIAMPolicyAssignment;Write
 quicksight:DeleteIdentityPropagationConfig;Write
 quicksight:DeleteKnowledgeBase;Write
+quicksight:DeleteLimitsProfile;Write
 quicksight:DeleteNamespace;Write
 quicksight:DeleteOAuthClientApplication;Write
 quicksight:DeleteRefreshSchedule;Write
@@ -92,6 +96,8 @@ quicksight:DescribeAnalysis;Read
 quicksight:DescribeAnalysisPermissions;Read
 quicksight:DescribeAssetBundleExportJob;Read
 quicksight:DescribeAssetBundleImportJob;Read
+quicksight:DescribeAutomationGroup;Read
+quicksight:DescribeAutomationGroupPermissions;Permissions management
 quicksight:DescribeAutomationJob;Read
 quicksight:DescribeBrand;Read
 quicksight:DescribeBrandAssignment;Read
@@ -123,6 +129,7 @@ quicksight:DescribeIpRestriction;Read
 quicksight:DescribeKeyRegistration;Read
 quicksight:DescribeKnowledgeBase;Read
 quicksight:DescribeKnowledgeBasePermissions;Permissions management
+quicksight:DescribeLimitsProfile;Read
 quicksight:DescribeNamespace;Read
 quicksight:DescribeOAuthClientApplication;Read
 quicksight:DescribeQPersonalizationConfiguration;Read
@@ -162,6 +169,8 @@ quicksight:ListAgents;List
 quicksight:ListAnalyses;List
 quicksight:ListAssetBundleExportJobs;List
 quicksight:ListAssetBundleImportJobs;List
+quicksight:ListAssignmentsForPrincipal;List
+quicksight:ListAutomationGroups;List
 quicksight:ListBrands;List
 quicksight:ListCustomPermissions;List
 quicksight:ListCustomerManagedKeys;List
@@ -182,8 +191,10 @@ quicksight:ListIdentityPropagationConfigs;List
 quicksight:ListIngestions;List
 quicksight:ListKMSKeysForUser;List
 quicksight:ListKnowledgeBases;List
+quicksight:ListLimitsProfiles;List
 quicksight:ListNamespaces;List
 quicksight:ListOAuthClientApplications;List
+quicksight:ListProfileAssignments;List
 quicksight:ListRefreshSchedules;List
 quicksight:ListRoleMemberships;List
 quicksight:ListSelfUpgrades;List
@@ -216,6 +227,7 @@ quicksight:ScopeDownPolicy;Write
 quicksight:SearchActionConnectors;List
 quicksight:SearchAgents;List
 quicksight:SearchAnalyses;List
+quicksight:SearchAutomationGroups;List
 quicksight:SearchDashboards;List
 quicksight:SearchDataSets;List
 quicksight:SearchDataSources;List
@@ -248,6 +260,7 @@ quicksight:UpdateAgentPermissions;Permissions management
 quicksight:UpdateAnalysis;Write
 quicksight:UpdateAnalysisPermissions;Permissions management
 quicksight:UpdateApplicationWithTokenExchangeGrant;Write
+quicksight:UpdateAutomationGroupPermissions;Permissions management
 quicksight:UpdateBrand;Write
 quicksight:UpdateBrandAssignment;Write
 quicksight:UpdateBrandPublishedVersion;Write
@@ -275,6 +288,7 @@ quicksight:UpdateIdentityPropagationConfig;Write
 quicksight:UpdateIpRestriction;Write
 quicksight:UpdateKeyRegistration;Write
 quicksight:UpdateKnowledgeBasePermissions;Permissions management
+quicksight:UpdateLimitsProfile;Write
 quicksight:UpdateOAuthClientApplication;Write
 quicksight:UpdatePublicSharingSettings;Write
 quicksight:UpdateQPersonalizationConfiguration;Write

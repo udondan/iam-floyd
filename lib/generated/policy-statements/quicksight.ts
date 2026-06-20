@@ -41,6 +41,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to assign a limits profile to targets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchAssignLimitsProfile.html
+   */
+  public toBatchAssignLimitsProfile() {
+    return this.to('BatchAssignLimitsProfile');
+  }
+
+  /**
    * Grants permission to create reviewed answers for a topic
    *
    * Access Level: Write
@@ -90,6 +101,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toBatchGetPreferences() {
     return this.to('BatchGetPreferences');
+  }
+
+  /**
+   * Grants permission to unassign a limits profile from targets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchUnassignLimitsProfile.html
+   */
+  public toBatchUnassignLimitsProfile() {
+    return this.to('BatchUnassignLimitsProfile');
   }
 
   /**
@@ -394,6 +416,21 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateIngestion() {
     return this.to('CreateIngestion');
+  }
+
+  /**
+   * Grants permission to create a limits profile
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateLimitsProfile.html
+   */
+  public toCreateLimitsProfile() {
+    return this.to('CreateLimitsProfile');
   }
 
   /**
@@ -867,6 +904,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a limits profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteLimitsProfile.html
+   */
+  public toDeleteLimitsProfile() {
+    return this.to('DeleteLimitsProfile');
+  }
+
+  /**
    * Grants permission to delete a QuickSight namespace
    *
    * Access Level: Write
@@ -1190,6 +1238,28 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeAssetBundleImportJob() {
     return this.to('DescribeAssetBundleImportJob');
+  }
+
+  /**
+   * Grants permission to describe an automation group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAutomationGroup.html
+   */
+  public toDescribeAutomationGroup() {
+    return this.to('DescribeAutomationGroup');
+  }
+
+  /**
+   * Grants permission to describe permissions for an automation group
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAutomationGroupPermissions.html
+   */
+  public toDescribeAutomationGroupPermissions() {
+    return this.to('DescribeAutomationGroupPermissions');
   }
 
   /**
@@ -1551,6 +1621,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeKnowledgeBasePermissions() {
     return this.to('DescribeKnowledgeBasePermissions');
+  }
+
+  /**
+   * Grants permission to describe a limits profile
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeLimitsProfile.html
+   */
+  public toDescribeLimitsProfile() {
+    return this.to('DescribeLimitsProfile');
   }
 
   /**
@@ -2012,6 +2093,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list limits profile assignments for a principal
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAssignmentsForPrincipal.html
+   */
+  public toListAssignmentsForPrincipal() {
+    return this.to('ListAssignmentsForPrincipal');
+  }
+
+  /**
+   * Grants permission to list all automation groups in an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListAutomationGroups.html
+   */
+  public toListAutomationGroups() {
+    return this.to('ListAutomationGroups');
+  }
+
+  /**
    * Grants permission to lists all brands in an Amazon QuickSight account
    *
    * Access Level: List
@@ -2244,6 +2347,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list limits profiles
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListLimitsProfiles.html
+   */
+  public toListLimitsProfiles() {
+    return this.to('ListLimitsProfiles');
+  }
+
+  /**
    * Grants permission to lists all namespaces in a QuickSight account
    *
    * Access Level: List
@@ -2267,6 +2381,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListOAuthClientApplications() {
     return this.to('ListOAuthClientApplications');
+  }
+
+  /**
+   * Grants permission to list assignments for a limits profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListProfileAssignments.html
+   */
+  public toListProfileAssignments() {
+    return this.to('ListProfileAssignments');
   }
 
   /**
@@ -2646,6 +2771,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to search for automation groups in an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchAutomationGroups.html
+   */
+  public toSearchAutomationGroups() {
+    return this.to('SearchAutomationGroups');
+  }
+
+  /**
    * Grants permission to search for a sub-set of QuickSight Dashboards
    *
    * Access Level: List
@@ -3009,6 +3145,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update permissions for an automation group
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAutomationGroupPermissions.html
+   */
+  public toUpdateAutomationGroupPermissions() {
+    return this.to('UpdateAutomationGroupPermissions');
+  }
+
+  /**
    * Grants permission to update a brand
    *
    * Access Level: Write
@@ -3328,6 +3475,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a limits profile
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateLimitsProfile.html
+   */
+  public toUpdateLimitsProfile() {
+    return this.to('UpdateLimitsProfile');
+  }
+
+  /**
    * Grants permission to update an OAuth client application
    *
    * Access Level: Write
@@ -3638,9 +3796,11 @@ export class Quicksight extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AccountConfigurations',
+      'BatchAssignLimitsProfile',
       'BatchCreateTopicReviewedAnswer',
       'BatchDeleteKnowledgeBase',
       'BatchDeleteTopicReviewedAnswer',
+      'BatchUnassignLimitsProfile',
       'BatchUpdatePreferences',
       'CancelIngestion',
       'CreateAccountCustomization',
@@ -3663,6 +3823,7 @@ export class Quicksight extends PolicyStatement {
       'CreateGroupMembership',
       'CreateIAMPolicyAssignment',
       'CreateIngestion',
+      'CreateLimitsProfile',
       'CreateNamespace',
       'CreateOAuthClientApplication',
       'CreateReader',
@@ -3701,6 +3862,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteIAMPolicyAssignment',
       'DeleteIdentityPropagationConfig',
       'DeleteKnowledgeBase',
+      'DeleteLimitsProfile',
       'DeleteNamespace',
       'DeleteOAuthClientApplication',
       'DeleteRefreshSchedule',
@@ -3763,6 +3925,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateIdentityPropagationConfig',
       'UpdateIpRestriction',
       'UpdateKeyRegistration',
+      'UpdateLimitsProfile',
       'UpdateOAuthClientApplication',
       'UpdatePublicSharingSettings',
       'UpdateQPersonalizationConfiguration',
@@ -3788,6 +3951,7 @@ export class Quicksight extends PolicyStatement {
     ],
     'Permissions management': [
       'AllowVendedLogDeliveryForResource',
+      'DescribeAutomationGroupPermissions',
       'DescribeDataSetPermissions',
       'DescribeDataSourcePermissions',
       'DescribeKnowledgeBasePermissions',
@@ -3796,6 +3960,7 @@ export class Quicksight extends PolicyStatement {
       'UpdateActionConnectorPermissions',
       'UpdateAgentPermissions',
       'UpdateAnalysisPermissions',
+      'UpdateAutomationGroupPermissions',
       'UpdateDashboardPermissions',
       'UpdateDataSetPermissions',
       'UpdateDataSourcePermissions',
@@ -3821,6 +3986,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeAnalysisPermissions',
       'DescribeAssetBundleExportJob',
       'DescribeAssetBundleImportJob',
+      'DescribeAutomationGroup',
       'DescribeAutomationJob',
       'DescribeBrand',
       'DescribeBrandAssignment',
@@ -3849,6 +4015,7 @@ export class Quicksight extends PolicyStatement {
       'DescribeIpRestriction',
       'DescribeKeyRegistration',
       'DescribeKnowledgeBase',
+      'DescribeLimitsProfile',
       'DescribeNamespace',
       'DescribeOAuthClientApplication',
       'DescribeQPersonalizationConfiguration',
@@ -3892,6 +4059,8 @@ export class Quicksight extends PolicyStatement {
       'ListAnalyses',
       'ListAssetBundleExportJobs',
       'ListAssetBundleImportJobs',
+      'ListAssignmentsForPrincipal',
+      'ListAutomationGroups',
       'ListBrands',
       'ListCustomPermissions',
       'ListCustomerManagedKeys',
@@ -3911,8 +4080,10 @@ export class Quicksight extends PolicyStatement {
       'ListIngestions',
       'ListKMSKeysForUser',
       'ListKnowledgeBases',
+      'ListLimitsProfiles',
       'ListNamespaces',
       'ListOAuthClientApplications',
+      'ListProfileAssignments',
       'ListRefreshSchedules',
       'ListRoleMemberships',
       'ListSelfUpgrades',
@@ -3934,6 +4105,7 @@ export class Quicksight extends PolicyStatement {
       'SearchActionConnectors',
       'SearchAgents',
       'SearchAnalyses',
+      'SearchAutomationGroups',
       'SearchDashboards',
       'SearchDataSets',
       'SearchDataSources',
@@ -4496,6 +4668,23 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type limitsProfile to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_LimitsProfile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onLimitsProfile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:limits-profile/${ resourceId }`);
+  }
+
+  /**
    * Filters access by tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -4516,6 +4705,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
+   * - .toCreateLimitsProfile()
    * - .toCreateNamespace()
    * - .toCreateOAuthClientApplication()
    * - .toCreateTemplate()
@@ -4594,6 +4784,7 @@ export class Quicksight extends PolicyStatement {
    * - actionconnector
    * - flow
    * - knowledgeBase
+   * - limitsProfile
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4624,6 +4815,7 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
+   * - .toCreateLimitsProfile()
    * - .toCreateNamespace()
    * - .toCreateOAuthClientApplication()
    * - .toCreateTemplate()

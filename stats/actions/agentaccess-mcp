@@ -1,3 +1,5 @@
+agentaccess-mcp:CallForwardedTool;Write
+agentaccess-mcp:CheckConnectionStatus;Read
 agentaccess-mcp:DoubleClick;Write
 agentaccess-mcp:GetScreenshot;Read
 agentaccess-mcp:HoldKey;Write

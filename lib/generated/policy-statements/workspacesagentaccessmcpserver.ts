@@ -19,6 +19,34 @@ export class AgentaccessMcp extends PolicyStatement {
   }
 
   /**
+   * Grants permission to invoke a forwarded tool on a remote instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifStackArn()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/developerguide/
+   */
+  public toCallForwardedTool() {
+    return this.to('CallForwardedTool');
+  }
+
+  /**
+   * Grants permission to check the connection status of a streaming session
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifStackArn()
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/developerguide/
+   */
+  public toCheckConnectionStatus() {
+    return this.to('CheckConnectionStatus');
+  }
+
+  /**
    * Grants permission to perform double click at coordinates
    *
    * Access Level: Write
@@ -230,6 +258,7 @@ export class AgentaccessMcp extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
+      'CallForwardedTool',
       'DoubleClick',
       'HoldKey',
       'InvokeMcp',
@@ -246,6 +275,7 @@ export class AgentaccessMcp extends PolicyStatement {
       'TypeText'
     ],
     Read: [
+      'CheckConnectionStatus',
       'GetScreenshot'
     ]
   };
@@ -256,6 +286,8 @@ export class AgentaccessMcp extends PolicyStatement {
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/
    *
    * Applies to actions:
+   * - .toCallForwardedTool()
+   * - .toCheckConnectionStatus()
    * - .toDoubleClick()
    * - .toGetScreenshot()
    * - .toHoldKey()
