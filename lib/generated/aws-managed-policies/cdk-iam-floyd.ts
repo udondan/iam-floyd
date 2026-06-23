@@ -1064,6 +1064,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEMRServicePolicyV2);
     }
 
+    /** Provides permissions to provision and manage Network Load Balancers, VPC endpoint services, and security groups required for Amazon EMR Spark Connect interactive sessions on EMR on EC2 clusters. */
+    public AmazonEMRServicePolicyForSessions(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonEMRServicePolicyForSessions);
+    }
+
     /** Provides limited access to the Amazon Cognito configuration service. */
     public AmazonESCognitoAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonESCognitoAccess);
@@ -3649,6 +3654,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSConfigServiceRolePolicy);
     }
 
+    /** Provides permissions for AWS Config to inventory and evaluate compliance of third-party cloud resources. */
+    public AWSConfigThirdPartyServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSConfigThirdPartyServiceRolePolicy);
+    }
+
     /** Provides access to use AWS Config, including searching by tags on resources, and reading all tags. This does not provide permission to configure AWS Config, which requires administrative privileges. */
     public AWSConfigUserAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSConfigUserAccess);
@@ -4782,6 +4792,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides permissions required to access MSK Cluster within a VPC, manage ENIs (create, describe, delete) in the VPC and write permissions to CloudWatch Logs. */
     public AWSLambdaMSKExecutionRole(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaMSKExecutionRole);
+    }
+
+    /** This policy grants permissions to create and administer ENI resources managed by the Lambda Network Connector */
+    public AWSLambdaNetworkConnectorOperatorPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSLambdaNetworkConnectorOperatorPolicy);
     }
 
     /** Grants Lambda Replicator necessary permissions to replicate functions across regions */
