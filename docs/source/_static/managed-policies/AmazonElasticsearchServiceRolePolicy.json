@@ -100,6 +100,16 @@
       "Resource": "arn:aws:ec2:*:*:network-interface/*"
     },
     {
+      "Sid": "Stmt1480452973194",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ]
+    },
+    {
       "Sid": "Stmt1480452973202",
       "Effect": "Allow",
       "Action": [

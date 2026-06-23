@@ -422,6 +422,8 @@ export class AwsManagedPolicy {
     public static AmazonEMRServerlessServiceRolePolicy = 'aws-service-role/AmazonEMRServerlessServiceRolePolicy';
     /** This policy is used for the Amazon EMR Service Role and should NOT be used for any other IAM users or roles in your account. The policy grants permissions to create and manage resources associated with EMR and related services necessary for the operation of your EMR cluster. */
     public static AmazonEMRServicePolicyV2 = 'service-role/AmazonEMRServicePolicy_v2';
+    /** Provides permissions to provision and manage Network Load Balancers, VPC endpoint services, and security groups required for Amazon EMR Spark Connect interactive sessions on EMR on EC2 clusters. */
+    public static AmazonEMRServicePolicyForSessions = 'service-role/AmazonEMRServicePolicyForSessions';
     /** Provides limited access to the Amazon Cognito configuration service. */
     public static AmazonESCognitoAccess = 'AmazonESCognitoAccess';
     /** Provides full access to the Amazon ES configuration service. */
@@ -1456,6 +1458,8 @@ export class AwsManagedPolicy {
     public static AWSConfigRulesExecutionRole = 'service-role/AWSConfigRulesExecutionRole';
     /** Allows Config to call AWS services and collect resource configurations on your behalf. */
     public static AWSConfigServiceRolePolicy = 'aws-service-role/AWSConfigServiceRolePolicy';
+    /** Provides permissions for AWS Config to inventory and evaluate compliance of third-party cloud resources. */
+    public static AWSConfigThirdPartyServiceRolePolicy = 'aws-service-role/AWSConfigThirdPartyServiceRolePolicy';
     /** Provides access to use AWS Config, including searching by tags on resources, and reading all tags. This does not provide permission to configure AWS Config, which requires administrative privileges. */
     public static AWSConfigUserAccess = 'AWSConfigUserAccess';
     /** Enables broad read/write access to ALL EC2 objects, read/write access to S3 buckets starting with 'import-to-ec2-', and the ability to list all S3 buckets, for the AWS Connector to import VMs on your behalf. */
@@ -1910,6 +1914,8 @@ export class AwsManagedPolicy {
     public static AWSLambdaManagedEC2ResourceOperator = 'AWSLambdaManagedEC2ResourceOperator';
     /** Provides permissions required to access MSK Cluster within a VPC, manage ENIs (create, describe, delete) in the VPC and write permissions to CloudWatch Logs. */
     public static AWSLambdaMSKExecutionRole = 'service-role/AWSLambdaMSKExecutionRole';
+    /** This policy grants permissions to create and administer ENI resources managed by the Lambda Network Connector */
+    public static AWSLambdaNetworkConnectorOperatorPolicy = 'AWSLambdaNetworkConnectorOperatorPolicy';
     /** Grants Lambda Replicator necessary permissions to replicate functions across regions */
     public static AWSLambdaReplicator = 'aws-service-role/AWSLambdaReplicator';
     /** Default policy for AWS Lambda service role. */

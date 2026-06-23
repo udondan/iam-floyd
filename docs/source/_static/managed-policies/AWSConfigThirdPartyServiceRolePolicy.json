@@ -1,0 +1,40 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowGetWebIdentityTokenByConfig",
+      "Effect": "Allow",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringLike": {
+          "sts:IdentityTokenAudience": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowConfigActionsForRules",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutEvaluations",
+        "config:GetComplianceDetailsByConfigRule"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowCloudwatchActionsForMetrics",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "cloudwatch:namespace": "AWS/Config"
+        }
+      }
+    }
+  ]
+}
