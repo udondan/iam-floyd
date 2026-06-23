@@ -1,12 +1,17 @@
 lambda:AddLayerVersionPermission;Permissions management
 lambda:AddPermission;Permissions management
 lambda:CheckpointDurableExecution;Write
+lambda:ConnectMicrovm;Write
 lambda:CreateAlias;Write
 lambda:CreateCapacityProvider;Write
 lambda:CreateCodeSigningConfig;Write
 lambda:CreateEventSourceMapping;Write
 lambda:CreateFunction;Write
 lambda:CreateFunctionUrlConfig;Write
+lambda:CreateMicrovmAuthToken;Write
+lambda:CreateMicrovmImage;Write
+lambda:CreateMicrovmShellAuthToken;Write
+lambda:CreateNetworkConnector;Write
 lambda:DeleteAlias;Write
 lambda:DeleteCapacityProvider;Write
 lambda:DeleteCodeSigningConfig;Write
@@ -17,6 +22,9 @@ lambda:DeleteFunctionConcurrency;Write
 lambda:DeleteFunctionEventInvokeConfig;Write
 lambda:DeleteFunctionUrlConfig;Write
 lambda:DeleteLayerVersion;Write
+lambda:DeleteMicrovmImage;Write
+lambda:DeleteMicrovmImageVersion;Write
+lambda:DeleteNetworkConnector;Write
 lambda:DeleteProvisionedConcurrencyConfig;Write
 lambda:DisableReplication;Permissions management
 lambda:EnableReplication;Permissions management
@@ -38,6 +46,11 @@ lambda:GetFunctionScalingConfig;Read
 lambda:GetFunctionUrlConfig;Read
 lambda:GetLayerVersion;Read
 lambda:GetLayerVersionPolicy;Read
+lambda:GetMicrovm;Read
+lambda:GetMicrovmImage;Read
+lambda:GetMicrovmImageBuild;Read
+lambda:GetMicrovmImageVersion;Read
+lambda:GetNetworkConnector;Read
 lambda:GetPolicy;Read
 lambda:GetProvisionedConcurrencyConfig;Read
 lambda:GetRuntimeManagementConfig;Read
@@ -56,10 +69,18 @@ lambda:ListFunctions;List
 lambda:ListFunctionsByCodeSigningConfig;List
 lambda:ListLayerVersions;List
 lambda:ListLayers;List
+lambda:ListManagedMicrovmImageVersions;List
+lambda:ListManagedMicrovmImages;List
+lambda:ListMicrovmImageBuilds;List
+lambda:ListMicrovmImageVersions;List
+lambda:ListMicrovmImages;List
+lambda:ListMicrovms;List
+lambda:ListNetworkConnectors;List
 lambda:ListProvisionedConcurrencyConfigs;List
 lambda:ListTags;Read
 lambda:ListVersionsByFunction;List
 lambda:PassCapacityProvider;Write
+lambda:PassNetworkConnector;Write
 lambda:PublishLayerVersion;Write
 lambda:PublishVersion;Write
 lambda:PutFunctionCodeSigningConfig;Write
@@ -71,11 +92,15 @@ lambda:PutProvisionedConcurrencyConfig;Write
 lambda:PutRuntimeManagementConfig;Write
 lambda:RemoveLayerVersionPermission;Permissions management
 lambda:RemovePermission;Permissions management
+lambda:ResumeMicrovm;Write
+lambda:RunMicrovm;Write
 lambda:SendDurableExecutionCallbackFailure;Write
 lambda:SendDurableExecutionCallbackHeartbeat;Write
 lambda:SendDurableExecutionCallbackSuccess;Write
 lambda:StopDurableExecution;Write
+lambda:SuspendMicrovm;Write
 lambda:TagResource;Tagging
+lambda:TerminateMicrovm;Write
 lambda:UntagResource;Tagging
 lambda:UpdateAlias;Write
 lambda:UpdateCapacityProvider;Write
@@ -86,3 +111,6 @@ lambda:UpdateFunctionCodeSigningConfig;Write
 lambda:UpdateFunctionConfiguration;Write
 lambda:UpdateFunctionEventInvokeConfig;Write
 lambda:UpdateFunctionUrlConfig;Write
+lambda:UpdateMicrovmImage;Write
+lambda:UpdateMicrovmImageVersion;Write
+lambda:UpdateNetworkConnector;Write

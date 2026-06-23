@@ -19,6 +19,17 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to batch delete instrumentation configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_BatchDeleteInstrumentationConfigurations.html
+   */
+  public toBatchDeleteInstrumentationConfigurations() {
+    return this.to('BatchDeleteInstrumentationConfigurations');
+  }
+
+  /**
    * Grants permission to batch retrieve a service level objective budget report
    *
    * Access Level: Read
@@ -36,6 +47,21 @@ export class ApplicationSignals extends PolicyStatement {
    */
   public toBatchUpdateExclusionWindows() {
     return this.to('BatchUpdateExclusionWindows');
+  }
+
+  /**
+   * Grants permission to create an instrumentation configuration for dynamic instrumentation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_CreateInstrumentationConfiguration.html
+   */
+  public toCreateInstrumentationConfiguration() {
+    return this.to('CreateInstrumentationConfiguration');
   }
 
   /**
@@ -65,6 +91,17 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an instrumentation configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteInstrumentationConfiguration.html
+   */
+  public toDeleteInstrumentationConfiguration() {
+    return this.to('DeleteInstrumentationConfiguration');
+  }
+
+  /**
    * Grants permission to delete a service level objective
    *
    * Access Level: Write
@@ -73,6 +110,28 @@ export class ApplicationSignals extends PolicyStatement {
    */
   public toDeleteServiceLevelObjective() {
     return this.to('DeleteServiceLevelObjective');
+  }
+
+  /**
+   * Grants permission to retrieve an instrumentation configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetInstrumentationConfiguration.html
+   */
+  public toGetInstrumentationConfiguration() {
+    return this.to('GetInstrumentationConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve the status history of an instrumentation configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetInstrumentationConfigurationStatus.html
+   */
+  public toGetInstrumentationConfigurationStatus() {
+    return this.to('GetInstrumentationConfigurationStatus');
   }
 
   /**
@@ -139,6 +198,17 @@ export class ApplicationSignals extends PolicyStatement {
    */
   public toListGroupingAttributeDefinitions() {
     return this.to('ListGroupingAttributeDefinitions');
+  }
+
+  /**
+   * Grants permission to list instrumentation configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListInstrumentationConfigurations.html
+   */
+  public toListInstrumentationConfigurations() {
+    return this.to('ListInstrumentationConfigurations');
   }
 
   /**
@@ -228,7 +298,7 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list tags for an Amazon CloudWatch SLO
+   * Grants permission to list tags for an Amazon CloudWatch Application Signals resource
    *
    * Access Level: Read
    *
@@ -250,6 +320,17 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Grants permission to report the status of instrumentation configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ReportInstrumentationConfigurationStatus.html
+   */
+  public toReportInstrumentationConfigurationStatus() {
+    return this.to('ReportInstrumentationConfigurationStatus');
+  }
+
+  /**
    * Grants permission to enable CloudWatch discovery
    *
    * Access Level: Write
@@ -261,7 +342,7 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an Amazon CloudWatch SLO
+   * Grants permission to add tags to an Amazon CloudWatch Application Signals resource
    *
    * Access Level: Tagging
    *
@@ -276,7 +357,7 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag to an Amazon CloudWatch SLO
+   * Grants permission to remove tags from an Amazon CloudWatch Application Signals resource
    *
    * Access Level: Tagging
    *
@@ -301,8 +382,24 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    Write: [
+      'BatchDeleteInstrumentationConfigurations',
+      'BatchUpdateExclusionWindows',
+      'CreateInstrumentationConfiguration',
+      'CreateServiceLevelObjective',
+      'DeleteGroupingConfiguration',
+      'DeleteInstrumentationConfiguration',
+      'DeleteServiceLevelObjective',
+      'Link',
+      'PutGroupingConfiguration',
+      'ReportInstrumentationConfigurationStatus',
+      'StartDiscovery',
+      'UpdateServiceLevelObjective'
+    ],
     Read: [
       'BatchGetServiceLevelObjectiveBudgetReport',
+      'GetInstrumentationConfiguration',
+      'GetInstrumentationConfigurationStatus',
       'GetService',
       'GetServiceLevelObjective',
       'ListServiceDependencies',
@@ -310,20 +407,11 @@ export class ApplicationSignals extends PolicyStatement {
       'ListServiceOperations',
       'ListTagsForResource'
     ],
-    Write: [
-      'BatchUpdateExclusionWindows',
-      'CreateServiceLevelObjective',
-      'DeleteGroupingConfiguration',
-      'DeleteServiceLevelObjective',
-      'Link',
-      'PutGroupingConfiguration',
-      'StartDiscovery',
-      'UpdateServiceLevelObjective'
-    ],
     List: [
       'ListAuditFindings',
       'ListEntityEvents',
       'ListGroupingAttributeDefinitions',
+      'ListInstrumentationConfigurations',
       'ListObservedEntities',
       'ListServiceLevelObjectiveExclusionWindows',
       'ListServiceLevelObjectives',
@@ -354,11 +442,32 @@ export class ApplicationSignals extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type instrumentationConfig to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateInstrumentationConfiguration.html
+   *
+   * @param service - Identifier for the service.
+   * @param environment - Identifier for the environment.
+   * @param signalType - Identifier for the signalType.
+   * @param locationHash - Identifier for the locationHash.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onInstrumentationConfig(service: string, environment: string, signalType: string, locationHash: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:application-signals:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instrumentationConfig/${ service }/${ environment }/${ signalType }/${ locationHash }`);
+  }
+
+  /**
    * Filters access by the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCreateInstrumentationConfiguration()
    * - .toCreateServiceLevelObjective()
    * - .toTagResource()
    *
@@ -377,6 +486,7 @@ export class ApplicationSignals extends PolicyStatement {
    *
    * Applies to resource types:
    * - slo
+   * - instrumentationConfig
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -392,6 +502,7 @@ export class ApplicationSignals extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCreateInstrumentationConfiguration()
    * - .toCreateServiceLevelObjective()
    * - .toTagResource()
    * - .toUntagResource()

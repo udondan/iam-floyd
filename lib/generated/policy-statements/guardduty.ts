@@ -103,6 +103,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a GuardDuty investigation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateInvestigation.html
+   */
+  public toCreateInvestigation() {
+    return this.to('CreateInvestigation');
+  }
+
+  /**
    * Grants permission to create a new Malware Protection plan
    *
    * Access Level: Write
@@ -499,6 +510,17 @@ export class Guardduty extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a GuardDuty investigation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetInvestigation.html
+   */
+  public toGetInvestigation() {
+    return this.to('GetInvestigation');
+  }
+
+  /**
    * Grants permission to retrieve the count of all GuardDuty invitations sent to a specified account, which does not include the accepted invitation
    *
    * Access Level: Read
@@ -705,6 +727,17 @@ export class Guardduty extends PolicyStatement {
    */
   public toListIPSets() {
     return this.to('ListIPSets');
+  }
+
+  /**
+   * Grants permission to retrieve a list of GuardDuty investigations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListInvestigations.html
+   */
+  public toListInvestigations() {
+    return this.to('ListInvestigations');
   }
 
   /**
@@ -1070,6 +1103,7 @@ export class Guardduty extends PolicyStatement {
       'CreateDetector',
       'CreateFilter',
       'CreateIPSet',
+      'CreateInvestigation',
       'CreateMalwareProtectionPlan',
       'CreateMembers',
       'CreatePublishingDestination',
@@ -1124,6 +1158,7 @@ export class Guardduty extends PolicyStatement {
       'GetFindings',
       'GetFindingsStatistics',
       'GetIPSet',
+      'GetInvestigation',
       'GetInvitationsCount',
       'GetMalwareProtectionPlan',
       'GetMalwareScan',
@@ -1145,6 +1180,7 @@ export class Guardduty extends PolicyStatement {
       'ListFilters',
       'ListFindings',
       'ListIPSets',
+      'ListInvestigations',
       'ListInvitations',
       'ListMalwareProtectionPlans',
       'ListMalwareScans',

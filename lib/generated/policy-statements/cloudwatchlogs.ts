@@ -424,6 +424,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete syslog configuration for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSyslogConfiguration.html
+   */
+  public toDeleteSyslogConfiguration() {
+    return this.to('DeleteSyslogConfiguration');
+  }
+
+  /**
    * Grants permission to delete a transformer associated with the specified log group
    *
    * Access Level: Write
@@ -1011,6 +1022,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return all syslog configurations associated with the AWS account making the request
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSyslogConfigurations.html
+   */
+  public toListSyslogConfigurations() {
+    return this.to('ListSyslogConfigurations');
+  }
+
+  /**
    * Grants permission to list the tags for the specified resource
    *
    * Access Level: List
@@ -1266,6 +1288,17 @@ export class Logs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add syslog configuration for the specified log group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSyslogConfiguration.html
+   */
+  public toPutSyslogConfiguration() {
+    return this.to('PutSyslogConfiguration');
+  }
+
+  /**
    * Grants permission to create or update a transformer and associates it with the specified log group
    *
    * Access Level: Write
@@ -1517,6 +1550,7 @@ export class Logs extends PolicyStatement {
       'DeleteRetentionPolicy',
       'DeleteScheduledQuery',
       'DeleteSubscriptionFilter',
+      'DeleteSyslogConfiguration',
       'DeleteTransformer',
       'DisassociateKmsKey',
       'DisassociateSourceFromS3TableIntegration',
@@ -1540,6 +1574,7 @@ export class Logs extends PolicyStatement {
       'PutQueryDefinition',
       'PutRetentionPolicy',
       'PutSubscriptionFilter',
+      'PutSyslogConfiguration',
       'PutTransformer',
       'UpdateAnomaly',
       'UpdateDeliveryConfiguration',
@@ -1583,6 +1618,7 @@ export class Logs extends PolicyStatement {
       'ListLogGroupsForQuery',
       'ListScheduledQueries',
       'ListSourcesForS3TableIntegration',
+      'ListSyslogConfigurations',
       'ListTagsForResource',
       'ListTagsLogGroup'
     ],

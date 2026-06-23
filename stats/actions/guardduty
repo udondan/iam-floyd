@@ -4,6 +4,7 @@ guardduty:ArchiveFindings;Write
 guardduty:CreateDetector;Write
 guardduty:CreateFilter;Write
 guardduty:CreateIPSet;Write
+guardduty:CreateInvestigation;Write
 guardduty:CreateMalwareProtectionPlan;Write
 guardduty:CreateMembers;Write
 guardduty:CreatePublishingDestination;Write
@@ -37,6 +38,7 @@ guardduty:GetFilter;Read
 guardduty:GetFindings;Read
 guardduty:GetFindingsStatistics;Read
 guardduty:GetIPSet;Read
+guardduty:GetInvestigation;Read
 guardduty:GetInvitationsCount;Read
 guardduty:GetMalwareProtectionPlan;Read
 guardduty:GetMalwareScan;Read
@@ -56,6 +58,7 @@ guardduty:ListDetectors;List
 guardduty:ListFilters;List
 guardduty:ListFindings;List
 guardduty:ListIPSets;List
+guardduty:ListInvestigations;List
 guardduty:ListInvitations;List
 guardduty:ListMalwareProtectionPlans;List
 guardduty:ListMalwareScans;List

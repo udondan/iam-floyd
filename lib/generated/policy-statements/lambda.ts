@@ -56,6 +56,17 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to connect to a Lambda MicroVM via HTTP (VPC Endpoint only)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toConnectMicrovm() {
+    return this.to('ConnectMicrovm');
+  }
+
+  /**
    * Grants permission to create an alias for a Lambda function version
    *
    * Access Level: Write
@@ -156,6 +167,68 @@ export class Lambda extends PolicyStatement {
    */
   public toCreateFunctionUrlConfig() {
     return this.to('CreateFunctionUrlConfig');
+  }
+
+  /**
+   * Grants permission to create an auth token for an AWS Lambda MicroVM
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmAuthToken.html
+   */
+  public toCreateMicrovmAuthToken() {
+    return this.to('CreateMicrovmAuthToken');
+  }
+
+  /**
+   * Grants permission to create an AWS Lambda MicroVM image
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - lambda:PassNetworkConnector
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmImage.html
+   */
+  public toCreateMicrovmImage() {
+    return this.to('CreateMicrovmImage');
+  }
+
+  /**
+   * Grants permission to create a shell auth token for an AWS Lambda MicroVM
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_CreateMicrovmShellAuthToken.html
+   */
+  public toCreateMicrovmShellAuthToken() {
+    return this.to('CreateMicrovmShellAuthToken');
+  }
+
+  /**
+   * Grants permission to create an AWS Lambda network connector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifSecurityGroupIds()
+   * - .ifSubnetIds()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateNetworkConnector.html
+   */
+  public toCreateNetworkConnector() {
+    return this.to('CreateNetworkConnector');
   }
 
   /**
@@ -273,6 +346,39 @@ export class Lambda extends PolicyStatement {
    */
   public toDeleteLayerVersion() {
     return this.to('DeleteLayerVersion');
+  }
+
+  /**
+   * Grants permission to delete an AWS Lambda MicroVM image
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_DeleteMicrovmImage.html
+   */
+  public toDeleteMicrovmImage() {
+    return this.to('DeleteMicrovmImage');
+  }
+
+  /**
+   * Grants permission to delete a version of an AWS Lambda MicroVM image
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_DeleteMicrovmImageVersion.html
+   */
+  public toDeleteMicrovmImageVersion() {
+    return this.to('DeleteMicrovmImageVersion');
+  }
+
+  /**
+   * Grants permission to delete an AWS Lambda network connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteNetworkConnector.html
+   */
+  public toDeleteNetworkConnector() {
+    return this.to('DeleteNetworkConnector');
   }
 
   /**
@@ -514,6 +620,61 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view information about an AWS Lambda MicroVM
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovm.html
+   */
+  public toGetMicrovm() {
+    return this.to('GetMicrovm');
+  }
+
+  /**
+   * Grants permission to view information about an AWS Lambda MicroVM image
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImage.html
+   */
+  public toGetMicrovmImage() {
+    return this.to('GetMicrovmImage');
+  }
+
+  /**
+   * Grants permission to view information about a build of an AWS Lambda MicroVM image version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImageBuild.html
+   */
+  public toGetMicrovmImageBuild() {
+    return this.to('GetMicrovmImageBuild');
+  }
+
+  /**
+   * Grants permission to view information about a version of an AWS Lambda MicroVM image
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_GetMicrovmImageVersion.html
+   */
+  public toGetMicrovmImageVersion() {
+    return this.to('GetMicrovmImageVersion');
+  }
+
+  /**
+   * Grants permission to view details about an AWS Lambda network connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetNetworkConnector.html
+   */
+  public toGetNetworkConnector() {
+    return this.to('GetNetworkConnector');
+  }
+
+  /**
    * Grants permission to view the resource-based policy for an AWS Lambda function, version, or alias
    *
    * Access Level: Read
@@ -724,6 +885,83 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of versions for a managed AWS Lambda MicroVM image
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListManagedMicrovmImageVersions.html
+   */
+  public toListManagedMicrovmImageVersions() {
+    return this.to('ListManagedMicrovmImageVersions');
+  }
+
+  /**
+   * Grants permission to retrieve a list of managed AWS Lambda MicroVM images
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListManagedMicrovmImages.html
+   */
+  public toListManagedMicrovmImages() {
+    return this.to('ListManagedMicrovmImages');
+  }
+
+  /**
+   * Grants permission to retrieve a list of builds for an AWS Lambda MicroVM image version
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImageBuilds.html
+   */
+  public toListMicrovmImageBuilds() {
+    return this.to('ListMicrovmImageBuilds');
+  }
+
+  /**
+   * Grants permission to retrieve a list of versions for an AWS Lambda MicroVM image
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImageVersions.html
+   */
+  public toListMicrovmImageVersions() {
+    return this.to('ListMicrovmImageVersions');
+  }
+
+  /**
+   * Grants permission to retrieve a list of AWS Lambda MicroVM images
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovmImages.html
+   */
+  public toListMicrovmImages() {
+    return this.to('ListMicrovmImages');
+  }
+
+  /**
+   * Grants permission to retrieve a list of AWS Lambda MicroVMs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ListMicrovms.html
+   */
+  public toListMicrovms() {
+    return this.to('ListMicrovms');
+  }
+
+  /**
+   * Grants permission to retrieve a list of AWS Lambda network connectors
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_ListNetworkConnectors.html
+   */
+  public toListNetworkConnectors() {
+    return this.to('ListNetworkConnectors');
+  }
+
+  /**
    * Grants permission to retrieve a list of provisioned concurrency configurations for an AWS Lambda function
    *
    * Access Level: List
@@ -735,7 +973,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource
+   * Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource
    *
    * Access Level: Read
    *
@@ -765,6 +1003,17 @@ export class Lambda extends PolicyStatement {
    */
   public toPassCapacityProvider() {
     return this.to('PassCapacityProvider');
+  }
+
+  /**
+   * Grants permission to pass an AWS Lambda network connector to a service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html
+   */
+  public toPassNetworkConnector() {
+    return this.to('PassNetworkConnector');
   }
 
   /**
@@ -896,6 +1145,32 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Grants permission to resume a suspended AWS Lambda MicroVM
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_ResumeMicrovm.html
+   */
+  public toResumeMicrovm() {
+    return this.to('ResumeMicrovm');
+  }
+
+  /**
+   * Grants permission to run an AWS Lambda MicroVM from a MicroVM image
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - lambda:PassNetworkConnector
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_RunMicrovm.html
+   */
+  public toRunMicrovm() {
+    return this.to('RunMicrovm');
+  }
+
+  /**
    * Grants permission to send a failure response for a callback operation in an AWS Lambda durable execution
    *
    * Access Level: Write
@@ -940,7 +1215,18 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource
+   * Grants permission to suspend an AWS Lambda MicroVM
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_SuspendMicrovm.html
+   */
+  public toSuspendMicrovm() {
+    return this.to('SuspendMicrovm');
+  }
+
+  /**
+   * Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource
    *
    * Access Level: Tagging
    *
@@ -955,7 +1241,18 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource
+   * Grants permission to terminate an AWS Lambda MicroVM
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_TerminateMicrovm.html
+   */
+  public toTerminateMicrovm() {
+    return this.to('TerminateMicrovm');
+  }
+
+  /**
+   * Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, code signing configuration, network connector or MicroVM image resource
    *
    * Access Level: Tagging
    *
@@ -1080,6 +1377,43 @@ export class Lambda extends PolicyStatement {
     return this.to('UpdateFunctionUrlConfig');
   }
 
+  /**
+   * Grants permission to update an AWS Lambda MicroVM image
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
+   * - lambda:PassNetworkConnector
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_UpdateMicrovmImage.html
+   */
+  public toUpdateMicrovmImage() {
+    return this.to('UpdateMicrovmImage');
+  }
+
+  /**
+   * Grants permission to update a version of an AWS Lambda MicroVM image
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/microvm-api/API_UpdateMicrovmImageVersion.html
+   */
+  public toUpdateMicrovmImageVersion() {
+    return this.to('UpdateMicrovmImageVersion');
+  }
+
+  /**
+   * Grants permission to update an AWS Lambda network connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateNetworkConnector.html
+   */
+  public toUpdateNetworkConnector() {
+    return this.to('UpdateNetworkConnector');
+  }
+
   protected accessLevelList: AccessLevelList = {
     'Permissions management': [
       'AddLayerVersionPermission',
@@ -1091,12 +1425,17 @@ export class Lambda extends PolicyStatement {
     ],
     Write: [
       'CheckpointDurableExecution',
+      'ConnectMicrovm',
       'CreateAlias',
       'CreateCapacityProvider',
       'CreateCodeSigningConfig',
       'CreateEventSourceMapping',
       'CreateFunction',
       'CreateFunctionUrlConfig',
+      'CreateMicrovmAuthToken',
+      'CreateMicrovmImage',
+      'CreateMicrovmShellAuthToken',
+      'CreateNetworkConnector',
       'DeleteAlias',
       'DeleteCapacityProvider',
       'DeleteCodeSigningConfig',
@@ -1107,11 +1446,15 @@ export class Lambda extends PolicyStatement {
       'DeleteFunctionEventInvokeConfig',
       'DeleteFunctionUrlConfig',
       'DeleteLayerVersion',
+      'DeleteMicrovmImage',
+      'DeleteMicrovmImageVersion',
+      'DeleteNetworkConnector',
       'DeleteProvisionedConcurrencyConfig',
       'InvokeAsync',
       'InvokeFunction',
       'InvokeFunctionUrl',
       'PassCapacityProvider',
+      'PassNetworkConnector',
       'PublishLayerVersion',
       'PublishVersion',
       'PutFunctionCodeSigningConfig',
@@ -1121,10 +1464,14 @@ export class Lambda extends PolicyStatement {
       'PutFunctionScalingConfig',
       'PutProvisionedConcurrencyConfig',
       'PutRuntimeManagementConfig',
+      'ResumeMicrovm',
+      'RunMicrovm',
       'SendDurableExecutionCallbackFailure',
       'SendDurableExecutionCallbackHeartbeat',
       'SendDurableExecutionCallbackSuccess',
       'StopDurableExecution',
+      'SuspendMicrovm',
+      'TerminateMicrovm',
       'UpdateAlias',
       'UpdateCapacityProvider',
       'UpdateCodeSigningConfig',
@@ -1133,7 +1480,10 @@ export class Lambda extends PolicyStatement {
       'UpdateFunctionCodeSigningConfig',
       'UpdateFunctionConfiguration',
       'UpdateFunctionEventInvokeConfig',
-      'UpdateFunctionUrlConfig'
+      'UpdateFunctionUrlConfig',
+      'UpdateMicrovmImage',
+      'UpdateMicrovmImageVersion',
+      'UpdateNetworkConnector'
     ],
     Read: [
       'GetAccountSettings',
@@ -1154,6 +1504,11 @@ export class Lambda extends PolicyStatement {
       'GetFunctionUrlConfig',
       'GetLayerVersion',
       'GetLayerVersionPolicy',
+      'GetMicrovm',
+      'GetMicrovmImage',
+      'GetMicrovmImageBuild',
+      'GetMicrovmImageVersion',
+      'GetNetworkConnector',
       'GetPolicy',
       'GetProvisionedConcurrencyConfig',
       'GetRuntimeManagementConfig',
@@ -1172,6 +1527,13 @@ export class Lambda extends PolicyStatement {
       'ListFunctionsByCodeSigningConfig',
       'ListLayerVersions',
       'ListLayers',
+      'ListManagedMicrovmImageVersions',
+      'ListManagedMicrovmImages',
+      'ListMicrovmImageBuilds',
+      'ListMicrovmImageVersions',
+      'ListMicrovmImages',
+      'ListMicrovms',
+      'ListNetworkConnectors',
       'ListProvisionedConcurrencyConfigs',
       'ListVersionsByFunction'
     ],
@@ -1332,6 +1694,40 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type networkConnector to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param networkConnectorId - Identifier for the networkConnectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNetworkConnector(networkConnectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:network-connector:${ networkConnectorId }`);
+  }
+
+  /**
+   * Adds a resource of type microvmImage to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param microvmImageName - Identifier for the microvmImageName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMicrovmImage(microvmImageName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lambda:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:microvm-image:${ microvmImageName }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1341,6 +1737,8 @@ export class Lambda extends PolicyStatement {
    * - .toCreateCodeSigningConfig()
    * - .toCreateEventSourceMapping()
    * - .toCreateFunction()
+   * - .toCreateMicrovmImage()
+   * - .toCreateNetworkConnector()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1363,6 +1761,8 @@ export class Lambda extends PolicyStatement {
    * - function
    * - function alias
    * - function version
+   * - networkConnector
+   * - microvmImage
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1382,6 +1782,8 @@ export class Lambda extends PolicyStatement {
    * - .toCreateCodeSigningConfig()
    * - .toCreateEventSourceMapping()
    * - .toCreateFunction()
+   * - .toCreateMicrovmImage()
+   * - .toCreateNetworkConnector()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -1523,6 +1925,7 @@ export class Lambda extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCapacityProvider()
    * - .toCreateFunction()
+   * - .toCreateNetworkConnector()
    * - .toUpdateFunctionConfiguration()
    *
    * @param value The value(s) to check
@@ -1552,6 +1955,7 @@ export class Lambda extends PolicyStatement {
    * Applies to actions:
    * - .toCreateCapacityProvider()
    * - .toCreateFunction()
+   * - .toCreateNetworkConnector()
    * - .toUpdateFunctionConfiguration()
    *
    * @param value The value(s) to check
