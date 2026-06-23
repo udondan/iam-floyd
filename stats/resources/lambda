@@ -7,3 +7,5 @@ lambda:function alias
 lambda:function version
 lambda:layer
 lambda:layerVersion
+lambda:microvmImage
+lambda:networkConnector

@@ -33,6 +33,7 @@ logs:DeleteResourcePolicy;Permissions management
 logs:DeleteRetentionPolicy;Write
 logs:DeleteScheduledQuery;Write
 logs:DeleteSubscriptionFilter;Write
+logs:DeleteSyslogConfiguration;Write
 logs:DeleteTransformer;Write
 logs:DescribeAccountPolicies;List
 logs:DescribeConfigurationTemplates;List
@@ -86,6 +87,7 @@ logs:ListLogGroupsForEntity;List
 logs:ListLogGroupsForQuery;List
 logs:ListScheduledQueries;List
 logs:ListSourcesForS3TableIntegration;List
+logs:ListSyslogConfigurations;List
 logs:ListTagsForResource;List
 logs:ListTagsLogGroup;List
 logs:ProcessWithPipeline;Write
@@ -107,6 +109,7 @@ logs:PutQueryDefinition;Write
 logs:PutResourcePolicy;Permissions management
 logs:PutRetentionPolicy;Write
 logs:PutSubscriptionFilter;Write
+logs:PutSyslogConfiguration;Write
 logs:PutTransformer;Write
 logs:StartLiveTail;Read
 logs:StartQuery;Read
