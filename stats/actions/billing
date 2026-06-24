@@ -12,7 +12,9 @@ billing:GetBillingViewData;Read
 billing:GetContractInformation;Read
 billing:GetCreditAllocationHistory;Read
 billing:GetCredits;Read
+billing:GetCumulativeTracking;Read
 billing:GetIAMAccessPreference;Read
+billing:GetMonthlyTracking;Read
 billing:GetResourcePolicy;Permissions management
 billing:GetSellerOfRecord;Read
 billing:ListBillingViews;Read
