@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AIDevOpsMutativeAccess",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:UpdateAutoScalingGroup",
+        "cloudformation:UpdateStack",
+        "cloudwatch:PutMetricAlarm",
+        "ec2:CreateTags",
+        "ec2:ModifyInstanceAttribute",
+        "ecs:UpdateService",
+        "elasticloadbalancing:ModifyTargetGroup",
+        "lambda:UpdateFunctionConfiguration",
+        "logs:PutMetricFilter",
+        "rds:ModifyDBInstance"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
