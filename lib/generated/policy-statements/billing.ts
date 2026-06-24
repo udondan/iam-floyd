@@ -204,6 +204,17 @@ export class Billing extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve cumulative spend and usage tracking data for a contract
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetCumulativeTracking() {
+    return this.to('GetCumulativeTracking');
+  }
+
+  /**
    * Grants permission to retrieve the state of the Allow IAM Access billing preference
    *
    * Access Level: Read
@@ -212,6 +223,17 @@ export class Billing extends PolicyStatement {
    */
   public toGetIAMAccessPreference() {
     return this.to('GetIAMAccessPreference');
+  }
+
+  /**
+   * Grants permission to retrieve monthly spend and usage tracking data for a contract
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
+   */
+  public toGetMonthlyTracking() {
+    return this.to('GetMonthlyTracking');
   }
 
   /**
@@ -419,7 +441,9 @@ export class Billing extends PolicyStatement {
       'GetContractInformation',
       'GetCreditAllocationHistory',
       'GetCredits',
+      'GetCumulativeTracking',
       'GetIAMAccessPreference',
+      'GetMonthlyTracking',
       'GetSellerOfRecord',
       'ListBillingViews',
       'ListTagsForResource',
@@ -448,6 +472,19 @@ export class Billing extends PolicyStatement {
    */
   public onBillingview(resourceId: string, account?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:billing::${ account ?? this.defaultAccount }:billingview/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type contract to the statement
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/
+   *
+   * @param contractId - Identifier for the contractId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onContract(contractId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:billing::${ account ?? this.defaultAccount }:contract/${ contractId }`);
   }
 
   /**
