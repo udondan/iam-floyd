@@ -12,6 +12,8 @@ export class AwsManagedPolicy {
     public static AdministratorAccessAWSElasticBeanstalk = 'AdministratorAccess-AWSElasticBeanstalk';
     /** Provides permissions required by the AWS DevOps Agent to conduct investigations and perform analysis on customer AWS resources. */
     public static AIDevOpsAgentAccessPolicy = 'AIDevOpsAgentAccessPolicy';
+    /** Provides elevated permissions required by the AWS DevOps Agent to perform operator-approved mutations or elevated actions on customer AWS resources during operational events. */
+    public static AIDevOpsAgentActionsPolicy = 'AIDevOpsAgentActionsPolicy';
     /** Provides full access to Amazon DevOps Agent via the AWS Management Console */
     public static AIDevOpsAgentFullAccess = 'AIDevOpsAgentFullAccess';
     /** Provides read only access to Amazon DevOps Agent via the AWS Management Console */

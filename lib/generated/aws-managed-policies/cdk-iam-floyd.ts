@@ -39,6 +39,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentAccessPolicy);
     }
 
+    /** Provides elevated permissions required by the AWS DevOps Agent to perform operator-approved mutations or elevated actions on customer AWS resources during operational events. */
+    public AIDevOpsAgentActionsPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentActionsPolicy);
+    }
+
     /** Provides full access to Amazon DevOps Agent via the AWS Management Console */
     public AIDevOpsAgentFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentFullAccess);
