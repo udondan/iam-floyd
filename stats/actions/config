@@ -6,6 +6,7 @@ config:DeleteConfigRule;Write
 config:DeleteConfigurationAggregator;Write
 config:DeleteConfigurationRecorder;Write
 config:DeleteConformancePack;Write
+config:DeleteConnector;Write
 config:DeleteDeliveryChannel;Write
 config:DeleteEvaluationResults;Write
 config:DeleteOrganizationConfigRule;Write
@@ -55,6 +56,7 @@ config:GetComplianceSummaryByConfigRule;Read
 config:GetComplianceSummaryByResourceType;Read
 config:GetConformancePackComplianceDetails;Read
 config:GetConformancePackComplianceSummary;Read
+config:GetConnector;Read
 config:GetCustomRulePolicy;Read
 config:GetDiscoveredResourceCounts;Read
 config:GetOrganizationConfigRuleDetailedStatus;Read
@@ -66,6 +68,7 @@ config:GetStoredQuery;Read
 config:ListAggregateDiscoveredResources;List
 config:ListConfigurationRecorders;List
 config:ListConformancePackComplianceScores;List
+config:ListConnectors;List
 config:ListDiscoveredResources;List
 config:ListResourceEvaluations;List
 config:ListStoredQueries;List
@@ -75,6 +78,7 @@ config:PutConfigRule;Write
 config:PutConfigurationAggregator;Write
 config:PutConfigurationRecorder;Write
 config:PutConformancePack;Write
+config:PutConnector;Write
 config:PutDeliveryChannel;Write
 config:PutEvaluations;Write
 config:PutExternalEvaluation;Write
@@ -86,6 +90,7 @@ config:PutResourceConfig;Write
 config:PutRetentionConfiguration;Write
 config:PutServiceLinkedConfigurationRecorder;Write
 config:PutStoredQuery;Write
+config:PutThirdPartyServiceLinkedConfigurationRecorder;Write
 config:SelectAggregateResourceConfig;Read
 config:SelectResourceConfig;Read
 config:StartConfigRulesEvaluation;Write

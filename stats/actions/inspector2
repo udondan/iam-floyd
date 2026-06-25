@@ -12,12 +12,14 @@ inspector2:CancelSbomExport;Write
 inspector2:CreateCisScanConfiguration;Write
 inspector2:CreateCodeSecurityIntegration;Write
 inspector2:CreateCodeSecurityScanConfiguration;Write
+inspector2:CreateConnector;Write
 inspector2:CreateFilter;Write
 inspector2:CreateFindingsReport;Write
 inspector2:CreateSbomExport;Write
 inspector2:DeleteCisScanConfiguration;Write
 inspector2:DeleteCodeSecurityIntegration;Write
 inspector2:DeleteCodeSecurityScanConfiguration;Write
+inspector2:DeleteConnector;Write
 inspector2:DeleteFilter;Write
 inspector2:DescribeOrganizationConfiguration;Read
 inspector2:Disable;Write
@@ -46,6 +48,8 @@ inspector2:ListCisScans;List
 inspector2:ListCodeSecurityIntegrations;List
 inspector2:ListCodeSecurityScanConfigurationAssociations;List
 inspector2:ListCodeSecurityScanConfigurations;List
+inspector2:ListConnectorScanConfigurations;List
+inspector2:ListConnectors;List
 inspector2:ListCoverage;List
 inspector2:ListCoverageStatistics;List
 inspector2:ListDelegatedAdminAccounts;List
@@ -68,6 +72,8 @@ inspector2:UpdateCisScanConfiguration;Write
 inspector2:UpdateCodeSecurityIntegration;Write
 inspector2:UpdateCodeSecurityScanConfiguration;Write
 inspector2:UpdateConfiguration;Write
+inspector2:UpdateConnector;Write
+inspector2:UpdateConnectorScanConfiguration;Write
 inspector2:UpdateEc2DeepInspectionConfiguration;Write
 inspector2:UpdateEncryptionKey;Write
 inspector2:UpdateFilter;Write

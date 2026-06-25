@@ -3,6 +3,7 @@ config:ConfigRule
 config:ConfigurationAggregator
 config:ConfigurationRecorder
 config:ConformancePack
+config:Connector
 config:OrganizationConfigRule
 config:OrganizationConformancePack
 config:RemediationConfiguration
