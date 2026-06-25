@@ -186,6 +186,21 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a connector to scan resources from a third-party cloud provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateConnector.html
+   */
+  public toCreateConnector() {
+    return this.to('CreateConnector');
+  }
+
+  /**
    * Grants permission to create and define the settings for a findings filter
    *
    * Access Level: Write
@@ -256,6 +271,17 @@ export class Inspector2 extends PolicyStatement {
    */
   public toDeleteCodeSecurityScanConfiguration() {
     return this.to('DeleteCodeSecurityScanConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a connector configured for scanning resources from a third-party cloud provider
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteConnector.html
+   */
+  public toDeleteConnector() {
+    return this.to('DeleteConnector');
   }
 
   /**
@@ -567,6 +593,28 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list scan configurations for connectors
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListConnectorScanConfigurations.html
+   */
+  public toListConnectorScanConfigurations() {
+    return this.to('ListConnectorScanConfigurations');
+  }
+
+  /**
+   * Grants permission to list connectors configured for scanning resources from third-party cloud providers
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListConnectors.html
+   */
+  public toListConnectors() {
+    return this.to('ListConnectors');
+  }
+
+  /**
    * Grants permission to retrieve the types of statistics Amazon Inspector can generate for resources Inspector monitors
    *
    * Access Level: List
@@ -827,6 +875,33 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a connector configured for scanning resources from a third-party cloud provider
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConnector.html
+   */
+  public toUpdateConnector() {
+    return this.to('UpdateConnector');
+  }
+
+  /**
+   * Grants permission to update scan configuration settings for resources associated with a connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateConnectorScanConfiguration.html
+   */
+  public toUpdateConnectorScanConfiguration() {
+    return this.to('UpdateConnectorScanConfiguration');
+  }
+
+  /**
    * Grants permission to update ec2 deep inspection configuration by delegated administrator, member and standalone account
    *
    * Access Level: Write
@@ -896,12 +971,14 @@ export class Inspector2 extends PolicyStatement {
       'CreateCisScanConfiguration',
       'CreateCodeSecurityIntegration',
       'CreateCodeSecurityScanConfiguration',
+      'CreateConnector',
       'CreateFilter',
       'CreateFindingsReport',
       'CreateSbomExport',
       'DeleteCisScanConfiguration',
       'DeleteCodeSecurityIntegration',
       'DeleteCodeSecurityScanConfiguration',
+      'DeleteConnector',
       'DeleteFilter',
       'Disable',
       'DisableDelegatedAdminAccount',
@@ -918,6 +995,8 @@ export class Inspector2 extends PolicyStatement {
       'UpdateCodeSecurityIntegration',
       'UpdateCodeSecurityScanConfiguration',
       'UpdateConfiguration',
+      'UpdateConnector',
+      'UpdateConnectorScanConfiguration',
       'UpdateEc2DeepInspectionConfiguration',
       'UpdateEncryptionKey',
       'UpdateFilter',
@@ -956,6 +1035,8 @@ export class Inspector2 extends PolicyStatement {
       'ListCodeSecurityIntegrations',
       'ListCodeSecurityScanConfigurationAssociations',
       'ListCodeSecurityScanConfigurations',
+      'ListConnectorScanConfigurations',
+      'ListConnectors',
       'ListCoverage',
       'ListCoverageStatistics',
       'ListDelegatedAdminAccounts',
@@ -1057,6 +1138,23 @@ export class Inspector2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Connector to the statement
+   *
+   * https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+   *
+   * @param connectorId - Identifier for the connectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:inspector2:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorId }`);
+  }
+
+  /**
    * Filters access by the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1065,8 +1163,10 @@ export class Inspector2 extends PolicyStatement {
    * - .toCreateCisScanConfiguration()
    * - .toCreateCodeSecurityIntegration()
    * - .toCreateCodeSecurityScanConfiguration()
+   * - .toCreateConnector()
    * - .toCreateFilter()
    * - .toTagResource()
+   * - .toUpdateConnector()
    * - .toUpdateFilter()
    *
    * @param tagKey The tag key to check
@@ -1090,12 +1190,14 @@ export class Inspector2 extends PolicyStatement {
    * - .toUpdateCisScanConfiguration()
    * - .toUpdateCodeSecurityIntegration()
    * - .toUpdateCodeSecurityScanConfiguration()
+   * - .toUpdateConnector()
    *
    * Applies to resource types:
    * - Filter
    * - CIS Scan Configuration
    * - Code Security Scan Configuration
    * - Code Security Integration
+   * - Connector
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1114,9 +1216,11 @@ export class Inspector2 extends PolicyStatement {
    * - .toCreateCisScanConfiguration()
    * - .toCreateCodeSecurityIntegration()
    * - .toCreateCodeSecurityScanConfiguration()
+   * - .toCreateConnector()
    * - .toCreateFilter()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateConnector()
    * - .toUpdateFilter()
    *
    * @param value The value(s) to check

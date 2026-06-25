@@ -107,6 +107,17 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a connector configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html
+   */
+  public toDeleteConnector() {
+    return this.to('DeleteConnector');
+  }
+
+  /**
    * Grants permission to delete the delivery channel
    *
    * Access Level: Write
@@ -655,6 +666,17 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return the details of a specific connector configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_GetConnector.html
+   */
+  public toGetConnector() {
+    return this.to('GetConnector');
+  }
+
+  /**
    * Grants permission to return the policy definition containing the logic for your AWS Config Custom Policy rule
    *
    * Access Level: Read
@@ -773,6 +795,17 @@ export class Config extends PolicyStatement {
    */
   public toListConformancePackComplianceScores() {
     return this.to('ListConformancePackComplianceScores');
+  }
+
+  /**
+   * Grants permission to list all connectors in the AWS account and region
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_ListConnectors.html
+   */
+  public toListConnectors() {
+    return this.to('ListConnectors');
   }
 
   /**
@@ -903,6 +936,24 @@ export class Config extends PolicyStatement {
    */
   public toPutConformancePack() {
     return this.to('PutConformancePack');
+  }
+
+  /**
+   * Grants permission to create a connector configuration that contains provider identity information, as well as other optional provider-specific information required for third-party recording
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html
+   */
+  public toPutConnector() {
+    return this.to('PutConnector');
   }
 
   /**
@@ -1056,6 +1107,25 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update a service-linked configuration recorder for a third-party provider linked to a specific AWS partner service
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifConfigurationRecorderServicePrincipal()
+   *
+   * Dependent actions:
+   * - config:GetConnector
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html
+   */
+  public toPutThirdPartyServiceLinkedConfigurationRecorder() {
+    return this.to('PutThirdPartyServiceLinkedConfigurationRecorder');
+  }
+
+  /**
    * Grants permission to accept a structured query language (SQL) SELECT command and an aggregator to query configuration state of AWS resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties
    *
    * Access Level: Read
@@ -1175,6 +1245,7 @@ export class Config extends PolicyStatement {
       'DeleteConfigurationAggregator',
       'DeleteConfigurationRecorder',
       'DeleteConformancePack',
+      'DeleteConnector',
       'DeleteDeliveryChannel',
       'DeleteEvaluationResults',
       'DeleteOrganizationConfigRule',
@@ -1192,6 +1263,7 @@ export class Config extends PolicyStatement {
       'PutConfigurationAggregator',
       'PutConfigurationRecorder',
       'PutConformancePack',
+      'PutConnector',
       'PutDeliveryChannel',
       'PutEvaluations',
       'PutExternalEvaluation',
@@ -1203,6 +1275,7 @@ export class Config extends PolicyStatement {
       'PutRetentionConfiguration',
       'PutServiceLinkedConfigurationRecorder',
       'PutStoredQuery',
+      'PutThirdPartyServiceLinkedConfigurationRecorder',
       'StartConfigRulesEvaluation',
       'StartConfigurationRecorder',
       'StartRemediationExecution',
@@ -1238,6 +1311,7 @@ export class Config extends PolicyStatement {
       'GetComplianceSummaryByResourceType',
       'GetConformancePackComplianceDetails',
       'GetConformancePackComplianceSummary',
+      'GetConnector',
       'GetCustomRulePolicy',
       'GetDiscoveredResourceCounts',
       'GetOrganizationConfigRuleDetailedStatus',
@@ -1265,6 +1339,7 @@ export class Config extends PolicyStatement {
       'ListAggregateDiscoveredResources',
       'ListConfigurationRecorders',
       'ListConformancePackComplianceScores',
+      'ListConnectors',
       'ListDiscoveredResources',
       'ListResourceEvaluations',
       'ListStoredQueries'
@@ -1430,6 +1505,25 @@ export class Config extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Connector to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_Connector.html
+   *
+   * @param provider - Identifier for the provider.
+   * @param providerId - Identifier for the providerId.
+   * @param connectorId - Identifier for the connectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(provider: string, providerId: string, connectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:config:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ provider }/${ providerId }/${ connectorId }`);
+  }
+
+  /**
    * Filters access by the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1439,8 +1533,10 @@ export class Config extends PolicyStatement {
    * - .toPutConfigRule()
    * - .toPutConfigurationAggregator()
    * - .toPutConfigurationRecorder()
+   * - .toPutConnector()
    * - .toPutServiceLinkedConfigurationRecorder()
    * - .toPutStoredQuery()
+   * - .toPutThirdPartyServiceLinkedConfigurationRecorder()
    * - .toTagResource()
    *
    * @param tagKey The tag key to check
@@ -1465,6 +1561,7 @@ export class Config extends PolicyStatement {
    * - OrganizationConformancePack
    * - StoredQuery
    * - ConfigurationRecorder
+   * - Connector
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1484,8 +1581,10 @@ export class Config extends PolicyStatement {
    * - .toPutConfigRule()
    * - .toPutConfigurationAggregator()
    * - .toPutConfigurationRecorder()
+   * - .toPutConnector()
    * - .toPutServiceLinkedConfigurationRecorder()
    * - .toPutStoredQuery()
+   * - .toPutThirdPartyServiceLinkedConfigurationRecorder()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -1506,6 +1605,7 @@ export class Config extends PolicyStatement {
    * - .toDescribeConfigurationRecorderStatus()
    * - .toDescribeConfigurationRecorders()
    * - .toPutServiceLinkedConfigurationRecorder()
+   * - .toPutThirdPartyServiceLinkedConfigurationRecorder()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
