@@ -2,6 +2,7 @@ securityhub:aggregatorv2
 securityhub:automation-rule
 securityhub:automation-rulev2
 securityhub:configuration-policy
+securityhub:connector
 securityhub:connectorv2
 securityhub:finding-aggregator
 securityhub:hub

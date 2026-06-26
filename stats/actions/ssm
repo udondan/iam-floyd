@@ -5,6 +5,7 @@ ssm:CancelMaintenanceWindowExecution;Write
 ssm:CreateActivation;Write
 ssm:CreateAssociation;Write
 ssm:CreateAssociationBatch;Write
+ssm:CreateCloudConnector;Write
 ssm:CreateDocument;Write
 ssm:CreateMaintenanceWindow;Write
 ssm:CreateOpsItem;Write
@@ -13,6 +14,7 @@ ssm:CreatePatchBaseline;Write
 ssm:CreateResourceDataSync;Write
 ssm:DeleteActivation;Write
 ssm:DeleteAssociation;Write
+ssm:DeleteCloudConnector;Write
 ssm:DeleteDocument;Write
 ssm:DeleteInventory;Write
 ssm:DeleteMaintenanceWindow;Write
@@ -67,6 +69,7 @@ ssm:GetAccessToken;Read
 ssm:GetAutomationExecution;Read
 ssm:GetCalendar;Read
 ssm:GetCalendarState;Read
+ssm:GetCloudConnector;Read
 ssm:GetCommandInvocation;Read
 ssm:GetConnectionStatus;Read
 ssm:GetDefaultPatchBaseline;Read
@@ -95,6 +98,7 @@ ssm:GetServiceSetting;Read
 ssm:LabelParameterVersion;Write
 ssm:ListAssociationVersions;List
 ssm:ListAssociations;List
+ssm:ListCloudConnectors;List
 ssm:ListCommandInvocations;List
 ssm:ListCommands;List
 ssm:ListComplianceItems;List
@@ -140,6 +144,7 @@ ssm:TerminateSession;Write
 ssm:UnlabelParameterVersion;Write
 ssm:UpdateAssociation;Write
 ssm:UpdateAssociationStatus;Write
+ssm:UpdateCloudConnector;Write
 ssm:UpdateDocument;Write
 ssm:UpdateDocumentDefaultVersion;Write
 ssm:UpdateDocumentMetadata;Write
@@ -154,3 +159,4 @@ ssm:UpdateOpsMetadata;Write
 ssm:UpdatePatchBaseline;Write
 ssm:UpdateResourceDataSync;Write
 ssm:UpdateServiceSetting;Write
+ssm:ValidateCloudConnector;Read
