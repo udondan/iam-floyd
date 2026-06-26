@@ -11,7 +11,9 @@
         "logs:DescribeResourcePolicies",
         "logs:ListLogGroups",
         "ec2:MonitorInstances",
-        "logs:DescribeDeliverySources"
+        "logs:DescribeDeliverySources",
+        "logs:DescribeDeliveries",
+        "logs:DescribeDeliveryDestinations"
       ],
       "Resource": "*",
       "Condition": {
