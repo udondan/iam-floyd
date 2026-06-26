@@ -278,6 +278,21 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a connector based on input parameters
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateConnector.html
+   */
+  public toCreateConnector() {
+    return this.to('CreateConnector');
+  }
+
+  /**
    * Grants permission to create a connector V2 based on input parameters
    *
    * Access Level: Write
@@ -389,6 +404,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toDeleteConfigurationPolicy() {
     return this.to('DeleteConfigurationPolicy');
+  }
+
+  /**
+   * Grants permission to delete a connector in Security Hub CSPM
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteConnector.html
+   */
+  public toDeleteConnector() {
+    return this.to('DeleteConnector');
   }
 
   /**
@@ -573,6 +599,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disable a Security Hub V2 feature
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHubFeatureV2.html
+   */
+  public toDisableSecurityHubFeatureV2() {
+    return this.to('DisableSecurityHubFeatureV2');
+  }
+
+  /**
    * Grants permission to disable Security Hub V2
    *
    * Access Level: Write
@@ -658,6 +695,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toEnableSecurityHub() {
     return this.to('EnableSecurityHub');
+  }
+
+  /**
+   * Grants permission to enable a Security Hub V2 feature
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHubFeatureV2.html
+   */
+  public toEnableSecurityHubFeatureV2() {
+    return this.to('EnableSecurityHubFeatureV2');
   }
 
   /**
@@ -750,6 +798,17 @@ export class Securityhub extends PolicyStatement {
    */
   public toGetConfigurationPolicyAssociation() {
     return this.to('GetConfigurationPolicyAssociation');
+  }
+
+  /**
+   * Grants permission to retrieve details for a connector from Security Hub CSPM based on connector id
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetConnector.html
+   */
+  public toGetConnector() {
+    return this.to('GetConnector');
   }
 
   /**
@@ -1075,6 +1134,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve a list of connectors and their metadata for the calling account from Security Hub CSPM
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListConnectors.html
+   */
+  public toListConnectors() {
+    return this.to('ListConnectors');
+  }
+
+  /**
    * Grants permission to retrieve a list of connectors V2 and their metadata for the calling account from Security Hub
    *
    * Access Level: List
@@ -1302,6 +1372,17 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a connector in Security Hub CSPM based on connector id and input parameters
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateConnector.html
+   */
+  public toUpdateConnector() {
+    return this.to('UpdateConnector');
+  }
+
+  /**
    * Grants permission to update a connector V2 in Security Hub based on connector id and input parameters
    *
    * Access Level: Write
@@ -1409,6 +1490,7 @@ export class Securityhub extends PolicyStatement {
       'CreateAutomationRule',
       'CreateAutomationRuleV2',
       'CreateConfigurationPolicy',
+      'CreateConnector',
       'CreateConnectorV2',
       'CreateFindingAggregator',
       'CreateInsight',
@@ -1419,6 +1501,7 @@ export class Securityhub extends PolicyStatement {
       'DeleteAggregatorV2',
       'DeleteAutomationRuleV2',
       'DeleteConfigurationPolicy',
+      'DeleteConnector',
       'DeleteConnectorV2',
       'DeleteFindingAggregator',
       'DeleteInsight',
@@ -1427,6 +1510,7 @@ export class Securityhub extends PolicyStatement {
       'DisableImportFindingsForProduct',
       'DisableOrganizationAdminAccount',
       'DisableSecurityHub',
+      'DisableSecurityHubFeatureV2',
       'DisableSecurityHubV2',
       'DisassociateFromAdministratorAccount',
       'DisassociateFromMasterAccount',
@@ -1434,6 +1518,7 @@ export class Securityhub extends PolicyStatement {
       'EnableImportFindingsForProduct',
       'EnableOrganizationAdminAccount',
       'EnableSecurityHub',
+      'EnableSecurityHubFeatureV2',
       'EnableSecurityHubV2',
       'GenerateRecommendedPolicyV2',
       'InviteMembers',
@@ -1443,6 +1528,7 @@ export class Securityhub extends PolicyStatement {
       'UpdateAggregatorV2',
       'UpdateAutomationRuleV2',
       'UpdateConfigurationPolicy',
+      'UpdateConnector',
       'UpdateConnectorV2',
       'UpdateFindingAggregator',
       'UpdateFindings',
@@ -1475,6 +1561,7 @@ export class Securityhub extends PolicyStatement {
       'GetAutomationRuleV2',
       'GetConfigurationPolicy',
       'GetConfigurationPolicyAssociation',
+      'GetConnector',
       'GetConnectorV2',
       'GetControlFindingSummary',
       'GetFindingAggregator',
@@ -1509,6 +1596,7 @@ export class Securityhub extends PolicyStatement {
       'ListAutomationRulesV2',
       'ListConfigurationPolicies',
       'ListConfigurationPolicyAssociations',
+      'ListConnectors',
       'ListConnectorsV2',
       'ListEnabledProductsForImport',
       'ListFindingAggregators',
@@ -1655,6 +1743,23 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type connector to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param connectorId - Identifier for the connectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnector(connectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityhub:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connector/${ connectorId }`);
+  }
+
+  /**
    * Adds a resource of type connectorv2 to the statement
    *
    * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
@@ -1680,6 +1785,7 @@ export class Securityhub extends PolicyStatement {
    * - .toCreateAutomationRule()
    * - .toCreateAutomationRuleV2()
    * - .toCreateConfigurationPolicy()
+   * - .toCreateConnector()
    * - .toCreateConnectorV2()
    * - .toEnableSecurityHub()
    * - .toEnableSecurityHubV2()
@@ -1704,6 +1810,7 @@ export class Securityhub extends PolicyStatement {
    * - automation-rule
    * - automation-rulev2
    * - configuration-policy
+   * - connector
    * - connectorv2
    *
    * @param tagKey The tag key to check
@@ -1723,6 +1830,7 @@ export class Securityhub extends PolicyStatement {
    * - .toCreateAutomationRule()
    * - .toCreateAutomationRuleV2()
    * - .toCreateConfigurationPolicy()
+   * - .toCreateConnector()
    * - .toCreateConnectorV2()
    * - .toEnableSecurityHub()
    * - .toEnableSecurityHubV2()

@@ -2,6 +2,7 @@ ssm:association
 ssm:automation-definition
 ssm:automation-execution
 ssm:bucket
+ssm:cloud-connector
 ssm:document
 ssm:iam-role
 ssm:instance

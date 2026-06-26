@@ -115,6 +115,26 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a cloud connector for managing instances in other cloud environments
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - config:GetConnector
+   * - config:PutThirdPartyServiceLinkedConfigurationRecorder
+   * - iam:PassRole
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateCloudConnector.html
+   */
+  public toCreateCloudConnector() {
+    return this.to('CreateCloudConnector');
+  }
+
+  /**
    * Grants permission to create a Systems Manager SSM document
    *
    * Access Level: Write
@@ -230,6 +250,26 @@ export class Ssm extends PolicyStatement {
    */
   public toDeleteAssociation() {
     return this.to('DeleteAssociation');
+  }
+
+  /**
+   * Grants permission to delete a specified cloud connector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - config:DeleteServiceLinkedConfigurationRecorder
+   * - config:GetConnector
+   * - config:PutThirdPartyServiceLinkedConfigurationRecorder
+   * - ssm:ListAssociations
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteCloudConnector.html
+   */
+  public toDeleteCloudConnector() {
+    return this.to('DeleteCloudConnector');
   }
 
   /**
@@ -874,6 +914,20 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about a specified cloud connector
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCloudConnector.html
+   */
+  public toGetCloudConnector() {
+    return this.to('GetCloudConnector');
+  }
+
+  /**
    * Grants permission to view details about the command execution of a specified invocation or plugin
    *
    * Access Level: Read
@@ -1205,6 +1259,17 @@ export class Ssm extends PolicyStatement {
    */
   public toListAssociations() {
     return this.to('ListAssociations');
+  }
+
+  /**
+   * Grants permission to list cloud connectors in your account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCloudConnectors.html
+   */
+  public toListCloudConnectors() {
+    return this.to('ListCloudConnectors');
   }
 
   /**
@@ -1797,6 +1862,24 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a specified cloud connector
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - config:GetConnector
+   * - config:PutThirdPartyServiceLinkedConfigurationRecorder
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateCloudConnector.html
+   */
+  public toUpdateCloudConnector() {
+    return this.to('UpdateCloudConnector');
+  }
+
+  /**
    * Grants permission to update one or more values for an SSM document
    *
    * Access Level: Write
@@ -1974,6 +2057,20 @@ export class Ssm extends PolicyStatement {
     return this.to('UpdateServiceSetting');
   }
 
+  /**
+   * Grants permission to verify that a specified cloud connector is functioning properly and to retrieve any validation findings or issues detected
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ValidateCloudConnector.html
+   */
+  public toValidateCloudConnector() {
+    return this.to('ValidateCloudConnector');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Tagging: [
       'AddTagsToResource',
@@ -1986,6 +2083,7 @@ export class Ssm extends PolicyStatement {
       'CreateActivation',
       'CreateAssociation',
       'CreateAssociationBatch',
+      'CreateCloudConnector',
       'CreateDocument',
       'CreateMaintenanceWindow',
       'CreateOpsItem',
@@ -1994,6 +2092,7 @@ export class Ssm extends PolicyStatement {
       'CreateResourceDataSync',
       'DeleteActivation',
       'DeleteAssociation',
+      'DeleteCloudConnector',
       'DeleteDocument',
       'DeleteInventory',
       'DeleteMaintenanceWindow',
@@ -2032,6 +2131,7 @@ export class Ssm extends PolicyStatement {
       'UnlabelParameterVersion',
       'UpdateAssociation',
       'UpdateAssociationStatus',
+      'UpdateCloudConnector',
       'UpdateDocument',
       'UpdateDocumentDefaultVersion',
       'UpdateDocumentMetadata',
@@ -2078,6 +2178,7 @@ export class Ssm extends PolicyStatement {
       'GetAutomationExecution',
       'GetCalendar',
       'GetCalendarState',
+      'GetCloudConnector',
       'GetCommandInvocation',
       'GetConnectionStatus',
       'GetDefaultPatchBaseline',
@@ -2103,7 +2204,8 @@ export class Ssm extends PolicyStatement {
       'GetPatchBaselineForPatchGroup',
       'GetServiceSetting',
       'PutConfigurePackageResult',
-      'StartExecutionPreview'
+      'StartExecutionPreview',
+      'ValidateCloudConnector'
     ],
     List: [
       'DescribeMaintenanceWindowExecutionTaskInvocations',
@@ -2123,6 +2225,7 @@ export class Ssm extends PolicyStatement {
       'GetResourcePolicies',
       'ListAssociationVersions',
       'ListAssociations',
+      'ListCloudConnectors',
       'ListCommandInvocations',
       'ListCommands',
       'ListComplianceItems',
@@ -2206,6 +2309,23 @@ export class Ssm extends PolicyStatement {
    */
   public onBucket(bucketName: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:s3:::${ bucketName }`);
+  }
+
+  /**
+   * Adds a resource of type cloud-connector to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/cloud-connectors.html
+   *
+   * @param cloudConnectorId - Identifier for the cloudConnectorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCloudConnector(cloudConnectorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:ssm:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cloud-connector/${ cloudConnectorId }`);
   }
 
   /**
@@ -2502,6 +2622,7 @@ export class Ssm extends PolicyStatement {
    * - .toCreateActivation()
    * - .toCreateAssociation()
    * - .toCreateAssociationBatch()
+   * - .toCreateCloudConnector()
    * - .toCreateDocument()
    * - .toCreateMaintenanceWindow()
    * - .toCreateOpsItem()
@@ -2531,6 +2652,7 @@ export class Ssm extends PolicyStatement {
    * - .toCreateAssociation()
    * - .toCreateAssociationBatch()
    * - .toDeleteAssociation()
+   * - .toDeleteCloudConnector()
    * - .toDeleteParameter()
    * - .toDeleteParameters()
    * - .toDescribeAssociation()
@@ -2541,6 +2663,7 @@ export class Ssm extends PolicyStatement {
    * - .toDescribeInstancePatchStates()
    * - .toDescribeInstancePatches()
    * - .toGetAutomationExecution()
+   * - .toGetCloudConnector()
    * - .toGetConnectionStatus()
    * - .toGetParameter()
    * - .toGetParameterHistory()
@@ -2560,11 +2683,14 @@ export class Ssm extends PolicyStatement {
    * - .toUnlabelParameterVersion()
    * - .toUpdateAssociation()
    * - .toUpdateAssociationStatus()
+   * - .toUpdateCloudConnector()
    * - .toUpdateInstanceAssociationStatus()
+   * - .toValidateCloudConnector()
    *
    * Applies to resource types:
    * - association
    * - automation-execution
+   * - cloud-connector
    * - document
    * - instance
    * - maintenancewindow
@@ -2595,6 +2721,7 @@ export class Ssm extends PolicyStatement {
    * - .toCreateActivation()
    * - .toCreateAssociation()
    * - .toCreateAssociationBatch()
+   * - .toCreateCloudConnector()
    * - .toCreateDocument()
    * - .toCreateMaintenanceWindow()
    * - .toCreateOpsItem()
