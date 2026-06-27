@@ -1329,6 +1329,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspector2ServiceRolePolicy);
     }
 
+    /** Grants permissions for Amazon Inspector to perform actions on your behalf for multi-cloud resource scanning. */
+    public AmazonInspector2ThirdPartyServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspector2ThirdPartyServiceRolePolicy);
+    }
+
     /** Provides full access to Amazon Inspector. */
     public AmazonInspectorFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonInspectorFullAccess);

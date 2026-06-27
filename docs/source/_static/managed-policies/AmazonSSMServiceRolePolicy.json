@@ -14,7 +14,8 @@
         "ssm:StartAutomationExecution",
         "ssm:StopAutomationExecution",
         "ssm:ListTagsForResource",
-        "ssm:GetCalendarState"
+        "ssm:GetCalendarState",
+        "ssm:ListCloudConnectors"
       ],
       "Resource": [
         "*"

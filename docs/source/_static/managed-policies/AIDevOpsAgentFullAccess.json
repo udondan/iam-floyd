@@ -75,6 +75,7 @@
         "aidevops:TagResource",
         "aidevops:UntagResource",
         "aidevops:UpdateAgentSpace",
+        "aidevops:UpdateApprovalAction",
         "aidevops:UpdateAsset",
         "aidevops:UpdateAssetFile",
         "aidevops:UpdateAssociation",
