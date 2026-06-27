@@ -50,6 +50,7 @@
         "aidevops:RevokeAccessToken",
         "aidevops:RotateAccessToken",
         "aidevops:SendMessage",
+        "aidevops:UpdateApprovalAction",
         "aidevops:UpdateAsset",
         "aidevops:UpdateAssetFile",
         "aidevops:UpdateBacklogTask",

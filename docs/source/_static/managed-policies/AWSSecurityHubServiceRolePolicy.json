@@ -83,6 +83,7 @@
       "Effect": "Allow",
       "Action": [
         "config:PutServiceLinkedConfigurationRecorder",
+        "config:PutThirdPartyServiceLinkedConfigurationRecorder",
         "config:DeleteServiceLinkedConfigurationRecorder",
         "config:DescribeConfigurationRecorders",
         "config:DescribeConfigurationRecorderStatus"
@@ -90,6 +91,15 @@
       "Resource": [
         "arn:aws:config:*:*:configuration-recorder/*ConfigurationRecorderForSecurityHubCSPM*"
       ]
+    },
+    {
+      "Sid": "SecurityHubCSPMServiceRoleConfigListAndGet",
+      "Effect": "Allow",
+      "Action": [
+        "config:ListConfigurationRecorders",
+        "config:GetConnector"
+      ],
+      "Resource": "*"
     },
     {
       "Sid": "SecurityHubCSPMServiceRoleIamPermissions",
@@ -103,6 +113,12 @@
           "iam:AWSServiceName": "config.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "SecurityHubCSPMServiceRoleConfigMetricsPermissions",
+      "Effect": "Allow",
+      "Action": "cloudwatch:GetMetricData",
+      "Resource": "*"
     }
   ]
 }

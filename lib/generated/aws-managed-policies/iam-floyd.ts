@@ -528,6 +528,8 @@ export class AwsManagedPolicy {
     public static AmazonInspector2ReadOnlyAccess = 'AmazonInspector2ReadOnlyAccess';
     /** Grants Amazon Inspector access to AWS Services needed to perform security assessments */
     public static AmazonInspector2ServiceRolePolicy = 'aws-service-role/AmazonInspector2ServiceRolePolicy';
+    /** Grants permissions for Amazon Inspector to perform actions on your behalf for multi-cloud resource scanning. */
+    public static AmazonInspector2ThirdPartyServiceRolePolicy = 'aws-service-role/AmazonInspector2ThirdPartyServiceRolePolicy';
     /** Provides full access to Amazon Inspector. */
     public static AmazonInspectorFullAccess = 'AmazonInspectorFullAccess';
     /** Provides read only access to Amazon Inspector. */
