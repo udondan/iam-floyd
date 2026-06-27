@@ -33,6 +33,28 @@ export class UserSubscriptions extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a User subscription Claim add-on
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toCreateClaimAddOn() {
+    return this.to('CreateClaimAddOn');
+  }
+
+  /**
+   * Grants permission to delete a User subscription auto-top-up rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toDeleteAutoTopUpRule() {
+    return this.to('DeleteAutoTopUpRule');
+  }
+
+  /**
    * Grants permission to delete a User subscription Claim
    *
    * Access Level: Write
@@ -41,6 +63,39 @@ export class UserSubscriptions extends PolicyStatement {
    */
   public toDeleteClaim() {
     return this.to('DeleteClaim');
+  }
+
+  /**
+   * Grants permission to get a User subscription auto-top-up rule
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toGetAutoTopUpRule() {
+    return this.to('GetAutoTopUpRule');
+  }
+
+  /**
+   * Grants permission to get a User subscription effective usage limit
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toGetEffectiveUsageLimit() {
+    return this.to('GetEffectiveUsageLimit');
+  }
+
+  /**
+   * Grants permission to get User subscription usage limit history
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toGetUsageLimitHistory() {
+    return this.to('GetUsageLimitHistory');
   }
 
   /**
@@ -55,6 +110,17 @@ export class UserSubscriptions extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all User subscription Claim add-ons
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toListClaimAddOns() {
+    return this.to('ListClaimAddOns');
+  }
+
+  /**
    * Grants permission to list all User subscription Claims
    *
    * Access Level: List
@@ -63,6 +129,28 @@ export class UserSubscriptions extends PolicyStatement {
    */
   public toListClaims() {
     return this.to('ListClaims');
+  }
+
+  /**
+   * Grants permission to list all User subscription entitlements
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toListEntitlements() {
+    return this.to('ListEntitlements');
+  }
+
+  /**
+   * Grants permission to list all User subscription usage limits
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toListUsageLimits() {
+    return this.to('ListUsageLimits');
   }
 
   /**
@@ -77,6 +165,17 @@ export class UserSubscriptions extends PolicyStatement {
   }
 
   /**
+   * Grants permission to set a User subscription auto-top-up rule
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toSetAutoTopUpRule() {
+    return this.to('SetAutoTopUpRule');
+  }
+
+  /**
    * Grants permission to set a User subscription overage configuration
    *
    * Access Level: Write
@@ -85,6 +184,17 @@ export class UserSubscriptions extends PolicyStatement {
    */
   public toSetOverageConfig() {
     return this.to('SetOverageConfig');
+  }
+
+  /**
+   * Grants permission to set a User subscription usage limit
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html
+   */
+  public toSetUsageLimit() {
+    return this.to('SetUsageLimit');
   }
 
   /**
@@ -101,13 +211,25 @@ export class UserSubscriptions extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'CreateClaim',
+      'CreateClaimAddOn',
+      'DeleteAutoTopUpRule',
       'DeleteClaim',
+      'SetAutoTopUpRule',
       'SetOverageConfig',
+      'SetUsageLimit',
       'UpdateClaim'
+    ],
+    Read: [
+      'GetAutoTopUpRule',
+      'GetEffectiveUsageLimit',
+      'GetUsageLimitHistory'
     ],
     List: [
       'ListApplicationClaims',
+      'ListClaimAddOns',
       'ListClaims',
+      'ListEntitlements',
+      'ListUsageLimits',
       'ListUserSubscriptions'
     ]
   };

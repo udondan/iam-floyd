@@ -1,7 +1,17 @@
 user-subscriptions:CreateClaim;Write
+user-subscriptions:CreateClaimAddOn;Write
+user-subscriptions:DeleteAutoTopUpRule;Write
 user-subscriptions:DeleteClaim;Write
+user-subscriptions:GetAutoTopUpRule;Read
+user-subscriptions:GetEffectiveUsageLimit;Read
+user-subscriptions:GetUsageLimitHistory;Read
 user-subscriptions:ListApplicationClaims;List
+user-subscriptions:ListClaimAddOns;List
 user-subscriptions:ListClaims;List
+user-subscriptions:ListEntitlements;List
+user-subscriptions:ListUsageLimits;List
 user-subscriptions:ListUserSubscriptions;List
+user-subscriptions:SetAutoTopUpRule;Write
 user-subscriptions:SetOverageConfig;Write
+user-subscriptions:SetUsageLimit;Write
 user-subscriptions:UpdateClaim;Write

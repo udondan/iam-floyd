@@ -68,6 +68,7 @@ aidevops:SendMessage;Write
 aidevops:TagResource;Tagging
 aidevops:UntagResource;Tagging
 aidevops:UpdateAgentSpace;Write
+aidevops:UpdateApprovalAction;Write
 aidevops:UpdateAsset;Write
 aidevops:UpdateAssetFile;Write
 aidevops:UpdateAssociation;Write
