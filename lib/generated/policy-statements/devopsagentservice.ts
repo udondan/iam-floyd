@@ -837,6 +837,17 @@ export class Aidevops extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an approval action (approve or reject) for an agent tool invocation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/devopsagent/latest/APIReference/API_UpdateApprovalAction.html
+   */
+  public toUpdateApprovalAction() {
+    return this.to('UpdateApprovalAction');
+  }
+
+  /**
    * Grants permission to update an asset
    *
    * Access Level: Write
@@ -995,6 +1006,7 @@ export class Aidevops extends PolicyStatement {
       'RotateAccessToken',
       'SendMessage',
       'UpdateAgentSpace',
+      'UpdateApprovalAction',
       'UpdateAsset',
       'UpdateAssetFile',
       'UpdateAssociation',
