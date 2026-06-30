@@ -37,6 +37,7 @@ transform-custom:ListSources;List
 transform-custom:ListTagsForResource;Read
 transform-custom:ListTransformationPackageMetadata;List
 transform-custom:ListTransformationPackageShares;Read
+transform-custom:SendTelemetryEvent;Write
 transform-custom:ShareTransformationPackage;Write
 transform-custom:TagResource;Tagging
 transform-custom:UnshareTransformationPackage;Write

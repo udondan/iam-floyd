@@ -952,6 +952,17 @@ export class Es extends PolicyStatement {
   }
 
   /**
+   * Grants permission to submit feedback for OpenSearch domain insight
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_InsightFeedback.html
+   */
+  public toInsightFeedback() {
+    return this.to('InsightFeedback');
+  }
+
+  /**
    * Grants permission to list OpenSearch Applications
    *
    * Access Level: List
@@ -1482,6 +1493,7 @@ export class Es extends PolicyStatement {
       'ESHttpPatch',
       'ESHttpPost',
       'ESHttpPut',
+      'InsightFeedback',
       'PurchaseReservedElasticsearchInstanceOffering',
       'PurchaseReservedInstanceOffering',
       'PutDefaultApplicationSetting',

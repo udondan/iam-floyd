@@ -81,6 +81,7 @@ es:GetIndex;Read
 es:GetPackageVersionHistory;Read
 es:GetUpgradeHistory;Read
 es:GetUpgradeStatus;Read
+es:InsightFeedback;Write
 es:ListApplications;List
 es:ListDataSourceAttachments;List
 es:ListDataSources;List
