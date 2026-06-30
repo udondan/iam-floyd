@@ -2,6 +2,8 @@
 export class AwsManagedPolicy {
     /** Allow Access Analyzer to analyze resource metadata */
     public static AccessAnalyzerServiceRolePolicy = 'aws-service-role/AccessAnalyzerServiceRolePolicy';
+    /** Grants account access manager permissions to manage AWS account access */
+    public static AccountAccessManagerServiceRolePolicy = 'aws-service-role/AccountAccessManagerServiceRolePolicy';
     /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to account management, notification, cost and usage analysis, and identity provider management. */
     public static AccountManagementFromVercel = 'AccountManagementFromVercel';
     /** Provides full access to AWS services and resources. */
