@@ -538,6 +538,17 @@ export class TransformCustom extends PolicyStatement {
   }
 
   /**
+   * Grants permission to send a CLI telemetry event
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transform/latest/userguide/custom.html
+   */
+  public toSendTelemetryEvent() {
+    return this.to('SendTelemetryEvent');
+  }
+
+  /**
    * Grants permission to share a Transformation Package with another AWS account or AWS Organization
    *
    * Access Level: Write
@@ -728,6 +739,7 @@ export class TransformCustom extends PolicyStatement {
       'DeleteSource',
       'DeleteTransformationPackage',
       'ExecuteTransformation',
+      'SendTelemetryEvent',
       'ShareTransformationPackage',
       'UnshareTransformationPackage',
       'UpdateAnalysis',

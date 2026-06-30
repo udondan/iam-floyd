@@ -29,6 +29,7 @@ export class Wafv2 extends PolicyStatement {
    * - apprunner:AssociateWebAcl
    * - appsync:AssociateWebACL
    * - appsync:SetWebACL
+   * - bedrock-agentcore:GatewayAssociateWebACL
    * - cognito-idp:AssociateWebACL
    * - ec2:AssociateVerifiedAccessInstanceWebAcl
    * - elasticloadbalancing:CreateWebACLAssociation
@@ -282,6 +283,7 @@ export class Wafv2 extends PolicyStatement {
    * - apprunner:DisassociateWebAcl
    * - appsync:DisassociateWebACL
    * - appsync:SetWebACL
+   * - bedrock-agentcore:GatewayDisassociateWebACL
    * - cognito-idp:DisassociateWebACL
    * - ec2:DisassociateVerifiedAccessInstanceWebAcl
    * - elasticloadbalancing:DeleteWebACLAssociation
@@ -498,6 +500,7 @@ export class Wafv2 extends PolicyStatement {
    * - amplify:GetWebACLForResource
    * - apprunner:DescribeWebAclForService
    * - appsync:GetWebACLForResource
+   * - bedrock-agentcore:GatewayGetWebACLForResource
    * - cognito-idp:GetWebACLForResource
    * - ec2:GetVerifiedAccessInstanceWebAcl
    * - elasticloadbalancing:GetLoadBalancerWebACL
@@ -609,6 +612,7 @@ export class Wafv2 extends PolicyStatement {
    * - amplify:ListResourcesForWebACL
    * - apprunner:ListAssociatedServicesForWebAcl
    * - appsync:ListResourcesForWebACL
+   * - bedrock-agentcore:GatewayListResourcesForWebACL
    * - cognito-idp:ListResourcesForWebACL
    * - ec2:DescribeVerifiedAccessInstanceWebAclAssociations
    * - elasticloadbalancing:DescribeWebACLAssociation
@@ -1079,6 +1083,20 @@ export class Wafv2 extends PolicyStatement {
    */
   public onAmplifyApp(appId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:amplify:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apps/${ appId }`);
+  }
+
+  /**
+   * Adds a resource of type agentcore-gateway to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAgentcoreGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:bedrock-agentcore:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
   }
 
   /**

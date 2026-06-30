@@ -37,6 +37,7 @@ ec2:AssociateVerifiedAccessInstanceWebAcl;Write
 ec2:AssociateVpcCidrBlock;Write
 ec2:AttachApplianceToNatGateway;Permissions management
 ec2:AttachClassicLinkVpc;Write
+ec2:AttachImageWatermark;Write
 ec2:AttachInternetGateway;Write
 ec2:AttachNetworkInterface;Write
 ec2:AttachResourcesToPlacementGroup;Permissions management
@@ -467,6 +468,7 @@ ec2:DescribeVpnConnections;List
 ec2:DescribeVpnGateways;List
 ec2:DetachApplianceFromNatGateway;Permissions management
 ec2:DetachClassicLinkVpc;Write
+ec2:DetachImageWatermark;Write
 ec2:DetachInternetGateway;Write
 ec2:DetachNetworkInterface;Write
 ec2:DetachResourcesFromPlacementGroup;Permissions management

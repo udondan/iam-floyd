@@ -583,6 +583,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to attach a watermark to an Amazon Machine Image (AMI)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachImageWatermark.html
+   */
+  public toAttachImageWatermark() {
+    return this.to('AttachImageWatermark');
+  }
+
+  /**
    * Grants permission to attach an internet gateway to a VPC
    *
    * Access Level: Write
@@ -1267,12 +1281,15 @@ export class Ec2 extends PolicyStatement {
    * - .ifRegion()
    *
    * Dependent actions:
+   * - autoscaling:DescribeTags
    * - ec2:CreateTags
+   * - ec2:DescribeTags
    * - ecs:ListClusters
    * - ecs:ListContainerInstances
    * - ecs:ListServices
    * - ecs:ListTaskDefinitions
    * - ecs:ListTasks
+   * - iam:CreateServiceLinkedRole
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html
@@ -6924,6 +6941,20 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to detach a watermark from an Amazon Machine Image (AMI)
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifRegion()
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachImageWatermark.html
+   */
+  public toDetachImageWatermark() {
+    return this.to('DetachImageWatermark');
+  }
+
+  /**
    * Grants permission to detach an internet gateway from a VPC
    *
    * Access Level: Write
@@ -11550,6 +11581,7 @@ export class Ec2 extends PolicyStatement {
       'AssociateVerifiedAccessInstanceWebAcl',
       'AssociateVpcCidrBlock',
       'AttachClassicLinkVpc',
+      'AttachImageWatermark',
       'AttachInternetGateway',
       'AttachNetworkInterface',
       'AttachVerifiedAccessTrustProvider',
@@ -11777,6 +11809,7 @@ export class Ec2 extends PolicyStatement {
       'DeregisterTransitGatewayMulticastGroupMembers',
       'DeregisterTransitGatewayMulticastGroupSources',
       'DetachClassicLinkVpc',
+      'DetachImageWatermark',
       'DetachInternetGateway',
       'DetachNetworkInterface',
       'DetachVerifiedAccessTrustProvider',
@@ -15187,6 +15220,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateVpcCidrBlock()
    * - .toAttachApplianceToNatGateway()
    * - .toAttachClassicLinkVpc()
+   * - .toAttachImageWatermark()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
    * - .toAttachResourcesToPlacementGroup()
@@ -15205,6 +15239,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelSpotFleetRequests()
    * - .toCancelSpotInstanceRequests()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateCapacityReservationCancellationQuote()
    * - .toCreateCarrierGateway()
    * - .toCreateClientVpnEndpoint()
    * - .toCreateClientVpnRoute()
@@ -15400,6 +15435,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVpcEndpointServicePermissions()
    * - .toDetachApplianceFromNatGateway()
    * - .toDetachClassicLinkVpc()
+   * - .toDetachImageWatermark()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
    * - .toDetachResourcesFromPlacementGroup()
@@ -17421,6 +17457,7 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ID of an image
    *
    * Applies to actions:
+   * - .toAttachImageWatermark()
    * - .toCancelImageLaunchPermission()
    * - .toCopyImage()
    * - .toCreateFleet()
@@ -17432,6 +17469,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeregisterImage()
    * - .toDescribeImageAttribute()
+   * - .toDetachImageWatermark()
    * - .toDisableFastLaunch()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
@@ -17468,6 +17506,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAttachImageWatermark()
    * - .toCancelImageLaunchPermission()
    * - .toCreateFleet()
    * - .toCreateImageUsageReport()
@@ -17476,6 +17515,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTags()
    * - .toDeregisterImage()
    * - .toDescribeImageAttribute()
+   * - .toDetachImageWatermark()
    * - .toDisableFastLaunch()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
@@ -18821,6 +18861,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAttachImageWatermark()
    * - .toCancelImageLaunchPermission()
    * - .toCopyFpgaImage()
    * - .toCopyImage()
@@ -18840,6 +18881,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeFpgaImageAttribute()
    * - .toDescribeImageAttribute()
    * - .toDescribeSnapshotAttribute()
+   * - .toDetachImageWatermark()
    * - .toDisableFastLaunch()
    * - .toDisableFastSnapshotRestores()
    * - .toDisableImage()
@@ -19347,6 +19389,7 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html#amazon-ec2-keys
    *
    * Applies to actions:
+   * - .toAttachImageWatermark()
    * - .toCancelImageLaunchPermission()
    * - .toCreateFleet()
    * - .toCreateFpgaImage()
@@ -19357,6 +19400,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteFpgaImage()
    * - .toDeregisterImage()
    * - .toDescribeImageAttribute()
+   * - .toDetachImageWatermark()
    * - .toDisableFastLaunch()
    * - .toDisableImage()
    * - .toDisableImageDeprecation()
@@ -19481,6 +19525,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateVpcCidrBlock()
    * - .toAttachApplianceToNatGateway()
    * - .toAttachClassicLinkVpc()
+   * - .toAttachImageWatermark()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
    * - .toAttachResourcesToPlacementGroup()
@@ -19911,6 +19956,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVpnGateways()
    * - .toDetachApplianceFromNatGateway()
    * - .toDetachClassicLinkVpc()
+   * - .toDetachImageWatermark()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
    * - .toDetachResourcesFromPlacementGroup()
@@ -20532,6 +20578,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateVpcCidrBlock()
    * - .toAttachApplianceToNatGateway()
    * - .toAttachClassicLinkVpc()
+   * - .toAttachImageWatermark()
    * - .toAttachInternetGateway()
    * - .toAttachNetworkInterface()
    * - .toAttachResourcesToPlacementGroup()
@@ -20550,6 +20597,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCancelSpotFleetRequests()
    * - .toCancelSpotInstanceRequests()
    * - .toCreateCapacityReservationBySplitting()
+   * - .toCreateCapacityReservationCancellationQuote()
    * - .toCreateCarrierGateway()
    * - .toCreateClientVpnEndpoint()
    * - .toCreateClientVpnRoute()
@@ -20745,6 +20793,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeVpcEndpointServicePermissions()
    * - .toDetachApplianceFromNatGateway()
    * - .toDetachClassicLinkVpc()
+   * - .toDetachImageWatermark()
    * - .toDetachInternetGateway()
    * - .toDetachNetworkInterface()
    * - .toDetachResourcesFromPlacementGroup()
@@ -21126,6 +21175,7 @@ export class Ec2 extends PolicyStatement {
    * - .toAssociateAddress()
    * - .toAssociateIamInstanceProfile()
    * - .toAttachClassicLinkVpc()
+   * - .toAttachImageWatermark()
    * - .toAttachNetworkInterface()
    * - .toAttachVolume()
    * - .toCancelImageLaunchPermission()
@@ -21144,6 +21194,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDescribeImageAttribute()
    * - .toDescribeInstanceAttribute()
    * - .toDetachClassicLinkVpc()
+   * - .toDetachImageWatermark()
    * - .toDetachNetworkInterface()
    * - .toDetachVolume()
    * - .toDisableFastLaunch()

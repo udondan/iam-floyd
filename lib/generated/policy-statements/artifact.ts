@@ -41,6 +41,32 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a compliance inquiry
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_CreateComplianceInquiry.html
+   */
+  public toCreateComplianceInquiry() {
+    return this.to('CreateComplianceInquiry');
+  }
+
+  /**
+   * Grants permission to export a compliance inquiry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_ExportComplianceInquiry.html
+   */
+  public toExportComplianceInquiry() {
+    return this.to('ExportComplianceInquiry');
+  }
+
+  /**
    * Grants permission to get the account settings for Artifact
    *
    * Access Level: Read
@@ -60,6 +86,17 @@ export class Artifact extends PolicyStatement {
    */
   public toGetAgreement() {
     return this.to('GetAgreement');
+  }
+
+  /**
+   * Grants permission to get metadata associated with a compliance inquiry
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetComplianceInquiryMetadata.html
+   */
+  public toGetComplianceInquiryMetadata() {
+    return this.to('GetComplianceInquiryMetadata');
   }
 
   /**
@@ -129,6 +166,28 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list compliance inquiries submitted by the customer account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListComplianceInquiries.html
+   */
+  public toListComplianceInquiries() {
+    return this.to('ListComplianceInquiries');
+  }
+
+  /**
+   * Grants permission to list queries for a compliance inquiry
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListComplianceInquiryQueries.html
+   */
+  public toListComplianceInquiryQueries() {
+    return this.to('ListComplianceInquiryQueries');
+  }
+
+  /**
    * Grants permission to list customer-agreement resources that have been accepted by the customer account
    *
    * Access Level: List
@@ -162,6 +221,17 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list all tags on an AWS Artifact resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
    * Grants permission to put account settings for Artifact
    *
    * Access Level: Write
@@ -170,6 +240,21 @@ export class Artifact extends PolicyStatement {
    */
   public toPutAccountSettings() {
     return this.to('PutAccountSettings');
+  }
+
+  /**
+   * Grants permission to associate a set of tags with an AWS Artifact resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
   }
 
   /**
@@ -183,27 +268,51 @@ export class Artifact extends PolicyStatement {
     return this.to('TerminateAgreement');
   }
 
+  /**
+   * Grants permission to remove the association of tags from an AWS Artifact resource
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/artifact/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AcceptAgreement',
       'AcceptNdaForAgreement',
+      'CreateComplianceInquiry',
       'PutAccountSettings',
       'TerminateAgreement'
     ],
     Read: [
+      'ExportComplianceInquiry',
       'GetAccountSettings',
       'GetAgreement',
+      'GetComplianceInquiryMetadata',
       'GetCustomerAgreement',
       'GetNdaForAgreement',
       'GetReport',
       'GetReportMetadata',
-      'GetTermForReport'
+      'GetTermForReport',
+      'ListTagsForResource'
     ],
     List: [
       'ListAgreements',
+      'ListComplianceInquiries',
+      'ListComplianceInquiryQueries',
       'ListCustomerAgreements',
       'ListReportVersions',
       'ListReports'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
     ]
   };
 
@@ -251,6 +360,23 @@ export class Artifact extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type compliance-inquiry to the statement
+   *
+   * https://docs.aws.amazon.com/artifact/latest/ug/managing-compliance-inquiries.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onComplianceInquiry(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:artifact:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compliance-inquiry/${ resourceName }`);
+  }
+
+  /**
    * Filters access by which category reports are associated with
    *
    * https://docs.aws.amazon.com/artifact/latest/ug/using-condition-keys.html
@@ -278,5 +404,55 @@ export class Artifact extends PolicyStatement {
    */
   public ifReportSeries(value: string | string[], operator?: Operator | string) {
     return this.if(`ReportSeries`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateComplianceInquiry()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - compliance-inquiry
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateComplianceInquiry()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
   }
 }
