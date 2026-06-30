@@ -136,7 +136,8 @@
             "emr-serverless.amazonaws.com",
             "elasticmapreduce.amazonaws.com",
             "redshift.amazonaws.com",
-            "airflow-serverless.amazonaws.com"
+            "airflow-serverless.amazonaws.com",
+            "events.amazonaws.com"
           ]
         }
       }
@@ -224,7 +225,9 @@
         "s3:CreateBucket",
         "s3:DeleteBucketPolicy",
         "s3:Get*",
-        "s3:Put*"
+        "s3:Put*",
+        "s3:DeleteObject",
+        "s3:AbortMultipartUpload"
       ],
       "Resource": [
         "arn:aws:s3:::amazon-sagemaker*"
@@ -277,6 +280,9 @@
       "Action": [
         "cloudwatch:PutMetricData",
         "cloudwatch:GetMetricData",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DeleteAlarms",
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
         "logs:Describe*",
@@ -519,7 +525,8 @@
         "secretsmanager:GetSecretValue",
         "secretsmanager:TagResource",
         "secretsmanager:UpdateSecret",
-        "secretsmanager:PutResourcePolicy"
+        "secretsmanager:PutResourcePolicy",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "*",
       "Condition": {
@@ -537,7 +544,8 @@
         "secretsmanager:DescribeSecret",
         "secretsmanager:GetSecretValue",
         "secretsmanager:TagResource",
-        "secretsmanager:UpdateSecret"
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "*",
       "Condition": {
@@ -884,7 +892,8 @@
         "ec2:CreateNetworkInterface",
         "ec2:DeleteNetworkInterface",
         "ec2:CreateNetworkInterfacePermission",
-        "ec2:DeleteNetworkInterfacePermission"
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:CreateVpcEndpoint"
       ],
       "Resource": "*"
     },
@@ -1034,6 +1043,38 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "CanvasGeneralPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "comprehend:*",
+        "textract:*",
+        "rekognition:*",
+        "sagemaker-data-science-assistant:*",
+        "rds:DescribeDBInstances",
+        "application-autoscaling:PutScalingPolicy",
+        "application-autoscaling:RegisterScalableTarget",
+        "application-autoscaling:DescribeScalingActivities",
+        "quicksight:ListNamespaces",
+        "events:PutRule",
+        "events:DescribeRule",
+        "events:PutTargets",
+        "events:TagResource",
+        "events:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CanvasRedshiftAccess",
+      "Effect": "Allow",
+      "Action": [
+        "redshift:GetClusterCredentials"
+      ],
+      "Resource": [
+        "arn:aws:redshift:*:*:dbuser:*/sagemaker_access*",
+        "arn:aws:redshift:*:*:dbname:*"
+      ]
     }
   ]
 }

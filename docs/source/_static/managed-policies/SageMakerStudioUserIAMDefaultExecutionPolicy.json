@@ -55,7 +55,9 @@
         "datazone:GenerateCode",
         "datazone:SendMessage",
         "datazone:CancelMessage",
-        "datazone:QueryGraph"
+        "datazone:QueryGraph",
+        "datazone:StartCompute",
+        "datazone:StopCompute"
       ],
       "Resource": "*"
     },
@@ -73,16 +75,6 @@
       "Sid": "ValidateCfn",
       "Effect": "Allow",
       "Action": "cloudformation:ValidateTemplate",
-      "Resource": "*"
-    },
-    {
-      "Sid": "SageMakerUnifiedStudioMcp",
-      "Effect": "Allow",
-      "Action": [
-        "sagemaker-unified-studio-mcp:InvokeMcp",
-        "sagemaker-unified-studio-mcp:CallReadOnlyTool",
-        "sagemaker-unified-studio-mcp:CallPrivilegedTool"
-      ],
       "Resource": "*"
     },
     {
@@ -166,7 +158,8 @@
       "Action": [
         "sagemaker:CreatePresignedDomainUrl",
         "sagemaker:CreateUserProfile",
-        "sagemaker:DeleteUserProfile"
+        "sagemaker:DeleteUserProfile",
+        "sagemaker:UpdateUserProfile"
       ],
       "Resource": "arn:aws:sagemaker:*:*:user-profile/*",
       "Condition": {
@@ -195,6 +188,25 @@
           "sagemaker:SpaceSharingType": [
             "Private"
           ]
+        }
+      }
+    },
+    {
+      "Sid": "CanvasUserProfileApp",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateApp",
+        "sagemaker:DeleteApp",
+        "sagemaker:CreateSpace",
+        "sagemaker:DeleteSpace"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:app/*/Canvas/*",
+        "arn:aws:sagemaker:*:*:space/*/CanvasManagedSpace*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonDataZoneUser": "${aws:PrincipalTag/datazone:userId}"
         }
       }
     },
@@ -278,6 +290,9 @@
       "Action": [
         "cloudwatch:PutMetricData",
         "cloudwatch:GetMetricData",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DeleteAlarms",
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
         "logs:Describe*",
@@ -473,7 +488,8 @@
             "emr-serverless.amazonaws.com",
             "elasticmapreduce.amazonaws.com",
             "redshift.amazonaws.com",
-            "airflow-serverless.amazonaws.com"
+            "airflow-serverless.amazonaws.com",
+            "events.amazonaws.com"
           ]
         }
       }
@@ -591,7 +607,8 @@
         "secretsmanager:DescribeSecret",
         "secretsmanager:GetSecretValue",
         "secretsmanager:UpdateSecret",
-        "secretsmanager:PutResourcePolicy"
+        "secretsmanager:PutResourcePolicy",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "*",
       "Condition": {
@@ -607,7 +624,8 @@
         "secretsmanager:CreateSecret",
         "secretsmanager:DescribeSecret",
         "secretsmanager:GetSecretValue",
-        "secretsmanager:UpdateSecret"
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "*",
       "Condition": {
@@ -640,15 +658,27 @@
       "Sid": "CodeConnectionsUser",
       "Effect": "Allow",
       "Action": [
-        "codeconnections:UseConnection",
-        "codeconnections:ListConnections",
         "codeconnections:GetConnection",
-        "codeconnections:GetHost",
-        "codeconnections:ListTagsForResource",
-        "codestar-connections:UseConnection",
-        "codestar-connections:ListConnections",
+        "codeconnections:UseConnection",
         "codestar-connections:GetConnection",
+        "codestar-connections:UseConnection"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/for-use-with-all-datazone-projects": "true"
+        }
+      }
+    },
+    {
+      "Sid": "CodeConnectionsUserList",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:GetHost",
+        "codeconnections:ListConnections",
+        "codeconnections:ListTagsForResource",
         "codestar-connections:GetHost",
+        "codestar-connections:ListConnections",
         "codestar-connections:ListTagsForResource"
       ],
       "Resource": "*"
@@ -884,7 +914,8 @@
         "ec2:CreateNetworkInterface",
         "ec2:DeleteNetworkInterface",
         "ec2:CreateNetworkInterfacePermission",
-        "ec2:DeleteNetworkInterfacePermission"
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:CreateVpcEndpoint"
       ],
       "Resource": "*"
     },
@@ -939,6 +970,78 @@
         "elasticmapreduce:*Tag*"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "CanvasGeneralPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "comprehend:BatchDetect*",
+        "comprehend:Detect*",
+        "textract:Analyze*",
+        "textract:Start*",
+        "textract:Get*",
+        "rekognition:Detect*",
+        "sagemaker-data-science-assistant:*",
+        "rds:DescribeDBInstances",
+        "application-autoscaling:PutScalingPolicy",
+        "application-autoscaling:RegisterScalableTarget",
+        "application-autoscaling:DescribeScalingActivities",
+        "quicksight:ListNamespaces",
+        "events:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CanvasRedshiftAccess",
+      "Effect": "Allow",
+      "Action": [
+        "redshift:GetClusterCredentials"
+      ],
+      "Resource": [
+        "arn:aws:redshift:*:*:dbuser:*/sagemaker_access*",
+        "arn:aws:redshift:*:*:dbname:*"
+      ]
+    },
+    {
+      "Sid": "CanvasEventBridgePutOperation",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/sagemaker:is-canvas-data-prep-job": "true"
+        }
+      }
+    },
+    {
+      "Sid": "CanvasEventBridgeOperations",
+      "Effect": "Allow",
+      "Action": [
+        "events:DescribeRule",
+        "events:PutTargets"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/sagemaker:is-canvas-data-prep-job": "true"
+        }
+      }
+    },
+    {
+      "Sid": "CanvasEventBridgeTagBasedOperations",
+      "Effect": "Allow",
+      "Action": [
+        "events:TagResource"
+      ],
+      "Resource": "arn:aws:events:*:*:rule/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/sagemaker:is-canvas-data-prep-job": "true",
+          "aws:ResourceTag/sagemaker:is-canvas-data-prep-job": "true"
+        }
+      }
     }
   ]
 }

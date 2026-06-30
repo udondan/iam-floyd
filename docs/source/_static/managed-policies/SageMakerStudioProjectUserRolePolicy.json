@@ -317,21 +317,7 @@
         "glue:BatchStopJobRun",
         "glue:StopWorkflowRun",
         "glue:StartJobRun",
-        "glue:CancelDataQualityRuleRecommendationRun",
-        "glue:CancelDataQualityRulesetEvaluationRun",
-        "glue:DeleteDataQualityRuleset",
-        "glue:GetDataQualityModel",
-        "glue:GetDataQualityModelResult",
-        "glue:GetDataQualityRuleRecommendationRun",
-        "glue:GetDataQualityRuleset",
-        "glue:GetDataQualityRulesetEvaluationRun",
-        "glue:GetDataQualityResult",
-        "glue:PublishDataQuality",
-        "glue:PutDataQualityProfileAnnotation",
-        "glue:PutDataQualityStatisticAnnotation",
-        "glue:StartDataQualityRuleRecommendationRun",
-        "glue:StartDataQualityRulesetEvaluationRun",
-        "glue:UpdateDataQualityRuleset",
+        "glue:*DataQuality*",
         "glue:GetJobRun",
         "glue:GetJobRuns",
         "glue:BatchGetJobs",
@@ -367,8 +353,7 @@
       "Sid": "GlueDQVetl",
       "Effect": "Allow",
       "Action": [
-        "glue:GetDataQualityResult",
-        "glue:PublishDataQuality"
+        "glue:*DataQuality*"
       ],
       "Resource": [
         "arn:aws:glue:*:*:dataQualityRuleset/dq_etl_ruleset_${aws:PrincipalTag/AmazonDataZoneProject}_*"
@@ -665,7 +650,7 @@
       }
     },
     {
-      "Sid": "DataLakeCrossAccountDecryptKMSPermissions",
+      "Sid": "XAcctKmsDecrypt",
       "Effect": "Allow",
       "Action": [
         "kms:Decrypt"
@@ -769,7 +754,7 @@
       }
     },
     {
-      "Sid": "AccessLevelControlS3BucketPermissions",
+      "Sid": "S3BucketAcl",
       "Effect": "Allow",
       "Action": "s3:GetBucketAcl",
       "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}",
@@ -780,7 +765,7 @@
       }
     },
     {
-      "Sid": "TagS3ObjectPermissionsForBedrockEvaluation",
+      "Sid": "BREvalS3Tag",
       "Effect": "Allow",
       "Action": "s3:PutObjectTagging",
       "Resource": "arn:aws:s3:::${aws:PrincipalTag/DomainBucketName}/${aws:PrincipalTag/AmazonDataZoneDomain}/${aws:PrincipalTag/AmazonDataZoneProject}/genAI/assets/evaluations/*",
@@ -993,9 +978,26 @@
         "datazone:ListEnvironmentBlueprints",
         "datazone:ListProjects",
         "datazone:UpdateConnection",
-        "datazone:PostLineageEvent"
+        "datazone:PostLineageEvent",
+        "datazone:*Compute*"
       ],
       "Resource": "arn:aws:datazone:*:*:domain/${aws:PrincipalTag/AmazonDataZoneDomain}"
+    },
+    {
+      "Sid": "CodeConnectionsUser",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:GetConnection",
+        "codeconnections:UseConnection",
+        "codestar-connections:GetConnection",
+        "codestar-connections:UseConnection"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/for-use-with-all-datazone-projects": "true"
+        }
+      }
     },
     {
       "Sid": "GlueGetDefaultDatabase",
@@ -1404,7 +1406,7 @@
       }
     },
     {
-      "Sid": "RedshiftDataActionsIAMSessionRestriction",
+      "Sid": "RSDataIAMSession",
       "Effect": "Allow",
       "Action": [
         "redshift-data:DescribeStatement",
@@ -1475,7 +1477,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "RedshiftServerlessWorkgroupWithResourceType",
+      "Sid": "RSWgTagged",
       "Effect": "Allow",
       "Action": [
         "redshift-serverless:GetWorkgroup",
@@ -1491,7 +1493,7 @@
       }
     },
     {
-      "Sid": "RedshiftExistingComputeConnectToCatalog",
+      "Sid": "RSExistCatalog",
       "Effect": "Allow",
       "Action": [
         "redshift:GetClusterCredentialsWithIAM"
@@ -1528,7 +1530,7 @@
       }
     },
     {
-      "Sid": "RedshiftDataActionsForManagedWorkgroup",
+      "Sid": "RSDataMWg",
       "Effect": "Allow",
       "Action": [
         "redshift-data:BatchExecuteStatement",
@@ -1920,7 +1922,7 @@
       }
     },
     {
-      "Sid": "BedrockInvokeModelAppInferenceProfilePermissions",
+      "Sid": "BRInvokeAppProfile",
       "Effect": "Allow",
       "Action": [
         "bedrock:GetInferenceProfile",
@@ -2025,7 +2027,7 @@
       }
     },
     {
-      "Sid": "CreateEvaluationJobForFoundationModelPermissions",
+      "Sid": "BREvalFM",
       "Effect": "Allow",
       "Action": "bedrock:CreateEvaluationJob",
       "Resource": [
@@ -2034,7 +2036,7 @@
       ]
     },
     {
-      "Sid": "BedrockCreateEvaluationJobPermissions",
+      "Sid": "BRCreateEval",
       "Effect": "Allow",
       "Action": "bedrock:CreateEvaluationJob",
       "Resource": [
@@ -2093,7 +2095,7 @@
       }
     },
     {
-      "Sid": "BedrockRetrieveAndGeneratePermissions",
+      "Sid": "BRRAG",
       "Effect": "Allow",
       "Action": "bedrock:RetrieveAndGenerate",
       "Resource": "*",
@@ -2302,7 +2304,7 @@
       }
     },
     {
-      "Sid": "KmsViaSecretsManagerPermissionsForBedrock",
+      "Sid": "BRKmsSM",
       "Effect": "Allow",
       "Action": [
         "kms:Decrypt",
@@ -2349,7 +2351,7 @@
       }
     },
     {
-      "Sid": "GetDataZoneEnvironmentCFNStackPermissions",
+      "Sid": "DZEnvCfn",
       "Effect": "Allow",
       "Action": [
         "cloudformation:GetTemplate",
@@ -2438,12 +2440,18 @@
       "Resource": "arn:aws:logs:*:*:log-group:/aws/lambda/athenafederatedcatalog*"
     },
     {
-      "Sid": "UnrestrictedDataConnectionPermissions",
+      "Sid": "DataConnOpen",
       "Effect": "Allow",
       "Action": [
         "dynamodb:ListTables",
         "glue:ManagedConnector",
-        "glue:TestConnection"
+        "glue:TestConnection",
+        "codeconnections:GetHost",
+        "codeconnections:ListConnections",
+        "codeconnections:ListTagsForResource",
+        "codestar-connections:GetHost",
+        "codestar-connections:ListConnections",
+        "codestar-connections:ListTagsForResource"
       ],
       "Resource": "*"
     },
@@ -2571,7 +2579,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "CrossAccountLakeFormationResourceSharingPermissions",
+      "Sid": "XAcctLFCreate",
       "Effect": "Allow",
       "Action": [
         "ram:CreateResourceShare"
@@ -2593,7 +2601,7 @@
       }
     },
     {
-      "Sid": "CrossAccountRAMResourceSharingPermissions",
+      "Sid": "XAcctRAMGlue",
       "Effect": "Allow",
       "Action": [
         "glue:DeleteResourcePolicy",
@@ -2614,7 +2622,7 @@
       }
     },
     {
-      "Sid": "CrossAccountRAMResourceSharingViaLakeFormationPermissions",
+      "Sid": "XAcctRAMLF",
       "Effect": "Allow",
       "Action": [
         "ram:AssociateResourceShare",
@@ -2653,7 +2661,7 @@
       }
     },
     {
-      "Sid": "CrossAccountRAMResourceShareInvitationPermission",
+      "Sid": "XAcctRAMInvite",
       "Effect": "Allow",
       "Action": [
         "ram:AcceptResourceShareInvitation"
@@ -2669,7 +2677,7 @@
       }
     },
     {
-      "Sid": "CrossAccountRAMResourceSharingViaLakeFormationHybrid",
+      "Sid": "XAcctRAMLFHybrid",
       "Effect": "Allow",
       "Action": "ram:AssociateResourceSharePermission",
       "Resource": "*",
@@ -2718,7 +2726,7 @@
       }
     },
     {
-      "Sid": "ManageQuickSightFolderAndDataSourceResources",
+      "Sid": "QSFolderDS",
       "Effect": "Allow",
       "Action": [
         "quicksight:DescribeDataSource",
@@ -2800,16 +2808,6 @@
           "aws:ResourceTag/AmazonDataZoneProject": "${aws:PrincipalTag/AmazonDataZoneProject}"
         }
       }
-    },
-    {
-      "Sid": "SageMakerUnifiedStudioMcp",
-      "Effect": "Allow",
-      "Action": [
-        "sagemaker-unified-studio-mcp:InvokeMcp",
-        "sagemaker-unified-studio-mcp:CallReadOnlyTool",
-        "sagemaker-unified-studio-mcp:CallPrivilegedTool"
-      ],
-      "Resource": "*"
     }
   ]
 }

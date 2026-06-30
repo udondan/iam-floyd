@@ -14,6 +14,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AccessAnalyzerServiceRolePolicy);
     }
 
+    /** Grants account access manager permissions to manage AWS account access */
+    public AccountAccessManagerServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AccountAccessManagerServiceRolePolicy);
+    }
+
     /** For use with accounts created through the Vercel Marketplace integration with AWS. Provides access to account management, notification, cost and usage analysis, and identity provider management. */
     public AccountManagementFromVercel(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AccountManagementFromVercel);

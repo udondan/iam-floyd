@@ -12,7 +12,14 @@
         "redshift-serverless:*",
         "redshift:*",
         "s3:*",
-        "s3tables:*"
+        "s3tables:*",
+        "comprehend:*",
+        "textract:*",
+        "rekognition:*",
+        "sagemaker-data-science-assistant:*",
+        "rds:*",
+        "quicksight:*",
+        "events:*"
       ],
       "Resource": "*"
     },
@@ -33,7 +40,8 @@
         "sqlworkbench:*",
         "emr-serverless:*",
         "airflow-serverless:*",
-        "airflow:*"
+        "airflow:*",
+        "application-autoscaling:*"
       ],
       "Resource": "*"
     },
@@ -299,7 +307,8 @@
         "secretsmanager:GetSecretValue",
         "secretsmanager:TagResource",
         "secretsmanager:UpdateSecret",
-        "secretsmanager:PutResourcePolicy"
+        "secretsmanager:PutResourcePolicy",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "*",
       "Condition": {
@@ -317,7 +326,8 @@
         "secretsmanager:DescribeSecret",
         "secretsmanager:GetSecretValue",
         "secretsmanager:TagResource",
-        "secretsmanager:UpdateSecret"
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "*",
       "Condition": {
@@ -650,7 +660,8 @@
         "ec2:CreateNetworkInterface",
         "ec2:DeleteNetworkInterface",
         "ec2:CreateNetworkInterfacePermission",
-        "ec2:DeleteNetworkInterfacePermission"
+        "ec2:DeleteNetworkInterfacePermission",
+        "ec2:CreateVpcEndpoint"
       ],
       "Resource": "*"
     },

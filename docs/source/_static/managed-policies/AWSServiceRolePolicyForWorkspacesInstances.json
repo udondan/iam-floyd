@@ -2,8 +2,10 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "DescribeResources",
       "Effect": "Allow",
       "Action": [
+        "ec2:DescribeCapacityReservations",
         "ec2:DescribeInstances",
         "ec2:DescribeInstanceStatus",
         "ec2:DescribeTags",
@@ -12,6 +14,43 @@
       "Resource": "*"
     },
     {
+      "Sid": "CreateCapacityReservation",
+      "Effect": "Allow",
+      "Action": "ec2:CreateCapacityReservation",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/ManagedBy": "workspaces-instances"
+        }
+      }
+    },
+    {
+      "Sid": "ManageTaggedCapacityReservations",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifyCapacityReservation",
+        "ec2:CancelCapacityReservation"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/ManagedBy": "workspaces-instances"
+        }
+      }
+    },
+    {
+      "Sid": "TagRemediation",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:*:*:capacity-reservation/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/ManagedBy": "workspaces-instances"
+        }
+      }
+    },
+    {
+      "Sid": "ManagedInstanceOperations",
       "Effect": "Allow",
       "Action": [
         "ec2:CreateTags",
