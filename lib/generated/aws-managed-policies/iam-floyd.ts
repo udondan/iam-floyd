@@ -1252,6 +1252,10 @@ export class AwsManagedPolicy {
     public static AWSArtifactAgreementsFullAccess = 'AWSArtifactAgreementsFullAccess';
     /** This policy grants read-only access to list the AWS Artifact service agreements and to download the accepted agreements.. It also includes permissions to list as well as describe the organization details. Additionally, the policy provides the ability to check if the required service-linked role exists. */
     public static AWSArtifactAgreementsReadOnlyAccess = 'AWSArtifactAgreementsReadOnlyAccess';
+    /** Provides full access to the Artifact Compliance Inquiry. */
+    public static AWSArtifactComplianceInquiriesFullAccess = 'AWSArtifactComplianceInquiriesFullAccess';
+    /** Provides read-only access to Artifact Compliance Inquiry. */
+    public static AWSArtifactComplianceInquiriesReadOnlyAccess = 'AWSArtifactComplianceInquiriesReadOnlyAccess';
     /** Provides read-only access to the AWS Artifact service reports. */
     public static AWSArtifactReportsReadOnlyAccess = 'AWSArtifactReportsReadOnlyAccess';
     /** Allows AWS Artifact to gather information about an organization via AWS Organizations service. */
@@ -2090,6 +2094,8 @@ export class AwsManagedPolicy {
     public static AWSPartnerCentralMarketingManagement = 'AWSPartnerCentralMarketingManagement';
     /** Provides necessary access for opportunity management activities. */
     public static AWSPartnerCentralOpportunityManagement = 'AWSPartnerCentralOpportunityManagement';
+    /** Provides necessary access for revenue attribution management activities. */
+    public static AWSPartnerCentralRevenueAttributionManagement = 'AWSPartnerCentralRevenueAttributionManagement';
     /** Provides necessary access for developer testing in the Sandbox catalog. */
     public static AWSPartnerCentralSandboxFullAccess = 'AWSPartnerCentralSandboxFullAccess';
     /** Provides access to the ResourceSnapshotJob to read a resource and snapshot it in the target engagement. */
@@ -2246,6 +2252,8 @@ export class AwsManagedPolicy {
     public static AWSResourceExplorerServiceRolePolicy = 'aws-service-role/AWSResourceExplorerServiceRolePolicy';
     /** This is the read only policy for AWS Resource Groups */
     public static AWSResourceGroupsReadOnlyAccess = 'AWSResourceGroupsReadOnlyAccess';
+    /** Provides necessary access for revenue attribution management activities. */
+    public static AWSRevenueAttributionManagement = 'AWSRevenueAttributionManagement';
     /** Provides full access to AWS RoboMaker via the AWS Management Console and SDK. Also provides select access to related services (e.g., S3, IAM). */
     public static AWSRoboMakerFullAccess = 'AWSRoboMaker_FullAccess';
     /** Provides read only access to AWS RoboMaker via the AWS Management Console and SDK */
@@ -2464,6 +2472,8 @@ export class AwsManagedPolicy {
     public static AWSTransformCustomManageTransformations = 'AWSTransformCustomManageTransformations';
     /** Enables the AWS Transform service to read a specified SecretsManager Secret in connection to specified KMS key. This policy grants permissions to read the specified secret value and decrypt it is the secret is encrypted */
     public static AWSTransformSecretsManagerConnectorPolicy = 'AWSTransformSecretsManagerConnectorPolicy';
+    /** Grants AWS Transform (ATX) Continuous Modernization CLI/agent the permissions needed to invoke the AWS Security Agent service for automated code security reviews and remediation, including uploading scan artifacts and retrieving findings. */
+    public static AWSTransformSecurityAgentExecutorAccess = 'AWSTransformSecurityAgentExecutorAccess';
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */
     public static AWSTrustedAdvisorPriorityFullAccess = 'AWSTrustedAdvisorPriorityFullAccess';
     /** Provides read-only access to AWS Trusted Advisor Priority. This includes permission to view the delegated administrator accounts. */

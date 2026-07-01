@@ -113,6 +113,8 @@
         "tax:PutSupplementalTaxRegistration",
         "tax:DeleteSupplementalTaxRegistration",
         "tax:GetTaxRegistration",
+        "tax:PutTaxRegistration",
+        "tax:ListTaxRegistrations",
         "aws-marketplace:ListPayables",
         "aws-marketplace:ListInvoiceSubmissionTasks",
         "invoicing:ListInvoiceSummaries",

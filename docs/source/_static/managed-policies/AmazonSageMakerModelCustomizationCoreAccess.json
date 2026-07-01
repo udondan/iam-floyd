@@ -301,7 +301,8 @@
         "kms:DescribeKey",
         "kms:ListAliases",
         "iam:ListRoles",
-        "ec2:DescribeVpcs"
+        "ec2:DescribeVpcs",
+        "servicequotas:ListServiceQuotas"
       ],
       "Resource": "*",
       "Condition": {

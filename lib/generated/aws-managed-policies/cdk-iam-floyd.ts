@@ -3139,6 +3139,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSArtifactAgreementsReadOnlyAccess);
     }
 
+    /** Provides full access to the Artifact Compliance Inquiry. */
+    public AWSArtifactComplianceInquiriesFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSArtifactComplianceInquiriesFullAccess);
+    }
+
+    /** Provides read-only access to Artifact Compliance Inquiry. */
+    public AWSArtifactComplianceInquiriesReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSArtifactComplianceInquiriesReadOnlyAccess);
+    }
+
     /** Provides read-only access to the AWS Artifact service reports. */
     public AWSArtifactReportsReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSArtifactReportsReadOnlyAccess);
@@ -5234,6 +5244,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralOpportunityManagement);
     }
 
+    /** Provides necessary access for revenue attribution management activities. */
+    public AWSPartnerCentralRevenueAttributionManagement(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralRevenueAttributionManagement);
+    }
+
     /** Provides necessary access for developer testing in the Sandbox catalog. */
     public AWSPartnerCentralSandboxFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSPartnerCentralSandboxFullAccess);
@@ -5622,6 +5637,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** This is the read only policy for AWS Resource Groups */
     public AWSResourceGroupsReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSResourceGroupsReadOnlyAccess);
+    }
+
+    /** Provides necessary access for revenue attribution management activities. */
+    public AWSRevenueAttributionManagement(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSRevenueAttributionManagement);
     }
 
     /** Provides full access to AWS RoboMaker via the AWS Management Console and SDK. Also provides select access to related services (e.g., S3, IAM). */
@@ -6167,6 +6187,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Enables the AWS Transform service to read a specified SecretsManager Secret in connection to specified KMS key. This policy grants permissions to read the specified secret value and decrypt it is the secret is encrypted */
     public AWSTransformSecretsManagerConnectorPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformSecretsManagerConnectorPolicy);
+    }
+
+    /** Grants AWS Transform (ATX) Continuous Modernization CLI/agent the permissions needed to invoke the AWS Security Agent service for automated code security reviews and remediation, including uploading scan artifacts and retrieving findings. */
+    public AWSTransformSecurityAgentExecutorAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformSecurityAgentExecutorAccess);
     }
 
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */
