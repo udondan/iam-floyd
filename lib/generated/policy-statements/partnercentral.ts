@@ -336,6 +336,36 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create marketplace revenue shares in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_CreateMarketplaceRevenueShare.html
+   */
+  public toCreateMarketplaceRevenueShare() {
+    return this.to('CreateMarketplaceRevenueShare');
+  }
+
+  /**
+   * Grants permission to create marketplace revenue share allocations in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_CreateMarketplaceRevenueShareAllocation.html
+   */
+  public toCreateMarketplaceRevenueShareAllocation() {
+    return this.to('CreateMarketplaceRevenueShareAllocation');
+  }
+
+  /**
    * Grants permission to create new Opportunities on AWS Partner Central
    *
    * Access Level: Write
@@ -430,6 +460,22 @@ export class Partnercentral extends PolicyStatement {
    */
   public toCreateResourceSnapshotJob() {
     return this.to('CreateResourceSnapshotJob');
+  }
+
+  /**
+   * Grants permission to create revenue attributions in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_CreateRevenueAttribution.html
+   */
+  public toCreateRevenueAttribution() {
+    return this.to('CreateRevenueAttribution');
   }
 
   /**
@@ -700,6 +746,34 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve marketplace revenue share details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetMarketplaceRevenueShare.html
+   */
+  public toGetMarketplaceRevenueShare() {
+    return this.to('GetMarketplaceRevenueShare');
+  }
+
+  /**
+   * Grants permission to retrieve marketplace revenue share allocation details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetMarketplaceRevenueShareAllocation.html
+   */
+  public toGetMarketplaceRevenueShareAllocation() {
+    return this.to('GetMarketplaceRevenueShareAllocation');
+  }
+
+  /**
    * Grants permission to retrieve details of Opportunities on AWS Partner Central
    *
    * Access Level: Read
@@ -846,6 +920,48 @@ export class Partnercentral extends PolicyStatement {
    */
   public toGetResourceSnapshotJob() {
     return this.to('GetResourceSnapshotJob');
+  }
+
+  /**
+   * Grants permission to retrieve revenue attribution details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetRevenueAttribution.html
+   */
+  public toGetRevenueAttribution() {
+    return this.to('GetRevenueAttribution');
+  }
+
+  /**
+   * Grants permission to retrieve revenue attribution allocation details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetRevenueAttributionAllocation.html
+   */
+  public toGetRevenueAttributionAllocation() {
+    return this.to('GetRevenueAttributionAllocation');
+  }
+
+  /**
+   * Grants permission to retrieve revenue attribution allocations task details in AWS Partner Central
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_GetRevenueAttributionAllocationsTask.html
+   */
+  public toGetRevenueAttributionAllocationsTask() {
+    return this.to('GetRevenueAttributionAllocationsTask');
   }
 
   /**
@@ -1070,6 +1186,34 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list marketplace revenue share allocations in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_ListMarketplaceRevenueShareAllocations.html
+   */
+  public toListMarketplaceRevenueShareAllocations() {
+    return this.to('ListMarketplaceRevenueShareAllocations');
+  }
+
+  /**
+   * Grants permission to list marketplace revenue shares in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_ListMarketplaceRevenueShares.html
+   */
+  public toListMarketplaceRevenueShares() {
+    return this.to('ListMarketplaceRevenueShares');
+  }
+
+  /**
    * Grants permission to list Opportunities on AWS Partner Central
    *
    * Access Level: List
@@ -1188,6 +1332,34 @@ export class Partnercentral extends PolicyStatement {
    */
   public toListResourceSnapshots() {
     return this.to('ListResourceSnapshots');
+  }
+
+  /**
+   * Grants permission to list revenue attribution allocations in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_ListRevenueAttributionAllocations.html
+   */
+  public toListRevenueAttributionAllocations() {
+    return this.to('ListRevenueAttributionAllocations');
+  }
+
+  /**
+   * Grants permission to list revenue attributions in AWS Partner Central
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_ListRevenueAttributions.html
+   */
+  public toListRevenueAttributions() {
+    return this.to('ListRevenueAttributions');
   }
 
   /**
@@ -1477,6 +1649,20 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to initiate tasks that manage revenue attribution allocations in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_StartRevenueAttributionAllocationsTask.html
+   */
+  public toStartRevenueAttributionAllocationsTask() {
+    return this.to('StartRevenueAttributionAllocationsTask');
+  }
+
+  /**
    * Grants permission to start verification processes in AWS Partner Central
    *
    * Access Level: Write
@@ -1619,6 +1805,20 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update marketplace revenue share allocations in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_UpdateMarketplaceRevenueShareAllocation.html
+   */
+  public toUpdateMarketplaceRevenueShareAllocation() {
+    return this.to('UpdateMarketplaceRevenueShareAllocation');
+  }
+
+  /**
    * Grants permission to update Opportunities on AWS Partner Central
    *
    * Access Level: Write
@@ -1663,6 +1863,20 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update revenue attributions in AWS Partner Central
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifCatalog()
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/API_prm_UpdateRevenueAttribution.html
+   */
+  public toUpdateRevenueAttribution() {
+    return this.to('UpdateRevenueAttribution');
+  }
+
+  /**
    * Grants permission to use Partner Central Agents sessions in AWS Partner Central
    *
    * Access Level: Write
@@ -1698,12 +1912,15 @@ export class Partnercentral extends PolicyStatement {
       'CreateEngagement',
       'CreateEngagementContext',
       'CreateEngagementInvitation',
+      'CreateMarketplaceRevenueShare',
+      'CreateMarketplaceRevenueShareAllocation',
       'CreateOpportunity',
       'CreatePartner',
       'CreateProgramManagementAccount',
       'CreateRelationship',
       'CreateResourceSnapshot',
       'CreateResourceSnapshotJob',
+      'CreateRevenueAttribution',
       'DeleteProgramManagementAccount',
       'DeleteRelationship',
       'DeleteResourceSnapshotJob',
@@ -1726,6 +1943,7 @@ export class Partnercentral extends PolicyStatement {
       'StartProfileUpdateTask',
       'StartProspectingFromEngagementTask',
       'StartResourceSnapshotJob',
+      'StartRevenueAttributionAllocationsTask',
       'StartVerification',
       'StopResourceSnapshotJob',
       'SubmitBenefitApplication',
@@ -1733,9 +1951,11 @@ export class Partnercentral extends PolicyStatement {
       'UpdateBenefitApplication',
       'UpdateConnectionPreferences',
       'UpdateEngagementContext',
+      'UpdateMarketplaceRevenueShareAllocation',
       'UpdateOpportunity',
       'UpdateProgramManagementAccount',
       'UpdateRelationship',
+      'UpdateRevenueAttribution',
       'UseSession'
     ],
     Read: [
@@ -1751,6 +1971,8 @@ export class Partnercentral extends PolicyStatement {
       'GetConnectionPreferences',
       'GetEngagement',
       'GetEngagementInvitation',
+      'GetMarketplaceRevenueShare',
+      'GetMarketplaceRevenueShareAllocation',
       'GetOpportunity',
       'GetPartner',
       'GetPartnerDashboard',
@@ -1762,6 +1984,9 @@ export class Partnercentral extends PolicyStatement {
       'GetRelationship',
       'GetResourceSnapshot',
       'GetResourceSnapshotJob',
+      'GetRevenueAttribution',
+      'GetRevenueAttributionAllocation',
+      'GetRevenueAttributionAllocationsTask',
       'GetSellingSystemSettings',
       'GetVerification',
       'ListEngagementMembers',
@@ -1781,6 +2006,8 @@ export class Partnercentral extends PolicyStatement {
       'ListEngagementFromOpportunityTasks',
       'ListEngagementInvitations',
       'ListEngagements',
+      'ListMarketplaceRevenueShareAllocations',
+      'ListMarketplaceRevenueShares',
       'ListOpportunities',
       'ListOpportunityFromEngagementTasks',
       'ListPartnerPaths',
@@ -1790,6 +2017,8 @@ export class Partnercentral extends PolicyStatement {
       'ListRelationships',
       'ListResourceSnapshotJobs',
       'ListResourceSnapshots',
+      'ListRevenueAttributionAllocations',
+      'ListRevenueAttributions',
       'ListSolutions',
       'SearchPartnerProfiles'
     ],
@@ -2117,6 +2346,42 @@ export class Partnercentral extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type RevenueAttribution to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-revenue-attribution.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param revenueAttributionId - Identifier for the revenueAttributionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRevenueAttribution(catalog: string, revenueAttributionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/revenue-attribution/${ revenueAttributionId }`);
+  }
+
+  /**
+   * Adds a resource of type MarketplaceRevenueShare to the statement
+   *
+   * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-marketplace-revenue-share.html
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param marketplaceProductId - Identifier for the marketplaceProductId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onMarketplaceRevenueShare(catalog: string, marketplaceProductId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:partnercentral:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:catalog/${ catalog }/marketplace-revenue-share/${ marketplaceProductId }`);
+  }
+
+  /**
    * Adds a resource of type ProspectingFromEngagementTask to the statement
    *
    * https://docs.aws.amazon.com/partner-central/latest/APIReference/working-with-your-leads.html
@@ -2138,11 +2403,13 @@ export class Partnercentral extends PolicyStatement {
    * Applies to actions:
    * - .toCreateBenefitApplication()
    * - .toCreateChannelHandshake()
+   * - .toCreateMarketplaceRevenueShare()
    * - .toCreateOpportunity()
    * - .toCreatePartner()
    * - .toCreateProgramManagementAccount()
    * - .toCreateRelationship()
    * - .toCreateResourceSnapshotJob()
+   * - .toCreateRevenueAttribution()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
    * - .toStartOpportunityFromEngagementTask()
@@ -2208,6 +2475,8 @@ export class Partnercentral extends PolicyStatement {
    * - ProgramManagementAccount
    * - Relationship
    * - ChannelHandshake
+   * - RevenueAttribution
+   * - MarketplaceRevenueShare
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2225,11 +2494,13 @@ export class Partnercentral extends PolicyStatement {
    * Applies to actions:
    * - .toCreateBenefitApplication()
    * - .toCreateChannelHandshake()
+   * - .toCreateMarketplaceRevenueShare()
    * - .toCreateOpportunity()
    * - .toCreatePartner()
    * - .toCreateProgramManagementAccount()
    * - .toCreateRelationship()
    * - .toCreateResourceSnapshotJob()
+   * - .toCreateRevenueAttribution()
    * - .toListTagsForResource()
    * - .toStartEngagementByAcceptingInvitationTask()
    * - .toStartEngagementFromOpportunityTask()
@@ -2269,12 +2540,15 @@ export class Partnercentral extends PolicyStatement {
    * - .toCreateEngagement()
    * - .toCreateEngagementContext()
    * - .toCreateEngagementInvitation()
+   * - .toCreateMarketplaceRevenueShare()
+   * - .toCreateMarketplaceRevenueShareAllocation()
    * - .toCreateOpportunity()
    * - .toCreatePartner()
    * - .toCreateProgramManagementAccount()
    * - .toCreateRelationship()
    * - .toCreateResourceSnapshot()
    * - .toCreateResourceSnapshotJob()
+   * - .toCreateRevenueAttribution()
    * - .toDeleteProgramManagementAccount()
    * - .toDeleteRelationship()
    * - .toDeleteResourceSnapshotJob()
@@ -2291,6 +2565,8 @@ export class Partnercentral extends PolicyStatement {
    * - .toGetConnectionPreferences()
    * - .toGetEngagement()
    * - .toGetEngagementInvitation()
+   * - .toGetMarketplaceRevenueShare()
+   * - .toGetMarketplaceRevenueShareAllocation()
    * - .toGetOpportunity()
    * - .toGetPartner()
    * - .toGetPartnerDashboard()
@@ -2301,6 +2577,9 @@ export class Partnercentral extends PolicyStatement {
    * - .toGetRelationship()
    * - .toGetResourceSnapshot()
    * - .toGetResourceSnapshotJob()
+   * - .toGetRevenueAttribution()
+   * - .toGetRevenueAttributionAllocation()
+   * - .toGetRevenueAttributionAllocationsTask()
    * - .toGetSellingSystemSettings()
    * - .toGetVerification()
    * - .toListBenefitAllocations()
@@ -2315,6 +2594,8 @@ export class Partnercentral extends PolicyStatement {
    * - .toListEngagementMembers()
    * - .toListEngagementResourceAssociations()
    * - .toListEngagements()
+   * - .toListMarketplaceRevenueShareAllocations()
+   * - .toListMarketplaceRevenueShares()
    * - .toListOpportunities()
    * - .toListOpportunityFromEngagementTasks()
    * - .toListPartners()
@@ -2323,6 +2604,8 @@ export class Partnercentral extends PolicyStatement {
    * - .toListRelationships()
    * - .toListResourceSnapshotJobs()
    * - .toListResourceSnapshots()
+   * - .toListRevenueAttributionAllocations()
+   * - .toListRevenueAttributions()
    * - .toListSolutions()
    * - .toListTagsForResource()
    * - .toPutAllianceLeadContact()
@@ -2339,6 +2622,7 @@ export class Partnercentral extends PolicyStatement {
    * - .toStartProfileUpdateTask()
    * - .toStartProspectingFromEngagementTask()
    * - .toStartResourceSnapshotJob()
+   * - .toStartRevenueAttributionAllocationsTask()
    * - .toStartVerification()
    * - .toStopResourceSnapshotJob()
    * - .toSubmitBenefitApplication()
@@ -2348,9 +2632,11 @@ export class Partnercentral extends PolicyStatement {
    * - .toUpdateBenefitApplication()
    * - .toUpdateConnectionPreferences()
    * - .toUpdateEngagementContext()
+   * - .toUpdateMarketplaceRevenueShareAllocation()
    * - .toUpdateOpportunity()
    * - .toUpdateProgramManagementAccount()
    * - .toUpdateRelationship()
+   * - .toUpdateRevenueAttribution()
    * - .toUseSession()
    *
    * @param value The value(s) to check

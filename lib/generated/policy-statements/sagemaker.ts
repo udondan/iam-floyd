@@ -156,6 +156,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to put a batch of records to one or more feature groups
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_BatchWriteRecord.html
+   */
+  public toBatchWriteRecord() {
+    return this.to('BatchWriteRecord');
+  }
+
+  /**
    * Grants permission to invoke MLflow APIs
    *
    * Access Level: Write
@@ -4352,6 +4363,17 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list record identifiers from a feature group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_ListRecords.html
+   */
+  public toListRecords() {
+    return this.to('ListRecords');
+  }
+
+  /**
    * Grants permission to list resource catalogs
    *
    * Access Level: List
@@ -5825,6 +5847,7 @@ export class Sagemaker extends PolicyStatement {
       'BatchAddClusterNodes',
       'BatchDeleteClusterNodes',
       'BatchPutMetrics',
+      'BatchWriteRecord',
       'CallMlflowAppApi',
       'CallPartnerAppApi',
       'CompleteRollout',
@@ -6145,6 +6168,7 @@ export class Sagemaker extends PolicyStatement {
       'ListPipelines',
       'ListProcessingJobs',
       'ListProjects',
+      'ListRecords',
       'ListResourceCatalogs',
       'ListSharedModelEvents',
       'ListSharedModelVersions',

@@ -2,6 +2,7 @@ eks:AccessKubernetesApi;Read
 eks:AssociateAccessPolicy;Write
 eks:AssociateEncryptionConfig;Write
 eks:AssociateIdentityProviderConfig;Write
+eks:CancelUpdate;Write
 eks:CreateAccessEntry;Write
 eks:CreateAddon;Write
 eks:CreateCapability;Write

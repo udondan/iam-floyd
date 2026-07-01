@@ -32,6 +32,7 @@ connect:BatchUpdateDataTableValue;Write
 connect:ClaimPhoneNumber;Write
 connect:CompleteAttachedFileUpload;Write
 connect:CreateAgentStatus;Write
+connect:CreateAttachedFile;Write
 connect:CreateAuthenticationProfile;Write
 connect:CreateContact;Write
 connect:CreateContactFlow;Write
@@ -163,6 +164,7 @@ connect:GetContactMetrics;Read
 connect:GetCurrentMetricData;Read
 connect:GetCurrentUserData;Read
 connect:GetEffectiveHoursOfOperations;Read
+connect:GetEvaluationFormValidation;Read
 connect:GetFederationToken;Read
 connect:GetFlowAssociation;Read
 connect:GetMetricData;Read
@@ -276,11 +278,13 @@ connect:SendOutboundEmail;Write
 connect:SendOutboundWebNotification;Write
 connect:StartAttachedFileUpload;Write
 connect:StartChatContact;Write
+connect:StartContactConversationalAnalyticsJob;Write
 connect:StartContactEvaluation;Write
 connect:StartContactMediaProcessing;Write
 connect:StartContactRecording;Write
 connect:StartContactStreaming;Write
 connect:StartEmailContact;Write
+connect:StartEvaluationFormValidation;Write
 connect:StartForecastingPlanningSchedulingIntegration;Write
 connect:StartOutboundChatContact;Write
 connect:StartOutboundEmailContact;Write

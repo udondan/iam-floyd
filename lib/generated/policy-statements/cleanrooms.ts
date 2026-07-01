@@ -198,6 +198,31 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new intermediate table in a membership
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms:GetCollaborationAnalysisTemplate
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIntermediateTable.html
+   */
+  public toCreateIntermediateTable() {
+    return this.to('CreateIntermediateTable');
+  }
+
+  /**
+   * Grants permission to create an analysis rule for an intermediate table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateIntermediateTableAnalysisRule.html
+   */
+  public toCreateIntermediateTableAnalysisRule() {
+    return this.to('CreateIntermediateTableAnalysisRule');
+  }
+
+  /**
    * Grants permission to join collaborations by creating a membership
    *
    * Access Level: Write
@@ -348,6 +373,28 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to remove an intermediate table from a collaboration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIntermediateTable.html
+   */
+  public toDeleteIntermediateTable() {
+    return this.to('DeleteIntermediateTable');
+  }
+
+  /**
+   * Grants permission to delete an existing analysis rule for an intermediate table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DeleteIntermediateTableAnalysisRule.html
+   */
+  public toDeleteIntermediateTableAnalysisRule() {
+    return this.to('DeleteIntermediateTableAnalysisRule');
+  }
+
+  /**
    * Grants permission to delete members from a collaboration
    *
    * Access Level: Write
@@ -383,6 +430,17 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toDeletePrivacyBudgetTemplate() {
     return this.to('DeletePrivacyBudgetTemplate');
+  }
+
+  /**
+   * Grants permission to invalidate an intermediate table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_DisallowIntermediateTable.html
+   */
+  public toDisallowIntermediateTable() {
+    return this.to('DisallowIntermediateTable');
   }
 
   /**
@@ -540,6 +598,28 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toGetIdNamespaceAssociation() {
     return this.to('GetIdNamespaceAssociation');
+  }
+
+  /**
+   * Grants permission to view details of an intermediate table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIntermediateTable.html
+   */
+  public toGetIntermediateTable() {
+    return this.to('GetIntermediateTable');
+  }
+
+  /**
+   * Grants permission to view analysis rules for an intermediate table
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetIntermediateTableAnalysisRule.html
+   */
+  public toGetIntermediateTableAnalysisRule() {
+    return this.to('GetIntermediateTableAnalysisRule');
   }
 
   /**
@@ -755,6 +835,28 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list versions of an intermediate table
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListIntermediateTableVersions.html
+   */
+  public toListIntermediateTableVersions() {
+    return this.to('ListIntermediateTableVersions');
+  }
+
+  /**
+   * Grants permission to list intermediate tables for a membership
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListIntermediateTables.html
+   */
+  public toListIntermediateTables() {
+    return this.to('ListIntermediateTables');
+  }
+
+  /**
    * Grants permission to list the members of a collaboration
    *
    * Access Level: List
@@ -876,6 +978,20 @@ export class Cleanrooms extends PolicyStatement {
    */
   public toPopulateIdMappingTable() {
     return this.to('PopulateIdMappingTable');
+  }
+
+  /**
+   * Grants permission to populate an intermediate table by executing its stored analysis
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - cleanrooms:GetSchema
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_PopulateIntermediateTable.html
+   */
+  public toPopulateIntermediateTable() {
+    return this.to('PopulateIntermediateTable');
   }
 
   /**
@@ -1103,6 +1219,28 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an intermediate table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIntermediateTable.html
+   */
+  public toUpdateIntermediateTable() {
+    return this.to('UpdateIntermediateTable');
+  }
+
+  /**
+   * Grants permission to update an analysis rule for an intermediate table
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateIntermediateTableAnalysisRule.html
+   */
+  public toUpdateIntermediateTableAnalysisRule() {
+    return this.to('UpdateIntermediateTableAnalysisRule');
+  }
+
+  /**
    * Grants permission to update details of a membership
    *
    * Access Level: Write
@@ -1178,6 +1316,8 @@ export class Cleanrooms extends PolicyStatement {
       'GetConfiguredTableAssociationAnalysisRule',
       'GetIdMappingTable',
       'GetIdNamespaceAssociation',
+      'GetIntermediateTable',
+      'GetIntermediateTableAnalysisRule',
       'GetMembership',
       'GetPrivacyBudgetTemplate',
       'GetProtectedJob',
@@ -1199,6 +1339,8 @@ export class Cleanrooms extends PolicyStatement {
       'CreateConfiguredTableAssociationAnalysisRule',
       'CreateIdMappingTable',
       'CreateIdNamespaceAssociation',
+      'CreateIntermediateTable',
+      'CreateIntermediateTableAnalysisRule',
       'CreateMembership',
       'CreatePrivacyBudgetTemplate',
       'DeleteAnalysisTemplate',
@@ -1210,10 +1352,14 @@ export class Cleanrooms extends PolicyStatement {
       'DeleteConfiguredTableAssociationAnalysisRule',
       'DeleteIdMappingTable',
       'DeleteIdNamespaceAssociation',
+      'DeleteIntermediateTable',
+      'DeleteIntermediateTableAnalysisRule',
       'DeleteMember',
       'DeleteMembership',
       'DeletePrivacyBudgetTemplate',
+      'DisallowIntermediateTable',
       'PopulateIdMappingTable',
+      'PopulateIntermediateTable',
       'StartProtectedJob',
       'StartProtectedQuery',
       'UpdateAnalysisTemplate',
@@ -1228,6 +1374,8 @@ export class Cleanrooms extends PolicyStatement {
       'UpdateConfiguredTableReference',
       'UpdateIdMappingTable',
       'UpdateIdNamespaceAssociation',
+      'UpdateIntermediateTable',
+      'UpdateIntermediateTableAnalysisRule',
       'UpdateMembership',
       'UpdatePrivacyBudgetTemplate',
       'UpdateProtectedJob',
@@ -1247,6 +1395,8 @@ export class Cleanrooms extends PolicyStatement {
       'ListConfiguredTables',
       'ListIdMappingTables',
       'ListIdNamespaceAssociations',
+      'ListIntermediateTableVersions',
+      'ListIntermediateTables',
       'ListMembers',
       'ListMemberships',
       'ListPrivacyBudgetTemplates',
@@ -1404,6 +1554,24 @@ export class Cleanrooms extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type intermediatetable to the statement
+   *
+   * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
+   *
+   * @param membershipId - Identifier for the membershipId.
+   * @param intermediateTableId - Identifier for the intermediateTableId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntermediatetable(membershipId: string, intermediateTableId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cleanrooms:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:membership/${ membershipId }/intermediatetable/${ intermediateTableId }`);
+  }
+
+  /**
    * Adds a resource of type privacybudgettemplate to the statement
    *
    * https://docs.aws.amazon.com/clean-rooms/latest/userguide/security-iam.html
@@ -1436,6 +1604,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .toCreateConfiguredTableAssociationAnalysisRule()
    * - .toCreateIdMappingTable()
    * - .toCreateIdNamespaceAssociation()
+   * - .toCreateIntermediateTable()
    * - .toCreateMembership()
    * - .toCreatePrivacyBudgetTemplate()
    * - .toTagResource()
@@ -1463,6 +1632,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .toCreateConfiguredTableAssociationAnalysisRule()
    * - .toCreateIdMappingTable()
    * - .toCreateIdNamespaceAssociation()
+   * - .toCreateIntermediateTable()
    * - .toCreateMembership()
    * - .toCreatePrivacyBudgetTemplate()
    *
@@ -1475,6 +1645,7 @@ export class Cleanrooms extends PolicyStatement {
    * - idmappingtable
    * - idnamespaceassociation
    * - membership
+   * - intermediatetable
    * - privacybudgettemplate
    *
    * @param tagKey The tag key to check
@@ -1500,6 +1671,7 @@ export class Cleanrooms extends PolicyStatement {
    * - .toCreateConfiguredTableAssociationAnalysisRule()
    * - .toCreateIdMappingTable()
    * - .toCreateIdNamespaceAssociation()
+   * - .toCreateIntermediateTable()
    * - .toCreateMembership()
    * - .toCreatePrivacyBudgetTemplate()
    * - .toTagResource()
