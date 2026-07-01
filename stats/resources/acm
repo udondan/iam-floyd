@@ -1,1 +1,4 @@
+acm:acme-domain-validation
+acm:acme-endpoint
+acm:acme-external-account-binding
 acm:certificate

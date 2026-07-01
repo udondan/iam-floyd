@@ -9,6 +9,7 @@ sagemaker:BatchDescribeModelPackage;Read
 sagemaker:BatchGetMetrics;Read
 sagemaker:BatchGetRecord;Read
 sagemaker:BatchPutMetrics;Write
+sagemaker:BatchWriteRecord;Write
 sagemaker:CallMlflowAppApi;Write
 sagemaker:CallPartnerAppApi;Write
 sagemaker:CallWithBearerToken;Read
@@ -327,6 +328,7 @@ sagemaker:ListPipelineVersions;List
 sagemaker:ListPipelines;List
 sagemaker:ListProcessingJobs;List
 sagemaker:ListProjects;List
+sagemaker:ListRecords;List
 sagemaker:ListResourceCatalogs;List
 sagemaker:ListSharedModelEvents;List
 sagemaker:ListSharedModelVersions;List

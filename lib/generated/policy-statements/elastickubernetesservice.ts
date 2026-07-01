@@ -77,6 +77,17 @@ export class Eks extends PolicyStatement {
   }
 
   /**
+   * Grants permission to cancel an in-progress Kubernetes version update for an Amazon EKS cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/eks/latest/APIReference/API_CancelUpdate.html
+   */
+  public toCancelUpdate() {
+    return this.to('CancelUpdate');
+  }
+
+  /**
    * Grants permission to create an Amazon EKS access entry
    *
    * Access Level: Write
@@ -894,6 +905,7 @@ export class Eks extends PolicyStatement {
       'AssociateAccessPolicy',
       'AssociateEncryptionConfig',
       'AssociateIdentityProviderConfig',
+      'CancelUpdate',
       'CreateAccessEntry',
       'CreateAddon',
       'CreateCapability',

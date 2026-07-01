@@ -11,6 +11,8 @@ cleanrooms:CreateConfiguredTableAssociation;Write
 cleanrooms:CreateConfiguredTableAssociationAnalysisRule;Write
 cleanrooms:CreateIdMappingTable;Write
 cleanrooms:CreateIdNamespaceAssociation;Write
+cleanrooms:CreateIntermediateTable;Write
+cleanrooms:CreateIntermediateTableAnalysisRule;Write
 cleanrooms:CreateMembership;Write
 cleanrooms:CreatePrivacyBudgetTemplate;Write
 cleanrooms:DeleteAnalysisTemplate;Write
@@ -22,9 +24,12 @@ cleanrooms:DeleteConfiguredTableAssociation;Write
 cleanrooms:DeleteConfiguredTableAssociationAnalysisRule;Write
 cleanrooms:DeleteIdMappingTable;Write
 cleanrooms:DeleteIdNamespaceAssociation;Write
+cleanrooms:DeleteIntermediateTable;Write
+cleanrooms:DeleteIntermediateTableAnalysisRule;Write
 cleanrooms:DeleteMember;Write
 cleanrooms:DeleteMembership;Write
 cleanrooms:DeletePrivacyBudgetTemplate;Write
+cleanrooms:DisallowIntermediateTable;Write
 cleanrooms:GetAnalysisTemplate;Read
 cleanrooms:GetCollaboration;Read
 cleanrooms:GetCollaborationAnalysisTemplate;Read
@@ -39,6 +44,8 @@ cleanrooms:GetConfiguredTableAssociation;Read
 cleanrooms:GetConfiguredTableAssociationAnalysisRule;Read
 cleanrooms:GetIdMappingTable;Read
 cleanrooms:GetIdNamespaceAssociation;Read
+cleanrooms:GetIntermediateTable;Read
+cleanrooms:GetIntermediateTableAnalysisRule;Read
 cleanrooms:GetMembership;Read
 cleanrooms:GetPrivacyBudgetTemplate;Read
 cleanrooms:GetProtectedJob;Read
@@ -58,6 +65,8 @@ cleanrooms:ListConfiguredTableAssociations;List
 cleanrooms:ListConfiguredTables;List
 cleanrooms:ListIdMappingTables;List
 cleanrooms:ListIdNamespaceAssociations;List
+cleanrooms:ListIntermediateTableVersions;List
+cleanrooms:ListIntermediateTables;List
 cleanrooms:ListMembers;List
 cleanrooms:ListMemberships;List
 cleanrooms:ListPrivacyBudgetTemplates;List
@@ -69,6 +78,7 @@ cleanrooms:ListTagsForResource;List
 cleanrooms:PassCollaboration;Read
 cleanrooms:PassMembership;Read
 cleanrooms:PopulateIdMappingTable;Write
+cleanrooms:PopulateIntermediateTable;Write
 cleanrooms:PreviewPrivacyImpact;Read
 cleanrooms:StartProtectedJob;Write
 cleanrooms:StartProtectedQuery;Write
@@ -86,6 +96,8 @@ cleanrooms:UpdateConfiguredTableAssociationAnalysisRule;Write
 cleanrooms:UpdateConfiguredTableReference;Write
 cleanrooms:UpdateIdMappingTable;Write
 cleanrooms:UpdateIdNamespaceAssociation;Write
+cleanrooms:UpdateIntermediateTable;Write
+cleanrooms:UpdateIntermediateTableAnalysisRule;Write
 cleanrooms:UpdateMembership;Write
 cleanrooms:UpdatePrivacyBudgetTemplate;Write
 cleanrooms:UpdateProtectedJob;Write

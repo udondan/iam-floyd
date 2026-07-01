@@ -7,6 +7,7 @@ partnercentral:ConnectionInvitation
 partnercentral:ConnectionPreferences
 partnercentral:Dashboard
 partnercentral:Engagement
+partnercentral:MarketplaceRevenueShare
 partnercentral:Opportunity
 partnercentral:OpportunityFromEngagementTask
 partnercentral:Partner
@@ -14,6 +15,7 @@ partnercentral:ProgramManagementAccount
 partnercentral:ProspectingFromEngagementTask
 partnercentral:Relationship
 partnercentral:ResourceSnapshot
+partnercentral:RevenueAttribution
 partnercentral:Solution
 partnercentral:engagement-by-accepting-invitation-task
 partnercentral:engagement-from-opportunity-task

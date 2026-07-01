@@ -1,4 +1,5 @@
 acm:CertificateAuthority
+acm:CertificateKeyPairOrigin
 acm:CertificateTransparencyLogging
 acm:DomainNames
 acm:Export

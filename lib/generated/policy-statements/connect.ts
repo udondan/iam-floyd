@@ -560,6 +560,23 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an attached file upload in an Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateAttachedFile.html
+   */
+  public toCreateAttachedFile() {
+    return this.to('CreateAttachedFile');
+  }
+
+  /**
    * Grants permission to create authentication profile resources in an Amazon Connect instance
    *
    * Access Level: Write
@@ -2614,6 +2631,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get an evaluation form validation in the specified Amazon Connect instance. If the version property is not provided, the validation of the latest version of the evaluation form is provided
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetEvaluationFormValidation.html
+   */
+  public toGetEvaluationFormValidation() {
+    return this.to('GetEvaluationFormValidation');
+  }
+
+  /**
    * Grants permission to federate into an Amazon Connect instance when using SAML-based authentication for identity management
    *
    * Access Level: Read
@@ -4339,6 +4371,23 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start analysis for a contact in Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactConversationalAnalyticsJob.html
+   */
+  public toStartContactConversationalAnalyticsJob() {
+    return this.to('StartContactConversationalAnalyticsJob');
+  }
+
+  /**
    * Grants permission to start an empty evaluation in the specified Amazon Connect instance, using the given evaluation form for the particular contact. The evaluation form version used for the contact evaluation corresponds to the currently activated version. If no version is activated for the evaluation form, the contact evaluation cannot be started
    *
    * Access Level: Write
@@ -4411,6 +4460,20 @@ export class Connect extends PolicyStatement {
    */
   public toStartEmailContact() {
     return this.to('StartEmailContact');
+  }
+
+  /**
+   * Grants permission to start an evaluation form validation in the specified Amazon Connect instance
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifInstanceId()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEvaluationFormValidation.html
+   */
+  public toStartEvaluationFormValidation() {
+    return this.to('StartEvaluationFormValidation');
   }
 
   /**
@@ -5687,6 +5750,7 @@ export class Connect extends PolicyStatement {
       'ClaimPhoneNumber',
       'CompleteAttachedFileUpload',
       'CreateAgentStatus',
+      'CreateAttachedFile',
       'CreateAuthenticationProfile',
       'CreateContact',
       'CreateContactFlow',
@@ -5794,11 +5858,13 @@ export class Connect extends PolicyStatement {
       'SendOutboundWebNotification',
       'StartAttachedFileUpload',
       'StartChatContact',
+      'StartContactConversationalAnalyticsJob',
       'StartContactEvaluation',
       'StartContactMediaProcessing',
       'StartContactRecording',
       'StartContactStreaming',
       'StartEmailContact',
+      'StartEvaluationFormValidation',
       'StartForecastingPlanningSchedulingIntegration',
       'StartOutboundChatContact',
       'StartOutboundEmailContact',
@@ -5921,6 +5987,7 @@ export class Connect extends PolicyStatement {
       'GetCurrentMetricData',
       'GetCurrentUserData',
       'GetEffectiveHoursOfOperations',
+      'GetEvaluationFormValidation',
       'GetFederationToken',
       'GetFlowAssociation',
       'GetMetricData',
@@ -6688,6 +6755,9 @@ export class Connect extends PolicyStatement {
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAiAgent(assistantId: string, aIAgentId: string, version: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:wisdom:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-agent/${ assistantId }/${ aIAgentId }:${ version }`);
@@ -6739,6 +6809,7 @@ export class Connect extends PolicyStatement {
    * - .toClaimPhoneNumber()
    * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
+   * - .toCreateAttachedFile()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
    * - .toCreateEmailAddress()
@@ -6763,6 +6834,7 @@ export class Connect extends PolicyStatement {
    * - .toImportPhoneNumber()
    * - .toReplicateInstance()
    * - .toStartAttachedFileUpload()
+   * - .toStartContactConversationalAnalyticsJob()
    * - .toTagContact()
    * - .toTagResource()
    *
@@ -6797,6 +6869,7 @@ export class Connect extends PolicyStatement {
    * - .toBatchGetFlowAssociation()
    * - .toBatchUpdateDataTableValue()
    * - .toCompleteAttachedFileUpload()
+   * - .toCreateAttachedFile()
    * - .toCreateContact()
    * - .toCreateContactFlowModuleAlias()
    * - .toCreateContactFlowModuleVersion()
@@ -6876,6 +6949,7 @@ export class Connect extends PolicyStatement {
    * - .toGetContactAttributes()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
+   * - .toGetEvaluationFormValidation()
    * - .toGetFlowAssociation()
    * - .toGetMetricData()
    * - .toGetMetricDataV2()
@@ -6917,6 +6991,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchResourceTags()
    * - .toSearchWorkspaceAssociations()
    * - .toStartAttachedFileUpload()
+   * - .toStartContactConversationalAnalyticsJob()
    * - .toStartContactEvaluation()
    * - .toStartContactRecording()
    * - .toStartContactStreaming()
@@ -7007,6 +7082,7 @@ export class Connect extends PolicyStatement {
    * - customer-managed-view-version
    * - attached-file
    * - email-address
+   * - ai-agent
    * - workspace
    * - notification
    *
@@ -7028,6 +7104,7 @@ export class Connect extends PolicyStatement {
    * - .toClaimPhoneNumber()
    * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
+   * - .toCreateAttachedFile()
    * - .toCreateContactFlow()
    * - .toCreateContactFlowModule()
    * - .toCreateEmailAddress()
@@ -7052,6 +7129,7 @@ export class Connect extends PolicyStatement {
    * - .toImportPhoneNumber()
    * - .toReplicateInstance()
    * - .toStartAttachedFileUpload()
+   * - .toStartContactConversationalAnalyticsJob()
    * - .toTagContact()
    * - .toTagResource()
    * - .toUntagContact()
@@ -7249,6 +7327,7 @@ export class Connect extends PolicyStatement {
    * - .toClaimPhoneNumber()
    * - .toCompleteAttachedFileUpload()
    * - .toCreateAgentStatus()
+   * - .toCreateAttachedFile()
    * - .toCreateAuthenticationProfile()
    * - .toCreateContact()
    * - .toCreateContactFlow()
@@ -7374,6 +7453,7 @@ export class Connect extends PolicyStatement {
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
    * - .toGetEffectiveHoursOfOperations()
+   * - .toGetEvaluationFormValidation()
    * - .toGetFederationToken()
    * - .toGetFlowAssociation()
    * - .toGetMetricData()
@@ -7467,9 +7547,11 @@ export class Connect extends PolicyStatement {
    * - .toSendOutboundWebNotification()
    * - .toStartAttachedFileUpload()
    * - .toStartChatContact()
+   * - .toStartContactConversationalAnalyticsJob()
    * - .toStartContactEvaluation()
    * - .toStartContactMediaProcessing()
    * - .toStartEmailContact()
+   * - .toStartEvaluationFormValidation()
    * - .toStartForecastingPlanningSchedulingIntegration()
    * - .toStartOutboundChatContact()
    * - .toStartOutboundEmailContact()
