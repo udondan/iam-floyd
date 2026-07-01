@@ -544,6 +544,20 @@
           "iam:AWSServiceName": "resource-explorer-2.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "TelemetryReadTagsForLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:ListTagsForResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}",
+          "aws:ResourceTag/CloudWatchTelemetryRuleManaged": "true"
+        }
+      }
     }
   ]
 }

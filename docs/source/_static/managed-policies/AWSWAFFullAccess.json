@@ -229,6 +229,24 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "AllowActionsForAgentCoreGateway",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GatewayAssociateWebACL",
+        "bedrock-agentcore:GatewayDisassociateWebACL",
+        "bedrock-agentcore:GatewayGetWebACLForResource"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:gateway/*"
+    },
+    {
+      "Sid": "AllowListActionsForAgentCoreGateway",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GatewayListResourcesForWebACL"
+      ],
+      "Resource": "*"
     }
   ]
 }

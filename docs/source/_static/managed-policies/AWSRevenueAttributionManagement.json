@@ -1,0 +1,74 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RevenueAttributionCreation",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateRevenueAttribution"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RevenueAttributionListing",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListRevenueAttributions"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RevenueAttributionManagement",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetRevenueAttribution",
+        "partnercentral:UpdateRevenueAttribution"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/revenue-attribution/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "TaggingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:TagResource",
+        "partnercentral:UntagResource",
+        "partnercentral:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral:*:*:catalog/*/revenue-attribution/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    }
+  ]
+}

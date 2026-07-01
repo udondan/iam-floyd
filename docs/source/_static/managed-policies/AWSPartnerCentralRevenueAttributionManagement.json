@@ -1,0 +1,195 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RevenueMeasurementCreation",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:CreateRevenueAttribution",
+        "partnercentral:CreateMarketplaceRevenueShare",
+        "partnercentral:CreateMarketplaceRevenueShareAllocation"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RevenueMeasurementListing",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListRevenueAttributions",
+        "partnercentral:ListRevenueAttributionAllocations",
+        "partnercentral:ListMarketplaceRevenueShares",
+        "partnercentral:ListMarketplaceRevenueShareAllocations"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "RevenueAttributionManagement",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetRevenueAttribution",
+        "partnercentral:UpdateRevenueAttribution",
+        "partnercentral:GetRevenueAttributionAllocation",
+        "partnercentral:StartRevenueAttributionAllocationsTask",
+        "partnercentral:GetRevenueAttributionAllocationsTask"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/revenue-attribution/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "MarketplaceRevenueShareManagement",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetMarketplaceRevenueShare",
+        "partnercentral:GetMarketplaceRevenueShareAllocation",
+        "partnercentral:UpdateMarketplaceRevenueShareAllocation"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/marketplace-revenue-share/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "TaggingAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:TagResource",
+        "partnercentral:UntagResource",
+        "partnercentral:ListTagsForResource"
+      ],
+      "Resource": [
+        "arn:aws:partnercentral:*:*:catalog/*/revenue-attribution/*",
+        "arn:aws:partnercentral:*:*:catalog/*/marketplace-revenue-share/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OpportunityListing",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListOpportunities"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "OpportunityAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetOpportunity"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/opportunity/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerListing",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:ListPartners"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "PartnerResourceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "partnercentral:GetPartner"
+      ],
+      "Resource": "arn:aws:partnercentral:*:*:catalog/*/partner/*",
+      "Condition": {
+        "StringEquals": {
+          "partnercentral:Catalog": [
+            "AWS",
+            "Sandbox"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ListingAWSMarketplaceEntities",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ListEntities"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AWSMarketplaceEntityAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:DescribeEntity"
+      ],
+      "Resource": [
+        "arn:aws:aws-marketplace:*:*:AWSMarketplace*/Offer/*"
+      ]
+    },
+    {
+      "Sid": "AmazonQPartnerAssistantAccess",
+      "Effect": "Allow",
+      "Action": [
+        "q:StartConversation",
+        "q:SendMessage",
+        "q:GetConversation",
+        "q:ListConversations",
+        "q:PassRequest"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

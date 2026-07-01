@@ -8,7 +8,16 @@
       "acm:SearchCertificates",
       "acm:GetCertificate",
       "acm:ListTagsForCertificate",
-      "acm:GetAccountConfiguration"
+      "acm:GetAccountConfiguration",
+      "acm:DescribeAcmeAccount",
+      "acm:DescribeAcmeDomainValidation",
+      "acm:DescribeAcmeEndpoint",
+      "acm:DescribeAcmeExternalAccountBinding",
+      "acm:ListAcmeAccounts",
+      "acm:ListAcmeDomainValidations",
+      "acm:ListAcmeEndpoints",
+      "acm:ListAcmeExternalAccountBindings",
+      "acm:ListTagsForResource"
     ],
     "Resource": "*"
   }
