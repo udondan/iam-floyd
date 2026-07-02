@@ -1,3 +1,4 @@
+ecs:AllowVendedLogDeliveryForResource;Permissions management
 ecs:ContinueServiceDeployment;Write
 ecs:CreateCapacityProvider;Write
 ecs:CreateCluster;Write

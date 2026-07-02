@@ -82,6 +82,17 @@ export class Gameliftstreams extends PolicyStatement {
   }
 
   /**
+   * Grants permission to establish an administrative terminal connection to a stream session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamSessionAdminShell.html
+   */
+  public toCreateStreamSessionAdminShell() {
+    return this.to('CreateStreamSessionAdminShell');
+  }
+
+  /**
    * Grants permission to create a stream session connection
    *
    * Access Level: Write
@@ -317,6 +328,7 @@ export class Gameliftstreams extends PolicyStatement {
       'AssociateApplications',
       'CreateApplication',
       'CreateStreamGroup',
+      'CreateStreamSessionAdminShell',
       'CreateStreamSessionConnection',
       'DeleteApplication',
       'DeleteStreamGroup',

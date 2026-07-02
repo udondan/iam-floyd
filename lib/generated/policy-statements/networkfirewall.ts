@@ -78,6 +78,24 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create an AWS Network Firewall container association
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_CreateContainerAssociation.html
+   */
+  public toCreateContainerAssociation() {
+    return this.to('CreateContainerAssociation');
+  }
+
+  /**
    * Grants permission to create an AWS Network Firewall firewall
    *
    * Access Level: Write
@@ -221,6 +239,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete an AWS Network Firewall container association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DeleteContainerAssociation.html
+   */
+  public toDeleteContainerAssociation() {
+    return this.to('DeleteContainerAssociation');
+  }
+
+  /**
    * Grants permission to delete a firewall
    *
    * Access Level: Write
@@ -342,6 +371,17 @@ export class NetworkFirewall extends PolicyStatement {
    */
   public toDeleteVpcEndpointAssociation() {
     return this.to('DeleteVpcEndpointAssociation');
+  }
+
+  /**
+   * Grants permission to retrieve the data objects that define a container association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeContainerAssociation.html
+   */
+  public toDescribeContainerAssociation() {
+    return this.to('DescribeContainerAssociation');
   }
 
   /**
@@ -569,6 +609,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the metadata for container associations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ListContainerAssociations.html
+   */
+  public toListContainerAssociations() {
+    return this.to('ListContainerAssociations');
+  }
+
+  /**
    * Grants permission to retrieve the metadata for firewall policies
    *
    * Access Level: List
@@ -785,6 +836,17 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an AWS Network Firewall container association
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_UpdateContainerAssociation.html
+   */
+  public toUpdateContainerAssociation() {
+    return this.to('UpdateContainerAssociation');
+  }
+
+  /**
    * Grants permission to modify firewall analysis settings of a firewall
    *
    * Access Level: Write
@@ -956,6 +1018,7 @@ export class NetworkFirewall extends PolicyStatement {
       'AssociateFirewallPolicy',
       'AssociateSubnets',
       'AttachRuleGroupsToProxyConfiguration',
+      'CreateContainerAssociation',
       'CreateFirewall',
       'CreateFirewallPolicy',
       'CreateProxy',
@@ -965,6 +1028,7 @@ export class NetworkFirewall extends PolicyStatement {
       'CreateRuleGroup',
       'CreateTLSInspectionConfiguration',
       'CreateVpcEndpointAssociation',
+      'DeleteContainerAssociation',
       'DeleteFirewall',
       'DeleteFirewallPolicy',
       'DeleteNetworkFirewallTransitGatewayAttachment',
@@ -985,6 +1049,7 @@ export class NetworkFirewall extends PolicyStatement {
       'StartFlowCapture',
       'StartFlowFlush',
       'UpdateAvailabilityZoneChangeProtection',
+      'UpdateContainerAssociation',
       'UpdateFirewallAnalysisSettings',
       'UpdateFirewallDeleteProtection',
       'UpdateFirewallDescription',
@@ -1002,6 +1067,7 @@ export class NetworkFirewall extends PolicyStatement {
       'UpdateTLSInspectionConfiguration'
     ],
     Read: [
+      'DescribeContainerAssociation',
       'DescribeFirewall',
       'DescribeFirewallMetadata',
       'DescribeFirewallPolicy',
@@ -1022,6 +1088,7 @@ export class NetworkFirewall extends PolicyStatement {
     ],
     List: [
       'ListAnalysisReports',
+      'ListContainerAssociations',
       'ListFirewallPolicies',
       'ListFirewalls',
       'ListFlowOperations',
@@ -1193,12 +1260,30 @@ export class NetworkFirewall extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type ContainerAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_ContainerAssociation.html
+   *
+   * @param name - Identifier for the name.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContainerAssociation(name: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:network-firewall:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:container-association/${ name }`);
+  }
+
+  /**
    * Filters access by on the allowed set of values for each of the tags
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
    * - .toAssociateFirewallPolicy()
+   * - .toCreateContainerAssociation()
    * - .toCreateFirewall()
    * - .toCreateFirewallPolicy()
    * - .toCreateProxy()
@@ -1232,6 +1317,7 @@ export class NetworkFirewall extends PolicyStatement {
    * - ProxyRuleGroup
    * - ProxyConfiguration
    * - Proxy
+   * - ContainerAssociation
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1248,6 +1334,7 @@ export class NetworkFirewall extends PolicyStatement {
    *
    * Applies to actions:
    * - .toAssociateFirewallPolicy()
+   * - .toCreateContainerAssociation()
    * - .toCreateFirewall()
    * - .toCreateFirewallPolicy()
    * - .toCreateProxy()

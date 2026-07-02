@@ -8,6 +8,7 @@ cloudwatch:DeleteAnomalyDetector;Write
 cloudwatch:DeleteDashboards;Write
 cloudwatch:DeleteInsightRules;Write
 cloudwatch:DeleteMetricStream;Write
+cloudwatch:DeletePipelineRule;Write
 cloudwatch:DeleteServiceLevelObjective;Write
 cloudwatch:DescribeAlarmHistory;Read
 cloudwatch:DescribeAlarms;Read
@@ -55,6 +56,7 @@ cloudwatch:PutManagedInsightRules;Write
 cloudwatch:PutMetricAlarm;Write
 cloudwatch:PutMetricData;Write
 cloudwatch:PutMetricStream;Write
+cloudwatch:PutPipelineRule;Write
 cloudwatch:SetAlarmState;Write
 cloudwatch:StartMetricStreams;Write
 cloudwatch:StartOTelEnrichment;Write

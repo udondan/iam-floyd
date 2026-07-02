@@ -138,6 +138,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a pipeline rule for CloudWatch pipelines for OTel metric processing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toDeletePipelineRule() {
+    return this.to('DeletePipelineRule');
+  }
+
+  /**
    * Grants permission to delete a service level objective
    *
    * Access Level: Write
@@ -710,6 +721,17 @@ export class Cloudwatch extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update a pipeline rule for CloudWatch pipelines for OTel metric processing
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html
+   */
+  public toPutPipelineRule() {
+    return this.to('PutPipelineRule');
+  }
+
+  /**
    * Grants permission to temporarily set the state of an alarm for testing purposes
    *
    * Access Level: Write
@@ -840,6 +862,7 @@ export class Cloudwatch extends PolicyStatement {
       'DeleteDashboards',
       'DeleteInsightRules',
       'DeleteMetricStream',
+      'DeletePipelineRule',
       'DeleteServiceLevelObjective',
       'DisableAlarmActions',
       'DisableInsightRules',
@@ -857,6 +880,7 @@ export class Cloudwatch extends PolicyStatement {
       'PutMetricAlarm',
       'PutMetricData',
       'PutMetricStream',
+      'PutPipelineRule',
       'SetAlarmState',
       'StartMetricStreams',
       'StartOTelEnrichment',

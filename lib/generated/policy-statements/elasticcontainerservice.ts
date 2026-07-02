@@ -19,6 +19,17 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to allow vended log delivery for a specified resource
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/action-logs-getting-started.html
+   */
+  public toAllowVendedLogDeliveryForResource() {
+    return this.to('AllowVendedLogDeliveryForResource');
+  }
+
+  /**
    * Grants permission to continue a paused service deployment
    *
    * Access Level: Write
@@ -1166,6 +1177,9 @@ export class Ecs extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
+    'Permissions management': [
+      'AllowVendedLogDeliveryForResource'
+    ],
     Write: [
       'ContinueServiceDeployment',
       'CreateCapacityProvider',
