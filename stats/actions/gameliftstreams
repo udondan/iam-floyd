@@ -2,6 +2,7 @@ gameliftstreams:AddStreamGroupLocations;Write
 gameliftstreams:AssociateApplications;Write
 gameliftstreams:CreateApplication;Write
 gameliftstreams:CreateStreamGroup;Write
+gameliftstreams:CreateStreamSessionAdminShell;Write
 gameliftstreams:CreateStreamSessionConnection;Write
 gameliftstreams:DeleteApplication;Write
 gameliftstreams:DeleteStreamGroup;Write

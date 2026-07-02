@@ -3,6 +3,7 @@ network-firewall:AssociateAvailabilityZones;Write
 network-firewall:AssociateFirewallPolicy;Write
 network-firewall:AssociateSubnets;Write
 network-firewall:AttachRuleGroupsToProxyConfiguration;Write
+network-firewall:CreateContainerAssociation;Write
 network-firewall:CreateFirewall;Write
 network-firewall:CreateFirewallPolicy;Write
 network-firewall:CreateProxy;Write
@@ -12,6 +13,7 @@ network-firewall:CreateProxyRules;Write
 network-firewall:CreateRuleGroup;Write
 network-firewall:CreateTLSInspectionConfiguration;Write
 network-firewall:CreateVpcEndpointAssociation;Write
+network-firewall:DeleteContainerAssociation;Write
 network-firewall:DeleteFirewall;Write
 network-firewall:DeleteFirewallPolicy;Write
 network-firewall:DeleteNetworkFirewallTransitGatewayAttachment;Write
@@ -23,6 +25,7 @@ network-firewall:DeleteResourcePolicy;Write
 network-firewall:DeleteRuleGroup;Write
 network-firewall:DeleteTLSInspectionConfiguration;Write
 network-firewall:DeleteVpcEndpointAssociation;Write
+network-firewall:DescribeContainerAssociation;Read
 network-firewall:DescribeFirewall;Read
 network-firewall:DescribeFirewallMetadata;Read
 network-firewall:DescribeFirewallPolicy;Read
@@ -43,6 +46,7 @@ network-firewall:DisassociateAvailabilityZones;Write
 network-firewall:DisassociateSubnets;Write
 network-firewall:GetAnalysisReportResults;Read
 network-firewall:ListAnalysisReports;List
+network-firewall:ListContainerAssociations;List
 network-firewall:ListFirewallPolicies;List
 network-firewall:ListFirewalls;List
 network-firewall:ListFlowOperationResults;Read
@@ -62,6 +66,7 @@ network-firewall:StartFlowFlush;Write
 network-firewall:TagResource;Tagging
 network-firewall:UntagResource;Tagging
 network-firewall:UpdateAvailabilityZoneChangeProtection;Write
+network-firewall:UpdateContainerAssociation;Write
 network-firewall:UpdateFirewallAnalysisSettings;Write
 network-firewall:UpdateFirewallDeleteProtection;Write
 network-firewall:UpdateFirewallDescription;Write

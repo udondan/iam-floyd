@@ -1,3 +1,4 @@
+network-firewall:ContainerAssociation
 network-firewall:Firewall
 network-firewall:FirewallPolicy
 network-firewall:Proxy
