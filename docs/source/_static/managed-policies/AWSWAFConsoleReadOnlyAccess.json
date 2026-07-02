@@ -304,6 +304,24 @@
         "pricingplanmanager:ListSubscriptions"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowGetActionForAgentCoreGateway",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GatewayGetWebACLForResource",
+        "bedrock-agentcore:GetGateway"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:gateway/*"
+    },
+    {
+      "Sid": "AllowListActionsForAgentCoreGateway",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GatewayListResourcesForWebACL",
+        "bedrock-agentcore:ListGateways"
+      ],
+      "Resource": "*"
     }
   ]
 }

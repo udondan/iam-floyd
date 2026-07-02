@@ -39,6 +39,13 @@
         "servicequotas:GetServiceQuota"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter"
+      ],
+      "Resource": "*"
     }
   ]
 }

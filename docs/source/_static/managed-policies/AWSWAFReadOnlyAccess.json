@@ -160,6 +160,22 @@
         "elasticloadbalancing:DescribeWebACLAssociation"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "AllowReadActionsForAgentCoreGateway",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GatewayGetWebACLForResource"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:gateway/*"
+    },
+    {
+      "Sid": "AllowListActionsForAgentCoreGateway",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GatewayListResourcesForWebACL"
+      ],
+      "Resource": "*"
     }
   ]
 }
