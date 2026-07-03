@@ -1598,6 +1598,12 @@ export class AwsManagedPolicy {
     public static AWSECRPullThroughCacheServiceRolePolicy = 'aws-service-role/AWSECRPullThroughCache_ServiceRolePolicy';
     /** Provide the instance in your custom platform builder environment permission to launch EC2 instance, create EBS snapshot and AMI, stream logs to Amazon CloudWatch Logs, and store artifacts in Amazon S3. */
     public static AWSElasticBeanstalkCustomPlatformforEC2Role = 'AWSElasticBeanstalkCustomPlatformforEC2Role';
+    /** Permissions needed by Elastic Beanstalk to build container images on behalf of customer. */
+    public static AWSElasticBeanstalkEKSImageBuild = 'AWSElasticBeanstalkEKSImageBuild';
+    /** Observability permissions for Elastic Beanstalk environments running in Elastic Kubernetes Service cluster */
+    public static AWSElasticBeanstalkEKSObservability = 'AWSElasticBeanstalkEKSObservability';
+    /** Permissions needed to pass through tags to resources created by EKS Controllers */
+    public static AWSElasticBeanstalkEKSTagging = 'AWSElasticBeanstalkEKSTagging';
     /** AWS Elastic Beanstalk Service policy for Health Monitoring system */
     public static AWSElasticBeanstalkEnhancedHealth = 'service-role/AWSElasticBeanstalkEnhancedHealth';
     /** AWS Elastic Beanstalk Service Role policy that grants limited permissions to update your resources on your behalf for maintenance purposes. */

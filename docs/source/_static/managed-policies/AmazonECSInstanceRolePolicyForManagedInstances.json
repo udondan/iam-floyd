@@ -23,7 +23,10 @@
       "Action": [
         "ecs:Poll"
       ],
-      "Resource": "arn:aws:ecs:*:*:container-instance/*"
+      "Resource": [
+        "arn:aws:ecs:*:*:container-instance/*",
+        "arn:aws:ecs:*:*:task-set/*"
+      ]
     },
     {
       "Sid": "ECSAgentTelemetryPermissions",
