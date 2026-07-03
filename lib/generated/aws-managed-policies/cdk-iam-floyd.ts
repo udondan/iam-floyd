@@ -4004,6 +4004,21 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElasticBeanstalkCustomPlatformforEC2Role);
     }
 
+    /** Permissions needed by Elastic Beanstalk to build container images on behalf of customer. */
+    public AWSElasticBeanstalkEKSImageBuild(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElasticBeanstalkEKSImageBuild);
+    }
+
+    /** Observability permissions for Elastic Beanstalk environments running in Elastic Kubernetes Service cluster */
+    public AWSElasticBeanstalkEKSObservability(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElasticBeanstalkEKSObservability);
+    }
+
+    /** Permissions needed to pass through tags to resources created by EKS Controllers */
+    public AWSElasticBeanstalkEKSTagging(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElasticBeanstalkEKSTagging);
+    }
+
     /** AWS Elastic Beanstalk Service policy for Health Monitoring system */
     public AWSElasticBeanstalkEnhancedHealth(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSElasticBeanstalkEnhancedHealth);
