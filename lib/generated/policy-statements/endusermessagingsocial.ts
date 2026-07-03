@@ -35,6 +35,17 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new WhatsApp Flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppFlow.html
+   */
+  public toCreateWhatsAppFlow() {
+    return this.to('CreateWhatsAppFlow');
+  }
+
+  /**
    * Grants permission to create a WhatsApp message template
    *
    * Access Level: Write
@@ -68,6 +79,17 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a WhatsApp Flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeleteWhatsAppFlow.html
+   */
+  public toDeleteWhatsAppFlow() {
+    return this.to('DeleteWhatsAppFlow');
+  }
+
+  /**
    * Grants permission to delete a media object from WhatsApp
    *
    * Access Level: Write
@@ -87,6 +109,17 @@ export class SocialMessaging extends PolicyStatement {
    */
   public toDeleteWhatsAppMessageTemplate() {
     return this.to('DeleteWhatsAppMessageTemplate');
+  }
+
+  /**
+   * Grants permission to deprecate a published WhatsApp Flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeprecateWhatsAppFlow.html
+   */
+  public toDeprecateWhatsAppFlow() {
+    return this.to('DeprecateWhatsAppFlow');
   }
 
   /**
@@ -120,6 +153,28 @@ export class SocialMessaging extends PolicyStatement {
    */
   public toGetLinkedWhatsAppBusinessAccountPhoneNumber() {
     return this.to('GetLinkedWhatsAppBusinessAccountPhoneNumber');
+  }
+
+  /**
+   * Grants permission to retrieve the metadata and status of a WhatsApp Flow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppFlow.html
+   */
+  public toGetWhatsAppFlow() {
+    return this.to('GetWhatsAppFlow');
+  }
+
+  /**
+   * Grants permission to generate a web preview URL for testing a WhatsApp Flow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppFlowPreview.html
+   */
+  public toGetWhatsAppFlowPreview() {
+    return this.to('GetWhatsAppFlowPreview');
   }
 
   /**
@@ -167,6 +222,28 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list the assets of a WhatsApp Flow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppFlowAssets.html
+   */
+  public toListWhatsAppFlowAssets() {
+    return this.to('ListWhatsAppFlowAssets');
+  }
+
+  /**
+   * Grants permission to list all WhatsApp Flows for a WhatsApp Business Account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppFlows.html
+   */
+  public toListWhatsAppFlows() {
+    return this.to('ListWhatsAppFlows');
+  }
+
+  /**
    * Grants permission to list WhatsApp message templates
    *
    * Access Level: List
@@ -197,6 +274,17 @@ export class SocialMessaging extends PolicyStatement {
    */
   public toPostWhatsAppMessageMedia() {
     return this.to('PostWhatsAppMessageMedia');
+  }
+
+  /**
+   * Grants permission to publish a WhatsApp Flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_PublishWhatsAppFlow.html
+   */
+  public toPublishWhatsAppFlow() {
+    return this.to('PublishWhatsAppFlow');
   }
 
   /**
@@ -253,6 +341,28 @@ export class SocialMessaging extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update the metadata of a WhatsApp Flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppFlow.html
+   */
+  public toUpdateWhatsAppFlow() {
+    return this.to('UpdateWhatsAppFlow');
+  }
+
+  /**
+   * Grants permission to update the Flow JSON definition of a WhatsApp Flow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppFlowAssets.html
+   */
+  public toUpdateWhatsAppFlowAssets() {
+    return this.to('UpdateWhatsAppFlowAssets');
+  }
+
+  /**
    * Grants permission to update a WhatsApp message template
    *
    * Access Level: Write
@@ -266,26 +376,36 @@ export class SocialMessaging extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateWhatsAppBusinessAccount',
+      'CreateWhatsAppFlow',
       'CreateWhatsAppMessageTemplate',
       'CreateWhatsAppMessageTemplateFromLibrary',
       'CreateWhatsAppMessageTemplateMedia',
+      'DeleteWhatsAppFlow',
       'DeleteWhatsAppMessageMedia',
       'DeleteWhatsAppMessageTemplate',
+      'DeprecateWhatsAppFlow',
       'DisassociateWhatsAppBusinessAccount',
       'GetWhatsAppMessageMedia',
       'PostWhatsAppMessageMedia',
+      'PublishWhatsAppFlow',
       'PutWhatsAppBusinessAccountEventDestinations',
       'SendWhatsAppMessage',
+      'UpdateWhatsAppFlow',
+      'UpdateWhatsAppFlowAssets',
       'UpdateWhatsAppMessageTemplate'
     ],
     Read: [
       'GetLinkedWhatsAppBusinessAccount',
       'GetLinkedWhatsAppBusinessAccountPhoneNumber',
+      'GetWhatsAppFlow',
+      'GetWhatsAppFlowPreview',
       'GetWhatsAppMessageTemplate',
       'ListTagsForResource'
     ],
     List: [
       'ListLinkedWhatsAppBusinessAccounts',
+      'ListWhatsAppFlowAssets',
+      'ListWhatsAppFlows',
       'ListWhatsAppMessageTemplates',
       'ListWhatsAppTemplateLibrary'
     ],
