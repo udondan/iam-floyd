@@ -11,7 +11,8 @@
         "ec2:GetImageBlockPublicAccessState",
         "ec2:GetSnapshotBlockPublicAccessState",
         "ec2:GetAllowedImagesSettings",
-        "ec2:DescribeVpcBlockPublicAccessOptions"
+        "ec2:DescribeVpcBlockPublicAccessOptions",
+        "ec2:DescribeAccountVpcEncryptionControl"
       ],
       "Resource": [
         "*"
