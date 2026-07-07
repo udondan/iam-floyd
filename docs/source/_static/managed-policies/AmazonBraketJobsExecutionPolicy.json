@@ -16,6 +16,23 @@
     {
       "Effect": "Allow",
       "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:ListBucket",
+        "s3:CreateBucket",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3:::*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/AmazonBraket": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "ecr:GetDownloadUrlForLayer",
         "ecr:BatchGetImage",
         "ecr:BatchCheckLayerAvailability"

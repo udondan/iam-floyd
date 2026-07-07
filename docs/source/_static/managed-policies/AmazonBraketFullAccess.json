@@ -21,6 +21,26 @@
     {
       "Effect": "Allow",
       "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:ListBucket",
+        "s3:CreateBucket",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3:::*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringEqualsIgnoreCase": {
+          "aws:ResourceTag/AmazonBraket": "true"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "s3:ListAllMyBuckets",
         "servicequotas:GetServiceQuota",
         "cloudwatch:GetMetricData",
