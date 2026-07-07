@@ -2688,6 +2688,8 @@ export class AwsManagedPolicy {
     public static DBModDiscoveryAndAssessment = 'DBModDiscoveryAndAssessment';
     /** Resource provisioning and data migration permissions for database connector used in database modernization */
     public static DBModProvisioningAndMigration = 'DBModProvisioningAndMigration';
+    /** Provides permissions for the database connector used by ATXHelix during the offline (DMS-free) database modernization workflow */
+    public static DBModVirtualSource = 'DBModVirtualSource';
     /** Provides access to read-only APIs needed to run EC2 Declarative Policies Account Status Report. */
     public static DeclarativePoliciesEC2Report = 'aws-service-role/DeclarativePoliciesEC2Report';
     /** Permissions required to support Amazon CloudWatch Contributor Insights for Amazon DynamoDB. */

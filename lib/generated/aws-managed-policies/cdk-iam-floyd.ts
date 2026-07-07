@@ -6729,6 +6729,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DBModProvisioningAndMigration);
     }
 
+    /** Provides permissions for the database connector used by ATXHelix during the offline (DMS-free) database modernization workflow */
+    public DBModVirtualSource(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DBModVirtualSource);
+    }
+
     /** Provides access to read-only APIs needed to run EC2 Declarative Policies Account Status Report. */
     public DeclarativePoliciesEC2Report(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.DeclarativePoliciesEC2Report);
