@@ -6199,6 +6199,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformCustomManageTransformations);
     }
 
+    /** Enables the AWS Transform service to manage customer revenue attribution for incentives. */
+    public AWSTransformRevenueAttributionPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformRevenueAttributionPolicy);
+    }
+
     /** Enables the AWS Transform service to read a specified SecretsManager Secret in connection to specified KMS key. This policy grants permissions to read the specified secret value and decrypt it is the secret is encrypted */
     public AWSTransformSecretsManagerConnectorPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformSecretsManagerConnectorPolicy);
