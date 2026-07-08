@@ -2476,6 +2476,8 @@ export class AwsManagedPolicy {
     public static AWSTransformCustomFullAccess = 'AWSTransformCustomFullAccess';
     /** Enables the management of transformation resources and execution of transformations in AWS Transform custom. */
     public static AWSTransformCustomManageTransformations = 'AWSTransformCustomManageTransformations';
+    /** Enables the AWS Transform service to manage customer revenue attribution for incentives. */
+    public static AWSTransformRevenueAttributionPolicy = 'AWSTransformRevenueAttributionPolicy';
     /** Enables the AWS Transform service to read a specified SecretsManager Secret in connection to specified KMS key. This policy grants permissions to read the specified secret value and decrypt it is the secret is encrypted */
     public static AWSTransformSecretsManagerConnectorPolicy = 'AWSTransformSecretsManagerConnectorPolicy';
     /** Grants AWS Transform (ATX) Continuous Modernization CLI/agent the permissions needed to invoke the AWS Security Agent service for automated code security reviews and remediation, including uploading scan artifacts and retrieving findings. */

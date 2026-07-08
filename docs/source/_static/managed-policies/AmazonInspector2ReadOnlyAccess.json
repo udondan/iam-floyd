@@ -50,6 +50,20 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "AllowCrossServiceReadsForConnectorHealth",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeConfigurationRecorders",
+        "config:DescribeConfigurationRecorderStatus",
+        "config:ListConfigurationRecorders",
+        "config:GetConnector",
+        "config:ListConnectors",
+        "ssm:GetCloudConnector",
+        "ssm:ListCloudConnectors"
+      ],
+      "Resource": "*"
     }
   ]
 }
