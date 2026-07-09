@@ -253,6 +253,21 @@
       }
     },
     {
+      "Sid": "AttachImageWatermarkPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachImageWatermark"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*::image/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/CreatedBy": "EC2 Image Builder"
+        }
+      }
+    },
+    {
       "Sid": "UpdateCustomerLicensePermissions",
       "Effect": "Allow",
       "Action": [

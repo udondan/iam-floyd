@@ -106,6 +106,32 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "AllowConfigConnectorWriteAndList",
+      "Effect": "Allow",
+      "Action": [
+        "config:PutConnector",
+        "config:ListConnectors"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowConfigConnectorRead",
+      "Effect": "Allow",
+      "Action": "config:GetConnector",
+      "Resource": "arn:aws:config:*:*:connector/*"
+    },
+    {
+      "Sid": "AllowCreateConfigThirdPartySLR",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/thirdparty.config.amazonaws.com/AWSServiceRoleForConfigThirdParty",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "thirdparty.config.amazonaws.com"
+        }
+      }
     }
   ]
 }
