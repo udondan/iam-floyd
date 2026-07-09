@@ -94,6 +94,18 @@
         "sso:DescribeInstance"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "support:CreateCase",
+        "support:DescribeServices",
+        "support:DescribeSeverityLevels",
+        "support:DescribeCases",
+        "support:AddCommunicationToCase",
+        "support:ResolveCase"
+      ],
+      "Resource": "*"
     }
   ]
 }
