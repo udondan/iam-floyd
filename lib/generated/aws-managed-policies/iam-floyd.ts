@@ -2006,6 +2006,8 @@ export class AwsManagedPolicy {
     public static AWSMarketplaceSellerProductsReadOnly = 'AWSMarketplaceSellerProductsReadOnly';
     /** Provides full access to all MCP service actions. This policy does not grant access to the actions taken by the MCP, only the MCP actions themselves. */
     public static AWSMcpServiceActionsFullAccess = 'AWSMcpServiceActionsFullAccess';
+    /** Provides access to authenticate to the AWS MCP server using AWS Sign-In OAuth */
+    public static AWSMCPSignInOAuthAccessPolicy = 'AWSMCPSignInOAuthAccessPolicy';
     /** The default policy that enables access to AWS Services and Resources used or managed by MediaConnect. */
     public static AWSMediaConnectServicePolicy = 'aws-service-role/AWSMediaConnectServicePolicy';
     /** Allows MediaLive Anywhere to create and manage AWS resources on your behalf. */

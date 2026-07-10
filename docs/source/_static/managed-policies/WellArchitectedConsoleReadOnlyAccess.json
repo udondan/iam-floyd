@@ -6,7 +6,17 @@
       "Action": [
         "wellarchitected:Get*",
         "wellarchitected:List*",
-        "wellarchitected:ExportLens"
+        "wellarchitected:ExportLens",
+        "organizations:DescribeAccount",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListRoots",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListAccountsForParent",
+        "organizations:ListAccounts",
+        "organizations:DescribeOrganization",
+        "trustedadvisor:List*",
+        "trustedadvisor:Get*"
       ],
       "Resource": "*"
     }

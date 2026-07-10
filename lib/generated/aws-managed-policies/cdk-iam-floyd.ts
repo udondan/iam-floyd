@@ -5024,6 +5024,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMcpServiceActionsFullAccess);
     }
 
+    /** Provides access to authenticate to the AWS MCP server using AWS Sign-In OAuth */
+    public AWSMCPSignInOAuthAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMCPSignInOAuthAccessPolicy);
+    }
+
     /** The default policy that enables access to AWS Services and Resources used or managed by MediaConnect. */
     public AWSMediaConnectServicePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSMediaConnectServicePolicy);
