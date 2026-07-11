@@ -193,7 +193,8 @@
             "arn:aws:eks::aws:cluster-access-policy/AmazonEKSBlockStoragePolicy",
             "arn:aws:eks::aws:cluster-access-policy/AmazonEKSBlockStorageClusterPolicy",
             "arn:aws:eks::aws:cluster-access-policy/AmazonEKSHybridPolicy",
-            "arn:aws:eks::aws:cluster-access-policy/AmazonEKSEventPolicy"
+            "arn:aws:eks::aws:cluster-access-policy/AmazonEKSEventPolicy",
+            "arn:aws:eks::aws:cluster-access-policy/AmazonEKSPodIdentityPolicy"
           ]
         }
       }

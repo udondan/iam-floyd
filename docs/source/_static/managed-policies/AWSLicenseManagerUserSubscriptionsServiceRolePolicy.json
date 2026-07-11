@@ -6,7 +6,8 @@
       "Effect": "Allow",
       "Action": [
         "ds:DescribeDirectories",
-        "ds:GetAuthorizedApplicationDetails"
+        "ds:GetAuthorizedApplicationDetails",
+        "ds:DescribeTrusts"
       ],
       "Resource": "*"
     },
@@ -111,6 +112,14 @@
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeNetworkInterfaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DescribeVpcEndpoints",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcEndpoints"
       ],
       "Resource": "*"
     },
