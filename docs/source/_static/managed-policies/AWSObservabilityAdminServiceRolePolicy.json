@@ -9,7 +9,8 @@
         "organizations:ListChildren",
         "organizations:ListParents",
         "organizations:DescribeOrganization",
-        "organizations:DescribeOrganizationalUnit"
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAWSServiceAccessForOrganization"
       ],
       "Resource": "*"
     },
