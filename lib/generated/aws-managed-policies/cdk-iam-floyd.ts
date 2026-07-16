@@ -4499,6 +4499,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIAMIdentityCenterAllowListForIdentityContext);
     }
 
+    /** Allows IAM Role Manager to manage resources in your account on your behalf. */
+    public AWSIAMRoleManagerServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIAMRoleManagerServiceRolePolicy);
+    }
+
     /** Provides access to manage IAM Identity Center users from an external provider. */
     public AWSIdentityCenterExternalManagementPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSIdentityCenterExternalManagementPolicy);

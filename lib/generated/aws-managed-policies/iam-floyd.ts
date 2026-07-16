@@ -1796,6 +1796,8 @@ export class AwsManagedPolicy {
     public static AWSHealthOmicsServiceLinkedRolePolicy = 'aws-service-role/AWSHealthOmicsServiceLinkedRolePolicy';
     /** Provides the list of actions that are allowed for roles assumed with the IAM Identity Center identity context. AWS Security Token Service (AWS STS) automatically attaches this policy to assumed roles. The identity context is passed as ProvidedContext. */
     public static AWSIAMIdentityCenterAllowListForIdentityContext = 'AWSIAMIdentityCenterAllowListForIdentityContext';
+    /** Allows IAM Role Manager to manage resources in your account on your behalf. */
+    public static AWSIAMRoleManagerServiceRolePolicy = 'aws-service-role/AWSIAMRoleManagerServiceRolePolicy';
     /** Provides access to manage IAM Identity Center users from an external provider. */
     public static AWSIdentityCenterExternalManagementPolicy = 'service-role/AWSIdentityCenterExternalManagementPolicy';
     /** Grants full access to the Identity Sync service */

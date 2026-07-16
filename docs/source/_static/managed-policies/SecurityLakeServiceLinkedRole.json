@@ -42,6 +42,16 @@
       "Resource": "*"
     },
     {
+      "Sid": "AllowOrganizationTrailValidation",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:GetTrailStatus",
+        "cloudtrail:GetEventSelectors"
+      ],
+      "Resource": "*"
+    },
+    {
       "Sid": "DescribeAnyVpc",
       "Effect": "Allow",
       "Action": [
