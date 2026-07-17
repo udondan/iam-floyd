@@ -3038,6 +3038,8 @@ export class AwsManagedPolicy {
     public static WAFRegionalLoggingServiceRolePolicy = 'aws-service-role/WAFRegionalLoggingServiceRolePolicy';
     /** This policy creates a service-linked role that allows AWS WAF to write logs to Amazon Kinesis Data Firehose. */
     public static WAFV2LoggingServiceRolePolicy = 'aws-service-role/WAFV2LoggingServiceRolePolicy';
+    /** Grants the AWS Well-Architected Agent read-only access to AWS resource configurations, security settings, and operational data to generate optimization recommendations */
+    public static WellArchitectedAgentResourceScanning = 'WellArchitectedAgentResourceScanning';
     /** Provides full access to AWS Well-Architected Tool via the AWS Management Console */
     public static WellArchitectedConsoleFullAccess = 'WellArchitectedConsoleFullAccess';
     /** Provides read-only access to AWS Well-Architected Tool via the AWS Management Console */

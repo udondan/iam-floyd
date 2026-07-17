@@ -7604,6 +7604,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.WAFV2LoggingServiceRolePolicy);
     }
 
+    /** Grants the AWS Well-Architected Agent read-only access to AWS resource configurations, security settings, and operational data to generate optimization recommendations */
+    public WellArchitectedAgentResourceScanning(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.WellArchitectedAgentResourceScanning);
+    }
+
     /** Provides full access to AWS Well-Architected Tool via the AWS Management Console */
     public WellArchitectedConsoleFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.WellArchitectedConsoleFullAccess);

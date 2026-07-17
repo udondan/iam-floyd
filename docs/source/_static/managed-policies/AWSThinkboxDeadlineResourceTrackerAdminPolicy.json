@@ -227,8 +227,8 @@
         "s3:GetObject"
       ],
       "Resource": [
-        "arn:aws:s3:::*/deadline_aws_resource_tracker-*.zip",
-        "arn:aws:s3:::*/DeadlineAWSResourceTrackerTemplate-*.yaml"
+        "arn:aws:s3:::*/deadline_aws_resource_tracker*.zip",
+        "arn:aws:s3:::*/DeadlineAWSResourceTrackerTemplate*.yaml"
       ]
     },
     {
