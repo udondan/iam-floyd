@@ -1189,7 +1189,8 @@
       "Effect": "Deny",
       "Action": [
         "sagemaker:CreateNotebookInstanceLifecycleConfig",
-        "sagemaker:UpdateNotebookInstanceLifecycleConfig"
+        "sagemaker:UpdateNotebookInstanceLifecycleConfig",
+        "sagemaker:DeleteNotebookInstanceLifecycleConfig"
       ],
       "Resource": "*"
     }

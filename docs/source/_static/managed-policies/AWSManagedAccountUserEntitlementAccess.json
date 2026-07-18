@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": [
+      "identitystore:CreateGroup",
+      "identitystore:GetGroupId",
+      "identitystore:GetUserId",
+      "identitystore:CreateGroupMembership",
+      "sso:ListInstances",
+      "sso-directory:ListProvisioningTenants",
+      "account-access:ListApplications",
+      "account-access:CreateEntitlement",
+      "account-access:ListEntitlements"
+    ],
+    "Resource": "*"
+  }
+}

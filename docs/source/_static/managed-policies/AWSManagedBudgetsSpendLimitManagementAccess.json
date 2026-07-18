@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SCPActions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:AttachPolicy",
+        "organizations:DescribePolicy",
+        "organizations:DetachPolicy",
+        "organizations:ListPolicies"
+      ],
+      "Resource": "arn:aws:organizations::*:policy/*/service_control_policy/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/ManagedBy": "SpendLimit"
+        }
+      }
+    },
+    {
+      "Sid": "SCPTargetActions",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:AttachPolicy",
+        "organizations:DetachPolicy"
+      ],
+      "Resource": "arn:aws:organizations::*:account/*"
+    },
+    {
+      "Sid": "AccountActions",
+      "Effect": "Allow",
+      "Action": "organizations:CloseAccount",
+      "Resource": "arn:aws:organizations::*:account/*"
+    }
+  ]
+}

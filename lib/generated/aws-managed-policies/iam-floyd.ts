@@ -1330,6 +1330,8 @@ export class AwsManagedPolicy {
     public static AWSBudgetsActionsWithAWSResourceControlAccess = 'AWSBudgetsActionsWithAWSResourceControlAccess';
     /** Provides read only access to AWS Budgets Console via the AWS Management Console. */
     public static AWSBudgetsReadOnlyAccess = 'AWSBudgetsReadOnlyAccess';
+    /** Grants the AWS Budgets service permissions to describe, stop, and terminate resources in a member account to enforce spend limit actions. */
+    public static AWSBudgetsSpendLimitMemberRolePolicy = 'aws-service-role/AWSBudgetsSpendLimitMemberRolePolicy';
     /** This IAM policy grants users full access to the AWS BugBust console */
     public static AWSBugBustFullAccess = 'AWSBugBustFullAccess';
     /** This IAM policy grants users access to participate in AWS BugBust events */
@@ -1958,6 +1960,10 @@ export class AwsManagedPolicy {
     public static AWSLicenseManagerUserSubscriptionsServiceRolePolicy = 'aws-service-role/AWSLicenseManagerUserSubscriptionsServiceRolePolicy';
     /** Allows AWS M2 to manage AWS resources on your behalf. */
     public static AWSM2ServicePolicy = 'aws-service-role/AWSM2ServicePolicy';
+    /** Grants AWS permissions to manage account access entitlements for AWS managed accounts */
+    public static AWSManagedAccountUserEntitlementAccess = 'AWSManagedAccountUserEntitlementAccess';
+    /** Grants the AWS Budgets service permissions to attach and detach Service Control Policies and manage accounts in an AWS Organization to enforce spend limit guardrails on member accounts. */
+    public static AWSManagedBudgetsSpendLimitManagementAccess = 'AWSManagedBudgetsSpendLimitManagementAccess';
     /** Allows AWS Managed Services to read the values of the tags on AWS resources */
     public static AWSManagedServicesContactsServiceRolePolicy = 'aws-service-role/AWSManagedServices_ContactsServiceRolePolicy';
     /** AWS Managed Services - policy to manage detective controls infrastructure */

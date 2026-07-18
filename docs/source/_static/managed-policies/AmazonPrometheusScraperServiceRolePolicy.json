@@ -90,6 +90,17 @@
           "aws:PrincipalAccount": "${aws:ResourceAccount}"
         }
       }
+    },
+    {
+      "Sid": "CloudWatchMetricsWriting",
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "arn:aws:cloudwatch:*:*:dataset/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalAccount": "${aws:ResourceAccount}"
+        }
+      }
     }
   ]
 }
