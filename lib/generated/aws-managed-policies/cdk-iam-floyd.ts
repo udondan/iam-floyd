@@ -3334,6 +3334,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBudgetsReadOnlyAccess);
     }
 
+    /** Grants the AWS Budgets service permissions to describe, stop, and terminate resources in a member account to enforce spend limit actions. */
+    public AWSBudgetsSpendLimitMemberRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBudgetsSpendLimitMemberRolePolicy);
+    }
+
     /** This IAM policy grants users full access to the AWS BugBust console */
     public AWSBugBustFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBugBustFullAccess);
@@ -4902,6 +4907,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AWS M2 to manage AWS resources on your behalf. */
     public AWSM2ServicePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSM2ServicePolicy);
+    }
+
+    /** Grants AWS permissions to manage account access entitlements for AWS managed accounts */
+    public AWSManagedAccountUserEntitlementAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedAccountUserEntitlementAccess);
+    }
+
+    /** Grants the AWS Budgets service permissions to attach and detach Service Control Policies and manage accounts in an AWS Organization to enforce spend limit guardrails on member accounts. */
+    public AWSManagedBudgetsSpendLimitManagementAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedBudgetsSpendLimitManagementAccess);
     }
 
     /** Allows AWS Managed Services to read the values of the tags on AWS resources */
