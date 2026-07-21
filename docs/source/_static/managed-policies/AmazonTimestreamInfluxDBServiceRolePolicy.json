@@ -100,6 +100,38 @@
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
+    },
+    {
+      "Sid": "RetrievePluginSecretStatement",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:InfluxDB-RepoToken-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DecryptPluginSecretStatement",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:*:kms:*:${aws:PrincipalAccount}:key/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        },
+        "StringLike": {
+          "kms:ViaService": "secretsmanager.*.amazonaws.com",
+          "kms:EncryptionContext:SecretARN": "arn:*:secretsmanager:*:*:secret:InfluxDB-RepoToken-*"
+        }
+      }
     }
   ]
 }

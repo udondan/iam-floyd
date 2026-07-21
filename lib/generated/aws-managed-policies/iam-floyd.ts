@@ -1960,6 +1960,8 @@ export class AwsManagedPolicy {
     public static AWSLicenseManagerUserSubscriptionsServiceRolePolicy = 'aws-service-role/AWSLicenseManagerUserSubscriptionsServiceRolePolicy';
     /** Allows AWS M2 to manage AWS resources on your behalf. */
     public static AWSM2ServicePolicy = 'aws-service-role/AWSM2ServicePolicy';
+    /** Grants AWS permissions to update and maintain AWS managed roles for AWS managed accounts */
+    public static AWSManagedAccountManagementAccess = 'AWSManagedAccountManagementAccess';
     /** Grants AWS permissions to manage account access entitlements for AWS managed accounts */
     public static AWSManagedAccountUserEntitlementAccess = 'AWSManagedAccountUserEntitlementAccess';
     /** Grants the AWS Budgets service permissions to attach and detach Service Control Policies and manage accounts in an AWS Organization to enforce spend limit guardrails on member accounts. */
@@ -1974,6 +1976,8 @@ export class AwsManagedPolicy {
     public static AWSManagedServicesSelfServiceReportingServiceRolePolicy = 'aws-service-role/AWSManagedServices_SelfServiceReporting_ServiceRolePolicy';
     /** Allows AWS Managed Services to manage deployment toolkit on your behalf. */
     public static AWSManagedServicesDeploymentToolkitPolicy = 'aws-service-role/AWSManagedServicesDeploymentToolkitPolicy';
+    /** Grants AWS permission to complete signup for AWS managed accounts. */
+    public static AWSManagedSignUpAdminAccess = 'service-role/AWSManagedSignUpAdminAccess';
     /** Provides full access to configure and customize the AWS Management Console */
     public static AWSManagementConsoleAdministratorAccess = 'job-function/AWSManagementConsoleAdministratorAccess';
     /** Grants access to essential AWS Management Console features and user experience (UX) capabilities for non-administrative users. */
@@ -2486,6 +2490,10 @@ export class AwsManagedPolicy {
     public static AWSTransformCustomFullAccess = 'AWSTransformCustomFullAccess';
     /** Enables the management of transformation resources and execution of transformations in AWS Transform custom. */
     public static AWSTransformCustomManageTransformations = 'AWSTransformCustomManageTransformations';
+    /** Grants developers execution role the permissions needed to execute AWS Transform Continuous Modernization CLI/agent to run assessments/transformations using AWS Batch, including uploading source code, retrieving results, monitoring Batch job status, reading logs, and managing transformation schedules. */
+    public static AWSTransformInfrastructureExecutorAccessBatch = 'AWSTransformInfrastructureExecutorAccessBatch';
+    /** Grants developers execution role the permissions needed to execute AWS Transform Continuous Modernization CLI/agent to run assessments/transformations using EC2, including uploading source code, retrieving results, monitoring job status, reading logs, and managing transformation schedules. */
+    public static AWSTransformInfrastructureExecutorAccessEC2 = 'AWSTransformInfrastructureExecutorAccessEC2';
     /** Enables the AWS Transform service to manage customer revenue attribution for incentives. */
     public static AWSTransformRevenueAttributionPolicy = 'AWSTransformRevenueAttributionPolicy';
     /** Enables the AWS Transform service to read a specified SecretsManager Secret in connection to specified KMS key. This policy grants permissions to read the specified secret value and decrypt it is the secret is encrypted */

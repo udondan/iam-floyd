@@ -50,6 +50,52 @@
       }
     },
     {
+      "Sid": "DataCaptureS3",
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::hyperpod-tls*/data-capture/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "S3ListBucketAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::hyperpod-tls*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DataCaptureKMS",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "s3.*.amazonaws.com",
+          "kms:EncryptionContext:aws:s3:arn": "arn:aws:s3:::hyperpod-tls*"
+        },
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Sid": "ECRAuthorization",
       "Effect": "Allow",
       "Action": [
@@ -89,7 +135,8 @@
       "Effect": "Allow",
       "Action": [
         "ec2:CreateNetworkInterface",
-        "ec2:CreateNetworkInterfacePermission"
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:DeleteNetworkInterface"
       ],
       "Resource": [
         "arn:aws:ec2:*:*:network-interface/*",
@@ -127,6 +174,19 @@
       "Condition": {
         "StringEquals": {
           "eks:policyarn": "arn:aws:eks::aws:cluster-access-policy/AmazonSagemakerHyperpodInferenceMonitoringPolicy"
+        }
+      }
+    },
+    {
+      "Sid": "EKSAccessEntryListPolicies",
+      "Effect": "Allow",
+      "Action": [
+        "eks:ListAssociatedAccessPolicies"
+      ],
+      "Resource": "arn:aws:eks:*:*:access-entry/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
         }
       }
     },
