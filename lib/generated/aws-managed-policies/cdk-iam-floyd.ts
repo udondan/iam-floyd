@@ -4909,6 +4909,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSM2ServicePolicy);
     }
 
+    /** Grants AWS permissions to update and maintain AWS managed roles for AWS managed accounts */
+    public AWSManagedAccountManagementAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedAccountManagementAccess);
+    }
+
     /** Grants AWS permissions to manage account access entitlements for AWS managed accounts */
     public AWSManagedAccountUserEntitlementAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedAccountUserEntitlementAccess);
@@ -4942,6 +4947,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AWS Managed Services to manage deployment toolkit on your behalf. */
     public AWSManagedServicesDeploymentToolkitPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedServicesDeploymentToolkitPolicy);
+    }
+
+    /** Grants AWS permission to complete signup for AWS managed accounts. */
+    public AWSManagedSignUpAdminAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedSignUpAdminAccess);
     }
 
     /** Provides full access to configure and customize the AWS Management Console */
@@ -6222,6 +6232,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Enables the management of transformation resources and execution of transformations in AWS Transform custom. */
     public AWSTransformCustomManageTransformations(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformCustomManageTransformations);
+    }
+
+    /** Grants developers execution role the permissions needed to execute AWS Transform Continuous Modernization CLI/agent to run assessments/transformations using AWS Batch, including uploading source code, retrieving results, monitoring Batch job status, reading logs, and managing transformation schedules. */
+    public AWSTransformInfrastructureExecutorAccessBatch(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformInfrastructureExecutorAccessBatch);
+    }
+
+    /** Grants developers execution role the permissions needed to execute AWS Transform Continuous Modernization CLI/agent to run assessments/transformations using EC2, including uploading source code, retrieving results, monitoring job status, reading logs, and managing transformation schedules. */
+    public AWSTransformInfrastructureExecutorAccessEC2(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformInfrastructureExecutorAccessEC2);
     }
 
     /** Enables the AWS Transform service to manage customer revenue attribution for incentives. */

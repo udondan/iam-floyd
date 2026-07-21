@@ -15,6 +15,14 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "sid2",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:ListGroupMembershipsForMember"
+      ],
+      "Resource": "*"
     }
   ]
 }
