@@ -1964,8 +1964,14 @@ export class AwsManagedPolicy {
     public static AWSManagedAccountManagementAccess = 'AWSManagedAccountManagementAccess';
     /** Grants AWS permissions to manage account access entitlements for AWS managed accounts */
     public static AWSManagedAccountUserEntitlementAccess = 'AWSManagedAccountUserEntitlementAccess';
+    /** Grants AWS permission to activate advanced features for AWS managed accounts */
+    public static AWSManagedAdvancedFeaturesActivationAccess = 'AWSManagedAdvancedFeaturesActivationAccess';
     /** Grants the AWS Budgets service permissions to attach and detach Service Control Policies and manage accounts in an AWS Organization to enforce spend limit guardrails on member accounts. */
     public static AWSManagedBudgetsSpendLimitManagementAccess = 'AWSManagedBudgetsSpendLimitManagementAccess';
+    /** Grants AWS permission to manage organization control policies for AWS managed accounts */
+    public static AWSManagedControlPolicyManagementAccess = 'AWSManagedControlPolicyManagementAccess';
+    /** Grants permissions to manage Service Control Policies (SCPs) in AWS Organizations for the AWS Managed Service Access Management service. Includes permissions to list, create, update, and attach SCPs scoped to policies tagged with ManagedBy=service-access. */
+    public static AWSManagedServiceAccessManagementAccess = 'service-role/AWSManagedServiceAccessManagementAccess';
     /** Allows AWS Managed Services to read the values of the tags on AWS resources */
     public static AWSManagedServicesContactsServiceRolePolicy = 'aws-service-role/AWSManagedServices_ContactsServiceRolePolicy';
     /** AWS Managed Services - policy to manage detective controls infrastructure */
@@ -1976,6 +1982,10 @@ export class AwsManagedPolicy {
     public static AWSManagedServicesSelfServiceReportingServiceRolePolicy = 'aws-service-role/AWSManagedServices_SelfServiceReporting_ServiceRolePolicy';
     /** Allows AWS Managed Services to manage deployment toolkit on your behalf. */
     public static AWSManagedServicesDeploymentToolkitPolicy = 'aws-service-role/AWSManagedServicesDeploymentToolkitPolicy';
+    /** Grants full administrative access to AWS account settings management. This policy allows owners to view and modify account information, billing, payments, tax registration, identity management, organization policies, budgets, cost analysis, and workspace notifications. Intended for workspace owners who need complete administrative access over account configuration and member management. The policy does not grant access to compute, storage, networking, or other infrastructure services unrelated to account settings. */
+    public static AWSManagedSettingsAdminAccess = 'AWSManagedSettingsAdminAccess';
+    /** Grants team members read-only access to AWS Settings, including workspace and owner information, team membership, plan and spend summary. It does not grant permissions to modify workspace configuration or to manage billing and payments. */
+    public static AWSManagedSettingsReadOnlyAccess = 'AWSManagedSettingsReadOnlyAccess';
     /** Grants AWS permission to complete signup for AWS managed accounts. */
     public static AWSManagedSignUpAdminAccess = 'service-role/AWSManagedSignUpAdminAccess';
     /** Provides full access to configure and customize the AWS Management Console */

@@ -473,7 +473,10 @@
       "Action": [
         "iam:PassRole"
       ],
-      "Resource": "arn:aws:iam::*:role/SageMakerForLambda*",
+      "Resource": [
+        "arn:aws:iam::*:role/SageMakerForLambda*",
+        "arn:aws:iam::*:role/service-role/SageMakerForLambda*"
+      ],
       "Condition": {
         "ArnLike": {
           "iam:AssociatedResourceArn": "arn:aws:lambda:*:*:function:*"
@@ -490,7 +493,10 @@
       "Action": [
         "iam:PassRole"
       ],
-      "Resource": "arn:aws:iam::*:role/SageMakerForBedrock*",
+      "Resource": [
+        "arn:aws:iam::*:role/SageMakerForBedrock*",
+        "arn:aws:iam::*:role/service-role/SageMakerForBedrock*"
+      ],
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}",
