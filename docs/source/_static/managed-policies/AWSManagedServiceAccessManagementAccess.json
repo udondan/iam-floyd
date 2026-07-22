@@ -1,0 +1,68 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowListRoots",
+      "Effect": "Allow",
+      "Action": "organizations:ListRoots",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSCPList",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:ListPolicies",
+        "organizations:ListPoliciesForTarget"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": "SERVICE_CONTROL_POLICY"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSCPCreateWithTag",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:CreatePolicy",
+        "organizations:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "organizations:PolicyType": "SERVICE_CONTROL_POLICY",
+          "aws:RequestTag/ManagedBy": "service-access"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSCPUpdateTagged",
+      "Effect": "Allow",
+      "Action": "organizations:UpdatePolicy",
+      "Resource": "arn:aws:organizations::*:policy/*/service_control_policy/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/ManagedBy": "service-access"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSCPAttachTaggedPolicy",
+      "Effect": "Allow",
+      "Action": "organizations:AttachPolicy",
+      "Resource": "arn:aws:organizations::*:policy/*/service_control_policy/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/ManagedBy": "service-access"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSCPAttachRoot",
+      "Effect": "Allow",
+      "Action": "organizations:AttachPolicy",
+      "Resource": "arn:aws:organizations::*:root/*"
+    }
+  ]
+}

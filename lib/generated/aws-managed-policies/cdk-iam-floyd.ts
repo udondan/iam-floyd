@@ -4919,9 +4919,24 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedAccountUserEntitlementAccess);
     }
 
+    /** Grants AWS permission to activate advanced features for AWS managed accounts */
+    public AWSManagedAdvancedFeaturesActivationAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedAdvancedFeaturesActivationAccess);
+    }
+
     /** Grants the AWS Budgets service permissions to attach and detach Service Control Policies and manage accounts in an AWS Organization to enforce spend limit guardrails on member accounts. */
     public AWSManagedBudgetsSpendLimitManagementAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedBudgetsSpendLimitManagementAccess);
+    }
+
+    /** Grants AWS permission to manage organization control policies for AWS managed accounts */
+    public AWSManagedControlPolicyManagementAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedControlPolicyManagementAccess);
+    }
+
+    /** Grants permissions to manage Service Control Policies (SCPs) in AWS Organizations for the AWS Managed Service Access Management service. Includes permissions to list, create, update, and attach SCPs scoped to policies tagged with ManagedBy=service-access. */
+    public AWSManagedServiceAccessManagementAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedServiceAccessManagementAccess);
     }
 
     /** Allows AWS Managed Services to read the values of the tags on AWS resources */
@@ -4947,6 +4962,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows AWS Managed Services to manage deployment toolkit on your behalf. */
     public AWSManagedServicesDeploymentToolkitPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedServicesDeploymentToolkitPolicy);
+    }
+
+    /** Grants full administrative access to AWS account settings management. This policy allows owners to view and modify account information, billing, payments, tax registration, identity management, organization policies, budgets, cost analysis, and workspace notifications. Intended for workspace owners who need complete administrative access over account configuration and member management. The policy does not grant access to compute, storage, networking, or other infrastructure services unrelated to account settings. */
+    public AWSManagedSettingsAdminAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedSettingsAdminAccess);
+    }
+
+    /** Grants team members read-only access to AWS Settings, including workspace and owner information, team membership, plan and spend summary. It does not grant permissions to modify workspace configuration or to manage billing and payments. */
+    public AWSManagedSettingsReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSManagedSettingsReadOnlyAccess);
     }
 
     /** Grants AWS permission to complete signup for AWS managed accounts. */

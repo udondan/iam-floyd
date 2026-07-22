@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AccountReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "account:GetAccountInformation",
+        "account:GetContactInformation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IdentityStoreReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "identitystore:DescribeUser",
+        "identitystore:ListGroupMemberships",
+        "identitystore:ListGroups",
+        "identitystore:ListUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "OrganizationsReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSOReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "sso:DescribeInstance"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
