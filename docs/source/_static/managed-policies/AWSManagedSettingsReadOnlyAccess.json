@@ -37,6 +37,16 @@
         "sso:DescribeInstance"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "SSODirectoryReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "sso-directory:DescribeUsers",
+        "sso-directory:SearchGroups",
+        "sso-directory:SearchUsers"
+      ],
+      "Resource": "*"
     }
   ]
 }

@@ -2,6 +2,19 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "ActivateAdvancedUpdateAccountName",
+      "Effect": "Allow",
+      "Action": [
+        "account:PutAccountName"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:CalledViaLast": "account.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "AWSSettingsAccountAccess",
       "Effect": "Allow",
       "Action": [
@@ -49,7 +62,8 @@
         "budgets:CreateBudget",
         "budgets:DeleteBudget",
         "budgets:DescribeBudgets",
-        "budgets:DescribeBudget"
+        "budgets:DescribeBudget",
+        "budgets:DescribeBudgetActionHistories"
       ],
       "Resource": "*"
     },
@@ -99,7 +113,6 @@
         "identitystore:DescribeUser",
         "identitystore:GetGroupId",
         "identitystore:GetUserId",
-        "sso:UpdateInstance",
         "identitystore:ListGroupMemberships",
         "identitystore:UpdateIdentityStore",
         "identitystore:ListGroupMembershipsForMember",
@@ -140,7 +153,8 @@
         "organizations:ListRoots",
         "organizations:CreateBuilderIdOwnedAccount",
         "organizations:DescribeCreateAccountStatus",
-        "organizations:DescribeAccount"
+        "organizations:DescribeAccount",
+        "organizations:InviteAccountToOrganization"
       ],
       "Resource": "*"
     },
@@ -211,7 +225,8 @@
         "sso:ListApplicationAssignments",
         "sso:CreateApplicationAssignment",
         "sso:DescribeApplication",
-        "sso:ListApplications"
+        "sso:ListApplications",
+        "sso:UpdateInstance"
       ],
       "Resource": "*"
     },
@@ -242,7 +257,7 @@
       "Resource": "*"
     },
     {
-      "Sid": "TransitionProvisioningAccess",
+      "Sid": "ActivateAdvancedProvisioningAccess",
       "Effect": "Allow",
       "Action": [
         "organizations:CreateBuilderIdOwnedAccount",
@@ -264,7 +279,7 @@
       }
     },
     {
-      "Sid": "TransitionDelegatedAdminAccess",
+      "Sid": "ActivateAdvancedDelegatedAdminAccess",
       "Effect": "Allow",
       "Action": [
         "organizations:RegisterDelegatedAdministrator",
@@ -279,7 +294,7 @@
       }
     },
     {
-      "Sid": "TransitionManagedRoleAccess",
+      "Sid": "ActivateAdvancedManagedRoleAccess",
       "Effect": "Allow",
       "Action": [
         "iam:GetRole",
@@ -293,7 +308,8 @@
       ],
       "Resource": [
         "arn:aws:iam::*:role/managed/*",
-        "arn:aws:iam::*:role/ManagedAccountAdmin"
+        "arn:aws:iam::*:role/ManagedAccountAdmin",
+        "arn:aws:iam::*:role/AccountFullAccessRole"
       ],
       "Condition": {
         "StringEquals": {
@@ -302,10 +318,10 @@
       }
     },
     {
-      "Sid": "TransitionMemberAccountAssume",
+      "Sid": "ActivateAdvancedMemberAccountAssume",
       "Effect": "Allow",
       "Action": "sts:AssumeRole",
-      "Resource": "arn:aws:iam::*:role/OrganizationAccountAccessRole",
+      "Resource": "arn:aws:iam::*:role/managed/AWSManagedAdvancedFeaturesActivationRole",
       "Condition": {
         "StringEquals": {
           "aws:CalledViaLast": "account.amazonaws.com"
@@ -313,7 +329,7 @@
       }
     },
     {
-      "Sid": "TransitionBudgetsAccess",
+      "Sid": "ActivateAdvancedBudgetsAccess",
       "Effect": "Allow",
       "Action": "budgets:ModifyBudget",
       "Resource": "arn:aws:budgets::*:budget/sla-*",
@@ -324,7 +340,7 @@
       }
     },
     {
-      "Sid": "TransitionSCPCleanupAccess",
+      "Sid": "ActivateAdvancedSCPCleanupAccess",
       "Effect": "Allow",
       "Action": [
         "organizations:DeletePolicy",

@@ -2,15 +2,41 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:UpdateStack",
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/stacksets-exec-role-stack-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
       "Action": [
         "iam:CreateRole",
         "iam:DeleteRole",
-        "iam:GetRole"
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:PutRolePolicy"
       ],
       "Effect": "Allow",
       "Resource": [
         "arn:aws:iam::*:role/stacksets-exec-*"
-      ]
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
     },
     {
       "Action": [
