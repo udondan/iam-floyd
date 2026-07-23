@@ -20,6 +20,7 @@
       "Action": [
         "pi:CreatePerformanceAnalysisReport",
         "pi:GetPerformanceAnalysisReport",
+        "pi:ListPerformanceAnalysisReportRecommendations",
         "pi:ListPerformanceAnalysisReports",
         "pi:DeletePerformanceAnalysisReport"
       ],

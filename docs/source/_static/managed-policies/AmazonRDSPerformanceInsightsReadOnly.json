@@ -72,6 +72,12 @@
       "Resource": "arn:aws:pi:*:*:perf-reports/rds/*/*"
     },
     {
+      "Sid": "AmazonRDSPerformanceInsightsListPerformanceAnalysisReportRecommendations",
+      "Effect": "Allow",
+      "Action": "pi:ListPerformanceAnalysisReportRecommendations",
+      "Resource": "arn:aws:pi:*:*:perf-reports/rds/*/*"
+    },
+    {
       "Sid": "AmazonRDSPerformanceInsightsListPerformanceAnalysisReports",
       "Effect": "Allow",
       "Action": "pi:ListPerformanceAnalysisReports",

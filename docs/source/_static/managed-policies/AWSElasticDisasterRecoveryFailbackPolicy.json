@@ -41,7 +41,9 @@
         "drs:NotifyAgentDisconnectedForDrs",
         "drs:NotifyConsistencyAttainedForDrs",
         "drs:GetFailbackLaunchRequestedForDrs",
-        "drs:IssueAgentCertificateForDrs"
+        "drs:IssueAgentCertificateForDrs",
+        "drs:GetAgentSnapshotCreditsForDrs",
+        "drs:SendVolumeStatsForDrs"
       ],
       "Resource": "arn:aws:drs:*:*:recovery-instance/${aws:SourceIdentity}"
     }
