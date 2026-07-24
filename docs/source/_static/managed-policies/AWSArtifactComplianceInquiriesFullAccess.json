@@ -16,7 +16,8 @@
       "Action": [
         "artifact:ListComplianceInquiryQueries",
         "artifact:GetComplianceInquiryMetadata",
-        "artifact:ExportComplianceInquiry"
+        "artifact:ExportComplianceInquiry",
+        "artifact:PutComplianceInquiryFeedback"
       ],
       "Resource": "arn:aws:artifact:*:*:compliance-inquiry/*"
     }
