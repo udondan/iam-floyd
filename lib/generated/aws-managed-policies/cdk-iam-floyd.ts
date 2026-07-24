@@ -1694,6 +1694,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonNimbleStudioStudioUser);
     }
 
+    /** Provides full access to resources in Oracle Database@AWS */
+    public AmazonODBFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBFullAccess);
+    }
+
     /** Allows Oracle Database@AWS to manage AWS resources on your behalf. */
     public AmazonODBServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBServiceRolePolicy);

@@ -674,6 +674,8 @@ export class AwsManagedPolicy {
     public static AmazonNimbleStudioStudioAdmin = 'AmazonNimbleStudio-StudioAdmin';
     /** This policy grants access to Amazon Nimble Studio resources associated with the studio user and related studio resources in other services. Attach this policy to the User role associated with your studio. */
     public static AmazonNimbleStudioStudioUser = 'AmazonNimbleStudio-StudioUser';
+    /** Provides full access to resources in Oracle Database@AWS */
+    public static AmazonODBFullAccess = 'AmazonODBFullAccess';
     /** Allows Oracle Database@AWS to manage AWS resources on your behalf. */
     public static AmazonODBServiceRolePolicy = 'aws-service-role/AmazonODBServiceRolePolicy';
     /** Provides full access to Amazon Omics and other required AWS Services. This policy allows the user to view and accept RAM share invitations to access resources outside of the user's AWS account. */

@@ -264,7 +264,7 @@
       ]
     },
     {
-      "Sid": "AllowTagSVMWithMapMigrated",
+      "Sid": "AllowTagSVMWithMapKeys",
       "Effect": "Allow",
       "Action": [
         "fsx:TagResource"
@@ -273,7 +273,8 @@
       "Condition": {
         "ForAllValues:StringEquals": {
           "aws:TagKeys": [
-            "map-migrated"
+            "map-migrated",
+            "aws-apn-id"
           ]
         }
       }

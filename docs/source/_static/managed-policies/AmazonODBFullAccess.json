@@ -1,0 +1,121 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowODBActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:GetOciOnboardingStatus",
+        "odb:InitializeService",
+        "odb:CreateCloudExadataInfrastructure",
+        "odb:GetCloudExadataInfrastructure",
+        "odb:UpdateCloudExadataInfrastructure",
+        "odb:GetCloudExadataInfrastructureUnallocatedResources",
+        "odb:DeleteCloudExadataInfrastructure",
+        "odb:ListCloudExadataInfrastructures",
+        "odb:CreateCloudVmCluster",
+        "odb:GetCloudVmCluster",
+        "odb:DeleteCloudVmCluster",
+        "odb:ListCloudVmClusters",
+        "odb:CreateCloudAutonomousVmCluster",
+        "odb:GetCloudAutonomousVmCluster",
+        "odb:DeleteCloudAutonomousVmCluster",
+        "odb:ListCloudAutonomousVmClusters",
+        "odb:CreateAutonomousDatabase",
+        "odb:GetAutonomousDatabase",
+        "odb:UpdateAutonomousDatabase",
+        "odb:DeleteAutonomousDatabase",
+        "odb:ListAutonomousDatabases",
+        "odb:ListAutonomousDatabaseClones",
+        "odb:ListAutonomousDatabasePeers",
+        "odb:StartAutonomousDatabase",
+        "odb:StopAutonomousDatabase",
+        "odb:RebootAutonomousDatabase",
+        "odb:ShrinkAutonomousDatabase",
+        "odb:SwitchoverAutonomousDatabase",
+        "odb:FailoverAutonomousDatabase",
+        "odb:RestoreAutonomousDatabase",
+        "odb:CreateAutonomousDatabaseWallet",
+        "odb:GetAutonomousDatabaseWalletDetails",
+        "odb:CreateAutonomousDatabaseBackup",
+        "odb:GetAutonomousDatabaseBackup",
+        "odb:UpdateAutonomousDatabaseBackup",
+        "odb:DeleteAutonomousDatabaseBackup",
+        "odb:ListAutonomousDatabaseBackups",
+        "odb:CreateDbNode",
+        "odb:GetDbNode",
+        "odb:RebootDbNode",
+        "odb:StartDbNode",
+        "odb:StopDbNode",
+        "odb:DeleteDbNode",
+        "odb:ListDbNodes",
+        "odb:GetDbServer",
+        "odb:ListDbServers",
+        "odb:CreateOdbNetwork",
+        "odb:GetOdbNetwork",
+        "odb:UpdateOdbNetwork",
+        "odb:DeleteOdbNetwork",
+        "odb:ListOdbNetworks",
+        "odb:CreateOdbPeeringConnection",
+        "odb:GetOdbPeeringConnection",
+        "odb:UpdateOdbPeeringConnection",
+        "odb:DeleteOdbPeeringConnection",
+        "odb:ListOdbPeeringConnections",
+        "odb:ListAutonomousVirtualMachines",
+        "odb:ListDbSystemShapes",
+        "odb:ListGiVersions",
+        "odb:ListSystemVersions",
+        "odb:ListAutonomousDatabaseVersions",
+        "odb:ListAutonomousDatabaseCharacterSets",
+        "odb:PutResourcePolicy",
+        "odb:GetResourcePolicy",
+        "odb:DeleteResourcePolicy",
+        "odb:CreateOutboundIntegration",
+        "odb:TagResource",
+        "odb:UntagResource",
+        "odb:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2Actions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowOdbNetworkPeeringActions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateOdbNetworkPeering",
+        "ec2:ModifyOdbNetworkPeering",
+        "ec2:DeleteOdbNetworkPeering"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "odb.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AllowSLRActions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "odb.amazonaws.com",
+            "vpc-lattice.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}
