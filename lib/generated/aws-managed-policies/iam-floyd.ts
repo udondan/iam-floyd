@@ -2306,6 +2306,8 @@ export class AwsManagedPolicy {
     public static AWSSavingsPlansFullAccess = 'AWSSavingsPlansFullAccess';
     /** Provides read only access to Savings Plans service */
     public static AWSSavingsPlansReadOnlyAccess = 'AWSSavingsPlansReadOnlyAccess';
+    /** Allow SDMP to create and manage resources on behalf of the customer. */
+    public static AWSSDMPServiceRolePolicy = 'aws-service-role/AWSSDMPServiceRolePolicy';
     /** Provides access to retrieve and describe secrets from Secrets Manager. This policy also allows decrypting KMS keys for Secrets Manager secrets. */
     public static AWSSecretsManagerClientReadOnlyAccess = 'AWSSecretsManagerClientReadOnlyAccess';
     /** Allows AWS Security Agent to manage resources on your behalf. */

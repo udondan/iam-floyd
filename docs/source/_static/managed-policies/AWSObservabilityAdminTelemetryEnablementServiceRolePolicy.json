@@ -558,6 +558,34 @@
           "aws:ResourceTag/CloudWatchTelemetryRuleManaged": "true"
         }
       }
+    },
+    {
+      "Sid": "TelemetryKMSOperationsForAccount",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Describe*",
+        "logs:AssociateKmsKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "TelemetryKMSOperationsForOrganization",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Describe*",
+        "logs:AssociateKmsKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalOrgId": "${aws:ResourceOrgId}"
+        }
+      }
     }
   ]
 }

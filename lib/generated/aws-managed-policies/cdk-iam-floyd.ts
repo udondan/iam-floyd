@@ -5774,6 +5774,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSavingsPlansReadOnlyAccess);
     }
 
+    /** Allow SDMP to create and manage resources on behalf of the customer. */
+    public AWSSDMPServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSDMPServiceRolePolicy);
+    }
+
     /** Provides access to retrieve and describe secrets from Secrets Manager. This policy also allows decrypting KMS keys for Secrets Manager secrets. */
     public AWSSecretsManagerClientReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSecretsManagerClientReadOnlyAccess);
