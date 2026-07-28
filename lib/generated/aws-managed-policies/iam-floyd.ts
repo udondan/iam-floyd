@@ -2926,6 +2926,8 @@ export class AwsManagedPolicy {
     public static ROSAIngressOperatorPolicy = 'service-role/ROSAIngressOperatorPolicy';
     /** Allows the Red Hat OpenShift Service on AWS (ROSA) installer to manage AWS resources that support ROSA cluster installation. This includes managing instance profiles for ROSA worker nodes. */
     public static ROSAInstallerPolicy = 'service-role/ROSAInstallerPolicy';
+    /** Provides permissions for the ROSA Karpenter controller to dynamically provision and manage EC2 instances for Red Hat OpenShift Service on AWS (ROSA) hosted control plane clusters. This includes EC2 fleet and   instance lifecycle management, instance pricing queries, KMS operations for EBS volume encryption with customer-managed keys, and IAM instance profile management. */
+    public static ROSAKarpenterControllerPolicy = 'service-role/ROSAKarpenterControllerPolicy';
     /** Allows the built-in ROSA AWS Encryption Provider to manage AWS Key Management Service (KMS) keys to support etcd data encryption using a customer provided AWS KMS key. The policy allows encryption and decryption of data using KMS keys. */
     public static ROSAKMSProviderPolicy = 'service-role/ROSAKMSProviderPolicy';
     /** Allows the ROSA Kubernetes controller to manage Amazon EC2, Elastic Load Balancing (ELB), and AWS Key Management Service (KMS) resources for a ROSA cluster. */

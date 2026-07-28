@@ -7324,6 +7324,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ROSAInstallerPolicy);
     }
 
+    /** Provides permissions for the ROSA Karpenter controller to dynamically provision and manage EC2 instances for Red Hat OpenShift Service on AWS (ROSA) hosted control plane clusters. This includes EC2 fleet and   instance lifecycle management, instance pricing queries, KMS operations for EBS volume encryption with customer-managed keys, and IAM instance profile management. */
+    public ROSAKarpenterControllerPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ROSAKarpenterControllerPolicy);
+    }
+
     /** Allows the built-in ROSA AWS Encryption Provider to manage AWS Key Management Service (KMS) keys to support etcd data encryption using a customer provided AWS KMS key. The policy allows encryption and decryption of data using KMS keys. */
     public ROSAKMSProviderPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.ROSAKMSProviderPolicy);
