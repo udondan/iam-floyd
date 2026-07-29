@@ -221,7 +221,7 @@
       "Action": [
         "logs:PutResourcePolicy"
       ],
-      "Resource": "*",
+      "Resource": "arn:aws:logs:*:*:log-group:*",
       "Condition": {
         "ForAnyValue:StringEquals": {
           "aws:CalledVia": [

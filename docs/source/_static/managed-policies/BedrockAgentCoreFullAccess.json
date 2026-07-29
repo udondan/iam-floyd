@@ -401,6 +401,23 @@
         "lambda:GetFunction"
       ],
       "Resource": "arn:aws:lambda:*:*:function:*"
+    },
+    {
+      "Sid": "AgentCoreEvaluationBedrockMantleInference",
+      "Effect": "Allow",
+      "Action": "bedrock-mantle:CreateInference",
+      "Resource": "arn:aws:bedrock-mantle:*:*:project/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "AgentCoreEvaluationBedrockMantleCallWithBearerToken",
+      "Effect": "Allow",
+      "Action": "bedrock-mantle:CallWithBearerToken",
+      "Resource": "*"
     }
   ]
 }
