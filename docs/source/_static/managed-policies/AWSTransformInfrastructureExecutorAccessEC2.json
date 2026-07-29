@@ -10,7 +10,10 @@
         "cloudformation:DescribeStackResources",
         "cloudformation:DescribeStackDriftDetectionStatus"
       ],
-      "Resource": "arn:aws:cloudformation:*:*:stack/atx-*/*"
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/atx-*/*",
+        "arn:aws:cloudformation:*:*:stack/AtxSecurityAgentStack-*/*"
+      ]
     },
     {
       "Sid": "CFNValidateTemplate",
@@ -124,8 +127,11 @@
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
         },
-        "ForAnyValue:StringEquals": {
-          "kms:ResourceAliases": "alias/atx-encryption-key"
+        "ForAnyValue:StringLike": {
+          "kms:ResourceAliases": [
+            "alias/atx-encryption-key",
+            "alias/atx-encryption-key-*"
+          ]
         }
       }
     },
@@ -163,7 +169,10 @@
         "scheduler:GetSchedule",
         "scheduler:UpdateSchedule"
       ],
-      "Resource": "arn:aws:scheduler:*:*:schedule/atx-ct/*",
+      "Resource": [
+        "arn:aws:scheduler:*:*:schedule/atx-ct/*",
+        "arn:aws:scheduler:*:*:schedule/atx-ct-*/*"
+      ],
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
@@ -174,7 +183,10 @@
       "Sid": "SchedGroupRead",
       "Effect": "Allow",
       "Action": "scheduler:GetScheduleGroup",
-      "Resource": "arn:aws:scheduler:*:*:schedule-group/atx-ct",
+      "Resource": [
+        "arn:aws:scheduler:*:*:schedule-group/atx-ct",
+        "arn:aws:scheduler:*:*:schedule-group/atx-ct-*"
+      ],
       "Condition": {
         "StringEquals": {
           "aws:ResourceAccount": "${aws:PrincipalAccount}"
@@ -199,7 +211,10 @@
       "Sid": "IAMPassEC2InstanceRole",
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "arn:aws:iam::*:role/atx-transform-role*",
+      "Resource": [
+        "arn:aws:iam::*:role/atx-transform-role",
+        "arn:aws:iam::*:role/atx-transform-role-*"
+      ],
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": "ec2.amazonaws.com",
@@ -211,7 +226,10 @@
       "Sid": "IAMPassSchedulerRole",
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "arn:aws:iam::*:role/AtxSchedulerInvocationRole",
+      "Resource": [
+        "arn:aws:iam::*:role/AtxSchedulerInvocationRole",
+        "arn:aws:iam::*:role/AtxSchedulerInvocationRole-*"
+      ],
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": "scheduler.amazonaws.com",
