@@ -1583,7 +1583,8 @@
       "Sid": "AllowGetSecretForRedShift",
       "Effect": "Allow",
       "Action": [
-        "secretsmanager:GetSecretValue"
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "arn:aws:secretsmanager:*:*:secret:*",
       "Condition": {
@@ -2421,6 +2422,7 @@
       "Effect": "Allow",
       "Action": [
         "secretsmanager:GetSecretValue",
+        "secretsmanager:PutSecretValue",
         "glue:GetConnections"
       ],
       "Resource": "*",
