@@ -1,0 +1,113 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateENIWithTag",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestTag/AmazonSageMakerManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
+      "Sid": "CreateENIInSubnetAndSG",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": [
+        "arn:aws:ec2:*:*:subnet/*",
+        "arn:aws:ec2:*:*:security-group/*"
+      ]
+    },
+    {
+      "Sid": "CreateENIPermission",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterfacePermission"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:AuthorizedService": "sagemaker.amazonaws.com",
+          "ec2:Permission": "INSTANCE-ATTACH",
+          "aws:ResourceTag/AmazonSageMakerManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
+      "Sid": "DeleteENITagScoped",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkInterface"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonSageMakerManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
+      "Sid": "DeleteENIPermissionTagScoped",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNetworkInterfacePermission"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/AmazonSageMakerManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      },
+      "Resource": "arn:aws:ec2:*:*:network-interface/*"
+    },
+    {
+      "Sid": "TagOnCreateSageMakerResourcesForENI",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:network-interface/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "CreateNetworkInterface",
+          "aws:RequestTag/AmazonSageMakerManaged": "true",
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    },
+    {
+      "Sid": "DescribeNetworkResources",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeDhcpOptions",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceAccount": "${aws:PrincipalAccount}"
+        }
+      }
+    }
+  ]
+}

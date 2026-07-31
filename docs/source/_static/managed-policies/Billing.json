@@ -87,6 +87,8 @@
         "invoicing:GetInvoiceCorrection",
         "invoicing:ListInvoiceSummaries",
         "invoicing:ListInvoiceUnits",
+        "invoicing:ListProcurementPortals",
+        "invoicing:ListProcurementPortalSuppliers",
         "invoicing:CreateProcurementPortalPreference",
         "invoicing:GetProcurementPortalPreference",
         "invoicing:PutProcurementPortalPreference",

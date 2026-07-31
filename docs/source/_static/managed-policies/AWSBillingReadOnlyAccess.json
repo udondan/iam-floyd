@@ -54,6 +54,8 @@
         "invoicing:ListProcurementPortalPreferences",
         "invoicing:ListTagsForResource",
         "invoicing:ListInvoiceCorrections",
+        "invoicing:ListProcurementPortals",
+        "invoicing:ListProcurementPortalSuppliers",
         "mapcredits:ListQuarterSpend",
         "mapcredits:ListAssociatedPrograms",
         "mapcredits:ListQuarterCredits",
