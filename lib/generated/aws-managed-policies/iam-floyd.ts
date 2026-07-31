@@ -518,6 +518,8 @@ export class AwsManagedPolicy {
     public static AmazonHoneycodeWorkbookReadOnlyAccess = 'AmazonHoneycodeWorkbookReadOnlyAccess';
     /** Grants Amazon Inspector access to AWS Services needed to perform agent-less security assessments */
     public static AmazonInspector2AgentlessServiceRolePolicy = 'aws-service-role/AmazonInspector2AgentlessServiceRolePolicy';
+    /** Grants Amazon Inspector access to AWS Services needed to perform security assessments for AMI */
+    public static AmazonInspector2AmiScanServiceRolePolicy = 'aws-service-role/AmazonInspector2AmiScanServiceRolePolicy';
     /** Provides full access to Amazon Inspector and access to other related services such as organizations. */
     public static AmazonInspector2FullAccess = 'AmazonInspector2FullAccess';
     /** Provides full access to Amazon Inspector and access to other related services such as organizations with restrictive organizational access. */
@@ -906,6 +908,8 @@ export class AwsManagedPolicy {
     public static AmazonSageMakerHyperPodServiceRolePolicy = 'aws-service-role/AmazonSageMakerHyperPodServiceRolePolicy';
     /** This policy provides administrative permissions required to set up the SageMaker HyperPod training operator. It enables access to Amazon SageMaker HyperPod and EKS add-ons. The policy includes permissions to describe the SageMaker HyperPod resources in your account. */
     public static AmazonSageMakerHyperPodTrainingOperatorAccess = 'AmazonSageMakerHyperPodTrainingOperatorAccess';
+    /** Managed policy for Service Linked Role for Amazon SageMaker Inference. */
+    public static AmazonSageMakerInferenceServiceRolePolicy = 'aws-service-role/AmazonSageMakerInferenceServiceRolePolicy';
     /** Provides permissions for Amazon SageMaker job execution roles to access data in Amazon S3, invoke agents through Amazon Bedrock AgentCore, track experiments with MLflow, publish model packages, write logs to Amazon CloudWatch, invoke AWS Lambda functions, and manage Amazon VPC network interfaces. */
     public static AmazonSageMakerJobFullAccess = 'AmazonSageMakerJobFullAccess';
     /** Provides permissions for agent runtimes to invoke the Amazon SageMaker job runtime APIs used during model customization for sample generation, trajectory completion, and reward submission. */
@@ -2892,6 +2896,10 @@ export class AwsManagedPolicy {
     public static PartnerCentralIncentiveBenefitManagement = 'PartnerCentralIncentiveBenefitManagement';
     /** Provides full access to AWS services and resources, but does not allow management of Users and groups. */
     public static PowerUserAccess = 'PowerUserAccess';
+    /** Provides full access to AWS Pricing Plan Manager */
+    public static PricingPlanManagerFullAccess = 'PricingPlanManagerFullAccess';
+    /** Provides read only access to AWS Pricing Plan Manager */
+    public static PricingPlanManagerReadonlyAccess = 'PricingPlanManagerReadonlyAccess';
     /** Grants permissions to AWS Services and Resources used or managed by Amazon Q Apps. */
     public static QAppsServiceRolePolicy = 'aws-service-role/QAppsServiceRolePolicy';
     /** Grants permissions to QBusiness to call QuickSight APIs for the QuickSight plugin */
