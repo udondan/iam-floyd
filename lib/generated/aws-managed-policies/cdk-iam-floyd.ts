@@ -5674,6 +5674,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSResilienceHubAsssessmentExecutionPolicy);
     }
 
+    /** Policy for AWS Resilience Hub service role which allows access to AWS Fault Injection Service in order to start resilience testing. */
+    public AWSResilienceHubResilienceTestingPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSResilienceHubResilienceTestingPolicy);
+    }
+
     /** Allows AWS Resilience Hub to access resources in your account for resilience discovery, assessment, and management. */
     public AWSResilienceHubServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSResilienceHubServiceRolePolicy);
@@ -6127,6 +6132,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Provides read-only access to supportplans. */
     public AWSSupportPlansReadOnlyAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSupportPlansReadOnlyAccess);
+    }
+
+    /** Allows AWS Support Plans to read and update AWS resources used to manage your account's Support Plan on your behalf. */
+    public AWSSupportPlansServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSSupportPlansServiceRolePolicy);
     }
 
     /** Allows AWS Support to access AWS resources to provide billing, administrative, and support services. */

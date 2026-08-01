@@ -2266,6 +2266,8 @@ export class AwsManagedPolicy {
     public static AWSRepostSpaceSupportOperationsPolicy = 'AWSRepostSpaceSupportOperationsPolicy';
     /** Policy for AWS Resilience Hub service role which allows access to other AWS services in order to execute assessment. */
     public static AWSResilienceHubAsssessmentExecutionPolicy = 'AWSResilienceHubAsssessmentExecutionPolicy';
+    /** Policy for AWS Resilience Hub service role which allows access to AWS Fault Injection Service in order to start resilience testing. */
+    public static AWSResilienceHubResilienceTestingPolicy = 'AWSResilienceHubResilienceTestingPolicy';
     /** Allows AWS Resilience Hub to access resources in your account for resilience discovery, assessment, and management. */
     public static AWSResilienceHubServiceRolePolicy = 'aws-service-role/AWSResilienceHubServiceRolePolicy';
     /** Allows AWS Resilience Hub to access resources in your account for resilience discovery, assessment, and management. This policy grants wildcarded read-only permissions that may include sensitive information in the output. */
@@ -2448,6 +2450,8 @@ export class AwsManagedPolicy {
     public static AWSSupportPlansFullAccess = 'AWSSupportPlansFullAccess';
     /** Provides read-only access to supportplans. */
     public static AWSSupportPlansReadOnlyAccess = 'AWSSupportPlansReadOnlyAccess';
+    /** Allows AWS Support Plans to read and update AWS resources used to manage your account's Support Plan on your behalf. */
+    public static AWSSupportPlansServiceRolePolicy = 'aws-service-role/AWSSupportPlansServiceRolePolicy';
     /** Allows AWS Support to access AWS resources to provide billing, administrative, and support services. */
     public static AWSSupportServiceRolePolicy = 'aws-service-role/AWSSupportServiceRolePolicy';
     /** Grants AWS Systems Manager (SSM) permission to discover AWS account information. */
