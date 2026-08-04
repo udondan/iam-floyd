@@ -84,6 +84,10 @@ export class AwsManagedPolicy {
     public static AmazonAuroraDSQLReadOnlyAccess = 'AmazonAuroraDSQLReadOnlyAccess';
     /** Provides Bedrock Model inference permission to Bedrock agent core memory */
     public static AmazonBedrockAgentCoreMemoryBedrockModelInferenceExecutionRolePolicy = 'AmazonBedrockAgentCoreMemoryBedrockModelInferenceExecutionRolePolicy';
+    /** Provides full access to Amazon Bedrock Web Search, including retrieval of content from external websites outside the AWS network boundary. */
+    public static AmazonBedrockExternalWebSearchFullAccess = 'AmazonBedrockExternalWebSearchFullAccess';
+    /** Provides read-only access to Amazon Bedrock Web Search, including retrieval of content from external websites outside the AWS network boundary. */
+    public static AmazonBedrockExternalWebSearchReadOnly = 'AmazonBedrockExternalWebSearchReadOnly';
     /** Provides full access to Amazon Bedrock as well as limited access to related services that are required by it */
     public static AmazonBedrockFullAccess = 'AmazonBedrockFullAccess';
     /** Provides limited access to Amazon Bedrock as well as to related services that are required by it */
@@ -100,6 +104,10 @@ export class AwsManagedPolicy {
     public static AmazonBedrockReadOnly = 'AmazonBedrockReadOnly';
     /** Defines the maximum permissions of IAM roles that Amazon Bedrock Studio creates for operating Amazon Bedrock Studio resources. */
     public static AmazonBedrockStudioPermissionsBoundary = 'AmazonBedrockStudioPermissionsBoundary';
+    /** Provides full access to Amazon Bedrock Web Search. Data remains within the AWS network boundary. */
+    public static AmazonBedrockWebSearchFullAccess = 'AmazonBedrockWebSearchFullAccess';
+    /** Provides read-only access to Amazon Bedrock Web Search. Data remains within the AWS network boundary. */
+    public static AmazonBedrockWebSearchReadOnly = 'AmazonBedrockWebSearchReadOnly';
     /** Provides full access to Amazon Braket via the AWS Management Console and SDK. Also provides access to related services (e.g., S3, logs). */
     public static AmazonBraketFullAccess = 'AmazonBraketFullAccess';
     /** Grants access to AWS Services and resources necessary for executing an Amazon Braket Job including S3, Cloudwatch, IAM and Braket */

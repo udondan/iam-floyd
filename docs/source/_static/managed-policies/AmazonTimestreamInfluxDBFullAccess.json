@@ -23,7 +23,12 @@
         "timestream-influxdb:ListDbClusters",
         "timestream-influxdb:ListDbInstancesForCluster",
         "timestream-influxdb:RebootDbInstance",
-        "timestream-influxdb:RebootDbCluster"
+        "timestream-influxdb:RebootDbCluster",
+        "timestream-influxdb:CreateDbBackup",
+        "timestream-influxdb:GetDbBackup",
+        "timestream-influxdb:ListDbBackups",
+        "timestream-influxdb:DeleteDbBackup",
+        "timestream-influxdb:RestoreFromDbBackup"
       ],
       "Resource": "arn:aws:timestream-influxdb:*:*:*"
     },

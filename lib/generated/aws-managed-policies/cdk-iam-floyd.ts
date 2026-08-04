@@ -219,6 +219,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockAgentCoreMemoryBedrockModelInferenceExecutionRolePolicy);
     }
 
+    /** Provides full access to Amazon Bedrock Web Search, including retrieval of content from external websites outside the AWS network boundary. */
+    public AmazonBedrockExternalWebSearchFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockExternalWebSearchFullAccess);
+    }
+
+    /** Provides read-only access to Amazon Bedrock Web Search, including retrieval of content from external websites outside the AWS network boundary. */
+    public AmazonBedrockExternalWebSearchReadOnly(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockExternalWebSearchReadOnly);
+    }
+
     /** Provides full access to Amazon Bedrock as well as limited access to related services that are required by it */
     public AmazonBedrockFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockFullAccess);
@@ -257,6 +267,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Defines the maximum permissions of IAM roles that Amazon Bedrock Studio creates for operating Amazon Bedrock Studio resources. */
     public AmazonBedrockStudioPermissionsBoundary(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockStudioPermissionsBoundary);
+    }
+
+    /** Provides full access to Amazon Bedrock Web Search. Data remains within the AWS network boundary. */
+    public AmazonBedrockWebSearchFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockWebSearchFullAccess);
+    }
+
+    /** Provides read-only access to Amazon Bedrock Web Search. Data remains within the AWS network boundary. */
+    public AmazonBedrockWebSearchReadOnly(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonBedrockWebSearchReadOnly);
     }
 
     /** Provides full access to Amazon Braket via the AWS Management Console and SDK. Also provides access to related services (e.g., S3, logs). */
