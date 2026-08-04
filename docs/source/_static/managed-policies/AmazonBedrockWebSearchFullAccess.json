@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AmazonBedrockWebSearchFullAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-websearch:InvokeSearch",
+        "bedrock-websearch:InvokeFetch"
+      ],
+      "Resource": "arn:aws:bedrock-websearch:*:*:*"
+    }
+  ]
+}

@@ -63,6 +63,7 @@
         "datazone:GetDataProduct",
         "datazone:GetDataSource",
         "datazone:GetDataSourceRun",
+        "datazone:GetDesignation",
         "datazone:GetDomain",
         "datazone:GetDomainUnit",
         "datazone:GetEnvironment",

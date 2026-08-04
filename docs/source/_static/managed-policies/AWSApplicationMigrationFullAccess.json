@@ -278,6 +278,79 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "FSxDescribeOperations",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DescribeVolumes",
+        "fsx:DescribeSnapshots"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "FSxCreateVolume",
+      "Effect": "Allow",
+      "Action": "fsx:CreateVolume",
+      "Resource": [
+        "arn:aws:fsx:*:*:volume/*/*",
+        "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AWSApplicationMigrationServiceManaged": "false"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "FSxDeleteVolumeAndTag",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DeleteVolume",
+        "fsx:TagResource"
+      ],
+      "Resource": "arn:aws:fsx:*:*:volume/*/*",
+      "Condition": {
+        "Null": {
+          "aws:ResourceTag/AWSApplicationMigrationServiceManaged": "false"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "FSxCreateSnapshot",
+      "Effect": "Allow",
+      "Action": "fsx:CreateSnapshot",
+      "Resource": [
+        "arn:aws:fsx:*:*:snapshot/*/*",
+        "arn:aws:fsx:*:*:volume/*/*"
+      ],
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/AWSApplicationMigrationServiceManaged": "false"
+        },
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": [
+            "mgn.amazonaws.com"
+          ]
+        }
+      }
     }
   ]
 }
