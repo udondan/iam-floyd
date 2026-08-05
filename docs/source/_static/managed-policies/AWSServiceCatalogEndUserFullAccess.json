@@ -17,6 +17,7 @@
         "cloudformation:ListChangeSets",
         "cloudformation:DeleteChangeSet",
         "cloudformation:TagResource",
+        "cloudformation:UntagResource",
         "cloudformation:CreateStackSet",
         "cloudformation:CreateStackInstances",
         "cloudformation:UpdateStackSet",

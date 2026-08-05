@@ -18,6 +18,15 @@
       "Resource": "*"
     },
     {
+      "Sid": "BedrockWebSearch",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-websearch:InvokeSearch",
+        "bedrock-websearch:InvokeFetch"
+      ],
+      "Resource": "arn:aws:bedrock-websearch:*:*:*"
+    },
+    {
       "Sid": "DescribeKey",
       "Effect": "Allow",
       "Action": [

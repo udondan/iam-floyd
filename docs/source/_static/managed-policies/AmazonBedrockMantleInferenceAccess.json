@@ -12,6 +12,15 @@
       "Resource": "arn:aws:bedrock-mantle:*:*:project/*"
     },
     {
+      "Sid": "BedrockWebSearch",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-websearch:InvokeSearch",
+        "bedrock-websearch:InvokeFetch"
+      ],
+      "Resource": "arn:aws:bedrock-websearch:*:*:*"
+    },
+    {
       "Sid": "BedrockMantleCallWithBearerToken",
       "Effect": "Allow",
       "Action": [
