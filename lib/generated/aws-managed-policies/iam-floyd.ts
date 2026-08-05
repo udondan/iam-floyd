@@ -2568,6 +2568,8 @@ export class AwsManagedPolicy {
     public static AWSWAFFullAccess = 'AWSWAFFullAccess';
     /** Provides read only access to AWS WAF actions. */
     public static AWSWAFReadOnlyAccess = 'AWSWAFReadOnlyAccess';
+    /** Grants the AWS Well-Architected Agent read-only access to AWS resource configurations, security settings, and operational data to generate optimization recommendations */
+    public static AWSWellArchitectedAgentResourceScanningServiceRolePolicy = 'aws-service-role/AWSWellArchitectedAgentResourceScanningServiceRolePolicy';
     /** Allows WellArchitected to access AWS services and resources that relate to WellArchitected resources on behalf of customers. */
     public static AWSWellArchitectedDiscoveryServiceRolePolicy = 'aws-service-role/AWSWellArchitectedDiscoveryServiceRolePolicy';
     /** Allows Well-Architected to access Organizations on your behalf. */

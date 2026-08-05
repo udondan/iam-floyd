@@ -185,6 +185,24 @@
       }
     },
     {
+      "Sid": "CloudFormationTagOnCreate",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/EC2FastLaunch*/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "cloudformation:CreateAction": "CreateStack"
+        },
+        "ForAnyValue:StringLike": {
+          "aws:CalledVia": "ec2fastlaunch.amazonaws.com"
+        }
+      }
+    },
+    {
       "Sid": "EC2LaunchTemplateModify",
       "Effect": "Allow",
       "Action": [

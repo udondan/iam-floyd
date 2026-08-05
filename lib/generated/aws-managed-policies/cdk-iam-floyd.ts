@@ -6429,6 +6429,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSWAFReadOnlyAccess);
     }
 
+    /** Grants the AWS Well-Architected Agent read-only access to AWS resource configurations, security settings, and operational data to generate optimization recommendations */
+    public AWSWellArchitectedAgentResourceScanningServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSWellArchitectedAgentResourceScanningServiceRolePolicy);
+    }
+
     /** Allows WellArchitected to access AWS services and resources that relate to WellArchitected resources on behalf of customers. */
     public AWSWellArchitectedDiscoveryServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSWellArchitectedDiscoveryServiceRolePolicy);

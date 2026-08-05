@@ -1,0 +1,1453 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudControlDiscoveryFrontDoor",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeType",
+        "cloudformation:GetResource",
+        "cloudformation:ListResources",
+        "cloudformation:ListTypes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AccessAnalyzer",
+      "Effect": "Allow",
+      "Action": [
+        "access-analyzer:GetAnalyzer",
+        "access-analyzer:ListAnalyzers",
+        "access-analyzer:ListArchiveRules"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Acm",
+      "Effect": "Allow",
+      "Action": [
+        "acm:DescribeCertificate"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AcmPca",
+      "Effect": "Allow",
+      "Action": [
+        "acm-pca:DescribeCertificateAuthority",
+        "acm-pca:GetCertificateAuthorityCsr",
+        "acm-pca:ListCertificateAuthorities",
+        "acm-pca:ListTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AcoAutomation",
+      "Effect": "Allow",
+      "Action": [
+        "aco-automation:GetAutomationRule",
+        "aco-automation:ListAutomationRules"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Aidevops",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:DescribePrivateConnection",
+        "aidevops:GetAgentSpace",
+        "aidevops:GetAssociation",
+        "aidevops:GetOperatorApp",
+        "aidevops:GetService",
+        "aidevops:ListAgentSpaces",
+        "aidevops:ListAssociations",
+        "aidevops:ListPrivateConnections",
+        "aidevops:ListServices",
+        "aidevops:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Aiops",
+      "Effect": "Allow",
+      "Action": [
+        "aiops:GetInvestigationGroup",
+        "aiops:GetInvestigationGroupPolicy",
+        "aiops:ListInvestigationGroups",
+        "aiops:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Airflow",
+      "Effect": "Allow",
+      "Action": [
+        "airflow:GetEnvironment",
+        "airflow:ListEnvironments"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AirflowServerless",
+      "Effect": "Allow",
+      "Action": [
+        "airflow-serverless:GetWorkflow",
+        "airflow-serverless:ListTagsForResource",
+        "airflow-serverless:ListWorkflows"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Amplify",
+      "Effect": "Allow",
+      "Action": [
+        "amplify:GetApp",
+        "amplify:GetBranch",
+        "amplify:GetDomainAssociation",
+        "amplify:ListApps",
+        "amplify:ListBranches",
+        "amplify:ListDomainAssociations",
+        "amplify:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Amplifyuibuilder",
+      "Effect": "Allow",
+      "Action": [
+        "amplifyuibuilder:GetComponent",
+        "amplifyuibuilder:GetForm",
+        "amplifyuibuilder:GetTheme",
+        "amplifyuibuilder:ListComponents",
+        "amplifyuibuilder:ListForms",
+        "amplifyuibuilder:ListThemes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Aoss",
+      "Effect": "Allow",
+      "Action": [
+        "aoss:BatchGetCollection",
+        "aoss:BatchGetCollectionGroup",
+        "aoss:BatchGetLifecyclePolicy",
+        "aoss:BatchGetVpcEndpoint",
+        "aoss:GetAccessPolicy",
+        "aoss:GetSecurityConfig",
+        "aoss:GetSecurityPolicy",
+        "aoss:ListAccessPolicies",
+        "aoss:ListCollectionGroups",
+        "aoss:ListCollections",
+        "aoss:ListLifecyclePolicies",
+        "aoss:ListSecurityConfigs",
+        "aoss:ListSecurityPolicies",
+        "aoss:ListTagsForResource",
+        "aoss:ListVpcEndpoints"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Apigateway",
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:GetRoutingRule",
+        "apigateway:ListRoutingRules"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AppIntegrations",
+      "Effect": "Allow",
+      "Action": [
+        "app-integrations:GetApplication",
+        "app-integrations:GetDataIntegration",
+        "app-integrations:GetEventIntegration",
+        "app-integrations:ListApplications",
+        "app-integrations:ListDataIntegrations",
+        "app-integrations:ListEventIntegrations",
+        "app-integrations:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Appconfig",
+      "Effect": "Allow",
+      "Action": [
+        "appconfig:GetApplication",
+        "appconfig:GetConfigurationProfile",
+        "appconfig:GetDeployment",
+        "appconfig:GetDeploymentStrategy",
+        "appconfig:GetEnvironment",
+        "appconfig:GetExtension",
+        "appconfig:GetExtensionAssociation",
+        "appconfig:GetHostedConfigurationVersion",
+        "appconfig:ListApplications",
+        "appconfig:ListConfigurationProfiles",
+        "appconfig:ListDeployments",
+        "appconfig:ListDeploymentStrategies",
+        "appconfig:ListEnvironments",
+        "appconfig:ListExtensionAssociations",
+        "appconfig:ListExtensions",
+        "appconfig:ListHostedConfigurationVersions",
+        "appconfig:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Appflow",
+      "Effect": "Allow",
+      "Action": [
+        "appflow:DescribeConnector",
+        "appflow:DescribeConnectorProfiles",
+        "appflow:DescribeFlow",
+        "appflow:ListConnectors",
+        "appflow:ListFlows",
+        "appflow:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ApplicationAutoscaling",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:DescribeScalableTargets",
+        "application-autoscaling:DescribeScalingActivities",
+        "application-autoscaling:DescribeScalingPolicies",
+        "application-autoscaling:DescribeScheduledActions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ApplicationSignals",
+      "Effect": "Allow",
+      "Action": [
+        "application-signals:GetServiceLevelObjective",
+        "application-signals:ListGroupingAttributeDefinitions",
+        "application-signals:ListServiceLevelObjectiveExclusionWindows",
+        "application-signals:ListServiceLevelObjectives",
+        "application-signals:ListServices",
+        "application-signals:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Applicationinsights",
+      "Effect": "Allow",
+      "Action": [
+        "applicationinsights:DescribeApplication",
+        "applicationinsights:DescribeComponent",
+        "applicationinsights:DescribeLogPattern",
+        "applicationinsights:ListApplications",
+        "applicationinsights:ListComponents",
+        "applicationinsights:ListLogPatterns",
+        "applicationinsights:ListLogPatternSets",
+        "applicationinsights:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Apprunner",
+      "Effect": "Allow",
+      "Action": [
+        "apprunner:DescribeAutoScalingConfiguration",
+        "apprunner:DescribeObservabilityConfiguration",
+        "apprunner:DescribeService",
+        "apprunner:DescribeVpcConnector",
+        "apprunner:DescribeVpcIngressConnection",
+        "apprunner:ListAutoScalingConfigurations",
+        "apprunner:ListObservabilityConfigurations",
+        "apprunner:ListServices",
+        "apprunner:ListVpcConnectors",
+        "apprunner:ListVpcIngressConnections"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Appstream",
+      "Effect": "Allow",
+      "Action": [
+        "appstream:DescribeAppBlockBuilders",
+        "appstream:DescribeDirectoryConfigs",
+        "appstream:DescribeImageBuilders",
+        "appstream:DescribeStacks",
+        "appstream:DescribeUsers",
+        "appstream:DescribeUserStackAssociations",
+        "appstream:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Appsync",
+      "Effect": "Allow",
+      "Action": [
+        "appsync:GetApi",
+        "appsync:GetChannelNamespace",
+        "appsync:GetDataSource",
+        "appsync:GetDomainName",
+        "appsync:GetGraphqlApi",
+        "appsync:GetSourceApiAssociation",
+        "appsync:ListApis",
+        "appsync:ListChannelNamespaces",
+        "appsync:ListDataSources",
+        "appsync:ListDomainNames",
+        "appsync:ListFunctions",
+        "appsync:ListGraphqlApis",
+        "appsync:ListResolvers",
+        "appsync:ListSourceApiAssociations",
+        "appsync:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Apptest",
+      "Effect": "Allow",
+      "Action": [
+        "apptest:GetTestCase",
+        "apptest:ListTagsForResource",
+        "apptest:ListTestCases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Aps",
+      "Effect": "Allow",
+      "Action": [
+        "aps:DescribeAlertManagerDefinition",
+        "aps:DescribeAnomalyDetector",
+        "aps:DescribeLoggingConfiguration",
+        "aps:DescribeQueryLoggingConfiguration",
+        "aps:DescribeResourcePolicy",
+        "aps:DescribeRuleGroupsNamespace",
+        "aps:DescribeScraper",
+        "aps:DescribeScraperLoggingConfiguration",
+        "aps:DescribeWorkspace",
+        "aps:DescribeWorkspaceConfiguration",
+        "aps:ListAnomalyDetectors",
+        "aps:ListRuleGroupsNamespaces",
+        "aps:ListScrapers",
+        "aps:ListTagsForResource",
+        "aps:ListWorkspaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ArcRegionSwitch",
+      "Effect": "Allow",
+      "Action": [
+        "arc-region-switch:GetPlan",
+        "arc-region-switch:ListPlans",
+        "arc-region-switch:ListRoute53HealthChecks",
+        "arc-region-switch:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ArcZonalShift",
+      "Effect": "Allow",
+      "Action": [
+        "arc-zonal-shift:GetAutoshiftObserverNotificationStatus",
+        "arc-zonal-shift:GetManagedResource",
+        "arc-zonal-shift:ListManagedResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Athena",
+      "Effect": "Allow",
+      "Action": [
+        "athena:GetCapacityAssignmentConfiguration",
+        "athena:GetCapacityReservation",
+        "athena:GetDataCatalog",
+        "athena:GetNamedQuery",
+        "athena:GetPreparedStatement",
+        "athena:GetWorkGroup",
+        "athena:ListCapacityReservations",
+        "athena:ListDataCatalogs",
+        "athena:ListNamedQueries",
+        "athena:ListPreparedStatements",
+        "athena:ListTagsForResource",
+        "athena:ListWorkGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Auditmanager",
+      "Effect": "Allow",
+      "Action": [
+        "auditmanager:GetAssessment",
+        "auditmanager:ListAssessments",
+        "auditmanager:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Autoscaling",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:DescribeAccountLimits",
+        "autoscaling:DescribeAccountSettings",
+        "autoscaling:DescribeAdjustmentTypes",
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribeAutoScalingInstances",
+        "autoscaling:DescribeAutoScalingNotificationTypes",
+        "autoscaling:DescribeInstanceRefreshes",
+        "autoscaling:DescribeLaunchConfigurations",
+        "autoscaling:DescribeLifecycleHookTypes",
+        "autoscaling:DescribeLifecycleHooks",
+        "autoscaling:DescribeLoadBalancerTargetGroups",
+        "autoscaling:DescribeLoadBalancers",
+        "autoscaling:DescribeMetricCollectionTypes",
+        "autoscaling:DescribeNotificationConfigurations",
+        "autoscaling:DescribePolicies",
+        "autoscaling:DescribeScalingActivities",
+        "autoscaling:DescribeScalingProcessTypes",
+        "autoscaling:DescribeScheduledActions",
+        "autoscaling:DescribeTags",
+        "autoscaling:DescribeTerminationPolicyTypes",
+        "autoscaling:DescribeTrafficSources",
+        "autoscaling:DescribeWarmPool"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AwsExternalAnthropic",
+      "Effect": "Allow",
+      "Action": [
+        "aws-external-anthropic:GetWorkspace",
+        "aws-external-anthropic:ListTagsForResource",
+        "aws-external-anthropic:ListWorkspaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "B2bi",
+      "Effect": "Allow",
+      "Action": [
+        "b2bi:GetCapability",
+        "b2bi:GetPartnership",
+        "b2bi:GetProfile",
+        "b2bi:GetTransformer",
+        "b2bi:ListCapabilities",
+        "b2bi:ListPartnerships",
+        "b2bi:ListProfiles",
+        "b2bi:ListTagsForResource",
+        "b2bi:ListTransformers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Backup",
+      "Effect": "Allow",
+      "Action": [
+        "backup:DescribeBackupVault",
+        "backup:DescribeFramework",
+        "backup:DescribeReportPlan",
+        "backup:GetBackupPlan",
+        "backup:GetBackupSelection",
+        "backup:GetBackupVaultAccessPolicy",
+        "backup:GetBackupVaultNotifications",
+        "backup:GetRestoreTestingPlan",
+        "backup:GetRestoreTestingSelection",
+        "backup:GetTieringConfiguration",
+        "backup:ListBackupPlans",
+        "backup:ListBackupSelections",
+        "backup:ListBackupVaults",
+        "backup:ListFrameworks",
+        "backup:ListReportPlans",
+        "backup:ListRestoreTestingPlans",
+        "backup:ListRestoreTestingSelections",
+        "backup:ListTags",
+        "backup:ListTieringConfigurations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BackupGateway",
+      "Effect": "Allow",
+      "Action": [
+        "backup-gateway:GetHypervisor",
+        "backup-gateway:ListHypervisors",
+        "backup-gateway:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Batch",
+      "Effect": "Allow",
+      "Action": [
+        "batch:DescribeComputeEnvironments",
+        "batch:DescribeConsumableResource",
+        "batch:DescribeJobDefinitions",
+        "batch:DescribeJobQueues",
+        "batch:DescribeQuotaShare",
+        "batch:DescribeSchedulingPolicies",
+        "batch:DescribeServiceEnvironments",
+        "batch:ListConsumableResources",
+        "batch:ListQuotaShares",
+        "batch:ListSchedulingPolicies"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BcmDataExports",
+      "Effect": "Allow",
+      "Action": [
+        "bcm-data-exports:GetExport",
+        "bcm-data-exports:ListExports",
+        "bcm-data-exports:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BcmPricingCalculator",
+      "Effect": "Allow",
+      "Action": [
+        "bcm-pricing-calculator:GetBillScenario",
+        "bcm-pricing-calculator:ListBillScenarios",
+        "bcm-pricing-calculator:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Bedrock",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:GetAgent",
+        "bedrock:GetAgentActionGroup",
+        "bedrock:GetAgentAlias",
+        "bedrock:GetAgentCollaborator",
+        "bedrock:GetAgentKnowledgeBase",
+        "bedrock:GetAutomatedReasoningPolicy",
+        "bedrock:GetBlueprint",
+        "bedrock:GetDataAutomationLibrary",
+        "bedrock:GetDataAutomationProject",
+        "bedrock:GetDataSource",
+        "bedrock:GetFlow",
+        "bedrock:GetFlowAlias",
+        "bedrock:GetFlowVersion",
+        "bedrock:GetGuardrail",
+        "bedrock:GetInferenceProfile",
+        "bedrock:GetKnowledgeBase",
+        "bedrock:GetPrompt",
+        "bedrock:GetPromptRouter",
+        "bedrock:ListAgentActionGroups",
+        "bedrock:ListAgentAliases",
+        "bedrock:ListAgentCollaborators",
+        "bedrock:ListAgentKnowledgeBases",
+        "bedrock:ListAgents",
+        "bedrock:ListAutomatedReasoningPolicies",
+        "bedrock:ListBlueprints",
+        "bedrock:ListDataAutomationLibraries",
+        "bedrock:ListDataAutomationProjects",
+        "bedrock:ListDataSources",
+        "bedrock:ListEnforcedGuardrailsConfiguration",
+        "bedrock:ListFlowAliases",
+        "bedrock:ListFlows",
+        "bedrock:ListFlowVersions",
+        "bedrock:ListGuardrails",
+        "bedrock:ListInferenceProfiles",
+        "bedrock:ListKnowledgeBases",
+        "bedrock:ListPromptRouters",
+        "bedrock:ListPrompts",
+        "bedrock:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BedrockMantle",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-mantle:GetProject",
+        "bedrock-mantle:ListProjects",
+        "bedrock-mantle:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Billing",
+      "Effect": "Allow",
+      "Action": [
+        "billing:GetBillingView",
+        "billing:ListBillingViews",
+        "billing:ListSourceViewsForBillingView",
+        "billing:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Billingconductor",
+      "Effect": "Allow",
+      "Action": [
+        "billingconductor:ListAccountAssociations",
+        "billingconductor:ListBillingGroups",
+        "billingconductor:ListCustomLineItems",
+        "billingconductor:ListCustomLineItemVersions",
+        "billingconductor:ListPricingPlans",
+        "billingconductor:ListPricingRules",
+        "billingconductor:ListPricingRulesAssociatedToPricingPlan",
+        "billingconductor:ListResourcesAssociatedToCustomLineItem",
+        "billingconductor:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Braket",
+      "Effect": "Allow",
+      "Action": [
+        "braket:ListTagsForResource",
+        "braket:SearchSpendingLimits"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Budgets",
+      "Effect": "Allow",
+      "Action": [
+        "budgets:DescribeBudgetAction",
+        "budgets:DescribeBudgetActionsForAccount",
+        "budgets:DescribeBudgetActionsForBudget",
+        "budgets:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Cases",
+      "Effect": "Allow",
+      "Action": [
+        "cases:BatchGetCaseRule",
+        "cases:BatchGetField",
+        "cases:GetDomain",
+        "cases:GetLayout",
+        "cases:GetTemplate",
+        "cases:ListCaseRules",
+        "cases:ListDomains",
+        "cases:ListFields",
+        "cases:ListLayouts",
+        "cases:ListTemplates"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ce",
+      "Effect": "Allow",
+      "Action": [
+        "ce:DescribeCostCategoryDefinition",
+        "ce:GetAnomalyMonitors",
+        "ce:GetAnomalySubscriptions",
+        "ce:GetCostAndUsage",
+        "ce:GetCostAndUsageWithResources",
+        "ce:ListCostCategoryDefinitions",
+        "ce:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Chatbot",
+      "Effect": "Allow",
+      "Action": [
+        "chatbot:DescribeSlackChannelConfigurations",
+        "chatbot:GetCustomAction",
+        "chatbot:GetMicrosoftTeamsChannelConfiguration",
+        "chatbot:ListAssociations",
+        "chatbot:ListCustomActions",
+        "chatbot:ListMicrosoftTeamsChannelConfigurations",
+        "chatbot:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Chime",
+      "Effect": "Allow",
+      "Action": [
+        "chime:DescribeAppInstance",
+        "chime:DescribeAppInstanceBot",
+        "chime:ListAppInstanceBots",
+        "chime:ListAppInstances",
+        "chime:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Cleanrooms",
+      "Effect": "Allow",
+      "Action": [
+        "cleanrooms:GetAnalysisTemplate",
+        "cleanrooms:GetCollaboration",
+        "cleanrooms:GetConfiguredTable",
+        "cleanrooms:GetConfiguredTableAnalysisRule",
+        "cleanrooms:GetConfiguredTableAssociation",
+        "cleanrooms:GetConfiguredTableAssociationAnalysisRule",
+        "cleanrooms:GetIdMappingTable",
+        "cleanrooms:GetIdNamespaceAssociation",
+        "cleanrooms:GetMembership",
+        "cleanrooms:GetPrivacyBudgetTemplate",
+        "cleanrooms:ListAnalysisTemplates",
+        "cleanrooms:ListCollaborations",
+        "cleanrooms:ListConfiguredTableAssociations",
+        "cleanrooms:ListConfiguredTables",
+        "cleanrooms:ListIdMappingTables",
+        "cleanrooms:ListIdNamespaceAssociations",
+        "cleanrooms:ListMembers",
+        "cleanrooms:ListMemberships",
+        "cleanrooms:ListPrivacyBudgetTemplates",
+        "cleanrooms:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CleanroomsMl",
+      "Effect": "Allow",
+      "Action": [
+        "cleanrooms-ml:GetConfiguredModelAlgorithm",
+        "cleanrooms-ml:GetConfiguredModelAlgorithmAssociation",
+        "cleanrooms-ml:GetTrainingDataset",
+        "cleanrooms-ml:ListConfiguredModelAlgorithmAssociations",
+        "cleanrooms-ml:ListConfiguredModelAlgorithms",
+        "cleanrooms-ml:ListTrainingDatasets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Cloudformation",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:BatchDescribeTypeConfigurations",
+        "cloudformation:DescribePublisher",
+        "cloudformation:DescribeStackInstance",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackSet",
+        "cloudformation:DescribeType",
+        "cloudformation:GetStackPolicy",
+        "cloudformation:GetTemplate",
+        "cloudformation:ListStackInstances",
+        "cloudformation:ListStacks",
+        "cloudformation:ListStackSets",
+        "cloudformation:ListTypes",
+        "cloudformation:ListTypeVersions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Cloudfront",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:DescribeConnectionFunction",
+        "cloudfront:DescribeFunction",
+        "cloudfront:DescribeKeyValueStore",
+        "cloudfront:GetAnycastIpList",
+        "cloudfront:GetCachePolicy",
+        "cloudfront:GetCloudFrontOriginAccessIdentity",
+        "cloudfront:GetConnectionFunction",
+        "cloudfront:GetConnectionGroup",
+        "cloudfront:GetContinuousDeploymentPolicy",
+        "cloudfront:GetDistribution",
+        "cloudfront:GetDistributionConfig",
+        "cloudfront:GetDistributionTenant",
+        "cloudfront:GetFunction",
+        "cloudfront:GetKeyGroup",
+        "cloudfront:GetOriginAccessControl",
+        "cloudfront:GetOriginRequestPolicy",
+        "cloudfront:GetPublicKey",
+        "cloudfront:GetRealtimeLogConfig",
+        "cloudfront:GetResponseHeadersPolicy",
+        "cloudfront:GetTrustStore",
+        "cloudfront:GetVpcOrigin",
+        "cloudfront:ListAnycastIpLists",
+        "cloudfront:ListCachePolicies",
+        "cloudfront:ListCloudFrontOriginAccessIdentities",
+        "cloudfront:ListConnectionFunctions",
+        "cloudfront:ListConnectionGroups",
+        "cloudfront:ListContinuousDeploymentPolicies",
+        "cloudfront:ListDistributions",
+        "cloudfront:ListDistributionTenants",
+        "cloudfront:ListFunctions",
+        "cloudfront:ListKeyGroups",
+        "cloudfront:ListKeyValueStores",
+        "cloudfront:ListOriginAccessControls",
+        "cloudfront:ListOriginRequestPolicies",
+        "cloudfront:ListPublicKeys",
+        "cloudfront:ListRealtimeLogConfigs",
+        "cloudfront:ListResponseHeadersPolicies",
+        "cloudfront:ListTagsForResource",
+        "cloudfront:ListTrustStores",
+        "cloudfront:ListVpcOrigins"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Cloudtrail",
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:GetChannel",
+        "cloudtrail:GetDashboard",
+        "cloudtrail:GetEventConfiguration",
+        "cloudtrail:GetEventDataStore",
+        "cloudtrail:GetEventSelectors",
+        "cloudtrail:GetInsightSelectors",
+        "cloudtrail:GetTrail",
+        "cloudtrail:GetTrailStatus",
+        "cloudtrail:ListChannels",
+        "cloudtrail:ListDashboards",
+        "cloudtrail:ListEventDataStores",
+        "cloudtrail:ListTags",
+        "cloudtrail:ListTrails"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Cloudwatch",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetAlarmMuteRule",
+        "cloudwatch:GetDashboard",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricStream",
+        "cloudwatch:GetMetricWidgetImage",
+        "cloudwatch:GetOTelEnrichment",
+        "cloudwatch:ListAlarmMuteRules",
+        "cloudwatch:ListDashboards",
+        "cloudwatch:ListManagedInsightRules",
+        "cloudwatch:ListMetrics",
+        "cloudwatch:ListMetricStreams",
+        "cloudwatch:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Codeartifact",
+      "Effect": "Allow",
+      "Action": [
+        "codeartifact:DescribeDomain",
+        "codeartifact:DescribePackageGroup",
+        "codeartifact:DescribeRepository",
+        "codeartifact:GetDomainPermissionsPolicy",
+        "codeartifact:GetRepositoryPermissionsPolicy",
+        "codeartifact:ListAllowedRepositoriesForGroup",
+        "codeartifact:ListDomains",
+        "codeartifact:ListPackageGroups",
+        "codeartifact:ListRepositories",
+        "codeartifact:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Codebuild",
+      "Effect": "Allow",
+      "Action": [
+        "codebuild:BatchGetFleets",
+        "codebuild:ListFleets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Codecommit",
+      "Effect": "Allow",
+      "Action": [
+        "codecommit:GetRepository",
+        "codecommit:GetRepositoryTriggers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Codeconnections",
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:GetConnection",
+        "codeconnections:ListConnections",
+        "codeconnections:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Codedeploy",
+      "Effect": "Allow",
+      "Action": [
+        "codedeploy:GetApplication",
+        "codedeploy:GetDeployment",
+        "codedeploy:GetDeploymentConfig",
+        "codedeploy:GetDeploymentGroup",
+        "codedeploy:ListApplications",
+        "codedeploy:ListDeploymentConfigs",
+        "codedeploy:ListDeploymentGroups",
+        "codedeploy:ListDeployments",
+        "codedeploy:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeguruProfiler",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-profiler:DescribeProfilingGroup",
+        "codeguru-profiler:GetNotificationConfiguration",
+        "codeguru-profiler:GetPolicy",
+        "codeguru-profiler:ListProfilingGroups",
+        "codeguru-profiler:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeguruReviewer",
+      "Effect": "Allow",
+      "Action": [
+        "codeguru-reviewer:DescribeRepositoryAssociation",
+        "codeguru-reviewer:ListRepositoryAssociations",
+        "codeguru-reviewer:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Codepipeline",
+      "Effect": "Allow",
+      "Action": [
+        "codepipeline:GetPipeline",
+        "codepipeline:GetPipelineState",
+        "codepipeline:ListActionTypes",
+        "codepipeline:ListPipelines",
+        "codepipeline:ListTagsForResource",
+        "codepipeline:ListWebhooks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodestarConnections",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-connections:GetConnection",
+        "codestar-connections:GetRepositoryLink",
+        "codestar-connections:GetSyncConfiguration",
+        "codestar-connections:ListConnections",
+        "codestar-connections:ListRepositoryLinks",
+        "codestar-connections:ListSyncConfigurations",
+        "codestar-connections:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodestarNotifications",
+      "Effect": "Allow",
+      "Action": [
+        "codestar-notifications:DescribeNotificationRule",
+        "codestar-notifications:ListNotificationRules"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CognitoIdentity",
+      "Effect": "Allow",
+      "Action": [
+        "cognito-identity:DescribeIdentityPool",
+        "cognito-identity:GetIdentityPoolRoles",
+        "cognito-identity:GetPrincipalTagAttributeMap",
+        "cognito-identity:ListIdentityPools"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CognitoIdp",
+      "Effect": "Allow",
+      "Action": [
+        "cognito-idp:DescribeIdentityProvider",
+        "cognito-idp:DescribeResourceServer",
+        "cognito-idp:DescribeTerms",
+        "cognito-idp:DescribeUserPool",
+        "cognito-idp:DescribeUserPoolClient",
+        "cognito-idp:GetGroup",
+        "cognito-idp:GetUserPoolMfaConfig",
+        "cognito-idp:ListGroups",
+        "cognito-idp:ListIdentityProviders",
+        "cognito-idp:ListResourceServers",
+        "cognito-idp:ListTerms",
+        "cognito-idp:ListUserPoolClients",
+        "cognito-idp:ListUserPools"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Comprehend",
+      "Effect": "Allow",
+      "Action": [
+        "comprehend:DescribeDocumentClassifier",
+        "comprehend:DescribeFlywheel",
+        "comprehend:DescribeResourcePolicy",
+        "comprehend:ListDocumentClassifiers",
+        "comprehend:ListFlywheels",
+        "comprehend:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Config",
+      "Effect": "Allow",
+      "Action": [
+        "config:DescribeAggregationAuthorizations",
+        "config:DescribeComplianceByConfigRule",
+        "config:DescribeConfigRules",
+        "config:DescribeConfigurationAggregators",
+        "config:DescribeConformancePacks",
+        "config:DescribeOrganizationConformancePacks",
+        "config:DescribeRemediationConfigurations",
+        "config:GetStoredQuery",
+        "config:ListStoredQueries",
+        "config:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Connect",
+      "Effect": "Allow",
+      "Action": [
+        "connect:DescribeAgentStatus",
+        "connect:DescribeContactFlow",
+        "connect:DescribeContactFlowModule",
+        "connect:DescribeContactFlowModuleAlias",
+        "connect:DescribeDataTable",
+        "connect:DescribeEvaluationForm",
+        "connect:DescribeHoursOfOperation",
+        "connect:DescribeInstance",
+        "connect:DescribeInstanceStorageConfig",
+        "connect:DescribeNotification",
+        "connect:DescribePhoneNumber",
+        "connect:DescribePredefinedAttribute",
+        "connect:DescribePrompt",
+        "connect:DescribeQueue",
+        "connect:DescribeQuickConnect",
+        "connect:DescribeRoutingProfile",
+        "connect:DescribeRule",
+        "connect:DescribeSecurityProfile",
+        "connect:DescribeTrafficDistributionGroup",
+        "connect:DescribeUserHierarchyGroup",
+        "connect:DescribeView",
+        "connect:DescribeWorkspace",
+        "connect:GetTaskTemplate",
+        "connect:ListAgentStatuses",
+        "connect:ListApprovedOrigins",
+        "connect:ListBots",
+        "connect:ListContactFlowModuleAliases",
+        "connect:ListContactFlowModules",
+        "connect:ListContactFlowModuleVersions",
+        "connect:ListContactFlows",
+        "connect:ListContactFlowVersions",
+        "connect:ListDataTableAttributes",
+        "connect:ListDataTables",
+        "connect:ListEvaluationForms",
+        "connect:ListEvaluationFormVersions",
+        "connect:ListHoursOfOperationOverrides",
+        "connect:ListHoursOfOperations",
+        "connect:ListInstanceAttributes",
+        "connect:ListInstances",
+        "connect:ListInstanceStorageConfigs",
+        "connect:ListIntegrationAssociations",
+        "connect:ListLambdaFunctions",
+        "connect:ListNotifications",
+        "connect:ListPredefinedAttributes",
+        "connect:ListPrompts",
+        "connect:ListQueueEmailAddresses",
+        "connect:ListQueueQuickConnects",
+        "connect:ListQueues",
+        "connect:ListQuickConnects",
+        "connect:ListRoutingProfileManualAssignmentQueues",
+        "connect:ListRoutingProfileQueues",
+        "connect:ListRoutingProfiles",
+        "connect:ListRules",
+        "connect:ListSecurityKeys",
+        "connect:ListSecurityProfileApplications",
+        "connect:ListSecurityProfileFlowModules",
+        "connect:ListSecurityProfilePermissions",
+        "connect:ListSecurityProfiles",
+        "connect:ListTagsForResource",
+        "connect:ListTaskTemplates",
+        "connect:ListTrafficDistributionGroups",
+        "connect:ListUserHierarchyGroups",
+        "connect:ListUserProficiencies",
+        "connect:ListUsers",
+        "connect:ListViews",
+        "connect:ListViewVersions",
+        "connect:ListWorkspaceMedia",
+        "connect:ListWorkspacePages",
+        "connect:ListWorkspaces",
+        "connect:SearchWorkspaceAssociations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ConnectCampaigns",
+      "Effect": "Allow",
+      "Action": [
+        "connect-campaigns:DescribeCampaign",
+        "connect-campaigns:ListCampaigns"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Controltower",
+      "Effect": "Allow",
+      "Action": [
+        "controltower:GetEnabledBaseline",
+        "controltower:GetEnabledControl",
+        "controltower:GetLandingZone",
+        "controltower:ListEnabledBaselines",
+        "controltower:ListEnabledControls",
+        "controltower:ListLandingZones",
+        "controltower:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Cur",
+      "Effect": "Allow",
+      "Action": [
+        "cur:DescribeReportDefinitions",
+        "cur:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Databrew",
+      "Effect": "Allow",
+      "Action": [
+        "databrew:DescribeDataset",
+        "databrew:DescribeJob",
+        "databrew:DescribeProject",
+        "databrew:DescribeRecipe",
+        "databrew:DescribeRuleset",
+        "databrew:DescribeSchedule",
+        "databrew:ListDatasets",
+        "databrew:ListJobs",
+        "databrew:ListProjects",
+        "databrew:ListRecipes",
+        "databrew:ListRulesets",
+        "databrew:ListSchedules",
+        "databrew:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Datapipeline",
+      "Effect": "Allow",
+      "Action": [
+        "datapipeline:DescribePipelines",
+        "datapipeline:GetPipelineDefinition",
+        "datapipeline:ListPipelines"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Datasync",
+      "Effect": "Allow",
+      "Action": [
+        "datasync:DescribeAgent",
+        "datasync:DescribeLocationAzureBlob",
+        "datasync:DescribeLocationEfs",
+        "datasync:DescribeLocationFsxLustre",
+        "datasync:DescribeLocationFsxOntap",
+        "datasync:DescribeLocationFsxOpenZfs",
+        "datasync:DescribeLocationFsxWindows",
+        "datasync:DescribeLocationHdfs",
+        "datasync:DescribeLocationNfs",
+        "datasync:DescribeLocationObjectStorage",
+        "datasync:DescribeLocationS3",
+        "datasync:DescribeLocationSmb",
+        "datasync:DescribeTask",
+        "datasync:ListAgents",
+        "datasync:ListLocations",
+        "datasync:ListTagsForResource",
+        "datasync:ListTasks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Datazone",
+      "Effect": "Allow",
+      "Action": [
+        "datazone:GetDataSource",
+        "datazone:GetDomain",
+        "datazone:GetDomainUnit",
+        "datazone:GetEnvironment",
+        "datazone:GetEnvironmentAction",
+        "datazone:GetEnvironmentBlueprintConfiguration",
+        "datazone:GetEnvironmentProfile",
+        "datazone:GetGroupProfile",
+        "datazone:GetProject",
+        "datazone:GetProjectProfile",
+        "datazone:GetSubscriptionTarget",
+        "datazone:GetUserProfile",
+        "datazone:ListConnections",
+        "datazone:ListDataSources",
+        "datazone:ListDomains",
+        "datazone:ListDomainUnitsForParent",
+        "datazone:ListEntityOwners",
+        "datazone:ListEnvironmentActions",
+        "datazone:ListEnvironmentBlueprintConfigurations",
+        "datazone:ListEnvironmentProfiles",
+        "datazone:ListEnvironments",
+        "datazone:ListPolicyGrants",
+        "datazone:ListProjectMemberships",
+        "datazone:ListProjectProfiles",
+        "datazone:ListProjects",
+        "datazone:ListSubscriptionTargets",
+        "datazone:SearchGroupProfiles",
+        "datazone:SearchUserProfiles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Deadline",
+      "Effect": "Allow",
+      "Action": [
+        "deadline:GetFarm",
+        "deadline:GetFleet",
+        "deadline:GetLicenseEndpoint",
+        "deadline:GetLimit",
+        "deadline:GetMonitor",
+        "deadline:GetQueue",
+        "deadline:GetQueueEnvironment",
+        "deadline:GetQueueFleetAssociation",
+        "deadline:GetQueueLimitAssociation",
+        "deadline:GetStorageProfile",
+        "deadline:ListFarms",
+        "deadline:ListFleets",
+        "deadline:ListLicenseEndpoints",
+        "deadline:ListLimits",
+        "deadline:ListMeteredProducts",
+        "deadline:ListMonitors",
+        "deadline:ListQueueEnvironments",
+        "deadline:ListQueueFleetAssociations",
+        "deadline:ListQueueLimitAssociations",
+        "deadline:ListQueues",
+        "deadline:ListStorageProfiles",
+        "deadline:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Detective",
+      "Effect": "Allow",
+      "Action": [
+        "detective:DescribeOrganizationConfiguration",
+        "detective:GetMembers",
+        "detective:ListGraphs",
+        "detective:ListMembers",
+        "detective:ListOrganizationAdminAccount",
+        "detective:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Devicefarm",
+      "Effect": "Allow",
+      "Action": [
+        "devicefarm:GetDevicePool",
+        "devicefarm:GetInstanceProfile",
+        "devicefarm:GetNetworkProfile",
+        "devicefarm:GetProject",
+        "devicefarm:GetTestGridProject",
+        "devicefarm:GetVPCEConfiguration",
+        "devicefarm:ListDevicePools",
+        "devicefarm:ListInstanceProfiles",
+        "devicefarm:ListNetworkProfiles",
+        "devicefarm:ListProjects",
+        "devicefarm:ListTagsForResource",
+        "devicefarm:ListTestGridProjects",
+        "devicefarm:ListVPCEConfigurations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DevopsGuru",
+      "Effect": "Allow",
+      "Action": [
+        "devops-guru:DescribeServiceIntegration",
+        "devops-guru:GetResourceCollection",
+        "devops-guru:ListNotificationChannels"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Directconnect",
+      "Effect": "Allow",
+      "Action": [
+        "directconnect:DescribeConnections",
+        "directconnect:DescribeDirectConnectGatewayAssociations",
+        "directconnect:DescribeDirectConnectGateways",
+        "directconnect:DescribeLags",
+        "directconnect:DescribeVirtualInterfaces"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Dms",
+      "Effect": "Allow",
+      "Action": [
+        "dms:DescribeDataMigrations",
+        "dms:DescribeReplicationConfigs",
+        "dms:ListDataProviders",
+        "dms:ListInstanceProfiles",
+        "dms:ListMigrationProjects",
+        "dms:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DocdbElastic",
+      "Effect": "Allow",
+      "Action": [
+        "docdb-elastic:GetCluster",
+        "docdb-elastic:ListClusters",
+        "docdb-elastic:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ds",
+      "Effect": "Allow",
+      "Action": [
+        "ds:DescribeDirectories",
+        "ds:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Dsql",
+      "Effect": "Allow",
+      "Action": [
+        "dsql:GetCluster",
+        "dsql:GetClusterPolicy",
+        "dsql:GetVpcEndpointServiceName",
+        "dsql:ListClusters",
+        "dsql:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Dynamodb",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:DescribeBackup",
+        "dynamodb:DescribeContinuousBackups",
+        "dynamodb:DescribeContributorInsights",
+        "dynamodb:DescribeEndpoints",
+        "dynamodb:DescribeExport",
+        "dynamodb:DescribeGlobalTable",
+        "dynamodb:DescribeGlobalTableSettings",
+        "dynamodb:DescribeImport",
+        "dynamodb:DescribeKinesisStreamingDestination",
+        "dynamodb:DescribeLimits",
+        "dynamodb:DescribeReservedCapacity",
+        "dynamodb:DescribeReservedCapacityOfferings",
+        "dynamodb:DescribeStream",
+        "dynamodb:DescribeTable",
+        "dynamodb:DescribeTableReplicaAutoScaling",
+        "dynamodb:DescribeTimeToLive",
+        "dynamodb:GetResourcePolicy",
+        "dynamodb:ListTables",
+        "dynamodb:ListTagsOfResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ecr",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:DescribePullThroughCacheRules",
+        "ecr:DescribeRegistry",
+        "ecr:DescribeRepositories",
+        "ecr:DescribeRepositoryCreationTemplates",
+        "ecr:GetLifecyclePolicy",
+        "ecr:GetRegistryPolicy",
+        "ecr:GetRegistryScanningConfiguration",
+        "ecr:GetRepositoryPolicy",
+        "ecr:GetSigningConfiguration",
+        "ecr:ListPullTimeUpdateExclusions",
+        "ecr:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EcrPublic",
+      "Effect": "Allow",
+      "Action": [
+        "ecr-public:DescribeRepositories",
+        "ecr-public:GetRepositoryCatalogData",
+        "ecr-public:GetRepositoryPolicy",
+        "ecr-public:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Ecs",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:DescribeCapacityProviders",
+        "ecs:DescribeClusters",
+        "ecs:DescribeDaemon",
+        "ecs:DescribeDaemonTaskDefinition",
+        "ecs:DescribeServices",
+        "ecs:DescribeTaskDefinition",
+        "ecs:ListClusters",
+        "ecs:ListDaemons",
+        "ecs:ListDaemonTaskDefinitions",
+        "ecs:ListServices",
+        "ecs:ListTagsForResource",
+        "ecs:ListTaskDefinitions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Eks",
+      "Effect": "Allow",
+      "Action": [
+        "eks:DescribeAccessEntry",
+        "eks:DescribeAddon",
+        "eks:DescribeCapability",
+        "eks:DescribeCluster",
+        "eks:DescribeFargateProfile",
+        "eks:DescribeIdentityProviderConfig",
+        "eks:DescribeNodegroup",
+        "eks:DescribePodIdentityAssociation",
+        "eks:ListAccessEntries",
+        "eks:ListAddons",
+        "eks:ListAssociatedAccessPolicies",
+        "eks:ListCapabilities",
+        "eks:ListClusters",
+        "eks:ListFargateProfiles",
+        "eks:ListIdentityProviderConfigs",
+        "eks:ListNodegroups",
+        "eks:ListPodIdentityAssociations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Elasticache",
+      "Effect": "Allow",
+      "Action": [
+        "elasticache:DescribeCacheClusters",
+        "elasticache:DescribeCacheParameterGroups",
+        "elasticache:DescribeCacheParameters",
+        "elasticache:DescribeCacheSubnetGroups",
+        "elasticache:DescribeGlobalReplicationGroups",
+        "elasticache:DescribeReplicationGroups",
+        "elasticache:DescribeServerlessCaches",
+        "elasticache:DescribeUserGroups",
+        "elasticache:DescribeUsers",
+        "elasticache:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Elasticbeanstalk",
+      "Effect": "Allow",
+      "Action": [
+        "elasticbeanstalk:DescribeApplications",
+        "elasticbeanstalk:DescribeApplicationVersions",
+        "elasticbeanstalk:DescribeConfigurationSettings",
+        "elasticbeanstalk:DescribeEnvironments",
+        "elasticbeanstalk:ListTagsForResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
