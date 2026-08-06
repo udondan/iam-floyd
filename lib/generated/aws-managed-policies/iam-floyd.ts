@@ -20,6 +20,8 @@ export class AwsManagedPolicy {
     public static AIDevOpsAgentFullAccess = 'AIDevOpsAgentFullAccess';
     /** Provides read only access to Amazon DevOps Agent via the AWS Management Console */
     public static AIDevOpsAgentReadOnlyAccess = 'AIDevOpsAgentReadOnlyAccess';
+    /** Provides permissions required by the AWS DevOps Agent to coordinate with AgentSpaces connected through Agent Space Constellation. */
+    public static AIDevOpsConstellationAccessPolicy = 'service-role/AIDevOpsConstellationAccessPolicy';
     /** Provides access to use the AWS DevOps operator web app for an Agent Space. */
     public static AIDevOpsOperatorAppAccessPolicy = 'AIDevOpsOperatorAppAccessPolicy';
     /** Provides permissions required by the Amazon AI Operations Assistant to generate incident report of the investigation. */
@@ -1330,6 +1332,8 @@ export class AwsManagedPolicy {
     public static AWSBedrockAgentCoreGatewayNetworkServiceRolePolicy = 'aws-service-role/AWSBedrockAgentCoreGatewayNetworkServiceRolePolicy';
     /** Allows Bedrock AgentCore Identity to managed VPC Lattice resources on your behalf */
     public static AWSBedrockAgentCoreIdentityNetworkServiceRolePolicy = 'aws-service-role/AWSBedrockAgentCoreIdentityNetworkServiceRolePolicy';
+    /** Allows Bedrock AgentCore Runtime Instances to manage compute resources on your behalf. */
+    public static AWSBedrockAgentCoreRuntimeInstancesServiceRolePolicy = 'aws-service-role/AWSBedrockAgentCoreRuntimeInstancesServiceRolePolicy';
     /** Use the AWSBillingConductorFullAccess managed policy to allow complete access to AWS Billing Conductor (ABC) console and APIs. This policy allows users to list, create and delete ABC resources. */
     public static AWSBillingConductorFullAccess = 'AWSBillingConductorFullAccess';
     /** Use the AWSBillingConductorReadOnlyAccess managed policy to allow read only access to AWS Billing Conductor (ABC) console and APIs. This policy grants permission to view and list all ABC resources. It does not include the ability to create or delete resources. */
@@ -2598,6 +2602,10 @@ export class AwsManagedPolicy {
     public static BedrockAgentCoreNetworkServiceRolePolicy = 'aws-service-role/BedrockAgentCoreNetworkServiceRolePolicy';
     /** Allows access to identity and token management resources that are required for Amazon Bedrock AgentCore Runtime authentication and authorization. */
     public static BedrockAgentCoreRuntimeIdentityServiceRolePolicy = 'aws-service-role/BedrockAgentCoreRuntimeIdentityServiceRolePolicy';
+    /** Default policy for the instance role of instances managed by Bedrock AgentCore Runtime Instances. */
+    public static BedrockAgentCoreRuntimeInstancesInstanceRolePolicy = 'BedrockAgentCoreRuntimeInstancesInstanceRolePolicy';
+    /** Provides access to create and manage compute and associated resources for Bedrock AgentCore Runtime Instances */
+    public static BedrockAgentCoreRuntimeInstancesOperatorRolePolicy = 'BedrockAgentCoreRuntimeInstancesOperatorRolePolicy';
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */
     public static Billing = 'job-function/Billing';
     /** Allows Budgets to verify access to Billing Views shared across account boundaries. */

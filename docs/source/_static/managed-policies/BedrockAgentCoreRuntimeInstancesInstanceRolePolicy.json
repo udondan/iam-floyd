@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowWritingSystemLogs",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:PutSystemLogEvents"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:capacity-provider/*"
+    }
+  ]
+}

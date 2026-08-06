@@ -59,6 +59,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentReadOnlyAccess);
     }
 
+    /** Provides permissions required by the AWS DevOps Agent to coordinate with AgentSpaces connected through Agent Space Constellation. */
+    public AIDevOpsConstellationAccessPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsConstellationAccessPolicy);
+    }
+
     /** Provides access to use the AWS DevOps operator web app for an Agent Space. */
     public AIDevOpsOperatorAppAccessPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsOperatorAppAccessPolicy);
@@ -3334,6 +3339,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBedrockAgentCoreIdentityNetworkServiceRolePolicy);
     }
 
+    /** Allows Bedrock AgentCore Runtime Instances to manage compute resources on your behalf. */
+    public AWSBedrockAgentCoreRuntimeInstancesServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBedrockAgentCoreRuntimeInstancesServiceRolePolicy);
+    }
+
     /** Use the AWSBillingConductorFullAccess managed policy to allow complete access to AWS Billing Conductor (ABC) console and APIs. This policy allows users to list, create and delete ABC resources. */
     public AWSBillingConductorFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBillingConductorFullAccess);
@@ -6502,6 +6512,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Allows access to identity and token management resources that are required for Amazon Bedrock AgentCore Runtime authentication and authorization. */
     public BedrockAgentCoreRuntimeIdentityServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BedrockAgentCoreRuntimeIdentityServiceRolePolicy);
+    }
+
+    /** Default policy for the instance role of instances managed by Bedrock AgentCore Runtime Instances. */
+    public BedrockAgentCoreRuntimeInstancesInstanceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BedrockAgentCoreRuntimeInstancesInstanceRolePolicy);
+    }
+
+    /** Provides access to create and manage compute and associated resources for Bedrock AgentCore Runtime Instances */
+    public BedrockAgentCoreRuntimeInstancesOperatorRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.BedrockAgentCoreRuntimeInstancesOperatorRolePolicy);
     }
 
     /** Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods. */

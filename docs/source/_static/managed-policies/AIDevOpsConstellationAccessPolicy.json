@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ConstellationCoordination",
+      "Effect": "Allow",
+      "Action": [
+        "aidevops:GetAgentSpace",
+        "aidevops:CreateBacklogTask",
+        "aidevops:GetBacklogTask",
+        "aidevops:ListBacklogTasks",
+        "aidevops:GetAsset",
+        "aidevops:GetAssetContent",
+        "aidevops:GetAssetFile",
+        "aidevops:ListAssets",
+        "aidevops:ListAssetFiles",
+        "aidevops:ListExecutions",
+        "aidevops:ListJournalRecords"
+      ],
+      "Resource": "arn:aws:aidevops:*:*:agentspace/*"
+    }
+  ]
+}
