@@ -28,6 +28,7 @@
         "autoscaling:DescribeAutoScalingInstances",
         "autoscaling:DescribeScalingActivities",
         "eks:DescribeCluster",
+        "ecs:DescribeCapacityProviders",
         "ecs:DescribeClusters",
         "ecs:DescribeContainerInstances",
         "ecs:DescribeTaskDefinition",
@@ -88,6 +89,7 @@
           "iam:PassedToService": [
             "ec2.amazonaws.com",
             "ec2.amazonaws.com.cn",
+            "ecs.amazonaws.com",
             "ecs-tasks.amazonaws.com"
           ]
         }
@@ -104,7 +106,8 @@
             "spot.amazonaws.com",
             "spotfleet.amazonaws.com",
             "autoscaling.amazonaws.com",
-            "ecs.amazonaws.com"
+            "ecs.amazonaws.com",
+            "ecs-compute.amazonaws.com"
           ]
         }
       }
@@ -167,9 +170,11 @@
       "Action": [
         "ecs:DeleteCluster",
         "ecs:DeregisterContainerInstance",
+        "ecs:PutClusterCapacityProviders",
         "ecs:RunTask",
         "ecs:StartTask",
-        "ecs:StopTask"
+        "ecs:StopTask",
+        "ecs:UpdateCluster"
       ],
       "Resource": "arn:aws:ecs:*:*:cluster/AWSBatch*"
     },
@@ -254,6 +259,27 @@
           ]
         }
       }
+    },
+    {
+      "Sid": "AWSBatchPolicyStatement18",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:CreateCapacityProvider",
+        "ecs:UpdateCapacityProvider",
+        "ecs:DeleteCapacityProvider"
+      ],
+      "Resource": "arn:aws:ecs:*:*:capacity-provider/AWSBatch*"
+    },
+    {
+      "Sid": "AWSBatchPolicyStatement19",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:TagResource",
+        "ecs:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:ecs:*:*:capacity-provider/AWSBatch*"
+      ]
     }
   ]
 }
