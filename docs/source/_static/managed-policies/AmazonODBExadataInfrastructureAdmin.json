@@ -1,0 +1,63 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowODBActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:GetOciOnboardingStatus",
+        "odb:InitializeService",
+        "odb:CreateCloudExadataInfrastructure",
+        "odb:GetCloudExadataInfrastructure",
+        "odb:UpdateCloudExadataInfrastructure",
+        "odb:GetCloudExadataInfrastructureUnallocatedResources",
+        "odb:DeleteCloudExadataInfrastructure",
+        "odb:ListCloudExadataInfrastructures",
+        "odb:ListCloudVmClusters",
+        "odb:ListCloudAutonomousVmClusters",
+        "odb:GetDbServer",
+        "odb:ListDbServers",
+        "odb:ListDbSystemShapes",
+        "odb:PutResourcePolicy",
+        "odb:GetResourcePolicy",
+        "odb:DeleteResourcePolicy",
+        "odb:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2Actions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowSLRActions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "odb.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowTaggingActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:TagResource",
+        "odb:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:cloud-exadata-infrastructure/*"
+      ]
+    }
+  ]
+}

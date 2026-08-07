@@ -1,0 +1,51 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowODBReads",
+      "Effect": "Allow",
+      "Action": [
+        "odb:GetOciOnboardingStatus",
+        "odb:GetCloudExadataInfrastructure",
+        "odb:GetCloudExadataInfrastructureUnallocatedResources",
+        "odb:ListCloudExadataInfrastructures",
+        "odb:GetCloudVmCluster",
+        "odb:ListCloudVmClusters",
+        "odb:GetCloudAutonomousVmCluster",
+        "odb:ListCloudAutonomousVmClusters",
+        "odb:GetAutonomousDatabase",
+        "odb:ListAutonomousDatabases",
+        "odb:ListAutonomousDatabaseClones",
+        "odb:ListAutonomousDatabasePeers",
+        "odb:GetAutonomousDatabaseBackup",
+        "odb:ListAutonomousDatabaseBackups",
+        "odb:GetDbNode",
+        "odb:ListDbNodes",
+        "odb:GetDbServer",
+        "odb:ListDbServers",
+        "odb:GetOdbNetwork",
+        "odb:ListOdbNetworks",
+        "odb:GetOdbPeeringConnection",
+        "odb:ListOdbPeeringConnections",
+        "odb:ListAutonomousVirtualMachines",
+        "odb:ListDbSystemShapes",
+        "odb:ListGiVersions",
+        "odb:ListSystemVersions",
+        "odb:ListAutonomousDatabaseVersions",
+        "odb:ListAutonomousDatabaseCharacterSets",
+        "odb:GetResourcePolicy",
+        "odb:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2Reads",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

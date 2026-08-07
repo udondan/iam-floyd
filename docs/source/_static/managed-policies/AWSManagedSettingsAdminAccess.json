@@ -289,7 +289,10 @@
       "Condition": {
         "StringEquals": {
           "aws:CalledViaLast": "account.amazonaws.com",
-          "organizations:ServicePrincipal": "sso.amazonaws.com"
+          "organizations:ServicePrincipal": [
+            "sso.amazonaws.com",
+            "account-access.amazonaws.com"
+          ]
         }
       }
     },

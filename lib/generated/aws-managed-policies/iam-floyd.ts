@@ -12,6 +12,10 @@ export class AwsManagedPolicy {
     public static AdministratorAccessAmplify = 'AdministratorAccess-Amplify';
     /** Grants account administrative permissions. Explicitly allows developers and administrators to gain direct access to resources they need to manage AWS Elastic Beanstalk applications */
     public static AdministratorAccessAWSElasticBeanstalk = 'AdministratorAccess-AWSElasticBeanstalk';
+    /** Provides full access to AWS Agent Registry */
+    public static AgentRegistryFullAccess = 'AgentRegistryFullAccess';
+    /** Policy for ReadOnly access to AWS Agent Registry */
+    public static AgentRegistryReadOnlyAccess = 'AgentRegistryReadOnlyAccess';
     /** Provides permissions required by the AWS DevOps Agent to conduct investigations and perform analysis on customer AWS resources. */
     public static AIDevOpsAgentAccessPolicy = 'AIDevOpsAgentAccessPolicy';
     /** Provides elevated permissions required by the AWS DevOps Agent to perform operator-approved mutations or elevated actions on customer AWS resources during operational events. */
@@ -686,8 +690,16 @@ export class AwsManagedPolicy {
     public static AmazonNimbleStudioStudioAdmin = 'AmazonNimbleStudio-StudioAdmin';
     /** This policy grants access to Amazon Nimble Studio resources associated with the studio user and related studio resources in other services. Attach this policy to the User role associated with your studio. */
     public static AmazonNimbleStudioStudioUser = 'AmazonNimbleStudio-StudioUser';
+    /** Provides administrative access to manage Autonomous VM cluster resources in Oracle Database@AWS */
+    public static AmazonODBAutonomousVmClusterAdmin = 'job-function/AmazonODBAutonomousVmClusterAdmin';
+    /** Provides administrative access to manage Exadata Infrastructure resources in Oracle Database@AWS */
+    public static AmazonODBExadataInfrastructureAdmin = 'job-function/AmazonODBExadataInfrastructureAdmin';
     /** Provides full access to resources in Oracle Database@AWS */
     public static AmazonODBFullAccess = 'AmazonODBFullAccess';
+    /** Provides administrative access to networking resources for Oracle Database@AWS */
+    public static AmazonODBNetworkAdmin = 'job-function/AmazonODBNetworkAdmin';
+    /** Provides read-only access to Oracle Database@AWS resources */
+    public static AmazonODBReadOnlyAccess = 'AmazonODBReadOnlyAccess';
     /** Allows Oracle Database@AWS to manage AWS resources on your behalf. */
     public static AmazonODBServiceRolePolicy = 'aws-service-role/AmazonODBServiceRolePolicy';
     /** Provides full access to Amazon Omics and other required AWS Services. This policy allows the user to view and accept RAM share invitations to access resources outside of the user's AWS account. */
@@ -1156,6 +1168,8 @@ export class AwsManagedPolicy {
     public static AWSAccountUsageReportAccess = 'AWSAccountUsageReportAccess';
     /** Provides access for the Discovery Agentless Connector to register with AWS Application Discovery Service. */
     public static AWSAgentlessDiscoveryService = 'AWSAgentlessDiscoveryService';
+    /** Allows AWS Agent Registry to access AWS service resources on your behalf */
+    public static AWSAgentRegistryServiceRolePolicy = 'aws-service-role/AWSAgentRegistryServiceRolePolicy';
     /** Allows AWS AppConfig to call AWS services on your behalf. */
     public static AWSAppConfigServiceRolePolicy = 'aws-service-role/AWSAppConfigServiceRolePolicy';
     /** Provides full access to the AWS AppFabric service and read only access to dependent services such as S3, Kinesis, KMS. */
@@ -1282,6 +1296,8 @@ export class AwsManagedPolicy {
     public static AWSAuditManagerServiceRolePolicy = 'aws-service-role/AWSAuditManagerServiceRolePolicy';
     /** Policy granting permissions to AWS Auto Scaling to periodically forecast capacity and generate scheduled scaling actions for Auto Scaling groups in a scaling plan */
     public static AWSAutoScalingPlansEC2AutoScalingPolicy = 'aws-service-role/AWSAutoScalingPlansEC2AutoScalingPolicy';
+    /** This policy grants users permissions to create and manage backup access points for accessing backup data in recovery points through S3 access points. */
+    public static AWSBackupAccessPointOperatorAccess = 'AWSBackupAccessPointOperatorAccess';
     /** This policy grants permissions for users to create controls and frameworks that define their expectations for AWS Backup resources and activities, and to audit AWS Backup resources and activities against their defined controls and frameworks. This policy grants permissions to AWS Config and similar services to describe user expectations perform the audits. This policy also grants permissions to deliver audit reports to S3 and similar services, and enables users to find and open their audit reports. */
     public static AWSBackupAuditAccess = 'AWSBackupAuditAccess';
     /** This policy allows the AWS Backint agent to complete backup data transfer with AWS Backup Storage plane. Attach this policy to roles assumed by EC2 Instances running SAP HANA with the Backint agent. */
@@ -2528,12 +2544,18 @@ export class AwsManagedPolicy {
     public static AWSTransformInfrastructureExecutorAccessBatch = 'AWSTransformInfrastructureExecutorAccessBatch';
     /** Grants developers execution role the permissions needed to execute AWS Transform Continuous Modernization CLI/agent to run assessments/transformations using EC2, including uploading source code, retrieving results, monitoring job status, reading logs, and managing transformation schedules. */
     public static AWSTransformInfrastructureExecutorAccessEC2 = 'AWSTransformInfrastructureExecutorAccessEC2';
+    /** Grants permissions for AWS Transform to set up AWS landing zones including account provisioning, organizational governance, and Control Tower configuration */
+    public static AWSTransformLandingZoneAgentPolicy = 'AWSTransformLandingZoneAgentPolicy';
+    /** Grants permissions for AWS Transform to deploy and configure network infrastructure including VPCs, Transit Gateways, and route tables for network migration */
+    public static AWSTransformNetworkMigrationAgentPolicy = 'AWSTransformNetworkMigrationAgentPolicy';
     /** Enables the AWS Transform service to manage customer revenue attribution for incentives. */
     public static AWSTransformRevenueAttributionPolicy = 'AWSTransformRevenueAttributionPolicy';
     /** Enables the AWS Transform service to read a specified SecretsManager Secret in connection to specified KMS key. This policy grants permissions to read the specified secret value and decrypt it is the secret is encrypted */
     public static AWSTransformSecretsManagerConnectorPolicy = 'AWSTransformSecretsManagerConnectorPolicy';
     /** Grants AWS Transform (ATX) Continuous Modernization CLI/agent the permissions needed to invoke the AWS Security Agent service for automated code security reviews and remediation, including uploading scan artifacts and retrieving findings. */
     public static AWSTransformSecurityAgentExecutorAccess = 'AWSTransformSecurityAgentExecutorAccess';
+    /** Grants permissions for AWS Transform to perform server migration operations including replication, testing, and cutover using AWS Application Migration Service */
+    public static AWSTransformServerMigrationAgentPolicy = 'AWSTransformServerMigrationAgentPolicy';
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */
     public static AWSTrustedAdvisorPriorityFullAccess = 'AWSTrustedAdvisorPriorityFullAccess';
     /** Provides read-only access to AWS Trusted Advisor Priority. This includes permission to view the delegated administrator accounts. */

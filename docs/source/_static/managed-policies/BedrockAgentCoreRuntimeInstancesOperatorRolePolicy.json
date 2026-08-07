@@ -288,7 +288,8 @@
         "iam:PassRole"
       ],
       "Resource": [
-        "arn:aws:iam::*:role/AmazonBedrockAgentCoreCapacityProviderDefaultInstanceRole*"
+        "arn:aws:iam::*:role/AmazonBedrockAgentCoreCapacityProviderDefaultInstanceRole*",
+        "arn:aws:iam::*:role/service-role/AmazonBedrockAgentCoreCapacityProviderDefaultInstanceRole*"
       ],
       "Condition": {
         "StringLike": {
