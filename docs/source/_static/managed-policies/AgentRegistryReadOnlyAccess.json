@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AgentRegistryReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "agent-registry:GetRegistry",
+        "agent-registry:ListRegistries",
+        "agent-registry:GetRegistryRecord",
+        "agent-registry:ListRegistryRecords",
+        "agent-registry:ListDiscoverableRegistryRecords",
+        "agent-registry:GetDiscoverableRegistryRecord",
+        "agent-registry:InvokeRegistryMcp",
+        "agent-registry:SearchDiscoverableRegistryRecords",
+        "agent-registry:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:agent-registry:*:*:*"
+    }
+  ]
+}

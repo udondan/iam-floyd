@@ -1,0 +1,58 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowODBActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:GetOciOnboardingStatus",
+        "odb:InitializeService",
+        "odb:GetCloudExadataInfrastructure",
+        "odb:GetCloudExadataInfrastructureUnallocatedResources",
+        "odb:ListCloudExadataInfrastructures",
+        "odb:CreateCloudAutonomousVmCluster",
+        "odb:GetCloudAutonomousVmCluster",
+        "odb:DeleteCloudAutonomousVmCluster",
+        "odb:ListCloudAutonomousVmClusters",
+        "odb:ListDbServers",
+        "odb:GetOdbNetwork",
+        "odb:ListOdbNetworks",
+        "odb:ListAutonomousVirtualMachines",
+        "odb:ListDbSystemShapes",
+        "odb:ListGiVersions",
+        "odb:ListSystemVersions",
+        "odb:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowEC2Actions",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAvailabilityZones"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowTaggingActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:TagResource",
+        "odb:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:cloud-autonomous-vm-cluster/*"
+      ]
+    },
+    {
+      "Sid": "AllowOutboundIntegrationActions",
+      "Effect": "Allow",
+      "Action": [
+        "odb:CreateOutboundIntegration"
+      ],
+      "Resource": [
+        "arn:aws:odb:*:*:cloud-autonomous-vm-cluster/*"
+      ]
+    }
+  ]
+}

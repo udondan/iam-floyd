@@ -1,0 +1,62 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateBackupAccessPointPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:CreateBackupAccessPoint"
+      ],
+      "Resource": "arn:aws:backup:*:*:recovery-point:*"
+    },
+    {
+      "Sid": "BackupAccessPointPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:DescribeBackupAccessPoint",
+        "backup:DeleteBackupAccessPoint"
+      ],
+      "Resource": "arn:aws:backup:*:*:accesspoint/*"
+    },
+    {
+      "Sid": "ListBackupAccessPointPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "backup:ListBackupAccessPoints",
+        "backup:ListBackupAccessPointsByResource",
+        "backup:ListBackupAccessPointsByRecoveryPoint"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3AccessPointPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateAccessPoint",
+        "s3:DeleteAccessPoint",
+        "s3:GetAccessPoint",
+        "s3:PutAccessPointPolicy"
+      ],
+      "Resource": "arn:aws:s3:*:*:accesspoint/*",
+      "Condition": {
+        "ForAnyValue:StringEquals": {
+          "aws:CalledVia": "backup.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "DecryptKMSEncryptedDataByAWSBackup",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "backup.*.amazonaws.com",
+          "kms:EncryptionContext:aws:backup:backup-vault": "*"
+        }
+      }
+    }
+  ]
+}

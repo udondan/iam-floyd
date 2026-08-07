@@ -39,6 +39,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AdministratorAccessAWSElasticBeanstalk);
     }
 
+    /** Provides full access to AWS Agent Registry */
+    public AgentRegistryFullAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AgentRegistryFullAccess);
+    }
+
+    /** Policy for ReadOnly access to AWS Agent Registry */
+    public AgentRegistryReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AgentRegistryReadOnlyAccess);
+    }
+
     /** Provides permissions required by the AWS DevOps Agent to conduct investigations and perform analysis on customer AWS resources. */
     public AIDevOpsAgentAccessPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AIDevOpsAgentAccessPolicy);
@@ -1724,9 +1734,29 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonNimbleStudioStudioUser);
     }
 
+    /** Provides administrative access to manage Autonomous VM cluster resources in Oracle Database@AWS */
+    public AmazonODBAutonomousVmClusterAdmin(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBAutonomousVmClusterAdmin);
+    }
+
+    /** Provides administrative access to manage Exadata Infrastructure resources in Oracle Database@AWS */
+    public AmazonODBExadataInfrastructureAdmin(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBExadataInfrastructureAdmin);
+    }
+
     /** Provides full access to resources in Oracle Database@AWS */
     public AmazonODBFullAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBFullAccess);
+    }
+
+    /** Provides administrative access to networking resources for Oracle Database@AWS */
+    public AmazonODBNetworkAdmin(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBNetworkAdmin);
+    }
+
+    /** Provides read-only access to Oracle Database@AWS resources */
+    public AmazonODBReadOnlyAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AmazonODBReadOnlyAccess);
     }
 
     /** Allows Oracle Database@AWS to manage AWS resources on your behalf. */
@@ -2899,6 +2929,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAgentlessDiscoveryService);
     }
 
+    /** Allows AWS Agent Registry to access AWS service resources on your behalf */
+    public AWSAgentRegistryServiceRolePolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAgentRegistryServiceRolePolicy);
+    }
+
     /** Allows AWS AppConfig to call AWS services on your behalf. */
     public AWSAppConfigServiceRolePolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAppConfigServiceRolePolicy);
@@ -3212,6 +3247,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Policy granting permissions to AWS Auto Scaling to periodically forecast capacity and generate scheduled scaling actions for Auto Scaling groups in a scaling plan */
     public AWSAutoScalingPlansEC2AutoScalingPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSAutoScalingPlansEC2AutoScalingPolicy);
+    }
+
+    /** This policy grants users permissions to create and manage backup access points for accessing backup data in recovery points through S3 access points. */
+    public AWSBackupAccessPointOperatorAccess(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSBackupAccessPointOperatorAccess);
     }
 
     /** This policy grants permissions for users to create controls and frameworks that define their expectations for AWS Backup resources and activities, and to audit AWS Backup resources and activities against their defined controls and frameworks. This policy grants permissions to AWS Config and similar services to describe user expectations perform the audits. This policy also grants permissions to deliver audit reports to S3 and similar services, and enables users to find and open their audit reports. */
@@ -6329,6 +6369,16 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformInfrastructureExecutorAccessEC2);
     }
 
+    /** Grants permissions for AWS Transform to set up AWS landing zones including account provisioning, organizational governance, and Control Tower configuration */
+    public AWSTransformLandingZoneAgentPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformLandingZoneAgentPolicy);
+    }
+
+    /** Grants permissions for AWS Transform to deploy and configure network infrastructure including VPCs, Transit Gateways, and route tables for network migration */
+    public AWSTransformNetworkMigrationAgentPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformNetworkMigrationAgentPolicy);
+    }
+
     /** Enables the AWS Transform service to manage customer revenue attribution for incentives. */
     public AWSTransformRevenueAttributionPolicy(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformRevenueAttributionPolicy);
@@ -6342,6 +6392,11 @@ export class AwsManagedPolicy extends AwsManagedPolicyStatic {
     /** Grants AWS Transform (ATX) Continuous Modernization CLI/agent the permissions needed to invoke the AWS Security Agent service for automated code security reviews and remediation, including uploading scan artifacts and retrieving findings. */
     public AWSTransformSecurityAgentExecutorAccess(): aws_iam.IManagedPolicy {
         return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformSecurityAgentExecutorAccess);
+    }
+
+    /** Grants permissions for AWS Transform to perform server migration operations including replication, testing, and cutover using AWS Application Migration Service */
+    public AWSTransformServerMigrationAgentPolicy(): aws_iam.IManagedPolicy {
+        return aws_iam.ManagedPolicy.fromAwsManagedPolicyName(AwsManagedPolicyStatic.AWSTransformServerMigrationAgentPolicy);
     }
 
     /** Provides full access to AWS Trusted Advisor Priority. This policy also enables the user to add Trusted Advisor as a trusted service with AWS Organizations and to specify delegated administrator accounts for Trusted Advisor Priority. */

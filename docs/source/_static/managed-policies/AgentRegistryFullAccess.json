@@ -1,0 +1,89 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AgentRegistryFullAccess",
+      "Effect": "Allow",
+      "Action": "agent-registry:*",
+      "Resource": "arn:aws:agent-registry:*:*:*"
+    },
+    {
+      "Sid": "AgentRegistryPassRoleAccess",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "agent-registry.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AgentRegistryWorkloadIdentityAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:CreateWorkloadIdentity",
+        "bedrock-agentcore:DeleteWorkloadIdentity",
+        "bedrock-agentcore:GetWorkloadAccessToken",
+        "bedrock-agentcore:GetWorkloadIdentity"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:workload-identity-directory/*"
+    },
+    {
+      "Sid": "AllowGetResourceOauth2TokenForOauthBasedSynchronization",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GetResourceOauth2Token"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:credential-provider/*"
+    },
+    {
+      "Sid": "AllowListOauth2CredentialsProvidersForConsolePicker",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:ListOauth2CredentialProviders"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:*:*:*"
+    },
+    {
+      "Sid": "IAMListAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListRoles"
+      ],
+      "Resource": "arn:aws:iam::*:role/*"
+    },
+    {
+      "Sid": "AgentRegistryKMSAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kms:Decrypt"
+      ],
+      "Resource": "arn:aws:kms:*:*:key/*",
+      "Condition": {
+        "StringLike": {
+          "kms:ViaService": "agent-registry.*.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "AgentRegistrySecretsManagerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:*:*:secret:*"
+    },
+    {
+      "Sid": "AgentRegistryServiceLinkedRoleAccess",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/agent-registry.amazonaws.com/AWSServiceRoleForAgentRegistry",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "agent-registry.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
