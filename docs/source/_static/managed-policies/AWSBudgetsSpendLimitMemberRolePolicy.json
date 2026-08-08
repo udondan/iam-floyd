@@ -11,7 +11,8 @@
         "ec2:DescribeVpnGateways",
         "ec2:DescribeAddresses",
         "ec2:DescribeSnapshots",
-        "ec2:DescribeInstanceStatus"
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeVolumes"
       ],
       "Resource": "*"
     },
@@ -137,12 +138,19 @@
       ]
     },
     {
+      "Sid": "CostOptimizationHubActions",
+      "Effect": "Allow",
+      "Action": "cost-optimization-hub:UpdateEnrollmentStatus",
+      "Resource": "*"
+    },
+    {
       "Sid": "ComputeOptimizerActions",
       "Effect": "Allow",
       "Action": [
         "compute-optimizer:GetIdleRecommendations",
         "compute-optimizer:GetRecommendationSummaries",
-        "compute-optimizer:GetEnrollmentStatus"
+        "compute-optimizer:GetEnrollmentStatus",
+        "compute-optimizer:UpdateEnrollmentStatus"
       ],
       "Resource": "*"
     },
@@ -152,7 +160,8 @@
       "Action": [
         "aco-automation:StartAutomationEvent",
         "aco-automation:ListRecommendedActions",
-        "aco-automation:GetAutomationEvent"
+        "aco-automation:GetAutomationEvent",
+        "aco-automation:UpdateEnrollmentConfiguration"
       ],
       "Resource": "*"
     },

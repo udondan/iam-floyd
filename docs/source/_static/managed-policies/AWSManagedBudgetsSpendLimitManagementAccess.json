@@ -7,8 +7,7 @@
       "Action": [
         "organizations:AttachPolicy",
         "organizations:DescribePolicy",
-        "organizations:DetachPolicy",
-        "organizations:ListPolicies"
+        "organizations:DetachPolicy"
       ],
       "Resource": "arn:aws:organizations::*:policy/*/service_control_policy/*",
       "Condition": {
@@ -16,6 +15,12 @@
           "aws:ResourceTag/ManagedBy": "SpendLimit"
         }
       }
+    },
+    {
+      "Sid": "SCPListPolicyAction",
+      "Effect": "Allow",
+      "Action": "organizations:ListPolicies",
+      "Resource": "*"
     },
     {
       "Sid": "SCPTargetActions",

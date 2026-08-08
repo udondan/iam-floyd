@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
         "autoscaling:DescribeAutoScalingGroups",
         "cloudfront:GetDistribution",
@@ -22,7 +23,9 @@
         "kinesis:DescribeStream",
         "kinesis:ListStreams",
         "lambda:GetFunction",
+        "lambda:GetFunctionConfiguration",
         "lambda:ListFunctions",
+        "lambda:ListTags",
         "rds:DescribeDBClusters",
         "rds:DescribeDBInstances",
         "resource-groups:ListGroupResources",
@@ -38,14 +41,13 @@
         "synthetics:DescribeCanariesLastRun",
         "tag:GetResources"
       ],
-      "Effect": "Allow",
       "Resource": "*"
     },
     {
+      "Effect": "Allow",
       "Action": [
         "apigateway:GET"
       ],
-      "Effect": "Allow",
       "Resource": [
         "arn:aws:apigateway:*::/restapis*"
       ]
