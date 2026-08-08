@@ -252,7 +252,10 @@
         "support:DescribeSeverityLevels",
         "support:DescribeCases",
         "support:AddCommunicationToCase",
-        "support:ResolveCase"
+        "support:ResolveCase",
+        "supportplans:GetSupportPlan",
+        "supportplans:StartSupportPlanUpdate",
+        "supportplans:GetSupportPlanUpdateStatus"
       ],
       "Resource": "*"
     },
