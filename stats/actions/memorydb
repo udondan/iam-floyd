@@ -34,11 +34,10 @@ memorydb:FailoverShard;Write
 memorydb:ListAllowedMultiRegionClusterUpdates;Read
 memorydb:ListAllowedNodeTypeUpdates;Read
 memorydb:ListTags;Read
-memorydb:PauseMultiRegionClusterReplication;Write
 memorydb:PurchaseReservedNodesOffering;Write
 memorydb:ResetParameterGroup;Write
-memorydb:TagResource;Tagging
-memorydb:UntagResource;Tagging
+memorydb:TagResource;Tagging, Write
+memorydb:UntagResource;Tagging, Write
 memorydb:UpdateAcl;Write
 memorydb:UpdateCluster;Write
 memorydb:UpdateMultiRegionCluster;Write

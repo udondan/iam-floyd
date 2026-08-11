@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html).
+ * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_secretsmanager.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Secretsmanager extends PolicyStatement {
   public servicePrefix = 'secretsmanager';
 
   /**
-   * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html).
+   * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_secretsmanager.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -34,14 +34,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CancelRotateSecret.html
    */
   public toCancelRotateSecret() {
@@ -53,19 +45,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifName()
-   * - .ifDescription()
-   * - .ifKmsKeyArn()
-   * - .ifKmsKeyId()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
-   * - .ifResourceTag()
-   * - .ifAddReplicaRegions()
-   * - .ifForceOverwriteReplicaSecret()
-   * - .ifType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html
    */
   public toCreateSecret() {
@@ -75,15 +54,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Grants permission to delete the resource policy attached to a secret
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteResourcePolicy.html
    */
@@ -96,16 +67,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifRecoveryWindowInDays()
-   * - .ifForceDeleteWithoutRecovery()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html
    */
   public toDeleteSecret() {
@@ -116,14 +77,6 @@ export class Secretsmanager extends PolicyStatement {
    * Grants permission to retrieve the metadata about a secret, but not the encrypted data
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DescribeSecret.html
    */
@@ -147,14 +100,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetResourcePolicy.html
    */
   public toGetResourcePolicy() {
@@ -166,16 +111,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifVersionId()
-   * - .ifVersionStage()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
    */
   public toGetSecretValue() {
@@ -186,14 +121,6 @@ export class Secretsmanager extends PolicyStatement {
    * Grants permission to list the available versions of a secret
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ListSecretVersionIds.html
    */
@@ -215,16 +142,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Grants permission to attach a resource policy to a secret
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifBlockPublicPolicy()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_PutResourcePolicy.html
    */
@@ -237,14 +155,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_PutSecretValue.html
    */
   public toPutSecretValue() {
@@ -255,14 +165,6 @@ export class Secretsmanager extends PolicyStatement {
    * Grants permission to remove regions from replication
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RemoveRegionsFromReplication.html
    */
@@ -275,16 +177,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifAddReplicaRegions()
-   * - .ifForceOverwriteReplicaSecret()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ReplicateSecretToRegions.html
    */
   public toReplicateSecretToRegions() {
@@ -295,14 +187,6 @@ export class Secretsmanager extends PolicyStatement {
    * Grants permission to cancel deletion of a secret
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RestoreSecret.html
    */
@@ -315,18 +199,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifRotationLambdaARN()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifModifyRotationRules()
-   * - .ifRotateImmediately()
-   * - .ifResourceType()
-   * - .ifExternalSecretRotationRoleArn()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html
    */
   public toRotateSecret() {
@@ -338,14 +210,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_StopReplicationToReplica.html
    */
   public toStopReplicationToReplica() {
@@ -355,17 +219,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Grants permission to add tags to a secret
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html
    */
@@ -376,16 +230,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Grants permission to remove tags from a secret
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifAwsTagKeys()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html
    */
@@ -398,18 +243,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifDescription()
-   * - .ifKmsKeyArn()
-   * - .ifKmsKeyId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifType()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UpdateSecret.html
    */
   public toUpdateSecret() {
@@ -421,15 +254,6 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifVersionStage()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
-   *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UpdateSecretVersionStage.html
    */
   public toUpdateSecretVersionStage() {
@@ -439,15 +263,7 @@ export class Secretsmanager extends PolicyStatement {
   /**
    * Grants permission to validate a resource policy before attaching policy
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifSecretId()
-   * - .ifResource()
-   * - .ifResourceTag()
-   * - .ifAwsResourceTag()
-   * - .ifSecretPrimaryRegion()
-   * - .ifResourceType()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_ValidateResourcePolicy.html
    */
@@ -467,15 +283,20 @@ export class Secretsmanager extends PolicyStatement {
     Write: [
       'CancelRotateSecret',
       'CreateSecret',
+      'DeleteResourcePolicy',
       'DeleteSecret',
+      'PutResourcePolicy',
       'PutSecretValue',
       'RemoveRegionsFromReplication',
       'ReplicateSecretToRegions',
       'RestoreSecret',
       'RotateSecret',
       'StopReplicationToReplica',
+      'TagResource',
+      'UntagResource',
       'UpdateSecret',
-      'UpdateSecretVersionStage'
+      'UpdateSecretVersionStage',
+      'ValidateResourcePolicy'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
@@ -519,8 +340,26 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
+   * - .toCancelRotateSecret()
    * - .toCreateSecret()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSecret()
+   * - .toDescribeSecret()
+   * - .toGetResourcePolicy()
+   * - .toGetSecretValue()
+   * - .toListSecretVersionIds()
+   * - .toPutResourcePolicy()
+   * - .toPutSecretValue()
+   * - .toRemoveRegionsFromReplication()
+   * - .toReplicateSecretToRegions()
+   * - .toRestoreSecret()
+   * - .toRotateSecret()
+   * - .toStopReplicationToReplica()
    * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateSecret()
+   * - .toUpdateSecretVersionStage()
+   * - .toValidateResourcePolicy()
    *
    * Applies to resource types:
    * - Secret
@@ -577,9 +416,26 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
+   * - .toCancelRotateSecret()
    * - .toCreateSecret()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSecret()
+   * - .toDescribeSecret()
+   * - .toGetResourcePolicy()
+   * - .toGetSecretValue()
+   * - .toListSecretVersionIds()
+   * - .toPutResourcePolicy()
+   * - .toPutSecretValue()
+   * - .toRemoveRegionsFromReplication()
+   * - .toReplicateSecretToRegions()
+   * - .toRestoreSecret()
+   * - .toRotateSecret()
+   * - .toStopReplicationToReplica()
    * - .toTagResource()
    * - .toUntagResource()
+   * - .toUpdateSecret()
+   * - .toUpdateSecretVersionStage()
+   * - .toValidateResourcePolicy()
    *
    * Applies to resource types:
    * - Secret
@@ -944,6 +800,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCancelRotateSecret()
+   * - .toCreateSecret()
    * - .toDeleteResourcePolicy()
    * - .toDeleteSecret()
    * - .toDescribeSecret()
@@ -981,6 +838,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCancelRotateSecret()
+   * - .toCreateSecret()
    * - .toDeleteResourcePolicy()
    * - .toDeleteSecret()
    * - .toDescribeSecret()

@@ -1,0 +1,1105 @@
+import { AccessLevelList } from '../../shared/access-level';
+import { PolicyStatement, Operator } from '../../shared';
+
+/**
+ * Statement provider for service [odb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html).
+ *
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ */
+export class Odb extends PolicyStatement {
+  public servicePrefix = 'odb';
+
+  /**
+   * Statement provider for service [odb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html).
+   *
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   */
+  constructor(sid?: string) {
+    super(sid);
+  }
+
+  /**
+   * Grants permission to register the Amazon Web Services Marketplace token for your Amazon Web Services account to activate your Oracle Database@Amazon Web Services subscription
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AcceptMarketplaceRegistration.html
+   */
+  public toAcceptMarketplaceRegistration() {
+    return this.to('AcceptMarketplaceRegistration');
+  }
+
+  /**
+   * Grants permission to associate an AWS Identity and Access Management (IAM) service role with a specified resource to enable AWS service integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AssociateIamRoleToResource.html
+   */
+  public toAssociateIamRoleToResource() {
+    return this.to('AssociateIamRoleToResource');
+  }
+
+  /**
+   * Grants permission to create an Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabase.html
+   */
+  public toCreateAutonomousDatabase() {
+    return this.to('CreateAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to create a backup of the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabaseBackup.html
+   */
+  public toCreateAutonomousDatabaseBackup() {
+    return this.to('CreateAutonomousDatabaseBackup');
+  }
+
+  /**
+   * Grants permission to create a wallet for the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateAutonomousDatabaseWallet.html
+   */
+  public toCreateAutonomousDatabaseWallet() {
+    return this.to('CreateAutonomousDatabaseWallet');
+  }
+
+  /**
+   * Grants permission to create an Autonomous VM cluster in the specified Exadata infrastructure
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudAutonomousVmCluster.html
+   */
+  public toCreateCloudAutonomousVmCluster() {
+    return this.to('CreateCloudAutonomousVmCluster');
+  }
+
+  /**
+   * Grants permission to create an Exadata infrastructure
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudExadataInfrastructure.html
+   */
+  public toCreateCloudExadataInfrastructure() {
+    return this.to('CreateCloudExadataInfrastructure');
+  }
+
+  /**
+   * Grants permission to create a VM cluster on the specified Exadata infrastructure
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudVmCluster.html
+   */
+  public toCreateCloudVmCluster() {
+    return this.to('CreateCloudVmCluster');
+  }
+
+  /**
+   * Grants permission to create an ODB network
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbNetwork.html
+   */
+  public toCreateOdbNetwork() {
+    return this.to('CreateOdbNetwork');
+  }
+
+  /**
+   * Grants permission to create an ODB Peering Connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbPeeringConnection.html
+   */
+  public toCreateOdbPeeringConnection() {
+    return this.to('CreateOdbPeeringConnection');
+  }
+
+  /**
+   * Grants permission to delete the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteAutonomousDatabase.html
+   */
+  public toDeleteAutonomousDatabase() {
+    return this.to('DeleteAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to delete the specified Autonomous Database backup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteAutonomousDatabaseBackup.html
+   */
+  public toDeleteAutonomousDatabaseBackup() {
+    return this.to('DeleteAutonomousDatabaseBackup');
+  }
+
+  /**
+   * Grants permission to Deletes an Autonomous VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudAutonomousVmCluster.html
+   */
+  public toDeleteCloudAutonomousVmCluster() {
+    return this.to('DeleteCloudAutonomousVmCluster');
+  }
+
+  /**
+   * Grants permission to delete a specified Exadata infrastructure. Before you use this operation, make sure to delete all of the VM clusters that are hosted on this Exadata infrastructure
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudExadataInfrastructure.html
+   */
+  public toDeleteCloudExadataInfrastructure() {
+    return this.to('DeleteCloudExadataInfrastructure');
+  }
+
+  /**
+   * Grants permission to delete a specified VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudVmCluster.html
+   */
+  public toDeleteCloudVmCluster() {
+    return this.to('DeleteCloudVmCluster');
+  }
+
+  /**
+   * Grants permission to delete the specified ODB network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbNetwork.html
+   */
+  public toDeleteOdbNetwork() {
+    return this.to('DeleteOdbNetwork');
+  }
+
+  /**
+   * Grants permission to delete the specified ODB Peering Connection. When you delete an ODB peering connection, the underlying VPC peering connection is also deleted
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbPeeringConnection.html
+   */
+  public toDeleteOdbPeeringConnection() {
+    return this.to('DeleteOdbPeeringConnection');
+  }
+
+  /**
+   * Grants permission to disassociate an AWS Identity and Access Management (IAM) service role from a specified resource to disable AWS service integration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateIamRoleFromResource.html
+   */
+  public toDisassociateIamRoleFromResource() {
+    return this.to('DisassociateIamRoleFromResource');
+  }
+
+  /**
+   * Grants permission to fail over the specified Autonomous Database to a standby peer database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_FailoverAutonomousDatabase.html
+   */
+  public toFailoverAutonomousDatabase() {
+    return this.to('FailoverAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to get information about a specific Autonomous Database
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabase.html
+   */
+  public toGetAutonomousDatabase() {
+    return this.to('GetAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to get information about a specific Autonomous Database backup
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabaseBackup.html
+   */
+  public toGetAutonomousDatabaseBackup() {
+    return this.to('GetAutonomousDatabaseBackup');
+  }
+
+  /**
+   * Grants permission to get the wallet details for the specified Autonomous Database
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetAutonomousDatabaseWalletDetails.html
+   */
+  public toGetAutonomousDatabaseWalletDetails() {
+    return this.to('GetAutonomousDatabaseWalletDetails');
+  }
+
+  /**
+   * Grants permission to get information about a specific Autonomous VM cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudAutonomousVmCluster.html
+   */
+  public toGetCloudAutonomousVmCluster() {
+    return this.to('GetCloudAutonomousVmCluster');
+  }
+
+  /**
+   * Grants permission to get information about the specified Exadata infrastructure
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructure.html
+   */
+  public toGetCloudExadataInfrastructure() {
+    return this.to('GetCloudExadataInfrastructure');
+  }
+
+  /**
+   * Grants permission to retrieve information about unallocated resources in a specified Cloud Exadata Infrastructure
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructureUnallocatedResources.html
+   */
+  public toGetCloudExadataInfrastructureUnallocatedResources() {
+    return this.to('GetCloudExadataInfrastructureUnallocatedResources');
+  }
+
+  /**
+   * Grants permission to get information about the specified VM cluster
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudVmCluster.html
+   */
+  public toGetCloudVmCluster() {
+    return this.to('GetCloudVmCluster');
+  }
+
+  /**
+   * Grants permission to get information about the specified DB node
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbNode.html
+   */
+  public toGetDbNode() {
+    return this.to('GetDbNode');
+  }
+
+  /**
+   * Grants permission to get information about the specified database server
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbServer.html
+   */
+  public toGetDbServer() {
+    return this.to('GetDbServer');
+  }
+
+  /**
+   * Grants permission to get the tenancy activation link and onboarding status for your Amazon Web Services account
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOciOnboardingStatus.html
+   */
+  public toGetOciOnboardingStatus() {
+    return this.to('GetOciOnboardingStatus');
+  }
+
+  /**
+   * Grants permission to get information about the specified ODB network
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbNetwork.html
+   */
+  public toGetOdbNetwork() {
+    return this.to('GetOdbNetwork');
+  }
+
+  /**
+   * Grants permission to get information about the specified ODB Peering connection
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbPeeringConnection.html
+   */
+  public toGetOdbPeeringConnection() {
+    return this.to('GetOdbPeeringConnection');
+  }
+
+  /**
+   * Grants permission to initialize the ODB service for the first time in an account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_InitializeService.html
+   */
+  public toInitializeService() {
+    return this.to('InitializeService');
+  }
+
+  /**
+   * Grants permission to list information about the backups of the specified Autonomous Database
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseBackups.html
+   */
+  public toListAutonomousDatabaseBackups() {
+    return this.to('ListAutonomousDatabaseBackups');
+  }
+
+  /**
+   * Grants permission to list information about the character sets that are available for Autonomous Databases
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseCharacterSets.html
+   */
+  public toListAutonomousDatabaseCharacterSets() {
+    return this.to('ListAutonomousDatabaseCharacterSets');
+  }
+
+  /**
+   * Grants permission to list all clones of the specified Autonomous Database
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseClones.html
+   */
+  public toListAutonomousDatabaseClones() {
+    return this.to('ListAutonomousDatabaseClones');
+  }
+
+  /**
+   * Grants permission to list all peer databases of the specified Autonomous Database
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabasePeers.html
+   */
+  public toListAutonomousDatabasePeers() {
+    return this.to('ListAutonomousDatabasePeers');
+  }
+
+  /**
+   * Grants permission to list information about the Oracle Database software versions that are available for Autonomous Databases
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabaseVersions.html
+   */
+  public toListAutonomousDatabaseVersions() {
+    return this.to('ListAutonomousDatabaseVersions');
+  }
+
+  /**
+   * Grants permission to list information about the Autonomous Databases owned by your Amazon Web Services account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousDatabases.html
+   */
+  public toListAutonomousDatabases() {
+    return this.to('ListAutonomousDatabases');
+  }
+
+  /**
+   * Grants permission to list all Autonomous VMs in an Autonomous VM cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousVirtualMachines.html
+   */
+  public toListAutonomousVirtualMachines() {
+    return this.to('ListAutonomousVirtualMachines');
+  }
+
+  /**
+   * Grants permission to list all Autonomous VM clusters in a specified Cloud Exadata infrastructure
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudAutonomousVmClusters.html
+   */
+  public toListCloudAutonomousVmClusters() {
+    return this.to('ListCloudAutonomousVmClusters');
+  }
+
+  /**
+   * Grants permission to list information about the Exadata infrastructures owned by your Amazon Web Services account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudExadataInfrastructures.html
+   */
+  public toListCloudExadataInfrastructures() {
+    return this.to('ListCloudExadataInfrastructures');
+  }
+
+  /**
+   * Grants permission to list information about the VM clusters owned by your Amazon Web Services account or only the ones on the specified Exadata infrastructure
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudVmClusters.html
+   */
+  public toListCloudVmClusters() {
+    return this.to('ListCloudVmClusters');
+  }
+
+  /**
+   * Grants permission to list information about the DB nodes for the specified VM cluster
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbNodes.html
+   */
+  public toListDbNodes() {
+    return this.to('ListDbNodes');
+  }
+
+  /**
+   * Grants permission to list information about the database servers that belong to the specified Exadata infrastructure
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbServers.html
+   */
+  public toListDbServers() {
+    return this.to('ListDbServers');
+  }
+
+  /**
+   * Grants permission to list information about the shapes that are available for an Exadata infrastructure
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbSystemShapes.html
+   */
+  public toListDbSystemShapes() {
+    return this.to('ListDbSystemShapes');
+  }
+
+  /**
+   * Grants permission to list information about the flex components that are available for a DB system shape
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListFlexComponents.html
+   */
+  public toListFlexComponents() {
+    return this.to('ListFlexComponents');
+  }
+
+  /**
+   * Grants permission to list information about Oracle Grid Infrastructure (GI) software versions that are available for a VM cluster for the specified shape
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListGiVersions.html
+   */
+  public toListGiVersions() {
+    return this.to('ListGiVersions');
+  }
+
+  /**
+   * Grants permission to list information about the ODB networks owned by your Amazon Web Services account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbNetworks.html
+   */
+  public toListOdbNetworks() {
+    return this.to('ListOdbNetworks');
+  }
+
+  /**
+   * Grants permission to list all ODB peering connections or those associated with a specific ODB network
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbPeeringConnections.html
+   */
+  public toListOdbPeeringConnections() {
+    return this.to('ListOdbPeeringConnections');
+  }
+
+  /**
+   * Grants permission to list information about the system versions that are available for a VM cluster for the specified giVersion and shape
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListSystemVersions.html
+   */
+  public toListSystemVersions() {
+    return this.to('ListSystemVersions');
+  }
+
+  /**
+   * Grants permission to list information about the tags applied to this resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to reboot the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_RebootAutonomousDatabase.html
+   */
+  public toRebootAutonomousDatabase() {
+    return this.to('RebootAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to reboot the specified DB node in a VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_RebootDbNode.html
+   */
+  public toRebootDbNode() {
+    return this.to('RebootDbNode');
+  }
+
+  /**
+   * Grants permission to restore the specified Autonomous Database to a point in time
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_RestoreAutonomousDatabase.html
+   */
+  public toRestoreAutonomousDatabase() {
+    return this.to('RestoreAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to shrink the storage of the specified Autonomous Database to reclaim unused space
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_ShrinkAutonomousDatabase.html
+   */
+  public toShrinkAutonomousDatabase() {
+    return this.to('ShrinkAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to start the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_StartAutonomousDatabase.html
+   */
+  public toStartAutonomousDatabase() {
+    return this.to('StartAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to start the specified DB node in a VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_StartDbNode.html
+   */
+  public toStartDbNode() {
+    return this.to('StartDbNode');
+  }
+
+  /**
+   * Grants permission to stop the specified Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_StopAutonomousDatabase.html
+   */
+  public toStopAutonomousDatabase() {
+    return this.to('StopAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to stop the specified DB node in a VM cluster
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_StopDbNode.html
+   */
+  public toStopDbNode() {
+    return this.to('StopDbNode');
+  }
+
+  /**
+   * Grants permission to switch over the specified Autonomous Database to a standby peer database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_SwitchoverAutonomousDatabase.html
+   */
+  public toSwitchoverAutonomousDatabase() {
+    return this.to('SwitchoverAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to apply tags to the specified resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from the specified resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update the properties of an Autonomous Database
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateAutonomousDatabase.html
+   */
+  public toUpdateAutonomousDatabase() {
+    return this.to('UpdateAutonomousDatabase');
+  }
+
+  /**
+   * Grants permission to update the properties of an Autonomous Database backup
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateAutonomousDatabaseBackup.html
+   */
+  public toUpdateAutonomousDatabaseBackup() {
+    return this.to('UpdateAutonomousDatabaseBackup');
+  }
+
+  /**
+   * Grants permission to update the properties of an Exadata infrastructure resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudExadataInfrastructure.html
+   */
+  public toUpdateCloudExadataInfrastructure() {
+    return this.to('UpdateCloudExadataInfrastructure');
+  }
+
+  /**
+   * Grants permission to update properties of a specified ODB network
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbNetwork.html
+   */
+  public toUpdateOdbNetwork() {
+    return this.to('UpdateOdbNetwork');
+  }
+
+  /**
+   * Grants permission to update properties of a specified ODB Peering Connection
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbPeeringConnection.html
+   */
+  public toUpdateOdbPeeringConnection() {
+    return this.to('UpdateOdbPeeringConnection');
+  }
+
+  protected accessLevelList: AccessLevelList = {
+    Write: [
+      'AcceptMarketplaceRegistration',
+      'AssociateIamRoleToResource',
+      'CreateAutonomousDatabase',
+      'CreateAutonomousDatabaseBackup',
+      'CreateAutonomousDatabaseWallet',
+      'CreateCloudAutonomousVmCluster',
+      'CreateCloudExadataInfrastructure',
+      'CreateCloudVmCluster',
+      'CreateOdbNetwork',
+      'CreateOdbPeeringConnection',
+      'DeleteAutonomousDatabase',
+      'DeleteAutonomousDatabaseBackup',
+      'DeleteCloudAutonomousVmCluster',
+      'DeleteCloudExadataInfrastructure',
+      'DeleteCloudVmCluster',
+      'DeleteOdbNetwork',
+      'DeleteOdbPeeringConnection',
+      'DisassociateIamRoleFromResource',
+      'FailoverAutonomousDatabase',
+      'InitializeService',
+      'RebootAutonomousDatabase',
+      'RebootDbNode',
+      'RestoreAutonomousDatabase',
+      'ShrinkAutonomousDatabase',
+      'StartAutonomousDatabase',
+      'StartDbNode',
+      'StopAutonomousDatabase',
+      'StopDbNode',
+      'SwitchoverAutonomousDatabase',
+      'TagResource',
+      'UntagResource',
+      'UpdateAutonomousDatabase',
+      'UpdateAutonomousDatabaseBackup',
+      'UpdateCloudExadataInfrastructure',
+      'UpdateOdbNetwork',
+      'UpdateOdbPeeringConnection'
+    ],
+    Read: [
+      'GetAutonomousDatabase',
+      'GetAutonomousDatabaseBackup',
+      'GetAutonomousDatabaseWalletDetails',
+      'GetCloudAutonomousVmCluster',
+      'GetCloudExadataInfrastructure',
+      'GetCloudExadataInfrastructureUnallocatedResources',
+      'GetCloudVmCluster',
+      'GetDbNode',
+      'GetDbServer',
+      'GetOciOnboardingStatus',
+      'GetOdbNetwork',
+      'GetOdbPeeringConnection',
+      'ListTagsForResource'
+    ],
+    List: [
+      'ListAutonomousDatabaseBackups',
+      'ListAutonomousDatabaseCharacterSets',
+      'ListAutonomousDatabaseClones',
+      'ListAutonomousDatabasePeers',
+      'ListAutonomousDatabaseVersions',
+      'ListAutonomousDatabases',
+      'ListAutonomousVirtualMachines',
+      'ListCloudAutonomousVmClusters',
+      'ListCloudExadataInfrastructures',
+      'ListCloudVmClusters',
+      'ListDbNodes',
+      'ListDbServers',
+      'ListDbSystemShapes',
+      'ListFlexComponents',
+      'ListGiVersions',
+      'ListOdbNetworks',
+      'ListOdbPeeringConnections',
+      'ListSystemVersions'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
+    ]
+  };
+
+  /**
+   * Adds a resource of type autonomous-database to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AutonomousDatabase.html
+   *
+   * @param autonomousDatabaseId - Identifier for the autonomousDatabaseId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAutonomousDatabase(autonomousDatabaseId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:autonomous-database/${ autonomousDatabaseId }`);
+  }
+
+  /**
+   * Adds a resource of type autonomous-database-backup to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_AutonomousDatabaseBackup.html
+   *
+   * @param autonomousDatabaseBackupId - Identifier for the autonomousDatabaseBackupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAutonomousDatabaseBackup(autonomousDatabaseBackupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:autonomous-database-backup/${ autonomousDatabaseBackupId }`);
+  }
+
+  /**
+   * Adds a resource of type cloud-autonomous-vm-cluster to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudAutonomousVmCluster.html
+   *
+   * @param cloudAutonomousVmClusterId - Identifier for the cloudAutonomousVmClusterId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCloudAutonomousVmCluster(cloudAutonomousVmClusterId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cloud-autonomous-vm-cluster/${ cloudAutonomousVmClusterId }`);
+  }
+
+  /**
+   * Adds a resource of type cloud-exadata-infrastructure to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudExadataInfrastructure.html
+   *
+   * @param cloudExadataInfrastructureId - Identifier for the cloudExadataInfrastructureId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCloudExadataInfrastructure(cloudExadataInfrastructureId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cloud-exadata-infrastructure/${ cloudExadataInfrastructureId }`);
+  }
+
+  /**
+   * Adds a resource of type cloud-vm-cluster to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_CloudVmCluster.html
+   *
+   * @param cloudVmClusterId - Identifier for the cloudVmClusterId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCloudVmCluster(cloudVmClusterId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cloud-vm-cluster/${ cloudVmClusterId }`);
+  }
+
+  /**
+   * Adds a resource of type db-node to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_DbNode.html
+   *
+   * @param dbNodeId - Identifier for the dbNodeId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDbNode(dbNodeId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:db-node/${ dbNodeId }`);
+  }
+
+  /**
+   * Adds a resource of type odb-network to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_OdbNetwork.html
+   *
+   * @param odbNetworkId - Identifier for the odbNetworkId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOdbNetwork(odbNetworkId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:odb-network/${ odbNetworkId }`);
+  }
+
+  /**
+   * Adds a resource of type odb-peering-connection to the statement
+   *
+   * https://docs.aws.amazon.com/odb/latest/APIReference/API_OdbPeeringConnection.html
+   *
+   * @param odbPeeringConnectionId - Identifier for the odbPeeringConnectionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOdbPeeringConnection(odbPeeringConnectionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:odb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:odb-peering-connection/${ odbPeeringConnectionId }`);
+  }
+
+  /**
+   * Filters access by a tag key and value pair that is allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAutonomousDatabase()
+   * - .toCreateAutonomousDatabaseBackup()
+   * - .toCreateCloudAutonomousVmCluster()
+   * - .toCreateCloudExadataInfrastructure()
+   * - .toCreateCloudVmCluster()
+   * - .toCreateOdbNetwork()
+   * - .toCreateOdbPeeringConnection()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateIamRoleToResource()
+   * - .toCreateAutonomousDatabase()
+   * - .toCreateAutonomousDatabaseBackup()
+   * - .toCreateAutonomousDatabaseWallet()
+   * - .toCreateCloudAutonomousVmCluster()
+   * - .toCreateCloudVmCluster()
+   * - .toCreateOdbPeeringConnection()
+   * - .toDeleteAutonomousDatabase()
+   * - .toDeleteAutonomousDatabaseBackup()
+   * - .toDeleteCloudAutonomousVmCluster()
+   * - .toDeleteCloudExadataInfrastructure()
+   * - .toDeleteCloudVmCluster()
+   * - .toDeleteOdbNetwork()
+   * - .toDeleteOdbPeeringConnection()
+   * - .toDisassociateIamRoleFromResource()
+   * - .toFailoverAutonomousDatabase()
+   * - .toGetAutonomousDatabase()
+   * - .toGetAutonomousDatabaseBackup()
+   * - .toGetAutonomousDatabaseWalletDetails()
+   * - .toGetCloudAutonomousVmCluster()
+   * - .toGetCloudExadataInfrastructure()
+   * - .toGetCloudExadataInfrastructureUnallocatedResources()
+   * - .toGetCloudVmCluster()
+   * - .toGetDbNode()
+   * - .toGetDbServer()
+   * - .toGetOdbNetwork()
+   * - .toGetOdbPeeringConnection()
+   * - .toListAutonomousDatabaseBackups()
+   * - .toListAutonomousDatabaseClones()
+   * - .toListAutonomousDatabasePeers()
+   * - .toListAutonomousVirtualMachines()
+   * - .toListCloudAutonomousVmClusters()
+   * - .toListCloudVmClusters()
+   * - .toListDbNodes()
+   * - .toListDbServers()
+   * - .toListOdbPeeringConnections()
+   * - .toListTagsForResource()
+   * - .toRebootAutonomousDatabase()
+   * - .toRebootDbNode()
+   * - .toRestoreAutonomousDatabase()
+   * - .toShrinkAutonomousDatabase()
+   * - .toStartAutonomousDatabase()
+   * - .toStartDbNode()
+   * - .toStopAutonomousDatabase()
+   * - .toStopDbNode()
+   * - .toSwitchoverAutonomousDatabase()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAutonomousDatabase()
+   * - .toUpdateAutonomousDatabaseBackup()
+   * - .toUpdateCloudExadataInfrastructure()
+   * - .toUpdateOdbNetwork()
+   * - .toUpdateOdbPeeringConnection()
+   *
+   * Applies to resource types:
+   * - autonomous-database
+   * - autonomous-database-backup
+   * - cloud-autonomous-vm-cluster
+   * - cloud-exadata-infrastructure
+   * - cloud-vm-cluster
+   * - db-node
+   * - odb-network
+   * - odb-peering-connection
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by a list of tag keys that are allowed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAutonomousDatabase()
+   * - .toCreateAutonomousDatabaseBackup()
+   * - .toCreateCloudAutonomousVmCluster()
+   * - .toCreateCloudExadataInfrastructure()
+   * - .toCreateCloudVmCluster()
+   * - .toCreateOdbNetwork()
+   * - .toCreateOdbPeeringConnection()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+}

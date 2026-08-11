@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [savingsplans](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssavingsplans.html).
+ * Statement provider for service [savingsplans](https://docs.aws.amazon.com/service-authorization/latest/reference/list_savingsplans.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Savingsplans extends PolicyStatement {
   public servicePrefix = 'savingsplans';
 
   /**
-   * Statement provider for service [savingsplans](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssavingsplans.html).
+   * Statement provider for service [savingsplans](https://docs.aws.amazon.com/service-authorization/latest/reference/list_savingsplans.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -38,9 +38,6 @@ export class Savingsplans extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DeleteQueuedSavingsPlan.html
    */
   public toDeleteQueuedSavingsPlan() {
@@ -52,9 +49,6 @@ export class Savingsplans extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlanRates.html
    */
   public toDescribeSavingsPlanRates() {
@@ -65,9 +59,6 @@ export class Savingsplans extends PolicyStatement {
    * Grants permission to describe the savings plans associated with customers account
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlans.html
    */
@@ -113,9 +104,6 @@ export class Savingsplans extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_ReturnSavingsPlan.html
    */
   public toReturnSavingsPlan() {
@@ -125,11 +113,7 @@ export class Savingsplans extends PolicyStatement {
   /**
    * Grants permission to tag a savings plan
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_TagResource.html
    */
@@ -140,10 +124,7 @@ export class Savingsplans extends PolicyStatement {
   /**
    * Grants permission to untag a savings plan
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_UntagResource.html
    */
@@ -155,7 +136,9 @@ export class Savingsplans extends PolicyStatement {
     Write: [
       'CreateSavingsPlan',
       'DeleteQueuedSavingsPlan',
-      'ReturnSavingsPlan'
+      'ReturnSavingsPlan',
+      'TagResource',
+      'UntagResource'
     ],
     Read: [
       'DescribeSavingsPlanRates',
@@ -214,7 +197,10 @@ export class Savingsplans extends PolicyStatement {
    * - .toDeleteQueuedSavingsPlan()
    * - .toDescribeSavingsPlanRates()
    * - .toDescribeSavingsPlans()
+   * - .toListTagsForResource()
    * - .toReturnSavingsPlan()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - savingsplan

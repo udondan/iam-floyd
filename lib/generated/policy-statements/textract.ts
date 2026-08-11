@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [textract](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontextract.html).
+ * Statement provider for service [textract](https://docs.aws.amazon.com/service-authorization/latest/reference/list_textract.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Textract extends PolicyStatement {
   public servicePrefix = 'textract';
 
   /**
-   * Statement provider for service [textract](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontextract.html).
+   * Statement provider for service [textract](https://docs.aws.amazon.com/service-authorization/latest/reference/list_textract.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,9 +23,6 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeDocument.html
    */
   public toAnalyzeDocument() {
@@ -37,9 +34,6 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeExpense.html
    */
   public toAnalyzeExpense() {
@@ -50,9 +44,6 @@ export class Textract extends PolicyStatement {
    * Grants permission to detect relevant information from identity documents provided as input
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeID.html
    */
@@ -79,10 +70,6 @@ export class Textract extends PolicyStatement {
    * Grants permission to create an Amazon Textract adapter version
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_CreateAdapterVersion.html
    */
@@ -116,9 +103,6 @@ export class Textract extends PolicyStatement {
    * Grants permission to detect text in document images
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_DetectDocumentText.html
    */
@@ -241,9 +225,6 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentAnalysis.html
    */
   public toStartDocumentAnalysis() {
@@ -254,9 +235,6 @@ export class Textract extends PolicyStatement {
    * Grants permission to start an asynchronous job to detect text in document images or pdfs
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentTextDetection.html
    */
@@ -269,9 +247,6 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartExpenseAnalysis.html
    */
   public toStartExpenseAnalysis() {
@@ -283,9 +258,6 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:GetObject
-   *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartLendingAnalysis.html
    */
   public toStartLendingAnalysis() {
@@ -295,11 +267,7 @@ export class Textract extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_TagResource.html
    */
@@ -310,10 +278,7 @@ export class Textract extends PolicyStatement {
   /**
    * Grants permission to remove one or more tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_UntagResource.html
    */
@@ -358,6 +323,8 @@ export class Textract extends PolicyStatement {
       'StartDocumentTextDetection',
       'StartExpenseAnalysis',
       'StartLendingAnalysis',
+      'TagResource',
+      'UntagResource',
       'UpdateAdapter'
     ],
     Tagging: [
@@ -423,6 +390,17 @@ export class Textract extends PolicyStatement {
    * Filters access by tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateAdapterVersion()
+   * - .toDeleteAdapter()
+   * - .toDeleteAdapterVersion()
+   * - .toGetAdapter()
+   * - .toGetAdapterVersion()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAdapter()
    *
    * Applies to resource types:
    * - adapter

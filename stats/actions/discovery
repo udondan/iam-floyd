@@ -2,9 +2,9 @@ discovery:AssociateConfigurationItemsToApplication;Write
 discovery:BatchDeleteAgents;Write
 discovery:BatchDeleteImportData;Write
 discovery:CreateApplication;Write
-discovery:CreateTags;Tagging
+discovery:CreateTags;Tagging, Write
 discovery:DeleteApplications;Write
-discovery:DeleteTags;Tagging
+discovery:DeleteTags;Tagging, Write
 discovery:DescribeAgents;Read
 discovery:DescribeBatchDeleteConfigurationTask;Read
 discovery:DescribeConfigurations;Read

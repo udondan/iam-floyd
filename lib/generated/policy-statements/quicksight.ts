@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [quicksight](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html).
+ * Statement provider for service [quicksight](https://docs.aws.amazon.com/service-authorization/latest/reference/list_quicksight.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,34 +10,12 @@ export class Quicksight extends PolicyStatement {
   public servicePrefix = 'quicksight';
 
   /**
-   * Statement provider for service [quicksight](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html).
+   * Statement provider for service [quicksight](https://docs.aws.amazon.com/service-authorization/latest/reference/list_quicksight.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
-  }
-
-  /**
-   * Grants permission to enable setting default access to AWS resources
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/accessing-data-sources.html
-   */
-  public toAccountConfigurations() {
-    return this.to('AccountConfigurations');
-  }
-
-  /**
-   * Grants permission to configure log delivery for QuickSuite instance
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toAllowVendedLogDeliveryForResource() {
-    return this.to('AllowVendedLogDeliveryForResource');
   }
 
   /**
@@ -55,10 +33,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to create reviewed answers for a topic
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchCreateTopicReviewedAnswer.html
    */
@@ -82,25 +56,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchDeleteTopicReviewedAnswer.html
    */
   public toBatchDeleteTopicReviewedAnswer() {
     return this.to('BatchDeleteTopicReviewedAnswer');
-  }
-
-  /**
-   * Grants permission to get user preferences
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toBatchGetPreferences() {
-    return this.to('BatchGetPreferences');
   }
 
   /**
@@ -115,24 +74,9 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update user preferences
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toBatchUpdatePreferences() {
-    return this.to('BatchUpdatePreferences');
-  }
-
-  /**
    * Grants permission to cancel a SPICE ingestions on a dataset
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CancelIngestion.html
    */
@@ -161,8 +105,8 @@ export class Quicksight extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifEdition()
    * - .ifDirectoryType()
+   * - .ifEdition()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAccountSubscription.html
    */
@@ -175,25 +119,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateActionConnector.html
    */
   public toCreateActionConnector() {
     return this.to('CreateActionConnector');
-  }
-
-  /**
-   * Grants permission to provision Amazon QuickSight administrators, authors, and readers
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toCreateAdmin() {
-    return this.to('CreateAdmin');
   }
 
   /**
@@ -212,10 +141,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateAnalysis.html
    */
   public toCreateAnalysis() {
@@ -226,10 +151,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to create an Amazon QuickSight brand
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateBrand.html
    */
@@ -242,10 +163,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateCustomPermissions.html
    */
   public toCreateCustomPermissions() {
@@ -257,10 +174,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDashboard.html
    */
   public toCreateDashboard() {
@@ -271,13 +184,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to create a dataset
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - quicksight:PassDataSource
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSet.html
    */
@@ -294,39 +200,10 @@ export class Quicksight extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSource.html
    */
   public toCreateDataSource() {
     return this.to('CreateDataSource');
-  }
-
-  /**
-   * Grants permission to create a QuickSight email customization template
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
-   */
-  public toCreateEmailCustomizationTemplate() {
-    return this.to('CreateEmailCustomizationTemplate');
-  }
-
-  /**
-   * Grants permission to create an extension access
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toCreateExtensionAccess() {
-    return this.to('CreateExtensionAccess');
   }
 
   /**
@@ -344,10 +221,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to create a QuickSight folder
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateFolder.html
    */
@@ -382,10 +255,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateGroupMembership.html
    */
   public toCreateGroupMembership() {
@@ -408,10 +277,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateIngestion.html
    */
   public toCreateIngestion() {
@@ -419,13 +284,20 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a limits profile
+   * Grants permission to create a knowledge base
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateKnowledgeBase.html
+   */
+  public toCreateKnowledgeBase() {
+    return this.to('CreateKnowledgeBase');
+  }
+
+  /**
+   * Grants permission to create a limits profile
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateLimitsProfile.html
    */
@@ -437,13 +309,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to create an QuickSight namespace
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - ds:CreateIdentityPoolDirectory
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateNamespace.html
    */
@@ -464,17 +329,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toCreateOAuthClientApplication() {
     return this.to('CreateOAuthClientApplication');
-  }
-
-  /**
-   * Grants permission to provision Amazon QuickSight readers
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toCreateReader() {
-    return this.to('CreateReader');
   }
 
   /**
@@ -518,10 +372,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html
    */
   public toCreateTemplate() {
@@ -532,10 +382,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to create a template alias
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplateAlias.html
    */
@@ -548,10 +394,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTheme.html
    */
   public toCreateTheme() {
@@ -563,10 +405,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateThemeAlias.html
    */
   public toCreateThemeAlias() {
@@ -577,13 +415,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to create a topic
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - quicksight:PassDataSet
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTopic.html
    */
@@ -603,17 +434,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to provision Amazon QuickSight authors and readers
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toCreateUser() {
-    return this.to('CreateUser');
-  }
-
-  /**
    * Grants permission to create a vpc connection
    *
    * Access Level: Write
@@ -621,9 +441,6 @@ export class Quicksight extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateVPCConnection.html
    */
@@ -698,6 +515,17 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a QuickSight app
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteApp.html
+   */
+  public toDeleteApp() {
+    return this.to('DeleteApp');
+  }
+
+  /**
    * Grants permission to delete an Amazon QuickSight brand
    *
    * Access Level: Write
@@ -746,10 +574,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDataSet.html
    */
   public toDeleteDataSet() {
@@ -772,10 +596,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteDataSource.html
    */
   public toDeleteDataSource() {
@@ -791,28 +611,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toDeleteDefaultQBusinessApplication() {
     return this.to('DeleteDefaultQBusinessApplication');
-  }
-
-  /**
-   * Grants permission to delete a QuickSight email customization template
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
-   */
-  public toDeleteEmailCustomizationTemplate() {
-    return this.to('DeleteEmailCustomizationTemplate');
-  }
-
-  /**
-   * Grants permission to delete an extension access
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toDeleteExtensionAccess() {
-    return this.to('DeleteExtensionAccess');
   }
 
   /**
@@ -919,9 +717,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ds:DeleteDirectory
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteNamespace.html
    */
   public toDeleteNamespace() {
@@ -932,10 +727,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to delete an OAuth client application
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteOAuthClientApplication.html
    */
@@ -1039,10 +830,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTopic.html
    */
   public toDeleteTopic() {
@@ -1097,10 +884,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to delete a vpc connection
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteVPCConnection.html
    */
@@ -1219,6 +1002,28 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a QuickSight app
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeApp.html
+   */
+  public toDescribeApp() {
+    return this.to('DescribeApp');
+  }
+
+  /**
+   * Grants permission to describe permissions for a QuickSight app
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAppPermissions.html
+   */
+  public toDescribeAppPermissions() {
+    return this.to('DescribeAppPermissions');
+  }
+
+  /**
    * Grants permission to describe an asset bundle export job
    *
    * Access Level: Read
@@ -1254,7 +1059,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to describe permissions for an automation group
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAutomationGroupPermissions.html
    */
@@ -1304,17 +1109,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeBrandPublishedVersion() {
     return this.to('DescribeBrandPublishedVersion');
-  }
-
-  /**
-   * Grants permission to describe chat configuration
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toDescribeChatConfiguration() {
-    return this.to('DescribeChatConfiguration');
   }
 
   /**
@@ -1388,10 +1182,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSet.html
    */
   public toDescribeDataSet() {
@@ -1401,11 +1191,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to describe the resource policy of a dataset
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSetPermissions.html
    */
@@ -1429,10 +1215,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSource.html
    */
   public toDescribeDataSource() {
@@ -1442,11 +1224,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to describe the resource policy of a data source
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDataSourcePermissions.html
    */
@@ -1463,28 +1241,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeDefaultQBusinessApplication() {
     return this.to('DescribeDefaultQBusinessApplication');
-  }
-
-  /**
-   * Grants permission to describe a QuickSight email customization template
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
-   */
-  public toDescribeEmailCustomizationTemplate() {
-    return this.to('DescribeEmailCustomizationTemplate');
-  }
-
-  /**
-   * Grants permission to describe an extension access
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toDescribeExtensionAccess() {
-    return this.to('DescribeExtensionAccess');
   }
 
   /**
@@ -1569,10 +1325,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeIngestion.html
    */
   public toDescribeIngestion() {
@@ -1615,7 +1367,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to describe the resource policy of a knowledge base
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeKnowledgeBasePermissions.html
    */
@@ -1650,10 +1402,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeOAuthClientApplication.html
    */
   public toDescribeOAuthClientApplication() {
@@ -1669,17 +1417,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toDescribeQPersonalizationConfiguration() {
     return this.to('DescribeQPersonalizationConfiguration');
-  }
-
-  /**
-   * Grants permission to describe index capacity
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toDescribeQuickIndexCapacity() {
-    return this.to('DescribeQuickIndexCapacity');
   }
 
   /**
@@ -1740,7 +1477,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to describe permissions for a space
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeSpacePermissions.html
    */
@@ -1819,10 +1556,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTopic.html
    */
   public toDescribeTopic() {
@@ -1832,11 +1565,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to describe the resource policy of a topic
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTopicPermissions.html
    */
@@ -1848,10 +1577,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to describe the refresh status of a topic
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTopicRefresh.html
    */
@@ -1886,10 +1611,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeVPCConnection.html
    */
   public toDescribeVPCConnection() {
@@ -1901,9 +1622,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAllowedEmbeddingDomains()
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html
    */
   public toGenerateEmbedUrlForAnonymousUser() {
@@ -1914,9 +1632,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to generate a URL used to embed a QuickSight Dashboard for a user registered with QuickSight
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAllowedEmbeddingDomains()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html
    */
@@ -1936,39 +1651,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toGenerateEmbedUrlForRegisteredUserWithIdentity() {
     return this.to('GenerateEmbedUrlForRegisteredUserWithIdentity');
-  }
-
-  /**
-   * Grants permission to get a URL used to embed a QuickSight Dashboard for a user not registered with QuickSight
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toGetAnonymousUserEmbedUrl() {
-    return this.to('GetAnonymousUserEmbedUrl');
-  }
-
-  /**
-   * Grants permission to get an auth code representing a QuickSight user
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toGetAuthCode() {
-    return this.to('GetAuthCode');
-  }
-
-  /**
-   * Grants permission to get information about the custom permissions in an account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toGetCustomPermissionsSummary() {
-    return this.to('GetCustomPermissionsSummary');
   }
 
   /**
@@ -2002,17 +1684,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toGetFlowPermissions() {
     return this.to('GetFlowPermissions');
-  }
-
-  /**
-   * Grants permission to use Amazon QuickSight, in Enterprise edition, to identify and display the Microsoft Active Directory (Microsoft Active Directory) directory groups that are mapped to roles in Amazon QuickSight
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toGetGroupMapping() {
-    return this.to('GetGroupMapping');
   }
 
   /**
@@ -2068,6 +1739,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toListAnalyses() {
     return this.to('ListAnalyses');
+  }
+
+  /**
+   * Grants permission to list all apps in a QuickSight account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListApps.html
+   */
+  public toListApps() {
+    return this.to('ListApps');
   }
 
   /**
@@ -2137,17 +1819,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all registered customer managed keys
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
-   */
-  public toListCustomerManagedKeys() {
-    return this.to('ListCustomerManagedKeys');
-  }
-
-  /**
    * Grants permission to list all versions of a QuickSight Dashboard
    *
    * Access Level: List
@@ -2197,17 +1868,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toListDataSources() {
     return this.to('ListDataSources');
-  }
-
-  /**
-   * Grants permission to list extension accesses
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toListExtensionAccesses() {
-    return this.to('ListExtensionAccesses');
   }
 
   /**
@@ -2322,17 +1982,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toListIngestions() {
     return this.to('ListIngestions');
-  }
-
-  /**
-   * Grants permission to list a user's KMS keys
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
-   */
-  public toListKMSKeysForUser() {
-    return this.to('ListKMSKeysForUser');
   }
 
   /**
@@ -2590,17 +2239,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list users index capacity
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toListUsersIndexCapacity() {
-    return this.to('ListUsersIndexCapacity');
-  }
-
-  /**
    * Grants permission to list all vpc connections
    *
    * Access Level: List
@@ -2613,36 +2251,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toListVPCConnections() {
     return this.to('ListVPCConnections');
-  }
-
-  /**
-   * Grants permission to use a dataset for a template
-   *
-   * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
-   */
-  public toPassDataSet() {
-    return this.to('PassDataSet');
-  }
-
-  /**
-   * Grants permission to use a data source for a data set
-   *
-   * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-api-overview.html
-   */
-  public toPassDataSource() {
-    return this.to('PassDataSource');
   }
 
   /**
@@ -2668,51 +2276,14 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get QuickSuite usage metrics
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toQuickSuiteUsageMetrics() {
-    return this.to('QuickSuiteUsageMetrics');
-  }
-
-  /**
-   * Grants permission to register a customer managed key
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
-   */
-  public toRegisterCustomerManagedKey() {
-    return this.to('RegisterCustomerManagedKey');
-  }
-
-  /**
    * Grants permission to create a QuickSight user, whose identity is associated with the IAM identity/role specified in the request
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html
    */
   public toRegisterUser() {
     return this.to('RegisterUser');
-  }
-
-  /**
-   * Grants permission to remove a customer managed key
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/key-management.html
-   */
-  public toRemoveCustomerManagedKey() {
-    return this.to('RemoveCustomerManagedKey');
   }
 
   /**
@@ -2724,17 +2295,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toRestoreAnalysis() {
     return this.to('RestoreAnalysis');
-  }
-
-  /**
-   * Grants permission to manage scoping policies for permissions to AWS resources
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/accessing-data-sources.html
-   */
-  public toScopeDownPolicy() {
-    return this.to('ScopeDownPolicy');
   }
 
   /**
@@ -2768,6 +2328,17 @@ export class Quicksight extends PolicyStatement {
    */
   public toSearchAnalyses() {
     return this.to('SearchAnalyses');
+  }
+
+  /**
+   * Grants permission to search for apps in a QuickSight account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchApps.html
+   */
+  public toSearchApps() {
+    return this.to('SearchApps');
   }
 
   /**
@@ -2812,17 +2383,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toSearchDataSources() {
     return this.to('SearchDataSources');
-  }
-
-  /**
-   * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toSearchDirectoryGroups() {
-    return this.to('SearchDirectoryGroups');
   }
 
   /**
@@ -2892,28 +2452,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to search the QuickSight users belonging to this account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toSearchUsers() {
-    return this.to('SearchUsers');
-  }
-
-  /**
-   * Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toSetGroupMapping() {
-    return this.to('SetGroupMapping');
-  }
-
-  /**
    * Grants permission to start an asset bundle export job
    *
    * Access Level: Write
@@ -2969,28 +2507,9 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to subscribe to Amazon QuickSight, and also to allow the user to upgrade the subscription to Enterprise edition
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifEdition()
-   * - .ifDirectoryType()
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toSubscribe() {
-    return this.to('Subscribe');
-  }
-
-  /**
    * Grants permission to add tags to a QuickSight resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagResource.html
    */
@@ -2999,34 +2518,9 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to unpublish a flow
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toUnpublishFlow() {
-    return this.to('UnpublishFlow');
-  }
-
-  /**
-   * Grants permission to unsubscribe from Amazon QuickSight, which permanently deletes all users and their resources from Amazon QuickSight
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toUnsubscribe() {
-    return this.to('Unsubscribe');
-  }
-
-  /**
    * Grants permission to remove tags from a QuickSight resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UntagResource.html
    */
@@ -3081,7 +2575,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for an action connector
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateActionConnectorPermissions.html
    */
@@ -3103,7 +2597,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update agent permissions
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAgentPermissions.html
    */
@@ -3125,12 +2619,23 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for an analysis
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAnalysisPermissions.html
    */
   public toUpdateAnalysisPermissions() {
     return this.to('UpdateAnalysisPermissions');
+  }
+
+  /**
+   * Grants permission to update permissions for a QuickSight app
+   *
+   * Access Level: Permissions management, Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAppPermissions.html
+   */
+  public toUpdateAppPermissions() {
+    return this.to('UpdateAppPermissions');
   }
 
   /**
@@ -3147,7 +2652,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for an automation group
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAutomationGroupPermissions.html
    */
@@ -3189,17 +2694,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update chat configuration
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toUpdateChatConfiguration() {
-    return this.to('UpdateChatConfiguration');
-  }
-
-  /**
    * Grants permission to update a QuickSight custom permissions resource
    *
    * Access Level: Write
@@ -3235,7 +2729,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a QuickSight Dashboard
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPermissions.html
    */
@@ -3270,13 +2764,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - quicksight:PassDataSource
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSet.html
    */
   public toUpdateDataSet() {
@@ -3286,11 +2773,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update the resource policy of a dataset
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSetPermissions.html
    */
@@ -3303,13 +2786,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSource.html
    */
   public toUpdateDataSource() {
@@ -3319,11 +2795,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update the resource policy of a data source
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDataSourcePermissions.html
    */
@@ -3343,28 +2815,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a QuickSight email customization template
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
-   */
-  public toUpdateEmailCustomizationTemplate() {
-    return this.to('UpdateEmailCustomizationTemplate');
-  }
-
-  /**
-   * Grants permission to update an extension access
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toUpdateExtensionAccess() {
-    return this.to('UpdateExtensionAccess');
-  }
-
-  /**
    * Grants permission to update a flow
    *
    * Access Level: Write
@@ -3378,7 +2828,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a flow
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateFlowPermissions.html
    */
@@ -3400,7 +2850,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a QuickSight Folder
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateFolderPermissions.html
    */
@@ -3464,9 +2914,20 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update a knowledge base
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateKnowledgeBase.html
+   */
+  public toUpdateKnowledgeBase() {
+    return this.to('UpdateKnowledgeBase');
+  }
+
+  /**
    * Grants permission to update the resource policy of a knowledge base
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateKnowledgeBasePermissions.html
    */
@@ -3489,10 +2950,6 @@ export class Quicksight extends PolicyStatement {
    * Grants permission to update an OAuth client application
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateOAuthClientApplication.html
    */
@@ -3523,17 +2980,6 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update index capacity
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
-   */
-  public toUpdateQuickIndexCapacity() {
-    return this.to('UpdateQuickIndexCapacity');
-  }
-
-  /**
    * Grants permission to update QuickSight Q Search configuration
    *
    * Access Level: Write
@@ -3553,17 +2999,6 @@ export class Quicksight extends PolicyStatement {
    */
   public toUpdateRefreshSchedule() {
     return this.to('UpdateRefreshSchedule');
-  }
-
-  /**
-   * Grants permission to update resource-level permissions in QuickSight
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html
-   */
-  public toUpdateResourcePermissions() {
-    return this.to('UpdateResourcePermissions');
   }
 
   /**
@@ -3624,7 +3059,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a space
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSpacePermissions.html
    */
@@ -3668,7 +3103,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a template
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTemplatePermissions.html
    */
@@ -3701,7 +3136,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update permissions for a theme
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html
    */
@@ -3714,13 +3149,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - quicksight:PassDataSet
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTopic.html
    */
   public toUpdateTopic() {
@@ -3730,11 +3158,7 @@ export class Quicksight extends PolicyStatement {
   /**
    * Grants permission to update the resource policy of a topic
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTopicPermissions.html
    */
@@ -3780,13 +3204,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateVPCConnection.html
    */
   public toUpdateVPCConnection() {
@@ -3795,18 +3212,15 @@ export class Quicksight extends PolicyStatement {
 
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'AccountConfigurations',
       'BatchAssignLimitsProfile',
       'BatchCreateTopicReviewedAnswer',
       'BatchDeleteKnowledgeBase',
       'BatchDeleteTopicReviewedAnswer',
       'BatchUnassignLimitsProfile',
-      'BatchUpdatePreferences',
       'CancelIngestion',
       'CreateAccountCustomization',
       'CreateAccountSubscription',
       'CreateActionConnector',
-      'CreateAdmin',
       'CreateAgent',
       'CreateAnalysis',
       'CreateBrand',
@@ -3814,8 +3228,6 @@ export class Quicksight extends PolicyStatement {
       'CreateDashboard',
       'CreateDataSet',
       'CreateDataSource',
-      'CreateEmailCustomizationTemplate',
-      'CreateExtensionAccess',
       'CreateFlow',
       'CreateFolder',
       'CreateFolderMembership',
@@ -3823,10 +3235,10 @@ export class Quicksight extends PolicyStatement {
       'CreateGroupMembership',
       'CreateIAMPolicyAssignment',
       'CreateIngestion',
+      'CreateKnowledgeBase',
       'CreateLimitsProfile',
       'CreateNamespace',
       'CreateOAuthClientApplication',
-      'CreateReader',
       'CreateRefreshSchedule',
       'CreateRoleMembership',
       'CreateSpace',
@@ -3836,7 +3248,6 @@ export class Quicksight extends PolicyStatement {
       'CreateThemeAlias',
       'CreateTopic',
       'CreateTopicRefreshSchedule',
-      'CreateUser',
       'CreateVPCConnection',
       'DeleteAccountCustomPermission',
       'DeleteAccountCustomization',
@@ -3844,6 +3255,7 @@ export class Quicksight extends PolicyStatement {
       'DeleteActionConnector',
       'DeleteAgent',
       'DeleteAnalysis',
+      'DeleteApp',
       'DeleteBrand',
       'DeleteBrandAssignment',
       'DeleteCustomPermissions',
@@ -3852,8 +3264,6 @@ export class Quicksight extends PolicyStatement {
       'DeleteDataSetRefreshProperties',
       'DeleteDataSource',
       'DeleteDefaultQBusinessApplication',
-      'DeleteEmailCustomizationTemplate',
-      'DeleteExtensionAccess',
       'DeleteFlow',
       'DeleteFolder',
       'DeleteFolderMembership',
@@ -3879,101 +3289,87 @@ export class Quicksight extends PolicyStatement {
       'DeleteUserByPrincipalId',
       'DeleteUserCustomPermission',
       'DeleteVPCConnection',
+      'DescribeAutomationGroupPermissions',
+      'DescribeKnowledgeBasePermissions',
+      'DescribeSpacePermissions',
+      'DescribeTopicPermissions',
       'GenerateEmbedUrlForAnonymousUser',
       'GenerateEmbedUrlForRegisteredUser',
       'GenerateEmbedUrlForRegisteredUserWithIdentity',
       'PutDataSetRefreshProperties',
-      'RegisterCustomerManagedKey',
       'RegisterUser',
-      'RemoveCustomerManagedKey',
       'RestoreAnalysis',
-      'ScopeDownPolicy',
-      'SetGroupMapping',
       'StartAssetBundleExportJob',
       'StartAssetBundleImportJob',
       'StartAutomationJob',
       'StartDashboardSnapshotJob',
       'StartDashboardSnapshotJobSchedule',
-      'Subscribe',
-      'UnpublishFlow',
-      'Unsubscribe',
+      'TagResource',
+      'UntagResource',
       'UpdateAccountCustomPermission',
       'UpdateAccountCustomization',
       'UpdateAccountSettings',
       'UpdateActionConnector',
+      'UpdateActionConnectorPermissions',
       'UpdateAgent',
+      'UpdateAgentPermissions',
       'UpdateAnalysis',
+      'UpdateAnalysisPermissions',
+      'UpdateAppPermissions',
       'UpdateApplicationWithTokenExchangeGrant',
+      'UpdateAutomationGroupPermissions',
       'UpdateBrand',
       'UpdateBrandAssignment',
       'UpdateBrandPublishedVersion',
-      'UpdateChatConfiguration',
       'UpdateCustomPermissions',
       'UpdateDashboard',
       'UpdateDashboardLinks',
+      'UpdateDashboardPermissions',
       'UpdateDashboardPublishedVersion',
       'UpdateDashboardsQAConfiguration',
       'UpdateDataSet',
+      'UpdateDataSetPermissions',
       'UpdateDataSource',
+      'UpdateDataSourcePermissions',
       'UpdateDefaultQBusinessApplication',
-      'UpdateEmailCustomizationTemplate',
-      'UpdateExtensionAccess',
       'UpdateFlow',
+      'UpdateFlowPermissions',
       'UpdateFolder',
+      'UpdateFolderPermissions',
       'UpdateGroup',
       'UpdateIAMPolicyAssignment',
       'UpdateIdentityPropagationConfig',
       'UpdateIpRestriction',
       'UpdateKeyRegistration',
+      'UpdateKnowledgeBase',
+      'UpdateKnowledgeBasePermissions',
       'UpdateLimitsProfile',
       'UpdateOAuthClientApplication',
       'UpdatePublicSharingSettings',
       'UpdateQPersonalizationConfiguration',
-      'UpdateQuickIndexCapacity',
       'UpdateQuickSightQSearchConfiguration',
       'UpdateRefreshSchedule',
-      'UpdateResourcePermissions',
       'UpdateRoleCustomPermission',
       'UpdateSPICECapacityConfiguration',
       'UpdateSelfUpgrade',
       'UpdateSelfUpgradeConfiguration',
       'UpdateSpace',
+      'UpdateSpacePermissions',
       'UpdateSpaceResources',
       'UpdateTemplate',
       'UpdateTemplateAlias',
+      'UpdateTemplatePermissions',
       'UpdateTheme',
       'UpdateThemeAlias',
+      'UpdateThemePermissions',
       'UpdateTopic',
+      'UpdateTopicPermissions',
       'UpdateTopicRefreshSchedule',
       'UpdateUser',
       'UpdateUserCustomPermission',
       'UpdateVPCConnection'
     ],
-    'Permissions management': [
-      'AllowVendedLogDeliveryForResource',
-      'DescribeAutomationGroupPermissions',
-      'DescribeDataSetPermissions',
-      'DescribeDataSourcePermissions',
-      'DescribeKnowledgeBasePermissions',
-      'DescribeSpacePermissions',
-      'DescribeTopicPermissions',
-      'UpdateActionConnectorPermissions',
-      'UpdateAgentPermissions',
-      'UpdateAnalysisPermissions',
-      'UpdateAutomationGroupPermissions',
-      'UpdateDashboardPermissions',
-      'UpdateDataSetPermissions',
-      'UpdateDataSourcePermissions',
-      'UpdateFlowPermissions',
-      'UpdateFolderPermissions',
-      'UpdateKnowledgeBasePermissions',
-      'UpdateSpacePermissions',
-      'UpdateTemplatePermissions',
-      'UpdateThemePermissions',
-      'UpdateTopicPermissions'
-    ],
     Read: [
-      'BatchGetPreferences',
       'DescribeAccountCustomPermission',
       'DescribeAccountCustomization',
       'DescribeAccountSettings',
@@ -3984,6 +3380,8 @@ export class Quicksight extends PolicyStatement {
       'DescribeAgentPermissions',
       'DescribeAnalysis',
       'DescribeAnalysisPermissions',
+      'DescribeApp',
+      'DescribeAppPermissions',
       'DescribeAssetBundleExportJob',
       'DescribeAssetBundleImportJob',
       'DescribeAutomationGroup',
@@ -3991,7 +3389,6 @@ export class Quicksight extends PolicyStatement {
       'DescribeBrand',
       'DescribeBrandAssignment',
       'DescribeBrandPublishedVersion',
-      'DescribeChatConfiguration',
       'DescribeCustomPermissions',
       'DescribeDashboard',
       'DescribeDashboardPermissions',
@@ -3999,11 +3396,11 @@ export class Quicksight extends PolicyStatement {
       'DescribeDashboardSnapshotJobResult',
       'DescribeDashboardsQAConfiguration',
       'DescribeDataSet',
+      'DescribeDataSetPermissions',
       'DescribeDataSetRefreshProperties',
       'DescribeDataSource',
+      'DescribeDataSourcePermissions',
       'DescribeDefaultQBusinessApplication',
-      'DescribeEmailCustomizationTemplate',
-      'DescribeExtensionAccess',
       'DescribeFlow',
       'DescribeFolder',
       'DescribeFolderPermissions',
@@ -4019,7 +3416,6 @@ export class Quicksight extends PolicyStatement {
       'DescribeNamespace',
       'DescribeOAuthClientApplication',
       'DescribeQPersonalizationConfiguration',
-      'DescribeQuickIndexCapacity',
       'DescribeQuickSightQSearchConfiguration',
       'DescribeRefreshSchedule',
       'DescribeRoleCustomPermission',
@@ -4036,39 +3432,52 @@ export class Quicksight extends PolicyStatement {
       'DescribeTopicRefreshSchedule',
       'DescribeUser',
       'DescribeVPCConnection',
-      'GetAnonymousUserEmbedUrl',
-      'GetAuthCode',
-      'GetCustomPermissionsSummary',
       'GetDashboardEmbedUrl',
       'GetFlowMetadata',
       'GetFlowPermissions',
-      'GetGroupMapping',
       'GetIdentityContext',
       'GetSessionEmbedUrl',
       'ListFolderMembers',
       'ListTagsForResource',
-      'PassDataSet',
-      'PassDataSource',
       'PredictQAResults',
-      'QuickSuiteUsageMetrics',
       'SearchFolders'
+    ],
+    'Permissions management': [
+      'DescribeAutomationGroupPermissions',
+      'DescribeKnowledgeBasePermissions',
+      'DescribeSpacePermissions',
+      'DescribeTopicPermissions',
+      'UpdateActionConnectorPermissions',
+      'UpdateAgentPermissions',
+      'UpdateAnalysisPermissions',
+      'UpdateAppPermissions',
+      'UpdateAutomationGroupPermissions',
+      'UpdateDashboardPermissions',
+      'UpdateDataSetPermissions',
+      'UpdateDataSourcePermissions',
+      'UpdateFlowPermissions',
+      'UpdateFolderPermissions',
+      'UpdateKnowledgeBasePermissions',
+      'UpdateSpacePermissions',
+      'UpdateTemplatePermissions',
+      'UpdateThemePermissions',
+      'UpdateTopicPermissions'
     ],
     List: [
       'ListActionConnectors',
       'ListAgents',
       'ListAnalyses',
+      'ListApps',
       'ListAssetBundleExportJobs',
       'ListAssetBundleImportJobs',
       'ListAssignmentsForPrincipal',
       'ListAutomationGroups',
       'ListBrands',
       'ListCustomPermissions',
-      'ListCustomerManagedKeys',
       'ListDashboardVersions',
       'ListDashboards',
       'ListDataSets',
       'ListDataSources',
-      'ListExtensionAccesses',
       'ListFlows',
       'ListFolders',
       'ListFoldersForResource',
@@ -4078,7 +3487,6 @@ export class Quicksight extends PolicyStatement {
       'ListIAMPolicyAssignmentsForUser',
       'ListIdentityPropagationConfigs',
       'ListIngestions',
-      'ListKMSKeysForUser',
       'ListKnowledgeBases',
       'ListLimitsProfiles',
       'ListNamespaces',
@@ -4100,22 +3508,20 @@ export class Quicksight extends PolicyStatement {
       'ListTopics',
       'ListUserGroups',
       'ListUsers',
-      'ListUsersIndexCapacity',
       'ListVPCConnections',
       'SearchActionConnectors',
       'SearchAgents',
       'SearchAnalyses',
+      'SearchApps',
       'SearchAutomationGroups',
       'SearchDashboards',
       'SearchDataSets',
       'SearchDataSources',
-      'SearchDirectoryGroups',
       'SearchFlows',
       'SearchGroups',
       'SearchKnowledgeBases',
       'SearchSpaces',
-      'SearchTopics',
-      'SearchUsers'
+      'SearchTopics'
     ],
     Tagging: [
       'TagResource',
@@ -4135,384 +3541,6 @@ export class Quicksight extends PolicyStatement {
    */
   public onAccount(resourceId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:account/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type user to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_User.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type group to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Group.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:group/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type analysis to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Analysis.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analysis/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type dashboard to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Dashboard.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDashboard(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type template to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Template.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:template/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type vpcconnection to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_VPCConnection.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onVpcconnection(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpcConnection/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type oauthClientApplication to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_OAuthClientApplication.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onOauthClientApplication(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:oauthClientApplication/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type assetBundleExportJob to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleExportJob.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAssetBundleExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:asset-bundle-export-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type assetBundleImportJob to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleImportJob.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAssetBundleImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:asset-bundle-import-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type datasource to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSource.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDatasource(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datasource/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type dataset to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSet.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type ingestion to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Ingestion.html
-   *
-   * @param datasetId - Identifier for the datasetId.
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onIngestion(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }/ingestion/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type refreshschedule to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html
-   *
-   * @param datasetId - Identifier for the datasetId.
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onRefreshschedule(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }/refresh-schedule/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type theme to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Theme.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTheme(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:theme/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type assignment to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IAMPolicyAssignment.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAssignment(resourceId: string, account?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight::${ account ?? this.defaultAccount }:assignment/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type customization to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AccountCustomization.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustomization(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:customization/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type namespace to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_NamespaceInfoV2.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:namespace/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type folder to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Folder.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onFolder(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:folder/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type emailCustomizationTemplate to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:email-customization-template/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type topic to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TopicDetails.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTopic(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topic/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type dashboardSnapshotJob to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DashboardSnapshotJob.html
-   *
-   * @param dashboardId - Identifier for the dashboardId.
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDashboardSnapshotJob(dashboardId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ dashboardId }/snapshot-job/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type brand to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BrandDetail.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBrand(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:brand/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type custompermissions to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CustomPermissions.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustompermissions(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custompermissions/${ resourceId }`);
   }
 
   /**
@@ -4547,6 +3575,277 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type analysis to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Analysis.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAnalysis(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:analysis/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type app to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AppSummary.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApp(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:app/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type approvalPolicy to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ApprovalPolicy.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onApprovalPolicy(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:approval-policy/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type assetBundleExportJob to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleExportJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAssetBundleExportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:asset-bundle-export-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type assetBundleImportJob to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartAssetBundleImportJob.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAssetBundleImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:asset-bundle-import-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type assignment to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IAMPolicyAssignment.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAssignment(resourceId: string, account?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight::${ account ?? this.defaultAccount }:assignment/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type automation to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Automation.html
+   *
+   * @param automationGroupId - Identifier for the automationGroupId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAutomation(automationGroupId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ automationGroupId }/automation/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type automationGroup to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AutomationGroup.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAutomationGroup(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type automationJob to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AutomationJob.html
+   *
+   * @param automationGroupId - Identifier for the automationGroupId.
+   * @param automationId - Identifier for the automationId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAutomationJob(automationGroupId: string, automationId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ automationGroupId }/automation/${ automationId }/job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type brand to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BrandDetail.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBrand(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:brand/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type customization to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AccountCustomization.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomization(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:customization/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type custompermissions to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CustomPermissions.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustompermissions(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custompermissions/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type dashboard to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Dashboard.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDashboard(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type dashboardSnapshotJob to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DashboardSnapshotJob.html
+   *
+   * @param dashboardId - Identifier for the dashboardId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDashboardSnapshotJob(dashboardId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ dashboardId }/snapshot-job/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSet.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type datasource to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSource.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDatasource(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:datasource/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type emailCustomizationTemplate to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight-email-templates.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEmailCustomizationTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:email-customization-template/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type extensionaccess to the statement
    *
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
@@ -4578,48 +3877,52 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type automation to the statement
+   * Adds a resource of type folder to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Automation.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Folder.html
    *
-   * @param automationGroupId - Identifier for the automationGroupId.
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onAutomation(automationGroupId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ automationGroupId }/automation/${ resourceId }`);
+  public onFolder(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:folder/${ resourceId }`);
   }
 
   /**
-   * Adds a resource of type automationJob to the statement
+   * Adds a resource of type group to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AutomationJob.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Group.html
    *
-   * @param automationGroupId - Identifier for the automationGroupId.
-   * @param automationId - Identifier for the automationId.
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onAutomationJob(automationGroupId: string, automationId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ automationGroupId }/automation/${ automationId }/job/${ resourceId }`);
+  public onGroup(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:group/${ resourceId }`);
   }
 
   /**
-   * Adds a resource of type automationGroup to the statement
+   * Adds a resource of type ingestion to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AutomationGroup.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Ingestion.html
    *
+   * @param datasetId - Identifier for the datasetId.
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onAutomationGroup(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:automation-group/${ resourceId }`);
+  public onIngestion(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }/ingestion/${ resourceId }`);
   }
 
   /**
@@ -4640,6 +3943,69 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type limitsProfile to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_LimitsProfile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onLimitsProfile(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:limits-profile/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type namespace to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_NamespaceInfoV2.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNamespace(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:namespace/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type oauthClientApplication to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_OAuthClientApplication.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOauthClientApplication(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:oauthClientApplication/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type refreshschedule to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html
+   *
+   * @param datasetId - Identifier for the datasetId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onRefreshschedule(datasetId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }/refresh-schedule/${ resourceId }`);
+  }
+
+  /**
    * Adds a resource of type space to the statement
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Space.html
@@ -4654,23 +4020,9 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type approvalPolicy to the statement
+   * Adds a resource of type template to the statement
    *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ApprovalPolicy.html
-   *
-   * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onApprovalPolicy(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:approval-policy/${ resourceId }`);
-  }
-
-  /**
-   * Adds a resource of type limitsProfile to the statement
-   *
-   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_LimitsProfile.html
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Template.html
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -4680,8 +4032,76 @@ export class Quicksight extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onLimitsProfile(resourceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:limits-profile/${ resourceId }`);
+  public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:template/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type theme to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Theme.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTheme(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:theme/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type topic to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TopicDetails.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTopic(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:topic/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type user to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_User.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user/${ resourceId }`);
+  }
+
+  /**
+   * Adds a resource of type vpcconnection to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_VPCConnection.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVpcconnection(resourceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:quicksight:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:vpcConnection/${ resourceId }`);
   }
 
   /**
@@ -4701,11 +4121,10 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateDashboard()
    * - .toCreateDataSet()
    * - .toCreateDataSource()
-   * - .toCreateEmailCustomizationTemplate()
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
-   * - .toCreateLimitsProfile()
+   * - .toCreateKnowledgeBase()
    * - .toCreateNamespace()
    * - .toCreateOAuthClientApplication()
    * - .toCreateTemplate()
@@ -4736,8 +4155,6 @@ export class Quicksight extends PolicyStatement {
    * - .toListTopicReviewedAnswers()
    * - .toListTopics()
    * - .toListVPCConnections()
-   * - .toPassDataSet()
-   * - .toPassDataSource()
    * - .toRegisterUser()
    * - .toTagResource()
    * - .toUpdateDataSet()
@@ -4762,29 +4179,194 @@ export class Quicksight extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toBatchCreateTopicReviewedAnswer()
+   * - .toBatchDeleteKnowledgeBase()
+   * - .toBatchDeleteTopicReviewedAnswer()
+   * - .toCancelIngestion()
+   * - .toCreateActionConnector()
+   * - .toCreateAnalysis()
+   * - .toCreateBrand()
+   * - .toCreateCustomPermissions()
+   * - .toCreateDashboard()
+   * - .toCreateDataSet()
+   * - .toCreateFlow()
+   * - .toCreateFolder()
+   * - .toCreateFolderMembership()
+   * - .toCreateIngestion()
+   * - .toCreateKnowledgeBase()
+   * - .toCreateNamespace()
+   * - .toCreateTemplate()
+   * - .toCreateTemplateAlias()
+   * - .toCreateTheme()
+   * - .toCreateThemeAlias()
+   * - .toCreateTopic()
+   * - .toCreateTopicRefreshSchedule()
+   * - .toDeleteAccountCustomization()
+   * - .toDeleteActionConnector()
+   * - .toDeleteAnalysis()
+   * - .toDeleteApp()
+   * - .toDeleteBrand()
+   * - .toDeleteDashboard()
+   * - .toDeleteDataSet()
+   * - .toDeleteDataSetRefreshProperties()
+   * - .toDeleteDataSource()
+   * - .toDeleteFlow()
+   * - .toDeleteFolder()
+   * - .toDeleteFolderMembership()
+   * - .toDeleteKnowledgeBase()
+   * - .toDeleteNamespace()
+   * - .toDeleteOAuthClientApplication()
+   * - .toDeleteTemplate()
+   * - .toDeleteTemplateAlias()
+   * - .toDeleteTheme()
+   * - .toDeleteThemeAlias()
+   * - .toDeleteTopic()
+   * - .toDeleteTopicRefreshSchedule()
+   * - .toDeleteUser()
+   * - .toDeleteUserByPrincipalId()
+   * - .toDeleteUserCustomPermission()
+   * - .toDeleteVPCConnection()
+   * - .toDescribeAccountCustomization()
+   * - .toDescribeActionConnector()
+   * - .toDescribeActionConnectorPermissions()
+   * - .toDescribeAnalysis()
+   * - .toDescribeAnalysisPermissions()
+   * - .toDescribeApp()
+   * - .toDescribeAppPermissions()
+   * - .toDescribeBrand()
+   * - .toDescribeBrandPublishedVersion()
+   * - .toDescribeCustomPermissions()
+   * - .toDescribeDashboard()
+   * - .toDescribeDashboardPermissions()
+   * - .toDescribeDashboardSnapshotJob()
+   * - .toDescribeDashboardSnapshotJobResult()
+   * - .toDescribeDataSet()
+   * - .toDescribeDataSetPermissions()
+   * - .toDescribeDataSetRefreshProperties()
+   * - .toDescribeDataSource()
+   * - .toDescribeDataSourcePermissions()
+   * - .toDescribeFlow()
+   * - .toDescribeFolder()
+   * - .toDescribeFolderPermissions()
+   * - .toDescribeFolderResolvedPermissions()
+   * - .toDescribeIngestion()
+   * - .toDescribeKnowledgeBase()
+   * - .toDescribeKnowledgeBasePermissions()
+   * - .toDescribeNamespace()
+   * - .toDescribeOAuthClientApplication()
+   * - .toDescribeTemplate()
+   * - .toDescribeTemplateAlias()
+   * - .toDescribeTemplatePermissions()
+   * - .toDescribeTheme()
+   * - .toDescribeThemeAlias()
+   * - .toDescribeThemePermissions()
+   * - .toDescribeTopic()
+   * - .toDescribeTopicPermissions()
+   * - .toDescribeTopicRefresh()
+   * - .toDescribeTopicRefreshSchedule()
+   * - .toDescribeUser()
+   * - .toDescribeVPCConnection()
+   * - .toGenerateEmbedUrlForAnonymousUser()
+   * - .toGenerateEmbedUrlForRegisteredUser()
+   * - .toGetDashboardEmbedUrl()
+   * - .toGetFlowMetadata()
+   * - .toGetFlowPermissions()
+   * - .toGetIdentityContext()
+   * - .toListAnalyses()
+   * - .toListApps()
+   * - .toListDashboardVersions()
+   * - .toListDashboards()
+   * - .toListFolderMembers()
+   * - .toListFolders()
+   * - .toListFoldersForResource()
+   * - .toListSelfUpgrades()
+   * - .toListTagsForResource()
+   * - .toListTemplateAliases()
+   * - .toListTemplateVersions()
+   * - .toListTemplates()
+   * - .toListThemeAliases()
+   * - .toListThemeVersions()
+   * - .toListThemes()
+   * - .toListUserGroups()
+   * - .toListUsers()
+   * - .toPredictQAResults()
+   * - .toPutDataSetRefreshProperties()
+   * - .toRegisterUser()
+   * - .toRestoreAnalysis()
+   * - .toSearchActionConnectors()
+   * - .toSearchAnalyses()
+   * - .toSearchApps()
+   * - .toSearchDashboards()
+   * - .toSearchDataSets()
+   * - .toSearchDataSources()
+   * - .toSearchFolders()
+   * - .toSearchKnowledgeBases()
+   * - .toSearchTopics()
+   * - .toStartDashboardSnapshotJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAccountCustomization()
+   * - .toUpdateActionConnector()
+   * - .toUpdateActionConnectorPermissions()
+   * - .toUpdateAnalysis()
+   * - .toUpdateAnalysisPermissions()
+   * - .toUpdateAppPermissions()
+   * - .toUpdateBrand()
+   * - .toUpdateBrandPublishedVersion()
+   * - .toUpdateCustomPermissions()
+   * - .toUpdateDashboard()
+   * - .toUpdateDashboardLinks()
+   * - .toUpdateDashboardPermissions()
+   * - .toUpdateDashboardPublishedVersion()
+   * - .toUpdateDataSet()
+   * - .toUpdateDataSetPermissions()
+   * - .toUpdateDataSource()
+   * - .toUpdateDataSourcePermissions()
+   * - .toUpdateFlow()
+   * - .toUpdateFlowPermissions()
+   * - .toUpdateFolder()
+   * - .toUpdateFolderPermissions()
+   * - .toUpdateKnowledgeBase()
+   * - .toUpdateKnowledgeBasePermissions()
+   * - .toUpdateOAuthClientApplication()
+   * - .toUpdateSelfUpgrade()
+   * - .toUpdateTemplate()
+   * - .toUpdateTemplateAlias()
+   * - .toUpdateTemplatePermissions()
+   * - .toUpdateTheme()
+   * - .toUpdateThemeAlias()
+   * - .toUpdateThemePermissions()
+   * - .toUpdateTopic()
+   * - .toUpdateTopicPermissions()
+   * - .toUpdateTopicRefreshSchedule()
+   * - .toUpdateUser()
+   * - .toUpdateUserCustomPermission()
+   * - .toUpdateVPCConnection()
+   *
    * Applies to resource types:
-   * - user
-   * - analysis
-   * - dashboard
-   * - template
-   * - vpcconnection
-   * - oauthClientApplication
-   * - datasource
-   * - dataset
-   * - ingestion
-   * - theme
-   * - customization
-   * - namespace
-   * - folder
-   * - emailCustomizationTemplate
-   * - topic
-   * - dashboardSnapshotJob
-   * - brand
-   * - custompermissions
    * - actionconnector
+   * - analysis
+   * - app
+   * - brand
+   * - customization
+   * - custompermissions
+   * - dashboard
+   * - dashboardSnapshotJob
+   * - dataset
+   * - datasource
+   * - emailCustomizationTemplate
    * - flow
+   * - folder
+   * - ingestion
    * - knowledgeBase
-   * - limitsProfile
+   * - namespace
+   * - oauthClientApplication
+   * - template
+   * - theme
+   * - topic
+   * - user
+   * - vpcconnection
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4811,11 +4393,10 @@ export class Quicksight extends PolicyStatement {
    * - .toCreateDashboard()
    * - .toCreateDataSet()
    * - .toCreateDataSource()
-   * - .toCreateEmailCustomizationTemplate()
    * - .toCreateFolder()
    * - .toCreateGroupMembership()
    * - .toCreateIngestion()
-   * - .toCreateLimitsProfile()
+   * - .toCreateKnowledgeBase()
    * - .toCreateNamespace()
    * - .toCreateOAuthClientApplication()
    * - .toCreateTemplate()
@@ -4846,8 +4427,6 @@ export class Quicksight extends PolicyStatement {
    * - .toListTopicReviewedAnswers()
    * - .toListTopics()
    * - .toListVPCConnections()
-   * - .toPassDataSet()
-   * - .toPassDataSource()
    * - .toRegisterUser()
    * - .toTagResource()
    * - .toUntagResource()
@@ -4891,7 +4470,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAccountSubscription()
-   * - .toSubscribe()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4907,7 +4485,6 @@ export class Quicksight extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAccountSubscription()
-   * - .toSubscribe()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

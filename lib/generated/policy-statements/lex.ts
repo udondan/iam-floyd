@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [lex](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlex.html).
+ * Statement provider for service [lex](https://docs.aws.amazon.com/service-authorization/latest/reference/list_lex.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Lex extends PolicyStatement {
   public servicePrefix = 'lex';
 
   /**
-   * Statement provider for service [lex](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlex.html).
+   * Statement provider for service [lex](https://docs.aws.amazon.com/service-authorization/latest/reference/list_lex.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -441,10 +441,6 @@ export class Lex extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html
    */
   public toPutBot() {
@@ -455,10 +451,6 @@ export class Lex extends PolicyStatement {
    * Creates or updates an alias for the specific bot
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBotAlias.html
    */
@@ -524,11 +516,7 @@ export class Lex extends PolicyStatement {
   /**
    * Adds or overwrites tags to a Lex resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_TagResource.html
    */
@@ -539,11 +527,7 @@ export class Lex extends PolicyStatement {
   /**
    * Removes tags from a Lex resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_UntagResource.html
    */
@@ -574,7 +558,9 @@ export class Lex extends PolicyStatement {
       'PutSession',
       'PutSlotType',
       'StartImport',
-      'StartMigration'
+      'StartMigration',
+      'TagResource',
+      'UntagResource'
     ],
     Read: [
       'GetBot',
@@ -614,6 +600,10 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_BotMetadata.html
    *
+   * @param botId - Identifier for the botId.
+   * @param partition2 - Identifier for the partition2.
+   * @param region2 - Identifier for the region2.
+   * @param account2 - Identifier for the account2.
    * @param botName - Identifier for the botName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
@@ -622,8 +612,31 @@ export class Lex extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onBot(botName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot:${ botName }`);
+  public onBot(botId: string, partition2: string, region2: string, account2: string, botName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot/${ botId }, arn:${ partition2 }:lex:${ region2 }:${ account2 }:bot:${ botName }`);
+  }
+
+  /**
+   * Adds a resource of type bot alias to the statement
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_BotAliasMetadata.html
+   *
+   * @param botId - Identifier for the botId.
+   * @param botAliasId - Identifier for the botAliasId.
+   * @param partition2 - Identifier for the partition2.
+   * @param region2 - Identifier for the region2.
+   * @param account2 - Identifier for the account2.
+   * @param botName - Identifier for the botName.
+   * @param botAlias - Identifier for the botAlias.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBotAlias(botId: string, botAliasId: string, partition2: string, region2: string, account2: string, botName: string, botAlias: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot-alias/${ botId }/${ botAliasId }, arn:${ partition2 }:lex:${ region2 }:${ account2 }:bot:${ botName }:${ botAlias }`);
   }
 
   /**
@@ -642,24 +655,6 @@ export class Lex extends PolicyStatement {
    */
   public onBotVersion(botName: string, botVersion: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot:${ botName }:${ botVersion }`);
-  }
-
-  /**
-   * Adds a resource of type bot alias to the statement
-   *
-   * https://docs.aws.amazon.com/lex/latest/dg/API_BotAliasMetadata.html
-   *
-   * @param botName - Identifier for the botName.
-   * @param botAlias - Identifier for the botAlias.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBotAlias(botName: string, botAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:lex:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:bot:${ botName }:${ botAlias }`);
   }
 
   /**
@@ -719,6 +714,7 @@ export class Lex extends PolicyStatement {
    * Applies to actions:
    * - .toPutBot()
    * - .toPutBotAlias()
+   * - .toStartImport()
    * - .toTagResource()
    * - .toUntagResource()
    *
@@ -735,10 +731,39 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateBotVersion()
+   * - .toDeleteBot()
+   * - .toDeleteBotAlias()
+   * - .toDeleteBotChannelAssociation()
+   * - .toDeleteBotVersion()
+   * - .toDeleteIntent()
+   * - .toDeleteSession()
+   * - .toDeleteSlotType()
+   * - .toDeleteUtterances()
+   * - .toGetBot()
+   * - .toGetBotAlias()
+   * - .toGetBotChannelAssociation()
+   * - .toGetBotChannelAssociations()
+   * - .toGetBotVersions()
+   * - .toGetExport()
+   * - .toGetSession()
+   * - .toGetUtterancesView()
+   * - .toListTagsForResource()
+   * - .toPostContent()
+   * - .toPostText()
+   * - .toPutBot()
+   * - .toPutBotAlias()
+   * - .toPutSession()
+   * - .toStartImport()
+   * - .toStartMigration()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
    * Applies to resource types:
    * - bot
-   * - bot version
    * - bot alias
+   * - bot version
    * - channel
    *
    * @param tagKey The tag key to check
@@ -757,6 +782,7 @@ export class Lex extends PolicyStatement {
    * Applies to actions:
    * - .toPutBot()
    * - .toPutBotAlias()
+   * - .toStartImport()
    * - .toTagResource()
    * - .toUntagResource()
    *

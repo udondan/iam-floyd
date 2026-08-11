@@ -1,4 +1,3 @@
-dsql:AddPeerCluster;Write
 dsql:CreateCluster;Write
 dsql:CreateStream;Write
 dsql:DbConnect;Write
@@ -12,19 +11,15 @@ dsql:GetClusterPolicy;Read
 dsql:GetRestoreJob;Read
 dsql:GetStream;Read
 dsql:GetVpcEndpointServiceName;Read
-dsql:InjectError;Write
 dsql:ListClusters;List
 dsql:ListStreams;List
 dsql:ListTagsForResource;Read
 dsql:PutClusterPolicy;Write
-dsql:PutMultiRegionProperties;Write
-dsql:PutWitnessRegion;Write
-dsql:RemovePeerCluster;Write
 dsql:StartBackupJob;Write
 dsql:StartRestoreJob;Write
 dsql:StopBackupJob;Write
 dsql:StopRestoreJob;Write
-dsql:TagResource;Tagging
-dsql:UntagResource;Tagging
+dsql:TagResource;Tagging, Write
+dsql:UntagResource;Tagging, Write
 dsql:UpdateCluster;Write
 dsql:UpdateStream;Write

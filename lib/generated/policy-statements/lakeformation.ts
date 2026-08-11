@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [lakeformation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslakeformation.html).
+ * Statement provider for service [lakeformation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Lakeformation extends PolicyStatement {
   public servicePrefix = 'lakeformation';
 
   /**
-   * Statement provider for service [lakeformation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslakeformation.html).
+   * Statement provider for service [lakeformation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_lakeformation.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,7 +21,7 @@ export class Lakeformation extends PolicyStatement {
   /**
    * Grants permission to attach Lake Formation tags to catalog resources
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_AddLFTagsToResource.html
    */
@@ -32,7 +32,7 @@ export class Lakeformation extends PolicyStatement {
   /**
    * Grants permission to data lake permissions to one or more principals in a batch
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_BatchGrantPermissions.html
    */
@@ -43,7 +43,7 @@ export class Lakeformation extends PolicyStatement {
   /**
    * Grants permission to revoke data lake permissions from one or more principals in a batch
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_BatchRevokePermissions.html
    */
@@ -334,9 +334,6 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - lakeformation:StartQueryPlanning
-   *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetQueryState.html
    */
   public toGetQueryState() {
@@ -347,9 +344,6 @@ export class Lakeformation extends PolicyStatement {
    * Grants permission to retrieve the statistics for the given query
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - lakeformation:StartQueryPlanning
    *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetQueryStatistics.html
    */
@@ -406,10 +400,6 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - lakeformation:GetWorkUnits
-   * - lakeformation:StartQueryPlanning
-   *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetWorkUnitResults.html
    */
   public toGetWorkUnitResults() {
@@ -421,9 +411,6 @@ export class Lakeformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - lakeformation:StartQueryPlanning
-   *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GetWorkUnits.html
    */
   public toGetWorkUnits() {
@@ -433,7 +420,7 @@ export class Lakeformation extends PolicyStatement {
   /**
    * Grants permission to data lake permissions to a principal
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GrantPermissions.html
    */
@@ -532,7 +519,7 @@ export class Lakeformation extends PolicyStatement {
   /**
    * Grants permission to overwrite data lake settings such as the list of data lake administrators and database and table default permissions
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_PutDataLakeSettings.html
    */
@@ -565,7 +552,7 @@ export class Lakeformation extends PolicyStatement {
   /**
    * Grants permission to remove lakeformation tags from catalog resources
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RemoveLFTagsFromResource.html
    */
@@ -576,7 +563,7 @@ export class Lakeformation extends PolicyStatement {
   /**
    * Grants permission to revoke data lake permissions from a principal
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_RevokePermissions.html
    */
@@ -710,14 +697,10 @@ export class Lakeformation extends PolicyStatement {
       'AddLFTagsToResource',
       'RemoveLFTagsFromResource'
     ],
-    'Permissions management': [
+    Write: [
+      'AddLFTagsToResource',
       'BatchGrantPermissions',
       'BatchRevokePermissions',
-      'GrantPermissions',
-      'PutDataLakeSettings',
-      'RevokePermissions'
-    ],
-    Write: [
       'CancelTransaction',
       'CommitTransaction',
       'CreateDataCellsFilter',
@@ -734,8 +717,12 @@ export class Lakeformation extends PolicyStatement {
       'DeregisterResource',
       'ExtendTransaction',
       'GetDataAccess',
+      'GrantPermissions',
+      'PutDataLakeSettings',
       'RegisterResource',
       'RegisterResourceWithPrivilegedAccess',
+      'RemoveLFTagsFromResource',
+      'RevokePermissions',
       'StartQueryPlanning',
       'StartTransaction',
       'UpdateDataCellsFilter',
@@ -745,6 +732,13 @@ export class Lakeformation extends PolicyStatement {
       'UpdateResource',
       'UpdateTableObjects',
       'UpdateTableStorageOptimizer'
+    ],
+    'Permissions management': [
+      'BatchGrantPermissions',
+      'BatchRevokePermissions',
+      'GrantPermissions',
+      'PutDataLakeSettings',
+      'RevokePermissions'
     ],
     Read: [
       'DescribeLakeFormationIdentityCenterConfiguration',

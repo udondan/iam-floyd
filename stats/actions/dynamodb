@@ -1,18 +1,13 @@
-dynamodb:AssociateTableReplica;Write
 dynamodb:BatchGetItem;Read
 dynamodb:BatchWriteItem;Write
 dynamodb:ConditionCheckItem;Read
 dynamodb:CreateBackup;Write
 dynamodb:CreateGlobalTable;Write
-dynamodb:CreateGlobalTableWitness;Write
 dynamodb:CreateTable;Write
-dynamodb:CreateTableReplica;Write
 dynamodb:DeleteBackup;Write
-dynamodb:DeleteGlobalTableWitness;Write
 dynamodb:DeleteItem;Write
-dynamodb:DeleteResourcePolicy;Permissions management
+dynamodb:DeleteResourcePolicy;Permissions management, Write
 dynamodb:DeleteTable;Write
-dynamodb:DeleteTableReplica;Write
 dynamodb:DescribeBackup;Read
 dynamodb:DescribeContinuousBackups;Read
 dynamodb:DescribeContributorInsights;Read
@@ -23,8 +18,6 @@ dynamodb:DescribeGlobalTableSettings;Read
 dynamodb:DescribeImport;Read
 dynamodb:DescribeKinesisStreamingDestination;Read
 dynamodb:DescribeLimits;Read
-dynamodb:DescribeReservedCapacity;Read
-dynamodb:DescribeReservedCapacityOfferings;Read
 dynamodb:DescribeStream;Read
 dynamodb:DescribeTable;Read
 dynamodb:DescribeTableReplicaAutoScaling;Read
@@ -32,13 +25,11 @@ dynamodb:DescribeTimeToLive;Read
 dynamodb:DisableKinesisStreamingDestination;Write
 dynamodb:EnableKinesisStreamingDestination;Write
 dynamodb:ExportTableToPointInTime;Write
-dynamodb:GetAbacStatus;Read
 dynamodb:GetItem;Read
 dynamodb:GetRecords;Read
 dynamodb:GetResourcePolicy;Read
 dynamodb:GetShardIterator;Read
 dynamodb:ImportTable;Write
-dynamodb:InjectError;Write
 dynamodb:ListBackups;List
 dynamodb:ListContributorInsights;List
 dynamodb:ListExports;List
@@ -51,28 +42,20 @@ dynamodb:PartiQLDelete;Write
 dynamodb:PartiQLInsert;Write
 dynamodb:PartiQLSelect;Read
 dynamodb:PartiQLUpdate;Write
-dynamodb:PurchaseReservedCapacityOfferings;Write
 dynamodb:PutItem;Write
-dynamodb:PutResourcePolicy;Permissions management
+dynamodb:PutResourcePolicy;Permissions management, Write
 dynamodb:Query;Read
-dynamodb:ReadDataForReplication;Read
-dynamodb:ReplicateSettings;Write
-dynamodb:RestoreTableFromAwsBackup;Write
 dynamodb:RestoreTableFromBackup;Write
 dynamodb:RestoreTableToPointInTime;Write
 dynamodb:Scan;Read
-dynamodb:StartAwsBackupJob;Write
-dynamodb:TagResource;Tagging
-dynamodb:UntagResource;Tagging
-dynamodb:UpdateAbacStatus;Permissions management
+dynamodb:TagResource;Tagging, Write
+dynamodb:UntagResource;Tagging, Write
 dynamodb:UpdateContinuousBackups;Write
 dynamodb:UpdateContributorInsights;Write
 dynamodb:UpdateGlobalTable;Write
 dynamodb:UpdateGlobalTableSettings;Write
-dynamodb:UpdateGlobalTableVersion;Write
 dynamodb:UpdateItem;Write
 dynamodb:UpdateKinesisStreamingDestination;Write
 dynamodb:UpdateTable;Write
 dynamodb:UpdateTableReplicaAutoScaling;Write
 dynamodb:UpdateTimeToLive;Write
-dynamodb:WriteDataForReplication;Write

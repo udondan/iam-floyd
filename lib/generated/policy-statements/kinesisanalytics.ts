@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [kinesisanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisanalytics.html).
+ * Statement provider for service [kinesisanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_kinesisanalytics.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Kinesisanalytics extends PolicyStatement {
   public servicePrefix = 'kinesisanalytics';
 
   /**
-   * Statement provider for service [kinesisanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisanalytics.html).
+   * Statement provider for service [kinesisanalytics](https://docs.aws.amazon.com/service-authorization/latest/reference/list_kinesisanalytics.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -122,17 +122,6 @@ export class Kinesisanalytics extends PolicyStatement {
   }
 
   /**
-   * Grants permission to Kinesis Data Analytics console to display stream results for Kinesis Data Analytics SQL runtime applications
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/api-permissions-reference.html#api-permissions-reference-gas
-   */
-  public toGetApplicationState() {
-    return this.to('GetApplicationState');
-  }
-
-  /**
    * Grants permission to list applications for the account
    *
    * Access Level: List
@@ -179,11 +168,7 @@ export class Kinesisanalytics extends PolicyStatement {
   /**
    * Grants permission to add tags to the application
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_TagResource.html
    */
@@ -194,10 +179,7 @@ export class Kinesisanalytics extends PolicyStatement {
   /**
    * Grants permission to remove the specified tags from the application
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UntagResource.html
    */
@@ -227,12 +209,13 @@ export class Kinesisanalytics extends PolicyStatement {
       'DeleteApplicationReferenceDataSource',
       'StartApplication',
       'StopApplication',
+      'TagResource',
+      'UntagResource',
       'UpdateApplication'
     ],
     Read: [
       'DescribeApplication',
       'DiscoverInputSchema',
-      'GetApplicationState',
       'ListTagsForResource'
     ],
     List: [
@@ -282,6 +265,21 @@ export class Kinesisanalytics extends PolicyStatement {
    * Filters access by tag-value assoicated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAddApplicationInput()
+   * - .toAddApplicationOutput()
+   * - .toAddApplicationReferenceDataSource()
+   * - .toDeleteApplication()
+   * - .toDeleteApplicationOutput()
+   * - .toDeleteApplicationReferenceDataSource()
+   * - .toDescribeApplication()
+   * - .toListTagsForResource()
+   * - .toStartApplication()
+   * - .toStopApplication()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateApplication()
    *
    * Applies to resource types:
    * - application

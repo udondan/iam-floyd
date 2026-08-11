@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [iot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html).
+ * Statement provider for service [iot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iot.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iot extends PolicyStatement {
   public servicePrefix = 'iot';
 
   /**
-   * Statement provider for service [iot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html).
+   * Statement provider for service [iot](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iot.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -56,9 +56,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iot:GetIndexingConfiguration
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AssociateSbomWithPackageVersion.html
    */
   public toAssociateSbomWithPackageVersion() {
@@ -79,7 +76,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to attach a policy to the specified target
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AttachPolicy.html
    */
@@ -90,7 +87,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to attach the specified policy to the specified principal (certificate or other credential)
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AttachPrincipalPolicy.html
    */
@@ -113,9 +110,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to attach the specified principal to the specified thing
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifThingArn()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AttachThingPrincipal.html
    */
@@ -205,9 +199,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifDelete()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_CloseTunnel.html
    */
   public toCloseTunnel() {
@@ -252,10 +243,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuthorizer.html
    */
   public toCreateAuthorizer() {
@@ -266,10 +253,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to create a billing group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateBillingGroup.html
    */
@@ -293,10 +276,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateProvider.html
    */
   public toCreateCertificateProvider() {
@@ -307,10 +286,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to create a command that can be used to start new executions against a device
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCommand.html
    */
@@ -323,10 +298,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCustomMetric.html
    */
   public toCreateCustomMetric() {
@@ -337,10 +308,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to define a dimension that can be used to to limit the scope of a metric used in a security profile
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDimension.html
    */
@@ -353,11 +320,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifDomainName()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDomainConfiguration.html
    */
   public toCreateDomainConfiguration() {
@@ -368,10 +330,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to create a Dynamic Thing Group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDynamicThingGroup.html
    */
@@ -384,10 +342,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateFleetMetric.html
    */
   public toCreateFleetMetric() {
@@ -399,10 +353,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateJob.html
    */
   public toCreateJob() {
@@ -413,10 +363,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to create a job template
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateJobTemplate.html
    */
@@ -440,10 +386,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateMitigationAction.html
    */
   public toCreateMitigationAction() {
@@ -454,10 +396,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to create an OTA update job
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateOTAUpdate.html
    */
@@ -470,13 +408,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iot:GetIndexingConfiguration
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackage.html
    */
   public toCreatePackage() {
@@ -488,14 +419,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iot:GetIndexingConfiguration
-   * - s3:GetObjectVersion
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePackageVersion.html
    */
   public toCreatePackageVersion() {
@@ -505,11 +428,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to create an AWS IoT policy
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicy.html
    */
@@ -520,7 +439,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to create a new version of the specified AWS IoT policy
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicyVersion.html
    */
@@ -544,13 +463,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html
    */
   public toCreateProvisioningTemplate() {
@@ -573,13 +485,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html
    */
   public toCreateRoleAlias() {
@@ -590,10 +495,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to create a scheduled audit that is run at a specified time interval
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateScheduledAudit.html
    */
@@ -606,10 +507,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateSecurityProfile.html
    */
   public toCreateSecurityProfile() {
@@ -620,10 +517,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to create a new AWS IoT stream
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateStream.html
    */
@@ -647,10 +540,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingGroup.html
    */
   public toCreateThingGroup() {
@@ -662,10 +551,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingType.html
    */
   public toCreateThingType() {
@@ -676,10 +561,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to create a rule
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRule.html
    */
@@ -943,7 +824,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to delete the specified policy
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html
    */
@@ -954,7 +835,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to Delete the specified version of the specified policy
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicyVersion.html
    */
@@ -1526,7 +1407,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to detach a policy from the specified target
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DetachPolicy.html
    */
@@ -1537,7 +1418,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to remove the specified policy from the specified certificate
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DetachPrincipalPolicy.html
    */
@@ -1560,9 +1441,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to detach the specified principal from the specified thing
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifThingArn()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DetachThingPrincipal.html
    */
@@ -1662,9 +1540,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to retrieve the specified connection information
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifIncludeSocketInformation()
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
@@ -1830,9 +1705,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to get the thing's connectivity data
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifIncludeSocketInformation()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetThingConnectivityData.html
    */
@@ -2700,11 +2572,8 @@ export class Iot extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    * - .ifAwsResourceTag()
-   *
-   * Dependent actions:
-   * - iam:PassRole
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCACertificate.html
    */
@@ -2805,11 +2674,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifThingGroupArn()
-   * - .ifTunnelDestinationService()
-   * - .ifClientMode()
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-secure-tunneling_RotateTunnelAccessToken.html
    */
   public toRotateTunnelAccessToken() {
@@ -2832,9 +2696,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifTopic()
-   *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
   public toSendDirectMessage() {
@@ -2844,7 +2705,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to set the default authorizer. This will be used if a websocket connection is made without specifying an authorizer
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_SetDefaultAuthorizer.html
    */
@@ -2855,7 +2716,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to set the specified version of the specified policy as the policy's default (operative) version
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_SetDefaultPolicyVersion.html
    */
@@ -2911,11 +2772,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to start a new command execution
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifCommandExecutionParameterString()
-   * - .ifCommandExecutionParameterBoolean()
-   * - .ifCommandExecutionParameterNumber()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_iot-jobs-data_StartCommandExecution.html
    */
@@ -2981,11 +2837,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to tag a specified resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_TagResource.html
    */
@@ -3029,10 +2881,7 @@ export class Iot extends PolicyStatement {
   /**
    * Grants permission to untag a specified resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UntagResource.html
    */
@@ -3088,9 +2937,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to update a registered CA certificate
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCACertificate.html
    */
@@ -3246,9 +3092,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iot:GetIndexingConfiguration
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackage.html
    */
   public toUpdatePackage() {
@@ -3259,9 +3102,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to update the package configuration of the account
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageConfiguration.html
    */
@@ -3274,10 +3114,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iot:GetIndexingConfiguration
-   * - s3:GetObjectVersion
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdatePackageVersion.html
    */
   public toUpdatePackageVersion() {
@@ -3289,9 +3125,6 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateProvisioningTemplate.html
    */
   public toUpdateProvisioningTemplate() {
@@ -3302,9 +3135,6 @@ export class Iot extends PolicyStatement {
    * Grants permission to update the role alias
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html
    */
@@ -3429,6 +3259,8 @@ export class Iot extends PolicyStatement {
       'AddThingToThingGroup',
       'AssociateSbomWithPackageVersion',
       'AssociateTargetsWithJob',
+      'AttachPolicy',
+      'AttachPrincipalPolicy',
       'AttachSecurityProfile',
       'AttachThingPrincipal',
       'CancelAuditMitigationActionsTask',
@@ -3459,6 +3291,8 @@ export class Iot extends PolicyStatement {
       'CreateOTAUpdate',
       'CreatePackage',
       'CreatePackageVersion',
+      'CreatePolicy',
+      'CreatePolicyVersion',
       'CreateProvisioningClaim',
       'CreateProvisioningTemplate',
       'CreateProvisioningTemplateVersion',
@@ -3493,6 +3327,8 @@ export class Iot extends PolicyStatement {
       'DeleteOTAUpdate',
       'DeletePackage',
       'DeletePackageVersion',
+      'DeletePolicy',
+      'DeletePolicyVersion',
       'DeleteProvisioningTemplate',
       'DeleteProvisioningTemplateVersion',
       'DeleteRegistrationCode',
@@ -3508,6 +3344,8 @@ export class Iot extends PolicyStatement {
       'DeleteTopicRuleDestination',
       'DeleteV2LoggingLevel',
       'DeprecateThingType',
+      'DetachPolicy',
+      'DetachPrincipalPolicy',
       'DetachSecurityProfile',
       'DetachThingPrincipal',
       'DisableTopicRule',
@@ -3530,6 +3368,8 @@ export class Iot extends PolicyStatement {
       'RetainPublish',
       'RotateTunnelAccessToken',
       'SendDirectMessage',
+      'SetDefaultAuthorizer',
+      'SetDefaultPolicyVersion',
       'SetLoggingOptions',
       'SetV2LoggingLevel',
       'SetV2LoggingOptions',
@@ -3540,7 +3380,9 @@ export class Iot extends PolicyStatement {
       'StartThingRegistrationTask',
       'StopThingRegistrationTask',
       'Subscribe',
+      'TagResource',
       'TransferCertificate',
+      'UntagResource',
       'UpdateAccountAuditConfiguration',
       'UpdateAuditSuppression',
       'UpdateAuthorizer',
@@ -3729,6 +3571,88 @@ export class Iot extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type authorizer to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html
+   *
+   * @param authorizerName - Identifier for the authorizerName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAuthorizer(authorizerName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:authorizer/${ authorizerName }`);
+  }
+
+  /**
+   * Adds a resource of type billinggroup to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/billing-groups.html
+   *
+   * @param billingGroupName - Identifier for the billingGroupName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onBillinggroup(billingGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:billinggroup/${ billingGroupName }`);
+  }
+
+  /**
+   * Adds a resource of type cacert to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html
+   *
+   * @param cACertificate - Identifier for the cACertificate.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCacert(cACertificate: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cacert/${ cACertificate }`);
+  }
+
+  /**
+   * Adds a resource of type cert to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html
+   *
+   * @param certificate - Identifier for the certificate.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onCert(certificate: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cert/${ certificate }`);
+  }
+
+  /**
+   * Adds a resource of type certificateprovider to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html
+   *
+   * @param certificateProviderName - Identifier for the certificateProviderName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCertificateprovider(certificateProviderName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:certificateprovider/${ certificateProviderName }`);
+  }
+
+  /**
    * Adds a resource of type client to the statement
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html
@@ -3743,17 +3667,104 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type index to the statement
+   * Adds a resource of type command to the statement
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html
+   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-remote-command.html
    *
-   * @param indexName - Identifier for the indexName.
+   * @param commandId - Identifier for the commandId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCommand(commandId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:command/${ commandId }`);
+  }
+
+  /**
+   * Adds a resource of type custommetric to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
+   *
+   * @param metricName - Identifier for the metricName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustommetric(metricName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custommetric/${ metricName }`);
+  }
+
+  /**
+   * Adds a resource of type destination to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/rule-destination.html
+   *
+   * @param destinationType - Identifier for the destinationType.
+   * @param uuid - Identifier for the uuid.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onIndex(indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexName }`);
+  public onDestination(destinationType: string, uuid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ruledestination/${ destinationType }/${ uuid }`);
+  }
+
+  /**
+   * Adds a resource of type dimension to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
+   *
+   * @param dimensionName - Identifier for the dimensionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDimension(dimensionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dimension/${ dimensionName }`);
+  }
+
+  /**
+   * Adds a resource of type domainconfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html
+   *
+   * @param domainConfigurationName - Identifier for the domainConfigurationName.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDomainconfiguration(domainConfigurationName: string, id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domainconfiguration/${ domainConfigurationName }/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type dynamicthinggroup to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/dynamic-thing-groups.html
+   *
+   * @param thingGroupName - Identifier for the thingGroupName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDynamicthinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thinggroup/${ thingGroupName }`);
   }
 
   /**
@@ -3771,6 +3782,20 @@ export class Iot extends PolicyStatement {
    */
   public onFleetmetric(fleetMetricName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:fleetmetric/${ fleetMetricName }`);
+  }
+
+  /**
+   * Adds a resource of type index to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html
+   *
+   * @param indexName - Identifier for the indexName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onIndex(indexName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:index/${ indexName }`);
   }
 
   /**
@@ -3808,11 +3833,11 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type tunnel to the statement
+   * Adds a resource of type mitigationaction to the statement
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-tunnels.html
+   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html
    *
-   * @param tunnelId - Identifier for the tunnelId.
+   * @param mitigationActionName - Identifier for the mitigationActionName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -3820,8 +3845,179 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onTunnel(tunnelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tunnel/${ tunnelId }`);
+  public onMitigationaction(mitigationActionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mitigationaction/${ mitigationActionName }`);
+  }
+
+  /**
+   * Adds a resource of type otaupdate to the statement
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html
+   *
+   * @param otaUpdateId - Identifier for the otaUpdateId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:otaupdate/${ otaUpdateId }`);
+  }
+
+  /**
+   * Adds a resource of type package to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html
+   *
+   * @param packageName - Identifier for the packageName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPackage(packageName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ packageName }`);
+  }
+
+  /**
+   * Adds a resource of type packageversion to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html
+   *
+   * @param packageName - Identifier for the packageName.
+   * @param versionName - Identifier for the versionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPackageversion(packageName: string, versionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ packageName }/version/${ versionName }`);
+  }
+
+  /**
+   * Adds a resource of type policy to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html
+   *
+   * @param policyName - Identifier for the policyName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPolicy(policyName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy/${ policyName }`);
+  }
+
+  /**
+   * Adds a resource of type provisioningtemplate to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html
+   *
+   * @param provisioningTemplate - Identifier for the provisioningTemplate.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:provisioningtemplate/${ provisioningTemplate }`);
+  }
+
+  /**
+   * Adds a resource of type rolealias to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html
+   *
+   * @param roleAlias - Identifier for the roleAlias.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRolealias(roleAlias: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rolealias/${ roleAlias }`);
+  }
+
+  /**
+   * Adds a resource of type rule to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html
+   *
+   * @param ruleName - Identifier for the ruleName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rule/${ ruleName }`);
+  }
+
+  /**
+   * Adds a resource of type scheduledaudit to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit.html
+   *
+   * @param scheduleName - Identifier for the scheduleName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onScheduledaudit(scheduleName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scheduledaudit/${ scheduleName }`);
+  }
+
+  /**
+   * Adds a resource of type securityprofile to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
+   *
+   * @param securityProfileName - Identifier for the securityProfileName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:securityprofile/${ securityProfileName }`);
+  }
+
+  /**
+   * Adds a resource of type stream to the statement
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html
+   *
+   * @param streamId - Identifier for the streamId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStream(streamId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stream/${ streamId }`);
   }
 
   /**
@@ -3852,40 +4048,6 @@ export class Iot extends PolicyStatement {
    * - .ifAwsResourceTag()
    */
   public onThinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thinggroup/${ thingGroupName }`);
-  }
-
-  /**
-   * Adds a resource of type billinggroup to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/billing-groups.html
-   *
-   * @param billingGroupName - Identifier for the billingGroupName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onBillinggroup(billingGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:billinggroup/${ billingGroupName }`);
-  }
-
-  /**
-   * Adds a resource of type dynamicthinggroup to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/dynamic-thing-groups.html
-   *
-   * @param thingGroupName - Identifier for the thingGroupName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDynamicthinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:thinggroup/${ thingGroupName }`);
   }
 
@@ -3935,11 +4097,11 @@ export class Iot extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type rolealias to the statement
+   * Adds a resource of type tunnel to the statement
    *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html
+   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-tunnels.html
    *
-   * @param roleAlias - Identifier for the roleAlias.
+   * @param tunnelId - Identifier for the tunnelId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -3947,328 +4109,8 @@ export class Iot extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onRolealias(roleAlias: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rolealias/${ roleAlias }`);
-  }
-
-  /**
-   * Adds a resource of type authorizer to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html
-   *
-   * @param authorizerName - Identifier for the authorizerName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAuthorizer(authorizerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:authorizer/${ authorizerName }`);
-  }
-
-  /**
-   * Adds a resource of type policy to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html
-   *
-   * @param policyName - Identifier for the policyName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPolicy(policyName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:policy/${ policyName }`);
-  }
-
-  /**
-   * Adds a resource of type cert to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html
-   *
-   * @param certificate - Identifier for the certificate.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onCert(certificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cert/${ certificate }`);
-  }
-
-  /**
-   * Adds a resource of type cacert to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html
-   *
-   * @param cACertificate - Identifier for the cACertificate.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCacert(cACertificate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cacert/${ cACertificate }`);
-  }
-
-  /**
-   * Adds a resource of type stream to the statement
-   *
-   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html
-   *
-   * @param streamId - Identifier for the streamId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onStream(streamId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stream/${ streamId }`);
-  }
-
-  /**
-   * Adds a resource of type otaupdate to the statement
-   *
-   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html
-   *
-   * @param otaUpdateId - Identifier for the otaUpdateId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:otaupdate/${ otaUpdateId }`);
-  }
-
-  /**
-   * Adds a resource of type scheduledaudit to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit.html
-   *
-   * @param scheduleName - Identifier for the scheduleName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onScheduledaudit(scheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scheduledaudit/${ scheduleName }`);
-  }
-
-  /**
-   * Adds a resource of type mitigationaction to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html
-   *
-   * @param mitigationActionName - Identifier for the mitigationActionName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onMitigationaction(mitigationActionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mitigationaction/${ mitigationActionName }`);
-  }
-
-  /**
-   * Adds a resource of type securityprofile to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
-   *
-   * @param securityProfileName - Identifier for the securityProfileName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:securityprofile/${ securityProfileName }`);
-  }
-
-  /**
-   * Adds a resource of type custommetric to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
-   *
-   * @param metricName - Identifier for the metricName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustommetric(metricName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:custommetric/${ metricName }`);
-  }
-
-  /**
-   * Adds a resource of type dimension to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html
-   *
-   * @param dimensionName - Identifier for the dimensionName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDimension(dimensionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dimension/${ dimensionName }`);
-  }
-
-  /**
-   * Adds a resource of type rule to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html
-   *
-   * @param ruleName - Identifier for the ruleName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:rule/${ ruleName }`);
-  }
-
-  /**
-   * Adds a resource of type destination to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/rule-destination.html
-   *
-   * @param destinationType - Identifier for the destinationType.
-   * @param uuid - Identifier for the uuid.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onDestination(destinationType: string, uuid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ruledestination/${ destinationType }/${ uuid }`);
-  }
-
-  /**
-   * Adds a resource of type provisioningtemplate to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html
-   *
-   * @param provisioningTemplate - Identifier for the provisioningTemplate.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:provisioningtemplate/${ provisioningTemplate }`);
-  }
-
-  /**
-   * Adds a resource of type domainconfiguration to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html
-   *
-   * @param domainConfigurationName - Identifier for the domainConfigurationName.
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDomainconfiguration(domainConfigurationName: string, id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domainconfiguration/${ domainConfigurationName }/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type package to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html
-   *
-   * @param packageName - Identifier for the packageName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPackage(packageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ packageName }`);
-  }
-
-  /**
-   * Adds a resource of type packageversion to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/software-package-catalog.html
-   *
-   * @param packageName - Identifier for the packageName.
-   * @param versionName - Identifier for the versionName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPackageversion(packageName: string, versionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:package/${ packageName }/version/${ versionName }`);
-  }
-
-  /**
-   * Adds a resource of type certificateprovider to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html
-   *
-   * @param certificateProviderName - Identifier for the certificateProviderName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCertificateprovider(certificateProviderName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:certificateprovider/${ certificateProviderName }`);
-  }
-
-  /**
-   * Adds a resource of type command to the statement
-   *
-   * https://docs.aws.amazon.com/iot/latest/developerguide/iot-remote-command.html
-   *
-   * @param commandId - Identifier for the commandId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCommand(commandId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:command/${ commandId }`);
+  public onTunnel(tunnelId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iot:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:tunnel/${ tunnelId }`);
   }
 
   /**
@@ -4319,35 +4161,184 @@ export class Iot extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
    *
    * Applies to actions:
+   * - .toAddThingToBillingGroup()
+   * - .toAddThingToThingGroup()
+   * - .toAssociateSbomWithPackageVersion()
+   * - .toAssociateTargetsWithJob()
+   * - .toAttachPolicy()
+   * - .toAttachSecurityProfile()
+   * - .toCancelJob()
+   * - .toCancelJobExecution()
+   * - .toCloseTunnel()
+   * - .toCreateAuthorizer()
+   * - .toCreateBillingGroup()
+   * - .toCreateCertificateProvider()
+   * - .toCreateCommand()
+   * - .toCreateCustomMetric()
+   * - .toCreateDimension()
+   * - .toCreateDomainConfiguration()
+   * - .toCreateDynamicThingGroup()
+   * - .toCreateFleetMetric()
+   * - .toCreateJob()
+   * - .toCreateJobTemplate()
+   * - .toCreateMitigationAction()
+   * - .toCreateOTAUpdate()
+   * - .toCreatePackage()
+   * - .toCreatePackageVersion()
+   * - .toCreatePolicy()
+   * - .toCreatePolicyVersion()
+   * - .toCreateProvisioningClaim()
+   * - .toCreateProvisioningTemplate()
+   * - .toCreateProvisioningTemplateVersion()
+   * - .toCreateRoleAlias()
+   * - .toCreateScheduledAudit()
+   * - .toCreateSecurityProfile()
+   * - .toCreateStream()
+   * - .toCreateThing()
+   * - .toCreateThingGroup()
+   * - .toCreateThingType()
+   * - .toCreateTopicRule()
+   * - .toDeleteAuthorizer()
+   * - .toDeleteBillingGroup()
+   * - .toDeleteCACertificate()
+   * - .toDeleteCertificateProvider()
+   * - .toDeleteCommand()
+   * - .toDeleteCustomMetric()
+   * - .toDeleteDimension()
+   * - .toDeleteDomainConfiguration()
+   * - .toDeleteDynamicThingGroup()
+   * - .toDeleteFleetMetric()
+   * - .toDeleteJob()
+   * - .toDeleteJobExecution()
+   * - .toDeleteJobTemplate()
+   * - .toDeleteMitigationAction()
+   * - .toDeleteOTAUpdate()
+   * - .toDeletePackage()
+   * - .toDeletePackageVersion()
+   * - .toDeletePolicy()
+   * - .toDeletePolicyVersion()
+   * - .toDeleteProvisioningTemplate()
+   * - .toDeleteProvisioningTemplateVersion()
+   * - .toDeleteRoleAlias()
+   * - .toDeleteScheduledAudit()
+   * - .toDeleteSecurityProfile()
+   * - .toDeleteStream()
+   * - .toDeleteThingGroup()
+   * - .toDeleteThingType()
+   * - .toDeleteTopicRule()
+   * - .toDeprecateThingType()
+   * - .toDescribeAuthorizer()
+   * - .toDescribeBillingGroup()
+   * - .toDescribeCACertificate()
+   * - .toDescribeCertificateProvider()
+   * - .toDescribeCustomMetric()
+   * - .toDescribeDimension()
+   * - .toDescribeDomainConfiguration()
+   * - .toDescribeFleetMetric()
+   * - .toDescribeJob()
+   * - .toDescribeJobExecution()
+   * - .toDescribeJobTemplate()
+   * - .toDescribeManagedJobTemplate()
+   * - .toDescribeMitigationAction()
+   * - .toDescribeProvisioningTemplate()
+   * - .toDescribeProvisioningTemplateVersion()
+   * - .toDescribeRoleAlias()
+   * - .toDescribeScheduledAudit()
+   * - .toDescribeSecurityProfile()
+   * - .toDescribeStream()
+   * - .toDescribeThingGroup()
+   * - .toDescribeThingType()
+   * - .toDescribeTunnel()
+   * - .toDetachPolicy()
+   * - .toDetachSecurityProfile()
+   * - .toDisableTopicRule()
+   * - .toDisassociateSbomFromPackageVersion()
+   * - .toEnableTopicRule()
+   * - .toGetBehaviorModelTrainingSummaries()
+   * - .toGetCommand()
+   * - .toGetJobDocument()
+   * - .toGetOTAUpdate()
+   * - .toGetPackage()
+   * - .toGetPackageVersion()
+   * - .toGetPolicy()
+   * - .toGetPolicyVersion()
+   * - .toGetTopicRule()
+   * - .toListActiveViolations()
+   * - .toListCommandExecutions()
+   * - .toListJobExecutionsForJob()
+   * - .toListPolicyVersions()
+   * - .toListProvisioningTemplateVersions()
+   * - .toListSbomValidationResults()
+   * - .toListSecurityProfiles()
+   * - .toListSecurityProfilesForTarget()
+   * - .toListTagsForResource()
+   * - .toListTargetsForPolicy()
+   * - .toListTargetsForSecurityProfile()
+   * - .toListThingsInBillingGroup()
+   * - .toListThingsInThingGroup()
+   * - .toListViolationEvents()
    * - .toRegisterCACertificate()
+   * - .toRemoveThingFromBillingGroup()
+   * - .toRemoveThingFromThingGroup()
+   * - .toReplaceTopicRule()
+   * - .toRotateTunnelAccessToken()
+   * - .toSetDefaultAuthorizer()
+   * - .toSetDefaultPolicyVersion()
+   * - .toStartCommandExecution()
+   * - .toStartDetectMitigationActionsTask()
+   * - .toTagResource()
+   * - .toTestInvokeAuthorizer()
+   * - .toUntagResource()
+   * - .toUpdateAuthorizer()
+   * - .toUpdateBillingGroup()
+   * - .toUpdateCACertificate()
+   * - .toUpdateCertificateProvider()
+   * - .toUpdateCommand()
+   * - .toUpdateCustomMetric()
+   * - .toUpdateDimension()
+   * - .toUpdateDomainConfiguration()
+   * - .toUpdateDynamicThingGroup()
+   * - .toUpdateFleetMetric()
+   * - .toUpdateJob()
+   * - .toUpdateMitigationAction()
+   * - .toUpdatePackage()
+   * - .toUpdatePackageVersion()
+   * - .toUpdateProvisioningTemplate()
+   * - .toUpdateRoleAlias()
+   * - .toUpdateScheduledAudit()
+   * - .toUpdateSecurityProfile()
+   * - .toUpdateStream()
+   * - .toUpdateThingGroup()
+   * - .toUpdateThingGroupsForThing()
+   * - .toUpdateThingType()
    *
    * Applies to resource types:
+   * - authorizer
+   * - billinggroup
+   * - cacert
+   * - certificateprovider
+   * - command
+   * - custommetric
+   * - dimension
+   * - domainconfiguration
+   * - dynamicthinggroup
    * - fleetmetric
    * - job
    * - jobtemplate
-   * - tunnel
-   * - thinggroup
-   * - billinggroup
-   * - dynamicthinggroup
-   * - thingtype
-   * - rolealias
-   * - authorizer
-   * - policy
-   * - cacert
-   * - stream
-   * - otaupdate
-   * - scheduledaudit
    * - mitigationaction
-   * - securityprofile
-   * - custommetric
-   * - dimension
-   * - rule
-   * - provisioningtemplate
-   * - domainconfiguration
+   * - otaupdate
    * - package
    * - packageversion
-   * - certificateprovider
-   * - command
+   * - policy
+   * - provisioningtemplate
+   * - rolealias
+   * - rule
+   * - scheduledaudit
+   * - securityprofile
+   * - stream
+   * - thinggroup
+   * - thingtype
+   * - tunnel
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

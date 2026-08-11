@@ -1,3 +1,5 @@
 signin:console
 signin:oauth2-public-client-localhost
+signin:oauth2-public-client-registration
 signin:oauth2-public-client-remote
+signin:oauth2-resource-service-principal

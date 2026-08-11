@@ -3,11 +3,8 @@ qapps:AssociateQAppWithUser;Write
 qapps:BatchCreateCategory;Write
 qapps:BatchDeleteCategory;Write
 qapps:BatchUpdateCategory;Write
-qapps:CopyQApp;Write
 qapps:CreateLibraryItem;Write
-qapps:CreateLibraryItemReview;Write
 qapps:CreateQApp;Write
-qapps:CreateSubscriptionToken;Write
 qapps:DeleteLibraryItem;Write
 qapps:DeleteQApp;Write
 qapps:DescribeQAppPermissions;Read
@@ -24,13 +21,11 @@ qapps:ListLibraryItems;List
 qapps:ListQAppSessionData;Read
 qapps:ListQApps;List
 qapps:ListTagsForResource;Read
-qapps:PredictProblemStatementFromConversation;Write
 qapps:PredictQApp;Write
-qapps:PredictQAppFromProblemStatement;Write
 qapps:StartQAppSession;Write
 qapps:StopQAppSession;Write
-qapps:TagResource;Tagging
-qapps:UntagResource;Tagging
+qapps:TagResource;Tagging, Write
+qapps:UntagResource;Tagging, Write
 qapps:UpdateLibraryItem;Write
 qapps:UpdateLibraryItemMetadata;Write
 qapps:UpdateQApp;Write

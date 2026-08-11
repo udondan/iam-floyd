@@ -13,7 +13,6 @@ states:DescribeStateMachineAlias;Read
 states:DescribeStateMachineForExecution;Read
 states:GetActivityTask;Write
 states:GetExecutionHistory;Read
-states:InvokeHTTPEndpoint;Write
 states:ListActivities;List
 states:ListExecutions;List
 states:ListMapRuns;List
@@ -23,16 +22,15 @@ states:ListStateMachines;List
 states:ListTagsForResource;List
 states:PublishStateMachineVersion;Write
 states:RedriveExecution;Write
-states:RevealSecrets;Read
 states:SendTaskFailure;Write
 states:SendTaskHeartbeat;Write
 states:SendTaskSuccess;Write
 states:StartExecution;Write
 states:StartSyncExecution;Write
 states:StopExecution;Write
-states:TagResource;Tagging
+states:TagResource;Tagging, Write
 states:TestState;Write
-states:UntagResource;Tagging
+states:UntagResource;Tagging, Write
 states:UpdateMapRun;Write
 states:UpdateStateMachine;Write
 states:UpdateStateMachineAlias;Write

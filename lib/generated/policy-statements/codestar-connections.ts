@@ -1,0 +1,687 @@
+import { AccessLevelList } from '../../shared/access-level';
+import { PolicyStatement, Operator } from '../../shared';
+
+/**
+ * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codestar-connections.html).
+ *
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ */
+export class CodestarConnections extends PolicyStatement {
+  public servicePrefix = 'codestar-connections';
+
+  /**
+   * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/service-authorization/latest/reference/list_codestar-connections.html).
+   *
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   */
+  constructor(sid?: string) {
+    super(sid);
+  }
+
+  /**
+   * Grants permission to create a Connection resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifProviderType()
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html
+   */
+  public toCreateConnection() {
+    return this.to('CreateConnection');
+  }
+
+  /**
+   * Grants permission to create a host resource
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifProviderType()
+   * - .ifVpcId()
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateHost.html
+   */
+  public toCreateHost() {
+    return this.to('CreateHost');
+  }
+
+  /**
+   * Grants permission to create a repository link
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateRepositoryLink.html
+   */
+  public toCreateRepositoryLink() {
+    return this.to('CreateRepositoryLink');
+  }
+
+  /**
+   * Grants permission to create a template sync config
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateSyncConfiguration.html
+   */
+  public toCreateSyncConfiguration() {
+    return this.to('CreateSyncConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a Connection resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteConnection.html
+   */
+  public toDeleteConnection() {
+    return this.to('DeleteConnection');
+  }
+
+  /**
+   * Grants permission to delete a host resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteHost.html
+   */
+  public toDeleteHost() {
+    return this.to('DeleteHost');
+  }
+
+  /**
+   * Grants permission to delete a repository link
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteRepositoryLink.html
+   */
+  public toDeleteRepositoryLink() {
+    return this.to('DeleteRepositoryLink');
+  }
+
+  /**
+   * Grants permission to delete a sync configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteSyncConfiguration.html
+   */
+  public toDeleteSyncConfiguration() {
+    return this.to('DeleteSyncConfiguration');
+  }
+
+  /**
+   * Grants permission to get details about a Connection resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetConnection.html
+   */
+  public toGetConnection() {
+    return this.to('GetConnection');
+  }
+
+  /**
+   * Grants permission to get details about a host resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetHost.html
+   */
+  public toGetHost() {
+    return this.to('GetHost');
+  }
+
+  /**
+   * Grants permission to describe a repository link
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetRepositoryLink.html
+   */
+  public toGetRepositoryLink() {
+    return this.to('GetRepositoryLink');
+  }
+
+  /**
+   * Grants permission to get the latest sync status for a repository
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetRepositorySyncStatus.html
+   */
+  public toGetRepositorySyncStatus() {
+    return this.to('GetRepositorySyncStatus');
+  }
+
+  /**
+   * Grants permission to get the latest sync status for a resource (cfn stack or other resources)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetResourceSyncStatus.html
+   */
+  public toGetResourceSyncStatus() {
+    return this.to('GetResourceSyncStatus');
+  }
+
+  /**
+   * Grants permission to describe service sync blockers on a resource (cfn stack or other resources)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetSyncBlockerSummary.html
+   */
+  public toGetSyncBlockerSummary() {
+    return this.to('GetSyncBlockerSummary');
+  }
+
+  /**
+   * Grants permission to describe a sync configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetSyncConfiguration.html
+   */
+  public toGetSyncConfiguration() {
+    return this.to('GetSyncConfiguration');
+  }
+
+  /**
+   * Grants permission to list Connection resources
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListConnections.html
+   */
+  public toListConnections() {
+    return this.to('ListConnections');
+  }
+
+  /**
+   * Grants permission to list host resources
+   *
+   * Access Level: List
+   *
+   * Possible conditions:
+   * - .ifProviderTypeFilter()
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListHosts.html
+   */
+  public toListHosts() {
+    return this.to('ListHosts');
+  }
+
+  /**
+   * Grants permission to list repository links
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListRepositoryLinks.html
+   */
+  public toListRepositoryLinks() {
+    return this.to('ListRepositoryLinks');
+  }
+
+  /**
+   * Grants permission to list repository sync definitions
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListRepositorySyncDefinitions.html
+   */
+  public toListRepositorySyncDefinitions() {
+    return this.to('ListRepositorySyncDefinitions');
+  }
+
+  /**
+   * Grants permission to list sync configurations for a repository link
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListSyncConfigurations.html
+   */
+  public toListSyncConfigurations() {
+    return this.to('ListSyncConfigurations');
+  }
+
+  /**
+   * Grants permission to the set of key-value pairs that are used to manage the resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to add or modify the tags of the given resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from an AWS resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a Connection resource with an installation of the CodeStar Connections App
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
+   */
+  public toUpdateConnectionInstallation() {
+    return this.to('UpdateConnectionInstallation');
+  }
+
+  /**
+   * Grants permission to update a host resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UpdateHost.html
+   */
+  public toUpdateHost() {
+    return this.to('UpdateHost');
+  }
+
+  /**
+   * Grants permission to update a repository link
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UpdateRepositoryLink.html
+   */
+  public toUpdateRepositoryLink() {
+    return this.to('UpdateRepositoryLink');
+  }
+
+  /**
+   * Grants permission to update a sync blocker for a resource (cfn stack or other resources)
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UpdateSyncBlocker.html
+   */
+  public toUpdateSyncBlocker() {
+    return this.to('UpdateSyncBlocker');
+  }
+
+  /**
+   * Grants permission to update a sync configuration
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifBranch()
+   *
+   * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UpdateSyncConfiguration.html
+   */
+  public toUpdateSyncConfiguration() {
+    return this.to('UpdateSyncConfiguration');
+  }
+
+  protected accessLevelList: AccessLevelList = {
+    Write: [
+      'CreateConnection',
+      'CreateHost',
+      'CreateRepositoryLink',
+      'CreateSyncConfiguration',
+      'DeleteConnection',
+      'DeleteHost',
+      'DeleteRepositoryLink',
+      'DeleteSyncConfiguration',
+      'TagResource',
+      'UntagResource',
+      'UpdateConnectionInstallation',
+      'UpdateHost',
+      'UpdateRepositoryLink',
+      'UpdateSyncBlocker',
+      'UpdateSyncConfiguration'
+    ],
+    Read: [
+      'GetConnection',
+      'GetHost',
+      'GetRepositoryLink',
+      'GetRepositorySyncStatus',
+      'GetResourceSyncStatus',
+      'GetSyncBlockerSummary',
+      'GetSyncConfiguration'
+    ],
+    List: [
+      'ListConnections',
+      'ListHosts',
+      'ListRepositoryLinks',
+      'ListRepositorySyncDefinitions',
+      'ListSyncConfigurations',
+      'ListTagsForResource'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
+    ]
+  };
+
+  /**
+   * Adds a resource of type Connection to the statement
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/connections.html
+   *
+   * @param connectionId - Identifier for the connectionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codestar-connections:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionId }`);
+  }
+
+  /**
+   * Adds a resource of type Host to the statement
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-hosts.html
+   *
+   * @param hostId - Identifier for the hostId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHost(hostId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codestar-connections:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:host/${ hostId }`);
+  }
+
+  /**
+   * Adds a resource of type RepositoryLink to the statement
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/repositorylinks.html
+   *
+   * @param repositoryLinkId - Identifier for the repositoryLinkId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRepositoryLink(repositoryLinkId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:codestar-connections:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:repository-link/${ repositoryLinkId }`);
+  }
+
+  /**
+   * Filters access by the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateConnection()
+   * - .toCreateHost()
+   * - .toCreateRepositoryLink()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateRepositoryLink()
+   * - .toCreateSyncConfiguration()
+   * - .toDeleteConnection()
+   * - .toDeleteHost()
+   * - .toDeleteRepositoryLink()
+   * - .toGetConnection()
+   * - .toGetHost()
+   * - .toGetRepositoryLink()
+   * - .toGetRepositorySyncStatus()
+   * - .toListConnections()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateConnectionInstallation()
+   * - .toUpdateHost()
+   * - .toUpdateRepositoryLink()
+   *
+   * Applies to resource types:
+   * - Connection
+   * - Host
+   * - RepositoryLink
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateConnection()
+   * - .toCreateHost()
+   * - .toCreateRepositoryLink()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the branch name that is passed in the request
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
+   *
+   * Applies to actions:
+   * - .toCreateSyncConfiguration()
+   * - .toGetRepositorySyncStatus()
+   * - .toUpdateSyncConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBranch(value: string | string[], operator?: Operator | string) {
+    return this.if(`Branch`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the branch name that is passed in the request. Applies only to UseConnection requests for access to a specific repository branch
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifBranchName(value: string | string[], operator?: Operator | string) {
+    return this.if(`BranchName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the repository that is passed in the request. Applies only to UseConnection requests for access to a specific repository
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifFullRepositoryId(value: string | string[], operator?: Operator | string) {
+    return this.if(`FullRepositoryId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the host resource associated with the connection used in the request
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-hosts
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifHostArn(value: string | string[], operator?: Operator | string) {
+    return this.if(`HostArn`, value, operator ?? 'ArnLike');
+  }
+
+  /**
+   * Filters access by the third-party ID (such as the Bitbucket App installation ID for CodeStar Connections) that is used to update a Connection. Allows you to restrict which third-party App installations can be used to make a Connection
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-handshake
+   *
+   * Applies to actions:
+   * - .toUpdateConnectionInstallation()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifInstallationId(value: string | string[], operator?: Operator | string) {
+    return this.if(`InstallationId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the owner of the third-party repository. Applies only to UseConnection requests for access to repositories owned by a specific user
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOwnerId(value: string | string[], operator?: Operator | string) {
+    return this.if(`OwnerId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the service to which the principal is allowed to pass a Connection or RepositoryLink
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-passconnection
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifPassedToService(value: string | string[], operator?: Operator | string) {
+    return this.if(`PassedToService`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the provider action in a UseConnection request such as ListRepositories. See documentation for all valid values
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-access
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProviderAction(value: string | string[], operator?: Operator | string) {
+    return this.if(`ProviderAction`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the write permissions of a provider action in a UseConnection request. Valid types include read_only and read_write
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProviderPermissionsRequired(value: string | string[], operator?: Operator | string) {
+    return this.if(`ProviderPermissionsRequired`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the type of third-party provider passed in the request
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-managing
+   *
+   * Applies to actions:
+   * - .toCreateConnection()
+   * - .toCreateHost()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProviderType(value: string | string[], operator?: Operator | string) {
+    return this.if(`ProviderType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the type of third-party provider used to filter results
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-managing
+   *
+   * Applies to actions:
+   * - .toListConnections()
+   * - .toListHosts()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifProviderTypeFilter(value: string | string[], operator?: Operator | string) {
+    return this.if(`ProviderTypeFilter`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the repository name that is passed in the request. Applies only to UseConnection requests for access to repositories owned by a specific user
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifRepositoryName(value: string | string[], operator?: Operator | string) {
+    return this.if(`RepositoryName`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the VpcId passed in the request
+   *
+   * https://docs.aws.amazon.com/dtconsole/latest/userguide/security-iam.html#permissions-reference-connections-hosts
+   *
+   * Applies to actions:
+   * - .toCreateHost()
+   * - .toUpdateHost()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcId(value: string | string[], operator?: Operator | string) {
+    return this.if(`VpcId`, value, operator ?? 'StringLike');
+  }
+}

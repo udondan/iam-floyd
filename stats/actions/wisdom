@@ -1,5 +1,4 @@
 wisdom:ActivateMessageTemplate;Write
-wisdom:AllowVendedLogDeliveryForResource;Permissions management
 wisdom:CreateAIAgent;Write
 wisdom:CreateAIAgentVersion;Write
 wisdom:CreateAIGuardrail;Write
@@ -80,8 +79,8 @@ wisdom:SearchSessions;Read
 wisdom:SendMessage;Write
 wisdom:StartContentUpload;Write
 wisdom:StartImportJob;Write
-wisdom:TagResource;Tagging
-wisdom:UntagResource;Tagging
+wisdom:TagResource;Tagging, Write
+wisdom:UntagResource;Tagging, Write
 wisdom:UpdateAIAgent;Write
 wisdom:UpdateAIGuardrail;Write
 wisdom:UpdateAIPrompt;Write

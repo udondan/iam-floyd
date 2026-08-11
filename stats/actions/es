@@ -2,7 +2,7 @@ es:AcceptInboundConnection;Write
 es:AcceptInboundCrossClusterSearchConnection;Write
 es:AddDataSource;Write
 es:AddDirectQueryDataSource;Write
-es:AddTags;Tagging
+es:AddTags;Tagging, Write
 es:AssociatePackage;Write
 es:AssociatePackages;Write
 es:AttachDataSource;Write
@@ -78,6 +78,7 @@ es:GetDefaultApplicationSetting;Read
 es:GetDirectQueryDataSource;Read
 es:GetDomainMaintenanceStatus;Read
 es:GetIndex;Read
+es:GetMigration;Read
 es:GetPackageVersionHistory;Read
 es:GetUpgradeHistory;Read
 es:GetUpgradeStatus;Read
@@ -94,6 +95,7 @@ es:ListElasticsearchInstanceTypes;List
 es:ListElasticsearchVersions;List
 es:ListInsights;List
 es:ListInstanceTypeDetails;List
+es:ListMigrations;List
 es:ListPackagesForDomain;List
 es:ListScheduledActions;List
 es:ListTags;Read
@@ -107,12 +109,13 @@ es:PutDefaultApplicationSetting;Write
 es:RegisterCapability;Write
 es:RejectInboundConnection;Write
 es:RejectInboundCrossClusterSearchConnection;Write
-es:RemoveTags;Tagging
+es:RemoveTags;Tagging, Write
 es:RevokeVpcEndpointAccess;Write
 es:RollbackElasticsearchServiceSoftwareUpdate;Write
 es:RollbackServiceSoftwareUpdate;Write
 es:StartDomainMaintenance;Write
 es:StartElasticsearchServiceSoftwareUpdate;Write
+es:StartMigration;Write
 es:StartServiceSoftwareUpdate;Write
 es:UpdateApplication;Write
 es:UpdateDataSource;Write

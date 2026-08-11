@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [states](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstepfunctions.html).
+ * Statement provider for service [states](https://docs.aws.amazon.com/service-authorization/latest/reference/list_stepfunctions.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class States extends PolicyStatement {
   public servicePrefix = 'states';
 
   /**
-   * Statement provider for service [states](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstepfunctions.html).
+   * Statement provider for service [states](https://docs.aws.amazon.com/service-authorization/latest/reference/list_stepfunctions.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,10 +23,6 @@ export class States extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html
    */
   public toCreateActivity() {
@@ -38,14 +34,6 @@ export class States extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - states:PublishStateMachineVersion
-   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html
    */
   public toCreateStateMachine() {
@@ -56,9 +44,6 @@ export class States extends PolicyStatement {
    * Grants permission to create a state machine alias
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachineAlias.html
    */
@@ -93,9 +78,6 @@ export class States extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
-   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachineAlias.html
    */
   public toDeleteStateMachineAlias() {
@@ -106,9 +88,6 @@ export class States extends PolicyStatement {
    * Grants permission to delete a state machine version
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachineVersion.html
    */
@@ -154,9 +133,6 @@ export class States extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
-   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachine.html
    */
   public toDescribeStateMachine() {
@@ -167,9 +143,6 @@ export class States extends PolicyStatement {
    * Grants permission to describe a state machine alias
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachineAlias.html
    */
@@ -211,17 +184,6 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Grants permission to invoke the HTTP Task state
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html
-   */
-  public toInvokeHTTPEndpoint() {
-    return this.to('InvokeHTTPEndpoint');
-  }
-
-  /**
    * Grants permission to list the existing activities
    *
    * Access Level: List
@@ -236,9 +198,6 @@ export class States extends PolicyStatement {
    * Grants permission to list the executions of a state machine
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListExecutions.html
    */
@@ -261,9 +220,6 @@ export class States extends PolicyStatement {
    * Grants permission to list the aliases of a state machine
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachineAliases.html
    */
@@ -327,17 +283,6 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Grants permission to reveal sensitive data from an execution
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html
-   */
-  public toRevealSecrets() {
-    return this.to('RevealSecrets');
-  }
-
-  /**
    * Grants permission to report that the task identified by the taskToken failed
    *
    * Access Level: Write
@@ -375,9 +320,6 @@ export class States extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
-   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html
    */
   public toStartExecution() {
@@ -388,9 +330,6 @@ export class States extends PolicyStatement {
    * Grants permission to start a Synchronous Express state machine execution
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartSyncExecution.html
    */
@@ -412,11 +351,7 @@ export class States extends PolicyStatement {
   /**
    * Grants permission to tag an AWS Step Functions resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html
    */
@@ -429,9 +364,6 @@ export class States extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - states:RevealSecrets
-   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_TestState.html
    */
   public toTestState() {
@@ -441,10 +373,7 @@ export class States extends PolicyStatement {
   /**
    * Grants permission to remove a tag from an AWS Step Functions resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UntagResource.html
    */
@@ -468,14 +397,6 @@ export class States extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - states:PublishStateMachineVersion
-   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html
    */
   public toUpdateStateMachine() {
@@ -486,9 +407,6 @@ export class States extends PolicyStatement {
    * Grants permission to update a state machine alias
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifStateMachineQualifier()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachineAlias.html
    */
@@ -517,7 +435,6 @@ export class States extends PolicyStatement {
       'DeleteStateMachineAlias',
       'DeleteStateMachineVersion',
       'GetActivityTask',
-      'InvokeHTTPEndpoint',
       'PublishStateMachineVersion',
       'RedriveExecution',
       'SendTaskFailure',
@@ -526,7 +443,9 @@ export class States extends PolicyStatement {
       'StartExecution',
       'StartSyncExecution',
       'StopExecution',
+      'TagResource',
       'TestState',
+      'UntagResource',
       'UpdateMapRun',
       'UpdateStateMachine',
       'UpdateStateMachineAlias'
@@ -539,7 +458,6 @@ export class States extends PolicyStatement {
       'DescribeStateMachineAlias',
       'DescribeStateMachineForExecution',
       'GetExecutionHistory',
-      'RevealSecrets',
       'ValidateStateMachineDefinition'
     ],
     List: [
@@ -609,75 +527,6 @@ export class States extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type statemachine to the statement
-   *
-   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html
-   *
-   * @param stateMachineName - Identifier for the stateMachineName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }`);
-  }
-
-  /**
-   * Adds a resource of type statemachineversion to the statement
-   *
-   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-cd-aliasing-versioning.html
-   *
-   * @param stateMachineName - Identifier for the stateMachineName.
-   * @param stateMachineVersionId - Identifier for the stateMachineVersionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onStatemachineversion(stateMachineName: string, stateMachineVersionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineVersionId }`);
-  }
-
-  /**
-   * Adds a resource of type statemachinealias to the statement
-   *
-   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-cd-aliasing-versioning.html
-   *
-   * @param stateMachineName - Identifier for the stateMachineName.
-   * @param stateMachineAliasName - Identifier for the stateMachineAliasName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onStatemachinealias(stateMachineName: string, stateMachineAliasName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineAliasName }`);
-  }
-
-  /**
-   * Adds a resource of type maprun to the statement
-   *
-   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html
-   *
-   * @param stateMachineName - Identifier for the stateMachineName.
-   * @param mapRunLabel - Identifier for the mapRunLabel.
-   * @param mapRunId - Identifier for the mapRunId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onMaprun(stateMachineName: string, mapRunLabel: string, mapRunId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
-  }
-
-  /**
    * Adds a resource of type labelled execution to the statement
    *
    * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html
@@ -711,6 +560,75 @@ export class States extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type maprun to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html
+   *
+   * @param stateMachineName - Identifier for the stateMachineName.
+   * @param mapRunLabel - Identifier for the mapRunLabel.
+   * @param mapRunId - Identifier for the mapRunId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMaprun(stateMachineName: string, mapRunLabel: string, mapRunId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mapRun:${ stateMachineName }/${ mapRunLabel }:${ mapRunId }`);
+  }
+
+  /**
+   * Adds a resource of type statemachine to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html
+   *
+   * @param stateMachineName - Identifier for the stateMachineName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }`);
+  }
+
+  /**
+   * Adds a resource of type statemachinealias to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-cd-aliasing-versioning.html
+   *
+   * @param stateMachineName - Identifier for the stateMachineName.
+   * @param stateMachineAliasName - Identifier for the stateMachineAliasName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStatemachinealias(stateMachineName: string, stateMachineAliasName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineAliasName }`);
+  }
+
+  /**
+   * Adds a resource of type statemachineversion to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-cd-aliasing-versioning.html
+   *
+   * @param stateMachineName - Identifier for the stateMachineName.
+   * @param stateMachineVersionId - Identifier for the stateMachineVersionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onStatemachineversion(stateMachineName: string, stateMachineVersionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:states:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:stateMachine:${ stateMachineName }:${ stateMachineVersionId }`);
+  }
+
+  /**
    * Filters access by a tag key and value pair that is allowed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -734,12 +652,42 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateActivity()
+   * - .toCreateStateMachine()
+   * - .toCreateStateMachineAlias()
+   * - .toDeleteActivity()
+   * - .toDeleteStateMachine()
+   * - .toDeleteStateMachineAlias()
+   * - .toDeleteStateMachineVersion()
+   * - .toDescribeActivity()
+   * - .toDescribeExecution()
+   * - .toDescribeStateMachine()
+   * - .toDescribeStateMachineAlias()
+   * - .toDescribeStateMachineForExecution()
+   * - .toGetActivityTask()
+   * - .toGetExecutionHistory()
+   * - .toListExecutions()
+   * - .toListMapRuns()
+   * - .toListStateMachineAliases()
+   * - .toListStateMachineVersions()
+   * - .toListTagsForResource()
+   * - .toPublishStateMachineVersion()
+   * - .toRedriveExecution()
+   * - .toStartExecution()
+   * - .toStartSyncExecution()
+   * - .toStopExecution()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateStateMachine()
+   * - .toUpdateStateMachineAlias()
+   *
    * Applies to resource types:
    * - activity
    * - execution
    * - statemachine
-   * - statemachineversion
    * - statemachinealias
+   * - statemachineversion
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

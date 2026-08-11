@@ -4,11 +4,9 @@ lex:BatchUpdateCustomVocabularyItem;Write
 lex:BuildBotLocale;Write
 lex:CreateBot;Write
 lex:CreateBotAlias;Write
-lex:CreateBotChannel;Write
 lex:CreateBotLocale;Write
 lex:CreateBotReplica;Write
 lex:CreateBotVersion;Write
-lex:CreateCustomVocabulary;Write
 lex:CreateExport;Write
 lex:CreateIntent;Write
 lex:CreateIntentVersion;Write
@@ -17,13 +15,11 @@ lex:CreateResourcePolicyStatement;Write
 lex:CreateSlot;Write
 lex:CreateSlotType;Write
 lex:CreateSlotTypeVersion;Write
-lex:CreateTestSet;Write
 lex:CreateTestSetDiscrepancyReport;Write
 lex:CreateUploadUrl;Write
 lex:DeleteBot;Write
 lex:DeleteBotAlias;Write
 lex:DeleteBotAnalyzerRecommendation;Write
-lex:DeleteBotChannel;Write
 lex:DeleteBotChannelAssociation;Write
 lex:DeleteBotLocale;Write
 lex:DeleteBotReplica;Write
@@ -44,13 +40,11 @@ lex:DeleteUtterances;Write
 lex:DescribeBot;Read
 lex:DescribeBotAlias;Read
 lex:DescribeBotAnalyzerRecommendation;Read
-lex:DescribeBotChannel;Read
 lex:DescribeBotLocale;Read
 lex:DescribeBotRecommendation;Read
 lex:DescribeBotReplica;Read
 lex:DescribeBotResourceGeneration;Read
 lex:DescribeBotVersion;Read
-lex:DescribeCustomVocabulary;Read
 lex:DescribeCustomVocabularyMetadata;Read
 lex:DescribeExport;Read
 lex:DescribeImport;Read
@@ -90,7 +84,6 @@ lex:ListAggregatedUtterances;List
 lex:ListBotAliasReplicas;List
 lex:ListBotAliases;List
 lex:ListBotAnalyzerRecommendations;List
-lex:ListBotChannels;List
 lex:ListBotLocales;List
 lex:ListBotRecommendations;List
 lex:ListBotReplicas;List
@@ -137,13 +130,12 @@ lex:StartTestExecution;Write
 lex:StartTestSetGeneration;Write
 lex:StopBotAnalyzer;Write
 lex:StopBotRecommendation;Write
-lex:TagResource;Tagging
-lex:UntagResource;Tagging
+lex:TagResource;Tagging, Write
+lex:UntagResource;Tagging, Write
 lex:UpdateBot;Write
 lex:UpdateBotAlias;Write
 lex:UpdateBotLocale;Write
 lex:UpdateBotRecommendation;Write
-lex:UpdateCustomVocabulary;Write
 lex:UpdateExport;Write
 lex:UpdateIntent;Write
 lex:UpdateResourcePolicy;Write

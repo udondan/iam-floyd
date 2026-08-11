@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [apprunner](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapprunner.html).
+ * Statement provider for service [apprunner](https://docs.aws.amazon.com/service-authorization/latest/reference/list_apprunner.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Apprunner extends PolicyStatement {
   public servicePrefix = 'apprunner';
 
   /**
-   * Statement provider for service [apprunner](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsapprunner.html).
+   * Statement provider for service [apprunner](https://docs.aws.amazon.com/service-authorization/latest/reference/list_apprunner.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -30,24 +30,9 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate the service with an AWS WAF web ACL
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
-   */
-  public toAssociateWebAcl() {
-    return this.to('AssociateWebAcl');
-  }
-
-  /**
    * Grants permission to create an AWS App Runner automatic scaling configuration resource
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateAutoScalingConfiguration.html
    */
@@ -60,10 +45,6 @@ export class Apprunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateConnection.html
    */
   public toCreateConnection() {
@@ -74,10 +55,6 @@ export class Apprunner extends PolicyStatement {
    * Grants permission to create an AWS App Runner observability configuration resource
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateObservabilityConfiguration.html
    */
@@ -90,14 +67,6 @@ export class Apprunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifConnectionArn()
-   * - .ifAutoScalingConfigurationArn()
-   * - .ifObservabilityConfigurationArn()
-   * - .ifVpcConnectorArn()
-   *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html
    */
   public toCreateService() {
@@ -109,10 +78,6 @@ export class Apprunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateVpcConnector.html
    */
   public toCreateVpcConnector() {
@@ -123,13 +88,6 @@ export class Apprunner extends PolicyStatement {
    * Grants permission to create an AWS App Runner VpcIngressConnection resource
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifServiceArn()
-   * - .ifVpcId()
-   * - .ifVpcEndpointId()
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_CreateVpcIngressConnection.html
    */
@@ -281,17 +239,6 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get the AWS WAF web ACL that is associated with an AWS App Runner service
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
-   */
-  public toDescribeWebAclForService() {
-    return this.to('DescribeWebAclForService');
-  }
-
-  /**
    * Grants permission to disassociate a custom domain name from an AWS App Runner service
    *
    * Access Level: Write
@@ -300,28 +247,6 @@ export class Apprunner extends PolicyStatement {
    */
   public toDisassociateCustomDomain() {
     return this.to('DisassociateCustomDomain');
-  }
-
-  /**
-   * Grants permission to disassociate the service with an AWS WAF web ACL
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
-   */
-  public toDisassociateWebAcl() {
-    return this.to('DisassociateWebAcl');
-  }
-
-  /**
-   * Grants permission to list the services that are associated with an AWS WAF web ACL
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/apprunner/latest/dg/waf-manage.html
-   */
-  public toListAssociatedServicesForWebAcl() {
-    return this.to('ListAssociatedServicesForWebAcl');
   }
 
   /**
@@ -459,11 +384,7 @@ export class Apprunner extends PolicyStatement {
   /**
    * Grants permission to add tags to, or update tag values of, an AWS App Runner resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_TagResource.html
    */
@@ -474,10 +395,7 @@ export class Apprunner extends PolicyStatement {
   /**
    * Grants permission to remove tags from an AWS App Runner resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_UntagResource.html
    */
@@ -501,12 +419,6 @@ export class Apprunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifConnectionArn()
-   * - .ifAutoScalingConfigurationArn()
-   * - .ifObservabilityConfigurationArn()
-   * - .ifVpcConnectorArn()
-   *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateService.html
    */
   public toUpdateService() {
@@ -518,10 +430,6 @@ export class Apprunner extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifVpcId()
-   * - .ifVpcEndpointId()
-   *
    * https://docs.aws.amazon.com/apprunner/latest/api/API_UpdateVpcIngressConnection.html
    */
   public toUpdateVpcIngressConnection() {
@@ -531,7 +439,6 @@ export class Apprunner extends PolicyStatement {
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateCustomDomain',
-      'AssociateWebAcl',
       'CreateAutoScalingConfiguration',
       'CreateConnection',
       'CreateObservabilityConfiguration',
@@ -545,10 +452,11 @@ export class Apprunner extends PolicyStatement {
       'DeleteVpcConnector',
       'DeleteVpcIngressConnection',
       'DisassociateCustomDomain',
-      'DisassociateWebAcl',
       'PauseService',
       'ResumeService',
       'StartDeployment',
+      'TagResource',
+      'UntagResource',
       'UpdateDefaultAutoScalingConfiguration',
       'UpdateService',
       'UpdateVpcIngressConnection'
@@ -561,11 +469,9 @@ export class Apprunner extends PolicyStatement {
       'DescribeService',
       'DescribeVpcConnector',
       'DescribeVpcIngressConnection',
-      'DescribeWebAclForService',
       'ListTagsForResource'
     ],
     List: [
-      'ListAssociatedServicesForWebAcl',
       'ListAutoScalingConfigurations',
       'ListConnections',
       'ListObservabilityConfigurations',
@@ -580,38 +486,6 @@ export class Apprunner extends PolicyStatement {
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type service to the statement
-   *
-   * @param serviceName - Identifier for the serviceName.
-   * @param serviceId - Identifier for the serviceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onService(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
-  }
-
-  /**
-   * Adds a resource of type connection to the statement
-   *
-   * @param connectionName - Identifier for the connectionName.
-   * @param connectionId - Identifier for the connectionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onConnection(connectionName: string, connectionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionName }/${ connectionId }`);
-  }
 
   /**
    * Adds a resource of type autoscalingconfiguration to the statement
@@ -631,6 +505,22 @@ export class Apprunner extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type connection to the statement
+   *
+   * @param connectionName - Identifier for the connectionName.
+   * @param connectionId - Identifier for the connectionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onConnection(connectionName: string, connectionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:connection/${ connectionName }/${ connectionId }`);
+  }
+
+  /**
    * Adds a resource of type observabilityconfiguration to the statement
    *
    * @param observabilityConfigurationName - Identifier for the observabilityConfigurationName.
@@ -645,6 +535,22 @@ export class Apprunner extends PolicyStatement {
    */
   public onObservabilityconfiguration(observabilityConfigurationName: string, observabilityConfigurationVersion: string, observabilityConfigurationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:observabilityconfiguration/${ observabilityConfigurationName }/${ observabilityConfigurationVersion }/${ observabilityConfigurationId }`);
+  }
+
+  /**
+   * Adds a resource of type service to the statement
+   *
+   * @param serviceName - Identifier for the serviceName.
+   * @param serviceId - Identifier for the serviceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onService(serviceName: string, serviceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:apprunner:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service/${ serviceName }/${ serviceId }`);
   }
 
   /**
@@ -814,11 +720,45 @@ export class Apprunner extends PolicyStatement {
   /**
    * Filters access by actions based on tag key-value pairs attached to the resource
    *
+   * Applies to actions:
+   * - .toAssociateCustomDomain()
+   * - .toCreateAutoScalingConfiguration()
+   * - .toCreateConnection()
+   * - .toCreateObservabilityConfiguration()
+   * - .toCreateService()
+   * - .toCreateVpcConnector()
+   * - .toCreateVpcIngressConnection()
+   * - .toDeleteAutoScalingConfiguration()
+   * - .toDeleteConnection()
+   * - .toDeleteObservabilityConfiguration()
+   * - .toDeleteService()
+   * - .toDeleteVpcConnector()
+   * - .toDeleteVpcIngressConnection()
+   * - .toDescribeAutoScalingConfiguration()
+   * - .toDescribeCustomDomains()
+   * - .toDescribeObservabilityConfiguration()
+   * - .toDescribeOperation()
+   * - .toDescribeService()
+   * - .toDescribeVpcConnector()
+   * - .toDescribeVpcIngressConnection()
+   * - .toDisassociateCustomDomain()
+   * - .toListOperations()
+   * - .toListServicesForAutoScalingConfiguration()
+   * - .toListTagsForResource()
+   * - .toPauseService()
+   * - .toResumeService()
+   * - .toStartDeployment()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDefaultAutoScalingConfiguration()
+   * - .toUpdateService()
+   * - .toUpdateVpcIngressConnection()
+   *
    * Applies to resource types:
-   * - service
-   * - connection
    * - autoscalingconfiguration
+   * - connection
    * - observabilityconfiguration
+   * - service
    * - vpcconnector
    * - vpcingressconnection
    *

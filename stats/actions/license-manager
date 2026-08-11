@@ -52,11 +52,11 @@ license-manager:ListTagsForResource;Read
 license-manager:ListTokens;List
 license-manager:ListUsageForLicenseConfiguration;List
 license-manager:RejectGrant;Write
-license-manager:TagResource;Tagging
-license-manager:UntagResource;Tagging
+license-manager:TagResource;Tagging, Write
+license-manager:UntagResource;Tagging, Write
 license-manager:UpdateLicenseAssetGroup;Write
 license-manager:UpdateLicenseAssetRuleset;Write
 license-manager:UpdateLicenseConfiguration;Write
 license-manager:UpdateLicenseManagerReportGenerator;Write
 license-manager:UpdateLicenseSpecificationsForResource;Write
-license-manager:UpdateServiceSettings;Permissions management
+license-manager:UpdateServiceSettings;Permissions management, Write

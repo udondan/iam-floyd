@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html).
+ * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotsitewise.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Iotsitewise extends PolicyStatement {
   public servicePrefix = 'iotsitewise';
 
   /**
-   * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotsitewise.html).
+   * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/service-authorization/latest/reference/list_iotsitewise.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -41,6 +41,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate data segments to a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchAssociateDataSegmentsToDataset.html
+   */
+  public toBatchAssociateDataSegmentsToDataset() {
+    return this.to('BatchAssociateDataSegmentsToDataset');
+  }
+
+  /**
    * Grants permission to associate assets to a project
    *
    * Access Level: Write
@@ -49,6 +60,28 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toBatchAssociateProjectAssets() {
     return this.to('BatchAssociateProjectAssets');
+  }
+
+  /**
+   * Grants permission to batch delete data segments from a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchDeleteDatasetDataSegments.html
+   */
+  public toBatchDeleteDatasetDataSegments() {
+    return this.to('BatchDeleteDatasetDataSegments');
+  }
+
+  /**
+   * Grants permission to disassociate data segments from a dataset
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchDisassociateDataSegmentsFromDataset.html
+   */
+  public toBatchDisassociateDataSegmentsFromDataset() {
+    return this.to('BatchDisassociateDataSegmentsFromDataset');
   }
 
   /**
@@ -107,13 +140,42 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an access policy for a portal or a project
+   * Grants permission to cancel an enrichment job
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CancelEnrichmentJob.html
+   */
+  public toCancelEnrichmentJob() {
+    return this.to('CancelEnrichmentJob');
+  }
+
+  /**
+   * Grants permission to cancel a pipeline execution in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CancelPipelineExecution.html
+   */
+  public toCancelPipelineExecution() {
+    return this.to('CancelPipelineExecution');
+  }
+
+  /**
+   * Grants permission to cancel a query
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CancelQuery.html
+   */
+  public toCancelQuery() {
+    return this.to('CancelQuery');
+  }
+
+  /**
+   * Grants permission to create an access policy for a portal or a project
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html
    */
@@ -122,13 +184,24 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an asset from an asset model
+   * Grants permission to create an application
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateApplication.html
+   */
+  public toCreateApplication() {
+    return this.to('CreateApplication');
+  }
+
+  /**
+   * Grants permission to create an asset from an asset model
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html
    */
@@ -178,10 +251,6 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html
    */
   public toCreateComputationModel() {
@@ -192,10 +261,6 @@ export class Iotsitewise extends PolicyStatement {
    * Grants permission to create a dashboard in a project
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html
    */
@@ -208,14 +273,32 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDataset.html
    */
   public toCreateDataset() {
     return this.to('CreateDataset');
+  }
+
+  /**
+   * Grants permission to create a dataset export job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDatasetExportJob.html
+   */
+  public toCreateDatasetExportJob() {
+    return this.to('CreateDatasetExportJob');
+  }
+
+  /**
+   * Grants permission to create an enrichment job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateEnrichmentJob.html
+   */
+  public toCreateEnrichmentJob() {
+    return this.to('CreateEnrichmentJob');
   }
 
   /**
@@ -234,6 +317,22 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new pipeline definition in a workspace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifTaskArns()
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePipeline.html
+   */
+  public toCreatePipeline() {
+    return this.to('CreatePipeline');
+  }
+
+  /**
    * Grants permission to create a portal
    *
    * Access Level: Write
@@ -241,10 +340,6 @@ export class Iotsitewise extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sso:CreateManagedApplicationInstance
-   * - sso:DescribeRegisteredRegions
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html
    */
@@ -257,14 +352,40 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
     return this.to('CreateProject');
+  }
+
+  /**
+   * Grants permission to create a new task definition in a workspace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateTask.html
+   */
+  public toCreateTask() {
+    return this.to('CreateTask');
+  }
+
+  /**
+   * Grants permission to create a workspace
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateWorkspace.html
+   */
+  public toCreateWorkspace() {
+    return this.to('CreateWorkspace');
   }
 
   /**
@@ -276,6 +397,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDeleteAccessPolicy() {
     return this.to('DeleteAccessPolicy');
+  }
+
+  /**
+   * Grants permission to delete an application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteApplication.html
+   */
+  public toDeleteApplication() {
+    return this.to('DeleteApplication');
   }
 
   /**
@@ -367,12 +499,20 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a portal
+   * Grants permission to delete a pipeline definition from a workspace
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - sso:DeleteManagedApplicationInstance
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePipeline.html
+   */
+  public toDeletePipeline() {
+    return this.to('DeletePipeline');
+  }
+
+  /**
+   * Grants permission to delete a portal
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePortal.html
    */
@@ -392,6 +532,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete a task definition from a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteTask.html
+   */
+  public toDeleteTask() {
+    return this.to('DeleteTask');
+  }
+
+  /**
    * Grants permission to delete a time series
    *
    * Access Level: Write
@@ -400,6 +551,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDeleteTimeSeries() {
     return this.to('DeleteTimeSeries');
+  }
+
+  /**
+   * Grants permission to delete a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteWorkspace.html
+   */
+  public toDeleteWorkspace() {
+    return this.to('DeleteWorkspace');
   }
 
   /**
@@ -422,6 +584,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDescribeAction() {
     return this.to('DescribeAction');
+  }
+
+  /**
+   * Grants permission to describe an application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeApplication.html
+   */
+  public toDescribeApplication() {
+    return this.to('DescribeApplication');
   }
 
   /**
@@ -546,6 +719,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a dataset export job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDatasetExportJob.html
+   */
+  public toDescribeDatasetExportJob() {
+    return this.to('DescribeDatasetExportJob');
+  }
+
+  /**
    * Grants permission to describe the default encryption configuration for the AWS account
    *
    * Access Level: Read
@@ -554,6 +738,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDescribeDefaultEncryptionConfiguration() {
     return this.to('DescribeDefaultEncryptionConfiguration');
+  }
+
+  /**
+   * Grants permission to describe an enrichment job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeEnrichmentJob.html
+   */
+  public toDescribeEnrichmentJob() {
+    return this.to('DescribeEnrichmentJob');
   }
 
   /**
@@ -601,6 +796,28 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve detailed information about a pipeline in a workspace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribePipeline.html
+   */
+  public toDescribePipeline() {
+    return this.to('DescribePipeline');
+  }
+
+  /**
+   * Grants permission to retrieve detailed information about a pipeline execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribePipelineExecution.html
+   */
+  public toDescribePipelineExecution() {
+    return this.to('DescribePipelineExecution');
+  }
+
+  /**
    * Grants permission to describe a portal
    *
    * Access Level: Read
@@ -623,6 +840,28 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to describe a query
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeQuery.html
+   */
+  public toDescribeQuery() {
+    return this.to('DescribeQuery');
+  }
+
+  /**
+   * Grants permission to describe a search
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeSearch.html
+   */
+  public toDescribeSearch() {
+    return this.to('DescribeSearch');
+  }
+
+  /**
    * Grants permission to describe the storage configuration for the AWS account
    *
    * Access Level: Read
@@ -634,18 +873,36 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a time series
+   * Grants permission to retrieve detailed information about a task in a workspace
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTask.html
+   */
+  public toDescribeTask() {
+    return this.to('DescribeTask');
+  }
+
+  /**
+   * Grants permission to describe a time series
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTimeSeries.html
    */
   public toDescribeTimeSeries() {
     return this.to('DescribeTimeSeries');
+  }
+
+  /**
+   * Grants permission to describe a workspace
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeWorkspace.html
+   */
+  public toDescribeWorkspace() {
+    return this.to('DescribeWorkspace');
   }
 
   /**
@@ -668,15 +925,6 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toDisassociateTimeSeriesFromAssetProperty() {
     return this.to('DisassociateTimeSeriesFromAssetProperty');
-  }
-
-  /**
-   * Grants permission to allow IoT SiteWise integrate with other services
-   *
-   * Access Level: Write
-   */
-  public toEnableSiteWiseIntegration() {
-    return this.to('EnableSiteWiseIntegration');
   }
 
   /**
@@ -735,6 +983,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve captured data
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetCaptureData.html
+   */
+  public toGetCaptureData() {
+    return this.to('GetCaptureData');
+  }
+
+  /**
    * Grants permission to retrieve interpolated values for an asset property
    *
    * Access Level: Read
@@ -743,6 +1002,28 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toGetInterpolatedAssetPropertyValues() {
     return this.to('GetInterpolatedAssetPropertyValues');
+  }
+
+  /**
+   * Grants permission to retrieve query results
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetQueryResults.html
+   */
+  public toGetQueryResults() {
+    return this.to('GetQueryResults');
+  }
+
+  /**
+   * Grants permission to retrieve search results
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetSearchResults.html
+   */
+  public toGetSearchResults() {
+    return this.to('GetSearchResults');
   }
 
   /**
@@ -776,6 +1057,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListActions() {
     return this.to('ListActions');
+  }
+
+  /**
+   * Grants permission to list all applications
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListApplications.html
+   */
+  public toListApplications() {
+    return this.to('ListApplications');
   }
 
   /**
@@ -922,6 +1214,39 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list dataset data segment relationships
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasetDataSegmentRelationships.html
+   */
+  public toListDatasetDataSegmentRelationships() {
+    return this.to('ListDatasetDataSegmentRelationships');
+  }
+
+  /**
+   * Grants permission to list data segments for a dataset
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasetDataSegments.html
+   */
+  public toListDatasetDataSegments() {
+    return this.to('ListDatasetDataSegments');
+  }
+
+  /**
+   * Grants permission to list dataset export jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDatasetExportJobs.html
+   */
+  public toListDatasetExportJobs() {
+    return this.to('ListDatasetExportJobs');
+  }
+
+  /**
    * Grants permission to list all datasets
    *
    * Access Level: List
@@ -930,6 +1255,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListDatasets() {
     return this.to('ListDatasets');
+  }
+
+  /**
+   * Grants permission to list enrichment jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListEnrichmentJobs.html
+   */
+  public toListEnrichmentJobs() {
+    return this.to('ListEnrichmentJobs');
   }
 
   /**
@@ -966,6 +1302,28 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list pipeline executions for a pipeline in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListPipelineExecutions.html
+   */
+  public toListPipelineExecutions() {
+    return this.to('ListPipelineExecutions');
+  }
+
+  /**
+   * Grants permission to list pipeline definitions in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListPipelines.html
+   */
+  public toListPipelines() {
+    return this.to('ListPipelines');
+  }
+
+  /**
    * Grants permission to list all portals
    *
    * Access Level: List
@@ -999,17 +1357,47 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list queries
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListQueries.html
+   */
+  public toListQueries() {
+    return this.to('ListQueries');
+  }
+
+  /**
+   * Grants permission to list searches
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListSearches.html
+   */
+  public toListSearches() {
+    return this.to('ListSearches');
+  }
+
+  /**
    * Grants permission to list all tags for a resource
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to list task definitions in a workspace
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTasks.html
+   */
+  public toListTasks() {
+    return this.to('ListTasks');
   }
 
   /**
@@ -1021,6 +1409,17 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toListTimeSeries() {
     return this.to('ListTimeSeries');
+  }
+
+  /**
+   * Grants permission to list all workspaces
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListWorkspaces.html
+   */
+  public toListWorkspaces() {
+    return this.to('ListWorkspaces');
   }
 
   /**
@@ -1068,13 +1467,42 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to start execution of a pipeline in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_StartPipelineExecution.html
+   */
+  public toStartPipelineExecution() {
+    return this.to('StartPipelineExecution');
+  }
+
+  /**
+   * Grants permission to start a query on sensor data
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_StartQuery.html
+   */
+  public toStartQuery() {
+    return this.to('StartQuery');
+  }
+
+  /**
+   * Grants permission to start a search
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_StartSearch.html
+   */
+  public toStartSearch() {
+    return this.to('StartSearch');
+  }
+
+  /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TagResource.html
    */
@@ -1085,10 +1513,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UntagResource.html
    */
@@ -1138,15 +1563,6 @@ export class Iotsitewise extends PolicyStatement {
    */
   public toUpdateAssetModelCompositeModel() {
     return this.to('UpdateAssetModelCompositeModel');
-  }
-
-  /**
-   * Grants permission to update an AssetModel property routing
-   *
-   * Access Level: Write
-   */
-  public toUpdateAssetModelPropertyRouting() {
-    return this.to('UpdateAssetModelPropertyRouting');
   }
 
   /**
@@ -1216,6 +1632,17 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
+   * Grants permission to update an existing pipeline definition in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdatePipeline.html
+   */
+  public toUpdatePipeline() {
+    return this.to('UpdatePipeline');
+  }
+
+  /**
    * Grants permission to update a portal
    *
    * Access Level: Write
@@ -1237,14 +1664,43 @@ export class Iotsitewise extends PolicyStatement {
     return this.to('UpdateProject');
   }
 
+  /**
+   * Grants permission to update an existing task definition in a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateTask.html
+   */
+  public toUpdateTask() {
+    return this.to('UpdateTask');
+  }
+
+  /**
+   * Grants permission to update a workspace
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateWorkspace.html
+   */
+  public toUpdateWorkspace() {
+    return this.to('UpdateWorkspace');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Write: [
       'AssociateAssets',
       'AssociateTimeSeriesToAssetProperty',
+      'BatchAssociateDataSegmentsToDataset',
       'BatchAssociateProjectAssets',
+      'BatchDeleteDatasetDataSegments',
+      'BatchDisassociateDataSegmentsFromDataset',
       'BatchDisassociateProjectAssets',
       'BatchPutAssetPropertyValue',
+      'CancelEnrichmentJob',
+      'CancelPipelineExecution',
+      'CancelQuery',
       'CreateAccessPolicy',
+      'CreateApplication',
       'CreateAsset',
       'CreateAssetModel',
       'CreateAssetModelCompositeModel',
@@ -1252,10 +1708,16 @@ export class Iotsitewise extends PolicyStatement {
       'CreateComputationModel',
       'CreateDashboard',
       'CreateDataset',
+      'CreateDatasetExportJob',
+      'CreateEnrichmentJob',
       'CreateGateway',
+      'CreatePipeline',
       'CreatePortal',
       'CreateProject',
+      'CreateTask',
+      'CreateWorkspace',
       'DeleteAccessPolicy',
+      'DeleteApplication',
       'DeleteAsset',
       'DeleteAssetModel',
       'DeleteAssetModelCompositeModel',
@@ -1264,30 +1726,39 @@ export class Iotsitewise extends PolicyStatement {
       'DeleteDashboard',
       'DeleteDataset',
       'DeleteGateway',
+      'DeletePipeline',
       'DeletePortal',
       'DeleteProject',
+      'DeleteTask',
       'DeleteTimeSeries',
+      'DeleteWorkspace',
       'DisassociateAssets',
       'DisassociateTimeSeriesFromAssetProperty',
-      'EnableSiteWiseIntegration',
       'ExecuteAction',
       'PutAssetModelInterfaceRelationship',
       'PutDefaultEncryptionConfiguration',
       'PutLoggingOptions',
       'PutStorageConfiguration',
+      'StartPipelineExecution',
+      'StartQuery',
+      'StartSearch',
+      'TagResource',
+      'UntagResource',
       'UpdateAccessPolicy',
       'UpdateAsset',
       'UpdateAssetModel',
       'UpdateAssetModelCompositeModel',
-      'UpdateAssetModelPropertyRouting',
       'UpdateAssetProperty',
       'UpdateComputationModel',
       'UpdateDashboard',
       'UpdateDataset',
       'UpdateGateway',
       'UpdateGatewayCapabilityConfiguration',
+      'UpdatePipeline',
       'UpdatePortal',
-      'UpdateProject'
+      'UpdateProject',
+      'UpdateTask',
+      'UpdateWorkspace'
     ],
     Read: [
       'BatchGetAssetPropertyAggregates',
@@ -1295,6 +1766,7 @@ export class Iotsitewise extends PolicyStatement {
       'BatchGetAssetPropertyValueHistory',
       'DescribeAccessPolicy',
       'DescribeAction',
+      'DescribeApplication',
       'DescribeAsset',
       'DescribeAssetCompositeModel',
       'DescribeAssetModel',
@@ -1306,26 +1778,38 @@ export class Iotsitewise extends PolicyStatement {
       'DescribeComputationModelExecutionSummary',
       'DescribeDashboard',
       'DescribeDataset',
+      'DescribeDatasetExportJob',
       'DescribeDefaultEncryptionConfiguration',
+      'DescribeEnrichmentJob',
       'DescribeExecution',
       'DescribeGateway',
       'DescribeGatewayCapabilityConfiguration',
       'DescribeLoggingOptions',
+      'DescribePipeline',
+      'DescribePipelineExecution',
       'DescribePortal',
       'DescribeProject',
+      'DescribeQuery',
+      'DescribeSearch',
       'DescribeStorageConfiguration',
+      'DescribeTask',
       'DescribeTimeSeries',
+      'DescribeWorkspace',
       'ExecuteQuery',
       'GetAssetPropertyAggregates',
       'GetAssetPropertyValue',
       'GetAssetPropertyValueHistory',
+      'GetCaptureData',
       'GetInterpolatedAssetPropertyValues',
+      'GetQueryResults',
+      'GetSearchResults',
       'InvokeAssistant',
       'ListTagsForResource'
     ],
     List: [
       'ListAccessPolicies',
       'ListActions',
+      'ListApplications',
       'ListAssetModelCompositeModels',
       'ListAssetModelProperties',
       'ListAssetModels',
@@ -1339,20 +1823,65 @@ export class Iotsitewise extends PolicyStatement {
       'ListComputationModelResolveToResources',
       'ListComputationModels',
       'ListDashboards',
+      'ListDatasetDataSegmentRelationships',
+      'ListDatasetDataSegments',
+      'ListDatasetExportJobs',
       'ListDatasets',
+      'ListEnrichmentJobs',
       'ListExecutions',
       'ListGateways',
       'ListInterfaceRelationships',
+      'ListPipelineExecutions',
+      'ListPipelines',
       'ListPortals',
       'ListProjectAssets',
       'ListProjects',
-      'ListTimeSeries'
+      'ListQueries',
+      'ListSearches',
+      'ListTasks',
+      'ListTimeSeries',
+      'ListWorkspaces'
     ],
     Tagging: [
       'TagResource',
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type access-policy to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html
+   *
+   * @param accessPolicyId - Identifier for the accessPolicyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-policy/${ accessPolicyId }`);
+  }
+
+  /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateApplication.html
+   *
+   * @param workspaceName - Identifier for the workspaceName.
+   * @param applicationId - Identifier for the applicationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplication(workspaceName: string, applicationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceName }/application/${ applicationId }`);
+  }
 
   /**
    * Adds a resource of type asset to the statement
@@ -1389,11 +1918,11 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type time-series to the statement
+   * Adds a resource of type computation-model to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTimeSeries.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html
    *
-   * @param timeSeriesId - Identifier for the timeSeriesId.
+   * @param computationModelId - Identifier for the computationModelId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1401,8 +1930,42 @@ export class Iotsitewise extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onTimeSeries(timeSeriesId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:time-series/${ timeSeriesId }`);
+  public onComputationModel(computationModelId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:computation-model/${ computationModelId }`);
+  }
+
+  /**
+   * Adds a resource of type dashboard to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html
+   *
+   * @param dashboardId - Identifier for the dashboardId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ dashboardId }`);
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDataset.html
+   *
+   * @param datasetId - Identifier for the datasetId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataset(datasetId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }`);
   }
 
   /**
@@ -1420,6 +1983,24 @@ export class Iotsitewise extends PolicyStatement {
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:gateway/${ gatewayId }`);
+  }
+
+  /**
+   * Adds a resource of type pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePipeline.html
+   *
+   * @param workspaceName - Identifier for the workspaceName.
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPipeline(workspaceName: string, pipelineName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceName }/pipeline/${ pipelineName }`);
   }
 
   /**
@@ -1457,11 +2038,12 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type dashboard to the statement
+   * Adds a resource of type task to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateTask.html
    *
-   * @param dashboardId - Identifier for the dashboardId.
+   * @param workspaceName - Identifier for the workspaceName.
+   * @param taskName - Identifier for the taskName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1469,16 +2051,16 @@ export class Iotsitewise extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dashboard/${ dashboardId }`);
+  public onTask(workspaceName: string, taskName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceName }/task/${ taskName }`);
   }
 
   /**
-   * Adds a resource of type access-policy to the statement
+   * Adds a resource of type time-series to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeTimeSeries.html
    *
-   * @param accessPolicyId - Identifier for the accessPolicyId.
+   * @param timeSeriesId - Identifier for the timeSeriesId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1486,16 +2068,16 @@ export class Iotsitewise extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:access-policy/${ accessPolicyId }`);
+  public onTimeSeries(timeSeriesId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:time-series/${ timeSeriesId }`);
   }
 
   /**
-   * Adds a resource of type dataset to the statement
+   * Adds a resource of type workspace to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDataset.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateWorkspace.html
    *
-   * @param datasetId - Identifier for the datasetId.
+   * @param workspaceName - Identifier for the workspaceName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1503,25 +2085,8 @@ export class Iotsitewise extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onDataset(datasetId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:dataset/${ datasetId }`);
-  }
-
-  /**
-   * Adds a resource of type computation-model to the statement
-   *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html
-   *
-   * @param computationModelId - Identifier for the computationModelId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onComputationModel(computationModelId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:computation-model/${ computationModelId }`);
+  public onWorkspace(workspaceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:iotsitewise:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workspace/${ workspaceName }`);
   }
 
   /**
@@ -1531,14 +2096,18 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAccessPolicy()
+   * - .toCreateApplication()
    * - .toCreateAsset()
    * - .toCreateAssetModel()
    * - .toCreateComputationModel()
    * - .toCreateDashboard()
    * - .toCreateDataset()
    * - .toCreateGateway()
+   * - .toCreatePipeline()
    * - .toCreatePortal()
    * - .toCreateProject()
+   * - .toCreateTask()
+   * - .toCreateWorkspace()
    * - .toDescribeTimeSeries()
    * - .toTagResource()
    *
@@ -1556,19 +2125,147 @@ export class Iotsitewise extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociateAssets()
+   * - .toAssociateTimeSeriesToAssetProperty()
+   * - .toBatchAssociateDataSegmentsToDataset()
+   * - .toBatchAssociateProjectAssets()
+   * - .toBatchDeleteDatasetDataSegments()
+   * - .toBatchDisassociateDataSegmentsFromDataset()
+   * - .toBatchDisassociateProjectAssets()
+   * - .toBatchGetAssetPropertyAggregates()
+   * - .toBatchGetAssetPropertyValue()
+   * - .toBatchGetAssetPropertyValueHistory()
+   * - .toBatchPutAssetPropertyValue()
+   * - .toCancelEnrichmentJob()
+   * - .toCancelPipelineExecution()
+   * - .toCancelQuery()
+   * - .toCreateAccessPolicy()
+   * - .toCreateAsset()
+   * - .toCreateAssetModelCompositeModel()
+   * - .toCreateBulkImportJob()
+   * - .toCreateComputationModel()
+   * - .toCreateDashboard()
+   * - .toCreateDataset()
+   * - .toCreateDatasetExportJob()
+   * - .toCreateEnrichmentJob()
+   * - .toCreateProject()
+   * - .toDeleteAccessPolicy()
+   * - .toDeleteApplication()
+   * - .toDeleteAsset()
+   * - .toDeleteAssetModel()
+   * - .toDeleteAssetModelCompositeModel()
+   * - .toDeleteAssetModelInterfaceRelationship()
+   * - .toDeleteComputationModel()
+   * - .toDeleteDashboard()
+   * - .toDeleteDataset()
+   * - .toDeleteGateway()
+   * - .toDeletePipeline()
+   * - .toDeletePortal()
+   * - .toDeleteProject()
+   * - .toDeleteTask()
+   * - .toDeleteTimeSeries()
+   * - .toDeleteWorkspace()
+   * - .toDescribeAccessPolicy()
+   * - .toDescribeAction()
+   * - .toDescribeApplication()
+   * - .toDescribeAsset()
+   * - .toDescribeAssetCompositeModel()
+   * - .toDescribeAssetModel()
+   * - .toDescribeAssetModelCompositeModel()
+   * - .toDescribeAssetModelInterfaceRelationship()
+   * - .toDescribeAssetProperty()
+   * - .toDescribeBulkImportJob()
+   * - .toDescribeComputationModel()
+   * - .toDescribeComputationModelExecutionSummary()
+   * - .toDescribeDashboard()
+   * - .toDescribeDataset()
+   * - .toDescribeDatasetExportJob()
+   * - .toDescribeEnrichmentJob()
+   * - .toDescribeGateway()
+   * - .toDescribeGatewayCapabilityConfiguration()
+   * - .toDescribePipeline()
+   * - .toDescribePipelineExecution()
+   * - .toDescribePortal()
+   * - .toDescribeProject()
+   * - .toDescribeQuery()
+   * - .toDescribeSearch()
+   * - .toDescribeTask()
+   * - .toDescribeTimeSeries()
+   * - .toDescribeWorkspace()
+   * - .toDisassociateAssets()
+   * - .toDisassociateTimeSeriesFromAssetProperty()
+   * - .toExecuteAction()
+   * - .toGetAssetPropertyAggregates()
+   * - .toGetAssetPropertyValue()
+   * - .toGetAssetPropertyValueHistory()
+   * - .toGetCaptureData()
+   * - .toGetInterpolatedAssetPropertyValues()
+   * - .toGetQueryResults()
+   * - .toGetSearchResults()
+   * - .toListAccessPolicies()
+   * - .toListActions()
+   * - .toListAssetModelCompositeModels()
+   * - .toListAssetModelProperties()
+   * - .toListAssetProperties()
+   * - .toListAssetRelationships()
+   * - .toListAssets()
+   * - .toListAssociatedAssets()
+   * - .toListBulkImportJobs()
+   * - .toListCompositionRelationships()
+   * - .toListComputationModelDataBindingUsages()
+   * - .toListComputationModelResolveToResources()
+   * - .toListDashboards()
+   * - .toListDatasetDataSegmentRelationships()
+   * - .toListDatasetDataSegments()
+   * - .toListDatasetExportJobs()
+   * - .toListDatasets()
+   * - .toListEnrichmentJobs()
+   * - .toListExecutions()
+   * - .toListInterfaceRelationships()
+   * - .toListPipelineExecutions()
+   * - .toListProjectAssets()
+   * - .toListProjects()
+   * - .toListQueries()
+   * - .toListSearches()
    * - .toListTagsForResource()
+   * - .toListTimeSeries()
+   * - .toPutAssetModelInterfaceRelationship()
+   * - .toStartPipelineExecution()
+   * - .toStartQuery()
+   * - .toStartSearch()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAccessPolicy()
+   * - .toUpdateAsset()
+   * - .toUpdateAssetModel()
+   * - .toUpdateAssetModelCompositeModel()
+   * - .toUpdateAssetProperty()
+   * - .toUpdateComputationModel()
+   * - .toUpdateDashboard()
+   * - .toUpdateDataset()
+   * - .toUpdateGateway()
+   * - .toUpdateGatewayCapabilityConfiguration()
+   * - .toUpdatePipeline()
+   * - .toUpdatePortal()
+   * - .toUpdateProject()
+   * - .toUpdateTask()
+   * - .toUpdateWorkspace()
    *
    * Applies to resource types:
+   * - access-policy
+   * - application
    * - asset
    * - asset-model
-   * - time-series
+   * - computation-model
+   * - dashboard
+   * - dataset
    * - gateway
+   * - pipeline
    * - portal
    * - project
-   * - dashboard
-   * - access-policy
-   * - dataset
-   * - computation-model
+   * - task
+   * - time-series
+   * - workspace
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1585,14 +2282,18 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateAccessPolicy()
+   * - .toCreateApplication()
    * - .toCreateAsset()
    * - .toCreateAssetModel()
    * - .toCreateComputationModel()
    * - .toCreateDashboard()
    * - .toCreateDataset()
    * - .toCreateGateway()
+   * - .toCreatePipeline()
    * - .toCreatePortal()
    * - .toCreateProject()
+   * - .toCreateTask()
+   * - .toCreateWorkspace()
    * - .toDescribeTimeSeries()
    * - .toTagResource()
    * - .toUntagResource()
@@ -1710,6 +2411,22 @@ export class Iotsitewise extends PolicyStatement {
    */
   public ifPropertyId(value: string | string[], operator?: Operator | string) {
     return this.if(`propertyId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the task ARNs specified in the pipeline request
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
+   *
+   * Applies to actions:
+   * - .toCreatePipeline()
+   * - .toUpdatePipeline()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`
+   */
+  public ifTaskArns(value: string | string[], operator?: Operator | string) {
+    return this.if(`taskArns`, value, operator ?? 'ArnLike');
   }
 
   /**

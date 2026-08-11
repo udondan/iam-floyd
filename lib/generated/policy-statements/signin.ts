@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [signin](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssignin.html).
+ * Statement provider for service [signin](https://docs.aws.amazon.com/service-authorization/latest/reference/list_signin.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Signin extends PolicyStatement {
   public servicePrefix = 'signin';
 
   /**
-   * Statement provider for service [signin](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssignin.html).
+   * Statement provider for service [signin](https://docs.aws.amazon.com/service-authorization/latest/reference/list_signin.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -22,9 +22,6 @@ export class Signin extends PolicyStatement {
    * Grants permission to authenticate to the AWS Management Console
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifPrincipalArn()
    *
    * https://docs.aws.amazon.com/signin/latest/APIReference/API_Authenticate.html
    */
@@ -44,14 +41,14 @@ export class Signin extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AWS account through the AWS Management Console sign-up flow
+   * Grants permission to dynamically register an OAuth 2.0 public client for use with AWS Sign-In
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/console-private-access.html
+   * https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateOAuth2PublicClient.html
    */
-  public toCreateAccount() {
-    return this.to('CreateAccount');
+  public toCreateOAuth2PublicClient() {
+    return this.to('CreateOAuth2PublicClient');
   }
 
   /**
@@ -69,15 +66,6 @@ export class Signin extends PolicyStatement {
    * Grants permission to create an Identity Center application that represents the AWS Management Console on an Identity Center organization instance
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - sso:CreateApplication
-   * - sso:GetSharedSsoConfiguration
-   * - sso:ListApplications
-   * - sso:PutApplicationAccessScope
-   * - sso:PutApplicationAssignmentConfiguration
-   * - sso:PutApplicationAuthenticationMethod
-   * - sso:PutApplicationGrant
    *
    * https://docs.aws.amazon.com/signin/latest/APIReference/API_CreateTrustedIdentityPropagationApplicationForConsole.html
    */
@@ -130,6 +118,17 @@ export class Signin extends PolicyStatement {
   }
 
   /**
+   * Grants permission to inspect the metadata and active state of an OAuth 2.0 access token or refresh token
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/signin/latest/APIReference/API_IntrospectOAuth2Token.html
+   */
+  public toIntrospectOAuth2Token() {
+    return this.to('IntrospectOAuth2Token');
+  }
+
+  /**
    * Grants permission to list the SignIn Resource Based Policy statements in your account
    *
    * Access Level: List
@@ -144,10 +143,6 @@ export class Signin extends PolicyStatement {
    * Grants permission to list all Identity Center applications that represent the AWS Management Console
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - sso:GetSharedSsoConfiguration
-   * - sso:ListApplications
    *
    * https://docs.aws.amazon.com/signin/latest/APIReference/API_ListTrustedIdentityPropagationApplicationsForConsole.html
    */
@@ -177,27 +172,52 @@ export class Signin extends PolicyStatement {
     return this.to('PutResourcePermissionStatement');
   }
 
+  /**
+   * Grants permission to revoke an OAuth 2.0 refresh token and its associated refresh tokens
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/signin/latest/APIReference/API_RevokeOAuth2Token.html
+   */
+  public toRevokeOAuth2Token() {
+    return this.to('RevokeOAuth2Token');
+  }
+
   protected accessLevelList: AccessLevelList = {
     Read: [
       'Authenticate',
       'AuthorizeOAuth2Access',
       'CreateOAuth2Token',
       'GetConsoleAuthorizationConfiguration',
-      'GetResourcePolicy'
+      'GetResourcePolicy',
+      'IntrospectOAuth2Token'
     ],
     Write: [
-      'CreateAccount',
+      'CreateOAuth2PublicClient',
       'CreateTrustedIdentityPropagationApplicationForConsole',
       'DeleteConsoleAuthorizationConfiguration',
       'DeleteResourcePermissionStatement',
       'PutConsoleAuthorizationConfiguration',
-      'PutResourcePermissionStatement'
+      'PutResourcePermissionStatement',
+      'RevokeOAuth2Token'
     ],
     List: [
       'ListResourcePermissionStatements',
       'ListTrustedIdentityPropagationApplicationsForConsole'
     ]
   };
+
+  /**
+   * Adds a resource of type console to the statement
+   *
+   * https://docs.aws.amazon.com/signin/latest/APIReference
+   *
+   * @param consoleName - Identifier for the consoleName.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onConsole(consoleName: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:signin:::console/${ consoleName }`);
+  }
 
   /**
    * Adds a resource of type oauth2-public-client-localhost to the statement
@@ -210,6 +230,19 @@ export class Signin extends PolicyStatement {
    */
   public onOauth2PublicClientLocalhost(account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:signin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:oauth2/public-client/localhost`);
+  }
+
+  /**
+   * Adds a resource of type oauth2-public-client-registration to the statement
+   *
+   * https://docs.aws.amazon.com/signin/latest/APIReference
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onOauth2PublicClientRegistration(resourceName: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:signin:${ region ?? this.defaultRegion }::external-client/dcr/${ resourceName }`);
   }
 
   /**
@@ -226,15 +259,97 @@ export class Signin extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type console to the statement
+   * Adds a resource of type oauth2-resource-service-principal to the statement
    *
    * https://docs.aws.amazon.com/signin/latest/APIReference
    *
-   * @param consoleName - Identifier for the consoleName.
+   * @param servicePrincipalName - Identifier for the servicePrincipalName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    */
-  public onConsole(consoleName: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:signin:::console/${ consoleName }`);
+  public onOauth2ResourceServicePrincipal(servicePrincipalName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:signin:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:service-principal/${ servicePrincipalName }`);
+  }
+
+  /**
+   * Filters access by the client authentication method used in the OAuth token request
+   *
+   * https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateOAuth2Token()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOAuthClientAuthentication(value: string | string[], operator?: Operator | string) {
+    return this.if(`OAuthClientAuthentication`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the OAuth client ID used in the authorization or token request
+   *
+   * https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html
+   *
+   * Applies to actions:
+   * - .toAuthorizeOAuth2Access()
+   * - .toCreateOAuth2Token()
+   * - .toIntrospectOAuth2Token()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOAuthClientId(value: string | string[], operator?: Operator | string) {
+    return this.if(`OAuthClientId`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the OAuth grant type used in the token request
+   *
+   * https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html
+   *
+   * Applies to actions:
+   * - .toCreateOAuth2Token()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOAuthGrantType(value: string | string[], operator?: Operator | string) {
+    return this.if(`OAuthGrantType`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the redirect URI specified in the OAuth authorization request
+   *
+   * https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html
+   *
+   * Applies to actions:
+   * - .toAuthorizeOAuth2Access()
+   * - .toCreateOAuth2PublicClient()
+   * - .toCreateOAuth2Token()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOAuthRedirectUri(value: string | string[], operator?: Operator | string) {
+    return this.if(`OAuthRedirectUri`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the type of OAuth token being operated on
+   *
+   * https://docs.aws.amazon.com/signin/latest/userguide/reference-signin-condition-keys.html
+   *
+   * Applies to actions:
+   * - .toIntrospectOAuth2Token()
+   * - .toRevokeOAuth2Token()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOAuthTokenType(value: string | string[], operator?: Operator | string) {
+    return this.if(`OAuthTokenType`, value, operator ?? 'StringLike');
   }
 
   /**

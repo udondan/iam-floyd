@@ -3,8 +3,8 @@ iot:AddThingToBillingGroup;Write
 iot:AddThingToThingGroup;Write
 iot:AssociateSbomWithPackageVersion;Write
 iot:AssociateTargetsWithJob;Write
-iot:AttachPolicy;Permissions management
-iot:AttachPrincipalPolicy;Permissions management
+iot:AttachPolicy;Permissions management, Write
+iot:AttachPrincipalPolicy;Permissions management, Write
 iot:AttachSecurityProfile;Write
 iot:AttachThingPrincipal;Write
 iot:CancelAuditMitigationActionsTask;Write
@@ -35,8 +35,8 @@ iot:CreateMitigationAction;Write
 iot:CreateOTAUpdate;Write
 iot:CreatePackage;Write
 iot:CreatePackageVersion;Write
-iot:CreatePolicy;Permissions management
-iot:CreatePolicyVersion;Permissions management
+iot:CreatePolicy;Permissions management, Write
+iot:CreatePolicyVersion;Permissions management, Write
 iot:CreateProvisioningClaim;Write
 iot:CreateProvisioningTemplate;Write
 iot:CreateProvisioningTemplateVersion;Write
@@ -71,8 +71,8 @@ iot:DeleteMitigationAction;Write
 iot:DeleteOTAUpdate;Write
 iot:DeletePackage;Write
 iot:DeletePackageVersion;Write
-iot:DeletePolicy;Permissions management
-iot:DeletePolicyVersion;Permissions management
+iot:DeletePolicy;Permissions management, Write
+iot:DeletePolicyVersion;Permissions management, Write
 iot:DeleteProvisioningTemplate;Write
 iot:DeleteProvisioningTemplateVersion;Write
 iot:DeleteRegistrationCode;Write
@@ -124,8 +124,8 @@ iot:DescribeThingGroup;Read
 iot:DescribeThingRegistrationTask;Read
 iot:DescribeThingType;Read
 iot:DescribeTunnel;Read
-iot:DetachPolicy;Permissions management
-iot:DetachPrincipalPolicy;Permissions management
+iot:DetachPolicy;Permissions management, Write
+iot:DetachPrincipalPolicy;Permissions management, Write
 iot:DetachSecurityProfile;Write
 iot:DetachThingPrincipal;Write
 iot:DisableTopicRule;Write
@@ -241,8 +241,8 @@ iot:RetainPublish;Write
 iot:RotateTunnelAccessToken;Write
 iot:SearchIndex;Read
 iot:SendDirectMessage;Write
-iot:SetDefaultAuthorizer;Permissions management
-iot:SetDefaultPolicyVersion;Permissions management
+iot:SetDefaultAuthorizer;Permissions management, Write
+iot:SetDefaultPolicyVersion;Permissions management, Write
 iot:SetLoggingOptions;Write
 iot:SetV2LoggingLevel;Write
 iot:SetV2LoggingOptions;Write
@@ -253,11 +253,11 @@ iot:StartOnDemandAuditTask;Write
 iot:StartThingRegistrationTask;Write
 iot:StopThingRegistrationTask;Write
 iot:Subscribe;Write
-iot:TagResource;Tagging
+iot:TagResource;Tagging, Write
 iot:TestAuthorization;Read
 iot:TestInvokeAuthorizer;Read
 iot:TransferCertificate;Write
-iot:UntagResource;Tagging
+iot:UntagResource;Tagging, Write
 iot:UpdateAccountAuditConfiguration;Write
 iot:UpdateAuditSuppression;Write
 iot:UpdateAuthorizer;Write

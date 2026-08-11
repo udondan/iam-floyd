@@ -1,0 +1,515 @@
+import { AccessLevelList } from '../../shared/access-level';
+import { PolicyStatement, Operator } from '../../shared';
+
+/**
+ * Statement provider for service [application-signals](https://docs.aws.amazon.com/service-authorization/latest/reference/list_application-signals.html).
+ *
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+ */
+export class ApplicationSignals extends PolicyStatement {
+  public servicePrefix = 'application-signals';
+
+  /**
+   * Statement provider for service [application-signals](https://docs.aws.amazon.com/service-authorization/latest/reference/list_application-signals.html).
+   *
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
+   */
+  constructor(sid?: string) {
+    super(sid);
+  }
+
+  /**
+   * Grants permission to batch delete instrumentation configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_BatchDeleteInstrumentationConfigurations.html
+   */
+  public toBatchDeleteInstrumentationConfigurations() {
+    return this.to('BatchDeleteInstrumentationConfigurations');
+  }
+
+  /**
+   * Grants permission to batch retrieve a service level objective budget report
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_BatchGetServiceLevelObjectiveBudgetReport.html
+   */
+  public toBatchGetServiceLevelObjectiveBudgetReport() {
+    return this.to('BatchGetServiceLevelObjectiveBudgetReport');
+  }
+
+  /**
+   * Grants permission to add or remove exclusion windows from Amazon CloudWatch SLOs
+   *
+   * Access Level: Write
+   */
+  public toBatchUpdateExclusionWindows() {
+    return this.to('BatchUpdateExclusionWindows');
+  }
+
+  /**
+   * Grants permission to create an instrumentation configuration for dynamic instrumentation
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_CreateInstrumentationConfiguration.html
+   */
+  public toCreateInstrumentationConfiguration() {
+    return this.to('CreateInstrumentationConfiguration');
+  }
+
+  /**
+   * Grants permission to create a service level objective
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_CreateServiceLevelObjective.html
+   */
+  public toCreateServiceLevelObjective() {
+    return this.to('CreateServiceLevelObjective');
+  }
+
+  /**
+   * Grants permission to delete a grouping configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteGroupingConfiguration.html
+   */
+  public toDeleteGroupingConfiguration() {
+    return this.to('DeleteGroupingConfiguration');
+  }
+
+  /**
+   * Grants permission to delete an instrumentation configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteInstrumentationConfiguration.html
+   */
+  public toDeleteInstrumentationConfiguration() {
+    return this.to('DeleteInstrumentationConfiguration');
+  }
+
+  /**
+   * Grants permission to delete a service level objective
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteServiceLevelObjective.html
+   */
+  public toDeleteServiceLevelObjective() {
+    return this.to('DeleteServiceLevelObjective');
+  }
+
+  /**
+   * Grants permission to retrieve an instrumentation configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetInstrumentationConfiguration.html
+   */
+  public toGetInstrumentationConfiguration() {
+    return this.to('GetInstrumentationConfiguration');
+  }
+
+  /**
+   * Grants permission to retrieve the status history of an instrumentation configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetInstrumentationConfigurationStatus.html
+   */
+  public toGetInstrumentationConfigurationStatus() {
+    return this.to('GetInstrumentationConfigurationStatus');
+  }
+
+  /**
+   * Grants permission to retrieve information about a service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetService.html
+   */
+  public toGetService() {
+    return this.to('GetService');
+  }
+
+  /**
+   * Grants permission to retrieve information about service level objective
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_GetServiceLevelObjective.html
+   */
+  public toGetServiceLevelObjective() {
+    return this.to('GetServiceLevelObjective');
+  }
+
+  /**
+   * Grants permission to list service auditing results
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListAuditFindings.html
+   */
+  public toListAuditFindings() {
+    return this.to('ListAuditFindings');
+  }
+
+  /**
+   * Grants permission to list events for an entity
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListEntityEvents.html
+   */
+  public toListEntityEvents() {
+    return this.to('ListEntityEvents');
+  }
+
+  /**
+   * Grants permission to list grouping attribute configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListGroupingAttributeDefinitions.html
+   */
+  public toListGroupingAttributeDefinitions() {
+    return this.to('ListGroupingAttributeDefinitions');
+  }
+
+  /**
+   * Grants permission to list instrumentation configurations
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListInstrumentationConfigurations.html
+   */
+  public toListInstrumentationConfigurations() {
+    return this.to('ListInstrumentationConfigurations');
+  }
+
+  /**
+   * Grants permission to list entities associated with other entities
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Application_Signals_Permissions.html
+   */
+  public toListObservedEntities() {
+    return this.to('ListObservedEntities');
+  }
+
+  /**
+   * Grants permission to list service dependencies
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceDependencies.html
+   */
+  public toListServiceDependencies() {
+    return this.to('ListServiceDependencies');
+  }
+
+  /**
+   * Grants permission to list service dependents
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceDependents.html
+   */
+  public toListServiceDependents() {
+    return this.to('ListServiceDependents');
+  }
+
+  /**
+   * Grants permission to list exclusion windows for an Amazon CloudWatch SLO
+   *
+   * Access Level: List
+   */
+  public toListServiceLevelObjectiveExclusionWindows() {
+    return this.to('ListServiceLevelObjectiveExclusionWindows');
+  }
+
+  /**
+   * Grants permission to list service level objectives
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceLevelObjectives.html
+   */
+  public toListServiceLevelObjectives() {
+    return this.to('ListServiceLevelObjectives');
+  }
+
+  /**
+   * Grants permission to list service operations
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceOperations.html
+   */
+  public toListServiceOperations() {
+    return this.to('ListServiceOperations');
+  }
+
+  /**
+   * Grants permission to list service states
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceStates.html
+   */
+  public toListServiceStates() {
+    return this.to('ListServiceStates');
+  }
+
+  /**
+   * Grants permission to list services
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServices.html
+   */
+  public toListServices() {
+    return this.to('ListServices');
+  }
+
+  /**
+   * Grants permission to list tags for an Amazon CloudWatch Application Signals resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListTagsForResource.html
+   */
+  public toListTagsForResource() {
+    return this.to('ListTagsForResource');
+  }
+
+  /**
+   * Grants permission to create or update a grouping configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_PutGroupingConfiguration.html
+   */
+  public toPutGroupingConfiguration() {
+    return this.to('PutGroupingConfiguration');
+  }
+
+  /**
+   * Grants permission to report the status of instrumentation configurations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ReportInstrumentationConfigurationStatus.html
+   */
+  public toReportInstrumentationConfigurationStatus() {
+    return this.to('ReportInstrumentationConfigurationStatus');
+  }
+
+  /**
+   * Grants permission to enable CloudWatch discovery
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_StartDiscovery.html
+   */
+  public toStartDiscovery() {
+    return this.to('StartDiscovery');
+  }
+
+  /**
+   * Grants permission to add tags to an Amazon CloudWatch Application Signals resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_TagResource.html
+   */
+  public toTagResource() {
+    return this.to('TagResource');
+  }
+
+  /**
+   * Grants permission to remove tags from an Amazon CloudWatch Application Signals resource
+   *
+   * Access Level: Tagging, Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_UntagResource.html
+   */
+  public toUntagResource() {
+    return this.to('UntagResource');
+  }
+
+  /**
+   * Grants permission to update a service level objective
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_UpdateServiceLevelObjective.html
+   */
+  public toUpdateServiceLevelObjective() {
+    return this.to('UpdateServiceLevelObjective');
+  }
+
+  protected accessLevelList: AccessLevelList = {
+    Write: [
+      'BatchDeleteInstrumentationConfigurations',
+      'BatchUpdateExclusionWindows',
+      'CreateInstrumentationConfiguration',
+      'CreateServiceLevelObjective',
+      'DeleteGroupingConfiguration',
+      'DeleteInstrumentationConfiguration',
+      'DeleteServiceLevelObjective',
+      'PutGroupingConfiguration',
+      'ReportInstrumentationConfigurationStatus',
+      'StartDiscovery',
+      'TagResource',
+      'UntagResource',
+      'UpdateServiceLevelObjective'
+    ],
+    Read: [
+      'BatchGetServiceLevelObjectiveBudgetReport',
+      'GetInstrumentationConfiguration',
+      'GetInstrumentationConfigurationStatus',
+      'GetService',
+      'GetServiceLevelObjective',
+      'ListServiceDependencies',
+      'ListServiceDependents',
+      'ListServiceOperations',
+      'ListTagsForResource'
+    ],
+    List: [
+      'ListAuditFindings',
+      'ListEntityEvents',
+      'ListGroupingAttributeDefinitions',
+      'ListInstrumentationConfigurations',
+      'ListObservedEntities',
+      'ListServiceLevelObjectiveExclusionWindows',
+      'ListServiceLevelObjectives',
+      'ListServiceStates',
+      'ListServices'
+    ],
+    Tagging: [
+      'TagResource',
+      'UntagResource'
+    ]
+  };
+
+  /**
+   * Adds a resource of type instrumentationConfig to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateInstrumentationConfiguration.html
+   *
+   * @param service - Identifier for the service.
+   * @param environment - Identifier for the environment.
+   * @param signalType - Identifier for the signalType.
+   * @param locationHash - Identifier for the locationHash.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onInstrumentationConfig(service: string, environment: string, signalType: string, locationHash: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:application-signals:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instrumentationConfig/${ service }/${ environment }/${ signalType }/${ locationHash }`);
+  }
+
+  /**
+   * Adds a resource of type slo to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-ServiceLevelObjectives.html
+   *
+   * @param sloName - Identifier for the sloName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSlo(sloName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:application-signals:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:slo/${ sloName }`);
+  }
+
+  /**
+   * Filters access by the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateInstrumentationConfiguration()
+   * - .toCreateServiceLevelObjective()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toBatchDeleteInstrumentationConfigurations()
+   * - .toBatchGetServiceLevelObjectiveBudgetReport()
+   * - .toBatchUpdateExclusionWindows()
+   * - .toDeleteInstrumentationConfiguration()
+   * - .toDeleteServiceLevelObjective()
+   * - .toGetInstrumentationConfiguration()
+   * - .toGetInstrumentationConfigurationStatus()
+   * - .toGetServiceLevelObjective()
+   * - .toListServiceLevelObjectiveExclusionWindows()
+   * - .toListTagsForResource()
+   * - .toReportInstrumentationConfigurationStatus()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateServiceLevelObjective()
+   *
+   * Applies to resource types:
+   * - instrumentationConfig
+   * - slo
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator ?? 'StringLike');
+  }
+
+  /**
+   * Filters access by the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateInstrumentationConfiguration()
+   * - .toCreateServiceLevelObjective()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: Operator | string) {
+    return this.if(`aws:TagKeys`, value, operator ?? 'StringLike');
+  }
+}

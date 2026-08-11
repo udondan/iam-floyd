@@ -37,8 +37,8 @@ wickr:ListUsers;Read
 wickr:RegisterOidcConfig;Write
 wickr:RegisterOidcConfigTest;Write
 wickr:RegisterOpentdfConfig;Write
-wickr:TagResource;Tagging
-wickr:UntagResource;Tagging
+wickr:TagResource;Tagging, Write
+wickr:UntagResource;Tagging, Write
 wickr:UpdateBot;Write
 wickr:UpdateDataRetention;Write
 wickr:UpdateGuestUser;Write

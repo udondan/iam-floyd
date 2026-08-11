@@ -1,6 +1,5 @@
 bedrock-mantle:ArchiveProject;Write
 bedrock-mantle:AssociateCustomizedModel;Write
-bedrock-mantle:CallWithBearerToken;List
 bedrock-mantle:CancelFineTuningJob;Write
 bedrock-mantle:CancelInference;Write
 bedrock-mantle:CreateCustomizedModel;Write
@@ -31,7 +30,7 @@ bedrock-mantle:ListProjects;List
 bedrock-mantle:ListReservations;List
 bedrock-mantle:ListTagsForResource;Read
 bedrock-mantle:PutAccountDataRetention;Write
-bedrock-mantle:TagResource;Tagging
-bedrock-mantle:UntagResource;Tagging
+bedrock-mantle:TagResource;Tagging, Write
+bedrock-mantle:UntagResource;Tagging, Write
 bedrock-mantle:UpdateProject;Write
 bedrock-mantle:UpdateReservation;Write

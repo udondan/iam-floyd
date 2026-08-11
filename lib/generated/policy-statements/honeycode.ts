@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement } from '../../shared';
 
 /**
- * Statement provider for service [honeycode](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonhoneycode.html).
+ * Statement provider for service [honeycode](https://docs.aws.amazon.com/service-authorization/latest/reference/list_honeycode.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,23 +10,12 @@ export class Honeycode extends PolicyStatement {
   public servicePrefix = 'honeycode';
 
   /**
-   * Statement provider for service [honeycode](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonhoneycode.html).
+   * Statement provider for service [honeycode](https://docs.aws.amazon.com/service-authorization/latest/reference/list_honeycode.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
-  }
-
-  /**
-   * Grants permission to approve a team association request for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#approve-team-association
-   */
-  public toApproveTeamAssociation() {
-    return this.to('ApproveTeamAssociation');
   }
 
   /**
@@ -74,50 +63,6 @@ export class Honeycode extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a new Amazon Honeycode team for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#create-team
-   */
-  public toCreateTeam() {
-    return this.to('CreateTeam');
-  }
-
-  /**
-   * Grants permission to create a new tenant within Amazon Honeycode for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#create-tenant
-   */
-  public toCreateTenant() {
-    return this.to('CreateTenant');
-  }
-
-  /**
-   * Grants permission to delete Amazon Honeycode domains for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#delete-domains
-   */
-  public toDeleteDomains() {
-    return this.to('DeleteDomains');
-  }
-
-  /**
-   * Grants permission to remove groups from an Amazon Honeycode team for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#deregister-groups
-   */
-  public toDeregisterGroups() {
-    return this.to('DeregisterGroups');
-  }
-
-  /**
    * Grants permission to get details about a table data import job
    *
    * Access Level: Read
@@ -126,17 +71,6 @@ export class Honeycode extends PolicyStatement {
    */
   public toDescribeTableDataImportJob() {
     return this.to('DescribeTableDataImportJob');
-  }
-
-  /**
-   * Grants permission to get details about Amazon Honeycode teams for your AWS Account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#describe-team
-   */
-  public toDescribeTeam() {
-    return this.to('DescribeTeam');
   }
 
   /**
@@ -159,28 +93,6 @@ export class Honeycode extends PolicyStatement {
    */
   public toInvokeScreenAutomation() {
     return this.to('InvokeScreenAutomation');
-  }
-
-  /**
-   * Grants permission to list all Amazon Honeycode domains and their verification status for your AWS Account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#list-domains
-   */
-  public toListDomains() {
-    return this.to('ListDomains');
-  }
-
-  /**
-   * Grants permission to list all groups in an Amazon Honeycode team for your AWS Account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#list-groups
-   */
-  public toListGroups() {
-    return this.to('ListGroups');
   }
 
   /**
@@ -219,34 +131,12 @@ export class Honeycode extends PolicyStatement {
   /**
    * Grants permission to list all tags for a resource
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     return this.to('ListTagsForResource');
-  }
-
-  /**
-   * Grants permission to list all pending and approved team associations with your AWS Account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#list-team-associations
-   */
-  public toListTeamAssociations() {
-    return this.to('ListTeamAssociations');
-  }
-
-  /**
-   * Grants permission to list all tenants of Amazon Honeycode for your AWS Account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/tenant.html#list-tenants
-   */
-  public toListTenants() {
-    return this.to('ListTenants');
   }
 
   /**
@@ -258,50 +148,6 @@ export class Honeycode extends PolicyStatement {
    */
   public toQueryTableRows() {
     return this.to('QueryTableRows');
-  }
-
-  /**
-   * Grants permission to request verification of the Amazon Honeycode domains for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#register-domain-for-verification
-   */
-  public toRegisterDomainForVerification() {
-    return this.to('RegisterDomainForVerification');
-  }
-
-  /**
-   * Grants permission to add groups to an Amazon Honeycode team for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/group.html#register-groups
-   */
-  public toRegisterGroups() {
-    return this.to('RegisterGroups');
-  }
-
-  /**
-   * Grants permission to reject a team association request for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#reject-team-association
-   */
-  public toRejectTeamAssociation() {
-    return this.to('RejectTeamAssociation');
-  }
-
-  /**
-   * Grants permission to restart verification of the Amazon Honeycode domains for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/domain.html#restart-domain-verification
-   */
-  public toRestartDomainVerification() {
-    return this.to('RestartDomainVerification');
   }
 
   /**
@@ -318,7 +164,7 @@ export class Honeycode extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_TagResource.html
    */
@@ -329,7 +175,7 @@ export class Honeycode extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_UntagResource.html
    */
@@ -337,50 +183,27 @@ export class Honeycode extends PolicyStatement {
     return this.to('UntagResource');
   }
 
-  /**
-   * Grants permission to update an Amazon Honeycode team for your AWS Account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team.html#update-team
-   */
-  public toUpdateTeam() {
-    return this.to('UpdateTeam');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
-      'ApproveTeamAssociation',
       'BatchCreateTableRows',
       'BatchDeleteTableRows',
       'BatchUpdateTableRows',
       'BatchUpsertTableRows',
-      'CreateTeam',
-      'CreateTenant',
-      'DeleteDomains',
-      'DeregisterGroups',
       'InvokeScreenAutomation',
-      'RegisterDomainForVerification',
-      'RegisterGroups',
-      'RejectTeamAssociation',
-      'RestartDomainVerification',
+      'ListTagsForResource',
       'StartTableDataImportJob',
-      'UpdateTeam'
+      'TagResource',
+      'UntagResource'
     ],
     Read: [
       'DescribeTableDataImportJob',
-      'DescribeTeam',
       'GetScreenData',
       'QueryTableRows'
     ],
     List: [
-      'ListDomains',
-      'ListGroups',
       'ListTableColumns',
       'ListTableRows',
-      'ListTables',
-      'ListTeamAssociations',
-      'ListTenants'
+      'ListTables'
     ],
     Tagging: [
       'ListTagsForResource',
@@ -388,35 +211,6 @@ export class Honeycode extends PolicyStatement {
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type workbook to the statement
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-workbook.html
-   *
-   * @param workbookId - Identifier for the workbookId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onWorkbook(workbookId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:honeycode:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workbook:workbook/${ workbookId }`);
-  }
-
-  /**
-   * Adds a resource of type table to the statement
-   *
-   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-table.html
-   *
-   * @param workbookId - Identifier for the workbookId.
-   * @param tableId - Identifier for the tableId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onTable(workbookId: string, tableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:honeycode:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table:workbook/${ workbookId }/table/${ tableId }`);
-  }
 
   /**
    * Adds a resource of type screen to the statement
@@ -449,5 +243,34 @@ export class Honeycode extends PolicyStatement {
    */
   public onScreenAutomation(workbookId: string, appId: string, screenId: string, automationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:honeycode:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:screen-automation:workbook/${ workbookId }/app/${ appId }/screen/${ screenId }/automation/${ automationId }`);
+  }
+
+  /**
+   * Adds a resource of type table to the statement
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-table.html
+   *
+   * @param workbookId - Identifier for the workbookId.
+   * @param tableId - Identifier for the tableId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onTable(workbookId: string, tableId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:honeycode:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table:workbook/${ workbookId }/table/${ tableId }`);
+  }
+
+  /**
+   * Adds a resource of type workbook to the statement
+   *
+   * https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-workbook.html
+   *
+   * @param workbookId - Identifier for the workbookId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWorkbook(workbookId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:honeycode:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workbook:workbook/${ workbookId }`);
   }
 }

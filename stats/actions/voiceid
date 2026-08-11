@@ -5,7 +5,6 @@ voiceid:DeleteDomain;Write
 voiceid:DeleteFraudster;Write
 voiceid:DeleteSpeaker;Write
 voiceid:DeleteWatchlist;Write
-voiceid:DescribeComplianceConsent;Read
 voiceid:DescribeDomain;Read
 voiceid:DescribeFraudster;Read
 voiceid:DescribeFraudsterRegistrationJob;Read
@@ -22,10 +21,9 @@ voiceid:ListSpeakers;List
 voiceid:ListTagsForResource;Read
 voiceid:ListWatchlists;List
 voiceid:OptOutSpeaker;Write
-voiceid:RegisterComplianceConsent;Write
 voiceid:StartFraudsterRegistrationJob;Write
 voiceid:StartSpeakerEnrollmentJob;Write
-voiceid:TagResource;Tagging
-voiceid:UntagResource;Tagging
+voiceid:TagResource;Tagging, Write
+voiceid:UntagResource;Tagging, Write
 voiceid:UpdateDomain;Write
 voiceid:UpdateWatchlist;Write

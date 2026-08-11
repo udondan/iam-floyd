@@ -1,12 +1,7 @@
 cur:DeleteReportDefinition;Write
 cur:DescribeReportDefinitions;Read
-cur:GetClassicReport;Read
-cur:GetClassicReportPreferences;Read
-cur:GetUsageReport;Read
 cur:ListTagsForResource;Read
 cur:ModifyReportDefinition;Write
-cur:PutClassicReportPreferences;Write
 cur:PutReportDefinition;Write
-cur:TagResource;Tagging
-cur:UntagResource;Tagging
-cur:ValidateReportDestination;Read
+cur:TagResource;Tagging, Write
+cur:UntagResource;Tagging, Write

@@ -1,7 +1,7 @@
-deadline:AssociateMemberToFarm;Permissions management
-deadline:AssociateMemberToFleet;Permissions management
-deadline:AssociateMemberToJob;Permissions management
-deadline:AssociateMemberToQueue;Permissions management
+deadline:AssociateMemberToFarm;Permissions management, Write
+deadline:AssociateMemberToFleet;Permissions management, Write
+deadline:AssociateMemberToJob;Permissions management, Write
+deadline:AssociateMemberToQueue;Permissions management, Write
 deadline:AssumeFleetRoleForRead;Write
 deadline:AssumeFleetRoleForWorker;Write
 deadline:AssumeQueueRoleForRead;Write
@@ -36,16 +36,14 @@ deadline:DeleteQueueLimitAssociation;Write
 deadline:DeleteStorageProfile;Write
 deadline:DeleteVolume;Write
 deadline:DeleteWorker;Write
-deadline:DisassociateMemberFromFarm;Permissions management
-deadline:DisassociateMemberFromFleet;Permissions management
-deadline:DisassociateMemberFromJob;Permissions management
-deadline:DisassociateMemberFromQueue;Permissions management
-deadline:GetApplicationVersion;Read
+deadline:DisassociateMemberFromFarm;Permissions management, Write
+deadline:DisassociateMemberFromFleet;Permissions management, Write
+deadline:DisassociateMemberFromJob;Permissions management, Write
+deadline:DisassociateMemberFromQueue;Permissions management, Write
 deadline:GetBudget;Read
 deadline:GetFarm;Read
 deadline:GetFleet;Read
 deadline:GetJob;Read
-deadline:GetJobTemplate;Read
 deadline:GetLicenseEndpoint;Read
 deadline:GetLimit;Read
 deadline:GetMonitor;Read
@@ -99,8 +97,8 @@ deadline:SearchSteps;Read
 deadline:SearchTasks;Read
 deadline:SearchWorkers;Read
 deadline:StartSessionsStatisticsAggregation;Read
-deadline:TagResource;Tagging
-deadline:UntagResource;Tagging
+deadline:TagResource;Tagging, Write
+deadline:UntagResource;Tagging, Write
 deadline:UpdateBudget;Write
 deadline:UpdateFarm;Write
 deadline:UpdateFleet;Write

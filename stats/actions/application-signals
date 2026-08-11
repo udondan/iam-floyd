@@ -10,7 +10,6 @@ application-signals:GetInstrumentationConfiguration;Read
 application-signals:GetInstrumentationConfigurationStatus;Read
 application-signals:GetService;Read
 application-signals:GetServiceLevelObjective;Read
-application-signals:Link;Write
 application-signals:ListAuditFindings;List
 application-signals:ListEntityEvents;List
 application-signals:ListGroupingAttributeDefinitions;List
@@ -27,6 +26,6 @@ application-signals:ListTagsForResource;Read
 application-signals:PutGroupingConfiguration;Write
 application-signals:ReportInstrumentationConfigurationStatus;Write
 application-signals:StartDiscovery;Write
-application-signals:TagResource;Tagging
-application-signals:UntagResource;Tagging
+application-signals:TagResource;Tagging, Write
+application-signals:UntagResource;Tagging, Write
 application-signals:UpdateServiceLevelObjective;Write

@@ -71,7 +71,6 @@ mobiletargeting:GetJourneyRuns;List
 mobiletargeting:GetPushTemplate;Read
 mobiletargeting:GetRecommenderConfiguration;Read
 mobiletargeting:GetRecommenderConfigurations;List
-mobiletargeting:GetReports;Read
 mobiletargeting:GetSegment;Read
 mobiletargeting:GetSegmentExportJobs;List
 mobiletargeting:GetSegmentImportJobs;List
@@ -94,8 +93,8 @@ mobiletargeting:RemoveAttributes;Write
 mobiletargeting:SendMessages;Write
 mobiletargeting:SendOTPMessage;Write
 mobiletargeting:SendUsersMessages;Write
-mobiletargeting:TagResource;Tagging
-mobiletargeting:UntagResource;Tagging
+mobiletargeting:TagResource;Tagging, Write
+mobiletargeting:UntagResource;Tagging, Write
 mobiletargeting:UpdateAdmChannel;Write
 mobiletargeting:UpdateApnsChannel;Write
 mobiletargeting:UpdateApnsSandboxChannel;Write

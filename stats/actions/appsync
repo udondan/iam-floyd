@@ -1,7 +1,6 @@
 appsync:AssociateApi;Write
 appsync:AssociateMergedGraphqlApi;Write
 appsync:AssociateSourceGraphqlApi;Write
-appsync:AssociateWebACL;Write
 appsync:CreateApi;Write
 appsync:CreateApiCache;Write
 appsync:CreateApiKey;Write
@@ -21,12 +20,10 @@ appsync:DeleteDomainName;Write
 appsync:DeleteFunction;Write
 appsync:DeleteGraphqlApi;Write
 appsync:DeleteResolver;Write
-appsync:DeleteResourcePolicy;Write
 appsync:DeleteType;Write
 appsync:DisassociateApi;Write
 appsync:DisassociateMergedGraphqlApi;Write
 appsync:DisassociateSourceGraphqlApi;Write
-appsync:DisassociateWebACL;Write
 appsync:EvaluateCode;Read
 appsync:EvaluateMappingTemplate;Read
 appsync:EventConnect;Write
@@ -45,12 +42,9 @@ appsync:GetGraphqlApi;Read
 appsync:GetGraphqlApiEnvironmentVariables;Read
 appsync:GetIntrospectionSchema;Read
 appsync:GetResolver;Read
-appsync:GetResourcePolicy;Read
 appsync:GetSchemaCreationStatus;Read
 appsync:GetSourceApiAssociation;Read
 appsync:GetType;Read
-appsync:GetWebACLForResource;Read
-appsync:GraphQL;Write
 appsync:ListApiKeys;List
 appsync:ListApis;List
 appsync:ListChannelNamespaces;List
@@ -60,20 +54,17 @@ appsync:ListFunctions;List
 appsync:ListGraphqlApis;List
 appsync:ListResolvers;List
 appsync:ListResolversByFunction;List
-appsync:ListResourcesForWebACL;List
 appsync:ListSourceApiAssociations;List
 appsync:ListTagsForResource;Read
 appsync:ListTypes;List
 appsync:ListTypesByAssociation;List
 appsync:PutGraphqlApiEnvironmentVariables;Write
-appsync:PutResourcePolicy;Write
-appsync:SetWebACL;Permissions management
-appsync:SourceGraphQL;Write
+appsync:SetWebACL;Permissions management, Write
 appsync:StartDataSourceIntrospection;Write
 appsync:StartSchemaCreation;Write
 appsync:StartSchemaMerge;Write
-appsync:TagResource;Tagging
-appsync:UntagResource;Tagging
+appsync:TagResource;Tagging, Write
+appsync:UntagResource;Tagging, Write
 appsync:UpdateApi;Write
 appsync:UpdateApiCache;Write
 appsync:UpdateApiKey;Write

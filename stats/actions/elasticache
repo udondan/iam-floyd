@@ -1,4 +1,4 @@
-elasticache:AddTagsToResource;Tagging
+elasticache:AddTagsToResource;Tagging, Write
 elasticache:AuthorizeCacheSecurityGroupIngress;Write
 elasticache:BatchApplyUpdateAction;Write
 elasticache:BatchStopUpdateAction;Write
@@ -54,7 +54,6 @@ elasticache:ExportServerlessCacheSnapshot;Write
 elasticache:FailoverGlobalReplicationGroup;Write
 elasticache:IncreaseNodeGroupsInGlobalReplicationGroup;Write
 elasticache:IncreaseReplicaCount;Write
-elasticache:InterruptClusterAzPower;Write
 elasticache:ListAllowedNodeTypeModifications;List
 elasticache:ListTagsForResource;Read
 elasticache:ModifyCacheCluster;Write
@@ -69,7 +68,7 @@ elasticache:ModifyUserGroup;Write
 elasticache:PurchaseReservedCacheNodesOffering;Write
 elasticache:RebalanceSlotsInGlobalReplicationGroup;Write
 elasticache:RebootCacheCluster;Write
-elasticache:RemoveTagsFromResource;Tagging
+elasticache:RemoveTagsFromResource;Tagging, Write
 elasticache:ResetCacheParameterGroup;Write
 elasticache:RevokeCacheSecurityGroupIngress;Write
 elasticache:StartMigration;Write

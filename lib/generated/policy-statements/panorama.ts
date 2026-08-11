@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [panorama](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html).
+ * Statement provider for service [panorama](https://docs.aws.amazon.com/service-authorization/latest/reference/list_panorama.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Panorama extends PolicyStatement {
   public servicePrefix = 'panorama';
 
   /**
-   * Statement provider for service [panorama](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html).
+   * Statement provider for service [panorama](https://docs.aws.amazon.com/service-authorization/latest/reference/list_panorama.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -24,8 +24,8 @@ export class Panorama extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/panorama/latest/api/API_CreateApplicationInstance.html
    */
@@ -61,8 +61,8 @@ export class Panorama extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/panorama/latest/api/API_CreatePackage.html
    */
@@ -214,28 +214,6 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view details about a software version for the AWS Panorama Appliance
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html
-   */
-  public toDescribeSoftware() {
-    return this.to('DescribeSoftware');
-  }
-
-  /**
-   * Grants permission to generate a WebSocket endpoint for communication with AWS Panorama
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/service-authorization/latest/reference/list_awspanorama.html
-   */
-  public toGetWebSocketURL() {
-    return this.to('GetWebSocketURL');
-  }
-
-  /**
    * Grants permission to retrieve a list of application instance dependencies in AWS Panorama
    *
    * Access Level: List
@@ -351,8 +329,8 @@ export class Panorama extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/panorama/latest/api/API_ProvisionDevice.html
    */
@@ -396,11 +374,7 @@ export class Panorama extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource in AWS Panorama
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/panorama/latest/api/API_TagResource.html
    */
@@ -411,10 +385,7 @@ export class Panorama extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource in AWS Panorama
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/panorama/latest/api/API_UntagResource.html
    */
@@ -447,6 +418,8 @@ export class Panorama extends PolicyStatement {
       'RegisterPackageVersion',
       'RemoveApplicationInstance',
       'SignalApplicationInstanceNodeInstances',
+      'TagResource',
+      'UntagResource',
       'UpdateDeviceMetadata'
     ],
     Read: [
@@ -459,8 +432,6 @@ export class Panorama extends PolicyStatement {
       'DescribePackage',
       'DescribePackageImportJob',
       'DescribePackageVersion',
-      'DescribeSoftware',
-      'GetWebSocketURL',
       'ListTagsForResource'
     ],
     List: [
@@ -479,6 +450,23 @@ export class Panorama extends PolicyStatement {
       'UntagResource'
     ]
   };
+
+  /**
+   * Adds a resource of type applicationInstance to the statement
+   *
+   * https://docs.aws.amazon.com/panorama/latest/dev/gettingstarted-concepts.html#gettingstarted-concepts-application
+   *
+   * @param applicationInstanceId - Identifier for the applicationInstanceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplicationInstance(applicationInstanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:panorama:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:applicationInstance/${ applicationInstanceId }`);
+  }
 
   /**
    * Adds a resource of type device to the statement
@@ -515,23 +503,6 @@ export class Panorama extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type applicationInstance to the statement
-   *
-   * https://docs.aws.amazon.com/panorama/latest/dev/gettingstarted-concepts.html#gettingstarted-concepts-application
-   *
-   * @param applicationInstanceId - Identifier for the applicationInstanceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onApplicationInstance(applicationInstanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:panorama:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:applicationInstance/${ applicationInstanceId }`);
-  }
-
-  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -555,10 +526,31 @@ export class Panorama extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toDeleteDevice()
+   * - .toDeletePackage()
+   * - .toDeregisterPackageVersion()
+   * - .toDescribeApplicationInstance()
+   * - .toDescribeApplicationInstanceDetails()
+   * - .toDescribeDevice()
+   * - .toDescribePackage()
+   * - .toDescribePackageVersion()
+   * - .toListApplicationInstanceDependencies()
+   * - .toListApplicationInstanceNodeInstances()
+   * - .toListApplicationInstances()
+   * - .toListDevicesJobs()
+   * - .toListTagsForResource()
+   * - .toRegisterPackageVersion()
+   * - .toRemoveApplicationInstance()
+   * - .toSignalApplicationInstanceNodeInstances()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDeviceMetadata()
+   *
    * Applies to resource types:
+   * - applicationInstance
    * - device
    * - package
-   * - applicationInstance
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

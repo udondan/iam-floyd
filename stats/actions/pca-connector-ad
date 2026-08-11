@@ -19,7 +19,7 @@ pca-connector-ad:ListServicePrincipalNames;List
 pca-connector-ad:ListTagsForResource;Read
 pca-connector-ad:ListTemplateGroupAccessControlEntries;List
 pca-connector-ad:ListTemplates;List
-pca-connector-ad:TagResource;Tagging
-pca-connector-ad:UntagResource;Tagging
+pca-connector-ad:TagResource;Tagging, Write
+pca-connector-ad:UntagResource;Tagging, Write
 pca-connector-ad:UpdateTemplate;Write
 pca-connector-ad:UpdateTemplateGroupAccessControlEntry;Write

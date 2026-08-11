@@ -7,20 +7,16 @@ codebuild:BatchGetProjects;Read
 codebuild:BatchGetReportGroups;Read
 codebuild:BatchGetReports;Read
 codebuild:BatchGetSandboxes;Read
-codebuild:BatchPutCodeCoverages;Write
-codebuild:BatchPutTestCases;Write
 codebuild:CreateFleet;Write
 codebuild:CreateProject;Write
-codebuild:CreateReport;Write
 codebuild:CreateReportGroup;Write
 codebuild:CreateWebhook;Write
 codebuild:DeleteBuildBatch;Write
 codebuild:DeleteFleet;Write
-codebuild:DeleteOAuthToken;Write
 codebuild:DeleteProject;Write
 codebuild:DeleteReport;Write
 codebuild:DeleteReportGroup;Write
-codebuild:DeleteResourcePolicy;Permissions management
+codebuild:DeleteResourcePolicy;Permissions management, Write
 codebuild:DeleteSourceCredentials;Write
 codebuild:DeleteWebhook;Write
 codebuild:DescribeCodeCoverages;Read
@@ -34,21 +30,18 @@ codebuild:ListBuildBatchesForProject;List
 codebuild:ListBuilds;List
 codebuild:ListBuildsForProject;List
 codebuild:ListCommandExecutionsForSandbox;List
-codebuild:ListConnectedOAuthAccounts;List
 codebuild:ListCuratedEnvironmentImages;List
 codebuild:ListFleets;List
 codebuild:ListProjects;List
 codebuild:ListReportGroups;List
 codebuild:ListReports;List
 codebuild:ListReportsForReportGroup;List
-codebuild:ListRepositories;List
 codebuild:ListSandboxes;List
 codebuild:ListSandboxesForProject;List
 codebuild:ListSharedProjects;List
 codebuild:ListSharedReportGroups;List
 codebuild:ListSourceCredentials;List
-codebuild:PersistOAuthToken;Write
-codebuild:PutResourcePolicy;Permissions management
+codebuild:PutResourcePolicy;Permissions management, Write
 codebuild:RetryBuild;Write
 codebuild:RetryBuildBatch;Write
 codebuild:StartBuild;Write
@@ -62,6 +55,5 @@ codebuild:StopSandbox;Write
 codebuild:UpdateFleet;Write
 codebuild:UpdateProject;Write
 codebuild:UpdateProjectVisibility;Write
-codebuild:UpdateReport;Write
 codebuild:UpdateReportGroup;Write
 codebuild:UpdateWebhook;Write

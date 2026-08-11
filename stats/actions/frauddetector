@@ -28,7 +28,6 @@ frauddetector:DeleteRule;Write
 frauddetector:DeleteVariable;Write
 frauddetector:DescribeDetector;Read
 frauddetector:DescribeModelVersions;Read
-frauddetector:GetBatchImportJobValidationReport;Read
 frauddetector:GetBatchImportJobs;List
 frauddetector:GetBatchPredictionJobs;List
 frauddetector:GetDeleteEventsByEventTypeStatus;Read
@@ -59,8 +58,8 @@ frauddetector:PutKMSEncryptionKey;Write
 frauddetector:PutLabel;Write
 frauddetector:PutOutcome;Write
 frauddetector:SendEvent;Write
-frauddetector:TagResource;Tagging
-frauddetector:UntagResource;Tagging
+frauddetector:TagResource;Tagging, Write
+frauddetector:UntagResource;Tagging, Write
 frauddetector:UpdateDetectorVersion;Write
 frauddetector:UpdateDetectorVersionMetadata;Write
 frauddetector:UpdateDetectorVersionStatus;Write

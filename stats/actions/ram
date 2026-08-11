@@ -9,7 +9,7 @@ ram:DeletePermissionVersion;Write
 ram:DeleteResourceShare;Write
 ram:DisassociateResourceShare;Write
 ram:DisassociateResourceSharePermission;Write
-ram:EnableSharingWithAwsOrganization;Permissions management
+ram:EnableSharingWithAwsOrganization;Permissions management, Write
 ram:GetPermission;Read
 ram:GetResourcePolicies;Read
 ram:GetResourceShareAssociations;Read
@@ -30,6 +30,6 @@ ram:PromoteResourceShareCreatedFromPolicy;Write
 ram:RejectResourceShareInvitation;Write
 ram:ReplacePermissionAssociations;Write
 ram:SetDefaultPermissionVersion;Write
-ram:TagResource;Tagging
-ram:UntagResource;Tagging
+ram:TagResource;Tagging, Write
+ram:UntagResource;Tagging, Write
 ram:UpdateResourceShare;Write

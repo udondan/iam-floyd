@@ -38,5 +38,5 @@ fms:PutNotificationChannel;Write
 fms:PutPolicy;Write
 fms:PutProtocolsList;Write
 fms:PutResourceSet;Write
-fms:TagResource;Tagging
-fms:UntagResource;Tagging
+fms:TagResource;Tagging, Write
+fms:UntagResource;Tagging, Write

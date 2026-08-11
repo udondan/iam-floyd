@@ -9,10 +9,8 @@ cognito-sync:GetIdentityPoolConfiguration;Read
 cognito-sync:ListDatasets;List
 cognito-sync:ListIdentityPoolUsage;Read
 cognito-sync:ListRecords;Read
-cognito-sync:QueryRecords;Read
 cognito-sync:RegisterDevice;Write
 cognito-sync:SetCognitoEvents;Write
-cognito-sync:SetDatasetConfiguration;Write
 cognito-sync:SetIdentityPoolConfiguration;Write
 cognito-sync:SubscribeToDataset;Write
 cognito-sync:UnsubscribeFromDataset;Write

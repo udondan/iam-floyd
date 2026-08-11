@@ -6,6 +6,6 @@ license-manager-linux-subscriptions:ListLinuxSubscriptions;Read
 license-manager-linux-subscriptions:ListRegisteredSubscriptionProviders;Read
 license-manager-linux-subscriptions:ListTagsForResource;Read
 license-manager-linux-subscriptions:RegisterSubscriptionProvider;Write
-license-manager-linux-subscriptions:TagResource;Tagging
-license-manager-linux-subscriptions:UntagResource;Tagging
+license-manager-linux-subscriptions:TagResource;Tagging, Write
+license-manager-linux-subscriptions:UntagResource;Tagging, Write
 license-manager-linux-subscriptions:UpdateServiceSettings;Write

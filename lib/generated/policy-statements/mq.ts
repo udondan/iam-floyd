@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [mq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmq.html).
+ * Statement provider for service [mq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_mq.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Mq extends PolicyStatement {
   public servicePrefix = 'mq';
 
   /**
-   * Statement provider for service [mq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmq.html).
+   * Statement provider for service [mq](https://docs.aws.amazon.com/service-authorization/latest/reference/list_mq.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -26,22 +26,6 @@ export class Mq extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - ec2:CreateNetworkInterface
-   * - ec2:CreateNetworkInterfacePermission
-   * - ec2:CreateSecurityGroup
-   * - ec2:CreateVpcEndpoint
-   * - ec2:DescribeInternetGateways
-   * - ec2:DescribeNetworkInterfacePermissions
-   * - ec2:DescribeNetworkInterfaces
-   * - ec2:DescribeSecurityGroups
-   * - ec2:DescribeSubnets
-   * - ec2:DescribeVpcEndpoints
-   * - ec2:DescribeVpcs
-   * - ec2:ModifyNetworkInterfaceAttribute
-   * - iam:CreateServiceLinkedRole
-   * - route53:AssociateVPCWithHostedZone
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
    */
@@ -65,24 +49,9 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a replica broker
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
-   */
-  public toCreateReplicaBroker() {
-    return this.to('CreateReplicaBroker');
-  }
-
-  /**
    * Grants permission to create tags
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-post
    */
@@ -106,12 +75,6 @@ export class Mq extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ec2:DeleteNetworkInterface
-   * - ec2:DeleteNetworkInterfacePermission
-   * - ec2:DeleteVpcEndpoints
-   * - ec2:DetachNetworkInterface
-   *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete
    */
   public toDeleteBroker() {
@@ -132,10 +95,7 @@ export class Mq extends PolicyStatement {
   /**
    * Grants permission to delete tags
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-delete
    */
@@ -320,15 +280,6 @@ export class Mq extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update RabbitMQ broker authentication and authorization configuration
-   *
-   * Access Level: Write
-   */
-  public toUpdateBrokerAccessConfiguration() {
-    return this.to('UpdateBrokerAccessConfiguration');
-  }
-
-  /**
    * Grants permission to update the specified configuration
    *
    * Access Level: Write
@@ -354,15 +305,15 @@ export class Mq extends PolicyStatement {
     Write: [
       'CreateBroker',
       'CreateConfiguration',
-      'CreateReplicaBroker',
+      'CreateTags',
       'CreateUser',
       'DeleteBroker',
       'DeleteConfiguration',
+      'DeleteTags',
       'DeleteUser',
       'Promote',
       'RebootBroker',
       'UpdateBroker',
-      'UpdateBrokerAccessConfiguration',
       'UpdateConfiguration',
       'UpdateUser'
     ],
@@ -445,6 +396,27 @@ export class Mq extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .toCreateTags()
+   * - .toCreateUser()
+   * - .toDeleteBroker()
+   * - .toDeleteConfiguration()
+   * - .toDeleteTags()
+   * - .toDeleteUser()
+   * - .toDescribeBroker()
+   * - .toDescribeConfiguration()
+   * - .toDescribeConfigurationRevision()
+   * - .toDescribeSharedResources()
+   * - .toDescribeUser()
+   * - .toListConfigurationRevisions()
+   * - .toListTags()
+   * - .toListUsers()
+   * - .toPromote()
+   * - .toRebootBroker()
+   * - .toUpdateBroker()
+   * - .toUpdateConfiguration()
+   * - .toUpdateUser()
    *
    * Applies to resource types:
    * - brokers

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [cloudformation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudformation.html).
+ * Statement provider for service [cloudformation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudformation.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Cloudformation extends PolicyStatement {
   public servicePrefix = 'cloudformation';
 
   /**
-   * Statement provider for service [cloudformation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudformation.html).
+   * Statement provider for service [cloudformation](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudformation.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -67,9 +67,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifRoleArn()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html
    */
   public toContinueUpdateRollback() {
@@ -80,16 +77,6 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to create a list of changes for a stack
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifChangeSetName()
-   * - .ifResourceTypes()
-   * - .ifImportResourceTypes()
-   * - .ifRoleArn()
-   * - .ifStackPolicyUrl()
-   * - .ifTemplateUrl()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html
    */
@@ -113,14 +100,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifResourceTypes()
-   * - .ifRoleArn()
-   * - .ifStackPolicyUrl()
-   * - .ifTemplateUrl()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html
    */
   public toCreateStack() {
@@ -131,10 +110,6 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to create stack instances for the specified accounts, within the specified regions
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifTargetRegion()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html
    */
@@ -159,26 +134,15 @@ export class Cloudformation extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifRoleArn()
-   * - .ifTemplateUrl()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifRoleArn()
+   * - .ifTemplateUrl()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html
    */
   public toCreateStackSet() {
     return this.to('CreateStackSet');
-  }
-
-  /**
-   * Grants permission to upload templates to Amazon S3 buckets. Used only by the AWS CloudFormation console and is not documented in the API reference
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html
-   */
-  public toCreateUploadBucket() {
-    return this.to('CreateUploadBucket');
   }
 
   /**
@@ -208,9 +172,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifChangeSetName()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html
    */
   public toDeleteChangeSet() {
@@ -233,9 +194,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifRoleArn()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html
    */
   public toDeleteStack() {
@@ -246,9 +204,6 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to delete stack instances for the specified accounts, in the specified regions
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifTargetRegion()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackInstances.html
    */
@@ -294,9 +249,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifChangeSetName()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html
    */
   public toDescribeChangeSet() {
@@ -307,9 +259,6 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to return the Hook invocation information for the specified change set
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifChangeSetName()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSetHooks.html
    */
@@ -476,9 +425,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - cloudformation:ListStacks
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html
    */
   public toDescribeStacks() {
@@ -559,9 +505,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifChangeSetName()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html
    */
   public toExecuteChangeSet() {
@@ -598,9 +541,6 @@ export class Cloudformation extends PolicyStatement {
    * Possible conditions:
    * - .ifTypeArn()
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetHookResult.html
    */
   public toGetHookResult() {
@@ -633,9 +573,6 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to return information about a new or existing template
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifTemplateUrl()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html
    */
@@ -705,9 +642,6 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to return Hook invocations result information for the specified target
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifChangeSetName()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListHookResults.html
    */
@@ -951,9 +885,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifRoleArn()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RollbackStack.html
    */
   public toRollbackStack() {
@@ -963,10 +894,7 @@ export class Cloudformation extends PolicyStatement {
   /**
    * Grants permission to set a stack policy for a specified stack
    *
-   * Access Level: Permissions management
-   *
-   * Possible conditions:
-   * - .ifStackPolicyUrl()
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html
    */
@@ -1032,12 +960,7 @@ export class Cloudformation extends PolicyStatement {
   /**
    * Grants permission to tag cloudformation resources
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifCreateAction()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TagResource.html
    */
@@ -1059,11 +982,7 @@ export class Cloudformation extends PolicyStatement {
   /**
    * Grants permission to untag cloudformation resources
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifCreateAction()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UntagResource.html
    */
@@ -1087,14 +1006,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifResourceTypes()
-   * - .ifRoleArn()
-   * - .ifStackPolicyUrl()
-   * - .ifTemplateUrl()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html
    */
   public toUpdateStack() {
@@ -1106,9 +1017,6 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifTargetRegion()
-   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackInstances.html
    */
   public toUpdateStackInstances() {
@@ -1119,13 +1027,6 @@ export class Cloudformation extends PolicyStatement {
    * Grants permission to update a stackset as specified in the template
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifRoleArn()
-   * - .ifTemplateUrl()
-   * - .ifTargetRegion()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html
    */
@@ -1170,7 +1071,6 @@ export class Cloudformation extends PolicyStatement {
       'CreateStackInstances',
       'CreateStackRefactor',
       'CreateStackSet',
-      'CreateUploadBucket',
       'DeactivateOrganizationsAccess',
       'DeactivateType',
       'DeleteChangeSet',
@@ -1187,12 +1087,15 @@ export class Cloudformation extends PolicyStatement {
       'RegisterPublisher',
       'RegisterType',
       'RollbackStack',
+      'SetStackPolicy',
       'SetTypeConfiguration',
       'SetTypeDefaultVersion',
       'SignalResource',
       'StartResourceScan',
       'StopStackSetOperation',
+      'TagResource',
       'TestType',
+      'UntagResource',
       'UpdateGeneratedTemplate',
       'UpdateStack',
       'UpdateStackInstances',
@@ -1284,6 +1187,34 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type generatedtemplate to the statement
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onGeneratedtemplate(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:generatedTemplate/${ id }`);
+  }
+
+  /**
+   * Adds a resource of type resourcescan to the statement
+   *
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onResourcescan(id: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resourceScan/${ id }`);
+  }
+
+  /**
    * Adds a resource of type stack to the statement
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15b9
@@ -1362,34 +1293,6 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type generatedtemplate to the statement
-   *
-   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onGeneratedtemplate(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:generatedTemplate/${ id }`);
-  }
-
-  /**
-   * Adds a resource of type resourcescan to the statement
-   *
-   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC.html
-   *
-   * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onResourcescan(id: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudformation:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:resourceScan/${ id }`);
-  }
-
-  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
@@ -1414,6 +1317,60 @@ export class Cloudformation extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-conditions
+   *
+   * Applies to actions:
+   * - .toCancelUpdateStack()
+   * - .toContinueUpdateRollback()
+   * - .toCreateChangeSet()
+   * - .toCreateStack()
+   * - .toCreateStackInstances()
+   * - .toCreateStackRefactor()
+   * - .toDeleteChangeSet()
+   * - .toDeleteStack()
+   * - .toDeleteStackInstances()
+   * - .toDeleteStackSet()
+   * - .toDescribeChangeSet()
+   * - .toDescribeChangeSetHooks()
+   * - .toDescribeEvents()
+   * - .toDescribeStackEvents()
+   * - .toDescribeStackInstance()
+   * - .toDescribeStackRefactor()
+   * - .toDescribeStackResource()
+   * - .toDescribeStackResourceDrifts()
+   * - .toDescribeStackResources()
+   * - .toDescribeStackSet()
+   * - .toDescribeStackSetOperation()
+   * - .toDescribeStacks()
+   * - .toDetectStackDrift()
+   * - .toDetectStackResourceDrift()
+   * - .toDetectStackSetDrift()
+   * - .toExecuteChangeSet()
+   * - .toExecuteStackRefactor()
+   * - .toGetStackPolicy()
+   * - .toGetTemplate()
+   * - .toGetTemplateSummary()
+   * - .toImportStacksToStackSet()
+   * - .toListChangeSets()
+   * - .toListHookResults()
+   * - .toListStackInstanceResourceDrifts()
+   * - .toListStackInstances()
+   * - .toListStackRefactorActions()
+   * - .toListStackRefactors()
+   * - .toListStackResources()
+   * - .toListStackSetAutoDeploymentTargets()
+   * - .toListStackSetOperationResults()
+   * - .toListStackSetOperations()
+   * - .toRecordHandlerProgress()
+   * - .toRollbackStack()
+   * - .toSetStackPolicy()
+   * - .toSignalResource()
+   * - .toStopStackSetOperation()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateStack()
+   * - .toUpdateStackInstances()
+   * - .toUpdateStackSet()
+   * - .toUpdateTerminationProtection()
    *
    * Applies to resource types:
    * - changeset

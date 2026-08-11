@@ -1,22 +1,15 @@
 ce:CreateAnomalyMonitor;Write
 ce:CreateAnomalySubscription;Write
 ce:CreateCostCategoryDefinition;Write
-ce:CreateNotificationSubscription;Write
-ce:CreateReport;Write
 ce:DeleteAnomalyMonitor;Write
 ce:DeleteAnomalySubscription;Write
 ce:DeleteCostCategoryDefinition;Write
-ce:DeleteNotificationSubscription;Write
-ce:DeleteReport;Write
 ce:DescribeCostCategoryDefinition;Read
-ce:DescribeNotificationSubscription;Read
-ce:DescribeReport;Read
 ce:GetAnomalies;Read
 ce:GetAnomalyMonitors;Read
 ce:GetAnomalySubscriptions;Read
 ce:GetApproximateUsageRecords;Read
 ce:GetCommitmentPurchaseAnalysis;Read
-ce:GetConsoleActionSetEnforced;Read
 ce:GetCostAndUsage;Read
 ce:GetCostAndUsageComparisons;Read
 ce:GetCostAndUsageWithResources;Read
@@ -24,7 +17,6 @@ ce:GetCostCategories;Read
 ce:GetCostComparisonDrivers;Read
 ce:GetCostForecast;Read
 ce:GetDimensionValues;Read
-ce:GetPreferences;Read
 ce:GetReservationCoverage;Read
 ce:GetReservationPurchaseRecommendation;Read
 ce:GetReservationUtilization;Read
@@ -47,13 +39,9 @@ ce:ProvideAnomalyFeedback;Write
 ce:StartCommitmentPurchaseAnalysis;Write
 ce:StartCostAllocationTagBackfill;Write
 ce:StartSavingsPlansPurchaseRecommendationGeneration;Write
-ce:TagResource;Tagging
-ce:UntagResource;Tagging
+ce:TagResource;Tagging, Write
+ce:UntagResource;Tagging, Write
 ce:UpdateAnomalyMonitor;Write
 ce:UpdateAnomalySubscription;Write
-ce:UpdateConsoleActionSetEnforced;Write
 ce:UpdateCostAllocationTagsStatus;Write
 ce:UpdateCostCategoryDefinition;Write
-ce:UpdateNotificationSubscription;Write
-ce:UpdatePreferences;Write
-ce:UpdateReport;Write

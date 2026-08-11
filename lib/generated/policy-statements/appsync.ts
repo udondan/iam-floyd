@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [appsync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html).
+ * Statement provider for service [appsync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appsync.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Appsync extends PolicyStatement {
   public servicePrefix = 'appsync';
 
   /**
-   * Statement provider for service [appsync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsappsync.html).
+   * Statement provider for service [appsync](https://docs.aws.amazon.com/service-authorization/latest/reference/list_appsync.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -52,28 +52,14 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a web ACL and a resource
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
-   */
-  public toAssociateWebACL() {
-    return this.to('AssociateWebACL');
-  }
-
-  /**
    * Grants permission to create an API
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsResourceTag()
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApi.html
    */
@@ -108,11 +94,6 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateChannelNamespace.html
    */
   public toCreateChannelNamespace() {
@@ -134,11 +115,6 @@ export class Appsync extends PolicyStatement {
    * Grants permission to create a custom domain name in AppSync
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDomainName.html
    */
@@ -163,12 +139,9 @@ export class Appsync extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
+   * - .ifVisibility()
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
-   * - .ifVisibility()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html
    */
@@ -203,9 +176,6 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteApi.html
    */
   public toDeleteApi() {
@@ -239,9 +209,6 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteChannelNamespace.html
    */
   public toDeleteChannelNamespace() {
@@ -263,9 +230,6 @@ export class Appsync extends PolicyStatement {
    * Grants permission to delete a custom domain name in AppSync
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteDomainName.html
    */
@@ -289,9 +253,6 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteGraphqlApi.html
    */
   public toDeleteGraphqlApi() {
@@ -307,17 +268,6 @@ export class Appsync extends PolicyStatement {
    */
   public toDeleteResolver() {
     return this.to('DeleteResolver');
-  }
-
-  /**
-   * Grants permission to remove a resource policy
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
-   */
-  public toDeleteResourcePolicy() {
-    return this.to('DeleteResourcePolicy');
   }
 
   /**
@@ -362,17 +312,6 @@ export class Appsync extends PolicyStatement {
    */
   public toDisassociateSourceGraphqlApi() {
     return this.to('DisassociateSourceGraphqlApi');
-  }
-
-  /**
-   * Grants permission to disassociate a web ACL and a resource
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
-   */
-  public toDisassociateWebACL() {
-    return this.to('DisassociateWebACL');
   }
 
   /**
@@ -446,9 +385,6 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetApi.html
    */
   public toGetApi() {
@@ -481,9 +417,6 @@ export class Appsync extends PolicyStatement {
    * Grants permission to retrieve a channel namespace
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetChannelNamespace.html
    */
@@ -518,9 +451,6 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDomainName.html
    */
   public toGetDomainName() {
@@ -542,9 +472,6 @@ export class Appsync extends PolicyStatement {
    * Grants permission to retrieve a GraphQL API
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetGraphqlApi.html
    */
@@ -586,17 +513,6 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to read a resource policy
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
-   */
-  public toGetResourcePolicy() {
-    return this.to('GetResourcePolicy');
-  }
-
-  /**
    * Grants permission to retrieve the current status of a schema creation operation
    *
    * Access Level: Read
@@ -630,28 +546,6 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get associated web ACLs for a resource
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
-   */
-  public toGetWebACLForResource() {
-    return this.to('GetWebACLForResource');
-  }
-
-  /**
-   * Grants permission to send a GraphQL query to a GraphQL API
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/security-authz.html#aws-iam-authorization
-   */
-  public toGraphQL() {
-    return this.to('GraphQL');
-  }
-
-  /**
    * Grants permission to list the API keys for a given API
    *
    * Access Level: List
@@ -680,9 +574,6 @@ export class Appsync extends PolicyStatement {
    * Grants permission to list channel namespace
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListChannelNamespaces.html
    */
@@ -760,17 +651,6 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get associated resources for a web ACL
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
-   */
-  public toListResourcesForWebACL() {
-    return this.to('ListResourcesForWebACL');
-  }
-
-  /**
    * Grants permission to list source APIs associated to a given merged API
    *
    * Access Level: List
@@ -785,9 +665,6 @@ export class Appsync extends PolicyStatement {
    * Grants permission to list the tags for a resource
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTagsForResource.html
    */
@@ -829,36 +706,14 @@ export class Appsync extends PolicyStatement {
   }
 
   /**
-   * Grants permission to set a resource policy
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/merge-api.html
-   */
-  public toPutResourcePolicy() {
-    return this.to('PutResourcePolicy');
-  }
-
-  /**
    * Grants permission to set a web ACL
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html
    */
   public toSetWebACL() {
     return this.to('SetWebACL');
-  }
-
-  /**
-   * Grants permission to send a GraphQL query to a source API of a merged API
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-api.html
-   */
-  public toSourceGraphQL() {
-    return this.to('SourceGraphQL');
   }
 
   /**
@@ -897,12 +752,7 @@ export class Appsync extends PolicyStatement {
   /**
    * Grants permission to tag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_TagResource.html
    */
@@ -913,11 +763,7 @@ export class Appsync extends PolicyStatement {
   /**
    * Grants permission to untag a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsResourceTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UntagResource.html
    */
@@ -929,12 +775,6 @@ export class Appsync extends PolicyStatement {
    * Grants permission to update an API
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateApi.html
    */
@@ -969,9 +809,6 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateChannelNamespace.html
    */
   public toUpdateChannelNamespace() {
@@ -994,9 +831,6 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateDomainName.html
    */
   public toUpdateDomainName() {
@@ -1018,12 +852,6 @@ export class Appsync extends PolicyStatement {
    * Grants permission to update a GraphQL API
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateGraphqlApi.html
    */
@@ -1069,7 +897,6 @@ export class Appsync extends PolicyStatement {
       'AssociateApi',
       'AssociateMergedGraphqlApi',
       'AssociateSourceGraphqlApi',
-      'AssociateWebACL',
       'CreateApi',
       'CreateApiCache',
       'CreateApiKey',
@@ -1089,23 +916,21 @@ export class Appsync extends PolicyStatement {
       'DeleteFunction',
       'DeleteGraphqlApi',
       'DeleteResolver',
-      'DeleteResourcePolicy',
       'DeleteType',
       'DisassociateApi',
       'DisassociateMergedGraphqlApi',
       'DisassociateSourceGraphqlApi',
-      'DisassociateWebACL',
       'EventConnect',
       'EventPublish',
       'EventSubscribe',
       'FlushApiCache',
-      'GraphQL',
       'PutGraphqlApiEnvironmentVariables',
-      'PutResourcePolicy',
-      'SourceGraphQL',
+      'SetWebACL',
       'StartDataSourceIntrospection',
       'StartSchemaCreation',
       'StartSchemaMerge',
+      'TagResource',
+      'UntagResource',
       'UpdateApi',
       'UpdateApiCache',
       'UpdateApiKey',
@@ -1133,11 +958,9 @@ export class Appsync extends PolicyStatement {
       'GetGraphqlApiEnvironmentVariables',
       'GetIntrospectionSchema',
       'GetResolver',
-      'GetResourcePolicy',
       'GetSchemaCreationStatus',
       'GetSourceApiAssociation',
       'GetType',
-      'GetWebACLForResource',
       'ListTagsForResource'
     ],
     List: [
@@ -1150,7 +973,6 @@ export class Appsync extends PolicyStatement {
       'ListGraphqlApis',
       'ListResolvers',
       'ListResolversByFunction',
-      'ListResourcesForWebACL',
       'ListSourceApiAssociations',
       'ListTypes',
       'ListTypesByAssociation'
@@ -1163,131 +985,6 @@ export class Appsync extends PolicyStatement {
       'UntagResource'
     ]
   };
-
-  /**
-   * Adds a resource of type datasource to the statement
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html
-   *
-   * @param graphQLAPIId - Identifier for the graphQLAPIId.
-   * @param datasourceName - Identifier for the datasourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onDatasource(graphQLAPIId: string, datasourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/datasources/${ datasourceName }`);
-  }
-
-  /**
-   * Adds a resource of type domain to the statement
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/custom-domain-name.html
-   *
-   * @param domainName - Identifier for the domainName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domainnames/${ domainName }`);
-  }
-
-  /**
-   * Adds a resource of type graphqlapi to the statement
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html
-   *
-   * @param graphQLAPIId - Identifier for the graphQLAPIId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onGraphqlapi(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }`);
-  }
-
-  /**
-   * Adds a resource of type field to the statement
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html
-   *
-   * @param graphQLAPIId - Identifier for the graphQLAPIId.
-   * @param typeName - Identifier for the typeName.
-   * @param fieldName - Identifier for the fieldName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onField(graphQLAPIId: string, typeName: string, fieldName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/types/${ typeName }/fields/${ fieldName }`);
-  }
-
-  /**
-   * Adds a resource of type type to the statement
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type
-   *
-   * @param graphQLAPIId - Identifier for the graphQLAPIId.
-   * @param typeName - Identifier for the typeName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onType(graphQLAPIId: string, typeName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/types/${ typeName }`);
-  }
-
-  /**
-   * Adds a resource of type function to the statement
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html
-   *
-   * @param graphQLAPIId - Identifier for the graphQLAPIId.
-   * @param functionId - Identifier for the functionId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onFunction(graphQLAPIId: string, functionId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/functions/${ functionId }`);
-  }
-
-  /**
-   * Adds a resource of type sourceApiAssociation to the statement
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/merged-api.html
-   *
-   * @param mergedGraphQLAPIId - Identifier for the mergedGraphQLAPIId.
-   * @param associationid - Identifier for the associationid.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onSourceApiAssociation(mergedGraphQLAPIId: string, associationid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ mergedGraphQLAPIId }/sourceApiAssociations/${ associationid }`);
-  }
-
-  /**
-   * Adds a resource of type mergedApiAssociation to the statement
-   *
-   * https://docs.aws.amazon.com/appsync/latest/devguide/merged-api.html
-   *
-   * @param sourceGraphQLAPIId - Identifier for the sourceGraphQLAPIId.
-   * @param associationid - Identifier for the associationid.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onMergedApiAssociation(sourceGraphQLAPIId: string, associationid: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ sourceGraphQLAPIId }/mergedApiAssociations/${ associationid }`);
-  }
 
   /**
    * Adds a resource of type api to the statement
@@ -1322,6 +1019,131 @@ export class Appsync extends PolicyStatement {
    */
   public onChannelNamespace(apiId: string, channelNamespaceName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ apiId }/channelNamespace/${ channelNamespaceName }`);
+  }
+
+  /**
+   * Adds a resource of type datasource to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param datasourceName - Identifier for the datasourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onDatasource(graphQLAPIId: string, datasourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/datasources/${ datasourceName }`);
+  }
+
+  /**
+   * Adds a resource of type domain to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/custom-domain-name.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domainnames/${ domainName }`);
+  }
+
+  /**
+   * Adds a resource of type field to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param typeName - Identifier for the typeName.
+   * @param fieldName - Identifier for the fieldName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onField(graphQLAPIId: string, typeName: string, fieldName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/types/${ typeName }/fields/${ fieldName }`);
+  }
+
+  /**
+   * Adds a resource of type function to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param functionId - Identifier for the functionId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onFunction(graphQLAPIId: string, functionId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/functions/${ functionId }`);
+  }
+
+  /**
+   * Adds a resource of type graphqlapi to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onGraphqlapi(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }`);
+  }
+
+  /**
+   * Adds a resource of type mergedApiAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merged-api.html
+   *
+   * @param sourceGraphQLAPIId - Identifier for the sourceGraphQLAPIId.
+   * @param associationid - Identifier for the associationid.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMergedApiAssociation(sourceGraphQLAPIId: string, associationid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ sourceGraphQLAPIId }/mergedApiAssociations/${ associationid }`);
+  }
+
+  /**
+   * Adds a resource of type sourceApiAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/merged-api.html
+   *
+   * @param mergedGraphQLAPIId - Identifier for the mergedGraphQLAPIId.
+   * @param associationid - Identifier for the associationid.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSourceApiAssociation(mergedGraphQLAPIId: string, associationid: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ mergedGraphQLAPIId }/sourceApiAssociations/${ associationid }`);
+  }
+
+  /**
+   * Adds a resource of type type to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param typeName - Identifier for the typeName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onType(graphQLAPIId: string, typeName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:appsync:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:apis/${ graphQLAPIId }/types/${ typeName }`);
   }
 
   /**
@@ -1363,6 +1185,9 @@ export class Appsync extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toAssociateApi()
+   * - .toAssociateMergedGraphqlApi()
+   * - .toAssociateSourceGraphqlApi()
    * - .toCreateApi()
    * - .toCreateChannelNamespace()
    * - .toCreateDomainName()
@@ -1370,7 +1195,12 @@ export class Appsync extends PolicyStatement {
    * - .toDeleteChannelNamespace()
    * - .toDeleteDomainName()
    * - .toDeleteGraphqlApi()
+   * - .toDisassociateApi()
+   * - .toEventConnect()
+   * - .toEventPublish()
+   * - .toEventSubscribe()
    * - .toGetApi()
+   * - .toGetApiAssociation()
    * - .toGetChannelNamespace()
    * - .toGetDomainName()
    * - .toGetGraphqlApi()
@@ -1386,10 +1216,10 @@ export class Appsync extends PolicyStatement {
    * - .toUpdateGraphqlApi()
    *
    * Applies to resource types:
-   * - domain
-   * - graphqlapi
    * - api
    * - channelNamespace
+   * - domain
+   * - graphqlapi
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

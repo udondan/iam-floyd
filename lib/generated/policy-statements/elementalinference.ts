@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [elemental-inference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html).
+ * Statement provider for service [elemental-inference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class ElementalInference extends PolicyStatement {
   public servicePrefix = 'elemental-inference';
 
   /**
-   * Statement provider for service [elemental-inference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalinference.html).
+   * Statement provider for service [elemental-inference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elementalinference.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -183,11 +183,7 @@ export class ElementalInference extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_TagResource.html
    */
@@ -198,10 +194,7 @@ export class ElementalInference extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UntagResource.html
    */
@@ -240,6 +233,8 @@ export class ElementalInference extends PolicyStatement {
       'DeleteFeed',
       'DisassociateFeed',
       'PutMedia',
+      'TagResource',
+      'UntagResource',
       'UpdateDictionary',
       'UpdateFeed'
     ],
@@ -316,6 +311,21 @@ export class ElementalInference extends PolicyStatement {
    * Filters access by tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toAssociateFeed()
+   * - .toDeleteDictionary()
+   * - .toDeleteFeed()
+   * - .toDisassociateFeed()
+   * - .toExportDictionaryEntries()
+   * - .toGetDictionary()
+   * - .toGetFeed()
+   * - .toGetMetadata()
+   * - .toPutMedia()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateDictionary()
+   * - .toUpdateFeed()
    *
    * Applies to resource types:
    * - dictionary

@@ -1,17 +1,20 @@
 kafka:BatchAssociateScramSecret;Write
 kafka:BatchDisassociateScramSecret;Write
+kafka:CreateChannel;Write
 kafka:CreateCluster;Write
 kafka:CreateClusterV2;Write
 kafka:CreateConfiguration;Write
 kafka:CreateReplicator;Write
 kafka:CreateTopic;Write
 kafka:CreateVpcConnection;Write
+kafka:DeleteChannel;Write
 kafka:DeleteCluster;Write
 kafka:DeleteClusterPolicy;Write
 kafka:DeleteConfiguration;Write
 kafka:DeleteReplicator;Write
 kafka:DeleteTopic;Write
 kafka:DeleteVpcConnection;Write
+kafka:DescribeChannel;Read
 kafka:DescribeCluster;Read
 kafka:DescribeClusterOperation;Read
 kafka:DescribeClusterOperationV2;Read
@@ -25,6 +28,7 @@ kafka:DescribeVpcConnection;Read
 kafka:GetBootstrapBrokers;Read
 kafka:GetClusterPolicy;Read
 kafka:GetCompatibleKafkaVersions;List
+kafka:ListChannels;List
 kafka:ListClientVpcConnections;List
 kafka:ListClusterOperations;List
 kafka:ListClusterOperationsV2;List
@@ -42,11 +46,12 @@ kafka:ListVpcConnections;List
 kafka:PutClusterPolicy;Write
 kafka:RebootBroker;Write
 kafka:RejectClientVpcConnection;Write
-kafka:TagResource;Tagging
-kafka:UntagResource;Tagging
+kafka:TagResource;Tagging, Write
+kafka:UntagResource;Tagging, Write
 kafka:UpdateBrokerCount;Write
 kafka:UpdateBrokerStorage;Write
 kafka:UpdateBrokerType;Write
+kafka:UpdateChannel;Write
 kafka:UpdateClusterConfiguration;Write
 kafka:UpdateClusterKafkaVersion;Write
 kafka:UpdateConfiguration;Write

@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [dynamodb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html).
+ * Statement provider for service [dynamodb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_dynamodb.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Dynamodb extends PolicyStatement {
   public servicePrefix = 'dynamodb';
 
   /**
-   * Statement provider for service [dynamodb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html).
+   * Statement provider for service [dynamodb](https://docs.aws.amazon.com/service-authorization/latest/reference/list_dynamodb.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -19,26 +19,9 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create multi account global table replica
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
-   */
-  public toAssociateTableReplica() {
-    return this.to('AssociateTableReplica');
-  }
-
-  /**
    * Grants permission to return the attributes of one or more items from one or more tables
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifLeadingKeys()
-   * - .ifReturnConsumedCapacity()
-   * - .ifSelect()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html
    */
@@ -51,11 +34,6 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifLeadingKeys()
-   * - .ifReturnConsumedCapacity()
-   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
    */
   public toBatchWriteItem() {
@@ -66,12 +44,6 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to the ConditionCheckItem operation checks the existence of a set of attributes for the item with the given primary key
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifLeadingKeys()
-   * - .ifReturnConsumedCapacity()
-   * - .ifReturnValues()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheck.html
    */
@@ -102,40 +74,14 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to add a Witness to a Global Table
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
-   */
-  public toCreateGlobalTableWitness() {
-    return this.to('CreateGlobalTableWitness');
-  }
-
-  /**
    * Grants permission to the CreateTable operation adds a new table to your account
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html
    */
   public toCreateTable() {
     return this.to('CreateTable');
-  }
-
-  /**
-   * Grants permission to add a new replica table
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
-   */
-  public toCreateTableReplica() {
-    return this.to('CreateTableReplica');
   }
 
   /**
@@ -150,27 +96,9 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to remove a Witness from a Global Table
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
-   */
-  public toDeleteGlobalTableWitness() {
-    return this.to('DeleteGlobalTableWitness');
-  }
-
-  /**
    * Grants permission to deletes a single item in a table by primary key
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifEnclosingOperation()
-   * - .ifLeadingKeys()
-   * - .ifReturnConsumedCapacity()
-   * - .ifReturnValues()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html
    */
@@ -181,7 +109,7 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Grants permission to delete the resource-based policy attached to the resource
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteResourcePolicy.html
    */
@@ -198,17 +126,6 @@ export class Dynamodb extends PolicyStatement {
    */
   public toDeleteTable() {
     return this.to('DeleteTable');
-  }
-
-  /**
-   * Grants permission to delete a replica table and all of its items
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
-   */
-  public toDeleteTableReplica() {
-    return this.to('DeleteTableReplica');
   }
 
   /**
@@ -322,28 +239,6 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe one or more of the Reserved Capacity purchased
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
-   */
-  public toDescribeReservedCapacity() {
-    return this.to('DescribeReservedCapacity');
-  }
-
-  /**
-   * Grants permission to describe Reserved Capacity offerings that are available for purchase
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
-   */
-  public toDescribeReservedCapacityOfferings() {
-    return this.to('DescribeReservedCapacityOfferings');
-  }
-
-  /**
    * Grants permission to return information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table
    *
    * Access Level: Read
@@ -421,27 +316,9 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view the status of Attribute Based Access Control for the account
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/abac-enable-ddb.html
-   */
-  public toGetAbacStatus() {
-    return this.to('GetAbacStatus');
-  }
-
-  /**
    * Grants permission to the GetItem operation that returns a set of attributes for the item with the given primary key
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifEnclosingOperation()
-   * - .ifLeadingKeys()
-   * - .ifReturnConsumedCapacity()
-   * - .ifSelect()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html
    */
@@ -491,21 +368,6 @@ export class Dynamodb extends PolicyStatement {
    */
   public toImportTable() {
     return this.to('ImportTable');
-  }
-
-  /**
-   * Grants permission to start experiments on a Global Table
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifFisActionId()
-   * - .ifFisTargetArns()
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html
-   */
-  public toInjectError() {
-    return this.to('InjectError');
   }
 
   /**
@@ -601,12 +463,6 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifEnclosingOperation()
-   * - .ifLeadingKeys()
-   * - .ifReturnValues()
-   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
    */
   public toPartiQLDelete() {
@@ -617,11 +473,6 @@ export class Dynamodb extends PolicyStatement {
    * Grants permission to create a new item, if an item with same primary key does not exist in the table
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifEnclosingOperation()
-   * - .ifLeadingKeys()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
    */
@@ -634,13 +485,6 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifEnclosingOperation()
-   * - .ifFullTableScan()
-   * - .ifLeadingKeys()
-   * - .ifSelect()
-   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
    */
   public toPartiQLSelect() {
@@ -652,12 +496,6 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifEnclosingOperation()
-   * - .ifLeadingKeys()
-   * - .ifReturnValues()
-   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html
    */
   public toPartiQLUpdate() {
@@ -665,27 +503,9 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to purchases reserved capacity for use with your account
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/iam-policy-prevent-purchase-reserved-capacity.html
-   */
-  public toPurchaseReservedCapacityOfferings() {
-    return this.to('PurchaseReservedCapacityOfferings');
-  }
-
-  /**
    * Grants permission to create a new item, or replace an old item with a new item
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifEnclosingOperation()
-   * - .ifLeadingKeys()
-   * - .ifReturnConsumedCapacity()
-   * - .ifReturnValues()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html
    */
@@ -696,7 +516,7 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Grants permission to attach a resource-based policy to the resource
    *
-   * Access Level: Permissions management
+   * Access Level: Permissions management, Write
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutResourcePolicy.html
    */
@@ -709,13 +529,6 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifLeadingKeys()
-   * - .ifReturnConsumedCapacity()
-   * - .ifReturnValues()
-   * - .ifSelect()
-   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html
    */
   public toQuery() {
@@ -723,51 +536,9 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to read data from a multi account global table replica
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
-   */
-  public toReadDataForReplication() {
-    return this.to('ReadDataForReplication');
-  }
-
-  /**
-   * Grants permission to configure settings for a multi account global table replica
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
-   */
-  public toReplicateSettings() {
-    return this.to('ReplicateSettings');
-  }
-
-  /**
-   * Grants permission to create a new table from recovery point on AWS Backup
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsageNotesAWS.html
-   */
-  public toRestoreTableFromAwsBackup() {
-    return this.to('RestoreTableFromAwsBackup');
-  }
-
-  /**
    * Grants permission to create a new table from an existing backup
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - dynamodb:BatchWriteItem
-   * - dynamodb:DeleteItem
-   * - dynamodb:GetItem
-   * - dynamodb:PutItem
-   * - dynamodb:Query
-   * - dynamodb:Scan
-   * - dynamodb:UpdateItem
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html
    */
@@ -780,15 +551,6 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - dynamodb:BatchWriteItem
-   * - dynamodb:DeleteItem
-   * - dynamodb:GetItem
-   * - dynamodb:PutItem
-   * - dynamodb:Query
-   * - dynamodb:Scan
-   * - dynamodb:UpdateItem
-   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableToPointInTime.html
    */
   public toRestoreTableToPointInTime() {
@@ -800,12 +562,6 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifReturnConsumedCapacity()
-   * - .ifReturnValues()
-   * - .ifSelect()
-   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html
    */
   public toScan() {
@@ -813,24 +569,9 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a backup on AWS Backup with advanced features enabled
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsageNotesAWS.html
-   */
-  public toStartAwsBackupJob() {
-    return this.to('StartAwsBackupJob');
-  }
-
-  /**
    * Grants permission to associate a set of tags with an Amazon DynamoDB resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html
    */
@@ -841,26 +582,12 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Grants permission to remove the association of tags from an Amazon DynamoDB resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     return this.to('UntagResource');
-  }
-
-  /**
-   * Grants permission to update the status of Attribute Based Access Control for the account
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/abac-enable-ddb.html
-   */
-  public toUpdateAbacStatus() {
-    return this.to('UpdateAbacStatus');
   }
 
   /**
@@ -908,27 +635,9 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update version of the specified global table
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html
-   */
-  public toUpdateGlobalTableVersion() {
-    return this.to('UpdateGlobalTableVersion');
-  }
-
-  /**
    * Grants permission to edit an existing item's attributes, or adds a new item to the table if it does not already exist
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAttributes()
-   * - .ifEnclosingOperation()
-   * - .ifLeadingKeys()
-   * - .ifReturnConsumedCapacity()
-   * - .ifReturnValues()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
    */
@@ -980,58 +689,7 @@ export class Dynamodb extends PolicyStatement {
     return this.to('UpdateTimeToLive');
   }
 
-  /**
-   * Grants permission to write data to a multi account global table replica
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html
-   */
-  public toWriteDataForReplication() {
-    return this.to('WriteDataForReplication');
-  }
-
   protected accessLevelList: AccessLevelList = {
-    Write: [
-      'AssociateTableReplica',
-      'BatchWriteItem',
-      'CreateBackup',
-      'CreateGlobalTable',
-      'CreateGlobalTableWitness',
-      'CreateTable',
-      'CreateTableReplica',
-      'DeleteBackup',
-      'DeleteGlobalTableWitness',
-      'DeleteItem',
-      'DeleteTable',
-      'DeleteTableReplica',
-      'DisableKinesisStreamingDestination',
-      'EnableKinesisStreamingDestination',
-      'ExportTableToPointInTime',
-      'ImportTable',
-      'InjectError',
-      'PartiQLDelete',
-      'PartiQLInsert',
-      'PartiQLUpdate',
-      'PurchaseReservedCapacityOfferings',
-      'PutItem',
-      'ReplicateSettings',
-      'RestoreTableFromAwsBackup',
-      'RestoreTableFromBackup',
-      'RestoreTableToPointInTime',
-      'StartAwsBackupJob',
-      'UpdateContinuousBackups',
-      'UpdateContributorInsights',
-      'UpdateGlobalTable',
-      'UpdateGlobalTableSettings',
-      'UpdateGlobalTableVersion',
-      'UpdateItem',
-      'UpdateKinesisStreamingDestination',
-      'UpdateTable',
-      'UpdateTableReplicaAutoScaling',
-      'UpdateTimeToLive',
-      'WriteDataForReplication'
-    ],
     Read: [
       'BatchGetItem',
       'ConditionCheckItem',
@@ -1045,13 +703,10 @@ export class Dynamodb extends PolicyStatement {
       'DescribeImport',
       'DescribeKinesisStreamingDestination',
       'DescribeLimits',
-      'DescribeReservedCapacity',
-      'DescribeReservedCapacityOfferings',
       'DescribeStream',
       'DescribeTable',
       'DescribeTableReplicaAutoScaling',
       'DescribeTimeToLive',
-      'GetAbacStatus',
       'GetItem',
       'GetRecords',
       'GetResourcePolicy',
@@ -1060,13 +715,43 @@ export class Dynamodb extends PolicyStatement {
       'ListTagsOfResource',
       'PartiQLSelect',
       'Query',
-      'ReadDataForReplication',
       'Scan'
+    ],
+    Write: [
+      'BatchWriteItem',
+      'CreateBackup',
+      'CreateGlobalTable',
+      'CreateTable',
+      'DeleteBackup',
+      'DeleteItem',
+      'DeleteResourcePolicy',
+      'DeleteTable',
+      'DisableKinesisStreamingDestination',
+      'EnableKinesisStreamingDestination',
+      'ExportTableToPointInTime',
+      'ImportTable',
+      'PartiQLDelete',
+      'PartiQLInsert',
+      'PartiQLUpdate',
+      'PutItem',
+      'PutResourcePolicy',
+      'RestoreTableFromBackup',
+      'RestoreTableToPointInTime',
+      'TagResource',
+      'UntagResource',
+      'UpdateContinuousBackups',
+      'UpdateContributorInsights',
+      'UpdateGlobalTable',
+      'UpdateGlobalTableSettings',
+      'UpdateItem',
+      'UpdateKinesisStreamingDestination',
+      'UpdateTable',
+      'UpdateTableReplicaAutoScaling',
+      'UpdateTimeToLive'
     ],
     'Permissions management': [
       'DeleteResourcePolicy',
-      'PutResourcePolicy',
-      'UpdateAbacStatus'
+      'PutResourcePolicy'
     ],
     List: [
       'ListBackups',
@@ -1083,59 +768,9 @@ export class Dynamodb extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type index to the statement
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey
-   *
-   * @param tableName - Identifier for the tableName.
-   * @param indexName - Identifier for the indexName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onIndex(tableName: string, indexName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/index/${ indexName }`);
-  }
-
-  /**
-   * Adds a resource of type stream to the statement
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams
-   *
-   * @param tableName - Identifier for the tableName.
-   * @param streamLabel - Identifier for the streamLabel.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onStream(tableName: string, streamLabel: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/stream/${ streamLabel }`);
-  }
-
-  /**
-   * Adds a resource of type table to the statement
-   *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes
-   *
-   * @param tableName - Identifier for the tableName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTable(tableName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }`);
-  }
-
-  /**
    * Adds a resource of type backup to the statement
    *
-   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html
+   * http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html
    *
    * @param tableName - Identifier for the tableName.
    * @param backupName - Identifier for the backupName.
@@ -1191,6 +826,56 @@ export class Dynamodb extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type index to the statement
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey
+   *
+   * @param tableName - Identifier for the tableName.
+   * @param indexName - Identifier for the indexName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIndex(tableName: string, indexName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/index/${ indexName }`);
+  }
+
+  /**
+   * Adds a resource of type stream to the statement
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams
+   *
+   * @param tableName - Identifier for the tableName.
+   * @param streamLabel - Identifier for the streamLabel.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onStream(tableName: string, streamLabel: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }/stream/${ streamLabel }`);
+  }
+
+  /**
+   * Adds a resource of type table to the statement
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes
+   *
+   * @param tableName - Identifier for the tableName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTable(tableName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:dynamodb:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:table/${ tableName }`);
+  }
+
+  /**
    * Filters access by the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1211,6 +896,53 @@ export class Dynamodb extends PolicyStatement {
    * Filters access by the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toBatchGetItem()
+   * - .toBatchWriteItem()
+   * - .toConditionCheckItem()
+   * - .toCreateBackup()
+   * - .toCreateGlobalTable()
+   * - .toCreateTable()
+   * - .toDeleteItem()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteTable()
+   * - .toDescribeContinuousBackups()
+   * - .toDescribeContributorInsights()
+   * - .toDescribeKinesisStreamingDestination()
+   * - .toDescribeTable()
+   * - .toDescribeTableReplicaAutoScaling()
+   * - .toDescribeTimeToLive()
+   * - .toDisableKinesisStreamingDestination()
+   * - .toEnableKinesisStreamingDestination()
+   * - .toExportTableToPointInTime()
+   * - .toGetItem()
+   * - .toGetResourcePolicy()
+   * - .toImportTable()
+   * - .toListExports()
+   * - .toListImports()
+   * - .toListTagsOfResource()
+   * - .toPartiQLDelete()
+   * - .toPartiQLInsert()
+   * - .toPartiQLSelect()
+   * - .toPartiQLUpdate()
+   * - .toPutItem()
+   * - .toPutResourcePolicy()
+   * - .toQuery()
+   * - .toRestoreTableFromBackup()
+   * - .toRestoreTableToPointInTime()
+   * - .toScan()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateContinuousBackups()
+   * - .toUpdateContributorInsights()
+   * - .toUpdateGlobalTable()
+   * - .toUpdateGlobalTableSettings()
+   * - .toUpdateItem()
+   * - .toUpdateKinesisStreamingDestination()
+   * - .toUpdateTable()
+   * - .toUpdateTableReplicaAutoScaling()
+   * - .toUpdateTimeToLive()
    *
    * Applies to resource types:
    * - index
@@ -1305,9 +1037,6 @@ export class Dynamodb extends PolicyStatement {
   /**
    * Filters access by the ID of an AWS FIS action
    *
-   * Applies to actions:
-   * - .toInjectError()
-   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1317,9 +1046,6 @@ export class Dynamodb extends PolicyStatement {
 
   /**
    * Filters access by the ARN of an AWS FIS target
-   *
-   * Applies to actions:
-   * - .toInjectError()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnLike`

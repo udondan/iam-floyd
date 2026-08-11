@@ -1,5 +1,4 @@
 account:AcceptPrimaryEmailUpdate;Write
-account:CloseAccount;Write
 account:DeleteAlternateContact;Write
 account:DisableRegion;Write
 account:EnableRegion;Write
@@ -8,6 +7,7 @@ account:GetAlternateContact;Read
 account:GetContactInformation;Read
 account:GetGovCloudAccountInformation;Read
 account:GetPrimaryEmail;Read
+account:GetPrimaryEmailUpdateStatus;Read
 account:GetRegionOptStatus;Read
 account:ListRegions;List
 account:PutAccountName;Write

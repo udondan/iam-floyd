@@ -3,9 +3,7 @@ codecommit:BatchAssociateApprovalRuleTemplateWithRepositories;Write
 codecommit:BatchDescribeMergeConflicts;Read
 codecommit:BatchDisassociateApprovalRuleTemplateFromRepositories;Write
 codecommit:BatchGetCommits;Read
-codecommit:BatchGetPullRequests;Read
 codecommit:BatchGetRepositories;Read
-codecommit:CancelUploadArchive;Read
 codecommit:CreateApprovalRuleTemplate;Write
 codecommit:CreateBranch;Write
 codecommit:CreateCommit;Write
@@ -31,25 +29,17 @@ codecommit:GetCommentReactions;Read
 codecommit:GetCommentsForComparedCommit;Read
 codecommit:GetCommentsForPullRequest;Read
 codecommit:GetCommit;Read
-codecommit:GetCommitHistory;Read
-codecommit:GetCommitsFromMergeBase;Read
 codecommit:GetDifferences;Read
 codecommit:GetFile;Read
 codecommit:GetFolder;Read
 codecommit:GetMergeCommit;Read
 codecommit:GetMergeConflicts;Read
 codecommit:GetMergeOptions;Read
-codecommit:GetObjectIdentifier;Read
 codecommit:GetPullRequest;Read
 codecommit:GetPullRequestApprovalStates;Read
 codecommit:GetPullRequestOverrideState;Read
-codecommit:GetReferences;Read
 codecommit:GetRepository;Read
 codecommit:GetRepositoryTriggers;Read
-codecommit:GetTree;Read
-codecommit:GetUploadArchiveStatus;Read
-codecommit:GitPull;Read
-codecommit:GitPush;Write
 codecommit:ListApprovalRuleTemplates;List
 codecommit:ListAssociatedApprovalRuleTemplatesForRepository;List
 codecommit:ListBranches;List
@@ -71,9 +61,9 @@ codecommit:PostCommentReply;Write
 codecommit:PutCommentReaction;Write
 codecommit:PutFile;Write
 codecommit:PutRepositoryTriggers;Write
-codecommit:TagResource;Tagging
+codecommit:TagResource;Tagging, Write
 codecommit:TestRepositoryTriggers;Write
-codecommit:UntagResource;Tagging
+codecommit:UntagResource;Tagging, Write
 codecommit:UpdateApprovalRuleTemplateContent;Write
 codecommit:UpdateApprovalRuleTemplateDescription;Write
 codecommit:UpdateApprovalRuleTemplateName;Write
@@ -87,4 +77,3 @@ codecommit:UpdatePullRequestTitle;Write
 codecommit:UpdateRepositoryDescription;Write
 codecommit:UpdateRepositoryEncryptionKey;Write
 codecommit:UpdateRepositoryName;Write
-codecommit:UploadArchive;Write

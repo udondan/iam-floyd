@@ -75,25 +75,21 @@ cleanrooms:ListProtectedJobs;List
 cleanrooms:ListProtectedQueries;List
 cleanrooms:ListSchemas;List
 cleanrooms:ListTagsForResource;List
-cleanrooms:PassCollaboration;Read
-cleanrooms:PassMembership;Read
 cleanrooms:PopulateIdMappingTable;Write
 cleanrooms:PopulateIntermediateTable;Write
 cleanrooms:PreviewPrivacyImpact;Read
 cleanrooms:StartProtectedJob;Write
 cleanrooms:StartProtectedQuery;Write
-cleanrooms:TagResource;Tagging
-cleanrooms:UntagResource;Tagging
+cleanrooms:TagResource;Tagging, Write
+cleanrooms:UntagResource;Tagging, Write
 cleanrooms:UpdateAnalysisTemplate;Write
 cleanrooms:UpdateCollaboration;Write
 cleanrooms:UpdateCollaborationChangeRequest;Write
 cleanrooms:UpdateConfiguredAudienceModelAssociation;Write
 cleanrooms:UpdateConfiguredTable;Write
-cleanrooms:UpdateConfiguredTableAllowedColumns;Write
 cleanrooms:UpdateConfiguredTableAnalysisRule;Write
 cleanrooms:UpdateConfiguredTableAssociation;Write
 cleanrooms:UpdateConfiguredTableAssociationAnalysisRule;Write
-cleanrooms:UpdateConfiguredTableReference;Write
 cleanrooms:UpdateIdMappingTable;Write
 cleanrooms:UpdateIdNamespaceAssociation;Write
 cleanrooms:UpdateIntermediateTable;Write

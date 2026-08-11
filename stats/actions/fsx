@@ -1,6 +1,4 @@
-fsx:AssociateFileGateway;Write
 fsx:AssociateFileSystemAliases;Write
-fsx:BypassSnaplockEnterpriseRetention;Permissions management
 fsx:CancelDataRepositoryTask;Write
 fsx:CopyBackup;Write
 fsx:CopySnapshotAndUpdateVolume;Write
@@ -19,11 +17,9 @@ fsx:DeleteBackup;Write
 fsx:DeleteDataRepositoryAssociation;Write
 fsx:DeleteFileCache;Write
 fsx:DeleteFileSystem;Write
-fsx:DeleteResourcePolicy;Permissions management
 fsx:DeleteSnapshot;Write
 fsx:DeleteStorageVirtualMachine;Write
 fsx:DeleteVolume;Write
-fsx:DescribeAssociatedFileGateways;Read
 fsx:DescribeBackups;Read
 fsx:DescribeDataRepositoryAssociations;Read
 fsx:DescribeDataRepositoryTasks;Read
@@ -36,17 +32,13 @@ fsx:DescribeSnapshots;Read
 fsx:DescribeStorageVirtualMachines;Read
 fsx:DescribeVolumes;Read
 fsx:DetachAndDeleteS3AccessPoint;Write
-fsx:DisassociateFileGateway;Write
 fsx:DisassociateFileSystemAliases;Write
-fsx:GetResourcePolicy;Permissions management
 fsx:ListTagsForResource;Read
-fsx:ManageBackupPrincipalAssociations;Permissions management
-fsx:PutResourcePolicy;Permissions management
 fsx:ReleaseFileSystemNfsV3Locks;Write
 fsx:RestoreVolumeFromSnapshot;Write
 fsx:StartMisconfiguredStateRecovery;Write
-fsx:TagResource;Tagging
-fsx:UntagResource;Tagging
+fsx:TagResource;Tagging, Write
+fsx:UntagResource;Tagging, Write
 fsx:UpdateDataRepositoryAssociation;Write
 fsx:UpdateFileCache;Write
 fsx:UpdateFileSystem;Write

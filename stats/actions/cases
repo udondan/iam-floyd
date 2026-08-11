@@ -33,8 +33,8 @@ cases:PutCaseEventConfiguration;Write
 cases:SearchAllRelatedItems;Read
 cases:SearchCases;Read
 cases:SearchRelatedItems;Read
-cases:TagResource;Tagging
-cases:UntagResource;Tagging
+cases:TagResource;Tagging, Write
+cases:UntagResource;Tagging, Write
 cases:UpdateCase;Write
 cases:UpdateCaseRule;Write
 cases:UpdateField;Write

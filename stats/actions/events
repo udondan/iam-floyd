@@ -1,5 +1,4 @@
 events:ActivateEventSource;Write
-events:AllowVendedLogDeliveryForResource;Write
 events:CancelReplay;Write
 events:CreateApiDestination;Write
 events:CreateArchive;Write
@@ -27,7 +26,6 @@ events:DescribeReplay;Read
 events:DescribeRule;Read
 events:DisableRule;Write
 events:EnableRule;Write
-events:InvokeApiDestination;Write
 events:ListApiDestinations;List
 events:ListArchives;List
 events:ListConnections;List
@@ -43,16 +41,15 @@ events:ListTagsForResource;List
 events:ListTargetsByRule;List
 events:PutEvents;Write
 events:PutPartnerEvents;Write
-events:PutPermission;Permissions management
+events:PutPermission;Permissions management, Write
 events:PutRule;Write
 events:PutTargets;Write
-events:RemovePermission;Permissions management
+events:RemovePermission;Permissions management, Write
 events:RemoveTargets;Write
-events:RetrieveConnectionCredentials;Write
 events:StartReplay;Write
-events:TagResource;Tagging
+events:TagResource;Tagging, Write
 events:TestEventPattern;Read
-events:UntagResource;Tagging
+events:UntagResource;Tagging, Write
 events:UpdateApiDestination;Write
 events:UpdateArchive;Write
 events:UpdateConnection;Write

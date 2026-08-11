@@ -7,6 +7,6 @@ bcm-data-exports:ListExecutions;List
 bcm-data-exports:ListExports;List
 bcm-data-exports:ListTables;List
 bcm-data-exports:ListTagsForResource;Read
-bcm-data-exports:TagResource;Tagging
-bcm-data-exports:UntagResource;Tagging
+bcm-data-exports:TagResource;Tagging, Write
+bcm-data-exports:UntagResource;Tagging, Write
 bcm-data-exports:UpdateExport;Write

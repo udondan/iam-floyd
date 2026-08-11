@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [connect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html).
+ * Statement provider for service [connect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_connect.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Connect extends PolicyStatement {
   public servicePrefix = 'connect';
 
   /**
-   * Statement provider for service [connect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html).
+   * Statement provider for service [connect](https://docs.aws.amazon.com/service-authorization/latest/reference/list_connect.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,9 +23,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ActivateEvaluationForm.html
    */
   public toActivateEvaluationForm() {
@@ -37,11 +34,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - connect:DescribeInstance
-   * - connect:ListInstances
-   * - ds:DescribeDirectories
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
    */
   public toAdminGetEmergencyAccessToken() {
@@ -52,9 +44,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to grant access and to associate a dataset with the specified AWS account
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    */
   public toAssociateAnalyticsDataSet() {
     return this.to('AssociateAnalyticsDataSet');
@@ -64,9 +53,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to associate approved origin for an existing Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -79,18 +65,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   * - lex:CreateResourcePolicy
-   * - lex:DescribeBotAlias
-   * - lex:GetBot
-   * - lex:UpdateResourcePolicy
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateBot() {
@@ -102,11 +76,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifPreferredUserArn()
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateContactWithUser.html
    */
   public toAssociateContactWithUser() {
@@ -114,29 +83,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate a Customer Profiles domain for an existing Amazon Connect instance
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   * - profile:GetDomain
-   *
-   * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
-   */
-  public toAssociateCustomerProfilesDomain() {
-    return this.to('AssociateCustomerProfilesDomain');
-  }
-
-  /**
    * Grants permission to default vocabulary for an existing Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    */
   public toAssociateDefaultVocabulary() {
     return this.to('AssociateDefaultVocabulary');
@@ -146,10 +95,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to associate an alias with an email address resource in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html
    */
@@ -162,10 +107,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateFlow.html
    */
   public toAssociateFlow() {
@@ -176,22 +117,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to associate instance storage for an existing Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifStorageResourceType()
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - ds:DescribeDirectories
-   * - firehose:DescribeDeliveryStream
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   * - kinesis:DescribeStream
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - s3:GetBucketAcl
-   * - s3:GetBucketLocation
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -204,12 +129,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - lambda:AddPermission
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateLambdaFunction() {
@@ -220,15 +139,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to associate a Lex bot for an existing Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   * - lex:GetBot
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -241,10 +151,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociatePhoneNumberContactFlow.html
    */
   public toAssociatePhoneNumberContactFlow() {
@@ -255,10 +161,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to associate a set of email addresses with a queue
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateQueueEmailAddresses.html
    */
@@ -271,10 +173,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateQueueQuickConnects.html
    */
   public toAssociateQueueQuickConnects() {
@@ -285,10 +183,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to associate queues with a routing profile in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateRoutingProfileQueues.html
    */
@@ -301,9 +195,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toAssociateSecurityKey() {
@@ -314,10 +205,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to associate security profiles with an AI agent in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateSecurityProfiles.html
    */
@@ -330,15 +217,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifAwsResourceTag()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeUser
-   * - connect:SearchUsers
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateTrafficDistributionGroupUser.html
    */
   public toAssociateTrafficDistributionGroupUser() {
@@ -349,9 +227,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to associate user proficiencies to a user in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateUserProficiencies.html
    */
@@ -364,10 +239,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateWorkspace.html
    */
   public toAssociateWorkspace() {
@@ -378,9 +249,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to grant access and to associate the datasets with the specified AWS account
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    */
   public toBatchAssociateAnalyticsDataSet() {
     return this.to('BatchAssociateAnalyticsDataSet');
@@ -390,12 +258,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to batch create values in a data table in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifExpressionValue()
-   * - .ifPrimaryAttribute()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchCreateDataTableValue.html
    */
@@ -408,11 +270,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifPrimaryAttribute()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchDeleteDataTableValue.html
    */
   public toBatchDeleteDataTableValue() {
@@ -424,11 +281,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifPrimaryAttribute()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchDescribeDataTableValue.html
    */
   public toBatchDescribeDataTableValue() {
@@ -439,9 +291,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to revoke access and to disassociate the datasets with the specified AWS account
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    */
   public toBatchDisassociateAnalyticsDataSet() {
     return this.to('BatchDisassociateAnalyticsDataSet');
@@ -451,12 +300,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to get metadata for multiple attached files from an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchGetAttachedFileMetadata.html
    */
@@ -469,10 +312,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchGetFlowAssociation.html
    */
   public toBatchGetFlowAssociation() {
@@ -483,9 +322,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to put contacts in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchPutContact.html
    */
@@ -498,12 +334,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifExpressionValue()
-   * - .ifPrimaryAttribute()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_BatchUpdateDataTableValue.html
    */
   public toBatchUpdateDataTableValue() {
@@ -514,11 +344,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to claim phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html
    */
@@ -531,12 +356,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CompleteAttachedFileUpload.html
    */
   public toCompleteAttachedFileUpload() {
@@ -547,11 +366,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create agent status in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateAgentStatus.html
    */
@@ -564,12 +378,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateAttachedFile.html
    */
   public toCreateAttachedFile() {
@@ -580,9 +388,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create authentication profile resources in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateAuthenticationProfile.html
    */
@@ -595,11 +400,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactInitiationMethod()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContact.html
    */
   public toCreateContact() {
@@ -610,12 +410,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a contact flow in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlow.html
    */
@@ -628,11 +422,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowModule.html
    */
   public toCreateContactFlowModule() {
@@ -643,10 +432,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create an alias of a flow module version in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowModuleAlias.html
    */
@@ -659,10 +444,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowModuleVersion.html
    */
   public toCreateContactFlowModuleVersion() {
@@ -673,11 +454,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a version a flow in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlowVersion.html
    */
@@ -690,10 +466,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateDataTable.html
    */
   public toCreateDataTable() {
@@ -704,10 +476,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create an attribute for a data table in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateDataTableAttribute.html
    */
@@ -720,11 +488,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html
    */
   public toCreateEmailAddress() {
@@ -735,9 +498,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEvaluationForm.html
    */
@@ -750,11 +510,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateHoursOfOperation.html
    */
   public toCreateHoursOfOperation() {
@@ -765,9 +520,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create an hours of operation override in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateHoursOfOperationOverride.html
    */
@@ -784,19 +536,6 @@ export class Connect extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - ds:AuthorizeApplication
-   * - ds:CheckAlias
-   * - ds:CreateAlias
-   * - ds:CreateDirectory
-   * - ds:CreateIdentityPoolDirectory
-   * - ds:DeleteDirectory
-   * - ds:DescribeDirectories
-   * - ds:UnauthorizeApplication
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toCreateInstance() {
@@ -807,36 +546,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create an integration association with an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - app-integrations:CreateApplicationAssociation
-   * - app-integrations:CreateEventIntegrationAssociation
-   * - app-integrations:GetApplication
-   * - app-integrations:GetDataIntegration
-   * - app-integrations:ListDataIntegrationAssociations
-   * - app-integrations:TagResource
-   * - cases:GetDomain
-   * - chime:AssociateVoiceConnectorConnect
-   * - chime:DisassociateVoiceConnectorConnect
-   * - chime:TagResource
-   * - chime:UntagResource
-   * - connect:DescribeInstance
-   * - ds:DescribeDirectories
-   * - events:PutRule
-   * - events:PutTargets
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   * - mobiletargeting:GetApp
-   * - voiceid:DescribeDomain
-   * - wisdom:GetAssistant
-   * - wisdom:GetKnowledgeBase
-   * - wisdom:TagResource
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html
    */
@@ -849,11 +558,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateNotification.html
    */
   public toCreateNotification() {
@@ -864,10 +568,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to add a participant to an ongoing contact
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateParticipant.html
    */
@@ -880,10 +580,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePersistentContactAssociation.html
    */
   public toCreatePersistentContactAssociation() {
@@ -894,9 +590,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a predefined attribute in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePredefinedAttribute.html
    */
@@ -909,16 +602,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - s3:GetObject
-   * - s3:GetObjectAcl
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePrompt.html
    */
   public toCreatePrompt() {
@@ -929,9 +612,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a push notification registration for an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreatePushNotificationRegistration.html
    */
@@ -944,11 +624,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateQueue.html
    */
   public toCreateQueue() {
@@ -959,11 +634,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a quick connect in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateQuickConnect.html
    */
@@ -976,11 +646,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateRoutingProfile.html
    */
   public toCreateRoutingProfile() {
@@ -992,9 +657,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateRule.html
    */
   public toCreateRule() {
@@ -1005,11 +667,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a security profile for the specified Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateSecurityProfile.html
    */
@@ -1033,11 +690,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html
    */
   public toCreateTrafficDistributionGroup() {
@@ -1048,15 +700,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a use case for an integration association
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - connect:DescribeInstance
-   * - ds:DescribeDirectories
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUseCase.html
    */
@@ -1069,11 +712,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUser.html
    */
   public toCreateUser() {
@@ -1084,11 +722,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a user hierarchy group in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUserHierarchyGroup.html
    */
@@ -1101,11 +734,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateView.html
    */
   public toCreateView() {
@@ -1116,10 +744,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a view version in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateViewVersion.html
    */
@@ -1132,11 +756,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateVocabulary.html
    */
   public toCreateVocabulary() {
@@ -1147,11 +766,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create a workspace in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateWorkspace.html
    */
@@ -1164,10 +778,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateWorkspacePage.html
    */
   public toCreateWorkspacePage() {
@@ -1178,9 +788,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to deactivate an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeactivateEvaluationForm.html
    */
@@ -1193,15 +800,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - cases:DeleteRelatedItem
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html
    */
   public toDeleteAttachedFile() {
@@ -1212,10 +810,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a contact evaluation in the specified Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactEvaluation.html
    */
@@ -1228,11 +822,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifFlowType()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlow.html
    */
   public toDeleteContactFlow() {
@@ -1243,10 +832,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a contact flow module in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowModule.html
    */
@@ -1259,10 +844,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowModuleAlias.html
    */
   public toDeleteContactFlowModuleAlias() {
@@ -1273,10 +854,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a version of a flow module in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowModuleVersion.html
    */
@@ -1289,11 +866,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifFlowType()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteContactFlowVersion.html
    */
   public toDeleteContactFlowVersion() {
@@ -1304,10 +876,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a data table in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteDataTable.html
    */
@@ -1320,10 +888,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteDataTableAttribute.html
    */
   public toDeleteDataTableAttribute() {
@@ -1334,10 +898,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete an email address resource in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html
    */
@@ -1350,10 +910,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEvaluationForm.html
    */
   public toDeleteEvaluationForm() {
@@ -1364,10 +920,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete hours of operation in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteHoursOfOperation.html
    */
@@ -1380,9 +932,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteHoursOfOperationOverride.html
    */
   public toDeleteHoursOfOperationOverride() {
@@ -1393,15 +942,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete an Amazon Connect instance. When you remove an instance, the link to an existing AWS directory is also removed
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifAwsResourceTag()
-   *
-   * Dependent actions:
-   * - ds:DeleteDirectory
-   * - ds:DescribeDirectories
-   * - ds:UnauthorizeApplication
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -1414,19 +954,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - app-integrations:DeleteApplicationAssociation
-   * - app-integrations:DeleteEventIntegrationAssociation
-   * - app-integrations:UntagResource
-   * - connect:DescribeInstance
-   * - ds:DescribeDirectories
-   * - events:DeleteRule
-   * - events:ListTargetsByRule
-   * - events:RemoveTargets
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html
    */
   public toDeleteIntegrationAssociation() {
@@ -1437,10 +964,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a notification in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteNotification.html
    */
@@ -1453,9 +976,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeletePredefinedAttribute.html
    */
   public toDeletePredefinedAttribute() {
@@ -1466,10 +986,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a prompt in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeletePrompt.html
    */
@@ -1482,9 +998,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeletePushNotificationRegistration.html
    */
   public toDeletePushNotificationRegistration() {
@@ -1495,10 +1008,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a queue in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQueue.html
    */
@@ -1511,10 +1020,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQuickConnect.html
    */
   public toDeleteQuickConnect() {
@@ -1525,10 +1030,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete routing profiles in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteRoutingProfile.html
    */
@@ -1541,10 +1042,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteRule.html
    */
   public toDeleteRule() {
@@ -1555,10 +1052,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a security profile in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteSecurityProfile.html
    */
@@ -1571,10 +1064,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTaskTemplate.html
    */
   public toDeleteTaskTemplate() {
@@ -1585,9 +1074,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a traffic distribution group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html
    */
@@ -1600,13 +1086,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - connect:DescribeInstance
-   * - ds:DescribeDirectories
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUseCase.html
    */
   public toDeleteUseCase() {
@@ -1617,10 +1096,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a user in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html
    */
@@ -1633,9 +1108,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUserHierarchyGroup.html
    */
   public toDeleteUserHierarchyGroup() {
@@ -1646,10 +1118,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a view in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteView.html
    */
@@ -1662,10 +1130,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteViewVersion.html
    */
   public toDeleteViewVersion() {
@@ -1676,10 +1140,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete a vocabulary in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteVocabulary.html
    */
@@ -1692,10 +1152,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteWorkspace.html
    */
   public toDeleteWorkspace() {
@@ -1706,10 +1162,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to delete workspace media in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteWorkspaceMedia.html
    */
@@ -1722,10 +1174,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteWorkspacePage.html
    */
   public toDeleteWorkspacePage() {
@@ -1737,10 +1185,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeAgentStatus.html
    */
   public toDescribeAgentStatus() {
@@ -1748,12 +1192,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe authentication profile resources in an Amazon Connect instance
+   * Grants permission to describe an attached files configuration in an Amazon Connect instance
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeAttachedFilesConfiguration.html
+   */
+  public toDescribeAttachedFilesConfiguration() {
+    return this.to('DescribeAttachedFilesConfiguration');
+  }
+
+  /**
+   * Grants permission to describe authentication profile resources in an Amazon Connect instance
+   *
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeAuthenticationProfile.html
    */
@@ -1766,13 +1218,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContact.html
    */
   public toDescribeContact() {
@@ -1783,10 +1228,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a contact evaluation in the specified Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactEvaluation.html
    */
@@ -1799,11 +1240,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifFlowType()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlow.html
    */
   public toDescribeContactFlow() {
@@ -1814,10 +1250,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a contact flow module in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlowModule.html
    */
@@ -1830,10 +1262,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlowModuleAlias.html
    */
   public toDescribeContactFlowModuleAlias() {
@@ -1844,10 +1272,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a data table in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeDataTable.html
    */
@@ -1860,10 +1284,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeDataTableAttribute.html
    */
   public toDescribeDataTableAttribute() {
@@ -1874,10 +1294,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe an email address resource in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html
    */
@@ -1890,10 +1306,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEvaluationForm.html
    */
   public toDescribeEvaluationForm() {
@@ -1901,27 +1313,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe the status of forecasting, planning, and scheduling integration on an Amazon Connect instance
-   *
-   * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
-   */
-  public toDescribeForecastingPlanningSchedulingIntegration() {
-    return this.to('DescribeForecastingPlanningSchedulingIntegration');
-  }
-
-  /**
    * Grants permission to describe hours of operation in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeHoursOfOperation.html
    */
@@ -1934,9 +1328,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeHoursOfOperationOverride.html
    */
   public toDescribeHoursOfOperationOverride() {
@@ -1947,13 +1338,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to view details of an Amazon Connect instance and is also required to create an instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifAwsResourceTag()
-   *
-   * Dependent actions:
-   * - ds:DescribeDirectories
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -1966,10 +1350,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAttributeType()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDescribeInstanceAttribute() {
@@ -1980,10 +1360,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to view the instance storage configuration for an existing Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifStorageResourceType()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -1996,10 +1372,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeNotification.html
    */
   public toDescribeNotification() {
@@ -2010,9 +1382,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html
    */
@@ -2025,9 +1394,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePredefinedAttribute.html
    */
   public toDescribePredefinedAttribute() {
@@ -2038,10 +1404,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a prompt in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePrompt.html
    */
@@ -2054,10 +1416,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeQueue.html
    */
   public toDescribeQueue() {
@@ -2068,10 +1426,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a quick connect in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeQuickConnect.html
    */
@@ -2084,10 +1438,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html
    */
   public toDescribeRoutingProfile() {
@@ -2098,10 +1448,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a rule in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRule.html
    */
@@ -2114,10 +1460,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeSecurityProfile.html
    */
   public toDescribeSecurityProfile() {
@@ -2128,9 +1470,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a traffic distribution group
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeTrafficDistributionGroup.html
    */
@@ -2143,10 +1482,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html
    */
   public toDescribeUser() {
@@ -2157,9 +1492,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a hierarchy group for an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyGroup.html
    */
@@ -2172,9 +1504,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyStructure.html
    */
   public toDescribeUserHierarchyStructure() {
@@ -2185,10 +1514,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to describe a view in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeView.html
    */
@@ -2201,10 +1526,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeVocabulary.html
    */
   public toDescribeVocabulary() {
@@ -2216,10 +1537,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeWorkspace.html
    */
   public toDescribeWorkspace() {
@@ -2230,9 +1547,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to revoke access and to disassociate a dataset with the specified AWS account
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    */
   public toDisassociateAnalyticsDataSet() {
     return this.to('DisassociateAnalyticsDataSet');
@@ -2242,9 +1556,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to disassociate approved origin for an existing Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -2257,16 +1568,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   * - lex:DeleteResourcePolicy
-   * - lex:UpdateResourcePolicy
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateBot() {
@@ -2274,32 +1575,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate a Customer Profiles domain for an existing Amazon Connect instance
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:AttachRolePolicy
-   * - iam:DeleteRolePolicy
-   * - iam:DetachRolePolicy
-   * - iam:GetPolicy
-   * - iam:GetPolicyVersion
-   * - iam:GetRolePolicy
-   *
-   * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
-   */
-  public toDisassociateCustomerProfilesDomain() {
-    return this.to('DisassociateCustomerProfilesDomain');
-  }
-
-  /**
    * Grants permission to disassociate an alias from an email address resource in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html
    */
@@ -2312,10 +1590,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateFlow.html
    */
   public toDisassociateFlow() {
@@ -2326,10 +1600,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to disassociate instance storage for an existing Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifStorageResourceType()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -2342,12 +1612,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - lambda:RemovePermission
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateLambdaFunction() {
@@ -2358,14 +1622,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to disassociate a Lex bot for an existing Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -2378,10 +1634,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociatePhoneNumberContactFlow.html
    */
   public toDisassociatePhoneNumberContactFlow() {
@@ -2392,10 +1644,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to disassociate a set of email addresses from a queue
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateQueueEmailAddresses.html
    */
@@ -2408,10 +1656,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateQueueQuickConnects.html
    */
   public toDisassociateQueueQuickConnects() {
@@ -2422,10 +1666,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to disassociate queues from a routing profile in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateRoutingProfileQueues.html
    */
@@ -2438,9 +1678,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toDisassociateSecurityKey() {
@@ -2451,10 +1688,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to disassociate security profiles with an AI agent in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateSecurityProfiles.html
    */
@@ -2467,10 +1700,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateTrafficDistributionGroupUser.html
    */
   public toDisassociateTrafficDistributionGroupUser() {
@@ -2481,9 +1710,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to disassociate user proficiencies from a user in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateUserProficiencies.html
    */
@@ -2496,10 +1722,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateWorkspace.html
    */
   public toDisassociateWorkspace() {
@@ -2510,10 +1732,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to dismiss terminated Contact from Agent CCP
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DismissUserContact.html
    */
@@ -2526,11 +1744,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifPrimaryAttribute()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_EvaluateDataTableValues.html
    */
   public toEvaluateDataTableValues() {
@@ -2541,12 +1754,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to get an attached file from an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetAttachedFile.html
    */
@@ -2559,13 +1766,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html
    */
   public toGetContactAttributes() {
@@ -2576,9 +1776,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to get contact metrics in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactMetrics.html
    */
@@ -2591,10 +1788,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentMetricData.html
    */
   public toGetCurrentMetricData() {
@@ -2605,10 +1798,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to retrieve current user data in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentUserData.html
    */
@@ -2621,9 +1810,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetEffectiveHoursOfOperations.html
    */
   public toGetEffectiveHoursOfOperations() {
@@ -2634,10 +1820,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to get an evaluation form validation in the specified Amazon Connect instance. If the version property is not provided, the validation of the latest version of the evaluation form is provided
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetEvaluationFormValidation.html
    */
@@ -2650,9 +1832,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
    */
   public toGetFederationToken() {
@@ -2663,10 +1842,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to get information about the flow associations for the specified Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFlowAssociation.html
    */
@@ -2679,10 +1854,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html
    */
   public toGetMetricData() {
@@ -2693,10 +1864,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to retrieve metric data in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html
    */
@@ -2709,10 +1876,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html
    */
   public toGetPromptFile() {
@@ -2723,10 +1886,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to get details about specified task template in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetTaskTemplate.html
    */
@@ -2739,9 +1898,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetTrafficDistribution.html
    */
   public toGetTrafficDistribution() {
@@ -2753,15 +1909,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sms-voice:DescribePhoneNumbers
-   * - social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber
-   * - social-messaging:TagResource
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ImportPhoneNumber.html
    */
   public toImportPhoneNumber() {
@@ -2772,10 +1919,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to import workspace media in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ImportWorkspaceMedia.html
    */
@@ -2798,9 +1941,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list the association status of a dataset for a given Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    */
   public toListAnalyticsDataAssociations() {
     return this.to('ListAnalyticsDataAssociations');
@@ -2810,9 +1950,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list data lake datasets available to associate with for a given Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    */
   public toListAnalyticsDataLakeDataSets() {
     return this.to('ListAnalyticsDataLakeDataSets');
@@ -2822,9 +1959,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to view approved origins of an existing Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -2837,10 +1971,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListAssociatedContacts.html
    */
   public toListAssociatedContacts() {
@@ -2848,12 +1978,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list authentication profile resources in an Amazon Connect instance
+   * Grants permission to list attached files configurations in an Amazon Connect instance
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListAttachedFilesConfigurations.html
+   */
+  public toListAttachedFilesConfigurations() {
+    return this.to('ListAttachedFilesConfigurations');
+  }
+
+  /**
+   * Grants permission to list authentication profile resources in an Amazon Connect instance
+   *
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListAuthenticationProfiles.html
    */
@@ -2866,9 +2004,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListBots() {
@@ -2879,10 +2014,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list contact evaluations in the specified Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactEvaluations.html
    */
@@ -2895,10 +2026,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlowModuleAliases.html
    */
   public toListContactFlowModuleAliases() {
@@ -2909,10 +2036,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list all the versions of a flow module in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlowModuleVersions.html
    */
@@ -2936,11 +2059,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifFlowType()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlowVersions.html
    */
   public toListContactFlowVersions() {
@@ -2951,9 +2069,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list contact flow resources in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlows.html
    */
@@ -2966,13 +2081,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactReferences.html
    */
   public toListContactReferences() {
@@ -2983,10 +2091,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list attributes of a data table in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDataTableAttributes.html
    */
@@ -2999,11 +2103,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifPrimaryAttribute()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDataTablePrimaryValues.html
    */
   public toListDataTablePrimaryValues() {
@@ -3014,11 +2113,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list values in a data table in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifPrimaryAttribute()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDataTableValues.html
    */
@@ -3031,9 +2125,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDataTables.html
    */
   public toListDataTables() {
@@ -3044,9 +2135,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list default vocabularies associated with a Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListDefaultVocabularies.html
    */
@@ -3059,10 +2147,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEntitySecurityProfiles.html
    */
   public toListEntitySecurityProfiles() {
@@ -3073,9 +2157,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list versions of an evaluation form in the specified Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEvaluationFormVersions.html
    */
@@ -3088,9 +2169,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListEvaluationForms.html
    */
   public toListEvaluationForms() {
@@ -3101,9 +2179,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list summary information about the flow associations for the specified Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListFlowAssociations.html
    */
@@ -3116,9 +2191,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperationOverrides.html
    */
   public toListHoursOfOperationOverrides() {
@@ -3129,9 +2201,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list hours of operation resources in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperations.html
    */
@@ -3144,9 +2213,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListInstanceAttributes() {
@@ -3157,9 +2223,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to view storage configurations of an existing Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -3172,9 +2235,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - ds:DescribeDirectories
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListInstances() {
@@ -3185,13 +2245,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list summary information about the integration associations for the specified Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - connect:DescribeInstance
-   * - ds:DescribeDirectories
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListIntegrationAssociations.html
    */
@@ -3204,9 +2257,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListLambdaFunctions() {
@@ -3218,9 +2268,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListLexBots() {
@@ -3231,9 +2278,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list notifications in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListNotifications.html
    */
@@ -3268,9 +2312,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPredefinedAttributes.html
    */
   public toListPredefinedAttributes() {
@@ -3281,9 +2322,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list prompt resources in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPrompts.html
    */
@@ -3296,10 +2334,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueueEmailAddresses.html
    */
   public toListQueueEmailAddresses() {
@@ -3310,10 +2344,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list quick connect resources in a queue in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueueQuickConnects.html
    */
@@ -3348,9 +2378,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/contact-lens/latest/APIReference/API_ListRealtimeContactAnalysisSegments.html
    */
   public toListRealtimeContactAnalysisSegments() {
@@ -3361,11 +2388,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list the analysis segments for a real-time chat analytics session
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifListRealtimeContactAnalysisSegmentsByOutputType()
-   * - .ifListRealtimeContactAnalysisSegmentsBySegmentType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRealtimeContactAnalysisSegmentsV2.html
    */
@@ -3378,10 +2400,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfileManualAssignmentQueues.html
    */
   public toListRoutingProfileManualAssignmentQueues() {
@@ -3392,10 +2410,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list queue resources in a routing profile in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfileQueues.html
    */
@@ -3408,9 +2422,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfiles.html
    */
   public toListRoutingProfiles() {
@@ -3421,9 +2432,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list rules associated with a Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRules.html
    */
@@ -3436,9 +2444,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toListSecurityKeys() {
@@ -3449,10 +2454,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list applications associated with a specific security profile in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfileApplications.html
    */
@@ -3465,10 +2466,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfileFlowModules.html
    */
   public toListSecurityProfileFlowModules() {
@@ -3479,10 +2476,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list permissions associated with security profile in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfilePermissions.html
    */
@@ -3495,9 +2488,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfiles.html
    */
   public toListSecurityProfiles() {
@@ -3508,9 +2498,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list tags for an Amazon Connect resource
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTagsForResource.html
    */
@@ -3534,9 +2521,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTrafficDistributionGroupUsers.html
    */
   public toListTrafficDistributionGroupUsers() {
@@ -3559,13 +2543,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - connect:DescribeInstance
-   * - ds:DescribeDirectories
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUseCases.html
    */
   public toListUseCases() {
@@ -3576,9 +2553,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list the hierarchy group resources in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserHierarchyGroups.html
    */
@@ -3591,10 +2565,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserNotifications.html
    */
   public toListUserNotifications() {
@@ -3605,9 +2575,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list user proficiencies from a user in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserProficiencies.html
    */
@@ -3620,9 +2587,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUsers.html
    */
   public toListUsers() {
@@ -3633,10 +2597,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list the view versions in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListViewVersions.html
    */
@@ -3649,9 +2609,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListViews.html
    */
   public toListViews() {
@@ -3662,10 +2619,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list workspace media in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListWorkspaceMedia.html
    */
@@ -3678,10 +2631,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListWorkspacePages.html
    */
   public toListWorkspacePages() {
@@ -3692,9 +2641,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to list workspaces in an Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListWorkspaces.html
    */
@@ -3707,11 +2653,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifMonitorCapabilities()
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_MonitorContact.html
    */
   public toMonitorContact() {
@@ -3722,10 +2663,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to pause an ongoing contact
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_PauseContact.html
    */
@@ -3738,10 +2675,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_PutUserStatus.html
    */
   public toPutUserStatus() {
@@ -3752,9 +2685,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to release phone number resources in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ReleasePhoneNumber.html
    */
@@ -3767,24 +2697,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - ds:AuthorizeApplication
-   * - ds:CheckAlias
-   * - ds:CreateAlias
-   * - ds:CreateDirectory
-   * - ds:CreateIdentityPoolDirectory
-   * - ds:DeleteDirectory
-   * - ds:DescribeDirectories
-   * - ds:UnauthorizeApplication
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toReplicateInstance() {
@@ -3795,10 +2707,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to resume a paused contact
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContact.html
    */
@@ -3811,12 +2719,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContactRecording.html
    */
   public toResumeContactRecording() {
@@ -3827,13 +2729,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search agent status resources in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeAgentStatus
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAgentStatuses.html
    */
@@ -3857,13 +2752,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeContactEvaluation
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactEvaluations.html
    */
   public toSearchContactEvaluations() {
@@ -3874,13 +2762,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search contact flow module resources in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeContactFlowModule
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactFlowModules.html
    */
@@ -3893,14 +2774,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   * - .ifFlowType()
-   *
-   * Dependent actions:
-   * - connect:DescribeContactFlow
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactFlows.html
    */
   public toSearchContactFlows() {
@@ -3911,16 +2784,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search contacts in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifSearchTag()
-   * - .ifInstanceId()
-   * - .ifSearchContactsByContactAnalysis()
-   * - .ifChannel()
-   * - .ifPreferredUserArn()
-   *
-   * Dependent actions:
-   * - connect:DescribeContact
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContacts.html
    */
@@ -3933,13 +2796,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeDataTable
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchDataTables.html
    */
   public toSearchDataTables() {
@@ -3950,13 +2806,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search email address resources in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeEmailAddress
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html
    */
@@ -3969,13 +2818,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeEvaluationForm
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEvaluationForms.html
    */
   public toSearchEvaluationForms() {
@@ -3986,14 +2828,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search hours of operation override resources in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeHoursOfOperation
-   * - connect:ListHoursOfOperationOverrides
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchHoursOfOperationOverrides.html
    */
@@ -4006,13 +2840,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeHoursOfOperation
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchHoursOfOperations.html
    */
   public toSearchHoursOfOperations() {
@@ -4023,10 +2850,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search notifications in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchNotifications.html
    */
@@ -4039,12 +2862,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - connect:DescribePredefinedAttribute
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchPredefinedAttributes.html
    */
   public toSearchPredefinedAttributes() {
@@ -4055,13 +2872,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search prompt resources in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribePrompt
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchPrompts.html
    */
@@ -4074,13 +2884,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeQueue
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchQueues.html
    */
   public toSearchQueues() {
@@ -4091,13 +2894,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search quick connect resources in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeQuickConnect
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchQuickConnects.html
    */
@@ -4110,10 +2906,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchResourceTags.html
    */
   public toSearchResourceTags() {
@@ -4125,13 +2917,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeRoutingProfile
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html
    */
   public toSearchRoutingProfiles() {
@@ -4139,16 +2924,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to search security profile resources in an Amazon Connect instance
+   * Grants permission to search rules in an Amazon Connect instance
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRules.html
+   */
+  public toSearchRules() {
+    return this.to('SearchRules');
+  }
+
+  /**
+   * Grants permission to search security profile resources in an Amazon Connect instance
    *
-   * Dependent actions:
-   * - connect:DescribeSecurityProfile
+   * Access Level: Read
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchSecurityProfiles.html
    */
@@ -4161,13 +2950,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeUserHierarchyGroup
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchUserHierarchyGroups.html
    */
   public toSearchUserHierarchyGroups() {
@@ -4178,14 +2960,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search user resources in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeUser
-   * - connect:ListUserProficiencies
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchUsers.html
    */
@@ -4198,13 +2972,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeView
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchViews.html
    */
   public toSearchViews() {
@@ -4215,9 +2982,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search vocabularies in a Amazon Connect instance
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchVocabularies.html
    */
@@ -4230,10 +2994,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchWorkspaceAssociations.html
    */
   public toSearchWorkspaceAssociations() {
@@ -4244,13 +3004,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to search workspaces in an Amazon Connect instance
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSearchTag()
-   *
-   * Dependent actions:
-   * - connect:DescribeWorkspace
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchWorkspaces.html
    */
@@ -4270,43 +3023,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send integration events using the Amazon Connect API
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html
-   */
-  public toSendIntegrationEvent() {
-    return this.to('SendIntegrationEvent');
-  }
-
-  /**
-   * Grants permission to send outbound chat messages using the Amazon Connect API
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSubtype()
-   *
-   * Dependent actions:
-   * - social-messaging:SendWhatsAppMessage
-   * - wisdom:GetMessageTemplate
-   * - wisdom:RenderMessageTemplate
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html
-   */
-  public toSendOutboundChatMessage() {
-    return this.to('SendOutboundChatMessage');
-  }
-
-  /**
    * Grants permission to send outbound email using the Amazon Connect API
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundEmail.html
    */
@@ -4315,40 +3034,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send outbound web notifications using the Amazon Connect API
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - connect:DescribeView
-   * - kms:Decrypt
-   * - profile:BatchGetProfile
-   * - profile:GetProfileRecommendations
-   * - profile:SearchProfiles
-   *
-   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundWebNotification.html
-   */
-  public toSendOutboundWebNotification() {
-    return this.to('SendOutboundWebNotification');
-  }
-
-  /**
    * Grants permission to start an attached file upload in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   * - .ifUserArn()
-   *
-   * Dependent actions:
-   * - cases:CreateRelatedItem
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartAttachedFileUpload.html
    */
@@ -4361,9 +3049,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html
    */
   public toStartChatContact() {
@@ -4374,12 +3059,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to start analysis for a contact in Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactConversationalAnalyticsJob.html
    */
@@ -4392,10 +3071,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactEvaluation.html
    */
   public toStartContactEvaluation() {
@@ -4406,9 +3081,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to start message processing on an ongoing contact
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactMediaProcessing.html
    */
@@ -4421,12 +3093,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactRecording.html
    */
   public toStartContactRecording() {
@@ -4437,9 +3103,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to start chat streaming using the Amazon Connect API
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html
    */
@@ -4452,10 +3115,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEmailContact.html
    */
   public toStartEmailContact() {
@@ -4467,9 +3126,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEvaluationFormValidation.html
    */
   public toStartEvaluationFormValidation() {
@@ -4477,31 +3133,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to enable forecasting, planning, and scheduling integration on an Amazon Connect instance
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
-   */
-  public toStartForecastingPlanningSchedulingIntegration() {
-    return this.to('StartForecastingPlanningSchedulingIntegration');
-  }
-
-  /**
    * Grants permission to initiate an outbound chat using the Amazon Connect API
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifSubtype()
-   *
-   * Dependent actions:
-   * - wisdom:GetMessageTemplate
-   * - wisdom:RenderMessageTemplate
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html
    */
@@ -4513,10 +3147,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to initiate an outbound email using the Amazon Connect API
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundEmailContact.html
    */
@@ -4540,13 +3170,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartScreenSharing.html
    */
   public toStartScreenSharing() {
@@ -4557,11 +3180,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to initiate a task using the Amazon Connect API
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifAssignmentType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartTaskContact.html
    */
@@ -4574,9 +3192,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartWebRTCContact.html
    */
   public toStartWebRTCContact() {
@@ -4587,12 +3202,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to stop contacts that were initiated using the Amazon Connect API. If you use this operation on an active contact the contact ends, even if the agent is active on a call with a customer
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContact.html
    */
@@ -4605,9 +3214,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactMediaProcessing.html
    */
   public toStopContactMediaProcessing() {
@@ -4618,12 +3224,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to stop recording for the specified contact
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactRecording.html
    */
@@ -4636,9 +3236,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html
    */
   public toStopContactStreaming() {
@@ -4646,26 +3243,9 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disable forecasting, planning, and scheduling integration on an Amazon Connect instance
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/optimization-apis.html
-   */
-  public toStopForecastingPlanningSchedulingIntegration() {
-    return this.to('StopForecastingPlanningSchedulingIntegration');
-  }
-
-  /**
    * Grants permission to submit a contact evaluation in the specified Amazon Connect instance. Answers included in the request are merged with existing answers for the given evaluation. If no answers or notes are passed, the evaluation is submitted with the existing answers and notes. You can delete an answer or note by passing an empty object ({}) to the question identifier
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SubmitContactEvaluation.html
    */
@@ -4678,12 +3258,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_SuspendContactRecording.html
    */
   public toSuspendContactRecording() {
@@ -4695,14 +3269,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagContact.html
    */
   public toTagContact() {
@@ -4712,11 +3278,7 @@ export class Connect extends PolicyStatement {
   /**
    * Grants permission to tag an Amazon Connect resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagResource.html
    */
@@ -4729,13 +3291,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TransferContact.html
    */
   public toTransferContact() {
@@ -4747,13 +3302,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagContact.html
    */
   public toUntagContact() {
@@ -4763,10 +3311,7 @@ export class Connect extends PolicyStatement {
   /**
    * Grants permission to untag an Amazon Connect resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */
@@ -4779,10 +3324,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateAgentStatus.html
    */
   public toUpdateAgentStatus() {
@@ -4790,12 +3331,20 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update authentication profile resources in an Amazon Connect instance
+   * Grants permission to update an attached files configuration in an Amazon Connect instance
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateAttachedFilesConfiguration.html
+   */
+  public toUpdateAttachedFilesConfiguration() {
+    return this.to('UpdateAttachedFilesConfiguration');
+  }
+
+  /**
+   * Grants permission to update authentication profile resources in an Amazon Connect instance
+   *
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateAuthenticationProfile.html
    */
@@ -4808,13 +3357,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContact.html
    */
   public toUpdateContact() {
@@ -4825,13 +3367,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to create or update the contact attributes associated with the specified contact
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactAttributes.html
    */
@@ -4844,9 +3379,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactEvaluation.html
    */
   public toUpdateContactEvaluation() {
@@ -4857,11 +3389,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update contact flow content in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifFlowType()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowContent.html
    */
@@ -4874,11 +3401,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifFlowType()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowMetadata.html
    */
   public toUpdateContactFlowMetadata() {
@@ -4889,10 +3411,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update an alias of a flow module version in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowModuleAlias.html
    */
@@ -4905,10 +3423,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowModuleContent.html
    */
   public toUpdateContactFlowModuleContent() {
@@ -4919,10 +3433,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update the metadata of a contact flow module in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowModuleMetadata.html
    */
@@ -4935,11 +3445,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifFlowType()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowName.html
    */
   public toUpdateContactFlowName() {
@@ -4950,13 +3455,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update routing properties on a contact in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactRoutingData.html
    */
@@ -4969,13 +3467,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifContactAssociationId()
-   * - .ifChannel()
-   * - .ifUserArn()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactSchedule.html
    */
   public toUpdateContactSchedule() {
@@ -4986,10 +3477,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update an attribute of a data table in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateDataTableAttribute.html
    */
@@ -5002,10 +3489,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateDataTableMetadata.html
    */
   public toUpdateDataTableMetadata() {
@@ -5016,11 +3499,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update primary values in a data table in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   * - .ifPrimaryAttribute()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateDataTablePrimaryValues.html
    */
@@ -5033,10 +3511,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html
    */
   public toUpdateEmailAddressMetadata() {
@@ -5047,9 +3521,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update details about a specific evaluation form version in the specified Amazon Connect instance. Question and section identifiers cannot be duplicated within the same evaluation form
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEvaluationForm.html
    */
@@ -5062,10 +3533,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateHoursOfOperation.html
    */
   public toUpdateHoursOfOperation() {
@@ -5076,9 +3543,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update an hours of operation override in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateHoursOfOperationOverride.html
    */
@@ -5091,17 +3555,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAttributeType()
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - ds:DescribeDirectories
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   * - logs:CreateLogGroup
-   *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
   public toUpdateInstanceAttribute() {
@@ -5112,22 +3565,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update the storage configuration for an existing Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifStorageResourceType()
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - ds:DescribeDirectories
-   * - firehose:DescribeDeliveryStream
-   * - iam:AttachRolePolicy
-   * - iam:CreateServiceLinkedRole
-   * - iam:PutRolePolicy
-   * - kinesis:DescribeStream
-   * - kms:CreateGrant
-   * - kms:DescribeKey
-   * - s3:GetBucketAcl
-   * - s3:GetBucketLocation
    *
    * https://docs.aws.amazon.com/console/connect/amazon-connect-console/grant-instance-permissions
    */
@@ -5140,10 +3577,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateNotificationContent.html
    */
   public toUpdateNotificationContent() {
@@ -5154,9 +3587,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update and continue authentication for a specific contact
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateParticipantAuthentication.html
    */
@@ -5169,10 +3599,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateParticipantRoleConfig.html
    */
   public toUpdateParticipantRoleConfig() {
@@ -5183,10 +3609,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update phone number resources in an Amazon Connect instance or traffic distribution group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html
    */
@@ -5199,9 +3621,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumberMetadata.html
    */
   public toUpdatePhoneNumberMetadata() {
@@ -5212,9 +3631,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update a predefined attribute in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePredefinedAttribute.html
    */
@@ -5227,15 +3643,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - s3:GetObject
-   * - s3:GetObjectAcl
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePrompt.html
    */
   public toUpdatePrompt() {
@@ -5246,10 +3653,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update queue hours of operation in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueHoursOfOperation.html
    */
@@ -5262,10 +3665,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueMaxContacts.html
    */
   public toUpdateQueueMaxContacts() {
@@ -5276,10 +3675,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update a queue name and description in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueName.html
    */
@@ -5292,10 +3687,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueOutboundCallerConfig.html
    */
   public toUpdateQueueOutboundCallerConfig() {
@@ -5306,10 +3697,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update the outbound email configuration for a queue in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueOutboundEmailConfig.html
    */
@@ -5322,10 +3709,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQueueStatus.html
    */
   public toUpdateQueueStatus() {
@@ -5336,10 +3719,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update the configuration of a quick connect in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQuickConnectConfig.html
    */
@@ -5352,10 +3731,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateQuickConnectName.html
    */
   public toUpdateQuickConnectName() {
@@ -5366,10 +3741,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update a routing profile agent availability timer in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileAgentAvailabilityTimer.html
    */
@@ -5382,10 +3753,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileConcurrency.html
    */
   public toUpdateRoutingProfileConcurrency() {
@@ -5396,10 +3763,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update the outbound queue in a routing profile in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileDefaultOutboundQueue.html
    */
@@ -5412,10 +3775,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileName.html
    */
   public toUpdateRoutingProfileName() {
@@ -5426,10 +3785,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update the queues in routing profile in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileQueues.html
    */
@@ -5442,9 +3797,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRule.html
    */
   public toUpdateRule() {
@@ -5455,10 +3807,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update a security profile group for a user in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateSecurityProfile.html
    */
@@ -5471,10 +3819,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTaskTemplate.html
    */
   public toUpdateTaskTemplate() {
@@ -5485,9 +3829,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update traffic distribution for a traffic distribution group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html
    */
@@ -5500,10 +3841,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchy.html
    */
   public toUpdateUserHierarchy() {
@@ -5514,9 +3851,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update a user hierarchy group name in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchyGroupName.html
    */
@@ -5529,9 +3863,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchyStructure.html
    */
   public toUpdateUserHierarchyStructure() {
@@ -5542,10 +3873,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update identity information for a user in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserIdentityInfo.html
    */
@@ -5558,10 +3885,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserNotificationStatus.html
    */
   public toUpdateUserNotificationStatus() {
@@ -5572,10 +3895,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update phone configuration settings for a user in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserPhoneConfig.html
    */
@@ -5588,9 +3907,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserProficiencies.html
    */
   public toUpdateUserProficiencies() {
@@ -5601,10 +3917,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update a routing profile for a user in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserRoutingProfile.html
    */
@@ -5617,10 +3929,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserSecurityProfiles.html
    */
   public toUpdateUserSecurityProfiles() {
@@ -5631,10 +3939,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update a view's content in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateViewContent.html
    */
@@ -5647,10 +3951,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateViewMetadata.html
    */
   public toUpdateViewMetadata() {
@@ -5661,10 +3961,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update workspace metadata in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateWorkspaceMetadata.html
    */
@@ -5677,10 +3973,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateWorkspacePage.html
    */
   public toUpdateWorkspacePage() {
@@ -5692,10 +3984,6 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
-   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateWorkspaceTheme.html
    */
   public toUpdateWorkspaceTheme() {
@@ -5706,10 +3994,6 @@ export class Connect extends PolicyStatement {
    * Grants permission to update workspace visibility in an Amazon Connect instance
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifInstanceId()
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateWorkspaceVisibility.html
    */
@@ -5725,7 +4009,6 @@ export class Connect extends PolicyStatement {
       'AssociateApprovedOrigin',
       'AssociateBot',
       'AssociateContactWithUser',
-      'AssociateCustomerProfilesDomain',
       'AssociateDefaultVocabulary',
       'AssociateEmailAddressAlias',
       'AssociateFlow',
@@ -5826,7 +4109,6 @@ export class Connect extends PolicyStatement {
       'DisassociateAnalyticsDataSet',
       'DisassociateApprovedOrigin',
       'DisassociateBot',
-      'DisassociateCustomerProfilesDomain',
       'DisassociateEmailAddressAlias',
       'DisassociateFlow',
       'DisassociateInstanceStorageConfig',
@@ -5852,10 +4134,7 @@ export class Connect extends PolicyStatement {
       'ResumeContact',
       'ResumeContactRecording',
       'SendChatIntegrationEvent',
-      'SendIntegrationEvent',
-      'SendOutboundChatMessage',
       'SendOutboundEmail',
-      'SendOutboundWebNotification',
       'StartAttachedFileUpload',
       'StartChatContact',
       'StartContactConversationalAnalyticsJob',
@@ -5865,7 +4144,6 @@ export class Connect extends PolicyStatement {
       'StartContactStreaming',
       'StartEmailContact',
       'StartEvaluationFormValidation',
-      'StartForecastingPlanningSchedulingIntegration',
       'StartOutboundChatContact',
       'StartOutboundEmailContact',
       'StartOutboundVoiceContact',
@@ -5876,13 +4154,15 @@ export class Connect extends PolicyStatement {
       'StopContactMediaProcessing',
       'StopContactRecording',
       'StopContactStreaming',
-      'StopForecastingPlanningSchedulingIntegration',
       'SubmitContactEvaluation',
       'SuspendContactRecording',
       'TagContact',
+      'TagResource',
       'TransferContact',
       'UntagContact',
+      'UntagResource',
       'UpdateAgentStatus',
+      'UpdateAttachedFilesConfiguration',
       'UpdateAuthenticationProfile',
       'UpdateContact',
       'UpdateContactAttributes',
@@ -5948,6 +4228,7 @@ export class Connect extends PolicyStatement {
       'BatchDescribeDataTableValue',
       'BatchGetAttachedFileMetadata',
       'DescribeAgentStatus',
+      'DescribeAttachedFilesConfiguration',
       'DescribeAuthenticationProfile',
       'DescribeContact',
       'DescribeContactEvaluation',
@@ -5958,7 +4239,6 @@ export class Connect extends PolicyStatement {
       'DescribeDataTableAttribute',
       'DescribeEmailAddress',
       'DescribeEvaluationForm',
-      'DescribeForecastingPlanningSchedulingIntegration',
       'DescribeHoursOfOperation',
       'DescribeHoursOfOperationOverride',
       'DescribeInstance',
@@ -6014,6 +4294,7 @@ export class Connect extends PolicyStatement {
       'SearchQueues',
       'SearchQuickConnects',
       'SearchRoutingProfiles',
+      'SearchRules',
       'SearchSecurityProfiles',
       'SearchUserHierarchyGroups',
       'SearchUsers',
@@ -6029,6 +4310,7 @@ export class Connect extends PolicyStatement {
       'ListAnalyticsDataLakeDataSets',
       'ListApprovedOrigins',
       'ListAssociatedContacts',
+      'ListAttachedFilesConfigurations',
       'ListAuthenticationProfiles',
       'ListBots',
       'ListContactEvaluations',
@@ -6096,296 +4378,6 @@ export class Connect extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type instance to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
-  }
-
-  /**
-   * Adds a resource of type contact to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-attributes.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param contactId - Identifier for the contactId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onContact(instanceId: string, contactId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact/${ contactId }`);
-  }
-
-  /**
-   * Adds a resource of type user to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-agents.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param userId - Identifier for the userId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onUser(instanceId: string, userId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent/${ userId }`);
-  }
-
-  /**
-   * Adds a resource of type routing-profile to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param routingProfileId - Identifier for the routingProfileId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRoutingProfile(instanceId: string, routingProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/routing-profile/${ routingProfileId }`);
-  }
-
-  /**
-   * Adds a resource of type security-profile to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param securityProfileId - Identifier for the securityProfileId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSecurityProfile(instanceId: string, securityProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/security-profile/${ securityProfileId }`);
-  }
-
-  /**
-   * Adds a resource of type authentication-profile to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-authentication-profiles.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param authenticationProfileId - Identifier for the authenticationProfileId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAuthenticationProfile(instanceId: string, authenticationProfileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/authentication-profile/${ authenticationProfileId }`);
-  }
-
-  /**
-   * Adds a resource of type hierarchy-group to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param hierarchyGroupId - Identifier for the hierarchyGroupId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
-  }
-
-  /**
-   * Adds a resource of type data-table to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/data-tables.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param dataTableId - Identifier for the dataTableId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onDataTable(instanceId: string, dataTableId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/data-table/${ dataTableId }`);
-  }
-
-  /**
-   * Adds a resource of type queue to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param queueId - Identifier for the queueId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onQueue(instanceId: string, queueId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/queue/${ queueId }`);
-  }
-
-  /**
-   * Adds a resource of type wildcard-queue to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onWildcardQueue(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/queue/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type quick-connect to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param quickConnectId - Identifier for the quickConnectId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onQuickConnect(instanceId: string, quickConnectId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ quickConnectId }`);
-  }
-
-  /**
-   * Adds a resource of type wildcard-quick-connect to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onWildcardQuickConnect(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type contact-flow to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param contactFlowId - Identifier for the contactFlowId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
-  }
-
-  /**
-   * Adds a resource of type task-template to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param taskTemplateId - Identifier for the taskTemplateId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTaskTemplate(instanceId: string, taskTemplateId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/task-template/${ taskTemplateId }`);
-  }
-
-  /**
-   * Adds a resource of type contact-flow-module to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-modules.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param contactFlowModuleId - Identifier for the contactFlowModuleId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onContactFlowModule(instanceId: string, contactFlowModuleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/flow-module/${ contactFlowModuleId }`);
-  }
-
-  /**
-   * Adds a resource of type wildcard-contact-flow to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onWildcardContactFlow(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-flow/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type hours-of-operation to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param hoursOfOperationId - Identifier for the hoursOfOperationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onHoursOfOperation(instanceId: string, hoursOfOperationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/operating-hours/${ hoursOfOperationId }`);
-  }
-
-  /**
    * Adds a resource of type agent-status to the statement
    *
    * https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html
@@ -6401,347 +4393,6 @@ export class Connect extends PolicyStatement {
    */
   public onAgentStatus(instanceId: string, agentStatusId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-state/${ agentStatusId }`);
-  }
-
-  /**
-   * Adds a resource of type wildcard-agent-status to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onWildcardAgentStatus(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-state/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type legacy-phone-number to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param phoneNumberId - Identifier for the phoneNumberId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onLegacyPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/phone-number/${ phoneNumberId }`);
-  }
-
-  /**
-   * Adds a resource of type wildcard-legacy-phone-number to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onWildcardLegacyPhoneNumber(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/phone-number/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type phone-number to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
-   *
-   * @param phoneNumberId - Identifier for the phoneNumberId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPhoneNumber(phoneNumberId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone-number/${ phoneNumberId }`);
-  }
-
-  /**
-   * Adds a resource of type wildcard-phone-number to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
-   *
-   * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onWildcardPhoneNumber(resourceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone-number/${ resourceName }`);
-  }
-
-  /**
-   * Adds a resource of type integration-association to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param integrationAssociationId - Identifier for the integrationAssociationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onIntegrationAssociation(instanceId: string, integrationAssociationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/integration-association/${ integrationAssociationId }`);
-  }
-
-  /**
-   * Adds a resource of type use-case to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/add-rules-task-creation.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param useCaseId - Identifier for the useCaseId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onUseCase(instanceId: string, useCaseId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/use-case/${ useCaseId }`);
-  }
-
-  /**
-   * Adds a resource of type vocabulary to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/add-custom-vocabulary.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param vocabularyId - Identifier for the vocabularyId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onVocabulary(instanceId: string, vocabularyId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/vocabulary/${ vocabularyId }`);
-  }
-
-  /**
-   * Adds a resource of type traffic-distribution-group to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html
-   *
-   * @param trafficDistributionGroupId - Identifier for the trafficDistributionGroupId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTrafficDistributionGroup(trafficDistributionGroupId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:traffic-distribution-group/${ trafficDistributionGroupId }`);
-  }
-
-  /**
-   * Adds a resource of type rule to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param ruleId - Identifier for the ruleId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onRule(instanceId: string, ruleId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/rule/${ ruleId }`);
-  }
-
-  /**
-   * Adds a resource of type evaluation-form to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/create-evaluation-forms.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param formId - Identifier for the formId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEvaluationForm(instanceId: string, formId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/evaluation-form/${ formId }`);
-  }
-
-  /**
-   * Adds a resource of type contact-evaluation to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/evaluations.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param evaluationId - Identifier for the evaluationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onContactEvaluation(instanceId: string, evaluationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-evaluation/${ evaluationId }`);
-  }
-
-  /**
-   * Adds a resource of type prompt to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param promptId - Identifier for the promptId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPrompt(instanceId: string, promptId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/prompt/${ promptId }`);
-  }
-
-  /**
-   * Adds a resource of type customer-managed-view to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param viewId - Identifier for the viewId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustomerManagedView(instanceId: string, viewId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }`);
-  }
-
-  /**
-   * Adds a resource of type aws-managed-view to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
-   *
-   * @param viewId - Identifier for the viewId.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onAwsManagedView(viewId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:aws:view/${ viewId }`);
-  }
-
-  /**
-   * Adds a resource of type qualified-customer-managed-view to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param viewId - Identifier for the viewId.
-   * @param viewQualifier - Identifier for the viewQualifier.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onQualifiedCustomerManagedView(instanceId: string, viewId: string, viewQualifier: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewQualifier }`);
-  }
-
-  /**
-   * Adds a resource of type qualified-aws-managed-view to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
-   *
-   * @param viewId - Identifier for the viewId.
-   * @param viewQualifier - Identifier for the viewQualifier.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onQualifiedAwsManagedView(viewId: string, viewQualifier: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:aws:view/${ viewId }:${ viewQualifier }`);
-  }
-
-  /**
-   * Adds a resource of type customer-managed-view-version to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param viewId - Identifier for the viewId.
-   * @param viewVersion - Identifier for the viewVersion.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onCustomerManagedViewVersion(instanceId: string, viewId: string, viewVersion: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewVersion }`);
-  }
-
-  /**
-   * Adds a resource of type attached-file to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-attachments.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param fileId - Identifier for the fileId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAttachedFile(instanceId: string, fileId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/file/${ fileId }`);
-  }
-
-  /**
-   * Adds a resource of type email-address to the statement
-   *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html
-   *
-   * @param instanceId - Identifier for the instanceId.
-   * @param emailAddressId - Identifier for the emailAddressId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEmailAddress(instanceId: string, emailAddressId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/email-address/${ emailAddressId }`);
   }
 
   /**
@@ -6764,12 +4415,12 @@ export class Connect extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type workspace to the statement
+   * Adds a resource of type attached-file to the statement
    *
-   * https://docs.aws.amazon.com/connect/latest/adminguide/workspaces.html
+   * https://docs.aws.amazon.com/connect/latest/adminguide/enable-attachments.html
    *
    * @param instanceId - Identifier for the instanceId.
-   * @param workspaceId - Identifier for the workspaceId.
+   * @param fileId - Identifier for the fileId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -6777,8 +4428,288 @@ export class Connect extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onWorkspace(instanceId: string, workspaceId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/workspace/${ workspaceId }`);
+  public onAttachedFile(instanceId: string, fileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/file/${ fileId }`);
+  }
+
+  /**
+   * Adds a resource of type authentication-profile to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-authentication-profiles.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param authenticationProfileId - Identifier for the authenticationProfileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAuthenticationProfile(instanceId: string, authenticationProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/authentication-profile/${ authenticationProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type aws-managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param viewId - Identifier for the viewId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onAwsManagedView(viewId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:aws:view/${ viewId }`);
+  }
+
+  /**
+   * Adds a resource of type contact to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-attributes.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param contactId - Identifier for the contactId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContact(instanceId: string, contactId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact/${ contactId }`);
+  }
+
+  /**
+   * Adds a resource of type contact-evaluation to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/evaluations.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param evaluationId - Identifier for the evaluationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContactEvaluation(instanceId: string, evaluationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-evaluation/${ evaluationId }`);
+  }
+
+  /**
+   * Adds a resource of type contact-flow to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param contactFlowId - Identifier for the contactFlowId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-flow/${ contactFlowId }`);
+  }
+
+  /**
+   * Adds a resource of type contact-flow-module to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-modules.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param contactFlowModuleId - Identifier for the contactFlowModuleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onContactFlowModule(instanceId: string, contactFlowModuleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/flow-module/${ contactFlowModuleId }`);
+  }
+
+  /**
+   * Adds a resource of type customer-managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param viewId - Identifier for the viewId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomerManagedView(instanceId: string, viewId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }`);
+  }
+
+  /**
+   * Adds a resource of type customer-managed-view-version to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param viewId - Identifier for the viewId.
+   * @param viewVersion - Identifier for the viewVersion.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onCustomerManagedViewVersion(instanceId: string, viewId: string, viewVersion: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewVersion }`);
+  }
+
+  /**
+   * Adds a resource of type data-table to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/data-tables.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param dataTableId - Identifier for the dataTableId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onDataTable(instanceId: string, dataTableId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/data-table/${ dataTableId }`);
+  }
+
+  /**
+   * Adds a resource of type email-address to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param emailAddressId - Identifier for the emailAddressId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEmailAddress(instanceId: string, emailAddressId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/email-address/${ emailAddressId }`);
+  }
+
+  /**
+   * Adds a resource of type evaluation-form to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-evaluation-forms.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param formId - Identifier for the formId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEvaluationForm(instanceId: string, formId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/evaluation-form/${ formId }`);
+  }
+
+  /**
+   * Adds a resource of type hierarchy-group to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param hierarchyGroupId - Identifier for the hierarchyGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-group/${ hierarchyGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type hours-of-operation to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param hoursOfOperationId - Identifier for the hoursOfOperationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHoursOfOperation(instanceId: string, hoursOfOperationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/operating-hours/${ hoursOfOperationId }`);
+  }
+
+  /**
+   * Adds a resource of type instance to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }`);
+  }
+
+  /**
+   * Adds a resource of type integration-association to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param integrationAssociationId - Identifier for the integrationAssociationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onIntegrationAssociation(instanceId: string, integrationAssociationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/integration-association/${ integrationAssociationId }`);
+  }
+
+  /**
+   * Adds a resource of type legacy-phone-number to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param phoneNumberId - Identifier for the phoneNumberId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onLegacyPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/phone-number/${ phoneNumberId }`);
   }
 
   /**
@@ -6797,6 +4728,363 @@ export class Connect extends PolicyStatement {
    */
   public onNotification(instanceId: string, notificationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/notification/${ notificationId }`);
+  }
+
+  /**
+   * Adds a resource of type phone-number to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
+   *
+   * @param phoneNumberId - Identifier for the phoneNumberId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPhoneNumber(phoneNumberId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone-number/${ phoneNumberId }`);
+  }
+
+  /**
+   * Adds a resource of type prompt to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param promptId - Identifier for the promptId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPrompt(instanceId: string, promptId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/prompt/${ promptId }`);
+  }
+
+  /**
+   * Adds a resource of type qualified-aws-managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param viewId - Identifier for the viewId.
+   * @param viewQualifier - Identifier for the viewQualifier.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onQualifiedAwsManagedView(viewId: string, viewQualifier: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:aws:view/${ viewId }:${ viewQualifier }`);
+  }
+
+  /**
+   * Adds a resource of type qualified-customer-managed-view to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/view-resources-sg.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param viewId - Identifier for the viewId.
+   * @param viewQualifier - Identifier for the viewQualifier.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQualifiedCustomerManagedView(instanceId: string, viewId: string, viewQualifier: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/view/${ viewId }:${ viewQualifier }`);
+  }
+
+  /**
+   * Adds a resource of type queue to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param queueId - Identifier for the queueId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQueue(instanceId: string, queueId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/queue/${ queueId }`);
+  }
+
+  /**
+   * Adds a resource of type quick-connect to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param quickConnectId - Identifier for the quickConnectId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onQuickConnect(instanceId: string, quickConnectId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ quickConnectId }`);
+  }
+
+  /**
+   * Adds a resource of type routing-profile to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param routingProfileId - Identifier for the routingProfileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRoutingProfile(instanceId: string, routingProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/routing-profile/${ routingProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type rule to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param ruleId - Identifier for the ruleId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onRule(instanceId: string, ruleId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/rule/${ ruleId }`);
+  }
+
+  /**
+   * Adds a resource of type security-profile to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param securityProfileId - Identifier for the securityProfileId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSecurityProfile(instanceId: string, securityProfileId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/security-profile/${ securityProfileId }`);
+  }
+
+  /**
+   * Adds a resource of type task-template to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param taskTemplateId - Identifier for the taskTemplateId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTaskTemplate(instanceId: string, taskTemplateId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/task-template/${ taskTemplateId }`);
+  }
+
+  /**
+   * Adds a resource of type traffic-distribution-group to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html
+   *
+   * @param trafficDistributionGroupId - Identifier for the trafficDistributionGroupId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTrafficDistributionGroup(trafficDistributionGroupId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:traffic-distribution-group/${ trafficDistributionGroupId }`);
+  }
+
+  /**
+   * Adds a resource of type use-case to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/add-rules-task-creation.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param useCaseId - Identifier for the useCaseId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onUseCase(instanceId: string, useCaseId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/use-case/${ useCaseId }`);
+  }
+
+  /**
+   * Adds a resource of type user to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-agents.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param userId - Identifier for the userId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onUser(instanceId: string, userId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent/${ userId }`);
+  }
+
+  /**
+   * Adds a resource of type vocabulary to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/add-custom-vocabulary.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param vocabularyId - Identifier for the vocabularyId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onVocabulary(instanceId: string, vocabularyId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/vocabulary/${ vocabularyId }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-agent-status to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWildcardAgentStatus(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/agent-state/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-contact-flow to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWildcardContactFlow(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/contact-flow/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-legacy-phone-number to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWildcardLegacyPhoneNumber(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/phone-number/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-phone-number to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/ag-overview-numbers.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWildcardPhoneNumber(resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:phone-number/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-queue to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWildcardQueue(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/queue/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type wildcard-quick-connect to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onWildcardQuickConnect(instanceId: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/transfer-destination/${ resourceName }`);
+  }
+
+  /**
+   * Adds a resource of type workspace to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/workspaces.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param workspaceId - Identifier for the workspaceId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onWorkspace(instanceId: string, workspaceId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:connect:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:instance/${ instanceId }/workspace/${ workspaceId }`);
   }
 
   /**
@@ -6852,34 +5140,76 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
+   * - .toActivateEvaluationForm()
+   * - .toAdminGetEmergencyAccessToken()
+   * - .toAssociateAnalyticsDataSet()
+   * - .toAssociateApprovedOrigin()
+   * - .toAssociateBot()
    * - .toAssociateContactWithUser()
+   * - .toAssociateDefaultVocabulary()
    * - .toAssociateEmailAddressAlias()
    * - .toAssociateFlow()
+   * - .toAssociateInstanceStorageConfig()
+   * - .toAssociateLambdaFunction()
+   * - .toAssociateLexBot()
    * - .toAssociatePhoneNumberContactFlow()
    * - .toAssociateQueueEmailAddresses()
    * - .toAssociateQueueQuickConnects()
    * - .toAssociateRoutingProfileQueues()
+   * - .toAssociateSecurityKey()
    * - .toAssociateSecurityProfiles()
    * - .toAssociateTrafficDistributionGroupUser()
+   * - .toAssociateUserProficiencies()
    * - .toAssociateWorkspace()
+   * - .toBatchAssociateAnalyticsDataSet()
    * - .toBatchCreateDataTableValue()
    * - .toBatchDeleteDataTableValue()
    * - .toBatchDescribeDataTableValue()
+   * - .toBatchDisassociateAnalyticsDataSet()
    * - .toBatchGetAttachedFileMetadata()
    * - .toBatchGetFlowAssociation()
+   * - .toBatchPutContact()
    * - .toBatchUpdateDataTableValue()
+   * - .toClaimPhoneNumber()
    * - .toCompleteAttachedFileUpload()
+   * - .toCreateAgentStatus()
    * - .toCreateAttachedFile()
+   * - .toCreateAuthenticationProfile()
    * - .toCreateContact()
+   * - .toCreateContactFlow()
+   * - .toCreateContactFlowModule()
    * - .toCreateContactFlowModuleAlias()
    * - .toCreateContactFlowModuleVersion()
    * - .toCreateContactFlowVersion()
    * - .toCreateDataTable()
    * - .toCreateDataTableAttribute()
+   * - .toCreateEmailAddress()
+   * - .toCreateEvaluationForm()
+   * - .toCreateHoursOfOperation()
+   * - .toCreateHoursOfOperationOverride()
+   * - .toCreateIntegrationAssociation()
+   * - .toCreateNotification()
    * - .toCreateParticipant()
    * - .toCreatePersistentContactAssociation()
+   * - .toCreatePredefinedAttribute()
+   * - .toCreatePrompt()
+   * - .toCreatePushNotificationRegistration()
+   * - .toCreateQueue()
+   * - .toCreateQuickConnect()
+   * - .toCreateRoutingProfile()
+   * - .toCreateRule()
+   * - .toCreateSecurityProfile()
+   * - .toCreateTaskTemplate()
+   * - .toCreateTrafficDistributionGroup()
+   * - .toCreateUseCase()
+   * - .toCreateUser()
+   * - .toCreateUserHierarchyGroup()
+   * - .toCreateView()
    * - .toCreateViewVersion()
+   * - .toCreateVocabulary()
+   * - .toCreateWorkspace()
    * - .toCreateWorkspacePage()
+   * - .toDeactivateEvaluationForm()
    * - .toDeleteAttachedFile()
    * - .toDeleteContactEvaluation()
    * - .toDeleteContactFlow()
@@ -6892,9 +5222,13 @@ export class Connect extends PolicyStatement {
    * - .toDeleteEmailAddress()
    * - .toDeleteEvaluationForm()
    * - .toDeleteHoursOfOperation()
+   * - .toDeleteHoursOfOperationOverride()
    * - .toDeleteInstance()
+   * - .toDeleteIntegrationAssociation()
    * - .toDeleteNotification()
+   * - .toDeletePredefinedAttribute()
    * - .toDeletePrompt()
+   * - .toDeletePushNotificationRegistration()
    * - .toDeleteQueue()
    * - .toDeleteQuickConnect()
    * - .toDeleteRoutingProfile()
@@ -6902,7 +5236,9 @@ export class Connect extends PolicyStatement {
    * - .toDeleteSecurityProfile()
    * - .toDeleteTaskTemplate()
    * - .toDeleteTrafficDistributionGroup()
+   * - .toDeleteUseCase()
    * - .toDeleteUser()
+   * - .toDeleteUserHierarchyGroup()
    * - .toDeleteView()
    * - .toDeleteViewVersion()
    * - .toDeleteVocabulary()
@@ -6910,6 +5246,8 @@ export class Connect extends PolicyStatement {
    * - .toDeleteWorkspaceMedia()
    * - .toDeleteWorkspacePage()
    * - .toDescribeAgentStatus()
+   * - .toDescribeAttachedFilesConfiguration()
+   * - .toDescribeAuthenticationProfile()
    * - .toDescribeContact()
    * - .toDescribeContactEvaluation()
    * - .toDescribeContactFlow()
@@ -6920,9 +5258,13 @@ export class Connect extends PolicyStatement {
    * - .toDescribeEmailAddress()
    * - .toDescribeEvaluationForm()
    * - .toDescribeHoursOfOperation()
+   * - .toDescribeHoursOfOperationOverride()
    * - .toDescribeInstance()
+   * - .toDescribeInstanceAttribute()
+   * - .toDescribeInstanceStorageConfig()
    * - .toDescribeNotification()
    * - .toDescribePhoneNumber()
+   * - .toDescribePredefinedAttribute()
    * - .toDescribePrompt()
    * - .toDescribeQueue()
    * - .toDescribeQuickConnect()
@@ -6931,81 +5273,171 @@ export class Connect extends PolicyStatement {
    * - .toDescribeSecurityProfile()
    * - .toDescribeTrafficDistributionGroup()
    * - .toDescribeUser()
+   * - .toDescribeUserHierarchyGroup()
+   * - .toDescribeUserHierarchyStructure()
    * - .toDescribeView()
    * - .toDescribeVocabulary()
    * - .toDescribeWorkspace()
+   * - .toDisassociateAnalyticsDataSet()
+   * - .toDisassociateApprovedOrigin()
+   * - .toDisassociateBot()
    * - .toDisassociateEmailAddressAlias()
    * - .toDisassociateFlow()
+   * - .toDisassociateInstanceStorageConfig()
+   * - .toDisassociateLambdaFunction()
+   * - .toDisassociateLexBot()
    * - .toDisassociatePhoneNumberContactFlow()
    * - .toDisassociateQueueEmailAddresses()
    * - .toDisassociateQueueQuickConnects()
    * - .toDisassociateRoutingProfileQueues()
+   * - .toDisassociateSecurityKey()
    * - .toDisassociateSecurityProfiles()
    * - .toDisassociateTrafficDistributionGroupUser()
+   * - .toDisassociateUserProficiencies()
    * - .toDisassociateWorkspace()
    * - .toDismissUserContact()
    * - .toEvaluateDataTableValues()
    * - .toGetAttachedFile()
    * - .toGetContactAttributes()
+   * - .toGetContactMetrics()
    * - .toGetCurrentMetricData()
    * - .toGetCurrentUserData()
+   * - .toGetEffectiveHoursOfOperations()
    * - .toGetEvaluationFormValidation()
+   * - .toGetFederationToken()
    * - .toGetFlowAssociation()
    * - .toGetMetricData()
    * - .toGetMetricDataV2()
    * - .toGetPromptFile()
    * - .toGetTaskTemplate()
    * - .toGetTrafficDistribution()
+   * - .toImportPhoneNumber()
    * - .toImportWorkspaceMedia()
+   * - .toListAnalyticsDataAssociations()
+   * - .toListAnalyticsDataLakeDataSets()
+   * - .toListApprovedOrigins()
    * - .toListAssociatedContacts()
+   * - .toListAttachedFilesConfigurations()
+   * - .toListAuthenticationProfiles()
+   * - .toListBots()
    * - .toListContactEvaluations()
    * - .toListContactFlowModuleAliases()
    * - .toListContactFlowModuleVersions()
+   * - .toListContactFlowModules()
    * - .toListContactFlowVersions()
    * - .toListContactReferences()
    * - .toListDataTableAttributes()
    * - .toListDataTablePrimaryValues()
    * - .toListDataTableValues()
+   * - .toListDataTables()
+   * - .toListDefaultVocabularies()
    * - .toListEntitySecurityProfiles()
+   * - .toListEvaluationFormVersions()
+   * - .toListEvaluationForms()
+   * - .toListFlowAssociations()
+   * - .toListHoursOfOperationOverrides()
+   * - .toListHoursOfOperations()
+   * - .toListInstanceAttributes()
+   * - .toListInstanceStorageConfigs()
+   * - .toListIntegrationAssociations()
+   * - .toListLambdaFunctions()
+   * - .toListLexBots()
+   * - .toListNotifications()
+   * - .toListPhoneNumbersV2()
+   * - .toListPredefinedAttributes()
+   * - .toListPrompts()
    * - .toListQueueEmailAddresses()
    * - .toListQueueQuickConnects()
    * - .toListRealtimeContactAnalysisSegments()
    * - .toListRealtimeContactAnalysisSegmentsV2()
    * - .toListRoutingProfileManualAssignmentQueues()
    * - .toListRoutingProfileQueues()
+   * - .toListRoutingProfiles()
+   * - .toListRules()
+   * - .toListSecurityKeys()
    * - .toListSecurityProfileApplications()
    * - .toListSecurityProfileFlowModules()
    * - .toListSecurityProfilePermissions()
+   * - .toListSecurityProfiles()
    * - .toListTagsForResource()
+   * - .toListTaskTemplates()
    * - .toListTrafficDistributionGroupUsers()
+   * - .toListTrafficDistributionGroups()
+   * - .toListUseCases()
+   * - .toListUserHierarchyGroups()
    * - .toListUserNotifications()
+   * - .toListUserProficiencies()
+   * - .toListUsers()
    * - .toListViewVersions()
+   * - .toListViews()
    * - .toListWorkspaceMedia()
    * - .toListWorkspacePages()
+   * - .toListWorkspaces()
    * - .toMonitorContact()
    * - .toPauseContact()
    * - .toPutUserStatus()
    * - .toReleasePhoneNumber()
+   * - .toReplicateInstance()
    * - .toResumeContact()
    * - .toResumeContactRecording()
+   * - .toSearchAgentStatuses()
+   * - .toSearchAvailablePhoneNumbers()
+   * - .toSearchContactEvaluations()
+   * - .toSearchContactFlowModules()
+   * - .toSearchContactFlows()
+   * - .toSearchContacts()
+   * - .toSearchDataTables()
+   * - .toSearchEmailAddresses()
+   * - .toSearchEvaluationForms()
+   * - .toSearchHoursOfOperationOverrides()
+   * - .toSearchHoursOfOperations()
+   * - .toSearchNotifications()
+   * - .toSearchPredefinedAttributes()
+   * - .toSearchPrompts()
+   * - .toSearchQueues()
+   * - .toSearchQuickConnects()
    * - .toSearchResourceTags()
+   * - .toSearchRoutingProfiles()
+   * - .toSearchRules()
+   * - .toSearchSecurityProfiles()
+   * - .toSearchUserHierarchyGroups()
+   * - .toSearchUsers()
+   * - .toSearchViews()
+   * - .toSearchVocabularies()
    * - .toSearchWorkspaceAssociations()
+   * - .toSearchWorkspaces()
+   * - .toSendOutboundEmail()
    * - .toStartAttachedFileUpload()
+   * - .toStartChatContact()
    * - .toStartContactConversationalAnalyticsJob()
    * - .toStartContactEvaluation()
+   * - .toStartContactMediaProcessing()
    * - .toStartContactRecording()
    * - .toStartContactStreaming()
    * - .toStartEmailContact()
+   * - .toStartEvaluationFormValidation()
+   * - .toStartOutboundChatContact()
    * - .toStartOutboundEmailContact()
    * - .toStartScreenSharing()
    * - .toStartTaskContact()
+   * - .toStartWebRTCContact()
+   * - .toStopContact()
+   * - .toStopContactMediaProcessing()
    * - .toStopContactRecording()
    * - .toStopContactStreaming()
+   * - .toSubmitContactEvaluation()
    * - .toSuspendContactRecording()
+   * - .toTagContact()
+   * - .toTagResource()
    * - .toTransferContact()
+   * - .toUntagContact()
+   * - .toUntagResource()
    * - .toUpdateAgentStatus()
+   * - .toUpdateAttachedFilesConfiguration()
+   * - .toUpdateAuthenticationProfile()
    * - .toUpdateContact()
    * - .toUpdateContactAttributes()
+   * - .toUpdateContactEvaluation()
    * - .toUpdateContactFlowContent()
    * - .toUpdateContactFlowMetadata()
    * - .toUpdateContactFlowModuleAlias()
@@ -7018,11 +5450,17 @@ export class Connect extends PolicyStatement {
    * - .toUpdateDataTableMetadata()
    * - .toUpdateDataTablePrimaryValues()
    * - .toUpdateEmailAddressMetadata()
+   * - .toUpdateEvaluationForm()
    * - .toUpdateHoursOfOperation()
+   * - .toUpdateHoursOfOperationOverride()
+   * - .toUpdateInstanceAttribute()
+   * - .toUpdateInstanceStorageConfig()
    * - .toUpdateNotificationContent()
+   * - .toUpdateParticipantAuthentication()
    * - .toUpdateParticipantRoleConfig()
    * - .toUpdatePhoneNumber()
    * - .toUpdatePhoneNumberMetadata()
+   * - .toUpdatePredefinedAttribute()
    * - .toUpdatePrompt()
    * - .toUpdateQueueHoursOfOperation()
    * - .toUpdateQueueMaxContacts()
@@ -7037,13 +5475,17 @@ export class Connect extends PolicyStatement {
    * - .toUpdateRoutingProfileDefaultOutboundQueue()
    * - .toUpdateRoutingProfileName()
    * - .toUpdateRoutingProfileQueues()
+   * - .toUpdateRule()
    * - .toUpdateSecurityProfile()
    * - .toUpdateTaskTemplate()
    * - .toUpdateTrafficDistribution()
    * - .toUpdateUserHierarchy()
+   * - .toUpdateUserHierarchyGroupName()
+   * - .toUpdateUserHierarchyStructure()
    * - .toUpdateUserIdentityInfo()
    * - .toUpdateUserNotificationStatus()
    * - .toUpdateUserPhoneConfig()
+   * - .toUpdateUserProficiencies()
    * - .toUpdateUserRoutingProfile()
    * - .toUpdateUserSecurityProfiles()
    * - .toUpdateViewContent()
@@ -7054,37 +5496,39 @@ export class Connect extends PolicyStatement {
    * - .toUpdateWorkspaceVisibility()
    *
    * Applies to resource types:
-   * - instance
-   * - user
-   * - routing-profile
-   * - security-profile
-   * - hierarchy-group
+   * - agent-status
+   * - ai-agent
+   * - attached-file
+   * - authentication-profile
+   * - contact
+   * - contact-evaluation
+   * - contact-flow
+   * - contact-flow-module
+   * - customer-managed-view
+   * - customer-managed-view-version
    * - data-table
+   * - email-address
+   * - evaluation-form
+   * - hierarchy-group
+   * - hours-of-operation
+   * - instance
+   * - integration-association
+   * - notification
+   * - phone-number
+   * - prompt
+   * - qualified-customer-managed-view
    * - queue
    * - quick-connect
-   * - contact-flow
-   * - task-template
-   * - contact-flow-module
-   * - hours-of-operation
-   * - agent-status
-   * - phone-number
-   * - wildcard-phone-number
-   * - integration-association
-   * - use-case
-   * - vocabulary
-   * - traffic-distribution-group
+   * - routing-profile
    * - rule
-   * - evaluation-form
-   * - contact-evaluation
-   * - prompt
-   * - customer-managed-view
-   * - qualified-customer-managed-view
-   * - customer-managed-view-version
-   * - attached-file
-   * - email-address
-   * - ai-agent
+   * - security-profile
+   * - task-template
+   * - traffic-distribution-group
+   * - use-case
+   * - user
+   * - vocabulary
+   * - wildcard-phone-number
    * - workspace
-   * - notification
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -7398,6 +5842,7 @@ export class Connect extends PolicyStatement {
    * - .toDeleteWorkspaceMedia()
    * - .toDeleteWorkspacePage()
    * - .toDescribeAgentStatus()
+   * - .toDescribeAttachedFilesConfiguration()
    * - .toDescribeAuthenticationProfile()
    * - .toDescribeContact()
    * - .toDescribeContactEvaluation()
@@ -7408,7 +5853,6 @@ export class Connect extends PolicyStatement {
    * - .toDescribeDataTableAttribute()
    * - .toDescribeEmailAddress()
    * - .toDescribeEvaluationForm()
-   * - .toDescribeForecastingPlanningSchedulingIntegration()
    * - .toDescribeHoursOfOperation()
    * - .toDescribeHoursOfOperationOverride()
    * - .toDescribeInstance()
@@ -7465,6 +5909,7 @@ export class Connect extends PolicyStatement {
    * - .toListAnalyticsDataLakeDataSets()
    * - .toListApprovedOrigins()
    * - .toListAssociatedContacts()
+   * - .toListAttachedFilesConfigurations()
    * - .toListAuthenticationProfiles()
    * - .toListBots()
    * - .toListContactEvaluations()
@@ -7535,6 +5980,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchQuickConnects()
    * - .toSearchResourceTags()
    * - .toSearchRoutingProfiles()
+   * - .toSearchRules()
    * - .toSearchSecurityProfiles()
    * - .toSearchUserHierarchyGroups()
    * - .toSearchUsers()
@@ -7542,9 +5988,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchVocabularies()
    * - .toSearchWorkspaceAssociations()
    * - .toSearchWorkspaces()
-   * - .toSendOutboundChatMessage()
    * - .toSendOutboundEmail()
-   * - .toSendOutboundWebNotification()
    * - .toStartAttachedFileUpload()
    * - .toStartChatContact()
    * - .toStartContactConversationalAnalyticsJob()
@@ -7552,7 +5996,6 @@ export class Connect extends PolicyStatement {
    * - .toStartContactMediaProcessing()
    * - .toStartEmailContact()
    * - .toStartEvaluationFormValidation()
-   * - .toStartForecastingPlanningSchedulingIntegration()
    * - .toStartOutboundChatContact()
    * - .toStartOutboundEmailContact()
    * - .toStartScreenSharing()
@@ -7560,12 +6003,12 @@ export class Connect extends PolicyStatement {
    * - .toStartWebRTCContact()
    * - .toStopContact()
    * - .toStopContactMediaProcessing()
-   * - .toStopForecastingPlanningSchedulingIntegration()
    * - .toSubmitContactEvaluation()
    * - .toTagContact()
    * - .toTransferContact()
    * - .toUntagContact()
    * - .toUpdateAgentStatus()
+   * - .toUpdateAttachedFilesConfiguration()
    * - .toUpdateAuthenticationProfile()
    * - .toUpdateContact()
    * - .toUpdateContactAttributes()
@@ -7753,6 +6196,7 @@ export class Connect extends PolicyStatement {
    * - .toSearchQueues()
    * - .toSearchQuickConnects()
    * - .toSearchRoutingProfiles()
+   * - .toSearchRules()
    * - .toSearchSecurityProfiles()
    * - .toSearchUserHierarchyGroups()
    * - .toSearchUsers()
@@ -7791,7 +6235,6 @@ export class Connect extends PolicyStatement {
    * https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_service-with-iam.html
    *
    * Applies to actions:
-   * - .toSendOutboundChatMessage()
    * - .toStartOutboundChatContact()
    *
    * @param value The value(s) to check

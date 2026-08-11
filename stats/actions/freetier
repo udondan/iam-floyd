@@ -1,7 +1,5 @@
 freetier:GetAccountActivity;Read
 freetier:GetAccountPlanState;Read
-freetier:GetFreeTierAlertPreference;Read
 freetier:GetFreeTierUsage;Read
 freetier:ListAccountActivities;List
-freetier:PutFreeTierAlertPreference;Write
 freetier:UpgradeAccountPlan;Write

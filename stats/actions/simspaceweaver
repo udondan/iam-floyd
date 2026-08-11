@@ -12,5 +12,5 @@ simspaceweaver:StartSimulation;Write
 simspaceweaver:StopApp;Write
 simspaceweaver:StopClock;Write
 simspaceweaver:StopSimulation;Write
-simspaceweaver:TagResource;Tagging
-simspaceweaver:UntagResource;Tagging
+simspaceweaver:TagResource;Tagging, Write
+simspaceweaver:UntagResource;Tagging, Write

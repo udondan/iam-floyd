@@ -1,4 +1,6 @@
 aidevops:agentspace
+aidevops:asset
 aidevops:associations
 aidevops:private-connection
 aidevops:service
+aidevops:trigger

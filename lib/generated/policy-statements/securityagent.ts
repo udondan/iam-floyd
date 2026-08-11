@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [securityagent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html).
+ * Statement provider for service [securityagent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Securityagent extends PolicyStatement {
   public servicePrefix = 'securityagent';
 
   /**
-   * Statement provider for service [securityagent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityagent.html).
+   * Statement provider for service [securityagent](https://docs.aws.amazon.com/service-authorization/latest/reference/list_securityagent.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -34,12 +34,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKeyWithoutPlaintext
-   * - kms:ReEncryptFrom
-   * - kms:ReEncryptTo
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchCreateSecurityRequirements.html
    */
   public toBatchCreateSecurityRequirements() {
@@ -51,9 +45,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchDeleteCodeReviews.html
    */
   public toBatchDeleteCodeReviews() {
@@ -64,9 +55,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to delete multiple penetration tests in a single request
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchDeletePentests.html
    */
@@ -90,9 +78,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchDeleteThreatModels.html
    */
   public toBatchDeleteThreatModels() {
@@ -104,9 +89,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchDeleteThreats.html
    */
   public toBatchDeleteThreats() {
@@ -117,9 +99,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve multiple agent spaces in a single request
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetAgentSpaces.html
    */
@@ -143,9 +122,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetCodeReviewJobTasks.html
    */
   public toBatchGetCodeReviewJobTasks() {
@@ -156,9 +132,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve multiple code review jobs in a single request
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetCodeReviewJobs.html
    */
@@ -171,9 +144,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetCodeReviews.html
    */
   public toBatchGetCodeReviews() {
@@ -184,9 +154,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve multiple security testing findings in a single request
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetFindings.html
    */
@@ -199,9 +166,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobContentMetadata.html
    */
   public toBatchGetPentestJobContentMetadata() {
@@ -212,9 +176,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve multiple pentest job tasks in a single request
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobTasks.html
    */
@@ -227,9 +188,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobs.html
    */
   public toBatchGetPentestJobs() {
@@ -241,9 +199,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetPentests.html
    */
   public toBatchGetPentests() {
@@ -254,12 +209,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve multiple security requirements in a single request
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKeyWithoutPlaintext
-   * - kms:ReEncryptFrom
-   * - kms:ReEncryptTo
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetSecurityRequirements.html
    */
@@ -283,9 +232,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetThreatModelJobTasks.html
    */
   public toBatchGetThreatModelJobTasks() {
@@ -296,9 +242,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to retrieve details for one or more threat model jobs
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetThreatModelJobs.html
    */
@@ -311,9 +254,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetThreatModels.html
    */
   public toBatchGetThreatModels() {
@@ -325,9 +265,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_BatchGetThreats.html
    */
   public toBatchGetThreats() {
@@ -338,12 +275,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to batch update security requirements within a customer managed pack
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKeyWithoutPlaintext
-   * - kms:ReEncryptFrom
-   * - kms:ReEncryptTo
    *
    * https://docs.aws.amazon.com/securityagent/API_BatchUpdateSecurityRequirements.html
    */
@@ -360,11 +291,6 @@ export class Securityagent extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:DescribeKey
-   * - kms:GenerateDataKeyWithoutPlaintext
-   *
    * https://docs.aws.amazon.com/securityagent/API_CreateAgentSpace.html
    */
   public toCreateAgentSpace() {
@@ -380,11 +306,6 @@ export class Securityagent extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - iam:PassRole
-   * - kms:DescribeKey
-   * - sso:CreateApplication
-   *
    * https://docs.aws.amazon.com/securityagent/API_CreateApplication.html
    */
   public toCreateApplication() {
@@ -395,9 +316,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to create a new code review configuration
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_CreateCodeReview.html
    */
@@ -458,9 +376,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_CreatePentest.html
    */
   public toCreatePentest() {
@@ -502,13 +417,6 @@ export class Securityagent extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:DescribeKey
-   * - kms:GenerateDataKeyWithoutPlaintext
-   * - kms:ReEncryptFrom
-   * - kms:ReEncryptTo
-   *
    * https://docs.aws.amazon.com/securityagent/API_CreateSecurityRequirementPack.html
    */
   public toCreateSecurityRequirementPack() {
@@ -531,9 +439,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_CreateThreat.html
    */
   public toCreateThreat() {
@@ -545,9 +450,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_CreateThreatModel.html
    */
   public toCreateThreatModel() {
@@ -558,9 +460,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to delete an agent space record
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_DeleteAgentSpace.html
    */
@@ -793,12 +692,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKeyWithoutPlaintext
-   * - kms:ReEncryptFrom
-   * - kms:ReEncryptTo
-   *
    * https://docs.aws.amazon.com/securityagent/API_ImportSecurityRequirements.html
    */
   public toImportSecurityRequirements() {
@@ -854,9 +747,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_ListCodeReviewJobTasks.html
    */
   public toListCodeReviewJobTasks() {
@@ -868,9 +758,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_ListCodeReviewJobsForCodeReview.html
    */
   public toListCodeReviewJobsForCodeReview() {
@@ -881,9 +768,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to list code reviews with optional filtering by status
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_ListCodeReviews.html
    */
@@ -918,9 +802,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_ListDiscoveredEndpoints.html
    */
   public toListDiscoveredEndpoints() {
@@ -931,9 +812,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to list findings with filtering and pagination support
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_ListFindings.html
    */
@@ -979,9 +857,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_ListPentestJobTasks.html
    */
   public toListPentestJobTasks() {
@@ -993,9 +868,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_ListPentestJobsForPentest.html
    */
   public toListPentestJobsForPentest() {
@@ -1006,9 +878,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to list penetration tests with optional filtering by status
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_ListPentests.html
    */
@@ -1054,12 +923,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKeyWithoutPlaintext
-   * - kms:ReEncryptFrom
-   * - kms:ReEncryptTo
-   *
    * https://docs.aws.amazon.com/securityagent/API_ListSecurityRequirements.html
    */
   public toListSecurityRequirements() {
@@ -1093,9 +956,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_ListThreatModelJobTasks.html
    */
   public toListThreatModelJobTasks() {
@@ -1106,9 +966,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to list threat model jobs for a threat model
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_ListThreatModelJobs.html
    */
@@ -1121,9 +978,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_ListThreatModels.html
    */
   public toListThreatModels() {
@@ -1134,9 +988,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to list threats for a threat model job with filtering and pagination support
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_ListThreats.html
    */
@@ -1160,10 +1011,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
-   *
    * https://docs.aws.amazon.com/securityagent/API_StartCodeRemediation.html
    */
   public toStartCodeRemediation() {
@@ -1174,10 +1021,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to initiate the execution of a code review
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
    *
    * https://docs.aws.amazon.com/securityagent/API_StartCodeReviewJob.html
    */
@@ -1190,10 +1033,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
-   *
    * https://docs.aws.amazon.com/securityagent/API_StartPentestJob.html
    */
   public toStartPentestJob() {
@@ -1204,10 +1043,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to initiate the execution of a threat model job
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
    *
    * https://docs.aws.amazon.com/securityagent/API_StartThreatModelJob.html
    */
@@ -1220,9 +1055,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_StopCodeReviewJob.html
    */
   public toStopCodeReviewJob() {
@@ -1233,9 +1065,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to stop the execution of a running penetration test
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_StopPentestJob.html
    */
@@ -1248,9 +1077,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_StopThreatModelJob.html
    */
   public toStopThreatModelJob() {
@@ -1260,11 +1086,7 @@ export class Securityagent extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/securityagent/API_TagResource.html
    */
@@ -1286,10 +1108,7 @@ export class Securityagent extends PolicyStatement {
   /**
    * Grants permission to remove tags from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/securityagent/API_UntagResource.html
    */
@@ -1302,9 +1121,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_UpdateAgentSpace.html
    */
   public toUpdateAgentSpace() {
@@ -1315,10 +1131,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to update application configuration
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - kms:DescribeKey
    *
    * https://docs.aws.amazon.com/securityagent/API_UpdateApplication.html
    */
@@ -1331,9 +1143,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_UpdateCodeReview.html
    */
   public toUpdateCodeReview() {
@@ -1344,9 +1153,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to update an existing security finding with new details or status
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_UpdateFinding.html
    */
@@ -1369,9 +1175,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to update an existing penetration test with new configuration or settings
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_UpdatePentest.html
    */
@@ -1428,9 +1231,6 @@ export class Securityagent extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   *
    * https://docs.aws.amazon.com/securityagent/API_UpdateThreat.html
    */
   public toUpdateThreat() {
@@ -1441,9 +1241,6 @@ export class Securityagent extends PolicyStatement {
    * Grants permission to update an existing threat model with new configuration
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
    *
    * https://docs.aws.amazon.com/securityagent/API_UpdateThreatModel.html
    */
@@ -1507,7 +1304,9 @@ export class Securityagent extends PolicyStatement {
       'StopCodeReviewJob',
       'StopPentestJob',
       'StopThreatModelJob',
+      'TagResource',
       'ToggleManagedSecurityRequirement',
+      'UntagResource',
       'UpdateAgentSpace',
       'UpdateApplication',
       'UpdateCodeReview',
@@ -1585,6 +1384,23 @@ export class Securityagent extends PolicyStatement {
   };
 
   /**
+   * Adds a resource of type AgentSpace to the statement
+   *
+   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param agentId - Identifier for the agentId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onAgentSpace(agentId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }`);
+  }
+
+  /**
    * Adds a resource of type Application to the statement
    *
    * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
@@ -1599,23 +1415,6 @@ export class Securityagent extends PolicyStatement {
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:application/${ applicationId }`);
-  }
-
-  /**
-   * Adds a resource of type SecurityRequirementPack to the statement
-   *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
-   *
-   * @param securityRequirementPackId - Identifier for the securityRequirementPackId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onSecurityRequirementPack(securityRequirementPackId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:security-requirement-pack/${ securityRequirementPackId }`);
   }
 
   /**
@@ -1636,11 +1435,11 @@ export class Securityagent extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type AgentSpace to the statement
+   * Adds a resource of type PrivateConnection to the statement
    *
    * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
    *
-   * @param agentId - Identifier for the agentId.
+   * @param privateConnectionName - Identifier for the privateConnectionName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -1648,8 +1447,25 @@ export class Securityagent extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onAgentSpace(agentId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:agent-space/${ agentId }`);
+  public onPrivateConnection(privateConnectionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:private-connection/${ privateConnectionName }`);
+  }
+
+  /**
+   * Adds a resource of type SecurityRequirementPack to the statement
+   *
+   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param securityRequirementPackId - Identifier for the securityRequirementPackId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onSecurityRequirementPack(securityRequirementPackId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:security-requirement-pack/${ securityRequirementPackId }`);
   }
 
   /**
@@ -1667,23 +1483,6 @@ export class Securityagent extends PolicyStatement {
    */
   public onTargetDomain(targetDomainId: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:target-domain/${ targetDomainId }`);
-  }
-
-  /**
-   * Adds a resource of type PrivateConnection to the statement
-   *
-   * https://docs.aws.amazon.com/securityagent/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
-   *
-   * @param privateConnectionName - Identifier for the privateConnectionName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onPrivateConnection(privateConnectionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:securityagent:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:private-connection/${ privateConnectionName }`);
   }
 
   /**
@@ -1712,13 +1511,111 @@ export class Securityagent extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAddArtifact()
+   * - .toBatchCreateSecurityRequirements()
+   * - .toBatchDeleteCodeReviews()
+   * - .toBatchDeletePentests()
+   * - .toBatchDeleteSecurityRequirements()
+   * - .toBatchDeleteThreatModels()
+   * - .toBatchDeleteThreats()
+   * - .toBatchGetAgentSpaces()
+   * - .toBatchGetArtifactMetadata()
+   * - .toBatchGetCodeReviewJobTasks()
+   * - .toBatchGetCodeReviewJobs()
+   * - .toBatchGetCodeReviews()
+   * - .toBatchGetFindings()
+   * - .toBatchGetPentestJobContentMetadata()
+   * - .toBatchGetPentestJobTasks()
+   * - .toBatchGetPentestJobs()
+   * - .toBatchGetPentests()
+   * - .toBatchGetSecurityRequirements()
+   * - .toBatchGetTargetDomains()
+   * - .toBatchGetThreatModelJobTasks()
+   * - .toBatchGetThreatModelJobs()
+   * - .toBatchGetThreatModels()
+   * - .toBatchGetThreats()
+   * - .toBatchUpdateSecurityRequirements()
+   * - .toCreateCodeReview()
+   * - .toCreateDesignReview()
+   * - .toCreateMembership()
+   * - .toCreateOneTimeLoginSession()
+   * - .toCreatePentest()
+   * - .toCreateSecurityRequirement()
+   * - .toCreateThreat()
+   * - .toCreateThreatModel()
+   * - .toDeleteAgentSpace()
+   * - .toDeleteApplication()
+   * - .toDeleteArtifact()
+   * - .toDeleteDesignReview()
+   * - .toDeleteIntegration()
+   * - .toDeleteMembership()
+   * - .toDeletePrivateConnection()
+   * - .toDeleteSecurityRequirement()
+   * - .toDeleteSecurityRequirementPack()
+   * - .toDeleteTargetDomain()
+   * - .toDescribePrivateConnection()
+   * - .toGetApplication()
+   * - .toGetArtifact()
+   * - .toGetDesignReview()
+   * - .toGetDesignReviewArtifact()
+   * - .toGetDesignReviewFeedback()
+   * - .toGetIntegration()
+   * - .toGetSecurityRequirement()
+   * - .toGetSecurityRequirementPack()
+   * - .toImportSecurityRequirements()
+   * - .toListArtifacts()
+   * - .toListCodeReviewJobTasks()
+   * - .toListCodeReviewJobsForCodeReview()
+   * - .toListCodeReviews()
+   * - .toListDesignReviewComments()
+   * - .toListDesignReviews()
+   * - .toListDiscoveredEndpoints()
+   * - .toListFindings()
+   * - .toListIntegratedResources()
+   * - .toListMemberships()
+   * - .toListPentestJobTasks()
+   * - .toListPentestJobsForPentest()
+   * - .toListPentests()
+   * - .toListResourcesFromIntegration()
+   * - .toListSecurityRequirements()
+   * - .toListTagsForResource()
+   * - .toListThreatModelJobTasks()
+   * - .toListThreatModelJobs()
+   * - .toListThreatModels()
+   * - .toListThreats()
+   * - .toPutDesignReviewFeedback()
+   * - .toStartCodeRemediation()
+   * - .toStartCodeReviewJob()
+   * - .toStartPentestJob()
+   * - .toStartThreatModelJob()
+   * - .toStopCodeReviewJob()
+   * - .toStopPentestJob()
+   * - .toStopThreatModelJob()
+   * - .toTagResource()
+   * - .toToggleManagedSecurityRequirement()
+   * - .toUntagResource()
+   * - .toUpdateAgentSpace()
+   * - .toUpdateApplication()
+   * - .toUpdateCodeReview()
+   * - .toUpdateFinding()
+   * - .toUpdateIntegratedResources()
+   * - .toUpdatePentest()
+   * - .toUpdatePrivateConnectionCertificate()
+   * - .toUpdateSecurityRequirement()
+   * - .toUpdateSecurityRequirementPack()
+   * - .toUpdateTargetDomain()
+   * - .toUpdateThreat()
+   * - .toUpdateThreatModel()
+   * - .toVerifyTargetDomain()
+   *
    * Applies to resource types:
-   * - Application
-   * - SecurityRequirementPack
-   * - Integration
    * - AgentSpace
-   * - TargetDomain
+   * - Application
+   * - Integration
    * - PrivateConnection
+   * - SecurityRequirementPack
+   * - TargetDomain
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

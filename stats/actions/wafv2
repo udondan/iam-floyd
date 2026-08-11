@@ -9,14 +9,13 @@ wafv2:DeleteAPIKey;Write
 wafv2:DeleteFirewallManagerRuleGroups;Write
 wafv2:DeleteIPSet;Write
 wafv2:DeleteLoggingConfiguration;Write
-wafv2:DeletePermissionPolicy;Permissions management
+wafv2:DeletePermissionPolicy;Permissions management, Write
 wafv2:DeleteRegexPatternSet;Write
 wafv2:DeleteRuleGroup;Write
 wafv2:DeleteWebACL;Write
 wafv2:DescribeAllManagedProducts;Read
 wafv2:DescribeManagedProductsByVendor;Read
 wafv2:DescribeManagedRuleGroup;Read
-wafv2:DisassociateFirewallManager;Write
 wafv2:DisassociateWebACL;Write
 wafv2:GenerateMobileSdkReleaseUrl;Read
 wafv2:GetDecryptedAPIKey;Read
@@ -48,12 +47,11 @@ wafv2:ListRuleGroups;List
 wafv2:ListSettlementRecords;List
 wafv2:ListTagsForResource;Read
 wafv2:ListWebACLs;List
-wafv2:PutFirewallManagerRuleGroups;Write
 wafv2:PutLoggingConfiguration;Write
 wafv2:PutManagedRuleSetVersions;Write
-wafv2:PutPermissionPolicy;Permissions management
-wafv2:TagResource;Tagging
-wafv2:UntagResource;Tagging
+wafv2:PutPermissionPolicy;Permissions management, Write
+wafv2:TagResource;Tagging, Write
+wafv2:UntagResource;Tagging, Write
 wafv2:UpdateIPSet;Write
 wafv2:UpdateManagedRuleSetVersionExpiryDate;Write
 wafv2:UpdateRegexPatternSet;Write

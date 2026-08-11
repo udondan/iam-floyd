@@ -14,8 +14,8 @@ cassandra:Restore;Write
 cassandra:RestoreMultiRegionTable;Write
 cassandra:Select;Read
 cassandra:SelectMultiRegionResource;Read
-cassandra:TagMultiRegionResource;Tagging
-cassandra:TagResource;Tagging
-cassandra:UnTagMultiRegionResource;Tagging
-cassandra:UntagResource;Tagging
+cassandra:TagMultiRegionResource;Tagging, Write
+cassandra:TagResource;Tagging, Write
+cassandra:UnTagMultiRegionResource;Tagging, Write
+cassandra:UntagResource;Tagging, Write
 cassandra:UpdatePartitioner;Write

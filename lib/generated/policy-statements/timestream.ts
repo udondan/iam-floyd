@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestream.html).
+ * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_timestream.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Timestream extends PolicyStatement {
   public servicePrefix = 'timestream';
 
   /**
-   * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestream.html).
+   * Statement provider for service [timestream](https://docs.aws.amazon.com/service-authorization/latest/reference/list_timestream.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -23,9 +23,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_CancelQuery.html
    */
   public toCancelQuery() {
@@ -37,10 +34,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   * - timestream:WriteRecords
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateBatchLoadTask.html
    */
   public toCreateBatchLoadTask() {
@@ -51,13 +44,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to create a database in your account
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateDatabase.html
    */
@@ -74,10 +60,6 @@ export class Timestream extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * Dependent actions:
-   * - iam:PassRole
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateScheduledQuery.html
    */
   public toCreateScheduledQuery() {
@@ -88,13 +70,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to create a table in your account
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_CreateTable.html
    */
@@ -107,9 +82,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteDatabase.html
    */
   public toDeleteDatabase() {
@@ -120,9 +92,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to delete a scheduled query in your account
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteScheduledQuery.html
    */
@@ -135,9 +104,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DeleteTable.html
    */
   public toDeleteTable() {
@@ -148,9 +114,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to describe your account settings
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_DescribeAccountSettings.html
    */
@@ -163,9 +126,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeBatchLoadTask.html
    */
   public toDescribeBatchLoadTask() {
@@ -176,9 +136,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to describe a database in your account
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeDatabase.html
    */
@@ -202,9 +159,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeScheduledQuery.html
    */
   public toDescribeScheduledQuery() {
@@ -215,9 +169,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to describe a table in your account
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_DescribeTable.html
    */
@@ -230,9 +181,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ExecuteScheduledQuery.html
    */
   public toExecuteScheduledQuery() {
@@ -243,9 +191,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to get Status of a Timestream Table Backup
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html
    */
@@ -258,9 +203,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html
    */
   public toGetAwsRestoreStatus() {
@@ -271,9 +213,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to list batch load tasks in your account
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListBatchLoadTasks.html
    */
@@ -286,9 +225,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListDatabases.html
    */
   public toListDatabases() {
@@ -299,9 +235,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to list measures of a table in your account
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
@@ -314,9 +247,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListScheduledQueries.html
    */
   public toListScheduledQueries() {
@@ -327,9 +257,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to list tables in your account
    *
    * Access Level: List
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTables.html
    */
@@ -342,9 +269,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
@@ -355,10 +279,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to issue prepare queries
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   * - timestream:Select
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_PrepareQuery.html
    */
@@ -371,10 +291,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   * - timestream:WriteRecords
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ResumeBatchLoadTask.html
    */
   public toResumeBatchLoadTask() {
@@ -385,9 +301,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to issue 'select from table' queries
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
@@ -400,9 +313,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
   public toSelectValues() {
@@ -413,9 +323,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to start a Backup Job for a Timestream Table
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html
    */
@@ -428,9 +335,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/backups.html
    */
   public toStartAwsRestoreJob() {
@@ -440,14 +344,7 @@ export class Timestream extends PolicyStatement {
   /**
    * Grants permission to add tags to a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_TagResource.html
    */
@@ -460,13 +357,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - s3:AbortMultipartUpload
-   * - s3:GetObject
-   * - s3:PutObject
-   * - timestream:DescribeEndpoints
-   * - timestream:Select
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_Query.html
    */
   public toUnload() {
@@ -476,13 +366,7 @@ export class Timestream extends PolicyStatement {
   /**
    * Grants permission to remove a tag from a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UntagResource.html
    */
@@ -495,9 +379,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_query_UpdateAccountSettings.html
    */
   public toUpdateAccountSettings() {
@@ -508,9 +389,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to update a database in your account
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateDatabase.html
    */
@@ -523,9 +401,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateScheduledQuery.html
    */
   public toUpdateScheduledQuery() {
@@ -537,9 +412,6 @@ export class Timestream extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
-   *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_UpdateTable.html
    */
   public toUpdateTable() {
@@ -550,9 +422,6 @@ export class Timestream extends PolicyStatement {
    * Grants permission to ingest data to a table in your account
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - timestream:DescribeEndpoints
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_WriteRecords.html
    */
@@ -574,7 +443,9 @@ export class Timestream extends PolicyStatement {
       'ResumeBatchLoadTask',
       'StartAwsBackupJob',
       'StartAwsRestoreJob',
+      'TagResource',
       'Unload',
+      'UntagResource',
       'UpdateAccountSettings',
       'UpdateDatabase',
       'UpdateScheduledQuery',
@@ -626,6 +497,23 @@ export class Timestream extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type scheduled-query to the statement
+   *
+   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ScheduledQuery.html
+   *
+   * @param scheduledQueryName - Identifier for the scheduledQueryName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onScheduledQuery(scheduledQueryName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:timestream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scheduled-query/${ scheduledQueryName }`);
+  }
+
+  /**
    * Adds a resource of type table to the statement
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/API_Table.html
@@ -641,23 +529,6 @@ export class Timestream extends PolicyStatement {
    */
   public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:timestream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:database/${ databaseName }/table/${ tableName }`);
-  }
-
-  /**
-   * Adds a resource of type scheduled-query to the statement
-   *
-   * https://docs.aws.amazon.com/timestream/latest/developerguide/API_ScheduledQuery.html
-   *
-   * @param scheduledQueryName - Identifier for the scheduledQueryName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onScheduledQuery(scheduledQueryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:timestream:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:scheduled-query/${ scheduledQueryName }`);
   }
 
   /**
@@ -684,10 +555,36 @@ export class Timestream extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/timestream/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
    *
+   * Applies to actions:
+   * - .toCreateBatchLoadTask()
+   * - .toCreateDatabase()
+   * - .toCreateTable()
+   * - .toDeleteDatabase()
+   * - .toDeleteScheduledQuery()
+   * - .toDeleteTable()
+   * - .toDescribeDatabase()
+   * - .toDescribeScheduledQuery()
+   * - .toDescribeTable()
+   * - .toExecuteScheduledQuery()
+   * - .toListMeasures()
+   * - .toListTables()
+   * - .toListTagsForResource()
+   * - .toPrepareQuery()
+   * - .toSelect()
+   * - .toStartAwsBackupJob()
+   * - .toStartAwsRestoreJob()
+   * - .toTagResource()
+   * - .toUnload()
+   * - .toUntagResource()
+   * - .toUpdateDatabase()
+   * - .toUpdateScheduledQuery()
+   * - .toUpdateTable()
+   * - .toWriteRecords()
+   *
    * Applies to resource types:
    * - database
-   * - table
    * - scheduled-query
+   * - table
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

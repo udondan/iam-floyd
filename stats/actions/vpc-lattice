@@ -1,5 +1,3 @@
-vpc-lattice:AssociateViaAWSService;Permissions management
-vpc-lattice:AssociateViaAWSServiceEventsAndStates;Permissions management
 vpc-lattice:CreateAccessLogSubscription;Write
 vpc-lattice:CreateListener;Write
 vpc-lattice:CreateResourceConfiguration;Write
@@ -10,10 +8,9 @@ vpc-lattice:CreateServiceNetwork;Write
 vpc-lattice:CreateServiceNetworkResourceAssociation;Write
 vpc-lattice:CreateServiceNetworkServiceAssociation;Write
 vpc-lattice:CreateServiceNetworkVpcAssociation;Write
-vpc-lattice:CreateServiceNetworkVpcEndpointAssociation;Permissions management
 vpc-lattice:CreateTargetGroup;Write
 vpc-lattice:DeleteAccessLogSubscription;Write
-vpc-lattice:DeleteAuthPolicy;Permissions management
+vpc-lattice:DeleteAuthPolicy;Permissions management, Write
 vpc-lattice:DeleteDomainVerification;Write
 vpc-lattice:DeleteListener;Write
 vpc-lattice:DeleteResourceConfiguration;Write
@@ -58,12 +55,12 @@ vpc-lattice:ListServices;List
 vpc-lattice:ListTagsForResource;Read
 vpc-lattice:ListTargetGroups;List
 vpc-lattice:ListTargets;List
-vpc-lattice:PutAuthPolicy;Permissions management
+vpc-lattice:PutAuthPolicy;Permissions management, Write
 vpc-lattice:PutResourcePolicy;Write
 vpc-lattice:RegisterTargets;Write
 vpc-lattice:StartDomainVerification;Write
-vpc-lattice:TagResource;Tagging
-vpc-lattice:UntagResource;Tagging
+vpc-lattice:TagResource;Tagging, Write
+vpc-lattice:UntagResource;Tagging, Write
 vpc-lattice:UpdateAccessLogSubscription;Write
 vpc-lattice:UpdateListener;Write
 vpc-lattice:UpdateResourceConfiguration;Write

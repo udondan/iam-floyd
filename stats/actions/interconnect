@@ -8,6 +8,6 @@ interconnect:ListAttachPoints;Read
 interconnect:ListConnections;List
 interconnect:ListEnvironments;List
 interconnect:ListTagsForResource;Read
-interconnect:TagResource;Tagging
-interconnect:UntagResource;Tagging
+interconnect:TagResource;Tagging, Write
+interconnect:UntagResource;Tagging, Write
 interconnect:UpdateConnection;Write

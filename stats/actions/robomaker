@@ -41,7 +41,6 @@ robomaker:ListRobots;List
 robomaker:ListSimulationApplications;List
 robomaker:ListSimulationJobBatches;List
 robomaker:ListSimulationJobs;List
-robomaker:ListSupportedAvailabilityZones;List
 robomaker:ListTagsForResource;List
 robomaker:ListWorldExportJobs;List
 robomaker:ListWorldGenerationJobs;List
@@ -51,9 +50,8 @@ robomaker:RegisterRobot;Write
 robomaker:RestartSimulationJob;Write
 robomaker:StartSimulationJobBatch;Write
 robomaker:SyncDeploymentJob;Write
-robomaker:TagResource;Tagging
-robomaker:UntagResource;Tagging
+robomaker:TagResource;Tagging, Write
+robomaker:UntagResource;Tagging, Write
 robomaker:UpdateRobotApplication;Write
-robomaker:UpdateRobotDeployment;Write
 robomaker:UpdateSimulationApplication;Write
 robomaker:UpdateWorldTemplate;Write

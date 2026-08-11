@@ -7,7 +7,6 @@ chime:AssociatePhoneNumberWithUser;Write
 chime:AssociatePhoneNumbersWithVoiceConnector;Write
 chime:AssociatePhoneNumbersWithVoiceConnectorGroup;Write
 chime:AssociateSigninDelegateGroupsWithAccount;Write
-chime:AssociateVoiceConnectorConnect;Write
 chime:AuthorizeDirectory;Write
 chime:BatchCreateAttendee;Write
 chime:BatchCreateChannelMembership;Write
@@ -35,8 +34,6 @@ chime:CreateChannelBan;Write
 chime:CreateChannelFlow;Write
 chime:CreateChannelMembership;Write
 chime:CreateChannelModerator;Write
-chime:CreateConnectAnalyticsConnector;Write
-chime:CreateConnectCallTransferConnector;Write
 chime:CreateMediaCapturePipeline;Write
 chime:CreateMediaConcatenationPipeline;Write
 chime:CreateMediaInsightsPipeline;Write
@@ -120,7 +117,6 @@ chime:DisassociatePhoneNumberFromUser;Write
 chime:DisassociatePhoneNumbersFromVoiceConnector;Write
 chime:DisassociatePhoneNumbersFromVoiceConnectorGroup;Write
 chime:DisassociateSigninDelegateGroupsFromAccount;Write
-chime:DisassociateVoiceConnectorConnect;Write
 chime:DisconnectDirectory;Write
 chime:GetAccount;Read
 chime:GetAccountResource;Read
@@ -270,13 +266,13 @@ chime:StopSpeakerSearchTask;Write
 chime:StopVoiceToneAnalysisTask;Write
 chime:SubmitSupportRequest;Write
 chime:SuspendUsers;Write
-chime:TagAttendee;Tagging
-chime:TagMeeting;Tagging
-chime:TagResource;Tagging
+chime:TagAttendee;Tagging, Write
+chime:TagMeeting;Tagging, Write
+chime:TagResource;Tagging, Write
 chime:UnauthorizeDirectory;Write
-chime:UntagAttendee;Tagging
-chime:UntagMeeting;Tagging
-chime:UntagResource;Tagging
+chime:UntagAttendee;Tagging, Write
+chime:UntagMeeting;Tagging, Write
+chime:UntagResource;Tagging, Write
 chime:UpdateAccount;Write
 chime:UpdateAccountOpenIdConfig;Write
 chime:UpdateAccountResource;Write

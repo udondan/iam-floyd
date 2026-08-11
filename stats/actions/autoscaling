@@ -8,14 +8,14 @@ autoscaling:CancelInstanceRefresh;Write
 autoscaling:CompleteLifecycleAction;Write
 autoscaling:CreateAutoScalingGroup;Write
 autoscaling:CreateLaunchConfiguration;Write
-autoscaling:CreateOrUpdateTags;Tagging
+autoscaling:CreateOrUpdateTags;Tagging, Write
 autoscaling:DeleteAutoScalingGroup;Write
 autoscaling:DeleteLaunchConfiguration;Write
 autoscaling:DeleteLifecycleHook;Write
 autoscaling:DeleteNotificationConfiguration;Write
 autoscaling:DeletePolicy;Write
 autoscaling:DeleteScheduledAction;Write
-autoscaling:DeleteTags;Tagging
+autoscaling:DeleteTags;Tagging, Write
 autoscaling:DeleteWarmPool;Write
 autoscaling:DescribeAccountLimits;List
 autoscaling:DescribeAccountSettings;List

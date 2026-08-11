@@ -22,10 +22,9 @@ worklink:ListWebsiteAuthorizationProviders;List
 worklink:ListWebsiteCertificateAuthorities;List
 worklink:RestoreDomainAccess;Write
 worklink:RevokeDomainAccess;Write
-worklink:SearchEntity;List
 worklink:SignOutUser;Write
-worklink:TagResource;Tagging
-worklink:UntagResource;Tagging
+worklink:TagResource;Tagging, Write
+worklink:UntagResource;Tagging, Write
 worklink:UpdateAuditStreamConfiguration;Write
 worklink:UpdateCompanyNetworkConfiguration;Write
 worklink:UpdateDevicePolicyConfiguration;Write

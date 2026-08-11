@@ -1,6 +1,3 @@
-emr-serverless:AccessInteractiveEndpoints;Write
-emr-serverless:AccessLivyEndpoints;Write
-emr-serverless:AccessSystemProfileLogs;Write
 emr-serverless:CancelJobRun;Write
 emr-serverless:CreateApplication;Write
 emr-serverless:DeleteApplication;Write
@@ -19,7 +16,7 @@ emr-serverless:StartApplication;Write
 emr-serverless:StartJobRun;Write
 emr-serverless:StartSession;Write
 emr-serverless:StopApplication;Write
-emr-serverless:TagResource;Tagging
+emr-serverless:TagResource;Tagging, Write
 emr-serverless:TerminateSession;Write
-emr-serverless:UntagResource;Tagging
+emr-serverless:UntagResource;Tagging, Write
 emr-serverless:UpdateApplication;Write

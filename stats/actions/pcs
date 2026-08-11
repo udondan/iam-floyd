@@ -1,4 +1,3 @@
-pcs:AllowVendedLogDeliveryForResource;Write
 pcs:CreateCluster;Write
 pcs:CreateComputeNodeGroup;Write
 pcs:CreateQueue;Write
@@ -13,8 +12,8 @@ pcs:ListComputeNodeGroups;List
 pcs:ListQueues;List
 pcs:ListTagsForResource;Read
 pcs:RegisterComputeNodeGroupInstance;Write
-pcs:TagResource;Tagging
-pcs:UntagResource;Tagging
+pcs:TagResource;Tagging, Write
+pcs:UntagResource;Tagging, Write
 pcs:UpdateCluster;Write
 pcs:UpdateComputeNodeGroup;Write
 pcs:UpdateQueue;Write

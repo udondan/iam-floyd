@@ -1,3 +1,4 @@
+pricingplanmanager:ApprovePaidSubscription;Write
 pricingplanmanager:AssociateResourcesToSubscription;Write
 pricingplanmanager:CancelSubscription;Write
 pricingplanmanager:CancelSubscriptionChange;Write

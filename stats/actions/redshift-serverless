@@ -17,7 +17,6 @@ redshift-serverless:DeleteSnapshot;Write
 redshift-serverless:DeleteSnapshotCopyConfiguration;Write
 redshift-serverless:DeleteUsageLimit;Write
 redshift-serverless:DeleteWorkgroup;Write
-redshift-serverless:DescribeOneTimeCredit;Read
 redshift-serverless:GetCredentials;Write
 redshift-serverless:GetCustomDomainAssociation;Read
 redshift-serverless:GetEndpointAccess;Read
@@ -34,7 +33,6 @@ redshift-serverless:GetTableRestoreStatus;Read
 redshift-serverless:GetTrack;Read
 redshift-serverless:GetUsageLimit;Read
 redshift-serverless:GetWorkgroup;Read
-redshift-serverless:ListAutonomicsDenylist;Read
 redshift-serverless:ListCustomDomainAssociations;List
 redshift-serverless:ListEndpointAccess;List
 redshift-serverless:ListManagedWorkgroups;List
@@ -55,9 +53,8 @@ redshift-serverless:RestoreFromRecoveryPoint;Write
 redshift-serverless:RestoreFromSnapshot;Write
 redshift-serverless:RestoreTableFromRecoveryPoint;Write
 redshift-serverless:RestoreTableFromSnapshot;Write
-redshift-serverless:TagResource;Tagging
-redshift-serverless:UntagResource;Tagging
-redshift-serverless:UpdateAutonomicsDenylist;Write
+redshift-serverless:TagResource;Tagging, Write
+redshift-serverless:UntagResource;Tagging, Write
 redshift-serverless:UpdateCustomDomainAssociation;Write
 redshift-serverless:UpdateEndpointAccess;Write
 redshift-serverless:UpdateNamespace;Write

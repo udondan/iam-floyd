@@ -11,7 +11,6 @@ cloudformation:CreateStack;Write
 cloudformation:CreateStackInstances;Write
 cloudformation:CreateStackRefactor;Write
 cloudformation:CreateStackSet;Write
-cloudformation:CreateUploadBucket;Write
 cloudformation:DeactivateOrganizationsAccess;Write
 cloudformation:DeactivateType;Write
 cloudformation:DeleteChangeSet;Write
@@ -84,15 +83,15 @@ cloudformation:RecordHandlerProgress;Write
 cloudformation:RegisterPublisher;Write
 cloudformation:RegisterType;Write
 cloudformation:RollbackStack;Write
-cloudformation:SetStackPolicy;Permissions management
+cloudformation:SetStackPolicy;Permissions management, Write
 cloudformation:SetTypeConfiguration;Write
 cloudformation:SetTypeDefaultVersion;Write
 cloudformation:SignalResource;Write
 cloudformation:StartResourceScan;Write
 cloudformation:StopStackSetOperation;Write
-cloudformation:TagResource;Tagging
+cloudformation:TagResource;Tagging, Write
 cloudformation:TestType;Write
-cloudformation:UntagResource;Tagging
+cloudformation:UntagResource;Tagging, Write
 cloudformation:UpdateGeneratedTemplate;Write
 cloudformation:UpdateResource;Write
 cloudformation:UpdateStack;Write

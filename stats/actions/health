@@ -10,5 +10,5 @@ health:DescribeEventTypes;Read
 health:DescribeEvents;Read
 health:DescribeEventsForOrganization;Read
 health:DescribeHealthServiceStatusForOrganization;Read
-health:DisableHealthServiceAccessForOrganization;Permissions management
-health:EnableHealthServiceAccessForOrganization;Permissions management
+health:DisableHealthServiceAccessForOrganization;Permissions management, Write
+health:EnableHealthServiceAccessForOrganization;Permissions management, Write

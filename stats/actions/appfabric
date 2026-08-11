@@ -20,7 +20,7 @@ appfabric:ListTagsForResource;Read
 appfabric:StartIngestion;Write
 appfabric:StartUserAccessTasks;Write
 appfabric:StopIngestion;Write
-appfabric:TagResource;Tagging
-appfabric:UntagResource;Tagging
+appfabric:TagResource;Tagging, Write
+appfabric:UntagResource;Tagging, Write
 appfabric:UpdateAppAuthorization;Write
 appfabric:UpdateIngestionDestination;Write

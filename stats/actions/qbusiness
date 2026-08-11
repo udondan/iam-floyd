@@ -1,4 +1,3 @@
-qbusiness:AllowVendedLogDeliveryForResource;Permissions management
 qbusiness:AssociatePermission;Write
 qbusiness:BatchDeleteDocument;Write
 qbusiness:BatchPutDocument;Write
@@ -10,7 +9,6 @@ qbusiness:CreateAnonymousWebExperienceUrl;Write
 qbusiness:CreateApplication;Write
 qbusiness:CreateChatResponseConfiguration;Write
 qbusiness:CreateDataAccessor;Write
-qbusiness:CreateDataAccessorWithTti;Write
 qbusiness:CreateDataSource;Write
 qbusiness:CreateIndex;Write
 qbusiness:CreateIntegration;Write
@@ -33,7 +31,6 @@ qbusiness:DeletePlugin;Write
 qbusiness:DeleteRetriever;Write
 qbusiness:DeleteUser;Write
 qbusiness:DeleteWebExperience;Write
-qbusiness:DisableAclOnDataSource;Write
 qbusiness:DisassociatePermission;Write
 qbusiness:GetApplication;Read
 qbusiness:GetChatControlsConfiguration;List
@@ -72,13 +69,12 @@ qbusiness:ListTagsForResource;Read
 qbusiness:ListWebExperiences;List
 qbusiness:PutFeedback;Write
 qbusiness:PutGroup;Write
-qbusiness:PutResourcePolicy;Write
 qbusiness:SearchRelevantContent;Read
 qbusiness:StartDataSourceSyncJob;Write
 qbusiness:StartDeployment;Write
 qbusiness:StopDataSourceSyncJob;Write
-qbusiness:TagResource;Tagging
-qbusiness:UntagResource;Tagging
+qbusiness:TagResource;Tagging, Write
+qbusiness:UntagResource;Tagging, Write
 qbusiness:UpdateApplication;Write
 qbusiness:UpdateChatControlsConfiguration;Write
 qbusiness:UpdateChatResponseConfiguration;Write

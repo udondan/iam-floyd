@@ -2,7 +2,7 @@ route53:ActivateKeySigningKey;Write
 route53:AssociateVPCWithHostedZone;Write
 route53:ChangeCidrCollection;Write
 route53:ChangeResourceRecordSets;Write
-route53:ChangeTagsForResource;Tagging
+route53:ChangeTagsForResource;Tagging, Write
 route53:CreateCidrCollection;Write
 route53:CreateHealthCheck;Write
 route53:CreateHostedZone;Write

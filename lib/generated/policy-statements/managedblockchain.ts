@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [managedblockchain](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedblockchain.html).
+ * Statement provider for service [managedblockchain](https://docs.aws.amazon.com/service-authorization/latest/reference/list_managedblockchain.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Managedblockchain extends PolicyStatement {
   public servicePrefix = 'managedblockchain';
 
   /**
-   * Statement provider for service [managedblockchain](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedblockchain.html).
+   * Statement provider for service [managedblockchain](https://docs.aws.amazon.com/service-authorization/latest/reference/list_managedblockchain.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -24,8 +24,8 @@ export class Managedblockchain extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateAccessor.html
    */
@@ -37,13 +37,6 @@ export class Managedblockchain extends PolicyStatement {
    * Grants permission to create a member of an Amazon Managed Blockchain network
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateMember.html
    */
@@ -57,11 +50,8 @@ export class Managedblockchain extends PolicyStatement {
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNetwork.html
    */
@@ -74,13 +64,6 @@ export class Managedblockchain extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNode.html
    */
   public toCreateNode() {
@@ -91,10 +74,6 @@ export class Managedblockchain extends PolicyStatement {
    * Grants permission to create a proposal that other blockchain network members can vote on to add or remove a member in an Amazon Managed Blockchain network
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateProposal.html
    */
@@ -133,17 +112,6 @@ export class Managedblockchain extends PolicyStatement {
    */
   public toDeleteNode() {
     return this.to('DeleteNode');
-  }
-
-  /**
-   * Grants permission to send HTTP GET requests to an Ethereum node
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
-   */
-  public toGET() {
-    return this.to('GET');
   }
 
   /**
@@ -199,17 +167,6 @@ export class Managedblockchain extends PolicyStatement {
    */
   public toGetProposal() {
     return this.to('GetProposal');
-  }
-
-  /**
-   * Grants permission to create WebSocket connections to an Ethereum node
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
-   */
-  public toInvoke() {
-    return this.to('Invoke');
   }
 
   /**
@@ -345,17 +302,6 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send HTTP POST requests to an Ethereum node
-   *
-   * Access Level: Permissions management
-   *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/security_iam_id-based-policy-examples.html
-   */
-  public toPOST() {
-    return this.to('POST');
-  }
-
-  /**
    * Grants permission to reject the invitation to join the blockchain network
    *
    * Access Level: Write
@@ -369,11 +315,7 @@ export class Managedblockchain extends PolicyStatement {
   /**
    * Grants permission to add tags to an Amazon Managed Blockchain resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_TagResource.html
    */
@@ -384,10 +326,7 @@ export class Managedblockchain extends PolicyStatement {
   /**
    * Grants permission to remove tags from an Amazon Managed Blockchain resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UntagResource.html
    */
@@ -400,9 +339,6 @@ export class Managedblockchain extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateMember.html
    */
   public toUpdateMember() {
@@ -413,9 +349,6 @@ export class Managedblockchain extends PolicyStatement {
    * Grants permission to update a node from a member of an Amazon Managed Blockchain network
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateNode.html
    */
@@ -445,14 +378,11 @@ export class Managedblockchain extends PolicyStatement {
       'DeleteMember',
       'DeleteNode',
       'RejectInvitation',
+      'TagResource',
+      'UntagResource',
       'UpdateMember',
       'UpdateNode',
       'VoteOnProposal'
-    ],
-    'Permissions management': [
-      'GET',
-      'Invoke',
-      'POST'
     ],
     Read: [
       'GetAccessor',
@@ -482,25 +412,37 @@ export class Managedblockchain extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type network to the statement
+   * Adds a resource of type accessor to the statement
    *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Network.html
-   *
-   * @param networkId - Identifier for the networkId.
+   * @param accessorId - Identifier for the accessorId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public onNetwork(networkId: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }::networks/${ networkId }`);
+  public onAccessor(accessorId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accessors/${ accessorId }`);
+  }
+
+  /**
+   * Adds a resource of type invitation to the statement
+   *
+   * @param invitationId - Identifier for the invitationId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:invitations/${ invitationId }`);
   }
 
   /**
    * Adds a resource of type member to the statement
-   *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Member.html
    *
    * @param memberId - Identifier for the memberId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -515,9 +457,21 @@ export class Managedblockchain extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type node to the statement
+   * Adds a resource of type network to the statement
    *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Node.html
+   * @param networkId - Identifier for the networkId.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onNetwork(networkId: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }::networks/${ networkId }`);
+  }
+
+  /**
+   * Adds a resource of type node to the statement
    *
    * @param nodeId - Identifier for the nodeId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
@@ -534,8 +488,6 @@ export class Managedblockchain extends PolicyStatement {
   /**
    * Adds a resource of type proposal to the statement
    *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Proposal.html
-   *
    * @param proposalId - Identifier for the proposalId.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -545,40 +497,6 @@ export class Managedblockchain extends PolicyStatement {
    */
   public onProposal(proposalId: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }::proposals/${ proposalId }`);
-  }
-
-  /**
-   * Adds a resource of type invitation to the statement
-   *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Invitation.html
-   *
-   * @param invitationId - Identifier for the invitationId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:invitations/${ invitationId }`);
-  }
-
-  /**
-   * Adds a resource of type accessor to the statement
-   *
-   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Accessor.html
-   *
-   * @param accessorId - Identifier for the accessorId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onAccessor(accessorId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:managedblockchain:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:accessors/${ accessorId }`);
   }
 
   /**
@@ -607,13 +525,37 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toCreateMember()
+   * - .toCreateNode()
+   * - .toCreateProposal()
+   * - .toDeleteAccessor()
+   * - .toDeleteMember()
+   * - .toDeleteNode()
+   * - .toGetAccessor()
+   * - .toGetMember()
+   * - .toGetNetwork()
+   * - .toGetNode()
+   * - .toGetProposal()
+   * - .toListMembers()
+   * - .toListNodes()
+   * - .toListProposalVotes()
+   * - .toListProposals()
+   * - .toListTagsForResource()
+   * - .toRejectInvitation()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateMember()
+   * - .toUpdateNode()
+   * - .toVoteOnProposal()
+   *
    * Applies to resource types:
-   * - network
+   * - accessor
+   * - invitation
    * - member
+   * - network
    * - node
    * - proposal
-   * - invitation
-   * - accessor
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

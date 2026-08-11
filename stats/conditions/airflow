@@ -1,3 +1,8 @@
+airflow:DagAccessEntity
 airflow:RequestTag/${TagKey}
+airflow:ResourceAction
+airflow:ResourceId
 airflow:ResourceTag/${TagKey}
+airflow:ResourceType
 airflow:TagKeys
+airflow:TeamName

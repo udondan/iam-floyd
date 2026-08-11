@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [geo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html).
+ * Statement provider for service [geo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_location.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Geo extends PolicyStatement {
   public servicePrefix = 'geo';
 
   /**
-   * Statement provider for service [geo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlocation.html).
+   * Statement provider for service [geo](https://docs.aws.amazon.com/service-authorization/latest/reference/list_location.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -34,9 +34,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifDeviceIds()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchDeleteDevicePositionHistory.html
    */
   public toBatchDeleteDevicePositionHistory() {
@@ -47,9 +44,6 @@ export class Geo extends PolicyStatement {
    * Grants permission to delete a batch of geofences from a geofence collection
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifGeofenceIds()
    *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_BatchDeleteGeofence.html
    */
@@ -73,9 +67,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifDeviceIds()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchGetDevicePosition.html
    */
   public toBatchGetDevicePosition() {
@@ -87,9 +78,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifGeofenceIds()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_BatchPutGeofence.html
    */
   public toBatchPutGeofence() {
@@ -100,9 +88,6 @@ export class Geo extends PolicyStatement {
    * Grants permission to upload a position update for one or more devices to a tracker resource
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifDeviceIds()
    *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_BatchUpdateDevicePosition.html
    */
@@ -148,10 +133,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_CreateGeofenceCollection.html
    */
   public toCreateGeofenceCollection() {
@@ -162,10 +143,6 @@ export class Geo extends PolicyStatement {
    * Grants permission to create an API key resource
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_CreateKey.html
    */
@@ -178,10 +155,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/location/previous/APIReference/API_CreateMap.html
    */
   public toCreateMap() {
@@ -192,10 +165,6 @@ export class Geo extends PolicyStatement {
    * Grants permission to create a place index resource
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/location/previous/APIReference/API_CreatePlaceIndex.html
    */
@@ -208,10 +177,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/location/previous/APIReference/API_CreateRouteCalculator.html
    */
   public toCreateRouteCalculator() {
@@ -222,10 +187,6 @@ export class Geo extends PolicyStatement {
    * Grants permission to create a tracker resource
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_CreateTracker.html
    */
@@ -392,9 +353,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifDeviceIds()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_GetDevicePosition.html
    */
   public toGetDevicePosition() {
@@ -406,9 +364,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifDeviceIds()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_GetDevicePositionHistory.html
    */
   public toGetDevicePositionHistory() {
@@ -419,9 +374,6 @@ export class Geo extends PolicyStatement {
    * Grants permission to retrieve the geofence details from a geofence-collection
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifGeofenceIds()
    *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_GetGeofence.html
    */
@@ -621,9 +573,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifGeofenceIds()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_PutGeofence.html
    */
   public toPutGeofence() {
@@ -668,10 +617,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_geojobs_StartJob.html
    */
   public toStartJob() {
@@ -681,11 +626,7 @@ export class Geo extends PolicyStatement {
   /**
    * Grants permission to adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_TagResource.html
    */
@@ -696,10 +637,7 @@ export class Geo extends PolicyStatement {
   /**
    * Grants permission to remove the given tags (metadata) from the resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_geotags_UntagResource.html
    */
@@ -778,9 +716,6 @@ export class Geo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifDeviceIds()
-   *
    * https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointTracking_VerifyDevicePosition.html
    */
   public toVerifyDevicePosition() {
@@ -811,6 +746,8 @@ export class Geo extends PolicyStatement {
       'DisassociateTrackerConsumer',
       'PutGeofence',
       'StartJob',
+      'TagResource',
+      'UntagResource',
       'UpdateGeofenceCollection',
       'UpdateKey',
       'UpdateMap',
@@ -898,6 +835,23 @@ export class Geo extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type job to the statement
+   *
+   * https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:geo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
+  }
+
+  /**
    * Adds a resource of type map to the statement
    *
    * https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html
@@ -967,23 +921,6 @@ export class Geo extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type job to the statement
-   *
-   * https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html
-   *
-   * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:geo:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobId }`);
-  }
-
-  /**
    * Filters access by a tag's key and value in a request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1011,14 +948,80 @@ export class Geo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAssociateTrackerConsumer()
+   * - .toBatchDeleteDevicePositionHistory()
+   * - .toBatchDeleteGeofence()
+   * - .toBatchEvaluateGeofences()
+   * - .toBatchGetDevicePosition()
+   * - .toBatchPutGeofence()
+   * - .toBatchUpdateDevicePosition()
+   * - .toCalculateRoute()
+   * - .toCalculateRouteMatrix()
+   * - .toCancelJob()
+   * - .toCreateGeofenceCollection()
+   * - .toCreateKey()
+   * - .toCreateMap()
+   * - .toCreatePlaceIndex()
+   * - .toCreateRouteCalculator()
+   * - .toCreateTracker()
+   * - .toDeleteGeofenceCollection()
+   * - .toDeleteKey()
+   * - .toDeleteMap()
+   * - .toDeletePlaceIndex()
+   * - .toDeleteRouteCalculator()
+   * - .toDeleteTracker()
+   * - .toDescribeGeofenceCollection()
+   * - .toDescribeKey()
+   * - .toDescribeMap()
+   * - .toDescribePlaceIndex()
+   * - .toDescribeRouteCalculator()
+   * - .toDescribeTracker()
+   * - .toDisassociateTrackerConsumer()
+   * - .toForecastGeofenceEvents()
+   * - .toGetDevicePosition()
+   * - .toGetDevicePositionHistory()
+   * - .toGetGeofence()
+   * - .toGetJob()
+   * - .toGetMapGlyphs()
+   * - .toGetMapSprites()
+   * - .toGetMapStyleDescriptor()
+   * - .toGetMapTile()
+   * - .toGetPlace()
+   * - .toListDevicePositions()
+   * - .toListGeofenceCollections()
+   * - .toListGeofences()
+   * - .toListJobs()
+   * - .toListKeys()
+   * - .toListMaps()
+   * - .toListPlaceIndexes()
+   * - .toListRouteCalculators()
+   * - .toListTagsForResource()
+   * - .toListTrackerConsumers()
+   * - .toListTrackers()
+   * - .toPutGeofence()
+   * - .toSearchPlaceIndexForPosition()
+   * - .toSearchPlaceIndexForSuggestions()
+   * - .toSearchPlaceIndexForText()
+   * - .toStartJob()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateGeofenceCollection()
+   * - .toUpdateKey()
+   * - .toUpdateMap()
+   * - .toUpdatePlaceIndex()
+   * - .toUpdateRouteCalculator()
+   * - .toUpdateTracker()
+   * - .toVerifyDevicePosition()
+   *
    * Applies to resource types:
    * - api-key
    * - geofence-collection
+   * - job
    * - map
    * - place-index
    * - route-calculator
    * - tracker
-   * - job
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1057,11 +1060,23 @@ export class Geo extends PolicyStatement {
    * https://docs.aws.amazon.com/location/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * Applies to actions:
+   * - .toAssociateTrackerConsumer()
    * - .toBatchDeleteDevicePositionHistory()
    * - .toBatchGetDevicePosition()
    * - .toBatchUpdateDevicePosition()
+   * - .toCreateTracker()
+   * - .toDeleteTracker()
+   * - .toDescribeTracker()
+   * - .toDisassociateTrackerConsumer()
    * - .toGetDevicePosition()
    * - .toGetDevicePositionHistory()
+   * - .toListDevicePositions()
+   * - .toListTagsForResource()
+   * - .toListTrackerConsumers()
+   * - .toListTrackers()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateTracker()
    * - .toVerifyDevicePosition()
    *
    * Applies to resource types:
@@ -1081,9 +1096,20 @@ export class Geo extends PolicyStatement {
    *
    * Applies to actions:
    * - .toBatchDeleteGeofence()
+   * - .toBatchEvaluateGeofences()
    * - .toBatchPutGeofence()
+   * - .toCreateGeofenceCollection()
+   * - .toDeleteGeofenceCollection()
+   * - .toDescribeGeofenceCollection()
+   * - .toForecastGeofenceEvents()
    * - .toGetGeofence()
+   * - .toListGeofenceCollections()
+   * - .toListGeofences()
+   * - .toListTagsForResource()
    * - .toPutGeofence()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateGeofenceCollection()
    *
    * Applies to resource types:
    * - geofence-collection

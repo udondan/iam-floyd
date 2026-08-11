@@ -1,9 +1,7 @@
 bedrock:AgenticRetrieveStream;Read
-bedrock:AllowVendedLogDeliveryForResource;Permissions management
 bedrock:ApplyGuardrail;Read
 bedrock:AssociateAgentCollaborator;Write
 bedrock:AssociateAgentKnowledgeBase;Write
-bedrock:AssociateThirdPartyKnowledgeBase;Write
 bedrock:BatchDeleteAdvancedPromptOptimizationJob;Write
 bedrock:BatchDeleteEvaluationJob;Write
 bedrock:CallWithBearerToken;Read
@@ -75,7 +73,6 @@ bedrock:DeleteModelInvocationLoggingConfiguration;Write
 bedrock:DeletePrompt;Write
 bedrock:DeletePromptRouter;Write
 bedrock:DeleteProvisionedModelThroughput;Write
-bedrock:DeleteResourcePolicy;Write
 bedrock:DeleteSession;Write
 bedrock:DeregisterMarketplaceModelEndpoint;Write
 bedrock:DetectGeneratedContent;Read
@@ -103,7 +100,6 @@ bedrock:GetAutomatedReasoningPolicyTestCase;Read
 bedrock:GetAutomatedReasoningPolicyTestResult;Read
 bedrock:GetBlueprint;Read
 bedrock:GetBlueprintOptimizationStatus;Read
-bedrock:GetBlueprintRecommendation;Read
 bedrock:GetCustomModel;Read
 bedrock:GetCustomModelDeployment;Read
 bedrock:GetDataAutomationLibrary;Read
@@ -138,15 +134,11 @@ bedrock:GetModelInvocationLoggingConfiguration;Read
 bedrock:GetPrompt;Read
 bedrock:GetPromptRouter;Read
 bedrock:GetProvisionedModelThroughput;Read
-bedrock:GetResourcePolicy;Read
 bedrock:GetSession;Read
 bedrock:GetUseCaseForModelAccess;Read
 bedrock:IngestKnowledgeBaseDocuments;Write
 bedrock:InvokeAgent;Read
-bedrock:InvokeAutomatedReasoningPolicy;Read
 bedrock:InvokeBlueprintOptimizationAsync;Write
-bedrock:InvokeBlueprintRecommendationAsync;Write
-bedrock:InvokeBuilder;Write
 bedrock:InvokeDataAutomation;Write
 bedrock:InvokeDataAutomationAsync;Write
 bedrock:InvokeDataAutomationLibraryIngestionJob;Write
@@ -212,10 +204,8 @@ bedrock:PutEnforcedGuardrailConfiguration;Write
 bedrock:PutFoundationModelEntitlement;Write
 bedrock:PutInvocationStep;Write
 bedrock:PutModelInvocationLoggingConfiguration;Write
-bedrock:PutResourcePolicy;Write
 bedrock:PutUseCaseForModelAccess;Write
 bedrock:RegisterMarketplaceModelEndpoint;Write
-bedrock:RenderPrompt;Read
 bedrock:Rerank;Write
 bedrock:Retrieve;Read
 bedrock:RetrieveAndGenerate;Write
@@ -229,8 +219,8 @@ bedrock:StopFlowExecution;Write
 bedrock:StopIngestionJob;Write
 bedrock:StopModelCustomizationJob;Write
 bedrock:StopModelInvocationJob;Write
-bedrock:TagResource;Tagging
-bedrock:UntagResource;Tagging
+bedrock:TagResource;Tagging, Write
+bedrock:UntagResource;Tagging, Write
 bedrock:UpdateAgent;Write
 bedrock:UpdateAgentActionGroup;Write
 bedrock:UpdateAgentAlias;Write

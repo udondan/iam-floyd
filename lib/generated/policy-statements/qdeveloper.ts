@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [qdeveloper](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqdeveloper.html).
+ * Statement provider for service [qdeveloper](https://docs.aws.amazon.com/service-authorization/latest/reference/list_qdeveloper.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Qdeveloper extends PolicyStatement {
   public servicePrefix = 'qdeveloper';
 
   /**
-   * Statement provider for service [qdeveloper](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonqdeveloper.html).
+   * Statement provider for service [qdeveloper](https://docs.aws.amazon.com/service-authorization/latest/reference/list_qdeveloper.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -41,44 +41,18 @@ export class Qdeveloper extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all tags associated with an Amazon Q Developer resource
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
-   */
-  public toListTagsForResource() {
-    return this.to('ListTagsForResource');
-  }
-
-  /**
    * Grants permission to start an agent session with Amazon Q Developer
    *
    * Access Level: Write
    *
    * Possible conditions:
-   * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
    */
   public toStartAgentSession() {
     return this.to('StartAgentSession');
-  }
-
-  /**
-   * Grants permission to associate tags with an Amazon Q Developer resource
-   *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
-   */
-  public toTagResource() {
-    return this.to('TagResource');
   }
 
   /**
@@ -92,33 +66,12 @@ export class Qdeveloper extends PolicyStatement {
     return this.to('TransformCode');
   }
 
-  /**
-   * Grants permission to remove tags associated with an Amazon Q Developer resource
-   *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   *
-   * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_manage-access-with-policies.html
-   */
-  public toUntagResource() {
-    return this.to('UntagResource');
-  }
-
   protected accessLevelList: AccessLevelList = {
     Write: [
       'ExportArtifact',
       'ImportArtifact',
       'StartAgentSession',
       'TransformCode'
-    ],
-    List: [
-      'ListTagsForResource'
-    ],
-    Tagging: [
-      'TagResource',
-      'UntagResource'
     ]
   };
 
@@ -146,7 +99,6 @@ export class Qdeveloper extends PolicyStatement {
    *
    * Applies to actions:
    * - .toStartAgentSession()
-   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -160,6 +112,11 @@ export class Qdeveloper extends PolicyStatement {
    * Filters access by the tags associated with the Amazon Q Developer resource
    *
    * https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security-iam-service-with-iam.html
+   *
+   * Applies to actions:
+   * - .toExportArtifact()
+   * - .toImportArtifact()
+   * - .toTransformCode()
    *
    * Applies to resource types:
    * - codeTransformation
@@ -179,8 +136,6 @@ export class Qdeveloper extends PolicyStatement {
    *
    * Applies to actions:
    * - .toStartAgentSession()
-   * - .toTagResource()
-   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

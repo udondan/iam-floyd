@@ -1,4 +1,3 @@
-cloudfront:AllowVendedLogDeliveryForResource;Permissions management
 cloudfront:AssociateAlias;Write
 cloudfront:AssociateDistributionTenantWebACL;Write
 cloudfront:AssociateDistributionWebACL;Write
@@ -24,7 +23,6 @@ cloudfront:CreateOriginRequestPolicy;Write
 cloudfront:CreatePublicKey;Write
 cloudfront:CreateRealtimeLogConfig;Write
 cloudfront:CreateResponseHeadersPolicy;Write
-cloudfront:CreateSavingsPlan;Write
 cloudfront:CreateStreamingDistribution;Write
 cloudfront:CreateStreamingDistributionWithTags;Write
 cloudfront:CreateTrustStore;Write
@@ -92,7 +90,6 @@ cloudfront:GetRealtimeLogConfig;Read
 cloudfront:GetResourcePolicy;Read
 cloudfront:GetResponseHeadersPolicy;Read
 cloudfront:GetResponseHeadersPolicyConfig;Read
-cloudfront:GetSavingsPlan;Read
 cloudfront:GetStreamingDistribution;Read
 cloudfront:GetStreamingDistributionConfig;Read
 cloudfront:GetTrustStore;Read
@@ -112,7 +109,6 @@ cloudfront:ListDistributionsByCachePolicyId;List
 cloudfront:ListDistributionsByConnectionFunction;List
 cloudfront:ListDistributionsByConnectionMode;List
 cloudfront:ListDistributionsByKeyGroup;List
-cloudfront:ListDistributionsByLambdaFunction;List
 cloudfront:ListDistributionsByOriginRequestPolicyId;List
 cloudfront:ListDistributionsByRealtimeLogConfig;List
 cloudfront:ListDistributionsByResponseHeadersPolicyId;List
@@ -130,22 +126,19 @@ cloudfront:ListKeyValueStores;List
 cloudfront:ListOriginAccessControls;List
 cloudfront:ListOriginRequestPolicies;List
 cloudfront:ListPublicKeys;List
-cloudfront:ListRateCards;List
 cloudfront:ListRealtimeLogConfigs;List
 cloudfront:ListResponseHeadersPolicies;List
-cloudfront:ListSavingsPlans;List
 cloudfront:ListStreamingDistributions;List
 cloudfront:ListTagsForResource;Read
 cloudfront:ListTrustStores;List
-cloudfront:ListUsages;List
 cloudfront:ListVpcOrigins;List
 cloudfront:PublishConnectionFunction;Write
 cloudfront:PublishFunction;Write
 cloudfront:PutResourcePolicy;Write
-cloudfront:TagResource;Tagging
+cloudfront:TagResource;Tagging, Write
 cloudfront:TestConnectionFunction;Write
 cloudfront:TestFunction;Write
-cloudfront:UntagResource;Tagging
+cloudfront:UntagResource;Tagging, Write
 cloudfront:UpdateAnycastIpList;Write
 cloudfront:UpdateCachePolicy;Write
 cloudfront:UpdateCloudFrontOriginAccessIdentity;Write
@@ -166,7 +159,6 @@ cloudfront:UpdateOriginRequestPolicy;Write
 cloudfront:UpdatePublicKey;Write
 cloudfront:UpdateRealtimeLogConfig;Write
 cloudfront:UpdateResponseHeadersPolicy;Write
-cloudfront:UpdateSavingsPlan;Write
 cloudfront:UpdateStreamingDistribution;Write
 cloudfront:UpdateTrustStore;Write
 cloudfront:UpdateVpcOrigin;Write

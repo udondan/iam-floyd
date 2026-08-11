@@ -15,8 +15,6 @@ panorama:DescribeNodeFromTemplateJob;Read
 panorama:DescribePackage;Read
 panorama:DescribePackageImportJob;Read
 panorama:DescribePackageVersion;Read
-panorama:DescribeSoftware;Read
-panorama:GetWebSocketURL;Read
 panorama:ListApplicationInstanceDependencies;List
 panorama:ListApplicationInstanceNodeInstances;List
 panorama:ListApplicationInstances;List
@@ -31,6 +29,6 @@ panorama:ProvisionDevice;Write
 panorama:RegisterPackageVersion;Write
 panorama:RemoveApplicationInstance;Write
 panorama:SignalApplicationInstanceNodeInstances;Write
-panorama:TagResource;Tagging
-panorama:UntagResource;Tagging
+panorama:TagResource;Tagging, Write
+panorama:UntagResource;Tagging, Write
 panorama:UpdateDeviceMetadata;Write

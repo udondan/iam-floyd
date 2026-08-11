@@ -8,9 +8,8 @@ workspaces:CreateAccountLinkInvitation;Write
 workspaces:CreateConnectClientAddIn;Write
 workspaces:CreateConnectionAlias;Write
 workspaces:CreateIpGroup;Write
-workspaces:CreateRootClientCertificate;Write
 workspaces:CreateStandbyWorkspaces;Write
-workspaces:CreateTags;Tagging
+workspaces:CreateTags;Tagging, Write
 workspaces:CreateUpdatedWorkspaceImage;Write
 workspaces:CreateWorkspaceBundle;Write
 workspaces:CreateWorkspaceImage;Write
@@ -21,8 +20,7 @@ workspaces:DeleteClientBranding;Write
 workspaces:DeleteConnectClientAddIn;Write
 workspaces:DeleteConnectionAlias;Write
 workspaces:DeleteIpGroup;Write
-workspaces:DeleteRootClientCertificate;Write
-workspaces:DeleteTags;Tagging
+workspaces:DeleteTags;Tagging, Write
 workspaces:DeleteWorkspaceBundle;Write
 workspaces:DeleteWorkspaceImage;Write
 workspaces:DeployWorkspaceApplications;Write
@@ -37,7 +35,6 @@ workspaces:DescribeClientProperties;List
 workspaces:DescribeConnectClientAddIns;List
 workspaces:DescribeConnectionAliasPermissions;Read
 workspaces:DescribeConnectionAliases;Read
-workspaces:DescribeConsent;Read
 workspaces:DescribeCustomWorkspaceImageImport;Read
 workspaces:DescribeImageAssociations;List
 workspaces:DescribeIpGroups;Read
@@ -52,26 +49,22 @@ workspaces:DescribeWorkspaces;List
 workspaces:DescribeWorkspacesConnectionStatus;Read
 workspaces:DescribeWorkspacesPoolSessions;List
 workspaces:DescribeWorkspacesPools;List
-workspaces:DirectoryAccessManagement;List
 workspaces:DisassociateConnectionAlias;Write
 workspaces:DisassociateIpGroups;Write
 workspaces:DisassociateWorkspaceApplication;Write
 workspaces:GetAccountLink;Read
-workspaces:GetTroubleshootingRecommendation;Read
 workspaces:ImportClientBranding;Write
 workspaces:ImportCustomWorkspaceImage;Write
 workspaces:ImportWorkspaceImage;Write
-workspaces:InvokeTroubleshootingInvestigation;Read
 workspaces:ListAccountLinks;List
 workspaces:ListAvailableManagementCidrRanges;List
-workspaces:ListTroubleshootingRecommendations;Read
 workspaces:MigrateWorkspace;Write
 workspaces:ModifyAccount;Write
 workspaces:ModifyCertificateBasedAuthProperties;Write
 workspaces:ModifyClientProperties;Write
 workspaces:ModifyEndpointEncryptionMode;Write
 workspaces:ModifySamlProperties;Write
-workspaces:ModifySelfservicePermissions;Permissions management
+workspaces:ModifySelfservicePermissions;Permissions management, Write
 workspaces:ModifyStreamingProperties;Write
 workspaces:ModifyWorkspaceAccessProperties;Write
 workspaces:ModifyWorkspaceCreationProperties;Write
@@ -92,10 +85,8 @@ workspaces:TerminateWorkspaces;Write
 workspaces:TerminateWorkspacesPool;Write
 workspaces:TerminateWorkspacesPoolSession;Write
 workspaces:UpdateConnectClientAddIn;Write
-workspaces:UpdateConnectionAliasPermission;Permissions management
-workspaces:UpdateConsent;Write
-workspaces:UpdateRootClientCertificate;Write
+workspaces:UpdateConnectionAliasPermission;Permissions management, Write
 workspaces:UpdateRulesOfIpGroup;Write
 workspaces:UpdateWorkspaceBundle;Write
-workspaces:UpdateWorkspaceImagePermission;Permissions management
+workspaces:UpdateWorkspaceImagePermission;Permissions management, Write
 workspaces:UpdateWorkspacesPool;Write

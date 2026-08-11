@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudtrail.html).
+ * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudtrail.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,7 +10,7 @@ export class Cloudtrail extends PolicyStatement {
   public servicePrefix = 'cloudtrail';
 
   /**
-   * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudtrail.html).
+   * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/service-authorization/latest/reference/list_cloudtrail.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
@@ -21,11 +21,7 @@ export class Cloudtrail extends PolicyStatement {
   /**
    * Grants permission to add one or more tags to a trail, event data store, channel or dashboard, up to a limit of 50
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html
    */
@@ -49,13 +45,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - cloudtrail:AddTags
-   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateChannel.html
    */
   public toCreateChannel() {
@@ -66,15 +55,6 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to create a dashboard
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - cloudtrail:AddTags
-   * - cloudtrail:StartDashboardRefresh
-   * - cloudtrail:StartQuery
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateDashboard.html
    */
@@ -87,18 +67,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - cloudtrail:AddTags
-   * - iam:CreateServiceLinkedRole
-   * - iam:GetRole
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
-   * - organizations:ListAWSServiceAccessForOrganization
-   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateEventDataStore.html
    */
   public toCreateEventDataStore() {
@@ -106,30 +74,9 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a service-linked channel that specifies the settings for delivery of log data to an AWS service
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
-   */
-  public toCreateServiceLinkedChannel() {
-    return this.to('CreateServiceLinkedChannel');
-  }
-
-  /**
    * Grants permission to create a trail that specifies the settings for delivery of log data to an Amazon S3 bucket
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - cloudtrail:AddTags
-   * - iam:CreateServiceLinkedRole
-   * - iam:GetRole
-   * - organizations:ListAWSServiceAccessForOrganization
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html
    */
@@ -182,17 +129,6 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a service-linked channel
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
-   */
-  public toDeleteServiceLinkedChannel() {
-    return this.to('DeleteServiceLinkedChannel');
-  }
-
-  /**
    * Grants permission to delete a trail
    *
    * Access Level: Write
@@ -207,10 +143,6 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to deregister an AWS Organizations member account as a delegated administrator
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - organizations:DeregisterDelegatedAdministrator
-   * - organizations:ListAWSServiceAccessForOrganization
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeregisterOrganizationDelegatedAdmin.html
    */
@@ -245,13 +177,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - glue:DeleteDatabase
-   * - glue:DeleteTable
-   * - glue:PassConnection
-   * - lakeformation:DeregisterResource
-   * - lakeformation:RegisterResource
-   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DisableFederation.html
    */
   public toDisableFederation() {
@@ -262,14 +187,6 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to enable federation of event data store data by using the AWS Glue Data Catalog
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - glue:CreateDatabase
-   * - glue:CreateTable
-   * - iam:GetRole
-   * - iam:PassRole
-   * - lakeformation:DeregisterResource
-   * - lakeformation:RegisterResource
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_EnableFederation.html
    */
@@ -286,22 +203,6 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toGenerateQuery() {
     return this.to('GenerateQuery');
-  }
-
-  /**
-   * Grants permission to generate a results summary for specified queries using the CloudTrail natural language generator
-   *
-   * Access Level: Read
-   *
-   * Dependent actions:
-   * - cloudtrail:GetQueryResults
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
-   *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-results-summary.html
-   */
-  public toGenerateQueryResultsSummary() {
-    return this.to('GenerateQueryResultsSummary');
   }
 
   /**
@@ -353,10 +254,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
-   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html#query-federation-permissions
    */
   public toGetEventDataStoreData() {
@@ -401,10 +298,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
-   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetQueryResults.html
    */
   public toGetQueryResults() {
@@ -420,17 +313,6 @@ export class Cloudtrail extends PolicyStatement {
    */
   public toGetResourcePolicy() {
     return this.to('GetResourcePolicy');
-  }
-
-  /**
-   * Grants permission to list settings for the service-linked channel
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
-   */
-  public toGetServiceLinkedChannel() {
-    return this.to('GetServiceLinkedChannel');
   }
 
   /**
@@ -544,17 +426,6 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list service-linked channels associated with the current region for a specified account
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
-   */
-  public toListServiceLinkedChannels() {
-    return this.to('ListServiceLinkedChannels');
-  }
-
-  /**
    * Grants permission to list the tags for trails, event data stores, channels or dashboards in the current region
    *
    * Access Level: Read
@@ -591,10 +462,6 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to create and update event configurations for a trail or an event data store
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:GetRole
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_PutEventConfiguration.html
    */
@@ -640,12 +507,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:GetRole
-   * - organizations:ListAWSServiceAccessForOrganization
-   * - organizations:RegisterDelegatedAdministrator
-   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RegisterOrganizationDelegatedAdmin.html
    */
   public toRegisterOrganizationDelegatedAdmin() {
@@ -655,10 +516,7 @@ export class Cloudtrail extends PolicyStatement {
   /**
    * Grants permission to remove tags from a trail, event data store, channel or dashboard
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html
    */
@@ -692,9 +550,6 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to start a refresh on the specified dashboard
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - cloudtrail:StartQuery
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartDashboardRefresh.html
    */
@@ -739,10 +594,6 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to start a new query on a specified event data store
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartQuery.html
    */
@@ -799,10 +650,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - cloudtrail:StartDashboardRefresh
-   * - cloudtrail:StartQuery
-   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateDashboard.html
    */
   public toUpdateDashboard() {
@@ -814,13 +661,6 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:GetRole
-   * - kms:Decrypt
-   * - kms:GenerateDataKey
-   * - organizations:ListAWSServiceAccessForOrganization
-   *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateEventDataStore.html
    */
   public toUpdateEventDataStore() {
@@ -828,25 +668,9 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update the service-linked channel settings for delivery of log data to an AWS service
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html#slc-service-events
-   */
-  public toUpdateServiceLinkedChannel() {
-    return this.to('UpdateServiceLinkedChannel');
-  }
-
-  /**
    * Grants permission to update the settings that specify delivery of log files
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:GetRole
-   * - organizations:ListAWSServiceAccessForOrganization
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html
    */
@@ -860,17 +684,16 @@ export class Cloudtrail extends PolicyStatement {
       'RemoveTags'
     ],
     Write: [
+      'AddTags',
       'CancelQuery',
       'CreateChannel',
       'CreateDashboard',
       'CreateEventDataStore',
-      'CreateServiceLinkedChannel',
       'CreateTrail',
       'DeleteChannel',
       'DeleteDashboard',
       'DeleteEventDataStore',
       'DeleteResourcePolicy',
-      'DeleteServiceLinkedChannel',
       'DeleteTrail',
       'DeregisterOrganizationDelegatedAdmin',
       'DisableFederation',
@@ -881,6 +704,7 @@ export class Cloudtrail extends PolicyStatement {
       'PutInsightSelectors',
       'PutResourcePolicy',
       'RegisterOrganizationDelegatedAdmin',
+      'RemoveTags',
       'RestoreEventDataStore',
       'StartDashboardRefresh',
       'StartEventDataStoreIngestion',
@@ -893,13 +717,11 @@ export class Cloudtrail extends PolicyStatement {
       'UpdateChannel',
       'UpdateDashboard',
       'UpdateEventDataStore',
-      'UpdateServiceLinkedChannel',
       'UpdateTrail'
     ],
     Read: [
       'DescribeQuery',
       'DescribeTrails',
-      'GenerateQueryResultsSummary',
       'GetChannel',
       'GetDashboard',
       'GetEventConfiguration',
@@ -910,7 +732,6 @@ export class Cloudtrail extends PolicyStatement {
       'GetInsightSelectors',
       'GetQueryResults',
       'GetResourcePolicy',
-      'GetServiceLinkedChannel',
       'GetTrail',
       'GetTrailStatus',
       'ListImportFailures',
@@ -926,44 +747,9 @@ export class Cloudtrail extends PolicyStatement {
       'ListImports',
       'ListInsightsData',
       'ListQueries',
-      'ListServiceLinkedChannels',
       'ListTrails'
     ]
   };
-
-  /**
-   * Adds a resource of type trail to the statement
-   *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html#how-cloudtrail-works-trails
-   *
-   * @param trailName - Identifier for the trailName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudtrail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:trail/${ trailName }`);
-  }
-
-  /**
-   * Adds a resource of type eventdatastore to the statement
-   *
-   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html#how-cloudtrail-works-lake
-   *
-   * @param eventDataStoreId - Identifier for the eventDataStoreId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   */
-  public onEventdatastore(eventDataStoreId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudtrail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eventdatastore/${ eventDataStoreId }`);
-  }
 
   /**
    * Adds a resource of type channel to the statement
@@ -1000,6 +786,40 @@ export class Cloudtrail extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type eventdatastore to the statement
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html#how-cloudtrail-works-lake
+   *
+   * @param eventDataStoreId - Identifier for the eventDataStoreId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onEventdatastore(eventDataStoreId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudtrail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:eventdatastore/${ eventDataStoreId }`);
+  }
+
+  /**
+   * Adds a resource of type trail to the statement
+   *
+   * https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html#how-cloudtrail-works-trails
+   *
+   * @param trailName - Identifier for the trailName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:cloudtrail:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:trail/${ trailName }`);
+  }
+
+  /**
    * Filters access by the tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1024,11 +844,58 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .toAddTags()
+   * - .toCancelQuery()
+   * - .toCreateChannel()
+   * - .toCreateDashboard()
+   * - .toCreateEventDataStore()
+   * - .toCreateTrail()
+   * - .toDeleteChannel()
+   * - .toDeleteDashboard()
+   * - .toDeleteEventDataStore()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteTrail()
+   * - .toDescribeQuery()
+   * - .toDisableFederation()
+   * - .toEnableFederation()
+   * - .toGenerateQuery()
+   * - .toGetChannel()
+   * - .toGetDashboard()
+   * - .toGetEventConfiguration()
+   * - .toGetEventDataStore()
+   * - .toGetEventDataStoreData()
+   * - .toGetEventSelectors()
+   * - .toGetInsightSelectors()
+   * - .toGetQueryResults()
+   * - .toGetResourcePolicy()
+   * - .toGetTrail()
+   * - .toGetTrailStatus()
+   * - .toListInsightsData()
+   * - .toListQueries()
+   * - .toListTags()
+   * - .toPutEventConfiguration()
+   * - .toPutEventSelectors()
+   * - .toPutInsightSelectors()
+   * - .toPutResourcePolicy()
+   * - .toRemoveTags()
+   * - .toRestoreEventDataStore()
+   * - .toStartDashboardRefresh()
+   * - .toStartEventDataStoreIngestion()
+   * - .toStartLogging()
+   * - .toStartQuery()
+   * - .toStopEventDataStoreIngestion()
+   * - .toStopLogging()
+   * - .toUpdateChannel()
+   * - .toUpdateDashboard()
+   * - .toUpdateEventDataStore()
+   * - .toUpdateTrail()
+   *
    * Applies to resource types:
-   * - trail
-   * - eventdatastore
    * - channel
    * - dashboard
+   * - eventdatastore
+   * - trail
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

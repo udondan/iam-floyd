@@ -1,4 +1,3 @@
-braket:AcceptUserAgreement;Write
 braket:CancelJob;Write
 braket:CancelQuantumTask;Write
 braket:CreateJob;Write
@@ -8,13 +7,11 @@ braket:DeleteSpendingLimit;Write
 braket:GetDevice;Read
 braket:GetJob;Read
 braket:GetQuantumTask;Read
-braket:GetServiceLinkedRoleStatus;Read
-braket:GetUserAgreementStatus;Read
 braket:ListTagsForResource;Read
 braket:SearchDevices;List
 braket:SearchJobs;List
 braket:SearchQuantumTasks;List
 braket:SearchSpendingLimits;Read
-braket:TagResource;Tagging
-braket:UntagResource;Tagging
+braket:TagResource;Tagging, Write
+braket:UntagResource;Tagging, Write
 braket:UpdateSpendingLimit;Write

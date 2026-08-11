@@ -14,7 +14,6 @@ applicationinsights:DescribeObservation;Read
 applicationinsights:DescribeProblem;Read
 applicationinsights:DescribeProblemObservations;Read
 applicationinsights:DescribeWorkload;Read
-applicationinsights:Link;Write
 applicationinsights:ListApplications;List
 applicationinsights:ListComponents;List
 applicationinsights:ListConfigurationHistory;List
@@ -24,8 +23,8 @@ applicationinsights:ListProblems;List
 applicationinsights:ListTagsForResource;Read
 applicationinsights:ListWorkloads;List
 applicationinsights:RemoveWorkload;Write
-applicationinsights:TagResource;Tagging
-applicationinsights:UntagResource;Tagging
+applicationinsights:TagResource;Tagging, Write
+applicationinsights:UntagResource;Tagging, Write
 applicationinsights:UpdateApplication;Write
 applicationinsights:UpdateComponent;Write
 applicationinsights:UpdateComponentConfiguration;Write

@@ -5,7 +5,6 @@ aws-external-anthropic:ArchiveSession;Write
 aws-external-anthropic:ArchiveVault;Write
 aws-external-anthropic:ArchiveWorkspace;Write
 aws-external-anthropic:AssumeConsole;Write
-aws-external-anthropic:CallWithBearerToken;List
 aws-external-anthropic:CancelBatchInference;Write
 aws-external-anthropic:CountTokens;Write
 aws-external-anthropic:CreateAgent;Write
@@ -57,8 +56,8 @@ aws-external-anthropic:ListWebhooks;List
 aws-external-anthropic:ListWorkspaces;List
 aws-external-anthropic:ProcessEnvironmentWork;Write
 aws-external-anthropic:RotateWebhookSecret;Write
-aws-external-anthropic:TagResource;Tagging
-aws-external-anthropic:UntagResource;Tagging
+aws-external-anthropic:TagResource;Tagging, Write
+aws-external-anthropic:UntagResource;Tagging, Write
 aws-external-anthropic:UpdateAgent;Write
 aws-external-anthropic:UpdateEnvironment;Write
 aws-external-anthropic:UpdateMemoryStore;Write

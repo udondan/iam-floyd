@@ -3,9 +3,9 @@ iam:AddClientIDToOpenIDConnectProvider;Write
 iam:AddRoleToInstanceProfile;Write
 iam:AddUserToGroup;Write
 iam:AssociateDelegationRequest;Write
-iam:AttachGroupPolicy;Permissions management
-iam:AttachRolePolicy;Permissions management
-iam:AttachUserPolicy;Permissions management
+iam:AttachGroupPolicy;Permissions management, Write
+iam:AttachRolePolicy;Permissions management, Write
+iam:AttachUserPolicy;Permissions management, Write
 iam:ChangePassword;Write
 iam:CreateAccessKey;Write
 iam:CreateAccountAlias;Write
@@ -14,8 +14,8 @@ iam:CreateGroup;Write
 iam:CreateInstanceProfile;Write
 iam:CreateLoginProfile;Write
 iam:CreateOpenIDConnectProvider;Write
-iam:CreatePolicy;Permissions management
-iam:CreatePolicyVersion;Permissions management
+iam:CreatePolicy;Permissions management, Write
+iam:CreatePolicyVersion;Permissions management, Write
 iam:CreateRole;Write
 iam:CreateSAMLProvider;Write
 iam:CreateServiceLinkedRole;Write
@@ -25,18 +25,18 @@ iam:CreateVirtualMFADevice;Write
 iam:DeactivateMFADevice;Write
 iam:DeleteAccessKey;Write
 iam:DeleteAccountAlias;Write
-iam:DeleteAccountPasswordPolicy;Permissions management
+iam:DeleteAccountPasswordPolicy;Permissions management, Write
 iam:DeleteCloudFrontPublicKey;Write
 iam:DeleteGroup;Write
-iam:DeleteGroupPolicy;Permissions management
+iam:DeleteGroupPolicy;Permissions management, Write
 iam:DeleteInstanceProfile;Write
 iam:DeleteLoginProfile;Write
 iam:DeleteOpenIDConnectProvider;Write
-iam:DeletePolicy;Permissions management
-iam:DeletePolicyVersion;Permissions management
+iam:DeletePolicy;Permissions management, Write
+iam:DeletePolicyVersion;Permissions management, Write
 iam:DeleteRole;Write
-iam:DeleteRolePermissionsBoundary;Permissions management
-iam:DeleteRolePolicy;Permissions management
+iam:DeleteRolePermissionsBoundary;Permissions management, Write
+iam:DeleteRolePolicy;Permissions management, Write
 iam:DeleteSAMLProvider;Write
 iam:DeleteSSHPublicKey;Write
 iam:DeleteServerCertificate;Write
@@ -44,12 +44,12 @@ iam:DeleteServiceLinkedRole;Write
 iam:DeleteServiceSpecificCredential;Write
 iam:DeleteSigningCertificate;Write
 iam:DeleteUser;Write
-iam:DeleteUserPermissionsBoundary;Permissions management
-iam:DeleteUserPolicy;Permissions management
+iam:DeleteUserPermissionsBoundary;Permissions management, Write
+iam:DeleteUserPolicy;Permissions management, Write
 iam:DeleteVirtualMFADevice;Write
-iam:DetachGroupPolicy;Permissions management
-iam:DetachRolePolicy;Permissions management
-iam:DetachUserPolicy;Permissions management
+iam:DetachGroupPolicy;Permissions management, Write
+iam:DetachRolePolicy;Permissions management, Write
+iam:DetachUserPolicy;Permissions management, Write
 iam:DisableOrganizationsRootCredentialsManagement;Write
 iam:DisableOrganizationsRootSessions;Write
 iam:DisableOutboundWebIdentityFederation;Write
@@ -130,12 +130,11 @@ iam:ListUserPolicies;List
 iam:ListUserTags;List
 iam:ListUsers;List
 iam:ListVirtualMFADevices;List
-iam:PassRole;Write
-iam:PutGroupPolicy;Permissions management
-iam:PutRolePermissionsBoundary;Permissions management
-iam:PutRolePolicy;Permissions management
-iam:PutUserPermissionsBoundary;Permissions management
-iam:PutUserPolicy;Permissions management
+iam:PutGroupPolicy;Permissions management, Write
+iam:PutRolePermissionsBoundary;Permissions management, Write
+iam:PutRolePolicy;Permissions management, Write
+iam:PutUserPermissionsBoundary;Permissions management, Write
+iam:PutUserPolicy;Permissions management, Write
 iam:RejectDelegationRequest;Write
 iam:RemoveClientIDFromOpenIDConnectProvider;Write
 iam:RemoveRoleFromInstanceProfile;Write
@@ -143,32 +142,32 @@ iam:RemoveUserFromGroup;Write
 iam:ResetServiceSpecificCredential;Write
 iam:ResyncMFADevice;Write
 iam:SendDelegationToken;Write
-iam:SetDefaultPolicyVersion;Permissions management
+iam:SetDefaultPolicyVersion;Permissions management, Write
 iam:SetSTSRegionalEndpointStatus;Write
 iam:SetSecurityTokenServicePreferences;Write
 iam:SimulateCustomPolicy;Read
 iam:SimulatePrincipalPolicy;Read
-iam:TagInstanceProfile;Tagging
-iam:TagMFADevice;Tagging
-iam:TagOpenIDConnectProvider;Tagging
-iam:TagPolicy;Tagging
-iam:TagRole;Tagging
-iam:TagSAMLProvider;Tagging
-iam:TagServerCertificate;Tagging
-iam:TagUser;Tagging
-iam:UntagInstanceProfile;Tagging
-iam:UntagMFADevice;Tagging
-iam:UntagOpenIDConnectProvider;Tagging
-iam:UntagPolicy;Tagging
-iam:UntagRole;Tagging
-iam:UntagSAMLProvider;Tagging
-iam:UntagServerCertificate;Tagging
-iam:UntagUser;Tagging
+iam:TagInstanceProfile;Tagging, Write
+iam:TagMFADevice;Tagging, Write
+iam:TagOpenIDConnectProvider;Tagging, Write
+iam:TagPolicy;Tagging, Write
+iam:TagRole;Tagging, Write
+iam:TagSAMLProvider;Tagging, Write
+iam:TagServerCertificate;Tagging, Write
+iam:TagUser;Tagging, Write
+iam:UntagInstanceProfile;Tagging, Write
+iam:UntagMFADevice;Tagging, Write
+iam:UntagOpenIDConnectProvider;Tagging, Write
+iam:UntagPolicy;Tagging, Write
+iam:UntagRole;Tagging, Write
+iam:UntagSAMLProvider;Tagging, Write
+iam:UntagServerCertificate;Tagging, Write
+iam:UntagUser;Tagging, Write
 iam:UpdateAccessKey;Write
 iam:UpdateAccountEmailAddress;Write
 iam:UpdateAccountName;Write
 iam:UpdateAccountPasswordPolicy;Write
-iam:UpdateAssumeRolePolicy;Permissions management
+iam:UpdateAssumeRolePolicy;Permissions management, Write
 iam:UpdateCloudFrontPublicKey;Write
 iam:UpdateGroup;Write
 iam:UpdateLoginProfile;Write

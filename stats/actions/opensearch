@@ -1,4 +1,3 @@
-opensearch:ApplicationAccessAll;Permissions management
 opensearch:CancelAutoOptimizeJob;Write
 opensearch:CancelDirectQuery;Write
 opensearch:DeleteAutoOptimizeJob;Write

@@ -1,4 +1,3 @@
-ecs:AllowVendedLogDeliveryForResource;Permissions management
 ecs:ContinueServiceDeployment;Write
 ecs:CreateCapacityProvider;Write
 ecs:CreateCluster;Write
@@ -49,25 +48,22 @@ ecs:ListTagsForResource;Read
 ecs:ListTaskDefinitionFamilies;List
 ecs:ListTaskDefinitions;List
 ecs:ListTasks;List
-ecs:Poll;Write
 ecs:PutAccountSetting;Write
 ecs:PutAccountSettingDefault;Write
 ecs:PutAttributes;Write
 ecs:PutClusterCapacityProviders;Write
-ecs:PutSystemLogEvents;Write
 ecs:RegisterContainerInstance;Write
 ecs:RegisterDaemonTaskDefinition;Write
 ecs:RegisterTaskDefinition;Write
 ecs:RunTask;Write
 ecs:StartTask;Write
-ecs:StartTelemetrySession;Write
 ecs:StopServiceDeployment;Write
 ecs:StopTask;Write
 ecs:SubmitAttachmentStateChanges;Write
 ecs:SubmitContainerStateChange;Write
 ecs:SubmitTaskStateChange;Write
-ecs:TagResource;Tagging
-ecs:UntagResource;Tagging
+ecs:TagResource;Tagging, Write
+ecs:UntagResource;Tagging, Write
 ecs:UpdateCapacityProvider;Write
 ecs:UpdateCluster;Write
 ecs:UpdateClusterSettings;Write

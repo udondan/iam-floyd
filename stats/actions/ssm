@@ -1,4 +1,4 @@
-ssm:AddTagsToResource;Tagging
+ssm:AddTagsToResource;Tagging, Write
 ssm:AssociateOpsItemRelatedItem;Write
 ssm:CancelCommand;Write
 ssm:CancelMaintenanceWindowExecution;Write
@@ -24,7 +24,7 @@ ssm:DeleteParameter;Write
 ssm:DeleteParameters;Write
 ssm:DeletePatchBaseline;Write
 ssm:DeleteResourceDataSync;Write
-ssm:DeleteResourcePolicy;Permissions management
+ssm:DeleteResourcePolicy;Permissions management, Write
 ssm:DeregisterManagedInstance;Write
 ssm:DeregisterPatchBaselineForPatchGroup;Write
 ssm:DeregisterTargetFromMaintenanceWindow;Write
@@ -67,7 +67,6 @@ ssm:DisassociateOpsItemRelatedItem;Write
 ssm:ExecuteAPI;Read
 ssm:GetAccessToken;Read
 ssm:GetAutomationExecution;Read
-ssm:GetCalendar;Read
 ssm:GetCalendarState;Read
 ssm:GetCloudConnector;Read
 ssm:GetCommandInvocation;Read
@@ -83,7 +82,6 @@ ssm:GetMaintenanceWindowExecution;Read
 ssm:GetMaintenanceWindowExecutionTask;Read
 ssm:GetMaintenanceWindowExecutionTaskInvocation;Read
 ssm:GetMaintenanceWindowTask;Read
-ssm:GetManifest;Read
 ssm:GetOpsItem;Read
 ssm:GetOpsMetadata;Read
 ssm:GetOpsSummary;Read
@@ -116,19 +114,17 @@ ssm:ListOpsMetadata;List
 ssm:ListResourceComplianceSummaries;List
 ssm:ListResourceDataSync;List
 ssm:ListTagsForResource;List
-ssm:ModifyDocumentPermission;Permissions management
-ssm:PutCalendar;Write
+ssm:ModifyDocumentPermission;Permissions management, Write
 ssm:PutComplianceItems;Write
-ssm:PutConfigurePackageResult;Read
 ssm:PutInventory;Write
 ssm:PutParameter;Write
-ssm:PutResourcePolicy;Permissions management
+ssm:PutResourcePolicy;Permissions management, Write
 ssm:RegisterDefaultPatchBaseline;Write
 ssm:RegisterManagedInstance;Write
 ssm:RegisterPatchBaselineForPatchGroup;Write
 ssm:RegisterTargetWithMaintenanceWindow;Write
 ssm:RegisterTaskWithMaintenanceWindow;Write
-ssm:RemoveTagsFromResource;Tagging
+ssm:RemoveTagsFromResource;Tagging, Write
 ssm:ResetServiceSetting;Write
 ssm:ResumeSession;Write
 ssm:SendAutomationSignal;Write
@@ -148,7 +144,6 @@ ssm:UpdateCloudConnector;Write
 ssm:UpdateDocument;Write
 ssm:UpdateDocumentDefaultVersion;Write
 ssm:UpdateDocumentMetadata;Write
-ssm:UpdateInstanceAssociationStatus;Write
 ssm:UpdateInstanceInformation;Write
 ssm:UpdateMaintenanceWindow;Write
 ssm:UpdateMaintenanceWindowTarget;Write

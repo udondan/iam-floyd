@@ -2,7 +2,7 @@ import { AccessLevelList } from '../../shared/access-level';
 import { PolicyStatement, Operator } from '../../shared';
 
 /**
- * Statement provider for service [sagemaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html).
+ * Statement provider for service [sagemaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html).
  *
  * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
@@ -10,23 +10,12 @@ export class Sagemaker extends PolicyStatement {
   public servicePrefix = 'sagemaker';
 
   /**
-   * Statement provider for service [sagemaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html).
+   * Statement provider for service [sagemaker](https://docs.aws.amazon.com/service-authorization/latest/reference/list_sagemaker.html).
    *
    * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
   constructor(sid?: string) {
     super(sid);
-  }
-
-  /**
-   * Grants permission to access model package that can be used in Amazon SageMaker training or hosting services
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/
-   */
-  public toAccessModelPackage() {
-    return this.to('AccessModelPackage');
   }
 
   /**
@@ -43,12 +32,7 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Grants permission to add or overwrite one or more tags for the specified Amazon SageMaker resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifTaggingAction()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html
    */
@@ -72,11 +56,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ec2:AttachVolume
-   * - ec2:DescribeVolumes
-   * - eks:DescribeCluster
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AttachClusterNodeVolume.html
    */
   public toAttachClusterNodeVolume() {
@@ -88,9 +67,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - eks:DescribeCluster
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_BatchAddClusterNodes.html
    */
   public toBatchAddClusterNodes() {
@@ -101,9 +77,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to batch delete SageMaker HyperPod cluster nodes
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - eks:DescribeCluster
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_BatchDeleteClusterNodes.html
    */
@@ -189,20 +162,6 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to use bearer token in SageMaker Job and Inference runtime endpoints APIs
-   *
-   * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifBearerTokenType()
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CallWithBearerToken.html
-   */
-  public toCallWithBearerToken() {
-    return this.to('CallWithBearerToken');
-  }
-
-  /**
    * Grants permission to mark a rollout as complete for a job
    *
    * Access Level: Write
@@ -218,10 +177,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIBenchmarkJob.html
    */
   public toCreateAIBenchmarkJob() {
@@ -232,10 +187,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an AI recommendation job
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIRecommendationJob.html
    */
@@ -248,10 +199,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAIWorkloadConfig.html
    */
   public toCreateAIWorkloadConfig() {
@@ -262,13 +209,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an action
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAction.html
    */
@@ -281,13 +221,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAlgorithm.html
    */
   public toCreateAlgorithm() {
@@ -298,19 +231,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an App for a SageMaker UserProfile or Space
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifImageArns()
-   * - .ifImageVersionArns()
-   * - .ifOwnerUserProfileArn()
-   * - .ifSpaceSharingType()
-   * - .ifStudioLifecycleConfigArns()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateApp.html
    */
@@ -323,13 +243,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAppImageConfig.html
    */
   public toCreateAppImageConfig() {
@@ -340,13 +253,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an artifact
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateArtifact.html
    */
@@ -359,19 +265,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html
    */
   public toCreateAutoMLJob() {
@@ -382,19 +275,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a V2 AutoML job
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html
    */
@@ -407,27 +287,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - ec2:DescribeImages
-   * - ec2:DescribeSnapshots
-   * - ec2:ModifyImageAttribute
-   * - ec2:ModifySnapshotAttribute
-   * - eks:AssociateAccessPolicy
-   * - eks:CreateAccessEntry
-   * - eks:DeleteAccessEntry
-   * - eks:DescribeAccessEntry
-   * - eks:DescribeCluster
-   * - iam:CreateServiceLinkedRole
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCluster.html
    */
   public toCreateCluster() {
@@ -438,17 +297,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a cluster scheduler config
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - eks:AssociateAccessPolicy
-   * - eks:DescribeCluster
-   * - eks:ListAssociatedAccessPolicies
-   * - sagemaker:AddTags
-   * - sagemaker:DescribeCluster
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateClusterSchedulerConfig.html
    */
@@ -461,13 +309,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCodeRepository.html
    */
   public toCreateCodeRepository() {
@@ -478,14 +319,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a compilation job
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html
    */
@@ -498,17 +331,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - eks:AssociateAccessPolicy
-   * - eks:DescribeCluster
-   * - eks:ListAssociatedAccessPolicies
-   * - sagemaker:AddTags
-   * - sagemaker:DescribeCluster
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateComputeQuota.html
    */
   public toCreateComputeQuota() {
@@ -519,13 +341,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a context
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateContext.html
    */
@@ -538,22 +353,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDataQualityJobDefinition.html
    */
   public toCreateDataQualityJobDefinition() {
@@ -564,14 +363,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a device fleet
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDeviceFleet.html
    */
@@ -584,24 +375,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAppNetworkAccessType()
-   * - .ifInstanceTypes()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   * - .ifDomainSharingOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifImageArns()
-   * - .ifImageVersionArns()
-   * - .ifStudioLifecycleConfigArns()
-   *
-   * Dependent actions:
-   * - iam:CreateServiceLinkedRole
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html
    */
   public toCreateDomain() {
@@ -612,14 +385,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an edge deployment plan
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEdgeDeploymentPlan.html
    */
@@ -632,14 +397,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEdgeDeploymentStage.html
    */
   public toCreateEdgeDeploymentStage() {
@@ -650,14 +407,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an edge packaging job
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEdgePackagingJob.html
    */
@@ -670,13 +419,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html
    */
   public toCreateEndpoint() {
@@ -687,23 +429,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an endpoint configuration that can be deployed using Amazon SageMaker hosting services
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAcceleratorTypes()
-   * - .ifInstanceTypes()
-   * - .ifModelArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifServerlessMaxConcurrency()
-   * - .ifServerlessMemorySize()
-   * - .ifNetworkIsolation()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html
    */
@@ -716,13 +441,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateExperiment.html
    */
   public toCreateExperiment() {
@@ -733,20 +451,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a feature group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifFeatureGroupOnlineStoreKmsKeyArn()
-   * - .ifFeatureGroupOfflineStoreKmsKeyArn()
-   * - .ifFeatureGroupOfflineStoreS3Uri()
-   * - .ifFeatureGroupEnableOnlineStore()
-   * - .ifFeatureGroupOfflineStoreConfig()
-   * - .ifFeatureGroupDisableGlueTableCreation()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFeatureGroup.html
    */
@@ -759,16 +463,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifWorkteamArn()
-   * - .ifWorkteamType()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFlowDefinition.html
    */
   public toCreateFlowDefinition() {
@@ -779,13 +473,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a hub
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHub.html
    */
@@ -809,13 +496,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHubContentReference.html
    */
   public toCreateHubContentReference() {
@@ -826,13 +506,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to define the settings you will use for the human review workflow user interface
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHumanTaskUi.html
    */
@@ -845,26 +518,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifFileSystemAccessMode()
-   * - .ifFileSystemDirectoryPath()
-   * - .ifFileSystemId()
-   * - .ifFileSystemType()
-   * - .ifInstanceTypes()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html
    */
   public toCreateHyperParameterTuningJob() {
@@ -875,14 +528,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a SageMaker Image
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateImage.html
    */
@@ -906,14 +551,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifModelArn()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceComponent.html
    */
   public toCreateInferenceComponent() {
@@ -924,14 +561,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an inference experiment
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html
    */
@@ -944,14 +573,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html
    */
   public toCreateInferenceRecommendationsJob() {
@@ -963,17 +584,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateJob.html
    */
   public toCreateJob() {
@@ -984,18 +594,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to start a labeling job. A labeling job takes unlabeled data in and produces labeled data as output, which can be used for training SageMaker models
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifWorkteamArn()
-   * - .ifWorkteamType()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifOutputKmsKeyArn()
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html
    */
@@ -1019,14 +617,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateMlflowApp.html
    */
   public toCreateMlflowApp() {
@@ -1037,14 +627,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an MLflow tracking server
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateMlflowTrackingServer.html
    */
@@ -1057,18 +639,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifNetworkIsolation()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   * - .ifDirectGatedModelAccess()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html
    */
   public toCreateModel() {
@@ -1080,22 +650,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelBiasJobDefinition.html
    */
   public toCreateModelBiasJobDefinition() {
@@ -1106,13 +660,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a model card
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelCard.html
    */
@@ -1136,22 +683,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelExplainabilityJobDefinition.html
    */
   public toCreateModelExplainabilityJobDefinition() {
@@ -1162,17 +693,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a ModelPackage
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifModelApprovalStatus()
-   * - .ifCustomerMetadataProperties()
-   * - .ifModelLifeCycle()
-   * - .ifModelLifeCycle()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html
    */
@@ -1185,13 +705,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackageGroup.html
    */
   public toCreateModelPackageGroup() {
@@ -1202,22 +715,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a model quality job definition
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelQualityJobDefinition.html
    */
@@ -1230,22 +727,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateMonitoringSchedule.html
    */
   public toCreateMonitoringSchedule() {
@@ -1256,23 +737,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an Amazon SageMaker notebook instance. A notebook instance is an Amazon EC2 instance running on a Jupyter Notebook
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifAcceleratorTypes()
-   * - .ifDirectInternetAccess()
-   * - .ifInstanceTypes()
-   * - .ifMinimumInstanceMetadataServiceVersion()
-   * - .ifNotebookInstanceLifecycleConfigArns()
-   * - .ifRootAccess()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstance.html
    */
@@ -1285,13 +749,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html
    */
   public toCreateNotebookInstanceLifecycleConfig() {
@@ -1303,14 +760,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateOptimizationJob.html
    */
   public toCreateOptimizationJob() {
@@ -1321,13 +770,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create an Amazon SageMaker Partner AI App
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePartnerApp.html
    */
@@ -1350,14 +792,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a pipeline
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePipeline.html
    */
@@ -1414,22 +848,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   * - .ifInterContainerTrafficEncryption()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html
    */
   public toCreateProcessingJob() {
@@ -1441,13 +859,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProject.html
    */
   public toCreateProject() {
@@ -1455,52 +866,9 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a reserved capacity
-   *
-   * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateReservedCapacity.html
-   */
-  public toCreateReservedCapacity() {
-    return this.to('CreateReservedCapacity');
-  }
-
-  /**
-   * Grants permission to create a shared model in a SageMaker Studio application
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
-   */
-  public toCreateSharedModel() {
-    return this.to('CreateSharedModel');
-  }
-
-  /**
    * Grants permission to create a Space for a SageMaker Domain
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifImageArns()
-   * - .ifImageVersionArns()
-   * - .ifOwnerUserProfileArn()
-   * - .ifRemoteAccess()
-   * - .ifSpaceSharingType()
-   * - .ifStudioLifecycleConfigArns()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateSpace.html
    */
@@ -1513,13 +881,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateStudioLifecycleConfig.html
    */
   public toCreateStudioLifecycleConfig() {
@@ -1530,29 +891,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to start a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts and other optional output to an Amazon S3 location that you specify
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifFileSystemAccessMode()
-   * - .ifFileSystemDirectoryPath()
-   * - .ifFileSystemId()
-   * - .ifFileSystemType()
-   * - .ifInstanceTypes()
-   * - .ifInterContainerTrafficEncryption()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   * - .ifKeepAlivePeriod()
-   * - .ifEnableRemoteDebug()
-   * - .ifDirectGatedModelAccess()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
    */
@@ -1565,14 +903,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   * - sagemaker:CreateReservedCapacity
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html
    */
   public toCreateTrainingPlan() {
@@ -1583,17 +913,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to start a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that you specify
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifModelArn()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html
    */
@@ -1606,13 +925,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrial.html
    */
   public toCreateTrial() {
@@ -1623,13 +935,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a trial component
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html
    */
@@ -1642,20 +947,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifInstanceTypes()
-   * - .ifDomainSharingOutputKmsKeyArn()
-   * - .ifImageArns()
-   * - .ifImageVersionArns()
-   * - .ifStudioLifecycleConfigArns()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html
    */
   public toCreateUserProfile() {
@@ -1667,13 +958,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkforce.html
    */
   public toCreateWorkforce() {
@@ -1684,13 +968,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a workteam
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkteam.html
    */
@@ -1758,10 +1035,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifOwnerUserProfileArn()
-   * - .ifSpaceSharingType()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteApp.html
    */
   public toDeleteApp() {
@@ -1805,9 +1078,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to delete a SageMaker HyperPod cluster
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - eks:DeleteAccessEntry
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteCluster.html
    */
@@ -1962,9 +1232,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to delete a feature group
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteFeatureGroup.html
    */
@@ -2325,24 +1592,9 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants AWS Resource Access Manager permission to delete a resource policy on a SageMaker resource that supports cross-account sharing
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteResourcePolicy.html
-   */
-  public toDeleteResourcePolicy() {
-    return this.to('DeleteResourcePolicy');
-  }
-
-  /**
    * Grants permission to delete a Space
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifOwnerUserProfileArn()
-   * - .ifSpaceSharingType()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteSpace.html
    */
@@ -2364,10 +1616,7 @@ export class Sagemaker extends PolicyStatement {
   /**
    * Grants permission to delete the specified set of tags from an Amazon SageMaker resource
    *
-   * Access Level: Tagging
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
+   * Access Level: Tagging, Write
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html
    */
@@ -2593,17 +1842,6 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeClusterEvent() {
     return this.to('DescribeClusterEvent');
-  }
-
-  /**
-   * Grants permission to get information about the inference operator for a SageMaker HyperPod cluster
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference.html
-   */
-  public toDescribeClusterInference() {
-    return this.to('DescribeClusterInference');
   }
 
   /**
@@ -3128,9 +2366,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifPipelineVersionId()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribePipeline.html
    */
   public toDescribePipeline() {
@@ -3190,17 +2425,6 @@ export class Sagemaker extends PolicyStatement {
    */
   public toDescribeReservedCapacity() {
     return this.to('DescribeReservedCapacity');
-  }
-
-  /**
-   * Grants permission to describe a shared model in a SageMaker Studio application
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
-   */
-  public toDescribeSharedModel() {
-    return this.to('DescribeSharedModel');
   }
 
   /**
@@ -3329,11 +2553,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - ec2:DescribeVolumes
-   * - ec2:DetachVolume
-   * - eks:DescribeCluster
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DetachClusterNodeVolume.html
    */
   public toDetachClusterNodeVolume() {
@@ -3440,17 +2659,6 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants AWS Resource Access Manager permission to retrieve a resource policy on a SageMaker resource that supports cross-account sharing
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetResourcePolicy.html
-   */
-  public toGetResourcePolicy() {
-    return this.to('GetResourcePolicy');
-  }
-
-  /**
    * Grants permission to get a SageMaker Service Catalog Portfolio
    *
    * Access Level: Read
@@ -3488,13 +2696,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
-   * Dependent actions:
-   * - sagemaker:AddTags
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ImportHubContent.html
    */
   public toImportHubContent() {
@@ -3505,9 +2706,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to invoke an endpoint. After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifTargetModel()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html
    */
@@ -4385,39 +3583,6 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list shared model events
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
-   */
-  public toListSharedModelEvents() {
-    return this.to('ListSharedModelEvents');
-  }
-
-  /**
-   * Grants permission to list shared model versions
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
-   */
-  public toListSharedModelVersions() {
-    return this.to('ListSharedModelVersions');
-  }
-
-  /**
-   * Grants permission to list shared models
-   *
-   * Access Level: List
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
-   */
-  public toListSharedModels() {
-    return this.to('ListSharedModels');
-  }
-
-  /**
    * Grants permission to list the Spaces in your account
    *
    * Access Level: List
@@ -4616,17 +3781,6 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants AWS Resource Access Manager permission to create a resource policy on a SageMaker resource that supports cross-account sharing
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutResourcePolicy.html
-   */
-  public toPutResourcePolicy() {
-    return this.to('PutResourcePolicy');
-  }
-
-  /**
    * Grants permission to explore the lineage graph
    *
    * Access Level: List
@@ -4642,10 +3796,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RegisterDevices.html
    */
   public toRegisterDevices() {
@@ -4656,9 +3806,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to render a UI template used for a human annotation task
    *
    * Access Level: Read
-   *
-   * Dependent actions:
-   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RenderUiTemplate.html
    */
@@ -4758,17 +3905,6 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to send a shared model event
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
-   */
-  public toSendSharedModelEvent() {
-    return this.to('SendSharedModelEvent');
-  }
-
-  /**
    * Grants permission to start deep health checks for a SageMaker Hyperpod cluster
    *
    * Access Level: Write
@@ -4849,9 +3985,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to start a pipeline execution
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifPipelineVersionId()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html
    */
@@ -5139,47 +4272,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceTypes()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   *
-   * Dependent actions:
-   * - ec2:DescribeImages
-   * - ec2:DescribeSnapshots
-   * - ec2:ModifyImageAttribute
-   * - ec2:ModifySnapshotAttribute
-   * - eks:AssociateAccessPolicy
-   * - eks:CreateAccessEntry
-   * - eks:DeleteAccessEntry
-   * - eks:DescribeAccessEntry
-   * - eks:DescribeCluster
-   * - iam:PassRole
-   * - sagemaker:BatchAddClusterNodes
-   * - sagemaker:BatchDeleteClusterNodes
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateCluster.html
    */
   public toUpdateCluster() {
     return this.to('UpdateCluster');
-  }
-
-  /**
-   * Grants permission to update the inference operator for a SageMaker HyperPod cluster
-   *
-   * Access Level: Write
-   *
-   * Dependent actions:
-   * - eks:AssociateAccessPolicy
-   * - eks:DescribeCluster
-   * - eks:ListAssociatedAccessPolicies
-   * - iam:PassRole
-   * - sagemaker:DescribeCluster
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference.html
-   */
-  public toUpdateClusterInference() {
-    return this.to('UpdateClusterInference');
   }
 
   /**
@@ -5197,13 +4293,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to update platform software for a SageMaker HyperPod cluster
    *
    * Access Level: Write
-   *
-   * Dependent actions:
-   * - ec2:DescribeImages
-   * - ec2:DescribeSnapshots
-   * - ec2:ModifyImageAttribute
-   * - ec2:ModifySnapshotAttribute
-   * - eks:DescribeCluster
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html
    */
@@ -5270,16 +4359,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to update a Domain
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifVpcSecurityGroupIds()
-   * - .ifInstanceTypes()
-   * - .ifDomainSharingOutputKmsKeyArn()
-   * - .ifImageArns()
-   * - .ifImageVersionArns()
-   * - .ifAppNetworkAccessType()
-   * - .ifVpcSubnets()
-   * - .ifStudioLifecycleConfigArns()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateDomain.html
    */
@@ -5380,9 +4459,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateImage.html
    */
   public toUpdateImage() {
@@ -5471,13 +4547,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifModelApprovalStatus()
-   * - .ifCustomerMetadataProperties()
-   * - .ifCustomerMetadataPropertiesToRemove()
-   * - .ifModelLifeCycle()
-   * - .ifModelLifeCycle()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateModelPackage.html
    */
   public toUpdateModelPackage() {
@@ -5500,21 +4569,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
-   * - .ifInstanceTypes()
-   * - .ifMaxRuntimeInSeconds()
-   * - .ifNetworkIsolation()
-   * - .ifOutputKmsKeyArn()
-   * - .ifVolumeKmsKeyArn()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifVpcSubnets()
-   * - .ifInterContainerTrafficEncryption()
-   *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateMonitoringSchedule.html
    */
   public toUpdateMonitoringSchedule() {
@@ -5525,13 +4579,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to update a notebook instance. Notebook instance updates include upgrading or downgrading the EC2 instance used for your notebook instance to accommodate changes in your workload requirements
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAcceleratorTypes()
-   * - .ifInstanceTypes()
-   * - .ifMinimumInstanceMetadataServiceVersion()
-   * - .ifNotebookInstanceLifecycleConfigArns()
-   * - .ifRootAccess()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateNotebookInstance.html
    */
@@ -5566,9 +4613,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent actions:
-   * - iam:PassRole
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdatePipeline.html
    */
   public toUpdatePipeline() {
@@ -5591,9 +4635,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifPipelineVersionId()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdatePipelineVersion.html
    */
   public toUpdatePipelineVersion() {
@@ -5604,10 +4645,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to update a Project
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsRequestTag()
-   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateProject.html
    */
@@ -5627,29 +4664,9 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a shared model
-   *
-   * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
-   */
-  public toUpdateSharedModel() {
-    return this.to('UpdateSharedModel');
-  }
-
-  /**
    * Grants permission to update a Space
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceTypes()
-   * - .ifImageArns()
-   * - .ifImageVersionArns()
-   * - .ifOwnerUserProfileArn()
-   * - .ifRemoteAccess()
-   * - .ifSpaceSharingType()
-   * - .ifStudioLifecycleConfigArns()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html
    */
@@ -5661,11 +4678,6 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to update a training job
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifInstanceTypes()
-   * - .ifKeepAlivePeriod()
-   * - .ifEnableRemoteDebug()
    *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateTrainingJob.html
    */
@@ -5700,15 +4712,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifInstanceTypes()
-   * - .ifVpcSecurityGroupIds()
-   * - .ifInstanceTypes()
-   * - .ifDomainSharingOutputKmsKeyArn()
-   * - .ifImageArns()
-   * - .ifImageVersionArns()
-   * - .ifStudioLifecycleConfigArns()
-   *
    * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateUserProfile.html
    */
   public toUpdateUserProfile() {
@@ -5738,110 +4741,9 @@ export class Sagemaker extends PolicyStatement {
   }
 
   protected accessLevelList: AccessLevelList = {
-    Read: [
-      'AccessModelPackage',
-      'BatchDescribeModelPackage',
-      'BatchGetMetrics',
-      'BatchGetRecord',
-      'CallWithBearerToken',
-      'CreateHubContentPresignedUrls',
-      'DescribeAIBenchmarkJob',
-      'DescribeAIRecommendationJob',
-      'DescribeAIWorkloadConfig',
-      'DescribeAction',
-      'DescribeAlgorithm',
-      'DescribeApp',
-      'DescribeAppImageConfig',
-      'DescribeArtifact',
-      'DescribeAutoMLJob',
-      'DescribeAutoMLJobV2',
-      'DescribeCluster',
-      'DescribeClusterEvent',
-      'DescribeClusterInference',
-      'DescribeClusterNode',
-      'DescribeClusterSchedulerConfig',
-      'DescribeCodeRepository',
-      'DescribeCompilationJob',
-      'DescribeComputeQuota',
-      'DescribeContext',
-      'DescribeDataQualityJobDefinition',
-      'DescribeDevice',
-      'DescribeDeviceFleet',
-      'DescribeDomain',
-      'DescribeEdgeDeploymentPlan',
-      'DescribeEdgePackagingJob',
-      'DescribeEndpoint',
-      'DescribeEndpointConfig',
-      'DescribeExperiment',
-      'DescribeFeatureGroup',
-      'DescribeFeatureMetadata',
-      'DescribeFlowDefinition',
-      'DescribeHub',
-      'DescribeHubContent',
-      'DescribeHumanLoop',
-      'DescribeHumanTaskUi',
-      'DescribeHyperParameterTuningJob',
-      'DescribeImage',
-      'DescribeImageVersion',
-      'DescribeInferenceComponent',
-      'DescribeInferenceExperiment',
-      'DescribeInferenceRecommendationsJob',
-      'DescribeJob',
-      'DescribeJobSchemaVersion',
-      'DescribeLabelingJob',
-      'DescribeLineageGroup',
-      'DescribeMlflowApp',
-      'DescribeMlflowTrackingServer',
-      'DescribeModel',
-      'DescribeModelBiasJobDefinition',
-      'DescribeModelCard',
-      'DescribeModelCardExportJob',
-      'DescribeModelExplainabilityJobDefinition',
-      'DescribeModelPackage',
-      'DescribeModelPackageGroup',
-      'DescribeModelQualityJobDefinition',
-      'DescribeMonitoringSchedule',
-      'DescribeNotebookInstance',
-      'DescribeNotebookInstanceLifecycleConfig',
-      'DescribeOptimizationJob',
-      'DescribePartnerApp',
-      'DescribePipeline',
-      'DescribePipelineDefinitionForExecution',
-      'DescribePipelineExecution',
-      'DescribeProcessingJob',
-      'DescribeProject',
-      'DescribeReservedCapacity',
-      'DescribeSharedModel',
-      'DescribeSpace',
-      'DescribeStudioLifecycleConfig',
-      'DescribeSubscribedWorkteam',
-      'DescribeTrainingJob',
-      'DescribeTrainingPlan',
-      'DescribeTransformJob',
-      'DescribeTrial',
-      'DescribeTrialComponent',
-      'DescribeUserProfile',
-      'DescribeWorkforce',
-      'DescribeWorkteam',
-      'GetDeployments',
-      'GetDeviceFleetReport',
-      'GetDeviceRegistration',
-      'GetLineageGroupPolicy',
-      'GetModelPackageGroupPolicy',
-      'GetRecord',
-      'GetResourcePolicy',
-      'GetSagemakerServicecatalogPortfolioStatus',
-      'GetScalingConfigurationRecommendation',
-      'GetSearchSuggestions',
-      'InvokeEndpoint',
-      'InvokeEndpointAsync',
-      'InvokeEndpointWithResponseStream',
-      'RenderUiTemplate',
-      'Search',
-      'SearchTrainingPlanOfferings'
-    ],
     Write: [
       'AddAssociation',
+      'AddTags',
       'AssociateTrialComponent',
       'AttachClusterNodeVolume',
       'BatchAddClusterNodes',
@@ -5913,8 +4815,6 @@ export class Sagemaker extends PolicyStatement {
       'CreatePresignedNotebookInstanceUrl',
       'CreateProcessingJob',
       'CreateProject',
-      'CreateReservedCapacity',
-      'CreateSharedModel',
       'CreateSpace',
       'CreateStudioLifecycleConfig',
       'CreateTrainingJob',
@@ -5981,9 +4881,9 @@ export class Sagemaker extends PolicyStatement {
       'DeleteProcessingJob',
       'DeleteProject',
       'DeleteRecord',
-      'DeleteResourcePolicy',
       'DeleteSpace',
       'DeleteStudioLifecycleConfig',
+      'DeleteTags',
       'DeleteTrainingJob',
       'DeleteTrial',
       'DeleteTrialComponent',
@@ -6000,7 +4900,6 @@ export class Sagemaker extends PolicyStatement {
       'PutLineageGroupPolicy',
       'PutModelPackageGroupPolicy',
       'PutRecord',
-      'PutResourcePolicy',
       'RegisterDevices',
       'RetryPipelineExecution',
       'Sample',
@@ -6008,7 +4907,6 @@ export class Sagemaker extends PolicyStatement {
       'SendHeartbeat',
       'SendPipelineExecutionStepFailure',
       'SendPipelineExecutionStepSuccess',
-      'SendSharedModelEvent',
       'StartClusterHealthCheck',
       'StartEdgeDeploymentStage',
       'StartHumanLoop',
@@ -6043,7 +4941,6 @@ export class Sagemaker extends PolicyStatement {
       'UpdateAppImageConfig',
       'UpdateArtifact',
       'UpdateCluster',
-      'UpdateClusterInference',
       'UpdateClusterSchedulerConfig',
       'UpdateClusterSoftware',
       'UpdateCodeRepository',
@@ -6079,7 +4976,6 @@ export class Sagemaker extends PolicyStatement {
       'UpdatePipelineVersion',
       'UpdateProject',
       'UpdateReward',
-      'UpdateSharedModel',
       'UpdateSpace',
       'UpdateTrainingJob',
       'UpdateTrial',
@@ -6091,6 +4987,103 @@ export class Sagemaker extends PolicyStatement {
     Tagging: [
       'AddTags',
       'DeleteTags'
+    ],
+    Read: [
+      'BatchDescribeModelPackage',
+      'BatchGetMetrics',
+      'BatchGetRecord',
+      'CreateHubContentPresignedUrls',
+      'DescribeAIBenchmarkJob',
+      'DescribeAIRecommendationJob',
+      'DescribeAIWorkloadConfig',
+      'DescribeAction',
+      'DescribeAlgorithm',
+      'DescribeApp',
+      'DescribeAppImageConfig',
+      'DescribeArtifact',
+      'DescribeAutoMLJob',
+      'DescribeAutoMLJobV2',
+      'DescribeCluster',
+      'DescribeClusterEvent',
+      'DescribeClusterNode',
+      'DescribeClusterSchedulerConfig',
+      'DescribeCodeRepository',
+      'DescribeCompilationJob',
+      'DescribeComputeQuota',
+      'DescribeContext',
+      'DescribeDataQualityJobDefinition',
+      'DescribeDevice',
+      'DescribeDeviceFleet',
+      'DescribeDomain',
+      'DescribeEdgeDeploymentPlan',
+      'DescribeEdgePackagingJob',
+      'DescribeEndpoint',
+      'DescribeEndpointConfig',
+      'DescribeExperiment',
+      'DescribeFeatureGroup',
+      'DescribeFeatureMetadata',
+      'DescribeFlowDefinition',
+      'DescribeHub',
+      'DescribeHubContent',
+      'DescribeHumanLoop',
+      'DescribeHumanTaskUi',
+      'DescribeHyperParameterTuningJob',
+      'DescribeImage',
+      'DescribeImageVersion',
+      'DescribeInferenceComponent',
+      'DescribeInferenceExperiment',
+      'DescribeInferenceRecommendationsJob',
+      'DescribeJob',
+      'DescribeJobSchemaVersion',
+      'DescribeLabelingJob',
+      'DescribeLineageGroup',
+      'DescribeMlflowApp',
+      'DescribeMlflowTrackingServer',
+      'DescribeModel',
+      'DescribeModelBiasJobDefinition',
+      'DescribeModelCard',
+      'DescribeModelCardExportJob',
+      'DescribeModelExplainabilityJobDefinition',
+      'DescribeModelPackage',
+      'DescribeModelPackageGroup',
+      'DescribeModelQualityJobDefinition',
+      'DescribeMonitoringSchedule',
+      'DescribeNotebookInstance',
+      'DescribeNotebookInstanceLifecycleConfig',
+      'DescribeOptimizationJob',
+      'DescribePartnerApp',
+      'DescribePipeline',
+      'DescribePipelineDefinitionForExecution',
+      'DescribePipelineExecution',
+      'DescribeProcessingJob',
+      'DescribeProject',
+      'DescribeReservedCapacity',
+      'DescribeSpace',
+      'DescribeStudioLifecycleConfig',
+      'DescribeSubscribedWorkteam',
+      'DescribeTrainingJob',
+      'DescribeTrainingPlan',
+      'DescribeTransformJob',
+      'DescribeTrial',
+      'DescribeTrialComponent',
+      'DescribeUserProfile',
+      'DescribeWorkforce',
+      'DescribeWorkteam',
+      'GetDeployments',
+      'GetDeviceFleetReport',
+      'GetDeviceRegistration',
+      'GetLineageGroupPolicy',
+      'GetModelPackageGroupPolicy',
+      'GetRecord',
+      'GetSagemakerServicecatalogPortfolioStatus',
+      'GetScalingConfigurationRecommendation',
+      'GetSearchSuggestions',
+      'InvokeEndpoint',
+      'InvokeEndpointAsync',
+      'InvokeEndpointWithResponseStream',
+      'RenderUiTemplate',
+      'Search',
+      'SearchTrainingPlanOfferings'
     ],
     List: [
       'ListAIBenchmarkJobs',
@@ -6170,9 +5163,6 @@ export class Sagemaker extends PolicyStatement {
       'ListProjects',
       'ListRecords',
       'ListResourceCatalogs',
-      'ListSharedModelEvents',
-      'ListSharedModelVersions',
-      'ListSharedModels',
       'ListSpaces',
       'ListStageDevices',
       'ListStudioLifecycleConfigs',
@@ -6193,12 +5183,11 @@ export class Sagemaker extends PolicyStatement {
   };
 
   /**
-   * Adds a resource of type device to the statement
+   * Adds a resource of type action to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/neo-edge-devices.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ActionSummary.html
    *
-   * @param deviceFleetName - Identifier for the deviceFleetName.
-   * @param deviceName - Identifier for the deviceName.
+   * @param actionName - Identifier for the actionName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -6207,16 +5196,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onDevice(deviceFleetName: string, deviceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
+  public onAction(actionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:action/${ actionName }`);
   }
 
   /**
-   * Adds a resource of type device-fleet to the statement
+   * Adds a resource of type ai-benchmark-job to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge-device-fleet.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIBenchmarkJob.html
    *
-   * @param deviceFleetName - Identifier for the deviceFleetName.
+   * @param aIBenchmarkJobName - Identifier for the aIBenchmarkJobName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -6225,16 +5214,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onDeviceFleet(deviceFleetName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-fleet/${ deviceFleetName }`);
+  public onAiBenchmarkJob(aIBenchmarkJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-benchmark-job/${ aIBenchmarkJobName }`);
   }
 
   /**
-   * Adds a resource of type edge-packaging-job to the statement
+   * Adds a resource of type ai-recommendation-job to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge-packaging-job.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIRecommendationJob.html
    *
-   * @param edgePackagingJobName - Identifier for the edgePackagingJobName.
+   * @param aIRecommendationJobName - Identifier for the aIRecommendationJobName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -6243,16 +5232,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onEdgePackagingJob(edgePackagingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:edge-packaging-job/${ edgePackagingJobName }`);
+  public onAiRecommendationJob(aIRecommendationJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-recommendation-job/${ aIRecommendationJobName }`);
   }
 
   /**
-   * Adds a resource of type edge-deployment-plan to the statement
+   * Adds a resource of type ai-workload-config to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIWorkloadConfig.html
    *
-   * @param edgeDeploymentPlanName - Identifier for the edgeDeploymentPlanName.
+   * @param aIWorkloadConfigName - Identifier for the aIWorkloadConfigName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -6261,30 +5250,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onEdgeDeploymentPlan(edgeDeploymentPlanName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:edge-deployment/${ edgeDeploymentPlanName }`);
+  public onAiWorkloadConfig(aIWorkloadConfigName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-workload-config/${ aIWorkloadConfigName }`);
   }
 
   /**
-   * Adds a resource of type human-loop to the statement
+   * Adds a resource of type algorithm to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html
    *
-   * @param humanLoopName - Identifier for the humanLoopName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onHumanLoop(humanLoopName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:human-loop/${ humanLoopName }`);
-  }
-
-  /**
-   * Adds a resource of type flow-definition to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-create-flow-definition.html
-   *
-   * @param flowDefinitionName - Identifier for the flowDefinitionName.
+   * @param algorithmName - Identifier for the algorithmName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -6293,210 +5268,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onFlowDefinition(flowDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow-definition/${ flowDefinitionName }`);
-  }
-
-  /**
-   * Adds a resource of type human-task-ui to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-instructions-overview.html
-   *
-   * @param humanTaskUiName - Identifier for the humanTaskUiName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:human-task-ui/${ humanTaskUiName }`);
-  }
-
-  /**
-   * Adds a resource of type hub to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-content-sharing.html
-   *
-   * @param hubName - Identifier for the hubName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onHub(hubName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub/${ hubName }`);
-  }
-
-  /**
-   * Adds a resource of type hub-content to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-content-sharing.html
-   *
-   * @param hubName - Identifier for the hubName.
-   * @param hubContentType - Identifier for the hubContentType.
-   * @param hubContentName - Identifier for the hubContentName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onHubContent(hubName: string, hubContentType: string, hubContentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
-  }
-
-  /**
-   * Adds a resource of type inference-recommendations-job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-recommender-recommendation-jobs.html
-   *
-   * @param inferenceRecommendationsJobName - Identifier for the inferenceRecommendationsJobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onInferenceRecommendationsJob(inferenceRecommendationsJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
-  }
-
-  /**
-   * Adds a resource of type inference-experiment to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-experiment.html
-   *
-   * @param inferenceExperimentName - Identifier for the inferenceExperimentName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onInferenceExperiment(inferenceExperimentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-experiment/${ inferenceExperimentName }`);
-  }
-
-  /**
-   * Adds a resource of type labeling-job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html
-   *
-   * @param labelingJobName - Identifier for the labelingJobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onLabelingJob(labelingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:labeling-job/${ labelingJobName }`);
-  }
-
-  /**
-   * Adds a resource of type workteam to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html
-   *
-   * @param workteamName - Identifier for the workteamName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onWorkteam(workteamName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workteam/${ workteamName }`);
-  }
-
-  /**
-   * Adds a resource of type workforce to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html
-   *
-   * @param workforceName - Identifier for the workforceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onWorkforce(workforceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workforce/${ workforceName }`);
-  }
-
-  /**
-   * Adds a resource of type domain to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
-   *
-   * @param domainId - Identifier for the domainId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }`);
-  }
-
-  /**
-   * Adds a resource of type user-profile to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
-   *
-   * @param domainId - Identifier for the domainId.
-   * @param userProfileName - Identifier for the userProfileName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user-profile/${ domainId }/${ userProfileName }`);
-  }
-
-  /**
-   * Adds a resource of type space to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
-   *
-   * @param domainId - Identifier for the domainId.
-   * @param spaceName - Identifier for the spaceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onSpace(domainId: string, spaceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:space/${ domainId }/${ spaceName }`);
+  public onAlgorithm(algorithmName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:algorithm/${ algorithmName }`);
   }
 
   /**
@@ -6539,11 +5312,11 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type studio-lifecycle-config to the statement
+   * Adds a resource of type artifact to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-lcc.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ArtifactSummary.html
    *
-   * @param studioLifecycleConfigName - Identifier for the studioLifecycleConfigName.
+   * @param hashOfArtifactSource - Identifier for the hashOfArtifactSource.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -6552,427 +5325,8 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onStudioLifecycleConfig(studioLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
-  }
-
-  /**
-   * Adds a resource of type notebook-instance to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html
-   *
-   * @param notebookInstanceName - Identifier for the notebookInstanceName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onNotebookInstance(notebookInstanceName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook-instance/${ notebookInstanceName }`);
-  }
-
-  /**
-   * Adds a resource of type notebook-instance-lifecycle-config to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html
-   *
-   * @param notebookInstanceLifecycleConfigName - Identifier for the notebookInstanceLifecycleConfigName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onNotebookInstanceLifecycleConfig(notebookInstanceLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
-  }
-
-  /**
-   * Adds a resource of type code-repository to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html
-   *
-   * @param codeRepositoryName - Identifier for the codeRepositoryName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:code-repository/${ codeRepositoryName }`);
-  }
-
-  /**
-   * Adds a resource of type image to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html
-   *
-   * @param imageName - Identifier for the imageName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onImage(imageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image/${ imageName }`);
-  }
-
-  /**
-   * Adds a resource of type image-version to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html
-   *
-   * @param imageName - Identifier for the imageName.
-   * @param version - Identifier for the version.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onImageVersion(imageName: string, version: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image-version/${ imageName }/${ version }`);
-  }
-
-  /**
-   * Adds a resource of type algorithm to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html
-   *
-   * @param algorithmName - Identifier for the algorithmName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onAlgorithm(algorithmName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:algorithm/${ algorithmName }`);
-  }
-
-  /**
-   * Adds a resource of type cluster to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-cluster.html
-   *
-   * @param clusterId - Identifier for the clusterId.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterId }`);
-  }
-
-  /**
-   * Adds a resource of type training-job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html
-   *
-   * @param trainingJobName - Identifier for the trainingJobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onTrainingJob(trainingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training-job/${ trainingJobName }`);
-  }
-
-  /**
-   * Adds a resource of type processing-job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html
-   *
-   * @param processingJobName - Identifier for the processingJobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:processing-job/${ processingJobName }`);
-  }
-
-  /**
-   * Adds a resource of type job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html
-   *
-   * @param jobCategory - Identifier for the jobCategory.
-   * @param jobName - Identifier for the jobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onJob(jobCategory: string, jobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobCategory }/${ jobName }`);
-  }
-
-  /**
-   * Adds a resource of type hyper-parameter-tuning-job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html
-   *
-   * @param hyperParameterTuningJobName - Identifier for the hyperParameterTuningJobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onHyperParameterTuningJob(hyperParameterTuningJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
-  }
-
-  /**
-   * Adds a resource of type training-plan to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html
-   *
-   * @param trainingPlanName - Identifier for the trainingPlanName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onTrainingPlan(trainingPlanName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training-plan/${ trainingPlanName }`);
-  }
-
-  /**
-   * Adds a resource of type reserved-capacity to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html
-   *
-   * @param randomString - Identifier for the randomString.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onReservedCapacity(randomString: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reserved-capacity/${ randomString }`);
-  }
-
-  /**
-   * Adds a resource of type project to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-projects-whatis.html
-   *
-   * @param projectName - Identifier for the projectName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onProject(projectName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }`);
-  }
-
-  /**
-   * Adds a resource of type model-package to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ModelPackage.html
-   *
-   * @param modelPackageName - Identifier for the modelPackageName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifCurrentCustomerMetadataProperties()
-   * - .ifCurrentModelLifeCycleStage()
-   * - .ifCurrentModelLifeCycleStageStatus()
-   * - .ifResourceTag()
-   */
-  public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-package/${ modelPackageName }`);
-  }
-
-  /**
-   * Adds a resource of type model-package-group to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-model-group.html
-   *
-   * @param modelPackageGroupName - Identifier for the modelPackageGroupName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onModelPackageGroup(modelPackageGroupName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-package-group/${ modelPackageGroupName }`);
-  }
-
-  /**
-   * Adds a resource of type model to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
-   *
-   * @param modelName - Identifier for the modelName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onModel(modelName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/${ modelName }`);
-  }
-
-  /**
-   * Adds a resource of type endpoint-config to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
-   *
-   * @param endpointConfigName - Identifier for the endpointConfigName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onEndpointConfig(endpointConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint-config/${ endpointConfigName }`);
-  }
-
-  /**
-   * Adds a resource of type endpoint to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
-   *
-   * @param endpointName - Identifier for the endpointName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint/${ endpointName }`);
-  }
-
-  /**
-   * Adds a resource of type inference-component to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
-   *
-   * @param inferenceComponentName - Identifier for the inferenceComponentName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onInferenceComponent(inferenceComponentName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-component/${ inferenceComponentName }`);
-  }
-
-  /**
-   * Adds a resource of type transform-job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TransformJob.html.html
-   *
-   * @param transformJobName - Identifier for the transformJobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onTransformJob(transformJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transform-job/${ transformJobName }`);
-  }
-
-  /**
-   * Adds a resource of type compilation-job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html
-   *
-   * @param compilationJobName - Identifier for the compilationJobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onCompilationJob(compilationJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compilation-job/${ compilationJobName }`);
-  }
-
-  /**
-   * Adds a resource of type optimization-job to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OptimizationJobSummary.html
-   *
-   * @param optimizationJobName - Identifier for the optimizationJobName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
-   */
-  public onOptimizationJob(optimizationJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:optimization-job/${ optimizationJobName }`);
+  public onArtifact(hashOfArtifactSource: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:artifact/${ hashOfArtifactSource }`);
   }
 
   /**
@@ -6994,11 +5348,11 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type monitoring-schedule to the statement
+   * Adds a resource of type cluster to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-scheduling.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-cluster.html
    *
-   * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
+   * @param clusterId - Identifier for the clusterId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7007,23 +5361,98 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onMonitoringSchedule(monitoringScheduleName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }`);
+  public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster/${ clusterId }`);
   }
 
   /**
-   * Adds a resource of type monitoring-schedule-alert to the statement
+   * Adds a resource of type cluster-scheduler-config to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-scheduling.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-governance.html
    *
-   * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
-   * @param monitoringScheduleAlertName - Identifier for the monitoringScheduleAlertName.
+   * @param clusterSchedulerConfigId - Identifier for the clusterSchedulerConfigId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
-  public onMonitoringScheduleAlert(monitoringScheduleName: string, monitoringScheduleAlertName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
+  public onClusterSchedulerConfig(clusterSchedulerConfigId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster-scheduler-config/${ clusterSchedulerConfigId }`);
+  }
+
+  /**
+   * Adds a resource of type code-repository to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html
+   *
+   * @param codeRepositoryName - Identifier for the codeRepositoryName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:code-repository/${ codeRepositoryName }`);
+  }
+
+  /**
+   * Adds a resource of type compilation-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html
+   *
+   * @param compilationJobName - Identifier for the compilationJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onCompilationJob(compilationJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compilation-job/${ compilationJobName }`);
+  }
+
+  /**
+   * Adds a resource of type compute-quota to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-governance.html
+   *
+   * @param computeQuotaId - Identifier for the computeQuotaId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onComputeQuota(computeQuotaId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compute-quota/${ computeQuotaId }`);
+  }
+
+  /**
+   * Adds a resource of type context to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContextSummary.html
+   *
+   * @param contextName - Identifier for the contextName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onContext(contextName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:context/${ contextName }`);
   }
 
   /**
@@ -7045,11 +5474,12 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type model-quality-job-definition to the statement
+   * Adds a resource of type device to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/neo-edge-devices.html
    *
-   * @param modelQualityJobDefinitionName - Identifier for the modelQualityJobDefinitionName.
+   * @param deviceFleetName - Identifier for the deviceFleetName.
+   * @param deviceName - Identifier for the deviceName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7058,16 +5488,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onModelQualityJobDefinition(modelQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
+  public onDevice(deviceFleetName: string, deviceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-fleet/${ deviceFleetName }/device/${ deviceName }`);
   }
 
   /**
-   * Adds a resource of type model-bias-job-definition to the statement
+   * Adds a resource of type device-fleet to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-post-training-bias.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge-device-fleet.html
    *
-   * @param modelBiasJobDefinitionName - Identifier for the modelBiasJobDefinitionName.
+   * @param deviceFleetName - Identifier for the deviceFleetName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7076,16 +5506,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onModelBiasJobDefinition(modelBiasJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
+  public onDeviceFleet(deviceFleetName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:device-fleet/${ deviceFleetName }`);
   }
 
   /**
-   * Adds a resource of type model-explainability-job-definition to the statement
+   * Adds a resource of type domain to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
    *
-   * @param modelExplainabilityJobDefinitionName - Identifier for the modelExplainabilityJobDefinitionName.
+   * @param domainId - Identifier for the domainId.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7094,8 +5524,80 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onModelExplainabilityJobDefinition(modelExplainabilityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
+  public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:domain/${ domainId }`);
+  }
+
+  /**
+   * Adds a resource of type edge-deployment-plan to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge.html
+   *
+   * @param edgeDeploymentPlanName - Identifier for the edgeDeploymentPlanName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onEdgeDeploymentPlan(edgeDeploymentPlanName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:edge-deployment/${ edgeDeploymentPlanName }`);
+  }
+
+  /**
+   * Adds a resource of type edge-packaging-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/edge-packaging-job.html
+   *
+   * @param edgePackagingJobName - Identifier for the edgePackagingJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onEdgePackagingJob(edgePackagingJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:edge-packaging-job/${ edgePackagingJobName }`);
+  }
+
+  /**
+   * Adds a resource of type endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
+   *
+   * @param endpointName - Identifier for the endpointName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint/${ endpointName }`);
+  }
+
+  /**
+   * Adds a resource of type endpoint-config to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
+   *
+   * @param endpointConfigName - Identifier for the endpointConfigName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onEndpointConfig(endpointConfigName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:endpoint-config/${ endpointConfigName }`);
   }
 
   /**
@@ -7171,11 +5673,11 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type pipeline to the statement
+   * Adds a resource of type flow-definition to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Pipeline.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-create-flow-definition.html
    *
-   * @param pipelineName - Identifier for the pipelineName.
+   * @param flowDefinitionName - Identifier for the flowDefinitionName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7184,17 +5686,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineName }`);
+  public onFlowDefinition(flowDefinitionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:flow-definition/${ flowDefinitionName }`);
   }
 
   /**
-   * Adds a resource of type pipeline-execution to the statement
+   * Adds a resource of type hub to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PipelineExecution.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-content-sharing.html
    *
-   * @param pipelineName - Identifier for the pipelineName.
-   * @param randomString - Identifier for the randomString.
+   * @param hubName - Identifier for the hubName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7203,16 +5704,18 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onPipelineExecution(pipelineName: string, randomString: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineName }/execution/${ randomString }`);
+  public onHub(hubName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub/${ hubName }`);
   }
 
   /**
-   * Adds a resource of type artifact to the statement
+   * Adds a resource of type hub-content to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ArtifactSummary.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-content-sharing.html
    *
-   * @param hashOfArtifactSource - Identifier for the hashOfArtifactSource.
+   * @param hubName - Identifier for the hubName.
+   * @param hubContentType - Identifier for the hubContentType.
+   * @param hubContentName - Identifier for the hubContentName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7221,34 +5724,30 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onArtifact(hashOfArtifactSource: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:artifact/${ hashOfArtifactSource }`);
+  public onHubContent(hubName: string, hubContentType: string, hubContentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hub-content/${ hubName }/${ hubContentType }/${ hubContentName }`);
   }
 
   /**
-   * Adds a resource of type context to the statement
+   * Adds a resource of type human-loop to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContextSummary.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html
    *
-   * @param contextName - Identifier for the contextName.
+   * @param humanLoopName - Identifier for the humanLoopName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
-   * - .ifResourceTag()
    */
-  public onContext(contextName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:context/${ contextName }`);
+  public onHumanLoop(humanLoopName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:human-loop/${ humanLoopName }`);
   }
 
   /**
-   * Adds a resource of type action to the statement
+   * Adds a resource of type human-task-ui to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ActionSummary.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-instructions-overview.html
    *
-   * @param actionName - Identifier for the actionName.
+   * @param humanTaskUiName - Identifier for the humanTaskUiName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7257,8 +5756,154 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onAction(actionName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:action/${ actionName }`);
+  public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:human-task-ui/${ humanTaskUiName }`);
+  }
+
+  /**
+   * Adds a resource of type hyper-parameter-tuning-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html
+   *
+   * @param hyperParameterTuningJobName - Identifier for the hyperParameterTuningJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onHyperParameterTuningJob(hyperParameterTuningJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:hyper-parameter-tuning-job/${ hyperParameterTuningJobName }`);
+  }
+
+  /**
+   * Adds a resource of type image to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html
+   *
+   * @param imageName - Identifier for the imageName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onImage(imageName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image/${ imageName }`);
+  }
+
+  /**
+   * Adds a resource of type image-version to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html
+   *
+   * @param imageName - Identifier for the imageName.
+   * @param version - Identifier for the version.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onImageVersion(imageName: string, version: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:image-version/${ imageName }/${ version }`);
+  }
+
+  /**
+   * Adds a resource of type inference-component to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
+   *
+   * @param inferenceComponentName - Identifier for the inferenceComponentName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onInferenceComponent(inferenceComponentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-component/${ inferenceComponentName }`);
+  }
+
+  /**
+   * Adds a resource of type inference-experiment to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-experiment.html
+   *
+   * @param inferenceExperimentName - Identifier for the inferenceExperimentName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onInferenceExperiment(inferenceExperimentName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-experiment/${ inferenceExperimentName }`);
+  }
+
+  /**
+   * Adds a resource of type inference-recommendations-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/inference-recommender-recommendation-jobs.html
+   *
+   * @param inferenceRecommendationsJobName - Identifier for the inferenceRecommendationsJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onInferenceRecommendationsJob(inferenceRecommendationsJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:inference-recommendations-job/${ inferenceRecommendationsJobName }`);
+  }
+
+  /**
+   * Adds a resource of type job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html
+   *
+   * @param jobCategory - Identifier for the jobCategory.
+   * @param jobName - Identifier for the jobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onJob(jobCategory: string, jobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:job/${ jobCategory }/${ jobName }`);
+  }
+
+  /**
+   * Adds a resource of type labeling-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html
+   *
+   * @param labelingJobName - Identifier for the labelingJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onLabelingJob(labelingJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:labeling-job/${ labelingJobName }`);
   }
 
   /**
@@ -7277,6 +5922,74 @@ export class Sagemaker extends PolicyStatement {
    */
   public onLineageGroup(lineageGroupName: string, account?: string, region?: string, partition?: string) {
     return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:lineage-group/${ lineageGroupName }`);
+  }
+
+  /**
+   * Adds a resource of type mlflow-app to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MlflowApp.html
+   *
+   * @param mLflowAppId - Identifier for the mLflowAppId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onMlflowApp(mLflowAppId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-app/${ mLflowAppId }`);
+  }
+
+  /**
+   * Adds a resource of type mlflow-tracking-server to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MlflowTrackingServer.html
+   *
+   * @param mlflowTrackingServerName - Identifier for the mlflowTrackingServerName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMlflowTrackingServer(mlflowTrackingServerName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-tracking-server/${ mlflowTrackingServerName }`);
+  }
+
+  /**
+   * Adds a resource of type model to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html
+   *
+   * @param modelName - Identifier for the modelName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModel(modelName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model/${ modelName }`);
+  }
+
+  /**
+   * Adds a resource of type model-bias-job-definition to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-post-training-bias.html
+   *
+   * @param modelBiasJobDefinitionName - Identifier for the modelBiasJobDefinitionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelBiasJobDefinition(modelBiasJobDefinitionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-bias-job-definition/${ modelBiasJobDefinitionName }`);
   }
 
   /**
@@ -7317,6 +6030,291 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type model-explainability-job-definition to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html
+   *
+   * @param modelExplainabilityJobDefinitionName - Identifier for the modelExplainabilityJobDefinitionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelExplainabilityJobDefinition(modelExplainabilityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-explainability-job-definition/${ modelExplainabilityJobDefinitionName }`);
+  }
+
+  /**
+   * Adds a resource of type model-package to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ModelPackage.html
+   *
+   * @param modelPackageName - Identifier for the modelPackageName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCurrentCustomerMetadataProperties()
+   * - .ifCurrentModelLifeCycleStage()
+   * - .ifCurrentModelLifeCycleStageStatus()
+   * - .ifResourceTag()
+   */
+  public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-package/${ modelPackageName }`);
+  }
+
+  /**
+   * Adds a resource of type model-package-group to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-model-group.html
+   *
+   * @param modelPackageGroupName - Identifier for the modelPackageGroupName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelPackageGroup(modelPackageGroupName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-package-group/${ modelPackageGroupName }`);
+  }
+
+  /**
+   * Adds a resource of type model-quality-job-definition to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html
+   *
+   * @param modelQualityJobDefinitionName - Identifier for the modelQualityJobDefinitionName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onModelQualityJobDefinition(modelQualityJobDefinitionName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:model-quality-job-definition/${ modelQualityJobDefinitionName }`);
+  }
+
+  /**
+   * Adds a resource of type monitoring-schedule to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-scheduling.html
+   *
+   * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onMonitoringSchedule(monitoringScheduleName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }`);
+  }
+
+  /**
+   * Adds a resource of type monitoring-schedule-alert to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-scheduling.html
+   *
+   * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
+   * @param monitoringScheduleAlertName - Identifier for the monitoringScheduleAlertName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onMonitoringScheduleAlert(monitoringScheduleName: string, monitoringScheduleAlertName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:monitoring-schedule/${ monitoringScheduleName }/alert/${ monitoringScheduleAlertName }`);
+  }
+
+  /**
+   * Adds a resource of type notebook-instance to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html
+   *
+   * @param notebookInstanceName - Identifier for the notebookInstanceName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onNotebookInstance(notebookInstanceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook-instance/${ notebookInstanceName }`);
+  }
+
+  /**
+   * Adds a resource of type notebook-instance-lifecycle-config to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html
+   *
+   * @param notebookInstanceLifecycleConfigName - Identifier for the notebookInstanceLifecycleConfigName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onNotebookInstanceLifecycleConfig(notebookInstanceLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:notebook-instance-lifecycle-config/${ notebookInstanceLifecycleConfigName }`);
+  }
+
+  /**
+   * Adds a resource of type optimization-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OptimizationJobSummary.html
+   *
+   * @param optimizationJobName - Identifier for the optimizationJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onOptimizationJob(optimizationJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:optimization-job/${ optimizationJobName }`);
+  }
+
+  /**
+   * Adds a resource of type partner-app to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/partner-apps.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onPartnerApp(appId: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:partner-app/${ appId }`);
+  }
+
+  /**
+   * Adds a resource of type pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Pipeline.html
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineName }`);
+  }
+
+  /**
+   * Adds a resource of type pipeline-execution to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PipelineExecution.html
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param randomString - Identifier for the randomString.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onPipelineExecution(pipelineName: string, randomString: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:pipeline/${ pipelineName }/execution/${ randomString }`);
+  }
+
+  /**
+   * Adds a resource of type processing-job to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html
+   *
+   * @param processingJobName - Identifier for the processingJobName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:processing-job/${ processingJobName }`);
+  }
+
+  /**
+   * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-projects-whatis.html
+   *
+   * @param projectName - Identifier for the projectName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onProject(projectName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:project/${ projectName }`);
+  }
+
+  /**
+   * Adds a resource of type reserved-capacity to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html
+   *
+   * @param randomString - Identifier for the randomString.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onReservedCapacity(randomString: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:reserved-capacity/${ randomString }`);
+  }
+
+  /**
+   * Adds a resource of type sagemaker-catalog to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceCatalog.html
+   *
+   * @param resourceCatalogName - Identifier for the resourceCatalogName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   */
+  public onSagemakerCatalog(resourceCatalogName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sagemaker-catalog/${ resourceCatalogName }`);
+  }
+
+  /**
    * Adds a resource of type shared-model to the statement
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-collaborate-permissions.html
@@ -7345,39 +6343,12 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type sagemaker-catalog to the statement
+   * Adds a resource of type space to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceCatalog.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
    *
-   * @param resourceCatalogName - Identifier for the resourceCatalogName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onSagemakerCatalog(resourceCatalogName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:sagemaker-catalog/${ resourceCatalogName }`);
-  }
-
-  /**
-   * Adds a resource of type mlflow-tracking-server to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MlflowTrackingServer.html
-   *
-   * @param mlflowTrackingServerName - Identifier for the mlflowTrackingServerName.
-   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
-   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
-   */
-  public onMlflowTrackingServer(mlflowTrackingServerName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-tracking-server/${ mlflowTrackingServerName }`);
-  }
-
-  /**
-   * Adds a resource of type mlflow-app to the statement
-   *
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MlflowApp.html
-   *
-   * @param mLflowAppId - Identifier for the mLflowAppId.
+   * @param domainId - Identifier for the domainId.
+   * @param spaceName - Identifier for the spaceName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7386,16 +6357,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onMlflowApp(mLflowAppId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:mlflow-app/${ mLflowAppId }`);
+  public onSpace(domainId: string, spaceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:space/${ domainId }/${ spaceName }`);
   }
 
   /**
-   * Adds a resource of type compute-quota to the statement
+   * Adds a resource of type studio-lifecycle-config to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-governance.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-lcc.html
    *
-   * @param computeQuotaId - Identifier for the computeQuotaId.
+   * @param studioLifecycleConfigName - Identifier for the studioLifecycleConfigName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7404,16 +6375,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onComputeQuota(computeQuotaId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:compute-quota/${ computeQuotaId }`);
+  public onStudioLifecycleConfig(studioLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:studio-lifecycle-config/${ studioLifecycleConfigName }`);
   }
 
   /**
-   * Adds a resource of type cluster-scheduler-config to the statement
+   * Adds a resource of type training-job to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-governance.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html
    *
-   * @param clusterSchedulerConfigId - Identifier for the clusterSchedulerConfigId.
+   * @param trainingJobName - Identifier for the trainingJobName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7422,16 +6393,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onClusterSchedulerConfig(clusterSchedulerConfigId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:cluster-scheduler-config/${ clusterSchedulerConfigId }`);
+  public onTrainingJob(trainingJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training-job/${ trainingJobName }`);
   }
 
   /**
-   * Adds a resource of type partner-app to the statement
+   * Adds a resource of type training-plan to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/partner-apps.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html
    *
-   * @param appId - Identifier for the appId.
+   * @param trainingPlanName - Identifier for the trainingPlanName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7440,16 +6411,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onPartnerApp(appId: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:partner-app/${ appId }`);
+  public onTrainingPlan(trainingPlanName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:training-plan/${ trainingPlanName }`);
   }
 
   /**
-   * Adds a resource of type ai-workload-config to the statement
+   * Adds a resource of type transform-job to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIWorkloadConfig.html
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TransformJob.html.html
    *
-   * @param aIWorkloadConfigName - Identifier for the aIWorkloadConfigName.
+   * @param transformJobName - Identifier for the transformJobName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7458,16 +6429,17 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onAiWorkloadConfig(aIWorkloadConfigName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-workload-config/${ aIWorkloadConfigName }`);
+  public onTransformJob(transformJobName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:transform-job/${ transformJobName }`);
   }
 
   /**
-   * Adds a resource of type ai-benchmark-job to the statement
+   * Adds a resource of type user-profile to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIBenchmarkJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/studio-entity-status.html
    *
-   * @param aIBenchmarkJobName - Identifier for the aIBenchmarkJobName.
+   * @param domainId - Identifier for the domainId.
+   * @param userProfileName - Identifier for the userProfileName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7476,16 +6448,16 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onAiBenchmarkJob(aIBenchmarkJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-benchmark-job/${ aIBenchmarkJobName }`);
+  public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:user-profile/${ domainId }/${ userProfileName }`);
   }
 
   /**
-   * Adds a resource of type ai-recommendation-job to the statement
+   * Adds a resource of type workforce to the statement
    *
-   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AIRecommendationJob.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html
    *
-   * @param aIRecommendationJobName - Identifier for the aIRecommendationJobName.
+   * @param workforceName - Identifier for the workforceName.
    * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
    * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
@@ -7494,8 +6466,26 @@ export class Sagemaker extends PolicyStatement {
    * - .ifAwsResourceTag()
    * - .ifResourceTag()
    */
-  public onAiRecommendationJob(aIRecommendationJobName: string, account?: string, region?: string, partition?: string) {
-    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:ai-recommendation-job/${ aIRecommendationJobName }`);
+  public onWorkforce(workforceName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workforce/${ workforceName }`);
+  }
+
+  /**
+   * Adds a resource of type workteam to the statement
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html
+   *
+   * @param workteamName - Identifier for the workteamName.
+   * @param account - Account of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's account.
+   * @param region - Region of the resource; defaults to `*`, unless using the CDK, where the default is the current Stack's region.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`, unless using the CDK, where the default is the current Stack's partition.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
+   */
+  public onWorkteam(workteamName: string, account?: string, region?: string, partition?: string) {
+    return this.on(`arn:${ partition ?? this.defaultPartition }:sagemaker:${ region ?? this.defaultRegion }:${ account ?? this.defaultAccount }:workteam/${ workteamName }`);
   }
 
   /**
@@ -7559,7 +6549,6 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreatePipeline()
    * - .toCreateProcessingJob()
    * - .toCreateProject()
-   * - .toCreateReservedCapacity()
    * - .toCreateSpace()
    * - .toCreateStudioLifecycleConfig()
    * - .toCreateTrainingJob()
@@ -7590,82 +6579,413 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * Applies to actions:
+   * - .toAddAssociation()
+   * - .toAddTags()
+   * - .toAssociateTrialComponent()
+   * - .toAttachClusterNodeVolume()
+   * - .toBatchAddClusterNodes()
+   * - .toBatchDeleteClusterNodes()
+   * - .toBatchDescribeModelPackage()
+   * - .toBatchGetMetrics()
+   * - .toBatchGetRecord()
+   * - .toBatchPutMetrics()
+   * - .toBatchWriteRecord()
+   * - .toCallMlflowAppApi()
+   * - .toCallPartnerAppApi()
+   * - .toCompleteRollout()
+   * - .toCreateAIBenchmarkJob()
+   * - .toCreateAIRecommendationJob()
+   * - .toCreateAIWorkloadConfig()
+   * - .toCreateAction()
+   * - .toCreateAlgorithm()
+   * - .toCreateApp()
+   * - .toCreateAppImageConfig()
+   * - .toCreateArtifact()
+   * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
+   * - .toCreateCluster()
+   * - .toCreateClusterSchedulerConfig()
+   * - .toCreateCodeRepository()
+   * - .toCreateCompilationJob()
+   * - .toCreateComputeQuota()
+   * - .toCreateContext()
+   * - .toCreateDataQualityJobDefinition()
+   * - .toCreateDeviceFleet()
+   * - .toCreateDomain()
+   * - .toCreateEdgeDeploymentPlan()
+   * - .toCreateEdgeDeploymentStage()
+   * - .toCreateEdgePackagingJob()
+   * - .toCreateEndpoint()
+   * - .toCreateEndpointConfig()
+   * - .toCreateExperiment()
+   * - .toCreateFeatureGroup()
+   * - .toCreateFlowDefinition()
+   * - .toCreateHub()
+   * - .toCreateHubContentPresignedUrls()
+   * - .toCreateHubContentReference()
+   * - .toCreateHumanTaskUi()
+   * - .toCreateHyperParameterTuningJob()
+   * - .toCreateImage()
+   * - .toCreateImageVersion()
+   * - .toCreateInferenceComponent()
+   * - .toCreateInferenceExperiment()
+   * - .toCreateInferenceRecommendationsJob()
+   * - .toCreateJob()
+   * - .toCreateLabelingJob()
+   * - .toCreateMlflowApp()
    * - .toCreateMlflowTrackingServer()
+   * - .toCreateModel()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelCard()
+   * - .toCreateModelCardExportJob()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelPackage()
+   * - .toCreateModelPackageGroup()
+   * - .toCreateModelQualityJobDefinition()
+   * - .toCreateMonitoringSchedule()
+   * - .toCreateNotebookInstance()
+   * - .toCreateNotebookInstanceLifecycleConfig()
+   * - .toCreateOptimizationJob()
+   * - .toCreatePartnerApp()
+   * - .toCreatePartnerAppPresignedUrl()
+   * - .toCreatePipeline()
+   * - .toCreatePresignedDomainUrl()
+   * - .toCreatePresignedMlflowAppUrl()
    * - .toCreatePresignedMlflowTrackingServerUrl()
+   * - .toCreatePresignedNotebookInstanceUrl()
+   * - .toCreateProcessingJob()
+   * - .toCreateProject()
+   * - .toCreateSpace()
+   * - .toCreateStudioLifecycleConfig()
+   * - .toCreateTrainingJob()
+   * - .toCreateTrainingPlan()
+   * - .toCreateTransformJob()
+   * - .toCreateTrial()
+   * - .toCreateTrialComponent()
+   * - .toCreateUserProfile()
+   * - .toCreateWorkforce()
+   * - .toCreateWorkteam()
+   * - .toDeleteAIBenchmarkJob()
+   * - .toDeleteAIRecommendationJob()
+   * - .toDeleteAIWorkloadConfig()
+   * - .toDeleteAction()
+   * - .toDeleteAlgorithm()
+   * - .toDeleteApp()
+   * - .toDeleteAppImageConfig()
+   * - .toDeleteArtifact()
+   * - .toDeleteAssociation()
+   * - .toDeleteCluster()
+   * - .toDeleteClusterSchedulerConfig()
+   * - .toDeleteCodeRepository()
+   * - .toDeleteCompilationJob()
+   * - .toDeleteComputeQuota()
+   * - .toDeleteContext()
+   * - .toDeleteDataQualityJobDefinition()
+   * - .toDeleteDeviceFleet()
+   * - .toDeleteDomain()
+   * - .toDeleteEdgeDeploymentPlan()
+   * - .toDeleteEdgeDeploymentStage()
+   * - .toDeleteEndpoint()
+   * - .toDeleteEndpointConfig()
+   * - .toDeleteExperiment()
+   * - .toDeleteFeatureGroup()
+   * - .toDeleteFlowDefinition()
+   * - .toDeleteHub()
+   * - .toDeleteHubContent()
+   * - .toDeleteHubContentReference()
+   * - .toDeleteHumanTaskUi()
+   * - .toDeleteHyperParameterTuningJob()
+   * - .toDeleteImage()
+   * - .toDeleteImageVersion()
+   * - .toDeleteInferenceComponent()
+   * - .toDeleteInferenceExperiment()
+   * - .toDeleteJob()
+   * - .toDeleteMlflowApp()
    * - .toDeleteMlflowTrackingServer()
+   * - .toDeleteModel()
+   * - .toDeleteModelBiasJobDefinition()
+   * - .toDeleteModelCard()
+   * - .toDeleteModelExplainabilityJobDefinition()
+   * - .toDeleteModelPackage()
+   * - .toDeleteModelPackageGroup()
+   * - .toDeleteModelPackageGroupPolicy()
+   * - .toDeleteModelQualityJobDefinition()
+   * - .toDeleteMonitoringSchedule()
+   * - .toDeleteNotebookInstance()
+   * - .toDeleteNotebookInstanceLifecycleConfig()
+   * - .toDeleteOptimizationJob()
+   * - .toDeletePartnerApp()
+   * - .toDeletePipeline()
+   * - .toDeleteProcessingJob()
+   * - .toDeleteProject()
+   * - .toDeleteRecord()
+   * - .toDeleteSpace()
+   * - .toDeleteStudioLifecycleConfig()
+   * - .toDeleteTags()
+   * - .toDeleteTrainingJob()
+   * - .toDeleteTrial()
+   * - .toDeleteTrialComponent()
+   * - .toDeleteUserProfile()
+   * - .toDeleteWorkforce()
+   * - .toDeleteWorkteam()
+   * - .toDeployHubModel()
+   * - .toDeregisterDevices()
+   * - .toDescribeAIBenchmarkJob()
+   * - .toDescribeAIRecommendationJob()
+   * - .toDescribeAIWorkloadConfig()
+   * - .toDescribeAction()
+   * - .toDescribeAlgorithm()
+   * - .toDescribeApp()
+   * - .toDescribeAppImageConfig()
+   * - .toDescribeArtifact()
+   * - .toDescribeAutoMLJob()
+   * - .toDescribeAutoMLJobV2()
+   * - .toDescribeCluster()
+   * - .toDescribeClusterEvent()
+   * - .toDescribeClusterNode()
+   * - .toDescribeClusterSchedulerConfig()
+   * - .toDescribeCodeRepository()
+   * - .toDescribeCompilationJob()
+   * - .toDescribeComputeQuota()
+   * - .toDescribeContext()
+   * - .toDescribeDataQualityJobDefinition()
+   * - .toDescribeDevice()
+   * - .toDescribeDeviceFleet()
+   * - .toDescribeDomain()
+   * - .toDescribeEdgeDeploymentPlan()
+   * - .toDescribeEdgePackagingJob()
+   * - .toDescribeEndpoint()
+   * - .toDescribeEndpointConfig()
+   * - .toDescribeExperiment()
+   * - .toDescribeFeatureGroup()
+   * - .toDescribeFeatureMetadata()
+   * - .toDescribeFlowDefinition()
+   * - .toDescribeHub()
+   * - .toDescribeHubContent()
+   * - .toDescribeHumanTaskUi()
+   * - .toDescribeHyperParameterTuningJob()
+   * - .toDescribeImage()
+   * - .toDescribeImageVersion()
+   * - .toDescribeInferenceComponent()
+   * - .toDescribeInferenceExperiment()
+   * - .toDescribeInferenceRecommendationsJob()
+   * - .toDescribeJob()
+   * - .toDescribeLabelingJob()
+   * - .toDescribeMlflowApp()
    * - .toDescribeMlflowTrackingServer()
+   * - .toDescribeModel()
+   * - .toDescribeModelBiasJobDefinition()
+   * - .toDescribeModelCard()
+   * - .toDescribeModelCardExportJob()
+   * - .toDescribeModelExplainabilityJobDefinition()
+   * - .toDescribeModelPackage()
+   * - .toDescribeModelPackageGroup()
+   * - .toDescribeModelQualityJobDefinition()
+   * - .toDescribeMonitoringSchedule()
+   * - .toDescribeNotebookInstance()
+   * - .toDescribeNotebookInstanceLifecycleConfig()
+   * - .toDescribeOptimizationJob()
+   * - .toDescribePartnerApp()
+   * - .toDescribePipeline()
+   * - .toDescribePipelineDefinitionForExecution()
+   * - .toDescribePipelineExecution()
+   * - .toDescribeProcessingJob()
+   * - .toDescribeProject()
+   * - .toDescribeReservedCapacity()
+   * - .toDescribeSpace()
+   * - .toDescribeStudioLifecycleConfig()
+   * - .toDescribeSubscribedWorkteam()
+   * - .toDescribeTrainingJob()
+   * - .toDescribeTrainingPlan()
+   * - .toDescribeTransformJob()
+   * - .toDescribeTrial()
+   * - .toDescribeTrialComponent()
+   * - .toDescribeUserProfile()
+   * - .toDescribeWorkforce()
+   * - .toDescribeWorkteam()
+   * - .toDetachClusterNodeVolume()
+   * - .toDisassociateTrialComponent()
+   * - .toGetDeployments()
+   * - .toGetDeviceFleetReport()
+   * - .toGetDeviceRegistration()
+   * - .toGetModelPackageGroupPolicy()
+   * - .toGetRecord()
+   * - .toGetScalingConfigurationRecommendation()
+   * - .toImportHubContent()
+   * - .toInvokeEndpoint()
+   * - .toInvokeEndpointAsync()
+   * - .toInvokeEndpointWithResponseStream()
+   * - .toListAliases()
+   * - .toListClusterEvents()
+   * - .toListClusterNodes()
+   * - .toListHubContentVersions()
+   * - .toListHubContents()
+   * - .toListImageVersions()
+   * - .toListLabelingJobsForWorkteam()
+   * - .toListModelCardExportJobs()
+   * - .toListModelCardVersions()
+   * - .toListModelPackages()
+   * - .toListPipelineExecutionSteps()
+   * - .toListPipelineExecutions()
+   * - .toListPipelineParametersForExecution()
+   * - .toListPipelineVersions()
+   * - .toListRecords()
+   * - .toListTags()
+   * - .toListTrainingJobsForHyperParameterTuningJob()
+   * - .toListUltraServersByReservedCapacity()
+   * - .toPutModelPackageGroupPolicy()
+   * - .toPutRecord()
+   * - .toRegisterDevices()
+   * - .toRetryPipelineExecution()
+   * - .toSample()
+   * - .toSampleWithResponseStream()
+   * - .toSendHeartbeat()
+   * - .toSendPipelineExecutionStepFailure()
+   * - .toSendPipelineExecutionStepSuccess()
+   * - .toStartClusterHealthCheck()
+   * - .toStartEdgeDeploymentStage()
+   * - .toStartHumanLoop()
+   * - .toStartInferenceExperiment()
    * - .toStartMlflowTrackingServer()
+   * - .toStartMonitoringSchedule()
+   * - .toStartNotebookInstance()
+   * - .toStartPipelineExecution()
+   * - .toStartSession()
+   * - .toStopAIBenchmarkJob()
+   * - .toStopAIRecommendationJob()
+   * - .toStopAutoMLJob()
+   * - .toStopCompilationJob()
+   * - .toStopEdgeDeploymentStage()
+   * - .toStopEdgePackagingJob()
+   * - .toStopHyperParameterTuningJob()
+   * - .toStopInferenceExperiment()
+   * - .toStopInferenceRecommendationsJob()
+   * - .toStopJob()
+   * - .toStopLabelingJob()
    * - .toStopMlflowTrackingServer()
+   * - .toStopMonitoringSchedule()
+   * - .toStopNotebookInstance()
+   * - .toStopOptimizationJob()
+   * - .toStopPipelineExecution()
+   * - .toStopProcessingJob()
+   * - .toStopTrainingJob()
+   * - .toStopTransformJob()
+   * - .toTrainHubModel()
+   * - .toUpdateAction()
+   * - .toUpdateAppImageConfig()
+   * - .toUpdateArtifact()
+   * - .toUpdateCluster()
+   * - .toUpdateClusterSchedulerConfig()
+   * - .toUpdateClusterSoftware()
+   * - .toUpdateCodeRepository()
+   * - .toUpdateComputeQuota()
+   * - .toUpdateContext()
+   * - .toUpdateDeviceFleet()
+   * - .toUpdateDevices()
+   * - .toUpdateDomain()
+   * - .toUpdateEndpoint()
+   * - .toUpdateEndpointWeightsAndCapacities()
+   * - .toUpdateExperiment()
+   * - .toUpdateFeatureGroup()
+   * - .toUpdateFeatureMetadata()
+   * - .toUpdateHub()
+   * - .toUpdateHubContent()
+   * - .toUpdateHubContentReference()
+   * - .toUpdateImage()
+   * - .toUpdateImageVersion()
+   * - .toUpdateInferenceComponent()
+   * - .toUpdateInferenceComponentRuntimeConfig()
+   * - .toUpdateInferenceExperiment()
+   * - .toUpdateMlflowApp()
    * - .toUpdateMlflowTrackingServer()
+   * - .toUpdateModelCard()
+   * - .toUpdateModelPackage()
+   * - .toUpdateMonitoringAlert()
+   * - .toUpdateMonitoringSchedule()
+   * - .toUpdateNotebookInstance()
+   * - .toUpdateNotebookInstanceLifecycleConfig()
+   * - .toUpdatePartnerApp()
+   * - .toUpdatePipeline()
+   * - .toUpdatePipelineExecution()
+   * - .toUpdatePipelineVersion()
+   * - .toUpdateProject()
+   * - .toUpdateReward()
+   * - .toUpdateSpace()
+   * - .toUpdateTrainingJob()
+   * - .toUpdateTrial()
+   * - .toUpdateTrialComponent()
+   * - .toUpdateUserProfile()
+   * - .toUpdateWorkforce()
+   * - .toUpdateWorkteam()
    *
    * Applies to resource types:
-   * - device
-   * - device-fleet
-   * - edge-packaging-job
-   * - edge-deployment-plan
-   * - flow-definition
-   * - human-task-ui
-   * - hub
-   * - hub-content
-   * - inference-recommendations-job
-   * - inference-experiment
-   * - labeling-job
-   * - workteam
-   * - workforce
-   * - domain
-   * - user-profile
-   * - space
+   * - action
+   * - ai-benchmark-job
+   * - ai-recommendation-job
+   * - ai-workload-config
+   * - algorithm
    * - app
    * - app-image-config
-   * - studio-lifecycle-config
-   * - notebook-instance
-   * - notebook-instance-lifecycle-config
-   * - code-repository
-   * - image
-   * - image-version
-   * - algorithm
-   * - cluster
-   * - training-job
-   * - processing-job
-   * - job
-   * - hyper-parameter-tuning-job
-   * - training-plan
-   * - reserved-capacity
-   * - project
-   * - model-package
-   * - model-package-group
-   * - model
-   * - endpoint-config
-   * - endpoint
-   * - inference-component
-   * - transform-job
-   * - compilation-job
-   * - optimization-job
+   * - artifact
    * - automl-job
-   * - monitoring-schedule
+   * - cluster
+   * - cluster-scheduler-config
+   * - code-repository
+   * - compilation-job
+   * - compute-quota
+   * - context
    * - data-quality-job-definition
-   * - model-quality-job-definition
-   * - model-bias-job-definition
-   * - model-explainability-job-definition
+   * - device
+   * - device-fleet
+   * - domain
+   * - edge-deployment-plan
+   * - edge-packaging-job
+   * - endpoint
+   * - endpoint-config
    * - experiment
    * - experiment-trial
    * - experiment-trial-component
    * - feature-group
-   * - pipeline
-   * - pipeline-execution
-   * - artifact
-   * - context
-   * - action
+   * - flow-definition
+   * - hub
+   * - hub-content
+   * - human-task-ui
+   * - hyper-parameter-tuning-job
+   * - image
+   * - image-version
+   * - inference-component
+   * - inference-experiment
+   * - inference-recommendations-job
+   * - job
+   * - labeling-job
    * - lineage-group
+   * - mlflow-app
+   * - model
+   * - model-bias-job-definition
    * - model-card
    * - model-card-export-job
-   * - mlflow-app
-   * - compute-quota
-   * - cluster-scheduler-config
+   * - model-explainability-job-definition
+   * - model-package
+   * - model-package-group
+   * - model-quality-job-definition
+   * - monitoring-schedule
+   * - notebook-instance
+   * - notebook-instance-lifecycle-config
+   * - optimization-job
    * - partner-app
-   * - ai-workload-config
-   * - ai-benchmark-job
-   * - ai-recommendation-job
+   * - pipeline
+   * - pipeline-execution
+   * - processing-job
+   * - project
+   * - reserved-capacity
+   * - space
+   * - studio-lifecycle-config
+   * - training-job
+   * - training-plan
+   * - transform-job
+   * - user-profile
+   * - workforce
+   * - workteam
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -7736,7 +7056,6 @@ export class Sagemaker extends PolicyStatement {
    * - .toCreatePipeline()
    * - .toCreateProcessingJob()
    * - .toCreateProject()
-   * - .toCreateReservedCapacity()
    * - .toCreateSpace()
    * - .toCreateStudioLifecycleConfig()
    * - .toCreateTrainingJob()
@@ -7798,9 +7117,6 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
-   * Applies to actions:
-   * - .toCallWithBearerToken()
-   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -7820,6 +7136,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toDeleteModelPackage()
    * - .toDeleteTags()
    * - .toDescribeModelPackage()
+   * - .toListModelPackages()
    * - .toListTags()
    * - .toUpdateModelPackage()
    *
@@ -7846,6 +7163,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toDeleteModelPackage()
    * - .toDeleteTags()
    * - .toDescribeModelPackage()
+   * - .toListModelPackages()
    * - .toListTags()
    * - .toUpdateModelPackage()
    *
@@ -7871,6 +7189,7 @@ export class Sagemaker extends PolicyStatement {
    * - .toDeleteModelPackage()
    * - .toDeleteTags()
    * - .toDescribeModelPackage()
+   * - .toListModelPackages()
    * - .toListTags()
    * - .toUpdateModelPackage()
    *
@@ -8548,82 +7867,413 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * Applies to actions:
+   * - .toAddAssociation()
+   * - .toAddTags()
+   * - .toAssociateTrialComponent()
+   * - .toAttachClusterNodeVolume()
+   * - .toBatchAddClusterNodes()
+   * - .toBatchDeleteClusterNodes()
+   * - .toBatchDescribeModelPackage()
+   * - .toBatchGetMetrics()
+   * - .toBatchGetRecord()
+   * - .toBatchPutMetrics()
+   * - .toBatchWriteRecord()
+   * - .toCallMlflowAppApi()
+   * - .toCallPartnerAppApi()
+   * - .toCompleteRollout()
+   * - .toCreateAIBenchmarkJob()
+   * - .toCreateAIRecommendationJob()
+   * - .toCreateAIWorkloadConfig()
+   * - .toCreateAction()
+   * - .toCreateAlgorithm()
+   * - .toCreateApp()
+   * - .toCreateAppImageConfig()
+   * - .toCreateArtifact()
+   * - .toCreateAutoMLJob()
+   * - .toCreateAutoMLJobV2()
+   * - .toCreateCluster()
+   * - .toCreateClusterSchedulerConfig()
+   * - .toCreateCodeRepository()
+   * - .toCreateCompilationJob()
+   * - .toCreateComputeQuota()
+   * - .toCreateContext()
+   * - .toCreateDataQualityJobDefinition()
+   * - .toCreateDeviceFleet()
+   * - .toCreateDomain()
+   * - .toCreateEdgeDeploymentPlan()
+   * - .toCreateEdgeDeploymentStage()
+   * - .toCreateEdgePackagingJob()
+   * - .toCreateEndpoint()
+   * - .toCreateEndpointConfig()
+   * - .toCreateExperiment()
+   * - .toCreateFeatureGroup()
+   * - .toCreateFlowDefinition()
+   * - .toCreateHub()
+   * - .toCreateHubContentPresignedUrls()
+   * - .toCreateHubContentReference()
+   * - .toCreateHumanTaskUi()
+   * - .toCreateHyperParameterTuningJob()
+   * - .toCreateImage()
+   * - .toCreateImageVersion()
+   * - .toCreateInferenceComponent()
+   * - .toCreateInferenceExperiment()
+   * - .toCreateInferenceRecommendationsJob()
+   * - .toCreateJob()
+   * - .toCreateLabelingJob()
+   * - .toCreateMlflowApp()
    * - .toCreateMlflowTrackingServer()
+   * - .toCreateModel()
+   * - .toCreateModelBiasJobDefinition()
+   * - .toCreateModelCard()
+   * - .toCreateModelCardExportJob()
+   * - .toCreateModelExplainabilityJobDefinition()
+   * - .toCreateModelPackage()
+   * - .toCreateModelPackageGroup()
+   * - .toCreateModelQualityJobDefinition()
+   * - .toCreateMonitoringSchedule()
+   * - .toCreateNotebookInstance()
+   * - .toCreateNotebookInstanceLifecycleConfig()
+   * - .toCreateOptimizationJob()
+   * - .toCreatePartnerApp()
+   * - .toCreatePartnerAppPresignedUrl()
+   * - .toCreatePipeline()
+   * - .toCreatePresignedDomainUrl()
+   * - .toCreatePresignedMlflowAppUrl()
    * - .toCreatePresignedMlflowTrackingServerUrl()
+   * - .toCreatePresignedNotebookInstanceUrl()
+   * - .toCreateProcessingJob()
+   * - .toCreateProject()
+   * - .toCreateSpace()
+   * - .toCreateStudioLifecycleConfig()
+   * - .toCreateTrainingJob()
+   * - .toCreateTrainingPlan()
+   * - .toCreateTransformJob()
+   * - .toCreateTrial()
+   * - .toCreateTrialComponent()
+   * - .toCreateUserProfile()
+   * - .toCreateWorkforce()
+   * - .toCreateWorkteam()
+   * - .toDeleteAIBenchmarkJob()
+   * - .toDeleteAIRecommendationJob()
+   * - .toDeleteAIWorkloadConfig()
+   * - .toDeleteAction()
+   * - .toDeleteAlgorithm()
+   * - .toDeleteApp()
+   * - .toDeleteAppImageConfig()
+   * - .toDeleteArtifact()
+   * - .toDeleteAssociation()
+   * - .toDeleteCluster()
+   * - .toDeleteClusterSchedulerConfig()
+   * - .toDeleteCodeRepository()
+   * - .toDeleteCompilationJob()
+   * - .toDeleteComputeQuota()
+   * - .toDeleteContext()
+   * - .toDeleteDataQualityJobDefinition()
+   * - .toDeleteDeviceFleet()
+   * - .toDeleteDomain()
+   * - .toDeleteEdgeDeploymentPlan()
+   * - .toDeleteEdgeDeploymentStage()
+   * - .toDeleteEndpoint()
+   * - .toDeleteEndpointConfig()
+   * - .toDeleteExperiment()
+   * - .toDeleteFeatureGroup()
+   * - .toDeleteFlowDefinition()
+   * - .toDeleteHub()
+   * - .toDeleteHubContent()
+   * - .toDeleteHubContentReference()
+   * - .toDeleteHumanTaskUi()
+   * - .toDeleteHyperParameterTuningJob()
+   * - .toDeleteImage()
+   * - .toDeleteImageVersion()
+   * - .toDeleteInferenceComponent()
+   * - .toDeleteInferenceExperiment()
+   * - .toDeleteJob()
+   * - .toDeleteMlflowApp()
    * - .toDeleteMlflowTrackingServer()
+   * - .toDeleteModel()
+   * - .toDeleteModelBiasJobDefinition()
+   * - .toDeleteModelCard()
+   * - .toDeleteModelExplainabilityJobDefinition()
+   * - .toDeleteModelPackage()
+   * - .toDeleteModelPackageGroup()
+   * - .toDeleteModelPackageGroupPolicy()
+   * - .toDeleteModelQualityJobDefinition()
+   * - .toDeleteMonitoringSchedule()
+   * - .toDeleteNotebookInstance()
+   * - .toDeleteNotebookInstanceLifecycleConfig()
+   * - .toDeleteOptimizationJob()
+   * - .toDeletePartnerApp()
+   * - .toDeletePipeline()
+   * - .toDeleteProcessingJob()
+   * - .toDeleteProject()
+   * - .toDeleteRecord()
+   * - .toDeleteSpace()
+   * - .toDeleteStudioLifecycleConfig()
+   * - .toDeleteTags()
+   * - .toDeleteTrainingJob()
+   * - .toDeleteTrial()
+   * - .toDeleteTrialComponent()
+   * - .toDeleteUserProfile()
+   * - .toDeleteWorkforce()
+   * - .toDeleteWorkteam()
+   * - .toDeployHubModel()
+   * - .toDeregisterDevices()
+   * - .toDescribeAIBenchmarkJob()
+   * - .toDescribeAIRecommendationJob()
+   * - .toDescribeAIWorkloadConfig()
+   * - .toDescribeAction()
+   * - .toDescribeAlgorithm()
+   * - .toDescribeApp()
+   * - .toDescribeAppImageConfig()
+   * - .toDescribeArtifact()
+   * - .toDescribeAutoMLJob()
+   * - .toDescribeAutoMLJobV2()
+   * - .toDescribeCluster()
+   * - .toDescribeClusterEvent()
+   * - .toDescribeClusterNode()
+   * - .toDescribeClusterSchedulerConfig()
+   * - .toDescribeCodeRepository()
+   * - .toDescribeCompilationJob()
+   * - .toDescribeComputeQuota()
+   * - .toDescribeContext()
+   * - .toDescribeDataQualityJobDefinition()
+   * - .toDescribeDevice()
+   * - .toDescribeDeviceFleet()
+   * - .toDescribeDomain()
+   * - .toDescribeEdgeDeploymentPlan()
+   * - .toDescribeEdgePackagingJob()
+   * - .toDescribeEndpoint()
+   * - .toDescribeEndpointConfig()
+   * - .toDescribeExperiment()
+   * - .toDescribeFeatureGroup()
+   * - .toDescribeFeatureMetadata()
+   * - .toDescribeFlowDefinition()
+   * - .toDescribeHub()
+   * - .toDescribeHubContent()
+   * - .toDescribeHumanTaskUi()
+   * - .toDescribeHyperParameterTuningJob()
+   * - .toDescribeImage()
+   * - .toDescribeImageVersion()
+   * - .toDescribeInferenceComponent()
+   * - .toDescribeInferenceExperiment()
+   * - .toDescribeInferenceRecommendationsJob()
+   * - .toDescribeJob()
+   * - .toDescribeLabelingJob()
+   * - .toDescribeMlflowApp()
    * - .toDescribeMlflowTrackingServer()
+   * - .toDescribeModel()
+   * - .toDescribeModelBiasJobDefinition()
+   * - .toDescribeModelCard()
+   * - .toDescribeModelCardExportJob()
+   * - .toDescribeModelExplainabilityJobDefinition()
+   * - .toDescribeModelPackage()
+   * - .toDescribeModelPackageGroup()
+   * - .toDescribeModelQualityJobDefinition()
+   * - .toDescribeMonitoringSchedule()
+   * - .toDescribeNotebookInstance()
+   * - .toDescribeNotebookInstanceLifecycleConfig()
+   * - .toDescribeOptimizationJob()
+   * - .toDescribePartnerApp()
+   * - .toDescribePipeline()
+   * - .toDescribePipelineDefinitionForExecution()
+   * - .toDescribePipelineExecution()
+   * - .toDescribeProcessingJob()
+   * - .toDescribeProject()
+   * - .toDescribeReservedCapacity()
+   * - .toDescribeSpace()
+   * - .toDescribeStudioLifecycleConfig()
+   * - .toDescribeSubscribedWorkteam()
+   * - .toDescribeTrainingJob()
+   * - .toDescribeTrainingPlan()
+   * - .toDescribeTransformJob()
+   * - .toDescribeTrial()
+   * - .toDescribeTrialComponent()
+   * - .toDescribeUserProfile()
+   * - .toDescribeWorkforce()
+   * - .toDescribeWorkteam()
+   * - .toDetachClusterNodeVolume()
+   * - .toDisassociateTrialComponent()
+   * - .toGetDeployments()
+   * - .toGetDeviceFleetReport()
+   * - .toGetDeviceRegistration()
+   * - .toGetModelPackageGroupPolicy()
+   * - .toGetRecord()
+   * - .toGetScalingConfigurationRecommendation()
+   * - .toImportHubContent()
+   * - .toInvokeEndpoint()
+   * - .toInvokeEndpointAsync()
+   * - .toInvokeEndpointWithResponseStream()
+   * - .toListAliases()
+   * - .toListClusterEvents()
+   * - .toListClusterNodes()
+   * - .toListHubContentVersions()
+   * - .toListHubContents()
+   * - .toListImageVersions()
+   * - .toListLabelingJobsForWorkteam()
+   * - .toListModelCardExportJobs()
+   * - .toListModelCardVersions()
+   * - .toListModelPackages()
+   * - .toListPipelineExecutionSteps()
+   * - .toListPipelineExecutions()
+   * - .toListPipelineParametersForExecution()
+   * - .toListPipelineVersions()
+   * - .toListRecords()
+   * - .toListTags()
+   * - .toListTrainingJobsForHyperParameterTuningJob()
+   * - .toListUltraServersByReservedCapacity()
+   * - .toPutModelPackageGroupPolicy()
+   * - .toPutRecord()
+   * - .toRegisterDevices()
+   * - .toRetryPipelineExecution()
+   * - .toSample()
+   * - .toSampleWithResponseStream()
+   * - .toSendHeartbeat()
+   * - .toSendPipelineExecutionStepFailure()
+   * - .toSendPipelineExecutionStepSuccess()
+   * - .toStartClusterHealthCheck()
+   * - .toStartEdgeDeploymentStage()
+   * - .toStartHumanLoop()
+   * - .toStartInferenceExperiment()
    * - .toStartMlflowTrackingServer()
+   * - .toStartMonitoringSchedule()
+   * - .toStartNotebookInstance()
+   * - .toStartPipelineExecution()
+   * - .toStartSession()
+   * - .toStopAIBenchmarkJob()
+   * - .toStopAIRecommendationJob()
+   * - .toStopAutoMLJob()
+   * - .toStopCompilationJob()
+   * - .toStopEdgeDeploymentStage()
+   * - .toStopEdgePackagingJob()
+   * - .toStopHyperParameterTuningJob()
+   * - .toStopInferenceExperiment()
+   * - .toStopInferenceRecommendationsJob()
+   * - .toStopJob()
+   * - .toStopLabelingJob()
    * - .toStopMlflowTrackingServer()
+   * - .toStopMonitoringSchedule()
+   * - .toStopNotebookInstance()
+   * - .toStopOptimizationJob()
+   * - .toStopPipelineExecution()
+   * - .toStopProcessingJob()
+   * - .toStopTrainingJob()
+   * - .toStopTransformJob()
+   * - .toTrainHubModel()
+   * - .toUpdateAction()
+   * - .toUpdateAppImageConfig()
+   * - .toUpdateArtifact()
+   * - .toUpdateCluster()
+   * - .toUpdateClusterSchedulerConfig()
+   * - .toUpdateClusterSoftware()
+   * - .toUpdateCodeRepository()
+   * - .toUpdateComputeQuota()
+   * - .toUpdateContext()
+   * - .toUpdateDeviceFleet()
+   * - .toUpdateDevices()
+   * - .toUpdateDomain()
+   * - .toUpdateEndpoint()
+   * - .toUpdateEndpointWeightsAndCapacities()
+   * - .toUpdateExperiment()
+   * - .toUpdateFeatureGroup()
+   * - .toUpdateFeatureMetadata()
+   * - .toUpdateHub()
+   * - .toUpdateHubContent()
+   * - .toUpdateHubContentReference()
+   * - .toUpdateImage()
+   * - .toUpdateImageVersion()
+   * - .toUpdateInferenceComponent()
+   * - .toUpdateInferenceComponentRuntimeConfig()
+   * - .toUpdateInferenceExperiment()
+   * - .toUpdateMlflowApp()
    * - .toUpdateMlflowTrackingServer()
+   * - .toUpdateModelCard()
+   * - .toUpdateModelPackage()
+   * - .toUpdateMonitoringAlert()
+   * - .toUpdateMonitoringSchedule()
+   * - .toUpdateNotebookInstance()
+   * - .toUpdateNotebookInstanceLifecycleConfig()
+   * - .toUpdatePartnerApp()
+   * - .toUpdatePipeline()
+   * - .toUpdatePipelineExecution()
+   * - .toUpdatePipelineVersion()
+   * - .toUpdateProject()
+   * - .toUpdateReward()
+   * - .toUpdateSpace()
+   * - .toUpdateTrainingJob()
+   * - .toUpdateTrial()
+   * - .toUpdateTrialComponent()
+   * - .toUpdateUserProfile()
+   * - .toUpdateWorkforce()
+   * - .toUpdateWorkteam()
    *
    * Applies to resource types:
-   * - device
-   * - device-fleet
-   * - edge-packaging-job
-   * - edge-deployment-plan
-   * - flow-definition
-   * - human-task-ui
-   * - hub
-   * - hub-content
-   * - inference-recommendations-job
-   * - inference-experiment
-   * - labeling-job
-   * - workteam
-   * - workforce
-   * - domain
-   * - user-profile
-   * - space
+   * - action
+   * - ai-benchmark-job
+   * - ai-recommendation-job
+   * - ai-workload-config
+   * - algorithm
    * - app
    * - app-image-config
-   * - studio-lifecycle-config
-   * - notebook-instance
-   * - notebook-instance-lifecycle-config
-   * - code-repository
-   * - image
-   * - image-version
-   * - algorithm
-   * - cluster
-   * - training-job
-   * - processing-job
-   * - job
-   * - hyper-parameter-tuning-job
-   * - training-plan
-   * - reserved-capacity
-   * - project
-   * - model-package
-   * - model-package-group
-   * - model
-   * - endpoint-config
-   * - endpoint
-   * - inference-component
-   * - transform-job
-   * - compilation-job
-   * - optimization-job
+   * - artifact
    * - automl-job
-   * - monitoring-schedule
+   * - cluster
+   * - cluster-scheduler-config
+   * - code-repository
+   * - compilation-job
+   * - compute-quota
+   * - context
    * - data-quality-job-definition
-   * - model-quality-job-definition
-   * - model-bias-job-definition
-   * - model-explainability-job-definition
+   * - device
+   * - device-fleet
+   * - domain
+   * - edge-deployment-plan
+   * - edge-packaging-job
+   * - endpoint
+   * - endpoint-config
    * - experiment
    * - experiment-trial
    * - experiment-trial-component
    * - feature-group
-   * - pipeline
-   * - pipeline-execution
-   * - artifact
-   * - context
-   * - action
+   * - flow-definition
+   * - hub
+   * - hub-content
+   * - human-task-ui
+   * - hyper-parameter-tuning-job
+   * - image
+   * - image-version
+   * - inference-component
+   * - inference-experiment
+   * - inference-recommendations-job
+   * - job
+   * - labeling-job
    * - lineage-group
+   * - mlflow-app
+   * - model
+   * - model-bias-job-definition
    * - model-card
    * - model-card-export-job
-   * - mlflow-app
-   * - compute-quota
-   * - cluster-scheduler-config
+   * - model-explainability-job-definition
+   * - model-package
+   * - model-package-group
+   * - model-quality-job-definition
+   * - monitoring-schedule
+   * - notebook-instance
+   * - notebook-instance-lifecycle-config
+   * - optimization-job
    * - partner-app
-   * - ai-workload-config
-   * - ai-benchmark-job
-   * - ai-recommendation-job
+   * - pipeline
+   * - pipeline-execution
+   * - processing-job
+   * - project
+   * - reserved-capacity
+   * - space
+   * - studio-lifecycle-config
+   * - training-job
+   * - training-plan
+   * - transform-job
+   * - user-profile
+   * - workforce
+   * - workteam
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

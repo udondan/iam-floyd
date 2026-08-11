@@ -13,7 +13,6 @@ nimble:DeleteStudio;Write
 nimble:DeleteStudioComponent;Write
 nimble:DeleteStudioMember;Write
 nimble:GetEula;Read
-nimble:GetFeatureMap;Read
 nimble:GetLaunchProfile;Read
 nimble:GetLaunchProfileDetails;Read
 nimble:GetLaunchProfileInitialization;Read
@@ -37,13 +36,12 @@ nimble:ListStudioMembers;Read
 nimble:ListStudios;Read
 nimble:ListTagsForResource;Read
 nimble:PutLaunchProfileMembers;Write
-nimble:PutStudioLogEvents;Write
 nimble:PutStudioMembers;Write
 nimble:StartStreamingSession;Write
 nimble:StartStudioSSOConfigurationRepair;Write
 nimble:StopStreamingSession;Write
-nimble:TagResource;Tagging
-nimble:UntagResource;Tagging
+nimble:TagResource;Tagging, Write
+nimble:UntagResource;Tagging, Write
 nimble:UpdateLaunchProfile;Write
 nimble:UpdateLaunchProfileMember;Write
 nimble:UpdateStreamingImage;Write

@@ -14,6 +14,6 @@ docdb-elastic:ListTagsForResource;List
 docdb-elastic:RestoreClusterFromSnapshot;Write
 docdb-elastic:StartCluster;Write
 docdb-elastic:StopCluster;Write
-docdb-elastic:TagResource;Tagging
-docdb-elastic:UntagResource;Tagging
+docdb-elastic:TagResource;Tagging, Write
+docdb-elastic:UntagResource;Tagging, Write
 docdb-elastic:UpdateCluster;Write
